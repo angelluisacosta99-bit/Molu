@@ -13,3 +13,8 @@ estos tres pasos, en este orden:
 
 No omitir la revisión aunque el cambio parezca trivial (por ejemplo,
 cambios solo de documentación).
+
+**Regla dura, sin excepciones:** nunca hacer `merge` de un PR sin haber
+completado antes una revisión con un agente independiente. Si por
+cualquier motivo la revisión no se pudo lanzar o no terminó, el PR no se
+fusiona hasta que exista esa revisión.
