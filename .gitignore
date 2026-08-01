@@ -1,0 +1,30 @@
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Editores
+.vscode/
+.idea/
+
+# Archivos pesados de audio/video: no se versionan en Git.
+# Súbelos a Google Drive y deja el enlace en el README correspondiente
+# (ver docencia-espanol/grabaciones/README.md).
+*.mp4
+*.mov
+*.mkv
+*.avi
+*.wav
+*.mp3
+*.m4a
+
+# Archivos temporales
+*.tmp
+*.log
