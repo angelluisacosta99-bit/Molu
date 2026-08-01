@@ -18,3 +18,15 @@ cambios solo de documentación).
 completado antes una revisión con un agente independiente. Si por
 cualquier motivo la revisión no se pudo lanzar o no terminó, el PR no se
 fusiona hasta que exista esa revisión.
+
+## Diseño visual: usar siempre la skill `impeccable`
+
+Cuando la tarea implique diseñar, rediseñar, criticar, auditar o pulir
+una **interfaz frontend** (sitios web, landing pages, dashboards, UI de
+producto, componentes, formularios, pantallas de onboarding, etc.),
+usar siempre la skill `impeccable` (`.claude/skills/impeccable/`), en
+lugar de hacer el trabajo de diseño "a mano".
+
+Nota de alcance: `impeccable` es para interfaces frontend, no genera ni
+edita documentos de Word ni presentaciones de PowerPoint. Para esos
+formatos usar las skills `docx` y `pptx` respectivamente.
