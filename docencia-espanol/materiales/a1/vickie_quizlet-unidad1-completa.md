@@ -110,52 +110,52 @@ de Quizlet (Crear set → Importar): separador entre término y definición
 
 | Español | Ruso |
 |---|---|
-| alemán/alemana (Alemania) | немецкий/немецкая (Германия) |
-| español/española (España) | испанский/испанская (Испания) |
-| francés/francesa (Francia) | французский/французская (Франция) |
-| italiano/italiana (Italia) | итальянский/итальянская (Италия) |
-| brasileño/brasileña (Brasil) | бразильский/бразильская (Бразилия) |
-| portugués/portuguesa (Portugal) | португальский/португальская (Португалия) |
+| alemán/alemana (Alemania) | немец/немка (Германия) |
+| español/española (España) | испанец/испанка (Испания) |
+| francés/francesa (Francia) | француз/француженка (Франция) |
+| italiano/italiana (Italia) | итальянец/итальянка (Италия) |
+| brasileño/brasileña (Brasil) | бразилец/бразильянка (Бразилия) |
+| portugués/portuguesa (Portugal) | португалец/португалка (Португалия) |
 | marroquí (Marruecos) | марокканец/марокканка (Марокко) |
-| chino/china (China) | китайский/китайская (Китай) |
-| iraní (Irán) | иранский (Иран) |
-| británico/británica (Reino Unido) | британский/британская (Великобритания) |
-| turco/turca (Turquía) | турецкий/турецкая (Турция) |
-| sudafricano/sudafricana (Sudáfrica) | южноафриканский/южноафриканская (ЮАР) |
-| colombiano/colombiana (Colombia) | колумбийский/колумбийская (Колумбия) |
-| polaco/polaca (Polonia) | польский/польская (Польша) |
-| sueco/sueca (Suecia) | шведский/шведская (Швеция) |
-| canadiense (Canadá) | канадский (Канада) |
-| peruano/peruana (Perú) | перуанский/перуанская (Перу) |
-| bielorruso/bielorrusa (Bielorrusia) | белорусский/белорусская (Беларусь) |
-| mexicano/mexicana (México) | мексиканский/мексиканская (Мексика) |
-| irlandés/irlandesa (Irlanda) | ирландский/ирландская (Ирландия) |
-| estadounidense (Estados Unidos) | американский (США) |
-| cubano/cubana (Cuba) | кубинский/кубинская (Куба) |
-| argentino/argentina (Argentina) | аргентинский/аргентинская (Аргентина) |
-| nigeriano/nigeriana (Nigeria) | нигерийский/нигерийская (Нигерия) |
-| paquistaní (Pakistán) | пакистанский (Пакистан) |
-| puertorriqueño/puertorriqueña (Puerto Rico) | пуэрто-риканский/пуэрто-риканская (Пуэрто-Рико) |
+| chino/china (China) | китаец/китаянка (Китай) |
+| iraní (Irán) | иранец/иранка (Иран) |
+| británico/británica (Reino Unido) | британец/британка (Великобритания) |
+| turco/turca (Turquía) | турок/турчанка (Турция) |
+| sudafricano/sudafricana (Sudáfrica) | южноафриканец/южноафриканка (ЮАР) |
+| colombiano/colombiana (Colombia) | колумбиец/колумбийка (Колумбия) |
+| polaco/polaca (Polonia) | поляк/полька (Польша) |
+| sueco/sueca (Suecia) | швед/шведка (Швеция) |
+| canadiense (Canadá) | канадец/канадка (Канада) |
+| peruano/peruana (Perú) | перуанец/перуанка (Перу) |
+| bielorruso/bielorrusa (Bielorrusia) | белорус/белоруска (Беларусь) |
+| mexicano/mexicana (México) | мексиканец/мексиканка (Мексика) |
+| irlandés/irlandesa (Irlanda) | ирландец/ирландка (Ирландия) |
+| estadounidense (Estados Unidos) | американец/американка (США) |
+| cubano/cubana (Cuba) | кубинец/кубинка (Куба) |
+| argentino/argentina (Argentina) | аргентинец/аргентинка (Аргентина) |
+| nigeriano/nigeriana (Nigeria) | нигериец/нигерийка (Нигерия) |
+| paquistaní (Pakistán) | пакистанец/пакистанка (Пакистан) |
+| puertorriqueño/puertorriqueña (Puerto Rico) | пуэрториканец/пуэрториканка (Пуэрто-Рико) |
 
 ## 9. Gentilicios de España (comunidades autónomas)
 
 | Español | Ruso |
 |---|---|
-| andaluz/andaluza (Andalucía) | андалусийский/андалусийская (Андалусия) |
-| aragonés/aragonesa (Aragón) | арагонский/арагонская (Арагон) |
-| asturiano/asturiana (Asturias) | астурийский/астурийская (Астурия) |
-| balear (Islas Baleares) | балеарский (Балеарские острова) |
-| canario/canaria (Islas Canarias) | канарский/канарская (Канарские острова) |
-| cántabro/cántabra (Cantabria) | кантабрийский/кантабрийская (Кантабрия) |
-| castellanoleonés/castellanoleonesa (Castilla y León) | кастильско-леонский/кастильско-леонская (Кастилия-и-Леон) |
-| castellanomanchego/castellanomanchega (Castilla-La Mancha) | кастильско-манчский/кастильско-манчская (Кастилия-Ла-Манча) |
-| catalán/catalana (Cataluña) | каталонский/каталонская (Каталония) |
-| extremeño/extremeña (Extremadura) | эстремадурский/эстремадурская (Эстремадура) |
-| gallego/gallega (Galicia) | галисийский/галисийская (Галисия) |
-| madrileño/madrileña (Madrid) | мадридский/мадридская (Мадрид) |
-| murciano/murciana (Murcia) | мурсийский/мурсийская (Мурсия) |
-| valenciano/valenciana (Valencia) | валенсийский/валенсийская (Валенсия) |
-| vasco/vasca (País Vasco) | баскский/баскская (Страна Басков) |
+| andaluz/andaluza (Andalucía) | андалусец/андалуска (Андалусия) |
+| aragonés/aragonesa (Aragón) | арагонец/арагонка (Арагон) |
+| asturiano/asturiana (Asturias) | астуриец/астурийка (Астурия) |
+| balear (Islas Baleares) | балеарец/балеарка (Балеарские острова) |
+| canario/canaria (Islas Canarias) | канарец/канарка (Канарские острова) |
+| cántabro/cántabra (Cantabria) | кантабриец/кантабрийка (Кантабрия) |
+| castellanoleonés/castellanoleonesa (Castilla y León) | уроженец/уроженка Кастилии и Леона (Кастилия-и-Леон) |
+| castellanomanchego/castellanomanchega (Castilla-La Mancha) | уроженец/уроженка Кастилии-Ла-Манчи (Кастилия-Ла-Манча) |
+| catalán/catalana (Cataluña) | каталонец/каталонка (Каталония) |
+| extremeño/extremeña (Extremadura) | эстремадурец/эстремадурка (Эстремадура) |
+| gallego/gallega (Galicia) | галисиец/галисийка (Галисия) |
+| madrileño/madrileña (Madrid) | мадридец/мадридка (Мадрид) |
+| murciano/murciana (Murcia) | мурсиец/мурсийка (Мурсия) |
+| valenciano/valenciana (Valencia) | валенсиец/валенсийка (Валенсия) |
+| vasco/vasca (País Vasco) | баск/баска (Страна Басков) |
 
 ## 10. Profesiones
 
@@ -304,47 +304,47 @@ el domicilio	адрес проживания
 la ciudad	город
 el teléfono	телефон
 el correo electrónico	электронная почта
-alemán/alemana (Alemania)	немецкий/немецкая (Германия)
-español/española (España)	испанский/испанская (Испания)
-francés/francesa (Francia)	французский/французская (Франция)
-italiano/italiana (Italia)	итальянский/итальянская (Италия)
-brasileño/brasileña (Brasil)	бразильский/бразильская (Бразилия)
-portugués/portuguesa (Portugal)	португальский/португальская (Португалия)
+alemán/alemana (Alemania)	немец/немка (Германия)
+español/española (España)	испанец/испанка (Испания)
+francés/francesa (Francia)	француз/француженка (Франция)
+italiano/italiana (Italia)	итальянец/итальянка (Италия)
+brasileño/brasileña (Brasil)	бразилец/бразильянка (Бразилия)
+portugués/portuguesa (Portugal)	португалец/португалка (Португалия)
 marroquí (Marruecos)	марокканец/марокканка (Марокко)
-chino/china (China)	китайский/китайская (Китай)
-iraní (Irán)	иранский (Иран)
-británico/británica (Reino Unido)	британский/британская (Великобритания)
-turco/turca (Turquía)	турецкий/турецкая (Турция)
-sudafricano/sudafricana (Sudáfrica)	южноафриканский/южноафриканская (ЮАР)
-colombiano/colombiana (Colombia)	колумбийский/колумбийская (Колумбия)
-polaco/polaca (Polonia)	польский/польская (Польша)
-sueco/sueca (Suecia)	шведский/шведская (Швеция)
-canadiense (Canadá)	канадский (Канада)
-peruano/peruana (Perú)	перуанский/перуанская (Перу)
-bielorruso/bielorrusa (Bielorrusia)	белорусский/белорусская (Беларусь)
-mexicano/mexicana (México)	мексиканский/мексиканская (Мексика)
-irlandés/irlandesa (Irlanda)	ирландский/ирландская (Ирландия)
-estadounidense (Estados Unidos)	американский (США)
-cubano/cubana (Cuba)	кубинский/кубинская (Куба)
-argentino/argentina (Argentina)	аргентинский/аргентинская (Аргентина)
-nigeriano/nigeriana (Nigeria)	нигерийский/нигерийская (Нигерия)
-paquistaní (Pakistán)	пакистанский (Пакистан)
-puertorriqueño/puertorriqueña (Puerto Rico)	пуэрто-риканский/пуэрто-риканская (Пуэрто-Рико)
-andaluz/andaluza (Andalucía)	андалусийский/андалусийская (Андалусия)
-aragonés/aragonesa (Aragón)	арагонский/арагонская (Арагон)
-asturiano/asturiana (Asturias)	астурийский/астурийская (Астурия)
-balear (Islas Baleares)	балеарский (Балеарские острова)
-canario/canaria (Islas Canarias)	канарский/канарская (Канарские острова)
-cántabro/cántabra (Cantabria)	кантабрийский/кантабрийская (Кантабрия)
-castellanoleonés/castellanoleonesa (Castilla y León)	кастильско-леонский/кастильско-леонская (Кастилия-и-Леон)
-castellanomanchego/castellanomanchega (Castilla-La Mancha)	кастильско-манчский/кастильско-манчская (Кастилия-Ла-Манча)
-catalán/catalana (Cataluña)	каталонский/каталонская (Каталония)
-extremeño/extremeña (Extremadura)	эстремадурский/эстремадурская (Эстремадура)
-gallego/gallega (Galicia)	галисийский/галисийская (Галисия)
-madrileño/madrileña (Madrid)	мадридский/мадридская (Мадрид)
-murciano/murciana (Murcia)	мурсийский/мурсийская (Мурсия)
-valenciano/valenciana (Valencia)	валенсийский/валенсийская (Валенсия)
-vasco/vasca (País Vasco)	баскский/баскская (Страна Басков)
+chino/china (China)	китаец/китаянка (Китай)
+iraní (Irán)	иранец/иранка (Иран)
+británico/británica (Reino Unido)	британец/британка (Великобритания)
+turco/turca (Turquía)	турок/турчанка (Турция)
+sudafricano/sudafricana (Sudáfrica)	южноафриканец/южноафриканка (ЮАР)
+colombiano/colombiana (Colombia)	колумбиец/колумбийка (Колумбия)
+polaco/polaca (Polonia)	поляк/полька (Польша)
+sueco/sueca (Suecia)	швед/шведка (Швеция)
+canadiense (Canadá)	канадец/канадка (Канада)
+peruano/peruana (Perú)	перуанец/перуанка (Перу)
+bielorruso/bielorrusa (Bielorrusia)	белорус/белоруска (Беларусь)
+mexicano/mexicana (México)	мексиканец/мексиканка (Мексика)
+irlandés/irlandesa (Irlanda)	ирландец/ирландка (Ирландия)
+estadounidense (Estados Unidos)	американец/американка (США)
+cubano/cubana (Cuba)	кубинец/кубинка (Куба)
+argentino/argentina (Argentina)	аргентинец/аргентинка (Аргентина)
+nigeriano/nigeriana (Nigeria)	нигериец/нигерийка (Нигерия)
+paquistaní (Pakistán)	пакистанец/пакистанка (Пакистан)
+puertorriqueño/puertorriqueña (Puerto Rico)	пуэрториканец/пуэрториканка (Пуэрто-Рико)
+andaluz/andaluza (Andalucía)	андалусец/андалуска (Андалусия)
+aragonés/aragonesa (Aragón)	арагонец/арагонка (Арагон)
+asturiano/asturiana (Asturias)	астуриец/астурийка (Астурия)
+balear (Islas Baleares)	балеарец/балеарка (Балеарские острова)
+canario/canaria (Islas Canarias)	канарец/канарка (Канарские острова)
+cántabro/cántabra (Cantabria)	кантабриец/кантабрийка (Кантабрия)
+castellanoleonés/castellanoleonesa (Castilla y León)	уроженец/уроженка Кастилии и Леона (Кастилия-и-Леон)
+castellanomanchego/castellanomanchega (Castilla-La Mancha)	уроженец/уроженка Кастилии-Ла-Манчи (Кастилия-Ла-Манча)
+catalán/catalana (Cataluña)	каталонец/каталонка (Каталония)
+extremeño/extremeña (Extremadura)	эстремадурец/эстремадурка (Эстремадура)
+gallego/gallega (Galicia)	галисиец/галисийка (Галисия)
+madrileño/madrileña (Madrid)	мадридец/мадридка (Мадрид)
+murciano/murciana (Murcia)	мурсиец/мурсийка (Мурсия)
+valenciano/valenciana (Valencia)	валенсиец/валенсийка (Валенсия)
+vasco/vasca (País Vasco)	баск/баска (Страна Басков)
 peluquero/peluquera	парикмахер
 profesor/profesora	преподаватель, учитель/учительница
 médico/médica	врач
