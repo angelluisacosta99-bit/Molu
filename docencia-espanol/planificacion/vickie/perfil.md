@@ -2,12 +2,15 @@
 
 ## Datos generales
 
-- **Nivel:** por definir
+- **Nivel:** A0 (empieza desde cero)
 - **Idioma nativo:** ruso
 - **Frecuencia de clases:** por definir
 - **Ciudad natal:** Электросталь (Elektrostal)
 - **Residencia actual:** Moscú
 - **Teléfono:** +79164305040
+- **Teams:** victoria.lubimkina@gmail.com
+- **Telegram:** @ll_vickie
+- **Libro de texto:** Nuevo Español en Marcha (desde el nivel inicial)
 
 ## Características
 
@@ -17,4 +20,4 @@
 
 ## Progresión
 
-_(pendiente de completar)_
+- Empiezan desde cero con el libro *Nuevo Español en Marcha*.
