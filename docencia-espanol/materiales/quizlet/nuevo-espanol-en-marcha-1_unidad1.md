@@ -1,12 +1,17 @@
-# Quizlet — Vickie — Nuevo Español en Marcha 1, Unidad 1 completa
+# Quizlet — Nuevo Español en Marcha 1, Unidad 1 completa
 
-**Alumna:** Vickie (nivel A0/A1, nativa rusa)
+**Nivel:** A1 (principiantes, empiezan desde cero)
 **Libro:** Nuevo Español en Marcha 1
 **Cobertura:** Antes de empezar + 1A (¡Encantado!) + 1B (¿A qué te dedicas?) + 1C (¿Cuál es tu número de móvil?) + 1D (Comunicación y cultura: tú/usted)
-**Idiomas de la tarjeta:** término en español → traducción/explicación en ruso
+**Idiomas de la tarjeta:** término en español → traducción/explicación en ruso (por defecto, ya que todos los alumnos son rusohablantes; si algún alumno tiene otro idioma nativo, adapta la columna de la derecha antes de importar)
 
-Contenido extraído del Libro del alumno y del Cuaderno de ejercicios
-(carpeta de Drive del alumno, subcarpeta *Nuevo Español en Marcha*).
+Plantilla genérica, reutilizable para cualquier alumno que esté en este
+punto del libro. No está atada a un alumno concreto: cópiala o
+impórtala directamente en Quizlet para cada alumno que la necesite.
+
+Contenido extraído del Libro del alumno y del Cuaderno de ejercicios de
+*Nuevo Español en Marcha 1* (carpeta de Drive de materiales de
+referencia, subcarpeta *Nuevo Español en Marcha*).
 
 Al final del documento hay un bloque listo para pegar en el importador
 de Quizlet (Crear set → Importar): separador entre término y definición
