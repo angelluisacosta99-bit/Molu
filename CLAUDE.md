@@ -44,7 +44,8 @@ frecuente):
 
 1. **Nuevo Español en Marcha** — libro de texto principal, el que más
    se usa.
-2. **ПК Гонсалес** (PK González) — segundo material más usado.
+2. **ПК Гонсалес** ("полный курс" González, es decir, el curso completo
+   de González) — segundo material más usado.
 3. **Temas** — recursos adicionales organizados por tema.
 
 Antes de generar un ejercicio, tarea o presentación nueva, consultar el
