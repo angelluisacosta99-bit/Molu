@@ -53,3 +53,10 @@ contenido de estas carpetas (vía el conector de Google Drive) para
 mantener consistencia con la progresión, el vocabulario y la
 metodología que el alumno ya conoce, en vez de crear contenido genérico
 desde cero.
+
+## Nombre del profesor: sin tilde
+
+El nombre del usuario/profesor es **Angel Luis Acosta González**.
+"Angel" en este contexto **no lleva tilde** (no es "Ángel"). Al
+escribir su nombre en cualquier material, documento, commit, código o
+respuesta, usar siempre "Angel" sin acento.
