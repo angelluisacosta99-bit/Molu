@@ -2,8 +2,7 @@
 
 **Alumna:** Vickie (nivel A0/A1, nativa rusa)
 **Libro:** Nuevo Español en Marcha 1
-**Cobertura:** Antes de empezar + 1A (¡Encantado!) + 1B (¿A qué te dedicas?)
-+ 1C (¿Cuál es tu número de móvil?) + 1D (Comunicación y cultura: tú/usted)
+**Cobertura:** Antes de empezar + 1A (¡Encantado!) + 1B (¿A qué te dedicas?) + 1C (¿Cuál es tu número de móvil?) + 1D (Comunicación y cultura: tú/usted)
 **Idiomas de la tarjeta:** término en español → traducción/explicación en ruso
 
 Contenido extraído del Libro del alumno y del Cuaderno de ejercicios
@@ -21,7 +20,7 @@ de Quizlet (Crear set → Importar): separador entre término y definición
 |---|---|
 | ¡Hola! | Привет! |
 | Buenos días | Доброе утро! / Добрый день (утреннее приветствие) |
-| Buenas tardes | Добрый день (после полудía) |
+| Buenas tardes | Добрый день (после полудня) |
 | Buenas noches | Добрый вечер! / Спокойной ночи |
 | ¿Qué tal? | Как дела? |
 | Bien, ¿y tú? | Хорошо, а ты? |
