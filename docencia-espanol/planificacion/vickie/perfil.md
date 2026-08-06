@@ -18,6 +18,13 @@
 - **Estudios:** РАНХиГС (Academia Presidencial Rusa de Economía Nacional
   y Administración Pública).
 
+## Familia
+
+- **Padre:** Alexei
+- **Madre:** Yulia
+- **Hermano:** Andrei
+- **Abuelos:** un abuelo y dos abuelas
+
 ## Progresión
 
 - Empiezan desde cero con el libro *Nuevo Español en Marcha*.
