@@ -8,7 +8,7 @@ Matrimonio, estudian juntos.
 - **Idioma nativo:** ruso
 - **Frecuencia de clases:** por definir
 - **Residencia:** Alicante, España
-- **Hijo:** Vadim
+- **Hijo:** Vadim (trabaja como diseñador gráfico, no estudia)
 
 ## Sasha
 
