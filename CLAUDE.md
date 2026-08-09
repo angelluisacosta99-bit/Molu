@@ -60,3 +60,11 @@ El nombre del usuario/profesor es **Angel Luis Acosta González**.
 "Angel" en este contexto **no lleva tilde** (no es "Ángel"). Al
 escribir su nombre en cualquier material, documento, commit, código o
 respuesta, usar siempre "Angel" sin acento.
+
+## Presentaciones (.pptx): sin firma final
+
+En la diapositiva de cierre de cualquier presentación, no añadir una
+firma del tipo "— Angel Luis Acosta González, tu profesor de español".
+El pie de página con el nombre del autor (ej. "© Angel Luis Acosta
+González" o "Material elaborado por...") sí puede mantenerse, pero no
+esa línea de firma personalizada al final del mensaje de cierre.
