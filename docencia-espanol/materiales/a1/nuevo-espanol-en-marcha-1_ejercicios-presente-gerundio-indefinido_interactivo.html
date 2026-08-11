@@ -406,7 +406,7 @@
   <div class="channel-row">
     <a class="channel-btn" id="chWhatsapp" target="_blank" rel="noopener">WhatsApp</a>
     <a class="channel-btn" id="chTelegram" target="_blank" rel="noopener">Telegram</a>
-    <button class="channel-btn" id="chEmail" type="button">Correo</button>
+    <a class="channel-btn" id="chEmail" target="_blank" rel="noopener">Correo</a>
     <a class="channel-btn" id="chTeams" target="_blank" rel="noopener">Teams</a>
     <button class="channel-btn" id="chCopy" type="button">Copiar resumen</button>
     <span class="channel-copied" id="chCopiedMsg">¡Copiado!</span>
@@ -1061,6 +1061,18 @@
       // phone-number form (t.me/+<number>) has no equivalent and ignores ?text= entirely.
       document.getElementById("chTelegram").href = "https://t.me/" + TEACHER.telegram + "?text=" + encodeURIComponent(shortText);
       document.getElementById("chTeams").href = "https://teams.microsoft.com/l/chat/0/0?users=" + TEACHER.teamsEmail + "&message=" + encoded;
+      // Gmail's web compose URL, set as a plain https:// href — a native <a target="_blank">
+      // click is trusted browser navigation, exempt from the "block pop-ups" site permission
+      // that silently swallows a script-triggered window.open() call (this broke a previous
+      // version of this button on both desktop and mobile: the Correo button had, at some
+      // point during testing, triggered enough popups that Chrome's per-site "block
+      // pop-ups" permission for this origin got set, which only affects window.open(), not
+      // real link clicks). On Android with the Gmail app installed, the OS still intercepts
+      // this link and opens the app instead of the browser, which ignores the compose
+      // params — that's a separate, unrelated limitation covered by the copy fallback below.
+      document.getElementById("chEmail").href = "https://mail.google.com/mail/?view=cm&fs=1&to=" +
+        encodeURIComponent(TEACHER.email) + "&su=" + encodeURIComponent("Resultados — " + TITLE_LABEL) +
+        "&body=" + encodeURIComponent(shortText);
     }
     refreshLinks();
     nameEl.oninput = refreshLinks;
@@ -1104,31 +1116,18 @@
         if (ok) showCopied("Texto copiado. Pégalo (mantén pulsado → Pegar) en el chat que se acaba de abrir.");
       });
     });
-    // Correo: no single trick has proven reliable across every device this gets opened on.
-    // A plain mailto: link is blocked by the artifact's sandboxed iframe when shared
-    // publicly (silent failure). A Gmail web compose link (mail.google.com/mail/?view=cm...)
-    // fixed that for desktop, but on Android with the Gmail app installed, the OS intercepts
-    // mail.google.com links and opens the APP instead of the browser — and the Gmail app
-    // does not understand the view=cm compose parameters, so it just opens normally,
-    // ignoring to/su/body entirely ("redirects to Gmail but does nothing" — the app did
-    // open, it just silently dropped the pre-filled content). Rather than chase another
-    // device-specific trick, this copies the summary first — synchronously, so the
-    // window.open() right after doesn't consume the click's one-time "user activation"
-    // token and silently break the copy (see the Telegram/PR history for why the order
-    // matters) — with a clear, explicit confirmation, and only ATTEMPTS the Gmail link as
-    // an unguaranteed bonus. Whatever the link does or doesn't do, the teacher's address
-    // and the full text are always in the clipboard.
-    document.getElementById("chEmail").onclick = function () {
-      const text = currentSummary();
-      const shortText = truncateForUrl(text, 1200);
-      const gmailUrl = "https://mail.google.com/mail/?view=cm&fs=1&to=" +
-        encodeURIComponent(TEACHER.email) + "&su=" + encodeURIComponent("Resultados — " + TITLE_LABEL) +
-        "&body=" + encodeURIComponent(shortText);
-      fallbackCopy(text, function (ok) {
+    // Correo: like Teams, its own link can't be trusted to fully deliver the message (on
+    // Android with the Gmail app installed, the OS intercepts mail.google.com links and
+    // opens the APP instead of the browser, which ignores the compose params and just opens
+    // normally — "redirects to Gmail but does nothing"). This is a genuinely additive
+    // listener on the native <a href> click (NOT a onclick handler calling window.open()
+    // itself) — a script-triggered window.open() is what a "block pop-ups" site permission
+    // targets, and a real link click is exempt from it, which is what actually matters here.
+    document.getElementById("chEmail").addEventListener("click", function () {
+      copyText(currentSummary(), function (ok) {
         if (ok) showCopied("Texto copiado. Si no se abrió tu correo solo, pégalo (mantén pulsado → Pegar) en un email a " + TEACHER.email + ".");
       });
-      try { window.open(gmailUrl, "_blank", "noopener"); } catch (e) { /* ignore */ }
-    };
+    });
   }
 
   allInputs.forEach(function (rec) {
