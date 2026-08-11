@@ -1078,9 +1078,11 @@
     document.getElementById("chEmail").onclick = function () {
       const text = currentSummary();
       const mailtoUrl = "mailto:" + TEACHER.email + "?subject=" + encodeURIComponent("Resultados — " + TITLE_LABEL) + "&body=" + encodeURIComponent(text);
-      copyText(text, function () {
-        try { window.open(mailtoUrl, "_blank", "noopener"); } catch (e) { /* ignore */ }
-      });
+      // window.open must run synchronously inside the click handler — if it runs after the
+      // clipboard promise resolves, the browser no longer treats it as user-initiated and
+      // silently blocks it as a popup (only the copy would appear to work).
+      try { window.open(mailtoUrl, "_blank", "noopener"); } catch (e) { /* ignore */ }
+      copyText(text, function () {});
     };
   }
 
