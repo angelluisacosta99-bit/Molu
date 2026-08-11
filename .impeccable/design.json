@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-11T18:13:08Z",
+  "title": "Design System: Clases de Español",
+  "extensions": {
+    "colorMeta": {
+      "gold": { "role": "primary", "displayName": "Pencil Gold", "canonical": "oklch(56% 0.11 75)", "tonalRamp": ["#2A1E05", "#4F3A0A", "#75540E", "#A8790C", "#C99A2E", "#E0B44A", "#EFCF85", "#F8E7C0"] },
+      "paper": { "role": "neutral", "displayName": "Paper", "canonical": "oklch(96% 0.006 130)", "tonalRamp": ["#101626", "#1A2035", "#5B6270", "#9FA5AC", "#D6D8D2", "#EAECE6", "#F3F5F0", "#FBFCFA"] },
+      "paper-raised": { "role": "neutral", "displayName": "Paper Raised", "canonical": "oklch(100% 0 0)", "tonalRamp": ["#182036", "#20294A", "#616B84", "#A6ADBE", "#DEE1E8", "#F4F5F8", "#FFFFFF", "#FFFFFF"] },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "oklch(24% 0.05 265)", "tonalRamp": ["#0B0F1A", "#111827", "#17223B", "#2D3A5C", "#4B5468", "#8891A6", "#C7CEDD", "#ECEEF3"] },
+      "good": { "role": "success", "displayName": "Marker Green", "canonical": "oklch(46% 0.11 155)", "tonalRamp": ["#0D2A1A", "#154A2C", "#1F7A4C", "#2FA167", "#4CB47F", "#8ED2AC", "#C4E9D3", "#E7F3EC"] },
+      "bad": { "role": "danger", "displayName": "Correction Red", "canonical": "oklch(46% 0.14 25)", "tonalRamp": ["#2B0E0A", "#4C1811", "#B23A2E", "#C85142", "#E17868", "#EFA79A", "#F7CFC7", "#FBECE9"] },
+      "results-bg": { "role": "surface-fixed", "displayName": "Results Ink (fixed)", "canonical": "oklch(24% 0.05 265)", "tonalRamp": ["#17223B"] },
+      "results-accent": { "role": "accent-fixed", "displayName": "Results Gold (fixed)", "canonical": "oklch(78% 0.13 80)", "tonalRamp": ["#D9A441"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Page-level h1s: exercise titles, index page headline." },
+      "headline": { "displayName": "Headline", "purpose": "Card/section titles, gate card h2, block titles." },
+      "body": { "displayName": "Body", "purpose": "All prose and exercise instructions, capped ~65-75ch." },
+      "label": { "displayName": "Label", "purpose": "Uppercase kickers: eyebrows, channel-label, results-errors-title." },
+      "mono": { "displayName": "Mono", "purpose": "Scores, exercise numbers, access codes — anything counted, not read as prose." }
+    },
+    "shadows": [
+      { "name": "raised", "value": "0 1px 2px rgba(23,34,59,0.06), 0 4px 14px rgba(23,34,59,0.06)", "purpose": "The only elevation step: exercise cards and the gate overlay card." },
+      { "name": "raised-dark", "value": "0 1px 2px rgba(0,0,0,0.3), 0 8px 20px rgba(0,0,0,0.35)", "purpose": "Dark-mode equivalent of 'raised'." }
+    ],
+    "motion": [
+      { "name": "bar-fill", "value": "width 0.35s ease", "purpose": "Progress bar fill transition; the only animated property in the system besides color/border on hover." }
+    ],
+    "breakpoints": []
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The 'Corregir todos' call-to-action at the end of an exercise page.",
+      "html": "<button class=\"ds-btn-primary\">Corregir todos los ejercicios</button>",
+      "css": ".ds-btn-primary { background: #17223B; color: #F3F5F0; border: none; border-radius: 8px; padding: 0.9rem 1.6rem; font-weight: 700; font-size: 0.95rem; cursor: pointer; transition: background 0.15s, color 0.15s; } .ds-btn-primary:hover, .ds-btn-primary:focus-visible { background: #A8790C; color: #17223B; }"
+    },
+    {
+      "name": "Channel Button",
+      "kind": "custom",
+      "refersTo": "channel-button",
+      "description": "Send-results-to-teacher link (WhatsApp/Telegram/Correo/Teams). Always a real <a>, never a scripted window.open().",
+      "html": "<a class=\"ds-channel-btn\" href=\"#\" target=\"_blank\" rel=\"noopener\">WhatsApp</a>",
+      "css": ".ds-channel-btn { display: inline-flex; align-items: center; background: #ECEEF3; color: #17223B; text-decoration: none; border-radius: 8px; padding: 0.55rem 0.95rem; font-size: 0.85rem; font-weight: 600; font-family: inherit; } .ds-channel-btn:hover, .ds-channel-btn:focus-visible { background: #D9A441; }"
+    },
+    {
+      "name": "Exercise Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "The raised container for one exercise block.",
+      "html": "<div class=\"ds-card\"><h3>Ejercicio</h3><p>Contenido del ejercicio…</p></div>",
+      "css": ".ds-card { background: #FFFFFF; border-radius: 10px; padding: 1.4rem; box-shadow: 0 1px 2px rgba(23,34,59,0.06), 0 4px 14px rgba(23,34,59,0.06); }"
+    },
+    {
+      "name": "Blank Input",
+      "kind": "input",
+      "refersTo": "input-blank",
+      "description": "Inline fill-in-the-blank input inside exercise text.",
+      "html": "<input class=\"ds-input-blank\" type=\"text\" placeholder=\"…\" />",
+      "css": ".ds-input-blank { background: #FCFDFB; border: none; border-bottom: 2px solid #DCDFD3; border-radius: 3px 3px 0 0; padding: 0.15rem 0.4rem; font-family: inherit; font-size: 1rem; color: #17223B; } .ds-input-blank:focus { outline: none; border-bottom-color: #A8790C; box-shadow: 0 1px 0 0 #A8790C; }"
+    },
+    {
+      "name": "Results Panel",
+      "kind": "custom",
+      "refersTo": "results-panel",
+      "description": "Fixed dark-ink surface shown after grading; never follows the page's light/dark theme.",
+      "html": "<div class=\"ds-results\"><div class=\"ds-results-headline\">¡Buen trabajo!</div><div class=\"ds-results-score\">18<span>/20</span></div></div>",
+      "css": ".ds-results { background: #17223B; color: #ECEEF3; border-radius: 14px; padding: 1.6rem; } .ds-results-headline { font-family: Georgia, serif; font-size: 1.5rem; font-weight: 700; margin-bottom: 0.35rem; } .ds-results-score { font-family: ui-monospace, monospace; font-size: 2.4rem; font-weight: 700; color: #D9A441; } .ds-results-score span { font-size: 1rem; color: #C7CEDD; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "El Cuaderno del Profesor",
+    "overview": "This system is the visual language of a private Spanish tutor's own study materials — not a language-learning product, not a school's LMS. It should read like the table of contents and worksheets of a well-kept, handwritten notebook: cream paper, dark ink, a single gold pencil mark for emphasis. Warmth comes from restraint and craft, not from mascots, streaks, or bright primary colors. Every page in this system — an exercise, an index, a results panel — is a page of the same notebook, so it must share the same paper, the same ink, the same margins.\n\nThe system explicitly rejects: gamified language-app aesthetics (badges, streaks, cartoon mascots, saturated primary colors), generic corporate LMS/dashboard chrome (cold grays, dense data tables, stock \"education platform\" photography), and SaaS-cream minimalism that isn't actually this brand's own palette — the paper tone here is a specific, slightly green-gray cream (#F3F5F0), not a generic warm off-white.",
+    "keyCharacteristics": [
+      "Warm paper background, cool dark-navy ink — a stationery pairing, not a screen pairing.",
+      "Georgia serif for every heading; a plain system sans for body copy; monospace reserved for numbers.",
+      "One accent color (gold) used sparingly — never as a field of color.",
+      "The results panel always renders on a fixed dark-ink background regardless of site theme.",
+      "Full dark-mode parity on every token, switched by prefers-color-scheme."
+    ],
+    "rules": [
+      { "name": "The Fixed Panel Rule", "body": "The results panel never uses the swappable --ink/--paper-raised/--gold tokens — it defines its own --rp-* set and stays dark in both light and dark site themes.", "section": "colors" },
+      { "name": "The One Voice Rule", "body": "Gold appears on at most one or two elements per screen at a time. If gold is filling more than a button or a badge, pull it back.", "section": "colors" },
+      { "name": "The Numbers-Are-Mono Rule", "body": "Anything read as a count or a code (score, exercise number, access code) renders in monospace; anything read as prose does not.", "section": "typography" },
+      { "name": "The Two-State Rule", "body": "An element is either flush with the paper or raised off it with the single shadow. No intermediate elevation step.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep the paper tone a specific cool cream (#F3F5F0), not a generic warm off-white.",
+      "Do use Georgia for every heading and the system sans stack for every body paragraph.",
+      "Do render scores, exercise numbers, and codes in the monospace stack.",
+      "Do give the results panel its own fixed --rp-* dark palette on every new exercise.",
+      "Do implement every send-to-teacher channel button as a plain <a target=\"_blank\" rel=\"noopener\">.",
+      "Do define both a light and a dark value for every color token."
+    ],
+    "donts": [
+      "Don't use gamified language-app styling — mascots, streak counters, bright saturated primary colors, badges.",
+      "Don't use generic corporate LMS/dashboard chrome — cold grays, dense data tables, stock photography.",
+      "Don't drift the paper background toward a generic warm SaaS-cream.",
+      "Don't use window.open() or <button onclick> for any external-link channel button.",
+      "Don't point the results panel at the page's shared color tokens.",
+      "Don't add a second elevation step or a hard black drop shadow."
+    ]
+  }
+}

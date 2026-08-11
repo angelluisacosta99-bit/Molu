@@ -1,0 +1,263 @@
+<!--
+  Índice de artefactos de clases de español. Organiza los ejercicios interactivos por
+  manual → nivel → capítulo. Ver .claude/skills/ejercicio-interactivo/SKILL.md y
+  DESIGN.md/PRODUCT.md en la raíz del repo para la convención de diseño y publicación.
+  Al añadir un capítulo nuevo: publícalo con el tool Artifact, luego añade su fila aquí
+  (dentro del nivel correspondiente) y vuelve a publicar este índice con el mismo url.
+-->
+<title>Clases de Español — Índice</title>
+<style>
+  :root {
+    --paper: #F3F5F0;
+    --paper-raised: #FFFFFF;
+    --ink: #17223B;
+    --ink-soft: #4B5468;
+    --pencil: #6E7280;
+    --gold: #A8790C;
+    --gold-soft: #F1E4C2;
+    --border: #DCDFD3;
+    --shadow: 0 1px 2px rgba(23,34,59,0.06), 0 4px 14px rgba(23,34,59,0.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #101626;
+      --paper-raised: #182036;
+      --ink: #ECEEF3;
+      --ink-soft: #AEB6C9;
+      --pencil: #8B93A6;
+      --gold: #E0B44A;
+      --gold-soft: #3A3220;
+      --border: #2A3348;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 20px rgba(0,0,0,0.35);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #101626;
+    --paper-raised: #182036;
+    --ink: #ECEEF3;
+    --ink-soft: #AEB6C9;
+    --pencil: #8B93A6;
+    --gold: #E0B44A;
+    --gold-soft: #3A3220;
+    --border: #2A3348;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 20px rgba(0,0,0,0.35);
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--paper); color: var(--ink); }
+  body {
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 4rem;
+  }
+  h1, h2, h3 {
+    font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+    text-wrap: balance;
+    margin: 0;
+  }
+  .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+  a { color: inherit; }
+
+  .topbar {
+    position: sticky; top: 0; z-index: 20;
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+  .topbar-inner {
+    max-width: 780px; margin: 0 auto;
+    padding: 0.7rem 1.25rem;
+    display: flex; align-items: baseline; gap: 0.6rem;
+  }
+  .topbar-title { font-size: 0.95rem; font-weight: 700; letter-spacing: 0.01em; font-family: Georgia, serif; }
+  .topbar-sub { font-size: 0.78rem; color: var(--pencil); }
+
+  .wrap { max-width: 780px; margin: 0 auto; padding: 0 1.25rem; }
+
+  .hero { padding: 2.6rem 0 2.2rem; }
+  .eyebrow {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.7rem;
+  }
+  .hero h1 { font-size: clamp(1.9rem, 5vw, 2.5rem); font-weight: 700; }
+  .hero p { color: var(--ink-soft); max-width: 56ch; margin: 0.75rem 0 0; font-size: 1.02rem; }
+
+  .manual-section { padding: 0.4rem 0 3rem; }
+  .manual-label {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--pencil); margin-bottom: 0.5rem;
+  }
+  .manual-section h2 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+  .manual-section > .wrap > p { color: var(--ink-soft); max-width: 62ch; margin: 0 0 1.8rem; }
+
+  .level-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.1rem;
+  }
+
+  .level-card {
+    background: var(--paper-raised);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 1.3rem 1.4rem 1.4rem;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: rise 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .level-card:nth-child(1) { animation-delay: 0.02s; }
+  .level-card:nth-child(2) { animation-delay: 0.08s; }
+  .level-card:nth-child(3) { animation-delay: 0.14s; }
+  .level-card:nth-child(4) { animation-delay: 0.2s; }
+  @keyframes rise { to { opacity: 1; transform: translateY(0); } }
+  @media (prefers-reduced-motion: reduce) {
+    .level-card { animation: none; opacity: 1; transform: none; }
+  }
+
+  .level-head {
+    display: flex; align-items: baseline; gap: 0.6rem;
+    padding-bottom: 0.8rem; margin-bottom: 0.8rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .level-badge {
+    font-size: 1.1rem; font-weight: 700; color: var(--gold);
+  }
+  .level-volume { font-size: 0.78rem; color: var(--pencil); }
+
+  .chapter-row {
+    display: flex; align-items: center; justify-content: space-between; gap: 0.75rem;
+    text-decoration: none; color: inherit;
+    padding: 0.6rem 0.65rem;
+    margin: 0 -0.65rem;
+    border-radius: 8px;
+    transition: background 0.15s ease;
+  }
+  a.chapter-row:hover, a.chapter-row:focus-visible {
+    background: var(--gold-soft);
+    outline: none;
+  }
+  .chapter-num {
+    font-size: 0.78rem; font-weight: 700; color: var(--ink-soft);
+    min-width: 2.6em;
+  }
+  .chapter-title { font-size: 0.92rem; font-weight: 600; flex: 1; }
+  .chapter-arrow { color: var(--gold); font-size: 0.95rem; flex-shrink: 0; }
+
+  .chapter-row.empty {
+    color: var(--pencil);
+    cursor: default;
+  }
+  .chapter-row.empty .chapter-title { font-weight: 400; font-style: italic; }
+  .chapter-row.empty .chapter-num { color: var(--pencil); }
+  .chapter-row + .chapter-row { border-top: 1px dashed var(--border); border-radius: 0; margin-top: 0; padding-top: 0.65rem; }
+  .chapter-row:first-of-type { border-top: none; }
+
+  .more-manuals {
+    margin-top: 2.6rem;
+    padding-top: 1.4rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem;
+    color: var(--pencil);
+  }
+  .more-manuals b { color: var(--ink-soft); font-weight: 600; }
+
+  footer {
+    max-width: 780px; margin: 2rem auto 0; padding: 1.5rem 1.25rem 0;
+    display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+    font-size: 0.8rem; color: var(--pencil);
+    border-top: 1px solid var(--border);
+  }
+</style>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <span class="topbar-title">Clases de Español</span>
+    <span class="topbar-sub">Angel Luis Acosta González</span>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="eyebrow">Materiales para clases privadas de español</div>
+    <h1>Clases de Español</h1>
+    <p>Ejercicios interactivos con corrección instantánea, organizados por manual, nivel y
+    capítulo. Elige tu capítulo más abajo.</p>
+  </div>
+</div>
+
+<div class="manual-section">
+  <div class="wrap">
+    <div class="manual-label">Manual</div>
+    <h2>Nuevo Español en Marcha</h2>
+    <p>Libro de texto principal. Cuatro niveles, de A1 a B2 — un ejercicio interactivo por
+    capítulo, a medida que se van creando.</p>
+
+    <div class="level-grid">
+      <div class="level-card">
+        <div class="level-head">
+          <span class="level-badge mono">A1</span>
+          <span class="level-volume">Nuevo Español en Marcha 1</span>
+        </div>
+        <a class="chapter-row" href="https://claude.ai/code/artifact/0e16fd6b-20e3-4072-bbbe-e0208458f95d" target="_blank" rel="noopener">
+          <span class="chapter-num mono">U1-8</span>
+          <span class="chapter-title">Presente, gerundio, indefinido</span>
+          <span class="chapter-arrow">→</span>
+        </a>
+        <div class="chapter-row empty">
+          <span class="chapter-num mono">···</span>
+          <span class="chapter-title">Próximo capítulo, pronto</span>
+        </div>
+      </div>
+
+      <div class="level-card">
+        <div class="level-head">
+          <span class="level-badge mono">A2</span>
+          <span class="level-volume">Nuevo Español en Marcha 2</span>
+        </div>
+        <div class="chapter-row empty">
+          <span class="chapter-num mono">···</span>
+          <span class="chapter-title">Todavía sin capítulos publicados</span>
+        </div>
+      </div>
+
+      <div class="level-card">
+        <div class="level-head">
+          <span class="level-badge mono">B1</span>
+          <span class="level-volume">Nuevo Español en Marcha 3</span>
+        </div>
+        <div class="chapter-row empty">
+          <span class="chapter-num mono">···</span>
+          <span class="chapter-title">Todavía sin capítulos publicados</span>
+        </div>
+      </div>
+
+      <div class="level-card">
+        <div class="level-head">
+          <span class="level-badge mono">B2</span>
+          <span class="level-volume">Nuevo Español en Marcha 4</span>
+        </div>
+        <a class="chapter-row" href="https://claude.ai/code/artifact/53553512-06ea-4f7c-8a79-536a0cbca677" target="_blank" rel="noopener">
+          <span class="chapter-num mono">12C</span>
+          <span class="chapter-title">¿Sigues pintando? — Perífrasis verbales</span>
+          <span class="chapter-arrow">→</span>
+        </a>
+        <div class="chapter-row empty">
+          <span class="chapter-num mono">···</span>
+          <span class="chapter-title">Próximo capítulo, pronto</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="more-manuals">
+      <b>Próximos manuales:</b> ПК Гонсалес · Temas — se añadirán aquí en cuanto tengan su
+      primer capítulo publicado.
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span>Nuevo Español en Marcha · Índice</span>
+  <span>© Angel Luis Acosta González</span>
+</footer>
