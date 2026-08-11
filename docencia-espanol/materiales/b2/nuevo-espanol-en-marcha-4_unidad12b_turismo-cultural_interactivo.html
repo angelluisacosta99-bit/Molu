@@ -1,0 +1,1029 @@
+<!--
+  TEMPLATE — plantilla de ejercicio interactivo con corrección instantánea.
+  Ver .claude/skills/ejercicio-interactivo/SKILL.md para el proceso completo.
+  Busca todos los marcadores {{...}} y sustitúyelos; no dejes ninguno sin reemplazar.
+-->
+<title>Nuevo Español en Marcha · B2 · 12B — Turismo cultural (La pasiva)</title>
+<style>
+  :root {
+    --paper: #F3F5F0;
+    --paper-raised: #FFFFFF;
+    --ink: #17223B;
+    --ink-soft: #4B5468;
+    --pencil: #6E7280;
+    --gold: #A8790C;
+    --gold-soft: #F1E4C2;
+    --good: #1F7A4C;
+    --good-bg: #E7F3EC;
+    --bad: #B23A2E;
+    --bad-bg: #FBECE9;
+    --border: #DCDFD3;
+    --input-bg: #FCFDFB;
+    --focus: #A8790C;
+    --shadow: 0 1px 2px rgba(23,34,59,0.06), 0 4px 14px rgba(23,34,59,0.06);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #101626;
+      --paper-raised: #182036;
+      --ink: #ECEEF3;
+      --ink-soft: #AEB6C9;
+      --pencil: #8B93A6;
+      --gold: #E0B44A;
+      --gold-soft: #3A3220;
+      --good: #4CB47F;
+      --good-bg: #163326;
+      --bad: #E17868;
+      --bad-bg: #3A1E1B;
+      --border: #2A3348;
+      --input-bg: #131A2C;
+      --focus: #E0B44A;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 20px rgba(0,0,0,0.35);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #101626;
+    --paper-raised: #182036;
+    --ink: #ECEEF3;
+    --ink-soft: #AEB6C9;
+    --pencil: #8B93A6;
+    --gold: #E0B44A;
+    --gold-soft: #3A3220;
+    --good: #4CB47F;
+    --good-bg: #163326;
+    --bad: #E17868;
+    --bad-bg: #3A1E1B;
+    --border: #2A3348;
+    --input-bg: #131A2C;
+    --focus: #E0B44A;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 20px rgba(0,0,0,0.35);
+  }
+
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--paper);
+    color: var(--ink);
+  }
+  body {
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 4rem;
+  }
+  h1, h2, h3 {
+    font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+    text-wrap: balance;
+    margin: 0;
+  }
+  .mono, input, .score, .exnum, .navdot-label {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  }
+  a { color: inherit; }
+
+  /* ---------- top bar ---------- */
+  .topbar {
+    position: sticky; top: 0; z-index: 20;
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+  .topbar-inner {
+    max-width: 760px; margin: 0 auto;
+    padding: 0.7rem 1.25rem;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 1rem; flex-wrap: wrap;
+  }
+  .brand { display: flex; align-items: baseline; gap: 0.6rem; }
+  .brand-title { font-size: 0.95rem; font-weight: 700; letter-spacing: 0.01em; }
+  .brand-sub { font-size: 0.78rem; color: var(--pencil); }
+  .nav-dots { display: flex; gap: 0.4rem; }
+  .nav-dots a {
+    text-decoration: none;
+    font-size: 0.7rem;
+    padding: 0.28rem 0.6rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    color: var(--ink-soft);
+    white-space: nowrap;
+  }
+  .nav-dots a:hover { border-color: var(--gold); color: var(--gold); }
+  .score-wrap { display: flex; align-items: center; gap: 0.6rem; }
+  .score { font-size: 0.82rem; font-weight: 600; }
+  .score .num { color: var(--gold); }
+  .bar {
+    width: 84px; height: 6px; border-radius: 999px;
+    background: var(--border); overflow: hidden;
+  }
+  .bar-fill { height: 100%; background: var(--gold); width: 0%; transition: width 0.35s ease; }
+
+  /* ---------- hero ---------- */
+  .hero {
+    max-width: 760px; margin: 0 auto;
+    padding: 2.6rem 1.25rem 1.6rem;
+  }
+  .eyebrow {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 0.7rem;
+  }
+  .hero h1 { font-size: clamp(1.7rem, 4vw, 2.3rem); font-weight: 700; margin-bottom: 0.6rem; }
+  .hero p { color: var(--ink-soft); max-width: 62ch; font-size: 0.98rem; }
+  .hero-meta {
+    margin-top: 1.1rem; display: flex; gap: 1.2rem; flex-wrap: wrap;
+    font-size: 0.82rem; color: var(--pencil);
+  }
+  .hero-meta strong { color: var(--ink); }
+  .correct-all-wrap {
+    max-width: 760px; margin: 2.4rem auto 0; padding: 0 1.25rem 2.4rem;
+    text-align: center;
+  }
+  .correct-all-btn {
+    margin-top: 1.3rem;
+    background: var(--ink); color: var(--paper-raised);
+    border: none; border-radius: 8px;
+    padding: 0.65rem 1.2rem; font-size: 0.88rem; font-weight: 600;
+    cursor: pointer;
+  }
+  .correct-all-btn:hover { background: var(--gold); color: var(--ink); }
+  :root[data-theme="dark"] .correct-all-btn:hover,
+  :root:not([data-theme="light"]) .correct-all-btn:hover { color: #10142699; }
+  .progress-hint { margin-top: 0.7rem; font-size: 0.82rem; color: var(--pencil); text-align: center; }
+  .progress-hint.complete { color: var(--good); font-weight: 600; }
+
+  /* ---------- blocks ---------- */
+  main { max-width: 760px; margin: 0 auto; padding: 0 1.25rem; }
+  .block { margin-top: 2.4rem; scroll-margin-top: 6rem; }
+  .block-head {
+    display: flex; align-items: baseline; gap: 0.75rem;
+    padding-bottom: 0.6rem; margin-bottom: 1.3rem;
+    border-bottom: 2px solid var(--ink);
+  }
+  .block-num {
+    font-family: Georgia, serif; font-weight: 700; font-size: 1.05rem;
+    color: var(--paper-raised); background: var(--ink);
+    width: 2rem; height: 2rem; border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .block-titles h2 { font-size: 1.25rem; }
+  .block-titles .sub { font-size: 0.8rem; color: var(--pencil); margin-top: 0.15rem; }
+
+  /* ---------- exercise card ---------- */
+  .exercise {
+    background: var(--paper-raised);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    padding: 1.15rem 1.3rem 1.3rem;
+    margin-bottom: 1.1rem;
+  }
+  .exercise-head {
+    display: flex; align-items: flex-start; justify-content: space-between;
+    gap: 1rem; margin-bottom: 0.3rem;
+  }
+  .exercise-title { display: flex; gap: 0.6rem; align-items: baseline; }
+  .exnum { color: var(--gold); font-weight: 700; font-size: 0.85rem; }
+  .exercise-title h3 { font-size: 1.02rem; font-weight: 700; }
+  .exercise-instr { color: var(--pencil); font-size: 0.85rem; font-style: italic; margin-bottom: 0.85rem; }
+  .exercise-model { color: var(--pencil); font-size: 0.85rem; font-style: italic; margin-bottom: 0.7rem; }
+
+  .check-btn {
+    background: transparent; color: var(--ink);
+    border: 1px solid var(--ink); border-radius: 7px;
+    padding: 0.32rem 0.75rem; font-size: 0.78rem; font-weight: 600;
+    cursor: pointer; white-space: nowrap; flex-shrink: 0;
+  }
+  .check-btn:hover { background: var(--ink); color: var(--paper-raised); }
+
+  .items { display: flex; flex-direction: column; gap: 0.55rem; }
+  .item-row { font-size: 0.95rem; line-height: 1.7; }
+  .item-letter { color: var(--gold); font-weight: 700; margin-right: 0.3rem; }
+
+  input.blank {
+    background: var(--input-bg);
+    border: none; border-bottom: 2px solid var(--pencil);
+    color: var(--ink);
+    font-size: 0.95rem;
+    padding: 0.1rem 0.3rem;
+    width: 8.5em;
+    text-align: center;
+    border-radius: 3px 3px 0 0;
+  }
+  input.blank.wide { width: 15em; }
+  input.blank.full { width: 100%; max-width: 26em; text-align: left; }
+  input.blank:focus { outline: none; border-bottom-color: var(--focus); box-shadow: 0 1px 0 0 var(--focus); }
+  input.blank.correct { background: var(--good-bg); border-bottom-color: var(--good); color: var(--good); font-weight: 600; }
+  input.blank.incorrect { background: var(--bad-bg); border-bottom-color: var(--bad); color: var(--bad); }
+
+  .reveal {
+    font-size: 0.82rem; color: var(--good); font-style: italic;
+    margin-left: 0.3rem; display: none;
+  }
+  .reveal.show { display: inline; }
+  .reveal.bad-reveal { color: var(--bad); }
+
+  .paragraph { font-size: 0.97rem; line-height: 2; }
+
+  table.exercise-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+  table.exercise-table th, table.exercise-table td {
+    text-align: left; padding: 0.45rem 0.6rem; border-bottom: 1px solid var(--border);
+  }
+  table.exercise-table th { color: var(--pencil); font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.03em; }
+  .table-wrap { overflow-x: auto; }
+  .ref-table { margin-bottom: 0.9rem; }
+  .ref-table td:first-child { color: var(--gold); font-weight: 600; text-transform: capitalize; }
+
+  /* ---------- footer ---------- */
+  footer {
+    max-width: 760px; margin: 3rem auto 0; padding: 1.5rem 1.25rem 0;
+    border-top: 1px solid var(--border);
+    color: var(--pencil); font-size: 0.8rem;
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;
+  }
+
+  @media (max-width: 560px) {
+    .nav-dots { display: none; }
+    input.blank.wide { width: 11em; }
+    input.blank.full { max-width: 100%; }
+  }
+
+  /* ---------- access gate ---------- */
+  html[data-locked="true"] .gated-content { display: none; }
+  html[data-locked="false"] .gate-overlay { display: none; }
+  .gate-overlay {
+    position: fixed; inset: 0; z-index: 100; background: var(--paper);
+    display: flex; align-items: center; justify-content: center; padding: 1.5rem;
+  }
+  .gate-card {
+    max-width: 360px; width: 100%; background: var(--paper-raised);
+    border: 1px solid var(--border); border-radius: 12px; box-shadow: var(--shadow);
+    padding: 2.2rem 1.9rem; text-align: center;
+  }
+  .gate-card .eyebrow { justify-content: center; display: flex; }
+  .gate-card h2 { font-size: 1.15rem; margin: 0.4rem 0 0.5rem; }
+  .gate-card p { color: var(--ink-soft); font-size: 0.86rem; margin: 0 0 1.2rem; }
+  .gate-card input {
+    width: 100%; text-align: center; font-size: 1rem; letter-spacing: 0.08em;
+    background: var(--input-bg); border: 1.5px solid var(--border); border-radius: 8px;
+    padding: 0.6rem 0.8rem; color: var(--ink); margin-bottom: 0.8rem; text-transform: uppercase;
+  }
+  .gate-card input:focus { outline: none; border-color: var(--focus); }
+  .gate-card button {
+    width: 100%; background: var(--ink); color: var(--paper-raised); border: none;
+    border-radius: 8px; padding: 0.65rem 1rem; font-size: 0.9rem; font-weight: 600; cursor: pointer;
+  }
+  .gate-card button:hover { background: var(--gold); color: var(--ink); }
+  .gate-error { color: var(--bad); font-size: 0.82rem; margin-top: 0.7rem; min-height: 1.1em; }
+
+  /* ---------- results panel ---------- */
+  /* Deliberately single-theme (always dark), independent of the page's light/dark mode —
+     uses fixed local custom properties instead of the swappable --ink/--paper-raised/--gold
+     tokens, which invert meaning in dark mode and would otherwise make this unreadable. */
+  .results-panel {
+    --rp-bg: #17223B;
+    --rp-card: rgba(255,255,255,0.06);
+    --rp-text: #ECEEF3;
+    --rp-text-soft: #C7CEDD;
+    --rp-placeholder: #8E97AC;
+    --rp-accent: #D9A441;
+    --rp-bad: #E17868;
+    --rp-input-bg: rgba(255,255,255,0.08);
+    --rp-input-border: rgba(255,255,255,0.22);
+    background: var(--rp-bg); color: var(--rp-text); border-radius: 14px;
+    padding: 1.8rem 1.7rem; margin: 2.2rem 0 2rem; scroll-margin-top: 6rem;
+  }
+  .results-panel[hidden] { display: none; }
+  .results-headline { font-family: Georgia, serif; font-size: 1.5rem; font-weight: 700; margin-bottom: 0.35rem; color: var(--rp-text); }
+  .results-sub { font-size: 0.92rem; color: var(--rp-text-soft); margin-bottom: 1.3rem; max-width: 56ch; }
+  .results-score-row { display: flex; align-items: baseline; gap: 0.6rem; margin-bottom: 1.3rem; }
+  .results-score-num { font-family: Georgia, serif; font-size: 2.4rem; font-weight: 700; color: var(--rp-accent); }
+  .results-score-den { font-size: 1rem; color: var(--rp-text-soft); }
+  .results-name {
+    display: block; width: 100%; max-width: 320px; font-size: 0.9rem;
+    background: var(--rp-input-bg); border: 1px solid var(--rp-input-border); border-radius: 8px;
+    padding: 0.55rem 0.75rem; color: var(--rp-text); margin-bottom: 1.1rem; font-family: inherit;
+  }
+  .results-name::placeholder { color: var(--rp-placeholder); }
+  .results-name:focus { outline: none; border-color: var(--rp-accent); }
+  .results-errors {
+    background: var(--rp-card); border-radius: 10px; padding: 0.9rem 1.1rem;
+    margin-bottom: 1.3rem; max-height: 220px; overflow-y: auto;
+  }
+  .results-errors-title { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--rp-text-soft); margin-bottom: 0.5rem; }
+  .results-error-item { font-size: 0.85rem; line-height: 1.6; color: var(--rp-text); }
+  .results-error-item b { color: var(--rp-accent); font-weight: 600; }
+  .results-error-item s { color: var(--rp-bad); text-decoration: line-through; opacity: 0.85; }
+  .channel-label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--rp-text-soft); margin-bottom: 0.6rem; }
+  .channel-row { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+  .channel-btn {
+    display: inline-flex; align-items: center; gap: 0.45rem;
+    background: var(--rp-text); color: var(--rp-bg); text-decoration: none;
+    border-radius: 8px; padding: 0.55rem 0.95rem; font-size: 0.85rem; font-weight: 600;
+    border: none; cursor: pointer; font-family: inherit;
+  }
+  .channel-btn:hover { background: var(--rp-accent); }
+  .channel-copied { font-size: 0.8rem; color: var(--rp-accent); margin-top: 0.6rem; display: none; width: 100%; }
+</style>
+
+<script>
+  // unlocked-b2-12b-turismo-cultural here MUST be byte-identical to the one set further down in the gate
+  // script (search "STORAGE_KEY =") — same placeholder, same value, both occurrences.
+  document.documentElement.setAttribute(
+    "data-locked",
+    localStorage.getItem("unlocked-b2-12b-turismo-cultural") === "1" ? "false" : "true"
+  );
+</script>
+
+<div class="gate-overlay">
+  <div class="gate-card">
+    <div class="eyebrow">Acceso privado</div>
+    <h2>Ejercicios B2</h2>
+    <p>Pídele el código a tu profesor para entrar.</p>
+    <input type="text" id="gateInput" placeholder="CÓDIGO" autocomplete="off" autocapitalize="characters" />
+    <button id="gateBtn">Entrar</button>
+    <div class="gate-error" id="gateError"></div>
+  </div>
+</div>
+<script>
+  (function () {
+    // El código es solo un disuasivo, no seguridad real — cualquiera que vea el HTML
+    // fuente lo ve. Elige una palabra corta, memorable y ligada al tema, en MAYÚSCULAS.
+    const CODE = "TURISMO";
+    // MUST be byte-identical al unlocked-b2-12b-turismo-cultural usado arriba (ver comentario junto al
+    // primer occurrence). Usa un valor único por ejercicio, p. ej. "unlocked-b2-13a-tema".
+    const STORAGE_KEY = "unlocked-b2-12b-turismo-cultural";
+    function tryUnlock() {
+      const val = document.getElementById("gateInput").value.trim().toUpperCase();
+      if (val === CODE) {
+        localStorage.setItem(STORAGE_KEY, "1");
+        document.documentElement.setAttribute("data-locked", "false");
+      } else {
+        document.getElementById("gateError").textContent = "Código incorrecto. Inténtalo de nuevo.";
+      }
+    }
+    document.getElementById("gateBtn").addEventListener("click", tryUnlock);
+    document.getElementById("gateInput").addEventListener("keydown", function (e) {
+      if (e.key === "Enter") tryUnlock();
+    });
+  })();
+</script>
+
+<div class="topbar gated-content">
+  <div class="topbar-inner">
+    <div class="brand">
+      <!-- Ejemplo real (A1): Ejercicios B2 = "Ejercicios A1", 12B · Turismo cultural = "Presente · Gerundio · Indefinido" -->
+      <span class="brand-title">Ejercicios B2</span>
+      <span class="brand-sub">12B · Turismo cultural</span>
+    </div>
+    <nav class="nav-dots" id="navDots"></nav>
+    <div class="score-wrap">
+      <div class="bar"><div class="bar-fill" id="barFill"></div></div>
+      <div class="score"><span class="num" id="scoreNum">0</span><span style="color:var(--pencil)"> / </span><span id="scoreTotal">0</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="hero gated-content">
+  <div class="eyebrow">Nuevo Español en Marcha 4 · Nivel B2 · Unidad 12B</div>
+  <h1>Turismo cultural: la pasiva perifrástica</h1>
+  <p>Lee el texto, identifica las construcciones pasivas y practica la pasiva con ser y estar. Corrige cada ejercicio o corrígelos todos al final.</p>
+  <div class="hero-meta">
+    <span><strong id="totalBlanksLabel">—</strong> huecos en total</span>
+    <span><strong>1</strong> bloques</span>
+    <span><strong>5</strong> ejercicios</span>
+  </div>
+</div>
+
+<main id="main" class="gated-content"></main>
+
+<div class="correct-all-wrap gated-content">
+  <button class="correct-all-btn" id="correctAllBtn">Corregir todos los ejercicios</button>
+  <div class="progress-hint" id="progressHint"></div>
+</div>
+
+<div id="resultsPanel" class="results-panel gated-content" hidden>
+  <div class="results-headline" id="resHeadline"></div>
+  <div class="results-sub" id="resSub"></div>
+  <div class="results-score-row">
+    <span class="results-score-num" id="resScoreNum"></span>
+    <span class="results-score-den" id="resScoreDen"></span>
+  </div>
+  <input type="text" class="results-name" id="resName" placeholder="Tu nombre (para que tu profesor sepa quién eres)" />
+  <div class="results-errors" id="resErrors"></div>
+  <div class="channel-label">Enviar este resumen a tu profesor</div>
+  <div class="channel-row">
+    <a class="channel-btn" id="chWhatsapp" target="_blank" rel="noopener">WhatsApp</a>
+    <a class="channel-btn" id="chTelegram" target="_blank" rel="noopener">Telegram</a>
+    <a class="channel-btn" id="chEmail" target="_blank" rel="noopener">Correo</a>
+    <a class="channel-btn" id="chTeams" target="_blank" rel="noopener">Teams</a>
+    <button class="channel-btn" id="chCopy" type="button">Copiar resumen</button>
+    <span class="channel-copied" id="chCopiedMsg">¡Copiado!</span>
+  </div>
+</div>
+
+<footer class="gated-content">
+  <span>Nuevo Español en Marcha 4 · Unidad 12B</span>
+  <span>© Angel Luis Acosta González</span>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  // ---------- grading helpers ----------
+  // ACCENTS ARE STRICT BY DEFAULT ON THE ARRAY PATH (isCorrect below): typing "esta" is
+  // wrong when the key is "está". This is a deliberate default, not an oversight — in most
+  // Spanish grammar drills the accent IS the point being tested (e.g. "trabaja" [presente]
+  // vs. "trabajó" [indefinido] differ only by the accent; "esta"/"está" are different words).
+  // Loosening this for a whole exercise set would silently mark wrong tenses/words as
+  // correct. If THIS exercise is testing something where accents are incidental (open-ended
+  // short answers, vocabulary content rather than verb-form precision), use the {flex:[...]}
+  // spec instead (see isCorrect below) for just those items — it's accent-insensitive by
+  // design. Don't blanket-change norm()/isCorrect() to strip accents; ask the teacher first
+  // if you're unsure which behavior a given exercise needs.
+  function norm(s) {
+    return (s || "")
+      .toLowerCase()
+      .replace(/[¿?¡!.,]/g, "")
+      .trim()
+      .replace(/\s+/g, " ");
+  }
+  function stripAccents(s) {
+    return s.normalize("NFD").replace(/[̀-ͯ]/g, "");
+  }
+  function escapeHtml(s) {
+    return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+  // answer spec: array of accepted exact strings, OR {flex:[...]} meaning all keywords must appear (accent-insensitive)
+  function isCorrect(input, spec) {
+    const n = norm(input);
+    if (!n) return false;
+    if (Array.isArray(spec)) {
+      return spec.some(function (a) { return norm(a) === n; });
+    }
+    if (spec && spec.flex) {
+      const hay = stripAccents(n);
+      return spec.flex.every(function (k) { return hay.indexOf(stripAccents(k)) !== -1; });
+    }
+    return false;
+  }
+
+  // ---------- exercise data ----------
+  // template blanks use {0},{1}... matched to item.answers[i]
+  const blocks = [
+    {
+      id: "turismo-cultural", num: 1, title: "Turismo cultural",
+      sub: "Nuevo Español en Marcha 4 · Unidad 12B · Lectura, vocabulario y la pasiva",
+      exercises: [
+        {
+          num: 1, title: "Texto: Los desafíos del patrimonio histórico",
+          instr: "Lee el texto. Lo necesitarás para los ejercicios 2 y 3.",
+          type: "text",
+          text: "España es uno de los destinos turísticos del mundo más demandados. En gran parte, los más de 53 millones de turistas que visitan nuestro país anualmente son atraídos por el clima y la oferta lúdica, pero un amplio porcentaje es seducido también por la belleza de sus monumentos y la singularidad de su cultura, algo que es uno de los grandes alicientes del turismo interior. El turismo cultural se está convirtiendo en uno de los grandes ganchos de esta gran industria del ocio —la Unesco la considera la más importante del mundo, por encima de la industria automovilística o química—, que se ha expandido en los últimos años en todo el mundo provocando una competencia feroz entre países, ciudades y parajes más o menos naturales.\nPero la turística es una industria depredadora —basta ver en qué ha sido convertida gran parte de la costa española— que nunca descansa y que fagocita todo aquello que encuentra. La riqueza que genera tiene sus contrapartidas en los daños, físicos y de apreciación estética, que la presencia masiva de turistas provoca en el patrimonio cultural. Es un problema común a muchos países, desde Egipto, en donde se plantean limitar el acceso al valle de los Reyes, a Francia, en donde cunde la preocupación por que el país se convierta en un parque temático.\nEl debate cultural sobre el fenómeno ha comenzado a tomar forma y una prueba es el encuentro profesional que ha sido celebrado del 26 al 28 de mayo en Barcelona titulado, «Nuevas políticas para el turismo cultural. Desafíos, rupturas y respuestas», que organiza la Fundación Caixa Catalunya, entidad que quiere liderar el debate sobre la relación entre turismo y cultura como gestora que es de La Pedrera, de Gaudí, calificada como Patrimonio de la Humanidad. Ha sido una oportunidad para analizar la situación de algunos de los principales objetivos del turismo cultural en España que oscilan entre el cierre total y la afluencia sin control.",
+          a: []
+        },
+        {
+          num: 2, title: "Cuatro construcciones pasivas",
+          instr: "En el texto anterior aparecen cuatro construcciones pasivas. Escribe cada una.",
+          type: "items",
+          items: [
+            { t: "Construcción pasiva 1: {0}", a: [["son atraídos"]], wide: true },
+            { t: "Construcción pasiva 2: {0}", a: [["es seducido"]], wide: true },
+            { t: "Construcción pasiva 3: {0}", a: [["ha sido celebrado"]], wide: true },
+            { t: "Construcción pasiva 4: {0}", a: [["calificada", "fue calificada"]], wide: true }
+          ]
+        },
+        {
+          num: 3, title: "Vocabulario del texto",
+          instr: "Busca en el texto qué palabras o frases significan lo siguiente. (El 1 ya está resuelto: relativo al juego = lúdica.)",
+          type: "items",
+          items: [
+            { t: "Circunstancia que hace interesante un lugar: {0}", a: [["aliciente", "alicientes"]], wide: true },
+            { t: "Atracción que se siente hacia algo o hacia alguien: {0}", a: [["gancho", "ganchos"]] },
+            { t: "Tiempo libre: {0}", a: [["ocio"]] },
+            { t: "Grande, enorme: {0}", a: [["amplio", "amplia"]] },
+            { t: "Lugar: {0}", a: [["paraje", "parajes"]] },
+            { t: "Que roba o saquea con violencia y destrozo: {0}", a: [["depredadora", "depredador"]], wide: true },
+            { t: "Absorber: {0}", a: [["fagocita", "fagocitar"]] },
+            { t: "Multitudinaria: {0}", a: [["masiva", "masivo"]] },
+            { t: "Variar: {0}", a: [["oscilan", "oscilar"]] }
+          ]
+        },
+        {
+          num: 4, title: "Museo del Prado — El poder de las exposiciones temporales",
+          instr: "Completa las construcciones pasivas del texto con estos participios: visitado · acometidas · demostrado · dominada · invertida · inaugurado.",
+          type: "text",
+          text: "El Museo del Prado ha descubierto que la tendencia de los visitantes ha sido {0} por las grandes exposiciones temporales. Esto ha sido {1} por un estudio reciente que dice que los españoles que visitan estas muestras son el 60 %, y el resto extranjeros, cuando la proporción de los que acuden cada día es la contraria. La afluencia de público está {2} por el público extranjero, que ya ha superado los dos millones de personas al año. El Día Internacional del Museo, con entrada gratuita, fue {3} por 11.000 personas. El director del museo señala la exposición de Velázquez en 1990, con medio millón de visitantes, como la llamada de urgencia para plantearse la ampliación con el claustro de los Jerónimos, que fue {4} en 2006, después de un retraso respecto a los grandes museos, cuyas reformas fueron {5} en los setenta y ochenta.",
+          a: [["dominada"], ["demostrado"], ["invertida"], ["visitado"], ["inaugurado"], ["acometidas"]]
+        },
+        {
+          num: 5, title: "La pasiva con ser o estar",
+          instr: "Completa las frases con la forma pasiva con ser o estar. (El 1 ya está resuelto: Esta mañana su hermano ha sido galardonado (galardonar) con el premio Guay.)",
+          type: "items",
+          items: [
+            { t: "El edificio {0} (construir) el próximo año por la empresa encargada de su diseño.", a: [["será construido"]], wide: true },
+            { t: "El cuchillo {0} (hallar) por su vecino cuando paseaba por un parque cercano.", a: [["fue hallado"]], wide: true },
+            { t: "Los presuntos asesinos {0} (encarcelar) desde ayer por la noche.", a: [["están encarcelados"]], wide: true },
+            { t: "Cuando tú llamaste, la programación de la televisión ya {0} (suspender).", a: [["estaba suspendida"]], wide: true },
+            { t: "Cuando terminó de dar la conferencia, {0} (abuchear), por toda la gente de la sala.", a: [["fue abucheado"]], wide: true },
+            { t: "El cristal {0} (romper) antes de que tú llegaras.", a: [["estaba roto"]], wide: true },
+            { t: "Cada año las aceitunas {0} (recoger) para elaborar el famoso aceite de oliva.", a: [["son recogidas"]], wide: true },
+            { t: "En aquella época, las chicas {0} (invitar) al cine por sus parejas.", a: [["eran invitadas"]], wide: true },
+            { t: "Aquella mujer {0} (sentenciar) a tener aquel final desde que conoció a su compañero.", a: [["fue sentenciada"]], wide: true },
+            { t: "Recuerdo que todas las navidades la cena {0} (preparar) por tu madre.", a: [["era preparada"]], wide: true },
+            { t: "Durante la construcción del embalse en 1974, {0} (encontrar) miles de fósiles que nunca {1} (declarar).", a: [["fueron encontrados"], ["fueron declarados"]], wide: true },
+            { t: "Los rehenes {0} (retener) por los atracadores durante más de seis horas.", a: [["fueron retenidos"]], wide: true },
+            { t: "Las fiestas de mi pueblo {0} (suspender) porque no hay gente voluntaria para formar una comisión de fiestas.", a: [["están suspendidas"]], wide: true },
+            { t: "El escritor {0} (plagiar) en innumerables ocasiones por sus propios admiradores.", a: [["fue plagiado"]], wide: true }
+          ]
+        },
+        {
+          num: 6, title: "Participios con estar",
+          instr: "Completa las frases con los siguientes verbos en participio: traducir · reparar · resolver · castigar · fabricar · reservar.",
+          type: "items",
+          items: [
+            { t: "Ayer vino el técnico a revisar la lavadora. ¡Por fin está {0} porque no funcionaba!", a: [["reparada"]] },
+            { t: "El caso está {0}. El juez ha decidido que el acusado pague una multa.", a: [["resuelto"]] },
+            { t: "Mi hijo hoy no sale a jugar: está {0}.", a: [["castigado"]] },
+            { t: "El libro está {0} al inglés, pero al francés no.", a: [["traducido"]] },
+            { t: "Este producto está {0} en España y es de muy buena calidad.", a: [["fabricado"]] },
+            { t: "Disculpe, ¿está {0} este asiento?", a: [["reservado"]] }
+          ]
+        }
+      ]
+    }
+  ];
+
+  // ---------- render ----------
+  const main = document.getElementById("main");
+  const navDots = document.getElementById("navDots");
+  const allInputs = []; // {el, spec}
+
+  function makeInput(spec, wide, label) {
+    const inp = document.createElement("input");
+    inp.type = "text";
+    inp.className = "blank" + (wide ? " wide" : "");
+    inp.autocomplete = "off";
+    inp.autocapitalize = "off";
+    inp.spellcheck = false;
+    allInputs.push({ el: inp, spec: spec, label: label || "" });
+    return inp;
+  }
+
+  function renderTemplate(container, template, answers, wide, labelBase, forceIndex) {
+    const parts = template.split(/\{(\d+)\}/g);
+    let blankCount = 0;
+    for (let k = 1; k < parts.length; k += 2) blankCount++;
+    parts.forEach(function (part, i) {
+      if (i % 2 === 1) {
+        const tokenIdx = parseInt(part, 10);
+        const spec = answers[tokenIdx];
+        const label = (blankCount > 1 || forceIndex) ? labelBase + " (" + (tokenIdx + 1) + ")" : labelBase;
+        container.appendChild(makeInput(spec, wide, label));
+        const reveal = document.createElement("span");
+        reveal.className = "reveal";
+        container.appendChild(reveal);
+        allInputs[allInputs.length - 1].reveal = reveal;
+      } else if (part) {
+        container.appendChild(document.createTextNode(part));
+      }
+    });
+  }
+
+  function exerciseHeader(ex) {
+    const head = document.createElement("div");
+    head.className = "exercise-head";
+    const titleWrap = document.createElement("div");
+    titleWrap.className = "exercise-title";
+    titleWrap.innerHTML = '<span class="exnum">Ej. ' + ex.num + "</span>";
+    const h3 = document.createElement("h3");
+    h3.textContent = ex.title;
+    titleWrap.appendChild(h3);
+    head.appendChild(titleWrap);
+    const btn = document.createElement("button");
+    btn.className = "check-btn";
+    btn.textContent = "Corregir";
+    head.appendChild(btn);
+    return { head: head, btn: btn };
+  }
+
+  blocks.forEach(function (block) {
+    const sec = document.createElement("section");
+    sec.className = "block";
+    sec.id = block.id;
+
+    const bh = document.createElement("div");
+    bh.className = "block-head";
+    bh.innerHTML =
+      '<div class="block-num">' + block.num + '</div>' +
+      '<div class="block-titles"><h2>' + block.title + '</h2><div class="sub">' + block.sub + '</div></div>';
+    sec.appendChild(bh);
+
+    const navA = document.createElement("a");
+    navA.href = "#" + block.id;
+    navA.textContent = "Bloque " + block.num;
+    navDots.appendChild(navA);
+
+    block.exercises.forEach(function (ex) {
+      const card = document.createElement("div");
+      card.className = "exercise";
+      const startIdx = allInputs.length;
+      const hdr = exerciseHeader(ex);
+      card.appendChild(hdr.head);
+
+      if (ex.instr) {
+        const instr = document.createElement("div");
+        instr.className = "exercise-instr";
+        instr.textContent = ex.instr;
+        card.appendChild(instr);
+      }
+      if (ex.model) {
+        const model = document.createElement("div");
+        model.className = "exercise-model";
+        model.textContent = ex.model;
+        card.appendChild(model);
+      }
+
+      if (ex.type === "items") {
+        const wrap = document.createElement("div");
+        wrap.className = "items";
+        ex.items.forEach(function (item, i) {
+          const row = document.createElement("div");
+          row.className = "item-row";
+          const letter = document.createElement("span");
+          letter.className = "item-letter";
+          letter.textContent = String.fromCharCode(97 + i) + ".";
+          row.appendChild(letter);
+          renderTemplate(row, item.t, item.a, item.wide, "Ej. " + ex.num + String.fromCharCode(97 + i));
+          wrap.appendChild(row);
+        });
+        card.appendChild(wrap);
+      } else if (ex.type === "text") {
+        const p = document.createElement("div");
+        p.className = "paragraph";
+        ex.text.split("\n").forEach(function (line, li) {
+          if (li > 0) p.appendChild(document.createElement("br"));
+          renderTemplate(p, line, ex.a, false, "Ej. " + ex.num, true);
+        });
+        card.appendChild(p);
+      } else if (ex.type === "table2") {
+        const twrap = document.createElement("div");
+        twrap.className = "table-wrap";
+        const table = document.createElement("table");
+        table.className = "exercise-table";
+        table.innerHTML = "<thead><tr><th>Infinitivo</th><th>Gerundio</th></tr></thead>";
+        const tbody = document.createElement("tbody");
+        ex.rows.forEach(function (r) {
+          const tr = document.createElement("tr");
+          const td1 = document.createElement("td");
+          td1.textContent = r[0];
+          const td2 = document.createElement("td");
+          td2.appendChild(makeInput(r[1][0], false, "Ej. " + ex.num + " " + r[0]));
+          const reveal = document.createElement("span");
+          reveal.className = "reveal";
+          td2.appendChild(reveal);
+          allInputs[allInputs.length - 1].reveal = reveal;
+          tr.appendChild(td1); tr.appendChild(td2);
+          tbody.appendChild(tr);
+        });
+        table.appendChild(tbody);
+        twrap.appendChild(table);
+        card.appendChild(twrap);
+      } else if (ex.type === "conjTable") {
+        const twrap = document.createElement("div");
+        twrap.className = "table-wrap";
+        const table = document.createElement("table");
+        table.className = "exercise-table";
+        let thead = "<thead><tr><th>Sujeto</th>";
+        ex.cols.forEach(function (c) { thead += "<th>" + c.label + "</th>"; });
+        thead += "</tr></thead>";
+        table.innerHTML = thead;
+        const tbody = document.createElement("tbody");
+        ex.subjects.forEach(function (subj, si) {
+          const tr = document.createElement("tr");
+          const td0 = document.createElement("td");
+          td0.textContent = subj;
+          tr.appendChild(td0);
+          ex.cols.forEach(function (c) {
+            const td = document.createElement("td");
+            td.appendChild(makeInput(c.a[si], false, "Ej. " + ex.num + " " + subj + "/" + c.label));
+            const reveal = document.createElement("span");
+            reveal.className = "reveal";
+            td.appendChild(reveal);
+            allInputs[allInputs.length - 1].reveal = reveal;
+            tr.appendChild(td);
+          });
+          tbody.appendChild(tr);
+        });
+        table.appendChild(tbody);
+        twrap.appendChild(table);
+        card.appendChild(twrap);
+      } else if (ex.type === "agenda") {
+        const twrap = document.createElement("div");
+        twrap.className = "table-wrap";
+        const table = document.createElement("table");
+        table.className = "exercise-table ref-table";
+        table.innerHTML = "<thead><tr><th>Día</th><th>Actividad</th></tr></thead>";
+        const tbody = document.createElement("tbody");
+        ex.table.forEach(function (r) {
+          const tr = document.createElement("tr");
+          const td1 = document.createElement("td"); td1.textContent = r[0];
+          const td2 = document.createElement("td"); td2.textContent = r[1];
+          tr.appendChild(td1); tr.appendChild(td2);
+          tbody.appendChild(tr);
+        });
+        table.appendChild(tbody);
+        twrap.appendChild(table);
+        card.appendChild(twrap);
+        const wrap = document.createElement("div");
+        wrap.className = "items";
+        ex.items.forEach(function (item, i) {
+          const row = document.createElement("div");
+          row.className = "item-row";
+          const letter = document.createElement("span");
+          letter.className = "item-letter";
+          letter.textContent = String.fromCharCode(97 + i) + ".";
+          row.appendChild(letter);
+          renderTemplate(row, item.t, item.a, item.wide, "Ej. " + ex.num + String.fromCharCode(97 + i));
+          wrap.appendChild(row);
+        });
+        card.appendChild(wrap);
+      }
+
+      const endIdx = allInputs.length;
+      if (endIdx === startIdx) {
+        // Puramente informativo (p. ej. un texto de lectura sin huecos): no hay nada que
+        // corregir, así que no mostramos un botón "Corregir" que no haría nada.
+        hdr.btn.remove();
+      } else {
+        hdr.btn.addEventListener("click", function () {
+          gradeRange(startIdx, endIdx);
+          updateScore();
+        });
+      }
+
+      sec.appendChild(card);
+    });
+
+    main.appendChild(sec);
+  });
+
+  document.getElementById("totalBlanksLabel").textContent = allInputs.length;
+  document.getElementById("scoreTotal").textContent = allInputs.length;
+
+  function correctTextFor(spec) {
+    const t = Array.isArray(spec) ? spec[0] : (spec.show || (spec.flex ? spec.flex.join(" / ") : ""));
+    return typeof t === "string" ? t : "";
+  }
+
+  function gradeRange(start, end) {
+    for (let i = start; i < end; i++) {
+      const rec = allInputs[i];
+      const ok = isCorrect(rec.el.value, rec.spec);
+      rec.el.classList.remove("correct", "incorrect");
+      rec.el.classList.add(ok ? "correct" : "incorrect");
+      rec.el.dataset.checked = "1";
+      if (!ok && rec.reveal) {
+        rec.reveal.textContent = "→ " + correctTextFor(rec.spec);
+        rec.reveal.classList.add("show", "bad-reveal");
+      } else if (rec.reveal) {
+        rec.reveal.classList.remove("show", "bad-reveal");
+      }
+    }
+  }
+
+  function updateScore() {
+    let checked = 0, correct = 0;
+    allInputs.forEach(function (rec) {
+      if (rec.el.dataset.checked === "1") {
+        checked++;
+        if (rec.el.classList.contains("correct")) correct++;
+      }
+    });
+    document.getElementById("scoreNum").textContent = correct;
+    document.getElementById("scoreTotal").textContent = allInputs.length;
+    const pct = allInputs.length ? (correct / allInputs.length) * 100 : 0;
+    document.getElementById("barFill").style.width = pct + "%";
+    updateResultsPanel(checked, correct);
+  }
+
+  document.getElementById("correctAllBtn").addEventListener("click", function () {
+    gradeRange(0, allInputs.length);
+    updateScore();
+  });
+
+  // ---------- results panel: motivational message + send to teacher ----------
+  const TITLE_LABEL = "12B Turismo cultural — La pasiva (B2)"; // short label used in email subject / summary header
+  // These are Angel's real, reusable contact details — copy verbatim into every new
+  // exercise unless he says they changed. IMPORTANT: telegram MUST be his @username
+  // (no @, no phone number) — t.me/+<phone> links silently ignore ?text= and never
+  // pre-fill; only t.me/<username>?text=... does. See SKILL.md "Canal por canal".
+  const TEACHER = {
+    whatsapp: "79856456905",
+    telegram: "angel9904",
+    email: "angelluisacosta99@gmail.com",
+    teamsEmail: "angelluisacosta99@gmail.com"
+  };
+
+  function tierFor(pct) {
+    if (pct >= 90) return { headline: "¡Excelente trabajo! 🎉", sub: "Dominas muy bien este tema. ¡Sigue así!" };
+    if (pct >= 70) return { headline: "¡Muy bien! 👏", sub: "Vas por muy buen camino. Repasa los pocos fallos y lo tendrás perfecto." };
+    if (pct >= 50) return { headline: "Buen intento 💪", sub: "Vas progresando. Repasa los fallos marcados y el recuadro de gramática." };
+    return { headline: "¡Ánimo, esto es parte de aprender! 🌱", sub: "Vuelve a leer los ejemplos y repite el ejercicio — cada intento suma." };
+  }
+
+  function buildSummary(name, correct, total, pct) {
+    const lines = [];
+    lines.push("📋 Resultados — " + TITLE_LABEL);
+    lines.push("Alumno: " + (name || "(sin nombre)"));
+    lines.push("Puntuación: " + correct + "/" + total + " (" + pct + "%)");
+    lines.push("");
+    const wrong = allInputs.filter(function (rec) {
+      return rec.el.dataset.checked === "1" && !rec.el.classList.contains("correct");
+    });
+    if (wrong.length === 0) {
+      lines.push("¡Sin errores! 🎉");
+    } else {
+      lines.push("Fallos (" + wrong.length + "):");
+      wrong.forEach(function (rec) {
+        const given = rec.el.value.trim() || "(en blanco)";
+        lines.push("- " + rec.label + ": escribió \"" + given + "\" → correcto: \"" + correctTextFor(rec.spec) + "\"");
+      });
+    }
+    return lines.join("\n");
+  }
+
+  function updateResultsPanel(checked, correct) {
+    const panel = document.getElementById("resultsPanel");
+    const hint = document.getElementById("progressHint");
+    const total = allInputs.length;
+    if (checked === 0) {
+      panel.hidden = true;
+      if (hint) { hint.textContent = ""; hint.classList.remove("complete"); }
+      return;
+    }
+    if (checked < total) {
+      if (hint) {
+        hint.textContent = "Corregidos " + checked + "/" + total + " — corrige el resto de ejercicios (o pulsa \"Corregir todos\") para ver tu resumen final.";
+        hint.classList.remove("complete");
+      }
+      return; // wait until everything has been corrected at least once
+    }
+    if (hint) {
+      hint.textContent = "¡Todo corregido! Tu resumen está más abajo 👇";
+      hint.classList.add("complete");
+    }
+    const wasHidden = panel.hidden;
+    panel.hidden = false;
+    if (wasHidden) setTimeout(function () { panel.scrollIntoView({ behavior: "smooth", block: "start" }); }, 50);
+
+    const pct = Math.round((correct / total) * 100);
+    const tier = tierFor(pct);
+    document.getElementById("resHeadline").textContent = tier.headline;
+    document.getElementById("resSub").textContent = tier.sub;
+    document.getElementById("resScoreNum").textContent = correct;
+    document.getElementById("resScoreDen").textContent = "/ " + total + " (" + pct + "%)";
+
+    const wrong = allInputs.filter(function (rec) {
+      return rec.el.dataset.checked === "1" && !rec.el.classList.contains("correct");
+    });
+    const errBox = document.getElementById("resErrors");
+    if (wrong.length === 0) {
+      errBox.innerHTML = '<div class="results-error-item">¡Ni un solo fallo! 🎉</div>';
+    } else {
+      errBox.innerHTML = '<div class="results-errors-title">Fallos (' + wrong.length + ')</div>' +
+        wrong.map(function (rec) {
+          const given = escapeHtml(rec.el.value.trim() || "(en blanco)");
+          return '<div class="results-error-item"><b>' + rec.label + ':</b> <s>' + given + "</s> → " + correctTextFor(rec.spec) + "</div>";
+        }).join("");
+    }
+
+    wireChannels();
+  }
+
+  function wireChannels() {
+    const nameEl = document.getElementById("resName");
+    function currentSummary() {
+      const correct = parseInt(document.getElementById("resScoreNum").textContent, 10);
+      const total = allInputs.length;
+      const pct = Math.round((correct / total) * 100);
+      return buildSummary(nameEl.value.trim(), correct, total, pct);
+    }
+    // Long reports risk pushing the whole URL past the ~2000-char limit some browsers/
+    // servers truncate at. Keeps as many full lines as fit within an encoded-length budget,
+    // then appends a note — measuring the ENCODED length, since encodeURIComponent can
+    // roughly triple raw length (newlines, accents, emoji all expand).
+    function truncateForUrl(text, maxEncodedLen) {
+      const note = "\n\n(Informe truncado por ser muy largo para el enlace — usa \"Copiar resumen\" para ver todos los fallos.)";
+      if (encodeURIComponent(text).length <= maxEncodedLen) return text;
+      const lines = text.split("\n");
+      let out = "";
+      for (let i = 0; i < lines.length; i++) {
+        const candidate = out + (out ? "\n" : "") + lines[i];
+        if (encodeURIComponent(candidate + note).length > maxEncodedLen) break;
+        out = candidate;
+      }
+      return out + note;
+    }
+    function refreshLinks() {
+      const text = currentSummary();
+      const encoded = encodeURIComponent(text);
+      // t.me's server (nginx) rejects long query strings outright with a 400 Bad Request —
+      // wa.me tolerates the same length fine, so only Telegram needs the same length budget
+      // already used for the Gmail link below.
+      const shortText = truncateForUrl(text, 1200);
+      document.getElementById("chWhatsapp").href = "https://wa.me/" + TEACHER.whatsapp + "?text=" + encoded;
+      // t.me links only pre-fill the message box when addressed to a @username — the
+      // phone-number form (t.me/+<number>) has no equivalent and ignores ?text= entirely.
+      document.getElementById("chTelegram").href = "https://t.me/" + TEACHER.telegram + "?text=" + encodeURIComponent(shortText);
+      // encodeURIComponent on the recipient, matching every other channel's params (was raw
+      // before) — @ is technically legal unencoded in a query string, but the Teams desktop
+      // app parses this deep link with its own internal handler, not a browser, and may be
+      // stricter than what wa.me/t.me/mail.google.com's own parsers tolerate.
+      document.getElementById("chTeams").href = "https://teams.microsoft.com/l/chat/0/0?users=" + encodeURIComponent(TEACHER.teamsEmail) + "&message=" + encoded;
+      // Gmail's web compose URL, set as a plain https:// href — a native <a target="_blank">
+      // click is trusted browser navigation, exempt from the "block pop-ups" site permission
+      // that silently swallows a script-triggered window.open() call (this broke a previous
+      // version of this button on both desktop and mobile: the Correo button had, at some
+      // point during testing, triggered enough popups that Chrome's per-site "block
+      // pop-ups" permission for this origin got set, which only affects window.open(), not
+      // real link clicks). On Android with the Gmail app installed, the OS still intercepts
+      // this link and opens the app instead of the browser, which ignores the compose
+      // params — that's a separate, unrelated limitation covered by the copy fallback below.
+      document.getElementById("chEmail").href = "https://mail.google.com/mail/?view=cm&fs=1&to=" +
+        encodeURIComponent(TEACHER.email) + "&su=" + encodeURIComponent("Resultados — " + TITLE_LABEL) +
+        "&body=" + encodeURIComponent(shortText);
+    }
+    refreshLinks();
+    nameEl.oninput = refreshLinks;
+    function showCopied(text) {
+      const msg = document.getElementById("chCopiedMsg");
+      msg.textContent = text || "¡Copiado!";
+      msg.style.display = "block";
+      setTimeout(function () { msg.style.display = "none"; }, 3200);
+    }
+    function copyText(text, onDone) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () { onDone(true); }, function () { fallbackCopy(text, onDone); });
+      } else {
+        fallbackCopy(text, onDone);
+      }
+    }
+    function fallbackCopy(text, onDone) {
+      try {
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.style.position = "fixed";
+        ta.style.top = "-9999px";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.focus();
+        ta.select();
+        const ok = document.execCommand("copy");
+        document.body.removeChild(ta);
+        onDone(ok);
+      } catch (e) { onDone(false); }
+    }
+    document.getElementById("chCopy").onclick = function () {
+      copyText(currentSummary(), function (ok) { if (ok) showCopied(); });
+    };
+    // Teams' chat link works fully on mobile (recipient selected, message pasted), but on
+    // desktop the app has only shown the message pasted, not the recipient auto-selected —
+    // the same category of gap as Correo on Android: a native app intercepting a web deep
+    // link and only partially honoring its parameters, which the page has no way to detect
+    // or control. The button also copies the summary and names the exact manual step that
+    // might still be needed, covering both platforms without guessing which one applies.
+    document.getElementById("chTeams").addEventListener("click", function () {
+      copyText(currentSummary(), function (ok) {
+        if (ok) showCopied("Texto copiado. Si el destinatario no se seleccionó solo, elige a " + TEACHER.teamsEmail + ". Pégalo (mantén pulsado → Pegar) si el mensaje no se rellenó.");
+      });
+    });
+    // Correo: like Teams, its own link can't be trusted to fully deliver the message (on
+    // Android with the Gmail app installed, the OS intercepts mail.google.com links and
+    // opens the APP instead of the browser, which ignores the compose params and just opens
+    // normally — "redirects to Gmail but does nothing"). This is a genuinely additive
+    // listener on the native <a href> click (NOT a onclick handler calling window.open()
+    // itself) — a script-triggered window.open() is what a "block pop-ups" site permission
+    // targets, and a real link click is exempt from it, which is what actually matters here.
+    document.getElementById("chEmail").addEventListener("click", function () {
+      copyText(currentSummary(), function (ok) {
+        if (ok) showCopied("Texto copiado. Si no se abrió tu correo solo, pégalo (mantén pulsado → Pegar) en un email a " + TEACHER.email + ".");
+      });
+    });
+  }
+
+  allInputs.forEach(function (rec) {
+    rec.el.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        gradeRange(0, allInputs.length);
+        updateScore();
+      }
+    });
+  });
+
+  updateScore();
+})();
+</script>
