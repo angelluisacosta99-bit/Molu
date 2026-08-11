@@ -1,7 +1,7 @@
 ---
 name: ejercicio-interactivo
 description: "Use when Angel asks to build a new interactive Spanish grammar/vocabulary exercise page with instant grading — a self-contained HTML artifact where a student fills in blanks, gets corrected instantly, and can send their results to the teacher via WhatsApp/Telegram/Teams/Correo. Also use when asked to add a new chapter/unit to this format, or to fix/extend an existing one (e.g. the A1 \"Presente, gerundio, indefinido\" or B2 12C \"¿Sigues pintando?\" exercises already in docencia-espanol/materiales/). Triggers: \"ejercicio interactivo\", \"como el de A1/12C\", \"corrección instantánea\", \"página interactiva para practicar\", \"haz lo mismo con otro capítulo\"."
-version: 1.2.0
+version: 1.3.0
 user-invocable: true
 license: Apache 2.0
 ---
@@ -83,10 +83,13 @@ PR #22 invertía el orden que PR #20 daba por bueno.
    mezclar niveles de manuales distintos dentro de la misma sección.
 
 7. **Sigue el flujo de PR de este repositorio, sin excepciones.** `CLAUDE.md` en la raíz
-   exige: abrir PR → lanzar una revisión con un agente independiente (`Agent` tool,
-   `run_in_background: true`, dale contexto completo y pídele que verifique en vivo con
-   Playwright, no que confíe en la descripción del PR) → fusionar solo si no hay hallazgos
-   bloqueantes. Nunca te saltes esto, ni para cambios que parezcan triviales.
+   exige: abrir el PR (esto no dispara nada más — puede quedarse esperando) y, **solo
+   cuando el profesor pida fusionar ese PR**, lanzar una revisión con un agente
+   independiente (`Agent` tool, `run_in_background: true`, dale contexto completo y pídele
+   que verifique en vivo con Playwright, no que confíe en la descripción del PR) sobre el
+   estado actual del PR → fusionar solo si no hay hallazgos bloqueantes. Nunca te saltes la
+   revisión antes de fusionar, ni para cambios que parezcan triviales, y nunca la lances
+   (ni fusiones) solo por haber abierto el PR.
 
    **Nota sobre el historial de la rama**: los PRs anteriores en esta rama se fusionaron con
    `squash`, así que los commits viejos de la rama dejan de ser ancestros literales de
