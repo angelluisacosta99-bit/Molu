@@ -406,7 +406,7 @@
   <div class="channel-row">
     <a class="channel-btn" id="chWhatsapp" target="_blank" rel="noopener">WhatsApp</a>
     <a class="channel-btn" id="chTelegram" target="_blank" rel="noopener">Telegram</a>
-    <button class="channel-btn" id="chEmail" type="button">Correo</button>
+    <a class="channel-btn" id="chEmail" target="_blank" rel="noopener">Correo</a>
     <a class="channel-btn" id="chTeams" target="_blank" rel="noopener">Teams</a>
     <button class="channel-btn" id="chCopy" type="button">Copiar resumen</button>
     <span class="channel-copied" id="chCopiedMsg">¡Copiado!</span>
@@ -1033,12 +1033,38 @@
       const pct = Math.round((correct / total) * 100);
       return buildSummary(nameEl.value.trim(), correct, total, pct);
     }
+    // Long reports risk pushing the whole URL past the ~2000-char limit some browsers/
+    // servers truncate at. Keeps as many full lines as fit within an encoded-length budget,
+    // then appends a note — measuring the ENCODED length, since encodeURIComponent can
+    // roughly triple raw length (newlines, accents, emoji all expand).
+    function truncateForUrl(text, maxEncodedLen) {
+      const note = "\n\n(Informe truncado por ser muy largo para el enlace de correo — usa \"Copiar resumen\" para ver todos los fallos.)";
+      if (encodeURIComponent(text).length <= maxEncodedLen) return text;
+      const lines = text.split("\n");
+      let out = "";
+      for (let i = 0; i < lines.length; i++) {
+        const candidate = out + (out ? "\n" : "") + lines[i];
+        if (encodeURIComponent(candidate + note).length > maxEncodedLen) break;
+        out = candidate;
+      }
+      return out + note;
+    }
     function refreshLinks() {
       const text = currentSummary();
       const encoded = encodeURIComponent(text);
       document.getElementById("chWhatsapp").href = "https://wa.me/" + TEACHER.whatsapp + "?text=" + encoded;
       document.getElementById("chTelegram").href = "https://t.me/" + TEACHER.telegram;
       document.getElementById("chTeams").href = "https://teams.microsoft.com/l/chat/0/0?users=" + TEACHER.teamsEmail + "&message=" + encoded;
+      // Gmail's own web compose URL, opened as a plain https:// link — the same class of
+      // navigation as the WhatsApp/Telegram/Teams links above, which is what actually works
+      // from inside the artifact's sandboxed iframe. A mailto: link is a different, non-http
+      // protocol that the sandbox silently blocks regardless of how it's triggered, and even
+      // when it isn't blocked it depends on the visitor having a default mail app configured
+      // — unreliable for an exam opened by people with no Claude account and no known setup.
+      const emailBody = truncateForUrl(text, 1200);
+      document.getElementById("chEmail").href = "https://mail.google.com/mail/?view=cm&fs=1&to=" +
+        encodeURIComponent(TEACHER.email) + "&su=" + encodeURIComponent("Resultados — " + TITLE_LABEL) +
+        "&body=" + encodeURIComponent(emailBody);
     }
     refreshLinks();
     nameEl.oninput = refreshLinks;
@@ -1084,23 +1110,9 @@
         });
       });
     });
-    // Email: mailto: links can't be relied on to actually launch a mail app — depending on
-    // the device, the browser, and whether a mail app is even set up, window.open() can fail
-    // completely silently with no error and no visible sign anything happened. So this always
-    // copies the summary with a clear, actionable message (including the teacher's address to
-    // paste into), and only attempts to open the mail app as an unguaranteed bonus on top.
-    // Both actions consume the click's "user activation" token, and a browser only grants it
-    // once per gesture — so the copy has to happen first, synchronously (via the legacy
-    // execCommand path, not the async Clipboard API, which would still lose the activation
-    // waiting on its promise), and window.open() right after, still synchronously.
-    document.getElementById("chEmail").onclick = function () {
-      const text = currentSummary();
-      const mailtoUrl = "mailto:" + TEACHER.email + "?subject=" + encodeURIComponent("Resultados — " + TITLE_LABEL) + "&body=" + encodeURIComponent(text);
-      fallbackCopy(text, function (ok) {
-        if (ok) showCopied("Texto copiado. Si no se abrió tu correo solo, pégalo (mantén pulsado → Pegar) en un email a " + TEACHER.email + ".");
-      });
-      try { window.open(mailtoUrl, "_blank", "noopener"); } catch (e) { /* ignore */ }
-    };
+    // chEmail is a plain https:// link (Gmail compose, set in refreshLinks) opened with
+    // target="_blank" — the same kind of navigation as WhatsApp, which is what actually
+    // works from inside the artifact's sandboxed public iframe. No click handler needed.
   }
 
   allInputs.forEach(function (rec) {
