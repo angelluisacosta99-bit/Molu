@@ -1,7 +1,7 @@
 ---
 name: ejercicio-interactivo
 description: "Use when Angel asks to build a new interactive Spanish grammar/vocabulary exercise page with instant grading — a self-contained HTML artifact where a student fills in blanks, gets corrected instantly, and can send their results to the teacher via WhatsApp/Telegram/Teams/Correo. Also use when asked to add a new chapter/unit to this format, or to fix/extend an existing one (e.g. the A1 \"Presente, gerundio, indefinido\" or B2 12C \"¿Sigues pintando?\" exercises already in docencia-espanol/materiales/). Triggers: \"ejercicio interactivo\", \"como el de A1/12C\", \"corrección instantánea\", \"página interactiva para practicar\", \"haz lo mismo con otro capítulo\"."
-version: 1.2.0
+version: 1.5.0
 user-invocable: true
 license: Apache 2.0
 ---
@@ -82,11 +82,22 @@ PR #22 invertía el orden que PR #20 daba por bueno.
    del índice), duplica el bloque `.manual-section` completo para ese manual en vez de
    mezclar niveles de manuales distintos dentro de la misma sección.
 
-7. **Sigue el flujo de PR de este repositorio, sin excepciones.** `CLAUDE.md` en la raíz
-   exige: abrir PR → lanzar una revisión con un agente independiente (`Agent` tool,
-   `run_in_background: true`, dale contexto completo y pídele que verifique en vivo con
-   Playwright, no que confíe en la descripción del PR) → fusionar solo si no hay hallazgos
-   bloqueantes. Nunca te saltes esto, ni para cambios que parezcan triviales.
+7. **Añade el código a `docencia-espanol/materiales/codigos-acceso.html`.** Es la
+   referencia privada del profesor (nivel, capítulo, código, enlace) para cuando un alumno
+   pide el código en clase — añade una fila a la tabla y vuelve a publicar con el mismo
+   `url`. **Nunca enlaces esta página desde el índice público ni desde ningún material que
+   puedan ver los alumnos** — no por seguridad real (el código sigue siendo solo un
+   disuasivo, visible en el código fuente de cada ejercicio), sino porque no tiene sentido
+   poner todos los códigos juntos a la vista de cualquiera que reciba el enlace.
+
+8. **Sigue el flujo de PR de este repositorio, sin excepciones.** `CLAUDE.md` en la raíz
+   exige: abrir el PR (esto no dispara nada más — puede quedarse esperando) y, **solo
+   cuando el profesor pida fusionar ese PR**, lanzar una revisión con un agente
+   independiente (`Agent` tool, `run_in_background: true`, dale contexto completo y pídele
+   que verifique en vivo con Playwright, no que confíe en la descripción del PR) sobre el
+   estado actual del PR → fusionar solo si no hay hallazgos bloqueantes. Nunca te saltes la
+   revisión antes de fusionar, ni para cambios que parezcan triviales, y nunca la lances
+   (ni fusiones) solo por haber abierto el PR.
 
    **Nota sobre el historial de la rama**: los PRs anteriores en esta rama se fusionaron con
    `squash`, así que los commits viejos de la rama dejan de ser ancestros literales de
@@ -118,6 +129,21 @@ no las deshagas sin querer al modificar la plantilla.
   (`escapeHtml()`, usado en la lista de fallos del panel de resultados). Sin esto, un
   alumno que escribe `<algo>` en un hueco rompe el renderizado o ejecuta su propio HTML
   (self-XSS — bajo impacto real, pero un bug genuino).
+- **Todo número/letra estructural lleva `translate="no"`** (`.item-letter`, `.exnum`,
+  `#scoreNum`, `#scoreTotal`, `#totalBlanksLabel`, `#resScoreNum`, `#resScoreDen`, y en el
+  índice `.level-badge`/`.chapter-num`). Bug real visto en producción: en 12C, con el
+  traductor de página de Chrome móvil activo, los números "1.", "2."... de la lista de
+  ejercicios desaparecían (mientras el resto del contenido de esa misma fila — la frase, el
+  desplegable — seguía renderizando bien), porque Google Translate reescribe el DOM al
+  traducir y puede descartar nodos que son solo un número/puntuación sueltos, sobre todo
+  cuando conviven como hermanos de texto sí-traducible dentro del mismo contenedor armado
+  con `innerHTML`. La solución NO es desactivar la traducción de toda la página (los
+  alumnos rusohablantes pueden querer traducir el enunciado) — es marcar con
+  `translate="no"` solo los elementos puramente estructurales/numéricos, que Google
+  Translate respeta y deja intactos. La plantilla ya lo lleva en todos sus marcadores de
+  número; si añades un tipo de ejercicio nuevo (o tocas uno existente, como los 5 tipos
+  bespoke de 12C) que muestre un número de fila/hueco/puntuación fuera de estos, añade
+  `translate="no"` ahí también — no lo des por hecho solo porque venga de la plantilla.
 - **Tildes estrictas por diseño** — ver el paso 3 arriba. No es un bug a "arreglar"
   aflojando `norm()`/`isCorrect()` globalmente sin consultar al profesor primero.
 
@@ -227,7 +253,11 @@ parezca más "controlable" desde JS — ya se demostró que rompe el caso más b
   aplicadas. Punto de partida obligatorio para cualquier ejercicio nuevo.
 - `docencia-espanol/materiales/indice-clases-de-espanol.html` — el artefacto "Clases de
   Español", índice manual → nivel → capítulo de toda la biblioteca (ver paso 6 del flujo de
-  trabajo). Actualízalo cada vez que publiques un capítulo nuevo.
+  trabajo). Actualízalo cada vez que publiques un capítulo nuevo. Este es público (o puede
+  llegar a serlo si el profesor lo comparte) — nunca le añadas los códigos de acceso.
+- `docencia-espanol/materiales/codigos-acceso.html` — referencia privada del profesor con
+  el código de cada capítulo (ver paso 7). Actualízala cada vez que publiques un capítulo
+  nuevo; no la enlaces desde ningún material que puedan ver los alumnos.
 - `PRODUCT.md` y `DESIGN.md` (raíz del repo) — el sistema de diseño compartido por todos los
   artefactos de esta biblioteca (paleta papel/tinta, tipografía, componentes). Cualquier
   página nueva (ejercicio o índice) debe extender estos tokens, no inventar los suyos — ver

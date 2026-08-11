@@ -1,0 +1,187 @@
+<!--
+  Referencia privada del profesor: código de acceso de cada capítulo publicado.
+  NO enlazar desde el índice público "Clases de Español" ni desde ningún material que
+  puedan ver los alumnos — aunque el código es solo un disuasivo (cualquiera que vea el
+  código fuente de un ejercicio lo ve), no tiene sentido ponerlos todos juntos a la vista.
+  Al publicar un capítulo nuevo: añade su fila aquí y vuelve a publicar con el mismo url.
+-->
+<title>Códigos de acceso — Clases de Español</title>
+<style>
+  :root {
+    --paper: #F3F5F0;
+    --paper-raised: #FFFFFF;
+    --ink: #17223B;
+    --ink-soft: #4B5468;
+    --pencil: #6E7280;
+    --gold: #A8790C;
+    --gold-soft: #F1E4C2;
+    --border: #DCDFD3;
+    --shadow: 0 1px 2px rgba(23,34,59,0.06), 0 4px 14px rgba(23,34,59,0.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #101626;
+      --paper-raised: #182036;
+      --ink: #ECEEF3;
+      --ink-soft: #AEB6C9;
+      --pencil: #8B93A6;
+      --gold: #E0B44A;
+      --gold-soft: #3A3220;
+      --border: #2A3348;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 20px rgba(0,0,0,0.35);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #101626;
+    --paper-raised: #182036;
+    --ink: #ECEEF3;
+    --ink-soft: #AEB6C9;
+    --pencil: #8B93A6;
+    --gold: #E0B44A;
+    --gold-soft: #3A3220;
+    --border: #2A3348;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 20px rgba(0,0,0,0.35);
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--paper); color: var(--ink); }
+  body {
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 3rem;
+  }
+  h1, h2 {
+    font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+    text-wrap: balance;
+    margin: 0;
+  }
+  .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+  a { color: inherit; }
+
+  .topbar {
+    position: sticky; top: 0; z-index: 20;
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+  .topbar-inner {
+    max-width: 720px; margin: 0 auto;
+    padding: 0.7rem 1.25rem;
+    display: flex; align-items: baseline; gap: 0.6rem;
+  }
+  .topbar-title { font-size: 0.95rem; font-weight: 700; letter-spacing: 0.01em; font-family: Georgia, serif; }
+  .topbar-sub { font-size: 0.78rem; color: var(--pencil); }
+
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 1.25rem; }
+
+  .hero { padding: 2.2rem 0 1.4rem; }
+  .eyebrow {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.6rem;
+  }
+  .hero h1 { font-size: clamp(1.6rem, 4vw, 2.1rem); }
+
+  .privacy-note {
+    background: var(--gold-soft);
+    border-radius: 10px;
+    padding: 0.9rem 1.1rem;
+    font-size: 0.86rem;
+    color: var(--ink-soft);
+    margin: 1.1rem 0 2rem;
+  }
+  .privacy-note b { color: var(--ink); }
+
+  .table-wrap {
+    overflow-x: auto;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    background: var(--paper-raised);
+    margin-bottom: 2.2rem;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+  thead th {
+    text-align: left; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--pencil);
+    padding: 0.85rem 1rem; border-bottom: 1px solid var(--border);
+  }
+  tbody td { padding: 0.85rem 1rem; border-bottom: 1px solid var(--border); vertical-align: middle; }
+  tbody tr:last-child td { border-bottom: none; }
+  .level-cell { font-weight: 700; color: var(--gold); white-space: nowrap; }
+  .chapter-cell { font-weight: 600; }
+  .chapter-cell a { text-decoration: none; }
+  .chapter-cell a:hover { color: var(--gold); }
+  .code-cell {
+    font-weight: 700; letter-spacing: 0.04em; color: var(--ink);
+    background: var(--gold-soft);
+    border-radius: 6px; padding: 0.25rem 0.55rem;
+    white-space: nowrap; display: inline-block;
+  }
+  .empty-note { color: var(--pencil); font-size: 0.85rem; padding: 1.5rem 1rem; text-align: center; }
+
+  footer {
+    max-width: 720px; margin: 0 auto; padding: 1.5rem 1.25rem 0;
+    display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+    font-size: 0.8rem; color: var(--pencil);
+    border-top: 1px solid var(--border);
+  }
+</style>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <span class="topbar-title">Códigos de acceso</span>
+    <span class="topbar-sub">Referencia privada</span>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="eyebrow">Solo para ti</div>
+    <h1>Códigos de acceso por capítulo</h1>
+  </div>
+
+  <div class="privacy-note">
+    <b>Recuerda:</b> el código es solo un disuasivo, no seguridad real — cualquiera que vea
+    el código fuente de un ejercicio también lo ve. Esta página es privada por defecto (no
+    se comparte a menos que tú la compartas desde el menú de artefactos), pero no la
+    enlaces desde el índice público ni la mandes a los alumnos: es más rápida de usar tú
+    mismo que segura de repartir.
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Nivel</th>
+          <th>Capítulo</th>
+          <th>Código</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="level-cell mono">A1</td>
+          <td class="chapter-cell"><a href="https://claude.ai/code/artifact/0e16fd6b-20e3-4072-bbbe-e0208458f95d" target="_blank" rel="noopener">Presente, gerundio, indefinido</a></td>
+          <td><span class="code-cell mono">PRESENTE</span></td>
+        </tr>
+        <tr>
+          <td class="level-cell mono">B2</td>
+          <td class="chapter-cell"><a href="https://claude.ai/code/artifact/6488d308-756f-4d82-ba9e-9e09a78fed1f" target="_blank" rel="noopener">12B — Turismo cultural</a></td>
+          <td><span class="code-cell mono">TURISMO</span></td>
+        </tr>
+        <tr>
+          <td class="level-cell mono">B2</td>
+          <td class="chapter-cell"><a href="https://claude.ai/code/artifact/53553512-06ea-4f7c-8a79-536a0cbca677" target="_blank" rel="noopener">12C — ¿Sigues pintando?</a></td>
+          <td><span class="code-cell mono">PINTANDO</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="empty-note">Se añadirá una fila nueva cada vez que se publique un capítulo.</div>
+</div>
+
+<footer>
+  <span>Nuevo Español en Marcha</span>
+  <span>© Angel Luis Acosta González</span>
+</footer>

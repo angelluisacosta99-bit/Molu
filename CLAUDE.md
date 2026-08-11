@@ -2,22 +2,35 @@
 
 ## Flujo de trabajo obligatorio para Pull Requests
 
-Cada vez que se abra un Pull Request en este repositorio, seguir siempre
-estos tres pasos, en este orden:
+**Abrir un PR no dispara nada más automáticamente.** Se puede abrir un
+Pull Request con su descripción y dejarlo ahí, esperando, sin gastar una
+revisión todavía — sobre todo si va a seguir cambiando o el profesor
+todavía no ha pedido fusionarlo. Esto es así para no gastar tokens en
+revisiones de PRs que pueden cambiar antes de fusionarse.
 
-1. **Abrir el PR** con una descripción clara de los cambios.
-2. **Lanzar una revisión con un agente independiente** (por ejemplo, la
-   skill `review`) antes de fusionar.
-3. **Fusionar (merge) el PR**, salvo que la revisión detecte problemas
-   bloqueantes — en ese caso, corregirlos primero y repetir el ciclo.
+Los otros dos pasos van juntos y **solo se ejecutan cuando el profesor
+pide explícitamente fusionar/mergear un PR concreto** (o cuando así lo
+indique una tarea autónoma que el profesor haya autorizado de antemano
+para ese fin). En ese momento, y en ese orden:
+
+1. **Lanzar una revisión con un agente independiente** (por ejemplo, la
+   skill `review`), justo antes de fusionar — no una revisión antigua
+   lanzada al abrir el PR, sino una que verifique el estado actual del
+   PR (puede haber cambiado desde que se abrió).
+2. **Fusionar (merge) el PR**, salvo que la revisión detecte problemas
+   bloqueantes — en ese caso, corregirlos primero y repetir el ciclo
+   (nueva revisión, luego fusión).
 
 No omitir la revisión aunque el cambio parezca trivial (por ejemplo,
-cambios solo de documentación).
+cambios solo de documentación), y no omitirla aunque ya exista una
+revisión de una versión anterior del PR.
 
 **Regla dura, sin excepciones:** nunca hacer `merge` de un PR sin haber
-completado antes una revisión con un agente independiente. Si por
-cualquier motivo la revisión no se pudo lanzar o no terminó, el PR no se
-fusiona hasta que exista esa revisión.
+completado antes una revisión con un agente independiente sobre su
+estado actual. Si por cualquier motivo la revisión no se pudo lanzar o
+no terminó, el PR no se fusiona hasta que exista esa revisión. Y nunca
+lanzar la revisión (ni fusionar) solo por haber abierto el PR — hace
+falta que el profesor pida fusionar primero.
 
 ## Diseño visual: usar siempre la skill `impeccable`
 

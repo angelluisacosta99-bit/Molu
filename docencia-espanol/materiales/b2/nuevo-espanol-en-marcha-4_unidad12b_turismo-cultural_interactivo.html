@@ -1,4 +1,9 @@
-<title>Nuevo Español en Marcha · A1 · Presente, gerundio, indefinido</title>
+<!--
+  TEMPLATE — plantilla de ejercicio interactivo con corrección instantánea.
+  Ver .claude/skills/ejercicio-interactivo/SKILL.md para el proceso completo.
+  Busca todos los marcadores {{...}} y sustitúyelos; no dejes ninguno sin reemplazar.
+-->
+<title>Nuevo Español en Marcha · B2 · 12B — Turismo cultural (La pasiva)</title>
 <style>
   :root {
     --paper: #F3F5F0;
@@ -324,16 +329,18 @@
 </style>
 
 <script>
+  // unlocked-b2-12b-turismo-cultural here MUST be byte-identical to the one set further down in the gate
+  // script (search "STORAGE_KEY =") — same placeholder, same value, both occurrences.
   document.documentElement.setAttribute(
     "data-locked",
-    localStorage.getItem("unlocked-a1-presente-gerundio-indefinido") === "1" ? "false" : "true"
+    localStorage.getItem("unlocked-b2-12b-turismo-cultural") === "1" ? "false" : "true"
   );
 </script>
 
 <div class="gate-overlay">
   <div class="gate-card">
     <div class="eyebrow">Acceso privado</div>
-    <h2>Ejercicios A1</h2>
+    <h2>Ejercicios B2</h2>
     <p>Pídele el código a tu profesor para entrar.</p>
     <input type="text" id="gateInput" placeholder="CÓDIGO" autocomplete="off" autocapitalize="characters" />
     <button id="gateBtn">Entrar</button>
@@ -342,8 +349,12 @@
 </div>
 <script>
   (function () {
-    const CODE = "PRESENTE";
-    const STORAGE_KEY = "unlocked-a1-presente-gerundio-indefinido";
+    // El código es solo un disuasivo, no seguridad real — cualquiera que vea el HTML
+    // fuente lo ve. Elige una palabra corta, memorable y ligada al tema, en MAYÚSCULAS.
+    const CODE = "TURISMO";
+    // MUST be byte-identical al unlocked-b2-12b-turismo-cultural usado arriba (ver comentario junto al
+    // primer occurrence). Usa un valor único por ejercicio, p. ej. "unlocked-b2-13a-tema".
+    const STORAGE_KEY = "unlocked-b2-12b-turismo-cultural";
     function tryUnlock() {
       const val = document.getElementById("gateInput").value.trim().toUpperCase();
       if (val === CODE) {
@@ -363,8 +374,9 @@
 <div class="topbar gated-content">
   <div class="topbar-inner">
     <div class="brand">
-      <span class="brand-title">Ejercicios A1</span>
-      <span class="brand-sub">Presente · Gerundio · Indefinido</span>
+      <!-- Ejemplo real (A1): Ejercicios B2 = "Ejercicios A1", 12B · Turismo cultural = "Presente · Gerundio · Indefinido" -->
+      <span class="brand-title">Ejercicios B2</span>
+      <span class="brand-sub">12B · Turismo cultural</span>
     </div>
     <nav class="nav-dots" id="navDots"></nav>
     <div class="score-wrap">
@@ -375,14 +387,13 @@
 </div>
 
 <div class="hero gated-content">
-  <div class="eyebrow">Nuevo Español en Marcha 1 · Nivel A1 · Unidades 1-8</div>
-  <h1>20 ejercicios de gramática, corregidos al instante</h1>
-  <p>Presente, estar + gerundio y pretérito indefinido. Escribe tu respuesta en cada hueco y pulsa
-  «Corregir» — verás al momento si acertaste, y la forma correcta si no.</p>
+  <div class="eyebrow">Nuevo Español en Marcha 4 · Nivel B2 · Unidad 12B</div>
+  <h1>Turismo cultural: la pasiva perifrástica</h1>
+  <p>Lee el texto, identifica las construcciones pasivas y practica la pasiva con ser y estar. Corrige cada ejercicio o corrígelos todos al final.</p>
   <div class="hero-meta">
     <span><strong id="totalBlanksLabel" translate="no">—</strong> huecos en total</span>
-    <span><strong>4</strong> bloques</span>
-    <span><strong>20</strong> ejercicios</span>
+    <span><strong>1</strong> bloques</span>
+    <span><strong>6</strong> ejercicios</span>
   </div>
 </div>
 
@@ -414,7 +425,7 @@
 </div>
 
 <footer class="gated-content">
-  <span>Nuevo Español en Marcha 1 · Unidades 1-8</span>
+  <span>Nuevo Español en Marcha 4 · Unidad 12B</span>
   <span>© Angel Luis Acosta González</span>
 </footer>
 
@@ -423,6 +434,16 @@
   "use strict";
 
   // ---------- grading helpers ----------
+  // ACCENTS ARE STRICT BY DEFAULT ON THE ARRAY PATH (isCorrect below): typing "esta" is
+  // wrong when the key is "está". This is a deliberate default, not an oversight — in most
+  // Spanish grammar drills the accent IS the point being tested (e.g. "trabaja" [presente]
+  // vs. "trabajó" [indefinido] differ only by the accent; "esta"/"está" are different words).
+  // Loosening this for a whole exercise set would silently mark wrong tenses/words as
+  // correct. If THIS exercise is testing something where accents are incidental (open-ended
+  // short answers, vocabulary content rather than verb-form precision), use the {flex:[...]}
+  // spec instead (see isCorrect below) for just those items — it's accent-insensitive by
+  // design. Don't blanket-change norm()/isCorrect() to strip accents; ask the teacher first
+  // if you're unsure which behavior a given exercise needs.
   function norm(s) {
     return (s || "")
       .toLowerCase()
@@ -454,235 +475,83 @@
   // template blanks use {0},{1}... matched to item.answers[i]
   const blocks = [
     {
-      id: "presente", num: 1, title: "El presente",
-      sub: "Unidades 1-3 · Verbos regulares e irregulares, reflexivos, preguntas",
+      id: "turismo-cultural", num: 1, title: "Turismo cultural",
+      sub: "Nuevo Español en Marcha 4 · Unidad 12B · Lectura, vocabulario y la pasiva",
       exercises: [
         {
-          num: 1, title: "Verbos regulares (-ar, -er, -ir)",
-          instr: "Completa con la forma correcta del presente.",
-          type: "items",
-          items: [
-            { t: "María {0} (trabajar) en un hospital y {1} (vivir) en Madrid.", a: [["trabaja"], ["vive"]] },
-            { t: "¿Tú {0} (comer) en casa o en la oficina normalmente?", a: [["comes"]] },
-            { t: "Nosotros {0} (estudiar) español los lunes y los miércoles.", a: [["estudiamos"]] },
-            { t: "Mis padres {0} (vivir) en Sevilla desde hace diez años.", a: [["viven"]] },
-            { t: "Yo {0} (trabajar) de nueve a cinco y {1} (comer) a la una.", a: [["trabajo"], ["como"]] }
-          ]
-        },
-        {
-          num: 2, title: "Ser y estar",
-          instr: "Elige el verbo correcto (ser o estar) y conjúgalo.",
-          type: "items",
-          items: [
-            { t: "Pablo {0} profesor de inglés. (ser / estar)", a: [["es"]] },
-            { t: "Hoy Ana {0} muy contenta porque tiene vacaciones. (ser / estar)", a: [["está"]] },
-            { t: "Nosotros {0} de Rusia, pero ahora {1} en España. (ser / estar)", a: [["somos"], ["estamos"]] },
-            { t: "Este bolígrafo no {0} mío, {1} de Carlos. (ser / estar)", a: [["es"], ["es"]] },
-            { t: "Normalmente Luis {0} muy tranquilo, pero hoy {1} nervioso por el examen. (ser / estar)", a: [["es"], ["está"]] }
-          ]
-        },
-        {
-          num: 3, title: "Verbos irregulares: empezar, volver, ir, salir",
-          instr: "Completa el horario de Elena con el verbo correcto.",
-          type: "items",
-          items: [
-            { t: "Elena {0} (empezar) a trabajar a las ocho de la mañana.", a: [["empieza"]] },
-            { t: "Ella {0} (ir) a la oficina en autobús.", a: [["va"]] },
-            { t: "A las dos, Elena {0} (volver) a casa para comer.", a: [["vuelve"]] },
-            { t: "Por la tarde, ella {0} (salir) con sus amigas al cine.", a: [["sale"]] },
-            { t: "¿A qué hora {0} (empezar) tú a trabajar?", a: [["empiezas"]] }
-          ]
-        },
-        {
-          num: 4, title: "Verbos reflexivos: levantarse, ducharse, acostarse",
-          instr: "Completa la rutina de Jorge con el pronombre y el verbo correctos.",
-          type: "items",
-          items: [
-            { t: "Jorge {0} (levantarse) a las siete de la mañana.", a: [["se levanta"]] },
-            { t: "Después, él {0} (ducharse) y {1} (vestirse) rápido.", a: [["se ducha"], ["se viste"]] },
-            { t: "Nosotros {0} (acostarse) siempre después de las once.", a: [["nos acostamos"]] },
-            { t: "¿Tú {0} (levantarse) temprano los fines de semana?", a: [["te levantas"]] },
-            { t: "Mis hijos {0} (acostarse) a las nueve todos los días.", a: [["se acuestan"]] }
-          ]
-        },
-        {
-          num: 5, title: "Preguntas: dónde, de dónde, adónde",
-          instr: "Escribe la pregunta correcta para cada respuesta, usando dónde, de dónde o adónde.",
-          type: "items",
-          items: [
-            { t: "{0} — Soy de Moscú.", a: [["de dónde eres"]], wide: true },
-            { t: "{0} — Vivo en la calle Mayor, número 12.", a: [["dónde vives"]], wide: true },
-            { t: "{0} — Voy al gimnasio todos los martes.", a: [["adónde vas"]], wide: true },
-            { t: "{0} — Estoy en la biblioteca ahora mismo.", a: [["dónde estás"]], wide: true },
-            { t: "{0} — Vamos a la playa este fin de semana.", a: [["adónde vais"]], wide: true }
-          ]
-        },
-        {
-          num: 6, title: "Texto: un día normal de Sofía",
-          instr: "Completa el texto con la forma correcta del presente de los verbos entre paréntesis.",
+          num: 1, title: "Texto: Los desafíos del patrimonio histórico",
+          instr: "Lee el texto. Lo necesitarás para los ejercicios 2 y 3.",
           type: "text",
-          text: "Sofía {0} (levantarse) a las siete y {1} (ducharse) en diez minutos. Ella {2} (trabajar) en una escuela y {3} (empezar) a las ocho y media. A mediodía, {4} (comer) con sus compañeros en la cafetería. Por la tarde {5} (volver) a casa y {6} (ir) al gimnasio. Normalmente, ella {7} (acostarse) a las once de la noche.",
-          a: [["se levanta"], ["se ducha"], ["trabaja"], ["empieza"], ["come"], ["vuelve"], ["va"], ["se acuesta"]]
-        }
-      ]
-    },
-    {
-      id: "gerundio", num: 2, title: "Estar + gerundio",
-      sub: "Unidad 7 · ¿Qué estás haciendo? — presente continuo",
-      exercises: [
-        {
-          num: 7, title: "Formar el gerundio (verbos regulares)",
-          instr: "Escribe el gerundio de cada verbo. Recuerda: -ar → -ando; -er/-ir → -iendo.",
-          type: "table2",
-          rows: [
-            ["hablar", [["hablando"]]], ["comer", [["comiendo"]]], ["escribir", [["escribiendo"]]],
-            ["trabajar", [["trabajando"]]], ["abrir", [["abriendo"]]], ["cocinar", [["cocinando"]]]
-          ]
+          text: "España es uno de los destinos turísticos del mundo más demandados. En gran parte, los más de 53 millones de turistas que visitan nuestro país anualmente son atraídos por el clima y la oferta lúdica, pero un amplio porcentaje es seducido también por la belleza de sus monumentos y la singularidad de su cultura, algo que es uno de los grandes alicientes del turismo interior. El turismo cultural se está convirtiendo en uno de los grandes ganchos de esta gran industria del ocio —la Unesco la considera la más importante del mundo, por encima de la industria automovilística o química—, que se ha expandido en los últimos años en todo el mundo provocando una competencia feroz entre países, ciudades y parajes más o menos naturales.\nPero la turística es una industria depredadora —basta ver en qué ha sido convertida gran parte de la costa española— que nunca descansa y que fagocita todo aquello que encuentra. La riqueza que genera tiene sus contrapartidas en los daños, físicos y de apreciación estética, que la presencia masiva de turistas provoca en el patrimonio cultural. Es un problema común a muchos países, desde Egipto, en donde se plantean limitar el acceso al valle de los Reyes, a Francia, en donde cunde la preocupación por que el país se convierta en un parque temático.\nEl debate cultural sobre el fenómeno ha comenzado a tomar forma y una prueba es el encuentro profesional que ha sido celebrado del 26 al 28 de mayo en Barcelona titulado, «Nuevas políticas para el turismo cultural. Desafíos, rupturas y respuestas», que organiza la Fundación Caixa Catalunya, entidad que quiere liderar el debate sobre la relación entre turismo y cultura como gestora que es de La Pedrera, de Gaudí, calificada como Patrimonio de la Humanidad. Ha sido una oportunidad para analizar la situación de algunos de los principales objetivos del turismo cultural en España que oscilan entre el cierre total y la afluencia sin control.",
+          a: []
         },
         {
-          num: 8, title: "Gerundios irregulares",
-          instr: "Escribe el gerundio irregular de cada verbo.",
-          type: "table2",
-          rows: [
-            ["leer", [["leyendo"]]], ["dormir", [["durmiendo"]]], ["decir", [["diciendo"]]],
-            ["pedir", [["pidiendo"]]], ["oír", [["oyendo"]]]
-          ]
-        },
-        {
-          num: 9, title: "¿Qué está haciendo cada persona?",
-          instr: "Completa con estar + gerundio, usando el verbo entre paréntesis.",
+          num: 2, title: "Cuatro construcciones pasivas",
+          instr: "En el texto anterior aparecen cuatro construcciones pasivas. Escribe cada una.",
           type: "items",
           items: [
-            { t: "Ahora mismo, mi madre {0} (cocinar) la cena en la cocina.", a: [["está cocinando"]] },
-            { t: "Los niños {0} (jugar) en el parque en este momento.", a: [["están jugando"]] },
-            { t: "¿Qué {0} (hacer, tú) ahora? — {1} (leer) un libro muy interesante.", a: [["estás haciendo"], ["estoy leyendo"]] },
-            { t: "Nosotros {0} (estudiar) para el examen de español.", a: [["estamos estudiando"]] },
-            { t: "Mi hermano {0} (dormir) la siesta en el sofá.", a: [["está durmiendo"]] }
+            { t: "Construcción pasiva 1: {0}", a: [["son atraídos"]], wide: true },
+            { t: "Construcción pasiva 2: {0}", a: [["es seducido"]], wide: true },
+            { t: "Construcción pasiva 3: {0}", a: [["ha sido convertida"]], wide: true },
+            { t: "Construcción pasiva 4: {0}", a: [["ha sido celebrado"]], wide: true }
           ]
         },
         {
-          num: 10, title: "Verbos reflexivos con gerundio (dos formas)",
-          instr: "Transforma cada frase a la otra forma posible.",
-          model: "Modelo: Estoy lavándome → Me estoy lavando.",
+          num: 3, title: "Vocabulario del texto",
+          instr: "Busca en el texto qué palabras o frases significan lo siguiente. (El 1 ya está resuelto: relativo al juego = lúdica.)",
           type: "items",
           items: [
-            { t: "Estoy duchándome. → {0}", a: [["me estoy duchando"]], wide: true },
-            { t: "Rosa se está peinando. → {0}", a: [["rosa está peinándose"]], wide: true },
-            { t: "Nos estamos vistiendo. → {0}", a: [["estamos vistiéndonos"]], wide: true },
-            { t: "Los niños están lavándose los dientes. → {0}", a: [["los niños se están lavando los dientes"]], wide: true },
-            { t: "Mi padre se está afeitando. → {0}", a: [["mi padre está afeitándose"]], wide: true }
+            { t: "Circunstancia que hace interesante un lugar: {0}", a: [["aliciente", "alicientes"]], wide: true },
+            { t: "Atracción que se siente hacia algo o hacia alguien: {0}", a: [["gancho", "ganchos"]] },
+            { t: "Tiempo libre: {0}", a: [["ocio"]] },
+            { t: "Grande, enorme: {0}", a: [["feroz"]] },
+            { t: "Lugar: {0}", a: [["paraje", "parajes"]] },
+            { t: "Que roba o saquea con violencia y destrozo: {0}", a: [["depredadora", "depredador"]], wide: true },
+            { t: "Absorber: {0}", a: [["fagocitar", "fagocita"]] },
+            { t: "Multitudinaria: {0}", a: [["masiva", "masivo"]] },
+            { t: "Variar: {0}", a: [["oscilar", "oscilan"]] }
           ]
         },
         {
-          num: 11, title: "Diálogo por teléfono",
-          instr: "Completa el diálogo con estar + gerundio.",
+          num: 4, title: "Museo del Prado — El poder de las exposiciones temporales",
+          instr: "Completa las construcciones pasivas del texto con estos participios: visitado · acometidas · demostrado · dominada · invertida · inaugurado.",
           type: "text",
-          text: "— ¡Hola, Marta! ¿Qué {0} (hacer)?\n— Nada especial, {1} (ver) la televisión. ¿Y tú?\n— Yo {2} (preparar) la cena con mi hermana.\n— ¡Qué bien! ¿Y vuestros padres? ¿Qué {3} (hacer)?\n— Ellos {4} (leer) el periódico en el salón.",
-          a: [["estás haciendo"], ["estoy viendo"], ["estoy preparando"], ["están haciendo"], ["están leyendo"]]
+          text: "El Museo del Prado ha descubierto que la tendencia de los visitantes ha sido {0} por las grandes exposiciones temporales. Esto ha sido {1} por un estudio reciente que dice que los españoles que visitan estas muestras son el 60 %, y el resto extranjeros, cuando la proporción de los que acuden cada día es la contraria. La afluencia de público está {2} por el público extranjero, que ya ha superado los dos millones de personas al año. El Día Internacional del Museo, con entrada gratuita, fue {3} por 11.000 personas. El director del museo señala la exposición de Velázquez en 1990, con medio millón de visitantes, como la llamada de urgencia para plantearse la ampliación con el claustro de los Jerónimos, que fue {4} en 2006, después de un retraso respecto a los grandes museos, cuyas reformas fueron {5} en los setenta y ochenta.",
+          a: [["invertida"], ["demostrado"], ["dominada"], ["visitado"], ["inaugurado"], ["acometidas"]]
         },
         {
-          num: 12, title: "Corrige el error",
-          instr: "Cada frase tiene un error (o hay que confirmar que ya es correcta). Reescríbela bien.",
+          num: 5, title: "La pasiva con ser o estar",
+          instr: "Completa las frases con la forma pasiva con ser o estar. (El 1 ya está resuelto: Esta mañana su hermano ha sido galardonado (galardonar) con el premio Guay.)",
           type: "items",
           items: [
-            { t: "Estoy leyendo un libro ahora, pero mañana yo leo otro también. → {0}", a: [{ flex: ["estoy leyendo"], show: "Estoy leyendo un libro ahora mismo. (ya era correcto)" }], wide: true },
-            { t: "Ella está durmando en su habitación. → {0}", a: [["ella está durmiendo en su habitación"]], wide: true },
-            { t: "Nosotros estamos comiendo, hablando y viendo la televisión. → {0}", a: [["nosotros estamos comiendo y hablando", "estamos cenando juntos"]], wide: true },
-            { t: "Yo estoy escribendo un correo electrónico. → {0}", a: [["yo estoy escribiendo un correo electrónico"]], wide: true },
-            { t: "Estoy vistiendome para salir. → {0}", a: [["estoy vistiéndome para salir"]], wide: true }
-          ]
-        }
-      ]
-    },
-    {
-      id: "indefinido", num: 3, title: "Pretérito indefinido",
-      sub: "Unidad 8 · ¿Qué hizo Rosa ayer? — hablar del pasado",
-      exercises: [
-        {
-          num: 13, title: "Verbos regulares (-ar, -er, -ir)",
-          instr: "Conjuga el verbo en pretérito indefinido.",
-          type: "conjTable",
-          subjects: ["yo", "tú", "él / ella / Ud.", "nosotros/as", "ellos / ellas / Uds."],
-          cols: [
-            { label: "trabajar", a: [["trabajé"], ["trabajaste"], ["trabajó"], ["trabajamos"], ["trabajaron"]] },
-            { label: "comer", a: [["comí"], ["comiste"], ["comió"], ["comimos"], ["comieron"]] },
-            { label: "escribir", a: [["escribí"], ["escribiste"], ["escribió"], ["escribimos"], ["escribieron"]] }
+            { t: "El edificio {0} (construir) el próximo año por la empresa encargada de su diseño.", a: [["será construido"]], wide: true },
+            { t: "El cuchillo {0} (hallar) por su vecino cuando paseaba por un parque cercano.", a: [["fue hallado"]], wide: true },
+            { t: "Los presuntos asesinos {0} (encarcelar) desde ayer por la noche.", a: [["están encarcelados"]], wide: true },
+            { t: "Cuando tú llamaste, la programación de la televisión ya {0} (suspender).", a: [["había sido suspendida", "estaba suspendida"]], wide: true },
+            { t: "Cuando terminó de dar la conferencia, {0} (abuchear), por toda la gente de la sala.", a: [["fue abucheado"]], wide: true },
+            { t: "El cristal {0} (romper) antes de que tú llegaras.", a: [["había sido roto", "estaba roto"]], wide: true },
+            { t: "Cada año las aceitunas {0} (recoger) para elaborar el famoso aceite de oliva.", a: [["se recogen", "son recogidas"]], wide: true },
+            { t: "En aquella época, las chicas {0} (invitar) al cine por sus parejas.", a: [["eran invitadas"]], wide: true },
+            { t: "Aquella mujer {0} (sentenciar) a tener aquel final desde que conoció a su compañero.", a: [["estaba sentenciada"]], wide: true },
+            { t: "Recuerdo que todas las navidades la cena {0} (preparar) por tu madre.", a: [["era preparada"]], wide: true },
+            { t: "Durante la construcción del embalse en 1974, {0} (encontrar) miles de fósiles que nunca {1} (declarar).", a: [["fueron encontrados", "se encontraron"], ["fueron declarados", "se declararon"]], wide: true },
+            { t: "Los rehenes {0} (retener) por los atracadores durante más de seis horas.", a: [["fueron retenidos", "estuvieron retenidos"]], wide: true },
+            { t: "Las fiestas de mi pueblo {0} (suspender) porque no hay gente voluntaria para formar una comisión de fiestas.", a: [["han sido suspendidas", "se suspendieron"]], wide: true },
+            { t: "El escritor {0} (plagiar) en innumerables ocasiones por sus propios admiradores.", a: [["fue plagiado", "ha sido plagiado"]], wide: true }
           ]
         },
         {
-          num: 14, title: "Verbos irregulares: ir, ser, estar, hacer, ver",
-          instr: "Completa con el pretérito indefinido del verbo entre paréntesis.",
+          num: 6, title: "Participios con estar",
+          instr: "Completa las frases con los siguientes verbos en participio: traducir · reparar · resolver · castigar · fabricar · reservar.",
           type: "items",
           items: [
-            { t: "El verano pasado, yo {0} (ir) a Perú con mi familia.", a: [["fui"]] },
-            { t: "Nosotros {0} (estar) tres semanas en la Amazonía.", a: [["estuvimos"]] },
-            { t: "¿Qué tal {0} (ser) el viaje? — ¡Fantástico!", a: [["fue"]] },
-            { t: "Mi hermana {0} (hacer) un curso de español en Madrid.", a: [["hizo"]] },
-            { t: "Ayer nosotros {0} (ver) una película muy buena en el cine.", a: [["vimos"]] }
+            { t: "Ayer vino el técnico a revisar la lavadora. ¡Por fin está {0} porque no funcionaba!", a: [["reparada"]] },
+            { t: "El caso está {0}. El juez ha decidido que el acusado pague una multa.", a: [["resuelto"]] },
+            { t: "Mi hijo hoy no sale a jugar: está {0}.", a: [["castigado"]] },
+            { t: "El libro está {0} al inglés, pero al francés no.", a: [["traducido"]] },
+            { t: "Este producto está {0} en España y es de muy buena calidad.", a: [["fabricado"]] },
+            { t: "Disculpe, ¿está {0} este asiento?", a: [["reservado"]] }
           ]
-        },
-        {
-          num: 15, title: "Verbos con cambio ortográfico: jugar, empezar, llegar, buscar",
-          instr: "Completa con la primera persona (yo) del pretérito indefinido.",
-          type: "items",
-          items: [
-            { t: "Ayer (yo) {0} (jugar) al fútbol con mis amigos.", a: [["jugué"]] },
-            { t: "(Yo) {0} (empezar) a estudiar español hace dos años.", a: [["empecé"]] },
-            { t: "Anoche (yo) {0} (llegar) a casa muy tarde.", a: [["llegué"]] },
-            { t: "(Yo) {0} (buscar) las llaves durante media hora.", a: [["busqué"]] },
-            { t: "El lunes pasado (yo) {0} (empezar) un nuevo trabajo.", a: [["empecé"]] }
-          ]
-        },
-        {
-          num: 16, title: "Diálogo: la fiesta de cumpleaños",
-          instr: "Completa el diálogo con el pretérito indefinido de los verbos entre paréntesis.",
-          type: "text",
-          text: "— ¿Qué tal {0} (estar) tu cumpleaños?\n— Muy bien. Mis amigos {1} (venir) a mi casa y nosotros {2} (cenar) todos juntos.\n— ¿Y qué {3} (hacer) después de cenar?\n— {4} (Bailar) un poco y mi mejor amiga me {5} (dar) un regalo precioso.",
-          a: [["estuvo"], ["vinieron"], ["cenamos"], ["hicisteis"], ["bailamos"], ["dio"]]
-        },
-        {
-          num: 17, title: "La agenda de Guillermo",
-          instr: "Mira la agenda de la semana pasada de Guillermo y responde usando el pretérito indefinido.",
-          type: "agenda",
-          table: [["lunes", "reunión con el jefe"], ["martes", "comer con Ana en el centro"], ["miércoles", "gimnasio por la tarde"], ["jueves", "viajar a Barcelona"], ["viernes", "visitar el museo"]],
-          items: [
-            { t: "¿Qué hizo Guillermo el lunes? — {0}", a: [{ flex: ["reunion", "jefe"], show: "Tuvo una reunión con el jefe." }], wide: true },
-            { t: "¿Con quién comió el martes? — {0}", a: [{ flex: ["ana"], show: "Comió con Ana en el centro." }], wide: true },
-            { t: "¿Adónde viajó el jueves? — {0}", a: [{ flex: ["barcelona"], show: "Viajó a Barcelona." }], wide: true },
-            { t: "¿Qué visitó el viernes? — {0}", a: [{ flex: ["museo"], show: "Visitó el museo." }], wide: true }
-          ]
-        },
-        {
-          num: 18, title: "Texto de viaje: un país maravilloso",
-          instr: "Completa el texto con el pretérito indefinido de los verbos entre paréntesis.",
-          type: "text",
-          text: "El año pasado, Marina {0} (viajar) a Perú durante sus vacaciones. Ella {1} (ir) primero a Lima y después {2} (visitar) Cuzco. En Cuzco, {3} (conocer) Machu Picchu, un lugar impresionante. También {4} (estar) tres días en la Amazonía, donde {5} (ver) animales increíbles. Marina {6} (volver) a casa muy contenta y {7} (decir) a todos sus amigos que Perú es un país maravilloso.",
-          a: [["viajó"], ["fue"], ["visitó"], ["conoció"], ["estuvo"], ["vio"], ["volvió"], ["dijo"]]
-        }
-      ]
-    },
-    {
-      id: "contraste", num: 4, title: "Contraste y repaso",
-      sub: "Presente · Estar + gerundio · Pretérito indefinido, juntos",
-      exercises: [
-        {
-          num: 19, title: "Antes y ahora: presente habitual vs. pretérito indefinido",
-          instr: "Completa cada frase con el presente y el pretérito indefinido.",
-          model: "Modelo: Normalmente (yo) empiezo a las nueve, pero ayer empecé a las siete.",
-          type: "items",
-          items: [
-            { t: "Normalmente Pedro {0} (comer) en casa, pero el sábado pasado {1} (comer) en un restaurante.", a: [["come"], ["comió"]] },
-            { t: "Yo siempre {0} (levantarse) a las siete, pero esta mañana {1} (levantarse) a las nueve.", a: [["me levanto"], ["me levanté"]] },
-            { t: "Nosotros normalmente {0} (trabajar) hasta las cinco, pero el viernes pasado {1} (trabajar) hasta las ocho.", a: [["trabajamos"], ["trabajamos"]] },
-            { t: "Ella normalmente {0} (ir) al gimnasio los lunes, pero la semana pasada {1} (ir) el domingo.", a: [["va"], ["fue"]] }
-          ]
-        },
-        {
-          num: 20, title: "Texto final: el cumpleaños de Carmen",
-          instr: "Completa eligiendo la forma correcta: presente, estar + gerundio, o pretérito indefinido.",
-          type: "text",
-          text: "Hoy es el cumpleaños de Carmen. Normalmente ella {0} (trabajar) todo el día, pero hoy no trabaja porque tiene el día libre. Ahora mismo, Carmen {1} (preparar) la mesa para la fiesta y sus hijos {2} (decorar) el salón con globos. El año pasado, para su cumpleaños, Carmen {3} (ir) a la playa con toda la familia y lo {4} (pasar) muy bien. Este año, sus amigos {5} (venir) a las ocho y todos van a cenar juntos. En este momento, su marido {6} (llamar) por teléfono a los invitados para confirmar la hora, mientras Carmen {7} (sonreír) feliz, pensando en lo bien que lo {8} (pasar) siempre en sus cumpleaños.",
-          a: [["trabaja"], ["está preparando"], ["están decorando"], ["fue"], ["pasó"], ["vienen"], ["está llamando"], ["sonríe"], ["pasa"]]
         }
       ]
     }
@@ -887,10 +756,16 @@
       }
 
       const endIdx = allInputs.length;
-      hdr.btn.addEventListener("click", function () {
-        gradeRange(startIdx, endIdx);
-        updateScore();
-      });
+      if (endIdx === startIdx) {
+        // Puramente informativo (p. ej. un texto de lectura sin huecos): no hay nada que
+        // corregir, así que no mostramos un botón "Corregir" que no haría nada.
+        hdr.btn.remove();
+      } else {
+        hdr.btn.addEventListener("click", function () {
+          gradeRange(startIdx, endIdx);
+          updateScore();
+        });
+      }
 
       sec.appendChild(card);
     });
@@ -943,7 +818,11 @@
   });
 
   // ---------- results panel: motivational message + send to teacher ----------
-  const TITLE_LABEL = "Ejercicios A1 (Presente, gerundio, indefinido)";
+  const TITLE_LABEL = "12B Turismo cultural — La pasiva (B2)"; // short label used in email subject / summary header
+  // These are Angel's real, reusable contact details — copy verbatim into every new
+  // exercise unless he says they changed. IMPORTANT: telegram MUST be his @username
+  // (no @, no phone number) — t.me/+<phone> links silently ignore ?text= and never
+  // pre-fill; only t.me/<username>?text=... does. See SKILL.md "Canal por canal".
   const TEACHER = {
     whatsapp: "79856456905",
     telegram: "angel9904",
