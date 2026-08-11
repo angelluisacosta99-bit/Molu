@@ -233,7 +233,7 @@
     border: none; cursor: pointer; font-family: inherit;
   }
   .channel-btn:hover { background: var(--rp-accent); }
-  .channel-copied { font-size: 0.8rem; color: var(--rp-accent); margin-left: 0.5rem; display: none; }
+  .channel-copied { font-size: 0.8rem; color: var(--rp-accent); margin-top: 0.6rem; display: none; width: 100%; }
 </style>
 
 <script>
@@ -795,10 +795,11 @@
     }
     refreshLinks();
     nameEl.oninput = refreshLinks;
-    function showCopied() {
+    function showCopied(text) {
       const msg = document.getElementById("chCopiedMsg");
-      msg.style.display = "inline";
-      setTimeout(function () { msg.style.display = "none"; }, 2000);
+      msg.textContent = text || "¡Copiado!";
+      msg.style.display = "block";
+      setTimeout(function () { msg.style.display = "none"; }, 3200);
     }
     function copyText(text, onDone) {
       if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -825,30 +826,32 @@
     document.getElementById("chCopy").onclick = function () {
       copyText(currentSummary(), function (ok) { if (ok) showCopied(); });
     };
-    // Not every channel's own link/redirect reliably delivers the summary text:
-    // Telegram's t.me links have no way to pre-fill a message at all, and mailto:
-    // opening is unreliable inside embedded/sandboxed views (can even fail silently).
-    // Copying to the clipboard is the one thing that works everywhere, so every
-    // channel button also copies the summary — with a visible confirmation — as a
-    // safety net alongside whatever that channel's own link does.
-    ["chWhatsapp", "chTelegram", "chTeams"].forEach(function (id) {
+    // Telegram and Teams open the chat but can't pre-fill the message (unlike WhatsApp's
+    // ?text= param), so their buttons also copy the summary and tell the student in plain
+    // words to paste it once the chat is open — a silent "¡Copiado!" is easy to miss right
+    // after the app switches away to open the chat.
+    ["chTelegram", "chTeams"].forEach(function (id) {
       document.getElementById(id).addEventListener("click", function () {
-        copyText(currentSummary(), function (ok) { if (ok) showCopied(); });
+        copyText(currentSummary(), function (ok) {
+          if (ok) showCopied("Texto copiado. Pégalo (mantén pulsado → Pegar) en el chat que se acaba de abrir.");
+        });
       });
     });
-    // Email: mailto: links are unreliable inside embedded/sandboxed views and can
-    // even blank out the whole page if the OS has no mail client registered, so this
-    // opens the mail client in its own tab (never the current page) and separately
-    // copies the summary as a fallback in case the mail client never opens.
-    // Both actions consume the click's "user activation" token, and a browser only grants
-    // it once per gesture — so the copy has to happen first, synchronously (via the legacy
+    // Email: mailto: links can't be relied on to actually launch a mail app — depending on
+    // the device, the browser, and whether a mail app is even set up, window.open() can fail
+    // completely silently with no error and no visible sign anything happened. So this always
+    // copies the summary with a clear, actionable message (including the teacher's address to
+    // paste into), and only attempts to open the mail app as an unguaranteed bonus on top.
+    // Both actions consume the click's "user activation" token, and a browser only grants it
+    // once per gesture — so the copy has to happen first, synchronously (via the legacy
     // execCommand path, not the async Clipboard API, which would still lose the activation
-    // waiting on its promise), and window.open() right after, still synchronously. Doing
-    // window.open() first (as an earlier version of this fix did) silently breaks the copy.
+    // waiting on its promise), and window.open() right after, still synchronously.
     document.getElementById("chEmail").onclick = function () {
       const text = currentSummary();
       const mailtoUrl = "mailto:" + TEACHER.email + "?subject=" + encodeURIComponent("Resultados — " + TITLE_LABEL) + "&body=" + encodeURIComponent(text);
-      fallbackCopy(text, function (ok) { if (ok) showCopied(); });
+      fallbackCopy(text, function (ok) {
+        if (ok) showCopied("Texto copiado. Si no se abrió tu correo solo, pégalo (mantén pulsado → Pegar) en un email a " + TEACHER.email + ".");
+      });
       try { window.open(mailtoUrl, "_blank", "noopener"); } catch (e) { /* ignore */ }
     };
   }
