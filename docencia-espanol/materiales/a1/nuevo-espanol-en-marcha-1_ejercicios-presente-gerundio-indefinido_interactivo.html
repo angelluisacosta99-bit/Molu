@@ -1,0 +1,1098 @@
+<title>Ejercicios interactivos A1 — Presente, gerundio, indefinido</title>
+<style>
+  :root {
+    --paper: #F3F5F0;
+    --paper-raised: #FFFFFF;
+    --ink: #17223B;
+    --ink-soft: #4B5468;
+    --pencil: #6E7280;
+    --gold: #A8790C;
+    --gold-soft: #F1E4C2;
+    --good: #1F7A4C;
+    --good-bg: #E7F3EC;
+    --bad: #B23A2E;
+    --bad-bg: #FBECE9;
+    --border: #DCDFD3;
+    --input-bg: #FCFDFB;
+    --focus: #A8790C;
+    --shadow: 0 1px 2px rgba(23,34,59,0.06), 0 4px 14px rgba(23,34,59,0.06);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #101626;
+      --paper-raised: #182036;
+      --ink: #ECEEF3;
+      --ink-soft: #AEB6C9;
+      --pencil: #8B93A6;
+      --gold: #E0B44A;
+      --gold-soft: #3A3220;
+      --good: #4CB47F;
+      --good-bg: #163326;
+      --bad: #E17868;
+      --bad-bg: #3A1E1B;
+      --border: #2A3348;
+      --input-bg: #131A2C;
+      --focus: #E0B44A;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 20px rgba(0,0,0,0.35);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #101626;
+    --paper-raised: #182036;
+    --ink: #ECEEF3;
+    --ink-soft: #AEB6C9;
+    --pencil: #8B93A6;
+    --gold: #E0B44A;
+    --gold-soft: #3A3220;
+    --good: #4CB47F;
+    --good-bg: #163326;
+    --bad: #E17868;
+    --bad-bg: #3A1E1B;
+    --border: #2A3348;
+    --input-bg: #131A2C;
+    --focus: #E0B44A;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 20px rgba(0,0,0,0.35);
+  }
+
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--paper);
+    color: var(--ink);
+  }
+  body {
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 4rem;
+  }
+  h1, h2, h3 {
+    font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+    text-wrap: balance;
+    margin: 0;
+  }
+  .mono, input, .score, .exnum, .navdot-label {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  }
+  a { color: inherit; }
+
+  /* ---------- top bar ---------- */
+  .topbar {
+    position: sticky; top: 0; z-index: 20;
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+  .topbar-inner {
+    max-width: 760px; margin: 0 auto;
+    padding: 0.7rem 1.25rem;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 1rem; flex-wrap: wrap;
+  }
+  .brand { display: flex; align-items: baseline; gap: 0.6rem; }
+  .brand-title { font-size: 0.95rem; font-weight: 700; letter-spacing: 0.01em; }
+  .brand-sub { font-size: 0.78rem; color: var(--pencil); }
+  .nav-dots { display: flex; gap: 0.4rem; }
+  .nav-dots a {
+    text-decoration: none;
+    font-size: 0.7rem;
+    padding: 0.28rem 0.6rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    color: var(--ink-soft);
+    white-space: nowrap;
+  }
+  .nav-dots a:hover { border-color: var(--gold); color: var(--gold); }
+  .score-wrap { display: flex; align-items: center; gap: 0.6rem; }
+  .score { font-size: 0.82rem; font-weight: 600; }
+  .score .num { color: var(--gold); }
+  .bar {
+    width: 84px; height: 6px; border-radius: 999px;
+    background: var(--border); overflow: hidden;
+  }
+  .bar-fill { height: 100%; background: var(--gold); width: 0%; transition: width 0.35s ease; }
+
+  /* ---------- hero ---------- */
+  .hero {
+    max-width: 760px; margin: 0 auto;
+    padding: 2.6rem 1.25rem 1.6rem;
+  }
+  .eyebrow {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 0.7rem;
+  }
+  .hero h1 { font-size: clamp(1.7rem, 4vw, 2.3rem); font-weight: 700; margin-bottom: 0.6rem; }
+  .hero p { color: var(--ink-soft); max-width: 62ch; font-size: 0.98rem; }
+  .hero-meta {
+    margin-top: 1.1rem; display: flex; gap: 1.2rem; flex-wrap: wrap;
+    font-size: 0.82rem; color: var(--pencil);
+  }
+  .hero-meta strong { color: var(--ink); }
+  .correct-all-wrap {
+    max-width: 760px; margin: 2.4rem auto 0; padding: 0 1.25rem 2.4rem;
+    text-align: center;
+  }
+  .correct-all-btn {
+    margin-top: 1.3rem;
+    background: var(--ink); color: var(--paper-raised);
+    border: none; border-radius: 8px;
+    padding: 0.65rem 1.2rem; font-size: 0.88rem; font-weight: 600;
+    cursor: pointer;
+  }
+  .correct-all-btn:hover { background: var(--gold); color: var(--ink); }
+  :root[data-theme="dark"] .correct-all-btn:hover,
+  :root:not([data-theme="light"]) .correct-all-btn:hover { color: #10142699; }
+  .progress-hint { margin-top: 0.7rem; font-size: 0.82rem; color: var(--pencil); text-align: center; }
+  .progress-hint.complete { color: var(--good); font-weight: 600; }
+
+  /* ---------- blocks ---------- */
+  main { max-width: 760px; margin: 0 auto; padding: 0 1.25rem; }
+  .block { margin-top: 2.4rem; scroll-margin-top: 6rem; }
+  .block-head {
+    display: flex; align-items: baseline; gap: 0.75rem;
+    padding-bottom: 0.6rem; margin-bottom: 1.3rem;
+    border-bottom: 2px solid var(--ink);
+  }
+  .block-num {
+    font-family: Georgia, serif; font-weight: 700; font-size: 1.05rem;
+    color: var(--paper-raised); background: var(--ink);
+    width: 2rem; height: 2rem; border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .block-titles h2 { font-size: 1.25rem; }
+  .block-titles .sub { font-size: 0.8rem; color: var(--pencil); margin-top: 0.15rem; }
+
+  /* ---------- exercise card ---------- */
+  .exercise {
+    background: var(--paper-raised);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    padding: 1.15rem 1.3rem 1.3rem;
+    margin-bottom: 1.1rem;
+  }
+  .exercise-head {
+    display: flex; align-items: flex-start; justify-content: space-between;
+    gap: 1rem; margin-bottom: 0.3rem;
+  }
+  .exercise-title { display: flex; gap: 0.6rem; align-items: baseline; }
+  .exnum { color: var(--gold); font-weight: 700; font-size: 0.85rem; }
+  .exercise-title h3 { font-size: 1.02rem; font-weight: 700; }
+  .exercise-instr { color: var(--pencil); font-size: 0.85rem; font-style: italic; margin-bottom: 0.85rem; }
+  .exercise-model { color: var(--pencil); font-size: 0.85rem; font-style: italic; margin-bottom: 0.7rem; }
+
+  .check-btn {
+    background: transparent; color: var(--ink);
+    border: 1px solid var(--ink); border-radius: 7px;
+    padding: 0.32rem 0.75rem; font-size: 0.78rem; font-weight: 600;
+    cursor: pointer; white-space: nowrap; flex-shrink: 0;
+  }
+  .check-btn:hover { background: var(--ink); color: var(--paper-raised); }
+
+  .items { display: flex; flex-direction: column; gap: 0.55rem; }
+  .item-row { font-size: 0.95rem; line-height: 1.7; }
+  .item-letter { color: var(--gold); font-weight: 700; margin-right: 0.3rem; }
+
+  input.blank {
+    background: var(--input-bg);
+    border: none; border-bottom: 2px solid var(--pencil);
+    color: var(--ink);
+    font-size: 0.95rem;
+    padding: 0.1rem 0.3rem;
+    width: 8.5em;
+    text-align: center;
+    border-radius: 3px 3px 0 0;
+  }
+  input.blank.wide { width: 15em; }
+  input.blank.full { width: 100%; max-width: 26em; text-align: left; }
+  input.blank:focus { outline: none; border-bottom-color: var(--focus); box-shadow: 0 1px 0 0 var(--focus); }
+  input.blank.correct { background: var(--good-bg); border-bottom-color: var(--good); color: var(--good); font-weight: 600; }
+  input.blank.incorrect { background: var(--bad-bg); border-bottom-color: var(--bad); color: var(--bad); }
+
+  .reveal {
+    font-size: 0.82rem; color: var(--good); font-style: italic;
+    margin-left: 0.3rem; display: none;
+  }
+  .reveal.show { display: inline; }
+  .reveal.bad-reveal { color: var(--bad); }
+
+  .paragraph { font-size: 0.97rem; line-height: 2; }
+
+  table.exercise-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+  table.exercise-table th, table.exercise-table td {
+    text-align: left; padding: 0.45rem 0.6rem; border-bottom: 1px solid var(--border);
+  }
+  table.exercise-table th { color: var(--pencil); font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.03em; }
+  .table-wrap { overflow-x: auto; }
+  .ref-table { margin-bottom: 0.9rem; }
+  .ref-table td:first-child { color: var(--gold); font-weight: 600; text-transform: capitalize; }
+
+  /* ---------- footer ---------- */
+  footer {
+    max-width: 760px; margin: 3rem auto 0; padding: 1.5rem 1.25rem 0;
+    border-top: 1px solid var(--border);
+    color: var(--pencil); font-size: 0.8rem;
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;
+  }
+
+  @media (max-width: 560px) {
+    .nav-dots { display: none; }
+    input.blank.wide { width: 11em; }
+    input.blank.full { max-width: 100%; }
+  }
+
+  /* ---------- access gate ---------- */
+  html[data-locked="true"] .gated-content { display: none; }
+  html[data-locked="false"] .gate-overlay { display: none; }
+  .gate-overlay {
+    position: fixed; inset: 0; z-index: 100; background: var(--paper);
+    display: flex; align-items: center; justify-content: center; padding: 1.5rem;
+  }
+  .gate-card {
+    max-width: 360px; width: 100%; background: var(--paper-raised);
+    border: 1px solid var(--border); border-radius: 12px; box-shadow: var(--shadow);
+    padding: 2.2rem 1.9rem; text-align: center;
+  }
+  .gate-card .eyebrow { justify-content: center; display: flex; }
+  .gate-card h2 { font-size: 1.15rem; margin: 0.4rem 0 0.5rem; }
+  .gate-card p { color: var(--ink-soft); font-size: 0.86rem; margin: 0 0 1.2rem; }
+  .gate-card input {
+    width: 100%; text-align: center; font-size: 1rem; letter-spacing: 0.08em;
+    background: var(--input-bg); border: 1.5px solid var(--border); border-radius: 8px;
+    padding: 0.6rem 0.8rem; color: var(--ink); margin-bottom: 0.8rem; text-transform: uppercase;
+  }
+  .gate-card input:focus { outline: none; border-color: var(--focus); }
+  .gate-card button {
+    width: 100%; background: var(--ink); color: var(--paper-raised); border: none;
+    border-radius: 8px; padding: 0.65rem 1rem; font-size: 0.9rem; font-weight: 600; cursor: pointer;
+  }
+  .gate-card button:hover { background: var(--gold); color: var(--ink); }
+  .gate-error { color: var(--bad); font-size: 0.82rem; margin-top: 0.7rem; min-height: 1.1em; }
+
+  /* ---------- results panel ---------- */
+  /* Deliberately single-theme (always dark), independent of the page's light/dark mode —
+     uses fixed local custom properties instead of the swappable --ink/--paper-raised/--gold
+     tokens, which invert meaning in dark mode and would otherwise make this unreadable. */
+  .results-panel {
+    --rp-bg: #17223B;
+    --rp-card: rgba(255,255,255,0.06);
+    --rp-text: #ECEEF3;
+    --rp-text-soft: #C7CEDD;
+    --rp-placeholder: #8E97AC;
+    --rp-accent: #D9A441;
+    --rp-bad: #E17868;
+    --rp-input-bg: rgba(255,255,255,0.08);
+    --rp-input-border: rgba(255,255,255,0.22);
+    background: var(--rp-bg); color: var(--rp-text); border-radius: 14px;
+    padding: 1.8rem 1.7rem; margin: 2.2rem 0 2rem; scroll-margin-top: 6rem;
+  }
+  .results-panel[hidden] { display: none; }
+  .results-headline { font-family: Georgia, serif; font-size: 1.5rem; font-weight: 700; margin-bottom: 0.35rem; color: var(--rp-text); }
+  .results-sub { font-size: 0.92rem; color: var(--rp-text-soft); margin-bottom: 1.3rem; max-width: 56ch; }
+  .results-score-row { display: flex; align-items: baseline; gap: 0.6rem; margin-bottom: 1.3rem; }
+  .results-score-num { font-family: Georgia, serif; font-size: 2.4rem; font-weight: 700; color: var(--rp-accent); }
+  .results-score-den { font-size: 1rem; color: var(--rp-text-soft); }
+  .results-name {
+    display: block; width: 100%; max-width: 320px; font-size: 0.9rem;
+    background: var(--rp-input-bg); border: 1px solid var(--rp-input-border); border-radius: 8px;
+    padding: 0.55rem 0.75rem; color: var(--rp-text); margin-bottom: 1.1rem; font-family: inherit;
+  }
+  .results-name::placeholder { color: var(--rp-placeholder); }
+  .results-name:focus { outline: none; border-color: var(--rp-accent); }
+  .results-errors {
+    background: var(--rp-card); border-radius: 10px; padding: 0.9rem 1.1rem;
+    margin-bottom: 1.3rem; max-height: 220px; overflow-y: auto;
+  }
+  .results-errors-title { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--rp-text-soft); margin-bottom: 0.5rem; }
+  .results-error-item { font-size: 0.85rem; line-height: 1.6; color: var(--rp-text); }
+  .results-error-item b { color: var(--rp-accent); font-weight: 600; }
+  .results-error-item s { color: var(--rp-bad); text-decoration: line-through; opacity: 0.85; }
+  .channel-label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--rp-text-soft); margin-bottom: 0.6rem; }
+  .channel-row { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+  .channel-btn {
+    display: inline-flex; align-items: center; gap: 0.45rem;
+    background: var(--rp-text); color: var(--rp-bg); text-decoration: none;
+    border-radius: 8px; padding: 0.55rem 0.95rem; font-size: 0.85rem; font-weight: 600;
+    border: none; cursor: pointer; font-family: inherit;
+  }
+  .channel-btn:hover { background: var(--rp-accent); }
+  .channel-copied { font-size: 0.8rem; color: var(--rp-accent); margin-left: 0.5rem; display: none; }
+</style>
+
+<script>
+  document.documentElement.setAttribute(
+    "data-locked",
+    localStorage.getItem("unlocked-a1-presente-gerundio-indefinido") === "1" ? "false" : "true"
+  );
+</script>
+
+<div class="gate-overlay">
+  <div class="gate-card">
+    <div class="eyebrow">Acceso privado</div>
+    <h2>Ejercicios A1</h2>
+    <p>Pídele el código a tu profesor para entrar.</p>
+    <input type="text" id="gateInput" placeholder="CÓDIGO" autocomplete="off" autocapitalize="characters" />
+    <button id="gateBtn">Entrar</button>
+    <div class="gate-error" id="gateError"></div>
+  </div>
+</div>
+<script>
+  (function () {
+    const CODE = "PRESENTE";
+    const STORAGE_KEY = "unlocked-a1-presente-gerundio-indefinido";
+    function tryUnlock() {
+      const val = document.getElementById("gateInput").value.trim().toUpperCase();
+      if (val === CODE) {
+        localStorage.setItem(STORAGE_KEY, "1");
+        document.documentElement.setAttribute("data-locked", "false");
+      } else {
+        document.getElementById("gateError").textContent = "Código incorrecto. Inténtalo de nuevo.";
+      }
+    }
+    document.getElementById("gateBtn").addEventListener("click", tryUnlock);
+    document.getElementById("gateInput").addEventListener("keydown", function (e) {
+      if (e.key === "Enter") tryUnlock();
+    });
+  })();
+</script>
+
+<div class="topbar gated-content">
+  <div class="topbar-inner">
+    <div class="brand">
+      <span class="brand-title">Ejercicios A1</span>
+      <span class="brand-sub">Presente · Gerundio · Indefinido</span>
+    </div>
+    <nav class="nav-dots" id="navDots"></nav>
+    <div class="score-wrap">
+      <div class="bar"><div class="bar-fill" id="barFill"></div></div>
+      <div class="score"><span class="num" id="scoreNum">0</span><span style="color:var(--pencil)"> / </span><span id="scoreTotal">0</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="hero gated-content">
+  <div class="eyebrow">Nuevo Español en Marcha 1 · Nivel A1 · Unidades 1-8</div>
+  <h1>20 ejercicios de gramática, corregidos al instante</h1>
+  <p>Presente, estar + gerundio y pretérito indefinido. Escribe tu respuesta en cada hueco y pulsa
+  «Corregir» — verás al momento si acertaste, y la forma correcta si no.</p>
+  <div class="hero-meta">
+    <span><strong id="totalBlanksLabel">—</strong> huecos en total</span>
+    <span><strong>4</strong> bloques</span>
+    <span><strong>20</strong> ejercicios</span>
+  </div>
+</div>
+
+<main id="main" class="gated-content"></main>
+
+<div class="correct-all-wrap gated-content">
+  <button class="correct-all-btn" id="correctAllBtn">Corregir todos los ejercicios</button>
+  <div class="progress-hint" id="progressHint"></div>
+</div>
+
+<div id="resultsPanel" class="results-panel gated-content" hidden>
+  <div class="results-headline" id="resHeadline"></div>
+  <div class="results-sub" id="resSub"></div>
+  <div class="results-score-row">
+    <span class="results-score-num" id="resScoreNum"></span>
+    <span class="results-score-den" id="resScoreDen"></span>
+  </div>
+  <input type="text" class="results-name" id="resName" placeholder="Tu nombre (para que tu profesor sepa quién eres)" />
+  <div class="results-errors" id="resErrors"></div>
+  <div class="channel-label">Enviar este resumen a tu profesor</div>
+  <div class="channel-row">
+    <a class="channel-btn" id="chWhatsapp" target="_blank" rel="noopener">WhatsApp</a>
+    <a class="channel-btn" id="chTelegram" target="_blank" rel="noopener">Telegram</a>
+    <button class="channel-btn" id="chEmail" type="button">Correo</button>
+    <a class="channel-btn" id="chTeams" target="_blank" rel="noopener">Teams</a>
+    <button class="channel-btn" id="chCopy" type="button">Copiar resumen</button>
+    <span class="channel-copied" id="chCopiedMsg">¡Copiado!</span>
+  </div>
+</div>
+
+<footer class="gated-content">
+  <span>Nuevo Español en Marcha 1 · Unidades 1-8</span>
+  <span>© Angel Luis Acosta González</span>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  // ---------- grading helpers ----------
+  function norm(s) {
+    return (s || "")
+      .toLowerCase()
+      .replace(/[¿?¡!.,]/g, "")
+      .trim()
+      .replace(/\s+/g, " ");
+  }
+  function stripAccents(s) {
+    return s.normalize("NFD").replace(/[̀-ͯ]/g, "");
+  }
+  function escapeHtml(s) {
+    return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+  // answer spec: array of accepted exact strings, OR {flex:[...]} meaning all keywords must appear (accent-insensitive)
+  function isCorrect(input, spec) {
+    const n = norm(input);
+    if (!n) return false;
+    if (Array.isArray(spec)) {
+      return spec.some(function (a) { return norm(a) === n; });
+    }
+    if (spec && spec.flex) {
+      const hay = stripAccents(n);
+      return spec.flex.every(function (k) { return hay.indexOf(stripAccents(k)) !== -1; });
+    }
+    return false;
+  }
+
+  // ---------- exercise data ----------
+  // template blanks use {0},{1}... matched to item.answers[i]
+  const blocks = [
+    {
+      id: "presente", num: 1, title: "El presente",
+      sub: "Unidades 1-3 · Verbos regulares e irregulares, reflexivos, preguntas",
+      exercises: [
+        {
+          num: 1, title: "Verbos regulares (-ar, -er, -ir)",
+          instr: "Completa con la forma correcta del presente.",
+          type: "items",
+          items: [
+            { t: "María {0} (trabajar) en un hospital y {1} (vivir) en Madrid.", a: [["trabaja"], ["vive"]] },
+            { t: "¿Tú {0} (comer) en casa o en la oficina normalmente?", a: [["comes"]] },
+            { t: "Nosotros {0} (estudiar) español los lunes y los miércoles.", a: [["estudiamos"]] },
+            { t: "Mis padres {0} (vivir) en Sevilla desde hace diez años.", a: [["viven"]] },
+            { t: "Yo {0} (trabajar) de nueve a cinco y {1} (comer) a la una.", a: [["trabajo"], ["como"]] }
+          ]
+        },
+        {
+          num: 2, title: "Ser y estar",
+          instr: "Elige el verbo correcto (ser o estar) y conjúgalo.",
+          type: "items",
+          items: [
+            { t: "Pablo {0} profesor de inglés. (ser / estar)", a: [["es"]] },
+            { t: "Hoy Ana {0} muy contenta porque tiene vacaciones. (ser / estar)", a: [["está"]] },
+            { t: "Nosotros {0} de Rusia, pero ahora {1} en España. (ser / estar)", a: [["somos"], ["estamos"]] },
+            { t: "Este bolígrafo no {0} mío, {1} de Carlos. (ser / estar)", a: [["es"], ["es"]] },
+            { t: "Normalmente Luis {0} muy tranquilo, pero hoy {1} nervioso por el examen. (ser / estar)", a: [["es"], ["está"]] }
+          ]
+        },
+        {
+          num: 3, title: "Verbos irregulares: empezar, volver, ir, salir",
+          instr: "Completa el horario de Elena con el verbo correcto.",
+          type: "items",
+          items: [
+            { t: "Elena {0} (empezar) a trabajar a las ocho de la mañana.", a: [["empieza"]] },
+            { t: "Ella {0} (ir) a la oficina en autobús.", a: [["va"]] },
+            { t: "A las dos, Elena {0} (volver) a casa para comer.", a: [["vuelve"]] },
+            { t: "Por la tarde, ella {0} (salir) con sus amigas al cine.", a: [["sale"]] },
+            { t: "¿A qué hora {0} (empezar) tú a trabajar?", a: [["empiezas"]] }
+          ]
+        },
+        {
+          num: 4, title: "Verbos reflexivos: levantarse, ducharse, acostarse",
+          instr: "Completa la rutina de Jorge con el pronombre y el verbo correctos.",
+          type: "items",
+          items: [
+            { t: "Jorge {0} (levantarse) a las siete de la mañana.", a: [["se levanta"]] },
+            { t: "Después, él {0} (ducharse) y {1} (vestirse) rápido.", a: [["se ducha"], ["se viste"]] },
+            { t: "Nosotros {0} (acostarse) siempre después de las once.", a: [["nos acostamos"]] },
+            { t: "¿Tú {0} (levantarse) temprano los fines de semana?", a: [["te levantas"]] },
+            { t: "Mis hijos {0} (acostarse) a las nueve todos los días.", a: [["se acuestan"]] }
+          ]
+        },
+        {
+          num: 5, title: "Preguntas: dónde, de dónde, adónde",
+          instr: "Escribe la pregunta correcta para cada respuesta, usando dónde, de dónde o adónde.",
+          type: "items",
+          items: [
+            { t: "{0} — Soy de Moscú.", a: [["de dónde eres"]], wide: true },
+            { t: "{0} — Vivo en la calle Mayor, número 12.", a: [["dónde vives"]], wide: true },
+            { t: "{0} — Voy al gimnasio todos los martes.", a: [["adónde vas"]], wide: true },
+            { t: "{0} — Estoy en la biblioteca ahora mismo.", a: [["dónde estás"]], wide: true },
+            { t: "{0} — Vamos a la playa este fin de semana.", a: [["adónde vais"]], wide: true }
+          ]
+        },
+        {
+          num: 6, title: "Texto: un día normal de Sofía",
+          instr: "Completa el texto con la forma correcta del presente de los verbos entre paréntesis.",
+          type: "text",
+          text: "Sofía {0} (levantarse) a las siete y {1} (ducharse) en diez minutos. Ella {2} (trabajar) en una escuela y {3} (empezar) a las ocho y media. A mediodía, {4} (comer) con sus compañeros en la cafetería. Por la tarde {5} (volver) a casa y {6} (ir) al gimnasio. Normalmente, ella {7} (acostarse) a las once de la noche.",
+          a: [["se levanta"], ["se ducha"], ["trabaja"], ["empieza"], ["come"], ["vuelve"], ["va"], ["se acuesta"]]
+        }
+      ]
+    },
+    {
+      id: "gerundio", num: 2, title: "Estar + gerundio",
+      sub: "Unidad 7 · ¿Qué estás haciendo? — presente continuo",
+      exercises: [
+        {
+          num: 7, title: "Formar el gerundio (verbos regulares)",
+          instr: "Escribe el gerundio de cada verbo. Recuerda: -ar → -ando; -er/-ir → -iendo.",
+          type: "table2",
+          rows: [
+            ["hablar", [["hablando"]]], ["comer", [["comiendo"]]], ["escribir", [["escribiendo"]]],
+            ["trabajar", [["trabajando"]]], ["abrir", [["abriendo"]]], ["cocinar", [["cocinando"]]]
+          ]
+        },
+        {
+          num: 8, title: "Gerundios irregulares",
+          instr: "Escribe el gerundio irregular de cada verbo.",
+          type: "table2",
+          rows: [
+            ["leer", [["leyendo"]]], ["dormir", [["durmiendo"]]], ["decir", [["diciendo"]]],
+            ["pedir", [["pidiendo"]]], ["oír", [["oyendo"]]]
+          ]
+        },
+        {
+          num: 9, title: "¿Qué está haciendo cada persona?",
+          instr: "Completa con estar + gerundio, usando el verbo entre paréntesis.",
+          type: "items",
+          items: [
+            { t: "Ahora mismo, mi madre {0} (cocinar) la cena en la cocina.", a: [["está cocinando"]] },
+            { t: "Los niños {0} (jugar) en el parque en este momento.", a: [["están jugando"]] },
+            { t: "¿Qué {0} (hacer, tú) ahora? — {1} (leer) un libro muy interesante.", a: [["estás haciendo"], ["estoy leyendo"]] },
+            { t: "Nosotros {0} (estudiar) para el examen de español.", a: [["estamos estudiando"]] },
+            { t: "Mi hermano {0} (dormir) la siesta en el sofá.", a: [["está durmiendo"]] }
+          ]
+        },
+        {
+          num: 10, title: "Verbos reflexivos con gerundio (dos formas)",
+          instr: "Transforma cada frase a la otra forma posible.",
+          model: "Modelo: Estoy lavándome → Me estoy lavando.",
+          type: "items",
+          items: [
+            { t: "Estoy duchándome. → {0}", a: [["me estoy duchando"]], wide: true },
+            { t: "Rosa se está peinando. → {0}", a: [["rosa está peinándose"]], wide: true },
+            { t: "Nos estamos vistiendo. → {0}", a: [["estamos vistiéndonos"]], wide: true },
+            { t: "Los niños están lavándose los dientes. → {0}", a: [["los niños se están lavando los dientes"]], wide: true },
+            { t: "Mi padre se está afeitando. → {0}", a: [["mi padre está afeitándose"]], wide: true }
+          ]
+        },
+        {
+          num: 11, title: "Diálogo por teléfono",
+          instr: "Completa el diálogo con estar + gerundio.",
+          type: "text",
+          text: "— ¡Hola, Marta! ¿Qué {0} (hacer)?\n— Nada especial, {1} (ver) la televisión. ¿Y tú?\n— Yo {2} (preparar) la cena con mi hermana.\n— ¡Qué bien! ¿Y vuestros padres? ¿Qué {3} (hacer)?\n— Ellos {4} (leer) el periódico en el salón.",
+          a: [["estás haciendo"], ["estoy viendo"], ["estoy preparando"], ["están haciendo"], ["están leyendo"]]
+        },
+        {
+          num: 12, title: "Corrige el error",
+          instr: "Cada frase tiene un error (o hay que confirmar que ya es correcta). Reescríbela bien.",
+          type: "items",
+          items: [
+            { t: "Estoy leyendo un libro ahora, pero mañana yo leo otro también. → {0}", a: [{ flex: ["estoy leyendo"], show: "Estoy leyendo un libro ahora mismo. (ya era correcto)" }], wide: true },
+            { t: "Ella está durmando en su habitación. → {0}", a: [["ella está durmiendo en su habitación"]], wide: true },
+            { t: "Nosotros estamos comiendo, hablando y viendo la televisión. → {0}", a: [["nosotros estamos comiendo y hablando", "estamos cenando juntos"]], wide: true },
+            { t: "Yo estoy escribendo un correo electrónico. → {0}", a: [["yo estoy escribiendo un correo electrónico"]], wide: true },
+            { t: "Estoy vistiendome para salir. → {0}", a: [["estoy vistiéndome para salir"]], wide: true }
+          ]
+        }
+      ]
+    },
+    {
+      id: "indefinido", num: 3, title: "Pretérito indefinido",
+      sub: "Unidad 8 · ¿Qué hizo Rosa ayer? — hablar del pasado",
+      exercises: [
+        {
+          num: 13, title: "Verbos regulares (-ar, -er, -ir)",
+          instr: "Conjuga el verbo en pretérito indefinido.",
+          type: "conjTable",
+          subjects: ["yo", "tú", "él / ella / Ud.", "nosotros/as", "ellos / ellas / Uds."],
+          cols: [
+            { label: "trabajar", a: [["trabajé"], ["trabajaste"], ["trabajó"], ["trabajamos"], ["trabajaron"]] },
+            { label: "comer", a: [["comí"], ["comiste"], ["comió"], ["comimos"], ["comieron"]] },
+            { label: "escribir", a: [["escribí"], ["escribiste"], ["escribió"], ["escribimos"], ["escribieron"]] }
+          ]
+        },
+        {
+          num: 14, title: "Verbos irregulares: ir, ser, estar, hacer, ver",
+          instr: "Completa con el pretérito indefinido del verbo entre paréntesis.",
+          type: "items",
+          items: [
+            { t: "El verano pasado, yo {0} (ir) a Perú con mi familia.", a: [["fui"]] },
+            { t: "Nosotros {0} (estar) tres semanas en la Amazonía.", a: [["estuvimos"]] },
+            { t: "¿Qué tal {0} (ser) el viaje? — ¡Fantástico!", a: [["fue"]] },
+            { t: "Mi hermana {0} (hacer) un curso de español en Madrid.", a: [["hizo"]] },
+            { t: "Ayer nosotros {0} (ver) una película muy buena en el cine.", a: [["vimos"]] }
+          ]
+        },
+        {
+          num: 15, title: "Verbos con cambio ortográfico: jugar, empezar, llegar, buscar",
+          instr: "Completa con la primera persona (yo) del pretérito indefinido.",
+          type: "items",
+          items: [
+            { t: "Ayer (yo) {0} (jugar) al fútbol con mis amigos.", a: [["jugué"]] },
+            { t: "(Yo) {0} (empezar) a estudiar español hace dos años.", a: [["empecé"]] },
+            { t: "Anoche (yo) {0} (llegar) a casa muy tarde.", a: [["llegué"]] },
+            { t: "(Yo) {0} (buscar) las llaves durante media hora.", a: [["busqué"]] },
+            { t: "El lunes pasado (yo) {0} (empezar) un nuevo trabajo.", a: [["empecé"]] }
+          ]
+        },
+        {
+          num: 16, title: "Diálogo: la fiesta de cumpleaños",
+          instr: "Completa el diálogo con el pretérito indefinido de los verbos entre paréntesis.",
+          type: "text",
+          text: "— ¿Qué tal {0} (estar) tu cumpleaños?\n— Muy bien. Mis amigos {1} (venir) a mi casa y nosotros {2} (cenar) todos juntos.\n— ¿Y qué {3} (hacer) después de cenar?\n— {4} (Bailar) un poco y mi mejor amiga me {5} (dar) un regalo precioso.",
+          a: [["estuvo"], ["vinieron"], ["cenamos"], ["hicisteis"], ["bailamos"], ["dio"]]
+        },
+        {
+          num: 17, title: "La agenda de Guillermo",
+          instr: "Mira la agenda de la semana pasada de Guillermo y responde usando el pretérito indefinido.",
+          type: "agenda",
+          table: [["lunes", "reunión con el jefe"], ["martes", "comer con Ana en el centro"], ["miércoles", "gimnasio por la tarde"], ["jueves", "viajar a Barcelona"], ["viernes", "visitar el museo"]],
+          items: [
+            { t: "¿Qué hizo Guillermo el lunes? — {0}", a: [{ flex: ["reunion", "jefe"], show: "Tuvo una reunión con el jefe." }], wide: true },
+            { t: "¿Con quién comió el martes? — {0}", a: [{ flex: ["ana"], show: "Comió con Ana en el centro." }], wide: true },
+            { t: "¿Adónde viajó el jueves? — {0}", a: [{ flex: ["barcelona"], show: "Viajó a Barcelona." }], wide: true },
+            { t: "¿Qué visitó el viernes? — {0}", a: [{ flex: ["museo"], show: "Visitó el museo." }], wide: true }
+          ]
+        },
+        {
+          num: 18, title: "Texto de viaje: un país maravilloso",
+          instr: "Completa el texto con el pretérito indefinido de los verbos entre paréntesis.",
+          type: "text",
+          text: "El año pasado, Marina {0} (viajar) a Perú durante sus vacaciones. Ella {1} (ir) primero a Lima y después {2} (visitar) Cuzco. En Cuzco, {3} (conocer) Machu Picchu, un lugar impresionante. También {4} (estar) tres días en la Amazonía, donde {5} (ver) animales increíbles. Marina {6} (volver) a casa muy contenta y {7} (decir) a todos sus amigos que Perú es un país maravilloso.",
+          a: [["viajó"], ["fue"], ["visitó"], ["conoció"], ["estuvo"], ["vio"], ["volvió"], ["dijo"]]
+        }
+      ]
+    },
+    {
+      id: "contraste", num: 4, title: "Contraste y repaso",
+      sub: "Presente · Estar + gerundio · Pretérito indefinido, juntos",
+      exercises: [
+        {
+          num: 19, title: "Antes y ahora: presente habitual vs. pretérito indefinido",
+          instr: "Completa cada frase con el presente y el pretérito indefinido.",
+          model: "Modelo: Normalmente (yo) empiezo a las nueve, pero ayer empecé a las siete.",
+          type: "items",
+          items: [
+            { t: "Normalmente Pedro {0} (comer) en casa, pero el sábado pasado {1} (comer) en un restaurante.", a: [["come"], ["comió"]] },
+            { t: "Yo siempre {0} (levantarse) a las siete, pero esta mañana {1} (levantarse) a las nueve.", a: [["me levanto"], ["me levanté"]] },
+            { t: "Nosotros normalmente {0} (trabajar) hasta las cinco, pero el viernes pasado {1} (trabajar) hasta las ocho.", a: [["trabajamos"], ["trabajamos"]] },
+            { t: "Ella normalmente {0} (ir) al gimnasio los lunes, pero la semana pasada {1} (ir) el domingo.", a: [["va"], ["fue"]] }
+          ]
+        },
+        {
+          num: 20, title: "Texto final: el cumpleaños de Carmen",
+          instr: "Completa eligiendo la forma correcta: presente, estar + gerundio, o pretérito indefinido.",
+          type: "text",
+          text: "Hoy es el cumpleaños de Carmen. Normalmente ella {0} (trabajar) todo el día, pero hoy no trabaja porque tiene el día libre. Ahora mismo, Carmen {1} (preparar) la mesa para la fiesta y sus hijos {2} (decorar) el salón con globos. El año pasado, para su cumpleaños, Carmen {3} (ir) a la playa con toda la familia y lo {4} (pasar) muy bien. Este año, sus amigos {5} (venir) a las ocho y todos van a cenar juntos. En este momento, su marido {6} (llamar) por teléfono a los invitados para confirmar la hora, mientras Carmen {7} (sonreír) feliz, pensando en lo bien que lo {8} (pasar) siempre en sus cumpleaños.",
+          a: [["trabaja"], ["está preparando"], ["están decorando"], ["fue"], ["pasó"], ["vienen"], ["está llamando"], ["sonríe"], ["pasa"]]
+        }
+      ]
+    }
+  ];
+
+  // ---------- render ----------
+  const main = document.getElementById("main");
+  const navDots = document.getElementById("navDots");
+  const allInputs = []; // {el, spec}
+
+  function makeInput(spec, wide, label) {
+    const inp = document.createElement("input");
+    inp.type = "text";
+    inp.className = "blank" + (wide ? " wide" : "");
+    inp.autocomplete = "off";
+    inp.autocapitalize = "off";
+    inp.spellcheck = false;
+    allInputs.push({ el: inp, spec: spec, label: label || "" });
+    return inp;
+  }
+
+  function renderTemplate(container, template, answers, wide, labelBase, forceIndex) {
+    const parts = template.split(/\{(\d+)\}/g);
+    let blankCount = 0;
+    for (let k = 1; k < parts.length; k += 2) blankCount++;
+    parts.forEach(function (part, i) {
+      if (i % 2 === 1) {
+        const tokenIdx = parseInt(part, 10);
+        const spec = answers[tokenIdx];
+        const label = (blankCount > 1 || forceIndex) ? labelBase + " (" + (tokenIdx + 1) + ")" : labelBase;
+        container.appendChild(makeInput(spec, wide, label));
+        const reveal = document.createElement("span");
+        reveal.className = "reveal";
+        container.appendChild(reveal);
+        allInputs[allInputs.length - 1].reveal = reveal;
+      } else if (part) {
+        container.appendChild(document.createTextNode(part));
+      }
+    });
+  }
+
+  function exerciseHeader(ex) {
+    const head = document.createElement("div");
+    head.className = "exercise-head";
+    const titleWrap = document.createElement("div");
+    titleWrap.className = "exercise-title";
+    titleWrap.innerHTML = '<span class="exnum">Ej. ' + ex.num + "</span>";
+    const h3 = document.createElement("h3");
+    h3.textContent = ex.title;
+    titleWrap.appendChild(h3);
+    head.appendChild(titleWrap);
+    const btn = document.createElement("button");
+    btn.className = "check-btn";
+    btn.textContent = "Corregir";
+    head.appendChild(btn);
+    return { head: head, btn: btn };
+  }
+
+  blocks.forEach(function (block) {
+    const sec = document.createElement("section");
+    sec.className = "block";
+    sec.id = block.id;
+
+    const bh = document.createElement("div");
+    bh.className = "block-head";
+    bh.innerHTML =
+      '<div class="block-num">' + block.num + '</div>' +
+      '<div class="block-titles"><h2>' + block.title + '</h2><div class="sub">' + block.sub + '</div></div>';
+    sec.appendChild(bh);
+
+    const navA = document.createElement("a");
+    navA.href = "#" + block.id;
+    navA.textContent = "Bloque " + block.num;
+    navDots.appendChild(navA);
+
+    block.exercises.forEach(function (ex) {
+      const card = document.createElement("div");
+      card.className = "exercise";
+      const startIdx = allInputs.length;
+      const hdr = exerciseHeader(ex);
+      card.appendChild(hdr.head);
+
+      if (ex.instr) {
+        const instr = document.createElement("div");
+        instr.className = "exercise-instr";
+        instr.textContent = ex.instr;
+        card.appendChild(instr);
+      }
+      if (ex.model) {
+        const model = document.createElement("div");
+        model.className = "exercise-model";
+        model.textContent = ex.model;
+        card.appendChild(model);
+      }
+
+      if (ex.type === "items") {
+        const wrap = document.createElement("div");
+        wrap.className = "items";
+        ex.items.forEach(function (item, i) {
+          const row = document.createElement("div");
+          row.className = "item-row";
+          const letter = document.createElement("span");
+          letter.className = "item-letter";
+          letter.textContent = String.fromCharCode(97 + i) + ".";
+          row.appendChild(letter);
+          renderTemplate(row, item.t, item.a, item.wide, "Ej. " + ex.num + String.fromCharCode(97 + i));
+          wrap.appendChild(row);
+        });
+        card.appendChild(wrap);
+      } else if (ex.type === "text") {
+        const p = document.createElement("div");
+        p.className = "paragraph";
+        ex.text.split("\n").forEach(function (line, li) {
+          if (li > 0) p.appendChild(document.createElement("br"));
+          renderTemplate(p, line, ex.a, false, "Ej. " + ex.num, true);
+        });
+        card.appendChild(p);
+      } else if (ex.type === "table2") {
+        const twrap = document.createElement("div");
+        twrap.className = "table-wrap";
+        const table = document.createElement("table");
+        table.className = "exercise-table";
+        table.innerHTML = "<thead><tr><th>Infinitivo</th><th>Gerundio</th></tr></thead>";
+        const tbody = document.createElement("tbody");
+        ex.rows.forEach(function (r) {
+          const tr = document.createElement("tr");
+          const td1 = document.createElement("td");
+          td1.textContent = r[0];
+          const td2 = document.createElement("td");
+          td2.appendChild(makeInput(r[1][0], false, "Ej. " + ex.num + " " + r[0]));
+          const reveal = document.createElement("span");
+          reveal.className = "reveal";
+          td2.appendChild(reveal);
+          allInputs[allInputs.length - 1].reveal = reveal;
+          tr.appendChild(td1); tr.appendChild(td2);
+          tbody.appendChild(tr);
+        });
+        table.appendChild(tbody);
+        twrap.appendChild(table);
+        card.appendChild(twrap);
+      } else if (ex.type === "conjTable") {
+        const twrap = document.createElement("div");
+        twrap.className = "table-wrap";
+        const table = document.createElement("table");
+        table.className = "exercise-table";
+        let thead = "<thead><tr><th>Sujeto</th>";
+        ex.cols.forEach(function (c) { thead += "<th>" + c.label + "</th>"; });
+        thead += "</tr></thead>";
+        table.innerHTML = thead;
+        const tbody = document.createElement("tbody");
+        ex.subjects.forEach(function (subj, si) {
+          const tr = document.createElement("tr");
+          const td0 = document.createElement("td");
+          td0.textContent = subj;
+          tr.appendChild(td0);
+          ex.cols.forEach(function (c) {
+            const td = document.createElement("td");
+            td.appendChild(makeInput(c.a[si], false, "Ej. " + ex.num + " " + subj + "/" + c.label));
+            const reveal = document.createElement("span");
+            reveal.className = "reveal";
+            td.appendChild(reveal);
+            allInputs[allInputs.length - 1].reveal = reveal;
+            tr.appendChild(td);
+          });
+          tbody.appendChild(tr);
+        });
+        table.appendChild(tbody);
+        twrap.appendChild(table);
+        card.appendChild(twrap);
+      } else if (ex.type === "agenda") {
+        const twrap = document.createElement("div");
+        twrap.className = "table-wrap";
+        const table = document.createElement("table");
+        table.className = "exercise-table ref-table";
+        table.innerHTML = "<thead><tr><th>Día</th><th>Actividad</th></tr></thead>";
+        const tbody = document.createElement("tbody");
+        ex.table.forEach(function (r) {
+          const tr = document.createElement("tr");
+          const td1 = document.createElement("td"); td1.textContent = r[0];
+          const td2 = document.createElement("td"); td2.textContent = r[1];
+          tr.appendChild(td1); tr.appendChild(td2);
+          tbody.appendChild(tr);
+        });
+        table.appendChild(tbody);
+        twrap.appendChild(table);
+        card.appendChild(twrap);
+        const wrap = document.createElement("div");
+        wrap.className = "items";
+        ex.items.forEach(function (item, i) {
+          const row = document.createElement("div");
+          row.className = "item-row";
+          const letter = document.createElement("span");
+          letter.className = "item-letter";
+          letter.textContent = String.fromCharCode(97 + i) + ".";
+          row.appendChild(letter);
+          renderTemplate(row, item.t, item.a, item.wide, "Ej. " + ex.num + String.fromCharCode(97 + i));
+          wrap.appendChild(row);
+        });
+        card.appendChild(wrap);
+      }
+
+      const endIdx = allInputs.length;
+      hdr.btn.addEventListener("click", function () {
+        gradeRange(startIdx, endIdx);
+        updateScore();
+      });
+
+      sec.appendChild(card);
+    });
+
+    main.appendChild(sec);
+  });
+
+  document.getElementById("totalBlanksLabel").textContent = allInputs.length;
+  document.getElementById("scoreTotal").textContent = allInputs.length;
+
+  function correctTextFor(spec) {
+    const t = Array.isArray(spec) ? spec[0] : (spec.show || (spec.flex ? spec.flex.join(" / ") : ""));
+    return typeof t === "string" ? t : "";
+  }
+
+  function gradeRange(start, end) {
+    for (let i = start; i < end; i++) {
+      const rec = allInputs[i];
+      const ok = isCorrect(rec.el.value, rec.spec);
+      rec.el.classList.remove("correct", "incorrect");
+      rec.el.classList.add(ok ? "correct" : "incorrect");
+      rec.el.dataset.checked = "1";
+      if (!ok && rec.reveal) {
+        rec.reveal.textContent = "→ " + correctTextFor(rec.spec);
+        rec.reveal.classList.add("show", "bad-reveal");
+      } else if (rec.reveal) {
+        rec.reveal.classList.remove("show", "bad-reveal");
+      }
+    }
+  }
+
+  function updateScore() {
+    let checked = 0, correct = 0;
+    allInputs.forEach(function (rec) {
+      if (rec.el.dataset.checked === "1") {
+        checked++;
+        if (rec.el.classList.contains("correct")) correct++;
+      }
+    });
+    document.getElementById("scoreNum").textContent = correct;
+    document.getElementById("scoreTotal").textContent = allInputs.length;
+    const pct = allInputs.length ? (correct / allInputs.length) * 100 : 0;
+    document.getElementById("barFill").style.width = pct + "%";
+    updateResultsPanel(checked, correct);
+  }
+
+  document.getElementById("correctAllBtn").addEventListener("click", function () {
+    gradeRange(0, allInputs.length);
+    updateScore();
+  });
+
+  // ---------- results panel: motivational message + send to teacher ----------
+  const TITLE_LABEL = "Ejercicios A1 (Presente, gerundio, indefinido)";
+  const TEACHER = {
+    whatsapp: "79856456905",
+    telegram: "+79856456905",
+    email: "angelluisacosta99@gmail.com",
+    teamsEmail: "angelluisacosta99@gmail.com"
+  };
+
+  function tierFor(pct) {
+    if (pct >= 90) return { headline: "¡Excelente trabajo! 🎉", sub: "Dominas muy bien este tema. ¡Sigue así!" };
+    if (pct >= 70) return { headline: "¡Muy bien! 👏", sub: "Vas por muy buen camino. Repasa los pocos fallos y lo tendrás perfecto." };
+    if (pct >= 50) return { headline: "Buen intento 💪", sub: "Vas progresando. Repasa los fallos marcados y el recuadro de gramática." };
+    return { headline: "¡Ánimo, esto es parte de aprender! 🌱", sub: "Vuelve a leer los ejemplos y repite el ejercicio — cada intento suma." };
+  }
+
+  function buildSummary(name, correct, total, pct) {
+    const lines = [];
+    lines.push("📋 Resultados — " + TITLE_LABEL);
+    lines.push("Alumno: " + (name || "(sin nombre)"));
+    lines.push("Puntuación: " + correct + "/" + total + " (" + pct + "%)");
+    lines.push("");
+    const wrong = allInputs.filter(function (rec) {
+      return rec.el.dataset.checked === "1" && !rec.el.classList.contains("correct");
+    });
+    if (wrong.length === 0) {
+      lines.push("¡Sin errores! 🎉");
+    } else {
+      lines.push("Fallos (" + wrong.length + "):");
+      wrong.forEach(function (rec) {
+        const given = rec.el.value.trim() || "(en blanco)";
+        lines.push("- " + rec.label + ": escribió \"" + given + "\" → correcto: \"" + correctTextFor(rec.spec) + "\"");
+      });
+    }
+    return lines.join("\n");
+  }
+
+  function updateResultsPanel(checked, correct) {
+    const panel = document.getElementById("resultsPanel");
+    const hint = document.getElementById("progressHint");
+    const total = allInputs.length;
+    if (checked === 0) {
+      panel.hidden = true;
+      if (hint) { hint.textContent = ""; hint.classList.remove("complete"); }
+      return;
+    }
+    if (checked < total) {
+      if (hint) {
+        hint.textContent = "Corregidos " + checked + "/" + total + " — corrige el resto de ejercicios (o pulsa \"Corregir todos\") para ver tu resumen final.";
+        hint.classList.remove("complete");
+      }
+      return; // wait until everything has been corrected at least once
+    }
+    if (hint) {
+      hint.textContent = "¡Todo corregido! Tu resumen está más abajo 👇";
+      hint.classList.add("complete");
+    }
+    const wasHidden = panel.hidden;
+    panel.hidden = false;
+    if (wasHidden) setTimeout(function () { panel.scrollIntoView({ behavior: "smooth", block: "start" }); }, 50);
+
+    const pct = Math.round((correct / total) * 100);
+    const tier = tierFor(pct);
+    document.getElementById("resHeadline").textContent = tier.headline;
+    document.getElementById("resSub").textContent = tier.sub;
+    document.getElementById("resScoreNum").textContent = correct;
+    document.getElementById("resScoreDen").textContent = "/ " + total + " (" + pct + "%)";
+
+    const wrong = allInputs.filter(function (rec) {
+      return rec.el.dataset.checked === "1" && !rec.el.classList.contains("correct");
+    });
+    const errBox = document.getElementById("resErrors");
+    if (wrong.length === 0) {
+      errBox.innerHTML = '<div class="results-error-item">¡Ni un solo fallo! 🎉</div>';
+    } else {
+      errBox.innerHTML = '<div class="results-errors-title">Fallos (' + wrong.length + ')</div>' +
+        wrong.map(function (rec) {
+          const given = escapeHtml(rec.el.value.trim() || "(en blanco)");
+          return '<div class="results-error-item"><b>' + rec.label + ':</b> <s>' + given + "</s> → " + correctTextFor(rec.spec) + "</div>";
+        }).join("");
+    }
+
+    wireChannels();
+  }
+
+  function wireChannels() {
+    const nameEl = document.getElementById("resName");
+    function currentSummary() {
+      const correct = parseInt(document.getElementById("resScoreNum").textContent, 10);
+      const total = allInputs.length;
+      const pct = Math.round((correct / total) * 100);
+      return buildSummary(nameEl.value.trim(), correct, total, pct);
+    }
+    function refreshLinks() {
+      const text = currentSummary();
+      const encoded = encodeURIComponent(text);
+      document.getElementById("chWhatsapp").href = "https://wa.me/" + TEACHER.whatsapp + "?text=" + encoded;
+      document.getElementById("chTelegram").href = "https://t.me/" + TEACHER.telegram;
+      document.getElementById("chTeams").href = "https://teams.microsoft.com/l/chat/0/0?users=" + TEACHER.teamsEmail + "&message=" + encoded;
+    }
+    refreshLinks();
+    nameEl.oninput = refreshLinks;
+    function showCopied() {
+      const msg = document.getElementById("chCopiedMsg");
+      msg.style.display = "inline";
+      setTimeout(function () { msg.style.display = "none"; }, 2000);
+    }
+    function copyText(text, onDone) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () { onDone(true); }, function () { fallbackCopy(text, onDone); });
+      } else {
+        fallbackCopy(text, onDone);
+      }
+    }
+    function fallbackCopy(text, onDone) {
+      try {
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.style.position = "fixed";
+        ta.style.top = "-9999px";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.focus();
+        ta.select();
+        const ok = document.execCommand("copy");
+        document.body.removeChild(ta);
+        onDone(ok);
+      } catch (e) { onDone(false); }
+    }
+    document.getElementById("chCopy").onclick = function () {
+      copyText(currentSummary(), function (ok) { if (ok) showCopied(); });
+    };
+    // Email: mailto: links are unreliable inside embedded/sandboxed views and can
+    // even blank out the whole page if the OS has no mail client registered, so we
+    // copy the summary first (safe fallback) and open the mail client in its own tab.
+    document.getElementById("chEmail").onclick = function () {
+      const text = currentSummary();
+      const mailtoUrl = "mailto:" + TEACHER.email + "?subject=" + encodeURIComponent("Resultados — " + TITLE_LABEL) + "&body=" + encodeURIComponent(text);
+      copyText(text, function () {
+        try { window.open(mailtoUrl, "_blank", "noopener"); } catch (e) { /* ignore */ }
+      });
+    };
+  }
+
+  allInputs.forEach(function (rec) {
+    rec.el.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        gradeRange(0, allInputs.length);
+        updateScore();
+      }
+    });
+  });
+
+  updateScore();
+})();
+</script>
