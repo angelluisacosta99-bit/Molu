@@ -944,7 +944,7 @@
   const TITLE_LABEL = "Ejercicios A1 (Presente, gerundio, indefinido)";
   const TEACHER = {
     whatsapp: "79856456905",
-    telegram: "+79856456905",
+    telegram: "angel9904",
     email: "angelluisacosta99@gmail.com",
     teamsEmail: "angelluisacosta99@gmail.com"
   };
@@ -1053,7 +1053,9 @@
       const text = currentSummary();
       const encoded = encodeURIComponent(text);
       document.getElementById("chWhatsapp").href = "https://wa.me/" + TEACHER.whatsapp + "?text=" + encoded;
-      document.getElementById("chTelegram").href = "https://t.me/" + TEACHER.telegram;
+      // t.me links only pre-fill the message box when addressed to a @username — the
+      // phone-number form (t.me/+<number>) has no equivalent and ignores ?text= entirely.
+      document.getElementById("chTelegram").href = "https://t.me/" + TEACHER.telegram + "?text=" + encoded;
       document.getElementById("chTeams").href = "https://teams.microsoft.com/l/chat/0/0?users=" + TEACHER.teamsEmail + "&message=" + encoded;
       // Gmail's own web compose URL, opened as a plain https:// link — the same class of
       // navigation as the WhatsApp/Telegram/Teams links above, which is what actually works
@@ -1099,15 +1101,13 @@
     document.getElementById("chCopy").onclick = function () {
       copyText(currentSummary(), function (ok) { if (ok) showCopied(); });
     };
-    // Telegram and Teams open the chat but can't pre-fill the message (unlike WhatsApp's
-    // ?text= param), so their buttons also copy the summary and tell the student in plain
-    // words to paste it once the chat is open — a silent "¡Copiado!" is easy to miss right
-    // after the app switches away to open the chat.
-    ["chTelegram", "chTeams"].forEach(function (id) {
-      document.getElementById(id).addEventListener("click", function () {
-        copyText(currentSummary(), function (ok) {
-          if (ok) showCopied("Texto copiado. Pégalo (mantén pulsado → Pegar) en el chat que se acaba de abrir.");
-        });
+    // Teams' chat link can't reliably pre-fill the message the way ?text= does for
+    // WhatsApp/Telegram, so its button also copies the summary and tells the student in
+    // plain words to paste it once the chat is open — a silent "¡Copiado!" is easy to miss
+    // right after the app switches away to open the chat.
+    document.getElementById("chTeams").addEventListener("click", function () {
+      copyText(currentSummary(), function (ok) {
+        if (ok) showCopied("Texto copiado. Pégalo (mantén pulsado → Pegar) en el chat que se acaba de abrir.");
       });
     });
     // chEmail is a plain https:// link (Gmail compose, set in refreshLinks) opened with
