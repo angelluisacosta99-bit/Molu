@@ -1,7 +1,7 @@
 ---
 name: ejercicio-interactivo
 description: "Use when Angel asks to build a new interactive Spanish grammar/vocabulary exercise page with instant grading — a self-contained HTML artifact where a student fills in blanks, gets corrected instantly, and can send their results to the teacher via WhatsApp/Telegram/Teams/Correo. Also use when asked to add a new chapter/unit to this format, or to fix/extend an existing one (e.g. the A1 \"Presente, gerundio, indefinido\" or B2 12C \"¿Sigues pintando?\" exercises already in docencia-espanol/materiales/). Triggers: \"ejercicio interactivo\", \"como el de A1/12C\", \"corrección instantánea\", \"página interactiva para practicar\", \"haz lo mismo con otro capítulo\"."
-version: 1.1.0
+version: 1.2.0
 user-invocable: true
 license: Apache 2.0
 ---
@@ -64,9 +64,25 @@ PR #22 invertía el orden que PR #20 daba por bueno.
 
 5. **Publica con el tool `Artifact`.** Elige un favicon distinto por asignatura/nivel para
    reconocerlo rápido en la lista (✅ para A1, 🎨 para 12C). Al actualizar un artefacto ya
-   publicado, pasa siempre el mismo `url` para no crear uno nuevo.
+   publicado, pasa siempre el mismo `url` para no crear uno nuevo. Título del artefacto:
+   sigue la convención `Nuevo Español en Marcha · <Nivel> · <Capítulo> — <Tema>` (ver los dos
+   ejemplos ya publicados) para que se lea claro tanto en la lista plana de Artefactos como
+   en el índice del paso siguiente.
 
-6. **Sigue el flujo de PR de este repositorio, sin excepciones.** `CLAUDE.md` en la raíz
+6. **Añade el capítulo al índice.** `docencia-espanol/materiales/indice-clases-de-espanol.html`
+   es el artefacto "Clases de Español" — la página de entrada que organiza todo por manual →
+   nivel → capítulo (ver PRODUCT.md/DESIGN.md en la raíz del repo para el sistema de diseño
+   compartido). Al publicar un capítulo nuevo: dentro de la tarjeta `.level-card` del nivel
+   correspondiente, sustituye la fila `.chapter-row.empty` de "Próximo capítulo, pronto" por
+   una fila real (`<a class="chapter-row" href="<url del artefacto>" target="_blank"
+   rel="noopener">` con `.chapter-num`/`.chapter-title`/flecha, copiando el patrón de las
+   filas ya existentes) y añade una nueva fila `.empty` al final si quieres dejar sitio para
+   el siguiente. Vuelve a publicar el índice con el mismo `url` (no crees uno nuevo). Si
+   algún día se añade un manual nuevo (ПК Гонсалес, Temas — ver la nota "Próximos manuales"
+   del índice), duplica el bloque `.manual-section` completo para ese manual en vez de
+   mezclar niveles de manuales distintos dentro de la misma sección.
+
+7. **Sigue el flujo de PR de este repositorio, sin excepciones.** `CLAUDE.md` en la raíz
    exige: abrir PR → lanzar una revisión con un agente independiente (`Agent` tool,
    `run_in_background: true`, dale contexto completo y pídele que verifique en vivo con
    Playwright, no que confíe en la descripción del PR) → fusionar solo si no hay hallazgos
@@ -209,3 +225,10 @@ parezca más "controlable" desde JS — ya se demostró que rompe el caso más b
 
 - `reference/template.html` — plantilla completa, ya con todas las correcciones anteriores
   aplicadas. Punto de partida obligatorio para cualquier ejercicio nuevo.
+- `docencia-espanol/materiales/indice-clases-de-espanol.html` — el artefacto "Clases de
+  Español", índice manual → nivel → capítulo de toda la biblioteca (ver paso 6 del flujo de
+  trabajo). Actualízalo cada vez que publiques un capítulo nuevo.
+- `PRODUCT.md` y `DESIGN.md` (raíz del repo) — el sistema de diseño compartido por todos los
+  artefactos de esta biblioteca (paleta papel/tinta, tipografía, componentes). Cualquier
+  página nueva (ejercicio o índice) debe extender estos tokens, no inventar los suyos — ver
+  `DESIGN.md` para los valores exactos y las reglas nombradas ("The Fixed Panel Rule", etc.).
