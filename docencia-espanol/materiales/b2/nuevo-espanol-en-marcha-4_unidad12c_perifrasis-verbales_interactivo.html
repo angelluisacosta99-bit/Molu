@@ -824,12 +824,26 @@
       // version of this button on both desktop and mobile: the Correo button had, at some
       // point during testing, triggered enough popups that Chrome's per-site "block
       // pop-ups" permission for this origin got set, which only affects window.open(), not
-      // real link clicks). On Android with the Gmail app installed, the OS still intercepts
-      // this link and opens the app instead of the browser, which ignores the compose
-      // params — that's a separate, unrelated limitation covered by the copy fallback below.
-      document.getElementById("chEmail").href = "https://mail.google.com/mail/?view=cm&fs=1&to=" +
+      // real link clicks). Confirmed working on desktop.
+      const gmailWebUrl = "https://mail.google.com/mail/?view=cm&fs=1&to=" +
         encodeURIComponent(TEACHER.email) + "&su=" + encodeURIComponent("Resultados — " + TITLE_LABEL) +
         "&body=" + encodeURIComponent(shortText);
+      // On mobile, tapping the web URL above opens the Gmail APP (if the OS routes
+      // mail.google.com links there) but the app doesn't understand the view=cm compose
+      // params and just opens normally, ignoring them — confirmed: Android's own per-app
+      // "open supported links" setting doesn't change this, so it isn't a device-config
+      // issue, the app genuinely doesn't support this URL. googlegmail://co is the Gmail
+      // app's own compose deep link scheme, which it DOES understand — but it's a non-http
+      // protocol, exactly the kind the artifact's sandboxed iframe silently blocks when
+      // shared publicly (same root cause as mailto: — see PR history). Using it only on
+      // mobile keeps desktop on the proven, working gmailWebUrl, and if googlegmail://
+      // silently fails (no Gmail app, or blocked by an embedding sandbox), the copy
+      // fallback below still guarantees the text and address are available.
+      const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+      const gmailAppUrl = "googlegmail://co?to=" + encodeURIComponent(TEACHER.email) +
+        "&subject=" + encodeURIComponent("Resultados — " + TITLE_LABEL) +
+        "&body=" + encodeURIComponent(shortText);
+      document.getElementById("chEmail").href = isMobile ? gmailAppUrl : gmailWebUrl;
     }
     refreshLinks();
     nameEl.oninput = refreshLinks;
