@@ -317,7 +317,7 @@
   <div class="channel-row">
     <a class="channel-btn" id="chWhatsapp" target="_blank" rel="noopener">WhatsApp</a>
     <a class="channel-btn" id="chTelegram" target="_blank" rel="noopener">Telegram</a>
-    <a class="channel-btn" id="chEmail" target="_blank" rel="noopener">Correo</a>
+    <button class="channel-btn" id="chEmail" type="button">Correo</button>
     <a class="channel-btn" id="chTeams" target="_blank" rel="noopener">Teams</a>
     <button class="channel-btn" id="chCopy" type="button">Copiar resumen</button>
     <span class="channel-copied" id="chCopiedMsg">¡Copiado!</span>
@@ -814,15 +814,6 @@
       // phone-number form (t.me/+<number>) has no equivalent and ignores ?text= entirely.
       document.getElementById("chTelegram").href = "https://t.me/" + TEACHER.telegram + "?text=" + encodeURIComponent(shortText);
       document.getElementById("chTeams").href = "https://teams.microsoft.com/l/chat/0/0?users=" + TEACHER.teamsEmail + "&message=" + encoded;
-      // Gmail's own web compose URL, opened as a plain https:// link — the same class of
-      // navigation as the WhatsApp/Telegram/Teams links above, which is what actually works
-      // from inside the artifact's sandboxed iframe. A mailto: link is a different, non-http
-      // protocol that the sandbox silently blocks regardless of how it's triggered, and even
-      // when it isn't blocked it depends on the visitor having a default mail app configured
-      // — unreliable for an exam opened by people with no Claude account and no known setup.
-      document.getElementById("chEmail").href = "https://mail.google.com/mail/?view=cm&fs=1&to=" +
-        encodeURIComponent(TEACHER.email) + "&su=" + encodeURIComponent("Resultados — " + TITLE_LABEL) +
-        "&body=" + encodeURIComponent(shortText);
     }
     refreshLinks();
     nameEl.oninput = refreshLinks;
@@ -866,9 +857,31 @@
         if (ok) showCopied("Texto copiado. Pégalo (mantén pulsado → Pegar) en el chat que se acaba de abrir.");
       });
     });
-    // chEmail is a plain https:// link (Gmail compose, set in refreshLinks) opened with
-    // target="_blank" — the same kind of navigation as WhatsApp, which is what actually
-    // works from inside the artifact's sandboxed public iframe. No click handler needed.
+    // Correo: no single trick has proven reliable across every device this gets opened on.
+    // A plain mailto: link is blocked by the artifact's sandboxed iframe when shared
+    // publicly (silent failure). A Gmail web compose link (mail.google.com/mail/?view=cm...)
+    // fixed that for desktop, but on Android with the Gmail app installed, the OS intercepts
+    // mail.google.com links and opens the APP instead of the browser — and the Gmail app
+    // does not understand the view=cm compose parameters, so it just opens normally,
+    // ignoring to/su/body entirely ("redirects to Gmail but does nothing" — the app did
+    // open, it just silently dropped the pre-filled content). Rather than chase another
+    // device-specific trick, this copies the summary first — synchronously, so the
+    // window.open() right after doesn't consume the click's one-time "user activation"
+    // token and silently break the copy (see the Telegram/PR history for why the order
+    // matters) — with a clear, explicit confirmation, and only ATTEMPTS the Gmail link as
+    // an unguaranteed bonus. Whatever the link does or doesn't do, the teacher's address
+    // and the full text are always in the clipboard.
+    document.getElementById("chEmail").onclick = function () {
+      const text = currentSummary();
+      const shortText = truncateForUrl(text, 1200);
+      const gmailUrl = "https://mail.google.com/mail/?view=cm&fs=1&to=" +
+        encodeURIComponent(TEACHER.email) + "&su=" + encodeURIComponent("Resultados — " + TITLE_LABEL) +
+        "&body=" + encodeURIComponent(shortText);
+      fallbackCopy(text, function (ok) {
+        if (ok) showCopied("Texto copiado. Si no se abrió tu correo solo, pégalo (mantén pulsado → Pegar) en un email a " + TEACHER.email + ".");
+      });
+      try { window.open(gmailUrl, "_blank", "noopener"); } catch (e) { /* ignore */ }
+    };
   }
 
   updateScore();
