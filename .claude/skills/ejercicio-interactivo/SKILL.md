@@ -1,7 +1,7 @@
 ---
 name: ejercicio-interactivo
 description: "Use when Angel asks to build a new interactive Spanish grammar/vocabulary exercise page with instant grading — a self-contained HTML artifact where a student fills in blanks, gets corrected instantly, and can send their results to the teacher via WhatsApp/Telegram/Teams/Correo. Also use when asked to add a new chapter/unit to this format, or to fix/extend an existing one (e.g. the A1 \"Presente, gerundio, indefinido\" or B2 12C \"¿Sigues pintando?\" exercises already in docencia-espanol/materiales/). Triggers: \"ejercicio interactivo\", \"como el de A1/12C\", \"corrección instantánea\", \"página interactiva para practicar\", \"haz lo mismo con otro capítulo\"."
-version: 1.0.0
+version: 1.1.0
 user-invocable: true
 license: Apache 2.0
 ---
@@ -11,10 +11,20 @@ license: Apache 2.0
 Construye páginas HTML autocontenidas (sin backend) donde un alumno completa huecos, los
 corrige al instante, y puede enviar su resumen de resultados al profesor. Este formato ya
 existe en dos ejercicios reales — A1 (`docencia-espanol/materiales/a1/...interactivo.html`)
-y B2 12C (`docencia-espanol/materiales/b2/...interactivo.html`) — y pasó por **ocho
-iteraciones de bugs reales en producción** (ver la sección de lecciones abajo) antes de
-quedar sólido. No repitas esos errores: usa la plantilla ya corregida (`reference/template.html`)
+y B2 12C (`docencia-espanol/materiales/b2/...interactivo.html`) — y pasó por **más de una
+docena de PRs de corrección de bugs reales en producción** (PRs #19 a #31, ver la sección
+de lecciones abajo) antes de quedar sólido, sobre todo en los botones de "enviar al
+profesor". No repitas esos errores: usa la plantilla ya corregida (`reference/template.html`)
 como punto de partida siempre, no escribas esto desde cero.
+
+**Si te piden tocar los botones de envío (WhatsApp/Telegram/Correo/Teams) de un ejercicio
+ya publicado**: lee primero la sección "Canal por canal" de este documento entera. Ese
+código es el resultado de mucho ensayo-error en dispositivos reales; una idea que "debería
+funcionar" (otro `window.open()`, otro esquema de URL de app) ya se intentó y falló al
+menos una vez. Antes de proponer un cambio nuevo en esta zona, confirma qué PRs concretos
+tocaron esas líneas (`git log -p --follow <archivo>` o revisa los PRs #19-#31 con
+`pull_request_read`) en vez de fiarte de la memoria — así se detectó, por ejemplo, que
+PR #22 invertía el orden que PR #20 daba por bueno.
 
 ## Flujo de trabajo
 
@@ -98,10 +108,26 @@ no las deshagas sin querer al modificar la plantilla.
 ### Canal por canal (la parte que más costó)
 
 Cada botón de "enviar al profesor" tuvo su propia trampa específica de plataforma. La regla
-general que emergió: **usa siempre un enlace `https://` normal (`<a target="_blank">`),
-nunca `window.open()` desde JavaScript ni un protocolo que no sea http(s)** — WhatsApp
-siempre funcionó porque siempre fue así; todo lo que se rompió fue justamente lo que no
-cumplía esta regla.
+general que emergió: **usa siempre un enlace `https://` normal (`<a target="_blank"
+rel="noopener">`), nunca `window.open()` desde JavaScript ni un protocolo que no sea
+http(s)** — WhatsApp siempre funcionó porque siempre fue así; todo lo que se rompió fue
+justamente lo que no cumplía esta regla.
+
+**Caso real de por qué esta regla no es negociable (PR #28 → #29)**: en un intento de
+combinar copiar-al-portapapeles con abrir el correo, el botón de Correo se convirtió
+temporalmente en un `<button onclick="...">` que llamaba a `window.open()` en vez de ser un
+`<a href>`. El resultado, confirmado por el profesor en dispositivo real: el botón dejó de
+redirigir **tanto en el navegador de escritorio como en el móvil, a la vez**. Causa: el
+permiso "bloquear ventanas emergentes" de Chrome es **por sitio y persiste entre
+sesiones** — se había ido acumulando durante las propias pruebas de desarrollo (cada clic
+de prueba que abre un popup puede hacer que Chrome, tras varios, empiece a bloquear ese
+sitio silenciosamente). Un `<a target="_blank">` nativo está exento de ese bloqueo; un
+`window.open()` desde script no, ni siquiera si se ejecuta de forma síncrona dentro del
+manejador del clic. La corrección (PR #29) fue volver a un `<a href>` normal con la lógica
+de copiar-portapapeles enganchada como un `addEventListener("click", ...)` **aditivo** —
+que no reemplaza ni compite con la navegación nativa, solo se ejecuta además de ella.
+**Nunca reintroduzcas `window.open()` ni `<button onclick>` para estos botones**, aunque
+parezca más "controlable" desde JS — ya se demostró que rompe el caso más básico.
 
 - **WhatsApp** (`https://wa.me/<número>?text=<encoded>`): funciona de fábrica, sin trucos.
   Referencia de lo que SÍ funciona.
@@ -112,7 +138,25 @@ cumplía esta regla.
   `target="_blank"`: todo falla en silencio o, peor, puede dejar la página en blanco si el
   sistema no tiene cliente de correo configurado. La solución que sí funciona: un enlace de
   redacción de Gmail (`https://mail.google.com/mail/?view=cm&fs=1&to=...&su=...&body=...`),
-  exactamente de la misma clase que WhatsApp.
+  exactamente de la misma clase que WhatsApp. Confirmado por el profesor: en escritorio
+  abre Gmail web con todos los campos rellenados correctamente.
+- **Correo en Android: límite conocido y aceptado, no lo sigas "arreglando".** En el móvil,
+  este mismo enlace de Gmail web a veces abre el navegador en vez de la app (aunque el
+  ajuste "Abrir vínculos admitidos" de Gmail esté activado — confirmado por el profesor con
+  captura de pantalla, no es un problema de configuración del dispositivo), y cuando sí
+  abre la app, esta no entiende los parámetros de redacción web (`view=cm`, `su`, `body`) y
+  abre un correo en blanco. Se probó como alternativa el esquema propio de la app
+  (`googlegmail://co?to=...&subject=...&body=...`), condicionado por `navigator.userAgent`
+  solo en móvil (PR #31) — y en la prueba real en dispositivo **dejó de abrir nada en
+  absoluto**, peor que el comportamiento anterior. Se revirtió por completo sin fusionar el
+  PR. **Lección**: no sigas probando esquemas de URL de apps nativas sin
+  documentar/verificar — no hay forma de comprobarlos desde este entorno (no se pueden
+  lanzar apps nativas reales aquí) y cada intento fallido es un ciclo completo de "el
+  profesor prueba en su teléfono y reporta que empeoró". El único mecanismo que demostró
+  ser 100% fiable en móvil es el respaldo de copiar-al-portapapeles con mensaje explícito
+  (ver más abajo) — trátalo como la solución real, no como un "por si acaso" secundario.
+  Esto quedó aceptado explícitamente por el profesor como límite conocido, no como bug
+  pendiente: no reabras este hilo sin que él lo pida.
 - **Telegram**: los enlaces con número de teléfono (`t.me/+<número>`) nunca precargan texto
   — el parámetro `?text=` solo funciona con un `@usuario` (`t.me/<usuario>?text=...`). Pide
   el `@usuario` de Telegram del profesor si no lo tienes; no asumas que el número sirve.
@@ -124,7 +168,17 @@ cumplía esta regla.
   a diferencia de WhatsApp/Telegram/Correo, Teams sigue llevando el respaldo de "copiar al
   portapapeles + mensaje explícito" (`copyText(...)` con un texto tipo "pégalo en el chat
   que se acaba de abrir" — un simple "¡Copiado!" genérico pasa desapercibido justo cuando la
-  pantalla cambia de app).
+  pantalla cambia de app). **Codifica siempre `TEACHER.teamsEmail` con `encodeURIComponent`**
+  al construir el `?users=` del enlace (`https://teams.microsoft.com/l/chat/0/0?users=...`)
+  — PR #30 corrigió una inconsistencia real donde ese único campo se insertaba sin codificar
+  mientras todos los demás canales sí codificaban el suyo. Dicho esto, esa corrección es de
+  consistencia, no una solución confirmada a un límite ya observado y aceptado: en
+  escritorio, Teams pega el mensaje pero **no selecciona automáticamente al destinatario**
+  (hay que elegirlo a mano), mientras que en móvil sí lo selecciona bien — de nuevo, un caso
+  de una app nativa interceptando un enlace web y honrando solo parte de sus parámetros,
+  fuera del control del HTML/JS de la página. El mensaje de respaldo ya nombra el paso
+  manual exacto ("elige a " + TEACHER.teamsEmail + "..."); no sigas intentando forzar la
+  selección automática en escritorio sin que el profesor lo pida de nuevo.
 - **Al combinar una copia al portapapeles con `window.open()` en el mismo clic** (patrón ya
   no necesario para Correo/Telegram, pero relevante si se reutiliza en otro canal futuro):
   el navegador solo concede "permiso de interacción del usuario" una vez por gesto. Si

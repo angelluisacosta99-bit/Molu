@@ -349,10 +349,12 @@
 </div>
 <script>
   (function () {
-    // Deterrent-only, not real security — anyone who reads the page source sees CODE.
-    // Explain this plainly to the teacher; never present it as real access control.
-    const CODE = "{{GATE_CODE}}"; // pick a short, memorable, all-caps word tied to the topic
-    const STORAGE_KEY = "{{STORAGE_KEY}}"; // unique per exercise, e.g. "unlocked-b2-13a-topic"
+    // El código es solo un disuasivo, no seguridad real — cualquiera que vea el HTML
+    // fuente lo ve. Elige una palabra corta, memorable y ligada al tema, en MAYÚSCULAS.
+    const CODE = "{{GATE_CODE}}";
+    // MUST be byte-identical al {{STORAGE_KEY}} usado arriba (ver comentario junto al
+    // primer occurrence). Usa un valor único por ejercicio, p. ej. "unlocked-b2-13a-tema".
+    const STORAGE_KEY = "{{STORAGE_KEY}}";
     function tryUnlock() {
       const val = document.getElementById("gateInput").value.trim().toUpperCase();
       if (val === CODE) {
@@ -372,11 +374,9 @@
 <div class="topbar gated-content">
   <div class="topbar-inner">
     <div class="brand">
+      <!-- Ejemplo real (A1): {{BRAND_TITLE}} = "Ejercicios A1", {{BRAND_SUB}} = "Presente · Gerundio · Indefinido" -->
       <span class="brand-title">{{BRAND_TITLE}}</span>
-      <!-- e.g. "Ejercicios B2" -->
       <span class="brand-sub">{{BRAND_SUB}}</span>
-      <!-- e.g. "Perífrasis verbales" — short, topbar-width -->
-
     </div>
     <nav class="nav-dots" id="navDots"></nav>
     <div class="score-wrap">
@@ -388,11 +388,8 @@
 
 <div class="hero gated-content">
   <div class="eyebrow">{{EYEBROW}}</div>
-  <!-- e.g. "Nuevo Español en Marcha 4 · Nivel B2 · Unidad 13" -->
   <h1>{{HEADLINE}}</h1>
-  <!-- e.g. "N ejercicios de gramática, corregidos al instante" -->
   <p>{{SUBTITLE}}</p>
-  <!-- one line naming the grammar points covered, plus how it works -->
   <div class="hero-meta">
     <span><strong id="totalBlanksLabel">—</strong> huecos en total</span>
     <span><strong>{{N_BLOCKS}}</strong> bloques</span>
@@ -429,7 +426,6 @@
 
 <footer class="gated-content">
   <span>{{FOOTER_LEFT}}</span>
-  <!-- e.g. book/unit reference, matching the eyebrow above -->
   <span>© Angel Luis Acosta González</span>
 </footer>
 
@@ -476,95 +472,87 @@
   }
 
   // ---------- exercise data ----------
-  // Ground this in the teacher's real material (Google Drive: Nuevo Español en Marcha /
-  // ПК Гонсалес / Temas — see root CLAUDE.md for priority order and the skill's SKILL.md
-  // for how to pull it) rather than inventing generic sentences. If Drive gives an empty
-  // string, the PDF is scanned/image-only — ask the teacher for photos of the pages instead.
-  //
-  // template blanks use {0},{1}... matched to item.a[i] (or ex.a[i] for "text" exercises)
-  //
-  // answer spec per blank — TWO forms, pick per blank based on what's being tested:
-  //   1. [["answer"], ["alt answer"]]  — array of accepted exact strings (accent-STRICT,
-  //      see the big comment above norm()). Use for verb forms / precise grammar.
-  //   2. [{ flex: ["keyword1", "keyword2"], show: "Full model answer for the reveal." }]
-  //      — all keywords must appear, accent-INSENSITIVE. Use for open-ended short answers
-  //      where content matters more than exact wording (e.g. "¿Qué hizo ayer?" answers).
-  //      `show` is what's displayed when the student gets it wrong — write it as a full
-  //      natural sentence, not just the keyword list.
-  //
-  // {{BLOCKS_DATA}} — replace this whole array with the real exercise content. The five
-  // "type" values below are the ones the renderer (search "ex.type ===" further down this
-  // file) already knows how to draw; keep to these unless you also extend the renderer.
+  // template blanks use {0},{1}... matched to item.answers[i]
   const blocks = [
+    // Cada bloque agrupa varios ejercicios bajo un mismo subtema. {{BLOCKS}} — sustituye
+    // este array completo por los bloques/ejercicios reales del capítulo, basados en el
+    // material del profesor (ver SKILL.md paso 1). Lo que sigue es un ejemplo de cada uno
+    // de los 5 tipos soportados por el renderizador (busca 'ex.type ===' en este archivo);
+    // si necesitas un tipo nuevo, tendrás que extender también el renderizador.
     {
-      id: "{{block-id}}", num: 1, title: "{{Nombre del bloque}}",
-      sub: "{{Unidad/tema · qué cubre este bloque}}",
+      id: "{{BLOCK_ID}}", num: 1, title: "{{BLOCK_TITLE}}",
+      sub: "{{BLOCK_SUBTITLE}}",
       exercises: [
         {
-          // type "items": one blank-row per item, each with its own instruction line.
-          num: 1, title: "{{Título del ejercicio}}",
-          instr: "{{Instrucción para el alumno}}",
+          // Tipo "items": una lista de frases sueltas, cada una con sus propios huecos
+          // {0}, {1}... numerados desde 0 DENTRO de esa frase (no del ejercicio entero).
+          // "a" es un array paralelo a los huecos: a[i] es la lista de respuestas
+          // aceptadas para el hueco {i} (varias formas válidas si aplica).
+          num: 1, title: "{{EXERCISE_TITLE}}",
+          instr: "{{EXERCISE_INSTRUCTIONS}}",
           type: "items",
           items: [
-            // wide: true widens the input for longer answers (full phrases vs. single words).
-            { t: "{{Frase con hueco}} {0} {{resto de la frase}}", a: [["{{respuesta}}"]] },
-            { t: "{{Frase con dos huecos}} {0} ... {1} ...", a: [["{{resp1}}"], ["{{resp2}}"]], wide: true }
+            { t: "María {0} (trabajar) en un hospital y {1} (vivir) en Madrid.", a: [["trabaja"], ["vive"]] },
+            { t: "¿Tú {0} (comer) en casa o en la oficina normalmente?", a: [["comes"]] }
+            // wide: true en un item hace el input más ancho — úsalo para respuestas largas.
           ]
         },
         {
-          // type "text": one continuous paragraph/dialogue with several blanks; \n renders
-          // as a line break (use for dialogue turns). ex.a is a flat array across the WHOLE
-          // text, indexed by {0},{1}... in order of appearance.
-          num: 2, title: "{{Título}}",
-          instr: "{{Instrucción}}",
+          // Tipo "text": un único párrafo continuo con huecos numerados {0}, {1}... a lo
+          // largo de TODO el texto (no se reinicia por línea). "\n" en `text` inserta un
+          // salto de línea visual. "a" es un array paralelo a los huecos del texto entero.
+          num: 2, title: "{{EXERCISE_TITLE}}",
+          instr: "{{EXERCISE_INSTRUCTIONS}}",
           type: "text",
-          text: "{{Texto con}} {0} {{huecos numerados}} {1} {{en orden}}.",
-          a: [["{{resp1}}"], ["{{resp2}}"]]
+          text: "Hoy Carmen {0} (trabajar) todo el día, pero ahora mismo {1} (preparar) la cena.",
+          a: [["trabaja"], ["está preparando"]]
         },
         {
-          // type "table2": simple infinitivo → gerundio (or similar) two-column drill table.
-          // rows: [[label, [["answer"]]], ...] — second element is a one-blank answer spec.
-          // WARNING: the column headers ("Infinitivo"/"Gerundio") are HARDCODED in the
-          // renderer (search 'ex.type === "table2"' below), not read from this data. If
-          // this exercise drills something other than infinitivo→gerundio, either accept
-          // the mismatched headers or edit the renderer's <thead> string too.
-          num: 3, title: "{{Título}}",
-          instr: "{{Instrucción}}",
+          // Tipo "table2": tabla de 2 columnas, "rows" es [valor_fijo, [respuestas_aceptadas]].
+          // WARNING: los encabezados ("Infinitivo"/"Gerundio") están HARDCODEADOS en el
+          // renderizador (busca 'ex.type === "table2"' más abajo), no se leen de este
+          // array — si necesitas otros encabezados, edita el renderizador o usa "conjTable".
+          num: 3, title: "{{EXERCISE_TITLE}}",
+          instr: "{{EXERCISE_INSTRUCTIONS}}",
           type: "table2",
           rows: [
-            ["{{hablar}}", [["{{hablando}}"]]],
-            ["{{comer}}", [["{{comiendo}}"]]]
+            ["hablar", ["hablando"]],
+            ["comer", ["comiendo"]]
           ]
         },
         {
-          // type "conjTable": full conjugation grid — subjects as rows, verbs as columns.
-          // cols[i].a is indexed in the SAME order as `subjects`.
-          num: 4, title: "{{Título}}",
-          instr: "{{Instrucción}}",
+          // Tipo "conjTable": tabla de conjugación con columnas configurables. "subjects"
+          // es la columna izquierda fija (sujetos); "cols" define cada columna de la
+          // derecha con su encabezado ("label") y sus respuestas ("a", un array paralelo
+          // a "subjects" — a[i] es la respuesta para subjects[i] en esa columna).
+          num: 4, title: "{{EXERCISE_TITLE}}",
+          instr: "{{EXERCISE_INSTRUCTIONS}}",
           type: "conjTable",
-          subjects: ["yo", "tú", "él / ella / Ud.", "nosotros/as", "ellos / ellas / Uds."],
+          subjects: ["yo", "tú", "él/ella"],
           cols: [
-            { label: "{{verbo1}}", a: [["{{f1}}"], ["{{f2}}"], ["{{f3}}"], ["{{f4}}"], ["{{f5}}"]] },
-            { label: "{{verbo2}}", a: [["{{f1}}"], ["{{f2}}"], ["{{f3}}"], ["{{f4}}"], ["{{f5}}"]] }
+            { label: "Presente", a: ["hablo", "hablas", "habla"] },
+            { label: "Indefinido", a: ["hablé", "hablaste", "habló"] }
           ]
         },
         {
-          // type "agenda": a small reference table (read-only, day/activity or similar)
-          // followed by short-answer items about it — good fit for the {flex:...} spec
-          // above, since these are usually open questions about the table's content.
-          // WARNING: like table2, the column headers ("Día"/"Actividad") are HARDCODED in
-          // the renderer, not read from `table` below.
-          num: 5, title: "{{Título}}",
-          instr: "{{Instrucción}}",
+          // Tipo "agenda": tabla de referencia (solo lectura, sin huecos) seguida de una
+          // lista "items" tipo "items" que se responde consultando esa tabla.
+          // WARNING: igual que table2, los encabezados ("Día"/"Actividad") están
+          // HARDCODEADOS en el renderizador, no se leen de `table` aquí abajo.
+          num: 5, title: "{{EXERCISE_TITLE}}",
+          instr: "{{EXERCISE_INSTRUCTIONS}}",
           type: "agenda",
-          table: [["{{lunes}}", "{{actividad}}"], ["{{martes}}", "{{actividad}}"]],
+          table: [
+            ["lunes", "reunión con el equipo"],
+            ["martes", "clase de español"]
+          ],
           items: [
-            { t: "{{¿Pregunta sobre la tabla?}} — {0}", a: [{ flex: ["{{palabra-clave}}"], show: "{{Respuesta modelo completa.}}" }], wide: true }
+            { t: "El lunes María {0} (tener) una reunión con el equipo.", a: [["tiene"]] }
           ]
         }
       ]
     }
-    // Add more blocks (blocks 2, 3, ...) following the same shape as above.
+    // Añade más bloques ({ id, num, title, sub, exercises: [...] }) según haga falta.
   ];
 
   // ---------- render ----------
@@ -943,13 +931,20 @@
       // t.me links only pre-fill the message box when addressed to a @username — the
       // phone-number form (t.me/+<number>) has no equivalent and ignores ?text= entirely.
       document.getElementById("chTelegram").href = "https://t.me/" + TEACHER.telegram + "?text=" + encodeURIComponent(shortText);
-      document.getElementById("chTeams").href = "https://teams.microsoft.com/l/chat/0/0?users=" + TEACHER.teamsEmail + "&message=" + encoded;
-      // Gmail's own web compose URL, opened as a plain https:// link — the same class of
-      // navigation as the WhatsApp/Telegram/Teams links above, which is what actually works
-      // from inside the artifact's sandboxed iframe. A mailto: link is a different, non-http
-      // protocol that the sandbox silently blocks regardless of how it's triggered, and even
-      // when it isn't blocked it depends on the visitor having a default mail app configured
-      // — unreliable for an exam opened by people with no Claude account and no known setup.
+      // encodeURIComponent on the recipient, matching every other channel's params (was raw
+      // before) — @ is technically legal unencoded in a query string, but the Teams desktop
+      // app parses this deep link with its own internal handler, not a browser, and may be
+      // stricter than what wa.me/t.me/mail.google.com's own parsers tolerate.
+      document.getElementById("chTeams").href = "https://teams.microsoft.com/l/chat/0/0?users=" + encodeURIComponent(TEACHER.teamsEmail) + "&message=" + encoded;
+      // Gmail's web compose URL, set as a plain https:// href — a native <a target="_blank">
+      // click is trusted browser navigation, exempt from the "block pop-ups" site permission
+      // that silently swallows a script-triggered window.open() call (this broke a previous
+      // version of this button on both desktop and mobile: the Correo button had, at some
+      // point during testing, triggered enough popups that Chrome's per-site "block
+      // pop-ups" permission for this origin got set, which only affects window.open(), not
+      // real link clicks). On Android with the Gmail app installed, the OS still intercepts
+      // this link and opens the app instead of the browser, which ignores the compose
+      // params — that's a separate, unrelated limitation covered by the copy fallback below.
       document.getElementById("chEmail").href = "https://mail.google.com/mail/?view=cm&fs=1&to=" +
         encodeURIComponent(TEACHER.email) + "&su=" + encodeURIComponent("Resultados — " + TITLE_LABEL) +
         "&body=" + encodeURIComponent(shortText);
@@ -987,18 +982,29 @@
     document.getElementById("chCopy").onclick = function () {
       copyText(currentSummary(), function (ok) { if (ok) showCopied(); });
     };
-    // Teams' chat link can't reliably pre-fill the message the way ?text= does for
-    // WhatsApp/Telegram, so its button also copies the summary and tells the student in
-    // plain words to paste it once the chat is open — a silent "¡Copiado!" is easy to miss
-    // right after the app switches away to open the chat.
+    // Teams' chat link works fully on mobile (recipient selected, message pasted), but on
+    // desktop the app has only shown the message pasted, not the recipient auto-selected —
+    // the same category of gap as Correo on Android: a native app intercepting a web deep
+    // link and only partially honoring its parameters, which the page has no way to detect
+    // or control. The button also copies the summary and names the exact manual step that
+    // might still be needed, covering both platforms without guessing which one applies.
     document.getElementById("chTeams").addEventListener("click", function () {
       copyText(currentSummary(), function (ok) {
-        if (ok) showCopied("Texto copiado. Pégalo (mantén pulsado → Pegar) en el chat que se acaba de abrir.");
+        if (ok) showCopied("Texto copiado. Si el destinatario no se seleccionó solo, elige a " + TEACHER.teamsEmail + ". Pégalo (mantén pulsado → Pegar) si el mensaje no se rellenó.");
       });
     });
-    // chEmail is a plain https:// link (Gmail compose, set in refreshLinks) opened with
-    // target="_blank" — the same kind of navigation as WhatsApp, which is what actually
-    // works from inside the artifact's sandboxed public iframe. No click handler needed.
+    // Correo: like Teams, its own link can't be trusted to fully deliver the message (on
+    // Android with the Gmail app installed, the OS intercepts mail.google.com links and
+    // opens the APP instead of the browser, which ignores the compose params and just opens
+    // normally — "redirects to Gmail but does nothing"). This is a genuinely additive
+    // listener on the native <a href> click (NOT a onclick handler calling window.open()
+    // itself) — a script-triggered window.open() is what a "block pop-ups" site permission
+    // targets, and a real link click is exempt from it, which is what actually matters here.
+    document.getElementById("chEmail").addEventListener("click", function () {
+      copyText(currentSummary(), function (ok) {
+        if (ok) showCopied("Texto copiado. Si no se abrió tu correo solo, pégalo (mantén pulsado → Pegar) en un email a " + TEACHER.email + ".");
+      });
+    });
   }
 
   allInputs.forEach(function (rec) {
