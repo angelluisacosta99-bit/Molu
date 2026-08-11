@@ -433,6 +433,9 @@
   function stripAccents(s) {
     return s.normalize("NFD").replace(/[̀-ͯ]/g, "");
   }
+  function escapeHtml(s) {
+    return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
   // answer spec: array of accepted exact strings, OR {flex:[...]} meaning all keywords must appear (accent-insensitive)
   function isCorrect(input, spec) {
     const n = norm(input);
@@ -1014,7 +1017,7 @@
     } else {
       errBox.innerHTML = '<div class="results-errors-title">Fallos (' + wrong.length + ')</div>' +
         wrong.map(function (rec) {
-          const given = rec.el.value.trim() || "(en blanco)";
+          const given = escapeHtml(rec.el.value.trim() || "(en blanco)");
           return '<div class="results-error-item"><b>' + rec.label + ':</b> <s>' + given + "</s> → " + correctTextFor(rec.spec) + "</div>";
         }).join("");
     }
