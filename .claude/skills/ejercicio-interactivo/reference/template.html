@@ -508,7 +508,11 @@
           a: [["trabaja"], ["está preparando"]]
         },
         {
-          // Tipo "table2": tabla de 2 columnas, "rows" es [valor_fijo, [respuestas_aceptadas]].
+          // Tipo "table2": tabla de 2 columnas, "rows" es [valor_fijo, respuestas_aceptadas].
+          // OJO: "respuestas_aceptadas" es el mismo spec que usa isCorrect() para "a" en los
+          // demás tipos — casi siempre un array de UNA lista de alternativas, es decir
+          // [["hablando"]] (doble corchete), no ["hablando"] a secas; el renderizador hace
+          // makeInput(r[1][0], ...), así que r[1][0] debe ser el array de alternativas.
           // WARNING: los encabezados ("Infinitivo"/"Gerundio") están HARDCODEADOS en el
           // renderizador (busca 'ex.type === "table2"' más abajo), no se leen de este
           // array — si necesitas otros encabezados, edita el renderizador o usa "conjTable".
@@ -516,22 +520,25 @@
           instr: "{{EXERCISE_INSTRUCTIONS}}",
           type: "table2",
           rows: [
-            ["hablar", ["hablando"]],
-            ["comer", ["comiendo"]]
+            ["hablar", [["hablando"]]],
+            ["comer", [["comiendo"]]]
           ]
         },
         {
           // Tipo "conjTable": tabla de conjugación con columnas configurables. "subjects"
           // es la columna izquierda fija (sujetos); "cols" define cada columna de la
           // derecha con su encabezado ("label") y sus respuestas ("a", un array paralelo
-          // a "subjects" — a[i] es la respuesta para subjects[i] en esa columna).
+          // a "subjects" — a[i] son las alternativas aceptadas para subjects[i] en esa
+          // columna, es decir CADA elemento de "a" es a su vez un array de alternativas,
+          // p. ej. a: [["hablo"], ["hablas"], ["habla"]], no a: ["hablo", "hablas", "habla"]
+          // — el renderizador hace makeInput(c.a[si], ...) y espera ese array ahí).
           num: 4, title: "{{EXERCISE_TITLE}}",
           instr: "{{EXERCISE_INSTRUCTIONS}}",
           type: "conjTable",
           subjects: ["yo", "tú", "él/ella"],
           cols: [
-            { label: "Presente", a: ["hablo", "hablas", "habla"] },
-            { label: "Indefinido", a: ["hablé", "hablaste", "habló"] }
+            { label: "Presente", a: [["hablo"], ["hablas"], ["habla"]] },
+            { label: "Indefinido", a: [["hablé"], ["hablaste"], ["habló"]] }
           ]
         },
         {
