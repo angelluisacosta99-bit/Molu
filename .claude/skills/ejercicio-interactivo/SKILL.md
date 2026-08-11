@@ -1,6 +1,6 @@
 ---
 name: ejercicio-interactivo
-description: Use when Angel asks to build a new interactive Spanish grammar/vocabulary exercise page with instant grading — a self-contained HTML artifact where a student fills in blanks, gets corrected instantly, and can send their results to the teacher via WhatsApp/Telegram/Teams/Correo. Also use when asked to add a new chapter/unit to this format, or to fix/extend an existing one (e.g. the A1 "Presente, gerundio, indefinido" or B2 12C "¿Sigues pintando?" exercises already in docencia-espanol/materiales/). Triggers: "ejercicio interactivo", "como el de A1/12C", "corrección instantánea", "página interactiva para practicar", "haz lo mismo con otro capítulo".
+description: "Use when Angel asks to build a new interactive Spanish grammar/vocabulary exercise page with instant grading — a self-contained HTML artifact where a student fills in blanks, gets corrected instantly, and can send their results to the teacher via WhatsApp/Telegram/Teams/Correo. Also use when asked to add a new chapter/unit to this format, or to fix/extend an existing one (e.g. the A1 \"Presente, gerundio, indefinido\" or B2 12C \"¿Sigues pintando?\" exercises already in docencia-espanol/materiales/). Triggers: \"ejercicio interactivo\", \"como el de A1/12C\", \"corrección instantánea\", \"página interactiva para practicar\", \"haz lo mismo con otro capítulo\"."
 version: 1.0.0
 user-invocable: true
 license: Apache 2.0

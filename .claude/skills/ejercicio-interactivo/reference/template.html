@@ -329,6 +329,8 @@
 </style>
 
 <script>
+  // {{STORAGE_KEY}} here MUST be byte-identical to the one set further down in the gate
+  // script (search "STORAGE_KEY =") — same placeholder, same value, both occurrences.
   document.documentElement.setAttribute(
     "data-locked",
     localStorage.getItem("{{STORAGE_KEY}}") === "1" ? "false" : "true"
@@ -522,6 +524,10 @@
         {
           // type "table2": simple infinitivo → gerundio (or similar) two-column drill table.
           // rows: [[label, [["answer"]]], ...] — second element is a one-blank answer spec.
+          // WARNING: the column headers ("Infinitivo"/"Gerundio") are HARDCODED in the
+          // renderer (search 'ex.type === "table2"' below), not read from this data. If
+          // this exercise drills something other than infinitivo→gerundio, either accept
+          // the mismatched headers or edit the renderer's <thead> string too.
           num: 3, title: "{{Título}}",
           instr: "{{Instrucción}}",
           type: "table2",
@@ -546,6 +552,8 @@
           // type "agenda": a small reference table (read-only, day/activity or similar)
           // followed by short-answer items about it — good fit for the {flex:...} spec
           // above, since these are usually open questions about the table's content.
+          // WARNING: like table2, the column headers ("Día"/"Actividad") are HARDCODED in
+          // the renderer, not read from `table` below.
           num: 5, title: "{{Título}}",
           instr: "{{Instrucción}}",
           type: "agenda",
