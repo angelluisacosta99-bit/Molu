@@ -1038,7 +1038,7 @@
     // then appends a note — measuring the ENCODED length, since encodeURIComponent can
     // roughly triple raw length (newlines, accents, emoji all expand).
     function truncateForUrl(text, maxEncodedLen) {
-      const note = "\n\n(Informe truncado por ser muy largo para el enlace de correo — usa \"Copiar resumen\" para ver todos los fallos.)";
+      const note = "\n\n(Informe truncado por ser muy largo para el enlace — usa \"Copiar resumen\" para ver todos los fallos.)";
       if (encodeURIComponent(text).length <= maxEncodedLen) return text;
       const lines = text.split("\n");
       let out = "";
@@ -1052,10 +1052,14 @@
     function refreshLinks() {
       const text = currentSummary();
       const encoded = encodeURIComponent(text);
+      // t.me's server (nginx) rejects long query strings outright with a 400 Bad Request —
+      // wa.me tolerates the same length fine, so only Telegram needs the same length budget
+      // already used for the Gmail link below.
+      const shortText = truncateForUrl(text, 1200);
       document.getElementById("chWhatsapp").href = "https://wa.me/" + TEACHER.whatsapp + "?text=" + encoded;
       // t.me links only pre-fill the message box when addressed to a @username — the
       // phone-number form (t.me/+<number>) has no equivalent and ignores ?text= entirely.
-      document.getElementById("chTelegram").href = "https://t.me/" + TEACHER.telegram + "?text=" + encoded;
+      document.getElementById("chTelegram").href = "https://t.me/" + TEACHER.telegram + "?text=" + encodeURIComponent(shortText);
       document.getElementById("chTeams").href = "https://teams.microsoft.com/l/chat/0/0?users=" + TEACHER.teamsEmail + "&message=" + encoded;
       // Gmail's own web compose URL, opened as a plain https:// link — the same class of
       // navigation as the WhatsApp/Telegram/Teams links above, which is what actually works
@@ -1063,10 +1067,9 @@
       // protocol that the sandbox silently blocks regardless of how it's triggered, and even
       // when it isn't blocked it depends on the visitor having a default mail app configured
       // — unreliable for an exam opened by people with no Claude account and no known setup.
-      const emailBody = truncateForUrl(text, 1200);
       document.getElementById("chEmail").href = "https://mail.google.com/mail/?view=cm&fs=1&to=" +
         encodeURIComponent(TEACHER.email) + "&su=" + encodeURIComponent("Resultados — " + TITLE_LABEL) +
-        "&body=" + encodeURIComponent(emailBody);
+        "&body=" + encodeURIComponent(shortText);
     }
     refreshLinks();
     nameEl.oninput = refreshLinks;
