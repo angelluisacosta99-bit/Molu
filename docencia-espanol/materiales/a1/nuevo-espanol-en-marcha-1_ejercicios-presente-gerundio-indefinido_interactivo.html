@@ -1073,14 +1073,15 @@
       copyText(currentSummary(), function (ok) { if (ok) showCopied(); });
     };
     // Email: mailto: links are unreliable inside embedded/sandboxed views and can
-    // even blank out the whole page if the OS has no mail client registered, so we
-    // copy the summary first (safe fallback) and open the mail client in its own tab.
+    // even blank out the whole page if the OS has no mail client registered, so this
+    // opens the mail client in its own tab (never the current page) and separately
+    // copies the summary as a fallback in case the mail client never opens.
+    // window.open must run synchronously inside the click handler — if it runs after the
+    // clipboard promise resolves, the browser no longer treats it as user-initiated and
+    // silently blocks it as a popup (only the copy would appear to work).
     document.getElementById("chEmail").onclick = function () {
       const text = currentSummary();
       const mailtoUrl = "mailto:" + TEACHER.email + "?subject=" + encodeURIComponent("Resultados — " + TITLE_LABEL) + "&body=" + encodeURIComponent(text);
-      // window.open must run synchronously inside the click handler — if it runs after the
-      // clipboard promise resolves, the browser no longer treats it as user-initiated and
-      // silently blocks it as a popup (only the copy would appear to work).
       try { window.open(mailtoUrl, "_blank", "noopener"); } catch (e) { /* ignore */ }
       copyText(text, function () {});
     };
