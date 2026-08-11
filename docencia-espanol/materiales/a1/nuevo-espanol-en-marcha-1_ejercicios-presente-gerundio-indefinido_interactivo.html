@@ -1072,18 +1072,31 @@
     document.getElementById("chCopy").onclick = function () {
       copyText(currentSummary(), function (ok) { if (ok) showCopied(); });
     };
+    // Not every channel's own link/redirect reliably delivers the summary text:
+    // Telegram's t.me links have no way to pre-fill a message at all, and mailto:
+    // opening is unreliable inside embedded/sandboxed views (can even fail silently).
+    // Copying to the clipboard is the one thing that works everywhere, so every
+    // channel button also copies the summary — with a visible confirmation — as a
+    // safety net alongside whatever that channel's own link does.
+    ["chWhatsapp", "chTelegram", "chTeams"].forEach(function (id) {
+      document.getElementById(id).addEventListener("click", function () {
+        copyText(currentSummary(), function (ok) { if (ok) showCopied(); });
+      });
+    });
     // Email: mailto: links are unreliable inside embedded/sandboxed views and can
     // even blank out the whole page if the OS has no mail client registered, so this
     // opens the mail client in its own tab (never the current page) and separately
     // copies the summary as a fallback in case the mail client never opens.
-    // window.open must run synchronously inside the click handler — if it runs after the
-    // clipboard promise resolves, the browser no longer treats it as user-initiated and
-    // silently blocks it as a popup (only the copy would appear to work).
+    // Both actions consume the click's "user activation" token, and a browser only grants
+    // it once per gesture — so the copy has to happen first, synchronously (via the legacy
+    // execCommand path, not the async Clipboard API, which would still lose the activation
+    // waiting on its promise), and window.open() right after, still synchronously. Doing
+    // window.open() first (as an earlier version of this fix did) silently breaks the copy.
     document.getElementById("chEmail").onclick = function () {
       const text = currentSummary();
       const mailtoUrl = "mailto:" + TEACHER.email + "?subject=" + encodeURIComponent("Resultados — " + TITLE_LABEL) + "&body=" + encodeURIComponent(text);
+      fallbackCopy(text, function (ok) { if (ok) showCopied(); });
       try { window.open(mailtoUrl, "_blank", "noopener"); } catch (e) { /* ignore */ }
-      copyText(text, function () {});
     };
   }
 
