@@ -1,7 +1,7 @@
 ---
 name: ejercicio-interactivo
 description: "Use when Angel asks to build a new interactive Spanish grammar/vocabulary exercise page with instant grading — a self-contained HTML artifact where a student fills in blanks, gets corrected instantly, and can send their results to the teacher via WhatsApp/Telegram/Teams/Correo. Also use when asked to add a new chapter/unit to this format, or to fix/extend an existing one (e.g. the A1 \"Presente, gerundio, indefinido\" or B2 12C \"¿Sigues pintando?\" exercises already in docencia-espanol/materiales/). Triggers: \"ejercicio interactivo\", \"como el de A1/12C\", \"corrección instantánea\", \"página interactiva para practicar\", \"haz lo mismo con otro capítulo\"."
-version: 1.4.0
+version: 1.5.0
 user-invocable: true
 license: Apache 2.0
 ---
@@ -82,7 +82,15 @@ PR #22 invertía el orden que PR #20 daba por bueno.
    del índice), duplica el bloque `.manual-section` completo para ese manual en vez de
    mezclar niveles de manuales distintos dentro de la misma sección.
 
-7. **Sigue el flujo de PR de este repositorio, sin excepciones.** `CLAUDE.md` en la raíz
+7. **Añade el código a `docencia-espanol/materiales/codigos-acceso.html`.** Es la
+   referencia privada del profesor (nivel, capítulo, código, enlace) para cuando un alumno
+   pide el código en clase — añade una fila a la tabla y vuelve a publicar con el mismo
+   `url`. **Nunca enlaces esta página desde el índice público ni desde ningún material que
+   puedan ver los alumnos** — no por seguridad real (el código sigue siendo solo un
+   disuasivo, visible en el código fuente de cada ejercicio), sino porque no tiene sentido
+   poner todos los códigos juntos a la vista de cualquiera que reciba el enlace.
+
+8. **Sigue el flujo de PR de este repositorio, sin excepciones.** `CLAUDE.md` en la raíz
    exige: abrir el PR (esto no dispara nada más — puede quedarse esperando) y, **solo
    cuando el profesor pida fusionar ese PR**, lanzar una revisión con un agente
    independiente (`Agent` tool, `run_in_background: true`, dale contexto completo y pídele
@@ -245,7 +253,11 @@ parezca más "controlable" desde JS — ya se demostró que rompe el caso más b
   aplicadas. Punto de partida obligatorio para cualquier ejercicio nuevo.
 - `docencia-espanol/materiales/indice-clases-de-espanol.html` — el artefacto "Clases de
   Español", índice manual → nivel → capítulo de toda la biblioteca (ver paso 6 del flujo de
-  trabajo). Actualízalo cada vez que publiques un capítulo nuevo.
+  trabajo). Actualízalo cada vez que publiques un capítulo nuevo. Este es público (o puede
+  llegar a serlo si el profesor lo comparte) — nunca le añadas los códigos de acceso.
+- `docencia-espanol/materiales/codigos-acceso.html` — referencia privada del profesor con
+  el código de cada capítulo (ver paso 7). Actualízala cada vez que publiques un capítulo
+  nuevo; no la enlaces desde ningún material que puedan ver los alumnos.
 - `PRODUCT.md` y `DESIGN.md` (raíz del repo) — el sistema de diseño compartido por todos los
   artefactos de esta biblioteca (paleta papel/tinta, tipografía, componentes). Cualquier
   página nueva (ejercicio o índice) debe extender estos tokens, no inventar los suyos — ver
