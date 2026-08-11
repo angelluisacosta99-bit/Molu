@@ -1,7 +1,7 @@
 ---
 name: ejercicio-interactivo
 description: "Use when Angel asks to build a new interactive Spanish grammar/vocabulary exercise page with instant grading — a self-contained HTML artifact where a student fills in blanks, gets corrected instantly, and can send their results to the teacher via WhatsApp/Telegram/Teams/Correo. Also use when asked to add a new chapter/unit to this format, or to fix/extend an existing one (e.g. the A1 \"Presente, gerundio, indefinido\" or B2 12C \"¿Sigues pintando?\" exercises already in docencia-espanol/materiales/). Triggers: \"ejercicio interactivo\", \"como el de A1/12C\", \"corrección instantánea\", \"página interactiva para practicar\", \"haz lo mismo con otro capítulo\"."
-version: 1.3.0
+version: 1.4.0
 user-invocable: true
 license: Apache 2.0
 ---
@@ -121,6 +121,21 @@ no las deshagas sin querer al modificar la plantilla.
   (`escapeHtml()`, usado en la lista de fallos del panel de resultados). Sin esto, un
   alumno que escribe `<algo>` en un hueco rompe el renderizado o ejecuta su propio HTML
   (self-XSS — bajo impacto real, pero un bug genuino).
+- **Todo número/letra estructural lleva `translate="no"`** (`.item-letter`, `.exnum`,
+  `#scoreNum`, `#scoreTotal`, `#totalBlanksLabel`, `#resScoreNum`, `#resScoreDen`, y en el
+  índice `.level-badge`/`.chapter-num`). Bug real visto en producción: en 12C, con el
+  traductor de página de Chrome móvil activo, los números "1.", "2."... de la lista de
+  ejercicios desaparecían (mientras el resto del contenido de esa misma fila — la frase, el
+  desplegable — seguía renderizando bien), porque Google Translate reescribe el DOM al
+  traducir y puede descartar nodos que son solo un número/puntuación sueltos, sobre todo
+  cuando conviven como hermanos de texto sí-traducible dentro del mismo contenedor armado
+  con `innerHTML`. La solución NO es desactivar la traducción de toda la página (los
+  alumnos rusohablantes pueden querer traducir el enunciado) — es marcar con
+  `translate="no"` solo los elementos puramente estructurales/numéricos, que Google
+  Translate respeta y deja intactos. La plantilla ya lo lleva en todos sus marcadores de
+  número; si añades un tipo de ejercicio nuevo (o tocas uno existente, como los 5 tipos
+  bespoke de 12C) que muestre un número de fila/hueco/puntuación fuera de estos, añade
+  `translate="no"` ahí también — no lo des por hecho solo porque venga de la plantilla.
 - **Tildes estrictas por diseño** — ver el paso 3 arriba. No es un bug a "arreglar"
   aflojando `norm()`/`isCorrect()` globalmente sin consultar al profesor primero.
 

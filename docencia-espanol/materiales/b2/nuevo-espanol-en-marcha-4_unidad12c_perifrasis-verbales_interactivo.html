@@ -281,7 +281,7 @@
     </div>
     <div class="score-wrap">
       <div class="bar"><div class="bar-fill" id="barFill"></div></div>
-      <div class="score"><span class="num" id="scoreNum">0</span><span style="color:var(--pencil)"> / </span><span id="scoreTotal">0</span></div>
+      <div class="score"><span class="num" id="scoreNum" translate="no">0</span><span style="color:var(--pencil)"> / </span><span id="scoreTotal" translate="no">0</span></div>
     </div>
   </div>
 </div>
@@ -292,7 +292,7 @@
   <p>Continuidad, interrupción, obligación, probabilidad, repetición y aproximación. Elige, marca o completa
   cada ejercicio y pulsa «Corregir» para ver al instante si acertaste.</p>
   <div class="hero-meta">
-    <span><strong id="totalLabel">—</strong> respuestas en total</span>
+    <span><strong id="totalLabel" translate="no">—</strong> respuestas en total</span>
     <span><strong>5</strong> ejercicios</span>
   </div>
 </div>
@@ -308,8 +308,8 @@
   <div class="results-headline" id="resHeadline"></div>
   <div class="results-sub" id="resSub"></div>
   <div class="results-score-row">
-    <span class="results-score-num" id="resScoreNum"></span>
-    <span class="results-score-den" id="resScoreDen"></span>
+    <span class="results-score-num" id="resScoreNum" translate="no"></span>
+    <span class="results-score-den" id="resScoreDen" translate="no"></span>
   </div>
   <input type="text" class="results-name" id="resName" placeholder="Tu nombre (para que tu profesor sepa quién eres)" />
   <div class="results-errors" id="resErrors"></div>
@@ -359,7 +359,7 @@
     card.className = "exercise";
     const head = document.createElement("div");
     head.className = "exercise-head";
-    head.innerHTML = '<div class="exercise-title"><span class="exnum">Ej. ' + num + '</span><h3>' + title + "</h3></div>";
+    head.innerHTML = '<div class="exercise-title"><span class="exnum" translate="no">Ej. ' + num + '</span><h3>' + title + "</h3></div>";
     const btn = document.createElement("button");
     btn.className = "check-btn";
     btn.textContent = "Corregir";
@@ -397,7 +397,7 @@
       const row = document.createElement("div");
       row.className = "item-row";
       const groupName = "ex1-" + i;
-      let html = '<span class="item-letter">' + (i + 1) + ".</span>" + item.pre;
+      let html = '<span class="item-letter" translate="no">' + (i + 1) + ".</span>" + item.pre;
       html += '<span class="choice-group" data-idx="' + i + '">';
       item.opts.forEach(function (opt, oi) {
         html += '<label class="chip" data-oi="' + oi + '"><input type="radio" name="' + groupName + '" value="' + oi + '">' + opt + "</label>";
@@ -442,7 +442,7 @@
     items.forEach(function (item, i) {
       const row = document.createElement("div");
       row.className = "item-row";
-      let html = '<div class="item-prompt"><span class="item-letter">' + (i + 1) + ".</span>" + item.pre + "</div>";
+      let html = '<div class="item-prompt"><span class="item-letter" translate="no">' + (i + 1) + ".</span>" + item.pre + "</div>";
       if (item.given) {
         html += '<span style="color:var(--pencil);font-size:0.85rem;font-style:italic">(ejemplo ya resuelto: c) Llevo)</span>';
         row.innerHTML = html;
@@ -498,7 +498,7 @@
       const row = document.createElement("div");
       row.className = "item-row";
       if (item.given) {
-        row.innerHTML = '<span class="item-letter">' + (i + 1) + ".</span>" + item.t + ' <span style="color:var(--good);font-weight:600">→ ' + item.given + " (ejemplo)</span>";
+        row.innerHTML = '<span class="item-letter" translate="no">' + (i + 1) + ".</span>" + item.t + ' <span style="color:var(--good);font-weight:600">→ ' + item.given + " (ejemplo)</span>";
         wrap.appendChild(row);
         return;
       }
@@ -507,7 +507,7 @@
       sel.innerHTML = '<option value="">— elige —</option>' + cats.map(function (c) { return '<option value="' + c + '">' + c + "</option>"; }).join("");
       const reveal = document.createElement("span");
       reveal.className = "reveal";
-      row.innerHTML = '<span class="item-letter">' + (i + 1) + ".</span>" + item.t + " → ";
+      row.innerHTML = '<span class="item-letter" translate="no">' + (i + 1) + ".</span>" + item.t + " → ";
       row.appendChild(sel);
       row.appendChild(reveal);
       wrap.appendChild(row);
@@ -612,7 +612,7 @@
       sel.innerHTML = '<option value="">— elige —</option>' + values.map(function (x) { return '<option value="' + x.k + '">' + x.k + ") " + x.v + "</option>"; }).join("");
       const reveal = document.createElement("span");
       reveal.className = "reveal";
-      row.innerHTML = '<span class="item-letter">' + (i + 1) + '.</span> <span class="mono" style="font-style:italic">' + item.t + "</span> → ";
+      row.innerHTML = '<span class="item-letter" translate="no">' + (i + 1) + '.</span> <span class="mono" style="font-style:italic">' + item.t + "</span> → ";
       row.appendChild(sel);
       row.appendChild(reveal);
       wrap.appendChild(row);

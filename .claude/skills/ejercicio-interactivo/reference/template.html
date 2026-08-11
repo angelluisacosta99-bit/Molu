@@ -381,7 +381,7 @@
     <nav class="nav-dots" id="navDots"></nav>
     <div class="score-wrap">
       <div class="bar"><div class="bar-fill" id="barFill"></div></div>
-      <div class="score"><span class="num" id="scoreNum">0</span><span style="color:var(--pencil)"> / </span><span id="scoreTotal">0</span></div>
+      <div class="score"><span class="num" id="scoreNum" translate="no">0</span><span style="color:var(--pencil)"> / </span><span id="scoreTotal" translate="no">0</span></div>
     </div>
   </div>
 </div>
@@ -391,7 +391,7 @@
   <h1>{{HEADLINE}}</h1>
   <p>{{SUBTITLE}}</p>
   <div class="hero-meta">
-    <span><strong id="totalBlanksLabel">—</strong> huecos en total</span>
+    <span><strong id="totalBlanksLabel" translate="no">—</strong> huecos en total</span>
     <span><strong>{{N_BLOCKS}}</strong> bloques</span>
     <span><strong>{{N_EXERCISES}}</strong> ejercicios</span>
   </div>
@@ -408,8 +408,8 @@
   <div class="results-headline" id="resHeadline"></div>
   <div class="results-sub" id="resSub"></div>
   <div class="results-score-row">
-    <span class="results-score-num" id="resScoreNum"></span>
-    <span class="results-score-den" id="resScoreDen"></span>
+    <span class="results-score-num" id="resScoreNum" translate="no"></span>
+    <span class="results-score-den" id="resScoreDen" translate="no"></span>
   </div>
   <input type="text" class="results-name" id="resName" placeholder="Tu nombre (para que tu profesor sepa quién eres)" />
   <div class="results-errors" id="resErrors"></div>
@@ -603,7 +603,7 @@
     head.className = "exercise-head";
     const titleWrap = document.createElement("div");
     titleWrap.className = "exercise-title";
-    titleWrap.innerHTML = '<span class="exnum">Ej. ' + ex.num + "</span>";
+    titleWrap.innerHTML = '<span class="exnum" translate="no">Ej. ' + ex.num + "</span>";
     const h3 = document.createElement("h3");
     h3.textContent = ex.title;
     titleWrap.appendChild(h3);
@@ -660,6 +660,7 @@
           row.className = "item-row";
           const letter = document.createElement("span");
           letter.className = "item-letter";
+          letter.setAttribute("translate", "no");
           letter.textContent = String.fromCharCode(97 + i) + ".";
           row.appendChild(letter);
           renderTemplate(row, item.t, item.a, item.wide, "Ej. " + ex.num + String.fromCharCode(97 + i));
@@ -750,6 +751,7 @@
           row.className = "item-row";
           const letter = document.createElement("span");
           letter.className = "item-letter";
+          letter.setAttribute("translate", "no");
           letter.textContent = String.fromCharCode(97 + i) + ".";
           row.appendChild(letter);
           renderTemplate(row, item.t, item.a, item.wide, "Ej. " + ex.num + String.fromCharCode(97 + i));
