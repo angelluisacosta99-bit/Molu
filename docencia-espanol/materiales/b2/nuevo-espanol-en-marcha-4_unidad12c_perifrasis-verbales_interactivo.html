@@ -813,7 +813,11 @@
       // t.me links only pre-fill the message box when addressed to a @username — the
       // phone-number form (t.me/+<number>) has no equivalent and ignores ?text= entirely.
       document.getElementById("chTelegram").href = "https://t.me/" + TEACHER.telegram + "?text=" + encodeURIComponent(shortText);
-      document.getElementById("chTeams").href = "https://teams.microsoft.com/l/chat/0/0?users=" + TEACHER.teamsEmail + "&message=" + encoded;
+      // encodeURIComponent on the recipient, matching every other channel's params (was raw
+      // before) — @ is technically legal unencoded in a query string, but the Teams desktop
+      // app parses this deep link with its own internal handler, not a browser, and may be
+      // stricter than what wa.me/t.me/mail.google.com's own parsers tolerate.
+      document.getElementById("chTeams").href = "https://teams.microsoft.com/l/chat/0/0?users=" + encodeURIComponent(TEACHER.teamsEmail) + "&message=" + encoded;
       // Gmail's web compose URL, set as a plain https:// href — a native <a target="_blank">
       // click is trusted browser navigation, exempt from the "block pop-ups" site permission
       // that silently swallows a script-triggered window.open() call (this broke a previous
@@ -860,13 +864,15 @@
     document.getElementById("chCopy").onclick = function () {
       copyText(currentSummary(), function (ok) { if (ok) showCopied(); });
     };
-    // Teams' chat link can't reliably pre-fill the message the way ?text= does for
-    // WhatsApp/Telegram, so its button also copies the summary and tells the student in
-    // plain words to paste it once the chat is open — a silent "¡Copiado!" is easy to miss
-    // right after the app switches away to open the chat.
+    // Teams' chat link works fully on mobile (recipient selected, message pasted), but on
+    // desktop the app has only shown the message pasted, not the recipient auto-selected —
+    // the same category of gap as Correo on Android: a native app intercepting a web deep
+    // link and only partially honoring its parameters, which the page has no way to detect
+    // or control. The button also copies the summary and names the exact manual step that
+    // might still be needed, covering both platforms without guessing which one applies.
     document.getElementById("chTeams").addEventListener("click", function () {
       copyText(currentSummary(), function (ok) {
-        if (ok) showCopied("Texto copiado. Pégalo (mantén pulsado → Pegar) en el chat que se acaba de abrir.");
+        if (ok) showCopied("Texto copiado. Si el destinatario no se seleccionó solo, elige a " + TEACHER.teamsEmail + ". Pégalo (mantén pulsado → Pegar) si el mensaje no se rellenó.");
       });
     });
     // Correo: like Teams, its own link can't be trusted to fully deliver the message (on
