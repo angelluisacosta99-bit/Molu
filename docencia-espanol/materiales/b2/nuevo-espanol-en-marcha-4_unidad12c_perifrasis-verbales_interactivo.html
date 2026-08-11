@@ -126,6 +126,8 @@
   select.blank-select {
     background: var(--input-bg); color: var(--ink); border: none; border-bottom: 2px solid var(--pencil);
     font-size: 0.92rem; padding: 0.15rem 0.3rem; border-radius: 3px 3px 0 0; font-family: inherit;
+    max-width: 100%; vertical-align: middle;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
   }
   select.blank-select:focus { outline: none; border-bottom-color: var(--focus); }
   select.blank-select.correct { background: var(--good-bg); border-bottom-color: var(--good); color: var(--good); font-weight: 600; }
