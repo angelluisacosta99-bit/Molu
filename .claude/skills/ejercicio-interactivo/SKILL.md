@@ -1,7 +1,7 @@
 ---
 name: ejercicio-interactivo
 description: "Use when Angel asks to build a new interactive Spanish grammar/vocabulary exercise page with instant grading — a self-contained HTML artifact where a student fills in blanks, gets corrected instantly, and can send their results to the teacher via WhatsApp/Telegram/Teams/Correo. Also use when asked to add a new chapter/unit to this format, or to fix/extend an existing one (e.g. the A1 \"Presente, gerundio, indefinido\" or B2 12C \"¿Sigues pintando?\" exercises already in docencia-espanol/materiales/). Triggers: \"ejercicio interactivo\", \"como el de A1/12C\", \"corrección instantánea\", \"página interactiva para practicar\", \"haz lo mismo con otro capítulo\"."
-version: 1.8.0
+version: 1.9.0
 user-invocable: true
 license: Apache 2.0
 ---
@@ -216,6 +216,17 @@ no las deshagas sin querer al modificar la plantilla.
   ejercicio nuevo, dale siempre `max-width: 100%; overflow: hidden; text-overflow: ellipsis;
   white-space: nowrap;` — el desplegable nativo (las opciones, al abrirlo) no se ve
   afectado, solo el ancho de la caja cerrada.
+- **`.nav-dots` (la fila de píldoras "Sección N" para saltar entre secciones) nunca se
+  oculta en móvil — se desliza en horizontal.** Bug real: la plantilla traía
+  `@media (max-width: 560px) { .nav-dots { display: none; } }` desde el origen, tolerable
+  con pocas secciones pero que en un documento largo (Repaso B1 llegó a 12) le quita al
+  alumno la forma más cómoda de moverse por el documento en el móvil — justo donde más la
+  necesita. Ahora `.nav-dots` lleva `overflow-x: auto` (mismo patrón que `.table-wrap` para
+  tablas anchas) y, en la media query de 560px, `flex-basis: 100%; order: 3` para que las
+  píldoras bajen a su propia fila deslizable debajo de marca+puntuación en vez de compartir
+  línea con ellas. Ya corregido en `reference/template.html` y en todos los documentos
+  publicados (A1, 12B, Repaso B1); si tocas un ejercicio existente que todavía tuviera
+  `.nav-dots { display: none; }`, es la misma corrección.
 
 ### Canal por canal (la parte que más costó)
 
