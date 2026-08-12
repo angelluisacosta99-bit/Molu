@@ -2412,7 +2412,7 @@
             { t: "Mis alumnos no hacen los deberes. → Me gustaría {0}", a: [{ flex: ["que mis alumnos", "hicie"], show: "que mis alumnos hicieran los deberes" }], wide: true },
             { t: "Penélope no viene mucho a verme. → Me gustaría {0}", a: [{ flex: ["que", "vinie"], show: "que Penélope viniera más a verme" }], wide: true },
             { t: "No tengo un vestido largo y bonito. → Me gustaría {0}", a: [{ flex: ["tener un vestido"], show: "tener un vestido largo y bonito" }], wide: true },
-            { t: "Hace mucho calor. → Me gustaría {0}", a: [{ flex: ["que", "hicie", "calor"], show: "que no hiciera tanto calor" }], wide: true },
+            { t: "Hace mucho calor. → Me gustaría {0}", a: [{ flex: ["que", "no", "hicie", "calor"], show: "que no hiciera tanto calor" }], wide: true },
             { t: "Mi hijo es un mal estudiante. → Me gustaría {0}", a: [{ flex: ["que mi hijo", "fue"], show: "que mi hijo fuera un buen estudiante" }], wide: true }
           ]
         },
@@ -2824,7 +2824,11 @@
             { t: "Ayer llamó por teléfono {0} señora Pérez.", a: [["la"]] },
             { t: "He visto {0} casas de dos plantas preciosas.", a: [["unas"]], wide: true },
             { t: "¡Oiga, por favor! Quiero medio kilo de {0} boquerones.", a: [SIN_ARTICULO], wide: true },
-            { t: "Era casi imposible comprar {0} entrada para el concierto. Pero al fin tengo {1}.", a: [["una"], ["una", "la"]], wide: true },
+            // El segundo hueco solo acepta "una": un artículo determinado suelto ("tengo la")
+            // no funciona como objeto directo sin una cláusula detrás que lo modifique (como
+            // sí ocurre en "La del vestido rosa" de la teoría) — haría falta el clítico
+            // ("la tengo"), que no es lo que pide la frase.
+            { t: "Era casi imposible comprar {0} entrada para el concierto. Pero al fin tengo {1}.", a: [["una"], ["una"]], wide: true },
             { t: "El primo de Ana es {0} chico muy simpático.", a: [["un"]], wide: true }
           ]
         },

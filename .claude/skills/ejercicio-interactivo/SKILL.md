@@ -322,7 +322,7 @@ parezca más "controlable" desde JS — ya se demostró que rompe el caso más b
 - `reference/template.html` — plantilla completa, ya con todas las correcciones anteriores
   aplicadas. Punto de partida obligatorio para cualquier ejercicio nuevo.
 - `docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_repaso-b1_interactivo.html` —
-  **documento largo de repaso** (10 secciones, 49 ejercicios, 441 huecos), útil como
+  **documento largo de repaso** (11 secciones, 55 ejercicios, 490 huecos), útil como
   referencia cuando el material no sea un capítulo suelto sino un cuadernillo entero. Añade
   varias cosas sobre la plantilla que conviene copiar de ahí en vez de reinventar:
     - `block.introHTML` — teoría no interactiva antes de los ejercicios de cada sección.
