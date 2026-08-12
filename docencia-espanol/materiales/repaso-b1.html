@@ -248,6 +248,22 @@
   .rule-box p:last-child { margin-bottom: 0; }
   .rule-box b { color: var(--paper); }
   .rule-box .ex-words { font-style: italic; color: color-mix(in srgb, var(--paper) 78%, transparent); }
+  /* celda de un cuadro de conjugación que el libro ya trae resuelta */
+  .given-cell { color: var(--good); font-weight: 600; font-style: italic; white-space: nowrap; }
+  /* Los cuadros de conjugación llegan a tener 5 columnas: los huecos van más estrechos que
+     los de las frases sueltas para que quepan sin obligar a desplazar la tabla a mano. */
+  .exercise-table input.blank { width: 6.4em; }
+  .exercise-table td, .exercise-table th { white-space: nowrap; }
+  @media (max-width: 560px) {
+    .exercise-table input.blank { width: 5.1em; font-size: 0.85rem; }
+    .exercise-table th, .exercise-table td { padding: 0.35rem 0.4rem; font-size: 0.82rem; }
+  }
+  /* Aviso de que la tabla se puede desplazar en horizontal si no cabe entera. */
+  .table-wrap { position: relative; }
+  .table-hint {
+    font-size: 0.75rem; color: var(--pencil); font-style: italic; margin: 0.15rem 0 0.9rem;
+  }
+
   /* cierre de sección: corregir la sección entera y enviarla al profesor */
   .section-actions { text-align: center; margin: 1.4rem 0 0.2rem; }
   .section-correct-btn {
@@ -508,8 +524,8 @@
   <p>Teoría de gramática, vocabulario y ejercicios prácticos con corrección instantánea. Se completa por partes.</p>
   <div class="hero-meta">
     <span><strong id="totalBlanksLabel" translate="no">—</strong> huecos en total</span>
-    <span><strong>5</strong> secciones</span>
-    <span><strong>24</strong> ejercicios</span>
+    <span><strong>7</strong> secciones</span>
+    <span><strong>33</strong> ejercicios</span>
   </div>
   <div class="in-progress-note">
     <b>En construcción:</b> este repaso se está transcribiendo por partes. Donde el
@@ -583,6 +599,10 @@
   const NOTE_PISO_TIENE = ["tiene"];
   const NOTE_YO_QUE_TU_VER = ["vería"];
   const NOTE_TU_SABES_QUE = ["¿Tú sabes qué ha hecho tu hermano?"];
+  // Ej. 6.2: el libro dice "hay más de una opción". Lo que decide es la forma del verbo del
+  // final: los comienzos con "que" piden subjuntivo, los que no, infinitivo.
+  const INF_ENDINGS = ["a", "b", "e", "g", "h"];
+  const SUBJ_ENDINGS = ["c", "d", "f"];
 
   const blocks = [
     {
@@ -1580,6 +1600,438 @@
           a: [["no pongas"], ["no veas"], ["caliéntala"], ["recoge"], ["lee"], ["no te acuestes"], ["llámanos"]]
         }
       ]
+    },
+    {
+      id: "seccion-6", num: 6, title: "Gramática y vocabulario",
+      sub: "Sentimientos y opiniones, obligación, comparativos y superlativos",
+      introHTML: `
+        <div class="theory-wrap">
+          <div class="theory-cols">
+            <div>
+              <div class="theory-group">
+                <h3>Expresar sentimientos y opiniones</h3>
+                <p class="theory-lead">Las oraciones dependientes de verbos como <em>gustar, interesar, molestar</em>, que funcionan con los pronombres <em>me, te, le, nos, os, les</em>, llevan el verbo en infinitivo o subjuntivo.</p>
+                <ul class="theory-points">
+                  <li><span class="use-label"><b>Infinitivo.</b> Cuando el sujeto de las dos frases es el mismo.</span>
+                    <span class="example">Me <b>preocupa llegar</b> tarde al médico. <span style="color:var(--pencil)">(yo → yo)</span></span></li>
+                  <li><span class="use-label"><b>Subjuntivo.</b> Cuando el sujeto de los dos verbos es diferente.</span>
+                    <span class="example">Me <b>preocupa que</b> Paco <b>llegue</b> tarde al médico. <span style="color:var(--pencil)">(yo → él)</span></span></li>
+                </ul>
+              </div>
+
+              <div class="theory-group">
+                <h3>Hay que + infinitivo</h3>
+                <p class="theory-lead">Se utiliza <em>hay que</em> + infinitivo para hablar de obligaciones que afectan a todo el mundo.</p>
+                <ul class="theory-points">
+                  <li><span class="example"><b>Hay que escuchar</b> al profesor cuando está explicando.</span></li>
+                </ul>
+              </div>
+
+              <div class="theory-group">
+                <h3>(No) hace falta (que)</h3>
+                <ul class="theory-points">
+                  <li><span class="use-label"><b>Infinitivo.</b> Obligación impersonal.</span>
+                    <span class="example">No <b>hace falta limpiar</b> los cristales, están limpios.</span></li>
+                  <li><span class="use-label"><b>Subjuntivo.</b> Obligación personal.</span>
+                    <span class="example">No <b>hace falta que</b> (tú) <b>vengas</b> mañana.</span></li>
+                </ul>
+              </div>
+
+              <div class="theory-group">
+                <h3>Es necesario, es importante, es conveniente (que)</h3>
+                <ul class="theory-points">
+                  <li><span class="use-label"><b>Infinitivo.</b> Cuando la oración subordinada es impersonal, no se refiere a un sujeto concreto.</span>
+                    <span class="example">Es <b>necesario cuidar</b> el medioambiente.</span></li>
+                  <li><span class="use-label"><b>Subjuntivo.</b> Se utiliza cuando la oración subordinada tiene un sujeto personal.</span>
+                    <span class="example">Es <b>conveniente que</b> (tú) <b>hagas</b> lo que dice el médico.</span></li>
+                </ul>
+              </div>
+
+              <div class="theory-group">
+                <h3>Comparativos</h3>
+                <p class="theory-lead">Comparación con adjetivos:</p>
+                <ul class="theory-points">
+                  <li><span class="use-label">Superioridad: <em>más</em> + adjetivo + <em>que</em>. · Inferioridad: <em>menos</em> + adjetivo + <em>que</em>. · Igualdad: <em>tan</em> + adjetivo + <em>como</em>.</span>
+                    <span class="example">Mi coche es <b>menos</b> ruidoso <b>que</b> el tuyo.</span></li>
+                </ul>
+                <p class="theory-lead">Comparación con nombres:</p>
+                <ul class="theory-points">
+                  <li><span class="use-label">Superioridad: <em>más</em> + nombre + <em>que</em>. · Inferioridad: <em>menos</em> + nombre + <em>que</em>. · Igualdad: <em>tanto/a/os/as</em> + nombre + <em>como</em>.</span>
+                    <span class="example">Mi coche gasta <b>tanta</b> gasolina <b>como</b> el tuyo.</span></li>
+                </ul>
+                <p class="theory-lead">Comparación con verbos:</p>
+                <ul class="theory-points">
+                  <li><span class="use-label">Superioridad: verbo + <em>más que</em>. · Inferioridad: verbo + <em>menos que</em>. · Igualdad: verbo + <em>tanto como</em>.</span>
+                    <span class="example">Mi coche corre <b>tanto como</b> el tuyo.</span></li>
+                </ul>
+              </div>
+            </div>
+
+            <div>
+              <div class="theory-group">
+                <h3>La preposición <em>de</em> en la comparación</h3>
+                <p class="theory-lead">Se utiliza la preposición <em>de</em> para introducir la segunda parte de la comparación en los siguientes casos:</p>
+                <ul class="theory-points">
+                  <li><span class="use-label">Cuando hablamos de una cantidad determinada.</span>
+                    <span class="example">Me he gastado <b>más de</b> 100 € en la lotería.</span></li>
+                  <li><span class="use-label">Cuando la comparación (adjetiva) va seguida de <em>lo que</em>.</span>
+                    <span class="example">Es <b>más</b> caro <b>de lo que</b> creía.</span></li>
+                  <li><span class="use-label">Cuando la comparación (nominal) es cuantitativa.</span>
+                    <span class="example">Tenemos <b>menos</b> sillas <b>de las que</b> necesitamos.</span></li>
+                </ul>
+                <table class="theory-table">
+                  <thead><tr><th colspan="2">Comparativos irregulares</th></tr></thead>
+                  <tbody>
+                    <tr><td>grande</td><td class="tt-form">mayor</td></tr>
+                    <tr><td>pequeño</td><td class="tt-form">menor</td></tr>
+                    <tr><td>bueno</td><td class="tt-form">mejor</td></tr>
+                    <tr><td>malo</td><td class="tt-form">peor</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="theory-group">
+                <h3>Superlativos</h3>
+                <p class="theory-lead">Se utilizan para expresar las cualidades en su grado máximo. Hay dos formas de superlativo.</p>
+                <ul class="theory-points">
+                  <li><span class="use-label"><b>Superlativo absoluto:</b> se destaca una cualidad sin hacer una comparación. Adjetivo + <em>-ísimo/a/os/as</em>.</span>
+                    <span class="example">Esta niña es <b>guapísima</b>.</span></li>
+                  <li><span class="use-label"><b>Superlativo relativo:</b> expresa la superioridad con respecto a un grupo.</span>
+                    <span class="example">Es <b>el más alto</b> de su clase.</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-title">Vocabulario · Verbos de opinión y obligación</div>
+          <div class="vocab-chips">
+            <span class="vocab-chip">me molesta que…</span><span class="vocab-chip">me preocupa que…</span>
+            <span class="vocab-chip">es necesario que…</span><span class="vocab-chip">es importante que…</span>
+            <span class="vocab-chip">es conveniente que…</span><span class="vocab-chip">hay que…</span>
+            <span class="vocab-chip">me gusta que…</span>
+          </div>
+
+          <div class="vocab-title">Vocabulario · Mundo natural</div>
+          <div class="vocab-chips">
+            <span class="vocab-chip">cordillera</span><span class="vocab-chip">mar</span>
+            <span class="vocab-chip">continente</span><span class="vocab-chip">océano</span>
+            <span class="vocab-chip">desierto</span><span class="vocab-chip">selva</span>
+            <span class="vocab-chip">río</span><span class="vocab-chip">país</span>
+            <span class="vocab-chip">isla</span><span class="vocab-chip">cañón</span>
+          </div>
+        </div>
+      `,
+      exercises: [
+        {
+          num: 1, title: "Infinitivo o subjuntivo",
+          instr: "Completa con los verbos del recuadro en infinitivo o subjuntivo. (El 1 ya está resuelto: A la abuela le encanta que haga buen tiempo.)",
+          refHTML: '<span class="ref-label">Verbos</span>' +
+            '<div class="ref-options">' +
+            '<span class="ref-opt">ser</span><span class="ref-opt">conocer</span>' +
+            '<span class="ref-opt" style="text-decoration:line-through;opacity:0.55">hacer</span>' +
+            '<span class="ref-opt">vivir</span><span class="ref-opt">cambiar</span>' +
+            '<span class="ref-opt">fumar</span><span class="ref-opt">estar</span>' +
+            '<span class="ref-opt">venir</span><span class="ref-opt">preparar</span>' +
+            '<span class="ref-opt">suspender</span>' +
+            "</div>",
+          type: "items",
+          items: [
+            { t: "Me fastidia {0} de planes por culpa de Sergio.", a: [["cambiar"]] },
+            { t: "A Paula y a mí nos encanta {0} gente a casa.", a: [["que venga"]] },
+            { t: "¿No te preocupa {0} tan lejos de la ciudad? En este pueblo ni siquiera hay un hospital.", a: [["vivir"]], wide: true },
+            { t: "Vamos a apagar los cigarrillos, creo que a Felipe le molesta {0} en su casa.", a: [["que fumemos"]], wide: true },
+            { t: "Me parece importante {0} otras culturas.", a: [["conocer"]] },
+            { t: "A nosotras nos gusta mucho que Roxana {0} la cena, porque suele hacer platos muy buenos.", a: [["prepare"]], wide: true },
+            { t: "A los políticos no les interesa que la gente {0} tan descontenta.", a: [["esté"]] },
+            { t: "No es necesario {0} nativo para ser un buen profesor de inglés.", a: [["ser"]] },
+            { t: "Enrique estudia mucho, le preocupa {0}.", a: [["suspender"]] }
+          ]
+        },
+        {
+          num: 2, title: "Une las dos columnas",
+          instr: "Escribe la letra del final que corresponde. Hay más de una opción: lo que decide es la forma del verbo — los comienzos con «que» piden subjuntivo (c, d, f) y los que no lo llevan piden infinitivo (a, b, e, g, h).",
+          refHTML: '<span class="ref-label">Finales</span>' +
+            '<div class="ref-options" style="flex-direction:column;gap:0.3rem">' +
+            '<span class="ref-opt" style="white-space:normal"><b>a</b>vivir en un mundo tan contaminado.</span>' +
+            '<span class="ref-opt" style="white-space:normal"><b>b</b>salvar este planeta.</span>' +
+            '<span class="ref-opt" style="white-space:normal"><b>c</b>los niños aprendan desde pequeños a cuidar el medioambiente.</span>' +
+            '<span class="ref-opt" style="white-space:normal"><b>d</b>tires latas y botellas de plástico donde está el resto de la basura, porque luego tengo que separarlo yo.</span>' +
+            '<span class="ref-opt" style="white-space:normal"><b>e</b>desenchufar los aparatos eléctricos para ahorrar energía.</span>' +
+            '<span class="ref-opt" style="white-space:normal"><b>f</b>me ayudes, puedo hacerlo solo.</span>' +
+            '<span class="ref-opt" style="white-space:normal"><b>g</b>poner más puntos limpios en esta zona si queremos que la gente recicle más.</span>' +
+            '<span class="ref-opt" style="white-space:normal"><b>h</b>tirar el aceite usado por el fregadero, porque es muy contaminante.</span>' +
+            "</div>",
+          type: "items",
+          items: [
+            { t: "Hay que… → {0}", a: [INF_ENDINGS] },
+            { t: "Me preocupa… → {0}", a: [["a", "b", "e", "g", "h"]] },
+            { t: "Es conveniente… → {0}", a: [["a", "b", "e", "g", "h"]] },
+            { t: "Me molesta que… → {0}", a: [SUBJ_ENDINGS] },
+            { t: "No hay que… → {0}", a: [["a", "b", "e", "g", "h"]] },
+            { t: "Es importante que… → {0}", a: [["c", "d", "f"]] },
+            { t: "Me gusta que… → {0}", a: [["c", "d", "f"]] },
+            { t: "No hace falta que… → {0}", a: [["c", "d", "f"]] }
+          ]
+        },
+        {
+          num: 3, title: "Superlativos: relaciona",
+          instr: "Escribe el nombre del recuadro que corresponde. (El 1 ya está resuelto: Alpes.)",
+          refHTML: '<span class="ref-label">Nombres</span>' +
+            '<div class="ref-options">' +
+            '<span class="ref-opt">Nilo</span><span class="ref-opt">Pacífico</span>' +
+            '<span class="ref-opt" style="text-decoration:line-through;opacity:0.55">Alpes</span>' +
+            '<span class="ref-opt">Sahara</span><span class="ref-opt">Australia</span>' +
+            '<span class="ref-opt">Amazonía</span>' +
+            "</div>",
+          type: "items",
+          items: [
+            { t: "El río más largo del mundo: {0}", a: [["Nilo", "el Nilo"]] },
+            { t: "La isla más grande del mundo: {0}", a: [["Australia"]] },
+            { t: "El océano más extenso del mundo: {0}", a: [["Pacífico", "el Pacífico"]] },
+            { t: "El desierto más grande del mundo: {0}", a: [["Sahara", "el Sahara"]] },
+            { t: "La selva más grande del planeta: {0}", a: [["Amazonía", "la Amazonía"]] }
+          ]
+        },
+        {
+          num: 4, title: "Partículas comparativas",
+          instr: "Completa las frases con la partícula que corresponde. (El 1 ya está resuelto: Esta es pequeña. Necesito una más grande.)",
+          type: "items",
+          items: [
+            { t: "En las ciudades la contaminación no mejora. Está cada vez {0}.", a: [["peor"]] },
+            { t: "Este trabajo no está muy bien. Otras veces te ha salido {0}.", a: [["mejor"]] },
+            { t: "Ana es más joven. Es {0} que su hermana.", a: [["menor"]] },
+            { t: "Tú trabajas más que yo. Yo no trabajo {0} horas como tú.", a: [["tantas"]] },
+            { t: "Madrid tiene {0} habitantes que Barcelona.", a: [["más"]] },
+            { t: "Begoña no está {0} delgada como Susana.", a: [["tan"]] },
+            { t: "Ahora es más barato comprarse una vivienda {0} antes.", a: [["que"]] },
+            { t: "Estos zapatos son muy malos. Me gustaría comprarme unos {0}.", a: [["mejores"]] },
+            { t: "Hago más deporte que Angel. Estoy {0} en forma que él.", a: [["más"]] }
+          ]
+        },
+        {
+          num: 5, title: "El avestruz y el perezoso",
+          instr: "Completa el texto con las palabras del recuadro: más (2) · menos · tanto (2) · de(l) · como (2). El primer «más» ya está puesto.",
+          type: "text",
+          text: "El avestruz es el animal de dos patas más rápido {0} mundo: alcanza los 100 km/h. Además de correr mucho, es enorme: mide casi {1} {2} dos personas juntas. Y un huevo de esta ave puede pesar {3} {4} 24 huevos de gallina.\nEl animal {5} rápido es el perezoso, que no supera los 20 km/h, y que también tiene otro récord: es el animal que {6} horas duerme (como mínimo, 20 al día).",
+          a: [["del"], ["tanto"], ["como"], ["tanto"], ["como"], ["menos"], ["más"]]
+        }
+      ]
+    },
+    {
+      id: "seccion-7", num: 7, title: "Gramática y vocabulario",
+      sub: "Profesiones, oraciones temporales y condicionales, imperfecto de subjuntivo",
+      introHTML: `
+        <div class="theory-wrap">
+          <div class="theory-cols">
+            <div>
+              <div class="theory-group">
+                <h3>Género de profesiones y oficios</h3>
+                <p class="theory-lead">Los nombres de profesionales pueden tener género masculino y femenino.</p>
+                <table class="theory-table">
+                  <thead><tr><th>Masculino</th><th>Femenino</th></tr></thead>
+                  <tbody>
+                    <tr><td>camarer<b>o</b></td><td class="tt-form">camarer<b>a</b></td></tr>
+                    <tr><td>profesor</td><td class="tt-form">profesor<b>a</b></td></tr>
+                    <tr><td>juez</td><td class="tt-form">juez<b>a</b></td></tr>
+                    <tr><td>estudiante</td><td class="tt-form">estudiante</td></tr>
+                    <tr><td>dependient<b>e</b></td><td class="tt-form">dependient<b>a</b></td></tr>
+                    <tr><td>futbolista</td><td class="tt-form">futbolista</td></tr>
+                    <tr><td>policía</td><td class="tt-form">policía</td></tr>
+                    <tr><td>actor</td><td class="tt-form">actriz</td></tr>
+                    <tr><td>alcalde</td><td class="tt-form">alcalde<b>sa</b></td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="theory-group">
+                <h3>Oraciones temporales con <em>cuando</em></h3>
+                <p class="theory-lead">Las oraciones temporales introducidas por <em>cuando</em> pueden llevar el verbo en indicativo o subjuntivo.</p>
+                <ul class="theory-points">
+                  <li><span class="use-label"><b>Indicativo.</b> Cuando nos referimos al presente o al pasado.</span>
+                    <span class="example">Cuando <b>voy</b> de viaje, siempre <b>traigo</b> regalos.</span>
+                    <span class="example">Cuando <b>salí</b> del trabajo <b>fui</b> a visitar a Lola.</span>
+                    <span class="example">Cuando <b>vivía</b> en París, <b>trabajaba</b> de camarero en un restaurante.</span></li>
+                  <li><span class="use-label"><b>Subjuntivo.</b> Cuando nos referimos al futuro.</span>
+                    <span class="example">Cuando <b>termine</b> este trabajo, voy a hacer un viaje por África.</span></li>
+                  <li><span class="use-label">Se utiliza el verbo en <b>futuro</b> (y no en subjuntivo) en las oraciones interrogativas, directas o indirectas.</span>
+                    <span class="example">¿Cuándo <b>vendrás</b> a verme?</span>
+                    <span class="example">¿Sabes cuándo <b>llegará</b> María?</span>
+                    <span class="example">No sé cuándo <b>iré</b> a verte.</span></li>
+                </ul>
+              </div>
+
+              <div class="theory-group">
+                <h3>Oraciones condicionales</h3>
+                <p class="theory-lead">Las oraciones condicionales introducidas por <em>si</em> pueden llevar el verbo en indicativo o subjuntivo.</p>
+                <ul class="theory-points">
+                  <li><span class="use-label"><b>Presente de indicativo.</b> Cuando la condición de la que se habla puede realizarse en el presente o en el futuro.</span>
+                    <span class="example">Si <b>tengo</b> tiempo, <b>iré</b> a verte. <span style="color:var(--pencil)">(futuro)</span></span>
+                    <span class="example">Si <b>tienes</b> algún problema, <b>llámame</b> por teléfono. <span style="color:var(--pencil)">(imperativo)</span></span>
+                    <span class="example">Mi marido y yo todos los domingos, si <b>podemos</b>, <b>damos</b> un paseo. <span style="color:var(--pencil)">(presente)</span></span></li>
+                  <li><span class="use-label"><b>Pretérito imperfecto de subjuntivo.</b> Cuando la condición de la que se habla no se puede realizar o es poco probable.</span>
+                    <span class="example">Si <b>tuviera</b> mucho dinero, no <b>trabajaría</b>.</span></li>
+                </ul>
+              </div>
+            </div>
+
+            <div>
+              <div class="theory-group">
+                <h3>Pretérito imperfecto de subjuntivo</h3>
+                <table class="theory-table">
+                  <thead><tr><th>hablar</th><th>comer</th><th>vivir</th></tr></thead>
+                  <tbody>
+                    <tr><td class="tt-form">hablara</td><td class="tt-form">comiera</td><td class="tt-form">viviera</td></tr>
+                    <tr><td class="tt-form">hablaras</td><td class="tt-form">comieras</td><td class="tt-form">vivieras</td></tr>
+                    <tr><td class="tt-form">hablara</td><td class="tt-form">comiera</td><td class="tt-form">viviera</td></tr>
+                    <tr><td class="tt-form">habláramos</td><td class="tt-form">comiéramos</td><td class="tt-form">viviéramos</td></tr>
+                    <tr><td class="tt-form">hablarais</td><td class="tt-form">comierais</td><td class="tt-form">vivierais</td></tr>
+                    <tr><td class="tt-form">hablaran</td><td class="tt-form">comieran</td><td class="tt-form">vivieran</td></tr>
+                  </tbody>
+                </table>
+                <table class="theory-table">
+                  <thead><tr><th colspan="2">Verbos irregulares</th></tr></thead>
+                  <tbody>
+                    <tr><td><b>decir</b></td><td class="tt-form">dijera, dijeras…</td></tr>
+                    <tr><td><b>estar</b></td><td class="tt-form">estuviera, estuvieras…</td></tr>
+                    <tr><td><b>hacer</b></td><td class="tt-form">hiciera, hicieras…</td></tr>
+                    <tr><td><b>ir, ser</b></td><td class="tt-form">fuera, fueras…</td></tr>
+                    <tr><td><b>pedir</b></td><td class="tt-form">pidiera, pidieras…</td></tr>
+                    <tr><td><b>poder</b></td><td class="tt-form">pudiera, pudieras…</td></tr>
+                    <tr><td><b>tener</b></td><td class="tt-form">tuviera, tuvieras…</td></tr>
+                    <tr><td><b>venir</b></td><td class="tt-form">viniera, vinieras…</td></tr>
+                  </tbody>
+                </table>
+                <p class="theory-lead">Generalmente estos verbos en pretérito imperfecto de subjuntivo presentan la misma irregularidad que en pretérito indefinido.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-title">Vocabulario · Nombres de profesiones</div>
+          <div class="vocab-chips">
+            <span class="vocab-chip">jardinero/a</span><span class="vocab-chip">camarero/a</span>
+            <span class="vocab-chip">periodista</span><span class="vocab-chip">cocinero/a</span>
+            <span class="vocab-chip">abogado/a</span><span class="vocab-chip">locutor/a</span>
+            <span class="vocab-chip">secretario/a</span><span class="vocab-chip">cantante</span>
+            <span class="vocab-chip">fontanero/a</span><span class="vocab-chip">peluquero/a</span>
+            <span class="vocab-chip">bailarín/ina</span><span class="vocab-chip">juez/a</span>
+            <span class="vocab-chip">reportero/a</span><span class="vocab-chip">anestesista</span>
+            <span class="vocab-chip">recepcionista</span>
+          </div>
+
+          <div class="vocab-title">Vocabulario · Léxico del trabajo</div>
+          <div class="vocab-chips">
+            <span class="vocab-chip">anuncio</span><span class="vocab-chip">entrevista</span>
+            <span class="vocab-chip">currículo</span><span class="vocab-chip">empresa</span>
+            <span class="vocab-chip">contrato</span><span class="vocab-chip">despedir</span>
+            <span class="vocab-chip">horario</span><span class="vocab-chip">sueldo</span>
+            <span class="vocab-chip">salario</span><span class="vocab-chip">firmar</span>
+            <span class="vocab-chip">experiencia</span><span class="vocab-chip">paro</span>
+          </div>
+        </div>
+      `,
+      exercises: [
+        {
+          num: 1, title: "Vocabulario del trabajo",
+          instr: "Completa las frases con las palabras del recuadro.",
+          refHTML: '<span class="ref-label">Palabras</span>' +
+            '<div class="ref-options">' +
+            '<span class="ref-opt">contratar</span><span class="ref-opt">plantillas</span>' +
+            '<span class="ref-opt">eventual</span><span class="ref-opt">Recursos Humanos</span>' +
+            '<span class="ref-opt">candidatos</span><span class="ref-opt">cobrar</span>' +
+            '<span class="ref-opt">vacantes</span><span class="ref-opt">categoría</span>' +
+            "</div>",
+          type: "items",
+          items: [
+            { t: "Óscar trabaja en el Departamento de {0} de una multinacional, está contento con el trabajo.", a: [["Recursos Humanos"]], wide: true },
+            { t: "Sí, esta oferta de trabajo parece muy interesante, pero seguro que tiene más de cien {0} para un solo puesto.", a: [["candidatos"]], wide: true },
+            { t: "Las empresas de trabajo temporal son buenas para encontrar un trabajo {0}, para el verano o Navidad, pero es muy difícil que te ofrezcan un trabajo fijo.", a: [["eventual"]], wide: true },
+            { t: "Carlos está desesperado, no sabe qué hacer porque lleva más de cinco meses sin {0} y su jefe dice que no sabe cuándo le pagará.", a: [["cobrar"]], wide: true },
+            { t: "En este anuncio dice que hay diez {0} de ayudantes de cocina, voy a enviar el CV.", a: [["vacantes"]], wide: true },
+            { t: "Jorge, he leído en un artículo que para esta primavera van a {0} a varios músicos en la orquesta juvenil de Radio Nacional de España.", a: [["contratar"]], wide: true },
+            { t: "Mi amigo Rubén ha encontrado un trabajo estupendo. Él estudió Formación Profesional, pero tiene {0} de especialista, realiza el trabajo de un graduado universitario.", a: [["categoría"]], wide: true },
+            { t: "En muchas empresas las {0} se han reducido mucho. Donde antes trabajaban veinte personas, ahora trabajan solo diez.", a: [["plantillas"]], wide: true }
+          ]
+        },
+        {
+          num: 2, title: "Completa los cuadros (pretérito imperfecto de subjuntivo)",
+          instr: "Las formas en verde ya vienen dadas en el libro; completa las demás.",
+          type: "conjTables",
+          tables: [
+            {
+              corner: "Persona",
+              subjects: ["yo", "tú", "él / ella / Ud.", "nosotros/as", "vosotros/as", "ellos / ellas / Uds."],
+              cols: [
+                { label: "dar", a: ["diera", ["dieras"], ["diera"], "diéramos", "dierais", "dieran"] },
+                { label: "salir", a: [["saliera"], "salieras", ["saliera"], ["saliéramos"], ["salierais"], ["salieran"]] },
+                { label: "decir", a: ["dijera", ["dijeras"], ["dijera"], ["dijéramos"], "dijerais", ["dijeran"]] },
+                { label: "tener", a: [["tuviera"], "tuvieras", ["tuviera"], ["tuviéramos"], ["tuvierais"], ["tuvieran"]] }
+              ]
+            },
+            {
+              corner: "Persona",
+              subjects: ["yo", "tú", "él / ella / Ud.", "nosotros/as", "vosotros/as", "ellos / ellas / Uds."],
+              cols: [
+                { label: "venir", a: ["viniera", ["vinieras"], ["viniera"], "viniéramos", ["vinierais"], "vinieran"] },
+                { label: "leer", a: [["leyera"], "leyeras", ["leyera"], ["leyéramos"], "leyerais", ["leyeran"]] },
+                { label: "ver", a: ["viera", ["vieras"], ["viera"], "viéramos", ["vierais"], "vieran"] },
+                { label: "pedir", a: [["pidiera"], "pidieras", ["pidiera"], ["pidiéramos"], "pidierais", ["pidieran"]] }
+              ]
+            },
+            {
+              corner: "Persona",
+              subjects: ["yo", "tú", "él / ella / Ud.", "nosotros/as", "vosotros/as", "ellos / ellas / Uds."],
+              cols: [
+                { label: "estar", a: ["estuviera", ["estuvieras"], ["estuviera"], ["estuviéramos"], "estuvierais", ["estuvieran"]] },
+                { label: "ser", a: [["fuera"], "fueras", ["fuera"], ["fuéramos"], ["fuerais"], "fueran"] },
+                { label: "poner", a: [["pusiera"], ["pusieras"], "pusiera", ["pusiéramos"], ["pusierais"], ["pusieran"]] },
+                { label: "ir", a: [["fuera"], ["fueras"], ["fuera"], "fuéramos", ["fuerais"], ["fueran"]] }
+              ]
+            }
+          ]
+        },
+        {
+          num: 3, title: "Oraciones temporales: relaciona",
+          instr: "Escribe la letra del final que corresponde. Hay más de una opción; se acepta cualquier combinación que tenga sentido.",
+          refHTML: '<span class="ref-label">Finales</span>' +
+            '<div class="ref-options">' +
+            '<span class="ref-opt"><b>a</b>llámame.</span>' +
+            '<span class="ref-opt"><b>b</b>pásate por mi casa.</span>' +
+            '<span class="ref-opt"><b>c</b>ve al museo del Louvre.</span>' +
+            '<span class="ref-opt"><b>d</b>dile que la quiero.</span>' +
+            '<span class="ref-opt"><b>e</b>compra el pan.</span>' +
+            '<span class="ref-opt"><b>f</b>escribe la redacción de español.</span>' +
+            '<span class="ref-opt"><b>g</b>come.</span>' +
+            '<span class="ref-opt"><b>h</b>pídeselo a tu padre.</span>' +
+            "</div>",
+          type: "items",
+          items: [
+            { t: "Cuando vayas a París, → {0}", a: [["c", "a", "b"]] },
+            { t: "Cuando vuelvas del trabajo, → {0}", a: [["e", "a", "b"]] },
+            { t: "Cuando veas a María, → {0}", a: [["d", "a"]] },
+            { t: "Cuando estés triste, → {0}", a: [["a", "b"]] },
+            { t: "Cuando quieras, → {0}", a: [["b", "a"]] },
+            { t: "Cuando tengas tiempo, → {0}", a: [["f", "a", "b"]] },
+            { t: "Cuando necesites dinero, → {0}", a: [["h", "a"]] },
+            { t: "Cuando tengas hambre, → {0}", a: [["g", "e"]] }
+          ]
+        },
+        {
+          num: 4, title: "Oraciones condicionales",
+          instr: "Escribe el verbo adecuado de los dos que aparecen entre paréntesis.",
+          type: "items",
+          items: [
+            { t: "Si {0} tiempo, saldré a comprarme unos zapatos. (tengo / tuviera)", a: [["tengo"]] },
+            { t: "Si Roberto {0} más, aprobaría. (estudia / estudiara)", a: [["estudiara"]] },
+            { t: "Si {0} más de cien años, tendríamos tiempo para hacer muchas cosas. (vivimos / viviéramos)", a: [["viviéramos"]], wide: true },
+            { t: "Si trabajaras menos, no {0} tan cansado. (estarías / estuvieras)", a: [["estarías"]] },
+            { t: "Si {0} Ismael, dile que estoy enferma. (llamaría / llama)", a: [["llama"]] },
+            { t: "Si {0} hambre, comeré antes de llegar a casa. (tendré / tengo)", a: [["tengo"]] },
+            { t: "Si {0} ir al cine el domingo, te llamamos. (podemos / podríamos)", a: [["podemos"]] },
+            { t: "Si todos {0} más amables, el mundo sería más agradable. (fueran / son)", a: [["fueran"]] },
+            { t: "Si {0} cansado, no vayas a trabajar. (estuvieras / estás)", a: [["estás"]] }
+          ]
+        }
+      ]
     }
   ];
 
@@ -1632,6 +2084,46 @@
         container.appendChild(document.createTextNode(part));
       }
     });
+  }
+
+  // Cuadro de conjugación. spec de cada celda: un array de respuestas aceptadas → hueco
+  // editable; una CADENA → celda ya resuelta en el libro, que se muestra fija (no es un
+  // hueco y no cuenta para la puntuación).
+  function buildConjTable(tbl, exNum) {
+    const twrap = document.createElement("div");
+    twrap.className = "table-wrap";
+    const table = document.createElement("table");
+    table.className = "exercise-table";
+    let thead = "<thead><tr><th>" + (tbl.corner || "Sujeto") + "</th>";
+    tbl.cols.forEach(function (c) { thead += "<th>" + c.label + "</th>"; });
+    thead += "</tr></thead>";
+    table.innerHTML = thead;
+    const tbody = document.createElement("tbody");
+    tbl.subjects.forEach(function (subj, si) {
+      const tr = document.createElement("tr");
+      const td0 = document.createElement("td");
+      td0.textContent = subj;
+      tr.appendChild(td0);
+      tbl.cols.forEach(function (c) {
+        const td = document.createElement("td");
+        const spec = c.a[si];
+        if (typeof spec === "string") {
+          td.textContent = spec;
+          td.className = "given-cell";
+        } else {
+          td.appendChild(makeInput(spec, false, "Ej. " + exNum + " " + c.label + "/" + subj));
+          const reveal = document.createElement("span");
+          reveal.className = "reveal";
+          td.appendChild(reveal);
+          allInputs[allInputs.length - 1].reveal = reveal;
+        }
+        tr.appendChild(td);
+      });
+      tbody.appendChild(tr);
+    });
+    table.appendChild(tbody);
+    twrap.appendChild(table);
+    return twrap;
   }
 
   function exerciseHeader(ex) {
@@ -1751,34 +2243,15 @@
         twrap.appendChild(table);
         card.appendChild(twrap);
       } else if (ex.type === "conjTable") {
-        const twrap = document.createElement("div");
-        twrap.className = "table-wrap";
-        const table = document.createElement("table");
-        table.className = "exercise-table";
-        let thead = "<thead><tr><th>Sujeto</th>";
-        ex.cols.forEach(function (c) { thead += "<th>" + c.label + "</th>"; });
-        thead += "</tr></thead>";
-        table.innerHTML = thead;
-        const tbody = document.createElement("tbody");
-        ex.subjects.forEach(function (subj, si) {
-          const tr = document.createElement("tr");
-          const td0 = document.createElement("td");
-          td0.textContent = subj;
-          tr.appendChild(td0);
-          ex.cols.forEach(function (c) {
-            const td = document.createElement("td");
-            td.appendChild(makeInput(c.a[si], false, "Ej. " + ex.num + " " + subj + "/" + c.label));
-            const reveal = document.createElement("span");
-            reveal.className = "reveal";
-            td.appendChild(reveal);
-            allInputs[allInputs.length - 1].reveal = reveal;
-            tr.appendChild(td);
-          });
-          tbody.appendChild(tr);
-        });
-        table.appendChild(tbody);
-        twrap.appendChild(table);
-        card.appendChild(twrap);
+        card.appendChild(buildConjTable(ex, ex.num));
+      } else if (ex.type === "conjTables") {
+        // Varios cuadros de conjugación dentro del MISMO ejercicio (un solo botón
+        // "Corregir"), como en el libro, donde el ejercicio 2 son tres cuadros seguidos.
+        const tblHint = document.createElement("div");
+        tblHint.className = "table-hint";
+        tblHint.textContent = "En pantallas estrechas, desliza cada cuadro hacia los lados para ver todas las columnas.";
+        card.appendChild(tblHint);
+        ex.tables.forEach(function (tbl) { card.appendChild(buildConjTable(tbl, ex.num)); });
       } else if (ex.type === "agenda") {
         const twrap = document.createElement("div");
         twrap.className = "table-wrap";
