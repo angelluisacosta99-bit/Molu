@@ -29,8 +29,8 @@ el archivo correspondiente, no editarlo a mano.
 
 | Archivo | Origen | Páginas | Respuestas |
 | --- | --- | --- | --- |
-| `nuevo-espanol-en-marcha/a1/unidades-1-8_presente-gerundio-indefinido.md` | Nuevo Español en Marcha 1 (A1), unidades 1-8 | — | sin confirmar (ver nota) |
-| `nuevo-espanol-en-marcha/b1/repaso-b1_secciones-1-10.md` | Nuevo Español en Marcha 3 (B1), repaso final | 140-159 | **deducidas**, sin solucionario |
+| `nuevo-espanol-en-marcha/a1/unidades-1-8_presente-gerundio-indefinido.md` | Nuevo Español en Marcha 1 (A1), unidades 1-8 | — | **elaboradas** para el ejercicio |
+| `nuevo-espanol-en-marcha/b1/repaso-b1_secciones-1-11.md` | Nuevo Español en Marcha 3 (B1), repaso final | 140-161 | **deducidas**, sin solucionario |
 | `nuevo-espanol-en-marcha/b2/12b_turismo-cultural.md` | Nuevo Español en Marcha 4 (B2), unidad 12B | 12B | **solucionario oficial** del libro |
 | `nuevo-espanol-en-marcha/b2/12c_perifrasis-verbales.md` | Nuevo Español en Marcha 4 (B2), unidad 12C | 12C | **solucionario oficial** del libro |
 
@@ -42,9 +42,8 @@ solucionario. El profesor ya corrigió varias sobre la marcha, pero conviene tra
 revisables y no como autoridad. Donde había margen de duda, el artefacto lo explica en una
 nota que aparece al corregir, y esa nota también está aquí.
 
-Las de **A1** están **sin confirmar**: ese ejercicio se creó antes de que existiera esta
-carpeta y no consta si sus respuestas salieron de un solucionario o se elaboraron para el
-ejercicio. Antes de darlas por buenas para un material nuevo, preguntar al profesor.
+Las de **A1** fueron **elaboradas** para el ejercicio, no vienen de un solucionario del
+libro. El profesor lo confirmó.
 
 ## Origen de los escaneos
 

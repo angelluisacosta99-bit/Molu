@@ -1425,3 +1425,171 @@ b. ¿Desde qué ciudad la envían? → **desde Córdoba**
 c. ¿A quién va dirigida? → **a Juan**
 d. ¿Cuáles son los principales atractivos turísticos de Córdoba? → **el barrio judío, lleno de patios con flores, y la Mezquita**
 e. ¿Qué tiempo hace? → **hace muy buen tiempo**
+
+## 11. Gramática y vocabulario
+
+*Pronombres de objeto directo e indirecto, indefinidos, artículos*
+
+### Gramática y vocabulario
+
+#### Pronombres de objeto directo e indirecto
+
+| Pronombres de objeto directo |
+| --- |
+|   | singular | plural |
+| 1.ª persona | me | nos |
+| 2.ª persona | te | os |
+| 3.ª persona | lo (le) / la | los (les) / las |
+
+| Pronombres de objeto indirecto |
+| --- |
+|   | singular | plural |
+| 1.ª persona | me | nos |
+| 2.ª persona | te | os |
+| 3.ª persona | le (se) | les (se) |
+
+- Van delante del verbo conjugado y detrás del imperativo afirmativo.
+  - *Lo compré ayer.*
+  - *¿Me podrías dejar tu móvil? — Sí, cógelo.*
+- En perífrasis de infinitivo o gerundio, pueden ir detrás o delante del verbo que los acompaña.
+  - *Quiero verlos. / Los quiero ver.*
+- En 3.ª persona el uso de los pronombres le/les está aceptado para personas masculinas.
+  - *Estuve con tu hermano. Le / Lo encontré muy bien.*
+- Cuando utilizamos los dos pronombres (directo e indirecto), el indirecto siempre va en primer lugar.
+  - *Dámelo, por favor.*
+- Cuando al pronombre le (objeto indirecto) le sigue uno de los objetos directos de 3.ª persona (lo, la; los, las), el primero se convierte en se.
+  - *Acércaselo a tu compañero.*
+- Aunque el objeto indirecto aparezca detrás del verbo, el pronombre suele repetirse también delante.
+  - *¿Le has dado la noticia a Luis?*
+
+#### Indefinidos
+
+- Poco
+  - *Hay poco personal en esta empresa.*
+- Un poco
+  - *Quiero un café con un poco de leche.*
+- Mucho
+  - *Me gusta mucho. / Julián come muchos dulces.*
+- Bastante
+  - *Las patatas están bastante buenas. / Esperé bastantes horas.*
+- Demasiado
+  - *Tenía demasiado miedo. / Hay demasiados coches.*
+
+#### Artículos
+
+|   | Det. masc. | Det. fem. | Indet. masc. | Indet. fem. |
+| --- | --- | --- | --- | --- |
+| Sing. | el | la | un | una |
+| Pl. | los | las | unos | unas |
+
+Los artículos determinados (el, la, los, las) se usan:
+
+- Cuando hablamos de algo que conocemos.
+  - *Devuélveme el libro que te presté.*
+- Con el verbo gustar y con todos los verbos que llevan le.
+  - *Me gusta la música clásica.*
+- Es obligatorio con nombres de juegos y actividades de ocio, con partes del cuerpo, objetos personales o ropa, en lugar del posesivo.
+  - *Me duele la cabeza (no: Me duele mi cabeza).*
+  - *El fútbol es un deporte muy popular en Europa.*
+- Con la hora.
+  - *Son las seis de la tarde.*
+- Con los días de la semana.
+  - *El jueves voy a verte.*
+- A veces se puede eliminar el sustantivo y dejar el artículo.
+  - *¿Quién es tu novia? — La del vestido rosa.*
+Los artículos indeterminados (un, una, unos, unas) se usan:
+
+- Cuando se habla de algo por primera vez.
+  - *Me han regalado un gato.*
+- Para hablar de una cantidad aproximada.
+  - *He tardado unas doce horas.*
+
+> **El artículo neutro lo**
+> Seguido de un adjetivo o un adverbio, para sustantivarlo.
+> Lo más difícil es aprobar el primer examen.
+
+No se usa artículo:
+
+- Cuando se habla de una profesión, excepto si va con un adjetivo.
+  - *Mi primo es un carpintero estupendo.*
+- Tras las preposiciones de, con, sin.
+  - *Tengo dolor de cabeza.*
+
+**Vocabulario · Ropa y complementos**
+chaqueta · bolsillos · botones · falda · blusa · bufanda · pendientes · pañuelo (de cuello) · cinturón · medias · zapatos de tacón · bolso · gorro · abrigo · guantes · camisa · traje (de caballero) · corbata · sombrero · paraguas · traje de chaqueta (de señora)
+
+### Ejercicios
+
+#### Ej. 1 — Completa con pronombres de objeto directo
+
+*Escribe el pronombre que falta.*
+
+a. ¿Has visto la última exposición de Barceló? — Sí, **la** vi el sábado y me gustó mucho.
+b. ¿Has hablado con tu hermana últimamente? — Sí, **la** llamé la semana pasada.
+c. ¿Has preparado los macarrones? — No, **los** prepararé más tarde.
+d. ¿Sabes dónde están mis gafas? — Sí, **las** he visto encima de la mesa.
+e. No pagues, yo **te** invito.
+
+#### Ej. 2 — Localiza la palabra que no pertenece al grupo
+
+*Escribe la palabra que sobra en cada lista.*
+
+a. bañador, botas, abrigo, guantes, bufanda. → **bañador**
+b. vestido, blusa, falda, corbata, bolso. → **corbata**
+c. traje, corbata, zapatos, jersey, collar. → **collar**
+d. bufanda, zapatos, botas, medias, calcetines. → **bufanda**
+e. pendientes, reloj, pulsera, anillo, camisa. → **camisa**
+
+#### Ej. 3 — Completa el texto con las palabras del recuadro
+
+*Completa cada hueco con la palabra del recuadro que corresponde.*
+
+> **Palabras:** tiendas · talla · moda · barato · ir de compras · probártelo · marca · rebajas · queda bien
+
+El mejor momento para **ir de compras** (1) es la época de **rebajas** (2), cuando todas las **tiendas** (3) recortan sus precios. Todo es más **barato** (4); algunas veces la diferencia es de hasta más de un 50%. Cuando compras algo de ropa, debes **probártelo** (5) para asegurarte de que es tu **talla** (6) y de que te **queda bien** (7). También se rebajan los productos de **marca** (8) y los de **moda** (9) más actual.
+
+#### Ej. 4 — Relaciona
+
+*Escribe la palabra del recuadro que corresponde a cada situación.*
+
+> **Palabras:** Pijama · Bañador · Guantes · Traje · Chándal · Paraguas · Bufanda
+
+a. Llueve mucho afuera. → **paraguas**
+b. Voy a la playa. → **bañador**
+c. Tengo una entrevista de trabajo. → **traje**
+d. Me voy a la cama. → **pijama**
+e. Voy a hacer deporte. → **chándal**
+f. Hace mucho frío. Me duele la garganta. → **bufanda**
+g. Tengo las manos heladas. → **guantes**
+
+#### Ej. 5 — Completa con un artículo determinado o indeterminado, si es necesario
+
+*Escribe el artículo que falta. Cuando no haga falta ningún artículo, escribe un guion (—) en su lugar — el hueco necesita algo escrito para poder corregirse.*
+
+a. En esta tienda se venden **—** tejidos muy caros.
+b. ¿Puede decirme dónde hay **una** farmacia, por favor?
+c. Mis vecinos son **—** mecánicos.
+d. Hay **una** botella de leche en el frigorífico.
+e. A finales de mes siempre estoy sin **—** dinero.
+f. Ayer llamó por teléfono **la** señora Pérez.
+g. He visto **unas** casas de dos plantas preciosas.
+h. ¡Oiga, por favor! Quiero medio kilo de **—** boquerones.
+i. Era casi imposible comprar **una** entrada para el concierto. Pero al fin tengo **una**.
+j. El primo de Ana es **un** chico muy simpático.
+
+#### Ej. 6 — Corrige los errores en las siguientes frases
+
+*Cada frase tiene un error de concordancia con un indefinido (poco, mucho, bastante, demasiado). Escribe solo la parte corregida, no hace falta la frase entera.*
+
+a. He comprado bastantes cerveza. → **bastante cerveza**
+b. Mis abuelos están un pocos sordos. → **un poco sordos**
+c. Muchas días hago deporte. → **muchos días**
+d. Había demasiado gente en la discoteca. → **demasiada gente**
+e. En mi pueblo hay muchas coches. → **muchos coches**
+f. No he bebido bastantes agua. → **bastante agua**
+g. He ahorrado muchos dinero este mes. → **mucho dinero**
+h. No me lo puedo comprar; es poco caro. → **demasiado caro (el error no es de concordancia: «poco caro» significa lo contrario de lo que pide la frase)**
+i. Tengo mucho amigos. → **muchos amigos**
+j. Demasiada horas de trabajo no son buenas. → **demasiadas horas**
+k. Los bocadillos son bastantes buenos. → **bastante buenos (aquí «bastante» va delante de un adjetivo, y ahí es invariable)**
+l. Los niños tienen muchas sed. → **mucha sed**

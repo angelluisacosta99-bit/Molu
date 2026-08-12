@@ -554,8 +554,8 @@
   <p>Teoría de gramática, vocabulario y ejercicios prácticos con corrección instantánea. Se completa por partes.</p>
   <div class="hero-meta">
     <span><strong id="totalBlanksLabel" translate="no">—</strong> huecos en total</span>
-    <span><strong>10</strong> secciones</span>
-    <span><strong>49</strong> ejercicios</span>
+    <span><strong>11</strong> secciones</span>
+    <span><strong>55</strong> ejercicios</span>
   </div>
   <div class="in-progress-note">
     <b>En construcción:</b> este repaso se está transcribiendo por partes. Donde el
@@ -654,6 +654,11 @@
   // mañana" se marca mal aunque el verbo esté bien; es justo lo que el ejercicio enseña.
   const NOTE_CENA_MANANA = { flex: ["harías", "hoy"], show: "harías la cena hoy" };
   const NOTE_NO_SALDRIAN = { flex: ["saldrían", "hoy"], show: "hoy no saldrían" };
+  // Ej. 11.5: el hueco vacío SIEMPRE se marca mal (norm() lo trata como "sin responder" a
+  // propósito, ver más abajo), así que "no hace falta artículo" no se puede expresar
+  // dejando el campo en blanco. Se pide escribir un guion en su lugar; se explica una vez
+  // en el enunciado del ejercicio, no en cada hueco.
+  const SIN_ARTICULO = ["—", "-", "–"];
 
   const blocks = [
     {
@@ -2611,6 +2616,235 @@
             { t: "¿A quién va dirigida? → {0}", a: [{ flex: ["juan"], show: "a Juan" }], wide: true },
             { t: "¿Cuáles son los principales atractivos turísticos de Córdoba? → {0}", a: [{ flex: ["judío", "mezquita"], show: "el barrio judío, lleno de patios con flores, y la Mezquita" }], wide: true },
             { t: "¿Qué tiempo hace? → {0}", a: [conSinTildes(["hace muy buen tiempo", "hace buen tiempo", "muy buen tiempo", "buen tiempo", "hace mucho sol", "hace sol", "hace muy buen tiempo mucho sol y una temperatura estupenda", "hace mucho sol y una temperatura estupenda", "hace sol y una temperatura estupenda"])], wide: true }
+          ]
+        }
+      ]
+    },
+    {
+      id: "seccion-11", num: 11, title: "Gramática y vocabulario",
+      sub: "Pronombres de objeto directo e indirecto, indefinidos, artículos",
+      introHTML: `
+        <div class="theory-wrap">
+          <div class="theory-cols">
+            <div>
+              <div class="theory-group">
+                <h3>Pronombres de objeto directo e indirecto</h3>
+                <div class="table-wrap">
+                  <table class="theory-table">
+                    <thead><tr><th colspan="3">Pronombres de objeto directo</th></tr></thead>
+                    <tbody>
+                      <tr><td></td><td>singular</td><td>plural</td></tr>
+                      <tr><td>1.ª persona</td><td>me</td><td>nos</td></tr>
+                      <tr><td>2.ª persona</td><td>te</td><td>os</td></tr>
+                      <tr><td>3.ª persona</td><td>lo (le) / la</td><td>los (les) / las</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="table-wrap">
+                  <table class="theory-table">
+                    <thead><tr><th colspan="3">Pronombres de objeto indirecto</th></tr></thead>
+                    <tbody>
+                      <tr><td></td><td>singular</td><td>plural</td></tr>
+                      <tr><td>1.ª persona</td><td>me</td><td>nos</td></tr>
+                      <tr><td>2.ª persona</td><td>te</td><td>os</td></tr>
+                      <tr><td>3.ª persona</td><td>le (se)</td><td>les (se)</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <ul class="theory-points">
+                  <li><span class="use-label">Van delante del verbo conjugado y detrás del imperativo afirmativo.</span>
+                    <span class="example">Lo compré ayer.</span>
+                    <span class="example">¿Me podrías dejar tu móvil? — Sí, cógelo.</span></li>
+                  <li><span class="use-label">En perífrasis de infinitivo o gerundio, pueden ir detrás o delante del verbo que los acompaña.</span>
+                    <span class="example">Quiero verlos. / Los quiero ver.</span></li>
+                  <li><span class="use-label">En 3.ª persona el uso de los pronombres <b>le/les</b> está aceptado para personas masculinas.</span>
+                    <span class="example">Estuve con tu hermano. Le / Lo encontré muy bien.</span></li>
+                  <li><span class="use-label">Cuando utilizamos los dos pronombres (directo e indirecto), el indirecto siempre va en primer lugar.</span>
+                    <span class="example">Dámelo, por favor.</span></li>
+                  <li><span class="use-label">Cuando al pronombre <b>le</b> (objeto indirecto) le sigue uno de los objetos directos de 3.ª persona (<b>lo, la; los, las</b>), el primero se convierte en <b>se</b>.</span>
+                    <span class="example">Acércaselo a tu compañero.</span></li>
+                  <li><span class="use-label">Aunque el objeto indirecto aparezca detrás del verbo, el pronombre suele repetirse también delante.</span>
+                    <span class="example">¿Le has dado la noticia a Luis?</span></li>
+                </ul>
+              </div>
+            </div>
+            <div>
+              <div class="theory-group">
+                <h3>Indefinidos</h3>
+                <ul class="theory-points">
+                  <li><span class="use-label"><b>Poco</b></span>
+                    <span class="example">Hay poco personal en esta empresa.</span></li>
+                  <li><span class="use-label"><b>Un poco</b></span>
+                    <span class="example">Quiero un café con un poco de leche.</span></li>
+                  <li><span class="use-label"><b>Mucho</b></span>
+                    <span class="example">Me gusta mucho. / Julián come muchos dulces.</span></li>
+                  <li><span class="use-label"><b>Bastante</b></span>
+                    <span class="example">Las patatas están bastante buenas. / Esperé bastantes horas.</span></li>
+                  <li><span class="use-label"><b>Demasiado</b></span>
+                    <span class="example">Tenía demasiado miedo. / Hay demasiados coches.</span></li>
+                </ul>
+              </div>
+              <div class="theory-group">
+                <h3>Artículos</h3>
+                <div class="table-wrap">
+                  <table class="theory-table">
+                    <thead><tr><th></th><th>Det. masc.</th><th>Det. fem.</th><th>Indet. masc.</th><th>Indet. fem.</th></tr></thead>
+                    <tbody>
+                      <tr><td>Sing.</td><td>el</td><td>la</td><td>un</td><td>una</td></tr>
+                      <tr><td>Pl.</td><td>los</td><td>las</td><td>unos</td><td>unas</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p class="theory-lead">Los artículos determinados (<b>el, la, los, las</b>) se usan:</p>
+                <ul class="theory-points">
+                  <li><span class="use-label">Cuando hablamos de algo que conocemos.</span>
+                    <span class="example">Devuélveme el libro que te presté.</span></li>
+                  <li><span class="use-label">Con el verbo <b>gustar</b> y con todos los verbos que llevan <b>le</b>.</span>
+                    <span class="example">Me gusta la música clásica.</span></li>
+                  <li><span class="use-label">Es obligatorio con nombres de juegos y actividades de ocio, con partes del cuerpo, objetos personales o ropa, en lugar del posesivo.</span>
+                    <span class="example">Me duele la cabeza (no: Me duele mi cabeza).</span>
+                    <span class="example">El fútbol es un deporte muy popular en Europa.</span></li>
+                  <li><span class="use-label">Con la hora.</span>
+                    <span class="example">Son las seis de la tarde.</span></li>
+                  <li><span class="use-label">Con los días de la semana.</span>
+                    <span class="example">El jueves voy a verte.</span></li>
+                  <li><span class="use-label">A veces se puede eliminar el sustantivo y dejar el artículo.</span>
+                    <span class="example">¿Quién es tu novia? — La del vestido rosa.</span></li>
+                </ul>
+                <p class="theory-lead">Los artículos indeterminados (<b>un, una, unos, unas</b>) se usan:</p>
+                <ul class="theory-points">
+                  <li><span class="use-label">Cuando se habla de algo por primera vez.</span>
+                    <span class="example">Me han regalado un gato.</span></li>
+                  <li><span class="use-label">Para hablar de una cantidad aproximada.</span>
+                    <span class="example">He tardado unas doce horas.</span></li>
+                </ul>
+                <div class="rule-box">
+                  <h4>El artículo neutro lo</h4>
+                  <p>Seguido de un adjetivo o un adverbio, para sustantivarlo.</p>
+                  <p><b>Lo</b> más difícil es aprobar el primer examen.</p>
+                </div>
+                <p class="theory-lead">No se usa artículo:</p>
+                <ul class="theory-points">
+                  <li><span class="use-label">Cuando se habla de una profesión, excepto si va con un adjetivo.</span>
+                    <span class="example">Mi primo es un carpintero estupendo.</span></li>
+                  <li><span class="use-label">Tras las preposiciones <b>de, con, sin</b>.</span>
+                    <span class="example">Tengo dolor de cabeza.</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-title">Vocabulario · Ropa y complementos</div>
+          <div class="vocab-chips">
+            <span class="vocab-chip">chaqueta</span><span class="vocab-chip">bolsillos</span>
+            <span class="vocab-chip">botones</span><span class="vocab-chip">falda</span>
+            <span class="vocab-chip">blusa</span><span class="vocab-chip">bufanda</span>
+            <span class="vocab-chip">pendientes</span><span class="vocab-chip">pañuelo (de cuello)</span>
+            <span class="vocab-chip">cinturón</span><span class="vocab-chip">medias</span>
+            <span class="vocab-chip">zapatos de tacón</span><span class="vocab-chip">bolso</span>
+            <span class="vocab-chip">gorro</span><span class="vocab-chip">abrigo</span>
+            <span class="vocab-chip">guantes</span><span class="vocab-chip">camisa</span>
+            <span class="vocab-chip">traje (de caballero)</span><span class="vocab-chip">corbata</span>
+            <span class="vocab-chip">sombrero</span><span class="vocab-chip">paraguas</span>
+            <span class="vocab-chip">traje de chaqueta (de señora)</span>
+          </div>
+        </div>
+      `,
+      exercises: [
+        {
+          num: 1, title: "Completa con pronombres de objeto directo",
+          instr: "Escribe el pronombre que falta.",
+          type: "items",
+          items: [
+            { t: "¿Has visto la última exposición de Barceló? — Sí, {0} vi el sábado y me gustó mucho.", a: [["la"]], wide: true },
+            { t: "¿Has hablado con tu hermana últimamente? — Sí, {0} llamé la semana pasada.", a: [["la"]], wide: true },
+            { t: "¿Has preparado los macarrones? — No, {0} prepararé más tarde.", a: [["los"]], wide: true },
+            { t: "¿Sabes dónde están mis gafas? — Sí, {0} he visto encima de la mesa.", a: [["las"]], wide: true },
+            { t: "No pagues, yo {0} invito.", a: [["te"]] }
+          ]
+        },
+        {
+          num: 2, title: "Localiza la palabra que no pertenece al grupo",
+          instr: "Escribe la palabra que sobra en cada lista.",
+          type: "items",
+          items: [
+            { t: "bañador, botas, abrigo, guantes, bufanda. → {0}", a: [["bañador"]], wide: true },
+            { t: "vestido, blusa, falda, corbata, bolso. → {0}", a: [["corbata"]], wide: true },
+            { t: "traje, corbata, zapatos, jersey, collar. → {0}", a: [["collar"]], wide: true },
+            { t: "bufanda, zapatos, botas, medias, calcetines. → {0}", a: [["bufanda"]], wide: true },
+            { t: "pendientes, reloj, pulsera, anillo, camisa. → {0}", a: [["camisa"]], wide: true }
+          ]
+        },
+        {
+          num: 3, title: "Completa el texto con las palabras del recuadro",
+          instr: "Completa cada hueco con la palabra del recuadro que corresponde.",
+          refHTML: '<span class="ref-label">Palabras</span>' +
+            '<div class="ref-options">' +
+            '<span class="ref-opt">tiendas</span><span class="ref-opt">talla</span>' +
+            '<span class="ref-opt">moda</span><span class="ref-opt">barato</span>' +
+            '<span class="ref-opt">ir de compras</span><span class="ref-opt">probártelo</span>' +
+            '<span class="ref-opt">marca</span><span class="ref-opt">rebajas</span>' +
+            '<span class="ref-opt">queda bien</span>' +
+            "</div>",
+          type: "text",
+          text: "El mejor momento para {0} (1) es la época de {1} (2), cuando todas las {2} (3) recortan sus precios. Todo es más {3} (4); algunas veces la diferencia es de hasta más de un 50%. Cuando compras algo de ropa, debes {4} (5) para asegurarte de que es tu {5} (6) y de que te {6} (7). También se rebajan los productos de {7} (8) y los de {8} (9) más actual.",
+          a: [["ir de compras"], ["rebajas"], ["tiendas"], ["barato"], ["probártelo"], ["talla"], ["queda bien"], ["marca"], ["moda"]]
+        },
+        {
+          num: 4, title: "Relaciona",
+          instr: "Escribe la palabra del recuadro que corresponde a cada situación.",
+          refHTML: '<span class="ref-label">Palabras</span>' +
+            '<div class="ref-options">' +
+            '<span class="ref-opt">Pijama</span><span class="ref-opt">Bañador</span>' +
+            '<span class="ref-opt">Guantes</span><span class="ref-opt">Traje</span>' +
+            '<span class="ref-opt">Chándal</span><span class="ref-opt">Paraguas</span>' +
+            '<span class="ref-opt">Bufanda</span>' +
+            "</div>",
+          type: "items",
+          items: [
+            { t: "Llueve mucho afuera. → {0}", a: [["paraguas"]], wide: true },
+            { t: "Voy a la playa. → {0}", a: [["bañador"]], wide: true },
+            { t: "Tengo una entrevista de trabajo. → {0}", a: [["traje"]], wide: true },
+            { t: "Me voy a la cama. → {0}", a: [["pijama"]], wide: true },
+            { t: "Voy a hacer deporte. → {0}", a: [["chándal"]], wide: true },
+            { t: "Hace mucho frío. Me duele la garganta. → {0}", a: [["bufanda"]], wide: true },
+            { t: "Tengo las manos heladas. → {0}", a: [["guantes"]], wide: true }
+          ]
+        },
+        {
+          num: 5, title: "Completa con un artículo determinado o indeterminado, si es necesario",
+          instr: "Escribe el artículo que falta. Cuando no haga falta ningún artículo, escribe un guion (—) en su lugar — el hueco necesita algo escrito para poder corregirse.",
+          type: "items",
+          items: [
+            { t: "En esta tienda se venden {0} tejidos muy caros.", a: [SIN_ARTICULO], wide: true },
+            { t: "¿Puede decirme dónde hay {0} farmacia, por favor?", a: [["una"]] },
+            { t: "Mis vecinos son {0} mecánicos.", a: [SIN_ARTICULO] },
+            { t: "Hay {0} botella de leche en el frigorífico.", a: [["una"]] },
+            { t: "A finales de mes siempre estoy sin {0} dinero.", a: [SIN_ARTICULO] },
+            { t: "Ayer llamó por teléfono {0} señora Pérez.", a: [["la"]] },
+            { t: "He visto {0} casas de dos plantas preciosas.", a: [["unas"]], wide: true },
+            { t: "¡Oiga, por favor! Quiero medio kilo de {0} boquerones.", a: [SIN_ARTICULO], wide: true },
+            { t: "Era casi imposible comprar {0} entrada para el concierto. Pero al fin tengo {1}.", a: [["una"], ["una", "la"]], wide: true },
+            { t: "El primo de Ana es {0} chico muy simpático.", a: [["un"]], wide: true }
+          ]
+        },
+        {
+          num: 6, title: "Corrige los errores en las siguientes frases",
+          instr: "Cada frase tiene un error de concordancia con un indefinido (poco, mucho, bastante, demasiado). Escribe solo la parte corregida, no hace falta la frase entera.",
+          type: "items",
+          items: [
+            { t: "He comprado bastantes cerveza. → {0}", a: [{ flex: ["bastante cerveza"], show: "bastante cerveza" }], wide: true },
+            { t: "Mis abuelos están un pocos sordos. → {0}", a: [{ flex: ["un poco sordos"], show: "un poco sordos" }], wide: true },
+            { t: "Muchas días hago deporte. → {0}", a: [{ flex: ["muchos días"], show: "muchos días" }], wide: true },
+            { t: "Había demasiado gente en la discoteca. → {0}", a: [{ flex: ["demasiada gente"], show: "demasiada gente" }], wide: true },
+            { t: "En mi pueblo hay muchas coches. → {0}", a: [{ flex: ["muchos coches"], show: "muchos coches" }], wide: true },
+            { t: "No he bebido bastantes agua. → {0}", a: [{ flex: ["bastante agua"], show: "bastante agua" }], wide: true },
+            { t: "He ahorrado muchos dinero este mes. → {0}", a: [{ flex: ["mucho dinero"], show: "mucho dinero" }], wide: true },
+            { t: "No me lo puedo comprar; es poco caro. → {0}", a: [{ flex: ["demasiado caro"], show: "demasiado caro (el error no es de concordancia: «poco caro» significa lo contrario de lo que pide la frase)" }], wide: true },
+            { t: "Tengo mucho amigos. → {0}", a: [{ flex: ["muchos amigos"], show: "muchos amigos" }], wide: true },
+            { t: "Demasiada horas de trabajo no son buenas. → {0}", a: [{ flex: ["demasiadas horas"], show: "demasiadas horas" }], wide: true },
+            { t: "Los bocadillos son bastantes buenos. → {0}", a: [{ flex: ["bastante buenos"], show: "bastante buenos (aquí «bastante» va delante de un adjetivo, y ahí es invariable)" }], wide: true },
+            { t: "Los niños tienen muchas sed. → {0}", a: [{ flex: ["mucha sed"], show: "mucha sed" }], wide: true }
           ]
         }
       ]
