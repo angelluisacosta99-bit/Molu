@@ -248,6 +248,20 @@
   .rule-box p:last-child { margin-bottom: 0; }
   .rule-box b { color: var(--paper); }
   .rule-box .ex-words { font-style: italic; color: color-mix(in srgb, var(--paper) 78%, transparent); }
+  .theory-table {
+    width: 100%; border-collapse: collapse; font-size: 0.85rem; margin: 0.5rem 0 0.3rem;
+  }
+  .theory-table th {
+    background: var(--ink); color: var(--paper); text-align: left;
+    padding: 0.35rem 0.6rem; font-size: 0.76rem; font-weight: 700;
+    letter-spacing: 0.03em; font-family: -apple-system, sans-serif;
+  }
+  .theory-table td {
+    padding: 0.3rem 0.6rem; border-bottom: 1px solid var(--border); vertical-align: middle;
+  }
+  .theory-table tr:last-child td { border-bottom: none; }
+  .theory-table .tt-form { font-weight: 700; color: var(--gold); }
+  .theory-table .tt-span { color: var(--ink-soft); font-style: italic; }
   .vocab-title {
     font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
     color: var(--pencil); margin: 1.5rem 0 0.65rem;
@@ -465,8 +479,8 @@
   <p>Teoría de gramática, vocabulario y ejercicios prácticos con corrección instantánea. Se completa por partes.</p>
   <div class="hero-meta">
     <span><strong id="totalBlanksLabel" translate="no">—</strong> huecos en total</span>
-    <span><strong>1</strong> bloques</span>
-    <span><strong>4</strong> ejercicios</span>
+    <span><strong>3</strong> secciones</span>
+    <span><strong>14</strong> ejercicios</span>
   </div>
   <div class="in-progress-note">
     <b>En construcción:</b> este repaso se está transcribiendo por partes. Donde el
@@ -552,6 +566,9 @@
   // template blanks use {0},{1}... matched to item.answers[i]
   const NOTE_ESTA_MANANA = ["hemos visto", "vimos"];
   const NOTE_POR_POER_FUTURO = ["podremos", "podrá", "podrán", "se podrá"];
+  const NOTE_DE_A_ESTACIONES = ["de", "desde"];
+  const NOTE_PISO_TIENE = ["tiene"];
+  const NOTE_YO_QUE_TU_VER = ["vería", "verías"];
 
   const blocks = [
     {
@@ -734,6 +751,428 @@
           ]
         }
       ]
+    },
+    {
+      id: "seccion-2", num: 2, title: "Gramática y vocabulario",
+      sub: "Pretérito pluscuamperfecto, preposiciones y vocabulario de la ciudad",
+      introHTML: `
+        <div class="theory-wrap">
+          <div class="theory-cols">
+            <div>
+              <div class="theory-group">
+                <h3>Pretérito pluscuamperfecto</h3>
+                <p class="theory-lead">Se utiliza para expresar acciones acabadas y pasadas, anteriores a otras acciones también pasadas.</p>
+                <ul class="theory-points">
+                  <li><span class="example">Cuando llegué a casa, mi marido ya <b>había preparado</b> la cena.</span>
+                    <span class="use-label" style="margin-top:0.2rem">(La acción de preparar la cena es anterior a la de llegar.)</span></li>
+                  <li><span class="example">Clara lloraba porque su madre no le <b>había comprado</b> un helado.</span></li>
+                  <li><span class="example">Me encontré a Carlos y me dijo que <b>había cambiado</b> de trabajo.</span></li>
+                </ul>
+                <p class="theory-lead">Se forma con el pretérito imperfecto del verbo <em>haber</em> y el participio del verbo que indica la acción.</p>
+                <table class="theory-table">
+                  <thead><tr><th colspan="3">Haber (imperfecto) + participio</th></tr></thead>
+                  <tbody>
+                    <tr><td>yo</td><td class="tt-form">había</td><td rowspan="6" class="tt-span">hablado<br>comido<br>vivido</td></tr>
+                    <tr><td>tú</td><td class="tt-form">habías</td></tr>
+                    <tr><td>él / ella / Ud.</td><td class="tt-form">había</td></tr>
+                    <tr><td>nosotros/as</td><td class="tt-form">habíamos</td></tr>
+                    <tr><td>vosotros/as</td><td class="tt-form">habíais</td></tr>
+                    <tr><td>ellos / ellas / Uds.</td><td class="tt-form">habían</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="theory-group">
+                <h3>Preposiciones · A</h3>
+                <ul class="theory-points">
+                  <li><span class="use-label">Dirección, movimiento.</span>
+                    <span class="example">Vamos <b>a</b> la estación de autobuses.</span></li>
+                  <li><span class="use-label">Con el verbo <em>estar</em>, puede expresar:</span>
+                    <span class="example">Ubicación: El baño está <b>a</b> la derecha del salón.</span>
+                    <span class="example">Distancia: El aeropuerto está <b>a</b> 5 km.</span>
+                    <span class="example">Temperatura: Estamos <b>a</b> 0 ºC.</span>
+                    <span class="example">Precio: La merluza está <b>a</b> 30 € el kilo.</span></li>
+                  <li><span class="use-label">Con el verbo <em>ir</em>, puede expresar velocidad.</span>
+                    <span class="example">Yo nunca voy <b>a</b> más de 130 km/hora.</span></li>
+                </ul>
+              </div>
+
+              <div class="theory-group">
+                <h3>De</h3>
+                <ul class="theory-points">
+                  <li><span class="use-label">Indica origen, en el tiempo y en el espacio.</span>
+                    <span class="example">Rosa viene <b>del</b> supermercado.</span>
+                    <span class="example">Este vino es <b>de</b> Rioja.</span></li>
+                  <li><span class="use-label">Con el verbo <em>ir</em> forma múltiples expresiones.</span>
+                    <span class="example">Ir <b>de</b> viaje, ir <b>de</b> compras, ir <b>de</b> vacaciones, ir <b>de</b> excursión.</span>
+                    <span class="example">Nosotros este año no vamos <b>de</b> vacaciones porque no podemos.</span></li>
+                </ul>
+              </div>
+            </div>
+
+            <div>
+              <div class="theory-group">
+                <h3>Desde</h3>
+                <ul class="theory-points">
+                  <li><span class="use-label">Indica origen en el espacio y en el tiempo.</span>
+                    <span class="example">Viven aquí <b>desde</b> 1980.</span>
+                    <span class="example"><b>Desde</b> mi casa hasta allí hay dos kilómetros.</span></li>
+                </ul>
+              </div>
+
+              <div class="theory-group">
+                <h3>En</h3>
+                <ul class="theory-points">
+                  <li><span class="use-label">Indica ubicación, en el tiempo y en el espacio.</span>
+                    <span class="example">En España hace mucho calor <b>en</b> verano.</span></li>
+                  <li><span class="use-label">Forma de transporte.</span>
+                    <span class="example">Me gusta más viajar <b>en</b> tren que <b>en</b> avión, es más romántico.</span></li>
+                </ul>
+              </div>
+
+              <div class="theory-group">
+                <h3>Hasta</h3>
+                <ul class="theory-points">
+                  <li><span class="use-label">Indica punto final en el tiempo y en el espacio.</span>
+                    <span class="example">Estaremos en Madrid <b>hasta</b> el 21 de diciembre.</span></li>
+                </ul>
+              </div>
+
+              <div class="theory-group">
+                <h3>Por</h3>
+                <ul class="theory-points">
+                  <li><span class="use-label">Causa, razón.</span>
+                    <span class="example">Han despedido a Juan <b>por</b> llegar tarde al trabajo.</span></li>
+                  <li><span class="use-label">Lugar.</span>
+                    <span class="example">Ven <b>por</b> la carretera de Toledo, es más corto el viaje.</span></li>
+                  <li><span class="use-label">Medio.</span>
+                    <span class="example">Envíame las fotos <b>por</b> e-mail, por favor.</span></li>
+                </ul>
+              </div>
+
+              <div class="theory-group">
+                <h3>Para</h3>
+                <ul class="theory-points">
+                  <li><span class="use-label">Finalidad, objetivo.</span>
+                    <span class="example"><b>Para</b> venir a mi casa tienes que bajarte en la estación del metro de Plaza Cataluña.</span></li>
+                  <li><span class="use-label">Utilidad.</span>
+                    <span class="example">¿<b>Para</b> qué sirve esta máquina? — <b>Para</b> hacer agujeros en la pared.</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-title">Vocabulario · Moverse por la ciudad</div>
+          <div class="vocab-chips">
+            <span class="vocab-chip">estación</span><span class="vocab-chip">atasco</span>
+            <span class="vocab-chip">regresar</span><span class="vocab-chip">llegar</span>
+            <span class="vocab-chip">metro</span><span class="vocab-chip">rápido</span>
+            <span class="vocab-chip">durante</span><span class="vocab-chip">tren</span>
+            <span class="vocab-chip">ir</span><span class="vocab-chip">coche</span>
+            <span class="vocab-chip">tardar</span><span class="vocab-chip">transbordo</span>
+            <span class="vocab-chip">autobús</span>
+          </div>
+
+          <div class="vocab-title">Vocabulario · Cosas de la casa</div>
+          <div class="vocab-chips">
+            <span class="vocab-chip">aire acondicionado</span><span class="vocab-chip">calefacción</span>
+            <span class="vocab-chip">chimenea</span><span class="vocab-chip">equipo de música</span>
+            <span class="vocab-chip">ordenador</span><span class="vocab-chip">televisión</span>
+            <span class="vocab-chip">vídeo</span><span class="vocab-chip">DVD</span>
+            <span class="vocab-chip">lavaplatos</span><span class="vocab-chip">lavadora</span>
+            <span class="vocab-chip">secadora</span>
+          </div>
+        </div>
+      `,
+      exercises: [
+        {
+          num: 1, title: "Pretérito pluscuamperfecto o indefinido",
+          instr: "Forma frases usando el pretérito pluscuamperfecto o el pretérito indefinido, como en el ejemplo.",
+          model: "Ejemplo: Gonzalo se enfadó (enfadarse) porque ellos habían dejado (dejar) todas sus cosas desordenadas.",
+          type: "items",
+          items: [
+            { t: "Cuando Franco {0} (morir) yo aún no {1} (nacer).", a: [["murió"], ["había nacido"]] },
+            { t: "Cuando {0} (volver, ellos) a casa, todavía no {1} (arreglar, ellos) el ascensor.", a: [["volvieron"], ["habían arreglado"]] },
+            { t: "La última vez que {0} (ver, yo) a Marisa, {1} (adelgazar) muchísimo.", a: [["vi"], ["había adelgazado"]] },
+            { t: "Cuando Eva {0} (empezar) la carrera, nosotros ya {1} (terminar).", a: [["empezó"], ["habíamos terminado"]] },
+            { t: "A los 27 años, Leopoldo Muñoz ya {0} (componer) sus obras más importantes.", a: [["había compuesto"]] },
+            { t: "¿{0} (Ver, vosotros) antes un paisaje como este?", a: [["habíais visto"]] },
+            { t: "No {0} (poder, nosotros) comprar los sellos porque ya {1} (cerrar, ellos) el estanco.", a: [["pudimos"], ["habían cerrado"]] }
+          ]
+        },
+        {
+          num: 2, title: "Completa con la preposición adecuada",
+          instr: "Usa las preposiciones del recuadro. Algunas se repiten.",
+          refHTML: '<span class="ref-label">Preposiciones</span>' +
+            '<div class="ref-connectors"><span>a</span><span>hasta</span><span>en</span><span>para</span><span>de</span></div>',
+          type: "items",
+          items: [
+            { t: "{0} Núñez de Balboa {1} Callao no hay muchas estaciones.", a: [NOTE_DE_A_ESTACIONES, ["a", "hasta"]] },
+            { t: "Mi abuelo iba todos los días {0} tranvía {1} la Puerta del Sol.", a: [["en"], ["a", "hasta"]] },
+            { t: "Están haciendo obras {0} comunicar este barrio con el centro.", a: [["para"]] },
+            { t: "Tu casa está {0} poca distancia de la mía.", a: [["a"]] },
+            { t: "Un coche de segunda mano de esa marca te puede costar {0} 5000 euros.", a: [["hasta"]] },
+            { t: "El mercado está {0} cinco minutos de mi casa.", a: [["a"]] },
+            { t: "Puedo ir {0} su casa andando, pero suelo ir {1} metro por comodidad.", a: [["a", "hasta"], ["en"]] },
+            { t: "Puedo esperar {0} menos diez, después tengo que irme a la oficina.", a: [["hasta"]] }
+          ]
+        },
+        {
+          num: 3, title: "Por o para",
+          instr: "Escribe la opción correcta. (El 1 ya está resuelto: Toco la guitarra por diversión, pero no soy músico profesional.)",
+          type: "items",
+          items: [
+            { t: "Me necesitan en el hospital, ahora mismo voy {0} allá. (por / para)", a: [["para"]] },
+            { t: "¿{0} dónde vivías tú? (Por / Para)", a: [["por"]] },
+            { t: "Le han dado un premio {0} sacar buenas notas. (por / para)", a: [["por"]] },
+            { t: "Si quieres te mando las fotos de la fiesta {0} e-mail. (por / para)", a: [["por"]] },
+            { t: "Si vienes a mi casa {0} la autopista, toma la primera salida. (por / para)", a: [["por"]] }
+          ]
+        },
+        {
+          num: 4, title: "Ordena las letras para formar palabras",
+          instr: "Vocabulario de moverse por la ciudad. (El 1 ya está resuelto: CHOCE → coche.)",
+          type: "items",
+          items: [
+            { t: "CIÓNTAES → {0}", a: [["estación"]] },
+            { t: "TASCOA → {0}", a: [["atasco"]] },
+            { t: "GRESARER → {0}", a: [["regresar"]] },
+            { t: "TERANDU → {0}", a: [["durante"]] },
+            { t: "BORTRANSDO → {0}", a: [["transbordo"]] },
+            { t: "TRARDA → {0}", a: [["tardar"]] },
+            { t: "PIRÁDO → {0}", a: [["rápido"]] },
+            { t: "NERT → {0}", a: [["tren"]] },
+            { t: "MOTER → {0}", a: [["metro"]] }
+          ]
+        },
+        {
+          num: 5, title: "Querido diario",
+          instr: "Completa el texto con las palabras del ejercicio anterior. (El hueco 1 ya está resuelto: coche.)",
+          type: "text",
+          text: "Querido diario:\nHoy he decidido ir a clase en coche (1) para llegar más {0} (2). ¡Vaya idea! Primero me ha pillado un {1} (3) en la M-30 y he estado ahí parada {2} (4) media hora. Luego, me he encontrado la carretera cortada por obras, así que he tenido que {3} (5) hasta el puente y tomar otro camino mucho más largo. Al rato, se me ha pinchado una rueda. ¡Y no pasaba ni un taxi! Para no {4} (6) más, he decidido caminar hasta la {5} (7) de Atocha y tomar el {6} (8) de cercanías. Mañana voy en {7} (9), como siempre, aunque tenga que hacer {8} (10), y se acabó.",
+          a: [["rápido"], ["atasco"], ["durante"], ["regresar"], ["tardar"], ["estación"], ["tren"], ["metro"], ["transbordo"]]
+        }
+      ]
+    },
+    {
+      id: "seccion-3", num: 3, title: "Gramática y vocabulario",
+      sub: "Verbos reflexivos y verbos LE, oraciones de relativo y condicional",
+      introHTML: `
+        <div class="theory-wrap">
+          <div class="theory-cols">
+            <div>
+              <div class="theory-group">
+                <h3>Verbos reflexivos y verbos LE</h3>
+                <p class="theory-lead">Tenemos una serie de verbos que funcionan habitualmente con los pronombres <em>me, te, le, nos, os, les</em>. Siguen el mismo esquema que el verbo <em>gustar</em>.</p>
+                <table class="theory-table">
+                  <tbody>
+                    <tr><td>a mí</td><td class="tt-form">me</td><td rowspan="6" class="tt-span">cae/n bien / mal</td></tr>
+                    <tr><td>a ti</td><td class="tt-form">te</td></tr>
+                    <tr><td>a él / ella / Ud.</td><td class="tt-form">le</td></tr>
+                    <tr><td>a nosotros/as</td><td class="tt-form">nos</td></tr>
+                    <tr><td>a vosotros/as</td><td class="tt-form">os</td></tr>
+                    <tr><td>a ellos / ellas / Uds.</td><td class="tt-form">les</td></tr>
+                  </tbody>
+                </table>
+                <ul class="theory-points">
+                  <li><span class="example">A mí no <b>me interesa</b> la política.</span>
+                    <span class="example">¿A ti <b>te cae</b> bien la profesora nueva?</span>
+                    <span class="example">A ella no <b>le queda</b> bien esa blusa.</span>
+                    <span class="example">A nosotros <b>nos preocupan</b> el medioambiente.</span>
+                    <span class="example">¿A vosotros <b>os preocupa</b> la contaminación?</span>
+                    <span class="example">A ellos no <b>les importa</b> llegar tarde.</span></li>
+                </ul>
+                <p class="theory-lead">Otros verbos funcionan con los pronombres reflexivos <em>me, te, se, nos, os, se</em>.</p>
+                <table class="theory-table">
+                  <tbody>
+                    <tr><td class="tt-form">me llevo</td><td class="tt-form">nos llevamos</td></tr>
+                    <tr><td class="tt-form">te llevas</td><td class="tt-form">os lleváis</td></tr>
+                    <tr><td class="tt-form">se lleva</td><td class="tt-form">se llevan</td></tr>
+                  </tbody>
+                </table>
+                <ul class="theory-points">
+                  <li><span class="example">Luis <b>se lleva</b> muy bien con Angel.</span>
+                    <span class="example">Ayer Rosa <b>se encontraba</b> mal y no fue a clase.</span></li>
+                  <li><span class="use-label">A veces el mismo verbo puede usarse con las dos estructuras. En este caso, el verbo puede tener significados muy diferentes o, por el contrario, no variar apenas.</span>
+                    <span class="example">Julio no <b>se queda</b> nunca en casa los sábados por la noche.</span>
+                    <span class="example">A Ana <b>le queda</b> muy bien el vestido blanco.</span></li>
+                </ul>
+              </div>
+
+              <div class="theory-group">
+                <h3>Oraciones de relativo</h3>
+                <p class="theory-lead">Las oraciones de relativo están introducidas por los pronombres <em>que, el/la cual, los/las cuales, quien, quienes</em>. El relativo más utilizado, tanto para personas como para cosas, es <em>que</em>.</p>
+                <p class="theory-lead">Las oraciones de relativo pueden llevar el verbo en indicativo o subjuntivo.</p>
+                <ul class="theory-points">
+                  <li><span class="use-label"><b>Indicativo:</b> cuando el hablante conoce la existencia del antecedente.</span>
+                    <span class="example">He visto un restaurante nuevo <b>que pone</b> un cocido buenísimo.</span>
+                    <span class="example">Estamos buscando un bar <b>que tiene</b> unas tapas buenísimas.</span></li>
+                  <li><span class="use-label"><b>Subjuntivo:</b> si el hablante no conoce la existencia del antecedente.</span>
+                    <span class="example">Estamos buscando un bar <b>que tenga</b> buenas tapas.</span></li>
+                  <li><span class="use-label">También se usa el subjuntivo cuando decimos del antecedente que no existe o que es escaso.</span>
+                    <span class="example">Hay pocos bares <b>que tengan</b> buenas tapas.</span></li>
+                </ul>
+              </div>
+            </div>
+
+            <div>
+              <div class="theory-group">
+                <h3>Condicional</h3>
+                <p class="theory-lead">Cuando se utiliza independientemente, el condicional sirve para expresar consejos, sugerencias, deseos poco probables o cortesía.</p>
+                <ul class="theory-points">
+                  <li><span class="example">Yo que tú <b>hablaría</b> con el profesor.</span>
+                    <span class="example"><b>Podríamos</b> comprar un pollo asado y unas patatas fritas para comer.</span>
+                    <span class="example">Me <b>gustaría</b> estudiar música.</span>
+                    <span class="example">¿Le <b>importaría</b> cerrar la ventana? Tengo frío.</span></li>
+                </ul>
+                <table class="theory-table">
+                  <thead><tr><th colspan="2">hablar</th></tr></thead>
+                  <tbody>
+                    <tr><td class="tt-form">hablaría</td><td class="tt-form">hablaríamos</td></tr>
+                    <tr><td class="tt-form">hablarías</td><td class="tt-form">hablaríais</td></tr>
+                    <tr><td class="tt-form">hablaría</td><td class="tt-form">hablarían</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="theory-group">
+                <h3>Condicionales irregulares</h3>
+                <p class="theory-lead">Los condicionales irregulares tienen la misma irregularidad que los futuros.</p>
+                <table class="theory-table">
+                  <thead><tr><th>&nbsp;</th><th>Futuro</th><th>Condicional</th></tr></thead>
+                  <tbody>
+                    <tr><td><b>decir</b></td><td>diré</td><td class="tt-form">diría</td></tr>
+                    <tr><td><b>hacer</b></td><td>haré</td><td class="tt-form">haría</td></tr>
+                    <tr><td><b>poder</b></td><td>podré</td><td class="tt-form">podría</td></tr>
+                    <tr><td><b>poner</b></td><td>pondré</td><td class="tt-form">pondría</td></tr>
+                    <tr><td><b>salir</b></td><td>saldré</td><td class="tt-form">saldría</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-title">Vocabulario · Verbos</div>
+          <div class="vocab-chips">
+            <span class="vocab-chip">interesar</span><span class="vocab-chip">encantar</span>
+            <span class="vocab-chip">parecer</span><span class="vocab-chip">quedar</span>
+            <span class="vocab-chip">reír</span><span class="vocab-chip">enfadarse</span>
+            <span class="vocab-chip">preocuparse</span><span class="vocab-chip">importar</span>
+            <span class="vocab-chip">darse cuenta</span><span class="vocab-chip">equivocarse</span>
+          </div>
+
+          <div class="vocab-title">Vocabulario · Adjetivos de carácter</div>
+          <div class="vocab-chips">
+            <span class="vocab-chip">autoritario</span><span class="vocab-chip">vago</span>
+            <span class="vocab-chip">creativo</span><span class="vocab-chip">tolerante</span>
+            <span class="vocab-chip">ambicioso</span><span class="vocab-chip">responsable</span>
+            <span class="vocab-chip">encantador</span><span class="vocab-chip">competitivo</span>
+            <span class="vocab-chip">sociable</span><span class="vocab-chip">inseguro</span>
+            <span class="vocab-chip">envidioso</span><span class="vocab-chip">cariñoso</span>
+          </div>
+        </div>
+      `,
+      exercises: [
+        {
+          num: 1, title: "Completa con el pronombre correcto",
+          instr: "me, te, se, le, nos, os, les.",
+          type: "items",
+          items: [
+            { t: "No voy a ir contigo a correr el sábado, no {0} gusta madrugar los fines de semana.", a: [["me"]] },
+            { t: "Niños, ¿{0} apetece un helado?", a: [["os"]] },
+            { t: "Cuando nació Pedro {0} trasladamos a Londres.", a: [["nos"]] },
+            { t: "Ana no {0} encuentra bien, {1} duele la cabeza.", a: [["se"], ["le"]] },
+            { t: "Paula y Jorge no están saliendo juntos, pero {0} llevan muy bien.", a: [["se"]] },
+            { t: "Voy a despedir{0} de Susana, mañana {1} va a Buenos Aires.", a: [["me"], ["se"]] },
+            { t: "No pongas la música tan alta, a mis vecinos {0} molesta mucho.", a: [["les"]] },
+            { t: "Víctor, ¿{0} parece bien que invitemos a Teresa a comer con nosotros?", a: [["te"]] },
+            { t: "Mi hija ya sabe andar, pero aún {0} cae a veces.", a: [["se"]] }
+          ]
+        },
+        {
+          num: 2, title: "Relaciona cada expresión con su significado",
+          instr: "Escribe la letra (a-i) que corresponde a cada frase.",
+          refHTML: '<span class="ref-label">Significados</span>' +
+            '<div class="ref-options">' +
+            '<span class="ref-opt"><b>a</b>Se cae.</span>' +
+            '<span class="ref-opt"><b>b</b>Se lleva.</span>' +
+            '<span class="ref-opt"><b>c</b>Le cae bien.</span>' +
+            '<span class="ref-opt"><b>d</b>Le lleva.</span>' +
+            '<span class="ref-opt"><b>e</b>Se lleva mal.</span>' +
+            '<span class="ref-opt"><b>f</b>Le van.</span>' +
+            '<span class="ref-opt"><b>g</b>Se queda.</span>' +
+            '<span class="ref-opt"><b>h</b>Le queda bien.</span>' +
+            '<span class="ref-opt"><b>i</b>Se va.</span>' +
+            "</div>",
+          type: "items",
+          items: [
+            { t: "Está de moda. → {0}", a: [["b", "se lleva"]] },
+            { t: "Acerca a su hijo al colegio. → {0}", a: [["d", "le lleva"]] },
+            { t: "No tiene buena relación con alguien. → {0}", a: [["e", "se lleva mal"]] },
+            { t: "Le gusta esa persona. → {0}", a: [["c", "le cae bien"]] },
+            { t: "Pierde el equilibrio. → {0}", a: [["a", "se cae"]] },
+            { t: "Le gustan los coches caros. → {0}", a: [["f", "le van"]] },
+            { t: "Deja un lugar para ir a otro. → {0}", a: [["i", "se va"]] },
+            { t: "Permanece en un lugar. → {0}", a: [["g", "se queda"]] },
+            { t: "Le sienta bien la ropa. → {0}", a: [["h", "le queda bien"]] }
+          ]
+        },
+        {
+          num: 3, title: "Oraciones de relativo: indicativo o subjuntivo",
+          instr: "Completa con el verbo en la forma correcta.",
+          type: "items",
+          items: [
+            { t: "Cómprate un coche barato, pero que {0} (ser) seguro.", a: [["sea"]] },
+            { t: "Conozco una profesora de piano que {0} (dar) clases a niños por 20 euros la hora.", a: [["da"]] },
+            { t: "Pues yo tengo un programa de ordenador que {0} (servir) para componer tu propia música.", a: [["sirve"]] },
+            { t: "¿Conoces a alguien que {0} (poder) cuidar de mis hijos tres tardes a la semana? Es que yo no encuentro a nadie adecuado.", a: [["pueda"]] },
+            { t: "Necesito encontrar la mochila que {0} (usar) para ir al gimnasio y no sé dónde está.", a: [["uso"]] },
+            { t: "Estoy buscando un piso que {0} (tener) una terraza grande y preciosa. Lo vi el otro día en esta página web.", a: [NOTE_PISO_TIENE] },
+            { t: "Mi jefe está buscando un secretario que {0} (querer) quedarse a trabajar por las tardes hasta las ocho.", a: [["quiera"]] },
+            { t: "Me han dicho que en este trabajo necesitan chicos que {0} (tener) carné de conducir.", a: [["tengan"]] },
+            { t: "¿Conoces a alguien que {0} (trabajar) en televisión?", a: [["trabaje"]] },
+            { t: "Buenos días, póngame un pollo, que no {0} (ser) muy grande, por favor.", a: [["sea"]] }
+          ]
+        },
+        {
+          num: 4, title: "Relaciona cada adjetivo con su definición",
+          instr: "Escribe el adjetivo del recuadro que corresponde. (El 1 ya está resuelto: sociable.)",
+          refHTML: '<span class="ref-label">Adjetivos</span>' +
+            '<div class="ref-options">' +
+            '<span class="ref-opt">autoritario</span><span class="ref-opt">creativo</span>' +
+            '<span class="ref-opt">tolerante</span><span class="ref-opt">ambicioso</span>' +
+            '<span class="ref-opt">conservador</span><span class="ref-opt">vago</span>' +
+            '<span class="ref-opt">responsable</span><span class="ref-opt">encantador</span>' +
+            '<span class="ref-opt">inseguro</span><span class="ref-opt">envidioso</span>' +
+            '<span class="ref-opt">cariñoso</span>' +
+            "</div>",
+          type: "items",
+          items: [
+            { t: "No está seguro de sí mismo: {0}", a: [["inseguro"]] },
+            { t: "Siempre dice a los otros lo que tienen que hacer: {0}", a: [["autoritario"]] },
+            { t: "Desea riqueza, poder o fama: {0}", a: [["ambicioso"]] },
+            { t: "Tiene muchas ideas originales: {0}", a: [["creativo"]] },
+            { t: "Sabe bien cuáles son sus obligaciones y las cumple: {0}", a: [["responsable"]] },
+            { t: "Desea lo que tienen los demás: {0}", a: [["envidioso"]] },
+            { t: "Admite ideas muy diferentes: {0}", a: [["tolerante"]] },
+            { t: "Le gusta el orden establecido: {0}", a: [["conservador"]] },
+            { t: "Persona muy agradable: {0}", a: [["encantador"]] },
+            { t: "No le gusta trabajar: {0}", a: [["vago"]] },
+            { t: "Afectuoso: {0}", a: [["cariñoso"]] }
+          ]
+        },
+        {
+          num: 5, title: "Completa con el verbo en condicional",
+          instr: "(El 1 ya está resuelto: Me gustaría (gustar) vivir más cerca de mi trabajo.)",
+          type: "items",
+          items: [
+            { t: "Yo que tú no {0} (salir) a esas horas por esta zona, es peligroso.", a: [["saldría"]] },
+            { t: "¿{0} (Poder, usted) traernos otra cuchara, por favor?", a: [["podría"]] },
+            { t: "Yo que tú {0} (ver) menos la televisión.", a: [NOTE_YO_QUE_TU_VER] },
+            { t: "Nosotros, en tu lugar, {0} (leer) bien las instrucciones antes de usar el aparato.", a: [["leeríamos"]] }
+          ]
+        }
+      ]
     }
   ];
 
@@ -812,7 +1251,7 @@
 
     const navA = document.createElement("a");
     navA.href = "#" + block.id;
-    navA.textContent = "Bloque " + block.num;
+    navA.textContent = "Sección " + block.num;
     navDots.appendChild(navA);
 
     block.exercises.forEach(function (ex) {
@@ -981,6 +1420,9 @@
 
   attachNote(NOTE_ESTA_MANANA, "«Esta mañana», como es hoy, todavía está en curso → normalmente se usa el pretérito perfecto («hemos visto»). Si en tu clase se usa más el indefinido para el mismo día, «vimos» también se acepta aquí.");
   attachNote(NOTE_POR_POER_FUTURO, "El sujeto de «poder» no está explícito en la frase — se aceptan «podremos» (nosotros), «podrá» / «podrán» (uso más impersonal) y «se podrá».");
+  attachNote(NOTE_DE_A_ESTACIONES, "«De Núñez de Balboa a Callao» es la combinación del recuadro. «Desde… hasta» diría lo mismo, pero «desde» no está entre las preposiciones propuestas.");
+  attachNote(NOTE_PISO_TIENE, "Indicativo («tiene»), no subjuntivo: «Lo vi el otro día» indica que ese piso concreto existe y el hablante lo conoce. Compara con «Estoy buscando un piso que tenga terraza», donde el piso todavía no se conoce.");
+  attachNote(NOTE_YO_QUE_TU_VER, "Con «yo que tú…» el consejo se da en 1.ª persona: «yo que tú vería…» (= si yo fuera tú, vería). En la foto el paréntesis se lee «(ver, él)»; si en tu libro pide otra persona, díselo al profesor.");
 
   function correctTextFor(spec) {
     const t = Array.isArray(spec) ? spec[0] : (spec.show || (spec.flex ? spec.flex.join(" / ") : ""));
