@@ -248,6 +248,19 @@
   .rule-box p:last-child { margin-bottom: 0; }
   .rule-box b { color: var(--paper); }
   .rule-box .ex-words { font-style: italic; color: color-mix(in srgb, var(--paper) 78%, transparent); }
+  /* sopa de letras */
+  /* La rejilla NO lleva espacios literales entre letras: la separación es puramente
+     letter-spacing, para que las 10 columnas quepan en la pantalla de un móvil. */
+  .wordsearch {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    font-size: 0.95rem; line-height: 1.9; letter-spacing: 0.85em; text-indent: 0.42em;
+    background: var(--paper-raised); border: 1px solid var(--border); border-radius: 8px;
+    padding: 0.8rem 0.9rem; margin-top: 0.4rem; display: inline-block;
+    white-space: pre; overflow-x: auto; max-width: 100%;
+  }
+  @media (max-width: 520px) {
+    .wordsearch { font-size: 0.8rem; letter-spacing: 0.55em; text-indent: 0.28em; }
+  }
   .theory-table {
     width: 100%; border-collapse: collapse; font-size: 0.85rem; margin: 0.5rem 0 0.3rem;
   }
@@ -479,8 +492,8 @@
   <p>Teoría de gramática, vocabulario y ejercicios prácticos con corrección instantánea. Se completa por partes.</p>
   <div class="hero-meta">
     <span><strong id="totalBlanksLabel" translate="no">—</strong> huecos en total</span>
-    <span><strong>3</strong> secciones</span>
-    <span><strong>14</strong> ejercicios</span>
+    <span><strong>5</strong> secciones</span>
+    <span><strong>24</strong> ejercicios</span>
   </div>
   <div class="in-progress-note">
     <b>En construcción:</b> este repaso se está transcribiendo por partes. Donde el
@@ -566,9 +579,10 @@
   // template blanks use {0},{1}... matched to item.answers[i]
   const NOTE_ESTA_MANANA = ["hemos visto", "vimos"];
   const NOTE_POR_POER_FUTURO = ["podremos", "podrá", "podrán", "se podrá"];
-  const NOTE_DE_A_ESTACIONES = ["de", "desde"];
+  const NOTE_DE_A_ESTACIONES = ["de"];
   const NOTE_PISO_TIENE = ["tiene"];
-  const NOTE_YO_QUE_TU_VER = ["vería", "verías"];
+  const NOTE_YO_QUE_TU_VER = ["vería"];
+  const NOTE_TU_SABES_QUE = ["¿Tú sabes qué ha hecho tu hermano?"];
 
   const blocks = [
     {
@@ -978,7 +992,7 @@
                   <li><span class="example">A mí no <b>me interesa</b> la política.</span>
                     <span class="example">¿A ti <b>te cae</b> bien la profesora nueva?</span>
                     <span class="example">A ella no <b>le queda</b> bien esa blusa.</span>
-                    <span class="example">A nosotros <b>nos preocupan</b> el medioambiente.</span>
+                    <span class="example">A nosotros <b>nos preocupa</b> el medioambiente.</span>
                     <span class="example">¿A vosotros <b>os preocupa</b> la contaminación?</span>
                     <span class="example">A ellos no <b>les importa</b> llegar tarde.</span></li>
                 </ul>
@@ -1171,6 +1185,399 @@
             { t: "Yo que tú {0} (ver) menos la televisión.", a: [NOTE_YO_QUE_TU_VER] },
             { t: "Nosotros, en tu lugar, {0} (leer) bien las instrucciones antes de usar el aparato.", a: [["leeríamos"]] }
           ]
+        }
+      ]
+    },
+    {
+      id: "seccion-4", num: 4, title: "Gramática y vocabulario",
+      sub: "Perífrasis verbales, estar + gerundio, contrarios y acentuación de monosílabos",
+      introHTML: `
+        <div class="theory-wrap">
+          <div class="theory-cols">
+            <div>
+              <div class="theory-group">
+                <h3>Perífrasis verbales</h3>
+                <p class="theory-lead">Las perífrasis verbales se utilizan para expresar distintos matices en la duración, temporalidad o intencionalidad del hablante.</p>
+                <ul class="theory-points">
+                  <li><span class="use-label"><em>Seguir</em> o <em>llevar</em> + gerundio expresan la duración de una acción que empezó en el pasado y que aún continúa.</span>
+                    <span class="example">¿<b>Sigues viviendo</b> en la misma casa?</span>
+                    <span class="example"><b>Llevo trabajando</b> en Madrid tres años.</span></li>
+                  <li><span class="use-label"><em>Dejar de</em> + infinitivo expresa finalización.</span>
+                    <span class="example">El niño ya <b>ha dejado de llorar</b>.</span></li>
+                  <li><span class="use-label"><em>Acabar de</em> + infinitivo se utiliza para expresar una acción que ha sucedido en un tiempo muy reciente.</span>
+                    <span class="example"><b>Acabamos de volver</b> de vacaciones.</span></li>
+                  <li><span class="use-label"><em>Empezar a</em> + infinitivo expresa inicio.</span>
+                    <span class="example"><b>Empecé a estudiar</b> español cuando era joven.</span></li>
+                  <li><span class="use-label"><em>Volver a</em> + infinitivo expresa repetición.</span>
+                    <span class="example"><b>Volvieron a verse</b> después de unos años.</span></li>
+                </ul>
+              </div>
+
+              <div class="theory-group">
+                <h3>Estar + gerundio</h3>
+                <p class="theory-lead">Con la perífrasis <em>estar</em> + verbo en gerundio expresamos acciones en desarrollo ya sea en el presente, en el pasado o en el futuro.</p>
+                <ul class="theory-points">
+                  <li><span class="example">Roberto <b>está leyendo</b> una novela.</span>
+                    <span class="example">Lucía <b>estuvo esperando</b> el autobús una hora.</span>
+                    <span class="example">Mañana a esta hora <b>estaré comiendo</b> con Ana.</span></li>
+                </ul>
+              </div>
+
+              <div class="theory-group">
+                <h3>He estado / estaba / estuve + gerundio</h3>
+                <table class="theory-table">
+                  <thead><tr><th>Pret. imperfecto</th><th>Pret. indefinido</th><th>+ gerundio</th></tr></thead>
+                  <tbody>
+                    <tr><td class="tt-form">estaba</td><td class="tt-form">estuve</td><td rowspan="6" class="tt-span">trabajando<br>viviendo</td></tr>
+                    <tr><td class="tt-form">estabas</td><td class="tt-form">estuviste</td></tr>
+                    <tr><td class="tt-form">estaba</td><td class="tt-form">estuvo</td></tr>
+                    <tr><td class="tt-form">estábamos</td><td class="tt-form">estuvimos</td></tr>
+                    <tr><td class="tt-form">estabais</td><td class="tt-form">estuvisteis</td></tr>
+                    <tr><td class="tt-form">estaban</td><td class="tt-form">estuvieron</td></tr>
+                  </tbody>
+                </table>
+                <ul class="theory-points">
+                  <li><span class="use-label">La diferencia entre <em>estaba viviendo</em> y <em>estuve viviendo</em> es la misma que entre <em>vivía</em> y <em>viví</em>.</span>
+                    <span class="example">Yo <b>estuve viviendo / viví</b> en Lugo un año.</span>
+                    <span class="example">Cuando <b>estaba viviendo / vivía</b> en Perú, fui a Lima.</span></li>
+                </ul>
+              </div>
+            </div>
+
+            <div>
+              <div class="theory-group">
+                <h3>Cuidado: hábitos en el pasado</h3>
+                <p class="theory-lead">No se utiliza la perífrasis <em>estaba</em> + gerundio para expresar hábitos en el pasado.</p>
+                <ul class="theory-points">
+                  <li><span class="example">Yo antes <s style="opacity:0.6">estaba jugando</s> <b>jugaba</b> al fútbol todos los domingos.</span></li>
+                </ul>
+                <table class="theory-table">
+                  <thead><tr><th colspan="2">Pretérito perfecto + gerundio</th></tr></thead>
+                  <tbody>
+                    <tr><td class="tt-form">he estado</td><td rowspan="6" class="tt-span">leyendo</td></tr>
+                    <tr><td class="tt-form">has estado</td></tr>
+                    <tr><td class="tt-form">ha estado</td></tr>
+                    <tr><td class="tt-form">hemos estado</td></tr>
+                    <tr><td class="tt-form">habéis estado</td></tr>
+                    <tr><td class="tt-form">han estado</td></tr>
+                  </tbody>
+                </table>
+                <ul class="theory-points">
+                  <li><span class="use-label">Este tiempo se utiliza para expresar acciones en desarrollo en un pasado reciente. Pretende dar énfasis a la duración de la actividad.</span>
+                    <span class="example"><b>He estado leyendo</b> toda la mañana.</span></li>
+                  <li><span class="use-label">Recuerda que el pretérito imperfecto se utiliza para expresar acciones pasadas no acabadas, para hacer descripciones del pasado así como para expresar hábitos en el pasado.</span>
+                    <span class="example">Mi abuela <b>vivía</b> con nosotros.</span>
+                    <span class="example">Cuando <b>éramos</b> jóvenes, <b>dormíamos</b> mucho.</span></li>
+                </ul>
+              </div>
+
+              <div class="theory-group">
+                <h3>Formación de contrarios</h3>
+                <p class="theory-lead">Para la formación de adjetivos contrarios, usamos los prefijos <em>in-</em>, <em>i-</em> y <em>des-</em>.</p>
+                <ul class="theory-points">
+                  <li><span class="example">feliz → <b>in</b>feliz</span>
+                    <span class="example">responsable → <b>ir</b>responsable</span>
+                    <span class="example">agradable → <b>des</b>agradable</span></li>
+                  <li><span class="use-label">Si el adjetivo empieza por <em>p</em> o <em>b</em>, el prefijo es <em>im-</em>, en vez de <em>in-</em>.</span>
+                    <span class="example">posible → <b>im</b>posible</span></li>
+                </ul>
+              </div>
+
+              <div class="theory-group">
+                <h3>Acentuación de monosílabos</h3>
+                <p class="theory-lead">Las palabras de una sílaba (monosílabas) llevan tilde cuando son diferentes en categoría gramatical o significado.</p>
+                <table class="theory-table">
+                  <thead><tr><th>Con tilde</th><th>Sin tilde</th></tr></thead>
+                  <tbody>
+                    <tr><td><b>él</b> (pronombre)</td><td>el (artículo)</td></tr>
+                    <tr><td><b>mí</b> (pronombre)</td><td>mi (posesivo)</td></tr>
+                    <tr><td><b>sé</b> (verbo saber)</td><td>se (pronombre)</td></tr>
+                    <tr><td><b>sí</b> (adverbio)</td><td>si (conjunción condicional)</td></tr>
+                    <tr><td><b>té</b> (nombre)</td><td>te (pronombre)</td></tr>
+                    <tr><td><b>tú</b> (pronombre)</td><td>tu (posesivo)</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      `,
+      exercises: [
+        {
+          num: 1, title: "¿Qué sigue haciendo Daniela y qué ha dejado de hacer?",
+          instr: "Daniela no ha cambiado mucho en los últimos diez años. Escribe la frase completa. Las marcadas con (NO) son cosas que ya no hace.",
+          model: "Ejemplos: Salir a correr por las mañanas. → Daniela sigue saliendo a correr por las mañanas. · Escribir todo lo que hace en un diario. (NO) → Daniela ha dejado de escribir todo lo que hace en un diario.",
+          type: "items",
+          items: [
+            { t: "Hacer unos pasteles buenísimos. → {0}", a: [{ flex: ["sigue haciendo"], show: "Daniela sigue haciendo unos pasteles buenísimos." }], wide: true },
+            { t: "Contar unos chistes muy graciosos. → {0}", a: [{ flex: ["sigue contando"], show: "Daniela sigue contando unos chistes muy graciosos." }], wide: true },
+            { t: "Leer revistas del corazón. (NO) → {0}", a: [{ flex: ["ha dejado de leer"], show: "Daniela ha dejado de leer revistas del corazón." }], wide: true },
+            { t: "Ser un poco impaciente. → {0}", a: [{ flex: ["sigue siendo"], show: "Daniela sigue siendo un poco impaciente." }], wide: true },
+            { t: "Maquillarse a diario. (NO) → {0}", a: [{ flex: ["ha dejado de maquillarse"], show: "Daniela ha dejado de maquillarse a diario." }], wide: true },
+            { t: "Morderse las uñas. (NO) → {0}", a: [{ flex: ["ha dejado de morderse"], show: "Daniela ha dejado de morderse las uñas." }], wide: true },
+            { t: "Ir de vez en cuando a la montaña para relajarse. → {0}", a: [{ flex: ["sigue yendo"], show: "Daniela sigue yendo de vez en cuando a la montaña para relajarse." }], wide: true }
+          ]
+        },
+        {
+          num: 2, title: "Cambia la frase usando una perífrasis",
+          instr: "Usa dejar de, acabar de, empezar a, volver a + infinitivo, o seguir, llevar + gerundio. Escribe la frase completa.",
+          model: "Ejemplo: Mi marido ya no conduce. → Mi marido ha dejado de conducir.",
+          type: "items",
+          items: [
+            { t: "Mañana me apuntaré otra vez a yoga. → {0}", a: [{ flex: ["volveré a apuntarme"], show: "Mañana volveré a apuntarme a yoga." }], wide: true },
+            { t: "Luisa me ha llamado justo ahora. → {0}", a: [{ flex: ["acaba de llamar"], show: "Luisa acaba de llamarme." }], wide: true },
+            { t: "Todavía echo de menos mi antiguo barrio. → {0}", a: [{ flex: ["sigo echando"], show: "Sigo echando de menos mi antiguo barrio." }], wide: true },
+            { t: "El niño llora desde hace un rato. → {0}", a: [{ flex: ["lleva", "llorando"], show: "El niño lleva llorando un rato." }], wide: true },
+            { t: "¿Todavía usas esas gafas tan viejas? → {0}", a: [{ flex: ["sigues usando"], show: "¿Sigues usando esas gafas tan viejas?" }], wide: true },
+            { t: "En cuanto termino de limpiar los cristales, llueve. → {0}", a: [{ flex: ["empieza a llover"], show: "En cuanto termino de limpiar los cristales, empieza a llover." }], wide: true },
+            { t: "Hemos puesto la televisión ahora mismo. → {0}", a: [{ flex: ["acabamos de poner"], show: "Acabamos de poner la televisión." }], wide: true },
+            { t: "Siempre que te pido algo, protestas. → {0}", a: [{ flex: ["empiezas a protestar"], show: "Siempre que te pido algo, empiezas a protestar." }], wide: true }
+          ]
+        },
+        {
+          num: 3, title: "He estado / estaba / estuve",
+          instr: "Escribe la opción correcta.",
+          type: "items",
+          items: [
+            { t: "Antes Juanjo siempre {0} gastando bromas. (estaba / estuvo)", a: [["estaba"]] },
+            { t: "Conozco a una chica que {0} estudiando en Berlín cuando cayó el muro. (ha estado / estaba)", a: [["estaba"]] },
+            { t: "Anoche no pude dormir porque el gato de la vecina {0} maullando sin parar. (ha estado / estuvo)", a: [["estuvo"]] },
+            { t: "Anoche {0} celebrando el cumpleaños de Gema en un bar cuando vimos la noticia del terremoto en televisión. (estábamos / estuvimos)", a: [["estábamos"]], wide: true },
+            { t: "Durante estos últimos años, {0} viajando para perfeccionar sus conocimientos de inglés, pero ahora ha vuelto a su ciudad. (ha estado / estuvo)", a: [["ha estado"]], wide: true },
+            { t: "Cuando éramos jóvenes, {0} saliendo juntos una temporada. (estuvimos / estábamos)", a: [["estuvimos"]] }
+          ]
+        },
+        {
+          num: 4, title: "Formación de contrarios",
+          instr: "Los amigos de Eduardo tienen cualidades, pero también defectos. Escribe el adjetivo contrario al del recuadro que corresponde.",
+          refHTML: '<span class="ref-label">Adjetivos de partida</span>' +
+            '<div class="ref-options">' +
+            '<span class="ref-opt">responsable</span><span class="ref-opt">paciente</span>' +
+            '<span class="ref-opt">tranquilo/a</span><span class="ref-opt">ordenado/a</span>' +
+            '<span class="ref-opt">tolerante</span><span class="ref-opt">sociable</span>' +
+            "</div>",
+          type: "items",
+          items: [
+            { t: "Fran se preocupa demasiado por todo y nunca se relaja, siempre está {0} por alguna cosa.", a: [["intranquilo"]] },
+            { t: "Laura no puede esperar, lo quiere todo ahora y ya. Es bastante {0}.", a: [["impaciente"]] },
+            { t: "Nacho no acepta fácilmente las opiniones diferentes a la suya. Es un poco {0}.", a: [["intolerante"]] },
+            { t: "El escritorio de Ricardo está hecho un lío: lleno de objetos de todo tipo. Es muy {0}.", a: [["desordenado"]] },
+            { t: "Beatriz ha vuelto a dejar a su perro suelto por el jardín vecinal y, claro, ha destrozado las flores. Esta chica es un poco {0}.", a: [["irresponsable"]], wide: true },
+            { t: "A Arturo no le gusta mucho la gente, y prefiere estar solo. Es un poco {0}.", a: [["insociable", "poco sociable"]] }
+          ]
+        },
+        {
+          num: 5, title: "Escribe las tildes que faltan",
+          instr: "Copia cada frase con las tildes correctas.",
+          type: "items",
+          items: [
+            { t: "El libro daselo a el. → {0}", a: [["El libro dáselo a él"]], wide: true },
+            { t: "Mi casa es para mi y mi familia. → {0}", a: [["Mi casa es para mí y mi familia"]], wide: true },
+            { t: "No se si se llama Juan o Toni. → {0}", a: [["No sé si se llama Juan o Toni"]], wide: true },
+            { t: "A ti te gusta mucho el te. → {0}", a: [["A ti te gusta mucho el té"]], wide: true },
+            { t: "¿Tu sabes que ha hecho tu hermano? → {0}", a: [NOTE_TU_SABES_QUE], wide: true }
+          ]
+        }
+      ]
+    },
+    {
+      id: "seccion-5", num: 5, title: "Gramática y vocabulario",
+      sub: "Oraciones finales, imperativo, alimentos y partes del cuerpo",
+      introHTML: `
+        <div class="theory-wrap">
+          <div class="theory-cols">
+            <div>
+              <div class="theory-group">
+                <h3>Oraciones finales</h3>
+                <p class="theory-lead">Las oraciones que expresan finalidad y que están introducidas por <em>para</em> / <em>para que</em> pueden llevar el verbo en infinitivo o en subjuntivo.</p>
+                <ul class="theory-points">
+                  <li><span class="use-label"><em>Para</em> + infinitivo se utiliza cuando el sujeto de los dos verbos es el mismo.</span>
+                    <span class="example">Lo llamé <b>para preguntarle</b> por su salud. <span style="color:var(--pencil)">(yo → yo)</span></span></li>
+                  <li><span class="use-label"><em>Para que</em> + subjuntivo se utiliza cuando los sujetos son diferentes.</span>
+                    <span class="example">Te lo cuento <b>para que sepas</b> lo que pasó. <span style="color:var(--pencil)">(yo → tú)</span></span></li>
+                  <li><span class="use-label">Las oraciones interrogativas con <em>para qué…</em> se utilizan siempre con indicativo.</span>
+                    <span class="example">¿<b>Para qué</b> querías verme?</span></li>
+                </ul>
+              </div>
+
+              <div class="theory-group">
+                <h3>Imperativo</h3>
+                <p class="theory-lead">Se usa el imperativo para dar órdenes, para pedir favores, para dar instrucciones y consejos.</p>
+                <ul class="theory-points">
+                  <li><span class="example"><b>Bajad</b> la voz.</span>
+                    <span class="example">No <b>hagas</b> ruido, por favor.</span>
+                    <span class="example"><b>Bebe</b> dos litros de agua al día.</span></li>
+                  <li><span class="use-label">Cuando el imperativo se usa para dar una orden muchas veces se suaviza con <em>por favor</em>.</span>
+                    <span class="example">Carlos, <b>cierra</b> la puerta, por favor.</span></li>
+                </ul>
+                <p class="theory-lead">Todas las formas del imperativo (excepto <em>tú</em> y <em>vosotros</em> en la forma afirmativa) son iguales que las del presente de subjuntivo.</p>
+                <table class="theory-table">
+                  <thead><tr><th>Afirmativo</th><th>Negativo</th></tr></thead>
+                  <tbody>
+                    <tr><td class="tt-form">come (tú)</td><td>no comas (tú)</td></tr>
+                    <tr><td class="tt-form">coma (usted)</td><td>no coma (usted)</td></tr>
+                    <tr><td class="tt-form">comed (vosotros)</td><td>no comáis (vosotros)</td></tr>
+                    <tr><td class="tt-form">coman (ustedes)</td><td>no coman (ustedes)</td></tr>
+                    <tr><td class="tt-form">bebe (tú)</td><td>no bebas (tú)</td></tr>
+                    <tr><td class="tt-form">beba (usted)</td><td>no beba (usted)</td></tr>
+                    <tr><td class="tt-form">bebed (vosotros)</td><td>no bebáis (vosotros)</td></tr>
+                    <tr><td class="tt-form">beban (ustedes)</td><td>no beban (ustedes)</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div>
+              <div class="theory-group">
+                <h3>Imperativos irregulares</h3>
+                <p class="theory-lead">Los verbos que son irregulares en presente de indicativo suelen tener la misma irregularidad en imperativo (excepto la persona <em>vosotros</em>).</p>
+                <table class="theory-table">
+                  <thead><tr><th>Dormir — presente</th><th>Imperativo</th></tr></thead>
+                  <tbody>
+                    <tr><td>d<b>ue</b>rmo (yo)</td><td class="tt-form">d<b>ue</b>rme (tú) / no d<b>ue</b>rmas</td></tr>
+                    <tr><td></td><td class="tt-form">d<b>ue</b>rma (Ud.) / no d<b>ue</b>rma</td></tr>
+                    <tr><td></td><td class="tt-form">dormid (vos.) / no durmáis</td></tr>
+                    <tr><td></td><td class="tt-form">d<b>ue</b>rman (Uds.) / no d<b>ue</b>rman</td></tr>
+                  </tbody>
+                </table>
+                <p class="theory-lead">Otros irregulares: <em>decir, ir, hacer, poner, oír, tener, ser, venir</em> y <em>salir</em>.</p>
+                <table class="theory-table">
+                  <thead><tr><th>Decir — afirmativo</th><th>Negativo</th></tr></thead>
+                  <tbody>
+                    <tr><td class="tt-form">di (tú)</td><td>no digas</td></tr>
+                    <tr><td class="tt-form">diga (Ud.)</td><td>no diga</td></tr>
+                    <tr><td class="tt-form">decid (vosotros)</td><td>no digáis</td></tr>
+                    <tr><td class="tt-form">digan (Uds.)</td><td>no digan</td></tr>
+                  </tbody>
+                </table>
+                <table class="theory-table">
+                  <tbody>
+                    <tr><td><b>ir:</b> ve - no vayas</td><td><b>oír:</b> oye - no oigas</td></tr>
+                    <tr><td><b>hacer:</b> haz - no hagas</td><td><b>venir:</b> ven - no vengas</td></tr>
+                    <tr><td><b>poner:</b> pon - no pongas</td><td><b>salir:</b> sal - no salgas</td></tr>
+                  </tbody>
+                </table>
+                <ul class="theory-points">
+                  <li><span class="use-label"><b>Imperativo + pronombres.</b> Afirmativo: los pronombres van detrás del verbo.</span>
+                    <span class="example"><b>Cállense</b>, por favor. / <b>Díselo</b> tú, Angel.</span></li>
+                  <li><span class="use-label">Negativo: los pronombres van antes del verbo.</span>
+                    <span class="example">No <b>te sientes</b> ahí. / No <b>se lo digas</b> a Juan.</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-title">Vocabulario · Alimentos</div>
+          <div class="vocab-chips">
+            <span class="vocab-chip">berenjenas</span><span class="vocab-chip">garbanzos</span>
+            <span class="vocab-chip">mejillones</span><span class="vocab-chip">filete</span>
+            <span class="vocab-chip">yogur</span><span class="vocab-chip">salchichas</span>
+            <span class="vocab-chip">merluza</span><span class="vocab-chip">queso</span>
+            <span class="vocab-chip">lentejas</span><span class="vocab-chip">coliflor</span>
+            <span class="vocab-chip">leche</span><span class="vocab-chip">huevos</span>
+            <span class="vocab-chip">fruta</span><span class="vocab-chip">carne</span>
+            <span class="vocab-chip">pescado</span><span class="vocab-chip">pollo</span>
+            <span class="vocab-chip">bocadillos</span><span class="vocab-chip">pizza</span>
+            <span class="vocab-chip">lechuga</span><span class="vocab-chip">tomates</span>
+            <span class="vocab-chip">naranjas</span><span class="vocab-chip">espinacas</span>
+            <span class="vocab-chip">pasta</span><span class="vocab-chip">ensaladas</span>
+            <span class="vocab-chip">manzanas</span>
+          </div>
+
+          <div class="vocab-title">Vocabulario · Partes del cuerpo</div>
+          <div class="vocab-chips">
+            <span class="vocab-chip">cabeza</span><span class="vocab-chip">frente</span>
+            <span class="vocab-chip">orejas</span><span class="vocab-chip">ojos</span>
+            <span class="vocab-chip">nariz</span><span class="vocab-chip">boca</span>
+            <span class="vocab-chip">cuello</span><span class="vocab-chip">brazos</span>
+            <span class="vocab-chip">manos</span><span class="vocab-chip">dedos</span>
+            <span class="vocab-chip">pecho</span><span class="vocab-chip">espalda</span>
+            <span class="vocab-chip">caderas</span><span class="vocab-chip">piernas</span>
+            <span class="vocab-chip">rodillas</span><span class="vocab-chip">pies</span>
+          </div>
+        </div>
+      `,
+      exercises: [
+        {
+          num: 1, title: "Para, para que o para qué",
+          instr: "Completa con la forma adecuada.",
+          type: "items",
+          items: [
+            { t: "Te he invitado {0} conozcas mi pueblo.", a: [["para que"]] },
+            { t: "Necesitamos una escalera {0} cambiar esa bombilla.", a: [["para"]] },
+            { t: "¿{0} traes los libros? No tenemos tiempo de estudiar.", a: [["para qué"]] },
+            { t: "¿{0} han venido? No lo entiendo, no nos están ayudando.", a: [["para qué"]] },
+            { t: "Me llevé a los niños al parque {0} hicieran algo de deporte.", a: [["para que"]] },
+            { t: "Rosario cambió la planta de sitio {0} le diera más la luz.", a: [["para que"]] },
+            { t: "Vive en Moscú, pero de vez en cuando viene aquí {0} visitar a su familia.", a: [["para"]] },
+            { t: "Le he comprado el periódico {0} lea algo y se entretenga mientras espera.", a: [["para que"]] },
+            { t: "{0} estar en forma, tienes que descansar lo necesario.", a: [["para"]] },
+            { t: "Habían salido {0} dar un paseo por el barrio, pero se puso a llover y entraron en un cine.", a: [["para"]], wide: true }
+          ]
+        },
+        {
+          num: 2, title: "Trucos de cocina: infinitivo o subjuntivo",
+          instr: "Completa estos trucos de cocina de una revista escribiendo el verbo en infinitivo o en subjuntivo.",
+          type: "items",
+          items: [
+            { t: "Para que tus ensaladas {0} (quedar) perfectas, aliñalas solo unos minutos antes de servirlas.", a: [["queden"]], wide: true },
+            { t: "Para {0} (pelar) los tomates más fácilmente, mételos unos segundos en agua hirviendo.", a: [["pelar"]] },
+            { t: "Para {0} (conseguir) más zumo, introduce las naranjas en el microondas a máxima potencia durante un minuto.", a: [["conseguir"]], wide: true },
+            { t: "Para que las lentejas no {0} (pegarse), frota el fondo de la olla con un trozo de cebolla cruda.", a: [["se peguen"]], wide: true },
+            { t: "Para que la coliflor no {0} (tener) mal olor al cocerla, echa un chorrito de vinagre en el agua de cocción.", a: [["tenga"]], wide: true },
+            { t: "Para {0} (dar) un toque especial a tus bocadillos, añádeles unas semillas de sésamo.", a: [["dar"]] },
+            { t: "Para {0} (comprobar) si un huevo es fresco, mételo en un vaso de agua. Si se hunde, es fresco; si flota, no debes utilizarlo.", a: [["comprobar"]], wide: true },
+            { t: "Para que la lechuga {0} (conservar) todos sus nutrientes, córtala con las manos y no con el cuchillo.", a: [["conserve"]], wide: true }
+          ]
+        },
+        {
+          num: 3, title: "Sopa de letras: diez partes del cuerpo",
+          instr: "Busca las diez partes del cuerpo escondidas en la sopa de letras (en horizontal, vertical y diagonal, en cualquier sentido). Escríbelas en orden alfabético; entre paréntesis, el número de letras.",
+          refHTML: '<span class="ref-label">Sopa de letras</span>' +
+            '<div class="wordsearch">CADERAVILE\nAOZFAXJMSU\nBFDTLOEPUO\nERTOLLAPOH\nZEAÑILCOGC\nANMZDEUSBE\nQTSAOURDZP\nDEDORCIWIO</div>',
+          type: "items",
+          items: [
+            { t: "B… (5 letras) → {0}", a: [["brazo"]] },
+            { t: "C… (6 letras) → {0}", a: [["cabeza"]] },
+            { t: "C… (6 letras) → {0}", a: [["cadera"]] },
+            { t: "C… (4 letras) → {0}", a: [["codo"]] },
+            { t: "C… (6 letras) → {0}", a: [["cuello"]] },
+            { t: "D… (4 letras) → {0}", a: [["dedo"]] },
+            { t: "E… (7 letras) → {0}", a: [["espalda"]] },
+            { t: "F… (6 letras) → {0}", a: [["frente"]] },
+            { t: "P… (5 letras) → {0}", a: [["pecho"]] },
+            { t: "R… (7 letras) → {0}", a: [["rodilla"]] }
+          ]
+        },
+        {
+          num: 4, title: "Imperativos irregulares",
+          instr: "Completa las formas que faltan. (En DECIR ya están resueltas dos: tú negativo «no digas» y usted afirmativo «diga».)",
+          type: "items",
+          items: [
+            { t: "DECIR · tú → afirmativo {0}", a: [["di"]] },
+            { t: "DECIR · usted → negativo {0}", a: [["no diga"]] },
+            { t: "DECIR · vosotros/as → afirmativo {0}, negativo {1}", a: [["decid"], ["no digáis"]] },
+            { t: "DECIR · ustedes → afirmativo {0}, negativo {1}", a: [["digan"], ["no digan"]] },
+            { t: "IR · tú → afirmativo {0}, negativo {1}", a: [["ve"], ["no vayas"]] },
+            { t: "IR · usted → afirmativo {0}, negativo {1}", a: [["vaya"], ["no vaya"]] },
+            { t: "IR · vosotros/as → afirmativo {0}, negativo {1}", a: [["id"], ["no vayáis"]] },
+            { t: "IR · ustedes → afirmativo {0}, negativo {1}", a: [["vayan"], ["no vayan"]] },
+            { t: "HACER · tú → afirmativo {0}, negativo {1}", a: [["haz"], ["no hagas"]] },
+            { t: "HACER · usted → afirmativo {0}, negativo {1}", a: [["haga"], ["no haga"]] },
+            { t: "HACER · vosotros/as → afirmativo {0}, negativo {1}", a: [["haced"], ["no hagáis"]] },
+            { t: "HACER · ustedes → afirmativo {0}, negativo {1}", a: [["hagan"], ["no hagan"]] },
+            { t: "VENIR · tú → afirmativo {0}, negativo {1}", a: [["ven"], ["no vengas"]] },
+            { t: "VENIR · usted → afirmativo {0}, negativo {1}", a: [["venga"], ["no venga"]] },
+            { t: "VENIR · vosotros/as → afirmativo {0}, negativo {1}", a: [["venid"], ["no vengáis"]] },
+            { t: "VENIR · ustedes → afirmativo {0}, negativo {1}", a: [["vengan"], ["no vengan"]] }
+          ]
+        },
+        {
+          num: 5, title: "La nota de Nando y Susana",
+          instr: "Nando y Susana van a salir al teatro y después cenarán fuera. Completa la nota que dejan a su hijo con los verbos en imperativo (tú). (El hueco 1 ya está resuelto: Haz.)",
+          type: "text",
+          text: "Haz (1) (hacer) los deberes y no {0} (2) (poner) la música muy alta. Y no {1} (3) (ver) mucho la tele.\nTienes la cena en la nevera, {2} (4) (calentar, la cena) en el micro y después de cenar {3} (5) (recoger) la mesa. {4} (6) (Leer) un poco y no {5} (7) (acostarse) muy tarde.\nSi necesitas algo, {6} (8) (llamar, a nosotros) al móvil.\nBesos, Papá y mamá.",
+          a: [["no pongas"], ["no veas"], ["caliéntala"], ["recoge"], ["lee"], ["no te acuestes"], ["llámanos"]]
         }
       ]
     }
@@ -1420,9 +1827,10 @@
 
   attachNote(NOTE_ESTA_MANANA, "«Esta mañana», como es hoy, todavía está en curso → normalmente se usa el pretérito perfecto («hemos visto»). Si en tu clase se usa más el indefinido para el mismo día, «vimos» también se acepta aquí.");
   attachNote(NOTE_POR_POER_FUTURO, "El sujeto de «poder» no está explícito en la frase — se aceptan «podremos» (nosotros), «podrá» / «podrán» (uso más impersonal) y «se podrá».");
-  attachNote(NOTE_DE_A_ESTACIONES, "«De Núñez de Balboa a Callao» es la combinación del recuadro. «Desde… hasta» diría lo mismo, pero «desde» no está entre las preposiciones propuestas.");
+  attachNote(NOTE_DE_A_ESTACIONES, "«De Núñez de Balboa a Callao»: el origen se marca con «de». «Desde… hasta» diría lo mismo, pero solo se aceptan las preposiciones del recuadro, y «desde» no está entre ellas.");
   attachNote(NOTE_PISO_TIENE, "Indicativo («tiene»), no subjuntivo: «Lo vi el otro día» indica que ese piso concreto existe y el hablante lo conoce. Compara con «Estoy buscando un piso que tenga terraza», donde el piso todavía no se conoce.");
-  attachNote(NOTE_YO_QUE_TU_VER, "Con «yo que tú…» el consejo se da en 1.ª persona: «yo que tú vería…» (= si yo fuera tú, vería). En la foto el paréntesis se lee «(ver, él)»; si en tu libro pide otra persona, díselo al profesor.");
+  attachNote(NOTE_YO_QUE_TU_VER, "Con «yo que tú…» el consejo se da siempre en 1.ª persona: «yo que tú vería…» (= si yo fuera tú, vería). En el libro el paréntesis pone «(ver, él)», pero eso es una errata: la forma correcta aquí es «vería».");
+  attachNote(NOTE_TU_SABES_QUE, "Aquí hay dos tildes: «tú» (pronombre, no el posesivo «tu hermano») y «qué» (interrogativo indirecto, aunque no lleve signos de pregunta propios).");
 
   function correctTextFor(spec) {
     const t = Array.isArray(spec) ? spec[0] : (spec.show || (spec.flex ? spec.flex.join(" / ") : ""));
