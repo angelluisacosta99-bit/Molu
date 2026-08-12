@@ -618,10 +618,11 @@
   // final: los comienzos con "que" piden subjuntivo, los que no, infinitivo.
   const INF_ENDINGS = ["a", "b", "e", "g", "h"];
   const SUBJ_ENDINGS = ["c", "d", "f"];
-  // Ej. 8.6: el verbo es lo que se corrige; el cambio de expresión temporal ("mañana" dicho
-  // ayer → "hoy") va explicado en una nota tras corregir, no exigido en la respuesta.
-  const NOTE_CENA_MANANA = { flex: ["harías"], show: "harías la cena hoy" };
-  const NOTE_NO_SALDRIAN = { flex: ["saldrían"], show: "hoy no saldrían" };
+  // Ej. 8.6: además del verbo se EXIGE el cambio de expresión temporal — "mañana" dicho
+  // ayer es hoy. flex pide que aparezcan todas sus palabras, así que "harías la cena
+  // mañana" se marca mal aunque el verbo esté bien; es justo lo que el ejercicio enseña.
+  const NOTE_CENA_MANANA = { flex: ["harías", "hoy"], show: "harías la cena hoy" };
+  const NOTE_NO_SALDRIAN = { flex: ["saldrían", "hoy"], show: "hoy no saldrían" };
 
   const blocks = [
     {
@@ -1044,7 +1045,7 @@
                   </tbody>
                 </table>
                 <ul class="theory-points">
-                  <li><span class="example">Luis <b>se lleva</b> muy bien con Angel.</span>
+                  <li><span class="example">Luis <b>se lleva</b> muy bien con Ángel.</span>
                     <span class="example">Ayer Rosa <b>se encontraba</b> mal y no fue a clase.</span></li>
                   <li><span class="use-label">A veces el mismo verbo puede usarse con las dos estructuras. En este caso, el verbo puede tener significados muy diferentes o, por el contrario, no variar apenas.</span>
                     <span class="example">Julio no <b>se queda</b> nunca en casa los sábados por la noche.</span>
@@ -1498,7 +1499,7 @@
                 </table>
                 <ul class="theory-points">
                   <li><span class="use-label"><b>Imperativo + pronombres.</b> Afirmativo: los pronombres van detrás del verbo.</span>
-                    <span class="example"><b>Cállense</b>, por favor. / <b>Díselo</b> tú, Angel.</span></li>
+                    <span class="example"><b>Cállense</b>, por favor. / <b>Díselo</b> tú, Ángel.</span></li>
                   <li><span class="use-label">Negativo: los pronombres van antes del verbo.</span>
                     <span class="example">No <b>te sientes</b> ahí. / No <b>se lo digas</b> a Juan.</span></li>
                 </ul>
@@ -1824,7 +1825,7 @@
             { t: "Begoña no está {0} delgada como Susana.", a: [["tan"]] },
             { t: "Ahora es más barato comprarse una vivienda {0} antes.", a: [["que"]] },
             { t: "Estos zapatos son muy malos. Me gustaría comprarme unos {0}.", a: [["mejores"]] },
-            { t: "Hago más deporte que Angel. Estoy {0} en forma que él.", a: [["más"]] }
+            { t: "Hago más deporte que Ángel. Estoy {0} en forma que él.", a: [["más"]] }
           ]
         },
         {
@@ -2063,9 +2064,9 @@
                 <h3>Estilo directo e indirecto</h3>
                 <ul class="theory-points">
                   <li><span class="use-label"><b>Estilo directo:</b> reproduce las palabras del hablante exactamente igual a como fueron dichas. Gráficamente va escrito con dos puntos, comillas y mayúsculas.</span>
-                    <span class="example">Angel dijo: «Os <b>llamaré</b> mañana».</span></li>
+                    <span class="example">Ángel dijo: «Os <b>llamaré</b> mañana».</span></li>
                   <li><span class="use-label"><b>Estilo indirecto:</b> reproduce la idea del hablante pero no sus palabras textuales, y requiere adaptaciones en las estructuras (verbos, pronombres, posesivos, expresiones de tiempo…).</span>
-                    <span class="example">Angel me dijo ayer que nos <b>llamaría</b> hoy.</span></li>
+                    <span class="example">Ángel me dijo ayer que nos <b>llamaría</b> hoy.</span></li>
                 </ul>
               </div>
             </div>
@@ -2223,7 +2224,7 @@
         },
         {
           num: 6, title: "Pasa a estilo indirecto",
-          instr: "Completa cada frase. Fíjate en que, además del verbo, a veces cambia la expresión de tiempo.",
+          instr: "Completa cada frase. Cuando la expresión de tiempo cambie al pasar a estilo indirecto, tienes que cambiarla también: no basta con acertar el verbo.",
           type: "items",
           items: [
             { t: "Fernando: «Te llamaré esta noche». → Ayer Fernando me dijo que {0}", a: [{ flex: ["llamaría"], show: "me llamaría esa noche" }], wide: true },
@@ -2559,8 +2560,8 @@
   attachNote(NOTE_DE_A_ESTACIONES, "«De Núñez de Balboa a Callao»: el origen se marca con «de». «Desde… hasta» diría lo mismo, pero solo se aceptan las preposiciones del recuadro, y «desde» no está entre ellas.");
   attachNote(NOTE_PISO_TIENE, "Indicativo («tiene»), no subjuntivo: «Lo vi el otro día» indica que ese piso concreto existe y el hablante lo conoce. Compara con «Estoy buscando un piso que tenga terraza», donde el piso todavía no se conoce.");
   attachNote(NOTE_YO_QUE_TU_VER, "Con «yo que tú…» el consejo se da siempre en 1.ª persona: «yo que tú vería…» (= si yo fuera tú, vería). En el libro el paréntesis pone «(ver, él)», pero eso es una errata: la forma correcta aquí es «vería».");
-  attachNote(NOTE_CENA_MANANA, "Además del verbo, cambia el tiempo: «mañana» dicho AYER es hoy, así que en estilo indirecto se dice «harías la cena hoy».");
-  attachNote(NOTE_NO_SALDRIAN, "Igual que el anterior: «mañana» dicho ayer equivale a «hoy» → «me dijeron ayer que hoy no saldrían».");
+  attachNote(NOTE_CENA_MANANA, "Cuenta tanto el verbo como el tiempo: «mañana» dicho AYER es hoy, así que la respuesta completa es «harías la cena hoy». Con «mañana» se marca como error.");
+  attachNote(NOTE_NO_SALDRIAN, "Igual que el anterior: «mañana» dicho ayer equivale a «hoy» → «me dijeron ayer que hoy no saldrían». Hay que cambiar también la expresión de tiempo, no solo el verbo.");
   attachNote(NOTE_TU_SABES_QUE, "Aquí hay dos tildes: «tú» (pronombre, no el posesivo «tu hermano») y «qué» (interrogativo indirecto, aunque no lleve signos de pregunta propios).");
 
   function correctTextFor(spec) {

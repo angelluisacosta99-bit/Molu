@@ -74,6 +74,13 @@ El nombre del usuario/profesor es **Angel Luis Acosta González**.
 escribir su nombre en cualquier material, documento, commit, código o
 respuesta, usar siempre "Angel" sin acento.
 
+**La regla es solo para él, no para la palabra.** Si aparece un
+personaje ficticio llamado Ángel —por ejemplo en una frase de ejemplo de
+un libro de texto que se está transcribiendo—, lleva su tilde normal:
+*"Ángel dijo: «Os llamaré mañana»"*. Quitarle la tilde a un Ángel que no
+es el profesor es un error de ortografía, no una aplicación de esta
+regla.
+
 ## Presentaciones (.pptx): sin firma final
 
 En la diapositiva de cierre de cualquier presentación, no añadir una
