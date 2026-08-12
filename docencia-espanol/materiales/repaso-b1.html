@@ -1,0 +1,440 @@
+<!--
+  Repaso B1 — reproducción del cuaderno "RepasoB1.pdf" (Google Drive), transcrito por
+  partes según el profesor va enviando fotos de las páginas (el PDF es un escaneado sin
+  texto extraíble). NO es un ejercicio con corrección oculta como los de
+  ejercicio-interactivo — aquí las respuestas se muestran siempre, a la vista, porque es
+  material de repaso/consulta, no un examen. Las respuestas de los ejercicios de solución
+  única las resolvió Claude con su propio conocimiento de gramática (el profesor no tenía
+  el solucionario a mano); los ejercicios con "hay muchas opciones posibles" muestran UNA
+  combinación natural, marcada como tal. Cualquier respuesta con más margen de duda lleva
+  una nota "revisar" junto al badge de respuesta.
+  Al añadir una parte nueva: añade una nueva <section class="repaso-section"> siguiendo el
+  mismo patrón (número de sección, teoría, ejercicios con respuesta visible) y un nuevo
+  <a> en #navDots. Vuelve a publicar con el mismo url.
+-->
+<title>Repaso B1 — Nuevo Español en Marcha</title>
+<style>
+  :root {
+    --paper: #F3F5F0;
+    --paper-raised: #FFFFFF;
+    --ink: #17223B;
+    --ink-soft: #4B5468;
+    --pencil: #6E7280;
+    --gold: #A8790C;
+    --gold-soft: #F1E4C2;
+    --good: #1F7A4C;
+    --good-bg: #E7F3EC;
+    --bad: #B23A2E;
+    --bad-bg: #FBECE9;
+    --border: #DCDFD3;
+    --input-bg: #FCFDFB;
+    --shadow: 0 1px 2px rgba(23,34,59,0.06), 0 4px 14px rgba(23,34,59,0.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #101626;
+      --paper-raised: #182036;
+      --ink: #ECEEF3;
+      --ink-soft: #AEB6C9;
+      --pencil: #8B93A6;
+      --gold: #E0B44A;
+      --gold-soft: #3A3220;
+      --good: #4CB47F;
+      --good-bg: #163326;
+      --bad: #E17868;
+      --bad-bg: #3A1E1B;
+      --border: #2A3348;
+      --input-bg: #131A2C;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 20px rgba(0,0,0,0.35);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #101626;
+    --paper-raised: #182036;
+    --ink: #ECEEF3;
+    --ink-soft: #AEB6C9;
+    --pencil: #8B93A6;
+    --gold: #E0B44A;
+    --gold-soft: #3A3220;
+    --good: #4CB47F;
+    --good-bg: #163326;
+    --bad: #E17868;
+    --bad-bg: #3A1E1B;
+    --border: #2A3348;
+    --input-bg: #131A2C;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 20px rgba(0,0,0,0.35);
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--paper); color: var(--ink); }
+  body {
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px; line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 4rem;
+  }
+  h1, h2, h3, h4 {
+    font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+    text-wrap: balance; margin: 0;
+  }
+  .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+  a { color: inherit; }
+  em { color: var(--ink); }
+
+  /* ---------- top bar ---------- */
+  .topbar {
+    position: sticky; top: 0; z-index: 20;
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+  .topbar-inner {
+    max-width: 800px; margin: 0 auto; padding: 0.7rem 1.25rem;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 1rem; flex-wrap: wrap;
+  }
+  .brand { display: flex; align-items: baseline; gap: 0.6rem; }
+  .brand-title { font-size: 0.95rem; font-weight: 700; letter-spacing: 0.01em; font-family: Georgia, serif; }
+  .brand-sub { font-size: 0.78rem; color: var(--pencil); }
+  .nav-dots { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+  .nav-dots a {
+    text-decoration: none; font-size: 0.7rem; padding: 0.28rem 0.6rem;
+    border-radius: 999px; border: 1px solid var(--border); color: var(--ink-soft);
+    white-space: nowrap;
+  }
+  .nav-dots a:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* ---------- hero ---------- */
+  .hero { max-width: 800px; margin: 0 auto; padding: 2.6rem 1.25rem 1.6rem; }
+  .eyebrow {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.7rem;
+  }
+  .hero h1 { font-size: clamp(1.9rem, 5vw, 2.5rem); font-weight: 700; margin-bottom: 0.6rem; }
+  .hero p { color: var(--ink-soft); max-width: 64ch; font-size: 0.98rem; }
+  .hero-meta {
+    margin-top: 1.1rem; display: flex; gap: 1.2rem; flex-wrap: wrap;
+    font-size: 0.82rem; color: var(--pencil);
+  }
+  .hero-meta strong { color: var(--ink); }
+  .in-progress-note {
+    margin-top: 1.3rem; background: var(--gold-soft); border-radius: 10px;
+    padding: 0.8rem 1rem; font-size: 0.85rem; color: var(--ink-soft); max-width: 64ch;
+  }
+  .in-progress-note b { color: var(--ink); }
+
+  main { max-width: 800px; margin: 0 auto; padding: 0 1.25rem; }
+
+  /* ---------- section ---------- */
+  .repaso-section { margin-top: 2.6rem; scroll-margin-top: 6rem; }
+  .section-head {
+    display: flex; align-items: baseline; gap: 0.85rem;
+    padding-bottom: 0.7rem; margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--ink);
+  }
+  .section-num {
+    font-family: Georgia, serif; font-weight: 700; font-size: 1.15rem;
+    color: var(--paper-raised); background: var(--ink);
+    width: 2.2rem; height: 2.2rem; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .section-head h2 { font-size: 1.5rem; }
+
+  /* ---------- theory ---------- */
+  .theory-wrap {
+    background: var(--paper-raised); border: 1px solid var(--border); border-radius: 12px;
+    box-shadow: var(--shadow); padding: 1.6rem 1.7rem; margin-bottom: 1.6rem;
+  }
+  .theory-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 2.2rem; }
+  @media (max-width: 640px) { .theory-cols { grid-template-columns: 1fr; } }
+  .theory-group { margin-bottom: 1.5rem; }
+  .theory-group h3 {
+    font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--gold); font-family: -apple-system, sans-serif; margin-bottom: 0.6rem;
+  }
+  .theory-lead { font-size: 0.86rem; color: var(--ink-soft); margin-bottom: 0.5rem; }
+  .theory-points { list-style: none; margin: 0; padding: 0; }
+  .theory-points > li { margin-bottom: 0.75rem; font-size: 0.92rem; }
+  .theory-points > li > .use-label { display: block; color: var(--ink-soft); margin-bottom: 0.15rem; }
+  .theory-points .example {
+    display: block; font-style: italic; color: var(--ink); margin-top: 0.15rem;
+    padding-left: 0.9rem; border-left: 2px solid var(--gold-soft);
+  }
+  .theory-points .example b { color: var(--gold); font-weight: 700; font-style: normal; }
+  .theory-sub { margin: 0.3rem 0 0.6rem 0.9rem; }
+  .theory-sub li { margin-bottom: 0.6rem; font-size: 0.9rem; }
+
+  .rule-box {
+    background: var(--ink); color: var(--paper); border-radius: 10px;
+    padding: 1.1rem 1.3rem; margin-top: 0.4rem; font-size: 0.86rem;
+  }
+  .rule-box h4 {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--gold); font-family: -apple-system, sans-serif; margin-bottom: 0.7rem;
+  }
+  .rule-box p { margin: 0 0 0.7rem; color: color-mix(in srgb, var(--paper) 90%, transparent); }
+  .rule-box p:last-child { margin-bottom: 0; }
+  .rule-box b { color: var(--paper); }
+  .rule-box .ex-words { font-style: italic; color: color-mix(in srgb, var(--paper) 78%, transparent); }
+
+  .vocab-title {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--pencil); margin: 1.6rem 0 0.7rem;
+  }
+  .vocab-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .vocab-chip {
+    background: var(--input-bg); border: 1px solid var(--border); border-radius: 999px;
+    padding: 0.3rem 0.75rem; font-size: 0.85rem; font-family: ui-monospace, monospace;
+  }
+
+  /* ---------- exercises ---------- */
+  .exercise {
+    background: var(--paper-raised); border: 1px solid var(--border); border-radius: 10px;
+    box-shadow: var(--shadow); padding: 1.15rem 1.3rem 1.3rem; margin-bottom: 1.1rem;
+  }
+  .exercise-title { display: flex; gap: 0.6rem; align-items: baseline; margin-bottom: 0.3rem; }
+  .exnum { color: var(--gold); font-weight: 700; font-size: 0.85rem; font-family: ui-monospace, monospace; }
+  .exercise-title h3 { font-size: 1.02rem; font-weight: 700; font-family: -apple-system, sans-serif; }
+  .exercise-instr { color: var(--pencil); font-size: 0.85rem; font-style: italic; margin-bottom: 0.9rem; }
+
+  .ex-items { display: flex; flex-direction: column; gap: 0.7rem; }
+  .ex-item { font-size: 0.94rem; line-height: 1.65; }
+  .ex-num { color: var(--gold); font-weight: 700; margin-right: 0.35rem; font-family: ui-monospace, monospace; }
+  .ex-prompt { color: var(--ink-soft); }
+  .ex-answer {
+    display: inline-flex; align-items: center; gap: 0.35rem;
+    background: var(--good-bg); color: var(--good); font-weight: 700;
+    border-radius: 6px; padding: 0.1rem 0.5rem; margin: 0 0.15rem;
+  }
+  .ex-strike { text-decoration: line-through; color: var(--pencil); font-weight: 400; opacity: 0.75; }
+  .ex-note {
+    display: block; font-size: 0.78rem; color: var(--pencil); font-style: italic;
+    margin-top: 0.2rem; margin-left: 1.6rem;
+  }
+  .ex-note.flag { color: var(--bad); }
+  .ex-note.flag::before { content: "⚑ "; }
+
+  /* matching exercise (1) */
+  .match-item { display: block; }
+  .match-arrow { color: var(--gold); margin: 0 0.3rem; }
+
+  footer {
+    max-width: 800px; margin: 3rem auto 0; padding: 1.5rem 1.25rem 0;
+    border-top: 1px solid var(--border); color: var(--pencil); font-size: 0.8rem;
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;
+  }
+</style>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <span class="brand-title">Repaso B1</span>
+      <span class="brand-sub">Nuevo Español en Marcha</span>
+    </div>
+    <nav class="nav-dots" id="navDots">
+      <a href="#sec-1">Sección 1</a>
+    </nav>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="eyebrow">Material de repaso · consulta libre</div>
+  <h1>Repaso B1</h1>
+  <p>Teoría de gramática, vocabulario y ejercicios prácticos, con las respuestas siempre a
+  la vista — para repasar y consultar, no para hacer un examen.</p>
+  <div class="hero-meta">
+    <span><strong>1</strong> de N secciones (se irá completando)</span>
+  </div>
+  <div class="in-progress-note">
+    <b>En construcción:</b> este repaso se está transcribiendo por partes a partir de las
+    fotos del cuaderno original. Las respuestas de solución única están resueltas con
+    conocimiento de gramática (no había solucionario a mano); las marcadas con ⚑ tienen más
+    margen de duda y conviene que el profesor las revise.
+  </div>
+</div>
+
+<main>
+
+  <section class="repaso-section" id="sec-1">
+    <div class="section-head">
+      <div class="section-num">1</div>
+      <h2>Gramática y vocabulario</h2>
+    </div>
+
+    <div class="theory-wrap">
+      <div class="theory-cols">
+        <div>
+          <div class="theory-group">
+            <h3>Presente</h3>
+            <p class="theory-lead">Se utiliza la forma del presente de indicativo:</p>
+            <ul class="theory-points">
+              <li><span class="use-label">Para hablar de hábitos.</span>
+                <span class="example">Luis no <b>va</b> nunca a la discoteca.</span></li>
+              <li><span class="use-label">Para dar información general sobre uno mismo o sobre el mundo.</span>
+                <span class="example">Soy española, soy peluquera y me <b>gusta</b> mi trabajo.</span>
+                <span class="example">Muchas tiendas en España <b>cierran</b> a mediodía.</span></li>
+              <li><span class="use-label">Para hablar del futuro.</span>
+                <span class="example">Mañana te <b>espero</b> a las tres en mi casa.</span></li>
+              <li><span class="use-label">Para dar instrucciones.</span>
+                <span class="example">Para poner en marcha el coche, primero <b>enciendes</b> el motor y <b>empujas</b> el pedal del embrague…</span></li>
+            </ul>
+          </div>
+
+          <div class="theory-group">
+            <h3>Pretérito perfecto</h3>
+            <p class="theory-lead">Se utiliza el pretérito perfecto:</p>
+            <ul class="theory-points">
+              <li><span class="use-label">Para hablar de acciones acabadas que llegan hasta el presente.</span>
+                <span class="example">Ahora mismo <b>he visto</b> a Paco en el pasillo y me <b>ha dicho</b> que no vendrá mañana.</span></li>
+              <li><span class="use-label">También para hablar de experiencias personales o de acciones acabadas sin determinar el marco temporal.</span>
+                <span class="example">Manu <b>ha viajado</b> mucho por Brasil.</span></li>
+            </ul>
+          </div>
+
+          <div class="theory-group">
+            <h3>Pretérito indefinido</h3>
+            <p class="theory-lead">Se utiliza el pretérito indefinido:</p>
+            <ul class="theory-points">
+              <li><span class="use-label">Para hablar de acciones o estados acabados en un momento determinado del pasado.</span>
+                <span class="example">Rosalía <b>ganó</b> el Premio Ondas en 1998.</span></li>
+            </ul>
+          </div>
+
+          <div class="theory-group">
+            <h3>Pretérito imperfecto</h3>
+            <p class="theory-lead">El pretérito imperfecto se utiliza:</p>
+            <ul class="theory-points">
+              <li><span class="use-label">Para hablar de acciones habituales en el pasado.</span>
+                <span class="example">Antes <b>salía</b> mucho los fines de semana, pero ahora prefiero quedarme en casa.</span></li>
+              <li><span class="use-label">También para descripciones en el pasado.</span>
+                <span class="example">El camino del río <b>era</b> muy estrecho y <b>acababa</b> en un arenal.</span></li>
+              <li><span class="use-label">Se expresan acciones en desarrollo, muchas veces interrumpidas por otra puntual.</span>
+                <span class="example">Empezó a llover cuando <b>llegábamos</b> a la playa.</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <div class="theory-group">
+            <h3>Futuro</h3>
+            <p class="theory-lead">Se usa el futuro para:</p>
+            <ul class="theory-points">
+              <li><span class="use-label">Hacer predicciones.</span>
+                <span class="example">Dentro de unos años <b>viajaremos</b> a la Luna.</span></li>
+              <li><span class="use-label">Hacer promesas.</span>
+                <span class="example">Pasado mañana <b>visitaré</b> a tu padre.</span></li>
+              <li><span class="use-label">Detrás de <em>creo que</em> / <em>supongo que</em>.</span>
+                <span class="example">Creo que Juan <b>viajará</b> a Barcelona.</span></li>
+            </ul>
+          </div>
+
+          <div class="theory-group">
+            <h3>Expresar duración y tiempo de una acción</h3>
+            <p class="theory-lead">Informar, preguntar y responder sobre el tiempo que hace que se realiza una acción.</p>
+            <ul class="theory-points">
+              <li><span class="use-label"><em>Desde hace</em> + cantidad de tiempo</span>
+                <span class="example">No veo a mis primos <b>desde hace</b> diez años.</span></li>
+              <li><span class="use-label"><em>Desde</em> + fecha</span>
+                <span class="example">Vive en Berlín <b>desde</b> febrero.</span></li>
+              <li><span class="use-label"><em>Desde que</em> + frase</span>
+                <span class="example">No sale con sus amigas <b>desde que</b> tiene novio.</span></li>
+              <li><span class="use-label"><em>Hace</em> + tiempo + <em>que</em> + frase</span>
+                <span class="example"><b>Hace</b> tres años <b>que</b> trabajo en esta empresa.</span></li>
+              <li><span class="use-label"><em>Cuánto tiempo hace que</em> + frase</span>
+                <span class="example">¿Cuánto tiempo hace que eres vegetariana? — Siete años.</span></li>
+              <li><span class="use-label"><em>Desde cuándo</em> + frase</span>
+                <span class="example">¿Desde cuándo estudias chino? — Desde hace tres meses.</span></li>
+            </ul>
+          </div>
+
+          <div class="rule-box">
+            <h4>Reglas de acentuación</h4>
+            <p><b>Agudas.</b> Son las palabras cuya sílaba tónica es la última. Llevan tilde cuando terminan en vocal, <b>n</b> o <b>s</b>. <span class="ex-words">café, perdón, japonés.</span></p>
+            <p><b>Llanas.</b> Son las palabras que tienen el acento tónico en la penúltima sílaba. Llevan tilde cuando terminan en consonante, excepto en <b>n</b> o <b>s</b>. <span class="ex-words">fácil, árbol, fértil.</span></p>
+            <p><b>Esdrújulas.</b> Son las palabras cuya sílaba tónica es la antepenúltima. Llevan tilde siempre. <span class="ex-words">música, ácido, plátano.</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="vocab-title">Vocabulario · Verbos</div>
+      <div class="vocab-chips">
+        <span class="vocab-chip">estudiar</span>
+        <span class="vocab-chip">trabajar</span>
+        <span class="vocab-chip">trasladarse</span>
+        <span class="vocab-chip">vivir</span>
+        <span class="vocab-chip">construir</span>
+        <span class="vocab-chip">existir</span>
+        <span class="vocab-chip">vender</span>
+        <span class="vocab-chip">escribir</span>
+      </div>
+    </div>
+
+    <!-- Ejercicios prácticos -->
+    <div class="exercise">
+      <div class="exercise-title"><span class="exnum">Ej. 1</span><h3>Relaciona y forma frases</h3></div>
+      <div class="exercise-instr">Hay muchas opciones posibles — aquí se muestra una combinación natural para cada frase.</div>
+      <div class="ex-items">
+        <div class="ex-item match-item"><span class="ex-num">1.</span><span class="ex-prompt">Pedro se encuentra mejor</span><span class="match-arrow">→</span><span class="ex-answer">desde que toma las pastillas nuevas</span>
+          <span class="ex-note">Otras combinaciones también son válidas.</span></div>
+        <div class="ex-item match-item"><span class="ex-num">2.</span><span class="ex-prompt">Raúl trabaja en un restaurante</span><span class="match-arrow">→</span><span class="ex-answer">desde 2007</span></div>
+        <div class="ex-item match-item"><span class="ex-num">3.</span><span class="ex-prompt">Está deprimido</span><span class="match-arrow">→</span><span class="ex-answer">desde que le despidieron del trabajo</span></div>
+        <div class="ex-item match-item"><span class="ex-num">4.</span><span class="ex-prompt">No vemos a María</span><span class="match-arrow">→</span><span class="ex-answer">desde hace mucho tiempo</span></div>
+        <div class="ex-item match-item"><span class="ex-num">5.</span><span class="ex-prompt">Vivimos en este piso</span><span class="match-arrow">→</span><span class="ex-answer">desde hace tres meses</span></div>
+        <div class="ex-item match-item"><span class="ex-num">6.</span><span class="ex-prompt">Tengo carné de conducir</span><span class="match-arrow">→</span><span class="ex-answer">desde que tenía 18 años</span></div>
+        <div class="ex-item match-item"><span class="ex-num">7.</span><span class="ex-prompt">Estudio español</span><span class="match-arrow">→</span><span class="ex-answer">desde abril</span></div>
+        <div class="ex-item match-item"><span class="ex-num">8.</span><span class="ex-prompt">Clara lleva gafas</span><span class="match-arrow">→</span><span class="ex-answer">desde que era niña</span></div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <div class="exercise-title"><span class="exnum">Ej. 2</span><h3>Completa las frases con el verbo en el tiempo adecuado</h3></div>
+      <div class="exercise-instr">Pretérito perfecto, indefinido e imperfecto.</div>
+      <div class="ex-items">
+        <div class="ex-item"><span class="ex-num">1.</span>¿Dónde <span class="ex-answer">vivías</span> (vivir, tú) cuando <span class="ex-answer">tenías</span> (tener) diez años?</div>
+        <div class="ex-item"><span class="ex-num">2.</span>¿Qué <span class="ex-answer">hicisteis</span> (hacer, vosotros) ayer?</div>
+        <div class="ex-item"><span class="ex-num">3.</span>Esta mañana <span class="ex-answer">hemos visto</span> (ver, nosotros) un accidente al salir de casa.
+          <span class="ex-note flag">"Esta mañana" como hoy todavía en curso → perfecto ("hemos visto"). Si en tu clase se usa más el indefinido para el mismo día, "vimos" también es aceptable.</span></div>
+        <div class="ex-item"><span class="ex-num">4.</span>¿Cuántas veces <span class="ex-answer">has estado</span> (estar, tú) en Nueva York?</div>
+        <div class="ex-item"><span class="ex-num">5.</span>Anoche <span class="ex-answer">me acosté</span> (acostarse, yo) antes de las doce.</div>
+        <div class="ex-item"><span class="ex-num">6.</span>La semana pasada <span class="ex-answer">fueron</span> (ir, ellos) a esquiar a los Alpes suizos.</div>
+        <div class="ex-item"><span class="ex-num">7.</span>Hace 30 años la gente no <span class="ex-answer">utilizaba</span> (utilizar) internet.</div>
+        <div class="ex-item"><span class="ex-num">8.</span>Mi hermano <span class="ex-answer">ha ganado</span> (ganar) muchos premios de fotografía. ¡Es muy bueno!</div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <div class="exercise-title"><span class="exnum">Ej. 3</span><h3>Subraya el verbo adecuado</h3></div>
+      <div class="ex-items">
+        <div class="ex-item"><span class="ex-num">1.</span>Rosalía <span class="ex-answer">vivió</span> <span class="ex-strike">ha vivido</span> en Lima hasta 1951.</div>
+        <div class="ex-item"><span class="ex-num">2.</span>Mis hermanos nunca <span class="ex-answer">han salido</span> <span class="ex-strike">salían</span> al extranjero.</div>
+        <div class="ex-item"><span class="ex-num">3.</span>¿<span class="ex-answer">Has tenido</span> <span class="ex-strike">Tuviste</span> alguna vez un accidente grave? — Sí, en 1998 mi coche <span class="ex-answer">chocó</span> <span class="ex-strike">ha chocado</span> con un camión. <span class="ex-answer">Estuve</span> <span class="ex-strike">He estado</span> diez meses en el hospital.</div>
+        <div class="ex-item"><span class="ex-num">4.</span>Federico en su juventud <span class="ex-answer">vivió</span> <span class="ex-strike">ha vivido</span> en muchos sitios: Roma, Copenhague, Nairobi…</div>
+        <div class="ex-item"><span class="ex-num">5.</span>Hablas muy bien español, ¿dónde lo <span class="ex-answer">has aprendido</span> <span class="ex-strike">aprendiste</span>? — <span class="ex-answer">Empecé</span> <span class="ex-strike">He empezado</span> hace diez años en el instituto y cuando <span class="ex-answer">terminé</span> <span class="ex-strike">he terminado</span> mis estudios <span class="ex-answer">vine</span> <span class="ex-strike">he venido</span> a Mallorca a trabajar.</div>
+        <div class="ex-item"><span class="ex-num">6.</span>¿Qué tal el fin de semana? — Bien, el sábado <span class="ex-answer">fui</span> <span class="ex-strike">he ido</span> a ver un partido de fútbol y el domingo <span class="ex-answer">invité</span> <span class="ex-strike">he invitado</span> a Pablo a comer en un restaurante.</div>
+        <div class="ex-item"><span class="ex-num">7.</span>¿<span class="ex-answer">Has probado</span> <span class="ex-strike">Probabas</span> la paella alguna vez? — Sí, la <span class="ex-answer">probé</span> <span class="ex-strike">probaba</span> una vez en casa de mi amigo Antonio.</div>
+        <div class="ex-item"><span class="ex-num">8.</span>¿Te gusta bailar? — Sí, me encanta. Antes nunca <span class="ex-answer">iba</span> <span class="ex-strike">he ido</span> a la discoteca, pero últimamente <span class="ex-answer">he ido</span> <span class="ex-strike">iba</span> todos los sábados.</div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <div class="exercise-title"><span class="exnum">Ej. 4</span><h3>Completa con la forma adecuada del futuro</h3></div>
+      <div class="ex-items">
+        <div class="ex-item"><span class="ex-num">1.</span>¿Qué <span class="ex-answer">dirás</span> (decir) si tus padres te preguntan por las notas esta noche?</div>
+        <div class="ex-item"><span class="ex-num">2.</span>Este domingo yo no <span class="ex-answer">saldré</span> (salir) con mis amigos, tengo que estudiar.</div>
+        <div class="ex-item"><span class="ex-num">3.</span>Si apruebo todas las asignaturas, mis padres me <span class="ex-answer">pagarán</span> (pagar) un viaje a París.</div>
+        <div class="ex-item"><span class="ex-num">4.</span>Dicen que el año próximo <span class="ex-answer">habrá</span> (haber) más becas para todos los estudiantes.</div>
+        <div class="ex-item"><span class="ex-num">5.</span>Han dicho en la tele que este fin de semana <span class="ex-answer">habrá</span> (haber) nieve en la sierra, y <span class="ex-answer">podremos</span> (poder) ir a esquiar.
+          <span class="ex-note flag">Sujeto de "podremos" no está explícito en la frase — se asume "nosotros"; si en tu grupo se lee como impersonal, "se podrá" también encaja.</span></div>
+        <div class="ex-item"><span class="ex-num">6.</span>Jorge dice que de mayor <span class="ex-answer">será</span> (ser) pianista.</div>
+        <div class="ex-item"><span class="ex-num">7.</span>En el futuro la gente <span class="ex-answer">usará</span> (usar) solamente energía solar.</div>
+        <div class="ex-item"><span class="ex-num">8.</span>Es mejor que salgamos pronto porque si no <span class="ex-answer">habrá</span> (haber) mucho tráfico.</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span>Repaso B1 · en construcción</span>
+  <span>© Angel Luis Acosta González</span>
+</footer>
