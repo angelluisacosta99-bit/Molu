@@ -1,7 +1,7 @@
 ---
 name: ejercicio-interactivo
 description: "Use when Angel asks to build a new interactive Spanish grammar/vocabulary exercise page with instant grading — a self-contained HTML artifact where a student fills in blanks, gets corrected instantly, and can send their results to the teacher via WhatsApp/Telegram/Teams/Correo. Also use when asked to add a new chapter/unit to this format, or to fix/extend an existing one (e.g. the A1 \"Presente, gerundio, indefinido\" or B2 12C \"¿Sigues pintando?\" exercises already in docencia-espanol/materiales/). Triggers: \"ejercicio interactivo\", \"como el de A1/12C\", \"corrección instantánea\", \"página interactiva para practicar\", \"haz lo mismo con otro capítulo\"."
-version: 1.7.0
+version: 1.8.0
 user-invocable: true
 license: Apache 2.0
 ---
@@ -28,11 +28,22 @@ PR #22 invertía el orden que PR #20 daba por bueno.
 
 ## Flujo de trabajo
 
-1. **Fundamenta el contenido en material real.** Antes de inventar frases, consulta la
-   carpeta de Google Drive del profesor (ver `CLAUDE.md` de la raíz del repo para el enlace
-   y el orden de prioridad: Nuevo Español en Marcha > ПК Гонсалес > Temas). Si
-   `read_file_content` devuelve una cadena vacía, el PDF es escaneado/solo-imagen — pide al
-   profesor fotos de las páginas en su lugar (funcionó bien para 12C).
+1. **Fundamenta el contenido en material real.** Por este orden:
+
+   1. **Mira primero `docencia-espanol/fuentes/`** (ver su README). Ahí están, en texto
+      plano y con sus respuestas, todos los capítulos ya transcritos. Si el que necesitas
+      está, no pidas fotos ni vuelvas a transcribir: parte de ese archivo.
+   2. Si no está, consulta la carpeta de Google Drive del profesor (ver `CLAUDE.md` de la
+      raíz del repo para el enlace y el orden de prioridad: Nuevo Español en Marcha >
+      ПК Гонсалес > Temas).
+   3. Si `read_file_content` devuelve una cadena vacía, el PDF es escaneado/solo-imagen —
+      pide al profesor fotos de las páginas en su lugar (funcionó bien para 12C y para
+      Repaso B1). El conector de Drive además rechaza los PDF de más de 10 MB, así que con
+      los cuadernillos grandes se va directo a las fotos.
+
+   Todo lo que llegue por fotos hay que archivarlo después en `fuentes/` (paso 8): esa
+   carpeta existe justo para que el paso 3 no se repita nunca dos veces con el mismo
+   capítulo.
 
 2. **Copia la plantilla, no la reescribas.** `cp .claude/skills/ejercicio-interactivo/reference/template.html <destino>`.
    Sustituye **todos** los marcadores `{{...}}` (grep por `{{` para confirmar que no quede
@@ -94,7 +105,29 @@ PR #22 invertía el orden que PR #20 daba por bueno.
    disuasivo, visible en el código fuente de cada ejercicio), sino porque no tiene sentido
    poner todos los códigos juntos a la vista de cualquiera que reciba el enlace.
 
-8. **Sigue el flujo de PR de este repositorio, sin excepciones.** `CLAUDE.md` en la raíz
+8. **Archiva la transcripción en `docencia-espanol/fuentes/`. Siempre, sin excepción.**
+   Es una instrucción explícita del profesor: no quiere volver a escanear ni fotografiar un
+   capítulo que ya se transcribió una vez. En cuanto el artefacto esté publicado y
+   verificado, genera su archivo de texto:
+
+   ```bash
+   cd docencia-espanol/fuentes
+   NODE_PATH=/opt/node22/lib/node_modules node extraer.mjs \
+     ../materiales/<archivo>.html <CÓDIGO> > nuevo-espanol-en-marcha/<nivel>/<capítulo>.md
+   ```
+
+   `extraer.mjs` abre el artefacto en un navegador, rellena los huecos con texto imposible,
+   corrige y recoge del DOM cada enunciado con la respuesta que revela el propio motor.
+   **No transcribas ese archivo a mano**: lo que se archiva así es exactamente lo que se
+   verificó, y no una segunda transcripción que podría desviarse. Si más adelante se corrige
+   una respuesta en el artefacto, **regenera** el archivo en vez de editarlo.
+
+   Añade también su fila a la tabla de `fuentes/README.md`, anotando de dónde salieron las
+   respuestas: del solucionario del libro, o deducidas. Esa distinción es la que evita que
+   dentro de unos meses se tomen por buenas unas respuestas que en realidad están sin
+   confirmar.
+
+9. **Sigue el flujo de PR de este repositorio, sin excepciones.** `CLAUDE.md` en la raíz
    exige: abrir el PR (esto no dispara nada más — puede quedarse esperando) y, **solo
    cuando el profesor pida fusionar ese PR**, lanzar una revisión con un agente
    independiente (`Agent` tool, `run_in_background: true`, dale contexto completo y pídele
@@ -123,6 +156,8 @@ El fallo no fue no saber los pasos, fue no volver a mirarlos al final.
 - [ ] Fila añadida en `indice-clases-de-espanol.html`, en la tarjeta del nivel correcto, y
       el índice republicado (paso 6).
 - [ ] Fila añadida en `codigos-acceso.html` con su código, y republicado (paso 7).
+- [ ] Transcripción archivada en `docencia-espanol/fuentes/` con `extraer.mjs`, y su fila
+      en el README de esa carpeta indicando el origen de las respuestas (paso 8).
 - [ ] No queda ningún marcador `{{...}}` ni la cabecera de la plantilla sin adaptar (esa
       cabecera se publica en el código fuente que ve el alumno).
 - [ ] Si el material no viene claramente de un manual concreto, **pregúntale al profesor**
@@ -286,10 +321,10 @@ parezca más "controlable" desde JS — ya se demostró que rompe el caso más b
 
 - `reference/template.html` — plantilla completa, ya con todas las correcciones anteriores
   aplicadas. Punto de partida obligatorio para cualquier ejercicio nuevo.
-- `docencia-espanol/materiales/repaso-b1.html` — **documento largo de repaso** (7 secciones,
-  33 ejercicios, 341 huecos), útil como referencia cuando el material no sea un capítulo
-  suelto sino un cuadernillo entero. Añade cuatro cosas sobre la plantilla que conviene
-  copiar de ahí en vez de reinventar:
+- `docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_repaso-b1_interactivo.html` —
+  **documento largo de repaso** (11 secciones, 55 ejercicios, 490 huecos), útil como
+  referencia cuando el material no sea un capítulo suelto sino un cuadernillo entero. Añade
+  varias cosas sobre la plantilla que conviene copiar de ahí en vez de reinventar:
     - `block.introHTML` — teoría no interactiva antes de los ejercicios de cada sección.
     - `ex.refHTML` — recuadro de referencia dentro de un ejercicio (conectores, banco de
       opciones, sopa de letras). **Si el original enseña al alumno unas opciones, el
@@ -306,6 +341,24 @@ parezca más "controlable" desde JS — ya se demostró que rompe el caso más b
       de cada panel**, nunca por `id` global (habría duplicados), y cualquier atajo que
       corrija "todo" (la tecla Enter, sin ir más lejos) debe acotarse a la sección, o
       destapará las respuestas de las secciones que el alumno aún no ha hecho.
+    - `conSinTildes([...])` — amplía una lista de respuestas aceptadas con su versión sin
+      tildes. La vía de array es acentualmente estricta a propósito, y eso es correcto
+      cuando el acento **es** lo que se evalúa (`está`/`esta`, `trabajo`/`trabajó`). Pero en
+      respuestas abiertas de léxico o de fórmulas (*«Hacía mucho viento»*, *«¿Podrías…?»*)
+      lo que se evalúa no es la tilde, y exigirla convierte el ejercicio en un dictado. Úsalo
+      solo ahí, nunca en los huecos de forma verbal.
+    - `type: "open"` — ejercicio de redacción libre. No genera huecos, no puntúa y **no lleva
+      botón "Corregir"** (un botón que al pulsarlo no hace nada es peor que no tenerlo). Se
+      incluye porque está en el libro y el alumno tiene que poder verlo. Cuando un ejercicio
+      del original no tenga respuesta única, esta es la salida: transcribirlo así, no
+      omitirlo ni inventarle una respuesta correcta.
+    - Cuando `flex` se quede corto, cambia el diseño del hueco antes que la respuesta.
+      `flex` es un **Y** de palabras clave: no sabe expresar alternativas. Si el ejercicio
+      admite de verdad varias respuestas distintas (vosotros/ustedes, `-ara`/`-ase`,
+      *«Hacía calor»*/*«Hacía sol»*), hace falta un array —que sí es un **O**— con
+      `conSinTildes`. Y al revés: para descartar un error concreto sin castigar la tilde,
+      una clave de `flex` bien elegida lo hace sola (`"le dé azúcar"` acepta *dé* y *de*,
+      pero rechaza *des*, que es justo lo que el ejercicio persigue).
 - `docencia-espanol/materiales/indice-clases-de-espanol.html` — el artefacto "Clases de
   Español", índice manual → nivel → capítulo de toda la biblioteca (ver paso 6 del flujo de
   trabajo). Actualízalo cada vez que publiques un capítulo nuevo. Este es público (o puede
@@ -313,6 +366,9 @@ parezca más "controlable" desde JS — ya se demostró que rompe el caso más b
 - `docencia-espanol/materiales/codigos-acceso.html` — referencia privada del profesor con
   el código de cada capítulo (ver paso 7). Actualízala cada vez que publiques un capítulo
   nuevo; no la enlaces desde ningún material que puedan ver los alumnos.
+- `docencia-espanol/fuentes/` — las transcripciones en texto plano de todo lo escaneado,
+  con sus respuestas, más `extraer.mjs`, que las genera desde el artefacto publicado. Antes
+  de pedirle fotos al profesor de un capítulo, **mira aquí**: puede que ya esté transcrito.
 - `PRODUCT.md` y `DESIGN.md` (raíz del repo) — el sistema de diseño compartido por todos los
   artefactos de esta biblioteca (paleta papel/tinta, tipografía, componentes). Cualquier
   página nueva (ejercicio o índice) debe extender estos tokens, no inventar los suyos — ver

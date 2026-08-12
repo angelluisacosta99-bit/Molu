@@ -337,6 +337,21 @@
   }
   .in-progress-note b { color: var(--ink); }
 
+  /* Texto que el alumno solo tiene que leer (la postal del ejercicio 10.4). */
+  .postcard {
+    background: var(--input-bg); border: 1px solid var(--border); border-radius: 10px;
+    padding: 0.9rem 1.1rem; font-size: 0.9rem; line-height: 1.75; max-width: 60ch;
+    margin-top: 0.5rem;
+  }
+  .postcard .signature { display: block; margin-top: 0.4rem; padding-left: 1.5rem; font-style: italic; }
+  /* Ejercicio de escritura libre: no se corrige solo, así que se presenta como propuesta. */
+  .open-block {
+    background: var(--gold-soft); border-radius: 10px; padding: 0.9rem 1.1rem;
+    font-size: 0.9rem; line-height: 1.7; color: var(--ink-soft); max-width: 64ch;
+  }
+  .open-block b { color: var(--ink); }
+  .open-block .open-model { display: block; margin-top: 0.6rem; font-style: italic; }
+
   .check-btn {
     background: transparent; color: var(--ink);
     border: 1px solid var(--ink); border-radius: 7px;
@@ -539,8 +554,8 @@
   <p>Teoría de gramática, vocabulario y ejercicios prácticos con corrección instantánea. Se completa por partes.</p>
   <div class="hero-meta">
     <span><strong id="totalBlanksLabel" translate="no">—</strong> huecos en total</span>
-    <span><strong>8</strong> secciones</span>
-    <span><strong>39</strong> ejercicios</span>
+    <span><strong>11</strong> secciones</span>
+    <span><strong>55</strong> ejercicios</span>
   </div>
   <div class="in-progress-note">
     <b>En construcción:</b> este repaso se está transcribiendo por partes. Donde el
@@ -606,6 +621,22 @@
     return false;
   }
 
+  // Amplía una lista de respuestas aceptadas con su versión sin tildes. La vía de array es
+  // acentualmente estricta a propósito (ver el comentario de norm), pero eso solo tiene
+  // sentido cuando el acento ES lo que se evalúa — "está" frente a "esta". En las respuestas
+  // abiertas ("Hacía mucho viento", "¿Podrías…?") lo que se evalúa es el léxico y la
+  // fórmula, no la tilde, y penalizarla convertiría el ejercicio en un dictado. Se usa SOLO
+  // en esos casos, nunca en los de forma verbal.
+  function conSinTildes(list) {
+    const out = [];
+    list.forEach(function (s) {
+      out.push(s);
+      const plain = stripAccents(s);
+      if (plain !== s) out.push(plain);
+    });
+    return out;
+  }
+
   // ---------- exercise data ----------
   // template blanks use {0},{1}... matched to item.answers[i]
   const NOTE_ESTA_MANANA = ["hemos visto", "vimos"];
@@ -622,7 +653,12 @@
   // ayer es hoy. flex pide que aparezcan todas sus palabras, así que "harías la cena
   // mañana" se marca mal aunque el verbo esté bien; es justo lo que el ejercicio enseña.
   const NOTE_CENA_MANANA = { flex: ["harías", "hoy"], show: "harías la cena hoy" };
-  const NOTE_NO_SALDRIAN = { flex: ["saldrían", "hoy"], show: "hoy no saldrían" };
+  const NOTE_NO_SALDRIAN = { flex: ["no", "saldrían", "hoy"], show: "hoy no saldrían" };
+  // Ej. 11.5: el hueco vacío SIEMPRE se marca mal (norm() lo trata como "sin responder" a
+  // propósito, ver más abajo), así que "no hace falta artículo" no se puede expresar
+  // dejando el campo en blanco. Se pide escribir un guion en su lugar; se explica una vez
+  // en el enunciado del ejercicio, no en cada hueco.
+  const SIN_ARTICULO = ["—", "-", "–"];
 
   const blocks = [
     {
@@ -2235,6 +2271,587 @@
           ]
         }
       ]
+    },
+    {
+      id: "seccion-9", num: 9, title: "Gramática y vocabulario",
+      sub: "Voz pasiva, estilo indirecto con órdenes y peticiones, expresar deseos",
+      introHTML: `
+        <div class="theory-wrap">
+          <div class="theory-cols">
+            <div>
+              <div class="theory-group">
+                <h3>Voz pasiva</h3>
+                <ul class="theory-points">
+                  <li><span class="use-label">Se utiliza especialmente en los textos periodísticos e históricos.</span>
+                    <span class="example">La penicilina <b>fue descubierta</b> en 1928.</span></li>
+                  <li><span class="use-label">El hablante la usa cuando no le interesa decir quién es el sujeto agente de la acción, o cuando ese sujeto es obvio. También cuando le parece más importante enunciar el objeto directo que el sujeto. Compara:</span>
+                    <span class="example">El Cuerpo de Bomberos (sujeto agente) extinguió el incendio (objeto directo).</span>
+                    <span class="example">El incendio (sujeto pasivo) fue extinguido por el Cuerpo de Bomberos (complemento agente).</span></li>
+                  <li><span class="use-label">Se forma con el verbo <b>ser</b> + participio, en el mismo género y número que el sujeto pasivo.</span>
+                    <span class="example">Hoy <b>han sido recuperados</b> los artículos robados de la tienda.</span>
+                    <span class="example">El principal sospechoso del robo <b>ha sido declarado</b> culpable por el Tribunal.</span></li>
+                </ul>
+              </div>
+              <div class="theory-group">
+                <h3>Estilo indirecto: órdenes, peticiones y sugerencias</h3>
+                <ul class="theory-points">
+                  <li><span class="use-label">Cuando presentamos una orden o una sugerencia en estilo indirecto, el verbo de la oración subordinada tiene que ir en <b>subjuntivo</b>.</span>
+                    <span class="example">(Jefe: «No llegues tarde») → Mi jefe siempre me dice que no <b>llegue</b> tarde.</span>
+                    <span class="example">(Lucía: «Ven mañana a mi casa») → Lucía me pidió que <b>fuera</b> a su casa.</span></li>
+                </ul>
+              </div>
+            </div>
+            <div>
+              <div class="theory-group">
+                <ul class="theory-points">
+                  <li><span class="use-label">Si el verbo introductor está en <b>presente</b> o <b>pretérito perfecto</b>, la subordinada lleva <b>presente de subjuntivo</b>.</span>
+                    <span class="example">Mi madre siempre me dice [presente] que no <b>corra</b> [pres. subj.] cuando voy en coche.</span>
+                    <span class="example">Me ha pedido [pret. perf.] que le <b>preste</b> [pres. subj.] mi libro.</span></li>
+                  <li><span class="use-label">Si el verbo introductor está en <b>pretérito imperfecto, indefinido o pluscuamperfecto</b>, la subordinada lleva <b>pretérito imperfecto de subjuntivo</b>.</span>
+                    <span class="example">Me dijo [pret. indef.] que <b>abriera</b> [pret. imperf. subj.] la ventana.</span></li>
+                  <li><span class="use-label">Va introducido por verbos como <b>decir</b> (en el sentido de «ordenar») y otros como <b>pedir, sugerir, recomendar, aconsejar, rogar, prohibir</b>, etcétera.</span></li>
+                </ul>
+              </div>
+              <div class="theory-group">
+                <h3>Expresar deseos</h3>
+                <p class="theory-lead">Las oraciones subordinadas dependientes de verbos de deseo y necesidad (<b>espero, quiero, deseo, necesito, me gustaría</b>) pueden llevar el verbo en infinitivo o en subjuntivo.</p>
+                <ul class="theory-points">
+                  <li><span class="use-label"><b>Infinitivo</b>, cuando el sujeto de las dos oraciones es el mismo.</span>
+                    <span class="example">(Yo) Deseo <b>tener</b> (yo) más tiempo libre.</span>
+                    <span class="example">Ella espera <b>terminar</b> el informe a tiempo.</span>
+                    <span class="example">Nos gustaría <b>conocer</b> Nueva York.</span></li>
+                  <li><span class="use-label"><b>Subjuntivo</b>, cuando el sujeto de las dos oraciones es diferente.</span>
+                    <span class="example">Yo deseo que mis hijos <b>sean</b> felices.</span>
+                    <span class="example">Me gustaría que <b>limpiaras</b> tu cuarto.</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-title">Vocabulario · Noticias</div>
+          <div class="vocab-chips">
+            <span class="vocab-chip">titular</span><span class="vocab-chip">robar</span>
+            <span class="vocab-chip">detener</span><span class="vocab-chip">policía</span>
+            <span class="vocab-chip">persecución</span><span class="vocab-chip">agresor</span>
+            <span class="vocab-chip">huir</span><span class="vocab-chip">asaltar</span>
+            <span class="vocab-chip">apuñalar</span><span class="vocab-chip">herir</span>
+            <span class="vocab-chip">herido</span><span class="vocab-chip">atacar</span>
+            <span class="vocab-chip">víctima</span>
+          </div>
+
+          <div class="vocab-title">Vocabulario · Verbos de influencia</div>
+          <div class="vocab-chips">
+            <span class="vocab-chip">recomendar</span><span class="vocab-chip">aconsejar</span>
+            <span class="vocab-chip">sugerir</span><span class="vocab-chip">prohibir</span>
+            <span class="vocab-chip">pedir</span><span class="vocab-chip">rogar</span>
+          </div>
+        </div>
+      `,
+      exercises: [
+        {
+          num: 1, title: "Noticias del periódico",
+          instr: "Completa las noticias con los verbos del recuadro. Fíjate en el género y el número del sujeto pasivo: es lo que decide cuál encaja en cada hueco.",
+          refHTML: '<span class="ref-label">Verbos</span>' +
+            '<div class="ref-options">' +
+            '<span class="ref-opt">ha sido clausurado</span><span class="ref-opt">fue suspendido</span>' +
+            '<span class="ref-opt">fue interrumpido</span><span class="ref-opt">han sido recibidas</span>' +
+            '<span class="ref-opt">ha sido criticada</span>' +
+            "</div>",
+          type: "items",
+          items: [
+            { t: "La consejería de transportes {0} por no atender a los ciudadanos durante la huelga de autobuses.", a: [["ha sido criticada"]], wide: true },
+            { t: "El partido de fútbol {0} debido al mal tiempo.", a: [["fue suspendido"]], wide: true },
+            { t: "El Congreso de Médicos {0} por el ministro de Sanidad.", a: [["ha sido clausurado"]], wide: true },
+            { t: "El servicio de trenes {0} debido a la huelga de los empleados de la RENFE.", a: [["fue interrumpido"]], wide: true },
+            { t: "Las nuevas medidas de protección ambiental {0} con entusiasmo por la ciudadanía.", a: [["han sido recibidas"]], wide: true }
+          ]
+        },
+        {
+          num: 2, title: "Lo que le ha dicho su madre a Fede",
+          instr: "Laura le da muchas órdenes a su hijo Fede todos los días. Luego Guillermo le pregunta: «¿Qué te ha dicho tu madre?». Completa lo que responde Fede. El verbo introductor está en pretérito perfecto (me ha dicho), así que la subordinada va en presente de subjuntivo.",
+          model: "Ejemplo — Madre: «Fede, ven aquí ahora mismo». → Fede: Mi madre me ha dicho que vaya allí ahora mismo.",
+          type: "items",
+          items: [
+            { t: "«Fede, lávate las manos». → Mi madre me ha dicho que {0}", a: [{ flex: ["lave las manos"], show: "me lave las manos" }], wide: true },
+            { t: "«Fede, hijo, pon la mesa». → Mi madre me ha dicho que {0}", a: [{ flex: ["ponga la mesa"], show: "ponga la mesa" }], wide: true },
+            { t: "«Dile a papá que venga a comer». → Mi madre me ha dicho que {0}", a: [{ flex: ["diga", "venga"], show: "le diga a papá que venga a comer" }], wide: true },
+            { t: "«Fede, quita la tele». → Mi madre me ha dicho que {0}", a: [{ flex: ["quite la tele"], show: "quite la tele" }], wide: true },
+            // "des" es el error que persigue el ejercicio; pedir "le dé azúcar" como palabra
+            // completa lo descarta sin obligar a poner la tilde de "dé" (flex ignora tildes).
+            { t: "«No le des azúcar al perro». → Mi madre me ha dicho que {0}", a: [{ flex: ["no", "le dé azúcar"], show: "no le dé azúcar al perro" }], wide: true },
+            { t: "«Saca la basura». → Mi madre me ha dicho que {0}", a: [{ flex: ["saque la basura"], show: "saque la basura" }], wide: true },
+            { t: "«Lleva el pan a la mesa». → Mi madre me ha dicho que {0}", a: [{ flex: ["lleve el pan"], show: "lleve el pan a la mesa" }], wide: true }
+          ]
+        },
+        {
+          num: 3, title: "De estilo indirecto a estilo directo",
+          instr: "Escribe la orden o la petición tal y como se dijo. Cuando el original va en plural se aceptan tanto la forma de vosotros como la de ustedes; en singular, tanto la de tú como la de usted.",
+          model: "Ejemplo — Me ha pedido que me vaya con él. → «Ven conmigo».",
+          type: "items",
+          items: [
+            { t: "Me ha dicho que coma más frutas. → {0}", a: [conSinTildes(["come más frutas", "coma más frutas"])], wide: true },
+            { t: "Me ha pedido que lo lea en voz alta. → {0}", a: [conSinTildes(["léelo en voz alta", "léalo en voz alta"])], wide: true },
+            { t: "Me dice siempre que no haga ruido. → {0}", a: [conSinTildes(["no hagas ruido", "no haga ruido"])], wide: true },
+            { t: "Nos han pedido que lleguemos a las siete. → {0}", a: [conSinTildes(["llegad a las siete", "lleguen a las siete"])], wide: true },
+            { t: "Nos ha dicho que terminemos pronto. → {0}", a: [conSinTildes(["terminad pronto", "terminen pronto"])], wide: true },
+            { t: "Me ha pedido que haga la cena. → {0}", a: [conSinTildes(["haz la cena", "haga la cena"])], wide: true },
+            { t: "Les ha dicho a los niños que se laven las manos. → {0}", a: [conSinTildes(["lavaos las manos", "lávense las manos"])], wide: true }
+          ]
+        },
+        {
+          num: 4, title: "Expresar deseos: sigue el modelo",
+          instr: "Reescribe cada frase con «me gustaría». Infinitivo si el sujeto es el mismo; «que» + imperfecto de subjuntivo si es distinto. Se aceptan las dos terminaciones del subjuntivo (-ara y -ase).",
+          model: "Ejemplos — No tenemos piso. → Nos gustaría tener un piso. · Mi hija no me ayuda. → Me gustaría que mi hija me ayudara.",
+          type: "items",
+          items: [
+            { t: "Llego tarde todos los días. → Me gustaría {0}", a: [{ flex: ["no llegar tarde"], show: "no llegar tarde todos los días" }], wide: true },
+            { t: "Mis hijos no tienen trabajo. → Me gustaría {0}", a: [{ flex: ["que mis hijos", "tuvie"], show: "que mis hijos tuvieran trabajo" }], wide: true },
+            { t: "No salgo nunca de viaje. → Me gustaría {0}", a: [{ flex: ["salir de viaje"], show: "salir de viaje" }], wide: true },
+            { t: "No sé hablar inglés bien. → Me gustaría {0}", a: [{ flex: ["hablar inglés"], show: "hablar inglés bien (o «saber hablar inglés bien»)" }], wide: true },
+            { t: "Mi marido tiene pocas vacaciones. → Me gustaría {0}", a: [{ flex: ["que mi marido", "tuvie"], show: "que mi marido tuviera más vacaciones" }], wide: true },
+            { t: "Mis alumnos no hacen los deberes. → Me gustaría {0}", a: [{ flex: ["que mis alumnos", "hicie"], show: "que mis alumnos hicieran los deberes" }], wide: true },
+            { t: "Penélope no viene mucho a verme. → Me gustaría {0}", a: [{ flex: ["que", "vinie"], show: "que Penélope viniera más a verme" }], wide: true },
+            { t: "No tengo un vestido largo y bonito. → Me gustaría {0}", a: [{ flex: ["tener un vestido"], show: "tener un vestido largo y bonito" }], wide: true },
+            { t: "Hace mucho calor. → Me gustaría {0}", a: [{ flex: ["que", "no", "hicie", "calor"], show: "que no hiciera tanto calor" }], wide: true },
+            { t: "Mi hijo es un mal estudiante. → Me gustaría {0}", a: [{ flex: ["que mi hijo", "fue"], show: "que mi hijo fuera un buen estudiante" }], wide: true }
+          ]
+        },
+        {
+          num: 5, title: "Ordena las frases",
+          instr: "Escribe la frase ordenada. Todas empiezan por «Me gustaría» o «Les gustaría».",
+          type: "items",
+          items: [
+            { t: "enfermera / trabajar / Me / de / gustaría → {0}", a: [conSinTildes(["me gustaría trabajar de enfermera"])], wide: true },
+            { t: "ganar / gustaría / dinero / Me / más → {0}", a: [conSinTildes(["me gustaría ganar más dinero"])], wide: true },
+            { t: "fueras / París / a / gustaría / que / Me → {0}", a: [conSinTildes(["me gustaría que fueras a París"])], wide: true },
+            { t: "vinieras / casa / gustaría / Me / mi / a / que → {0}", a: [conSinTildes(["me gustaría que vinieras a mi casa"])], wide: true },
+            { t: "Me / que / bien / gustaría / hablaras / japonés / tú → {0}", a: [conSinTildes(["me gustaría que tú hablaras japonés bien", "me gustaría que tú hablaras bien japonés"])], wide: true },
+            { t: "más / Les / gustaría / yo / amable / que / fuera → {0}", a: [conSinTildes(["les gustaría que yo fuera más amable"])], wide: true }
+          ]
+        },
+        {
+          num: 6, title: "Escribe un párrafo",
+          instr: "Este ejercicio es de redacción libre: no tiene una respuesta única, así que no se corrige automáticamente. Escríbelo y mándaselo a tu profesor aparte.",
+          type: "open",
+          html: '<b>Escribe un párrafo sobre qué desean los habitantes de tu país de sus autoridades.</b>' +
+            '<span class="open-model">Los habitantes de mi país esperan que los gobernantes piensen más en los problemas que tenemos…</span>' +
+            '<span class="open-model">En primer lugar, queremos / deseamos que…</span>'
+        }
+      ]
+    },
+    {
+      id: "seccion-10", num: 10, title: "Gramática y vocabulario",
+      sub: "La conjetura, pedir un servicio con cortesía y escribir postales",
+      introHTML: `
+        <div class="theory-wrap">
+          <div class="theory-cols">
+            <div>
+              <div class="theory-group">
+                <h3>Expresión de la conjetura</h3>
+                <p class="theory-lead">Para expresar nuestras dudas, deseos o planes sin definir (conjeturas) utilizamos estas expresiones.</p>
+                <ul class="theory-points">
+                  <li><span class="use-label"><b>A lo mejor</b> + presente de indicativo.</span>
+                    <span class="example">A lo mejor <b>vamos</b> a Marbella.</span>
+                    <span class="example">A lo mejor <b>ha ido</b> a comprar los billetes de tren.</span></li>
+                  <li><span class="use-label"><b>Seguramente / probablemente</b> + futuro o presente de subjuntivo.</span>
+                    <span class="example">Seguramente <b>estará</b> / <b>esté</b> enferma. La llamaré.</span>
+                    <span class="example">Probablemente <b>iremos</b> / <b>vayamos</b> a cenar a un restaurante japonés.</span></li>
+                  <li><span class="use-label"><b>Quizás</b> + indicativo, cuando nos referimos a acciones pasadas o presentes.</span>
+                    <span class="example">Quizás <b>ha tenido</b> que ir al médico y por eso no ha venido a trabajar.</span></li>
+                  <li><span class="use-label"><b>Quizás</b> + subjuntivo, que se prefiere cuando hablamos de acciones futuras.</span>
+                    <span class="example">Quizás <b>compremos</b> un coche nuevo, pero no sé cuándo.</span></li>
+                </ul>
+                <div class="rule-box">
+                  <h4>Ojo</h4>
+                  <p>No se puede utilizar <b>a lo mejor</b> + verbo en futuro.</p>
+                  <p>A lo mejor <b>está</b> de vacaciones. (No: «a lo mejor estará de vacaciones»)</p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="theory-group">
+                <h3>Pedir un servicio de forma adecuada</h3>
+                <div class="table-wrap">
+                  <table class="theory-table">
+                    <thead><tr><th>Registro</th><th>Fórmulas</th><th>Sigue</th></tr></thead>
+                    <tbody>
+                      <tr><td><b>Formal</b></td><td>¿Le importaría…? · ¿Sería posible…? · ¿Sería(n) tan amable(s) de…?</td><td>+ infinitivo</td></tr>
+                      <tr><td><b>Informal</b></td><td>¿Te importaría…? · ¿Podrías…?</td><td>+ infinitivo</td></tr>
+                      <tr><td><b>Respuestas</b></td><td>Sí, cómo no. · Sí, ahora mismo. · Lo siento, pero… · Por supuesto. · Claro que sí.</td><td>—</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="theory-group">
+                <h3>Escribir postales: temas a tratar</h3>
+                <div class="table-wrap">
+                  <table class="theory-table">
+                    <thead><tr><th>Tema</th><th>Expresiones</th></tr></thead>
+                    <tbody>
+                      <tr><td>Para hablar del tiempo</td><td>Hace mucho frío / calor / viento / sol · Llueve sin parar / a cántaros · Está nublado / nevando · Hay nubes y claros / niebla / tormenta / lluvia / nieve</td></tr>
+                      <tr><td>Para hablar del paisaje</td><td>Esto es precioso / impresionante / muy bonito</td></tr>
+                      <tr><td>Para hablar de la gente</td><td>La gente es amable / antipática / acogedora</td></tr>
+                      <tr><td>Para despedirse</td><td>Saludos · Recuerdos · Un abrazo · Besos · ¡Hasta pronto!</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-title">Vocabulario · Alojamientos: en el hotel</div>
+          <div class="vocab-chips">
+            <span class="vocab-chip">piscina</span><span class="vocab-chip">sala de reuniones</span>
+            <span class="vocab-chip">gimnasio</span><span class="vocab-chip">sauna</span>
+            <span class="vocab-chip">restaurante</span><span class="vocab-chip">servicio de plancha</span>
+            <span class="vocab-chip">cuidado de niños</span><span class="vocab-chip">aparcamiento</span>
+            <span class="vocab-chip">lavandería</span><span class="vocab-chip">prensa gratuita</span>
+            <span class="vocab-chip">telefax</span>
+          </div>
+
+          <div class="vocab-title">Vocabulario · Alojamientos: en las habitaciones</div>
+          <div class="vocab-chips">
+            <span class="vocab-chip">radio</span><span class="vocab-chip">televisión</span>
+            <span class="vocab-chip">teléfono</span><span class="vocab-chip">secador de pelo</span>
+            <span class="vocab-chip">albornoces</span><span class="vocab-chip">minibar</span>
+            <span class="vocab-chip">baño privado</span><span class="vocab-chip">servicio de habitaciones 24 h</span>
+            <span class="vocab-chip">cafetera</span><span class="vocab-chip">tetera</span>
+            <span class="vocab-chip">terraza</span><span class="vocab-chip">aire acondicionado</span>
+            <span class="vocab-chip">escritorio</span>
+          </div>
+
+          <div class="vocab-title">Vocabulario · Tiempo atmosférico</div>
+          <div class="vocab-chips">
+            <span class="vocab-chip">nubes</span><span class="vocab-chip">lluvia</span>
+            <span class="vocab-chip">niebla</span><span class="vocab-chip">tormenta</span>
+            <span class="vocab-chip">viento</span><span class="vocab-chip">sol</span>
+            <span class="vocab-chip">nubes y claros</span><span class="vocab-chip">nieve</span>
+            <span class="vocab-chip">nublado</span><span class="vocab-chip">lluvioso</span>
+            <span class="vocab-chip">frío</span><span class="vocab-chip">calor</span>
+          </div>
+        </div>
+      `,
+      exercises: [
+        {
+          num: 1, title: "La conjetura",
+          instr: "Completa las frases con los verbos del recuadro en el tiempo correspondiente. Donde el libro admite las dos opciones (seguramente y probablemente llevan futuro o subjuntivo; quizás, indicativo o subjuntivo), se aceptan las dos. Aquí las tildes cuentan: «esta» y «está» no son la misma palabra.",
+          refHTML: '<span class="ref-label">Verbos</span>' +
+            '<div class="ref-options">' +
+            '<span class="ref-opt">encontrar</span><span class="ref-opt">venir</span>' +
+            '<span class="ref-opt">estar (x2)</span><span class="ref-opt">tener (x2)</span>' +
+            '<span class="ref-opt">vivir</span><span class="ref-opt">subir</span>' +
+            '<span class="ref-opt">poder</span><span class="ref-opt">oír</span>' +
+            "</div>",
+          type: "items",
+          items: [
+            { t: "Juan no me habla. Quizás {0} enfadado conmigo.", a: [["esté", "está"]] },
+            { t: "¿Necesitas un trabajo? A lo mejor {0} conseguirte uno.", a: [["puedo"]] },
+            { t: "El niño está llorando. Seguramente {0} hambre.", a: [["tendrá", "tenga"]] },
+            { t: "Estamos buscando billetes de avión. A lo mejor los {0} en internet.", a: [["encontramos"]] },
+            { t: "Paco no puede venir este fin de semana. Probablemente {0} trabajo en casa.", a: [["tendrá", "tenga"]] },
+            { t: "Hace mucho tiempo que no veo a Victoria. A lo mejor ya no {0} en Madrid.", a: [["vive"]] },
+            { t: "El avión tenía que haber aterrizado. Quizás {0} con retraso.", a: [["venga", "viene"]] },
+            { t: "No sé por qué no abre. Quizás no {0} el timbre.", a: [["oiga", "oye", "ha oído", "haya oído"]] },
+            { t: "El director quiere hablar contigo. Seguramente te {0} el sueldo.", a: [["subirá", "suba"]] },
+            { t: "Alicia no ha venido a trabajar. A lo mejor {0} enferma.", a: [["está"]] }
+          ]
+        },
+        {
+          num: 2, title: "¿Qué tiempo hacía?",
+          instr: "¿Qué tiempo crees que hacía para que sucedieran las siguientes cosas? Responde con una frase corta en pretérito imperfecto. Se acepta más de una formulación, y aquí las tildes no cuentan.",
+          model: "Ejemplo — Nos bañamos en el río toda la mañana. → Hacía mucho calor.",
+          type: "items",
+          items: [
+            { t: "Tuvimos que sentarnos a la sombra durante toda la tarde. → {0}", a: [conSinTildes(["hacía mucho calor", "hacía calor", "hacía mucho sol", "hacía sol", "hacía mucho sol y calor", "hacía mucho calor y sol", "hacía calor y sol", "hacía sol y calor"])], wide: true },
+            { t: "Los coches salpicaban agua y mojaban a los peatones. → {0}", a: [conSinTildes(["llovía", "llovía mucho", "estaba lloviendo", "había llovido", "había llovido mucho", "llovía a cántaros", "había lluvia"])], wide: true },
+            { t: "Tuvieron que cerrar el aeropuerto. No había suficiente visibilidad. → {0}", a: [conSinTildes(["había niebla", "había mucha niebla", "hacía niebla"])], wide: true },
+            { t: "Se me voló el periódico de las manos. → {0}", a: [conSinTildes(["hacía mucho viento", "hacía viento", "había mucho viento", "había viento"])], wide: true },
+            { t: "Mirando al cielo parecía que iba a llover. → {0}", a: [conSinTildes(["estaba nublado", "estaba muy nublado", "había nubes", "había muchas nubes"])], wide: true },
+            { t: "Pudimos ir a esquiar el fin de semana. → {0}", a: [conSinTildes(["había nevado", "había nevado mucho", "había nieve", "había mucha nieve", "nevaba", "estaba nevando"])], wide: true },
+            { t: "Un rayo partió un árbol. → {0}", a: [conSinTildes(["había tormenta", "había una tormenta", "hubo tormenta", "hubo una tormenta"])], wide: true },
+            { t: "Tuve que ponerme el abrigo, los guantes y un gorro. → {0}", a: [conSinTildes(["hacía mucho frío", "hacía frío", "hacía muchísimo frío"])], wide: true }
+          ]
+        },
+        {
+          num: 3, title: "En la recepción del hotel",
+          instr: "¿Cómo sería el diálogo que mantendrías con el recepcionista en cada situación? Escribe solo la fórmula de cortesía que falta. Ojo al registro: en el hotel se tratan de usted, pero en el albergue juvenil el recepcionista tutea.",
+          refHTML: '<span class="ref-label">Fórmulas</span>' +
+            '<div class="ref-options">' +
+            '<span class="ref-opt">¿Le importaría…?</span><span class="ref-opt">¿Sería posible…?</span>' +
+            '<span class="ref-opt">¿Sería(n) tan amable(s) de…?</span><span class="ref-opt">¿Te importaría…?</span>' +
+            '<span class="ref-opt">¿Podrías…?</span>' +
+            "</div>" +
+            '<span class="ref-label">Respuestas</span>' +
+            '<div class="ref-options">' +
+            '<span class="ref-opt">Sí, cómo no.</span><span class="ref-opt">Sí, ahora mismo.</span>' +
+            '<span class="ref-opt">Lo siento, pero…</span><span class="ref-opt">Por supuesto.</span>' +
+            '<span class="ref-opt">Claro que sí.</span>' +
+            "</div>",
+          type: "items",
+          items: [
+            { t: "1 · Quieres ir a un hotel a pasar el fin de semana. Cliente: ¿{0} decirme si hay habitaciones libres para el fin de semana?", a: [conSinTildes(["le importaría", "sería posible", "podría", "podría usted", "sería tan amable de", "sería usted tan amable de", "serían tan amables de"])], wide: true },
+            { t: "1 · Recepcionista: {0} ¿Qué tipo de habitación desearía?", a: [conSinTildes(["sí cómo no", "sí ahora mismo", "por supuesto", "claro que sí", "cómo no"])], wide: true },
+            { t: "2 · Tienes las maletas preparadas y quieres pedir la cuenta. Cliente: ¿{0} prepararme la cuenta, por favor?", a: [conSinTildes(["le importaría", "sería posible", "podría", "podría usted", "sería tan amable de", "sería usted tan amable de", "serían tan amables de"])], wide: true },
+            { t: "2 · Recepcionista: {0}. ¿Su número de habitación, por favor?", a: [conSinTildes(["sí ahora mismo", "sí cómo no", "por supuesto", "claro que sí", "ahora mismo", "cómo no"])], wide: true },
+            // Aquí el "de" ya está impreso detrás del hueco, así que solo cabe la fórmula
+            // "¿Sería(n) tan amable(s)…?"; "¿Le importaría de…?" sería agramatical.
+            { t: "3 · Quieres comer en un restaurante japonés cerca del hotel. Cliente: ¿{0} de indicarme dónde hay un restaurante japonés por esta zona?", a: [conSinTildes(["sería tan amable", "serían tan amables", "sería usted tan amable"])], wide: true },
+            { t: "3 · Recepcionista: {0} no hay ningún restaurante japonés en los alrededores.", a: [conSinTildes(["lo siento pero", "lo siento", "lo siento pero…", "lo siento mucho pero"])], wide: true },
+            { t: "4 · Estás en un albergue juvenil y quieres que te despierten a las ocho. Cliente: ¿{0} despertarme a las ocho de la mañana?", a: [conSinTildes(["podrías", "te importaría"])], wide: true },
+            { t: "4 · Recepcionista: {0}, ¿en qué habitación estás?", a: [conSinTildes(["sí cómo no", "sí ahora mismo", "por supuesto", "claro que sí", "cómo no"])], wide: true }
+          ]
+        },
+        {
+          num: 4, title: "Una postal desde Córdoba",
+          instr: "Lee la postal y contesta a las preguntas. Basta con que la respuesta contenga el dato correcto; no hace falta escribir una frase completa.",
+          refHTML: '<span class="ref-label">Postal</span>' +
+            '<div class="postcard">Querido Juan:<br>' +
+            'Estamos de vacaciones en Córdoba. Esta mañana hemos recorrido su precioso barrio judío, lleno de patios con flores. También hemos estado en la Mezquita y nos ha gustado muchísimo. Por otro lado, hace muy buen tiempo: mucho sol y una temperatura estupenda para pasear.<br>' +
+            'Ya te contaremos a la vuelta.<br>Muchos besos.' +
+            '<span class="signature">Ana y Manuel</span></div>',
+          type: "items",
+          items: [
+            { t: "¿Quién envía la tarjeta? → {0}", a: [{ flex: ["ana", "manuel"], show: "Ana y Manuel" }], wide: true },
+            { t: "¿Desde qué ciudad la envían? → {0}", a: [{ flex: ["córdoba"], show: "desde Córdoba" }], wide: true },
+            { t: "¿A quién va dirigida? → {0}", a: [{ flex: ["juan"], show: "a Juan" }], wide: true },
+            { t: "¿Cuáles son los principales atractivos turísticos de Córdoba? → {0}", a: [{ flex: ["judío", "mezquita"], show: "el barrio judío, lleno de patios con flores, y la Mezquita" }], wide: true },
+            { t: "¿Qué tiempo hace? → {0}", a: [conSinTildes(["hace muy buen tiempo", "hace buen tiempo", "muy buen tiempo", "buen tiempo", "hace mucho sol", "hace sol", "hace muy buen tiempo mucho sol y una temperatura estupenda", "hace mucho sol y una temperatura estupenda", "hace sol y una temperatura estupenda"])], wide: true }
+          ]
+        }
+      ]
+    },
+    {
+      id: "seccion-11", num: 11, title: "Gramática y vocabulario",
+      sub: "Pronombres de objeto directo e indirecto, indefinidos, artículos",
+      introHTML: `
+        <div class="theory-wrap">
+          <div class="theory-cols">
+            <div>
+              <div class="theory-group">
+                <h3>Pronombres de objeto directo e indirecto</h3>
+                <div class="table-wrap">
+                  <table class="theory-table">
+                    <thead><tr><th colspan="3">Pronombres de objeto directo</th></tr></thead>
+                    <tbody>
+                      <tr><td></td><td>singular</td><td>plural</td></tr>
+                      <tr><td>1.ª persona</td><td>me</td><td>nos</td></tr>
+                      <tr><td>2.ª persona</td><td>te</td><td>os</td></tr>
+                      <tr><td>3.ª persona</td><td>lo (le) / la</td><td>los (les) / las</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="table-wrap">
+                  <table class="theory-table">
+                    <thead><tr><th colspan="3">Pronombres de objeto indirecto</th></tr></thead>
+                    <tbody>
+                      <tr><td></td><td>singular</td><td>plural</td></tr>
+                      <tr><td>1.ª persona</td><td>me</td><td>nos</td></tr>
+                      <tr><td>2.ª persona</td><td>te</td><td>os</td></tr>
+                      <tr><td>3.ª persona</td><td>le (se)</td><td>les (se)</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <ul class="theory-points">
+                  <li><span class="use-label">Van delante del verbo conjugado y detrás del imperativo afirmativo.</span>
+                    <span class="example">Lo compré ayer.</span>
+                    <span class="example">¿Me podrías dejar tu móvil? — Sí, cógelo.</span></li>
+                  <li><span class="use-label">En perífrasis de infinitivo o gerundio, pueden ir detrás o delante del verbo que los acompaña.</span>
+                    <span class="example">Quiero verlos. / Los quiero ver.</span></li>
+                  <li><span class="use-label">En 3.ª persona el uso de los pronombres <b>le/les</b> está aceptado para personas masculinas.</span>
+                    <span class="example">Estuve con tu hermano. Le / Lo encontré muy bien.</span></li>
+                  <li><span class="use-label">Cuando utilizamos los dos pronombres (directo e indirecto), el indirecto siempre va en primer lugar.</span>
+                    <span class="example">Dámelo, por favor.</span></li>
+                  <li><span class="use-label">Cuando al pronombre <b>le</b> (objeto indirecto) le sigue uno de los objetos directos de 3.ª persona (<b>lo, la; los, las</b>), el primero se convierte en <b>se</b>.</span>
+                    <span class="example">Acércaselo a tu compañero.</span></li>
+                  <li><span class="use-label">Aunque el objeto indirecto aparezca detrás del verbo, el pronombre suele repetirse también delante.</span>
+                    <span class="example">¿Le has dado la noticia a Luis?</span></li>
+                </ul>
+              </div>
+            </div>
+            <div>
+              <div class="theory-group">
+                <h3>Indefinidos</h3>
+                <ul class="theory-points">
+                  <li><span class="use-label"><b>Poco</b></span>
+                    <span class="example">Hay poco personal en esta empresa.</span></li>
+                  <li><span class="use-label"><b>Un poco</b></span>
+                    <span class="example">Quiero un café con un poco de leche.</span></li>
+                  <li><span class="use-label"><b>Mucho</b></span>
+                    <span class="example">Me gusta mucho. / Julián come muchos dulces.</span></li>
+                  <li><span class="use-label"><b>Bastante</b></span>
+                    <span class="example">Las patatas están bastante buenas. / Esperé bastantes horas.</span></li>
+                  <li><span class="use-label"><b>Demasiado</b></span>
+                    <span class="example">Tenía demasiado miedo. / Hay demasiados coches.</span></li>
+                </ul>
+              </div>
+              <div class="theory-group">
+                <h3>Artículos</h3>
+                <div class="table-wrap">
+                  <table class="theory-table">
+                    <thead><tr><th></th><th>Det. masc.</th><th>Det. fem.</th><th>Indet. masc.</th><th>Indet. fem.</th></tr></thead>
+                    <tbody>
+                      <tr><td>Sing.</td><td>el</td><td>la</td><td>un</td><td>una</td></tr>
+                      <tr><td>Pl.</td><td>los</td><td>las</td><td>unos</td><td>unas</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p class="theory-lead">Los artículos determinados (<b>el, la, los, las</b>) se usan:</p>
+                <ul class="theory-points">
+                  <li><span class="use-label">Cuando hablamos de algo que conocemos.</span>
+                    <span class="example">Devuélveme el libro que te presté.</span></li>
+                  <li><span class="use-label">Con el verbo <b>gustar</b> y con todos los verbos que llevan <b>le</b>.</span>
+                    <span class="example">Me gusta la música clásica.</span></li>
+                  <li><span class="use-label">Es obligatorio con nombres de juegos y actividades de ocio, con partes del cuerpo, objetos personales o ropa, en lugar del posesivo.</span>
+                    <span class="example">Me duele la cabeza (no: Me duele mi cabeza).</span>
+                    <span class="example">El fútbol es un deporte muy popular en Europa.</span></li>
+                  <li><span class="use-label">Con la hora.</span>
+                    <span class="example">Son las seis de la tarde.</span></li>
+                  <li><span class="use-label">Con los días de la semana.</span>
+                    <span class="example">El jueves voy a verte.</span></li>
+                  <li><span class="use-label">A veces se puede eliminar el sustantivo y dejar el artículo.</span>
+                    <span class="example">¿Quién es tu novia? — La del vestido rosa.</span></li>
+                </ul>
+                <p class="theory-lead">Los artículos indeterminados (<b>un, una, unos, unas</b>) se usan:</p>
+                <ul class="theory-points">
+                  <li><span class="use-label">Cuando se habla de algo por primera vez.</span>
+                    <span class="example">Me han regalado un gato.</span></li>
+                  <li><span class="use-label">Para hablar de una cantidad aproximada.</span>
+                    <span class="example">He tardado unas doce horas.</span></li>
+                </ul>
+                <div class="rule-box">
+                  <h4>El artículo neutro lo</h4>
+                  <p>Seguido de un adjetivo o un adverbio, para sustantivarlo.</p>
+                  <p><b>Lo</b> más difícil es aprobar el primer examen.</p>
+                </div>
+                <p class="theory-lead">No se usa artículo:</p>
+                <ul class="theory-points">
+                  <li><span class="use-label">Cuando se habla de una profesión, excepto si va con un adjetivo.</span>
+                    <span class="example">Mi primo es un carpintero estupendo.</span></li>
+                  <li><span class="use-label">Tras las preposiciones <b>de, con, sin</b>.</span>
+                    <span class="example">Tengo dolor de cabeza.</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-title">Vocabulario · Ropa y complementos</div>
+          <div class="vocab-chips">
+            <span class="vocab-chip">chaqueta</span><span class="vocab-chip">bolsillos</span>
+            <span class="vocab-chip">botones</span><span class="vocab-chip">falda</span>
+            <span class="vocab-chip">blusa</span><span class="vocab-chip">bufanda</span>
+            <span class="vocab-chip">pendientes</span><span class="vocab-chip">pañuelo (de cuello)</span>
+            <span class="vocab-chip">cinturón</span><span class="vocab-chip">medias</span>
+            <span class="vocab-chip">zapatos de tacón</span><span class="vocab-chip">bolso</span>
+            <span class="vocab-chip">gorro</span><span class="vocab-chip">abrigo</span>
+            <span class="vocab-chip">guantes</span><span class="vocab-chip">camisa</span>
+            <span class="vocab-chip">traje (de caballero)</span><span class="vocab-chip">corbata</span>
+            <span class="vocab-chip">sombrero</span><span class="vocab-chip">paraguas</span>
+            <span class="vocab-chip">traje de chaqueta (de señora)</span>
+          </div>
+        </div>
+      `,
+      exercises: [
+        {
+          num: 1, title: "Completa con pronombres de objeto directo",
+          instr: "Escribe el pronombre que falta.",
+          type: "items",
+          items: [
+            { t: "¿Has visto la última exposición de Barceló? — Sí, {0} vi el sábado y me gustó mucho.", a: [["la"]], wide: true },
+            { t: "¿Has hablado con tu hermana últimamente? — Sí, {0} llamé la semana pasada.", a: [["la"]], wide: true },
+            { t: "¿Has preparado los macarrones? — No, {0} prepararé más tarde.", a: [["los"]], wide: true },
+            { t: "¿Sabes dónde están mis gafas? — Sí, {0} he visto encima de la mesa.", a: [["las"]], wide: true },
+            { t: "No pagues, yo {0} invito.", a: [["te"]] }
+          ]
+        },
+        {
+          num: 2, title: "Localiza la palabra que no pertenece al grupo",
+          instr: "Escribe la palabra que sobra en cada lista.",
+          type: "items",
+          items: [
+            { t: "bañador, botas, abrigo, guantes, bufanda. → {0}", a: [["bañador"]], wide: true },
+            { t: "vestido, blusa, falda, corbata, bolso. → {0}", a: [["corbata"]], wide: true },
+            { t: "traje, corbata, zapatos, jersey, collar. → {0}", a: [["collar"]], wide: true },
+            { t: "bufanda, zapatos, botas, medias, calcetines. → {0}", a: [["bufanda"]], wide: true },
+            { t: "pendientes, reloj, pulsera, anillo, camisa. → {0}", a: [["camisa"]], wide: true }
+          ]
+        },
+        {
+          num: 3, title: "Completa el texto con las palabras del recuadro",
+          instr: "Completa cada hueco con la palabra del recuadro que corresponde.",
+          refHTML: '<span class="ref-label">Palabras</span>' +
+            '<div class="ref-options">' +
+            '<span class="ref-opt">tiendas</span><span class="ref-opt">talla</span>' +
+            '<span class="ref-opt">moda</span><span class="ref-opt">barato</span>' +
+            '<span class="ref-opt">ir de compras</span><span class="ref-opt">probártelo</span>' +
+            '<span class="ref-opt">marca</span><span class="ref-opt">rebajas</span>' +
+            '<span class="ref-opt">queda bien</span>' +
+            "</div>",
+          type: "text",
+          text: "El mejor momento para {0} (1) es la época de {1} (2), cuando todas las {2} (3) recortan sus precios. Todo es más {3} (4); algunas veces la diferencia es de hasta más de un 50%. Cuando compras algo de ropa, debes {4} (5) para asegurarte de que es tu {5} (6) y de que te {6} (7). También se rebajan los productos de {7} (8) y los de {8} (9) más actual.",
+          a: [["ir de compras"], ["rebajas"], ["tiendas"], ["barato"], ["probártelo"], ["talla"], ["queda bien"], ["marca"], ["moda"]]
+        },
+        {
+          num: 4, title: "Relaciona",
+          instr: "Escribe la palabra del recuadro que corresponde a cada situación.",
+          refHTML: '<span class="ref-label">Palabras</span>' +
+            '<div class="ref-options">' +
+            '<span class="ref-opt">Pijama</span><span class="ref-opt">Bañador</span>' +
+            '<span class="ref-opt">Guantes</span><span class="ref-opt">Traje</span>' +
+            '<span class="ref-opt">Chándal</span><span class="ref-opt">Paraguas</span>' +
+            '<span class="ref-opt">Bufanda</span>' +
+            "</div>",
+          type: "items",
+          items: [
+            { t: "Llueve mucho afuera. → {0}", a: [["paraguas"]], wide: true },
+            { t: "Voy a la playa. → {0}", a: [["bañador"]], wide: true },
+            { t: "Tengo una entrevista de trabajo. → {0}", a: [["traje"]], wide: true },
+            { t: "Me voy a la cama. → {0}", a: [["pijama"]], wide: true },
+            { t: "Voy a hacer deporte. → {0}", a: [["chándal"]], wide: true },
+            { t: "Hace mucho frío. Me duele la garganta. → {0}", a: [["bufanda"]], wide: true },
+            { t: "Tengo las manos heladas. → {0}", a: [["guantes"]], wide: true }
+          ]
+        },
+        {
+          num: 5, title: "Completa con un artículo determinado o indeterminado, si es necesario",
+          instr: "Escribe el artículo que falta. Cuando no haga falta ningún artículo, escribe un guion (—) en su lugar — el hueco necesita algo escrito para poder corregirse.",
+          type: "items",
+          items: [
+            { t: "En esta tienda se venden {0} tejidos muy caros.", a: [SIN_ARTICULO], wide: true },
+            { t: "¿Puede decirme dónde hay {0} farmacia, por favor?", a: [["una"]] },
+            { t: "Mis vecinos son {0} mecánicos.", a: [SIN_ARTICULO] },
+            { t: "Hay {0} botella de leche en el frigorífico.", a: [["una"]] },
+            { t: "A finales de mes siempre estoy sin {0} dinero.", a: [SIN_ARTICULO] },
+            { t: "Ayer llamó por teléfono {0} señora Pérez.", a: [["la"]] },
+            { t: "He visto {0} casas de dos plantas preciosas.", a: [["unas"]], wide: true },
+            { t: "¡Oiga, por favor! Quiero medio kilo de {0} boquerones.", a: [SIN_ARTICULO], wide: true },
+            // El segundo hueco solo acepta "una": un artículo determinado suelto ("tengo la")
+            // no funciona como objeto directo sin una cláusula detrás que lo modifique (como
+            // sí ocurre en "La del vestido rosa" de la teoría) — haría falta el clítico
+            // ("la tengo"), que no es lo que pide la frase.
+            { t: "Era casi imposible comprar {0} entrada para el concierto. Pero al fin tengo {1}.", a: [["una"], ["una"]], wide: true },
+            { t: "El primo de Ana es {0} chico muy simpático.", a: [["un"]], wide: true }
+          ]
+        },
+        {
+          num: 6, title: "Corrige los errores en las siguientes frases",
+          instr: "Cada frase tiene un error de concordancia con un indefinido (poco, mucho, bastante, demasiado). Escribe solo la parte corregida, no hace falta la frase entera.",
+          type: "items",
+          items: [
+            { t: "He comprado bastantes cerveza. → {0}", a: [{ flex: ["bastante cerveza"], show: "bastante cerveza" }], wide: true },
+            { t: "Mis abuelos están un pocos sordos. → {0}", a: [{ flex: ["un poco sordos"], show: "un poco sordos" }], wide: true },
+            { t: "Muchas días hago deporte. → {0}", a: [{ flex: ["muchos días"], show: "muchos días" }], wide: true },
+            { t: "Había demasiado gente en la discoteca. → {0}", a: [{ flex: ["demasiada gente"], show: "demasiada gente" }], wide: true },
+            { t: "En mi pueblo hay muchas coches. → {0}", a: [{ flex: ["muchos coches"], show: "muchos coches" }], wide: true },
+            { t: "No he bebido bastantes agua. → {0}", a: [{ flex: ["bastante agua"], show: "bastante agua" }], wide: true },
+            { t: "He ahorrado muchos dinero este mes. → {0}", a: [{ flex: ["mucho dinero"], show: "mucho dinero" }], wide: true },
+            { t: "No me lo puedo comprar; es poco caro. → {0}", a: [{ flex: ["demasiado caro"], show: "demasiado caro (el error no es de concordancia: «poco caro» significa lo contrario de lo que pide la frase)" }], wide: true },
+            { t: "Tengo mucho amigos. → {0}", a: [{ flex: ["muchos amigos"], show: "muchos amigos" }], wide: true },
+            { t: "Demasiada horas de trabajo no son buenas. → {0}", a: [{ flex: ["demasiadas horas"], show: "demasiadas horas" }], wide: true },
+            { t: "Los bocadillos son bastantes buenos. → {0}", a: [{ flex: ["bastante buenos"], show: "bastante buenos (aquí «bastante» va delante de un adjetivo, y ahí es invariable)" }], wide: true },
+            { t: "Los niños tienen muchas sed. → {0}", a: [{ flex: ["mucha sed"], show: "mucha sed" }], wide: true }
+          ]
+        }
+      ]
     }
   ];
 
@@ -2339,6 +2956,9 @@
     h3.textContent = ex.title;
     titleWrap.appendChild(h3);
     head.appendChild(titleWrap);
+    // Los ejercicios de escritura libre no tienen huecos: un botón "Corregir" ahí no haría
+    // nada al pulsarlo, que es peor que no tenerlo.
+    if (ex.type === "open") return { head: head, btn: null };
     const btn = document.createElement("button");
     btn.className = "check-btn";
     btn.textContent = "Corregir";
@@ -2486,10 +3106,18 @@
           wrap.appendChild(row);
         });
         card.appendChild(wrap);
+      } else if (ex.type === "open") {
+        // Redacción libre: no hay una respuesta única, así que no genera huecos ni entra en
+        // la puntuación. Se incluye porque está en el libro y el alumno debe poder verlo,
+        // con la propuesta de comienzo que trae el original.
+        const box = document.createElement("div");
+        box.className = "open-block";
+        box.innerHTML = ex.html;
+        card.appendChild(box);
       }
 
       const endIdx = allInputs.length;
-      hdr.btn.addEventListener("click", function () {
+      if (hdr.btn) hdr.btn.addEventListener("click", function () {
         gradeRange(startIdx, endIdx);
         updateScore();
       });
@@ -2499,7 +3127,7 @@
 
     // Cierre de sección: botón para corregirla entera y su propio panel de resultados con
     // botones de envío, para que el alumno pueda entregar sección por sección sin tener que
-    // completar las cinco de una sentada.
+    // completar todas de una sentada.
     const secStart = blockStartIdx;
     const secEnd = allInputs.length;
     // Marca cada hueco con el rango de su sección, para que Enter corrija solo esta.
@@ -2589,7 +3217,7 @@
   // ---------- results panels: one per section + one global ----------
   // Cada sección tiene su propio panel (puntuación, fallos y botones de envío) para que el
   // alumno pueda hacer una sección, corregirla y mandársela al profesor sin tener que
-  // terminar las 5 de una sentada. El panel global de abajo hace lo mismo con todo.
+  // terminarlas todas de una sentada. El panel global de abajo hace lo mismo con todo.
   function tierFor(pct) {
     if (pct >= 90) return { headline: "¡Excelente trabajo! 🎉", sub: "Dominas muy bien este tema. ¡Sigue así!" };
     if (pct >= 70) return { headline: "¡Muy bien! 👏", sub: "Vas por muy buen camino. Repasa los pocos fallos y lo tendrás perfecto." };
@@ -2857,7 +3485,7 @@
   });
 
   // Enter corrige SOLO la sección en la que está el alumno, no el documento entero: con 7
-  // secciones y 341 huecos, corregirlo todo de golpe destaparía todas las respuestas de las
+  // secciones y varios cientos de huecos, corregirlo todo de golpe destaparía todas las respuestas de las
   // secciones que aún no ha hecho. rec.secRange lo fija el bucle de render por sección.
   allInputs.forEach(function (rec) {
     rec.el.addEventListener("keydown", function (e) {
