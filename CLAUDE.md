@@ -67,6 +67,16 @@ mantener consistencia con la progresión, el vocabulario y la
 metodología que el alumno ya conoce, en vez de crear contenido genérico
 desde cero.
 
+**Pero mirar antes `docencia-espanol/fuentes/`.** Varios de esos PDF son
+escaneados sin texto extraíble, así que hubo que transcribirlos a partir
+de fotos que el profesor envió por el chat. Todo lo transcrito queda
+archivado en esa carpeta en texto plano, con sus respuestas y con la
+nota de si estas vienen del solucionario del libro o están deducidas. Si
+el capítulo que hace falta ya está ahí, se parte de ese archivo: **no se
+le vuelven a pedir fotos de algo ya transcrito.** Y todo lo que se
+transcriba de nuevo se archiva ahí (ver el paso 8 de la skill
+`ejercicio-interactivo`).
+
 ## Nombre del profesor: sin tilde
 
 El nombre del usuario/profesor es **Angel Luis Acosta González**.
