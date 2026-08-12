@@ -29,17 +29,22 @@ el archivo correspondiente, no editarlo a mano.
 
 | Archivo | Origen | Páginas | Respuestas |
 | --- | --- | --- | --- |
-| `nuevo-espanol-en-marcha/a1/unidades-1-8_presente-gerundio-indefinido.md` | Nuevo Español en Marcha 1 (A1), unidades 1-8 | — | elaboradas para el ejercicio |
+| `nuevo-espanol-en-marcha/a1/unidades-1-8_presente-gerundio-indefinido.md` | Nuevo Español en Marcha 1 (A1), unidades 1-8 | — | sin confirmar (ver nota) |
 | `nuevo-espanol-en-marcha/b1/repaso-b1_secciones-1-8.md` | Nuevo Español en Marcha 3 (B1), repaso final | 140-155 | **deducidas**, sin solucionario |
 | `nuevo-espanol-en-marcha/b2/12b_turismo-cultural.md` | Nuevo Español en Marcha 4 (B2), unidad 12B | 12B | **solucionario oficial** del libro |
-| `nuevo-espanol-en-marcha/b2/12c_perifrasis-verbales.md` | Nuevo Español en Marcha 4 (B2), unidad 12C | 12C | elaboradas para el ejercicio |
+| `nuevo-espanol-en-marcha/b2/12c_perifrasis-verbales.md` | Nuevo Español en Marcha 4 (B2), unidad 12C | 12C | **solucionario oficial** del libro |
 
-**La columna de respuestas importa.** Solo las de 12B vienen del solucionario impreso del
-libro, que el profesor envió aparte. Las de Repaso B1 las dedujo Claude aplicando la
-gramática, porque las fotos no incluían solucionario; el profesor ya corrigió varias sobre
-la marcha, pero conviene tratarlas como revisables y no como autoridad. Donde había margen
-de duda, el artefacto lo explica en una nota que aparece al corregir, y esa nota también
-está aquí.
+**La columna de respuestas importa.** Las de 12B y 12C vienen del solucionario impreso del
+libro, que el profesor envió aparte: son autoridad.
+
+Las de **Repaso B1** las dedujo Claude aplicando la gramática, porque las fotos no incluían
+solucionario. El profesor ya corrigió varias sobre la marcha, pero conviene tratarlas como
+revisables y no como autoridad. Donde había margen de duda, el artefacto lo explica en una
+nota que aparece al corregir, y esa nota también está aquí.
+
+Las de **A1** están **sin confirmar**: ese ejercicio se creó antes de que existiera esta
+carpeta y no consta si sus respuestas salieron de un solucionario o se elaboraron para el
+ejercicio. Antes de darlas por buenas para un material nuevo, preguntar al profesor.
 
 ## Origen de los escaneos
 
