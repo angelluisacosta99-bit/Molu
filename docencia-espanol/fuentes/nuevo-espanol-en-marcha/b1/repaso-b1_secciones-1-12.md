@@ -1593,3 +1593,126 @@ i. Tengo mucho amigos. → **muchos amigos**
 j. Demasiada horas de trabajo no son buenas. → **demasiadas horas**
 k. Los bocadillos son bastantes buenos. → **bastante buenos (aquí «bastante» va delante de un adjetivo, y ahí es invariable)**
 l. Los niños tienen muchas sed. → **mucha sed**
+
+## 12. Gramática y vocabulario
+
+*Impersonal con se, adverbios, pedir favores/permiso y ofrecer ayuda*
+
+### Gramática y vocabulario
+
+#### Impersonal con se
+
+- Cuando al hablar o escribir no conocemos el sujeto o no nos interesa mencionarlo, usamos estructuras impersonales. Una de ellas es la formada por se + verbo activo + sujeto pasivo.
+  - *Se venden pisos.*
+- Otras veces no aparece ningún sujeto, entonces son totalmente impersonales.
+  - *Profesora, hable más alto, aquí no se oye.*
+
+#### Adverbios
+
+- Los adverbios sirven para calificar al verbo, al adjetivo o a otro adverbio.
+  - *Canta maravillosamente.*
+  - *Es muy bueno.*
+  - *Vive bastante cerca.*
+- Según su significado, pueden indicar tiempo, modo, lugar o cantidad.
+
+| Tiempo | Modo | Lugar | Cantidad |
+| --- | --- | --- | --- |
+| ahora | bien | aquí | mucho |
+| ya | mal | ahí | poco |
+| todavía | despacio | allí | bastante |
+| tarde | así | arriba | demasiado |
+| ayer | (Adverbios en -mente) | abajo | muy |
+| mañana |   | delante | ciento |
+| hoy |   | detrás |   |
+|   |   | cerca |   |
+|   |   | lejos |   |
+
+- Se pueden formar numerosos adverbios de modo añadiendo el sufijo -mente a los adjetivos.
+  - *correcto > correctamente*
+  - *fácil > fácilmente*
+  - *lento > lentamente*
+  - *directo > directamente*
+  - *rápido > rápidamente*
+  - *tranquilo > tranquilamente*
+
+#### Pedir favores, permiso y ofrecer ayuda
+
+- Pedir un favor
+  - *Te / Le importa + infinitivo*
+  - *¿Te importa repetir lo que has dicho?*
+- Podría(s) + infinitivo
+  - *¿Podrías prestarme dinero? Olvidé mi cartera en casa.*
+- Pedir permiso
+  - *Te / Le importa + que + subjuntivo*
+  - *¿Le importa que me siente aquí?*
+- Ofrecer ayuda
+  - *Quiere(s) + que + subjuntivo*
+  - *¿Quieres que te ayude a resolver el ejercicio?*
+
+#### Una redacción: conectores discursivos
+
+| Introducción |
+| --- |
+| Mucha gente piensa / dice… |
+| Este tema es polémico porque… |
+| Para empezar, tengo que decir que… |
+
+| Argumentación |
+| --- |
+| En primer lugar…, en segundo lugar…, por último… |
+| Por una parte / Por otra parte… |
+| Sin embargo / No obstante… |
+| Antes…, ahora, en cambio… |
+| Además… |
+| Aunque… |
+| Por ejemplo… |
+
+| Conclusión |
+| --- |
+| En resumen… |
+| Para terminar… |
+| En fin, yo pienso que… |
+
+**Vocabulario · Tradiciones**
+Navidad · Nochebuena · Nochevieja · Año Nuevo · Reyes Magos · turrón · regalos · belén · villancicos · árbol de Navidad · viejito pascuero · cola de mono · pan de pascua · pavo · frutos secos
+
+**Vocabulario · Fiestas**
+San Fermín · Año Nuevo Chino · Carnavales · Halloween · Corpus Christi · Inti Raymi (culto al sol) · Fallas de Valencia
+
+### Ejercicios
+
+#### Ej. 1 — Completa con los verbos del recuadro
+
+*Conjúgalos. Cada anuncio necesita el «se» impersonal delante del verbo — escribe los dos juntos en el hueco (por ejemplo «se vende»).*
+
+> **Verbos:** vender · pasear · bañar · impartir · alquilar · cuidar · compartir
+
+a. **se vende** piso de 120 metros cuadrados. Buen precio: 200 000 €.
+b. **se alquila** habitación en el Colegio Mayor.
+c. **se imparten (también se acepta «se imparte»)** clases particulares de física.
+d. **se cuidan (también se acepta «se cuida»)** niños los fines de semana.
+e. **se comparten (también se acepta «se comparte»)** bicicletas por horas.
+f. **se pasean (también «se pasea»)** y **bañan (también «se bañan», «baña» o «se baña»)** perros.
+
+#### Ej. 2 — Completa las frases con los adverbios correspondientes
+
+*Escribe el adverbio del recuadro que corresponde.*
+
+> **Adverbios:** lentamente · finalmente · estupendamente · tontamente · tranquilamente · detenidamente · rápidamente · maravillosamente
+
+a. La ambulancia llegó **rápidamente** al lugar del accidente.
+b. María observó **detenidamente** el cuadro de Picasso.
+c. El ciclista subió **lentamente** el puerto de montaña, porque estaba muy cansado.
+d. **finalmente**, Juan aprobó el carné de conducir.
+e. El finalista del concurso de música cantó **estupendamente** bien.
+f. Esperaré **tranquilamente** hasta que me llame por teléfono.
+g. Me caí por la escalera **tontamente**.
+h. A mi compañero de piso le encanta comer bien, y lo mejor es que cocina **maravillosamente**.
+
+#### Ej. 3 — Subraya el verbo más adecuado
+
+*Escribe la forma correcta — una de las dos que aparecen entre paréntesis.*
+
+PLÁCIDO DOMINGO
+Yo **nací** (nací / nacía) en Madrid, en la calle Ibiza. En la misma casa **vivíamos** (vivíamos / vivieron) mis padres, cuatro tíos, mi hermana y yo. Nosotros **íbamos** (íbamos / fuimos) todos los días a un colegio que **estaba** (estaba / estuvo) cerca del Retiro. Mi padre **era** (fue / era) actor y yo lo recuerdo interpretando El caballero de Gracia, porque muchas veces nos **llevaban** (llevaban / llevaron) al teatro. Cuando yo **tenía** (tenía / tuve) ocho años, nos **fuimos** (fuimos / íbamos) todos a México. Allí los niños normalmente **llevaban** (llevaban / llevaron) pantalón corto y por eso un día **tuve** (tenía / tuve) una pelea con unos chicos mexicanos.
+**Empecé** (Empecé / Empezaba) a tocar el piano desde muy pequeño, el primer año que **llegué** (llegué / llegaba) a México. **Canté** (Canté / Cantaba) por primera vez el 14 de abril de 1958 cuando yo **tenía** (tenía / tuve) 15 años. Antes, mi hermana y yo **habíamos actuado** (habíamos actuado / actuaba) en pequeños papeles porque el teatro **era** (era / fue) de mis padres. Mis padres **eran** (eran / fueron) encantadores, siempre me ayudaron en mi carrera.
