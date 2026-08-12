@@ -1,7 +1,7 @@
 ---
 name: ejercicio-interactivo
 description: "Use when Angel asks to build a new interactive Spanish grammar/vocabulary exercise page with instant grading — a self-contained HTML artifact where a student fills in blanks, gets corrected instantly, and can send their results to the teacher via WhatsApp/Telegram/Teams/Correo. Also use when asked to add a new chapter/unit to this format, or to fix/extend an existing one (e.g. the A1 \"Presente, gerundio, indefinido\" or B2 12C \"¿Sigues pintando?\" exercises already in docencia-espanol/materiales/). Triggers: \"ejercicio interactivo\", \"como el de A1/12C\", \"corrección instantánea\", \"página interactiva para practicar\", \"haz lo mismo con otro capítulo\"."
-version: 1.6.0
+version: 1.7.0
 user-invocable: true
 license: Apache 2.0
 ---
@@ -103,6 +103,14 @@ PR #22 invertía el orden que PR #20 daba por bueno.
    revisión antes de fusionar, ni para cambios que parezcan triviales, y nunca la lances
    (ni fusiones) solo por haber abierto el PR.
 
+   **Nota sobre el historial de la rama**: los PRs anteriores en esta rama se fusionaron con
+   `squash`, así que los commits viejos de la rama dejan de ser ancestros literales de
+   `main` tras cada merge. Antes de abrir un PR nuevo, si `git merge-base --is-ancestor
+   <último-commit> origin/main` falla, resetea la rama: `git fetch origin main && git
+   checkout -B <rama> origin/main`, y vuelve a aplicar (`git stash`/cherry-pick) solo los
+   commits todavía no fusionados. Nunca fuerces un push sin antes confirmar qué commits se
+   perderían.
+
 ### Checklist antes de dar por publicado un capítulo
 
 Repásala **cada vez**, aunque el capítulo haya costado mucho y parezca acabado. Con Repaso
@@ -120,14 +128,6 @@ El fallo no fue no saber los pasos, fue no volver a mirarlos al final.
 - [ ] Si el material no viene claramente de un manual concreto, **dilo al profesor** en vez
       de colocarlo por deducción: `RepasoB1.pdf` era un PDF suelto y se archivó bajo "Nuevo
       Español en Marcha 3" por parecido de formato, sin confirmarlo.
-
-   **Nota sobre el historial de la rama**: los PRs anteriores en esta rama se fusionaron con
-   `squash`, así que los commits viejos de la rama dejan de ser ancestros literales de
-   `main` tras cada merge. Antes de abrir un PR nuevo, si `git merge-base --is-ancestor
-   <último-commit> origin/main` falla, resetea la rama: `git fetch origin main && git
-   checkout -B <rama> origin/main`, y vuelve a aplicar (`git stash`/cherry-pick) solo los
-   commits todavía no fusionados. Nunca fuerces un push sin antes confirmar qué commits se
-   perderían.
 
 ## Lecciones aprendidas (no las repitas)
 
