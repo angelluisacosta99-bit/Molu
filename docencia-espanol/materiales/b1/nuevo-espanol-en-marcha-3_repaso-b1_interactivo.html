@@ -93,7 +93,6 @@
 
   /* ---------- top bar ---------- */
   .topbar {
-    position: sticky; top: 0; z-index: 20;
     background: color-mix(in srgb, var(--paper) 88%, transparent);
     backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--border);
@@ -113,8 +112,13 @@
      patrón que .table-wrap para las tablas anchas. */
   .nav-dots {
     display: flex; gap: 0.4rem;
-    overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: thin;
+    overflow-x: auto; -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin; scrollbar-color: #8EC1F0 transparent;
   }
+  /* Firefox usa scrollbar-color de arriba; Chrome/Safari/Edge necesitan esto aparte. */
+  .nav-dots::-webkit-scrollbar { height: 6px; }
+  .nav-dots::-webkit-scrollbar-track { background: transparent; }
+  .nav-dots::-webkit-scrollbar-thumb { background: #8EC1F0; border-radius: 999px; }
   .nav-dots a {
     text-decoration: none;
     font-size: 0.7rem;
