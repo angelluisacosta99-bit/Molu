@@ -1689,10 +1689,10 @@ San Fermín · Año Nuevo Chino · Carnavales · Halloween · Corpus Christi · 
 
 a. **se vende** piso de 120 metros cuadrados. Buen precio: 200 000 €.
 b. **se alquila** habitación en el Colegio Mayor.
-c. **se imparten (también se acepta «se imparte»)** clases particulares de física.
-d. **se cuidan (también se acepta «se cuida»)** niños los fines de semana.
-e. **se comparten (también se acepta «se comparte»)** bicicletas por horas.
-f. **se pasean (también «se pasea»)** y **bañan (también «se bañan», «baña» o «se baña»)** perros.
+c. **se imparten** clases particulares de física.
+d. **se cuidan** niños los fines de semana.
+e. **se comparten** bicicletas por horas.
+f. **se pasean** y **bañan** perros.
 
 #### Ej. 2 — Completa las frases con los adverbios correspondientes
 
