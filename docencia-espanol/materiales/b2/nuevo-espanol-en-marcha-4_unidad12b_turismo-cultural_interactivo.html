@@ -99,7 +99,12 @@
   .brand { display: flex; align-items: baseline; gap: 0.6rem; }
   .brand-title { font-size: 0.95rem; font-weight: 700; letter-spacing: 0.01em; }
   .brand-sub { font-size: 0.78rem; color: var(--pencil); }
-  .nav-dots { display: flex; gap: 0.4rem; }
+  /* overflow-x en vez de envolver: la fila de píldoras no cabe entera en ninguna pantalla
+     razonable. Se desliza en horizontal en su lugar — mismo patrón que .table-wrap. */
+  .nav-dots {
+    display: flex; gap: 0.4rem;
+    overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: thin;
+  }
   .nav-dots a {
     text-decoration: none;
     font-size: 0.7rem;
@@ -108,6 +113,7 @@
     border: 1px solid var(--border);
     color: var(--ink-soft);
     white-space: nowrap;
+    flex-shrink: 0;
   }
   .nav-dots a:hover { border-color: var(--gold); color: var(--gold); }
   .score-wrap { display: flex; align-items: center; gap: 0.6rem; }
@@ -245,7 +251,8 @@
   }
 
   @media (max-width: 560px) {
-    .nav-dots { display: none; }
+    /* Fila propia debajo de marca+puntuación, en vez de compartir línea con ellas. */
+    .nav-dots { flex-basis: 100%; order: 3; }
     input.blank.wide { width: 11em; }
     input.blank.full { max-width: 100%; }
   }
