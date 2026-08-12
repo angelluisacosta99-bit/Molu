@@ -63,11 +63,15 @@ PR #22 invertía el orden que PR #20 daba por bueno.
    profesor que lo pruebe en un dispositivo real antes de darlo por cerrado.
 
 5. **Publica con el tool `Artifact`.** Elige un favicon distinto por asignatura/nivel para
-   reconocerlo rápido en la lista (✅ para A1, 🎨 para 12C). Al actualizar un artefacto ya
-   publicado, pasa siempre el mismo `url` para no crear uno nuevo. Título del artefacto:
-   sigue la convención `Nuevo Español en Marcha · <Nivel> · <Capítulo> — <Tema>` (ver los dos
-   ejemplos ya publicados) para que se lea claro tanto en la lista plana de Artefactos como
-   en el índice del paso siguiente.
+   reconocerlo rápido en la lista (✅ para A1, 🎨 para 12C, 🏛️ para 12B, 📖 para Repaso B1).
+   Al actualizar un artefacto ya publicado, pasa siempre el mismo `url` para no crear uno
+   nuevo. Título del artefacto: sigue la convención
+   `Nuevo Español en Marcha · <Nivel> · <Capítulo> — <Tema>` (ver los ejemplos ya
+   publicados) para que se lea claro tanto en la lista plana de Artefactos como en el
+   índice del paso siguiente.
+
+   **Publicar NO es terminar.** Los pasos 6 y 7 forman parte de publicar un capítulo, no
+   son opcionales ni "para luego" — ver la checklist del final de esta sección.
 
 6. **Añade el capítulo al índice.** `docencia-espanol/materiales/indice-clases-de-espanol.html`
    es el artefacto "Clases de Español" — la página de entrada que organiza todo por manual →
@@ -98,6 +102,24 @@ PR #22 invertía el orden que PR #20 daba por bueno.
    estado actual del PR → fusionar solo si no hay hallazgos bloqueantes. Nunca te saltes la
    revisión antes de fusionar, ni para cambios que parezcan triviales, y nunca la lances
    (ni fusiones) solo por haber abierto el PR.
+
+### Checklist antes de dar por publicado un capítulo
+
+Repásala **cada vez**, aunque el capítulo haya costado mucho y parezca acabado. Con Repaso
+B1 se publicó el artefacto, se verificó, se abrió el PR y se fusionó —y aun así los pasos 6
+y 7 se quedaron sin hacer: la tarjeta de nivel B1 del índice seguía diciendo "todavía sin
+capítulos publicados" y el código no estaba en la lista del profesor. Lo detectó él, no yo.
+El fallo no fue no saber los pasos, fue no volver a mirarlos al final.
+
+- [ ] Artefacto publicado, y **con el mismo `url`** si ya existía.
+- [ ] Fila añadida en `indice-clases-de-espanol.html`, en la tarjeta del nivel correcto, y
+      el índice republicado (paso 6).
+- [ ] Fila añadida en `codigos-acceso.html` con su código, y republicado (paso 7).
+- [ ] No queda ningún marcador `{{...}}` ni la cabecera de la plantilla sin adaptar (esa
+      cabecera se publica en el código fuente que ve el alumno).
+- [ ] Si el material no viene claramente de un manual concreto, **dilo al profesor** en vez
+      de colocarlo por deducción: `RepasoB1.pdf` era un PDF suelto y se archivó bajo "Nuevo
+      Español en Marcha 3" por parecido de formato, sin confirmarlo.
 
    **Nota sobre el historial de la rama**: los PRs anteriores en esta rama se fusionaron con
    `squash`, así que los commits viejos de la rama dejan de ser ancestros literales de
@@ -262,6 +284,26 @@ parezca más "controlable" desde JS — ya se demostró que rompe el caso más b
 
 - `reference/template.html` — plantilla completa, ya con todas las correcciones anteriores
   aplicadas. Punto de partida obligatorio para cualquier ejercicio nuevo.
+- `docencia-espanol/materiales/repaso-b1.html` — **documento largo de repaso** (7 secciones,
+  33 ejercicios, 341 huecos), útil como referencia cuando el material no sea un capítulo
+  suelto sino un cuadernillo entero. Añade cuatro cosas sobre la plantilla que conviene
+  copiar de ahí en vez de reinventar:
+    - `block.introHTML` — teoría no interactiva antes de los ejercicios de cada sección.
+    - `ex.refHTML` — recuadro de referencia dentro de un ejercicio (conectores, banco de
+      opciones, sopa de letras). **Si el original enseña al alumno unas opciones, el
+      artefacto también tiene que enseñárselas**: un ejercicio de relacionar sin las
+      opciones a la vista es imposible de hacer, y así se publicó la primera versión.
+    - `type: "conjTables"` — varios cuadros de conjugación en un mismo ejercicio, con un
+      único botón "Corregir". Si el spec de una celda es una **cadena** en vez de un array,
+      se pinta fija (ya resuelta en el libro) y no cuenta como hueco.
+    - **Panel de resultados por sección** (`createResultsPanel()`): cada sección tiene su
+      puntuación, sus fallos y sus botones de envío, además del panel global. En documentos
+      largos es lo que permite al alumno entregar por partes en vez de abandonar a medias.
+      El resumen enviado nombra la sección, y el nombre del alumno se comparte entre
+      paneles. Ojo con dos cosas al replicarlo: los paneles se generan por **clases dentro
+      de cada panel**, nunca por `id` global (habría duplicados), y cualquier atajo que
+      corrija "todo" (la tecla Enter, sin ir más lejos) debe acotarse a la sección, o
+      destapará las respuestas de las secciones que el alumno aún no ha hecho.
 - `docencia-espanol/materiales/indice-clases-de-espanol.html` — el artefacto "Clases de
   Español", índice manual → nivel → capítulo de toda la biblioteca (ver paso 6 del flujo de
   trabajo). Actualízalo cada vez que publiques un capítulo nuevo. Este es público (o puede
