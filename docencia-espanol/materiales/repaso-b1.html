@@ -1,7 +1,15 @@
 <!--
-  TEMPLATE — plantilla de ejercicio interactivo con corrección instantánea.
-  Ver .claude/skills/ejercicio-interactivo/SKILL.md para el proceso completo.
-  Busca todos los marcadores {{...}} y sustitúyelos; no dejes ninguno sin reemplazar.
+  Repaso B1 — transcrito de las fotos de RepasoB1.pdf (el PDF original es un escaneado sin
+  texto extraíble). Construido sobre el motor de .claude/skills/ejercicio-interactivo/
+  reference/template.html, con tres añadidos propios de este documento:
+    · block.introHTML  — teoría no interactiva antes de los ejercicios de cada sección.
+    · ex.refHTML       — recuadro de referencia (conectores, banco de opciones…) dentro de
+                         un ejercicio, para que el alumno vea todas las piezas.
+    · type "conjTables" — varios cuadros de conjugación en un mismo ejercicio; si el spec de
+                         una celda es una cadena en vez de un array, se pinta fija (ya
+                         resuelta en el libro) y no cuenta como hueco.
+  Cada sección tiene su propio panel de resultados y sus botones de envío, además del panel
+  global del final, para que el alumno pueda entregar sección por sección.
 -->
 <title>Repaso B1 — Nuevo Español en Marcha</title>
 <style>
@@ -148,8 +156,13 @@
     cursor: pointer;
   }
   .correct-all-btn:hover { background: var(--gold); color: var(--ink); }
-  :root[data-theme="dark"] .correct-all-btn:hover,
-  :root:not([data-theme="light"]) .correct-all-btn:hover { color: #10142699; }
+  /* En oscuro, --ink es claro y quedaría texto claro sobre el dorado: se fuerza tinta
+     oscura. El :not([data-theme="light"]) va DENTRO del media query a propósito, para que
+     no se aplique también en modo claro. */
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .correct-all-btn:hover { color: #101426; }
+  }
+  :root[data-theme="dark"] .correct-all-btn:hover { color: #101426; }
   .progress-hint { margin-top: 0.7rem; font-size: 0.82rem; color: var(--pencil); text-align: center; }
   .progress-hint.complete { color: var(--good); font-weight: 600; }
 
@@ -275,8 +288,10 @@
   .section-correct-btn:hover, .section-correct-btn:focus-visible {
     background: var(--gold); border-color: var(--gold); color: var(--ink); outline: none;
   }
-  :root[data-theme="dark"] .section-correct-btn:hover,
-  :root:not([data-theme="light"]) .section-correct-btn:hover { color: #101426; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .section-correct-btn:hover { color: #101426; }
+  }
+  :root[data-theme="dark"] .section-correct-btn:hover { color: #101426; }
   .section-actions .progress-hint { margin-top: 0.6rem; }
   .block .results-panel { margin-top: 1.1rem; }
 
@@ -2299,6 +2314,8 @@
     // completar las cinco de una sentada.
     const secStart = blockStartIdx;
     const secEnd = allInputs.length;
+    // Marca cada hueco con el rango de su sección, para que Enter corrija solo esta.
+    for (let i = secStart; i < secEnd; i++) allInputs[i].secRange = { start: secStart, end: secEnd };
     if (secEnd > secStart) {
       const actions = document.createElement("div");
       actions.className = "section-actions";
@@ -2649,12 +2666,16 @@
     updateScore();
   });
 
+  // Enter corrige SOLO la sección en la que está el alumno, no el documento entero: con 7
+  // secciones y 341 huecos, corregirlo todo de golpe destaparía todas las respuestas de las
+  // secciones que aún no ha hecho. rec.secRange lo fija el bucle de render por sección.
   allInputs.forEach(function (rec) {
     rec.el.addEventListener("keydown", function (e) {
-      if (e.key === "Enter") {
-        gradeRange(0, allInputs.length);
-        updateScore();
-      }
+      if (e.key !== "Enter") return;
+      const r = rec.secRange;
+      if (r) gradeRange(r.start, r.end);
+      else gradeRange(0, allInputs.length);
+      updateScore();
     });
   });
 
