@@ -190,6 +190,24 @@
   .exercise-instr { color: var(--pencil); font-size: 0.85rem; font-style: italic; margin-bottom: 0.85rem; }
   .exercise-model { color: var(--pencil); font-size: 0.85rem; font-style: italic; margin-bottom: 0.7rem; }
 
+  /* bloque de referencia (conectores, banco de opciones…) mostrado dentro de un ejercicio,
+     antes de los huecos — para que el alumno vea todas las piezas con las que debe formar
+     su respuesta, no solo el hueco vacío */
+  .exercise-ref {
+    background: var(--gold-soft); border-radius: 10px; padding: 0.9rem 1.1rem;
+    margin-bottom: 1rem; font-size: 0.86rem; color: var(--ink);
+  }
+  .exercise-ref .ref-label {
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--ink-soft); font-family: -apple-system, sans-serif; display: block; margin-bottom: 0.3rem;
+  }
+  .exercise-ref .ref-connectors { font-weight: 700; font-family: ui-monospace, monospace; margin-bottom: 0.7rem; }
+  .exercise-ref .ref-connectors span::after { content: " · "; color: var(--ink-soft); font-weight: 400; }
+  .exercise-ref .ref-connectors span:last-child::after { content: ""; }
+  .exercise-ref .ref-options { display: flex; flex-wrap: wrap; gap: 0.4rem 0.9rem; }
+  .exercise-ref .ref-opt { white-space: nowrap; }
+  .exercise-ref .ref-opt b { color: var(--gold); font-family: ui-monospace, monospace; margin-right: 0.15rem; }
+
   /* nota mostrada solo después de corregir (ver attachNote()/gradeRange() en el script) */
   .grading-note {
     display: none; font-size: 0.78rem; color: var(--ink-soft); font-style: italic;
@@ -645,6 +663,19 @@
         {
           num: 1, title: "Relaciona y forma frases",
           instr: "Completa cada frase con desde, desde hace o desde que + la opción que corresponda. Hay más de una combinación posible en algunas frases — todas las razonables se aceptan.",
+          refHTML: '<span class="ref-label">Conectores</span>' +
+            '<div class="ref-connectors"><span>desde</span><span>desde hace</span><span>desde que</span></div>' +
+            '<span class="ref-label">Opciones</span>' +
+            '<div class="ref-options">' +
+            '<span class="ref-opt"><b>a</b>toma las pastillas nuevas</span>' +
+            '<span class="ref-opt"><b>b</b>2007</span>' +
+            '<span class="ref-opt"><b>c</b>le despidieron del trabajo</span>' +
+            '<span class="ref-opt"><b>d</b>tenía 18 años</span>' +
+            '<span class="ref-opt"><b>e</b>tres meses</span>' +
+            '<span class="ref-opt"><b>f</b>era niña</span>' +
+            '<span class="ref-opt"><b>g</b>mucho tiempo</span>' +
+            '<span class="ref-opt"><b>h</b>abril</span>' +
+            "</div>",
           type: "items",
           items: [
             { t: "Pedro se encuentra mejor {0}.", a: [["desde que toma las pastillas nuevas", "desde que empezó a tomar las pastillas nuevas"]], wide: true },
@@ -796,6 +827,12 @@
         instr.className = "exercise-instr";
         instr.textContent = ex.instr;
         card.appendChild(instr);
+      }
+      if (ex.refHTML) {
+        const ref = document.createElement("div");
+        ref.className = "exercise-ref";
+        ref.innerHTML = ex.refHTML;
+        card.appendChild(ref);
       }
       if (ex.model) {
         const model = document.createElement("div");
