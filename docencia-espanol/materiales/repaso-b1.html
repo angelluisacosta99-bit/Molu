@@ -248,6 +248,22 @@
   .rule-box p:last-child { margin-bottom: 0; }
   .rule-box b { color: var(--paper); }
   .rule-box .ex-words { font-style: italic; color: color-mix(in srgb, var(--paper) 78%, transparent); }
+  /* cierre de sección: corregir la sección entera y enviarla al profesor */
+  .section-actions { text-align: center; margin: 1.4rem 0 0.2rem; }
+  .section-correct-btn {
+    background: transparent; color: var(--ink);
+    border: 1.5px solid var(--ink); border-radius: 8px;
+    padding: 0.55rem 1.15rem; font-size: 0.85rem; font-weight: 600;
+    cursor: pointer; font-family: inherit;
+  }
+  .section-correct-btn:hover, .section-correct-btn:focus-visible {
+    background: var(--gold); border-color: var(--gold); color: var(--ink); outline: none;
+  }
+  :root[data-theme="dark"] .section-correct-btn:hover,
+  :root:not([data-theme="light"]) .section-correct-btn:hover { color: #101426; }
+  .section-actions .progress-hint { margin-top: 0.6rem; }
+  .block .results-panel { margin-top: 1.1rem; }
+
   /* sopa de letras */
   /* La rejilla NO lleva espacios literales entre letras: la separación es puramente
      letter-spacing, para que las 10 columnas quepan en la pantalla de un móvil. */
@@ -503,30 +519,14 @@
 
 <main id="main" class="gated-content"></main>
 
+<!-- El panel de resultados global y el de cada sección los construye createResultsPanel()
+     en el script; aquí solo queda el sitio donde se inserta el global. -->
 <div class="correct-all-wrap gated-content">
   <button class="correct-all-btn" id="correctAllBtn">Corregir todos los ejercicios</button>
   <div class="progress-hint" id="progressHint"></div>
 </div>
 
-<div id="resultsPanel" class="results-panel gated-content" hidden>
-  <div class="results-headline" id="resHeadline"></div>
-  <div class="results-sub" id="resSub"></div>
-  <div class="results-score-row">
-    <span class="results-score-num" id="resScoreNum" translate="no"></span>
-    <span class="results-score-den" id="resScoreDen" translate="no"></span>
-  </div>
-  <input type="text" class="results-name" id="resName" placeholder="Tu nombre (para que tu profesor sepa quién eres)" />
-  <div class="results-errors" id="resErrors"></div>
-  <div class="channel-label">Enviar este resumen a tu profesor</div>
-  <div class="channel-row">
-    <a class="channel-btn" id="chWhatsapp" target="_blank" rel="noopener">WhatsApp</a>
-    <a class="channel-btn" id="chTelegram" target="_blank" rel="noopener">Telegram</a>
-    <a class="channel-btn" id="chEmail" target="_blank" rel="noopener">Correo</a>
-    <a class="channel-btn" id="chTeams" target="_blank" rel="noopener">Teams</a>
-    <button class="channel-btn" id="chCopy" type="button">Copiar resumen</button>
-    <span class="channel-copied" id="chCopiedMsg">¡Copiado!</span>
-  </div>
-</div>
+<div id="globalResultsSlot" class="gated-content"></div>
 
 <footer class="gated-content">
   <span>Repaso B1 · en construcción</span>
@@ -1583,6 +1583,21 @@
     }
   ];
 
+  const TITLE_LABEL = "Repaso B1"; // short label used in email subject / summary header
+  // These are Angel's real, reusable contact details — copy verbatim into every new
+  // exercise unless he says they changed. IMPORTANT: telegram MUST be his @username
+  // (no @, no phone number) — t.me/+<phone> links silently ignore ?text= and never
+  // pre-fill; only t.me/<username>?text=... does. See SKILL.md "Canal por canal".
+  const TEACHER = {
+    whatsapp: "79856456905",
+    telegram: "angel9904",
+    email: "angelluisacosta99@gmail.com",
+    teamsEmail: "angelluisacosta99@gmail.com"
+  };
+
+  const panels = [];      // cada uno: { update(), syncName() }
+  let studentName = "";   // compartido: se escribe una vez y vale para todos los paneles
+
   // ---------- render ----------
   const main = document.getElementById("main");
   const navDots = document.getElementById("navDots");
@@ -1660,6 +1675,8 @@
     navA.href = "#" + block.id;
     navA.textContent = "Sección " + block.num;
     navDots.appendChild(navA);
+
+    const blockStartIdx = allInputs.length;
 
     block.exercises.forEach(function (ex) {
       const card = document.createElement("div");
@@ -1804,6 +1821,41 @@
       sec.appendChild(card);
     });
 
+    // Cierre de sección: botón para corregirla entera y su propio panel de resultados con
+    // botones de envío, para que el alumno pueda entregar sección por sección sin tener que
+    // completar las cinco de una sentada.
+    const secStart = blockStartIdx;
+    const secEnd = allInputs.length;
+    if (secEnd > secStart) {
+      const actions = document.createElement("div");
+      actions.className = "section-actions";
+      const secBtn = document.createElement("button");
+      secBtn.className = "section-correct-btn";
+      secBtn.type = "button";
+      secBtn.textContent = "Corregir la sección " + block.num;
+      const secHint = document.createElement("div");
+      secHint.className = "progress-hint";
+      actions.appendChild(secBtn);
+      actions.appendChild(secHint);
+      sec.appendChild(actions);
+
+      const secPanel = createResultsPanel({
+        scopeTitle: TITLE_LABEL + " · Sección " + block.num + " — " + block.sub,
+        recs: allInputs.slice(secStart, secEnd),
+        sendLabel: "Enviar los resultados de la sección " + block.num + " a tu profesor",
+        hintEl: secHint,
+        hintPartial: "corrige el resto de esta sección (o pulsa el botón de arriba) para ver tu resumen y enviarlo.",
+        hintAllDone: "¡Sección " + block.num + " corregida! Tu resumen está justo debajo 👇",
+        scrollIntoView: false
+      });
+      sec.appendChild(secPanel.el);
+
+      secBtn.addEventListener("click", function () {
+        gradeRange(secStart, secEnd);
+        updateScore();
+      });
+    }
+
     main.appendChild(sec);
   });
 
@@ -1854,39 +1906,10 @@
     }
   }
 
-  function updateScore() {
-    let checked = 0, correct = 0;
-    allInputs.forEach(function (rec) {
-      if (rec.el.dataset.checked === "1") {
-        checked++;
-        if (rec.el.classList.contains("correct")) correct++;
-      }
-    });
-    document.getElementById("scoreNum").textContent = correct;
-    document.getElementById("scoreTotal").textContent = allInputs.length;
-    const pct = allInputs.length ? (correct / allInputs.length) * 100 : 0;
-    document.getElementById("barFill").style.width = pct + "%";
-    updateResultsPanel(checked, correct);
-  }
-
-  document.getElementById("correctAllBtn").addEventListener("click", function () {
-    gradeRange(0, allInputs.length);
-    updateScore();
-  });
-
-  // ---------- results panel: motivational message + send to teacher ----------
-  const TITLE_LABEL = "Repaso B1"; // short label used in email subject / summary header
-  // These are Angel's real, reusable contact details — copy verbatim into every new
-  // exercise unless he says they changed. IMPORTANT: telegram MUST be his @username
-  // (no @, no phone number) — t.me/+<phone> links silently ignore ?text= and never
-  // pre-fill; only t.me/<username>?text=... does. See SKILL.md "Canal por canal".
-  const TEACHER = {
-    whatsapp: "79856456905",
-    telegram: "angel9904",
-    email: "angelluisacosta99@gmail.com",
-    teamsEmail: "angelluisacosta99@gmail.com"
-  };
-
+  // ---------- results panels: one per section + one global ----------
+  // Cada sección tiene su propio panel (puntuación, fallos y botones de envío) para que el
+  // alumno pueda hacer una sección, corregirla y mandársela al profesor sin tener que
+  // terminar las 5 de una sentada. El panel global de abajo hace lo mismo con todo.
   function tierFor(pct) {
     if (pct >= 90) return { headline: "¡Excelente trabajo! 🎉", sub: "Dominas muy bien este tema. ¡Sigue así!" };
     if (pct >= 70) return { headline: "¡Muy bien! 👏", sub: "Vas por muy buen camino. Repasa los pocos fallos y lo tendrás perfecto." };
@@ -1894,13 +1917,13 @@
     return { headline: "¡Ánimo, esto es parte de aprender! 🌱", sub: "Vuelve a leer los ejemplos y repite el ejercicio — cada intento suma." };
   }
 
-  function buildSummary(name, correct, total, pct) {
+  function buildSummary(scopeTitle, recs, correct, pct) {
     const lines = [];
-    lines.push("📋 Resultados — " + TITLE_LABEL);
-    lines.push("Alumno: " + (name || "(sin nombre)"));
-    lines.push("Puntuación: " + correct + "/" + total + " (" + pct + "%)");
+    lines.push("📋 Resultados — " + scopeTitle);
+    lines.push("Alumno: " + (studentName || "(sin nombre)"));
+    lines.push("Puntuación: " + correct + "/" + recs.length + " (" + pct + "%)");
     lines.push("");
-    const wrong = allInputs.filter(function (rec) {
+    const wrong = recs.filter(function (rec) {
       return rec.el.dataset.checked === "1" && !rec.el.classList.contains("correct");
     });
     if (wrong.length === 0) {
@@ -1915,78 +1938,82 @@
     return lines.join("\n");
   }
 
-  function updateResultsPanel(checked, correct) {
-    const panel = document.getElementById("resultsPanel");
-    const hint = document.getElementById("progressHint");
-    const total = allInputs.length;
-    if (checked === 0) {
-      panel.hidden = true;
-      if (hint) { hint.textContent = ""; hint.classList.remove("complete"); }
-      return;
+  // Long reports risk pushing the whole URL past the ~2000-char limit some browsers/
+  // servers truncate at. Keeps as many full lines as fit within an encoded-length budget,
+  // then appends a note — measuring the ENCODED length, since encodeURIComponent can
+  // roughly triple raw length (newlines, accents, emoji all expand).
+  function truncateForUrl(text, maxEncodedLen) {
+    const note = "\n\n(Informe truncado por ser muy largo para el enlace — usa \"Copiar resumen\" para ver todos los fallos.)";
+    if (encodeURIComponent(text).length <= maxEncodedLen) return text;
+    const lines = text.split("\n");
+    let out = "";
+    for (let i = 0; i < lines.length; i++) {
+      const candidate = out + (out ? "\n" : "") + lines[i];
+      if (encodeURIComponent(candidate + note).length > maxEncodedLen) break;
+      out = candidate;
     }
-    if (checked < total) {
-      if (hint) {
-        hint.textContent = "Corregidos " + checked + "/" + total + " — corrige el resto de ejercicios (o pulsa \"Corregir todos\") para ver tu resumen final.";
-        hint.classList.remove("complete");
-      }
-      return; // wait until everything has been corrected at least once
-    }
-    if (hint) {
-      hint.textContent = "¡Todo corregido! Tu resumen está más abajo 👇";
-      hint.classList.add("complete");
-    }
-    const wasHidden = panel.hidden;
-    panel.hidden = false;
-    if (wasHidden) setTimeout(function () { panel.scrollIntoView({ behavior: "smooth", block: "start" }); }, 50);
-
-    const pct = Math.round((correct / total) * 100);
-    const tier = tierFor(pct);
-    document.getElementById("resHeadline").textContent = tier.headline;
-    document.getElementById("resSub").textContent = tier.sub;
-    document.getElementById("resScoreNum").textContent = correct;
-    document.getElementById("resScoreDen").textContent = "/ " + total + " (" + pct + "%)";
-
-    const wrong = allInputs.filter(function (rec) {
-      return rec.el.dataset.checked === "1" && !rec.el.classList.contains("correct");
-    });
-    const errBox = document.getElementById("resErrors");
-    if (wrong.length === 0) {
-      errBox.innerHTML = '<div class="results-error-item">¡Ni un solo fallo! 🎉</div>';
-    } else {
-      errBox.innerHTML = '<div class="results-errors-title">Fallos (' + wrong.length + ')</div>' +
-        wrong.map(function (rec) {
-          const given = escapeHtml(rec.el.value.trim() || "(en blanco)");
-          return '<div class="results-error-item"><b>' + rec.label + ':</b> <s>' + given + "</s> → " + correctTextFor(rec.spec) + "</div>";
-        }).join("");
-    }
-
-    wireChannels();
+    return out + note;
   }
 
-  function wireChannels() {
-    const nameEl = document.getElementById("resName");
+  function copyText(text, onDone) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { onDone(true); }, function () { fallbackCopy(text, onDone); });
+    } else {
+      fallbackCopy(text, onDone);
+    }
+  }
+  function fallbackCopy(text, onDone) {
+    try {
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.top = "-9999px";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.focus();
+      ta.select();
+      const ok = document.execCommand("copy");
+      document.body.removeChild(ta);
+      onDone(ok);
+    } catch (e) { onDone(false); }
+  }
+
+  // opts: { scopeTitle, recs, sendLabel, hintEl, hintAllDone, hintPartial }
+  function createResultsPanel(opts) {
+    const recs = opts.recs;
+    const panel = document.createElement("div");
+    panel.className = "results-panel gated-content";
+    panel.hidden = true;
+    panel.innerHTML =
+      '<div class="results-headline"></div>' +
+      '<div class="results-sub"></div>' +
+      '<div class="results-score-row">' +
+        '<span class="results-score-num" translate="no"></span>' +
+        '<span class="results-score-den" translate="no"></span>' +
+      '</div>' +
+      '<input type="text" class="results-name" placeholder="Tu nombre (para que tu profesor sepa quién eres)" />' +
+      '<div class="results-errors"></div>' +
+      '<div class="channel-label">' + opts.sendLabel + '</div>' +
+      '<div class="channel-row">' +
+        '<a class="channel-btn ch-whatsapp" target="_blank" rel="noopener">WhatsApp</a>' +
+        '<a class="channel-btn ch-telegram" target="_blank" rel="noopener">Telegram</a>' +
+        '<a class="channel-btn ch-email" target="_blank" rel="noopener">Correo</a>' +
+        '<a class="channel-btn ch-teams" target="_blank" rel="noopener">Teams</a>' +
+        '<button class="channel-btn ch-copy" type="button">Copiar resumen</button>' +
+        '<span class="channel-copied"></span>' +
+      '</div>';
+
+    const q = function (sel) { return panel.querySelector(sel); };
+    const nameEl = q(".results-name");
+
     function currentSummary() {
-      const correct = parseInt(document.getElementById("resScoreNum").textContent, 10);
-      const total = allInputs.length;
-      const pct = Math.round((correct / total) * 100);
-      return buildSummary(nameEl.value.trim(), correct, total, pct);
+      const correct = recs.filter(function (r) {
+        return r.el.dataset.checked === "1" && r.el.classList.contains("correct");
+      }).length;
+      const pct = recs.length ? Math.round((correct / recs.length) * 100) : 0;
+      return buildSummary(opts.scopeTitle, recs, correct, pct);
     }
-    // Long reports risk pushing the whole URL past the ~2000-char limit some browsers/
-    // servers truncate at. Keeps as many full lines as fit within an encoded-length budget,
-    // then appends a note — measuring the ENCODED length, since encodeURIComponent can
-    // roughly triple raw length (newlines, accents, emoji all expand).
-    function truncateForUrl(text, maxEncodedLen) {
-      const note = "\n\n(Informe truncado por ser muy largo para el enlace — usa \"Copiar resumen\" para ver todos los fallos.)";
-      if (encodeURIComponent(text).length <= maxEncodedLen) return text;
-      const lines = text.split("\n");
-      let out = "";
-      for (let i = 0; i < lines.length; i++) {
-        const candidate = out + (out ? "\n" : "") + lines[i];
-        if (encodeURIComponent(candidate + note).length > maxEncodedLen) break;
-        out = candidate;
-      }
-      return out + note;
-    }
+
     function refreshLinks() {
       const text = currentSummary();
       const encoded = encodeURIComponent(text);
@@ -1994,59 +2021,39 @@
       // wa.me tolerates the same length fine, so only Telegram needs the same length budget
       // already used for the Gmail link below.
       const shortText = truncateForUrl(text, 1200);
-      document.getElementById("chWhatsapp").href = "https://wa.me/" + TEACHER.whatsapp + "?text=" + encoded;
+      q(".ch-whatsapp").href = "https://wa.me/" + TEACHER.whatsapp + "?text=" + encoded;
       // t.me links only pre-fill the message box when addressed to a @username — the
       // phone-number form (t.me/+<number>) has no equivalent and ignores ?text= entirely.
-      document.getElementById("chTelegram").href = "https://t.me/" + TEACHER.telegram + "?text=" + encodeURIComponent(shortText);
+      q(".ch-telegram").href = "https://t.me/" + TEACHER.telegram + "?text=" + encodeURIComponent(shortText);
       // encodeURIComponent on the recipient, matching every other channel's params (was raw
       // before) — @ is technically legal unencoded in a query string, but the Teams desktop
       // app parses this deep link with its own internal handler, not a browser, and may be
       // stricter than what wa.me/t.me/mail.google.com's own parsers tolerate.
-      document.getElementById("chTeams").href = "https://teams.microsoft.com/l/chat/0/0?users=" + encodeURIComponent(TEACHER.teamsEmail) + "&message=" + encoded;
+      q(".ch-teams").href = "https://teams.microsoft.com/l/chat/0/0?users=" + encodeURIComponent(TEACHER.teamsEmail) + "&message=" + encoded;
       // Gmail's web compose URL, set as a plain https:// href — a native <a target="_blank">
       // click is trusted browser navigation, exempt from the "block pop-ups" site permission
       // that silently swallows a script-triggered window.open() call (this broke a previous
-      // version of this button on both desktop and mobile: the Correo button had, at some
-      // point during testing, triggered enough popups that Chrome's per-site "block
-      // pop-ups" permission for this origin got set, which only affects window.open(), not
-      // real link clicks). On Android with the Gmail app installed, the OS still intercepts
-      // this link and opens the app instead of the browser, which ignores the compose
-      // params — that's a separate, unrelated limitation covered by the copy fallback below.
-      document.getElementById("chEmail").href = "https://mail.google.com/mail/?view=cm&fs=1&to=" +
-        encodeURIComponent(TEACHER.email) + "&su=" + encodeURIComponent("Resultados — " + TITLE_LABEL) +
+      // version of this button on both desktop and mobile). On Android with the Gmail app
+      // installed, the OS still intercepts this link and opens the app instead of the
+      // browser, which ignores the compose params — covered by the copy fallback below.
+      q(".ch-email").href = "https://mail.google.com/mail/?view=cm&fs=1&to=" +
+        encodeURIComponent(TEACHER.email) + "&su=" + encodeURIComponent("Resultados — " + opts.scopeTitle) +
         "&body=" + encodeURIComponent(shortText);
     }
-    refreshLinks();
-    nameEl.oninput = refreshLinks;
+
     function showCopied(text) {
-      const msg = document.getElementById("chCopiedMsg");
+      const msg = q(".channel-copied");
       msg.textContent = text || "¡Copiado!";
       msg.style.display = "block";
       setTimeout(function () { msg.style.display = "none"; }, 3200);
     }
-    function copyText(text, onDone) {
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(function () { onDone(true); }, function () { fallbackCopy(text, onDone); });
-      } else {
-        fallbackCopy(text, onDone);
-      }
-    }
-    function fallbackCopy(text, onDone) {
-      try {
-        const ta = document.createElement("textarea");
-        ta.value = text;
-        ta.style.position = "fixed";
-        ta.style.top = "-9999px";
-        ta.style.left = "-9999px";
-        document.body.appendChild(ta);
-        ta.focus();
-        ta.select();
-        const ok = document.execCommand("copy");
-        document.body.removeChild(ta);
-        onDone(ok);
-      } catch (e) { onDone(false); }
-    }
-    document.getElementById("chCopy").onclick = function () {
+
+    nameEl.addEventListener("input", function () {
+      studentName = nameEl.value.trim();
+      panels.forEach(function (p) { p.syncName(); });
+    });
+
+    q(".ch-copy").onclick = function () {
       copyText(currentSummary(), function (ok) { if (ok) showCopied(); });
     };
     // Teams' chat link works fully on mobile (recipient selected, message pasted), but on
@@ -2055,7 +2062,7 @@
     // link and only partially honoring its parameters, which the page has no way to detect
     // or control. The button also copies the summary and names the exact manual step that
     // might still be needed, covering both platforms without guessing which one applies.
-    document.getElementById("chTeams").addEventListener("click", function () {
+    q(".ch-teams").addEventListener("click", function () {
       copyText(currentSummary(), function (ok) {
         if (ok) showCopied("Texto copiado. Si el destinatario no se seleccionó solo, elige a " + TEACHER.teamsEmail + ". Pégalo (mantén pulsado → Pegar) si el mensaje no se rellenó.");
       });
@@ -2067,12 +2074,107 @@
     // listener on the native <a href> click (NOT a onclick handler calling window.open()
     // itself) — a script-triggered window.open() is what a "block pop-ups" site permission
     // targets, and a real link click is exempt from it, which is what actually matters here.
-    document.getElementById("chEmail").addEventListener("click", function () {
+    q(".ch-email").addEventListener("click", function () {
       copyText(currentSummary(), function (ok) {
         if (ok) showCopied("Texto copiado. Si no se abrió tu correo solo, pégalo (mantén pulsado → Pegar) en un email a " + TEACHER.email + ".");
       });
     });
+
+    const api = {
+      el: panel,
+      syncName: function () {
+        if (nameEl.value.trim() !== studentName) nameEl.value = studentName;
+        if (!panel.hidden) refreshLinks();
+      },
+      update: function () {
+        const checked = recs.filter(function (r) { return r.el.dataset.checked === "1"; }).length;
+        const correct = recs.filter(function (r) {
+          return r.el.dataset.checked === "1" && r.el.classList.contains("correct");
+        }).length;
+        const total = recs.length;
+        const hint = opts.hintEl;
+
+        if (checked === 0) {
+          panel.hidden = true;
+          if (hint) { hint.textContent = ""; hint.classList.remove("complete"); }
+          return;
+        }
+        if (checked < total) {
+          panel.hidden = true;
+          if (hint) {
+            hint.textContent = "Corregidos " + checked + "/" + total + " — " + opts.hintPartial;
+            hint.classList.remove("complete");
+          }
+          return; // wait until everything in scope has been corrected at least once
+        }
+        if (hint) {
+          hint.textContent = opts.hintAllDone;
+          hint.classList.add("complete");
+        }
+        const wasHidden = panel.hidden;
+        panel.hidden = false;
+        if (wasHidden && opts.scrollIntoView) {
+          setTimeout(function () { panel.scrollIntoView({ behavior: "smooth", block: "start" }); }, 50);
+        }
+
+        const pct = Math.round((correct / total) * 100);
+        const tier = tierFor(pct);
+        q(".results-headline").textContent = tier.headline;
+        q(".results-sub").textContent = tier.sub;
+        q(".results-score-num").textContent = correct;
+        q(".results-score-den").textContent = "/ " + total + " (" + pct + "%)";
+
+        const wrong = recs.filter(function (rec) {
+          return rec.el.dataset.checked === "1" && !rec.el.classList.contains("correct");
+        });
+        const errBox = q(".results-errors");
+        if (wrong.length === 0) {
+          errBox.innerHTML = '<div class="results-error-item">¡Ni un solo fallo! 🎉</div>';
+        } else {
+          errBox.innerHTML = '<div class="results-errors-title">Fallos (' + wrong.length + ')</div>' +
+            wrong.map(function (rec) {
+              const given = escapeHtml(rec.el.value.trim() || "(en blanco)");
+              return '<div class="results-error-item"><b>' + rec.label + ':</b> <s>' + given + "</s> → " + correctTextFor(rec.spec) + "</div>";
+            }).join("");
+        }
+        refreshLinks();
+      }
+    };
+    panels.push(api);
+    return api;
   }
+
+  function updateScore() {
+    let checked = 0, correct = 0;
+    allInputs.forEach(function (rec) {
+      if (rec.el.dataset.checked === "1") {
+        checked++;
+        if (rec.el.classList.contains("correct")) correct++;
+      }
+    });
+    document.getElementById("scoreNum").textContent = correct;
+    document.getElementById("scoreTotal").textContent = allInputs.length;
+    const pct = allInputs.length ? (correct / allInputs.length) * 100 : 0;
+    document.getElementById("barFill").style.width = pct + "%";
+    panels.forEach(function (p) { p.update(); });
+  }
+
+  // Panel global, al final de la página, con TODOS los ejercicios.
+  createResultsPanel({
+    scopeTitle: TITLE_LABEL,
+    recs: allInputs,
+    sendLabel: "Enviar el resumen completo a tu profesor",
+    hintEl: document.getElementById("progressHint"),
+    hintPartial: "corrige el resto de ejercicios (o pulsa \"Corregir todos\") para ver tu resumen final.",
+    hintAllDone: "¡Todo corregido! Tu resumen está más abajo 👇",
+    scrollIntoView: true
+  });
+  document.getElementById("globalResultsSlot").appendChild(panels[panels.length - 1].el);
+
+  document.getElementById("correctAllBtn").addEventListener("click", function () {
+    gradeRange(0, allInputs.length);
+    updateScore();
+  });
 
   allInputs.forEach(function (rec) {
     rec.el.addEventListener("keydown", function (e) {
