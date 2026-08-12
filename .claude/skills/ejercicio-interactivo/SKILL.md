@@ -125,9 +125,11 @@ El fallo no fue no saber los pasos, fue no volver a mirarlos al final.
 - [ ] Fila añadida en `codigos-acceso.html` con su código, y republicado (paso 7).
 - [ ] No queda ningún marcador `{{...}}` ni la cabecera de la plantilla sin adaptar (esa
       cabecera se publica en el código fuente que ve el alumno).
-- [ ] Si el material no viene claramente de un manual concreto, **dilo al profesor** en vez
-      de colocarlo por deducción: `RepasoB1.pdf` era un PDF suelto y se archivó bajo "Nuevo
-      Español en Marcha 3" por parecido de formato, sin confirmarlo.
+- [ ] Si el material no viene claramente de un manual concreto, **pregúntale al profesor**
+      en vez de archivarlo por deducción. `RepasoB1.pdf` era un PDF suelto y se colocó bajo
+      "Nuevo Español en Marcha 3" por parecido de formato; el profesor confirmó después que
+      era correcto, pero la deducción se dio por buena sin preguntar y podría no haberlo
+      sido. Preguntar cuesta una frase; moverlo después, rehacer índice y códigos.
 
 ## Lecciones aprendidas (no las repitas)
 

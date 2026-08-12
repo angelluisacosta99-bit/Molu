@@ -539,8 +539,8 @@
   <p>Teoría de gramática, vocabulario y ejercicios prácticos con corrección instantánea. Se completa por partes.</p>
   <div class="hero-meta">
     <span><strong id="totalBlanksLabel" translate="no">—</strong> huecos en total</span>
-    <span><strong>7</strong> secciones</span>
-    <span><strong>33</strong> ejercicios</span>
+    <span><strong>8</strong> secciones</span>
+    <span><strong>39</strong> ejercicios</span>
   </div>
   <div class="in-progress-note">
     <b>En construcción:</b> este repaso se está transcribiendo por partes. Donde el
@@ -618,6 +618,11 @@
   // final: los comienzos con "que" piden subjuntivo, los que no, infinitivo.
   const INF_ENDINGS = ["a", "b", "e", "g", "h"];
   const SUBJ_ENDINGS = ["c", "d", "f"];
+  // Ej. 8.6: además del verbo se EXIGE el cambio de expresión temporal — "mañana" dicho
+  // ayer es hoy. flex pide que aparezcan todas sus palabras, así que "harías la cena
+  // mañana" se marca mal aunque el verbo esté bien; es justo lo que el ejercicio enseña.
+  const NOTE_CENA_MANANA = { flex: ["harías", "hoy"], show: "harías la cena hoy" };
+  const NOTE_NO_SALDRIAN = { flex: ["saldrían", "hoy"], show: "hoy no saldrían" };
 
   const blocks = [
     {
@@ -1040,7 +1045,7 @@
                   </tbody>
                 </table>
                 <ul class="theory-points">
-                  <li><span class="example">Luis <b>se lleva</b> muy bien con Angel.</span>
+                  <li><span class="example">Luis <b>se lleva</b> muy bien con Ángel.</span>
                     <span class="example">Ayer Rosa <b>se encontraba</b> mal y no fue a clase.</span></li>
                   <li><span class="use-label">A veces el mismo verbo puede usarse con las dos estructuras. En este caso, el verbo puede tener significados muy diferentes o, por el contrario, no variar apenas.</span>
                     <span class="example">Julio no <b>se queda</b> nunca en casa los sábados por la noche.</span>
@@ -1494,7 +1499,7 @@
                 </table>
                 <ul class="theory-points">
                   <li><span class="use-label"><b>Imperativo + pronombres.</b> Afirmativo: los pronombres van detrás del verbo.</span>
-                    <span class="example"><b>Cállense</b>, por favor. / <b>Díselo</b> tú, Angel.</span></li>
+                    <span class="example"><b>Cállense</b>, por favor. / <b>Díselo</b> tú, Ángel.</span></li>
                   <li><span class="use-label">Negativo: los pronombres van antes del verbo.</span>
                     <span class="example">No <b>te sientes</b> ahí. / No <b>se lo digas</b> a Juan.</span></li>
                 </ul>
@@ -1820,7 +1825,7 @@
             { t: "Begoña no está {0} delgada como Susana.", a: [["tan"]] },
             { t: "Ahora es más barato comprarse una vivienda {0} antes.", a: [["que"]] },
             { t: "Estos zapatos son muy malos. Me gustaría comprarme unos {0}.", a: [["mejores"]] },
-            { t: "Hago más deporte que Angel. Estoy {0} en forma que él.", a: [["más"]] }
+            { t: "Hago más deporte que Ángel. Estoy {0} en forma que él.", a: [["más"]] }
           ]
         },
         {
@@ -2044,6 +2049,189 @@
             { t: "Si {0} ir al cine el domingo, te llamamos. (podemos / podríamos)", a: [["podemos"]] },
             { t: "Si todos {0} más amables, el mundo sería más agradable. (fueran / son)", a: [["fueran"]] },
             { t: "Si {0} cansado, no vayas a trabajar. (estuvieras / estás)", a: [["estás"]] }
+          ]
+        }
+      ]
+    },
+    {
+      id: "seccion-8", num: 8, title: "Gramática y vocabulario",
+      sub: "Estilo directo e indirecto, concretar una cita, deportes y espectáculos",
+      introHTML: `
+        <div class="theory-wrap">
+          <div class="theory-cols">
+            <div>
+              <div class="theory-group">
+                <h3>Estilo directo e indirecto</h3>
+                <ul class="theory-points">
+                  <li><span class="use-label"><b>Estilo directo:</b> reproduce las palabras del hablante exactamente igual a como fueron dichas. Gráficamente va escrito con dos puntos, comillas y mayúsculas.</span>
+                    <span class="example">Ángel dijo: «Os <b>llamaré</b> mañana».</span></li>
+                  <li><span class="use-label"><b>Estilo indirecto:</b> reproduce la idea del hablante pero no sus palabras textuales, y requiere adaptaciones en las estructuras (verbos, pronombres, posesivos, expresiones de tiempo…).</span>
+                    <span class="example">Ángel me dijo ayer que nos <b>llamaría</b> hoy.</span></li>
+                </ul>
+              </div>
+            </div>
+            <div>
+              <div class="theory-group">
+                <h3>Concretar una cita</h3>
+                <p class="theory-lead">Para concretar una cita podemos utilizar las siguientes expresiones.</p>
+                <div class="rule-box">
+                  <p>¿Dónde quedamos?</p>
+                  <p>¿A qué hora quedamos?</p>
+                  <p>¿Adónde vamos?</p>
+                  <p>¿Qué vamos a hacer?</p>
+                  <p>¿Qué te parece si vamos a…?</p>
+                  <p>¿Qué tal si quedamos en…?</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="table-wrap">
+            <table class="theory-table">
+              <thead><tr><th>Estilo directo</th><th>Estilo indirecto</th></tr></thead>
+              <tbody>
+                <tr><td><b>Presente</b><br>Ana: «<b>Quiero</b> ir al concierto de jazz».</td>
+                    <td><b>Pretérito imperfecto</b> (presente)<br>Ana dijo que <b>quería</b> (quiere) ir al concierto de jazz.</td></tr>
+                <tr><td><b>Pretérito imperfecto</b><br>Juan: «Ayer <b>debía</b> pagar el alquiler».</td>
+                    <td><b>Pretérito imperfecto</b><br>Juan dijo que <b>debía</b> pagar el alquiler ayer.</td></tr>
+                <tr><td><b>Pretérito perfecto</b><br>Pedro: «Yo <b>he viajado</b> por toda España».</td>
+                    <td><b>Pretérito pluscuamperfecto</b><br>Pedro dijo que <b>había viajado</b> por toda España.</td></tr>
+                <tr><td><b>Pretérito indefinido</b><br>Ana: «<b>Fui</b> al circo el otro día».</td>
+                    <td><b>Pretérito pluscuamperfecto</b><br>Ana dijo que <b>había ido</b> al circo el otro día.</td></tr>
+                <tr><td><b>Pretérito pluscuamperfecto</b><br>Juan: «A las ocho todavía no <b>había llegado</b> el tren».</td>
+                    <td><b>Pretérito pluscuamperfecto</b><br>Juan dijo que a las ocho todavía no <b>había llegado</b> el tren.</td></tr>
+                <tr><td><b>Futuro</b><br>Ana: «El próximo año <b>haré</b> más ejercicio».</td>
+                    <td><b>Condicional</b> (futuro)<br>Ana dijo que este año <b>haría</b> (hará) más ejercicio.</td></tr>
+                <tr><td><b>Condicional</b><br>Juan: «Yo le <b>diría</b> la verdad para evitar problemas».</td>
+                    <td><b>Condicional</b><br>Juan dijo que él le <b>diría</b> la verdad para evitar problemas.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="vocab-title">Vocabulario · Deportes</div>
+          <div class="vocab-chips">
+            <span class="vocab-chip">natación</span><span class="vocab-chip">fútbol</span>
+            <span class="vocab-chip">tenis</span><span class="vocab-chip">ciclismo</span>
+            <span class="vocab-chip">boxeo</span><span class="vocab-chip">golf</span>
+            <span class="vocab-chip">guantes</span><span class="vocab-chip">bañador</span>
+            <span class="vocab-chip">botas</span><span class="vocab-chip">casco</span>
+            <span class="vocab-chip">raqueta</span><span class="vocab-chip">palos</span>
+            <span class="vocab-chip">pista</span><span class="vocab-chip">ring</span>
+            <span class="vocab-chip">piscina</span><span class="vocab-chip">pista de hierba</span>
+            <span class="vocab-chip">tierra batida</span><span class="vocab-chip">estadio</span>
+            <span class="vocab-chip">campo</span><span class="vocab-chip">carretera</span>
+            <span class="vocab-chip">récord</span><span class="vocab-chip">medalla</span>
+            <span class="vocab-chip">árbitro</span><span class="vocab-chip">batir</span>
+            <span class="vocab-chip">ganador</span><span class="vocab-chip">aficionado</span>
+            <span class="vocab-chip">campeona</span><span class="vocab-chip">atleta</span>
+          </div>
+
+          <div class="vocab-title">Vocabulario · Espectáculos</div>
+          <div class="vocab-chips">
+            <span class="vocab-chip">concierto de rock</span><span class="vocab-chip">música clásica</span>
+            <span class="vocab-chip">jazz</span><span class="vocab-chip">cine</span>
+            <span class="vocab-chip">teatro</span><span class="vocab-chip">ópera</span>
+            <span class="vocab-chip">ballet</span><span class="vocab-chip">circo</span>
+            <span class="vocab-chip">tablao</span><span class="vocab-chip">exposición de pintura</span>
+            <span class="vocab-chip">fotografía</span><span class="vocab-chip">escultura</span>
+          </div>
+
+          <div class="vocab-title">Vocabulario · Arte y literatura</div>
+          <div class="vocab-chips">
+            <span class="vocab-chip">cantante</span><span class="vocab-chip">poeta</span>
+            <span class="vocab-chip">actriz</span><span class="vocab-chip">actor</span>
+            <span class="vocab-chip">director de orquesta</span><span class="vocab-chip">escritor</span>
+            <span class="vocab-chip">compositor</span><span class="vocab-chip">escultor</span>
+            <span class="vocab-chip">pintor</span><span class="vocab-chip">director de cine</span>
+          </div>
+
+          <div class="vocab-title">Vocabulario · Música</div>
+          <div class="vocab-chips">
+            <span class="vocab-chip">violonchelo / violonchelista</span>
+            <span class="vocab-chip">flauta / flautista</span>
+            <span class="vocab-chip">violín / violinista</span>
+            <span class="vocab-chip">piano / pianista</span>
+            <span class="vocab-chip">guitarra / guitarrista</span>
+            <span class="vocab-chip">baterista</span>
+          </div>
+        </div>
+      `,
+      exercises: [
+        {
+          num: 1, title: "¿A qué deportes se refieren?",
+          instr: "Escribe el deporte. (El 1 ya está resuelto: «Hay que golpear con diferentes palos según la distancia» → Golf.)",
+          type: "items",
+          items: [
+            { t: "«No sé qué tiene de emocionante ver a 22 hombres corriendo detrás de una pelota». → {0}", a: [["fútbol", "el fútbol"]], wide: true },
+            { t: "«Según su peso, los deportistas se agrupan en diferentes categorías». → {0}", a: [["boxeo", "el boxeo"]], wide: true },
+            { t: "«Se practica con diferentes estilos: braza, mariposa, espalda…». → {0}", a: [["natación", "la natación"]], wide: true },
+            { t: "«Se juega en diferentes tipos de pistas (de hierba, de tierra batida, etc.) y pueden jugar dos o cuatro personas». → {0}", a: [["tenis", "el tenis"]], wide: true }
+          ]
+        },
+        {
+          num: 2, title: "María José Rienda",
+          instr: "Lee el artículo y completa los huecos con las palabras del recuadro: carrera · medalla · éxitos · esquiadora · esquí.",
+          type: "text",
+          text: "Después de haber disputado tres juegos olímpicos y cinco mundiales, María José Rienda, {0} (1) granadina de 28 años, consiguió el domingo pasado ganar su primera {1} (2) al terminar tercera en Austria, en la primera {2} (3) de la Copa del Mundo de {3} (4). A lo largo de su trayectoria deportiva ha conseguido varios {4} (5), pero este es el primero que consigue en una copa del mundo.",
+          a: [["esquiadora"], ["medalla"], ["carrera"], ["esquí"], ["éxitos"]]
+        },
+        {
+          num: 3, title: "Arte, música y espectáculos",
+          instr: "Completa las frases con las palabras del recuadro.",
+          refHTML: '<span class="ref-label">Palabras</span>' +
+            '<div class="ref-options">' +
+            '<span class="ref-opt">música clásica</span><span class="ref-opt">ópera</span>' +
+            '<span class="ref-opt">exposición</span><span class="ref-opt">cantante</span>' +
+            '<span class="ref-opt">museo</span><span class="ref-opt">director</span>' +
+            '<span class="ref-opt">compositor</span>' +
+            "</div>",
+          type: "items",
+          items: [
+            { t: "Karajan fue el {0} de la Orquesta Filarmónica de Berlín.", a: [["director"]] },
+            { t: "Mick Jagger es el {0} de los Rolling Stones.", a: [["cantante"]] },
+            { t: "¿Te gusta la {0}? — Sí, muchísimo. — ¿Y quién es tu {1} favorito? — No es fácil decirlo, pero me gustan Bach y Vivaldi.", a: [["música clásica"], ["compositor"]], wide: true },
+            { t: "No he vuelto a la {0} desde que vi Las bodas de Fígaro.", a: [["ópera"]] },
+            { t: "Va a haber una {0} del pintor Carlos López en el nuevo {1} de la ciudad.", a: [["exposición"], ["museo"]], wide: true }
+          ]
+        },
+        {
+          num: 4, title: "Ordena la conversación entre Andrés y Marisa",
+          instr: "Escribe en cada casilla el número que le corresponde en la conversación (del 1 al 10).",
+          type: "items",
+          items: [
+            { t: "A: Esta tarde nos reunimos en casa de Paco, ¿te vienes? → {0}", a: [["3"]] },
+            { t: "M: ¡Uf! Es demasiado pronto. ¿Podemos quedar un poco más tarde? → {0}", a: [["6"]] },
+            { t: "Andrés: ¡Hola, Marisa! ¿Qué vas a hacer esta tarde? → {0}", a: [["1"]] },
+            { t: "M: Sí, mejor, ¿dónde quedamos? → {0}", a: [["8"]] },
+            { t: "Marisa: No lo tengo claro, ¿por qué? → {0}", a: [["2"]] },
+            { t: "M: Vale, allí estaré a las siete y media. ¡Hasta luego! → {0}", a: [["10"]] },
+            { t: "A: Si quieres quedamos a las siete y media. → {0}", a: [["7"]] },
+            { t: "M: Me gustaría, pero ¿a qué hora? → {0}", a: [["4"]] },
+            { t: "A: En el metro de Alonso Martínez. ¿Te parece bien? → {0}", a: [["9"]] },
+            { t: "A: Sobre las siete de la tarde. → {0}", a: [["5"]] }
+          ]
+        },
+        {
+          num: 5, title: "Lo que contó María",
+          instr: "Pasa a estilo indirecto lo que dijo María. Se corrige por los cambios clave (verbos y posesivos), así que no hace falta que copies la frase palabra por palabra.",
+          model: "María dijo: «Estoy cansada de trabajar porque mi jefa me exige cada día más y me pagan menos. Mi marido no tiene trabajo. Mis hijos están estudiando, pero sacan malas notas».",
+          type: "items",
+          items: [
+            { t: "…la semana pasada vi a María por la calle y me contó que estaba cansada porque {0}", a: [{ flex: ["exigía", "pagaban"], show: "su jefa le exigía cada día más y le pagaban menos" }], wide: true },
+            { t: "También me dijo que su marido {0}", a: [{ flex: ["no tenía trabajo"], show: "no tenía trabajo" }], wide: true },
+            { t: "…y que sus hijos {0}", a: [{ flex: ["estaban estudiando", "sacaban"], show: "estaban estudiando, pero sacaban malas notas" }], wide: true }
+          ]
+        },
+        {
+          num: 6, title: "Pasa a estilo indirecto",
+          instr: "Completa cada frase. Cuando la expresión de tiempo cambie al pasar a estilo indirecto, tienes que cambiarla también: no basta con acertar el verbo.",
+          type: "items",
+          items: [
+            { t: "Fernando: «Te llamaré esta noche». → Ayer Fernando me dijo que {0}", a: [{ flex: ["llamaría"], show: "me llamaría esa noche" }], wide: true },
+            { t: "Luis y Marta: «Nos casaremos el mes que viene». → Ayer me encontré con Luis y Marta y me dijeron que se {0}", a: [{ flex: ["casarían"], show: "casarían el mes siguiente" }], wide: true },
+            { t: "«Yo haré la cena mañana». → Tú me dijiste ayer que {0}", a: [NOTE_CENA_MANANA], wide: true },
+            { t: "Juan: «Yo haré la compra el sábado». → Juan dijo que él {0}", a: [{ flex: ["haría"], show: "haría la compra el sábado" }], wide: true },
+            { t: "«Mañana no saldremos». → Ellos me dijeron ayer que {0}", a: [NOTE_NO_SALDRIAN], wide: true }
           ]
         }
       ]
@@ -2372,6 +2560,8 @@
   attachNote(NOTE_DE_A_ESTACIONES, "«De Núñez de Balboa a Callao»: el origen se marca con «de». «Desde… hasta» diría lo mismo, pero solo se aceptan las preposiciones del recuadro, y «desde» no está entre ellas.");
   attachNote(NOTE_PISO_TIENE, "Indicativo («tiene»), no subjuntivo: «Lo vi el otro día» indica que ese piso concreto existe y el hablante lo conoce. Compara con «Estoy buscando un piso que tenga terraza», donde el piso todavía no se conoce.");
   attachNote(NOTE_YO_QUE_TU_VER, "Con «yo que tú…» el consejo se da siempre en 1.ª persona: «yo que tú vería…» (= si yo fuera tú, vería). En el libro el paréntesis pone «(ver, él)», pero eso es una errata: la forma correcta aquí es «vería».");
+  attachNote(NOTE_CENA_MANANA, "Cuenta tanto el verbo como el tiempo: «mañana» dicho AYER es hoy, así que la respuesta completa es «harías la cena hoy». Con «mañana» se marca como error.");
+  attachNote(NOTE_NO_SALDRIAN, "Igual que el anterior: «mañana» dicho ayer equivale a «hoy» → «me dijeron ayer que hoy no saldrían». Hay que cambiar también la expresión de tiempo, no solo el verbo.");
   attachNote(NOTE_TU_SABES_QUE, "Aquí hay dos tildes: «tú» (pronombre, no el posesivo «tu hermano») y «qué» (interrogativo indirecto, aunque no lleve signos de pregunta propios).");
 
   function correctTextFor(spec) {
