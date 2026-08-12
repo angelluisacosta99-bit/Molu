@@ -1,16 +1,7 @@
 <!--
-  Repaso B1 — reproducción del cuaderno "RepasoB1.pdf" (Google Drive), transcrito por
-  partes según el profesor va enviando fotos de las páginas (el PDF es un escaneado sin
-  texto extraíble). NO es un ejercicio con corrección oculta como los de
-  ejercicio-interactivo — aquí las respuestas se muestran siempre, a la vista, porque es
-  material de repaso/consulta, no un examen. Las respuestas de los ejercicios de solución
-  única las resolvió Claude con su propio conocimiento de gramática (el profesor no tenía
-  el solucionario a mano); los ejercicios con "hay muchas opciones posibles" muestran UNA
-  combinación natural, marcada como tal. Cualquier respuesta con más margen de duda lleva
-  una nota "revisar" junto al badge de respuesta.
-  Al añadir una parte nueva: añade una nueva <section class="repaso-section"> siguiendo el
-  mismo patrón (número de sección, teoría, ejercicios con respuesta visible) y un nuevo
-  <a> en #navDots. Vuelve a publicar con el mismo url.
+  TEMPLATE — plantilla de ejercicio interactivo con corrección instantánea.
+  Ver .claude/skills/ejercicio-interactivo/SKILL.md para el proceso completo.
+  Busca todos los marcadores {{...}} y sustitúyelos; no dejes ninguno sin reemplazar.
 -->
 <title>Repaso B1 — Nuevo Español en Marcha</title>
 <style>
@@ -28,8 +19,10 @@
     --bad-bg: #FBECE9;
     --border: #DCDFD3;
     --input-bg: #FCFDFB;
+    --focus: #A8790C;
     --shadow: 0 1px 2px rgba(23,34,59,0.06), 0 4px 14px rgba(23,34,59,0.06);
   }
+
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
       --paper: #101626;
@@ -45,6 +38,7 @@
       --bad-bg: #3A1E1B;
       --border: #2A3348;
       --input-bg: #131A2C;
+      --focus: #E0B44A;
       --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 20px rgba(0,0,0,0.35);
     }
   }
@@ -62,24 +56,32 @@
     --bad-bg: #3A1E1B;
     --border: #2A3348;
     --input-bg: #131A2C;
+    --focus: #E0B44A;
     --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 20px rgba(0,0,0,0.35);
   }
 
   * { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; background: var(--paper); color: var(--ink); }
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--paper);
+    color: var(--ink);
+  }
   body {
     font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 16px; line-height: 1.6;
+    font-size: 16px;
+    line-height: 1.55;
     -webkit-font-smoothing: antialiased;
     padding-bottom: 4rem;
   }
-  h1, h2, h3, h4 {
+  h1, h2, h3 {
     font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
-    text-wrap: balance; margin: 0;
+    text-wrap: balance;
+    margin: 0;
   }
-  .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+  .mono, input, .score, .exnum, .navdot-label {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  }
   a { color: inherit; }
-  em { color: var(--ink); }
 
   /* ---------- top bar ---------- */
   .topbar {
@@ -89,352 +91,1111 @@
     border-bottom: 1px solid var(--border);
   }
   .topbar-inner {
-    max-width: 800px; margin: 0 auto; padding: 0.7rem 1.25rem;
+    max-width: 760px; margin: 0 auto;
+    padding: 0.7rem 1.25rem;
     display: flex; align-items: center; justify-content: space-between;
     gap: 1rem; flex-wrap: wrap;
   }
   .brand { display: flex; align-items: baseline; gap: 0.6rem; }
-  .brand-title { font-size: 0.95rem; font-weight: 700; letter-spacing: 0.01em; font-family: Georgia, serif; }
+  .brand-title { font-size: 0.95rem; font-weight: 700; letter-spacing: 0.01em; }
   .brand-sub { font-size: 0.78rem; color: var(--pencil); }
-  .nav-dots { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+  .nav-dots { display: flex; gap: 0.4rem; }
   .nav-dots a {
-    text-decoration: none; font-size: 0.7rem; padding: 0.28rem 0.6rem;
-    border-radius: 999px; border: 1px solid var(--border); color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 0.7rem;
+    padding: 0.28rem 0.6rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    color: var(--ink-soft);
     white-space: nowrap;
   }
   .nav-dots a:hover { border-color: var(--gold); color: var(--gold); }
+  .score-wrap { display: flex; align-items: center; gap: 0.6rem; }
+  .score { font-size: 0.82rem; font-weight: 600; }
+  .score .num { color: var(--gold); }
+  .bar {
+    width: 84px; height: 6px; border-radius: 999px;
+    background: var(--border); overflow: hidden;
+  }
+  .bar-fill { height: 100%; background: var(--gold); width: 0%; transition: width 0.35s ease; }
 
   /* ---------- hero ---------- */
-  .hero { max-width: 800px; margin: 0 auto; padding: 2.6rem 1.25rem 1.6rem; }
-  .eyebrow {
-    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--gold); margin-bottom: 0.7rem;
+  .hero {
+    max-width: 760px; margin: 0 auto;
+    padding: 2.6rem 1.25rem 1.6rem;
   }
-  .hero h1 { font-size: clamp(1.9rem, 5vw, 2.5rem); font-weight: 700; margin-bottom: 0.6rem; }
-  .hero p { color: var(--ink-soft); max-width: 64ch; font-size: 0.98rem; }
+  .eyebrow {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 0.7rem;
+  }
+  .hero h1 { font-size: clamp(1.7rem, 4vw, 2.3rem); font-weight: 700; margin-bottom: 0.6rem; }
+  .hero p { color: var(--ink-soft); max-width: 62ch; font-size: 0.98rem; }
   .hero-meta {
     margin-top: 1.1rem; display: flex; gap: 1.2rem; flex-wrap: wrap;
     font-size: 0.82rem; color: var(--pencil);
   }
   .hero-meta strong { color: var(--ink); }
-  .in-progress-note {
-    margin-top: 1.3rem; background: var(--gold-soft); border-radius: 10px;
-    padding: 0.8rem 1rem; font-size: 0.85rem; color: var(--ink-soft); max-width: 64ch;
+  .correct-all-wrap {
+    max-width: 760px; margin: 2.4rem auto 0; padding: 0 1.25rem 2.4rem;
+    text-align: center;
   }
-  .in-progress-note b { color: var(--ink); }
+  .correct-all-btn {
+    margin-top: 1.3rem;
+    background: var(--ink); color: var(--paper-raised);
+    border: none; border-radius: 8px;
+    padding: 0.65rem 1.2rem; font-size: 0.88rem; font-weight: 600;
+    cursor: pointer;
+  }
+  .correct-all-btn:hover { background: var(--gold); color: var(--ink); }
+  :root[data-theme="dark"] .correct-all-btn:hover,
+  :root:not([data-theme="light"]) .correct-all-btn:hover { color: #10142699; }
+  .progress-hint { margin-top: 0.7rem; font-size: 0.82rem; color: var(--pencil); text-align: center; }
+  .progress-hint.complete { color: var(--good); font-weight: 600; }
 
-  main { max-width: 800px; margin: 0 auto; padding: 0 1.25rem; }
-
-  /* ---------- section ---------- */
-  .repaso-section { margin-top: 2.6rem; scroll-margin-top: 6rem; }
-  .section-head {
-    display: flex; align-items: baseline; gap: 0.85rem;
-    padding-bottom: 0.7rem; margin-bottom: 1.5rem;
+  /* ---------- blocks ---------- */
+  main { max-width: 760px; margin: 0 auto; padding: 0 1.25rem; }
+  .block { margin-top: 2.4rem; scroll-margin-top: 6rem; }
+  .block-head {
+    display: flex; align-items: baseline; gap: 0.75rem;
+    padding-bottom: 0.6rem; margin-bottom: 1.3rem;
     border-bottom: 2px solid var(--ink);
   }
-  .section-num {
-    font-family: Georgia, serif; font-weight: 700; font-size: 1.15rem;
+  .block-num {
+    font-family: Georgia, serif; font-weight: 700; font-size: 1.05rem;
     color: var(--paper-raised); background: var(--ink);
-    width: 2.2rem; height: 2.2rem; border-radius: 8px;
-    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    width: 2rem; height: 2rem; border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
   }
-  .section-head h2 { font-size: 1.5rem; }
+  .block-titles h2 { font-size: 1.25rem; }
+  .block-titles .sub { font-size: 0.8rem; color: var(--pencil); margin-top: 0.15rem; }
 
-  /* ---------- theory ---------- */
+  /* ---------- exercise card ---------- */
+  .exercise {
+    background: var(--paper-raised);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    padding: 1.15rem 1.3rem 1.3rem;
+    margin-bottom: 1.1rem;
+  }
+  .exercise-head {
+    display: flex; align-items: flex-start; justify-content: space-between;
+    gap: 1rem; margin-bottom: 0.3rem;
+  }
+  .exercise-title { display: flex; gap: 0.6rem; align-items: baseline; }
+  .exnum { color: var(--gold); font-weight: 700; font-size: 0.85rem; }
+  .exercise-title h3 { font-size: 1.02rem; font-weight: 700; }
+  .exercise-instr { color: var(--pencil); font-size: 0.85rem; font-style: italic; margin-bottom: 0.85rem; }
+  .exercise-model { color: var(--pencil); font-size: 0.85rem; font-style: italic; margin-bottom: 0.7rem; }
+
+  /* nota mostrada solo después de corregir (ver attachNote()/gradeRange() en el script) */
+  .grading-note {
+    display: none; font-size: 0.78rem; color: var(--ink-soft); font-style: italic;
+    margin: 0.3rem 0 0 1.6rem; max-width: 46ch;
+  }
+  .grading-note.show { display: block; }
+
+  /* ---------- teoría (contenido no interactivo antes de los ejercicios) ---------- */
   .theory-wrap {
-    background: var(--paper-raised); border: 1px solid var(--border); border-radius: 12px;
-    box-shadow: var(--shadow); padding: 1.6rem 1.7rem; margin-bottom: 1.6rem;
+    background: var(--paper-raised); border: 1px solid var(--border); border-radius: 10px;
+    box-shadow: var(--shadow); padding: 1.4rem 1.5rem; margin-bottom: 1.3rem;
   }
-  .theory-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 2.2rem; }
+  .theory-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 2rem; }
   @media (max-width: 640px) { .theory-cols { grid-template-columns: 1fr; } }
-  .theory-group { margin-bottom: 1.5rem; }
+  .theory-group { margin-bottom: 1.4rem; }
   .theory-group h3 {
-    font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--gold); font-family: -apple-system, sans-serif; margin-bottom: 0.6rem;
+    font-size: 0.76rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--gold); font-family: -apple-system, sans-serif; margin-bottom: 0.55rem;
   }
-  .theory-lead { font-size: 0.86rem; color: var(--ink-soft); margin-bottom: 0.5rem; }
+  .theory-lead { font-size: 0.85rem; color: var(--ink-soft); margin-bottom: 0.45rem; }
   .theory-points { list-style: none; margin: 0; padding: 0; }
-  .theory-points > li { margin-bottom: 0.75rem; font-size: 0.92rem; }
+  .theory-points > li { margin-bottom: 0.7rem; font-size: 0.9rem; }
   .theory-points > li > .use-label { display: block; color: var(--ink-soft); margin-bottom: 0.15rem; }
   .theory-points .example {
     display: block; font-style: italic; color: var(--ink); margin-top: 0.15rem;
-    padding-left: 0.9rem; border-left: 2px solid var(--gold-soft);
+    padding-left: 0.85rem; border-left: 2px solid var(--gold-soft);
   }
   .theory-points .example b { color: var(--gold); font-weight: 700; font-style: normal; }
-  .theory-sub { margin: 0.3rem 0 0.6rem 0.9rem; }
-  .theory-sub li { margin-bottom: 0.6rem; font-size: 0.9rem; }
-
   .rule-box {
     background: var(--ink); color: var(--paper); border-radius: 10px;
-    padding: 1.1rem 1.3rem; margin-top: 0.4rem; font-size: 0.86rem;
+    padding: 1.05rem 1.25rem; margin-top: 0.4rem; font-size: 0.85rem;
   }
   .rule-box h4 {
-    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--gold); font-family: -apple-system, sans-serif; margin-bottom: 0.7rem;
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--gold); font-family: -apple-system, sans-serif; margin-bottom: 0.65rem;
   }
-  .rule-box p { margin: 0 0 0.7rem; color: color-mix(in srgb, var(--paper) 90%, transparent); }
+  .rule-box p { margin: 0 0 0.65rem; color: color-mix(in srgb, var(--paper) 90%, transparent); }
   .rule-box p:last-child { margin-bottom: 0; }
   .rule-box b { color: var(--paper); }
   .rule-box .ex-words { font-style: italic; color: color-mix(in srgb, var(--paper) 78%, transparent); }
-
   .vocab-title {
-    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--pencil); margin: 1.6rem 0 0.7rem;
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--pencil); margin: 1.5rem 0 0.65rem;
   }
-  .vocab-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .vocab-chips { display: flex; flex-wrap: wrap; gap: 0.45rem; }
   .vocab-chip {
     background: var(--input-bg); border: 1px solid var(--border); border-radius: 999px;
-    padding: 0.3rem 0.75rem; font-size: 0.85rem; font-family: ui-monospace, monospace;
+    padding: 0.28rem 0.7rem; font-size: 0.83rem; font-family: ui-monospace, monospace;
   }
-
-  /* ---------- exercises ---------- */
-  .exercise {
-    background: var(--paper-raised); border: 1px solid var(--border); border-radius: 10px;
-    box-shadow: var(--shadow); padding: 1.15rem 1.3rem 1.3rem; margin-bottom: 1.1rem;
+  .in-progress-note {
+    background: var(--gold-soft); border-radius: 10px; padding: 0.8rem 1rem;
+    font-size: 0.84rem; color: var(--ink-soft); margin-top: 1.2rem; max-width: 64ch;
   }
-  .exercise-title { display: flex; gap: 0.6rem; align-items: baseline; margin-bottom: 0.3rem; }
-  .exnum { color: var(--gold); font-weight: 700; font-size: 0.85rem; font-family: ui-monospace, monospace; }
-  .exercise-title h3 { font-size: 1.02rem; font-weight: 700; font-family: -apple-system, sans-serif; }
-  .exercise-instr { color: var(--pencil); font-size: 0.85rem; font-style: italic; margin-bottom: 0.9rem; }
+  .in-progress-note b { color: var(--ink); }
 
-  .ex-items { display: flex; flex-direction: column; gap: 0.7rem; }
-  .ex-item { font-size: 0.94rem; line-height: 1.65; }
-  .ex-num { color: var(--gold); font-weight: 700; margin-right: 0.35rem; font-family: ui-monospace, monospace; }
-  .ex-prompt { color: var(--ink-soft); }
-  .ex-answer {
-    display: inline-flex; align-items: center; gap: 0.35rem;
-    background: var(--good-bg); color: var(--good); font-weight: 700;
-    border-radius: 6px; padding: 0.1rem 0.5rem; margin: 0 0.15rem;
+  .check-btn {
+    background: transparent; color: var(--ink);
+    border: 1px solid var(--ink); border-radius: 7px;
+    padding: 0.32rem 0.75rem; font-size: 0.78rem; font-weight: 600;
+    cursor: pointer; white-space: nowrap; flex-shrink: 0;
   }
-  .ex-strike { text-decoration: line-through; color: var(--pencil); font-weight: 400; opacity: 0.75; }
-  .ex-note {
-    display: block; font-size: 0.78rem; color: var(--pencil); font-style: italic;
-    margin-top: 0.2rem; margin-left: 1.6rem;
+  .check-btn:hover { background: var(--ink); color: var(--paper-raised); }
+
+  .items { display: flex; flex-direction: column; gap: 0.55rem; }
+  .item-row { font-size: 0.95rem; line-height: 1.7; }
+  .item-letter { color: var(--gold); font-weight: 700; margin-right: 0.3rem; }
+
+  input.blank {
+    background: var(--input-bg);
+    border: none; border-bottom: 2px solid var(--pencil);
+    color: var(--ink);
+    font-size: 0.95rem;
+    padding: 0.1rem 0.3rem;
+    width: 8.5em;
+    text-align: center;
+    border-radius: 3px 3px 0 0;
   }
-  .ex-note.flag { color: var(--bad); }
-  .ex-note.flag::before { content: "⚑ "; }
+  input.blank.wide { width: 15em; }
+  input.blank.full { width: 100%; max-width: 26em; text-align: left; }
+  input.blank:focus { outline: none; border-bottom-color: var(--focus); box-shadow: 0 1px 0 0 var(--focus); }
+  input.blank.correct { background: var(--good-bg); border-bottom-color: var(--good); color: var(--good); font-weight: 600; }
+  input.blank.incorrect { background: var(--bad-bg); border-bottom-color: var(--bad); color: var(--bad); }
 
-  /* matching exercise (1) */
-  .match-item { display: block; }
-  .match-arrow { color: var(--gold); margin: 0 0.3rem; }
+  .reveal {
+    font-size: 0.82rem; color: var(--good); font-style: italic;
+    margin-left: 0.3rem; display: none;
+  }
+  .reveal.show { display: inline; }
+  .reveal.bad-reveal { color: var(--bad); }
 
+  .paragraph { font-size: 0.97rem; line-height: 2; }
+
+  table.exercise-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+  table.exercise-table th, table.exercise-table td {
+    text-align: left; padding: 0.45rem 0.6rem; border-bottom: 1px solid var(--border);
+  }
+  table.exercise-table th { color: var(--pencil); font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.03em; }
+  .table-wrap { overflow-x: auto; }
+  .ref-table { margin-bottom: 0.9rem; }
+  .ref-table td:first-child { color: var(--gold); font-weight: 600; text-transform: capitalize; }
+
+  /* ---------- footer ---------- */
   footer {
-    max-width: 800px; margin: 3rem auto 0; padding: 1.5rem 1.25rem 0;
-    border-top: 1px solid var(--border); color: var(--pencil); font-size: 0.8rem;
+    max-width: 760px; margin: 3rem auto 0; padding: 1.5rem 1.25rem 0;
+    border-top: 1px solid var(--border);
+    color: var(--pencil); font-size: 0.8rem;
     display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;
   }
+
+  @media (max-width: 560px) {
+    .nav-dots { display: none; }
+    input.blank.wide { width: 11em; }
+    input.blank.full { max-width: 100%; }
+  }
+
+  /* ---------- access gate ---------- */
+  html[data-locked="true"] .gated-content { display: none; }
+  html[data-locked="false"] .gate-overlay { display: none; }
+  .gate-overlay {
+    position: fixed; inset: 0; z-index: 100; background: var(--paper);
+    display: flex; align-items: center; justify-content: center; padding: 1.5rem;
+  }
+  .gate-card {
+    max-width: 360px; width: 100%; background: var(--paper-raised);
+    border: 1px solid var(--border); border-radius: 12px; box-shadow: var(--shadow);
+    padding: 2.2rem 1.9rem; text-align: center;
+  }
+  .gate-card .eyebrow { justify-content: center; display: flex; }
+  .gate-card h2 { font-size: 1.15rem; margin: 0.4rem 0 0.5rem; }
+  .gate-card p { color: var(--ink-soft); font-size: 0.86rem; margin: 0 0 1.2rem; }
+  .gate-card input {
+    width: 100%; text-align: center; font-size: 1rem; letter-spacing: 0.08em;
+    background: var(--input-bg); border: 1.5px solid var(--border); border-radius: 8px;
+    padding: 0.6rem 0.8rem; color: var(--ink); margin-bottom: 0.8rem; text-transform: uppercase;
+  }
+  .gate-card input:focus { outline: none; border-color: var(--focus); }
+  .gate-card button {
+    width: 100%; background: var(--ink); color: var(--paper-raised); border: none;
+    border-radius: 8px; padding: 0.65rem 1rem; font-size: 0.9rem; font-weight: 600; cursor: pointer;
+  }
+  .gate-card button:hover { background: var(--gold); color: var(--ink); }
+  .gate-error { color: var(--bad); font-size: 0.82rem; margin-top: 0.7rem; min-height: 1.1em; }
+
+  /* ---------- results panel ---------- */
+  /* Deliberately single-theme (always dark), independent of the page's light/dark mode —
+     uses fixed local custom properties instead of the swappable --ink/--paper-raised/--gold
+     tokens, which invert meaning in dark mode and would otherwise make this unreadable. */
+  .results-panel {
+    --rp-bg: #17223B;
+    --rp-card: rgba(255,255,255,0.06);
+    --rp-text: #ECEEF3;
+    --rp-text-soft: #C7CEDD;
+    --rp-placeholder: #8E97AC;
+    --rp-accent: #D9A441;
+    --rp-bad: #E17868;
+    --rp-input-bg: rgba(255,255,255,0.08);
+    --rp-input-border: rgba(255,255,255,0.22);
+    background: var(--rp-bg); color: var(--rp-text); border-radius: 14px;
+    padding: 1.8rem 1.7rem; margin: 2.2rem 0 2rem; scroll-margin-top: 6rem;
+  }
+  .results-panel[hidden] { display: none; }
+  .results-headline { font-family: Georgia, serif; font-size: 1.5rem; font-weight: 700; margin-bottom: 0.35rem; color: var(--rp-text); }
+  .results-sub { font-size: 0.92rem; color: var(--rp-text-soft); margin-bottom: 1.3rem; max-width: 56ch; }
+  .results-score-row { display: flex; align-items: baseline; gap: 0.6rem; margin-bottom: 1.3rem; }
+  .results-score-num { font-family: Georgia, serif; font-size: 2.4rem; font-weight: 700; color: var(--rp-accent); }
+  .results-score-den { font-size: 1rem; color: var(--rp-text-soft); }
+  .results-name {
+    display: block; width: 100%; max-width: 320px; font-size: 0.9rem;
+    background: var(--rp-input-bg); border: 1px solid var(--rp-input-border); border-radius: 8px;
+    padding: 0.55rem 0.75rem; color: var(--rp-text); margin-bottom: 1.1rem; font-family: inherit;
+  }
+  .results-name::placeholder { color: var(--rp-placeholder); }
+  .results-name:focus { outline: none; border-color: var(--rp-accent); }
+  .results-errors {
+    background: var(--rp-card); border-radius: 10px; padding: 0.9rem 1.1rem;
+    margin-bottom: 1.3rem; max-height: 220px; overflow-y: auto;
+  }
+  .results-errors-title { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--rp-text-soft); margin-bottom: 0.5rem; }
+  .results-error-item { font-size: 0.85rem; line-height: 1.6; color: var(--rp-text); }
+  .results-error-item b { color: var(--rp-accent); font-weight: 600; }
+  .results-error-item s { color: var(--rp-bad); text-decoration: line-through; opacity: 0.85; }
+  .channel-label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--rp-text-soft); margin-bottom: 0.6rem; }
+  .channel-row { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+  .channel-btn {
+    display: inline-flex; align-items: center; gap: 0.45rem;
+    background: var(--rp-text); color: var(--rp-bg); text-decoration: none;
+    border-radius: 8px; padding: 0.55rem 0.95rem; font-size: 0.85rem; font-weight: 600;
+    border: none; cursor: pointer; font-family: inherit;
+  }
+  .channel-btn:hover { background: var(--rp-accent); }
+  .channel-copied { font-size: 0.8rem; color: var(--rp-accent); margin-top: 0.6rem; display: none; width: 100%; }
 </style>
 
-<div class="topbar">
+<script>
+  // unlocked-repaso-b1 here MUST be byte-identical to the one set further down in the gate
+  // script (search "STORAGE_KEY =") — same placeholder, same value, both occurrences.
+  document.documentElement.setAttribute(
+    "data-locked",
+    localStorage.getItem("unlocked-repaso-b1") === "1" ? "false" : "true"
+  );
+</script>
+
+<div class="gate-overlay">
+  <div class="gate-card">
+    <div class="eyebrow">Acceso privado</div>
+    <h2>Repaso B1</h2>
+    <p>Pídele el código a tu profesor para entrar.</p>
+    <input type="text" id="gateInput" placeholder="CÓDIGO" autocomplete="off" autocapitalize="characters" />
+    <button id="gateBtn">Entrar</button>
+    <div class="gate-error" id="gateError"></div>
+  </div>
+</div>
+<script>
+  (function () {
+    // El código es solo un disuasivo, no seguridad real — cualquiera que vea el HTML
+    // fuente lo ve. Elige una palabra corta, memorable y ligada al tema, en MAYÚSCULAS.
+    const CODE = "REPASO";
+    // MUST be byte-identical al unlocked-repaso-b1 usado arriba (ver comentario junto al
+    // primer occurrence). Usa un valor único por ejercicio, p. ej. "unlocked-b2-13a-tema".
+    const STORAGE_KEY = "unlocked-repaso-b1";
+    function tryUnlock() {
+      const val = document.getElementById("gateInput").value.trim().toUpperCase();
+      if (val === CODE) {
+        localStorage.setItem(STORAGE_KEY, "1");
+        document.documentElement.setAttribute("data-locked", "false");
+      } else {
+        document.getElementById("gateError").textContent = "Código incorrecto. Inténtalo de nuevo.";
+      }
+    }
+    document.getElementById("gateBtn").addEventListener("click", tryUnlock);
+    document.getElementById("gateInput").addEventListener("keydown", function (e) {
+      if (e.key === "Enter") tryUnlock();
+    });
+  })();
+</script>
+
+<div class="topbar gated-content">
   <div class="topbar-inner">
     <div class="brand">
+      <!-- Ejemplo real (A1): Repaso B1 = "Ejercicios A1", Gramática, vocabulario y ejercicios = "Presente · Gerundio · Indefinido" -->
       <span class="brand-title">Repaso B1</span>
-      <span class="brand-sub">Nuevo Español en Marcha</span>
+      <span class="brand-sub">Gramática, vocabulario y ejercicios</span>
     </div>
-    <nav class="nav-dots" id="navDots">
-      <a href="#sec-1">Sección 1</a>
-    </nav>
+    <nav class="nav-dots" id="navDots"></nav>
+    <div class="score-wrap">
+      <div class="bar"><div class="bar-fill" id="barFill"></div></div>
+      <div class="score"><span class="num" id="scoreNum" translate="no">0</span><span style="color:var(--pencil)"> / </span><span id="scoreTotal" translate="no">0</span></div>
+    </div>
   </div>
 </div>
 
-<div class="hero">
-  <div class="eyebrow">Material de repaso · consulta libre</div>
+<div class="hero gated-content">
+  <div class="eyebrow">Material de repaso · nivel B1</div>
   <h1>Repaso B1</h1>
-  <p>Teoría de gramática, vocabulario y ejercicios prácticos, con las respuestas siempre a
-  la vista — para repasar y consultar, no para hacer un examen.</p>
+  <p>Teoría de gramática, vocabulario y ejercicios prácticos con corrección instantánea. Se completa por partes.</p>
   <div class="hero-meta">
-    <span><strong>1</strong> de N secciones (se irá completando)</span>
+    <span><strong id="totalBlanksLabel" translate="no">—</strong> huecos en total</span>
+    <span><strong>1</strong> bloques</span>
+    <span><strong>4</strong> ejercicios</span>
   </div>
   <div class="in-progress-note">
-    <b>En construcción:</b> este repaso se está transcribiendo por partes a partir de las
-    fotos del cuaderno original. Las respuestas de solución única están resueltas con
-    conocimiento de gramática (no había solucionario a mano); las marcadas con ⚑ tienen más
-    margen de duda y conviene que el profesor las revise.
+    <b>En construcción:</b> este repaso se está transcribiendo por partes. Donde el
+    ejercicio original permite varias combinaciones correctas, se aceptan todas.
   </div>
 </div>
 
-<main>
+<main id="main" class="gated-content"></main>
 
-  <section class="repaso-section" id="sec-1">
-    <div class="section-head">
-      <div class="section-num">1</div>
-      <h2>Gramática y vocabulario</h2>
-    </div>
+<div class="correct-all-wrap gated-content">
+  <button class="correct-all-btn" id="correctAllBtn">Corregir todos los ejercicios</button>
+  <div class="progress-hint" id="progressHint"></div>
+</div>
 
-    <div class="theory-wrap">
-      <div class="theory-cols">
-        <div>
-          <div class="theory-group">
-            <h3>Presente</h3>
-            <p class="theory-lead">Se utiliza la forma del presente de indicativo:</p>
-            <ul class="theory-points">
-              <li><span class="use-label">Para hablar de hábitos.</span>
-                <span class="example">Luis no <b>va</b> nunca a la discoteca.</span></li>
-              <li><span class="use-label">Para dar información general sobre uno mismo o sobre el mundo.</span>
-                <span class="example">Soy española, soy peluquera y me <b>gusta</b> mi trabajo.</span>
-                <span class="example">Muchas tiendas en España <b>cierran</b> a mediodía.</span></li>
-              <li><span class="use-label">Para hablar del futuro.</span>
-                <span class="example">Mañana te <b>espero</b> a las tres en mi casa.</span></li>
-              <li><span class="use-label">Para dar instrucciones.</span>
-                <span class="example">Para poner en marcha el coche, primero <b>enciendes</b> el motor y <b>empujas</b> el pedal del embrague…</span></li>
-            </ul>
-          </div>
+<div id="resultsPanel" class="results-panel gated-content" hidden>
+  <div class="results-headline" id="resHeadline"></div>
+  <div class="results-sub" id="resSub"></div>
+  <div class="results-score-row">
+    <span class="results-score-num" id="resScoreNum" translate="no"></span>
+    <span class="results-score-den" id="resScoreDen" translate="no"></span>
+  </div>
+  <input type="text" class="results-name" id="resName" placeholder="Tu nombre (para que tu profesor sepa quién eres)" />
+  <div class="results-errors" id="resErrors"></div>
+  <div class="channel-label">Enviar este resumen a tu profesor</div>
+  <div class="channel-row">
+    <a class="channel-btn" id="chWhatsapp" target="_blank" rel="noopener">WhatsApp</a>
+    <a class="channel-btn" id="chTelegram" target="_blank" rel="noopener">Telegram</a>
+    <a class="channel-btn" id="chEmail" target="_blank" rel="noopener">Correo</a>
+    <a class="channel-btn" id="chTeams" target="_blank" rel="noopener">Teams</a>
+    <button class="channel-btn" id="chCopy" type="button">Copiar resumen</button>
+    <span class="channel-copied" id="chCopiedMsg">¡Copiado!</span>
+  </div>
+</div>
 
-          <div class="theory-group">
-            <h3>Pretérito perfecto</h3>
-            <p class="theory-lead">Se utiliza el pretérito perfecto:</p>
-            <ul class="theory-points">
-              <li><span class="use-label">Para hablar de acciones acabadas que llegan hasta el presente.</span>
-                <span class="example">Ahora mismo <b>he visto</b> a Paco en el pasillo y me <b>ha dicho</b> que no vendrá mañana.</span></li>
-              <li><span class="use-label">También para hablar de experiencias personales o de acciones acabadas sin determinar el marco temporal.</span>
-                <span class="example">Manu <b>ha viajado</b> mucho por Brasil.</span></li>
-            </ul>
-          </div>
-
-          <div class="theory-group">
-            <h3>Pretérito indefinido</h3>
-            <p class="theory-lead">Se utiliza el pretérito indefinido:</p>
-            <ul class="theory-points">
-              <li><span class="use-label">Para hablar de acciones o estados acabados en un momento determinado del pasado.</span>
-                <span class="example">Rosalía <b>ganó</b> el Premio Ondas en 1998.</span></li>
-            </ul>
-          </div>
-
-          <div class="theory-group">
-            <h3>Pretérito imperfecto</h3>
-            <p class="theory-lead">El pretérito imperfecto se utiliza:</p>
-            <ul class="theory-points">
-              <li><span class="use-label">Para hablar de acciones habituales en el pasado.</span>
-                <span class="example">Antes <b>salía</b> mucho los fines de semana, pero ahora prefiero quedarme en casa.</span></li>
-              <li><span class="use-label">También para descripciones en el pasado.</span>
-                <span class="example">El camino del río <b>era</b> muy estrecho y <b>acababa</b> en un arenal.</span></li>
-              <li><span class="use-label">Se expresan acciones en desarrollo, muchas veces interrumpidas por otra puntual.</span>
-                <span class="example">Empezó a llover cuando <b>llegábamos</b> a la playa.</span></li>
-            </ul>
-          </div>
-        </div>
-
-        <div>
-          <div class="theory-group">
-            <h3>Futuro</h3>
-            <p class="theory-lead">Se usa el futuro para:</p>
-            <ul class="theory-points">
-              <li><span class="use-label">Hacer predicciones.</span>
-                <span class="example">Dentro de unos años <b>viajaremos</b> a la Luna.</span></li>
-              <li><span class="use-label">Hacer promesas.</span>
-                <span class="example">Pasado mañana <b>visitaré</b> a tu padre.</span></li>
-              <li><span class="use-label">Detrás de <em>creo que</em> / <em>supongo que</em>.</span>
-                <span class="example">Creo que Juan <b>viajará</b> a Barcelona.</span></li>
-            </ul>
-          </div>
-
-          <div class="theory-group">
-            <h3>Expresar duración y tiempo de una acción</h3>
-            <p class="theory-lead">Informar, preguntar y responder sobre el tiempo que hace que se realiza una acción.</p>
-            <ul class="theory-points">
-              <li><span class="use-label"><em>Desde hace</em> + cantidad de tiempo</span>
-                <span class="example">No veo a mis primos <b>desde hace</b> diez años.</span></li>
-              <li><span class="use-label"><em>Desde</em> + fecha</span>
-                <span class="example">Vive en Berlín <b>desde</b> febrero.</span></li>
-              <li><span class="use-label"><em>Desde que</em> + frase</span>
-                <span class="example">No sale con sus amigas <b>desde que</b> tiene novio.</span></li>
-              <li><span class="use-label"><em>Hace</em> + tiempo + <em>que</em> + frase</span>
-                <span class="example"><b>Hace</b> tres años <b>que</b> trabajo en esta empresa.</span></li>
-              <li><span class="use-label"><em>Cuánto tiempo hace que</em> + frase</span>
-                <span class="example">¿Cuánto tiempo hace que eres vegetariana? — Siete años.</span></li>
-              <li><span class="use-label"><em>Desde cuándo</em> + frase</span>
-                <span class="example">¿Desde cuándo estudias chino? — Desde hace tres meses.</span></li>
-            </ul>
-          </div>
-
-          <div class="rule-box">
-            <h4>Reglas de acentuación</h4>
-            <p><b>Agudas.</b> Son las palabras cuya sílaba tónica es la última. Llevan tilde cuando terminan en vocal, <b>n</b> o <b>s</b>. <span class="ex-words">café, perdón, japonés.</span></p>
-            <p><b>Llanas.</b> Son las palabras que tienen el acento tónico en la penúltima sílaba. Llevan tilde cuando terminan en consonante, excepto en <b>n</b> o <b>s</b>. <span class="ex-words">fácil, árbol, fértil.</span></p>
-            <p><b>Esdrújulas.</b> Son las palabras cuya sílaba tónica es la antepenúltima. Llevan tilde siempre. <span class="ex-words">música, ácido, plátano.</span></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="vocab-title">Vocabulario · Verbos</div>
-      <div class="vocab-chips">
-        <span class="vocab-chip">estudiar</span>
-        <span class="vocab-chip">trabajar</span>
-        <span class="vocab-chip">trasladarse</span>
-        <span class="vocab-chip">vivir</span>
-        <span class="vocab-chip">construir</span>
-        <span class="vocab-chip">existir</span>
-        <span class="vocab-chip">vender</span>
-        <span class="vocab-chip">escribir</span>
-      </div>
-    </div>
-
-    <!-- Ejercicios prácticos -->
-    <div class="exercise">
-      <div class="exercise-title"><span class="exnum">Ej. 1</span><h3>Relaciona y forma frases</h3></div>
-      <div class="exercise-instr">Hay muchas opciones posibles — aquí se muestra una combinación natural para cada frase.</div>
-      <div class="ex-items">
-        <div class="ex-item match-item"><span class="ex-num">1.</span><span class="ex-prompt">Pedro se encuentra mejor</span><span class="match-arrow">→</span><span class="ex-answer">desde que toma las pastillas nuevas</span>
-          <span class="ex-note">Otras combinaciones también son válidas.</span></div>
-        <div class="ex-item match-item"><span class="ex-num">2.</span><span class="ex-prompt">Raúl trabaja en un restaurante</span><span class="match-arrow">→</span><span class="ex-answer">desde 2007</span></div>
-        <div class="ex-item match-item"><span class="ex-num">3.</span><span class="ex-prompt">Está deprimido</span><span class="match-arrow">→</span><span class="ex-answer">desde que le despidieron del trabajo</span></div>
-        <div class="ex-item match-item"><span class="ex-num">4.</span><span class="ex-prompt">No vemos a María</span><span class="match-arrow">→</span><span class="ex-answer">desde hace mucho tiempo</span></div>
-        <div class="ex-item match-item"><span class="ex-num">5.</span><span class="ex-prompt">Vivimos en este piso</span><span class="match-arrow">→</span><span class="ex-answer">desde hace tres meses</span></div>
-        <div class="ex-item match-item"><span class="ex-num">6.</span><span class="ex-prompt">Tengo carné de conducir</span><span class="match-arrow">→</span><span class="ex-answer">desde que tenía 18 años</span></div>
-        <div class="ex-item match-item"><span class="ex-num">7.</span><span class="ex-prompt">Estudio español</span><span class="match-arrow">→</span><span class="ex-answer">desde abril</span></div>
-        <div class="ex-item match-item"><span class="ex-num">8.</span><span class="ex-prompt">Clara lleva gafas</span><span class="match-arrow">→</span><span class="ex-answer">desde que era niña</span></div>
-      </div>
-    </div>
-
-    <div class="exercise">
-      <div class="exercise-title"><span class="exnum">Ej. 2</span><h3>Completa las frases con el verbo en el tiempo adecuado</h3></div>
-      <div class="exercise-instr">Pretérito perfecto, indefinido e imperfecto.</div>
-      <div class="ex-items">
-        <div class="ex-item"><span class="ex-num">1.</span>¿Dónde <span class="ex-answer">vivías</span> (vivir, tú) cuando <span class="ex-answer">tenías</span> (tener) diez años?</div>
-        <div class="ex-item"><span class="ex-num">2.</span>¿Qué <span class="ex-answer">hicisteis</span> (hacer, vosotros) ayer?</div>
-        <div class="ex-item"><span class="ex-num">3.</span>Esta mañana <span class="ex-answer">hemos visto</span> (ver, nosotros) un accidente al salir de casa.
-          <span class="ex-note flag">"Esta mañana" como hoy todavía en curso → perfecto ("hemos visto"). Si en tu clase se usa más el indefinido para el mismo día, "vimos" también es aceptable.</span></div>
-        <div class="ex-item"><span class="ex-num">4.</span>¿Cuántas veces <span class="ex-answer">has estado</span> (estar, tú) en Nueva York?</div>
-        <div class="ex-item"><span class="ex-num">5.</span>Anoche <span class="ex-answer">me acosté</span> (acostarse, yo) antes de las doce.</div>
-        <div class="ex-item"><span class="ex-num">6.</span>La semana pasada <span class="ex-answer">fueron</span> (ir, ellos) a esquiar a los Alpes suizos.</div>
-        <div class="ex-item"><span class="ex-num">7.</span>Hace 30 años la gente no <span class="ex-answer">utilizaba</span> (utilizar) internet.</div>
-        <div class="ex-item"><span class="ex-num">8.</span>Mi hermano <span class="ex-answer">ha ganado</span> (ganar) muchos premios de fotografía. ¡Es muy bueno!</div>
-      </div>
-    </div>
-
-    <div class="exercise">
-      <div class="exercise-title"><span class="exnum">Ej. 3</span><h3>Subraya el verbo adecuado</h3></div>
-      <div class="ex-items">
-        <div class="ex-item"><span class="ex-num">1.</span>Rosalía <span class="ex-answer">vivió</span> <span class="ex-strike">ha vivido</span> en Lima hasta 1951.</div>
-        <div class="ex-item"><span class="ex-num">2.</span>Mis hermanos nunca <span class="ex-answer">han salido</span> <span class="ex-strike">salían</span> al extranjero.</div>
-        <div class="ex-item"><span class="ex-num">3.</span>¿<span class="ex-answer">Has tenido</span> <span class="ex-strike">Tuviste</span> alguna vez un accidente grave? — Sí, en 1998 mi coche <span class="ex-answer">chocó</span> <span class="ex-strike">ha chocado</span> con un camión. <span class="ex-answer">Estuve</span> <span class="ex-strike">He estado</span> diez meses en el hospital.</div>
-        <div class="ex-item"><span class="ex-num">4.</span>Federico en su juventud <span class="ex-answer">vivió</span> <span class="ex-strike">ha vivido</span> en muchos sitios: Roma, Copenhague, Nairobi…</div>
-        <div class="ex-item"><span class="ex-num">5.</span>Hablas muy bien español, ¿dónde lo <span class="ex-answer">has aprendido</span> <span class="ex-strike">aprendiste</span>? — <span class="ex-answer">Empecé</span> <span class="ex-strike">He empezado</span> hace diez años en el instituto y cuando <span class="ex-answer">terminé</span> <span class="ex-strike">he terminado</span> mis estudios <span class="ex-answer">vine</span> <span class="ex-strike">he venido</span> a Mallorca a trabajar.</div>
-        <div class="ex-item"><span class="ex-num">6.</span>¿Qué tal el fin de semana? — Bien, el sábado <span class="ex-answer">fui</span> <span class="ex-strike">he ido</span> a ver un partido de fútbol y el domingo <span class="ex-answer">invité</span> <span class="ex-strike">he invitado</span> a Pablo a comer en un restaurante.</div>
-        <div class="ex-item"><span class="ex-num">7.</span>¿<span class="ex-answer">Has probado</span> <span class="ex-strike">Probabas</span> la paella alguna vez? — Sí, la <span class="ex-answer">probé</span> <span class="ex-strike">probaba</span> una vez en casa de mi amigo Antonio.</div>
-        <div class="ex-item"><span class="ex-num">8.</span>¿Te gusta bailar? — Sí, me encanta. Antes nunca <span class="ex-answer">iba</span> <span class="ex-strike">he ido</span> a la discoteca, pero últimamente <span class="ex-answer">he ido</span> <span class="ex-strike">iba</span> todos los sábados.</div>
-      </div>
-    </div>
-
-    <div class="exercise">
-      <div class="exercise-title"><span class="exnum">Ej. 4</span><h3>Completa con la forma adecuada del futuro</h3></div>
-      <div class="ex-items">
-        <div class="ex-item"><span class="ex-num">1.</span>¿Qué <span class="ex-answer">dirás</span> (decir) si tus padres te preguntan por las notas esta noche?</div>
-        <div class="ex-item"><span class="ex-num">2.</span>Este domingo yo no <span class="ex-answer">saldré</span> (salir) con mis amigos, tengo que estudiar.</div>
-        <div class="ex-item"><span class="ex-num">3.</span>Si apruebo todas las asignaturas, mis padres me <span class="ex-answer">pagarán</span> (pagar) un viaje a París.</div>
-        <div class="ex-item"><span class="ex-num">4.</span>Dicen que el año próximo <span class="ex-answer">habrá</span> (haber) más becas para todos los estudiantes.</div>
-        <div class="ex-item"><span class="ex-num">5.</span>Han dicho en la tele que este fin de semana <span class="ex-answer">habrá</span> (haber) nieve en la sierra, y <span class="ex-answer">podremos</span> (poder) ir a esquiar.
-          <span class="ex-note flag">Sujeto de "podremos" no está explícito en la frase — se asume "nosotros"; si en tu grupo se lee como impersonal, "se podrá" también encaja.</span></div>
-        <div class="ex-item"><span class="ex-num">6.</span>Jorge dice que de mayor <span class="ex-answer">será</span> (ser) pianista.</div>
-        <div class="ex-item"><span class="ex-num">7.</span>En el futuro la gente <span class="ex-answer">usará</span> (usar) solamente energía solar.</div>
-        <div class="ex-item"><span class="ex-num">8.</span>Es mejor que salgamos pronto porque si no <span class="ex-answer">habrá</span> (haber) mucho tráfico.</div>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer>
+<footer class="gated-content">
   <span>Repaso B1 · en construcción</span>
   <span>© Angel Luis Acosta González</span>
 </footer>
+
+<script>
+(function () {
+  "use strict";
+
+  // ---------- grading helpers ----------
+  // ACCENTS ARE STRICT BY DEFAULT ON THE ARRAY PATH (isCorrect below): typing "esta" is
+  // wrong when the key is "está". This is a deliberate default, not an oversight — in most
+  // Spanish grammar drills the accent IS the point being tested (e.g. "trabaja" [presente]
+  // vs. "trabajó" [indefinido] differ only by the accent; "esta"/"está" are different words).
+  // Loosening this for a whole exercise set would silently mark wrong tenses/words as
+  // correct. If THIS exercise is testing something where accents are incidental (open-ended
+  // short answers, vocabulary content rather than verb-form precision), use the {flex:[...]}
+  // spec instead (see isCorrect below) for just those items — it's accent-insensitive by
+  // design. Don't blanket-change norm()/isCorrect() to strip accents; ask the teacher first
+  // if you're unsure which behavior a given exercise needs.
+  function norm(s) {
+    return (s || "")
+      .toLowerCase()
+      .replace(/[¿?¡!.,]/g, "")
+      .trim()
+      .replace(/\s+/g, " ");
+  }
+  function stripAccents(s) {
+    return s.normalize("NFD").replace(/[̀-ͯ]/g, "");
+  }
+  function escapeHtml(s) {
+    return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+  // answer spec: array of accepted exact strings, OR {flex:[...]} meaning all keywords must appear (accent-insensitive)
+  function isCorrect(input, spec) {
+    const n = norm(input);
+    if (!n) return false;
+    if (Array.isArray(spec)) {
+      return spec.some(function (a) { return norm(a) === n; });
+    }
+    if (spec && spec.flex) {
+      const hay = stripAccents(n);
+      return spec.flex.every(function (k) { return hay.indexOf(stripAccents(k)) !== -1; });
+    }
+    return false;
+  }
+
+  // ---------- exercise data ----------
+  // template blanks use {0},{1}... matched to item.answers[i]
+  const NOTE_ESTA_MANANA = ["hemos visto", "vimos"];
+  const NOTE_POR_POER_FUTURO = ["podremos", "podrá", "podrán", "se podrá"];
+
+  const blocks = [
+    {
+      id: "seccion-1", num: 1, title: "Gramática y vocabulario",
+      sub: "Presente, futuro, pretéritos y expresar duración",
+      introHTML: `
+        <div class="theory-wrap">
+          <div class="theory-cols">
+            <div>
+              <div class="theory-group">
+                <h3>Presente</h3>
+                <p class="theory-lead">Se utiliza la forma del presente de indicativo:</p>
+                <ul class="theory-points">
+                  <li><span class="use-label">Para hablar de hábitos.</span>
+                    <span class="example">Luis no <b>va</b> nunca a la discoteca.</span></li>
+                  <li><span class="use-label">Para dar información general sobre uno mismo o sobre el mundo.</span>
+                    <span class="example">Soy española, soy peluquera y me <b>gusta</b> mi trabajo.</span>
+                    <span class="example">Muchas tiendas en España <b>cierran</b> a mediodía.</span></li>
+                  <li><span class="use-label">Para hablar del futuro.</span>
+                    <span class="example">Mañana te <b>espero</b> a las tres en mi casa.</span></li>
+                  <li><span class="use-label">Para dar instrucciones.</span>
+                    <span class="example">Para poner en marcha el coche, primero <b>enciendes</b> el motor y <b>empujas</b> el pedal del embrague…</span></li>
+                </ul>
+              </div>
+              <div class="theory-group">
+                <h3>Pretérito perfecto</h3>
+                <p class="theory-lead">Se utiliza el pretérito perfecto:</p>
+                <ul class="theory-points">
+                  <li><span class="use-label">Para hablar de acciones acabadas que llegan hasta el presente.</span>
+                    <span class="example">Ahora mismo <b>he visto</b> a Paco en el pasillo y me <b>ha dicho</b> que no vendrá mañana.</span></li>
+                  <li><span class="use-label">También para hablar de experiencias personales o de acciones acabadas sin determinar el marco temporal.</span>
+                    <span class="example">Manu <b>ha viajado</b> mucho por Brasil.</span></li>
+                </ul>
+              </div>
+              <div class="theory-group">
+                <h3>Pretérito indefinido</h3>
+                <p class="theory-lead">Se utiliza el pretérito indefinido:</p>
+                <ul class="theory-points">
+                  <li><span class="use-label">Para hablar de acciones o estados acabados en un momento determinado del pasado.</span>
+                    <span class="example">Rosalía <b>ganó</b> el Premio Ondas en 1998.</span></li>
+                </ul>
+              </div>
+              <div class="theory-group">
+                <h3>Pretérito imperfecto</h3>
+                <p class="theory-lead">El pretérito imperfecto se utiliza:</p>
+                <ul class="theory-points">
+                  <li><span class="use-label">Para hablar de acciones habituales en el pasado.</span>
+                    <span class="example">Antes <b>salía</b> mucho los fines de semana, pero ahora prefiero quedarme en casa.</span></li>
+                  <li><span class="use-label">También para descripciones en el pasado.</span>
+                    <span class="example">El camino del río <b>era</b> muy estrecho y <b>acababa</b> en un arenal.</span></li>
+                  <li><span class="use-label">Se expresan acciones en desarrollo, muchas veces interrumpidas por otra puntual.</span>
+                    <span class="example">Empezó a llover cuando <b>llegábamos</b> a la playa.</span></li>
+                </ul>
+              </div>
+            </div>
+            <div>
+              <div class="theory-group">
+                <h3>Futuro</h3>
+                <p class="theory-lead">Se usa el futuro para:</p>
+                <ul class="theory-points">
+                  <li><span class="use-label">Hacer predicciones.</span>
+                    <span class="example">Dentro de unos años <b>viajaremos</b> a la Luna.</span></li>
+                  <li><span class="use-label">Hacer promesas.</span>
+                    <span class="example">Pasado mañana <b>visitaré</b> a tu padre.</span></li>
+                  <li><span class="use-label">Detrás de <em>creo que</em> / <em>supongo que</em>.</span>
+                    <span class="example">Creo que Juan <b>viajará</b> a Barcelona.</span></li>
+                </ul>
+              </div>
+              <div class="theory-group">
+                <h3>Expresar duración y tiempo de una acción</h3>
+                <p class="theory-lead">Informar, preguntar y responder sobre el tiempo que hace que se realiza una acción.</p>
+                <ul class="theory-points">
+                  <li><span class="use-label"><em>Desde hace</em> + cantidad de tiempo</span>
+                    <span class="example">No veo a mis primos <b>desde hace</b> diez años.</span></li>
+                  <li><span class="use-label"><em>Desde</em> + fecha</span>
+                    <span class="example">Vive en Berlín <b>desde</b> febrero.</span></li>
+                  <li><span class="use-label"><em>Desde que</em> + frase</span>
+                    <span class="example">No sale con sus amigas <b>desde que</b> tiene novio.</span></li>
+                  <li><span class="use-label"><em>Hace</em> + tiempo + <em>que</em> + frase</span>
+                    <span class="example"><b>Hace</b> tres años <b>que</b> trabajo en esta empresa.</span></li>
+                  <li><span class="use-label"><em>Cuánto tiempo hace que</em> + frase</span>
+                    <span class="example">¿Cuánto tiempo hace que eres vegetariana? — Siete años.</span></li>
+                  <li><span class="use-label"><em>Desde cuándo</em> + frase</span>
+                    <span class="example">¿Desde cuándo estudias chino? — Desde hace tres meses.</span></li>
+                </ul>
+              </div>
+              <div class="rule-box">
+                <h4>Reglas de acentuación</h4>
+                <p><b>Agudas.</b> Son las palabras cuya sílaba tónica es la última. Llevan tilde cuando terminan en vocal, <b>n</b> o <b>s</b>. <span class="ex-words">café, perdón, japonés.</span></p>
+                <p><b>Llanas.</b> Son las palabras que tienen el acento tónico en la penúltima sílaba. Llevan tilde cuando terminan en consonante, excepto en <b>n</b> o <b>s</b>. <span class="ex-words">fácil, árbol, fértil.</span></p>
+                <p><b>Esdrújulas.</b> Son las palabras cuya sílaba tónica es la antepenúltima. Llevan tilde siempre. <span class="ex-words">música, ácido, plátano.</span></p>
+              </div>
+            </div>
+          </div>
+          <div class="vocab-title">Vocabulario · Verbos</div>
+          <div class="vocab-chips">
+            <span class="vocab-chip">estudiar</span>
+            <span class="vocab-chip">trabajar</span>
+            <span class="vocab-chip">trasladarse</span>
+            <span class="vocab-chip">vivir</span>
+            <span class="vocab-chip">construir</span>
+            <span class="vocab-chip">existir</span>
+            <span class="vocab-chip">vender</span>
+            <span class="vocab-chip">escribir</span>
+          </div>
+        </div>
+      `,
+      exercises: [
+        {
+          num: 1, title: "Relaciona y forma frases",
+          instr: "Completa cada frase con desde, desde hace o desde que + la opción que corresponda. Hay más de una combinación posible en algunas frases — todas las razonables se aceptan.",
+          type: "items",
+          items: [
+            { t: "Pedro se encuentra mejor {0}.", a: [["desde que toma las pastillas nuevas", "desde que empezó a tomar las pastillas nuevas"]], wide: true },
+            { t: "Raúl trabaja en un restaurante {0}.", a: [["desde 2007", "desde hace tres meses", "desde hace mucho tiempo", "desde abril"]], wide: true },
+            { t: "Está deprimido {0}.", a: [["desde que le despidieron del trabajo"]], wide: true },
+            { t: "No vemos a María {0}.", a: [["desde hace mucho tiempo", "desde hace tres meses", "desde 2007", "desde abril"]], wide: true },
+            { t: "Vivimos en este piso {0}.", a: [["desde hace tres meses", "desde abril", "desde hace mucho tiempo", "desde 2007"]], wide: true },
+            { t: "Tengo el carné de conducir {0}.", a: [["desde que tenía 18 años"]], wide: true },
+            { t: "Estudio español {0}.", a: [["desde abril", "desde hace tres meses", "desde hace mucho tiempo", "desde 2007"]], wide: true },
+            { t: "Clara lleva gafas {0}.", a: [["desde que era niña"]], wide: true }
+          ]
+        },
+        {
+          num: 2, title: "Completa las frases con el verbo en el tiempo adecuado",
+          instr: "Pretérito perfecto, indefinido e imperfecto.",
+          type: "items",
+          items: [
+            { t: "¿Dónde {0} (vivir, tú) cuando {1} (tener) diez años?", a: [["vivías"], ["tenías"]] },
+            { t: "¿Qué {0} (hacer, vosotros) ayer?", a: [["hicisteis"]] },
+            { t: "Esta mañana {0} (ver, nosotros) un accidente al salir de casa.", a: [NOTE_ESTA_MANANA] },
+            { t: "¿Cuántas veces {0} (estar, tú) en Nueva York?", a: [["has estado"]] },
+            { t: "Anoche {0} (acostarse, yo) antes de las doce.", a: [["me acosté"]] },
+            { t: "La semana pasada {0} (ir, ellos) a esquiar a los Alpes suizos.", a: [["fueron"]] },
+            { t: "Hace 30 años la gente no {0} (utilizar) internet.", a: [["utilizaba"]] },
+            { t: "Mi hermano {0} (ganar) muchos premios de fotografía. ¡Es muy bueno!", a: [["ha ganado"]] }
+          ]
+        },
+        {
+          num: 3, title: "Elige el verbo adecuado",
+          instr: "Escribe la forma correcta — una de las dos que aparecen entre paréntesis.",
+          type: "items",
+          items: [
+            { t: "Rosalía {0} (vivió / ha vivido) en Lima hasta 1951.", a: [["vivió"]] },
+            { t: "Mis hermanos nunca {0} (han salido / salían) al extranjero.", a: [["han salido"]] },
+            { t: "¿{0} (tuviste / has tenido) alguna vez un accidente grave? — Sí, en 1998 mi coche {1} (chocó / ha chocado) con un camión. {2} (estuve / he estado) diez meses en el hospital.", a: [["has tenido"], ["chocó"], ["estuve"]], wide: true },
+            { t: "Federico en su juventud {0} (vivió / ha vivido) en muchos sitios: Roma, Copenhague, Nairobi…", a: [["vivió"]] },
+            { t: "Hablas muy bien español, ¿dónde lo {0} (has aprendido / aprendiste)? — {1} (Empecé / He empezado) hace diez años en el instituto y cuando {2} (terminé / he terminado) mis estudios {3} (vine / he venido) a Mallorca a trabajar.", a: [["has aprendido"], ["empecé"], ["terminé"], ["vine"]], wide: true },
+            { t: "¿Qué tal el fin de semana? — Bien, el sábado {0} (fui / he ido) a ver un partido de fútbol y el domingo {1} (invité / he invitado) a Pablo a comer en un restaurante.", a: [["fui"], ["invité"]], wide: true },
+            { t: "¿{0} (Has probado / Probabas) la paella alguna vez? — Sí, la {1} (probé / probaba) una vez en casa de mi amigo Antonio.", a: [["has probado"], ["probé"]], wide: true },
+            { t: "¿Te gusta bailar? — Sí, me encanta. Antes nunca {0} (iba / he ido) a la discoteca, pero últimamente {1} (he ido / iba) todos los sábados.", a: [["iba"], ["he ido"]], wide: true }
+          ]
+        },
+        {
+          num: 4, title: "Completa con la forma adecuada del futuro",
+          instr: "Escribe el verbo en futuro.",
+          type: "items",
+          items: [
+            { t: "¿Qué {0} (decir) si tus padres te preguntan por las notas esta noche?", a: [["dirás"]] },
+            { t: "Este domingo yo no {0} (salir) con mis amigos, tengo que estudiar.", a: [["saldré"]] },
+            { t: "Si apruebo todas las asignaturas, mis padres me {0} (pagar) un viaje a París.", a: [["pagarán"]] },
+            { t: "Dicen que el año próximo {0} (haber) más becas para todos los estudiantes.", a: [["habrá"]] },
+            { t: "Han dicho en la tele que este fin de semana {0} (haber) nieve en la sierra, y {1} (poder) ir a esquiar.", a: [["habrá"], NOTE_POR_POER_FUTURO], wide: true },
+            { t: "Jorge dice que de mayor {0} (ser) pianista.", a: [["será"]] },
+            { t: "En el futuro la gente {0} (usar) solamente energía solar.", a: [["usará"]] },
+            { t: "Es mejor que salgamos pronto porque si no {0} (haber) mucho tráfico.", a: [["habrá"]] }
+          ]
+        }
+      ]
+    }
+  ];
+
+  // ---------- render ----------
+  const main = document.getElementById("main");
+  const navDots = document.getElementById("navDots");
+  const allInputs = []; // {el, spec}
+
+  function makeInput(spec, wide, label) {
+    const inp = document.createElement("input");
+    inp.type = "text";
+    inp.className = "blank" + (wide ? " wide" : "");
+    inp.autocomplete = "off";
+    inp.autocapitalize = "off";
+    inp.spellcheck = false;
+    allInputs.push({ el: inp, spec: spec, label: label || "" });
+    return inp;
+  }
+
+  function renderTemplate(container, template, answers, wide, labelBase, forceIndex) {
+    const parts = template.split(/\{(\d+)\}/g);
+    let blankCount = 0;
+    for (let k = 1; k < parts.length; k += 2) blankCount++;
+    parts.forEach(function (part, i) {
+      if (i % 2 === 1) {
+        const tokenIdx = parseInt(part, 10);
+        const spec = answers[tokenIdx];
+        const label = (blankCount > 1 || forceIndex) ? labelBase + " (" + (tokenIdx + 1) + ")" : labelBase;
+        container.appendChild(makeInput(spec, wide, label));
+        const reveal = document.createElement("span");
+        reveal.className = "reveal";
+        container.appendChild(reveal);
+        allInputs[allInputs.length - 1].reveal = reveal;
+      } else if (part) {
+        container.appendChild(document.createTextNode(part));
+      }
+    });
+  }
+
+  function exerciseHeader(ex) {
+    const head = document.createElement("div");
+    head.className = "exercise-head";
+    const titleWrap = document.createElement("div");
+    titleWrap.className = "exercise-title";
+    titleWrap.innerHTML = '<span class="exnum" translate="no">Ej. ' + ex.num + "</span>";
+    const h3 = document.createElement("h3");
+    h3.textContent = ex.title;
+    titleWrap.appendChild(h3);
+    head.appendChild(titleWrap);
+    const btn = document.createElement("button");
+    btn.className = "check-btn";
+    btn.textContent = "Corregir";
+    head.appendChild(btn);
+    return { head: head, btn: btn };
+  }
+
+  blocks.forEach(function (block) {
+    const sec = document.createElement("section");
+    sec.className = "block";
+    sec.id = block.id;
+
+    const bh = document.createElement("div");
+    bh.className = "block-head";
+    bh.innerHTML =
+      '<div class="block-num">' + block.num + '</div>' +
+      '<div class="block-titles"><h2>' + block.title + '</h2><div class="sub">' + block.sub + '</div></div>';
+    sec.appendChild(bh);
+
+    // Contenido de teoría no interactivo (no forma parte del motor de huecos/corrección),
+    // mostrado antes de los ejercicios del bloque. Solo se usa cuando block.introHTML existe.
+    if (block.introHTML) {
+      const intro = document.createElement("div");
+      intro.innerHTML = block.introHTML;
+      sec.appendChild(intro);
+    }
+
+    const navA = document.createElement("a");
+    navA.href = "#" + block.id;
+    navA.textContent = "Bloque " + block.num;
+    navDots.appendChild(navA);
+
+    block.exercises.forEach(function (ex) {
+      const card = document.createElement("div");
+      card.className = "exercise";
+      const startIdx = allInputs.length;
+      const hdr = exerciseHeader(ex);
+      card.appendChild(hdr.head);
+
+      if (ex.instr) {
+        const instr = document.createElement("div");
+        instr.className = "exercise-instr";
+        instr.textContent = ex.instr;
+        card.appendChild(instr);
+      }
+      if (ex.model) {
+        const model = document.createElement("div");
+        model.className = "exercise-model";
+        model.textContent = ex.model;
+        card.appendChild(model);
+      }
+
+      if (ex.type === "items") {
+        const wrap = document.createElement("div");
+        wrap.className = "items";
+        ex.items.forEach(function (item, i) {
+          const row = document.createElement("div");
+          row.className = "item-row";
+          const letter = document.createElement("span");
+          letter.className = "item-letter";
+          letter.setAttribute("translate", "no");
+          letter.textContent = String.fromCharCode(97 + i) + ".";
+          row.appendChild(letter);
+          renderTemplate(row, item.t, item.a, item.wide, "Ej. " + ex.num + String.fromCharCode(97 + i));
+          wrap.appendChild(row);
+        });
+        card.appendChild(wrap);
+      } else if (ex.type === "text") {
+        const p = document.createElement("div");
+        p.className = "paragraph";
+        ex.text.split("\n").forEach(function (line, li) {
+          if (li > 0) p.appendChild(document.createElement("br"));
+          renderTemplate(p, line, ex.a, false, "Ej. " + ex.num, true);
+        });
+        card.appendChild(p);
+      } else if (ex.type === "table2") {
+        const twrap = document.createElement("div");
+        twrap.className = "table-wrap";
+        const table = document.createElement("table");
+        table.className = "exercise-table";
+        table.innerHTML = "<thead><tr><th>Infinitivo</th><th>Gerundio</th></tr></thead>";
+        const tbody = document.createElement("tbody");
+        ex.rows.forEach(function (r) {
+          const tr = document.createElement("tr");
+          const td1 = document.createElement("td");
+          td1.textContent = r[0];
+          const td2 = document.createElement("td");
+          td2.appendChild(makeInput(r[1][0], false, "Ej. " + ex.num + " " + r[0]));
+          const reveal = document.createElement("span");
+          reveal.className = "reveal";
+          td2.appendChild(reveal);
+          allInputs[allInputs.length - 1].reveal = reveal;
+          tr.appendChild(td1); tr.appendChild(td2);
+          tbody.appendChild(tr);
+        });
+        table.appendChild(tbody);
+        twrap.appendChild(table);
+        card.appendChild(twrap);
+      } else if (ex.type === "conjTable") {
+        const twrap = document.createElement("div");
+        twrap.className = "table-wrap";
+        const table = document.createElement("table");
+        table.className = "exercise-table";
+        let thead = "<thead><tr><th>Sujeto</th>";
+        ex.cols.forEach(function (c) { thead += "<th>" + c.label + "</th>"; });
+        thead += "</tr></thead>";
+        table.innerHTML = thead;
+        const tbody = document.createElement("tbody");
+        ex.subjects.forEach(function (subj, si) {
+          const tr = document.createElement("tr");
+          const td0 = document.createElement("td");
+          td0.textContent = subj;
+          tr.appendChild(td0);
+          ex.cols.forEach(function (c) {
+            const td = document.createElement("td");
+            td.appendChild(makeInput(c.a[si], false, "Ej. " + ex.num + " " + subj + "/" + c.label));
+            const reveal = document.createElement("span");
+            reveal.className = "reveal";
+            td.appendChild(reveal);
+            allInputs[allInputs.length - 1].reveal = reveal;
+            tr.appendChild(td);
+          });
+          tbody.appendChild(tr);
+        });
+        table.appendChild(tbody);
+        twrap.appendChild(table);
+        card.appendChild(twrap);
+      } else if (ex.type === "agenda") {
+        const twrap = document.createElement("div");
+        twrap.className = "table-wrap";
+        const table = document.createElement("table");
+        table.className = "exercise-table ref-table";
+        table.innerHTML = "<thead><tr><th>Día</th><th>Actividad</th></tr></thead>";
+        const tbody = document.createElement("tbody");
+        ex.table.forEach(function (r) {
+          const tr = document.createElement("tr");
+          const td1 = document.createElement("td"); td1.textContent = r[0];
+          const td2 = document.createElement("td"); td2.textContent = r[1];
+          tr.appendChild(td1); tr.appendChild(td2);
+          tbody.appendChild(tr);
+        });
+        table.appendChild(tbody);
+        twrap.appendChild(table);
+        card.appendChild(twrap);
+        const wrap = document.createElement("div");
+        wrap.className = "items";
+        ex.items.forEach(function (item, i) {
+          const row = document.createElement("div");
+          row.className = "item-row";
+          const letter = document.createElement("span");
+          letter.className = "item-letter";
+          letter.setAttribute("translate", "no");
+          letter.textContent = String.fromCharCode(97 + i) + ".";
+          row.appendChild(letter);
+          renderTemplate(row, item.t, item.a, item.wide, "Ej. " + ex.num + String.fromCharCode(97 + i));
+          wrap.appendChild(row);
+        });
+        card.appendChild(wrap);
+      }
+
+      const endIdx = allInputs.length;
+      hdr.btn.addEventListener("click", function () {
+        gradeRange(startIdx, endIdx);
+        updateScore();
+      });
+
+      sec.appendChild(card);
+    });
+
+    main.appendChild(sec);
+  });
+
+  document.getElementById("totalBlanksLabel").textContent = allInputs.length;
+  document.getElementById("scoreTotal").textContent = allInputs.length;
+
+  // Aclaraciones lingüísticas que se muestran DESPUÉS de corregir (no antes, para no
+  // revelar la respuesta), enganchadas a un hueco concreto por identidad del array de
+  // respuestas aceptadas (ver NOTE_* más abajo, en los datos de los ejercicios).
+  function attachNote(spec, text) {
+    const rec = allInputs.find(function (r) { return r.spec === spec; });
+    if (!rec || !rec.reveal) return;
+    const row = rec.el.closest(".item-row");
+    if (!row) return;
+    const noteEl = document.createElement("div");
+    noteEl.className = "grading-note";
+    noteEl.textContent = text;
+    row.appendChild(noteEl);
+    rec.noteEl = noteEl;
+  }
+
+  attachNote(NOTE_ESTA_MANANA, "«Esta mañana», como es hoy, todavía está en curso → normalmente se usa el pretérito perfecto («hemos visto»). Si en tu clase se usa más el indefinido para el mismo día, «vimos» también se acepta aquí.");
+  attachNote(NOTE_POR_POER_FUTURO, "El sujeto de «poder» no está explícito en la frase — se aceptan «podremos» (nosotros), «podrá» / «podrán» (uso más impersonal) y «se podrá».");
+
+  function correctTextFor(spec) {
+    const t = Array.isArray(spec) ? spec[0] : (spec.show || (spec.flex ? spec.flex.join(" / ") : ""));
+    return typeof t === "string" ? t : "";
+  }
+
+  function gradeRange(start, end) {
+    for (let i = start; i < end; i++) {
+      const rec = allInputs[i];
+      const ok = isCorrect(rec.el.value, rec.spec);
+      rec.el.classList.remove("correct", "incorrect");
+      rec.el.classList.add(ok ? "correct" : "incorrect");
+      rec.el.dataset.checked = "1";
+      if (!ok && rec.reveal) {
+        rec.reveal.textContent = "→ " + correctTextFor(rec.spec);
+        rec.reveal.classList.add("show", "bad-reveal");
+      } else if (rec.reveal) {
+        rec.reveal.classList.remove("show", "bad-reveal");
+      }
+      if (rec.noteEl) rec.noteEl.classList.add("show");
+    }
+  }
+
+  function updateScore() {
+    let checked = 0, correct = 0;
+    allInputs.forEach(function (rec) {
+      if (rec.el.dataset.checked === "1") {
+        checked++;
+        if (rec.el.classList.contains("correct")) correct++;
+      }
+    });
+    document.getElementById("scoreNum").textContent = correct;
+    document.getElementById("scoreTotal").textContent = allInputs.length;
+    const pct = allInputs.length ? (correct / allInputs.length) * 100 : 0;
+    document.getElementById("barFill").style.width = pct + "%";
+    updateResultsPanel(checked, correct);
+  }
+
+  document.getElementById("correctAllBtn").addEventListener("click", function () {
+    gradeRange(0, allInputs.length);
+    updateScore();
+  });
+
+  // ---------- results panel: motivational message + send to teacher ----------
+  const TITLE_LABEL = "Repaso B1"; // short label used in email subject / summary header
+  // These are Angel's real, reusable contact details — copy verbatim into every new
+  // exercise unless he says they changed. IMPORTANT: telegram MUST be his @username
+  // (no @, no phone number) — t.me/+<phone> links silently ignore ?text= and never
+  // pre-fill; only t.me/<username>?text=... does. See SKILL.md "Canal por canal".
+  const TEACHER = {
+    whatsapp: "79856456905",
+    telegram: "angel9904",
+    email: "angelluisacosta99@gmail.com",
+    teamsEmail: "angelluisacosta99@gmail.com"
+  };
+
+  function tierFor(pct) {
+    if (pct >= 90) return { headline: "¡Excelente trabajo! 🎉", sub: "Dominas muy bien este tema. ¡Sigue así!" };
+    if (pct >= 70) return { headline: "¡Muy bien! 👏", sub: "Vas por muy buen camino. Repasa los pocos fallos y lo tendrás perfecto." };
+    if (pct >= 50) return { headline: "Buen intento 💪", sub: "Vas progresando. Repasa los fallos marcados y el recuadro de gramática." };
+    return { headline: "¡Ánimo, esto es parte de aprender! 🌱", sub: "Vuelve a leer los ejemplos y repite el ejercicio — cada intento suma." };
+  }
+
+  function buildSummary(name, correct, total, pct) {
+    const lines = [];
+    lines.push("📋 Resultados — " + TITLE_LABEL);
+    lines.push("Alumno: " + (name || "(sin nombre)"));
+    lines.push("Puntuación: " + correct + "/" + total + " (" + pct + "%)");
+    lines.push("");
+    const wrong = allInputs.filter(function (rec) {
+      return rec.el.dataset.checked === "1" && !rec.el.classList.contains("correct");
+    });
+    if (wrong.length === 0) {
+      lines.push("¡Sin errores! 🎉");
+    } else {
+      lines.push("Fallos (" + wrong.length + "):");
+      wrong.forEach(function (rec) {
+        const given = rec.el.value.trim() || "(en blanco)";
+        lines.push("- " + rec.label + ": escribió \"" + given + "\" → correcto: \"" + correctTextFor(rec.spec) + "\"");
+      });
+    }
+    return lines.join("\n");
+  }
+
+  function updateResultsPanel(checked, correct) {
+    const panel = document.getElementById("resultsPanel");
+    const hint = document.getElementById("progressHint");
+    const total = allInputs.length;
+    if (checked === 0) {
+      panel.hidden = true;
+      if (hint) { hint.textContent = ""; hint.classList.remove("complete"); }
+      return;
+    }
+    if (checked < total) {
+      if (hint) {
+        hint.textContent = "Corregidos " + checked + "/" + total + " — corrige el resto de ejercicios (o pulsa \"Corregir todos\") para ver tu resumen final.";
+        hint.classList.remove("complete");
+      }
+      return; // wait until everything has been corrected at least once
+    }
+    if (hint) {
+      hint.textContent = "¡Todo corregido! Tu resumen está más abajo 👇";
+      hint.classList.add("complete");
+    }
+    const wasHidden = panel.hidden;
+    panel.hidden = false;
+    if (wasHidden) setTimeout(function () { panel.scrollIntoView({ behavior: "smooth", block: "start" }); }, 50);
+
+    const pct = Math.round((correct / total) * 100);
+    const tier = tierFor(pct);
+    document.getElementById("resHeadline").textContent = tier.headline;
+    document.getElementById("resSub").textContent = tier.sub;
+    document.getElementById("resScoreNum").textContent = correct;
+    document.getElementById("resScoreDen").textContent = "/ " + total + " (" + pct + "%)";
+
+    const wrong = allInputs.filter(function (rec) {
+      return rec.el.dataset.checked === "1" && !rec.el.classList.contains("correct");
+    });
+    const errBox = document.getElementById("resErrors");
+    if (wrong.length === 0) {
+      errBox.innerHTML = '<div class="results-error-item">¡Ni un solo fallo! 🎉</div>';
+    } else {
+      errBox.innerHTML = '<div class="results-errors-title">Fallos (' + wrong.length + ')</div>' +
+        wrong.map(function (rec) {
+          const given = escapeHtml(rec.el.value.trim() || "(en blanco)");
+          return '<div class="results-error-item"><b>' + rec.label + ':</b> <s>' + given + "</s> → " + correctTextFor(rec.spec) + "</div>";
+        }).join("");
+    }
+
+    wireChannels();
+  }
+
+  function wireChannels() {
+    const nameEl = document.getElementById("resName");
+    function currentSummary() {
+      const correct = parseInt(document.getElementById("resScoreNum").textContent, 10);
+      const total = allInputs.length;
+      const pct = Math.round((correct / total) * 100);
+      return buildSummary(nameEl.value.trim(), correct, total, pct);
+    }
+    // Long reports risk pushing the whole URL past the ~2000-char limit some browsers/
+    // servers truncate at. Keeps as many full lines as fit within an encoded-length budget,
+    // then appends a note — measuring the ENCODED length, since encodeURIComponent can
+    // roughly triple raw length (newlines, accents, emoji all expand).
+    function truncateForUrl(text, maxEncodedLen) {
+      const note = "\n\n(Informe truncado por ser muy largo para el enlace — usa \"Copiar resumen\" para ver todos los fallos.)";
+      if (encodeURIComponent(text).length <= maxEncodedLen) return text;
+      const lines = text.split("\n");
+      let out = "";
+      for (let i = 0; i < lines.length; i++) {
+        const candidate = out + (out ? "\n" : "") + lines[i];
+        if (encodeURIComponent(candidate + note).length > maxEncodedLen) break;
+        out = candidate;
+      }
+      return out + note;
+    }
+    function refreshLinks() {
+      const text = currentSummary();
+      const encoded = encodeURIComponent(text);
+      // t.me's server (nginx) rejects long query strings outright with a 400 Bad Request —
+      // wa.me tolerates the same length fine, so only Telegram needs the same length budget
+      // already used for the Gmail link below.
+      const shortText = truncateForUrl(text, 1200);
+      document.getElementById("chWhatsapp").href = "https://wa.me/" + TEACHER.whatsapp + "?text=" + encoded;
+      // t.me links only pre-fill the message box when addressed to a @username — the
+      // phone-number form (t.me/+<number>) has no equivalent and ignores ?text= entirely.
+      document.getElementById("chTelegram").href = "https://t.me/" + TEACHER.telegram + "?text=" + encodeURIComponent(shortText);
+      // encodeURIComponent on the recipient, matching every other channel's params (was raw
+      // before) — @ is technically legal unencoded in a query string, but the Teams desktop
+      // app parses this deep link with its own internal handler, not a browser, and may be
+      // stricter than what wa.me/t.me/mail.google.com's own parsers tolerate.
+      document.getElementById("chTeams").href = "https://teams.microsoft.com/l/chat/0/0?users=" + encodeURIComponent(TEACHER.teamsEmail) + "&message=" + encoded;
+      // Gmail's web compose URL, set as a plain https:// href — a native <a target="_blank">
+      // click is trusted browser navigation, exempt from the "block pop-ups" site permission
+      // that silently swallows a script-triggered window.open() call (this broke a previous
+      // version of this button on both desktop and mobile: the Correo button had, at some
+      // point during testing, triggered enough popups that Chrome's per-site "block
+      // pop-ups" permission for this origin got set, which only affects window.open(), not
+      // real link clicks). On Android with the Gmail app installed, the OS still intercepts
+      // this link and opens the app instead of the browser, which ignores the compose
+      // params — that's a separate, unrelated limitation covered by the copy fallback below.
+      document.getElementById("chEmail").href = "https://mail.google.com/mail/?view=cm&fs=1&to=" +
+        encodeURIComponent(TEACHER.email) + "&su=" + encodeURIComponent("Resultados — " + TITLE_LABEL) +
+        "&body=" + encodeURIComponent(shortText);
+    }
+    refreshLinks();
+    nameEl.oninput = refreshLinks;
+    function showCopied(text) {
+      const msg = document.getElementById("chCopiedMsg");
+      msg.textContent = text || "¡Copiado!";
+      msg.style.display = "block";
+      setTimeout(function () { msg.style.display = "none"; }, 3200);
+    }
+    function copyText(text, onDone) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () { onDone(true); }, function () { fallbackCopy(text, onDone); });
+      } else {
+        fallbackCopy(text, onDone);
+      }
+    }
+    function fallbackCopy(text, onDone) {
+      try {
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.style.position = "fixed";
+        ta.style.top = "-9999px";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.focus();
+        ta.select();
+        const ok = document.execCommand("copy");
+        document.body.removeChild(ta);
+        onDone(ok);
+      } catch (e) { onDone(false); }
+    }
+    document.getElementById("chCopy").onclick = function () {
+      copyText(currentSummary(), function (ok) { if (ok) showCopied(); });
+    };
+    // Teams' chat link works fully on mobile (recipient selected, message pasted), but on
+    // desktop the app has only shown the message pasted, not the recipient auto-selected —
+    // the same category of gap as Correo on Android: a native app intercepting a web deep
+    // link and only partially honoring its parameters, which the page has no way to detect
+    // or control. The button also copies the summary and names the exact manual step that
+    // might still be needed, covering both platforms without guessing which one applies.
+    document.getElementById("chTeams").addEventListener("click", function () {
+      copyText(currentSummary(), function (ok) {
+        if (ok) showCopied("Texto copiado. Si el destinatario no se seleccionó solo, elige a " + TEACHER.teamsEmail + ". Pégalo (mantén pulsado → Pegar) si el mensaje no se rellenó.");
+      });
+    });
+    // Correo: like Teams, its own link can't be trusted to fully deliver the message (on
+    // Android with the Gmail app installed, the OS intercepts mail.google.com links and
+    // opens the APP instead of the browser, which ignores the compose params and just opens
+    // normally — "redirects to Gmail but does nothing"). This is a genuinely additive
+    // listener on the native <a href> click (NOT a onclick handler calling window.open()
+    // itself) — a script-triggered window.open() is what a "block pop-ups" site permission
+    // targets, and a real link click is exempt from it, which is what actually matters here.
+    document.getElementById("chEmail").addEventListener("click", function () {
+      copyText(currentSummary(), function (ok) {
+        if (ok) showCopied("Texto copiado. Si no se abrió tu correo solo, pégalo (mantén pulsado → Pegar) en un email a " + TEACHER.email + ".");
+      });
+    });
+  }
+
+  allInputs.forEach(function (rec) {
+    rec.el.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        gradeRange(0, allInputs.length);
+        updateScore();
+      }
+    });
+  });
+
+  updateScore();
+})();
+</script>
