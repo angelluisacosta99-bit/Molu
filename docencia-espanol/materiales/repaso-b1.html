@@ -1,0 +1,2684 @@
+<!--
+  Repaso B1 — transcrito de las fotos de RepasoB1.pdf (el PDF original es un escaneado sin
+  texto extraíble). Construido sobre el motor de .claude/skills/ejercicio-interactivo/
+  reference/template.html, con tres añadidos propios de este documento:
+    · block.introHTML  — teoría no interactiva antes de los ejercicios de cada sección.
+    · ex.refHTML       — recuadro de referencia (conectores, banco de opciones…) dentro de
+                         un ejercicio, para que el alumno vea todas las piezas.
+    · type "conjTables" — varios cuadros de conjugación en un mismo ejercicio; si el spec de
+                         una celda es una cadena en vez de un array, se pinta fija (ya
+                         resuelta en el libro) y no cuenta como hueco.
+  Cada sección tiene su propio panel de resultados y sus botones de envío, además del panel
+  global del final, para que el alumno pueda entregar sección por sección.
+-->
+<title>Repaso B1 — Nuevo Español en Marcha</title>
+<style>
+  :root {
+    --paper: #F3F5F0;
+    --paper-raised: #FFFFFF;
+    --ink: #17223B;
+    --ink-soft: #4B5468;
+    --pencil: #6E7280;
+    --gold: #A8790C;
+    --gold-soft: #F1E4C2;
+    --good: #1F7A4C;
+    --good-bg: #E7F3EC;
+    --bad: #B23A2E;
+    --bad-bg: #FBECE9;
+    --border: #DCDFD3;
+    --input-bg: #FCFDFB;
+    --focus: #A8790C;
+    --shadow: 0 1px 2px rgba(23,34,59,0.06), 0 4px 14px rgba(23,34,59,0.06);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #101626;
+      --paper-raised: #182036;
+      --ink: #ECEEF3;
+      --ink-soft: #AEB6C9;
+      --pencil: #8B93A6;
+      --gold: #E0B44A;
+      --gold-soft: #3A3220;
+      --good: #4CB47F;
+      --good-bg: #163326;
+      --bad: #E17868;
+      --bad-bg: #3A1E1B;
+      --border: #2A3348;
+      --input-bg: #131A2C;
+      --focus: #E0B44A;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 20px rgba(0,0,0,0.35);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #101626;
+    --paper-raised: #182036;
+    --ink: #ECEEF3;
+    --ink-soft: #AEB6C9;
+    --pencil: #8B93A6;
+    --gold: #E0B44A;
+    --gold-soft: #3A3220;
+    --good: #4CB47F;
+    --good-bg: #163326;
+    --bad: #E17868;
+    --bad-bg: #3A1E1B;
+    --border: #2A3348;
+    --input-bg: #131A2C;
+    --focus: #E0B44A;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 20px rgba(0,0,0,0.35);
+  }
+
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--paper);
+    color: var(--ink);
+  }
+  body {
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 4rem;
+  }
+  h1, h2, h3 {
+    font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+    text-wrap: balance;
+    margin: 0;
+  }
+  .mono, input, .score, .exnum, .navdot-label {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  }
+  a { color: inherit; }
+
+  /* ---------- top bar ---------- */
+  .topbar {
+    position: sticky; top: 0; z-index: 20;
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+  .topbar-inner {
+    max-width: 760px; margin: 0 auto;
+    padding: 0.7rem 1.25rem;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 1rem; flex-wrap: wrap;
+  }
+  .brand { display: flex; align-items: baseline; gap: 0.6rem; }
+  .brand-title { font-size: 0.95rem; font-weight: 700; letter-spacing: 0.01em; }
+  .brand-sub { font-size: 0.78rem; color: var(--pencil); }
+  .nav-dots { display: flex; gap: 0.4rem; }
+  .nav-dots a {
+    text-decoration: none;
+    font-size: 0.7rem;
+    padding: 0.28rem 0.6rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    color: var(--ink-soft);
+    white-space: nowrap;
+  }
+  .nav-dots a:hover { border-color: var(--gold); color: var(--gold); }
+  .score-wrap { display: flex; align-items: center; gap: 0.6rem; }
+  .score { font-size: 0.82rem; font-weight: 600; }
+  .score .num { color: var(--gold); }
+  .bar {
+    width: 84px; height: 6px; border-radius: 999px;
+    background: var(--border); overflow: hidden;
+  }
+  .bar-fill { height: 100%; background: var(--gold); width: 0%; transition: width 0.35s ease; }
+
+  /* ---------- hero ---------- */
+  .hero {
+    max-width: 760px; margin: 0 auto;
+    padding: 2.6rem 1.25rem 1.6rem;
+  }
+  .eyebrow {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 0.7rem;
+  }
+  .hero h1 { font-size: clamp(1.7rem, 4vw, 2.3rem); font-weight: 700; margin-bottom: 0.6rem; }
+  .hero p { color: var(--ink-soft); max-width: 62ch; font-size: 0.98rem; }
+  .hero-meta {
+    margin-top: 1.1rem; display: flex; gap: 1.2rem; flex-wrap: wrap;
+    font-size: 0.82rem; color: var(--pencil);
+  }
+  .hero-meta strong { color: var(--ink); }
+  .correct-all-wrap {
+    max-width: 760px; margin: 2.4rem auto 0; padding: 0 1.25rem 2.4rem;
+    text-align: center;
+  }
+  .correct-all-btn {
+    margin-top: 1.3rem;
+    background: var(--ink); color: var(--paper-raised);
+    border: none; border-radius: 8px;
+    padding: 0.65rem 1.2rem; font-size: 0.88rem; font-weight: 600;
+    cursor: pointer;
+  }
+  .correct-all-btn:hover { background: var(--gold); color: var(--ink); }
+  /* En oscuro, --ink es claro y quedaría texto claro sobre el dorado: se fuerza tinta
+     oscura. El :not([data-theme="light"]) va DENTRO del media query a propósito, para que
+     no se aplique también en modo claro. */
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .correct-all-btn:hover { color: #101426; }
+  }
+  :root[data-theme="dark"] .correct-all-btn:hover { color: #101426; }
+  .progress-hint { margin-top: 0.7rem; font-size: 0.82rem; color: var(--pencil); text-align: center; }
+  .progress-hint.complete { color: var(--good); font-weight: 600; }
+
+  /* ---------- blocks ---------- */
+  main { max-width: 760px; margin: 0 auto; padding: 0 1.25rem; }
+  .block { margin-top: 2.4rem; scroll-margin-top: 6rem; }
+  .block-head {
+    display: flex; align-items: baseline; gap: 0.75rem;
+    padding-bottom: 0.6rem; margin-bottom: 1.3rem;
+    border-bottom: 2px solid var(--ink);
+  }
+  .block-num {
+    font-family: Georgia, serif; font-weight: 700; font-size: 1.05rem;
+    color: var(--paper-raised); background: var(--ink);
+    width: 2rem; height: 2rem; border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .block-titles h2 { font-size: 1.25rem; }
+  .block-titles .sub { font-size: 0.8rem; color: var(--pencil); margin-top: 0.15rem; }
+
+  /* ---------- exercise card ---------- */
+  .exercise {
+    background: var(--paper-raised);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    padding: 1.15rem 1.3rem 1.3rem;
+    margin-bottom: 1.1rem;
+  }
+  .exercise-head {
+    display: flex; align-items: flex-start; justify-content: space-between;
+    gap: 1rem; margin-bottom: 0.3rem;
+  }
+  .exercise-title { display: flex; gap: 0.6rem; align-items: baseline; }
+  .exnum { color: var(--gold); font-weight: 700; font-size: 0.85rem; }
+  .exercise-title h3 { font-size: 1.02rem; font-weight: 700; }
+  .exercise-instr { color: var(--pencil); font-size: 0.85rem; font-style: italic; margin-bottom: 0.85rem; }
+  .exercise-model { color: var(--pencil); font-size: 0.85rem; font-style: italic; margin-bottom: 0.7rem; }
+
+  /* bloque de referencia (conectores, banco de opciones…) mostrado dentro de un ejercicio,
+     antes de los huecos — para que el alumno vea todas las piezas con las que debe formar
+     su respuesta, no solo el hueco vacío */
+  .exercise-ref {
+    background: var(--gold-soft); border-radius: 10px; padding: 0.9rem 1.1rem;
+    margin-bottom: 1rem; font-size: 0.86rem; color: var(--ink);
+  }
+  .exercise-ref .ref-label {
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--ink-soft); font-family: -apple-system, sans-serif; display: block; margin-bottom: 0.3rem;
+  }
+  .exercise-ref .ref-connectors { font-weight: 700; font-family: ui-monospace, monospace; margin-bottom: 0.7rem; }
+  .exercise-ref .ref-connectors span::after { content: " · "; color: var(--ink-soft); font-weight: 400; }
+  .exercise-ref .ref-connectors span:last-child::after { content: ""; }
+  .exercise-ref .ref-options { display: flex; flex-wrap: wrap; gap: 0.4rem 0.9rem; }
+  .exercise-ref .ref-opt { white-space: nowrap; }
+  .exercise-ref .ref-opt b { color: var(--gold); font-family: ui-monospace, monospace; margin-right: 0.15rem; }
+
+  /* nota mostrada solo después de corregir (ver attachNote()/gradeRange() en el script) */
+  .grading-note {
+    display: none; font-size: 0.78rem; color: var(--ink-soft); font-style: italic;
+    margin: 0.3rem 0 0 1.6rem; max-width: 46ch;
+  }
+  .grading-note.show { display: block; }
+
+  /* ---------- teoría (contenido no interactivo antes de los ejercicios) ---------- */
+  .theory-wrap {
+    background: var(--paper-raised); border: 1px solid var(--border); border-radius: 10px;
+    box-shadow: var(--shadow); padding: 1.4rem 1.5rem; margin-bottom: 1.3rem;
+  }
+  .theory-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 2rem; }
+  @media (max-width: 640px) { .theory-cols { grid-template-columns: 1fr; } }
+  .theory-group { margin-bottom: 1.4rem; }
+  .theory-group h3 {
+    font-size: 0.76rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--gold); font-family: -apple-system, sans-serif; margin-bottom: 0.55rem;
+  }
+  .theory-lead { font-size: 0.85rem; color: var(--ink-soft); margin-bottom: 0.45rem; }
+  .theory-points { list-style: none; margin: 0; padding: 0; }
+  .theory-points > li { margin-bottom: 0.7rem; font-size: 0.9rem; }
+  .theory-points > li > .use-label { display: block; color: var(--ink-soft); margin-bottom: 0.15rem; }
+  .theory-points .example {
+    display: block; font-style: italic; color: var(--ink); margin-top: 0.15rem;
+    padding-left: 0.85rem; border-left: 2px solid var(--gold-soft);
+  }
+  .theory-points .example b { color: var(--gold); font-weight: 700; font-style: normal; }
+  .rule-box {
+    background: var(--ink); color: var(--paper); border-radius: 10px;
+    padding: 1.05rem 1.25rem; margin-top: 0.4rem; font-size: 0.85rem;
+  }
+  .rule-box h4 {
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--gold); font-family: -apple-system, sans-serif; margin-bottom: 0.65rem;
+  }
+  .rule-box p { margin: 0 0 0.65rem; color: color-mix(in srgb, var(--paper) 90%, transparent); }
+  .rule-box p:last-child { margin-bottom: 0; }
+  .rule-box b { color: var(--paper); }
+  .rule-box .ex-words { font-style: italic; color: color-mix(in srgb, var(--paper) 78%, transparent); }
+  /* celda de un cuadro de conjugación que el libro ya trae resuelta */
+  .given-cell { color: var(--good); font-weight: 600; font-style: italic; white-space: nowrap; }
+  /* Los cuadros de conjugación llegan a tener 5 columnas: los huecos van más estrechos que
+     los de las frases sueltas para que quepan sin obligar a desplazar la tabla a mano. */
+  .exercise-table input.blank { width: 6.4em; }
+  .exercise-table td, .exercise-table th { white-space: nowrap; }
+  @media (max-width: 560px) {
+    .exercise-table input.blank { width: 5.1em; font-size: 0.85rem; }
+    .exercise-table th, .exercise-table td { padding: 0.35rem 0.4rem; font-size: 0.82rem; }
+  }
+  /* Aviso de que la tabla se puede desplazar en horizontal si no cabe entera. */
+  .table-wrap { position: relative; }
+  .table-hint {
+    font-size: 0.75rem; color: var(--pencil); font-style: italic; margin: 0.15rem 0 0.9rem;
+  }
+
+  /* cierre de sección: corregir la sección entera y enviarla al profesor */
+  .section-actions { text-align: center; margin: 1.4rem 0 0.2rem; }
+  .section-correct-btn {
+    background: transparent; color: var(--ink);
+    border: 1.5px solid var(--ink); border-radius: 8px;
+    padding: 0.55rem 1.15rem; font-size: 0.85rem; font-weight: 600;
+    cursor: pointer; font-family: inherit;
+  }
+  .section-correct-btn:hover, .section-correct-btn:focus-visible {
+    background: var(--gold); border-color: var(--gold); color: var(--ink); outline: none;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .section-correct-btn:hover { color: #101426; }
+  }
+  :root[data-theme="dark"] .section-correct-btn:hover { color: #101426; }
+  .section-actions .progress-hint { margin-top: 0.6rem; }
+  .block .results-panel { margin-top: 1.1rem; }
+
+  /* sopa de letras */
+  /* La rejilla NO lleva espacios literales entre letras: la separación es puramente
+     letter-spacing, para que las 10 columnas quepan en la pantalla de un móvil. */
+  .wordsearch {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    font-size: 0.95rem; line-height: 1.9; letter-spacing: 0.85em; text-indent: 0.42em;
+    background: var(--paper-raised); border: 1px solid var(--border); border-radius: 8px;
+    padding: 0.8rem 0.9rem; margin-top: 0.4rem; display: inline-block;
+    white-space: pre; overflow-x: auto; max-width: 100%;
+  }
+  @media (max-width: 520px) {
+    .wordsearch { font-size: 0.8rem; letter-spacing: 0.55em; text-indent: 0.28em; }
+  }
+  .theory-table {
+    width: 100%; border-collapse: collapse; font-size: 0.85rem; margin: 0.5rem 0 0.3rem;
+  }
+  .theory-table th {
+    background: var(--ink); color: var(--paper); text-align: left;
+    padding: 0.35rem 0.6rem; font-size: 0.76rem; font-weight: 700;
+    letter-spacing: 0.03em; font-family: -apple-system, sans-serif;
+  }
+  .theory-table td {
+    padding: 0.3rem 0.6rem; border-bottom: 1px solid var(--border); vertical-align: middle;
+  }
+  .theory-table tr:last-child td { border-bottom: none; }
+  .theory-table .tt-form { font-weight: 700; color: var(--gold); }
+  .theory-table .tt-span { color: var(--ink-soft); font-style: italic; }
+  .vocab-title {
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--pencil); margin: 1.5rem 0 0.65rem;
+  }
+  .vocab-chips { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+  .vocab-chip {
+    background: var(--input-bg); border: 1px solid var(--border); border-radius: 999px;
+    padding: 0.28rem 0.7rem; font-size: 0.83rem; font-family: ui-monospace, monospace;
+  }
+  .in-progress-note {
+    background: var(--gold-soft); border-radius: 10px; padding: 0.8rem 1rem;
+    font-size: 0.84rem; color: var(--ink-soft); margin-top: 1.2rem; max-width: 64ch;
+  }
+  .in-progress-note b { color: var(--ink); }
+
+  .check-btn {
+    background: transparent; color: var(--ink);
+    border: 1px solid var(--ink); border-radius: 7px;
+    padding: 0.32rem 0.75rem; font-size: 0.78rem; font-weight: 600;
+    cursor: pointer; white-space: nowrap; flex-shrink: 0;
+  }
+  .check-btn:hover { background: var(--ink); color: var(--paper-raised); }
+
+  .items { display: flex; flex-direction: column; gap: 0.55rem; }
+  .item-row { font-size: 0.95rem; line-height: 1.7; }
+  .item-letter { color: var(--gold); font-weight: 700; margin-right: 0.3rem; }
+
+  input.blank {
+    background: var(--input-bg);
+    border: none; border-bottom: 2px solid var(--pencil);
+    color: var(--ink);
+    font-size: 0.95rem;
+    padding: 0.1rem 0.3rem;
+    width: 8.5em;
+    text-align: center;
+    border-radius: 3px 3px 0 0;
+  }
+  input.blank.wide { width: 15em; }
+  input.blank.full { width: 100%; max-width: 26em; text-align: left; }
+  input.blank:focus { outline: none; border-bottom-color: var(--focus); box-shadow: 0 1px 0 0 var(--focus); }
+  input.blank.correct { background: var(--good-bg); border-bottom-color: var(--good); color: var(--good); font-weight: 600; }
+  input.blank.incorrect { background: var(--bad-bg); border-bottom-color: var(--bad); color: var(--bad); }
+
+  .reveal {
+    font-size: 0.82rem; color: var(--good); font-style: italic;
+    margin-left: 0.3rem; display: none;
+  }
+  .reveal.show { display: inline; }
+  .reveal.bad-reveal { color: var(--bad); }
+
+  .paragraph { font-size: 0.97rem; line-height: 2; }
+
+  table.exercise-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+  table.exercise-table th, table.exercise-table td {
+    text-align: left; padding: 0.45rem 0.6rem; border-bottom: 1px solid var(--border);
+  }
+  table.exercise-table th { color: var(--pencil); font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.03em; }
+  .table-wrap { overflow-x: auto; }
+  .ref-table { margin-bottom: 0.9rem; }
+  .ref-table td:first-child { color: var(--gold); font-weight: 600; text-transform: capitalize; }
+
+  /* ---------- footer ---------- */
+  footer {
+    max-width: 760px; margin: 3rem auto 0; padding: 1.5rem 1.25rem 0;
+    border-top: 1px solid var(--border);
+    color: var(--pencil); font-size: 0.8rem;
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;
+  }
+
+  @media (max-width: 560px) {
+    .nav-dots { display: none; }
+    input.blank.wide { width: 11em; }
+    input.blank.full { max-width: 100%; }
+  }
+
+  /* ---------- access gate ---------- */
+  html[data-locked="true"] .gated-content { display: none; }
+  html[data-locked="false"] .gate-overlay { display: none; }
+  .gate-overlay {
+    position: fixed; inset: 0; z-index: 100; background: var(--paper);
+    display: flex; align-items: center; justify-content: center; padding: 1.5rem;
+  }
+  .gate-card {
+    max-width: 360px; width: 100%; background: var(--paper-raised);
+    border: 1px solid var(--border); border-radius: 12px; box-shadow: var(--shadow);
+    padding: 2.2rem 1.9rem; text-align: center;
+  }
+  .gate-card .eyebrow { justify-content: center; display: flex; }
+  .gate-card h2 { font-size: 1.15rem; margin: 0.4rem 0 0.5rem; }
+  .gate-card p { color: var(--ink-soft); font-size: 0.86rem; margin: 0 0 1.2rem; }
+  .gate-card input {
+    width: 100%; text-align: center; font-size: 1rem; letter-spacing: 0.08em;
+    background: var(--input-bg); border: 1.5px solid var(--border); border-radius: 8px;
+    padding: 0.6rem 0.8rem; color: var(--ink); margin-bottom: 0.8rem; text-transform: uppercase;
+  }
+  .gate-card input:focus { outline: none; border-color: var(--focus); }
+  .gate-card button {
+    width: 100%; background: var(--ink); color: var(--paper-raised); border: none;
+    border-radius: 8px; padding: 0.65rem 1rem; font-size: 0.9rem; font-weight: 600; cursor: pointer;
+  }
+  .gate-card button:hover { background: var(--gold); color: var(--ink); }
+  .gate-error { color: var(--bad); font-size: 0.82rem; margin-top: 0.7rem; min-height: 1.1em; }
+
+  /* ---------- results panel ---------- */
+  /* Deliberately single-theme (always dark), independent of the page's light/dark mode —
+     uses fixed local custom properties instead of the swappable --ink/--paper-raised/--gold
+     tokens, which invert meaning in dark mode and would otherwise make this unreadable. */
+  .results-panel {
+    --rp-bg: #17223B;
+    --rp-card: rgba(255,255,255,0.06);
+    --rp-text: #ECEEF3;
+    --rp-text-soft: #C7CEDD;
+    --rp-placeholder: #8E97AC;
+    --rp-accent: #D9A441;
+    --rp-bad: #E17868;
+    --rp-input-bg: rgba(255,255,255,0.08);
+    --rp-input-border: rgba(255,255,255,0.22);
+    background: var(--rp-bg); color: var(--rp-text); border-radius: 14px;
+    padding: 1.8rem 1.7rem; margin: 2.2rem 0 2rem; scroll-margin-top: 6rem;
+  }
+  .results-panel[hidden] { display: none; }
+  .results-headline { font-family: Georgia, serif; font-size: 1.5rem; font-weight: 700; margin-bottom: 0.35rem; color: var(--rp-text); }
+  .results-sub { font-size: 0.92rem; color: var(--rp-text-soft); margin-bottom: 1.3rem; max-width: 56ch; }
+  .results-score-row { display: flex; align-items: baseline; gap: 0.6rem; margin-bottom: 1.3rem; }
+  .results-score-num { font-family: Georgia, serif; font-size: 2.4rem; font-weight: 700; color: var(--rp-accent); }
+  .results-score-den { font-size: 1rem; color: var(--rp-text-soft); }
+  .results-name {
+    display: block; width: 100%; max-width: 320px; font-size: 0.9rem;
+    background: var(--rp-input-bg); border: 1px solid var(--rp-input-border); border-radius: 8px;
+    padding: 0.55rem 0.75rem; color: var(--rp-text); margin-bottom: 1.1rem; font-family: inherit;
+  }
+  .results-name::placeholder { color: var(--rp-placeholder); }
+  .results-name:focus { outline: none; border-color: var(--rp-accent); }
+  .results-errors {
+    background: var(--rp-card); border-radius: 10px; padding: 0.9rem 1.1rem;
+    margin-bottom: 1.3rem; max-height: 220px; overflow-y: auto;
+  }
+  .results-errors-title { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--rp-text-soft); margin-bottom: 0.5rem; }
+  .results-error-item { font-size: 0.85rem; line-height: 1.6; color: var(--rp-text); }
+  .results-error-item b { color: var(--rp-accent); font-weight: 600; }
+  .results-error-item s { color: var(--rp-bad); text-decoration: line-through; opacity: 0.85; }
+  .channel-label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--rp-text-soft); margin-bottom: 0.6rem; }
+  .channel-row { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+  .channel-btn {
+    display: inline-flex; align-items: center; gap: 0.45rem;
+    background: var(--rp-text); color: var(--rp-bg); text-decoration: none;
+    border-radius: 8px; padding: 0.55rem 0.95rem; font-size: 0.85rem; font-weight: 600;
+    border: none; cursor: pointer; font-family: inherit;
+  }
+  .channel-btn:hover { background: var(--rp-accent); }
+  .channel-copied { font-size: 0.8rem; color: var(--rp-accent); margin-top: 0.6rem; display: none; width: 100%; }
+</style>
+
+<script>
+  // unlocked-repaso-b1 here MUST be byte-identical to the one set further down in the gate
+  // script (search "STORAGE_KEY =") — same placeholder, same value, both occurrences.
+  document.documentElement.setAttribute(
+    "data-locked",
+    localStorage.getItem("unlocked-repaso-b1") === "1" ? "false" : "true"
+  );
+</script>
+
+<div class="gate-overlay">
+  <div class="gate-card">
+    <div class="eyebrow">Acceso privado</div>
+    <h2>Repaso B1</h2>
+    <p>Pídele el código a tu profesor para entrar.</p>
+    <input type="text" id="gateInput" placeholder="CÓDIGO" autocomplete="off" autocapitalize="characters" />
+    <button id="gateBtn">Entrar</button>
+    <div class="gate-error" id="gateError"></div>
+  </div>
+</div>
+<script>
+  (function () {
+    // El código es solo un disuasivo, no seguridad real — cualquiera que vea el HTML
+    // fuente lo ve. Elige una palabra corta, memorable y ligada al tema, en MAYÚSCULAS.
+    const CODE = "REPASO";
+    // MUST be byte-identical al unlocked-repaso-b1 usado arriba (ver comentario junto al
+    // primer occurrence). Usa un valor único por ejercicio, p. ej. "unlocked-b2-13a-tema".
+    const STORAGE_KEY = "unlocked-repaso-b1";
+    function tryUnlock() {
+      const val = document.getElementById("gateInput").value.trim().toUpperCase();
+      if (val === CODE) {
+        localStorage.setItem(STORAGE_KEY, "1");
+        document.documentElement.setAttribute("data-locked", "false");
+      } else {
+        document.getElementById("gateError").textContent = "Código incorrecto. Inténtalo de nuevo.";
+      }
+    }
+    document.getElementById("gateBtn").addEventListener("click", tryUnlock);
+    document.getElementById("gateInput").addEventListener("keydown", function (e) {
+      if (e.key === "Enter") tryUnlock();
+    });
+  })();
+</script>
+
+<div class="topbar gated-content">
+  <div class="topbar-inner">
+    <div class="brand">
+      <!-- Ejemplo real (A1): Repaso B1 = "Ejercicios A1", Gramática, vocabulario y ejercicios = "Presente · Gerundio · Indefinido" -->
+      <span class="brand-title">Repaso B1</span>
+      <span class="brand-sub">Gramática, vocabulario y ejercicios</span>
+    </div>
+    <nav class="nav-dots" id="navDots"></nav>
+    <div class="score-wrap">
+      <div class="bar"><div class="bar-fill" id="barFill"></div></div>
+      <div class="score"><span class="num" id="scoreNum" translate="no">0</span><span style="color:var(--pencil)"> / </span><span id="scoreTotal" translate="no">0</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="hero gated-content">
+  <div class="eyebrow">Material de repaso · nivel B1</div>
+  <h1>Repaso B1</h1>
+  <p>Teoría de gramática, vocabulario y ejercicios prácticos con corrección instantánea. Se completa por partes.</p>
+  <div class="hero-meta">
+    <span><strong id="totalBlanksLabel" translate="no">—</strong> huecos en total</span>
+    <span><strong>7</strong> secciones</span>
+    <span><strong>33</strong> ejercicios</span>
+  </div>
+  <div class="in-progress-note">
+    <b>En construcción:</b> este repaso se está transcribiendo por partes. Donde el
+    ejercicio original permite varias combinaciones correctas, se aceptan todas.
+  </div>
+</div>
+
+<main id="main" class="gated-content"></main>
+
+<!-- El panel de resultados global y el de cada sección los construye createResultsPanel()
+     en el script; aquí solo queda el sitio donde se inserta el global. -->
+<div class="correct-all-wrap gated-content">
+  <button class="correct-all-btn" id="correctAllBtn">Corregir todos los ejercicios</button>
+  <div class="progress-hint" id="progressHint"></div>
+</div>
+
+<div id="globalResultsSlot" class="gated-content"></div>
+
+<footer class="gated-content">
+  <span>Repaso B1 · en construcción</span>
+  <span>© Angel Luis Acosta González</span>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  // ---------- grading helpers ----------
+  // ACCENTS ARE STRICT BY DEFAULT ON THE ARRAY PATH (isCorrect below): typing "esta" is
+  // wrong when the key is "está". This is a deliberate default, not an oversight — in most
+  // Spanish grammar drills the accent IS the point being tested (e.g. "trabaja" [presente]
+  // vs. "trabajó" [indefinido] differ only by the accent; "esta"/"está" are different words).
+  // Loosening this for a whole exercise set would silently mark wrong tenses/words as
+  // correct. If THIS exercise is testing something where accents are incidental (open-ended
+  // short answers, vocabulary content rather than verb-form precision), use the {flex:[...]}
+  // spec instead (see isCorrect below) for just those items — it's accent-insensitive by
+  // design. Don't blanket-change norm()/isCorrect() to strip accents; ask the teacher first
+  // if you're unsure which behavior a given exercise needs.
+  function norm(s) {
+    return (s || "")
+      .toLowerCase()
+      .replace(/[¿?¡!.,]/g, "")
+      .trim()
+      .replace(/\s+/g, " ");
+  }
+  function stripAccents(s) {
+    return s.normalize("NFD").replace(/[̀-ͯ]/g, "");
+  }
+  function escapeHtml(s) {
+    return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+  // answer spec: array of accepted exact strings, OR {flex:[...]} meaning all keywords must appear (accent-insensitive)
+  function isCorrect(input, spec) {
+    const n = norm(input);
+    if (!n) return false;
+    if (Array.isArray(spec)) {
+      return spec.some(function (a) { return norm(a) === n; });
+    }
+    if (spec && spec.flex) {
+      const hay = stripAccents(n);
+      return spec.flex.every(function (k) { return hay.indexOf(stripAccents(k)) !== -1; });
+    }
+    return false;
+  }
+
+  // ---------- exercise data ----------
+  // template blanks use {0},{1}... matched to item.answers[i]
+  const NOTE_ESTA_MANANA = ["hemos visto", "vimos"];
+  const NOTE_POR_POER_FUTURO = ["podremos", "podrá", "podrán", "se podrá"];
+  const NOTE_DE_A_ESTACIONES = ["de"];
+  const NOTE_PISO_TIENE = ["tiene"];
+  const NOTE_YO_QUE_TU_VER = ["vería"];
+  const NOTE_TU_SABES_QUE = ["¿Tú sabes qué ha hecho tu hermano?"];
+  // Ej. 6.2: el libro dice "hay más de una opción". Lo que decide es la forma del verbo del
+  // final: los comienzos con "que" piden subjuntivo, los que no, infinitivo.
+  const INF_ENDINGS = ["a", "b", "e", "g", "h"];
+  const SUBJ_ENDINGS = ["c", "d", "f"];
+
+  const blocks = [
+    {
+      id: "seccion-1", num: 1, title: "Gramática y vocabulario",
+      sub: "Presente, futuro, pretéritos y expresar duración",
+      introHTML: `
+        <div class="theory-wrap">
+          <div class="theory-cols">
+            <div>
+              <div class="theory-group">
+                <h3>Presente</h3>
+                <p class="theory-lead">Se utiliza la forma del presente de indicativo:</p>
+                <ul class="theory-points">
+                  <li><span class="use-label">Para hablar de hábitos.</span>
+                    <span class="example">Luis no <b>va</b> nunca a la discoteca.</span></li>
+                  <li><span class="use-label">Para dar información general sobre uno mismo o sobre el mundo.</span>
+                    <span class="example">Soy española, soy peluquera y me <b>gusta</b> mi trabajo.</span>
+                    <span class="example">Muchas tiendas en España <b>cierran</b> a mediodía.</span></li>
+                  <li><span class="use-label">Para hablar del futuro.</span>
+                    <span class="example">Mañana te <b>espero</b> a las tres en mi casa.</span></li>
+                  <li><span class="use-label">Para dar instrucciones.</span>
+                    <span class="example">Para poner en marcha el coche, primero <b>enciendes</b> el motor y <b>empujas</b> el pedal del embrague…</span></li>
+                </ul>
+              </div>
+              <div class="theory-group">
+                <h3>Pretérito perfecto</h3>
+                <p class="theory-lead">Se utiliza el pretérito perfecto:</p>
+                <ul class="theory-points">
+                  <li><span class="use-label">Para hablar de acciones acabadas que llegan hasta el presente.</span>
+                    <span class="example">Ahora mismo <b>he visto</b> a Paco en el pasillo y me <b>ha dicho</b> que no vendrá mañana.</span></li>
+                  <li><span class="use-label">También para hablar de experiencias personales o de acciones acabadas sin determinar el marco temporal.</span>
+                    <span class="example">Manu <b>ha viajado</b> mucho por Brasil.</span></li>
+                </ul>
+              </div>
+              <div class="theory-group">
+                <h3>Pretérito indefinido</h3>
+                <p class="theory-lead">Se utiliza el pretérito indefinido:</p>
+                <ul class="theory-points">
+                  <li><span class="use-label">Para hablar de acciones o estados acabados en un momento determinado del pasado.</span>
+                    <span class="example">Rosalía <b>ganó</b> el Premio Ondas en 1998.</span></li>
+                </ul>
+              </div>
+              <div class="theory-group">
+                <h3>Pretérito imperfecto</h3>
+                <p class="theory-lead">El pretérito imperfecto se utiliza:</p>
+                <ul class="theory-points">
+                  <li><span class="use-label">Para hablar de acciones habituales en el pasado.</span>
+                    <span class="example">Antes <b>salía</b> mucho los fines de semana, pero ahora prefiero quedarme en casa.</span></li>
+                  <li><span class="use-label">También para descripciones en el pasado.</span>
+                    <span class="example">El camino del río <b>era</b> muy estrecho y <b>acababa</b> en un arenal.</span></li>
+                  <li><span class="use-label">Se expresan acciones en desarrollo, muchas veces interrumpidas por otra puntual.</span>
+                    <span class="example">Empezó a llover cuando <b>llegábamos</b> a la playa.</span></li>
+                </ul>
+              </div>
+            </div>
+            <div>
+              <div class="theory-group">
+                <h3>Futuro</h3>
+                <p class="theory-lead">Se usa el futuro para:</p>
+                <ul class="theory-points">
+                  <li><span class="use-label">Hacer predicciones.</span>
+                    <span class="example">Dentro de unos años <b>viajaremos</b> a la Luna.</span></li>
+                  <li><span class="use-label">Hacer promesas.</span>
+                    <span class="example">Pasado mañana <b>visitaré</b> a tu padre.</span></li>
+                  <li><span class="use-label">Detrás de <em>creo que</em> / <em>supongo que</em>.</span>
+                    <span class="example">Creo que Juan <b>viajará</b> a Barcelona.</span></li>
+                </ul>
+              </div>
+              <div class="theory-group">
+                <h3>Expresar duración y tiempo de una acción</h3>
+                <p class="theory-lead">Informar, preguntar y responder sobre el tiempo que hace que se realiza una acción.</p>
+                <ul class="theory-points">
+                  <li><span class="use-label"><em>Desde hace</em> + cantidad de tiempo</span>
+                    <span class="example">No veo a mis primos <b>desde hace</b> diez años.</span></li>
+                  <li><span class="use-label"><em>Desde</em> + fecha</span>
+                    <span class="example">Vive en Berlín <b>desde</b> febrero.</span></li>
+                  <li><span class="use-label"><em>Desde que</em> + frase</span>
+                    <span class="example">No sale con sus amigas <b>desde que</b> tiene novio.</span></li>
+                  <li><span class="use-label"><em>Hace</em> + tiempo + <em>que</em> + frase</span>
+                    <span class="example"><b>Hace</b> tres años <b>que</b> trabajo en esta empresa.</span></li>
+                  <li><span class="use-label"><em>Cuánto tiempo hace que</em> + frase</span>
+                    <span class="example">¿Cuánto tiempo hace que eres vegetariana? — Siete años.</span></li>
+                  <li><span class="use-label"><em>Desde cuándo</em> + frase</span>
+                    <span class="example">¿Desde cuándo estudias chino? — Desde hace tres meses.</span></li>
+                </ul>
+              </div>
+              <div class="rule-box">
+                <h4>Reglas de acentuación</h4>
+                <p><b>Agudas.</b> Son las palabras cuya sílaba tónica es la última. Llevan tilde cuando terminan en vocal, <b>n</b> o <b>s</b>. <span class="ex-words">café, perdón, japonés.</span></p>
+                <p><b>Llanas.</b> Son las palabras que tienen el acento tónico en la penúltima sílaba. Llevan tilde cuando terminan en consonante, excepto en <b>n</b> o <b>s</b>. <span class="ex-words">fácil, árbol, fértil.</span></p>
+                <p><b>Esdrújulas.</b> Son las palabras cuya sílaba tónica es la antepenúltima. Llevan tilde siempre. <span class="ex-words">música, ácido, plátano.</span></p>
+              </div>
+            </div>
+          </div>
+          <div class="vocab-title">Vocabulario · Verbos</div>
+          <div class="vocab-chips">
+            <span class="vocab-chip">estudiar</span>
+            <span class="vocab-chip">trabajar</span>
+            <span class="vocab-chip">trasladarse</span>
+            <span class="vocab-chip">vivir</span>
+            <span class="vocab-chip">construir</span>
+            <span class="vocab-chip">existir</span>
+            <span class="vocab-chip">vender</span>
+            <span class="vocab-chip">escribir</span>
+          </div>
+        </div>
+      `,
+      exercises: [
+        {
+          num: 1, title: "Relaciona y forma frases",
+          instr: "Completa cada frase con desde, desde hace o desde que + la opción que corresponda. Hay más de una combinación posible en algunas frases — todas las razonables se aceptan.",
+          refHTML: '<span class="ref-label">Conectores</span>' +
+            '<div class="ref-connectors"><span>desde</span><span>desde hace</span><span>desde que</span></div>' +
+            '<span class="ref-label">Opciones</span>' +
+            '<div class="ref-options">' +
+            '<span class="ref-opt"><b>a</b>toma las pastillas nuevas</span>' +
+            '<span class="ref-opt"><b>b</b>2007</span>' +
+            '<span class="ref-opt"><b>c</b>le despidieron del trabajo</span>' +
+            '<span class="ref-opt"><b>d</b>tenía 18 años</span>' +
+            '<span class="ref-opt"><b>e</b>tres meses</span>' +
+            '<span class="ref-opt"><b>f</b>era niña</span>' +
+            '<span class="ref-opt"><b>g</b>mucho tiempo</span>' +
+            '<span class="ref-opt"><b>h</b>abril</span>' +
+            "</div>",
+          type: "items",
+          items: [
+            { t: "Pedro se encuentra mejor {0}.", a: [["desde que toma las pastillas nuevas", "desde que empezó a tomar las pastillas nuevas"]], wide: true },
+            { t: "Raúl trabaja en un restaurante {0}.", a: [["desde 2007", "desde hace tres meses", "desde hace mucho tiempo", "desde abril"]], wide: true },
+            { t: "Está deprimido {0}.", a: [["desde que le despidieron del trabajo"]], wide: true },
+            { t: "No vemos a María {0}.", a: [["desde hace mucho tiempo", "desde hace tres meses", "desde 2007", "desde abril"]], wide: true },
+            { t: "Vivimos en este piso {0}.", a: [["desde hace tres meses", "desde abril", "desde hace mucho tiempo", "desde 2007"]], wide: true },
+            { t: "Tengo el carné de conducir {0}.", a: [["desde que tenía 18 años"]], wide: true },
+            { t: "Estudio español {0}.", a: [["desde abril", "desde hace tres meses", "desde hace mucho tiempo", "desde 2007"]], wide: true },
+            { t: "Clara lleva gafas {0}.", a: [["desde que era niña"]], wide: true }
+          ]
+        },
+        {
+          num: 2, title: "Completa las frases con el verbo en el tiempo adecuado",
+          instr: "Pretérito perfecto, indefinido e imperfecto.",
+          type: "items",
+          items: [
+            { t: "¿Dónde {0} (vivir, tú) cuando {1} (tener) diez años?", a: [["vivías"], ["tenías"]] },
+            { t: "¿Qué {0} (hacer, vosotros) ayer?", a: [["hicisteis"]] },
+            { t: "Esta mañana {0} (ver, nosotros) un accidente al salir de casa.", a: [NOTE_ESTA_MANANA] },
+            { t: "¿Cuántas veces {0} (estar, tú) en Nueva York?", a: [["has estado"]] },
+            { t: "Anoche {0} (acostarse, yo) antes de las doce.", a: [["me acosté"]] },
+            { t: "La semana pasada {0} (ir, ellos) a esquiar a los Alpes suizos.", a: [["fueron"]] },
+            { t: "Hace 30 años la gente no {0} (utilizar) internet.", a: [["utilizaba"]] },
+            { t: "Mi hermano {0} (ganar) muchos premios de fotografía. ¡Es muy bueno!", a: [["ha ganado"]] }
+          ]
+        },
+        {
+          num: 3, title: "Elige el verbo adecuado",
+          instr: "Escribe la forma correcta — una de las dos que aparecen entre paréntesis.",
+          type: "items",
+          items: [
+            { t: "Rosalía {0} (vivió / ha vivido) en Lima hasta 1951.", a: [["vivió"]] },
+            { t: "Mis hermanos nunca {0} (han salido / salían) al extranjero.", a: [["han salido"]] },
+            { t: "¿{0} (tuviste / has tenido) alguna vez un accidente grave? — Sí, en 1998 mi coche {1} (chocó / ha chocado) con un camión. {2} (estuve / he estado) diez meses en el hospital.", a: [["has tenido"], ["chocó"], ["estuve"]], wide: true },
+            { t: "Federico en su juventud {0} (vivió / ha vivido) en muchos sitios: Roma, Copenhague, Nairobi…", a: [["vivió"]] },
+            { t: "Hablas muy bien español, ¿dónde lo {0} (has aprendido / aprendiste)? — {1} (Empecé / He empezado) hace diez años en el instituto y cuando {2} (terminé / he terminado) mis estudios {3} (vine / he venido) a Mallorca a trabajar.", a: [["has aprendido"], ["empecé"], ["terminé"], ["vine"]], wide: true },
+            { t: "¿Qué tal el fin de semana? — Bien, el sábado {0} (fui / he ido) a ver un partido de fútbol y el domingo {1} (invité / he invitado) a Pablo a comer en un restaurante.", a: [["fui"], ["invité"]], wide: true },
+            { t: "¿{0} (Has probado / Probabas) la paella alguna vez? — Sí, la {1} (probé / probaba) una vez en casa de mi amigo Antonio.", a: [["has probado"], ["probé"]], wide: true },
+            { t: "¿Te gusta bailar? — Sí, me encanta. Antes nunca {0} (iba / he ido) a la discoteca, pero últimamente {1} (he ido / iba) todos los sábados.", a: [["iba"], ["he ido"]], wide: true }
+          ]
+        },
+        {
+          num: 4, title: "Completa con la forma adecuada del futuro",
+          instr: "Escribe el verbo en futuro.",
+          type: "items",
+          items: [
+            { t: "¿Qué {0} (decir) si tus padres te preguntan por las notas esta noche?", a: [["dirás"]] },
+            { t: "Este domingo yo no {0} (salir) con mis amigos, tengo que estudiar.", a: [["saldré"]] },
+            { t: "Si apruebo todas las asignaturas, mis padres me {0} (pagar) un viaje a París.", a: [["pagarán"]] },
+            { t: "Dicen que el año próximo {0} (haber) más becas para todos los estudiantes.", a: [["habrá"]] },
+            { t: "Han dicho en la tele que este fin de semana {0} (haber) nieve en la sierra, y {1} (poder) ir a esquiar.", a: [["habrá"], NOTE_POR_POER_FUTURO], wide: true },
+            { t: "Jorge dice que de mayor {0} (ser) pianista.", a: [["será"]] },
+            { t: "En el futuro la gente {0} (usar) solamente energía solar.", a: [["usará"]] },
+            { t: "Es mejor que salgamos pronto porque si no {0} (haber) mucho tráfico.", a: [["habrá"]] }
+          ]
+        }
+      ]
+    },
+    {
+      id: "seccion-2", num: 2, title: "Gramática y vocabulario",
+      sub: "Pretérito pluscuamperfecto, preposiciones y vocabulario de la ciudad",
+      introHTML: `
+        <div class="theory-wrap">
+          <div class="theory-cols">
+            <div>
+              <div class="theory-group">
+                <h3>Pretérito pluscuamperfecto</h3>
+                <p class="theory-lead">Se utiliza para expresar acciones acabadas y pasadas, anteriores a otras acciones también pasadas.</p>
+                <ul class="theory-points">
+                  <li><span class="example">Cuando llegué a casa, mi marido ya <b>había preparado</b> la cena.</span>
+                    <span class="use-label" style="margin-top:0.2rem">(La acción de preparar la cena es anterior a la de llegar.)</span></li>
+                  <li><span class="example">Clara lloraba porque su madre no le <b>había comprado</b> un helado.</span></li>
+                  <li><span class="example">Me encontré a Carlos y me dijo que <b>había cambiado</b> de trabajo.</span></li>
+                </ul>
+                <p class="theory-lead">Se forma con el pretérito imperfecto del verbo <em>haber</em> y el participio del verbo que indica la acción.</p>
+                <table class="theory-table">
+                  <thead><tr><th colspan="3">Haber (imperfecto) + participio</th></tr></thead>
+                  <tbody>
+                    <tr><td>yo</td><td class="tt-form">había</td><td rowspan="6" class="tt-span">hablado<br>comido<br>vivido</td></tr>
+                    <tr><td>tú</td><td class="tt-form">habías</td></tr>
+                    <tr><td>él / ella / Ud.</td><td class="tt-form">había</td></tr>
+                    <tr><td>nosotros/as</td><td class="tt-form">habíamos</td></tr>
+                    <tr><td>vosotros/as</td><td class="tt-form">habíais</td></tr>
+                    <tr><td>ellos / ellas / Uds.</td><td class="tt-form">habían</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="theory-group">
+                <h3>Preposiciones · A</h3>
+                <ul class="theory-points">
+                  <li><span class="use-label">Dirección, movimiento.</span>
+                    <span class="example">Vamos <b>a</b> la estación de autobuses.</span></li>
+                  <li><span class="use-label">Con el verbo <em>estar</em>, puede expresar:</span>
+                    <span class="example">Ubicación: El baño está <b>a</b> la derecha del salón.</span>
+                    <span class="example">Distancia: El aeropuerto está <b>a</b> 5 km.</span>
+                    <span class="example">Temperatura: Estamos <b>a</b> 0 ºC.</span>
+                    <span class="example">Precio: La merluza está <b>a</b> 30 € el kilo.</span></li>
+                  <li><span class="use-label">Con el verbo <em>ir</em>, puede expresar velocidad.</span>
+                    <span class="example">Yo nunca voy <b>a</b> más de 130 km/hora.</span></li>
+                </ul>
+              </div>
+
+              <div class="theory-group">
+                <h3>De</h3>
+                <ul class="theory-points">
+                  <li><span class="use-label">Indica origen, en el tiempo y en el espacio.</span>
+                    <span class="example">Rosa viene <b>del</b> supermercado.</span>
+                    <span class="example">Este vino es <b>de</b> Rioja.</span></li>
+                  <li><span class="use-label">Con el verbo <em>ir</em> forma múltiples expresiones.</span>
+                    <span class="example">Ir <b>de</b> viaje, ir <b>de</b> compras, ir <b>de</b> vacaciones, ir <b>de</b> excursión.</span>
+                    <span class="example">Nosotros este año no vamos <b>de</b> vacaciones porque no podemos.</span></li>
+                </ul>
+              </div>
+            </div>
+
+            <div>
+              <div class="theory-group">
+                <h3>Desde</h3>
+                <ul class="theory-points">
+                  <li><span class="use-label">Indica origen en el espacio y en el tiempo.</span>
+                    <span class="example">Viven aquí <b>desde</b> 1980.</span>
+                    <span class="example"><b>Desde</b> mi casa hasta allí hay dos kilómetros.</span></li>
+                </ul>
+              </div>
+
+              <div class="theory-group">
+                <h3>En</h3>
+                <ul class="theory-points">
+                  <li><span class="use-label">Indica ubicación, en el tiempo y en el espacio.</span>
+                    <span class="example">En España hace mucho calor <b>en</b> verano.</span></li>
+                  <li><span class="use-label">Forma de transporte.</span>
+                    <span class="example">Me gusta más viajar <b>en</b> tren que <b>en</b> avión, es más romántico.</span></li>
+                </ul>
+              </div>
+
+              <div class="theory-group">
+                <h3>Hasta</h3>
+                <ul class="theory-points">
+                  <li><span class="use-label">Indica punto final en el tiempo y en el espacio.</span>
+                    <span class="example">Estaremos en Madrid <b>hasta</b> el 21 de diciembre.</span></li>
+                </ul>
+              </div>
+
+              <div class="theory-group">
+                <h3>Por</h3>
+                <ul class="theory-points">
+                  <li><span class="use-label">Causa, razón.</span>
+                    <span class="example">Han despedido a Juan <b>por</b> llegar tarde al trabajo.</span></li>
+                  <li><span class="use-label">Lugar.</span>
+                    <span class="example">Ven <b>por</b> la carretera de Toledo, es más corto el viaje.</span></li>
+                  <li><span class="use-label">Medio.</span>
+                    <span class="example">Envíame las fotos <b>por</b> e-mail, por favor.</span></li>
+                </ul>
+              </div>
+
+              <div class="theory-group">
+                <h3>Para</h3>
+                <ul class="theory-points">
+                  <li><span class="use-label">Finalidad, objetivo.</span>
+                    <span class="example"><b>Para</b> venir a mi casa tienes que bajarte en la estación del metro de Plaza Cataluña.</span></li>
+                  <li><span class="use-label">Utilidad.</span>
+                    <span class="example">¿<b>Para</b> qué sirve esta máquina? — <b>Para</b> hacer agujeros en la pared.</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-title">Vocabulario · Moverse por la ciudad</div>
+          <div class="vocab-chips">
+            <span class="vocab-chip">estación</span><span class="vocab-chip">atasco</span>
+            <span class="vocab-chip">regresar</span><span class="vocab-chip">llegar</span>
+            <span class="vocab-chip">metro</span><span class="vocab-chip">rápido</span>
+            <span class="vocab-chip">durante</span><span class="vocab-chip">tren</span>
+            <span class="vocab-chip">ir</span><span class="vocab-chip">coche</span>
+            <span class="vocab-chip">tardar</span><span class="vocab-chip">transbordo</span>
+            <span class="vocab-chip">autobús</span>
+          </div>
+
+          <div class="vocab-title">Vocabulario · Cosas de la casa</div>
+          <div class="vocab-chips">
+            <span class="vocab-chip">aire acondicionado</span><span class="vocab-chip">calefacción</span>
+            <span class="vocab-chip">chimenea</span><span class="vocab-chip">equipo de música</span>
+            <span class="vocab-chip">ordenador</span><span class="vocab-chip">televisión</span>
+            <span class="vocab-chip">vídeo</span><span class="vocab-chip">DVD</span>
+            <span class="vocab-chip">lavaplatos</span><span class="vocab-chip">lavadora</span>
+            <span class="vocab-chip">secadora</span>
+          </div>
+        </div>
+      `,
+      exercises: [
+        {
+          num: 1, title: "Pretérito pluscuamperfecto o indefinido",
+          instr: "Forma frases usando el pretérito pluscuamperfecto o el pretérito indefinido, como en el ejemplo.",
+          model: "Ejemplo: Gonzalo se enfadó (enfadarse) porque ellos habían dejado (dejar) todas sus cosas desordenadas.",
+          type: "items",
+          items: [
+            { t: "Cuando Franco {0} (morir) yo aún no {1} (nacer).", a: [["murió"], ["había nacido"]] },
+            { t: "Cuando {0} (volver, ellos) a casa, todavía no {1} (arreglar, ellos) el ascensor.", a: [["volvieron"], ["habían arreglado"]] },
+            { t: "La última vez que {0} (ver, yo) a Marisa, {1} (adelgazar) muchísimo.", a: [["vi"], ["había adelgazado"]] },
+            { t: "Cuando Eva {0} (empezar) la carrera, nosotros ya {1} (terminar).", a: [["empezó"], ["habíamos terminado"]] },
+            { t: "A los 27 años, Leopoldo Muñoz ya {0} (componer) sus obras más importantes.", a: [["había compuesto"]] },
+            { t: "¿{0} (Ver, vosotros) antes un paisaje como este?", a: [["habíais visto"]] },
+            { t: "No {0} (poder, nosotros) comprar los sellos porque ya {1} (cerrar, ellos) el estanco.", a: [["pudimos"], ["habían cerrado"]] }
+          ]
+        },
+        {
+          num: 2, title: "Completa con la preposición adecuada",
+          instr: "Usa las preposiciones del recuadro. Algunas se repiten.",
+          refHTML: '<span class="ref-label">Preposiciones</span>' +
+            '<div class="ref-connectors"><span>a</span><span>hasta</span><span>en</span><span>para</span><span>de</span></div>',
+          type: "items",
+          items: [
+            { t: "{0} Núñez de Balboa {1} Callao no hay muchas estaciones.", a: [NOTE_DE_A_ESTACIONES, ["a", "hasta"]] },
+            { t: "Mi abuelo iba todos los días {0} tranvía {1} la Puerta del Sol.", a: [["en"], ["a", "hasta"]] },
+            { t: "Están haciendo obras {0} comunicar este barrio con el centro.", a: [["para"]] },
+            { t: "Tu casa está {0} poca distancia de la mía.", a: [["a"]] },
+            { t: "Un coche de segunda mano de esa marca te puede costar {0} 5000 euros.", a: [["hasta"]] },
+            { t: "El mercado está {0} cinco minutos de mi casa.", a: [["a"]] },
+            { t: "Puedo ir {0} su casa andando, pero suelo ir {1} metro por comodidad.", a: [["a", "hasta"], ["en"]] },
+            { t: "Puedo esperar {0} menos diez, después tengo que irme a la oficina.", a: [["hasta"]] }
+          ]
+        },
+        {
+          num: 3, title: "Por o para",
+          instr: "Escribe la opción correcta. (El 1 ya está resuelto: Toco la guitarra por diversión, pero no soy músico profesional.)",
+          type: "items",
+          items: [
+            { t: "Me necesitan en el hospital, ahora mismo voy {0} allá. (por / para)", a: [["para"]] },
+            { t: "¿{0} dónde vivías tú? (Por / Para)", a: [["por"]] },
+            { t: "Le han dado un premio {0} sacar buenas notas. (por / para)", a: [["por"]] },
+            { t: "Si quieres te mando las fotos de la fiesta {0} e-mail. (por / para)", a: [["por"]] },
+            { t: "Si vienes a mi casa {0} la autopista, toma la primera salida. (por / para)", a: [["por"]] }
+          ]
+        },
+        {
+          num: 4, title: "Ordena las letras para formar palabras",
+          instr: "Vocabulario de moverse por la ciudad. (El 1 ya está resuelto: CHOCE → coche.)",
+          type: "items",
+          items: [
+            { t: "CIÓNTAES → {0}", a: [["estación"]] },
+            { t: "TASCOA → {0}", a: [["atasco"]] },
+            { t: "GRESARER → {0}", a: [["regresar"]] },
+            { t: "TERANDU → {0}", a: [["durante"]] },
+            { t: "BORTRANSDO → {0}", a: [["transbordo"]] },
+            { t: "TRARDA → {0}", a: [["tardar"]] },
+            { t: "PIRÁDO → {0}", a: [["rápido"]] },
+            { t: "NERT → {0}", a: [["tren"]] },
+            { t: "MOTER → {0}", a: [["metro"]] }
+          ]
+        },
+        {
+          num: 5, title: "Querido diario",
+          instr: "Completa el texto con las palabras del ejercicio anterior. (El hueco 1 ya está resuelto: coche.)",
+          type: "text",
+          text: "Querido diario:\nHoy he decidido ir a clase en coche (1) para llegar más {0} (2). ¡Vaya idea! Primero me ha pillado un {1} (3) en la M-30 y he estado ahí parada {2} (4) media hora. Luego, me he encontrado la carretera cortada por obras, así que he tenido que {3} (5) hasta el puente y tomar otro camino mucho más largo. Al rato, se me ha pinchado una rueda. ¡Y no pasaba ni un taxi! Para no {4} (6) más, he decidido caminar hasta la {5} (7) de Atocha y tomar el {6} (8) de cercanías. Mañana voy en {7} (9), como siempre, aunque tenga que hacer {8} (10), y se acabó.",
+          a: [["rápido"], ["atasco"], ["durante"], ["regresar"], ["tardar"], ["estación"], ["tren"], ["metro"], ["transbordo"]]
+        }
+      ]
+    },
+    {
+      id: "seccion-3", num: 3, title: "Gramática y vocabulario",
+      sub: "Verbos reflexivos y verbos LE, oraciones de relativo y condicional",
+      introHTML: `
+        <div class="theory-wrap">
+          <div class="theory-cols">
+            <div>
+              <div class="theory-group">
+                <h3>Verbos reflexivos y verbos LE</h3>
+                <p class="theory-lead">Tenemos una serie de verbos que funcionan habitualmente con los pronombres <em>me, te, le, nos, os, les</em>. Siguen el mismo esquema que el verbo <em>gustar</em>.</p>
+                <table class="theory-table">
+                  <tbody>
+                    <tr><td>a mí</td><td class="tt-form">me</td><td rowspan="6" class="tt-span">cae/n bien / mal</td></tr>
+                    <tr><td>a ti</td><td class="tt-form">te</td></tr>
+                    <tr><td>a él / ella / Ud.</td><td class="tt-form">le</td></tr>
+                    <tr><td>a nosotros/as</td><td class="tt-form">nos</td></tr>
+                    <tr><td>a vosotros/as</td><td class="tt-form">os</td></tr>
+                    <tr><td>a ellos / ellas / Uds.</td><td class="tt-form">les</td></tr>
+                  </tbody>
+                </table>
+                <ul class="theory-points">
+                  <li><span class="example">A mí no <b>me interesa</b> la política.</span>
+                    <span class="example">¿A ti <b>te cae</b> bien la profesora nueva?</span>
+                    <span class="example">A ella no <b>le queda</b> bien esa blusa.</span>
+                    <span class="example">A nosotros <b>nos preocupa</b> el medioambiente.</span>
+                    <span class="example">¿A vosotros <b>os preocupa</b> la contaminación?</span>
+                    <span class="example">A ellos no <b>les importa</b> llegar tarde.</span></li>
+                </ul>
+                <p class="theory-lead">Otros verbos funcionan con los pronombres reflexivos <em>me, te, se, nos, os, se</em>.</p>
+                <table class="theory-table">
+                  <tbody>
+                    <tr><td class="tt-form">me llevo</td><td class="tt-form">nos llevamos</td></tr>
+                    <tr><td class="tt-form">te llevas</td><td class="tt-form">os lleváis</td></tr>
+                    <tr><td class="tt-form">se lleva</td><td class="tt-form">se llevan</td></tr>
+                  </tbody>
+                </table>
+                <ul class="theory-points">
+                  <li><span class="example">Luis <b>se lleva</b> muy bien con Angel.</span>
+                    <span class="example">Ayer Rosa <b>se encontraba</b> mal y no fue a clase.</span></li>
+                  <li><span class="use-label">A veces el mismo verbo puede usarse con las dos estructuras. En este caso, el verbo puede tener significados muy diferentes o, por el contrario, no variar apenas.</span>
+                    <span class="example">Julio no <b>se queda</b> nunca en casa los sábados por la noche.</span>
+                    <span class="example">A Ana <b>le queda</b> muy bien el vestido blanco.</span></li>
+                </ul>
+              </div>
+
+              <div class="theory-group">
+                <h3>Oraciones de relativo</h3>
+                <p class="theory-lead">Las oraciones de relativo están introducidas por los pronombres <em>que, el/la cual, los/las cuales, quien, quienes</em>. El relativo más utilizado, tanto para personas como para cosas, es <em>que</em>.</p>
+                <p class="theory-lead">Las oraciones de relativo pueden llevar el verbo en indicativo o subjuntivo.</p>
+                <ul class="theory-points">
+                  <li><span class="use-label"><b>Indicativo:</b> cuando el hablante conoce la existencia del antecedente.</span>
+                    <span class="example">He visto un restaurante nuevo <b>que pone</b> un cocido buenísimo.</span>
+                    <span class="example">Estamos buscando un bar <b>que tiene</b> unas tapas buenísimas.</span></li>
+                  <li><span class="use-label"><b>Subjuntivo:</b> si el hablante no conoce la existencia del antecedente.</span>
+                    <span class="example">Estamos buscando un bar <b>que tenga</b> buenas tapas.</span></li>
+                  <li><span class="use-label">También se usa el subjuntivo cuando decimos del antecedente que no existe o que es escaso.</span>
+                    <span class="example">Hay pocos bares <b>que tengan</b> buenas tapas.</span></li>
+                </ul>
+              </div>
+            </div>
+
+            <div>
+              <div class="theory-group">
+                <h3>Condicional</h3>
+                <p class="theory-lead">Cuando se utiliza independientemente, el condicional sirve para expresar consejos, sugerencias, deseos poco probables o cortesía.</p>
+                <ul class="theory-points">
+                  <li><span class="example">Yo que tú <b>hablaría</b> con el profesor.</span>
+                    <span class="example"><b>Podríamos</b> comprar un pollo asado y unas patatas fritas para comer.</span>
+                    <span class="example">Me <b>gustaría</b> estudiar música.</span>
+                    <span class="example">¿Le <b>importaría</b> cerrar la ventana? Tengo frío.</span></li>
+                </ul>
+                <table class="theory-table">
+                  <thead><tr><th colspan="2">hablar</th></tr></thead>
+                  <tbody>
+                    <tr><td class="tt-form">hablaría</td><td class="tt-form">hablaríamos</td></tr>
+                    <tr><td class="tt-form">hablarías</td><td class="tt-form">hablaríais</td></tr>
+                    <tr><td class="tt-form">hablaría</td><td class="tt-form">hablarían</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="theory-group">
+                <h3>Condicionales irregulares</h3>
+                <p class="theory-lead">Los condicionales irregulares tienen la misma irregularidad que los futuros.</p>
+                <table class="theory-table">
+                  <thead><tr><th>&nbsp;</th><th>Futuro</th><th>Condicional</th></tr></thead>
+                  <tbody>
+                    <tr><td><b>decir</b></td><td>diré</td><td class="tt-form">diría</td></tr>
+                    <tr><td><b>hacer</b></td><td>haré</td><td class="tt-form">haría</td></tr>
+                    <tr><td><b>poder</b></td><td>podré</td><td class="tt-form">podría</td></tr>
+                    <tr><td><b>poner</b></td><td>pondré</td><td class="tt-form">pondría</td></tr>
+                    <tr><td><b>salir</b></td><td>saldré</td><td class="tt-form">saldría</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-title">Vocabulario · Verbos</div>
+          <div class="vocab-chips">
+            <span class="vocab-chip">interesar</span><span class="vocab-chip">encantar</span>
+            <span class="vocab-chip">parecer</span><span class="vocab-chip">quedar</span>
+            <span class="vocab-chip">reír</span><span class="vocab-chip">enfadarse</span>
+            <span class="vocab-chip">preocuparse</span><span class="vocab-chip">importar</span>
+            <span class="vocab-chip">darse cuenta</span><span class="vocab-chip">equivocarse</span>
+          </div>
+
+          <div class="vocab-title">Vocabulario · Adjetivos de carácter</div>
+          <div class="vocab-chips">
+            <span class="vocab-chip">autoritario</span><span class="vocab-chip">vago</span>
+            <span class="vocab-chip">creativo</span><span class="vocab-chip">tolerante</span>
+            <span class="vocab-chip">ambicioso</span><span class="vocab-chip">responsable</span>
+            <span class="vocab-chip">encantador</span><span class="vocab-chip">competitivo</span>
+            <span class="vocab-chip">sociable</span><span class="vocab-chip">inseguro</span>
+            <span class="vocab-chip">envidioso</span><span class="vocab-chip">cariñoso</span>
+          </div>
+        </div>
+      `,
+      exercises: [
+        {
+          num: 1, title: "Completa con el pronombre correcto",
+          instr: "me, te, se, le, nos, os, les.",
+          type: "items",
+          items: [
+            { t: "No voy a ir contigo a correr el sábado, no {0} gusta madrugar los fines de semana.", a: [["me"]] },
+            { t: "Niños, ¿{0} apetece un helado?", a: [["os"]] },
+            { t: "Cuando nació Pedro {0} trasladamos a Londres.", a: [["nos"]] },
+            { t: "Ana no {0} encuentra bien, {1} duele la cabeza.", a: [["se"], ["le"]] },
+            { t: "Paula y Jorge no están saliendo juntos, pero {0} llevan muy bien.", a: [["se"]] },
+            { t: "Voy a despedir{0} de Susana, mañana {1} va a Buenos Aires.", a: [["me"], ["se"]] },
+            { t: "No pongas la música tan alta, a mis vecinos {0} molesta mucho.", a: [["les"]] },
+            { t: "Víctor, ¿{0} parece bien que invitemos a Teresa a comer con nosotros?", a: [["te"]] },
+            { t: "Mi hija ya sabe andar, pero aún {0} cae a veces.", a: [["se"]] }
+          ]
+        },
+        {
+          num: 2, title: "Relaciona cada expresión con su significado",
+          instr: "Escribe la letra (a-i) que corresponde a cada frase.",
+          refHTML: '<span class="ref-label">Significados</span>' +
+            '<div class="ref-options">' +
+            '<span class="ref-opt"><b>a</b>Se cae.</span>' +
+            '<span class="ref-opt"><b>b</b>Se lleva.</span>' +
+            '<span class="ref-opt"><b>c</b>Le cae bien.</span>' +
+            '<span class="ref-opt"><b>d</b>Le lleva.</span>' +
+            '<span class="ref-opt"><b>e</b>Se lleva mal.</span>' +
+            '<span class="ref-opt"><b>f</b>Le van.</span>' +
+            '<span class="ref-opt"><b>g</b>Se queda.</span>' +
+            '<span class="ref-opt"><b>h</b>Le queda bien.</span>' +
+            '<span class="ref-opt"><b>i</b>Se va.</span>' +
+            "</div>",
+          type: "items",
+          items: [
+            { t: "Está de moda. → {0}", a: [["b", "se lleva"]] },
+            { t: "Acerca a su hijo al colegio. → {0}", a: [["d", "le lleva"]] },
+            { t: "No tiene buena relación con alguien. → {0}", a: [["e", "se lleva mal"]] },
+            { t: "Le gusta esa persona. → {0}", a: [["c", "le cae bien"]] },
+            { t: "Pierde el equilibrio. → {0}", a: [["a", "se cae"]] },
+            { t: "Le gustan los coches caros. → {0}", a: [["f", "le van"]] },
+            { t: "Deja un lugar para ir a otro. → {0}", a: [["i", "se va"]] },
+            { t: "Permanece en un lugar. → {0}", a: [["g", "se queda"]] },
+            { t: "Le sienta bien la ropa. → {0}", a: [["h", "le queda bien"]] }
+          ]
+        },
+        {
+          num: 3, title: "Oraciones de relativo: indicativo o subjuntivo",
+          instr: "Completa con el verbo en la forma correcta.",
+          type: "items",
+          items: [
+            { t: "Cómprate un coche barato, pero que {0} (ser) seguro.", a: [["sea"]] },
+            { t: "Conozco una profesora de piano que {0} (dar) clases a niños por 20 euros la hora.", a: [["da"]] },
+            { t: "Pues yo tengo un programa de ordenador que {0} (servir) para componer tu propia música.", a: [["sirve"]] },
+            { t: "¿Conoces a alguien que {0} (poder) cuidar de mis hijos tres tardes a la semana? Es que yo no encuentro a nadie adecuado.", a: [["pueda"]] },
+            { t: "Necesito encontrar la mochila que {0} (usar) para ir al gimnasio y no sé dónde está.", a: [["uso"]] },
+            { t: "Estoy buscando un piso que {0} (tener) una terraza grande y preciosa. Lo vi el otro día en esta página web.", a: [NOTE_PISO_TIENE] },
+            { t: "Mi jefe está buscando un secretario que {0} (querer) quedarse a trabajar por las tardes hasta las ocho.", a: [["quiera"]] },
+            { t: "Me han dicho que en este trabajo necesitan chicos que {0} (tener) carné de conducir.", a: [["tengan"]] },
+            { t: "¿Conoces a alguien que {0} (trabajar) en televisión?", a: [["trabaje"]] },
+            { t: "Buenos días, póngame un pollo, que no {0} (ser) muy grande, por favor.", a: [["sea"]] }
+          ]
+        },
+        {
+          num: 4, title: "Relaciona cada adjetivo con su definición",
+          instr: "Escribe el adjetivo del recuadro que corresponde. (El 1 ya está resuelto: sociable.)",
+          refHTML: '<span class="ref-label">Adjetivos</span>' +
+            '<div class="ref-options">' +
+            '<span class="ref-opt">autoritario</span><span class="ref-opt">creativo</span>' +
+            '<span class="ref-opt">tolerante</span><span class="ref-opt">ambicioso</span>' +
+            '<span class="ref-opt">conservador</span><span class="ref-opt">vago</span>' +
+            '<span class="ref-opt">responsable</span><span class="ref-opt">encantador</span>' +
+            '<span class="ref-opt">inseguro</span><span class="ref-opt">envidioso</span>' +
+            '<span class="ref-opt">cariñoso</span>' +
+            "</div>",
+          type: "items",
+          items: [
+            { t: "No está seguro de sí mismo: {0}", a: [["inseguro"]] },
+            { t: "Siempre dice a los otros lo que tienen que hacer: {0}", a: [["autoritario"]] },
+            { t: "Desea riqueza, poder o fama: {0}", a: [["ambicioso"]] },
+            { t: "Tiene muchas ideas originales: {0}", a: [["creativo"]] },
+            { t: "Sabe bien cuáles son sus obligaciones y las cumple: {0}", a: [["responsable"]] },
+            { t: "Desea lo que tienen los demás: {0}", a: [["envidioso"]] },
+            { t: "Admite ideas muy diferentes: {0}", a: [["tolerante"]] },
+            { t: "Le gusta el orden establecido: {0}", a: [["conservador"]] },
+            { t: "Persona muy agradable: {0}", a: [["encantador"]] },
+            { t: "No le gusta trabajar: {0}", a: [["vago"]] },
+            { t: "Afectuoso: {0}", a: [["cariñoso"]] }
+          ]
+        },
+        {
+          num: 5, title: "Completa con el verbo en condicional",
+          instr: "(El 1 ya está resuelto: Me gustaría (gustar) vivir más cerca de mi trabajo.)",
+          type: "items",
+          items: [
+            { t: "Yo que tú no {0} (salir) a esas horas por esta zona, es peligroso.", a: [["saldría"]] },
+            { t: "¿{0} (Poder, usted) traernos otra cuchara, por favor?", a: [["podría"]] },
+            { t: "Yo que tú {0} (ver) menos la televisión.", a: [NOTE_YO_QUE_TU_VER] },
+            { t: "Nosotros, en tu lugar, {0} (leer) bien las instrucciones antes de usar el aparato.", a: [["leeríamos"]] }
+          ]
+        }
+      ]
+    },
+    {
+      id: "seccion-4", num: 4, title: "Gramática y vocabulario",
+      sub: "Perífrasis verbales, estar + gerundio, contrarios y acentuación de monosílabos",
+      introHTML: `
+        <div class="theory-wrap">
+          <div class="theory-cols">
+            <div>
+              <div class="theory-group">
+                <h3>Perífrasis verbales</h3>
+                <p class="theory-lead">Las perífrasis verbales se utilizan para expresar distintos matices en la duración, temporalidad o intencionalidad del hablante.</p>
+                <ul class="theory-points">
+                  <li><span class="use-label"><em>Seguir</em> o <em>llevar</em> + gerundio expresan la duración de una acción que empezó en el pasado y que aún continúa.</span>
+                    <span class="example">¿<b>Sigues viviendo</b> en la misma casa?</span>
+                    <span class="example"><b>Llevo trabajando</b> en Madrid tres años.</span></li>
+                  <li><span class="use-label"><em>Dejar de</em> + infinitivo expresa finalización.</span>
+                    <span class="example">El niño ya <b>ha dejado de llorar</b>.</span></li>
+                  <li><span class="use-label"><em>Acabar de</em> + infinitivo se utiliza para expresar una acción que ha sucedido en un tiempo muy reciente.</span>
+                    <span class="example"><b>Acabamos de volver</b> de vacaciones.</span></li>
+                  <li><span class="use-label"><em>Empezar a</em> + infinitivo expresa inicio.</span>
+                    <span class="example"><b>Empecé a estudiar</b> español cuando era joven.</span></li>
+                  <li><span class="use-label"><em>Volver a</em> + infinitivo expresa repetición.</span>
+                    <span class="example"><b>Volvieron a verse</b> después de unos años.</span></li>
+                </ul>
+              </div>
+
+              <div class="theory-group">
+                <h3>Estar + gerundio</h3>
+                <p class="theory-lead">Con la perífrasis <em>estar</em> + verbo en gerundio expresamos acciones en desarrollo ya sea en el presente, en el pasado o en el futuro.</p>
+                <ul class="theory-points">
+                  <li><span class="example">Roberto <b>está leyendo</b> una novela.</span>
+                    <span class="example">Lucía <b>estuvo esperando</b> el autobús una hora.</span>
+                    <span class="example">Mañana a esta hora <b>estaré comiendo</b> con Ana.</span></li>
+                </ul>
+              </div>
+
+              <div class="theory-group">
+                <h3>He estado / estaba / estuve + gerundio</h3>
+                <table class="theory-table">
+                  <thead><tr><th>Pret. imperfecto</th><th>Pret. indefinido</th><th>+ gerundio</th></tr></thead>
+                  <tbody>
+                    <tr><td class="tt-form">estaba</td><td class="tt-form">estuve</td><td rowspan="6" class="tt-span">trabajando<br>viviendo</td></tr>
+                    <tr><td class="tt-form">estabas</td><td class="tt-form">estuviste</td></tr>
+                    <tr><td class="tt-form">estaba</td><td class="tt-form">estuvo</td></tr>
+                    <tr><td class="tt-form">estábamos</td><td class="tt-form">estuvimos</td></tr>
+                    <tr><td class="tt-form">estabais</td><td class="tt-form">estuvisteis</td></tr>
+                    <tr><td class="tt-form">estaban</td><td class="tt-form">estuvieron</td></tr>
+                  </tbody>
+                </table>
+                <ul class="theory-points">
+                  <li><span class="use-label">La diferencia entre <em>estaba viviendo</em> y <em>estuve viviendo</em> es la misma que entre <em>vivía</em> y <em>viví</em>.</span>
+                    <span class="example">Yo <b>estuve viviendo / viví</b> en Lugo un año.</span>
+                    <span class="example">Cuando <b>estaba viviendo / vivía</b> en Perú, fui a Lima.</span></li>
+                </ul>
+              </div>
+            </div>
+
+            <div>
+              <div class="theory-group">
+                <h3>Cuidado: hábitos en el pasado</h3>
+                <p class="theory-lead">No se utiliza la perífrasis <em>estaba</em> + gerundio para expresar hábitos en el pasado.</p>
+                <ul class="theory-points">
+                  <li><span class="example">Yo antes <s style="opacity:0.6">estaba jugando</s> <b>jugaba</b> al fútbol todos los domingos.</span></li>
+                </ul>
+                <table class="theory-table">
+                  <thead><tr><th colspan="2">Pretérito perfecto + gerundio</th></tr></thead>
+                  <tbody>
+                    <tr><td class="tt-form">he estado</td><td rowspan="6" class="tt-span">leyendo</td></tr>
+                    <tr><td class="tt-form">has estado</td></tr>
+                    <tr><td class="tt-form">ha estado</td></tr>
+                    <tr><td class="tt-form">hemos estado</td></tr>
+                    <tr><td class="tt-form">habéis estado</td></tr>
+                    <tr><td class="tt-form">han estado</td></tr>
+                  </tbody>
+                </table>
+                <ul class="theory-points">
+                  <li><span class="use-label">Este tiempo se utiliza para expresar acciones en desarrollo en un pasado reciente. Pretende dar énfasis a la duración de la actividad.</span>
+                    <span class="example"><b>He estado leyendo</b> toda la mañana.</span></li>
+                  <li><span class="use-label">Recuerda que el pretérito imperfecto se utiliza para expresar acciones pasadas no acabadas, para hacer descripciones del pasado así como para expresar hábitos en el pasado.</span>
+                    <span class="example">Mi abuela <b>vivía</b> con nosotros.</span>
+                    <span class="example">Cuando <b>éramos</b> jóvenes, <b>dormíamos</b> mucho.</span></li>
+                </ul>
+              </div>
+
+              <div class="theory-group">
+                <h3>Formación de contrarios</h3>
+                <p class="theory-lead">Para la formación de adjetivos contrarios, usamos los prefijos <em>in-</em>, <em>i-</em> y <em>des-</em>.</p>
+                <ul class="theory-points">
+                  <li><span class="example">feliz → <b>in</b>feliz</span>
+                    <span class="example">responsable → <b>ir</b>responsable</span>
+                    <span class="example">agradable → <b>des</b>agradable</span></li>
+                  <li><span class="use-label">Si el adjetivo empieza por <em>p</em> o <em>b</em>, el prefijo es <em>im-</em>, en vez de <em>in-</em>.</span>
+                    <span class="example">posible → <b>im</b>posible</span></li>
+                </ul>
+              </div>
+
+              <div class="theory-group">
+                <h3>Acentuación de monosílabos</h3>
+                <p class="theory-lead">Las palabras de una sílaba (monosílabas) llevan tilde cuando son diferentes en categoría gramatical o significado.</p>
+                <table class="theory-table">
+                  <thead><tr><th>Con tilde</th><th>Sin tilde</th></tr></thead>
+                  <tbody>
+                    <tr><td><b>él</b> (pronombre)</td><td>el (artículo)</td></tr>
+                    <tr><td><b>mí</b> (pronombre)</td><td>mi (posesivo)</td></tr>
+                    <tr><td><b>sé</b> (verbo saber)</td><td>se (pronombre)</td></tr>
+                    <tr><td><b>sí</b> (adverbio)</td><td>si (conjunción condicional)</td></tr>
+                    <tr><td><b>té</b> (nombre)</td><td>te (pronombre)</td></tr>
+                    <tr><td><b>tú</b> (pronombre)</td><td>tu (posesivo)</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      `,
+      exercises: [
+        {
+          num: 1, title: "¿Qué sigue haciendo Daniela y qué ha dejado de hacer?",
+          instr: "Daniela no ha cambiado mucho en los últimos diez años. Escribe la frase completa. Las marcadas con (NO) son cosas que ya no hace.",
+          model: "Ejemplos: Salir a correr por las mañanas. → Daniela sigue saliendo a correr por las mañanas. · Escribir todo lo que hace en un diario. (NO) → Daniela ha dejado de escribir todo lo que hace en un diario.",
+          type: "items",
+          items: [
+            { t: "Hacer unos pasteles buenísimos. → {0}", a: [{ flex: ["sigue haciendo"], show: "Daniela sigue haciendo unos pasteles buenísimos." }], wide: true },
+            { t: "Contar unos chistes muy graciosos. → {0}", a: [{ flex: ["sigue contando"], show: "Daniela sigue contando unos chistes muy graciosos." }], wide: true },
+            { t: "Leer revistas del corazón. (NO) → {0}", a: [{ flex: ["ha dejado de leer"], show: "Daniela ha dejado de leer revistas del corazón." }], wide: true },
+            { t: "Ser un poco impaciente. → {0}", a: [{ flex: ["sigue siendo"], show: "Daniela sigue siendo un poco impaciente." }], wide: true },
+            { t: "Maquillarse a diario. (NO) → {0}", a: [{ flex: ["ha dejado de maquillarse"], show: "Daniela ha dejado de maquillarse a diario." }], wide: true },
+            { t: "Morderse las uñas. (NO) → {0}", a: [{ flex: ["ha dejado de morderse"], show: "Daniela ha dejado de morderse las uñas." }], wide: true },
+            { t: "Ir de vez en cuando a la montaña para relajarse. → {0}", a: [{ flex: ["sigue yendo"], show: "Daniela sigue yendo de vez en cuando a la montaña para relajarse." }], wide: true }
+          ]
+        },
+        {
+          num: 2, title: "Cambia la frase usando una perífrasis",
+          instr: "Usa dejar de, acabar de, empezar a, volver a + infinitivo, o seguir, llevar + gerundio. Escribe la frase completa.",
+          model: "Ejemplo: Mi marido ya no conduce. → Mi marido ha dejado de conducir.",
+          type: "items",
+          items: [
+            { t: "Mañana me apuntaré otra vez a yoga. → {0}", a: [{ flex: ["volveré a apuntarme"], show: "Mañana volveré a apuntarme a yoga." }], wide: true },
+            { t: "Luisa me ha llamado justo ahora. → {0}", a: [{ flex: ["acaba de llamar"], show: "Luisa acaba de llamarme." }], wide: true },
+            { t: "Todavía echo de menos mi antiguo barrio. → {0}", a: [{ flex: ["sigo echando"], show: "Sigo echando de menos mi antiguo barrio." }], wide: true },
+            { t: "El niño llora desde hace un rato. → {0}", a: [{ flex: ["lleva", "llorando"], show: "El niño lleva llorando un rato." }], wide: true },
+            { t: "¿Todavía usas esas gafas tan viejas? → {0}", a: [{ flex: ["sigues usando"], show: "¿Sigues usando esas gafas tan viejas?" }], wide: true },
+            { t: "En cuanto termino de limpiar los cristales, llueve. → {0}", a: [{ flex: ["empieza a llover"], show: "En cuanto termino de limpiar los cristales, empieza a llover." }], wide: true },
+            { t: "Hemos puesto la televisión ahora mismo. → {0}", a: [{ flex: ["acabamos de poner"], show: "Acabamos de poner la televisión." }], wide: true },
+            { t: "Siempre que te pido algo, protestas. → {0}", a: [{ flex: ["empiezas a protestar"], show: "Siempre que te pido algo, empiezas a protestar." }], wide: true }
+          ]
+        },
+        {
+          num: 3, title: "He estado / estaba / estuve",
+          instr: "Escribe la opción correcta.",
+          type: "items",
+          items: [
+            { t: "Antes Juanjo siempre {0} gastando bromas. (estaba / estuvo)", a: [["estaba"]] },
+            { t: "Conozco a una chica que {0} estudiando en Berlín cuando cayó el muro. (ha estado / estaba)", a: [["estaba"]] },
+            { t: "Anoche no pude dormir porque el gato de la vecina {0} maullando sin parar. (ha estado / estuvo)", a: [["estuvo"]] },
+            { t: "Anoche {0} celebrando el cumpleaños de Gema en un bar cuando vimos la noticia del terremoto en televisión. (estábamos / estuvimos)", a: [["estábamos"]], wide: true },
+            { t: "Durante estos últimos años, {0} viajando para perfeccionar sus conocimientos de inglés, pero ahora ha vuelto a su ciudad. (ha estado / estuvo)", a: [["ha estado"]], wide: true },
+            { t: "Cuando éramos jóvenes, {0} saliendo juntos una temporada. (estuvimos / estábamos)", a: [["estuvimos"]] }
+          ]
+        },
+        {
+          num: 4, title: "Formación de contrarios",
+          instr: "Los amigos de Eduardo tienen cualidades, pero también defectos. Escribe el adjetivo contrario al del recuadro que corresponde.",
+          refHTML: '<span class="ref-label">Adjetivos de partida</span>' +
+            '<div class="ref-options">' +
+            '<span class="ref-opt">responsable</span><span class="ref-opt">paciente</span>' +
+            '<span class="ref-opt">tranquilo/a</span><span class="ref-opt">ordenado/a</span>' +
+            '<span class="ref-opt">tolerante</span><span class="ref-opt">sociable</span>' +
+            "</div>",
+          type: "items",
+          items: [
+            { t: "Fran se preocupa demasiado por todo y nunca se relaja, siempre está {0} por alguna cosa.", a: [["intranquilo"]] },
+            { t: "Laura no puede esperar, lo quiere todo ahora y ya. Es bastante {0}.", a: [["impaciente"]] },
+            { t: "Nacho no acepta fácilmente las opiniones diferentes a la suya. Es un poco {0}.", a: [["intolerante"]] },
+            { t: "El escritorio de Ricardo está hecho un lío: lleno de objetos de todo tipo. Es muy {0}.", a: [["desordenado"]] },
+            { t: "Beatriz ha vuelto a dejar a su perro suelto por el jardín vecinal y, claro, ha destrozado las flores. Esta chica es un poco {0}.", a: [["irresponsable"]], wide: true },
+            { t: "A Arturo no le gusta mucho la gente, y prefiere estar solo. Es un poco {0}.", a: [["insociable", "poco sociable"]] }
+          ]
+        },
+        {
+          num: 5, title: "Escribe las tildes que faltan",
+          instr: "Copia cada frase con las tildes correctas.",
+          type: "items",
+          items: [
+            { t: "El libro daselo a el. → {0}", a: [["El libro dáselo a él"]], wide: true },
+            { t: "Mi casa es para mi y mi familia. → {0}", a: [["Mi casa es para mí y mi familia"]], wide: true },
+            { t: "No se si se llama Juan o Toni. → {0}", a: [["No sé si se llama Juan o Toni"]], wide: true },
+            { t: "A ti te gusta mucho el te. → {0}", a: [["A ti te gusta mucho el té"]], wide: true },
+            { t: "¿Tu sabes que ha hecho tu hermano? → {0}", a: [NOTE_TU_SABES_QUE], wide: true }
+          ]
+        }
+      ]
+    },
+    {
+      id: "seccion-5", num: 5, title: "Gramática y vocabulario",
+      sub: "Oraciones finales, imperativo, alimentos y partes del cuerpo",
+      introHTML: `
+        <div class="theory-wrap">
+          <div class="theory-cols">
+            <div>
+              <div class="theory-group">
+                <h3>Oraciones finales</h3>
+                <p class="theory-lead">Las oraciones que expresan finalidad y que están introducidas por <em>para</em> / <em>para que</em> pueden llevar el verbo en infinitivo o en subjuntivo.</p>
+                <ul class="theory-points">
+                  <li><span class="use-label"><em>Para</em> + infinitivo se utiliza cuando el sujeto de los dos verbos es el mismo.</span>
+                    <span class="example">Lo llamé <b>para preguntarle</b> por su salud. <span style="color:var(--pencil)">(yo → yo)</span></span></li>
+                  <li><span class="use-label"><em>Para que</em> + subjuntivo se utiliza cuando los sujetos son diferentes.</span>
+                    <span class="example">Te lo cuento <b>para que sepas</b> lo que pasó. <span style="color:var(--pencil)">(yo → tú)</span></span></li>
+                  <li><span class="use-label">Las oraciones interrogativas con <em>para qué…</em> se utilizan siempre con indicativo.</span>
+                    <span class="example">¿<b>Para qué</b> querías verme?</span></li>
+                </ul>
+              </div>
+
+              <div class="theory-group">
+                <h3>Imperativo</h3>
+                <p class="theory-lead">Se usa el imperativo para dar órdenes, para pedir favores, para dar instrucciones y consejos.</p>
+                <ul class="theory-points">
+                  <li><span class="example"><b>Bajad</b> la voz.</span>
+                    <span class="example">No <b>hagas</b> ruido, por favor.</span>
+                    <span class="example"><b>Bebe</b> dos litros de agua al día.</span></li>
+                  <li><span class="use-label">Cuando el imperativo se usa para dar una orden muchas veces se suaviza con <em>por favor</em>.</span>
+                    <span class="example">Carlos, <b>cierra</b> la puerta, por favor.</span></li>
+                </ul>
+                <p class="theory-lead">Todas las formas del imperativo (excepto <em>tú</em> y <em>vosotros</em> en la forma afirmativa) son iguales que las del presente de subjuntivo.</p>
+                <table class="theory-table">
+                  <thead><tr><th>Afirmativo</th><th>Negativo</th></tr></thead>
+                  <tbody>
+                    <tr><td class="tt-form">come (tú)</td><td>no comas (tú)</td></tr>
+                    <tr><td class="tt-form">coma (usted)</td><td>no coma (usted)</td></tr>
+                    <tr><td class="tt-form">comed (vosotros)</td><td>no comáis (vosotros)</td></tr>
+                    <tr><td class="tt-form">coman (ustedes)</td><td>no coman (ustedes)</td></tr>
+                    <tr><td class="tt-form">bebe (tú)</td><td>no bebas (tú)</td></tr>
+                    <tr><td class="tt-form">beba (usted)</td><td>no beba (usted)</td></tr>
+                    <tr><td class="tt-form">bebed (vosotros)</td><td>no bebáis (vosotros)</td></tr>
+                    <tr><td class="tt-form">beban (ustedes)</td><td>no beban (ustedes)</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div>
+              <div class="theory-group">
+                <h3>Imperativos irregulares</h3>
+                <p class="theory-lead">Los verbos que son irregulares en presente de indicativo suelen tener la misma irregularidad en imperativo (excepto la persona <em>vosotros</em>).</p>
+                <table class="theory-table">
+                  <thead><tr><th>Dormir — presente</th><th>Imperativo</th></tr></thead>
+                  <tbody>
+                    <tr><td>d<b>ue</b>rmo (yo)</td><td class="tt-form">d<b>ue</b>rme (tú) / no d<b>ue</b>rmas</td></tr>
+                    <tr><td></td><td class="tt-form">d<b>ue</b>rma (Ud.) / no d<b>ue</b>rma</td></tr>
+                    <tr><td></td><td class="tt-form">dormid (vos.) / no durmáis</td></tr>
+                    <tr><td></td><td class="tt-form">d<b>ue</b>rman (Uds.) / no d<b>ue</b>rman</td></tr>
+                  </tbody>
+                </table>
+                <p class="theory-lead">Otros irregulares: <em>decir, ir, hacer, poner, oír, tener, ser, venir</em> y <em>salir</em>.</p>
+                <table class="theory-table">
+                  <thead><tr><th>Decir — afirmativo</th><th>Negativo</th></tr></thead>
+                  <tbody>
+                    <tr><td class="tt-form">di (tú)</td><td>no digas</td></tr>
+                    <tr><td class="tt-form">diga (Ud.)</td><td>no diga</td></tr>
+                    <tr><td class="tt-form">decid (vosotros)</td><td>no digáis</td></tr>
+                    <tr><td class="tt-form">digan (Uds.)</td><td>no digan</td></tr>
+                  </tbody>
+                </table>
+                <table class="theory-table">
+                  <tbody>
+                    <tr><td><b>ir:</b> ve - no vayas</td><td><b>oír:</b> oye - no oigas</td></tr>
+                    <tr><td><b>hacer:</b> haz - no hagas</td><td><b>venir:</b> ven - no vengas</td></tr>
+                    <tr><td><b>poner:</b> pon - no pongas</td><td><b>salir:</b> sal - no salgas</td></tr>
+                  </tbody>
+                </table>
+                <ul class="theory-points">
+                  <li><span class="use-label"><b>Imperativo + pronombres.</b> Afirmativo: los pronombres van detrás del verbo.</span>
+                    <span class="example"><b>Cállense</b>, por favor. / <b>Díselo</b> tú, Angel.</span></li>
+                  <li><span class="use-label">Negativo: los pronombres van antes del verbo.</span>
+                    <span class="example">No <b>te sientes</b> ahí. / No <b>se lo digas</b> a Juan.</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-title">Vocabulario · Alimentos</div>
+          <div class="vocab-chips">
+            <span class="vocab-chip">berenjenas</span><span class="vocab-chip">garbanzos</span>
+            <span class="vocab-chip">mejillones</span><span class="vocab-chip">filete</span>
+            <span class="vocab-chip">yogur</span><span class="vocab-chip">salchichas</span>
+            <span class="vocab-chip">merluza</span><span class="vocab-chip">queso</span>
+            <span class="vocab-chip">lentejas</span><span class="vocab-chip">coliflor</span>
+            <span class="vocab-chip">leche</span><span class="vocab-chip">huevos</span>
+            <span class="vocab-chip">fruta</span><span class="vocab-chip">carne</span>
+            <span class="vocab-chip">pescado</span><span class="vocab-chip">pollo</span>
+            <span class="vocab-chip">bocadillos</span><span class="vocab-chip">pizza</span>
+            <span class="vocab-chip">lechuga</span><span class="vocab-chip">tomates</span>
+            <span class="vocab-chip">naranjas</span><span class="vocab-chip">espinacas</span>
+            <span class="vocab-chip">pasta</span><span class="vocab-chip">ensaladas</span>
+            <span class="vocab-chip">manzanas</span>
+          </div>
+
+          <div class="vocab-title">Vocabulario · Partes del cuerpo</div>
+          <div class="vocab-chips">
+            <span class="vocab-chip">cabeza</span><span class="vocab-chip">frente</span>
+            <span class="vocab-chip">orejas</span><span class="vocab-chip">ojos</span>
+            <span class="vocab-chip">nariz</span><span class="vocab-chip">boca</span>
+            <span class="vocab-chip">cuello</span><span class="vocab-chip">brazos</span>
+            <span class="vocab-chip">manos</span><span class="vocab-chip">dedos</span>
+            <span class="vocab-chip">pecho</span><span class="vocab-chip">espalda</span>
+            <span class="vocab-chip">caderas</span><span class="vocab-chip">piernas</span>
+            <span class="vocab-chip">rodillas</span><span class="vocab-chip">pies</span>
+          </div>
+        </div>
+      `,
+      exercises: [
+        {
+          num: 1, title: "Para, para que o para qué",
+          instr: "Completa con la forma adecuada.",
+          type: "items",
+          items: [
+            { t: "Te he invitado {0} conozcas mi pueblo.", a: [["para que"]] },
+            { t: "Necesitamos una escalera {0} cambiar esa bombilla.", a: [["para"]] },
+            { t: "¿{0} traes los libros? No tenemos tiempo de estudiar.", a: [["para qué"]] },
+            { t: "¿{0} han venido? No lo entiendo, no nos están ayudando.", a: [["para qué"]] },
+            { t: "Me llevé a los niños al parque {0} hicieran algo de deporte.", a: [["para que"]] },
+            { t: "Rosario cambió la planta de sitio {0} le diera más la luz.", a: [["para que"]] },
+            { t: "Vive en Moscú, pero de vez en cuando viene aquí {0} visitar a su familia.", a: [["para"]] },
+            { t: "Le he comprado el periódico {0} lea algo y se entretenga mientras espera.", a: [["para que"]] },
+            { t: "{0} estar en forma, tienes que descansar lo necesario.", a: [["para"]] },
+            { t: "Habían salido {0} dar un paseo por el barrio, pero se puso a llover y entraron en un cine.", a: [["para"]], wide: true }
+          ]
+        },
+        {
+          num: 2, title: "Trucos de cocina: infinitivo o subjuntivo",
+          instr: "Completa estos trucos de cocina de una revista escribiendo el verbo en infinitivo o en subjuntivo.",
+          type: "items",
+          items: [
+            { t: "Para que tus ensaladas {0} (quedar) perfectas, aliñalas solo unos minutos antes de servirlas.", a: [["queden"]], wide: true },
+            { t: "Para {0} (pelar) los tomates más fácilmente, mételos unos segundos en agua hirviendo.", a: [["pelar"]] },
+            { t: "Para {0} (conseguir) más zumo, introduce las naranjas en el microondas a máxima potencia durante un minuto.", a: [["conseguir"]], wide: true },
+            { t: "Para que las lentejas no {0} (pegarse), frota el fondo de la olla con un trozo de cebolla cruda.", a: [["se peguen"]], wide: true },
+            { t: "Para que la coliflor no {0} (tener) mal olor al cocerla, echa un chorrito de vinagre en el agua de cocción.", a: [["tenga"]], wide: true },
+            { t: "Para {0} (dar) un toque especial a tus bocadillos, añádeles unas semillas de sésamo.", a: [["dar"]] },
+            { t: "Para {0} (comprobar) si un huevo es fresco, mételo en un vaso de agua. Si se hunde, es fresco; si flota, no debes utilizarlo.", a: [["comprobar"]], wide: true },
+            { t: "Para que la lechuga {0} (conservar) todos sus nutrientes, córtala con las manos y no con el cuchillo.", a: [["conserve"]], wide: true }
+          ]
+        },
+        {
+          num: 3, title: "Sopa de letras: diez partes del cuerpo",
+          instr: "Busca las diez partes del cuerpo escondidas en la sopa de letras (en horizontal, vertical y diagonal, en cualquier sentido). Escríbelas en orden alfabético; entre paréntesis, el número de letras.",
+          refHTML: '<span class="ref-label">Sopa de letras</span>' +
+            '<div class="wordsearch">CADERAVILE\nAOZFAXJMSU\nBFDTLOEPUO\nERTOLLAPOH\nZEAÑILCOGC\nANMZDEUSBE\nQTSAOURDZP\nDEDORCIWIO</div>',
+          type: "items",
+          items: [
+            { t: "B… (5 letras) → {0}", a: [["brazo"]] },
+            { t: "C… (6 letras) → {0}", a: [["cabeza"]] },
+            { t: "C… (6 letras) → {0}", a: [["cadera"]] },
+            { t: "C… (4 letras) → {0}", a: [["codo"]] },
+            { t: "C… (6 letras) → {0}", a: [["cuello"]] },
+            { t: "D… (4 letras) → {0}", a: [["dedo"]] },
+            { t: "E… (7 letras) → {0}", a: [["espalda"]] },
+            { t: "F… (6 letras) → {0}", a: [["frente"]] },
+            { t: "P… (5 letras) → {0}", a: [["pecho"]] },
+            { t: "R… (7 letras) → {0}", a: [["rodilla"]] }
+          ]
+        },
+        {
+          num: 4, title: "Imperativos irregulares",
+          instr: "Completa las formas que faltan. (En DECIR ya están resueltas dos: tú negativo «no digas» y usted afirmativo «diga».)",
+          type: "items",
+          items: [
+            { t: "DECIR · tú → afirmativo {0}", a: [["di"]] },
+            { t: "DECIR · usted → negativo {0}", a: [["no diga"]] },
+            { t: "DECIR · vosotros/as → afirmativo {0}, negativo {1}", a: [["decid"], ["no digáis"]] },
+            { t: "DECIR · ustedes → afirmativo {0}, negativo {1}", a: [["digan"], ["no digan"]] },
+            { t: "IR · tú → afirmativo {0}, negativo {1}", a: [["ve"], ["no vayas"]] },
+            { t: "IR · usted → afirmativo {0}, negativo {1}", a: [["vaya"], ["no vaya"]] },
+            { t: "IR · vosotros/as → afirmativo {0}, negativo {1}", a: [["id"], ["no vayáis"]] },
+            { t: "IR · ustedes → afirmativo {0}, negativo {1}", a: [["vayan"], ["no vayan"]] },
+            { t: "HACER · tú → afirmativo {0}, negativo {1}", a: [["haz"], ["no hagas"]] },
+            { t: "HACER · usted → afirmativo {0}, negativo {1}", a: [["haga"], ["no haga"]] },
+            { t: "HACER · vosotros/as → afirmativo {0}, negativo {1}", a: [["haced"], ["no hagáis"]] },
+            { t: "HACER · ustedes → afirmativo {0}, negativo {1}", a: [["hagan"], ["no hagan"]] },
+            { t: "VENIR · tú → afirmativo {0}, negativo {1}", a: [["ven"], ["no vengas"]] },
+            { t: "VENIR · usted → afirmativo {0}, negativo {1}", a: [["venga"], ["no venga"]] },
+            { t: "VENIR · vosotros/as → afirmativo {0}, negativo {1}", a: [["venid"], ["no vengáis"]] },
+            { t: "VENIR · ustedes → afirmativo {0}, negativo {1}", a: [["vengan"], ["no vengan"]] }
+          ]
+        },
+        {
+          num: 5, title: "La nota de Nando y Susana",
+          instr: "Nando y Susana van a salir al teatro y después cenarán fuera. Completa la nota que dejan a su hijo con los verbos en imperativo (tú). (El hueco 1 ya está resuelto: Haz.)",
+          type: "text",
+          text: "Haz (1) (hacer) los deberes y no {0} (2) (poner) la música muy alta. Y no {1} (3) (ver) mucho la tele.\nTienes la cena en la nevera, {2} (4) (calentar, la cena) en el micro y después de cenar {3} (5) (recoger) la mesa. {4} (6) (Leer) un poco y no {5} (7) (acostarse) muy tarde.\nSi necesitas algo, {6} (8) (llamar, a nosotros) al móvil.\nBesos, Papá y mamá.",
+          a: [["no pongas"], ["no veas"], ["caliéntala"], ["recoge"], ["lee"], ["no te acuestes"], ["llámanos"]]
+        }
+      ]
+    },
+    {
+      id: "seccion-6", num: 6, title: "Gramática y vocabulario",
+      sub: "Sentimientos y opiniones, obligación, comparativos y superlativos",
+      introHTML: `
+        <div class="theory-wrap">
+          <div class="theory-cols">
+            <div>
+              <div class="theory-group">
+                <h3>Expresar sentimientos y opiniones</h3>
+                <p class="theory-lead">Las oraciones dependientes de verbos como <em>gustar, interesar, molestar</em>, que funcionan con los pronombres <em>me, te, le, nos, os, les</em>, llevan el verbo en infinitivo o subjuntivo.</p>
+                <ul class="theory-points">
+                  <li><span class="use-label"><b>Infinitivo.</b> Cuando el sujeto de las dos frases es el mismo.</span>
+                    <span class="example">Me <b>preocupa llegar</b> tarde al médico. <span style="color:var(--pencil)">(yo → yo)</span></span></li>
+                  <li><span class="use-label"><b>Subjuntivo.</b> Cuando el sujeto de los dos verbos es diferente.</span>
+                    <span class="example">Me <b>preocupa que</b> Paco <b>llegue</b> tarde al médico. <span style="color:var(--pencil)">(yo → él)</span></span></li>
+                </ul>
+              </div>
+
+              <div class="theory-group">
+                <h3>Hay que + infinitivo</h3>
+                <p class="theory-lead">Se utiliza <em>hay que</em> + infinitivo para hablar de obligaciones que afectan a todo el mundo.</p>
+                <ul class="theory-points">
+                  <li><span class="example"><b>Hay que escuchar</b> al profesor cuando está explicando.</span></li>
+                </ul>
+              </div>
+
+              <div class="theory-group">
+                <h3>(No) hace falta (que)</h3>
+                <ul class="theory-points">
+                  <li><span class="use-label"><b>Infinitivo.</b> Obligación impersonal.</span>
+                    <span class="example">No <b>hace falta limpiar</b> los cristales, están limpios.</span></li>
+                  <li><span class="use-label"><b>Subjuntivo.</b> Obligación personal.</span>
+                    <span class="example">No <b>hace falta que</b> (tú) <b>vengas</b> mañana.</span></li>
+                </ul>
+              </div>
+
+              <div class="theory-group">
+                <h3>Es necesario, es importante, es conveniente (que)</h3>
+                <ul class="theory-points">
+                  <li><span class="use-label"><b>Infinitivo.</b> Cuando la oración subordinada es impersonal, no se refiere a un sujeto concreto.</span>
+                    <span class="example">Es <b>necesario cuidar</b> el medioambiente.</span></li>
+                  <li><span class="use-label"><b>Subjuntivo.</b> Se utiliza cuando la oración subordinada tiene un sujeto personal.</span>
+                    <span class="example">Es <b>conveniente que</b> (tú) <b>hagas</b> lo que dice el médico.</span></li>
+                </ul>
+              </div>
+
+              <div class="theory-group">
+                <h3>Comparativos</h3>
+                <p class="theory-lead">Comparación con adjetivos:</p>
+                <ul class="theory-points">
+                  <li><span class="use-label">Superioridad: <em>más</em> + adjetivo + <em>que</em>. · Inferioridad: <em>menos</em> + adjetivo + <em>que</em>. · Igualdad: <em>tan</em> + adjetivo + <em>como</em>.</span>
+                    <span class="example">Mi coche es <b>menos</b> ruidoso <b>que</b> el tuyo.</span></li>
+                </ul>
+                <p class="theory-lead">Comparación con nombres:</p>
+                <ul class="theory-points">
+                  <li><span class="use-label">Superioridad: <em>más</em> + nombre + <em>que</em>. · Inferioridad: <em>menos</em> + nombre + <em>que</em>. · Igualdad: <em>tanto/a/os/as</em> + nombre + <em>como</em>.</span>
+                    <span class="example">Mi coche gasta <b>tanta</b> gasolina <b>como</b> el tuyo.</span></li>
+                </ul>
+                <p class="theory-lead">Comparación con verbos:</p>
+                <ul class="theory-points">
+                  <li><span class="use-label">Superioridad: verbo + <em>más que</em>. · Inferioridad: verbo + <em>menos que</em>. · Igualdad: verbo + <em>tanto como</em>.</span>
+                    <span class="example">Mi coche corre <b>tanto como</b> el tuyo.</span></li>
+                </ul>
+              </div>
+            </div>
+
+            <div>
+              <div class="theory-group">
+                <h3>La preposición <em>de</em> en la comparación</h3>
+                <p class="theory-lead">Se utiliza la preposición <em>de</em> para introducir la segunda parte de la comparación en los siguientes casos:</p>
+                <ul class="theory-points">
+                  <li><span class="use-label">Cuando hablamos de una cantidad determinada.</span>
+                    <span class="example">Me he gastado <b>más de</b> 100 € en la lotería.</span></li>
+                  <li><span class="use-label">Cuando la comparación (adjetiva) va seguida de <em>lo que</em>.</span>
+                    <span class="example">Es <b>más</b> caro <b>de lo que</b> creía.</span></li>
+                  <li><span class="use-label">Cuando la comparación (nominal) es cuantitativa.</span>
+                    <span class="example">Tenemos <b>menos</b> sillas <b>de las que</b> necesitamos.</span></li>
+                </ul>
+                <table class="theory-table">
+                  <thead><tr><th colspan="2">Comparativos irregulares</th></tr></thead>
+                  <tbody>
+                    <tr><td>grande</td><td class="tt-form">mayor</td></tr>
+                    <tr><td>pequeño</td><td class="tt-form">menor</td></tr>
+                    <tr><td>bueno</td><td class="tt-form">mejor</td></tr>
+                    <tr><td>malo</td><td class="tt-form">peor</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="theory-group">
+                <h3>Superlativos</h3>
+                <p class="theory-lead">Se utilizan para expresar las cualidades en su grado máximo. Hay dos formas de superlativo.</p>
+                <ul class="theory-points">
+                  <li><span class="use-label"><b>Superlativo absoluto:</b> se destaca una cualidad sin hacer una comparación. Adjetivo + <em>-ísimo/a/os/as</em>.</span>
+                    <span class="example">Esta niña es <b>guapísima</b>.</span></li>
+                  <li><span class="use-label"><b>Superlativo relativo:</b> expresa la superioridad con respecto a un grupo.</span>
+                    <span class="example">Es <b>el más alto</b> de su clase.</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-title">Vocabulario · Verbos de opinión y obligación</div>
+          <div class="vocab-chips">
+            <span class="vocab-chip">me molesta que…</span><span class="vocab-chip">me preocupa que…</span>
+            <span class="vocab-chip">es necesario que…</span><span class="vocab-chip">es importante que…</span>
+            <span class="vocab-chip">es conveniente que…</span><span class="vocab-chip">hay que…</span>
+            <span class="vocab-chip">me gusta que…</span>
+          </div>
+
+          <div class="vocab-title">Vocabulario · Mundo natural</div>
+          <div class="vocab-chips">
+            <span class="vocab-chip">cordillera</span><span class="vocab-chip">mar</span>
+            <span class="vocab-chip">continente</span><span class="vocab-chip">océano</span>
+            <span class="vocab-chip">desierto</span><span class="vocab-chip">selva</span>
+            <span class="vocab-chip">río</span><span class="vocab-chip">país</span>
+            <span class="vocab-chip">isla</span><span class="vocab-chip">cañón</span>
+          </div>
+        </div>
+      `,
+      exercises: [
+        {
+          num: 1, title: "Infinitivo o subjuntivo",
+          instr: "Completa con los verbos del recuadro en infinitivo o subjuntivo. (El 1 ya está resuelto: A la abuela le encanta que haga buen tiempo.)",
+          refHTML: '<span class="ref-label">Verbos</span>' +
+            '<div class="ref-options">' +
+            '<span class="ref-opt">ser</span><span class="ref-opt">conocer</span>' +
+            '<span class="ref-opt" style="text-decoration:line-through;opacity:0.55">hacer</span>' +
+            '<span class="ref-opt">vivir</span><span class="ref-opt">cambiar</span>' +
+            '<span class="ref-opt">fumar</span><span class="ref-opt">estar</span>' +
+            '<span class="ref-opt">venir</span><span class="ref-opt">preparar</span>' +
+            '<span class="ref-opt">suspender</span>' +
+            "</div>",
+          type: "items",
+          items: [
+            { t: "Me fastidia {0} de planes por culpa de Sergio.", a: [["cambiar"]] },
+            { t: "A Paula y a mí nos encanta {0} gente a casa.", a: [["que venga"]] },
+            { t: "¿No te preocupa {0} tan lejos de la ciudad? En este pueblo ni siquiera hay un hospital.", a: [["vivir"]], wide: true },
+            { t: "Vamos a apagar los cigarrillos, creo que a Felipe le molesta {0} en su casa.", a: [["que fumemos"]], wide: true },
+            { t: "Me parece importante {0} otras culturas.", a: [["conocer"]] },
+            { t: "A nosotras nos gusta mucho que Roxana {0} la cena, porque suele hacer platos muy buenos.", a: [["prepare"]], wide: true },
+            { t: "A los políticos no les interesa que la gente {0} tan descontenta.", a: [["esté"]] },
+            { t: "No es necesario {0} nativo para ser un buen profesor de inglés.", a: [["ser"]] },
+            { t: "Enrique estudia mucho, le preocupa {0}.", a: [["suspender"]] }
+          ]
+        },
+        {
+          num: 2, title: "Une las dos columnas",
+          instr: "Escribe la letra del final que corresponde. Hay más de una opción: lo que decide es la forma del verbo — los comienzos con «que» piden subjuntivo (c, d, f) y los que no lo llevan piden infinitivo (a, b, e, g, h).",
+          refHTML: '<span class="ref-label">Finales</span>' +
+            '<div class="ref-options" style="flex-direction:column;gap:0.3rem">' +
+            '<span class="ref-opt" style="white-space:normal"><b>a</b>vivir en un mundo tan contaminado.</span>' +
+            '<span class="ref-opt" style="white-space:normal"><b>b</b>salvar este planeta.</span>' +
+            '<span class="ref-opt" style="white-space:normal"><b>c</b>los niños aprendan desde pequeños a cuidar el medioambiente.</span>' +
+            '<span class="ref-opt" style="white-space:normal"><b>d</b>tires latas y botellas de plástico donde está el resto de la basura, porque luego tengo que separarlo yo.</span>' +
+            '<span class="ref-opt" style="white-space:normal"><b>e</b>desenchufar los aparatos eléctricos para ahorrar energía.</span>' +
+            '<span class="ref-opt" style="white-space:normal"><b>f</b>me ayudes, puedo hacerlo solo.</span>' +
+            '<span class="ref-opt" style="white-space:normal"><b>g</b>poner más puntos limpios en esta zona si queremos que la gente recicle más.</span>' +
+            '<span class="ref-opt" style="white-space:normal"><b>h</b>tirar el aceite usado por el fregadero, porque es muy contaminante.</span>' +
+            "</div>",
+          type: "items",
+          items: [
+            { t: "Hay que… → {0}", a: [INF_ENDINGS] },
+            { t: "Me preocupa… → {0}", a: [["a", "b", "e", "g", "h"]] },
+            { t: "Es conveniente… → {0}", a: [["a", "b", "e", "g", "h"]] },
+            { t: "Me molesta que… → {0}", a: [SUBJ_ENDINGS] },
+            { t: "No hay que… → {0}", a: [["a", "b", "e", "g", "h"]] },
+            { t: "Es importante que… → {0}", a: [["c", "d", "f"]] },
+            { t: "Me gusta que… → {0}", a: [["c", "d", "f"]] },
+            { t: "No hace falta que… → {0}", a: [["c", "d", "f"]] }
+          ]
+        },
+        {
+          num: 3, title: "Superlativos: relaciona",
+          instr: "Escribe el nombre del recuadro que corresponde. (El 1 ya está resuelto: Alpes.)",
+          refHTML: '<span class="ref-label">Nombres</span>' +
+            '<div class="ref-options">' +
+            '<span class="ref-opt">Nilo</span><span class="ref-opt">Pacífico</span>' +
+            '<span class="ref-opt" style="text-decoration:line-through;opacity:0.55">Alpes</span>' +
+            '<span class="ref-opt">Sahara</span><span class="ref-opt">Australia</span>' +
+            '<span class="ref-opt">Amazonía</span>' +
+            "</div>",
+          type: "items",
+          items: [
+            { t: "El río más largo del mundo: {0}", a: [["Nilo", "el Nilo"]] },
+            { t: "La isla más grande del mundo: {0}", a: [["Australia"]] },
+            { t: "El océano más extenso del mundo: {0}", a: [["Pacífico", "el Pacífico"]] },
+            { t: "El desierto más grande del mundo: {0}", a: [["Sahara", "el Sahara"]] },
+            { t: "La selva más grande del planeta: {0}", a: [["Amazonía", "la Amazonía"]] }
+          ]
+        },
+        {
+          num: 4, title: "Partículas comparativas",
+          instr: "Completa las frases con la partícula que corresponde. (El 1 ya está resuelto: Esta es pequeña. Necesito una más grande.)",
+          type: "items",
+          items: [
+            { t: "En las ciudades la contaminación no mejora. Está cada vez {0}.", a: [["peor"]] },
+            { t: "Este trabajo no está muy bien. Otras veces te ha salido {0}.", a: [["mejor"]] },
+            { t: "Ana es más joven. Es {0} que su hermana.", a: [["menor"]] },
+            { t: "Tú trabajas más que yo. Yo no trabajo {0} horas como tú.", a: [["tantas"]] },
+            { t: "Madrid tiene {0} habitantes que Barcelona.", a: [["más"]] },
+            { t: "Begoña no está {0} delgada como Susana.", a: [["tan"]] },
+            { t: "Ahora es más barato comprarse una vivienda {0} antes.", a: [["que"]] },
+            { t: "Estos zapatos son muy malos. Me gustaría comprarme unos {0}.", a: [["mejores"]] },
+            { t: "Hago más deporte que Angel. Estoy {0} en forma que él.", a: [["más"]] }
+          ]
+        },
+        {
+          num: 5, title: "El avestruz y el perezoso",
+          instr: "Completa el texto con las palabras del recuadro: más (2) · menos · tanto (2) · de(l) · como (2). El primer «más» ya está puesto.",
+          type: "text",
+          text: "El avestruz es el animal de dos patas más rápido {0} mundo: alcanza los 100 km/h. Además de correr mucho, es enorme: mide casi {1} {2} dos personas juntas. Y un huevo de esta ave puede pesar {3} {4} 24 huevos de gallina.\nEl animal {5} rápido es el perezoso, que no supera los 20 km/h, y que también tiene otro récord: es el animal que {6} horas duerme (como mínimo, 20 al día).",
+          a: [["del"], ["tanto"], ["como"], ["tanto"], ["como"], ["menos"], ["más"]]
+        }
+      ]
+    },
+    {
+      id: "seccion-7", num: 7, title: "Gramática y vocabulario",
+      sub: "Profesiones, oraciones temporales y condicionales, imperfecto de subjuntivo",
+      introHTML: `
+        <div class="theory-wrap">
+          <div class="theory-cols">
+            <div>
+              <div class="theory-group">
+                <h3>Género de profesiones y oficios</h3>
+                <p class="theory-lead">Los nombres de profesionales pueden tener género masculino y femenino.</p>
+                <table class="theory-table">
+                  <thead><tr><th>Masculino</th><th>Femenino</th></tr></thead>
+                  <tbody>
+                    <tr><td>camarer<b>o</b></td><td class="tt-form">camarer<b>a</b></td></tr>
+                    <tr><td>profesor</td><td class="tt-form">profesor<b>a</b></td></tr>
+                    <tr><td>juez</td><td class="tt-form">juez<b>a</b></td></tr>
+                    <tr><td>estudiante</td><td class="tt-form">estudiante</td></tr>
+                    <tr><td>dependient<b>e</b></td><td class="tt-form">dependient<b>a</b></td></tr>
+                    <tr><td>futbolista</td><td class="tt-form">futbolista</td></tr>
+                    <tr><td>policía</td><td class="tt-form">policía</td></tr>
+                    <tr><td>actor</td><td class="tt-form">actriz</td></tr>
+                    <tr><td>alcalde</td><td class="tt-form">alcalde<b>sa</b></td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="theory-group">
+                <h3>Oraciones temporales con <em>cuando</em></h3>
+                <p class="theory-lead">Las oraciones temporales introducidas por <em>cuando</em> pueden llevar el verbo en indicativo o subjuntivo.</p>
+                <ul class="theory-points">
+                  <li><span class="use-label"><b>Indicativo.</b> Cuando nos referimos al presente o al pasado.</span>
+                    <span class="example">Cuando <b>voy</b> de viaje, siempre <b>traigo</b> regalos.</span>
+                    <span class="example">Cuando <b>salí</b> del trabajo <b>fui</b> a visitar a Lola.</span>
+                    <span class="example">Cuando <b>vivía</b> en París, <b>trabajaba</b> de camarero en un restaurante.</span></li>
+                  <li><span class="use-label"><b>Subjuntivo.</b> Cuando nos referimos al futuro.</span>
+                    <span class="example">Cuando <b>termine</b> este trabajo, voy a hacer un viaje por África.</span></li>
+                  <li><span class="use-label">Se utiliza el verbo en <b>futuro</b> (y no en subjuntivo) en las oraciones interrogativas, directas o indirectas.</span>
+                    <span class="example">¿Cuándo <b>vendrás</b> a verme?</span>
+                    <span class="example">¿Sabes cuándo <b>llegará</b> María?</span>
+                    <span class="example">No sé cuándo <b>iré</b> a verte.</span></li>
+                </ul>
+              </div>
+
+              <div class="theory-group">
+                <h3>Oraciones condicionales</h3>
+                <p class="theory-lead">Las oraciones condicionales introducidas por <em>si</em> pueden llevar el verbo en indicativo o subjuntivo.</p>
+                <ul class="theory-points">
+                  <li><span class="use-label"><b>Presente de indicativo.</b> Cuando la condición de la que se habla puede realizarse en el presente o en el futuro.</span>
+                    <span class="example">Si <b>tengo</b> tiempo, <b>iré</b> a verte. <span style="color:var(--pencil)">(futuro)</span></span>
+                    <span class="example">Si <b>tienes</b> algún problema, <b>llámame</b> por teléfono. <span style="color:var(--pencil)">(imperativo)</span></span>
+                    <span class="example">Mi marido y yo todos los domingos, si <b>podemos</b>, <b>damos</b> un paseo. <span style="color:var(--pencil)">(presente)</span></span></li>
+                  <li><span class="use-label"><b>Pretérito imperfecto de subjuntivo.</b> Cuando la condición de la que se habla no se puede realizar o es poco probable.</span>
+                    <span class="example">Si <b>tuviera</b> mucho dinero, no <b>trabajaría</b>.</span></li>
+                </ul>
+              </div>
+            </div>
+
+            <div>
+              <div class="theory-group">
+                <h3>Pretérito imperfecto de subjuntivo</h3>
+                <table class="theory-table">
+                  <thead><tr><th>hablar</th><th>comer</th><th>vivir</th></tr></thead>
+                  <tbody>
+                    <tr><td class="tt-form">hablara</td><td class="tt-form">comiera</td><td class="tt-form">viviera</td></tr>
+                    <tr><td class="tt-form">hablaras</td><td class="tt-form">comieras</td><td class="tt-form">vivieras</td></tr>
+                    <tr><td class="tt-form">hablara</td><td class="tt-form">comiera</td><td class="tt-form">viviera</td></tr>
+                    <tr><td class="tt-form">habláramos</td><td class="tt-form">comiéramos</td><td class="tt-form">viviéramos</td></tr>
+                    <tr><td class="tt-form">hablarais</td><td class="tt-form">comierais</td><td class="tt-form">vivierais</td></tr>
+                    <tr><td class="tt-form">hablaran</td><td class="tt-form">comieran</td><td class="tt-form">vivieran</td></tr>
+                  </tbody>
+                </table>
+                <table class="theory-table">
+                  <thead><tr><th colspan="2">Verbos irregulares</th></tr></thead>
+                  <tbody>
+                    <tr><td><b>decir</b></td><td class="tt-form">dijera, dijeras…</td></tr>
+                    <tr><td><b>estar</b></td><td class="tt-form">estuviera, estuvieras…</td></tr>
+                    <tr><td><b>hacer</b></td><td class="tt-form">hiciera, hicieras…</td></tr>
+                    <tr><td><b>ir, ser</b></td><td class="tt-form">fuera, fueras…</td></tr>
+                    <tr><td><b>pedir</b></td><td class="tt-form">pidiera, pidieras…</td></tr>
+                    <tr><td><b>poder</b></td><td class="tt-form">pudiera, pudieras…</td></tr>
+                    <tr><td><b>tener</b></td><td class="tt-form">tuviera, tuvieras…</td></tr>
+                    <tr><td><b>venir</b></td><td class="tt-form">viniera, vinieras…</td></tr>
+                  </tbody>
+                </table>
+                <p class="theory-lead">Generalmente estos verbos en pretérito imperfecto de subjuntivo presentan la misma irregularidad que en pretérito indefinido.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-title">Vocabulario · Nombres de profesiones</div>
+          <div class="vocab-chips">
+            <span class="vocab-chip">jardinero/a</span><span class="vocab-chip">camarero/a</span>
+            <span class="vocab-chip">periodista</span><span class="vocab-chip">cocinero/a</span>
+            <span class="vocab-chip">abogado/a</span><span class="vocab-chip">locutor/a</span>
+            <span class="vocab-chip">secretario/a</span><span class="vocab-chip">cantante</span>
+            <span class="vocab-chip">fontanero/a</span><span class="vocab-chip">peluquero/a</span>
+            <span class="vocab-chip">bailarín/ina</span><span class="vocab-chip">juez/a</span>
+            <span class="vocab-chip">reportero/a</span><span class="vocab-chip">anestesista</span>
+            <span class="vocab-chip">recepcionista</span>
+          </div>
+
+          <div class="vocab-title">Vocabulario · Léxico del trabajo</div>
+          <div class="vocab-chips">
+            <span class="vocab-chip">anuncio</span><span class="vocab-chip">entrevista</span>
+            <span class="vocab-chip">currículo</span><span class="vocab-chip">empresa</span>
+            <span class="vocab-chip">contrato</span><span class="vocab-chip">despedir</span>
+            <span class="vocab-chip">horario</span><span class="vocab-chip">sueldo</span>
+            <span class="vocab-chip">salario</span><span class="vocab-chip">firmar</span>
+            <span class="vocab-chip">experiencia</span><span class="vocab-chip">paro</span>
+          </div>
+        </div>
+      `,
+      exercises: [
+        {
+          num: 1, title: "Vocabulario del trabajo",
+          instr: "Completa las frases con las palabras del recuadro.",
+          refHTML: '<span class="ref-label">Palabras</span>' +
+            '<div class="ref-options">' +
+            '<span class="ref-opt">contratar</span><span class="ref-opt">plantillas</span>' +
+            '<span class="ref-opt">eventual</span><span class="ref-opt">Recursos Humanos</span>' +
+            '<span class="ref-opt">candidatos</span><span class="ref-opt">cobrar</span>' +
+            '<span class="ref-opt">vacantes</span><span class="ref-opt">categoría</span>' +
+            "</div>",
+          type: "items",
+          items: [
+            { t: "Óscar trabaja en el Departamento de {0} de una multinacional, está contento con el trabajo.", a: [["Recursos Humanos"]], wide: true },
+            { t: "Sí, esta oferta de trabajo parece muy interesante, pero seguro que tiene más de cien {0} para un solo puesto.", a: [["candidatos"]], wide: true },
+            { t: "Las empresas de trabajo temporal son buenas para encontrar un trabajo {0}, para el verano o Navidad, pero es muy difícil que te ofrezcan un trabajo fijo.", a: [["eventual"]], wide: true },
+            { t: "Carlos está desesperado, no sabe qué hacer porque lleva más de cinco meses sin {0} y su jefe dice que no sabe cuándo le pagará.", a: [["cobrar"]], wide: true },
+            { t: "En este anuncio dice que hay diez {0} de ayudantes de cocina, voy a enviar el CV.", a: [["vacantes"]], wide: true },
+            { t: "Jorge, he leído en un artículo que para esta primavera van a {0} a varios músicos en la orquesta juvenil de Radio Nacional de España.", a: [["contratar"]], wide: true },
+            { t: "Mi amigo Rubén ha encontrado un trabajo estupendo. Él estudió Formación Profesional, pero tiene {0} de especialista, realiza el trabajo de un graduado universitario.", a: [["categoría"]], wide: true },
+            { t: "En muchas empresas las {0} se han reducido mucho. Donde antes trabajaban veinte personas, ahora trabajan solo diez.", a: [["plantillas"]], wide: true }
+          ]
+        },
+        {
+          num: 2, title: "Completa los cuadros (pretérito imperfecto de subjuntivo)",
+          instr: "Las formas en verde ya vienen dadas en el libro; completa las demás.",
+          type: "conjTables",
+          tables: [
+            {
+              corner: "Persona",
+              subjects: ["yo", "tú", "él / ella / Ud.", "nosotros/as", "vosotros/as", "ellos / ellas / Uds."],
+              cols: [
+                { label: "dar", a: ["diera", ["dieras"], ["diera"], "diéramos", "dierais", "dieran"] },
+                { label: "salir", a: [["saliera"], "salieras", ["saliera"], ["saliéramos"], ["salierais"], ["salieran"]] },
+                { label: "decir", a: ["dijera", ["dijeras"], ["dijera"], ["dijéramos"], "dijerais", ["dijeran"]] },
+                { label: "tener", a: [["tuviera"], "tuvieras", ["tuviera"], ["tuviéramos"], ["tuvierais"], ["tuvieran"]] }
+              ]
+            },
+            {
+              corner: "Persona",
+              subjects: ["yo", "tú", "él / ella / Ud.", "nosotros/as", "vosotros/as", "ellos / ellas / Uds."],
+              cols: [
+                { label: "venir", a: ["viniera", ["vinieras"], ["viniera"], "viniéramos", ["vinierais"], "vinieran"] },
+                { label: "leer", a: [["leyera"], "leyeras", ["leyera"], ["leyéramos"], "leyerais", ["leyeran"]] },
+                { label: "ver", a: ["viera", ["vieras"], ["viera"], "viéramos", ["vierais"], "vieran"] },
+                { label: "pedir", a: [["pidiera"], "pidieras", ["pidiera"], ["pidiéramos"], "pidierais", ["pidieran"]] }
+              ]
+            },
+            {
+              corner: "Persona",
+              subjects: ["yo", "tú", "él / ella / Ud.", "nosotros/as", "vosotros/as", "ellos / ellas / Uds."],
+              cols: [
+                { label: "estar", a: ["estuviera", ["estuvieras"], ["estuviera"], ["estuviéramos"], "estuvierais", ["estuvieran"]] },
+                { label: "ser", a: [["fuera"], "fueras", ["fuera"], ["fuéramos"], ["fuerais"], "fueran"] },
+                { label: "poner", a: [["pusiera"], ["pusieras"], "pusiera", ["pusiéramos"], ["pusierais"], ["pusieran"]] },
+                { label: "ir", a: [["fuera"], ["fueras"], ["fuera"], "fuéramos", ["fuerais"], ["fueran"]] }
+              ]
+            }
+          ]
+        },
+        {
+          num: 3, title: "Oraciones temporales: relaciona",
+          instr: "Escribe la letra del final que corresponde. Hay más de una opción; se acepta cualquier combinación que tenga sentido.",
+          refHTML: '<span class="ref-label">Finales</span>' +
+            '<div class="ref-options">' +
+            '<span class="ref-opt"><b>a</b>llámame.</span>' +
+            '<span class="ref-opt"><b>b</b>pásate por mi casa.</span>' +
+            '<span class="ref-opt"><b>c</b>ve al museo del Louvre.</span>' +
+            '<span class="ref-opt"><b>d</b>dile que la quiero.</span>' +
+            '<span class="ref-opt"><b>e</b>compra el pan.</span>' +
+            '<span class="ref-opt"><b>f</b>escribe la redacción de español.</span>' +
+            '<span class="ref-opt"><b>g</b>come.</span>' +
+            '<span class="ref-opt"><b>h</b>pídeselo a tu padre.</span>' +
+            "</div>",
+          type: "items",
+          items: [
+            { t: "Cuando vayas a París, → {0}", a: [["c", "a", "b"]] },
+            { t: "Cuando vuelvas del trabajo, → {0}", a: [["e", "a", "b"]] },
+            { t: "Cuando veas a María, → {0}", a: [["d", "a"]] },
+            { t: "Cuando estés triste, → {0}", a: [["a", "b"]] },
+            { t: "Cuando quieras, → {0}", a: [["b", "a"]] },
+            { t: "Cuando tengas tiempo, → {0}", a: [["f", "a", "b"]] },
+            { t: "Cuando necesites dinero, → {0}", a: [["h", "a"]] },
+            { t: "Cuando tengas hambre, → {0}", a: [["g", "e"]] }
+          ]
+        },
+        {
+          num: 4, title: "Oraciones condicionales",
+          instr: "Escribe el verbo adecuado de los dos que aparecen entre paréntesis.",
+          type: "items",
+          items: [
+            { t: "Si {0} tiempo, saldré a comprarme unos zapatos. (tengo / tuviera)", a: [["tengo"]] },
+            { t: "Si Roberto {0} más, aprobaría. (estudia / estudiara)", a: [["estudiara"]] },
+            { t: "Si {0} más de cien años, tendríamos tiempo para hacer muchas cosas. (vivimos / viviéramos)", a: [["viviéramos"]], wide: true },
+            { t: "Si trabajaras menos, no {0} tan cansado. (estarías / estuvieras)", a: [["estarías"]] },
+            { t: "Si {0} Ismael, dile que estoy enferma. (llamaría / llama)", a: [["llama"]] },
+            { t: "Si {0} hambre, comeré antes de llegar a casa. (tendré / tengo)", a: [["tengo"]] },
+            { t: "Si {0} ir al cine el domingo, te llamamos. (podemos / podríamos)", a: [["podemos"]] },
+            { t: "Si todos {0} más amables, el mundo sería más agradable. (fueran / son)", a: [["fueran"]] },
+            { t: "Si {0} cansado, no vayas a trabajar. (estuvieras / estás)", a: [["estás"]] }
+          ]
+        }
+      ]
+    }
+  ];
+
+  const TITLE_LABEL = "Repaso B1"; // short label used in email subject / summary header
+  // These are Angel's real, reusable contact details — copy verbatim into every new
+  // exercise unless he says they changed. IMPORTANT: telegram MUST be his @username
+  // (no @, no phone number) — t.me/+<phone> links silently ignore ?text= and never
+  // pre-fill; only t.me/<username>?text=... does. See SKILL.md "Canal por canal".
+  const TEACHER = {
+    whatsapp: "79856456905",
+    telegram: "angel9904",
+    email: "angelluisacosta99@gmail.com",
+    teamsEmail: "angelluisacosta99@gmail.com"
+  };
+
+  const panels = [];      // cada uno: { update(), syncName() }
+  let studentName = "";   // compartido: se escribe una vez y vale para todos los paneles
+
+  // ---------- render ----------
+  const main = document.getElementById("main");
+  const navDots = document.getElementById("navDots");
+  const allInputs = []; // {el, spec}
+
+  function makeInput(spec, wide, label) {
+    const inp = document.createElement("input");
+    inp.type = "text";
+    inp.className = "blank" + (wide ? " wide" : "");
+    inp.autocomplete = "off";
+    inp.autocapitalize = "off";
+    inp.spellcheck = false;
+    allInputs.push({ el: inp, spec: spec, label: label || "" });
+    return inp;
+  }
+
+  function renderTemplate(container, template, answers, wide, labelBase, forceIndex) {
+    const parts = template.split(/\{(\d+)\}/g);
+    let blankCount = 0;
+    for (let k = 1; k < parts.length; k += 2) blankCount++;
+    parts.forEach(function (part, i) {
+      if (i % 2 === 1) {
+        const tokenIdx = parseInt(part, 10);
+        const spec = answers[tokenIdx];
+        const label = (blankCount > 1 || forceIndex) ? labelBase + " (" + (tokenIdx + 1) + ")" : labelBase;
+        container.appendChild(makeInput(spec, wide, label));
+        const reveal = document.createElement("span");
+        reveal.className = "reveal";
+        container.appendChild(reveal);
+        allInputs[allInputs.length - 1].reveal = reveal;
+      } else if (part) {
+        container.appendChild(document.createTextNode(part));
+      }
+    });
+  }
+
+  // Cuadro de conjugación. spec de cada celda: un array de respuestas aceptadas → hueco
+  // editable; una CADENA → celda ya resuelta en el libro, que se muestra fija (no es un
+  // hueco y no cuenta para la puntuación).
+  function buildConjTable(tbl, exNum) {
+    const twrap = document.createElement("div");
+    twrap.className = "table-wrap";
+    const table = document.createElement("table");
+    table.className = "exercise-table";
+    let thead = "<thead><tr><th>" + (tbl.corner || "Sujeto") + "</th>";
+    tbl.cols.forEach(function (c) { thead += "<th>" + c.label + "</th>"; });
+    thead += "</tr></thead>";
+    table.innerHTML = thead;
+    const tbody = document.createElement("tbody");
+    tbl.subjects.forEach(function (subj, si) {
+      const tr = document.createElement("tr");
+      const td0 = document.createElement("td");
+      td0.textContent = subj;
+      tr.appendChild(td0);
+      tbl.cols.forEach(function (c) {
+        const td = document.createElement("td");
+        const spec = c.a[si];
+        if (typeof spec === "string") {
+          td.textContent = spec;
+          td.className = "given-cell";
+        } else {
+          td.appendChild(makeInput(spec, false, "Ej. " + exNum + " " + c.label + "/" + subj));
+          const reveal = document.createElement("span");
+          reveal.className = "reveal";
+          td.appendChild(reveal);
+          allInputs[allInputs.length - 1].reveal = reveal;
+        }
+        tr.appendChild(td);
+      });
+      tbody.appendChild(tr);
+    });
+    table.appendChild(tbody);
+    twrap.appendChild(table);
+    return twrap;
+  }
+
+  function exerciseHeader(ex) {
+    const head = document.createElement("div");
+    head.className = "exercise-head";
+    const titleWrap = document.createElement("div");
+    titleWrap.className = "exercise-title";
+    titleWrap.innerHTML = '<span class="exnum" translate="no">Ej. ' + ex.num + "</span>";
+    const h3 = document.createElement("h3");
+    h3.textContent = ex.title;
+    titleWrap.appendChild(h3);
+    head.appendChild(titleWrap);
+    const btn = document.createElement("button");
+    btn.className = "check-btn";
+    btn.textContent = "Corregir";
+    head.appendChild(btn);
+    return { head: head, btn: btn };
+  }
+
+  blocks.forEach(function (block) {
+    const sec = document.createElement("section");
+    sec.className = "block";
+    sec.id = block.id;
+
+    const bh = document.createElement("div");
+    bh.className = "block-head";
+    bh.innerHTML =
+      '<div class="block-num">' + block.num + '</div>' +
+      '<div class="block-titles"><h2>' + block.title + '</h2><div class="sub">' + block.sub + '</div></div>';
+    sec.appendChild(bh);
+
+    // Contenido de teoría no interactivo (no forma parte del motor de huecos/corrección),
+    // mostrado antes de los ejercicios del bloque. Solo se usa cuando block.introHTML existe.
+    if (block.introHTML) {
+      const intro = document.createElement("div");
+      intro.innerHTML = block.introHTML;
+      sec.appendChild(intro);
+    }
+
+    const navA = document.createElement("a");
+    navA.href = "#" + block.id;
+    navA.textContent = "Sección " + block.num;
+    navDots.appendChild(navA);
+
+    const blockStartIdx = allInputs.length;
+
+    block.exercises.forEach(function (ex) {
+      const card = document.createElement("div");
+      card.className = "exercise";
+      const startIdx = allInputs.length;
+      const hdr = exerciseHeader(ex);
+      card.appendChild(hdr.head);
+
+      if (ex.instr) {
+        const instr = document.createElement("div");
+        instr.className = "exercise-instr";
+        instr.textContent = ex.instr;
+        card.appendChild(instr);
+      }
+      if (ex.refHTML) {
+        const ref = document.createElement("div");
+        ref.className = "exercise-ref";
+        ref.innerHTML = ex.refHTML;
+        card.appendChild(ref);
+      }
+      if (ex.model) {
+        const model = document.createElement("div");
+        model.className = "exercise-model";
+        model.textContent = ex.model;
+        card.appendChild(model);
+      }
+
+      if (ex.type === "items") {
+        const wrap = document.createElement("div");
+        wrap.className = "items";
+        ex.items.forEach(function (item, i) {
+          const row = document.createElement("div");
+          row.className = "item-row";
+          const letter = document.createElement("span");
+          letter.className = "item-letter";
+          letter.setAttribute("translate", "no");
+          letter.textContent = String.fromCharCode(97 + i) + ".";
+          row.appendChild(letter);
+          renderTemplate(row, item.t, item.a, item.wide, "Ej. " + ex.num + String.fromCharCode(97 + i));
+          wrap.appendChild(row);
+        });
+        card.appendChild(wrap);
+      } else if (ex.type === "text") {
+        const p = document.createElement("div");
+        p.className = "paragraph";
+        ex.text.split("\n").forEach(function (line, li) {
+          if (li > 0) p.appendChild(document.createElement("br"));
+          renderTemplate(p, line, ex.a, false, "Ej. " + ex.num, true);
+        });
+        card.appendChild(p);
+      } else if (ex.type === "table2") {
+        const twrap = document.createElement("div");
+        twrap.className = "table-wrap";
+        const table = document.createElement("table");
+        table.className = "exercise-table";
+        table.innerHTML = "<thead><tr><th>Infinitivo</th><th>Gerundio</th></tr></thead>";
+        const tbody = document.createElement("tbody");
+        ex.rows.forEach(function (r) {
+          const tr = document.createElement("tr");
+          const td1 = document.createElement("td");
+          td1.textContent = r[0];
+          const td2 = document.createElement("td");
+          td2.appendChild(makeInput(r[1][0], false, "Ej. " + ex.num + " " + r[0]));
+          const reveal = document.createElement("span");
+          reveal.className = "reveal";
+          td2.appendChild(reveal);
+          allInputs[allInputs.length - 1].reveal = reveal;
+          tr.appendChild(td1); tr.appendChild(td2);
+          tbody.appendChild(tr);
+        });
+        table.appendChild(tbody);
+        twrap.appendChild(table);
+        card.appendChild(twrap);
+      } else if (ex.type === "conjTable") {
+        card.appendChild(buildConjTable(ex, ex.num));
+      } else if (ex.type === "conjTables") {
+        // Varios cuadros de conjugación dentro del MISMO ejercicio (un solo botón
+        // "Corregir"), como en el libro, donde el ejercicio 2 son tres cuadros seguidos.
+        const tblHint = document.createElement("div");
+        tblHint.className = "table-hint";
+        tblHint.textContent = "En pantallas estrechas, desliza cada cuadro hacia los lados para ver todas las columnas.";
+        card.appendChild(tblHint);
+        ex.tables.forEach(function (tbl) { card.appendChild(buildConjTable(tbl, ex.num)); });
+      } else if (ex.type === "agenda") {
+        const twrap = document.createElement("div");
+        twrap.className = "table-wrap";
+        const table = document.createElement("table");
+        table.className = "exercise-table ref-table";
+        table.innerHTML = "<thead><tr><th>Día</th><th>Actividad</th></tr></thead>";
+        const tbody = document.createElement("tbody");
+        ex.table.forEach(function (r) {
+          const tr = document.createElement("tr");
+          const td1 = document.createElement("td"); td1.textContent = r[0];
+          const td2 = document.createElement("td"); td2.textContent = r[1];
+          tr.appendChild(td1); tr.appendChild(td2);
+          tbody.appendChild(tr);
+        });
+        table.appendChild(tbody);
+        twrap.appendChild(table);
+        card.appendChild(twrap);
+        const wrap = document.createElement("div");
+        wrap.className = "items";
+        ex.items.forEach(function (item, i) {
+          const row = document.createElement("div");
+          row.className = "item-row";
+          const letter = document.createElement("span");
+          letter.className = "item-letter";
+          letter.setAttribute("translate", "no");
+          letter.textContent = String.fromCharCode(97 + i) + ".";
+          row.appendChild(letter);
+          renderTemplate(row, item.t, item.a, item.wide, "Ej. " + ex.num + String.fromCharCode(97 + i));
+          wrap.appendChild(row);
+        });
+        card.appendChild(wrap);
+      }
+
+      const endIdx = allInputs.length;
+      hdr.btn.addEventListener("click", function () {
+        gradeRange(startIdx, endIdx);
+        updateScore();
+      });
+
+      sec.appendChild(card);
+    });
+
+    // Cierre de sección: botón para corregirla entera y su propio panel de resultados con
+    // botones de envío, para que el alumno pueda entregar sección por sección sin tener que
+    // completar las cinco de una sentada.
+    const secStart = blockStartIdx;
+    const secEnd = allInputs.length;
+    // Marca cada hueco con el rango de su sección, para que Enter corrija solo esta.
+    for (let i = secStart; i < secEnd; i++) allInputs[i].secRange = { start: secStart, end: secEnd };
+    if (secEnd > secStart) {
+      const actions = document.createElement("div");
+      actions.className = "section-actions";
+      const secBtn = document.createElement("button");
+      secBtn.className = "section-correct-btn";
+      secBtn.type = "button";
+      secBtn.textContent = "Corregir la sección " + block.num;
+      const secHint = document.createElement("div");
+      secHint.className = "progress-hint";
+      actions.appendChild(secBtn);
+      actions.appendChild(secHint);
+      sec.appendChild(actions);
+
+      const secPanel = createResultsPanel({
+        scopeTitle: TITLE_LABEL + " · Sección " + block.num + " — " + block.sub,
+        recs: allInputs.slice(secStart, secEnd),
+        sendLabel: "Enviar los resultados de la sección " + block.num + " a tu profesor",
+        hintEl: secHint,
+        hintPartial: "corrige el resto de esta sección (o pulsa el botón de arriba) para ver tu resumen y enviarlo.",
+        hintAllDone: "¡Sección " + block.num + " corregida! Tu resumen está justo debajo 👇",
+        scrollIntoView: false
+      });
+      sec.appendChild(secPanel.el);
+
+      secBtn.addEventListener("click", function () {
+        gradeRange(secStart, secEnd);
+        updateScore();
+      });
+    }
+
+    main.appendChild(sec);
+  });
+
+  document.getElementById("totalBlanksLabel").textContent = allInputs.length;
+  document.getElementById("scoreTotal").textContent = allInputs.length;
+
+  // Aclaraciones lingüísticas que se muestran DESPUÉS de corregir (no antes, para no
+  // revelar la respuesta), enganchadas a un hueco concreto por identidad del array de
+  // respuestas aceptadas (ver NOTE_* más abajo, en los datos de los ejercicios).
+  function attachNote(spec, text) {
+    const rec = allInputs.find(function (r) { return r.spec === spec; });
+    if (!rec || !rec.reveal) return;
+    const row = rec.el.closest(".item-row");
+    if (!row) return;
+    const noteEl = document.createElement("div");
+    noteEl.className = "grading-note";
+    noteEl.textContent = text;
+    row.appendChild(noteEl);
+    rec.noteEl = noteEl;
+  }
+
+  attachNote(NOTE_ESTA_MANANA, "«Esta mañana», como es hoy, todavía está en curso → normalmente se usa el pretérito perfecto («hemos visto»). Si en tu clase se usa más el indefinido para el mismo día, «vimos» también se acepta aquí.");
+  attachNote(NOTE_POR_POER_FUTURO, "El sujeto de «poder» no está explícito en la frase — se aceptan «podremos» (nosotros), «podrá» / «podrán» (uso más impersonal) y «se podrá».");
+  attachNote(NOTE_DE_A_ESTACIONES, "«De Núñez de Balboa a Callao»: el origen se marca con «de». «Desde… hasta» diría lo mismo, pero solo se aceptan las preposiciones del recuadro, y «desde» no está entre ellas.");
+  attachNote(NOTE_PISO_TIENE, "Indicativo («tiene»), no subjuntivo: «Lo vi el otro día» indica que ese piso concreto existe y el hablante lo conoce. Compara con «Estoy buscando un piso que tenga terraza», donde el piso todavía no se conoce.");
+  attachNote(NOTE_YO_QUE_TU_VER, "Con «yo que tú…» el consejo se da siempre en 1.ª persona: «yo que tú vería…» (= si yo fuera tú, vería). En el libro el paréntesis pone «(ver, él)», pero eso es una errata: la forma correcta aquí es «vería».");
+  attachNote(NOTE_TU_SABES_QUE, "Aquí hay dos tildes: «tú» (pronombre, no el posesivo «tu hermano») y «qué» (interrogativo indirecto, aunque no lleve signos de pregunta propios).");
+
+  function correctTextFor(spec) {
+    const t = Array.isArray(spec) ? spec[0] : (spec.show || (spec.flex ? spec.flex.join(" / ") : ""));
+    return typeof t === "string" ? t : "";
+  }
+
+  function gradeRange(start, end) {
+    for (let i = start; i < end; i++) {
+      const rec = allInputs[i];
+      const ok = isCorrect(rec.el.value, rec.spec);
+      rec.el.classList.remove("correct", "incorrect");
+      rec.el.classList.add(ok ? "correct" : "incorrect");
+      rec.el.dataset.checked = "1";
+      if (!ok && rec.reveal) {
+        rec.reveal.textContent = "→ " + correctTextFor(rec.spec);
+        rec.reveal.classList.add("show", "bad-reveal");
+      } else if (rec.reveal) {
+        rec.reveal.classList.remove("show", "bad-reveal");
+      }
+      if (rec.noteEl) rec.noteEl.classList.add("show");
+    }
+  }
+
+  // ---------- results panels: one per section + one global ----------
+  // Cada sección tiene su propio panel (puntuación, fallos y botones de envío) para que el
+  // alumno pueda hacer una sección, corregirla y mandársela al profesor sin tener que
+  // terminar las 5 de una sentada. El panel global de abajo hace lo mismo con todo.
+  function tierFor(pct) {
+    if (pct >= 90) return { headline: "¡Excelente trabajo! 🎉", sub: "Dominas muy bien este tema. ¡Sigue así!" };
+    if (pct >= 70) return { headline: "¡Muy bien! 👏", sub: "Vas por muy buen camino. Repasa los pocos fallos y lo tendrás perfecto." };
+    if (pct >= 50) return { headline: "Buen intento 💪", sub: "Vas progresando. Repasa los fallos marcados y el recuadro de gramática." };
+    return { headline: "¡Ánimo, esto es parte de aprender! 🌱", sub: "Vuelve a leer los ejemplos y repite el ejercicio — cada intento suma." };
+  }
+
+  function buildSummary(scopeTitle, recs, correct, pct) {
+    const lines = [];
+    lines.push("📋 Resultados — " + scopeTitle);
+    lines.push("Alumno: " + (studentName || "(sin nombre)"));
+    lines.push("Puntuación: " + correct + "/" + recs.length + " (" + pct + "%)");
+    lines.push("");
+    const wrong = recs.filter(function (rec) {
+      return rec.el.dataset.checked === "1" && !rec.el.classList.contains("correct");
+    });
+    if (wrong.length === 0) {
+      lines.push("¡Sin errores! 🎉");
+    } else {
+      lines.push("Fallos (" + wrong.length + "):");
+      wrong.forEach(function (rec) {
+        const given = rec.el.value.trim() || "(en blanco)";
+        lines.push("- " + rec.label + ": escribió \"" + given + "\" → correcto: \"" + correctTextFor(rec.spec) + "\"");
+      });
+    }
+    return lines.join("\n");
+  }
+
+  // Long reports risk pushing the whole URL past the ~2000-char limit some browsers/
+  // servers truncate at. Keeps as many full lines as fit within an encoded-length budget,
+  // then appends a note — measuring the ENCODED length, since encodeURIComponent can
+  // roughly triple raw length (newlines, accents, emoji all expand).
+  function truncateForUrl(text, maxEncodedLen) {
+    const note = "\n\n(Informe truncado por ser muy largo para el enlace — usa \"Copiar resumen\" para ver todos los fallos.)";
+    if (encodeURIComponent(text).length <= maxEncodedLen) return text;
+    const lines = text.split("\n");
+    let out = "";
+    for (let i = 0; i < lines.length; i++) {
+      const candidate = out + (out ? "\n" : "") + lines[i];
+      if (encodeURIComponent(candidate + note).length > maxEncodedLen) break;
+      out = candidate;
+    }
+    return out + note;
+  }
+
+  function copyText(text, onDone) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { onDone(true); }, function () { fallbackCopy(text, onDone); });
+    } else {
+      fallbackCopy(text, onDone);
+    }
+  }
+  function fallbackCopy(text, onDone) {
+    try {
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.top = "-9999px";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.focus();
+      ta.select();
+      const ok = document.execCommand("copy");
+      document.body.removeChild(ta);
+      onDone(ok);
+    } catch (e) { onDone(false); }
+  }
+
+  // opts: { scopeTitle, recs, sendLabel, hintEl, hintAllDone, hintPartial }
+  function createResultsPanel(opts) {
+    const recs = opts.recs;
+    const panel = document.createElement("div");
+    panel.className = "results-panel gated-content";
+    panel.hidden = true;
+    panel.innerHTML =
+      '<div class="results-headline"></div>' +
+      '<div class="results-sub"></div>' +
+      '<div class="results-score-row">' +
+        '<span class="results-score-num" translate="no"></span>' +
+        '<span class="results-score-den" translate="no"></span>' +
+      '</div>' +
+      '<input type="text" class="results-name" placeholder="Tu nombre (para que tu profesor sepa quién eres)" />' +
+      '<div class="results-errors"></div>' +
+      '<div class="channel-label">' + opts.sendLabel + '</div>' +
+      '<div class="channel-row">' +
+        '<a class="channel-btn ch-whatsapp" target="_blank" rel="noopener">WhatsApp</a>' +
+        '<a class="channel-btn ch-telegram" target="_blank" rel="noopener">Telegram</a>' +
+        '<a class="channel-btn ch-email" target="_blank" rel="noopener">Correo</a>' +
+        '<a class="channel-btn ch-teams" target="_blank" rel="noopener">Teams</a>' +
+        '<button class="channel-btn ch-copy" type="button">Copiar resumen</button>' +
+        '<span class="channel-copied"></span>' +
+      '</div>';
+
+    const q = function (sel) { return panel.querySelector(sel); };
+    const nameEl = q(".results-name");
+
+    function currentSummary() {
+      const correct = recs.filter(function (r) {
+        return r.el.dataset.checked === "1" && r.el.classList.contains("correct");
+      }).length;
+      const pct = recs.length ? Math.round((correct / recs.length) * 100) : 0;
+      return buildSummary(opts.scopeTitle, recs, correct, pct);
+    }
+
+    function refreshLinks() {
+      const text = currentSummary();
+      const encoded = encodeURIComponent(text);
+      // t.me's server (nginx) rejects long query strings outright with a 400 Bad Request —
+      // wa.me tolerates the same length fine, so only Telegram needs the same length budget
+      // already used for the Gmail link below.
+      const shortText = truncateForUrl(text, 1200);
+      q(".ch-whatsapp").href = "https://wa.me/" + TEACHER.whatsapp + "?text=" + encoded;
+      // t.me links only pre-fill the message box when addressed to a @username — the
+      // phone-number form (t.me/+<number>) has no equivalent and ignores ?text= entirely.
+      q(".ch-telegram").href = "https://t.me/" + TEACHER.telegram + "?text=" + encodeURIComponent(shortText);
+      // encodeURIComponent on the recipient, matching every other channel's params (was raw
+      // before) — @ is technically legal unencoded in a query string, but the Teams desktop
+      // app parses this deep link with its own internal handler, not a browser, and may be
+      // stricter than what wa.me/t.me/mail.google.com's own parsers tolerate.
+      q(".ch-teams").href = "https://teams.microsoft.com/l/chat/0/0?users=" + encodeURIComponent(TEACHER.teamsEmail) + "&message=" + encoded;
+      // Gmail's web compose URL, set as a plain https:// href — a native <a target="_blank">
+      // click is trusted browser navigation, exempt from the "block pop-ups" site permission
+      // that silently swallows a script-triggered window.open() call (this broke a previous
+      // version of this button on both desktop and mobile). On Android with the Gmail app
+      // installed, the OS still intercepts this link and opens the app instead of the
+      // browser, which ignores the compose params — covered by the copy fallback below.
+      q(".ch-email").href = "https://mail.google.com/mail/?view=cm&fs=1&to=" +
+        encodeURIComponent(TEACHER.email) + "&su=" + encodeURIComponent("Resultados — " + opts.scopeTitle) +
+        "&body=" + encodeURIComponent(shortText);
+    }
+
+    function showCopied(text) {
+      const msg = q(".channel-copied");
+      msg.textContent = text || "¡Copiado!";
+      msg.style.display = "block";
+      setTimeout(function () { msg.style.display = "none"; }, 3200);
+    }
+
+    nameEl.addEventListener("input", function () {
+      studentName = nameEl.value.trim();
+      panels.forEach(function (p) { p.syncName(); });
+    });
+
+    q(".ch-copy").onclick = function () {
+      copyText(currentSummary(), function (ok) { if (ok) showCopied(); });
+    };
+    // Teams' chat link works fully on mobile (recipient selected, message pasted), but on
+    // desktop the app has only shown the message pasted, not the recipient auto-selected —
+    // the same category of gap as Correo on Android: a native app intercepting a web deep
+    // link and only partially honoring its parameters, which the page has no way to detect
+    // or control. The button also copies the summary and names the exact manual step that
+    // might still be needed, covering both platforms without guessing which one applies.
+    q(".ch-teams").addEventListener("click", function () {
+      copyText(currentSummary(), function (ok) {
+        if (ok) showCopied("Texto copiado. Si el destinatario no se seleccionó solo, elige a " + TEACHER.teamsEmail + ". Pégalo (mantén pulsado → Pegar) si el mensaje no se rellenó.");
+      });
+    });
+    // Correo: like Teams, its own link can't be trusted to fully deliver the message (on
+    // Android with the Gmail app installed, the OS intercepts mail.google.com links and
+    // opens the APP instead of the browser, which ignores the compose params and just opens
+    // normally — "redirects to Gmail but does nothing"). This is a genuinely additive
+    // listener on the native <a href> click (NOT a onclick handler calling window.open()
+    // itself) — a script-triggered window.open() is what a "block pop-ups" site permission
+    // targets, and a real link click is exempt from it, which is what actually matters here.
+    q(".ch-email").addEventListener("click", function () {
+      copyText(currentSummary(), function (ok) {
+        if (ok) showCopied("Texto copiado. Si no se abrió tu correo solo, pégalo (mantén pulsado → Pegar) en un email a " + TEACHER.email + ".");
+      });
+    });
+
+    const api = {
+      el: panel,
+      syncName: function () {
+        if (nameEl.value.trim() !== studentName) nameEl.value = studentName;
+        if (!panel.hidden) refreshLinks();
+      },
+      update: function () {
+        const checked = recs.filter(function (r) { return r.el.dataset.checked === "1"; }).length;
+        const correct = recs.filter(function (r) {
+          return r.el.dataset.checked === "1" && r.el.classList.contains("correct");
+        }).length;
+        const total = recs.length;
+        const hint = opts.hintEl;
+
+        if (checked === 0) {
+          panel.hidden = true;
+          if (hint) { hint.textContent = ""; hint.classList.remove("complete"); }
+          return;
+        }
+        if (checked < total) {
+          panel.hidden = true;
+          if (hint) {
+            hint.textContent = "Corregidos " + checked + "/" + total + " — " + opts.hintPartial;
+            hint.classList.remove("complete");
+          }
+          return; // wait until everything in scope has been corrected at least once
+        }
+        if (hint) {
+          hint.textContent = opts.hintAllDone;
+          hint.classList.add("complete");
+        }
+        const wasHidden = panel.hidden;
+        panel.hidden = false;
+        if (wasHidden && opts.scrollIntoView) {
+          setTimeout(function () { panel.scrollIntoView({ behavior: "smooth", block: "start" }); }, 50);
+        }
+
+        const pct = Math.round((correct / total) * 100);
+        const tier = tierFor(pct);
+        q(".results-headline").textContent = tier.headline;
+        q(".results-sub").textContent = tier.sub;
+        q(".results-score-num").textContent = correct;
+        q(".results-score-den").textContent = "/ " + total + " (" + pct + "%)";
+
+        const wrong = recs.filter(function (rec) {
+          return rec.el.dataset.checked === "1" && !rec.el.classList.contains("correct");
+        });
+        const errBox = q(".results-errors");
+        if (wrong.length === 0) {
+          errBox.innerHTML = '<div class="results-error-item">¡Ni un solo fallo! 🎉</div>';
+        } else {
+          errBox.innerHTML = '<div class="results-errors-title">Fallos (' + wrong.length + ')</div>' +
+            wrong.map(function (rec) {
+              const given = escapeHtml(rec.el.value.trim() || "(en blanco)");
+              return '<div class="results-error-item"><b>' + rec.label + ':</b> <s>' + given + "</s> → " + correctTextFor(rec.spec) + "</div>";
+            }).join("");
+        }
+        refreshLinks();
+      }
+    };
+    panels.push(api);
+    return api;
+  }
+
+  function updateScore() {
+    let checked = 0, correct = 0;
+    allInputs.forEach(function (rec) {
+      if (rec.el.dataset.checked === "1") {
+        checked++;
+        if (rec.el.classList.contains("correct")) correct++;
+      }
+    });
+    document.getElementById("scoreNum").textContent = correct;
+    document.getElementById("scoreTotal").textContent = allInputs.length;
+    const pct = allInputs.length ? (correct / allInputs.length) * 100 : 0;
+    document.getElementById("barFill").style.width = pct + "%";
+    panels.forEach(function (p) { p.update(); });
+  }
+
+  // Panel global, al final de la página, con TODOS los ejercicios.
+  createResultsPanel({
+    scopeTitle: TITLE_LABEL,
+    recs: allInputs,
+    sendLabel: "Enviar el resumen completo a tu profesor",
+    hintEl: document.getElementById("progressHint"),
+    hintPartial: "corrige el resto de ejercicios (o pulsa \"Corregir todos\") para ver tu resumen final.",
+    hintAllDone: "¡Todo corregido! Tu resumen está más abajo 👇",
+    scrollIntoView: true
+  });
+  document.getElementById("globalResultsSlot").appendChild(panels[panels.length - 1].el);
+
+  document.getElementById("correctAllBtn").addEventListener("click", function () {
+    gradeRange(0, allInputs.length);
+    updateScore();
+  });
+
+  // Enter corrige SOLO la sección en la que está el alumno, no el documento entero: con 7
+  // secciones y 341 huecos, corregirlo todo de golpe destaparía todas las respuestas de las
+  // secciones que aún no ha hecho. rec.secRange lo fija el bucle de render por sección.
+  allInputs.forEach(function (rec) {
+    rec.el.addEventListener("keydown", function (e) {
+      if (e.key !== "Enter") return;
+      const r = rec.secRange;
+      if (r) gradeRange(r.start, r.end);
+      else gradeRange(0, allInputs.length);
+      updateScore();
+    });
+  });
+
+  updateScore();
+})();
+</script>
