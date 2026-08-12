@@ -1182,3 +1182,246 @@ c. «Yo haré la cena mañana». → Tú me dijiste ayer que **harías la cena h
 d. Juan: «Yo haré la compra el sábado». → Juan dijo que él **haría la compra el sábado**
 e. «Mañana no saldremos». → Ellos me dijeron ayer que **hoy no saldrían**
    > Igual que el anterior: «mañana» dicho ayer equivale a «hoy» → «me dijeron ayer que hoy no saldrían». Hay que cambiar también la expresión de tiempo, no solo el verbo.
+
+## 9. Gramática y vocabulario
+
+*Voz pasiva, estilo indirecto con órdenes y peticiones, expresar deseos*
+
+### Gramática y vocabulario
+
+#### Voz pasiva
+
+- Se utiliza especialmente en los textos periodísticos e históricos.
+  - *La penicilina fue descubierta en 1928.*
+- El hablante la usa cuando no le interesa decir quién es el sujeto agente de la acción, o cuando ese sujeto es obvio. También cuando le parece más importante enunciar el objeto directo que el sujeto. Compara:
+  - *El Cuerpo de Bomberos (sujeto agente) extinguió el incendio (objeto directo).*
+  - *El incendio (sujeto pasivo) fue extinguido por el Cuerpo de Bomberos (complemento agente).*
+- Se forma con el verbo ser + participio, en el mismo género y número que el sujeto pasivo.
+  - *Hoy han sido recuperados los artículos robados de la tienda.*
+  - *El principal sospechoso del robo ha sido declarado culpable por el Tribunal.*
+
+#### Estilo indirecto: órdenes, peticiones y sugerencias
+
+- Cuando presentamos una orden o una sugerencia en estilo indirecto, el verbo de la oración subordinada tiene que ir en subjuntivo.
+  - *(Jefe: «No llegues tarde») → Mi jefe siempre me dice que no llegue tarde.*
+  - *(Lucía: «Ven mañana a mi casa») → Lucía me pidió que fuera a su casa.*
+- Si el verbo introductor está en presente o pretérito perfecto, la subordinada lleva presente de subjuntivo.
+  - *Mi madre siempre me dice [presente] que no corra [pres. subj.] cuando voy en coche.*
+  - *Me ha pedido [pret. perf.] que le preste [pres. subj.] mi libro.*
+- Si el verbo introductor está en pretérito imperfecto, indefinido o pluscuamperfecto, la subordinada lleva pretérito imperfecto de subjuntivo.
+  - *Me dijo [pret. indef.] que abriera [pret. imperf. subj.] la ventana.*
+- Va introducido por verbos como decir (en el sentido de «ordenar») y otros como pedir, sugerir, recomendar, aconsejar, rogar, prohibir, etcétera.
+
+#### Expresar deseos
+
+Las oraciones subordinadas dependientes de verbos de deseo y necesidad (espero, quiero, deseo, necesito, me gustaría) pueden llevar el verbo en infinitivo o en subjuntivo.
+
+- Infinitivo, cuando el sujeto de las dos oraciones es el mismo.
+  - *(Yo) Deseo tener (yo) más tiempo libre.*
+  - *Ella espera terminar el informe a tiempo.*
+  - *Nos gustaría conocer Nueva York.*
+- Subjuntivo, cuando el sujeto de las dos oraciones es diferente.
+  - *Yo deseo que mis hijos sean felices.*
+  - *Me gustaría que limpiaras tu cuarto.*
+
+**Vocabulario · Noticias**
+titular · robar · detener · policía · persecución · agresor · huir · asaltar · apuñalar · herir · herido · atacar · víctima
+
+**Vocabulario · Verbos de influencia**
+recomendar · aconsejar · sugerir · prohibir · pedir · rogar
+
+### Ejercicios
+
+#### Ej. 1 — Noticias del periódico
+
+*Completa las noticias con los verbos del recuadro. Fíjate en el género y el número del sujeto pasivo: es lo que decide cuál encaja en cada hueco.*
+
+> **Verbos:** ha sido clausurado · fue suspendido · fue interrumpido · han sido recibidas · ha sido criticada
+
+a. La consejería de transportes **ha sido criticada** por no atender a los ciudadanos durante la huelga de autobuses.
+b. El partido de fútbol **fue suspendido** debido al mal tiempo.
+c. El Congreso de Médicos **ha sido clausurado** por el ministro de Sanidad.
+d. El servicio de trenes **fue interrumpido** debido a la huelga de los empleados de la RENFE.
+e. Las nuevas medidas de protección ambiental **han sido recibidas** con entusiasmo por la ciudadanía.
+
+#### Ej. 2 — Lo que le ha dicho su madre a Fede
+
+*Laura le da muchas órdenes a su hijo Fede todos los días. Luego Guillermo le pregunta: «¿Qué te ha dicho tu madre?». Completa lo que responde Fede. El verbo introductor está en pretérito perfecto (me ha dicho), así que la subordinada va en presente de subjuntivo.*
+
+*Ejemplo — Madre: «Fede, ven aquí ahora mismo». → Fede: Mi madre me ha dicho que vaya allí ahora mismo.*
+
+a. «Fede, lávate las manos». → Mi madre me ha dicho que **me lave las manos**
+b. «Fede, hijo, pon la mesa». → Mi madre me ha dicho que **ponga la mesa**
+c. «Dile a papá que venga a comer». → Mi madre me ha dicho que **le diga a papá que venga a comer**
+d. «Fede, quita la tele». → Mi madre me ha dicho que **quite la tele**
+e. «No le des azúcar al perro». → Mi madre me ha dicho que **no le dé azúcar al perro**
+f. «Saca la basura». → Mi madre me ha dicho que **saque la basura**
+g. «Lleva el pan a la mesa». → Mi madre me ha dicho que **lleve el pan a la mesa**
+
+#### Ej. 3 — De estilo indirecto a estilo directo
+
+*Escribe la orden o la petición tal y como se dijo. Cuando el original va en plural se aceptan tanto la forma de vosotros como la de ustedes; en singular, tanto la de tú como la de usted.*
+
+*Ejemplo — Me ha pedido que me vaya con él. → «Ven conmigo».*
+
+a. Me ha dicho que coma más frutas. → **come más frutas**
+b. Me ha pedido que lo lea en voz alta. → **léelo en voz alta**
+c. Me dice siempre que no haga ruido. → **no hagas ruido**
+d. Nos han pedido que lleguemos a las siete. → **llegad a las siete**
+e. Nos ha dicho que terminemos pronto. → **terminad pronto**
+f. Me ha pedido que haga la cena. → **haz la cena**
+g. Les ha dicho a los niños que se laven las manos. → **lavaos las manos**
+
+#### Ej. 4 — Expresar deseos: sigue el modelo
+
+*Reescribe cada frase con «me gustaría». Infinitivo si el sujeto es el mismo; «que» + imperfecto de subjuntivo si es distinto. Se aceptan las dos terminaciones del subjuntivo (-ara y -ase).*
+
+*Ejemplos — No tenemos piso. → Nos gustaría tener un piso. · Mi hija no me ayuda. → Me gustaría que mi hija me ayudara.*
+
+a. Llego tarde todos los días. → Me gustaría **no llegar tarde todos los días**
+b. Mis hijos no tienen trabajo. → Me gustaría **que mis hijos tuvieran trabajo**
+c. No salgo nunca de viaje. → Me gustaría **salir de viaje**
+d. No sé hablar inglés bien. → Me gustaría **hablar inglés bien (o «saber hablar inglés bien»)**
+e. Mi marido tiene pocas vacaciones. → Me gustaría **que mi marido tuviera más vacaciones**
+f. Mis alumnos no hacen los deberes. → Me gustaría **que mis alumnos hicieran los deberes**
+g. Penélope no viene mucho a verme. → Me gustaría **que Penélope viniera más a verme**
+h. No tengo un vestido largo y bonito. → Me gustaría **tener un vestido largo y bonito**
+i. Hace mucho calor. → Me gustaría **que no hiciera tanto calor**
+j. Mi hijo es un mal estudiante. → Me gustaría **que mi hijo fuera un buen estudiante**
+
+#### Ej. 5 — Ordena las frases
+
+*Escribe la frase ordenada. Todas empiezan por «Me gustaría» o «Les gustaría».*
+
+a. enfermera / trabajar / Me / de / gustaría → **me gustaría trabajar de enfermera**
+b. ganar / gustaría / dinero / Me / más → **me gustaría ganar más dinero**
+c. fueras / París / a / gustaría / que / Me → **me gustaría que fueras a París**
+d. vinieras / casa / gustaría / Me / mi / a / que → **me gustaría que vinieras a mi casa**
+e. Me / que / bien / gustaría / hablaras / japonés / tú → **me gustaría que tú hablaras japonés bien**
+f. más / Les / gustaría / yo / amable / que / fuera → **les gustaría que yo fuera más amable**
+
+#### Ej. 6 — Escribe un párrafo
+
+*Este ejercicio es de redacción libre: no tiene una respuesta única, así que no se corrige automáticamente. Escríbelo y mándaselo a tu profesor aparte.*
+
+> Escribe un párrafo sobre qué desean los habitantes de tu país de sus autoridades.
+> Los habitantes de mi país esperan que los gobernantes piensen más en los problemas que tenemos…
+> En primer lugar, queremos / deseamos que…
+
+## 10. Gramática y vocabulario
+
+*La conjetura, pedir un servicio con cortesía y escribir postales*
+
+### Gramática y vocabulario
+
+#### Expresión de la conjetura
+
+Para expresar nuestras dudas, deseos o planes sin definir (conjeturas) utilizamos estas expresiones.
+
+- A lo mejor + presente de indicativo.
+  - *A lo mejor vamos a Marbella.*
+  - *A lo mejor ha ido a comprar los billetes de tren.*
+- Seguramente / probablemente + futuro o presente de subjuntivo.
+  - *Seguramente estará / esté enferma. La llamaré.*
+  - *Probablemente iremos / vayamos a cenar a un restaurante japonés.*
+- Quizás + indicativo, cuando nos referimos a acciones pasadas o presentes.
+  - *Quizás ha tenido que ir al médico y por eso no ha venido a trabajar.*
+- Quizás + subjuntivo, que se prefiere cuando hablamos de acciones futuras.
+  - *Quizás compremos un coche nuevo, pero no sé cuándo.*
+
+> **Ojo**
+> No se puede utilizar a lo mejor + verbo en futuro.
+> A lo mejor está de vacaciones. (No: «a lo mejor estará de vacaciones»)
+
+#### Pedir un servicio de forma adecuada
+
+| Registro | Fórmulas | Sigue |
+| --- | --- | --- |
+| Formal | ¿Le importaría…? · ¿Sería posible…? · ¿Sería(n) tan amable(s) de…? | + infinitivo |
+| Informal | ¿Te importaría…? · ¿Podrías…? | + infinitivo |
+| Respuestas | Sí, cómo no. · Sí, ahora mismo. · Lo siento, pero… · Por supuesto. · Claro que sí. | — |
+
+#### Escribir postales: temas a tratar
+
+| Tema | Expresiones |
+| --- | --- |
+| Para hablar del tiempo | Hace mucho frío / calor / viento / sol · Llueve sin parar / a cántaros · Está nublado / nevando · Hay nubes y claros / niebla / tormenta / lluvia / nieve |
+| Para hablar del paisaje | Esto es precioso / impresionante / muy bonito |
+| Para hablar de la gente | La gente es amable / antipática / acogedora |
+| Para despedirse | Saludos · Recuerdos · Un abrazo · Besos · ¡Hasta pronto! |
+
+**Vocabulario · Alojamientos: en el hotel**
+piscina · sala de reuniones · gimnasio · sauna · restaurante · servicio de plancha · cuidado de niños · aparcamiento · lavandería · prensa gratuita · telefax
+
+**Vocabulario · Alojamientos: en las habitaciones**
+radio · televisión · teléfono · secador de pelo · albornoces · minibar · baño privado · servicio de habitaciones 24 h · cafetera · tetera · terraza · aire acondicionado · escritorio
+
+**Vocabulario · Tiempo atmosférico**
+nubes · lluvia · niebla · tormenta · viento · sol · nubes y claros · nieve · nublado · lluvioso · frío · calor
+
+### Ejercicios
+
+#### Ej. 1 — La conjetura
+
+*Completa las frases con los verbos del recuadro en el tiempo correspondiente. Donde el libro admite las dos opciones (seguramente y probablemente llevan futuro o subjuntivo; quizás, indicativo o subjuntivo), se aceptan las dos. Aquí las tildes cuentan: «esta» y «está» no son la misma palabra.*
+
+> **Verbos:** encontrar · venir · estar (x2) · tener (x2) · vivir · subir · poder · oír
+
+a. Juan no me habla. Quizás **esté** enfadado conmigo.
+b. ¿Necesitas un trabajo? A lo mejor **puedo** conseguirte uno.
+c. El niño está llorando. Seguramente **tendrá** hambre.
+d. Estamos buscando billetes de avión. A lo mejor los **encontramos** en internet.
+e. Paco no puede venir este fin de semana. Probablemente **tendrá** trabajo en casa.
+f. Hace mucho tiempo que no veo a Victoria. A lo mejor ya no **vive** en Madrid.
+g. El avión tenía que haber aterrizado. Quizás **venga** con retraso.
+h. No sé por qué no abre. Quizás no **oiga** el timbre.
+i. El director quiere hablar contigo. Seguramente te **subirá** el sueldo.
+j. Alicia no ha venido a trabajar. A lo mejor **está** enferma.
+
+#### Ej. 2 — ¿Qué tiempo hacía?
+
+*¿Qué tiempo crees que hacía para que sucedieran las siguientes cosas? Responde con una frase corta en pretérito imperfecto. Se acepta más de una formulación, y aquí las tildes no cuentan.*
+
+*Ejemplo — Nos bañamos en el río toda la mañana. → Hacía mucho calor.*
+
+a. Tuvimos que sentarnos a la sombra durante toda la tarde. → **hacía mucho calor**
+b. Los coches salpicaban agua y mojaban a los peatones. → **llovía**
+c. Tuvieron que cerrar el aeropuerto. No había suficiente visibilidad. → **había niebla**
+d. Se me voló el periódico de las manos. → **hacía mucho viento**
+e. Mirando al cielo parecía que iba a llover. → **estaba nublado**
+f. Pudimos ir a esquiar el fin de semana. → **había nevado**
+g. Un rayo partió un árbol. → **había tormenta**
+h. Tuve que ponerme el abrigo, los guantes y un gorro. → **hacía mucho frío**
+
+#### Ej. 3 — En la recepción del hotel
+
+*¿Cómo sería el diálogo que mantendrías con el recepcionista en cada situación? Escribe solo la fórmula de cortesía que falta. Ojo al registro: en el hotel se tratan de usted, pero en el albergue juvenil el recepcionista tutea.*
+
+> **Fórmulas:** ¿Le importaría…? · ¿Sería posible…? · ¿Sería(n) tan amable(s) de…? · ¿Te importaría…? · ¿Podrías…?
+> **Respuestas:** Sí, cómo no. · Sí, ahora mismo. · Lo siento, pero… · Por supuesto. · Claro que sí.
+
+a. 1 · Quieres ir a un hotel a pasar el fin de semana. Cliente: ¿**le importaría** decirme si hay habitaciones libres para el fin de semana?
+b. 1 · Recepcionista: **sí cómo no** ¿Qué tipo de habitación desearía?
+c. 2 · Tienes las maletas preparadas y quieres pedir la cuenta. Cliente: ¿**le importaría** prepararme la cuenta, por favor?
+d. 2 · Recepcionista: **sí ahora mismo**. ¿Su número de habitación, por favor?
+e. 3 · Quieres comer en un restaurante japonés cerca del hotel. Cliente: ¿**sería tan amable** de indicarme dónde hay un restaurante japonés por esta zona?
+f. 3 · Recepcionista: **lo siento pero** no hay ningún restaurante japonés en los alrededores.
+g. 4 · Estás en un albergue juvenil y quieres que te despierten a las ocho. Cliente: ¿**podrías** despertarme a las ocho de la mañana?
+h. 4 · Recepcionista: **sí cómo no**, ¿en qué habitación estás?
+
+#### Ej. 4 — Una postal desde Córdoba
+
+*Lee la postal y contesta a las preguntas. Basta con que la respuesta contenga el dato correcto; no hace falta escribir una frase completa.*
+
+> **Postal:**
+> Querido Juan:
+> Estamos de vacaciones en Córdoba. Esta mañana hemos recorrido su precioso barrio judío, lleno de patios con flores. También hemos estado en la Mezquita y nos ha gustado muchísimo. Por otro lado, hace muy buen tiempo: mucho sol y una temperatura estupenda para pasear.
+> Ya te contaremos a la vuelta.
+> Muchos besos.
+> Ana y Manuel
+
+a. ¿Quién envía la tarjeta? → **Ana y Manuel**
+b. ¿Desde qué ciudad la envían? → **desde Córdoba**
+c. ¿A quién va dirigida? → **a Juan**
+d. ¿Cuáles son los principales atractivos turísticos de Córdoba? → **el barrio judío, lleno de patios con flores, y la Mezquita**
+e. ¿Qué tiempo hace? → **hace muy buen tiempo**

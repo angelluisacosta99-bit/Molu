@@ -30,7 +30,7 @@ el archivo correspondiente, no editarlo a mano.
 | Archivo | Origen | Páginas | Respuestas |
 | --- | --- | --- | --- |
 | `nuevo-espanol-en-marcha/a1/unidades-1-8_presente-gerundio-indefinido.md` | Nuevo Español en Marcha 1 (A1), unidades 1-8 | — | sin confirmar (ver nota) |
-| `nuevo-espanol-en-marcha/b1/repaso-b1_secciones-1-8.md` | Nuevo Español en Marcha 3 (B1), repaso final | 140-155 | **deducidas**, sin solucionario |
+| `nuevo-espanol-en-marcha/b1/repaso-b1_secciones-1-10.md` | Nuevo Español en Marcha 3 (B1), repaso final | 140-159 | **deducidas**, sin solucionario |
 | `nuevo-espanol-en-marcha/b2/12b_turismo-cultural.md` | Nuevo Español en Marcha 4 (B2), unidad 12B | 12B | **solucionario oficial** del libro |
 | `nuevo-espanol-en-marcha/b2/12c_perifrasis-verbales.md` | Nuevo Español en Marcha 4 (B2), unidad 12C | 12C | **solucionario oficial** del libro |
 

@@ -321,10 +321,10 @@ parezca más "controlable" desde JS — ya se demostró que rompe el caso más b
 
 - `reference/template.html` — plantilla completa, ya con todas las correcciones anteriores
   aplicadas. Punto de partida obligatorio para cualquier ejercicio nuevo.
-- `docencia-espanol/materiales/repaso-b1.html` — **documento largo de repaso** (7 secciones,
-  33 ejercicios, 341 huecos), útil como referencia cuando el material no sea un capítulo
-  suelto sino un cuadernillo entero. Añade cuatro cosas sobre la plantilla que conviene
-  copiar de ahí en vez de reinventar:
+- `docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_repaso-b1_interactivo.html` —
+  **documento largo de repaso** (10 secciones, 49 ejercicios, 441 huecos), útil como
+  referencia cuando el material no sea un capítulo suelto sino un cuadernillo entero. Añade
+  varias cosas sobre la plantilla que conviene copiar de ahí en vez de reinventar:
     - `block.introHTML` — teoría no interactiva antes de los ejercicios de cada sección.
     - `ex.refHTML` — recuadro de referencia dentro de un ejercicio (conectores, banco de
       opciones, sopa de letras). **Si el original enseña al alumno unas opciones, el
@@ -341,6 +341,24 @@ parezca más "controlable" desde JS — ya se demostró que rompe el caso más b
       de cada panel**, nunca por `id` global (habría duplicados), y cualquier atajo que
       corrija "todo" (la tecla Enter, sin ir más lejos) debe acotarse a la sección, o
       destapará las respuestas de las secciones que el alumno aún no ha hecho.
+    - `conSinTildes([...])` — amplía una lista de respuestas aceptadas con su versión sin
+      tildes. La vía de array es acentualmente estricta a propósito, y eso es correcto
+      cuando el acento **es** lo que se evalúa (`está`/`esta`, `trabajo`/`trabajó`). Pero en
+      respuestas abiertas de léxico o de fórmulas (*«Hacía mucho viento»*, *«¿Podrías…?»*)
+      lo que se evalúa no es la tilde, y exigirla convierte el ejercicio en un dictado. Úsalo
+      solo ahí, nunca en los huecos de forma verbal.
+    - `type: "open"` — ejercicio de redacción libre. No genera huecos, no puntúa y **no lleva
+      botón "Corregir"** (un botón que al pulsarlo no hace nada es peor que no tenerlo). Se
+      incluye porque está en el libro y el alumno tiene que poder verlo. Cuando un ejercicio
+      del original no tenga respuesta única, esta es la salida: transcribirlo así, no
+      omitirlo ni inventarle una respuesta correcta.
+    - Cuando `flex` se quede corto, cambia el diseño del hueco antes que la respuesta.
+      `flex` es un **Y** de palabras clave: no sabe expresar alternativas. Si el ejercicio
+      admite de verdad varias respuestas distintas (vosotros/ustedes, `-ara`/`-ase`,
+      *«Hacía calor»*/*«Hacía sol»*), hace falta un array —que sí es un **O**— con
+      `conSinTildes`. Y al revés: para descartar un error concreto sin castigar la tilde,
+      una clave de `flex` bien elegida lo hace sola (`"le dé azúcar"` acepta *dé* y *de*,
+      pero rechaza *des*, que es justo lo que el ejercicio persigue).
 - `docencia-espanol/materiales/indice-clases-de-espanol.html` — el artefacto "Clases de
   Español", índice manual → nivel → capítulo de toda la biblioteca (ver paso 6 del flujo de
   trabajo). Actualízalo cada vez que publiques un capítulo nuevo. Este es público (o puede
