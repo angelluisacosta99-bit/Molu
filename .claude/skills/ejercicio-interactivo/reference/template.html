@@ -232,6 +232,21 @@
   .reveal.show { display: inline; }
   .reveal.bad-reveal { color: var(--bad); }
 
+  /* Hueco de verdadero/falso con botones — ver item.vf en "items" más abajo. */
+  .vf-toggle { display: inline-flex; gap: 0.35rem; margin: 0 0.15rem; vertical-align: middle; }
+  .vf-btn {
+    background: var(--input-bg); color: var(--ink);
+    border: 2px solid var(--pencil); border-radius: 6px;
+    width: 2.1em; height: 2.1em;
+    font-size: 0.88rem; font-weight: 700; line-height: 1;
+    cursor: pointer;
+  }
+  .vf-btn:hover { border-color: var(--focus); }
+  .vf-btn:focus-visible { outline: none; border-color: var(--focus); box-shadow: 0 0 0 2px var(--focus); }
+  .vf-btn.selected { background: var(--gold-soft); border-color: var(--gold); color: var(--ink); }
+  .vf-btn.correct { background: var(--good-bg); border-color: var(--good); color: var(--good); }
+  .vf-btn.incorrect { background: var(--bad-bg); border-color: var(--bad); color: var(--bad); }
+
   .paragraph { font-size: 0.97rem; line-height: 2; }
 
   table.exercise-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
@@ -502,7 +517,12 @@
           type: "items",
           items: [
             { t: "María {0} (trabajar) en un hospital y {1} (vivir) en Madrid.", a: [["trabaja"], ["vive"]] },
-            { t: "¿Tú {0} (comer) en casa o en la oficina normalmente?", a: [["comes"]] }
+            { t: "¿Tú {0} (comer) en casa o en la oficina normalmente?", a: [["comes"]] },
+            // vf: true en un item cambia el hueco de texto libre por dos botones "V"/"F"
+            // que el alumno pulsa en vez de escribir — pensado para ejercicios de
+            // verdadero/falso. La respuesta (a) sigue siendo ["V"] o ["F"], igual que
+            // cualquier otro hueco de texto; el motor de corrección no cambia.
+            { t: "Madrid es la capital de España. → {0}", a: [["V"]], vf: true }
             // wide: true en un item hace el input más ancho — úsalo para respuestas largas.
           ]
         },
@@ -587,7 +607,47 @@
     return inp;
   }
 
-  function renderTemplate(container, template, answers, wide, labelBase, forceIndex) {
+  // Hueco de verdadero/falso: dos botones en vez de texto libre. El input real que
+  // guarda el motor de corrección se queda oculto (type="hidden") para que gradeRange,
+  // isCorrect y el archivador extraer.mjs (que busca "input.blank") sigan funcionando
+  // exactamente igual — solo cambia cómo el alumno rellena el valor. Úsalo poniendo
+  // vf: true en el item (ver ejemplo de "items" más abajo); la respuesta (item.a) sigue
+  // siendo ["V"] o ["F"] como cualquier otro hueco de texto.
+  function makeVfButtons(spec, label) {
+    const inp = document.createElement("input");
+    inp.type = "hidden";
+    inp.className = "blank";
+    const wrap = document.createElement("span");
+    wrap.className = "vf-toggle";
+    const rec = { el: inp, spec: spec, label: label || "" };
+    ["V", "F"].forEach(function (letter) {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "vf-btn";
+      b.setAttribute("translate", "no");
+      b.textContent = letter;
+      b.addEventListener("click", function () {
+        inp.value = letter;
+        wrap.querySelectorAll(".vf-btn").forEach(function (x) {
+          x.classList.remove("selected", "correct", "incorrect");
+        });
+        b.classList.add("selected");
+      });
+      wrap.appendChild(b);
+    });
+    rec.onGrade = function (ok) {
+      const sel = wrap.querySelector(".vf-btn.selected");
+      if (sel) sel.classList.add(ok ? "correct" : "incorrect");
+    };
+    allInputs.push(rec);
+    const holder = document.createElement("span");
+    holder.className = "vf-wrap";
+    holder.appendChild(inp);
+    holder.appendChild(wrap);
+    return holder;
+  }
+
+  function renderTemplate(container, template, answers, wide, labelBase, forceIndex, vf) {
     const parts = template.split(/\{(\d+)\}/g);
     let blankCount = 0;
     for (let k = 1; k < parts.length; k += 2) blankCount++;
@@ -596,7 +656,7 @@
         const tokenIdx = parseInt(part, 10);
         const spec = answers[tokenIdx];
         const label = (blankCount > 1 || forceIndex) ? labelBase + " (" + (tokenIdx + 1) + ")" : labelBase;
-        container.appendChild(makeInput(spec, wide, label));
+        container.appendChild(vf ? makeVfButtons(spec, label) : makeInput(spec, wide, label));
         const reveal = document.createElement("span");
         reveal.className = "reveal";
         container.appendChild(reveal);
@@ -672,7 +732,7 @@
           letter.setAttribute("translate", "no");
           letter.textContent = String.fromCharCode(97 + i) + ".";
           row.appendChild(letter);
-          renderTemplate(row, item.t, item.a, item.wide, "Ej. " + ex.num + String.fromCharCode(97 + i));
+          renderTemplate(row, item.t, item.a, item.wide, "Ej. " + ex.num + String.fromCharCode(97 + i), false, item.vf);
           wrap.appendChild(row);
         });
         card.appendChild(wrap);
@@ -763,7 +823,7 @@
           letter.setAttribute("translate", "no");
           letter.textContent = String.fromCharCode(97 + i) + ".";
           row.appendChild(letter);
-          renderTemplate(row, item.t, item.a, item.wide, "Ej. " + ex.num + String.fromCharCode(97 + i));
+          renderTemplate(row, item.t, item.a, item.wide, "Ej. " + ex.num + String.fromCharCode(97 + i), false, item.vf);
           wrap.appendChild(row);
         });
         card.appendChild(wrap);
@@ -796,6 +856,7 @@
       rec.el.classList.remove("correct", "incorrect");
       rec.el.classList.add(ok ? "correct" : "incorrect");
       rec.el.dataset.checked = "1";
+      if (rec.onGrade) rec.onGrade(ok);
       if (!ok && rec.reveal) {
         rec.reveal.textContent = "→ " + correctTextFor(rec.spec);
         rec.reveal.classList.add("show", "bad-reveal");

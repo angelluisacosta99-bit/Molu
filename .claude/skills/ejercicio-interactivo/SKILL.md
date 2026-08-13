@@ -51,6 +51,10 @@ PR #22 invertía el orden que PR #20 daba por bueno.
    soportados por el motor de renderizado (`items`, `text`, `table2`, `conjTable`,
    `agenda` — documentados con ejemplos dentro de la propia plantilla). Si necesitas un tipo
    nuevo, tendrás que extender también el renderizador (busca `ex.type ===` en el archivo).
+   Dentro de `items`, para un hueco de verdadero/falso pon `vf: true` en el item en vez de
+   escribir un tipo de ejercicio nuevo — cambia el input de texto por dos botones "V"/"F"
+   sin tocar el motor de corrección (la respuesta sigue siendo `["V"]`/`["F"]`); ver el
+   ejemplo ya incluido en la propia plantilla y la lección más abajo.
 
 3. **Tildes: decide, no asumas.** La corrección del camino principal (`isCorrect`/`norm`)
    exige tilde exacta por diseño — en la mayoría de ejercicios de gramática la tilde
@@ -227,6 +231,23 @@ no las deshagas sin querer al modificar la plantilla.
   línea con ellas. Ya corregido en `reference/template.html` y en todos los documentos
   publicados (A1, 12B, Repaso B1); si tocas un ejercicio existente que todavía tuviera
   `.nav-dots { display: none; }`, es la misma corrección.
+- **Hueco de verdadero/falso (`item.vf: true`): el input real se queda, solo se oculta.**
+  Nació en el cuaderno A1 6A, a petición del profesor ("botoncitos V/F en vez de escribir").
+  La tentación es sustituir el `<input class="blank">` por otra cosa — pero `gradeRange`,
+  `isCorrect` y, sobre todo, `extraer.mjs` (el archivador de `fuentes/`) dependen de
+  encontrar un `input.blank` real para leer/escribir su `.value`. La solución que no rompe
+  nada de eso: el input sigue existiendo, `type="hidden"`, y dos `<button>` visibles le
+  escriben `"V"`/`"F"` al hacer clic — el motor de corrección no se entera de la diferencia.
+  Lo único que no podía reutilizarse tal cual: `gradeRange` coloreaba `rec.el` (el propio
+  input) al corregir, pero un input oculto no se ve. Se añadió un hook opcional
+  `rec.onGrade(ok)` — genérico, no solo para V/F — que `makeVfButtons` usa para colorear el
+  botón elegido en vez del input. Y **`extraer.mjs` tuvo que aprender la envoltura
+  `.vf-wrap`**: su recorrido del DOM solo reconocía `input.blank` como hijo directo de la
+  fila con el `.reveal` como su hermano siguiente; con el input anidado dentro de
+  `.vf-wrap`, sin este ajuste el texto de los botones ("V", "F") se colaba literal en la
+  frase archivada (`→ **?**VF`) en vez de la respuesta real. Si añades otro hueco "no-texto"
+  (chips, un slider, lo que sea) que también oculte el input real, revisa si necesita el
+  mismo tipo de ajuste en `extraer.mjs` antes de darlo por archivable.
 
 ### Canal por canal (la parte que más costó)
 
