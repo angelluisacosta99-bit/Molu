@@ -73,6 +73,15 @@ const md = await page.evaluate(() => {
           const ans = clean(rev?.textContent).replace(/^→\s*/, "");
           answers.push(ans || "?");
           s += "____";
+        } else if (ch.matches?.(".vf-wrap")) {
+          // Hueco de verdadero/falso con botones (en vez de input.blank suelto): el
+          // input real vive OCULTO dentro de .vf-wrap, así que hay que tratar el propio
+          // .vf-wrap como el hueco (su .reveal es su hermano siguiente) y no bajar a
+          // recorrer los botones "V"/"F" — si no, su texto se colaría en la frase.
+          const rev = ch.nextElementSibling?.matches?.(".reveal") ? ch.nextElementSibling : null;
+          const ans = clean(rev?.textContent).replace(/^→\s*/, "");
+          answers.push(ans || "?");
+          s += "____";
         } else if (ch.matches?.(".choice-group")) {
           // Las opciones (chips) se listan aparte entre corchetes, con la correcta en
           // negrita; aquí solo dejan su hueco para no pegarse al texto de la frase.

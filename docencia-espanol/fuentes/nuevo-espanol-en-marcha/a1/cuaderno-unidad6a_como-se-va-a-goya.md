@@ -33,7 +33,7 @@ j. **De** mi casa **a** la oficina tardo una hora.
 
 #### Ej. 3 — Escucha la conversación y señala verdadero o falso
 
-*Este ejercicio es de audio: necesitas escuchar la pista de esta unidad (el CD del cuaderno, o la que use tu profesor en clase) para responder. Escribe V (verdadero) o F (falso).*
+*Este ejercicio es de audio: necesitas escuchar la pista de esta unidad (el CD del cuaderno, o la que use tu profesor en clase) para responder. Marca V (verdadero) o F (falso).*
 
 a. Beatriz está en su hotel. → **V**
 b. Marta trabaja lejos de la plaza de España. → **F**
