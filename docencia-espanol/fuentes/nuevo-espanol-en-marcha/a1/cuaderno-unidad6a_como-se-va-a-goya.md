@@ -10,9 +10,12 @@
 
 > **Verbos:** cambiar · tomar · ir · bajar
 
-a. A Perdona, ¿cómo se va de Moncloa a Goya? B Mira, **toma** la línea 3 en dirección Legazpi, **baja** en la primera estación, Argüelles, y allí **cambia** a la línea 4.
-b. A Perdone, ¿cómo **se va** de Sol a Nuevos Ministerios? B **tome** la línea 2 en dirección Cuatro Caminos, allí **cambie** a la línea 6, es la primera estación.
-c. A Perdona, ¿cómo se **va** de Goya a Argüelles? B Es muy fácil, **toma** la línea 4 y **baja** en la última estación.
+1. A Perdona, ¿cómo se va de Moncloa a Goya?
+   B Mira, **toma** la línea 3 en dirección Legazpi, **baja** en la primera estación, Argüelles, y allí **cambia** a la línea 4.
+2. A Perdone, ¿cómo **se va** de Sol a Nuevos Ministerios?
+   B **tome** la línea 2 en dirección Cuatro Caminos, allí **cambie** a la línea 6, es la primera estación.
+3. A Perdona, ¿cómo se **va** de Goya a Argüelles?
+   B Es muy fácil, **toma** la línea 4 y **baja** en la última estación.
 
 #### Ej. 2 — Completa con las siguientes preposiciones
 

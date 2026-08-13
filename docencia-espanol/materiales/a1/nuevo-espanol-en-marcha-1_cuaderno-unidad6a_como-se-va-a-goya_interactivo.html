@@ -241,6 +241,18 @@
   .item-row { font-size: 0.95rem; line-height: 1.7; }
   .item-letter { color: var(--gold); font-weight: 700; margin-right: 0.3rem; }
 
+  /* Diálogos: cada réplica en su línea y con el interlocutor destacado. Sin esto, A y B
+     —que son dos personas distintas— se leen como una sola frase corrida. */
+  .dialog-row { padding: 0.15rem 0 0.35rem; }
+  .dialog-row + .dialog-row { border-top: 1px dashed var(--border); padding-top: 0.75rem; }
+  .dialog-row br { line-height: 2.4; }
+  .speaker {
+    display: inline-block; min-width: 1.4em;
+    color: var(--gold); font-weight: 700;
+    border-bottom: 2px solid var(--gold-soft);
+    margin-right: 0.45rem;
+  }
+
   input.blank {
     background: var(--input-bg);
     border: none; border-bottom: 2px solid var(--pencil);
@@ -600,10 +612,13 @@
             '<span class="ref-opt">ir</span><span class="ref-opt">bajar</span>' +
             "</div>",
           type: "items",
+          // Diálogos: numerados 1-3 como en el libro, y con cada interlocutor en su línea.
+          dialog: true,
+          numbered: true,
           items: [
-            { t: "A Perdona, ¿cómo se va de Moncloa a Goya? B Mira, {0} la línea 3 en dirección Legazpi, {1} en la primera estación, Argüelles, y allí {2} a la línea 4.", a: [["toma"], ["baja"], ["cambia"]], wide: true },
-            { t: "A Perdone, ¿cómo {0} de Sol a Nuevos Ministerios? B {1} la línea 2 en dirección Cuatro Caminos, allí {2} a la línea 6, es la primera estación.", a: [["se va"], ["tome"], ["cambie"]], wide: true },
-            { t: "A Perdona, ¿cómo se {0} de Goya a Argüelles? B Es muy fácil, {1} la línea 4 y {2} en la última estación.", a: [["va"], ["toma"], ["baja"]], wide: true }
+            { t: "A Perdona, ¿cómo se va de Moncloa a Goya?\nB Mira, {0} la línea 3 en dirección Legazpi, {1} en la primera estación, Argüelles, y allí {2} a la línea 4.", a: [["toma"], ["baja"], ["cambia"]], wide: true },
+            { t: "A Perdone, ¿cómo {0} de Sol a Nuevos Ministerios?\nB {1} la línea 2 en dirección Cuatro Caminos, allí {2} a la línea 6, es la primera estación.", a: [["se va"], ["tome"], ["cambie"]], wide: true },
+            { t: "A Perdona, ¿cómo se {0} de Goya a Argüelles?\nB Es muy fácil, {1} la línea 4 y {2} en la última estación.", a: [["va"], ["toma"], ["baja"]], wide: true }
           ]
         },
         {
@@ -715,7 +730,7 @@
     return holder;
   }
 
-  function renderTemplate(container, template, answers, wide, labelBase, forceIndex, vf) {
+  function renderTemplate(container, template, answers, wide, labelBase, forceIndex, vf, dialog) {
     const parts = template.split(/\{(\d+)\}/g);
     let blankCount = 0;
     for (let k = 1; k < parts.length; k += 2) blankCount++;
@@ -730,7 +745,25 @@
         container.appendChild(reveal);
         allInputs[allInputs.length - 1].reveal = reveal;
       } else if (part) {
-        container.appendChild(document.createTextNode(part));
+        // Un "\n" en la plantilla del ítem es un salto de línea real. Lo necesitan los
+        // diálogos: A y B son dos personas distintas y sus réplicas no pueden compartir
+        // línea. Fuera de los diálogos no hay "\n", así que esto no afecta al resto.
+        part.split("\n").forEach(function (linea, li) {
+          if (li > 0) container.appendChild(document.createElement("br"));
+          if (!linea) return;
+          // En un diálogo, la letra del interlocutor al principio de línea se marca como
+          // tal en vez de quedar suelta dentro de la frase.
+          const m = dialog && (li > 0 || i === 0) ? linea.match(/^([AB])\s+/) : null;
+          if (m) {
+            const who = document.createElement("span");
+            who.className = "speaker";
+            who.setAttribute("translate", "no");
+            who.textContent = m[1];
+            container.appendChild(who);
+            linea = linea.slice(m[0].length);
+          }
+          container.appendChild(document.createTextNode(linea));
+        });
       }
     });
   }
@@ -804,12 +837,16 @@
         ex.items.forEach(function (item, i) {
           const row = document.createElement("div");
           row.className = "item-row";
+          // Los diálogos se numeran 1, 2, 3 como en el libro: usar a/b/c ahí choca con las
+          // letras A/B de los propios interlocutores, que son otra cosa distinta.
+          const marca = ex.numbered ? (i + 1) + "." : String.fromCharCode(97 + i) + ".";
+          if (ex.dialog) row.classList.add("dialog-row");
           const letter = document.createElement("span");
           letter.className = "item-letter";
           letter.setAttribute("translate", "no");
-          letter.textContent = String.fromCharCode(97 + i) + ".";
+          letter.textContent = marca;
           row.appendChild(letter);
-          renderTemplate(row, item.t, item.a, item.wide, "Ej. " + ex.num + String.fromCharCode(97 + i), false, item.vf);
+          renderTemplate(row, item.t, item.a, item.wide, "Ej. " + ex.num + " " + marca.replace(".", ""), false, item.vf, ex.dialog);
           wrap.appendChild(row);
         });
         card.appendChild(wrap);

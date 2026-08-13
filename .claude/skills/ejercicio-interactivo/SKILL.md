@@ -272,6 +272,24 @@ no las deshagas sin querer al modificar la plantilla.
   unidades) y se lee mucho mejor en pantalla — pero **déjalo dicho** en una nota al pie de
   la transcripción, para que dentro de unos meses nadie los tome por literales del original.
 
+- **`ex.refHTML` ya está en la plantilla — pero antes no lo estaba, y por eso se publicó un
+  ejercicio irresoluble.** Al montar el cuaderno A1 6B (un «relaciona» de diez ítems) se dio
+  por hecho que la plantilla traía el recuadro de opciones, porque los capítulos anteriores
+  lo tenían. No lo traía: `refHTML` había nacido en Repaso B1 y en 6A se había portado **a
+  mano, solo a ese archivo**. Resultado: el artefacto se publicó con «Pon ___», «Habla ___»…
+  y ninguna opción a la vista. El motor no avisa de esto —una propiedad que el renderizador
+  no lee simplemente se ignora en silencio—, así que **después de rellenar `blocks`,
+  comprueba que cada propiedad que has usado la lee de verdad el renderizador** (`grep` por
+  su nombre en el archivo). Y cuando portes una mejora a un capítulo concreto, pásala
+  también a `reference/template.html` en el mismo momento, o el siguiente capítulo la
+  volverá a perder. Lo mismo pasó con `type: "open"` y con la transcripción plegable.
+- **Celdas ya resueltas en una tabla (`conjTable`): spec como cadena, no como array.** En
+  6B el libro trae resueltas las filas de «cerrar» y «seguir» y el presente de «guardar».
+  Si se ponen como huecos, el alumno tiene que "adivinar" algo que en su cuaderno está
+  impreso, y el total de huecos deja de coincidir con lo que hay que rellenar de verdad.
+  `ex.subjectLabel` cambia además el encabezado de la primera columna, que estaba fijado a
+  «Sujeto» y en una tabla de infinitivos no significa nada.
+
 ### Canal por canal (la parte que más costó)
 
 Cada botón de "enviar al profesor" tuvo su propia trampa específica de plataforma. La regla

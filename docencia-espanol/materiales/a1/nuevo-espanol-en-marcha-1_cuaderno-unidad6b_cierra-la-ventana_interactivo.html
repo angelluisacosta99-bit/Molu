@@ -1,9 +1,20 @@
 <!--
-  TEMPLATE — plantilla de ejercicio interactivo con corrección instantánea.
-  Ver .claude/skills/ejercicio-interactivo/SKILL.md para el proceso completo.
-  Busca todos los marcadores {{...}} y sustitúyelos; no dejes ninguno sin reemplazar.
+  Nuevo Español en Marcha 1 (A1), Cuaderno de Ejercicios, Unidad 6B — «Cierra la ventana,
+  por favor» (página 29). El tema es el imperativo afirmativo: de tú, de usted, y con
+  pronombre enclítico (siéntate, acuéstate, levántate, déjame).
+
+  Enunciados y respuestas salen del PDF del cuaderno que el profesor tiene en su Drive:
+  el texto de esta página sí se extrae en orden (a diferencia de la 28, que lleva el plano
+  de metro incrustado), y el propio PDF trae su solucionario, que confirma los cinco
+  ejercicios. Dos respuestas del ejercicio 1 (los ítems 8 y 9) salen ilegibles en ese
+  solucionario, pero se deducen sin ambigüedad por descarte: quedaban libres «i la mesa» y
+  «j a la derecha», y solo encajan con «Recoge» y «Tuerce» respectivamente.
+
+  Ojo con las tildes: en el ejercicio 4 son lo evaluado (imperativo + pronombre), así que
+  ahí la corrección las exige. En los ejercicios 2 y 5 el alumno solo copia el complemento
+  del enunciado, así que ahí se aceptan también sin tilde (ver conSinTildes más abajo).
 -->
-<title>{{TITLE}}</title>
+<title>Nuevo Español en Marcha · A1 · Cuaderno 6B — Cierra la ventana, por favor</title>
 <style>
   :root {
     --paper: #F3F5F0;
@@ -315,6 +326,9 @@
     text-align: left; padding: 0.45rem 0.6rem; border-bottom: 1px solid var(--border);
   }
   table.exercise-table th { color: var(--pencil); font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.03em; }
+  /* Celda que el libro ya trae resuelta: se distingue del hueco sin parecer un acierto
+     (no usa el verde de "correcto", que significa otra cosa en esta página). */
+  table.exercise-table td.fixed-cell { color: var(--ink-soft); font-style: italic; }
   .table-wrap { overflow-x: auto; }
   .ref-table { margin-bottom: 0.9rem; }
   .ref-table td:first-child { color: var(--gold); font-weight: 600; text-transform: capitalize; }
@@ -414,18 +428,18 @@
 </style>
 
 <script>
-  // {{STORAGE_KEY}} here MUST be byte-identical to the one set further down in the gate
+  // unlocked-a1-cuaderno-6b-ventana here MUST be byte-identical to the one set further down in the gate
   // script (search "STORAGE_KEY =") — same placeholder, same value, both occurrences.
   document.documentElement.setAttribute(
     "data-locked",
-    localStorage.getItem("{{STORAGE_KEY}}") === "1" ? "false" : "true"
+    localStorage.getItem("unlocked-a1-cuaderno-6b-ventana") === "1" ? "false" : "true"
   );
 </script>
 
 <div class="gate-overlay">
   <div class="gate-card">
     <div class="eyebrow">Acceso privado</div>
-    <h2>{{GATE_TITLE}}</h2>
+    <h2>Cuaderno A1 · Unidad 6B</h2>
     <p>Pídele el código a tu profesor para entrar.</p>
     <input type="text" id="gateInput" placeholder="CÓDIGO" autocomplete="off" autocapitalize="characters" />
     <button id="gateBtn">Entrar</button>
@@ -436,10 +450,10 @@
   (function () {
     // El código es solo un disuasivo, no seguridad real — cualquiera que vea el HTML
     // fuente lo ve. Elige una palabra corta, memorable y ligada al tema, en MAYÚSCULAS.
-    const CODE = "{{GATE_CODE}}";
-    // MUST be byte-identical al {{STORAGE_KEY}} usado arriba (ver comentario junto al
+    const CODE = "VENTANA";
+    // MUST be byte-identical al unlocked-a1-cuaderno-6b-ventana usado arriba (ver comentario junto al
     // primer occurrence). Usa un valor único por ejercicio, p. ej. "unlocked-b2-13a-tema".
-    const STORAGE_KEY = "{{STORAGE_KEY}}";
+    const STORAGE_KEY = "unlocked-a1-cuaderno-6b-ventana";
     function tryUnlock() {
       const val = document.getElementById("gateInput").value.trim().toUpperCase();
       if (val === CODE) {
@@ -459,9 +473,8 @@
 <div class="topbar gated-content">
   <div class="topbar-inner">
     <div class="brand">
-      <!-- Ejemplo real (A1): {{BRAND_TITLE}} = "Ejercicios A1", {{BRAND_SUB}} = "Presente · Gerundio · Indefinido" -->
-      <span class="brand-title">{{BRAND_TITLE}}</span>
-      <span class="brand-sub">{{BRAND_SUB}}</span>
+      <span class="brand-title">Cuaderno A1 · 6B</span>
+      <span class="brand-sub">Cierra la ventana, por favor</span>
     </div>
     <nav class="nav-dots" id="navDots"></nav>
     <div class="score-wrap">
@@ -472,13 +485,13 @@
 </div>
 
 <div class="hero gated-content">
-  <div class="eyebrow">{{EYEBROW}}</div>
-  <h1>{{HEADLINE}}</h1>
-  <p>{{SUBTITLE}}</p>
+  <div class="eyebrow">Nuevo Español en Marcha 1 · Cuaderno de ejercicios</div>
+  <h1>Cierra la ventana, por favor</h1>
+  <p>El imperativo afirmativo: de tú, de usted y con pronombre. Los cinco ejercicios de la unidad 6B, con corrección instantánea.</p>
   <div class="hero-meta">
     <span><strong id="totalBlanksLabel" translate="no">—</strong> huecos en total</span>
-    <span><strong>{{N_BLOCKS}}</strong> bloques</span>
-    <span><strong>{{N_EXERCISES}}</strong> ejercicios</span>
+    <span><strong>1</strong> bloque</span>
+    <span><strong>5</strong> ejercicios</span>
   </div>
 </div>
 
@@ -510,7 +523,7 @@
 </div>
 
 <footer class="gated-content">
-  <span>{{FOOTER_LEFT}}</span>
+  <span>Nuevo Español en Marcha 1 · Cuaderno · Unidad 6B</span>
   <span>© Angel Luis Acosta González</span>
 </footer>
 
@@ -558,106 +571,125 @@
 
   // ---------- exercise data ----------
   // template blanks use {0},{1}... matched to item.answers[i]
+  // Amplía una lista de respuestas aceptadas con su versión sin tildes. La vía de array es
+  // acentualmente estricta a propósito (ver comentario de norm/isCorrect), y eso es lo
+  // correcto en el ejercicio 4, donde la tilde ES lo que se evalúa (siéntate, acuéstate,
+  // levántate, déjame). Pero en los ejercicios 2 y 5 el alumno solo copia el complemento
+  // del enunciado y lo evaluado es la forma verbal del principio: ahí exigir la tilde de
+  // una palabra copiada («más», «estantería») convierte el ejercicio en un dictado.
+  function conSinTildes(list) {
+    const out = [];
+    list.forEach(function (s) {
+      out.push(s);
+      const sin = s.normalize("NFD").replace(/[̀-ͯ]/g, "");
+      if (sin !== s) out.push(sin);
+    });
+    return out;
+  }
+
+  // Opciones del ejercicio 1, en el mismo orden que las imprime el libro. Se muestran en un
+  // recuadro de referencia: un "relaciona" sin las opciones a la vista es irresoluble.
+  const OPCIONES_EJ1 = [
+    ["a", "más despacio"], ["b", "la cuenta"], ["c", "la luz"], ["d", "la puerta"],
+    ["e", "todo recto"], ["f", "aquí"], ["g", "la televisión"], ["h", "los ejercicios"],
+    ["i", "la mesa"], ["j", "a la derecha"]
+  ];
+  const REF_EJ1 = '<span class="ref-label">Opciones</span><div class="ref-options">' +
+    OPCIONES_EJ1.map(function (o) {
+      return '<span class="ref-opt"><b translate="no">' + o[0] + '</b> ' + o[1] + "</span>";
+    }).join("") + "</div>";
+
+  // En el ejercicio 1 se acepta tanto la letra (lo que pide el libro) como el complemento
+  // escrito entero, con o sin tilde: el alumno que lo resuelve mentalmente escribiendo la
+  // frase no está fallando. La letra va primera para que sea la que se muestre al corregir.
+  function ej1(letra) {
+    const opt = OPCIONES_EJ1.filter(function (o) { return o[0] === letra; })[0];
+    return [letra].concat(conSinTildes([opt[1]]));
+  }
+
   const blocks = [
-    // Cada bloque agrupa varios ejercicios bajo un mismo subtema. {{BLOCKS}} — sustituye
-    // este array completo por los bloques/ejercicios reales del capítulo, basados en el
-    // material del profesor (ver SKILL.md paso 1). Lo que sigue es un ejemplo de cada uno
-    // de los 5 tipos soportados por el renderizador (busca 'ex.type ===' en este archivo);
-    // si necesitas un tipo nuevo, tendrás que extender también el renderizador.
     {
-      id: "{{BLOCK_ID}}", num: 1, title: "{{BLOCK_TITLE}}",
-      sub: "{{BLOCK_SUBTITLE}}",
+      id: "unidad-6b", num: 1, title: "El barrio",
+      sub: "Unidad 6B · Cierra la ventana, por favor",
       exercises: [
         {
-          // Tipo "items": una lista de frases sueltas, cada una con sus propios huecos
-          // {0}, {1}... numerados desde 0 DENTRO de esa frase (no del ejercicio entero).
-          // "a" es un array paralelo a los huecos: a[i] es la lista de respuestas
-          // aceptadas para el hueco {i} (varias formas válidas si aplica).
-          num: 1, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
+          num: 1, title: "Relaciona",
+          instr: "Une cada imperativo con su complemento. Escribe la letra que le corresponde (también se acepta escribir el complemento entero).",
+          refHTML: REF_EJ1,
           type: "items",
           items: [
-            { t: "María {0} (trabajar) en un hospital y {1} (vivir) en Madrid.", a: [["trabaja"], ["vive"]] },
-            { t: "¿Tú {0} (comer) en casa o en la oficina normalmente?", a: [["comes"]] },
-            // vf: true en un item cambia el hueco de texto libre por dos botones "V"/"F"
-            // que el alumno pulsa en vez de escribir — pensado para ejercicios de
-            // verdadero/falso. La respuesta (a) sigue siendo ["V"] o ["F"], igual que
-            // cualquier otro hueco de texto; el motor de corrección no cambia.
-            { t: "Madrid es la capital de España. → {0}", a: [["V"]], vf: true }
-            // wide: true en un item hace el input más ancho — úsalo para respuestas largas.
-          ],
-          // Ejercicio de comprensión oral: transcriptHTML añade la transcripción al final
-          // de la tarjeta, dentro de un <details> plegado (la transcripción es la solución,
-          // así que no puede quedar a la vista mientras el alumno responde). Opcional:
-          // transcriptLabel cambia el texto del desplegable.
-          transcriptLabel: "Ver la transcripción del audio (ábrela solo después de responder)",
-          transcriptHTML:
-            '<span class="line"><span class="who">ANA:</span> ¿Dónde vives?</span>' +
-            '<span class="line"><span class="who">LUIS:</span> En Madrid, cerca del centro.</span>'
-        },
-        {
-          // Tipo "text": un único párrafo continuo con huecos numerados {0}, {1}... a lo
-          // largo de TODO el texto (no se reinicia por línea). "\n" en `text` inserta un
-          // salto de línea visual. "a" es un array paralelo a los huecos del texto entero.
-          num: 2, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          type: "text",
-          text: "Hoy Carmen {0} (trabajar) todo el día, pero ahora mismo {1} (preparar) la cena.",
-          a: [["trabaja"], ["está preparando"]]
-        },
-        {
-          // Tipo "table2": tabla de 2 columnas, "rows" es [valor_fijo, respuestas_aceptadas].
-          // OJO: "respuestas_aceptadas" es el mismo spec que usa isCorrect() para "a" en los
-          // demás tipos — casi siempre un array de UNA lista de alternativas, es decir
-          // [["hablando"]] (doble corchete), no ["hablando"] a secas; el renderizador hace
-          // makeInput(r[1][0], ...), así que r[1][0] debe ser el array de alternativas.
-          // WARNING: los encabezados ("Infinitivo"/"Gerundio") están HARDCODEADOS en el
-          // renderizador (busca 'ex.type === "table2"' más abajo), no se leen de este
-          // array — si necesitas otros encabezados, edita el renderizador o usa "conjTable".
-          num: 3, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          type: "table2",
-          rows: [
-            ["hablar", [["hablando"]]],
-            ["comer", [["comiendo"]]]
+            { t: "Pon {0}", a: [ej1("g")] },
+            { t: "Habla {0}", a: [ej1("a")] },
+            { t: "Ven {0}", a: [ej1("f")] },
+            { t: "Haz {0}", a: [ej1("h")] },
+            { t: "Cierra {0}", a: [ej1("d")] },
+            { t: "Pide {0}", a: [ej1("b")] },
+            { t: "Enciende {0}", a: [ej1("c")] },
+            { t: "Recoge {0}", a: [ej1("i")] },
+            { t: "Tuerce {0}", a: [ej1("j")] },
+            { t: "Sigue {0}", a: [ej1("e")] }
           ]
         },
         {
-          // Tipo "conjTable": tabla de conjugación con columnas configurables. "subjects"
-          // es la columna izquierda fija (sujetos); "cols" define cada columna de la
-          // derecha con su encabezado ("label") y sus respuestas ("a", un array paralelo
-          // a "subjects" — a[i] son las alternativas aceptadas para subjects[i] en esa
-          // columna, es decir CADA elemento de "a" es a su vez un array de alternativas,
-          // p. ej. a: [["hablo"], ["hablas"], ["habla"]], no a: ["hablo", "hablas", "habla"]
-          // — el renderizador hace makeInput(c.a[si], ...) y espera ese array ahí).
-          num: 4, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          type: "conjTable",
-          subjects: ["yo", "tú", "él/ella"],
-          cols: [
-            { label: "Presente", a: [["hablo"], ["hablas"], ["habla"]] },
-            { label: "Indefinido", a: [["hablé"], ["hablaste"], ["habló"]] }
-          ]
-        },
-        {
-          // Tipo "agenda": tabla de referencia (solo lectura, sin huecos) seguida de una
-          // lista "items" tipo "items" que se responde consultando esa tabla.
-          // WARNING: igual que table2, los encabezados ("Día"/"Actividad") están
-          // HARDCODEADOS en el renderizador, no se leen de `table` aquí abajo.
-          num: 5, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          type: "agenda",
-          table: [
-            ["lunes", "reunión con el equipo"],
-            ["martes", "clase de español"]
-          ],
+          num: 2, title: "Transforma las frases anteriores",
+          instr: "Convierte cada orden del ejercicio 1 en una petición con «¿Puedes...?» + infinitivo. La primera la trae resuelta el libro como modelo.",
+          model: "Modelo: Pon la televisión. → ¿Puedes poner la televisión?",
+          type: "items",
           items: [
-            { t: "El lunes María {0} (tener) una reunión con el equipo.", a: [["tiene"]] }
+            { t: "Habla más despacio. → {0}", a: [conSinTildes(["¿Puedes hablar más despacio?"])], wide: "full" },
+            { t: "Ven aquí. → {0}", a: [conSinTildes(["¿Puedes venir aquí?"])], wide: "full" },
+            { t: "Haz los ejercicios. → {0}", a: [conSinTildes(["¿Puedes hacer los ejercicios?"])], wide: "full" },
+            { t: "Cierra la puerta. → {0}", a: [conSinTildes(["¿Puedes cerrar la puerta?"])], wide: "full" },
+            { t: "Pide la cuenta. → {0}", a: [conSinTildes(["¿Puedes pedir la cuenta?"])], wide: "full" },
+            { t: "Enciende la luz. → {0}", a: [conSinTildes(["¿Puedes encender la luz?"])], wide: "full" },
+            { t: "Recoge la mesa. → {0}", a: [conSinTildes(["¿Puedes recoger la mesa?"])], wide: "full" },
+            { t: "Tuerce a la derecha. → {0}", a: [conSinTildes(["¿Puedes torcer a la derecha?"])], wide: "full" },
+            { t: "Sigue todo recto. → {0}", a: [conSinTildes(["¿Puedes seguir todo recto?"])], wide: "full" }
+          ]
+        },
+        {
+          num: 3, title: "Completa la tabla",
+          instr: "Completa el presente y el imperativo de tú. Las filas de «cerrar» y «seguir» vienen ya resueltas en el libro, igual que el presente de «guardar».",
+          type: "conjTable",
+          subjectLabel: "Infinitivo",
+          subjects: ["cerrar", "empezar", "encender", "seguir", "pedir", "guardar"],
+          cols: [
+            { label: "Presente (yo)", a: ["cierro", ["empiezo"], ["enciendo"], "sigo", ["pido"], "guardo"] },
+            { label: "Imperativo (tú)", a: ["cierra", ["empieza"], ["enciende"], "sigue", ["pide"], ["guarda"]] }
+          ]
+        },
+        {
+          num: 4, title: "Forma el imperativo",
+          instr: "Escribe la frase completa en imperativo. Donde pone (Ud.) el imperativo es de usted; en el resto, de tú. Ojo con la tilde de los imperativos con pronombre: aquí sí cuenta.",
+          model: "Modelo: Cerrar el libro. → Cierra el libro.",
+          type: "items",
+          items: [
+            { t: "Empezar / a trabajar. → {0}", a: [["Empieza a trabajar."]], wide: "full" },
+            { t: "Encender / el ordenador. → {0}", a: [["Enciende el ordenador."]], wide: "full" },
+            { t: "Christian / sentarse allí. → {0}", a: [["Christian, siéntate allí."]], wide: "full" },
+            { t: "Seguir / por aquí (Ud.). → {0}", a: [["Siga por aquí."]], wide: "full" },
+            { t: "Pedir / dinero / a tus padres. → {0}", a: [["Pide dinero a tus padres."]], wide: "full" },
+            { t: "Acostarse / pronto. → {0}", a: [["Acuéstate pronto."]], wide: "full" },
+            { t: "Levantarse ya / son las diez. → {0}", a: [["Levántate ya, son las diez."]], wide: "full" },
+            { t: "Darme / un vaso de agua. → {0}", a: [["Dame un vaso de agua."]], wide: "full" },
+            { t: "Dejarme / tu coche. → {0}", a: [["Déjame tu coche."]], wide: "full" },
+            { t: "Darme / su pasaporte (Ud.). → {0}", a: [["Deme su pasaporte."]], wide: "full" }
+          ]
+        },
+        {
+          num: 5, title: "Las instrucciones de la madre de Jaime",
+          instr: "Jaime tiene que ordenar la habitación. Escribe en imperativo (tú) las instrucciones que le da su madre. La primera la trae resuelta el libro.",
+          model: "Modelo: Guardar la ropa limpia en el armario. → Guarda la ropa limpia en el armario.",
+          type: "items",
+          items: [
+            { t: "Poner la ropa sucia en la lavadora. → {0}", a: [conSinTildes(["Pon la ropa sucia en la lavadora."])], wide: "full" },
+            { t: "Hacer la cama. → {0}", a: [conSinTildes(["Haz la cama."])], wide: "full" },
+            { t: "Colocar los libros en la estantería. → {0}", a: [conSinTildes(["Coloca los libros en la estantería."])], wide: "full" },
+            { t: "Poner los CD en su sitio. → {0}", a: [conSinTildes(["Pon los CD en su sitio."])], wide: "full" }
           ]
         }
       ]
     }
-    // Añade más bloques ({ id, num, title, sub, exercises: [...] }) según haga falta.
   ];
 
   // ---------- render ----------
@@ -665,10 +697,13 @@
   const navDots = document.getElementById("navDots");
   const allInputs = []; // {el, spec}
 
+  // wide: true  -> input intermedio (una o dos palabras)
+  // wide: "full" -> input de frase entera, que es lo que piden los ejercicios 2, 4 y 5:
+  //                 con el ancho normal la respuesta se escribe pero no se lee.
   function makeInput(spec, wide, label) {
     const inp = document.createElement("input");
     inp.type = "text";
-    inp.className = "blank" + (wide ? " wide" : "");
+    inp.className = "blank" + (wide === "full" ? " full" : wide ? " wide" : "");
     inp.autocomplete = "off";
     inp.autocapitalize = "off";
     inp.spellcheck = false;
@@ -873,7 +908,7 @@
         twrap.className = "table-wrap";
         const table = document.createElement("table");
         table.className = "exercise-table";
-        let thead = "<thead><tr><th>Sujeto</th>";
+        let thead = "<thead><tr><th>" + (ex.subjectLabel || "Sujeto") + "</th>";
         ex.cols.forEach(function (c) { thead += "<th>" + c.label + "</th>"; });
         thead += "</tr></thead>";
         table.innerHTML = thead;
@@ -885,11 +920,21 @@
           tr.appendChild(td0);
           ex.cols.forEach(function (c) {
             const td = document.createElement("td");
-            td.appendChild(makeInput(c.a[si], false, "Ej. " + ex.num + " " + subj + "/" + c.label));
-            const reveal = document.createElement("span");
-            reveal.className = "reveal";
-            td.appendChild(reveal);
-            allInputs[allInputs.length - 1].reveal = reveal;
+            const spec = c.a[si];
+            // Una cadena en vez de un array = celda que el libro ya trae resuelta: se pinta
+            // fija y no cuenta como hueco. Si se pusiera como hueco, el alumno tendría que
+            // "adivinar" algo que en su cuaderno está impreso, y el total de huecos dejaría
+            // de coincidir con lo que realmente hay que rellenar.
+            if (typeof spec === "string") {
+              td.textContent = spec;
+              td.className = "fixed-cell";
+            } else {
+              td.appendChild(makeInput(spec, false, "Ej. " + ex.num + " " + subj + "/" + c.label));
+              const reveal = document.createElement("span");
+              reveal.className = "reveal";
+              td.appendChild(reveal);
+              allInputs[allInputs.length - 1].reveal = reveal;
+            }
             tr.appendChild(td);
           });
           tbody.appendChild(tr);
@@ -1008,7 +1053,7 @@
   });
 
   // ---------- results panel: motivational message + send to teacher ----------
-  const TITLE_LABEL = "{{TITLE_LABEL}}"; // short label used in email subject / summary header
+  const TITLE_LABEL = "Cuaderno A1 · 6B Cierra la ventana, por favor"; // short label used in email subject / summary header
   // These are Angel's real, reusable contact details — copy verbatim into every new
   // exercise unless he says they changed. IMPORTANT: telegram MUST be his @username
   // (no @, no phone number) — t.me/+<phone> links silently ignore ?text= and never

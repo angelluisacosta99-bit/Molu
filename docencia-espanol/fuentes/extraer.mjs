@@ -87,6 +87,10 @@ const md = await page.evaluate(() => {
           continue; // se emite aparte
         } else if (ch.matches?.("br")) {
           s += "\n";
+        } else if (ch.matches?.(".speaker")) {
+          // La letra del interlocutor de un diálogo es un <span> pegado al texto siguiente;
+          // sin este espacio el archivo saldría con "APerdona..." en vez de "A Perdona...".
+          s += clean(ch.textContent) + " ";
         } else if (ch.matches?.(".open-model, .signature")) {
           // Se pintan como bloque aunque sean <span>, así que sin esto la firma de la postal
           // y las líneas de modelo de una redacción se pegarían al párrafo anterior.
@@ -248,7 +252,12 @@ const md = await page.evaluate(() => {
           const inline = "[" + opts.join(" / ") + "]";
           t = t.includes("____") ? t.replace("____", inline) : clean(t) + " " + inline;
         }
-        push(letter + " " + clean(t));
+        // Un ítem con saltos de línea es un diálogo: cada réplica va en su línea también en
+        // el archivo. Aplanarlo con clean() dejaría a los dos interlocutores en una sola
+        // frase corrida, que es justo lo que se corrigió en el artefacto.
+        const lineas = t.split("\n").map(clean).filter(Boolean);
+        push(letter + " " + lineas[0]);
+        lineas.slice(1).forEach(function (l) { push("   " + l); });
         const note = clean(row.querySelector(".grading-note")?.textContent);
         if (note) push("   > " + note);
       });
