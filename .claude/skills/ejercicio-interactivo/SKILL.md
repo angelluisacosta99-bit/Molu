@@ -33,19 +33,33 @@ PR #22 invertía el orden que PR #20 daba por bueno.
    1. **Mira primero `docencia-espanol/fuentes/`** (ver su README). Ahí están, en texto
       plano y con sus respuestas, todos los capítulos ya transcritos. Si el que necesitas
       está, no pidas fotos ni vuelvas a transcribir: parte de ese archivo.
-   2. **Si no está, pide al profesor que adjunte el PDF al chat.** Es la vía buena, y
-      durante mucho tiempo se usó la peor por no haberla probado. Un archivo adjuntado al
-      chat **llega al disco** (`/root/.claude/uploads/<sesión>/`), y con el archivo en la
-      mano funciona todo `poppler`: `docencia-espanol/fuentes/paginas.sh` saca de un tirón
-      el texto en orden de lectura (`pdftotext -layout`), la página renderizada como imagen
-      y las imágenes incrustadas a resolución original.
-   3. El **conector de Google Drive** (ver `CLAUDE.md` de la raíz para el enlace y el orden
-      de prioridad: Nuevo Español en Marcha > ПК Гонсалес > Temas) sirve para *localizar* el
-      material y para leer texto suelto, pero es un mal sustituto del PDF: `read_file_content`
-      devuelve el texto ya aplanado —y desordenado en cuanto la página lleva un gráfico
-      incrustado, como el plano de metro de la 6A—, y `download_file_content` falló de
-      forma persistente («session expired») aunque el resto del conector respondiera. La
-      descarga directa por HTTP tampoco: el proxy la bloquea y el archivo es privado.
+   2. **Si no está, baja el PDF entero a disco.** Lo que hace falta siempre es el archivo,
+      no su texto: con él funciona todo `poppler`, y `docencia-espanol/fuentes/paginas.sh`
+      saca de un tirón el diagnóstico, el texto en orden de lectura, la página renderizada
+      como imagen y las imágenes incrustadas a resolución original. Dos vías:
+
+      - **`download_file_content` del conector de Drive** (ver `CLAUDE.md` de la raíz para
+        el enlace y el orden de prioridad: Nuevo Español en Marcha > ПК Гонсалес > Temas).
+        Devuelve el archivo en base64; se decodifica con
+        `python3 -c "import json,base64; d=json.load(open(RUTA)); open(SALIDA,'wb').write(base64.b64decode(d['content']))"`.
+        La respuesta será demasiado grande para el contexto y se volcará a un archivo — eso
+        **no es un error**, es justo lo que interesa: se decodifica desde ahí.
+      - **Que el profesor lo adjunte al chat.** Los adjuntos llegan a
+        `/root/.claude/uploads/<sesión>/`. Es la vía para los PDF grandes (ver abajo).
+
+   3. **Ojo con el límite de tamaño de `download_file_content`, porque miente al fallar.**
+      Por encima de unos pocos MB devuelve **«MCP server "Google_Drive" session expired»**,
+      que suena a sesión caducada y no lo es: el resto del conector sigue respondiendo con
+      normalidad en la misma llamada siguiente. Medido en este repo: 74 KB, 844 KB y 2,74 MB
+      bajan enteros y válidos; 8,42 MB y 8,83 MB fallan siempre. Si ves ese error, **no
+      concluyas que el conector está roto ni te lances a pedir fotos**: es un PDF grande, y
+      la salida es pedir que lo adjunte al chat. Este error ya costó una tanda entera de
+      fotos de páginas que no hacían falta.
+
+      `read_file_content` es otra cosa y no sustituye a la descarga: devuelve el texto ya
+      aplanado, y desordenado en cuanto la página lleva un gráfico incrustado (el plano de
+      metro de la 6A). Sirve para localizar y para leer texto corrido, no para transcribir.
+      La descarga directa por HTTP no es opción: el proxy la bloquea y el archivo es privado.
    4. **Fotos de las páginas: último recurso, no el segundo.** Solo si el profesor no puede
       adjuntar el PDF. Con el PDF en disco no hacen falta ni para las ilustraciones
       (`pdfimages` las saca mejor que una foto) ni para los escaneos sin texto (se renderiza

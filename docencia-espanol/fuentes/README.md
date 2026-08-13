@@ -82,8 +82,13 @@ modelo, y en el artefacto van marcados como tales, sin hueco.
 
 ## Cómo obtener el material de un capítulo nuevo
 
-**Pídele al profesor que adjunte el PDF al chat.** Un archivo adjuntado al chat llega al
-disco del contenedor, y con el archivo en la mano `paginas.sh` da todo lo necesario:
+**Lo que hace falta es el PDF en disco**, no su texto. Dos vías: bajarlo del Drive del
+profesor con `download_file_content` (devuelve base64; se decodifica a archivo) o pedirle
+que lo adjunte al chat, que es lo que hay que hacer con los PDF grandes — por encima de unos
+pocos MB la descarga falla con un engañoso «session expired» que **no** significa que el
+conector esté caído (comprobado: 74 KB, 844 KB y 2,74 MB bajan bien; 8,4 MB y 8,8 MB no).
+
+Con el archivo en la mano, `paginas.sh` da todo lo necesario:
 
 ```bash
 cd docencia-espanol/fuentes
@@ -101,10 +106,9 @@ líneas de un «relaciona», los ítems ya resueltos, lo rodeado a mano. La 6B s
 con un hueco de más porque el ítem resuelto del ejercicio 1 era una línea dibujada,
 invisible en el texto.
 
-El conector de Drive sirve para *localizar* el material, pero no lo sustituye:
-`read_file_content` aplana el texto (y lo desordena si la página lleva un gráfico, como el
-plano de metro de la 6A) y `download_file_content` falla de forma persistente. Las fotos de
-páginas son el último recurso, no el segundo.
+`read_file_content` no sustituye a la descarga: aplana el texto y lo desordena si la página
+lleva un gráfico (como el plano de metro de la 6A). Sirve para localizar y para leer texto
+corrido, no para transcribir. Las fotos de páginas son el último recurso, no el segundo.
 
 ## Origen de los escaneos
 
