@@ -33,17 +33,36 @@ PR #22 invertía el orden que PR #20 daba por bueno.
    1. **Mira primero `docencia-espanol/fuentes/`** (ver su README). Ahí están, en texto
       plano y con sus respuestas, todos los capítulos ya transcritos. Si el que necesitas
       está, no pidas fotos ni vuelvas a transcribir: parte de ese archivo.
-   2. Si no está, consulta la carpeta de Google Drive del profesor (ver `CLAUDE.md` de la
-      raíz del repo para el enlace y el orden de prioridad: Nuevo Español en Marcha >
-      ПК Гонсалес > Temas).
-   3. Si `read_file_content` devuelve una cadena vacía, el PDF es escaneado/solo-imagen —
-      pide al profesor fotos de las páginas en su lugar (funcionó bien para 12C y para
-      Repaso B1). El conector de Drive además rechaza los PDF de más de 10 MB, así que con
-      los cuadernillos grandes se va directo a las fotos.
+   2. **Si no está, pide al profesor que adjunte el PDF al chat.** Es la vía buena, y
+      durante mucho tiempo se usó la peor por no haberla probado. Un archivo adjuntado al
+      chat **llega al disco** (`/root/.claude/uploads/<sesión>/`), y con el archivo en la
+      mano funciona todo `poppler`: `docencia-espanol/fuentes/paginas.sh` saca de un tirón
+      el texto en orden de lectura (`pdftotext -layout`), la página renderizada como imagen
+      y las imágenes incrustadas a resolución original.
+   3. El **conector de Google Drive** (ver `CLAUDE.md` de la raíz para el enlace y el orden
+      de prioridad: Nuevo Español en Marcha > ПК Гонсалес > Temas) sirve para *localizar* el
+      material y para leer texto suelto, pero es un mal sustituto del PDF: `read_file_content`
+      devuelve el texto ya aplanado —y desordenado en cuanto la página lleva un gráfico
+      incrustado, como el plano de metro de la 6A—, y `download_file_content` falló de
+      forma persistente («session expired») aunque el resto del conector respondiera. La
+      descarga directa por HTTP tampoco: el proxy la bloquea y el archivo es privado.
+   4. **Fotos de las páginas: último recurso, no el segundo.** Solo si el profesor no puede
+      adjuntar el PDF. Con el PDF en disco no hacen falta ni para las ilustraciones
+      (`pdfimages` las saca mejor que una foto) ni para los escaneos sin texto (se renderiza
+      cada página con `pdftoppm` y se transcribe mirándola).
 
    Todo lo que llegue por fotos hay que archivarlo después en `fuentes/` (paso 8): esa
-   carpeta existe justo para que el paso 3 no se repita nunca dos veces con el mismo
-   capítulo.
+   carpeta existe justo para que no se vuelva a fotografiar dos veces el mismo capítulo.
+
+   **Y mires lo que mires, mira la página.** Antes de dar por buena una transcripción,
+   renderiza la página y ábrela con `Read`, aunque el texto se haya extraído perfectamente.
+   Hay contenido que el texto **no puede** representar y que cambia las respuestas: las
+   líneas de un ejercicio de relacionar, los ítems que el libro ya trae resueltos, las
+   respuestas rodeadas, las flechas. En la 6B el ejercicio 1 se transcribió con diez huecos
+   cuando el libro trae el primero resuelto —con una línea dibujada de «Pon» a «g la
+   televisión»— y no se detectó hasta ver la página. El texto extraído tampoco es fiable al
+   pie de la letra: en un PDF de ПК Гонсалес `pdftotext` devuelve `tъ` y `йl` donde la
+   página pone claramente **tú** y **él**.
 
 2. **Copia la plantilla, no la reescribas.** `cp .claude/skills/ejercicio-interactivo/reference/template.html <destino>`.
    Sustituye **todos** los marcadores `{{...}}` (grep por `{{` para confirmar que no quede
@@ -454,6 +473,14 @@ parezca más "controlable" desde JS — ya se demostró que rompe el caso más b
 - `docencia-espanol/fuentes/` — las transcripciones en texto plano de todo lo escaneado,
   con sus respuestas, más `extraer.mjs`, que las genera desde el artefacto publicado. Antes
   de pedirle fotos al profesor de un capítulo, **mira aquí**: puede que ya esté transcrito.
+- `docencia-espanol/fuentes/paginas.sh` — dado un PDF y un rango de páginas, saca el texto
+  con `pdftotext -layout`, renderiza cada página a JPEG para poder mirarla, y extrae las
+  imágenes incrustadas. Es la herramienta del paso 1 cuando el profesor adjunta el PDF.
+  Escribe fuera del repo a propósito: las páginas de un libro con copyright son material de
+  trabajo intermedio, no se versionan; lo que se archiva es la transcripción.
+  Lo que **no** hay en el contenedor: `tesseract`/OCR, `qpdf`, `mutool`, PyMuPDF. No hace
+  falta OCR para transcribir —se lee el render con `Read`, que además acierta donde
+  `pdftotext` se equivoca— pero sí impide generar un PDF con capa de texto buscable.
 - `PRODUCT.md` y `DESIGN.md` (raíz del repo) — el sistema de diseño compartido por todos los
   artefactos de esta biblioteca (paleta papel/tinta, tipografía, componentes). Cualquier
   página nueva (ejercicio o índice) debe extender estos tokens, no inventar los suyos — ver
