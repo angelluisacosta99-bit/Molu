@@ -69,11 +69,16 @@ La **6B** se hizo entera desde ese mismo PDF, sin una sola foto: su página (la 
 el plano incrustado que desordenaba la 28, así que el texto se extrae en orden. Solo dos
 respuestas del ejercicio 1 salen ilegibles en el solucionario (los ítems 8 y 9), y se
 deducen por descarte sin ambigüedad: quedaban libres «i la mesa» y «j a la derecha», que
-solo encajan con «Recoge» y «Tuerce». **Falta la ilustración de esa página**: según los
-créditos del PDF, la 29 lleva un dibujo de Maravillas Delgado (la habitación desordenada de
-Jaime, del ejercicio 5). No se pudo extraer —el conector de Drive falla al descargar el
-archivo entero, y solo devuelve texto—, así que está pendiente de una foto del profesor.
-Los enunciados del ejercicio 5 sí son texto impreso, así que el ejercicio funciona sin ella.
+solo encajan con «Recoge» y «Tuerce». La **ilustración** de esa página (la habitación
+desordenada de Jaime, del ejercicio 5, dibujo de Maravillas Delgado según los créditos del
+cuaderno) sí llegó por foto: el conector de Drive devuelve el texto del PDF pero no permite
+descargar el archivo para extraer las imágenes, así que ese es el único trozo de 6B que no
+salió del PDF. Está incrustada en el artefacto, sin el folio de la esquina.
+
+La foto de la página completa sirvió además para corregir algo que el texto extraído no
+dejaba ver: **en el ejercicio 1 el libro trae resuelto el ítem 1**, con la línea ya trazada
+de «Pon» a «g la televisión». Los cinco ejercicios de 6B traen su primer ítem hecho como
+modelo, y en el artefacto van marcados como tales, sin hueco.
 
 ## Origen de los escaneos
 

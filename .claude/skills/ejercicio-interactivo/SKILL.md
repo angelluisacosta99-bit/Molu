@@ -283,6 +283,18 @@ no las deshagas sin querer al modificar la plantilla.
   su nombre en el archivo). Y cuando portes una mejora a un capítulo concreto, pásala
   también a `reference/template.html` en el mismo momento, o el siguiente capítulo la
   volverá a perder. Lo mismo pasó con `type: "open"` y con la transcripción plegable.
+- **El ítem que el libro trae resuelto va con `item.solved: true`, no como hueco.** Casi
+  todos los ejercicios de estos cuadernos traen el primer ítem hecho como modelo. Ponerlo
+  como hueco le pide al alumno algo que en su cuaderno ya está impreso, y descuadra la
+  puntuación. Con `solved: true` la fila se pinta en gris cursiva, se ve (está en el
+  original y sirve de modelo) y no genera hueco. **El texto extraído del PDF no siempre
+  delata cuál es**: en 6B, el ítem resuelto del ejercicio 1 es una **línea dibujada** entre
+  las dos columnas, que en el texto no aparece por ningún lado — se descubrió al ver la foto
+  de la página. Si el capítulo viene solo del PDF, sospecha del ítem 1 de cada ejercicio.
+- **Cuando el ejercicio numere sus opciones con letras, numera los ítems (`ex.numbered`).**
+  En un «relaciona» con opciones a-j, dejar los ítems como a., b., c. crea dos series de
+  letras que no significan lo mismo en la misma tarjeta. El libro numera los ítems 1-10:
+  copia eso. Mismo problema, misma solución que en los diálogos con interlocutores A/B.
 - **Celdas ya resueltas en una tabla (`conjTable`): spec como cadena, no como array.** En
   6B el libro trae resueltas las filas de «cerrar» y «seguir» y el presente de «guardar».
   Si se ponen como huecos, el alumno tiene que "adivinar" algo que en su cuaderno está

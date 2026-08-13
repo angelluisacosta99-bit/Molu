@@ -223,6 +223,9 @@
   .items { display: flex; flex-direction: column; gap: 0.55rem; }
   .item-row { font-size: 0.95rem; line-height: 1.7; }
   .item-letter { color: var(--gold); font-weight: 700; margin-right: 0.3rem; }
+  /* Fila ya resuelta en el libro: se ve, sirve de modelo, pero no se pide rellenarla. */
+  .solved-row { color: var(--ink-soft); font-style: italic; }
+  .solved-row .item-letter { color: var(--pencil); }
 
   /* Diálogos: cada réplica en su línea y con el interlocutor destacado. Sin esto, A y B
      —que son dos personas distintas— se leen como una sola frase corrida. */
@@ -577,6 +580,8 @@
           instr: "{{EXERCISE_INSTRUCTIONS}}",
           type: "items",
           items: [
+            // Ítem sin huecos y con solved: true = el que el libro trae resuelto como modelo.
+            { t: "Yo trabajo en un hospital y vivo en Madrid.", solved: true },
             { t: "María {0} (trabajar) en un hospital y {1} (vivir) en Madrid.", a: [["trabaja"], ["vive"]] },
             { t: "¿Tú {0} (comer) en casa o en la oficina normalmente?", a: [["comes"]] },
             // vf: true en un item cambia el hueco de texto libre por dos botones "V"/"F"
@@ -828,6 +833,10 @@
           // donde a/b/c chocaría con las letras A/B de los propios interlocutores.
           const marca = ex.numbered ? (i + 1) + "." : String.fromCharCode(97 + i) + ".";
           if (ex.dialog) row.classList.add("dialog-row");
+          // item.solved = fila que el libro ya trae resuelta (el típico ítem 1 hecho como
+          // modelo). Se muestra porque está en el original, pero va sin huecos: pedirle al
+          // alumno algo que en su cuaderno ya está impreso descuadra además la puntuación.
+          if (item.solved) row.classList.add("solved-row");
           const letter = document.createElement("span");
           letter.className = "item-letter";
           letter.setAttribute("translate", "no");
@@ -923,6 +932,10 @@
           // donde a/b/c chocaría con las letras A/B de los propios interlocutores.
           const marca = ex.numbered ? (i + 1) + "." : String.fromCharCode(97 + i) + ".";
           if (ex.dialog) row.classList.add("dialog-row");
+          // item.solved = fila que el libro ya trae resuelta (el típico ítem 1 hecho como
+          // modelo). Se muestra porque está en el original, pero va sin huecos: pedirle al
+          // alumno algo que en su cuaderno ya está impreso descuadra además la puntuación.
+          if (item.solved) row.classList.add("solved-row");
           const letter = document.createElement("span");
           letter.className = "item-letter";
           letter.setAttribute("translate", "no");
