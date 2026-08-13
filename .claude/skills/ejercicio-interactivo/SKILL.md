@@ -504,11 +504,11 @@ parezca más "controlable" desde JS — ya se demostró que rompe el caso más b
   gráficos vectoriales. `paginas.sh` ya incorpora sus diagnósticos, pero la guía tiene más
   (tablas con pdfplumber, campos de formulario, coste en tokens de rasterizar).
 - **Lo que NO funciona en este contenedor**, comprobado, para no volver a intentarlo: no hay
-  `tesseract` ni OCR, ni `qpdf`, ni `mutool`, ni `pdftk`. Y las librerías de Python para PDF
-  (`pypdf`, `pdfplumber`, PyMuPDF) **se instalan pero revientan al importarse** — el binding
-  de `cryptography` lanza un `PanicException` de Rust. O sea que de todo lo que propone
-  `pdf-reading`, aquí solo sirve la vía de línea de comandos de `poppler`, que es la que usa
-  `paginas.sh`. No hace falta OCR para transcribir —leer el render con `Read` acierta donde
+  `tesseract` ni OCR, ni `qpdf`, ni `mutool`, ni `pdftk`. Y de las librerías de Python para
+  PDF: `pypdf` y `pdfplumber` **se instalan pero revientan al importarse** (el binding de
+  `cryptography` lanza un `PanicException` de Rust), y PyMuPDF (`fitz`) directamente no está
+  y no se ha conseguido instalar. O sea que de todo lo que propone `pdf-reading`, aquí solo
+  sirve la vía de línea de comandos de `poppler`, que es la que usa `paginas.sh`. No hace falta OCR para transcribir —leer el render con `Read` acierta donde
   `pdftotext` se equivoca— pero sí impide generar un PDF con capa de texto buscable.
 - `PRODUCT.md` y `DESIGN.md` (raíz del repo) — el sistema de diseño compartido por todos los
   artefactos de esta biblioteca (paleta papel/tinta, tipografía, componentes). Cualquier

@@ -74,8 +74,10 @@ fi
 # Adjuntos incrustados: raros en un libro, pero si los hay suelen traer justo lo que se
 # estaba buscando por otro lado, y comprobarlo cuesta un comando.
 ADJ=$(pdfdetach -list "$PDF" 2>/dev/null | head -1 || true)
+# El patrón va anclado al principio a propósito: sin anclar, "10 embedded files" contiene
+# "0 embedded files" y los adjuntos de todos los múltiplos de 10 se silenciarían.
 case "$ADJ" in
-  *"0 embedded files"*|"") ;;
+  "0 embedded files"*|"") ;;
   *) echo "· pdfdetach: $ADJ  → extráelos con: pdfdetach -saveall -o <dir> \"$PDF\"" ;;
 esac
 echo
@@ -100,9 +102,13 @@ pdfimages -f "$DESDE" -l "$HASTA" -png "$PDF" "$OUT/incrustada" 2>/dev/null || t
 n=$(find "$OUT" -name 'incrustada-*.png' | wc -l)
 if [ "$n" -gt 0 ]; then
   echo "· $n imagen(es) incrustada(s):"
+  # La ruta va por argv, no interpolada dentro del literal de Python: un apóstrofo en el
+  # nombre del archivo o de la carpeta rompería la cadena y el tamaño saldría como "?".
   find "$OUT" -name 'incrustada-*.png' | sort | while read -r f; do
     echo "    $(basename "$f")  $(python3 -c "
-from PIL import Image; im=Image.open('$f'); print('%dx%d' % im.size)" 2>/dev/null || echo '?')"
+import sys
+from PIL import Image
+im = Image.open(sys.argv[1]); print('%dx%d' % im.size)" "$f" 2>/dev/null || echo '?')"
   done
 else
   # Que no haya ninguna no significa que la página no tenga dibujos: pueden ser vectores,
