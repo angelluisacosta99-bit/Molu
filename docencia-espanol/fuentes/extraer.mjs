@@ -254,6 +254,23 @@ const md = await page.evaluate(() => {
       });
       // tablas de conjugación
       for (const tw of ex.querySelectorAll(".table-wrap table")) { push(); emitTable(tw); }
+
+      // Transcripción del audio (plegada en el artefacto). Es contenido del libro, así que
+      // tiene que quedar archivado igual que lo demás — si no, este archivo dejaría de ser
+      // suficiente para reconstruir el capítulo sin volver al PDF.
+      const tr = ex.querySelector(".transcript");
+      if (tr) {
+        push();
+        push("**" + clean(tr.querySelector("summary")?.textContent) + "**");
+        push();
+        for (const line of tr.querySelectorAll(".transcript-body .line")) {
+          const who = clean(line.querySelector(".who")?.textContent);
+          const said = clean(line.textContent).slice(who.length).trim();
+          push("> **" + who + "** " + said);
+        }
+        const note = clean(tr.querySelector(".transcript-note")?.textContent);
+        if (note) { push(); push("*" + note + "*"); }
+      }
       push();
     }
   }

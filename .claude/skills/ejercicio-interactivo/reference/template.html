@@ -250,6 +250,37 @@
      V/F sin pulsar tiene que verse igual de mal — si no, el alumno lo lee como "bien". */
   .vf-toggle.unanswered .vf-btn { border-color: var(--bad); background: var(--bad-bg); }
 
+  /* Transcripción de un audio, plegada por defecto: en un ejercicio de comprensión oral la
+     transcripción ES la solución, así que debe estar disponible sin quedar a la vista
+     mientras el alumno responde. <details> nativo — sin JS y accesible por teclado. */
+  .transcript { margin-top: 1rem; border-top: 1px dashed var(--border); padding-top: 0.85rem; }
+  .transcript summary {
+    cursor: pointer; font-size: 0.82rem; font-weight: 600; color: var(--gold);
+    list-style: none; display: flex; align-items: baseline; gap: 0.4rem;
+  }
+  .transcript summary::-webkit-details-marker { display: none; }
+  .transcript summary::before {
+    content: "\25B6"; font-size: 0.62em; transition: transform 0.15s ease;
+  }
+  .transcript[open] summary::before { transform: rotate(90deg); }
+  .transcript summary:hover { color: var(--ink); }
+  .transcript summary:focus-visible {
+    outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 4px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .transcript summary::before { transition: none; }
+  }
+  .transcript-body {
+    margin-top: 0.75rem; background: var(--gold-soft); border-radius: 10px;
+    padding: 0.95rem 1.1rem; font-size: 0.88rem; line-height: 1.8; color: var(--ink);
+  }
+  .transcript-body .line { display: block; }
+  .transcript-body .line + .line { margin-top: 0.25rem; }
+  .transcript-body .who { color: var(--gold); font-weight: 700; margin-right: 0.35rem; }
+  .transcript-note {
+    margin-top: 0.7rem; font-size: 0.78rem; color: var(--pencil); font-style: italic;
+  }
+
   .paragraph { font-size: 0.97rem; line-height: 2; }
 
   table.exercise-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
@@ -527,7 +558,15 @@
             // cualquier otro hueco de texto; el motor de corrección no cambia.
             { t: "Madrid es la capital de España. → {0}", a: [["V"]], vf: true }
             // wide: true en un item hace el input más ancho — úsalo para respuestas largas.
-          ]
+          ],
+          // Ejercicio de comprensión oral: transcriptHTML añade la transcripción al final
+          // de la tarjeta, dentro de un <details> plegado (la transcripción es la solución,
+          // así que no puede quedar a la vista mientras el alumno responde). Opcional:
+          // transcriptLabel cambia el texto del desplegable.
+          transcriptLabel: "Ver la transcripción del audio (ábrela solo después de responder)",
+          transcriptHTML:
+            '<span class="line"><span class="who">ANA:</span> ¿Dónde vives?</span>' +
+            '<span class="line"><span class="who">LUIS:</span> En Madrid, cerca del centro.</span>'
         },
         {
           // Tipo "text": un único párrafo continuo con huecos numerados {0}, {1}... a lo
@@ -834,6 +873,22 @@
           wrap.appendChild(row);
         });
         card.appendChild(wrap);
+      }
+
+      // Transcripción de audio, si el ejercicio la trae. Va al final de la tarjeta, después
+      // de las preguntas: leerla antes de responder resuelve el ejercicio, así que ni se
+      // abre sola ni se coloca arriba.
+      if (ex.transcriptHTML) {
+        const det = document.createElement("details");
+        det.className = "transcript";
+        const sum = document.createElement("summary");
+        sum.textContent = ex.transcriptLabel || "Ver la transcripción del audio";
+        det.appendChild(sum);
+        const body = document.createElement("div");
+        body.className = "transcript-body";
+        body.innerHTML = ex.transcriptHTML;
+        det.appendChild(body);
+        card.appendChild(det);
       }
 
       const endIdx = allInputs.length;

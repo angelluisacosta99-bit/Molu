@@ -54,7 +54,15 @@ sobre un plano, así que no hay texto que corregir.
 El mapeo ejercicio→pista de ese cuaderno no está en ningún índice suelto del Drive: sale de
 la sección **«Transcripciones»** del propio PDF del cuaderno, que sí es legible por
 herramientas. Si hace falta la pista de otra unidad, se busca ahí antes que pedírsela al
-profesor.
+profesor. Esa misma sección trae el **texto completo de cada audio**, y el PDF incluye
+además su **solucionario**: en la 6A, ambos confirmaron por sí solos lo que el profesor
+había enviado por foto (respuestas `1 va, toma, baja, cambia…` y `3 1 V 2 F, 3 V`). O sea
+que de ese cuaderno, respuestas y transcripciones **no hace falta fotografiarlas**.
+
+Por eso el archivo de la 6A incluye la transcripción de la pista 7 completa, y el propio
+artefacto la muestra plegada dentro del ejercicio 3. Los nombres de las dos interlocutoras
+(MARTA / BEATRIZ) no están en el original —allí cada réplica lleva solo un símbolo— y se
+dedujeron del contenido; queda anotado también en el artefacto.
 
 ## Origen de los escaneos
 

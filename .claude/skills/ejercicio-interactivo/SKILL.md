@@ -249,6 +249,29 @@ no las deshagas sin querer al modificar la plantilla.
   (chips, un slider, lo que sea) que también oculte el input real, revisa si necesita el
   mismo tipo de ajuste en `extraer.mjs` antes de darlo por archivable.
 
+- **Ejercicios de audio: la transcripción va plegada (`ex.transcriptHTML`), nunca a la
+  vista.** En un ejercicio de comprensión oral la transcripción **es** la solución, así que
+  si se pone abierta el ejercicio deja de existir; pero omitirla tampoco vale, porque está
+  en el libro y sin audio a mano es lo único que le permite al alumno autocorregirse. La
+  plantilla la pinta en un `<details>` nativo al final de la tarjeta, después de las
+  preguntas (arriba se leería antes de responder). Nativo y no un desplegable a mano: sale
+  accesible por teclado y sin JS. `ex.transcriptLabel` cambia el texto del resumen — usa uno
+  que avise, del tipo "ábrela solo después de responder".
+- **Las transcripciones del cuaderno de A1 SÍ son texto extraíble del PDF.** Aunque las
+  páginas de ejercicios de ese PDF salgan desordenadas (ver más arriba), su sección
+  **«Transcripciones»** y su **solucionario** se leen perfectamente con el conector de
+  Drive. Antes de pedirle al profesor una foto del solucionario o el audio de una unidad,
+  **busca ahí**: en la 6A, el PDF confirmó por sí solo tanto las respuestas (`3 1 V 2 F,
+  3 V`) como el número de pista. Ojo con un detalle que despista: la sección de
+  transcripciones titula las unidades con el nombre que llevan en el **libro del alumno**,
+  no en el cuaderno (6A aparece como "¿Cómo se va a Plaza de España?" cuando en el cuaderno
+  es "¿Cómo se va a Goya?"). Es la misma unidad; guíate por el número y la letra.
+- **El diálogo original no trae nombres.** El libro distingue las réplicas solo con dos
+  símbolos, que además el OCR destroza. Deducirlos del contenido y escribirlos como
+  `MARTA:` / `BEATRIZ:` es correcto (es el mismo formato que el libro usa en otras
+  unidades) y se lee mucho mejor en pantalla — pero **déjalo dicho** en una nota al pie de
+  la transcripción, para que dentro de unos meses nadie los tome por literales del original.
+
 ### Canal por canal (la parte que más costó)
 
 Cada botón de "enviar al profesor" tuvo su propia trampa específica de plataforma. La regla

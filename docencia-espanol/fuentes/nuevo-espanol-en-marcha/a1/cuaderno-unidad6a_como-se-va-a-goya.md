@@ -39,8 +39,25 @@ a. Beatriz está en su hotel. → **V**
 b. Marta trabaja lejos de la plaza de España. → **F**
 c. Marta espera a Beatriz en su trabajo. → **V**
 
+**Ver la transcripción del audio (ábrela solo después de responder)**
+
+> **MARTA:** Dígame.
+> **BEATRIZ:** ¿Marta? Soy Beatriz.
+> **MARTA:** ¡Hola! ¿Ya estáis en Madrid?
+> **BEATRIZ:** Sí, estamos en el hotel de la plaza de España.
+> **MARTA:** Estupendo, ¿comemos juntas? Mi trabajo está cerca del hotel, si quieres puedes venir andando, tardas unos veinte minutos.
+> **BEATRIZ:** No, no, dime mejor cómo voy en metro, tengo un plano en la mano.
+> **MARTA:** Mira, estoy en Gran Vía, en la línea 5, solo hay dos estaciones desde Plaza de España, ¿lo ves?
+> **BEATRIZ:** Pues no.
+> **MARTA:** Coge la línea tres, y en la primera estación cambia a la línea 5.
+> **BEATRIZ:** ¿En Ventura Rodríguez?
+> **MARTA:** No, en la otra dirección, en Callao, ¿lo ves?
+> **BEATRIZ:** Sí, sí.
+
+*Transcripción de la pista 7 del CD del cuaderno, tal como aparece en el propio libro. Los nombres de las dos amigas no están en el original (allí cada réplica lleva solo un símbolo): se añaden aquí para que el diálogo se lea mejor en pantalla.*
+
 #### Ej. 4 — Marca en el plano el recorrido
 
 *Escucha otra vez y marca en el plano el recorrido del que están hablando.*
 
-> Plano de la Red de Metro (fragmento). Con la pista 7 otra vez, sigue sobre el plano el recorrido del que hablan Beatriz y Marta.
+> Plano de la Red de Metro (fragmento). Con la pista 7 otra vez, sigue sobre el plano el recorrido del que hablan Beatriz y Marta. Es la misma conversación del ejercicio 3, así que tienes su transcripción ahí arriba, plegada.
