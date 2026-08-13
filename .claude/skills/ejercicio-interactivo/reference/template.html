@@ -246,6 +246,9 @@
   .vf-btn.selected { background: var(--gold-soft); border-color: var(--gold); color: var(--ink); }
   .vf-btn.correct { background: var(--good-bg); border-color: var(--good); color: var(--good); }
   .vf-btn.incorrect { background: var(--bad-bg); border-color: var(--bad); color: var(--bad); }
+  /* Sin responder y ya corregido: un hueco de texto vacío se pinta en rojo, así que un
+     V/F sin pulsar tiene que verse igual de mal — si no, el alumno lo lee como "bien". */
+  .vf-toggle.unanswered .vf-btn { border-color: var(--bad); background: var(--bad-bg); }
 
   .paragraph { font-size: 0.97rem; line-height: 2; }
 
@@ -628,6 +631,7 @@
       b.textContent = letter;
       b.addEventListener("click", function () {
         inp.value = letter;
+        wrap.classList.remove("unanswered");
         wrap.querySelectorAll(".vf-btn").forEach(function (x) {
           x.classList.remove("selected", "correct", "incorrect");
         });
@@ -637,6 +641,9 @@
     });
     rec.onGrade = function (ok) {
       const sel = wrap.querySelector(".vf-btn.selected");
+      // Sin nada pulsado no hay botón que colorear: se marca el grupo entero, o el hueco
+      // se quedaría sin ninguna señal de error (a diferencia de un input de texto vacío).
+      wrap.classList.toggle("unanswered", !sel);
       if (sel) sel.classList.add(ok ? "correct" : "incorrect");
     };
     allInputs.push(rec);

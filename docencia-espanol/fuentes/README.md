@@ -30,7 +30,7 @@ el archivo correspondiente, no editarlo a mano.
 | Archivo | Origen | Páginas | Respuestas |
 | --- | --- | --- | --- |
 | `nuevo-espanol-en-marcha/a1/unidades-1-8_presente-gerundio-indefinido.md` | Nuevo Español en Marcha 1 (A1), unidades 1-8 | — | **elaboradas** para el ejercicio |
-| `nuevo-espanol-en-marcha/a1/cuaderno-unidad6a_como-se-va-a-goya.md` | Nuevo Español en Marcha 1 (A1), **cuaderno de ejercicios**, unidad 6A | 28 | **solucionario oficial** (ejercicios 1-2); los ejercicios 3-4 son de audio/plano, sin respuesta de texto |
+| `nuevo-espanol-en-marcha/a1/cuaderno-unidad6a_como-se-va-a-goya.md` | Nuevo Español en Marcha 1 (A1), **cuaderno de ejercicios**, unidad 6A | 28 | **solucionario oficial** (ejercicios 1-3); el ejercicio 4 es de marcar un plano, sin respuesta de texto |
 | `nuevo-espanol-en-marcha/b1/repaso-b1_secciones-1-12.md` | Nuevo Español en Marcha 3 (B1), repaso final | 140-163 | **deducidas**, sin solucionario |
 | `nuevo-espanol-en-marcha/b2/12b_turismo-cultural.md` | Nuevo Español en Marcha 4 (B2), unidad 12B | 12B | **solucionario oficial** del libro |
 | `nuevo-espanol-en-marcha/b2/12c_perifrasis-verbales.md` | Nuevo Español en Marcha 4 (B2), unidad 12C | 12C | **solucionario oficial** del libro |
@@ -46,9 +46,15 @@ nota que aparece al corregir, y esa nota también está aquí.
 Las de **A1 (unidades 1-8)** fueron **elaboradas** para el ejercicio, no vienen de un
 solucionario del libro. El profesor lo confirmó. Distinto es el caso de **A1, cuaderno de
 ejercicios, unidad 6A**: esas sí vienen del solucionario oficial que el profesor envió
-aparte (foto), y cubren los ejercicios 1 y 2 (huecos de texto). Los ejercicios 3 y 4 de esa
-misma unidad son de audio y de marcar un recorrido en un plano — no tienen huecos de texto,
-así que se archivan como referencia, sin respuesta.
+aparte (foto), y cubren los ejercicios 1, 2 y 3 — incluidas las tres respuestas V/F del 3,
+que es de audio (**pista 7** del CD del cuaderno) pero tiene respuesta cerrada y se corrige
+como cualquier otro. Solo el ejercicio 4 se archiva sin respuesta: pide marcar un recorrido
+sobre un plano, así que no hay texto que corregir.
+
+El mapeo ejercicio→pista de ese cuaderno no está en ningún índice suelto del Drive: sale de
+la sección **«Transcripciones»** del propio PDF del cuaderno, que sí es legible por
+herramientas. Si hace falta la pista de otra unidad, se busca ahí antes que pedírsela al
+profesor.
 
 ## Origen de los escaneos
 

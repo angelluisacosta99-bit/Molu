@@ -33,7 +33,7 @@ j. **De** mi casa **a** la oficina tardo una hora.
 
 #### Ej. 3 — Escucha la conversación y señala verdadero o falso
 
-*Este ejercicio es de audio: necesitas escuchar la pista de esta unidad (el CD del cuaderno, o la que use tu profesor en clase) para responder. Marca V (verdadero) o F (falso).*
+*Este ejercicio es de audio: necesitas escuchar la pista 7 del CD del cuaderno (o la que ponga tu profesor en clase) para responder. Marca V (verdadero) o F (falso).*
 
 a. Beatriz está en su hotel. → **V**
 b. Marta trabaja lejos de la plaza de España. → **F**
@@ -43,4 +43,4 @@ c. Marta espera a Beatriz en su trabajo. → **V**
 
 *Escucha otra vez y marca en el plano el recorrido del que están hablando.*
 
-> Plano de la Red de Metro (fragmento). Con el audio de la unidad, sigue sobre el plano el recorrido del que hablan Beatriz y Marta.
+> Plano de la Red de Metro (fragmento). Con la pista 7 otra vez, sigue sobre el plano el recorrido del que hablan Beatriz y Marta.
