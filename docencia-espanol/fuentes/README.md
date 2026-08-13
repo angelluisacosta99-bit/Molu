@@ -80,12 +80,43 @@ dejaba ver: **en el ejercicio 1 el libro trae resuelto el ítem 1**, con la lín
 de «Pon» a «g la televisión». Los cinco ejercicios de 6B traen su primer ítem hecho como
 modelo, y en el artefacto van marcados como tales, sin hueco.
 
+## Cómo obtener el material de un capítulo nuevo
+
+**Lo que hace falta es el PDF en disco**, no su texto. Dos vías: bajarlo del Drive del
+profesor con `download_file_content` (devuelve base64; se decodifica a archivo) o pedirle
+que lo adjunte al chat, que es lo que hay que hacer con los PDF grandes — por encima de unos
+pocos MB la descarga falla con un engañoso «session expired» que **no** significa que el
+conector esté caído (comprobado: 74 KB, 844 KB y 2,74 MB bajan bien; 8,4 MB y 8,8 MB no).
+
+Con el archivo en la mano, `paginas.sh` da todo lo necesario:
+
+```bash
+cd docencia-espanol/fuentes
+./paginas.sh /root/.claude/uploads/<sesión>/<archivo>.pdf <primera> [última]
+```
+
+Deja el texto en orden de lectura (`pdftotext -layout`, que respeta columnas y tablas), cada
+página renderizada a JPEG, y las imágenes incrustadas a resolución original. Escribe fuera
+del repo: las páginas del libro son material intermedio con copyright, aquí solo se archiva
+la transcripción.
+
+**Mira siempre el render antes de cerrar un capítulo**, aunque el texto haya salido
+perfecto. Hay cosas que el texto no puede representar y que cambian las respuestas: las
+líneas de un «relaciona», los ítems ya resueltos, lo rodeado a mano. La 6B se transcribió
+con un hueco de más porque el ítem resuelto del ejercicio 1 era una línea dibujada,
+invisible en el texto.
+
+`read_file_content` no sustituye a la descarga: aplana el texto y lo desordena si la página
+lleva un gráfico (como el plano de metro de la 6A). Sirve para localizar y para leer texto
+corrido, no para transcribir. Las fotos de páginas son el último recurso, no el segundo.
+
 ## Origen de los escaneos
 
-El PDF de Repaso B1 (`RepasoB1.pdf`, en el Drive del profesor) es un escaneado **sin texto
-extraíble** y pesa más de lo que admite el conector de Drive, así que no se puede leer por
-herramientas: llegó como fotos de las páginas enviadas en el chat. Lo mismo con 12B y 12C.
-Por eso existe esta carpeta.
+Repaso B1 (`RepasoB1.pdf`), 12B y 12C se transcribieron a partir de **fotos** enviadas por
+el chat, antes de saber que se podía adjuntar el PDF: son escaneados sin texto extraíble y
+el archivo excede lo que admite el conector de Drive. Por eso existe esta carpeta. Hoy no
+haría falta fotografiarlos: con el PDF adjunto, `paginas.sh` renderiza cada página y se
+transcribe mirándola. Si alguna vez hay que revisarlos, ese es el camino.
 
 El cuaderno de ejercicios de A1 (`Nuevo_espan_ol_en_marcha_1_A1_Cuaderno_d.pdf`) es distinto:
 **sí tiene texto extraíble** y está en el Drive del profesor, pero el texto sale desordenado
