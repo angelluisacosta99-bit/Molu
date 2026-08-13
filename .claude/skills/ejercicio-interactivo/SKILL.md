@@ -249,6 +249,59 @@ no las deshagas sin querer al modificar la plantilla.
   (chips, un slider, lo que sea) que también oculte el input real, revisa si necesita el
   mismo tipo de ajuste en `extraer.mjs` antes de darlo por archivable.
 
+- **Ejercicios de audio: la transcripción va plegada (`ex.transcriptHTML`), nunca a la
+  vista.** En un ejercicio de comprensión oral la transcripción **es** la solución, así que
+  si se pone abierta el ejercicio deja de existir; pero omitirla tampoco vale, porque está
+  en el libro y sin audio a mano es lo único que le permite al alumno autocorregirse. La
+  plantilla la pinta en un `<details>` nativo al final de la tarjeta, después de las
+  preguntas (arriba se leería antes de responder). Nativo y no un desplegable a mano: sale
+  accesible por teclado y sin JS. `ex.transcriptLabel` cambia el texto del resumen — usa uno
+  que avise, del tipo "ábrela solo después de responder".
+- **Las transcripciones del cuaderno de A1 SÍ son texto extraíble del PDF.** Aunque las
+  páginas de ejercicios de ese PDF salgan desordenadas (ver más arriba), su sección
+  **«Transcripciones»** y su **solucionario** se leen perfectamente con el conector de
+  Drive. Antes de pedirle al profesor una foto del solucionario o el audio de una unidad,
+  **busca ahí**: en la 6A, el PDF confirmó por sí solo tanto las respuestas (`3 1 V 2 F,
+  3 V`) como el número de pista. Ojo con un detalle que despista: la sección de
+  transcripciones titula las unidades con el nombre que llevan en el **libro del alumno**,
+  no en el cuaderno (6A aparece como "¿Cómo se va a Plaza de España?" cuando en el cuaderno
+  es "¿Cómo se va a Goya?"). Es la misma unidad; guíate por el número y la letra.
+- **El diálogo original no trae nombres.** El libro distingue las réplicas solo con dos
+  símbolos, que además el OCR destroza. Deducirlos del contenido y escribirlos como
+  `MARTA:` / `BEATRIZ:` es correcto (es el mismo formato que el libro usa en otras
+  unidades) y se lee mucho mejor en pantalla — pero **déjalo dicho** en una nota al pie de
+  la transcripción, para que dentro de unos meses nadie los tome por literales del original.
+
+- **`ex.refHTML` ya está en la plantilla — pero antes no lo estaba, y por eso se publicó un
+  ejercicio irresoluble.** Al montar el cuaderno A1 6B (un «relaciona» de diez ítems) se dio
+  por hecho que la plantilla traía el recuadro de opciones, porque los capítulos anteriores
+  lo tenían. No lo traía: `refHTML` había nacido en Repaso B1 y en 6A se había portado **a
+  mano, solo a ese archivo**. Resultado: el artefacto se publicó con «Pon ___», «Habla ___»…
+  y ninguna opción a la vista. El motor no avisa de esto —una propiedad que el renderizador
+  no lee simplemente se ignora en silencio—, así que **después de rellenar `blocks`,
+  comprueba que cada propiedad que has usado la lee de verdad el renderizador** (`grep` por
+  su nombre en el archivo). Y cuando portes una mejora a un capítulo concreto, pásala
+  también a `reference/template.html` en el mismo momento, o el siguiente capítulo la
+  volverá a perder. Lo mismo pasó con `type: "open"` y con la transcripción plegable.
+- **El ítem que el libro trae resuelto va con `item.solved: true`, no como hueco.** Casi
+  todos los ejercicios de estos cuadernos traen el primer ítem hecho como modelo. Ponerlo
+  como hueco le pide al alumno algo que en su cuaderno ya está impreso, y descuadra la
+  puntuación. Con `solved: true` la fila se pinta en gris cursiva, se ve (está en el
+  original y sirve de modelo) y no genera hueco. **El texto extraído del PDF no siempre
+  delata cuál es**: en 6B, el ítem resuelto del ejercicio 1 es una **línea dibujada** entre
+  las dos columnas, que en el texto no aparece por ningún lado — se descubrió al ver la foto
+  de la página. Si el capítulo viene solo del PDF, sospecha del ítem 1 de cada ejercicio.
+- **Cuando el ejercicio numere sus opciones con letras, numera los ítems (`ex.numbered`).**
+  En un «relaciona» con opciones a-j, dejar los ítems como a., b., c. crea dos series de
+  letras que no significan lo mismo en la misma tarjeta. El libro numera los ítems 1-10:
+  copia eso. Mismo problema, misma solución que en los diálogos con interlocutores A/B.
+- **Celdas ya resueltas en una tabla (`conjTable`): spec como cadena, no como array.** En
+  6B el libro trae resueltas las filas de «cerrar» y «seguir» y el presente de «guardar».
+  Si se ponen como huecos, el alumno tiene que "adivinar" algo que en su cuaderno está
+  impreso, y el total de huecos deja de coincidir con lo que hay que rellenar de verdad.
+  `ex.subjectLabel` cambia además el encabezado de la primera columna, que estaba fijado a
+  «Sujeto» y en una tabla de infinitivos no significa nada.
+
 ### Canal por canal (la parte que más costó)
 
 Cada botón de "enviar al profesor" tuvo su propia trampa específica de plataforma. La regla

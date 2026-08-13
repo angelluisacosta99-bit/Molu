@@ -31,6 +31,7 @@ el archivo correspondiente, no editarlo a mano.
 | --- | --- | --- | --- |
 | `nuevo-espanol-en-marcha/a1/unidades-1-8_presente-gerundio-indefinido.md` | Nuevo Español en Marcha 1 (A1), unidades 1-8 | — | **elaboradas** para el ejercicio |
 | `nuevo-espanol-en-marcha/a1/cuaderno-unidad6a_como-se-va-a-goya.md` | Nuevo Español en Marcha 1 (A1), **cuaderno de ejercicios**, unidad 6A | 28 | **solucionario oficial** (ejercicios 1-3); el ejercicio 4 es de marcar un plano, sin respuesta de texto |
+| `nuevo-espanol-en-marcha/a1/cuaderno-unidad6b_cierra-la-ventana.md` | Nuevo Español en Marcha 1 (A1), **cuaderno de ejercicios**, unidad 6B | 29 | **solucionario oficial** (los cinco ejercicios); dos respuestas del ej. 1 salen ilegibles y se deducen por descarte |
 | `nuevo-espanol-en-marcha/b1/repaso-b1_secciones-1-12.md` | Nuevo Español en Marcha 3 (B1), repaso final | 140-163 | **deducidas**, sin solucionario |
 | `nuevo-espanol-en-marcha/b2/12b_turismo-cultural.md` | Nuevo Español en Marcha 4 (B2), unidad 12B | 12B | **solucionario oficial** del libro |
 | `nuevo-espanol-en-marcha/b2/12c_perifrasis-verbales.md` | Nuevo Español en Marcha 4 (B2), unidad 12C | 12C | **solucionario oficial** del libro |
@@ -54,7 +55,30 @@ sobre un plano, así que no hay texto que corregir.
 El mapeo ejercicio→pista de ese cuaderno no está en ningún índice suelto del Drive: sale de
 la sección **«Transcripciones»** del propio PDF del cuaderno, que sí es legible por
 herramientas. Si hace falta la pista de otra unidad, se busca ahí antes que pedírsela al
-profesor.
+profesor. Esa misma sección trae el **texto completo de cada audio**, y el PDF incluye
+además su **solucionario**: en la 6A, ambos confirmaron por sí solos lo que el profesor
+había enviado por foto (respuestas `1 va, toma, baja, cambia…` y `3 1 V 2 F, 3 V`). O sea
+que de ese cuaderno, respuestas y transcripciones **no hace falta fotografiarlas**.
+
+Por eso el archivo de la 6A incluye la transcripción de la pista 7 completa, y el propio
+artefacto la muestra plegada dentro del ejercicio 3. Los nombres de las dos interlocutoras
+(MARTA / BEATRIZ) no están en el original —allí cada réplica lleva solo un símbolo— y se
+dedujeron del contenido; queda anotado también en el artefacto.
+
+La **6B** se hizo entera desde ese mismo PDF, sin una sola foto: su página (la 29) no lleva
+el plano incrustado que desordenaba la 28, así que el texto se extrae en orden. Solo dos
+respuestas del ejercicio 1 salen ilegibles en el solucionario (los ítems 8 y 9), y se
+deducen por descarte sin ambigüedad: quedaban libres «i la mesa» y «j a la derecha», que
+solo encajan con «Recoge» y «Tuerce». La **ilustración** de esa página (la habitación
+desordenada de Jaime, del ejercicio 5, dibujo de Maravillas Delgado según los créditos del
+cuaderno) sí llegó por foto: el conector de Drive devuelve el texto del PDF pero no permite
+descargar el archivo para extraer las imágenes, así que ese es el único trozo de 6B que no
+salió del PDF. Está incrustada en el artefacto, sin el folio de la esquina.
+
+La foto de la página completa sirvió además para corregir algo que el texto extraído no
+dejaba ver: **en el ejercicio 1 el libro trae resuelto el ítem 1**, con la línea ya trazada
+de «Pon» a «g la televisión». Los cinco ejercicios de 6B traen su primer ítem hecho como
+modelo, y en el artefacto van marcados como tales, sin hueco.
 
 ## Origen de los escaneos
 
