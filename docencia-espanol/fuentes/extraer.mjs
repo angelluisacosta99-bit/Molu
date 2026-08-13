@@ -65,10 +65,14 @@ const md = await page.evaluate(() => {
       for (const ch of node.childNodes) {
         if (ch.nodeType === 3) s += ch.nodeValue;
         else if (ch.nodeType !== 1) continue;
-        else if (ch.matches?.("input.blank, select.blank-select")) {
+        else if (ch.matches?.("input.blank, select.blank-select, .vf-wrap")) {
           // La respuesta vive en el .reveal INMEDIATAMENTE posterior al hueco. Buscarlo con
           // querySelector sobre el padre devolvería siempre el primero — y en un párrafo
           // con varios huecos todos acabarían con la respuesta del primero.
+          //
+          // `.vf-wrap` es el hueco de verdadero/falso: su input real vive OCULTO dentro,
+          // así que el hueco es la envoltura, no el input. Al no descender por ella, el
+          // texto de los botones ("V", "F") no se cuela en la frase archivada.
           const rev = ch.nextElementSibling?.matches?.(".reveal") ? ch.nextElementSibling : null;
           const ans = clean(rev?.textContent).replace(/^→\s*/, "");
           answers.push(ans || "?");
