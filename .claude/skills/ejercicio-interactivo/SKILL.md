@@ -473,13 +473,28 @@ parezca más "controlable" desde JS — ya se demostró que rompe el caso más b
 - `docencia-espanol/fuentes/` — las transcripciones en texto plano de todo lo escaneado,
   con sus respuestas, más `extraer.mjs`, que las genera desde el artefacto publicado. Antes
   de pedirle fotos al profesor de un capítulo, **mira aquí**: puede que ya esté transcrito.
-- `docencia-espanol/fuentes/paginas.sh` — dado un PDF y un rango de páginas, saca el texto
-  con `pdftotext -layout`, renderiza cada página a JPEG para poder mirarla, y extrae las
-  imágenes incrustadas. Es la herramienta del paso 1 cuando el profesor adjunta el PDF.
-  Escribe fuera del repo a propósito: las páginas de un libro con copyright son material de
-  trabajo intermedio, no se versionan; lo que se archiva es la transcripción.
-  Lo que **no** hay en el contenedor: `tesseract`/OCR, `qpdf`, `mutool`, PyMuPDF. No hace
-  falta OCR para transcribir —se lee el render con `Read`, que además acierta donde
+- `docencia-espanol/fuentes/paginas.sh` — dado un PDF y un rango de páginas, diagnostica el
+  archivo (`pdffonts`, `pdfdetach`), saca el texto con `pdftotext -layout`, renderiza cada
+  página a JPEG para poder mirarla, y extrae las imágenes incrustadas. Es la herramienta del
+  paso 1 cuando el profesor adjunta el PDF. Escribe fuera del repo a propósito: las páginas
+  de un libro con copyright son material de trabajo intermedio, no se versionan; lo que se
+  archiva es la transcripción.
+- **`/mnt/skills/public/pdf-reading/SKILL.md`** — guía completa de lectura de PDF que viene
+  con el entorno pero **no aparece entre las skills activables**, así que hay que abrirla con
+  `Read`. Léela antes de pelearte con un PDF: cubre cosas que aquí se aprendieron a base de
+  fallar. Las dos que más valen: `pdffonts` dice de antemano si hay capa de texto (sin
+  fuentes = escaneado, no gastes tiempo con `pdftotext`) y si el encoding es `Custom` o
+  `Identity-H`, que **predice** que el texto extraído saldrá con caracteres cambiados aunque
+  parezca correcto — es exactamente lo que pasaba con el PDF de ПК Гонсалес (`tъ`/`йl` por
+  `tú`/`él`). Trae además `pdfdetach` para adjuntos y el aviso de que `pdfimages` no ve los
+  gráficos vectoriales. `paginas.sh` ya incorpora sus diagnósticos, pero la guía tiene más
+  (tablas con pdfplumber, campos de formulario, coste en tokens de rasterizar).
+- **Lo que NO funciona en este contenedor**, comprobado, para no volver a intentarlo: no hay
+  `tesseract` ni OCR, ni `qpdf`, ni `mutool`, ni `pdftk`. Y las librerías de Python para PDF
+  (`pypdf`, `pdfplumber`, PyMuPDF) **se instalan pero revientan al importarse** — el binding
+  de `cryptography` lanza un `PanicException` de Rust. O sea que de todo lo que propone
+  `pdf-reading`, aquí solo sirve la vía de línea de comandos de `poppler`, que es la que usa
+  `paginas.sh`. No hace falta OCR para transcribir —leer el render con `Read` acierta donde
   `pdftotext` se equivoca— pero sí impide generar un PDF con capa de texto buscable.
 - `PRODUCT.md` y `DESIGN.md` (raíz del repo) — el sistema de diseño compartido por todos los
   artefactos de esta biblioteca (paleta papel/tinta, tipografía, componentes). Cualquier

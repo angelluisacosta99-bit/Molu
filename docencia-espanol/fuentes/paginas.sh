@@ -55,6 +55,31 @@ echo "Páginas:  $DESDE-$HASTA"
 echo "Salida:   $OUT"
 echo
 
+# 0. Diagnóstico previo, tomado de la skill /mnt/skills/public/pdf-reading (ver SKILL.md).
+#    Dice de antemano qué esperar del texto, en vez de descubrirlo al leerlo mal.
+FUENTES=$(pdffonts "$PDF" 2>/dev/null | tail -n +3 || true)
+if [ -z "$FUENTES" ]; then
+  echo "· pdffonts: SIN FUENTES → escaneado / solo imagen."
+  echo "  pdftotext no va a devolver nada: transcribe mirando pagina-*.jpg."
+else
+  echo "· pdffonts: $(echo "$FUENTES" | wc -l) fuente(s)"
+  if echo "$FUENTES" | grep -qE 'Custom|Identity-H'; then
+    echo "  ⚠ encoding Custom/Identity-H → el texto extraído PUEDE salir con caracteres"
+    echo "    cambiados aunque parezca correcto. Comprueba contra pagina-*.jpg antes de"
+    echo "    copiar nada. (Visto de verdad: pdftotext devolvía «tъ»/«йl» donde la página"
+    echo "    ponía «tú»/«él».)"
+  fi
+fi
+
+# Adjuntos incrustados: raros en un libro, pero si los hay suelen traer justo lo que se
+# estaba buscando por otro lado, y comprobarlo cuesta un comando.
+ADJ=$(pdfdetach -list "$PDF" 2>/dev/null | head -1 || true)
+case "$ADJ" in
+  *"0 embedded files"*|"") ;;
+  *) echo "· pdfdetach: $ADJ  → extráelos con: pdfdetach -saveall -o <dir> \"$PDF\"" ;;
+esac
+echo
+
 # 1. Texto en orden de lectura. -layout es la diferencia entre una tabla legible y una
 #    ristra de celdas sueltas; sin él, una página con un gráfico incrustado mezcla las
 #    etiquetas del gráfico con el cuerpo del texto (pasó con el plano de metro de la 6A).
