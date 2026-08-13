@@ -318,6 +318,9 @@
     text-align: left; padding: 0.45rem 0.6rem; border-bottom: 1px solid var(--border);
   }
   table.exercise-table th { color: var(--pencil); font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.03em; }
+  /* Celda que el libro ya trae resuelta: se distingue del hueco sin parecer un acierto
+     (no usa el verde de "correcto", que significa otra cosa en esta página). */
+  table.exercise-table td.fixed-cell { color: var(--ink-soft); font-style: italic; }
   .table-wrap { overflow-x: auto; }
   .ref-table { margin-bottom: 0.9rem; }
   .ref-table td:first-child { color: var(--gold); font-weight: 600; text-transform: capitalize; }
@@ -637,10 +640,14 @@
           // — el renderizador hace makeInput(c.a[si], ...) y espera ese array ahí).
           num: 4, title: "{{EXERCISE_TITLE}}",
           instr: "{{EXERCISE_INSTRUCTIONS}}",
+          // ex.subjectLabel cambia el encabezado de la primera columna (por defecto "Sujeto").
+          // Una celda cuyo spec es una CADENA en vez de un array se pinta fija: es la que el
+          // libro ya trae resuelta, y no cuenta como hueco.
           type: "conjTable",
+          subjectLabel: "Sujeto",
           subjects: ["yo", "tú", "él/ella"],
           cols: [
-            { label: "Presente", a: [["hablo"], ["hablas"], ["habla"]] },
+            { label: "Presente", a: ["hablo", ["hablas"], ["habla"]] },
             { label: "Indefinido", a: [["hablé"], ["hablaste"], ["habló"]] }
           ]
         },
@@ -670,10 +677,13 @@
   const navDots = document.getElementById("navDots");
   const allInputs = []; // {el, spec}
 
+  // wide: true  -> input intermedio (una o dos palabras)
+  // wide: "full" -> input de frase entera, para los ejercicios de transformar oraciones:
+  //                 con el ancho normal la respuesta se escribe pero no se lee.
   function makeInput(spec, wide, label) {
     const inp = document.createElement("input");
     inp.type = "text";
-    inp.className = "blank" + (wide ? " wide" : "");
+    inp.className = "blank" + (wide === "full" ? " full" : wide ? " wide" : "");
     inp.autocomplete = "off";
     inp.autocapitalize = "off";
     inp.spellcheck = false;
@@ -882,7 +892,7 @@
         twrap.className = "table-wrap";
         const table = document.createElement("table");
         table.className = "exercise-table";
-        let thead = "<thead><tr><th>Sujeto</th>";
+        let thead = "<thead><tr><th>" + (ex.subjectLabel || "Sujeto") + "</th>";
         ex.cols.forEach(function (c) { thead += "<th>" + c.label + "</th>"; });
         thead += "</tr></thead>";
         table.innerHTML = thead;
@@ -894,11 +904,21 @@
           tr.appendChild(td0);
           ex.cols.forEach(function (c) {
             const td = document.createElement("td");
-            td.appendChild(makeInput(c.a[si], false, "Ej. " + ex.num + " " + subj + "/" + c.label));
-            const reveal = document.createElement("span");
-            reveal.className = "reveal";
-            td.appendChild(reveal);
-            allInputs[allInputs.length - 1].reveal = reveal;
+            const spec = c.a[si];
+            // Una cadena en vez de un array = celda que el libro ya trae resuelta: se pinta
+            // fija y no cuenta como hueco. Si se pusiera como hueco, el alumno tendría que
+            // "adivinar" algo que en su cuaderno está impreso, y el total de huecos dejaría
+            // de coincidir con lo que realmente hay que rellenar.
+            if (typeof spec === "string") {
+              td.textContent = spec;
+              td.className = "fixed-cell";
+            } else {
+              td.appendChild(makeInput(spec, false, "Ej. " + ex.num + " " + subj + "/" + c.label));
+              const reveal = document.createElement("span");
+              reveal.className = "reveal";
+              td.appendChild(reveal);
+              allInputs[allInputs.length - 1].reveal = reveal;
+            }
             tr.appendChild(td);
           });
           tbody.appendChild(tr);
