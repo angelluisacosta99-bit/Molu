@@ -32,7 +32,13 @@ PR #22 invertía el orden que PR #20 daba por bueno.
 
    1. **Mira primero `docencia-espanol/fuentes/`** (ver su README). Ahí están, en texto
       plano y con sus respuestas, todos los capítulos ya transcritos. Si el que necesitas
-      está, no pidas fotos ni vuelvas a transcribir: parte de ese archivo.
+      está, no pidas fotos ni vuelvas a transcribir: parte de ese archivo. Mira también
+      **`fuentes/pendientes/`**: ahí se deja el material de partida de un capítulo que se
+      preparó en una sesión y se construye en otra —el PDF adjunto no sobrevive al cambio
+      de sesión, el repositorio sí—. Si el capítulo que te piden está ahí, tienes ya el
+      texto, las respuestas, la transcripción del audio y los dibujos recortados, y no hace
+      falta el PDF. Al publicarlo, genera su archivo con `extraer.mjs` y **borra su carpeta
+      de `pendientes/`**, o quedarán dos versiones del mismo capítulo.
    2. **Si no está, baja el PDF entero a disco.** Lo que hace falta siempre es el archivo,
       no su texto: con él funciona todo `poppler`, y `docencia-espanol/fuentes/paginas.sh`
       saca de un tirón el diagnóstico, el texto en orden de lectura, la página renderizada
