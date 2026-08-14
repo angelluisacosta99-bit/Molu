@@ -113,6 +113,10 @@ página renderizada a JPEG, y las imágenes incrustadas a resolución original. 
 del repo: las páginas del libro son material intermedio con copyright, aquí solo se archiva
 la transcripción.
 
+La única excepción es `pendientes/`: ahí sí se guardan la página y sus recortes, porque
+son lo único que le quedará a la sesión que construya el capítulo cuando el PDF ya no
+esté. Se borran en cuanto el capítulo se publica.
+
 **Mira siempre el render antes de cerrar un capítulo**, aunque el texto haya salido
 perfecto. Hay cosas que el texto no puede representar y que cambian las respuestas: las
 líneas de un «relaciona», los ítems ya resueltos, lo rodeado a mano. La 6B se transcribió

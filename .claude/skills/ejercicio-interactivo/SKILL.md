@@ -298,10 +298,10 @@ no las deshagas sin querer al modificar la plantilla.
 - **El cuaderno de B1 también trae solucionario y transcripciones**, con el mismo reparto:
   **64-68 transcripciones, 69-76 soluciones** (las 52-63 son los textos de «Leer más», la
   76 son las soluciones de esas lecturas y la 77 es la contracubierta; el PDF tiene 77
-  páginas y su numeración coincide con la del libro, sin desfase). El índice del principio,
-  en la página 3, lo dice tal cual: fíate de él y confírmalo renderizando. Ojo: el índice del principio lista la
-  página en la que EMPIEZA cada unidad, no la de cada sección — la unidad 5 empieza en la
-  20, así que 5A está en la 20, 5B en la 21 y 5C en la 22. Este PDF sí tiene capa de texto,
+  páginas y su numeración coincide con la del libro, sin desfase). Lo dice tal cual el
+  índice de la página 3; aun así, confírmalo renderizando los límites. Ojo con una trampa
+  de ese índice: lista la página en la que EMPIEZA cada unidad, no la de cada sección — la
+  unidad 5 empieza en la 20, así que 5A está en la 20, 5B en la 21 y 5C en la 22. Este PDF sí tiene capa de texto,
   pero es OCR de ABBYY con codificación Custom y sale sucio («senala», «Buenos dlas»): vale
   para localizar en qué página está algo, no para copiar. Transcribe mirando la página.
 - **Dónde están las transcripciones y el solucionario del cuaderno de A1.** El PDF del
@@ -660,7 +660,9 @@ parezca más "controlable" desde JS — ya se demostró que rompe el caso más b
   archivo (`pdffonts`, `pdfdetach`), saca el texto con `pdftotext -layout`, renderiza cada
   página a JPEG para poder mirarla, y extrae las imágenes incrustadas. Es la herramienta del
   paso 1 cuando el profesor adjunta el PDF. Escribe fuera del repo a propósito: las páginas
-  de un libro con copyright son material de trabajo intermedio, no se versionan; lo que se
+  de un libro con copyright son material de trabajo intermedio, no se versionan (la única
+  excepción es `fuentes/pendientes/`, donde sí se guarda lo justo para poder construir un
+  capítulo en otra sesión, y que se borra en cuanto ese capítulo se publica); lo que se
   archiva es la transcripción.
 - **`/mnt/skills/public/pdf-reading/SKILL.md`** — guía completa de lectura de PDF que viene
   con el entorno pero **no aparece entre las skills activables**, así que hay que abrirla con

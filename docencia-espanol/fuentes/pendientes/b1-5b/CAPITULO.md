@@ -45,11 +45,15 @@ hombros, espalda, brazos, pecho, abdomen, piernas, caderas, muslos, tobillos, ta
 > músculos de sus *ojos*: sus *cejas*, sus *pestañas*… Sienta su *frente* relajada e imagine
 > que alguien está pasando despacio un cepillo muy suave por sus *cabellos*.
 >
-> Deje que cada parte de su cuerpo sea atraída por la gravedad: la *cabeza*, el *cuello*,
+> Deje que cada parte de su cuerpo sea atraída por la gravedad: la cabeza, el *cuello*,
 > los *hombros*, la *espalda*… Ahora cada parte de su cuerpo es muy pesada: los *brazos*, el
 > *pecho*, el *abdomen*… Sus *piernas* son cada vez más pesadas: sienta como poco a poco se
 > relajan sus *caderas*, sus *muslos*, sus *tobillos*… Sienta sus pies más y más relajados:
 > el *talón*, cada uno de los *dedos*… Cualquier tensión desaparece poco a poco…
+
+En la transcripción, la **cursiva marca las palabras que son respuesta**, y cada una va
+en cursiva solo la primera vez que se nombra: el audio repite «cabeza» y «pies», pero
+cuentan una sola vez. Por eso son 22 respuestas y no 24 — el libro las escribe igual.
 
 El audio (MP3) **no lo tenemos**. Se avisa en el enunciado, como en 6A, 6C y 7A.
 
