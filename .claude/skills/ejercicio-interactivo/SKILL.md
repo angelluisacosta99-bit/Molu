@@ -352,7 +352,13 @@ no las deshagas sin querer al modificar la plantilla.
   ocupa un tercio. Con `fit-content` el recuadro encoge hasta su contenido, y cuando ese
   contenido ya es ancho —una lista larga de opciones— se queda a lo ancho como antes, sin
   necesidad de distinguir casos. Medido tras el cambio: la sopa ocupa el 38 % del ancho
-  disponible, la tabla de gustos el 42 %, y las listas largas siguen al 100 %.
+  disponible, la tabla de gustos el 42 %, y las listas largas siguen al 100 %. El título del
+  recuadro (`.ref-label`) va centrado también: con la caja ya ajustada, una etiqueta pegada a
+  la esquina izquierda queda descolgada.
+- **Una fila con foto se centra entera, no solo la foto** (`.item-row:has(.foto-act)`):
+  número, imagen y casilla de escribir. Centrar solo la imagen deja el número y el hueco
+  pegados a la izquierda y la fila se lee descolocada — lo detectó el profesor en cuanto se
+  centró la foto sola.
 - **`item.img` pone una foto en la fila, y va DESPUÉS del número.** Al revés (foto y luego
   número) cada número queda debajo de su propia foto y pegado a la siguiente, y no se sabe a
   cuál se refiere. La foto se declara como campo del ítem, no como HTML dentro de `item.t`:
