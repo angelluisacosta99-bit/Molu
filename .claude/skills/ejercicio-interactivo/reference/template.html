@@ -209,7 +209,20 @@
     color: var(--ink-soft); font-family: -apple-system, sans-serif; display: block; margin-bottom: 0.3rem;
   }
   .exercise-ref .ref-options { display: flex; flex-wrap: wrap; gap: 0.4rem 0.9rem; }
+  /* Opciones que son frases enteras, no palabras sueltas: una por línea. En fila y con
+     nowrap, una sola opción larga se sale de la pantalla en el móvil y arrastra scroll
+     horizontal a TODA la página. */
+  .exercise-ref .ref-options.ref-list { display: block; }
+  .exercise-ref .ref-options.ref-list .ref-opt { display: block; white-space: normal; }
+  .exercise-ref .ref-options.ref-list .ref-opt + .ref-opt { margin-top: 0.3rem; }
   .exercise-ref .ref-opt { white-space: nowrap; }
+  @media (max-width: 560px) {
+    /* Red de seguridad: en pantalla estrecha ninguna opción se queda en nowrap. Va
+       DESPUÉS de la regla de arriba a propósito: misma especificidad, así que si se
+       escribe antes gana el nowrap y esto no hace nada (pasó, y no se vio porque el
+       ejercicio que lo destapó usaba además .ref-list, que sí tiene más peso). */
+    .exercise-ref .ref-opt { white-space: normal; }
+  }
 
   /* Ejercicio sin respuesta única (una encuesta, marcar algo en un plano, una redacción):
      se muestra porque está en el libro y el alumno tiene que poder verlo, pero no puntúa
@@ -532,6 +545,14 @@
     flex: 1 1 8em; width: auto; max-width: none; min-width: 6em; text-align: left;
   }
   .item-row.tail-blank .tail-text { flex: 0 1 auto; min-width: 0; }
+  /* Fila que acaba en los botones V/F: el texto se estira y empuja los botones al borde
+     derecho, así todos los pares quedan en la misma columna. */
+  .item-row.vf-tail {
+    display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 0.3rem;
+  }
+  .item-row.vf-tail .tail-text { flex: 1 1 auto; min-width: 0; }
+  .item-row.vf-tail .vf-wrap { flex: 0 0 auto; }
+  .item-row.vf-tail .reveal.show { flex-basis: 100%; margin-left: 0; }
   .item-row.tail-blank .reveal.show { flex-basis: 100%; margin-left: 0; }
 </style>
 
@@ -1024,6 +1045,23 @@
           // sentido, ni cuando la fila ya usa la columna de item.pre, ni cuando la fila
           // lleva foto: ahí el hueco va DEBAJO de la imagen (así lo pide el enunciado del
           // libro, «escribe debajo qué actividad es») y al volverse flex se subía a su lado.
+          // Fila que acaba en botones V/F: los botones se van al borde derecho, para que
+          // todos queden en la misma columna por larga que sea la frase. Sin esto, cada par
+          // de botones empieza donde acaba su frase y la lista se ve descuadrada.
+          if (!item.pre && !row.querySelector(".foto-act")) {
+            const vfw = row.querySelector(".vf-wrap");
+            if (vfw && row.querySelectorAll("input.blank").length === 1) {
+              let cola = "", n = vfw.nextSibling;
+              while (n) { cola += n.textContent || ""; n = n.nextSibling; }
+              if (/^[\s.,;:!?¿¡…"»)]*$/.test(cola)) {
+                row.classList.add("vf-tail");
+                const head = document.createElement("span");
+                head.className = "tail-text";
+                while (row.firstChild && row.firstChild !== vfw) head.appendChild(row.firstChild);
+                row.insertBefore(head, vfw);
+              }
+            }
+          }
           if (!item.pre && !row.querySelector(".foto-act")) {
             const huecos = row.querySelectorAll("input.blank");
             if (huecos.length === 1) {
@@ -1192,6 +1230,23 @@
           // sentido, ni cuando la fila ya usa la columna de item.pre, ni cuando la fila
           // lleva foto: ahí el hueco va DEBAJO de la imagen (así lo pide el enunciado del
           // libro, «escribe debajo qué actividad es») y al volverse flex se subía a su lado.
+          // Fila que acaba en botones V/F: los botones se van al borde derecho, para que
+          // todos queden en la misma columna por larga que sea la frase. Sin esto, cada par
+          // de botones empieza donde acaba su frase y la lista se ve descuadrada.
+          if (!item.pre && !row.querySelector(".foto-act")) {
+            const vfw = row.querySelector(".vf-wrap");
+            if (vfw && row.querySelectorAll("input.blank").length === 1) {
+              let cola = "", n = vfw.nextSibling;
+              while (n) { cola += n.textContent || ""; n = n.nextSibling; }
+              if (/^[\s.,;:!?¿¡…"»)]*$/.test(cola)) {
+                row.classList.add("vf-tail");
+                const head = document.createElement("span");
+                head.className = "tail-text";
+                while (row.firstChild && row.firstChild !== vfw) head.appendChild(row.firstChild);
+                row.insertBefore(head, vfw);
+              }
+            }
+          }
           if (!item.pre && !row.querySelector(".foto-act")) {
             const huecos = row.querySelectorAll("input.blank");
             if (huecos.length === 1) {

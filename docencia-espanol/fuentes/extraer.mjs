@@ -209,8 +209,10 @@ const md = await page.evaluate(() => {
             }
             continue;
           }
+          // Se descartan los hijos sin texto (una <img> dentro del recuadro, por ejemplo):
+          // si no, el archivo acaba con un separador " · " suelto al final.
           push("> **" + clean(lab.textContent) + ":** " +
-            [...sib.children].map((c) => clean(c.textContent)).join(" · "));
+            [...sib.children].map((c) => clean(c.textContent)).filter(Boolean).join(" · "));
         }
         const ws = ref.querySelector(".wordsearch");
         if (ws) { push(); push("```"); push(ws.textContent.trim()); push("```"); }
@@ -279,9 +281,11 @@ const md = await page.evaluate(() => {
         push("**" + clean(tr.querySelector("summary")?.textContent) + "**");
         push();
         for (const line of tr.querySelectorAll(".transcript-body .line")) {
+          // No toda transcripción es un diálogo: la de la 6C es una sola línea sin hablante,
+          // y con el prefijo vacío salía un "****" suelto delante del texto.
           const who = clean(line.querySelector(".who")?.textContent);
           const said = clean(line.textContent).slice(who.length).trim();
-          push("> **" + who + "** " + said);
+          push(who ? "> **" + who + "** " + said : "> " + said);
         }
         const note = clean(tr.querySelector(".transcript-note")?.textContent);
         if (note) { push(); push("*" + note + "*"); }

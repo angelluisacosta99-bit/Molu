@@ -93,6 +93,11 @@ b. ranchera → **4**
 c. flamenco → **2**
 d. salsa → **1**
 
+**Ver la transcripción del audio (ábrela solo después de responder)**
+
+> Música de salsa, flamenco, tango y ranchera.
+> Así viene la transcripción en el cuaderno (página 55): solo dice en qué orden suenan los cuatro fragmentos, que es justo lo que pide el ejercicio.
+
 #### Ej. 8 — Música latina
 
 *Completa el texto con las palabras del recuadro. La primera la trae resuelta el libro, por eso «cultura» aparece tachada.*
