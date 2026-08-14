@@ -290,10 +290,15 @@ no las deshagas sin querer al modificar la plantilla.
   preguntas (arriba se leería antes de responder). Nativo y no un desplegable a mano: sale
   accesible por teclado y sin JS. `ex.transcriptLabel` cambia el texto del resumen — usa uno
   que avise, del tipo "ábrela solo después de responder".
-- **Las transcripciones del cuaderno de A1 SÍ son texto extraíble del PDF.** Aunque las
-  páginas de ejercicios de ese PDF salgan desordenadas (ver más arriba), su sección
-  **«Transcripciones»** y su **solucionario** se leen perfectamente con el conector de
-  Drive. Antes de pedirle al profesor una foto del solucionario o el audio de una unidad,
+- **El texto que devuelve el conector de Drive de un PDF escaneado es OCR suyo, no una capa
+  de texto.** El cuaderno de A1 no tiene fuentes (`pdffonts` vacío), y aun así
+  `read_file_content` devuelve texto: lo está reconociendo él. Eso explica de una vez las
+  dos rarezas que se le achacaban al PDF —el orden de lectura que no coincide con el visual
+  y los caracteres cambiados— y significa que **ese texto no vale para transcribir**, solo
+  para localizar y para leer de corrido. Baja el PDF y mira las páginas.
+- **Aun siendo OCR, la sección «Transcripciones» y el solucionario del cuaderno de A1 salen
+  lo bastante limpios para usarlos como referencia** (son texto corrido, sin gráficos que
+  desordenen la lectura). Antes de pedirle al profesor una foto del solucionario o el audio de una unidad,
   **busca ahí**: en la 6A, el PDF confirmó por sí solo tanto las respuestas (`3 1 V 2 F,
   3 V`) como el número de pista. Ojo con un detalle que despista: la sección de
   transcripciones titula las unidades con el nombre que llevan en el **libro del alumno**,

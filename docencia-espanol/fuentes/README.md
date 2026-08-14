@@ -32,6 +32,7 @@ el archivo correspondiente, no editarlo a mano.
 | `nuevo-espanol-en-marcha/a1/unidades-1-8_presente-gerundio-indefinido.md` | Nuevo Español en Marcha 1 (A1), unidades 1-8 | — | **elaboradas** para el ejercicio |
 | `nuevo-espanol-en-marcha/a1/cuaderno-unidad6a_como-se-va-a-goya.md` | Nuevo Español en Marcha 1 (A1), **cuaderno de ejercicios**, unidad 6A | 28 | **solucionario oficial** (ejercicios 1-3); el ejercicio 4 es de marcar un plano, sin respuesta de texto |
 | `nuevo-espanol-en-marcha/a1/cuaderno-unidad6b_cierra-la-ventana.md` | Nuevo Español en Marcha 1 (A1), **cuaderno de ejercicios**, unidad 6B | 29 | **solucionario oficial** (los cinco ejercicios); dos respuestas del ej. 1 salen ilegibles y se deducen por descarte |
+| `nuevo-espanol-en-marcha/a1/cuaderno-unidad6c_mi-barrio-es-tranquilo.md` | Nuevo Español en Marcha 1 (A1), **cuaderno de ejercicios**, unidad 6C | 30-31 | **solucionario oficial** (los nueve ejercicios; el 6 es actividad libre) |
 | `nuevo-espanol-en-marcha/b1/repaso-b1_secciones-1-12.md` | Nuevo Español en Marcha 3 (B1), repaso final | 140-163 | **deducidas**, sin solucionario |
 | `nuevo-espanol-en-marcha/b2/12b_turismo-cultural.md` | Nuevo Español en Marcha 4 (B2), unidad 12B | 12B | **solucionario oficial** del libro |
 | `nuevo-espanol-en-marcha/b2/12c_perifrasis-verbales.md` | Nuevo Español en Marcha 4 (B2), unidad 12C | 12C | **solucionario oficial** del libro |
@@ -118,8 +119,16 @@ el archivo excede lo que admite el conector de Drive. Por eso existe esta carpet
 haría falta fotografiarlos: con el PDF adjunto, `paginas.sh` renderiza cada página y se
 transcribe mirándola. Si alguna vez hay que revisarlos, ese es el camino.
 
-El cuaderno de ejercicios de A1 (`Nuevo_espan_ol_en_marcha_1_A1_Cuaderno_d.pdf`) es distinto:
-**sí tiene texto extraíble** y está en el Drive del profesor, pero el texto sale desordenado
-al extraerlo — se mezcla con las etiquetas del plano de metro incrustado en la página, y el
-orden de lectura del PDF no coincide con el orden visual. Por eso la unidad 6A también se
-transcribió a partir de una foto de la página, en vez de confiar en el texto del PDF.
+El cuaderno de ejercicios de A1 (`Nuevo_espan_ol_en_marcha_1_A1_Cuaderno_d.pdf`) **tampoco
+tiene capa de texto**: `pdffonts` no devuelve ninguna fuente, es un escaneado igual que los
+anteriores. Durante un tiempo aquí puso lo contrario, porque el conector de Drive sí
+devolvía texto de ese PDF y se dio por hecho que lo estaba extrayendo. En realidad lo que
+devuelve es **su propio OCR**, y eso explica de golpe las dos rarezas que se le achacaban:
+que el orden de lectura no coincidiera con el visual (se mezclaba con las etiquetas del
+plano de metro de la 6A) y que aparecieran caracteres cambiados.
+
+Consecuencia práctica: de este cuaderno **nunca hay que fiarse del texto del conector para
+transcribir**. Se baja el PDF, se renderizan las páginas con `paginas.sh` y se leen. Así se
+hizo la 6C, y mirar la página descubrió tres cosas que el OCR no mostraba: que el ejercicio
+4 trae resuelto su primer ítem, que el 7 pide escribir el número del fragmento junto a cada
+ritmo (y no al revés) y que en el recuadro del 8 la palabra «cultura» va tachada.
