@@ -130,24 +130,11 @@
     overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
   }
   select.blank-select:focus { outline: none; border-bottom-color: var(--focus); }
-  /* Fila que acaba en un desplegable: el desplegable se estira hasta el borde derecho, para
-     que todas las filas del ejercicio terminen en el mismo sitio. Sin esto, unas frases
-     dejaban el desplegable donde acababa el texto y otras lo bajaban de línea, y la lista
-     se veía descuadrada. Es la misma regla que en los demás capítulos se aplica a las
-     casillas de texto (.tail-blank) y a los botones V/F (.vf-tail).
-     Se conserva el max-width: 100% de arriba: sin él, un desplegable con opciones largas
-     se dibuja tan ancho como su opción más larga y desborda la pantalla en el móvil. */
-  .item-row.sel-tail {
-    display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 0.3rem;
-  }
-  .item-row.sel-tail .tail-text { flex: 0 1 auto; min-width: 0; }
   /* Turnos de un diálogo dentro de un ítem: cada persona en su línea. */
   .turno { display: block; }
   /* El primer turno va pegado al número: si es bloque, el «2.» se queda solo arriba. */
   .item-letter + .turno { display: inline; }
   .turno b { color: var(--gold); margin-right: 0.35rem; }
-  .item-row.sel-tail select.blank-select { flex: 1 1 10em; width: auto; min-width: 8em; }
-  .item-row.sel-tail .reveal.show { flex-basis: 100%; margin-left: 0; }
   select.blank-select.correct { background: var(--good-bg); border-bottom-color: var(--good); color: var(--good); font-weight: 600; }
   select.blank-select.incorrect { background: var(--bad-bg); border-bottom-color: var(--bad); color: var(--bad); }
   .reveal { font-size: 0.82rem; color: var(--good); font-style: italic; margin-left: 0.3rem; display: none; }
@@ -648,28 +635,6 @@
       updateScore();
     });
   })();
-
-  // Los cinco ejercicios de este capítulo son a medida y cada uno arma sus filas por su
-  // cuenta, así que la alineación se aplica al final, sobre lo ya construido: si la fila
-  // acaba en un desplegable (solo puntuación detrás), el número y la frase se envuelven en
-  // un único elemento y el desplegable se estira hasta el borde derecho.
-  document.querySelectorAll(".item-row").forEach(function (row) {
-    const sels = row.querySelectorAll("select.blank-select");
-    if (sels.length !== 1) return;
-    const sel = sels[0];
-    let cola = "", n = sel.nextSibling;
-    while (n) {
-      // El .reveal va detrás del desplegable pero está vacío hasta que se corrige.
-      if (!(n.nodeType === 1 && n.classList.contains("reveal"))) cola += n.textContent || "";
-      n = n.nextSibling;
-    }
-    if (!/^[\s.,;:!?¿¡…"»)]*$/.test(cola)) return;
-    row.classList.add("sel-tail");
-    const head = document.createElement("span");
-    head.className = "tail-text";
-    while (row.firstChild && row.firstChild !== sel) head.appendChild(row.firstChild);
-    row.insertBefore(head, sel);
-  });
 
   document.getElementById("totalLabel").textContent = allFields.length;
   document.getElementById("scoreTotal").textContent = allFields.length;
