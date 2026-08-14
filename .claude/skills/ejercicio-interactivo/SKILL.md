@@ -329,6 +329,26 @@ no las deshagas sin querer al modificar la plantilla.
   delata cuál es**: en 6B, el ítem resuelto del ejercicio 1 es una **línea dibujada** entre
   las dos columnas, que en el texto no aparece por ningún lado — se descubrió al ver la foto
   de la página. Si el capítulo viene solo del PDF, sospecha del ítem 1 de cada ejercicio.
+- **Los botones no son solo para V/F: `vf` acepta un par cualquiera, y se puede aplicar a un
+  solo hueco.** `vf: true` da V/F en todos los huecos del ítem; `vf: ["regular","irregular"]`
+  da ese par; y `vf: { 1: [...] }` lo aplica **solo al hueco {1}**. Esa tercera forma es la
+  que hace falta cuando un ítem mezcla escribir y elegir —«hablar → [imperativo]
+  [regular|irregular]»—, y nació de un fallo real: con `vf` declarado en el ítem, el hueco
+  del imperativo también se convirtió en botones. Si un ejercicio del libro pide repartir
+  cosas en dos columnas, esto es lo que traduce esa decisión a la pantalla.
+- **`item.img` pone una foto en la fila, y va DESPUÉS del número.** Al revés (foto y luego
+  número) cada número queda debajo de su propia foto y pegado a la siguiente, y no se sabe a
+  cuál se refiere. La foto se declara como campo del ítem, no como HTML dentro de `item.t`:
+  meter marcado en el texto de los enunciados abre una puerta que no hace falta abrir.
+- **Un «relaciona» donde un ítem admite varias letras: genera las permutaciones.** En
+  Practica más 3 el aceite está en tres platos. `norm()` ya se come las comas, así que basta
+  con generar cada orden con y sin espacio (la función `combos()` de ese capítulo).
+- **Una sopa de letras necesita una pista por hueco, y comprobar la rejilla por programa.**
+  Los huecos se corrigen en un orden fijo, así que sin pista cualquier palabra valdría en
+  cualquier hueco: se añaden las dos primeras letras (y se dice en el enunciado que es un
+  añadido del artefacto). Y antes de darla por buena, **busca cada palabra del solucionario
+  en la rejilla con un script, en las ocho direcciones** — en Practica más 3 «LECHUGA» va
+  hacia la izquierda y a ojo no aparecía.
 - **Cuando el ejercicio numere sus opciones con letras, numera los ítems (`ex.numbered`).**
   En un «relaciona» con opciones a-j, dejar los ítems como a., b., c. crea dos series de
   letras que no significan lo mismo en la misma tarjeta. El libro numera los ítems 1-10:

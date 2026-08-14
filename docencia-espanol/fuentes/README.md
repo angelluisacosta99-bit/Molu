@@ -33,6 +33,7 @@ el archivo correspondiente, no editarlo a mano.
 | `nuevo-espanol-en-marcha/a1/cuaderno-unidad6a_como-se-va-a-goya.md` | Nuevo Español en Marcha 1 (A1), **cuaderno de ejercicios**, unidad 6A | 28 | **solucionario oficial** (ejercicios 1-3); el ejercicio 4 es de marcar un plano, sin respuesta de texto |
 | `nuevo-espanol-en-marcha/a1/cuaderno-unidad6b_cierra-la-ventana.md` | Nuevo Español en Marcha 1 (A1), **cuaderno de ejercicios**, unidad 6B | 29 | **solucionario oficial** (los cinco ejercicios); dos respuestas del ej. 1 salen ilegibles y se deducen por descarte |
 | `nuevo-espanol-en-marcha/a1/cuaderno-unidad6c_mi-barrio-es-tranquilo.md` | Nuevo Español en Marcha 1 (A1), **cuaderno de ejercicios**, unidad 6C | 30-31 | **solucionario oficial** (los nueve ejercicios; el 6 es actividad libre) |
+| `nuevo-espanol-en-marcha/a1/practica-mas-3_unidades-5-6.md` | Nuevo Español en Marcha 1 (A1), **cuaderno de ejercicios**, «Practica más 3» (repaso de las unidades 5 y 6) | 32-33 | **solucionario oficial** (los ocho ejercicios) |
 | `nuevo-espanol-en-marcha/b1/repaso-b1_secciones-1-12.md` | Nuevo Español en Marcha 3 (B1), repaso final | 140-163 | **deducidas**, sin solucionario |
 | `nuevo-espanol-en-marcha/b2/12b_turismo-cultural.md` | Nuevo Español en Marcha 4 (B2), unidad 12B | 12B | **solucionario oficial** del libro |
 | `nuevo-espanol-en-marcha/b2/12c_perifrasis-verbales.md` | Nuevo Español en Marcha 4 (B2), unidad 12C | 12C | **solucionario oficial** del libro |
