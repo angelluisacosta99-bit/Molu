@@ -8,6 +8,7 @@
       "mcp__Google_Drive__read_file_content",
       "mcp__Google_Drive__get_file_permissions",
       "Artifact"
-    ]
+    ],
+    "defaultMode": "dontAsk"
   }
 }
