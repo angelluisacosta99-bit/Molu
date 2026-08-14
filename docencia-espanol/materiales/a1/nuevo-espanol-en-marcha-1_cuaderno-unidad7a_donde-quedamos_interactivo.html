@@ -220,10 +220,6 @@
   .exercise-ref .ref-options.ref-list { display: block; }
   .exercise-ref .ref-options.ref-list .ref-opt { display: block; white-space: normal; }
   .exercise-ref .ref-options.ref-list .ref-opt + .ref-opt { margin-top: 0.3rem; }
-  @media (max-width: 560px) {
-    /* Red de seguridad: en pantalla estrecha ninguna opción se queda en nowrap. */
-    .exercise-ref .ref-opt { white-space: normal; }
-  }
   /* Texto de lectura dentro del recuadro de referencia (ej. 7). A diferencia de un banco
      de opciones, aquí el recuadro SÍ debe ocupar el ancho de la tarjeta: un párrafo largo
      en una caja estrecha se lee fatal. */
@@ -233,6 +229,13 @@
   .lectura p:last-of-type { margin-bottom: 0.9rem; }
   .lectura img.foto-act { display: block; max-width: min(100%, 380px); border-radius: 8px; }
   .exercise-ref .ref-opt { white-space: nowrap; }
+  @media (max-width: 560px) {
+    /* Red de seguridad: en pantalla estrecha ninguna opción se queda en nowrap. Va
+       DESPUÉS de la regla de arriba a propósito: misma especificidad, así que si se
+       escribe antes gana el nowrap y esto no hace nada (pasó, y no se vio porque el
+       ejercicio que lo destapó usaba además .ref-list, que sí tiene más peso). */
+    .exercise-ref .ref-opt { white-space: normal; }
+  }
 
   /* Ejercicio sin respuesta única (una encuesta, marcar algo en un plano, una redacción):
      se muestra porque está en el libro y el alumno tiene que poder verlo, pero no puntúa

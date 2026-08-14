@@ -215,11 +215,14 @@
   .exercise-ref .ref-options.ref-list { display: block; }
   .exercise-ref .ref-options.ref-list .ref-opt { display: block; white-space: normal; }
   .exercise-ref .ref-options.ref-list .ref-opt + .ref-opt { margin-top: 0.3rem; }
+  .exercise-ref .ref-opt { white-space: nowrap; }
   @media (max-width: 560px) {
-    /* Red de seguridad: en pantalla estrecha ninguna opción se queda en nowrap. */
+    /* Red de seguridad: en pantalla estrecha ninguna opción se queda en nowrap. Va
+       DESPUÉS de la regla de arriba a propósito: misma especificidad, así que si se
+       escribe antes gana el nowrap y esto no hace nada (pasó, y no se vio porque el
+       ejercicio que lo destapó usaba además .ref-list, que sí tiene más peso). */
     .exercise-ref .ref-opt { white-space: normal; }
   }
-  .exercise-ref .ref-opt { white-space: nowrap; }
 
   /* Ejercicio sin respuesta única (una encuesta, marcar algo en un plano, una redacción):
      se muestra porque está en el libro y el alumno tiene que poder verlo, pero no puntúa
