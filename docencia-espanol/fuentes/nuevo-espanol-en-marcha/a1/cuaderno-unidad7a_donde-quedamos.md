@@ -39,7 +39,11 @@ k. DANIEL: Estupendo. Nos vemos allí a las cinco. → **5**
 
 *Imagínate que eres Ricardo o Carmen. Escribe diferentes razones por las que no puedes quedar para salir. En el libro es actividad libre: no se corrige, escribe todas las que se te ocurran.*
 
-> Algunas maneras de decir que no puedes:Lo siento, es que tengo que… (trabajar, estudiar, cuidar a mi hermano).No puedo, voy a… (cenar con unos amigos, ir al médico).Ese día no me viene bien, ¿te parece bien…?Escribe tus frases en el cuaderno o en el móvil y enséñaselas a tu profesor en clase.
+> Algunas maneras de decir que no puedes:
+> Lo siento, es que tengo que… (trabajar, estudiar, cuidar a mi hermano).
+> No puedo, voy a… (cenar con unos amigos, ir al médico).
+> Ese día no me viene bien, ¿te parece bien…?
+> Escribe tus frases en el cuaderno o en el móvil y enséñaselas a tu profesor en clase.
 
 #### Ej. 3 — Carolina y Pedro en Radio Centro
 

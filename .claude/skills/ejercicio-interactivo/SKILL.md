@@ -289,6 +289,13 @@ no las deshagas sin querer al modificar la plantilla.
   y si de verdad no aparece, dilo en el enunciado y pídesela al profesor, pero **nunca la
   inventes**: una transcripción escrita por Claude puesta como si fuera la del libro es
   material falso, y encima el alumno la usaría para autocorregirse.
+- **El cuaderno de B1 también trae solucionario y transcripciones**, con el mismo reparto:
+  **54-55 y 64-68 transcripciones, 69-77 soluciones** (el PDF de B1 tiene 77 páginas y su
+  numeración coincide con la del libro, sin desfase). Ojo: el índice del principio lista la
+  página en la que EMPIEZA cada unidad, no la de cada sección — la unidad 5 empieza en la
+  20, así que 5A está en la 20, 5B en la 21 y 5C en la 22. Este PDF sí tiene capa de texto,
+  pero es OCR de ABBYY con codificación Custom y sale sucio («senala», «Buenos dlas»): vale
+  para localizar en qué página está algo, no para copiar. Transcribe mirando la página.
 - **Dónde están las transcripciones y el solucionario del cuaderno de A1.** El PDF del
   cuaderno los trae al final, y son páginas del propio PDF, no algo que haya que pedir:
   **54-55 «Transcripciones», 56-61 «Soluciones», 62-64 el glosario.** Renderízalas con

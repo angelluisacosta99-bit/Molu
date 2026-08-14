@@ -36,6 +36,7 @@ el archivo correspondiente, no editarlo a mano.
 | `nuevo-espanol-en-marcha/a1/practica-mas-3_unidades-5-6.md` | Nuevo Español en Marcha 1 (A1), **cuaderno de ejercicios**, «Practica más 3» (repaso de las unidades 5 y 6) | 32-33 | **solucionario oficial** (los ocho ejercicios) |
 | `nuevo-espanol-en-marcha/a1/cuaderno-unidad7a_donde-quedamos.md` | Nuevo Español en Marcha 1 (A1), **cuaderno de ejercicios**, unidad 7A | 34-35 | **solucionario oficial** (páginas 59-60 del propio cuaderno). El ej. 2 es actividad libre; los ej. 1 y 3 son de audio (pistas 9 y 10) y llevan su transcripción, tomada de las páginas 54-55 |
 | `nuevo-espanol-en-marcha/b1/repaso-b1_secciones-1-12.md` | Nuevo Español en Marcha 3 (B1), repaso final | 140-163 | **deducidas**, sin solucionario |
+| `nuevo-espanol-en-marcha/b1/cuaderno-unidad5a_por-que-soy-vegetariano.md` | Nuevo Español en Marcha 3 (B1), **cuaderno de ejercicios**, unidad 5A | 20 | **solucionario oficial** (página 71 del propio cuaderno). El ej. 3 lo da el libro como «posibles respuestas», así que en el artefacto no puntúa y las del libro van en un plegable |
 | `nuevo-espanol-en-marcha/b2/12b_turismo-cultural.md` | Nuevo Español en Marcha 4 (B2), unidad 12B | 12B | **solucionario oficial** del libro |
 | `nuevo-espanol-en-marcha/b2/12c_perifrasis-verbales.md` | Nuevo Español en Marcha 4 (B2), unidad 12C | 12C | **solucionario oficial** del libro |
 
