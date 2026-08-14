@@ -227,7 +227,18 @@
     color: var(--ink-soft); font-family: -apple-system, sans-serif; display: block; margin-bottom: 0.3rem;
   }
   .exercise-ref .ref-options { display: flex; flex-wrap: wrap; gap: 0.4rem 0.9rem; }
+  /* Opciones que son frases enteras, no palabras sueltas: una por línea. */
+  .exercise-ref .ref-options.ref-list { display: block; }
+  .exercise-ref .ref-options.ref-list .ref-opt { display: block; white-space: normal; }
+  .exercise-ref .ref-options.ref-list .ref-opt + .ref-opt { margin-top: 0.3rem; }
   .exercise-ref .ref-opt { white-space: nowrap; }
+  @media (max-width: 560px) {
+    /* Red de seguridad: en pantalla estrecha ninguna opción se queda en nowrap. Va
+       DESPUÉS de la regla de arriba a propósito: misma especificidad, así que escrita
+       antes gana el nowrap y esto no hace nada. Una sola opción larga en nowrap
+       arrastra scroll horizontal a TODA la página, no solo al recuadro. */
+    .exercise-ref .ref-opt { white-space: normal; }
+  }
   .exercise-ref img { max-width: 100%; border-radius: 8px; display: block; margin: 0.5rem auto 0; }
   .exercise-ref .ref-opt img {
     display: inline-block; margin: 0; vertical-align: middle;

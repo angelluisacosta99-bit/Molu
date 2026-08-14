@@ -32,7 +32,8 @@
 *Elige el valor correcto según el recuadro de gramática.*
 
 1. Llevo esperando mi oportunidad laboral desde que terminé mis estudios. → Continuidad (ejemplo)
-2. A ¿Cuántos kilómetros hay desde tu casa al colegio? B Vienen a ser 3 kilómetros y medio. → **Aproximación**
+2. A ¿Cuántos kilómetros hay desde tu casa al colegio?
+   B Vienen a ser 3 kilómetros y medio. → **Aproximación**
 3. Cuando hablé con ella, ya llevaba recorrida la cuarta parte del camino. → **Interrupción y terminación**
 4. No vuelvas a insultarme delante de mis superiores. No te lo permito. → **Repetición**
 5. Debes estudiar más si quieres tener una buena calificación. → **Obligación o necesidad**

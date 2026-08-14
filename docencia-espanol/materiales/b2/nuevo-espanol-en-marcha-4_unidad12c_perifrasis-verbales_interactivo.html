@@ -130,6 +130,11 @@
     overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
   }
   select.blank-select:focus { outline: none; border-bottom-color: var(--focus); }
+  /* Turnos de un diálogo dentro de un ítem: cada persona en su línea. */
+  .turno { display: block; }
+  /* El primer turno va pegado al número: si es bloque, el «2.» se queda solo arriba. */
+  .item-letter + .turno { display: inline; }
+  .turno b { color: var(--gold); margin-right: 0.35rem; }
   select.blank-select.correct { background: var(--good-bg); border-bottom-color: var(--good); color: var(--good); font-weight: 600; }
   select.blank-select.incorrect { background: var(--bad-bg); border-bottom-color: var(--bad); color: var(--bad); }
   .reveal { font-size: 0.82rem; color: var(--good); font-style: italic; margin-left: 0.3rem; display: none; }
@@ -485,7 +490,9 @@
     const cats = ["Continuidad", "Interrupción y terminación", "Obligación o necesidad", "Probabilidad o suposición", "Repetición", "Aproximación"];
     const items = [
       { t: "Llevo esperando mi oportunidad laboral desde que terminé mis estudios.", given: "Continuidad" },
-      { t: "A ¿Cuántos kilómetros hay desde tu casa al colegio? B Vienen a ser 3 kilómetros y medio.", a: "Aproximación" },
+      // Son dos personas distintas: van en líneas separadas, con el turno marcado, no
+      // seguidas en la misma línea (misma corrección que se hizo en los diálogos de A1).
+      { t: '<span class="turno"><b>A</b> ¿Cuántos kilómetros hay desde tu casa al colegio?</span><span class="turno"><b>B</b> Vienen a ser 3 kilómetros y medio.</span>', a: "Aproximación" },
       { t: "Cuando hablé con ella, ya llevaba recorrida la cuarta parte del camino.", a: "Interrupción y terminación" },
       { t: "No vuelvas a insultarme delante de mis superiores. No te lo permito.", a: "Repetición" },
       { t: "Debes estudiar más si quieres tener una buena calificación.", a: "Obligación o necesidad" },

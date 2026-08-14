@@ -289,6 +289,13 @@ no las deshagas sin querer al modificar la plantilla.
   y si de verdad no aparece, dilo en el enunciado y pídesela al profesor, pero **nunca la
   inventes**: una transcripción escrita por Claude puesta como si fuera la del libro es
   material falso, y encima el alumno la usaría para autocorregirse.
+- **El cuaderno de B1 también trae solucionario y transcripciones**, con el mismo reparto:
+  **54-55 y 64-68 transcripciones, 69-77 soluciones** (el PDF de B1 tiene 77 páginas y su
+  numeración coincide con la del libro, sin desfase). Ojo: el índice del principio lista la
+  página en la que EMPIEZA cada unidad, no la de cada sección — la unidad 5 empieza en la
+  20, así que 5A está en la 20, 5B en la 21 y 5C en la 22. Este PDF sí tiene capa de texto,
+  pero es OCR de ABBYY con codificación Custom y sale sucio («senala», «Buenos dlas»): vale
+  para localizar en qué página está algo, no para copiar. Transcribe mirando la página.
 - **Dónde están las transcripciones y el solucionario del cuaderno de A1.** El PDF del
   cuaderno los trae al final, y son páginas del propio PDF, no algo que haya que pedir:
   **54-55 «Transcripciones», 56-61 «Soluciones», 62-64 el glosario.** Renderízalas con
@@ -436,6 +443,36 @@ no las deshagas sin querer al modificar la plantilla.
   número) cada número queda debajo de su propia foto y pegado a la siguiente, y no se sabe a
   cuál se refiere. La foto se declara como campo del ítem, no como HTML dentro de `item.t`:
   meter marcado en el texto de los enunciados abre una puerta que no hace falta abrir.
+- **Muchos dibujos pequeños van en rejilla, no en columna** (`.items:has(.foto-act)` con
+  `grid-template-columns: repeat(auto-fill, minmax(140px, 1fr))`). Los 18 alimentos de la 5A
+  en una sola columna eran una tira interminable para un ejercicio que en el libro cabe en
+  media página; con 140 px de mínimo salen cuatro por fila en el ordenador y dos en el
+  móvil, sin tocar nada más. Y dales a todos la **misma caja**
+  (`width: 100%; height: 100px; object-fit: contain`): son de proporciones muy distintas y,
+  a su ancho natural, unos se salen de su celda y los números quedan a distinta altura.
+  Ojo con la diferencia: esto es para dibujos pequeños de vocabulario; las **fotografías**
+  grandes de una actividad (Practica más 3) siguen yendo una por fila.
+- **Al recortar dibujos de una página escaneada, no uses bandas de posición fija.** En la 5A
+  la primera tanda salió con el plato del filete partido por la mitad: en dos de las seis
+  filas los dibujos casi se tocan y la banda fija los cortaba. Detecta las separaciones por
+  **columnas sin tinta** (con una separación mínima pequeña, ~14 px: subirla vuelve a fundir
+  dibujos vecinos), recorta el blanco sobrante de cada uno y **monta una hoja de contacto
+  con los recortes y míralos** antes de incrustarlos. Es la única forma de ver que están
+  enteros y que cada uno corresponde a la respuesta que dice el solucionario.
+- **Un salto de línea justo antes del hueco significa «esta respuesta va en su propia
+  línea».** La detección de hueco-de-cola lo respeta y no estira la casilla: si lo hace,
+  queda flotando a media altura, ni en línea ni debajo. Es el caso de los ejercicios de
+  «construye la frase», donde el enunciado va arriba y la raya de respuesta debajo, como en
+  el libro.
+- **Si el libro marca las respuestas como «posibles respuestas», el ejercicio no puntúa.**
+  Corregirlo contra una sola solución marcaría en rojo respuestas correctas. Va como
+  `type: "open"` con los enunciados a la vista, las del solucionario en un plegable para
+  comparar, y —esto es lo que lo salva de ser un ejercicio muerto— **una nota con la regla
+  que se está practicando** (en la 5A: después de *para que*, subjuntivo; después de *para*,
+  infinitivo), para que el alumno pueda autocorregirse aunque su frase no sea la del libro.
+- **Alinear los desplegables: probado y descartado.** Se llegó a estirar los `<select>` de
+  12C hasta el borde derecho, igual que las casillas de texto y los botones V/F. El profesor
+  lo vio y lo rechazó: los desplegables no necesitan alinearse. No lo vuelvas a proponer.
 - **Un «relaciona» donde un ítem admite varias letras: genera las permutaciones.** En
   Practica más 3 el aceite está en tres platos. `norm()` ya se come las comas, así que basta
   con generar cada orden con y sin espacio (la función `combos()` de ese capítulo).

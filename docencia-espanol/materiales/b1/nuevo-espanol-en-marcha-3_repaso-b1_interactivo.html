@@ -230,7 +230,18 @@
   .exercise-ref .ref-connectors span::after { content: " · "; color: var(--ink-soft); font-weight: 400; }
   .exercise-ref .ref-connectors span:last-child::after { content: ""; }
   .exercise-ref .ref-options { display: flex; flex-wrap: wrap; gap: 0.4rem 0.9rem; }
+  /* Opciones que son frases enteras, no palabras sueltas: una por línea. */
+  .exercise-ref .ref-options.ref-list { display: block; }
+  .exercise-ref .ref-options.ref-list .ref-opt { display: block; white-space: normal; }
+  .exercise-ref .ref-options.ref-list .ref-opt + .ref-opt { margin-top: 0.3rem; }
   .exercise-ref .ref-opt { white-space: nowrap; }
+  @media (max-width: 560px) {
+    /* Red de seguridad: en pantalla estrecha ninguna opción se queda en nowrap. Va
+       DESPUÉS de la regla de arriba a propósito: misma especificidad, así que escrita
+       antes gana el nowrap y esto no hace nada. Una sola opción larga en nowrap
+       arrastra scroll horizontal a TODA la página, no solo al recuadro. */
+    .exercise-ref .ref-opt { white-space: normal; }
+  }
   .exercise-ref .ref-opt b { color: var(--gold); font-family: ui-monospace, monospace; margin-right: 0.15rem; }
 
   /* nota mostrada solo después de corregir (ver attachNote()/gradeRange() en el script) */
