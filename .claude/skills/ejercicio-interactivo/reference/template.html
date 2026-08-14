@@ -472,6 +472,26 @@
   /* El título del recuadro, centrado sobre su contenido: ahora que la caja se ajusta a lo
      que hay dentro, una etiqueta pegada a la esquina izquierda queda descolgada. */
   .exercise-ref .ref-label { text-align: center; }
+  /* Filas en columnas (item.pre): etiqueta, casilla y botones alineados entre sí. Sin esto
+     cada fila empieza el hueco donde acaba su palabra, y las casillas y los botones quedan
+     a distinta altura — se ve descuadrado aunque cada fila por separado esté bien. */
+  .item-row:has(.item-pre) {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 0.55rem;
+  }
+  /* Ancho fijo, no mínimo: con min-width, una etiqueta más larga que el resto (aquí
+     «sentarse») empuja su fila unos píxeles y rompe la columna. */
+  .item-pre { flex: 0 0 8.8em; }
+  .item-row:has(.item-pre) input.blank { flex: 0 0 auto; }
+  /* La letra del ítem también entra en la columna: «i.» y «m.» no miden lo mismo, y
+     sin fijarla arrastra unos píxeles de diferencia a todo lo que va detrás. */
+  .item-row:has(.item-pre) .item-letter { flex: 0 0 1.7em; margin-right: 0; }
+  /* Un aviso de corrección ocupa su propia línea y no descoloca las columnas. */
+  .item-row:has(.item-pre) .reveal.show { flex-basis: 100%; margin-left: 0; }
+  .vf-toggle.vf-words .vf-btn { width: 6.4em; padding: 0; }
+  @media (max-width: 560px) {
+    .item-pre { flex: 0 0 6em; }
+    .vf-toggle.vf-words .vf-btn { width: 5.6em; }
+  }
   /* Una fila con foto se centra entera —número, imagen y casilla—, para que quede una
      columna ordenada. Con la casilla pegada a la izquierda y la foto en el centro, la fila
      se lee descolocada. */
@@ -764,8 +784,12 @@
     inp.className = "blank";
     const wrap = document.createElement("span");
     wrap.className = "vf-toggle";
+    const lista = opciones && opciones.length ? opciones : ["V", "F"];
+    // Un par de opciones que son palabras («regular»/«irregular») necesita que los dos
+    // botones midan lo mismo; si no, cada fila los coloca a una altura distinta.
+    if (lista.some(function (o) { return o.length > 1; })) wrap.classList.add("vf-words");
     const rec = { el: inp, spec: spec, label: label || "" };
-    (opciones && opciones.length ? opciones : ["V", "F"]).forEach(function (letter) {
+    lista.forEach(function (letter) {
       const b = document.createElement("button");
       b.type = "button";
       b.className = "vf-btn";
@@ -935,6 +959,15 @@
           letter.setAttribute("translate", "no");
           letter.textContent = marca;
           row.appendChild(letter);
+          // item.pre: etiqueta fija al principio de la fila (el verbo, la palabra que se
+          // clasifica...). Existe para poder alinear en columnas: metida dentro de item.t
+          // sería un nodo de texto suelto y cada fila empezaría el hueco en un sitio.
+          if (item.pre) {
+            const pre = document.createElement("span");
+            pre.className = "item-pre";
+            pre.textContent = item.pre;
+            row.appendChild(pre);
+          }
           // item.img: la foto va DESPUÉS del número y antes del hueco. Al revés, el
           // número quedaba debajo de su propia foto y pegado a la siguiente, y no se sabía
           // a cuál se refería. Se declara como campo propio, no como HTML dentro de item.t.
@@ -1059,6 +1092,15 @@
           letter.setAttribute("translate", "no");
           letter.textContent = marca;
           row.appendChild(letter);
+          // item.pre: etiqueta fija al principio de la fila (el verbo, la palabra que se
+          // clasifica...). Existe para poder alinear en columnas: metida dentro de item.t
+          // sería un nodo de texto suelto y cada fila empezaría el hueco en un sitio.
+          if (item.pre) {
+            const pre = document.createElement("span");
+            pre.className = "item-pre";
+            pre.textContent = item.pre;
+            row.appendChild(pre);
+          }
           // item.img: la foto va DESPUÉS del número y antes del hueco. Al revés, el
           // número quedaba debajo de su propia foto y pegado a la siguiente, y no se sabía
           // a cuál se refería. Se declara como campo propio, no como HTML dentro de item.t.

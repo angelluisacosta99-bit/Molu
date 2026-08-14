@@ -355,6 +355,22 @@ no las deshagas sin querer al modificar la plantilla.
   disponible, la tabla de gustos el 42 %, y las listas largas siguen al 100 %. El título del
   recuadro (`.ref-label`) va centrado también: con la caja ya ajustada, una etiqueta pegada a
   la esquina izquierda queda descolgada.
+- **Cuando todas las filas de un ejercicio tienen la misma forma, alinéalas en columnas con
+  `item.pre`.** Un listado de «palabra → casilla → botones» donde la palabra va dentro de
+  `item.t` empieza cada casilla donde acaba su palabra: casillas de distinto ancho, botones a
+  distinta altura, y el conjunto se ve descuadrado aunque cada fila por separado esté bien.
+  `item.pre` saca esa etiqueta a un elemento propio de ancho fijo y la fila pasa a ser un
+  flex con columnas. Tres cosas hay que fijar, no una: la etiqueta (`flex: 0 0 8.8em`), la
+  **letra del ítem** (`i.` y `m.` no miden lo mismo y arrastran la diferencia a todo lo que
+  va detrás) y el **ancho de los botones** cuando son palabras (`.vf-toggle.vf-words`, que
+  `makeVfButtons` marca sola al ver opciones de más de un carácter). Y usa `flex-basis`
+  fijo, no `min-width`: con `min-width`, la etiqueta más larga del grupo empuja su fila.
+- **Si tocas cómo se construye una fila, comprueba `extraer.mjs`.** Al pasar el ejercicio 5
+  de Practica más 3 a columnas, el `.md` archivado empezó a salir con las respuestas pegadas
+  (`**habla****regular**`): el separador que antes ponía el texto de `item.t` había
+  desaparecido. `extraer.mjs` necesitó reconocer `.item-pre` y añadir un espacio entre dos
+  huecos consecutivos. Regenera y compara con `diff` **todos** los `.md` después de cualquier
+  cambio estructural, no solo el del capítulo que estás tocando.
 - **Una fila con foto se centra entera, no solo la foto** (`.item-row:has(.foto-act)`):
   número, imagen y casilla de escribir. Centrar solo la imagen deja el número y el hueco
   pegados a la izquierda y la fila se lee descolocada — lo detectó el profesor en cuanto se

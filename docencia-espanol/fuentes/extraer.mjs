@@ -76,6 +76,9 @@ const md = await page.evaluate(() => {
           const rev = ch.nextElementSibling?.matches?.(".reveal") ? ch.nextElementSibling : null;
           const ans = clean(rev?.textContent).replace(/^→\s*/, "");
           answers.push(ans || "?");
+          // Dos huecos seguidos sin texto entre medias (una casilla y unos botones, p. ej.)
+          // se pegarían en el archivo: "**habla****regular**".
+          if (/____$/.test(s)) s += " ";
           s += "____";
         } else if (ch.matches?.(".choice-group")) {
           // Las opciones (chips) se listan aparte entre corchetes, con la correcta en
@@ -87,6 +90,9 @@ const md = await page.evaluate(() => {
           continue; // se emite aparte
         } else if (ch.matches?.("br")) {
           s += "\n";
+        } else if (ch.matches?.(".item-pre")) {
+          // Etiqueta fija al principio de la fila; sin el espacio quedaría pegada al hueco.
+          s += clean(ch.textContent) + " ";
         } else if (ch.matches?.(".speaker")) {
           // La letra del interlocutor de un diálogo es un <span> pegado al texto siguiente;
           // sin este espacio el archivo saldría con "APerdona..." en vez de "A Perdona...".
