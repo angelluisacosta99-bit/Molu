@@ -209,8 +209,10 @@ const md = await page.evaluate(() => {
             }
             continue;
           }
+          // Se descartan los hijos sin texto (una <img> dentro del recuadro, por ejemplo):
+          // si no, el archivo acaba con un separador " · " suelto al final.
           push("> **" + clean(lab.textContent) + ":** " +
-            [...sib.children].map((c) => clean(c.textContent)).join(" · "));
+            [...sib.children].map((c) => clean(c.textContent)).filter(Boolean).join(" · "));
         }
         const ws = ref.querySelector(".wordsearch");
         if (ws) { push(); push("```"); push(ws.textContent.trim()); push("```"); }
