@@ -1069,7 +1069,15 @@
           // Fila que acaba en botones V/F: los botones se van al borde derecho, para que
           // todos queden en la misma columna por larga que sea la frase. Sin esto, cada par
           // de botones empieza donde acaba su frase y la lista se ve descuadrada.
-          if (!item.pre && !row.querySelector(".foto-act")) {
+          //
+          // Tampoco se toca en una rejilla (ex.grid): ahí no hay «borde derecho» al que
+          // estirarse —la fila es una celda estrecha— y el `width: auto` de .tail-blank
+          // le devuelve al input su ancho intrínseco (~20 caracteres), más ancho que la
+          // celda, así que se sale y arrastra scroll horizontal a TODA la página en el
+          // móvil. Se vio en la 5B de B1, la primera rejilla sin fotos: hasta entonces
+          // todas las rejillas llevaban imagen y ya quedaban fuera por el filtro de
+          // .foto-act.
+          if (!ex.grid && !item.pre && !row.querySelector(".foto-act")) {
             const vfw = row.querySelector(".vf-wrap");
             if (vfw && row.querySelectorAll("input.blank").length === 1) {
               let cola = "", n = vfw.nextSibling;
@@ -1083,7 +1091,7 @@
               }
             }
           }
-          if (!item.pre && !row.querySelector(".foto-act")) {
+          if (!ex.grid && !item.pre && !row.querySelector(".foto-act")) {
             const huecos = row.querySelectorAll("input.blank");
             if (huecos.length === 1) {
               // Después del hueco solo puede quedar puntuación de cierre. Si hay palabras,
@@ -1260,7 +1268,7 @@
           // Fila que acaba en botones V/F: los botones se van al borde derecho, para que
           // todos queden en la misma columna por larga que sea la frase. Sin esto, cada par
           // de botones empieza donde acaba su frase y la lista se ve descuadrada.
-          if (!item.pre && !row.querySelector(".foto-act")) {
+          if (!ex.grid && !item.pre && !row.querySelector(".foto-act")) {
             const vfw = row.querySelector(".vf-wrap");
             if (vfw && row.querySelectorAll("input.blank").length === 1) {
               let cola = "", n = vfw.nextSibling;
@@ -1274,7 +1282,7 @@
               }
             }
           }
-          if (!item.pre && !row.querySelector(".foto-act")) {
+          if (!ex.grid && !item.pre && !row.querySelector(".foto-act")) {
             const huecos = row.querySelectorAll("input.blank");
             if (huecos.length === 1) {
               // Después del hueco solo puede quedar puntuación de cierre. Si hay palabras,

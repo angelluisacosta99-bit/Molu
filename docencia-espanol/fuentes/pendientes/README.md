@@ -31,4 +31,6 @@ versiones del mismo capítulo y no se sabrá cuál manda.
 
 ## Lo que hay ahora
 
-- **`b1-5b/`** — Unidad 5B del cuaderno de B1, «Las otras medicinas» (página 21).
+Nada pendiente: la carpeta está vacía. La 5B del cuaderno de B1 («Las otras medicinas»,
+página 21) era el último capítulo preparado aquí y ya está publicada y archivada en
+`nuevo-espanol-en-marcha/b1/cuaderno-unidad5b_las-otras-medicinas.md`.
