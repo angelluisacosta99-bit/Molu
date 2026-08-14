@@ -282,6 +282,23 @@ no las deshagas sin querer al modificar la plantilla.
   (chips, un slider, lo que sea) que también oculte el input real, revisa si necesita el
   mismo tipo de ajuste en `extraer.mjs` antes de darlo por archivable.
 
+- **REGLA DEL PROFESOR, sin excepciones: todo ejercicio con audio lleva su transcripción en
+  un plegable.** No es opcional ni depende de si tenemos la grabación — de hecho es cuando
+  NO la tenemos cuando más falta hace, porque sin ella el ejercicio es irresoluble en casa.
+  Si un capítulo tiene un ejercicio de audio, búscale la transcripción antes de publicarlo;
+  y si de verdad no aparece, dilo en el enunciado y pídesela al profesor, pero **nunca la
+  inventes**: una transcripción escrita por Claude puesta como si fuera la del libro es
+  material falso, y encima el alumno la usaría para autocorregirse.
+- **Dónde están las transcripciones y el solucionario del cuaderno de A1.** El PDF del
+  cuaderno los trae al final, y son páginas del propio PDF, no algo que haya que pedir:
+  **54-55 «Transcripciones», 56-61 «Soluciones», 62-64 el glosario.** Renderízalas con
+  `paginas.sh` y tenlas delante antes de transcribir un capítulo. Se descubrió tarde: hasta
+  la unidad 7A se estuvieron deduciendo respuestas y pidiendo fotos que ya estaban ahí.
+  Dos avisos: la sección de transcripciones titula las unidades con el nombre que llevan en
+  el **libro del alumno**, no en el cuaderno (6A aparece como "¿Cómo se va a Plaza de
+  España?" cuando en el cuaderno es "¿Cómo se va a Goya?" — guíate por número y letra); y
+  **el número de pista sácalo de ahí, no del iconito de la página**, que en el escaneado se
+  lee fatal: en 7A se transcribió "pista 19" y "pista 20" cuando eran la 9 y la 10.
 - **Ejercicios de audio: la transcripción va plegada (`ex.transcriptHTML`), nunca a la
   vista.** En un ejercicio de comprensión oral la transcripción **es** la solución, así que
   si se pone abierta el ejercicio deja de existir; pero omitirla tampoco vale, porque está
@@ -297,13 +314,9 @@ no las deshagas sin querer al modificar la plantilla.
   y los caracteres cambiados— y significa que **ese texto no vale para transcribir**, solo
   para localizar y para leer de corrido. Baja el PDF y mira las páginas.
 - **Aun siendo OCR, la sección «Transcripciones» y el solucionario del cuaderno de A1 salen
-  lo bastante limpios para usarlos como referencia** (son texto corrido, sin gráficos que
-  desordenen la lectura). Antes de pedirle al profesor una foto del solucionario o el audio de una unidad,
-  **busca ahí**: en la 6A, el PDF confirmó por sí solo tanto las respuestas (`3 1 V 2 F,
-  3 V`) como el número de pista. Ojo con un detalle que despista: la sección de
-  transcripciones titula las unidades con el nombre que llevan en el **libro del alumno**,
-  no en el cuaderno (6A aparece como "¿Cómo se va a Plaza de España?" cuando en el cuaderno
-  es "¿Cómo se va a Goya?"). Es la misma unidad; guíate por el número y la letra.
+  lo bastante limpios para leerlos de corrido** (son texto seguido, sin gráficos que
+  desordenen la lectura), así que sirven para localizar rápido en qué página está lo que
+  buscas. Para copiar el contenido, mira la página renderizada: el OCR cambia caracteres.
 - **El diálogo original no trae nombres.** El libro distingue las réplicas solo con dos
   símbolos, que además el OCR destroza. Deducirlos del contenido y escribirlos como
   `MARTA:` / `BEATRIZ:` es correcto (es el mismo formato que el libro usa en otras

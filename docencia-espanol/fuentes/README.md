@@ -34,7 +34,7 @@ el archivo correspondiente, no editarlo a mano.
 | `nuevo-espanol-en-marcha/a1/cuaderno-unidad6b_cierra-la-ventana.md` | Nuevo Español en Marcha 1 (A1), **cuaderno de ejercicios**, unidad 6B | 29 | **solucionario oficial** (los cinco ejercicios). Dos respuestas del ej. 1 salían ilegibles en la foto y se dedujeron por descarte; después se comprobaron contra el solucionario del PDF (pág. 59) y coinciden |
 | `nuevo-espanol-en-marcha/a1/cuaderno-unidad6c_mi-barrio-es-tranquilo.md` | Nuevo Español en Marcha 1 (A1), **cuaderno de ejercicios**, unidad 6C | 30-31 | **solucionario oficial** (los nueve ejercicios; el 6 es actividad libre) |
 | `nuevo-espanol-en-marcha/a1/practica-mas-3_unidades-5-6.md` | Nuevo Español en Marcha 1 (A1), **cuaderno de ejercicios**, «Practica más 3» (repaso de las unidades 5 y 6) | 32-33 | **solucionario oficial** (los ocho ejercicios) |
-| `nuevo-espanol-en-marcha/a1/cuaderno-unidad7a_donde-quedamos.md` | Nuevo Español en Marcha 1 (A1), **cuaderno de ejercicios**, unidad 7A | 34-35 | **solucionario oficial** (páginas 59-60 del propio cuaderno). El ej. 2 es actividad libre; el ej. 3 es de audio (pista 20) y todavía no hay grabación ni transcripción |
+| `nuevo-espanol-en-marcha/a1/cuaderno-unidad7a_donde-quedamos.md` | Nuevo Español en Marcha 1 (A1), **cuaderno de ejercicios**, unidad 7A | 34-35 | **solucionario oficial** (páginas 59-60 del propio cuaderno). El ej. 2 es actividad libre; los ej. 1 y 3 son de audio (pistas 9 y 10) y llevan su transcripción, tomada de las páginas 54-55 |
 | `nuevo-espanol-en-marcha/b1/repaso-b1_secciones-1-12.md` | Nuevo Español en Marcha 3 (B1), repaso final | 140-163 | **deducidas**, sin solucionario |
 | `nuevo-espanol-en-marcha/b2/12b_turismo-cultural.md` | Nuevo Español en Marcha 4 (B2), unidad 12B | 12B | **solucionario oficial** del libro |
 | `nuevo-espanol-en-marcha/b2/12c_perifrasis-verbales.md` | Nuevo Español en Marcha 4 (B2), unidad 12C | 12C | **solucionario oficial** del libro |
@@ -121,8 +121,8 @@ el archivo excede lo que admite el conector de Drive. Por eso existe esta carpet
 haría falta fotografiarlos: con el PDF adjunto, `paginas.sh` renderiza cada página y se
 transcribe mirándola. Si alguna vez hay que revisarlos, ese es el camino.
 
-**El cuaderno de A1 trae su propio solucionario oficial al final** (páginas 59-64 del PDF,
-después de las unidades). Ahí están las respuestas de todas las unidades y de todos los
+**El cuaderno de A1 trae su propio solucionario oficial al final** (páginas 56-61 del PDF; las
+54-55 son las transcripciones de los audios y las 62-64 el glosario). Ahí están las respuestas de todas las unidades y de todos los
 «Practica más». Eso significa que ningún capítulo de este cuaderno hace falta deducirlo:
 antes de transcribir, renderiza esas páginas y ten el solucionario delante. Se descubrió
 al preparar la unidad 7A —hasta entonces las respuestas se habían ido sacando de fotos

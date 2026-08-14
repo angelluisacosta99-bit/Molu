@@ -6,7 +6,7 @@
 
 #### Ej. 1 — Ordena las conversaciones
 
-*Numera cada línea según el orden en que se dice (1, 2, 3...). Son DOS conversaciones independientes: la de María y Ricardo y la de Daniel y Carmen; cada una se numera desde 1. La primera línea de la conversación de María ya la trae resuelta el libro. (En el cuaderno es la pista 19; después se escucha para comprobar.)*
+*Numera cada línea según el orden en que se dice (1, 2, 3...). Son DOS conversaciones independientes: la de María y Ricardo y la de Daniel y Carmen; cada una se numera desde 1. La primera línea de la conversación de María ya la trae resuelta el libro. (En el cuaderno es la pista 9; después se escucha para comprobar.)*
 
 a. MARÍA: ¿A qué hora te viene bien? → **3**
 b. RICARDO: De acuerdo. ¡Hasta mañana! → **6**
@@ -28,7 +28,7 @@ k. DANIEL: Estupendo. Nos vemos allí a las cinco. → **5**
 > **RICARDO:** ¿A las seis?
 > **MARÍA:** No, mejor a las seis y media.
 > **RICARDO:** De acuerdo. ¡Hasta mañana!
-> **** 
+> 
 > **DANIEL:** ¿Vamos al cine esta noche?
 > **CARMEN:** No puedo, lo siento. Voy a cenar con unos amigos.
 > **DANIEL:** ¿Y si nos tomamos un café antes?
@@ -43,7 +43,7 @@ k. DANIEL: Estupendo. Nos vemos allí a las cinco. → **5**
 
 #### Ej. 3 — Carolina y Pedro en Radio Centro
 
-*Carolina y Pedro están en Radio Centro hablando sobre sus espectáculos favoritos. Di si las frases son verdaderas o falsas. ATENCIÓN: este ejercicio es de comprensión oral (pista 20 del cuaderno) y el audio todavía no está en esta página; hazlo en clase con tu profesor o después de escucharlo. La primera ya la trae resuelta el libro.*
+*Carolina y Pedro están en Radio Centro hablando sobre sus espectáculos favoritos. Di si las frases son verdaderas o falsas. Es un ejercicio de comprensión oral (pista 10 del cuaderno): si no tienes el audio a mano, abajo está la transcripción, plegada — ábrela solo después de responder. La primera ya la trae resuelta el libro.*
 
 1. A Pedro le gusta ir a los conciertos de rock. → V
 2. A Carolina le gusta la música moderna. → **F**
@@ -51,6 +51,14 @@ k. DANIEL: Estupendo. Nos vemos allí a las cinco. → **5**
 4. A Pedro le gustan los espectáculos musicales. → **V**
 5. A Carolina no le gusta la ópera. → **V**
 6. A ellos no les gusta ir al cine. → **F**
+
+**Ver la transcripción del audio (ábrela solo después de responder)**
+
+> **ENTREV.:** Radio Centro FM. Esta noche en nuestra sección de «Espectáculos» vamos a hablar con Carolina y Pedro, una joven pareja de madrileños que nos van a comentar sus preferencias cuando salen de noche los fines de semana.
+> **ENTREV.:** ¿Adónde vais normalmente?
+> **PEDRO:** Yo prefiero ir a un concierto. Me gusta mucho ir a conciertos de rock, pero Carolina ya está un poco harta. A ella le gusta más ir al teatro. Después, nos gusta mucho ir a tomar unas tapas y volver a casa dando un paseo.
+> **ENTREV.:** ¿Y tú, Carolina, qué dices?
+> **CAROL.:** Me gusta mucho ir al teatro. También me gustan los conciertos de música clásica, excepto la ópera; es demasiado larga. A Pedro le gusta ir a todo tipo de espectáculos musicales, aunque son muy caros. Pero lo que más nos gusta hacer a los dos juntos es ir al cine.
 
 #### Ej. 4 — Al teléfono
 

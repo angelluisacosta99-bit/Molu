@@ -4,8 +4,9 @@
   contenido se transcribió mirando las páginas renderizadas, y las respuestas salen del
   solucionario oficial que el propio cuaderno trae al final (páginas 59-60).
   Construido sobre .claude/skills/ejercicio-interactivo/reference/template.html.
-  Nota: el ejercicio 3 es de comprensión oral (pista 20) y el audio todavía no está
-  incrustado aquí; se avisa en el enunciado.
+  Los ejercicios 1 y 3 son de audio (pistas 9 y 10). El audio no está incrustado todavía,
+  pero ambos llevan su transcripción plegada, tomada de la sección "Transcripciones" del
+  propio cuaderno (página 55).
 -->
 <title>Cuaderno A1 · 7A — ¿Dónde quedamos?</title>
 <style>
@@ -717,7 +718,7 @@
       exercises: [
         {
           num: 1, title: "Ordena las conversaciones",
-          instr: "Numera cada línea según el orden en que se dice (1, 2, 3...). Son DOS conversaciones independientes: la de María y Ricardo y la de Daniel y Carmen; cada una se numera desde 1. La primera línea de la conversación de María ya la trae resuelta el libro. (En el cuaderno es la pista 19; después se escucha para comprobar.)",
+          instr: "Numera cada línea según el orden en que se dice (1, 2, 3...). Son DOS conversaciones independientes: la de María y Ricardo y la de Daniel y Carmen; cada una se numera desde 1. La primera línea de la conversación de María ya la trae resuelta el libro. (En el cuaderno es la pista 9; después se escucha para comprobar.)",
           type: "items",
           items: [
             { t: "MARÍA: ¿A qué hora te viene bien? → {0}", a: [["3"]] },
@@ -761,7 +762,7 @@
         },
         {
           num: 3, title: "Carolina y Pedro en Radio Centro",
-          instr: "Carolina y Pedro están en Radio Centro hablando sobre sus espectáculos favoritos. Di si las frases son verdaderas o falsas. ATENCIÓN: este ejercicio es de comprensión oral (pista 20 del cuaderno) y el audio todavía no está en esta página; hazlo en clase con tu profesor o después de escucharlo. La primera ya la trae resuelta el libro.",
+          instr: "Carolina y Pedro están en Radio Centro hablando sobre sus espectáculos favoritos. Di si las frases son verdaderas o falsas. Es un ejercicio de comprensión oral (pista 10 del cuaderno): si no tienes el audio a mano, abajo está la transcripción, plegada — ábrela solo después de responder. La primera ya la trae resuelta el libro.",
           type: "items",
           numbered: true,
           items: [
@@ -771,7 +772,14 @@
             { t: "A Pedro le gustan los espectáculos musicales. → {0}", a: [["V"]], vf: true },
             { t: "A Carolina no le gusta la ópera. → {0}", a: [["V"]], vf: true },
             { t: "A ellos no les gusta ir al cine. → {0}", a: [["F"]], vf: true }
-          ]
+          ],
+          transcriptLabel: "Ver la transcripción del audio (ábrela solo después de responder)",
+          transcriptHTML:
+            '<span class="line"><span class="who">ENTREV.:</span> Radio Centro FM. Esta noche en nuestra sección de «Espectáculos» vamos a hablar con Carolina y Pedro, una joven pareja de madrileños que nos van a comentar sus preferencias cuando salen de noche los fines de semana.</span>' +
+            '<span class="line"><span class="who">ENTREV.:</span> ¿Adónde vais normalmente?</span>' +
+            '<span class="line"><span class="who">PEDRO:</span> Yo prefiero ir a un concierto. Me gusta mucho ir a conciertos de rock, pero Carolina ya está un poco harta. A ella le gusta más ir al teatro. Después, nos gusta mucho ir a tomar unas tapas y volver a casa dando un paseo.</span>' +
+            '<span class="line"><span class="who">ENTREV.:</span> ¿Y tú, Carolina, qué dices?</span>' +
+            '<span class="line"><span class="who">CAROL.:</span> Me gusta mucho ir al teatro. También me gustan los conciertos de música clásica, excepto la ópera; es demasiado larga. A Pedro le gusta ir a todo tipo de espectáculos musicales, aunque son muy caros. Pero lo que más nos gusta hacer a los dos juntos es ir al cine.</span>'
         },
         {
           num: 4, title: "Al teléfono",

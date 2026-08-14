@@ -281,9 +281,11 @@ const md = await page.evaluate(() => {
         push("**" + clean(tr.querySelector("summary")?.textContent) + "**");
         push();
         for (const line of tr.querySelectorAll(".transcript-body .line")) {
+          // No toda transcripción es un diálogo: la de la 6C es una sola línea sin hablante,
+          // y con el prefijo vacío salía un "****" suelto delante del texto.
           const who = clean(line.querySelector(".who")?.textContent);
           const said = clean(line.textContent).slice(who.length).trim();
-          push("> **" + who + "** " + said);
+          push(who ? "> **" + who + "** " + said : "> " + said);
         }
         const note = clean(tr.querySelector(".transcript-note")?.textContent);
         if (note) { push(); push("*" + note + "*"); }
