@@ -97,6 +97,10 @@ const md = await page.evaluate(() => {
           // La letra del interlocutor de un diálogo es un <span> pegado al texto siguiente;
           // sin este espacio el archivo saldría con "APerdona..." en vez de "A Perdona...".
           s += clean(ch.textContent) + " ";
+        } else if (ch.matches?.(".turno")) {
+          // Cada turno de un diálogo se pinta como bloque: en el archivo van en líneas
+          // aparte, o el segundo se pegaría al primero ("...al colegio?B Vienen a ser...").
+          s += (s && !/\n$/.test(s) ? "\n" : "") + clean(ch.textContent);
         } else if (ch.matches?.(".open-model, .signature")) {
           // Se pintan como bloque aunque sean <span>, así que sin esto la firma de la postal
           // y las líneas de modelo de una redacción se pegarían al párrafo anterior.
