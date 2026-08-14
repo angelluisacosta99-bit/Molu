@@ -492,7 +492,15 @@
   .item-row:has(.item-pre) .reveal.show { flex-basis: 100%; margin-left: 0; }
   .vf-toggle.vf-words .vf-btn { width: 6.4em; padding: 0; }
   @media (max-width: 560px) {
-    .item-pre { flex: 0 0 100%; }
+    /* En pantalla estrecha la etiqueta y el hueco se reparten el ancho, y el hueco baja
+       a su propia línea: siguen alineados sin robarle ancho a la casilla. La etiqueta
+       NO se lleva la línea entera (`flex: 0 0 100%`), porque entonces el número se
+       quedaba solo en la línea de arriba y cada ítem pasaba a ocupar tres o cuatro
+       líneas — el mismo defecto del número huérfano que ya se corrigió en las filas
+       que acaban en hueco. */
+    .item-row:has(.item-pre) .item-letter { flex: 0 0 auto; }
+    .item-pre { flex: 1 1 auto; }
+    .item-row:has(.item-pre) input.blank { flex: 1 1 100%; }
     .vf-toggle.vf-words .vf-btn { width: 5.6em; }
   }
 
@@ -1024,11 +1032,13 @@
           }
           renderTemplate(row, item.t, item.a, item.wide, "Ej. " + ex.num + " " + marca.replace(".", ""), false, item.vf, ex.dialog);
           // Si la fila termina en el hueco (enunciado + «→» + casilla), se marca para que la
-          // casilla baje a su propia línea a ancho completo: así todas las de un ejercicio
-          // miden y empiezan igual, por larga que sea su frase. No se toca cuando el hueco
-          // va DENTRO de la frase (un rellenar-el-espacio), donde alinear no tiene sentido,
-          // ni cuando la fila ya usa la columna de item.pre.
-          if (!item.pre) {
+          // casilla se estire hasta el borde derecho: empieza justo donde acaba el texto,
+          // pero todas las del ejercicio terminan en el mismo sitio. No se toca cuando el
+          // hueco va DENTRO de la frase (un rellenar-el-espacio), donde alinear no tiene
+          // sentido, ni cuando la fila ya usa la columna de item.pre, ni cuando la fila
+          // lleva foto: ahí el hueco va DEBAJO de la imagen (así lo pide el enunciado del
+          // libro, «escribe debajo qué actividad es») y al volverse flex se subía a su lado.
+          if (!item.pre && !row.querySelector(".foto-act")) {
             const huecos = row.querySelectorAll("input.blank");
             if (huecos.length === 1) {
               // Después del hueco solo puede quedar puntuación de cierre. Si hay palabras,
@@ -1180,11 +1190,13 @@
           }
           renderTemplate(row, item.t, item.a, item.wide, "Ej. " + ex.num + " " + marca.replace(".", ""), false, item.vf, ex.dialog);
           // Si la fila termina en el hueco (enunciado + «→» + casilla), se marca para que la
-          // casilla baje a su propia línea a ancho completo: así todas las de un ejercicio
-          // miden y empiezan igual, por larga que sea su frase. No se toca cuando el hueco
-          // va DENTRO de la frase (un rellenar-el-espacio), donde alinear no tiene sentido,
-          // ni cuando la fila ya usa la columna de item.pre.
-          if (!item.pre) {
+          // casilla se estire hasta el borde derecho: empieza justo donde acaba el texto,
+          // pero todas las del ejercicio terminan en el mismo sitio. No se toca cuando el
+          // hueco va DENTRO de la frase (un rellenar-el-espacio), donde alinear no tiene
+          // sentido, ni cuando la fila ya usa la columna de item.pre, ni cuando la fila
+          // lleva foto: ahí el hueco va DEBAJO de la imagen (así lo pide el enunciado del
+          // libro, «escribe debajo qué actividad es») y al volverse flex se subía a su lado.
+          if (!item.pre && !row.querySelector(".foto-act")) {
             const huecos = row.querySelectorAll("input.blank");
             if (huecos.length === 1) {
               // Después del hueco solo puede quedar puntuación de cierre. Si hay palabras,

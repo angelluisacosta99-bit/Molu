@@ -934,11 +934,13 @@
           row.appendChild(letter);
           renderTemplate(row, item.t, item.a, item.wide, "Ej. " + ex.num + " " + marca.replace(".", ""), false, item.vf, ex.dialog);
           // Si la fila termina en el hueco (enunciado + «→» + casilla), se marca para que la
-          // casilla baje a su propia línea a ancho completo: así todas las de un ejercicio
-          // miden y empiezan igual, por larga que sea su frase. No se toca cuando el hueco
-          // va DENTRO de la frase (un rellenar-el-espacio), donde alinear no tiene sentido,
-          // ni cuando la fila ya usa la columna de item.pre.
-          if (!item.pre) {
+          // casilla se estire hasta el borde derecho: empieza justo donde acaba el texto,
+          // pero todas las del ejercicio terminan en el mismo sitio. No se toca cuando el
+          // hueco va DENTRO de la frase (un rellenar-el-espacio), donde alinear no tiene
+          // sentido, ni cuando la fila ya usa la columna de item.pre, ni cuando la fila
+          // lleva foto: ahí el hueco va DEBAJO de la imagen (así lo pide el enunciado del
+          // libro, «escribe debajo qué actividad es») y al volverse flex se subía a su lado.
+          if (!item.pre && !row.querySelector(".foto-act")) {
             const huecos = row.querySelectorAll("input.blank");
             if (huecos.length === 1) {
               // Después del hueco solo puede quedar puntuación de cierre. Si hay palabras,
@@ -1075,11 +1077,13 @@
           row.appendChild(letter);
           renderTemplate(row, item.t, item.a, item.wide, "Ej. " + ex.num + " " + marca.replace(".", ""), false, item.vf, ex.dialog);
           // Si la fila termina en el hueco (enunciado + «→» + casilla), se marca para que la
-          // casilla baje a su propia línea a ancho completo: así todas las de un ejercicio
-          // miden y empiezan igual, por larga que sea su frase. No se toca cuando el hueco
-          // va DENTRO de la frase (un rellenar-el-espacio), donde alinear no tiene sentido,
-          // ni cuando la fila ya usa la columna de item.pre.
-          if (!item.pre) {
+          // casilla se estire hasta el borde derecho: empieza justo donde acaba el texto,
+          // pero todas las del ejercicio terminan en el mismo sitio. No se toca cuando el
+          // hueco va DENTRO de la frase (un rellenar-el-espacio), donde alinear no tiene
+          // sentido, ni cuando la fila ya usa la columna de item.pre, ni cuando la fila
+          // lleva foto: ahí el hueco va DEBAJO de la imagen (así lo pide el enunciado del
+          // libro, «escribe debajo qué actividad es») y al volverse flex se subía a su lado.
+          if (!item.pre && !row.querySelector(".foto-act")) {
             const huecos = row.querySelectorAll("input.blank");
             if (huecos.length === 1) {
               // Después del hueco solo puede quedar puntuación de cierre. Si hay palabras,

@@ -395,10 +395,20 @@ no las deshagas sin querer al modificar la plantilla.
   por verbo, columnas «Afirmativo»/«Negativo», y las formas dadas como **cadena** en vez de
   array para que salgan fijas y no cuenten como hueco) todo cae en columnas solo. Regla
   general: si las filas comparten estructura y no son frases, es una tabla, no una lista.
-  Al hacerlo, revisa el ancho de los huecos: `.exercise-table input.blank` va estrecho
-  (6.4 em) porque los cuadros de cinco columnas no caben de otra forma, y ahí «no vengáis» se
-  cortaba; un cuadro de solo dos columnas de respuesta tiene sitio de sobra y se ensancha con
-  `tr:has(td:nth-child(3)):not(:has(td:nth-child(4)))`.
+  La plantilla trae `conjTable` (un cuadro); **`conjTables`** (varios cuadros en el mismo
+  ejercicio, con un solo botón «Corregir») es un añadido de Repaso B1: si lo necesitas,
+  cópialo de ahí. Y si el documento estrecha los huecos de las tablas —Repaso B1 pone
+  `.exercise-table input.blank` a 6.4 em porque sus cuadros de cinco columnas no caben de
+  otra forma—, ensancha los cuadros de solo dos columnas de respuesta con
+  `tr:has(td:nth-child(3)):not(:has(td:nth-child(4)))`: con 6.4 em, «no vengáis» se cortaba.
+  Y da aire entre cuadros consecutivos (`.table-wrap + .table-wrap`), o los cuatro se leen
+  como una sola tabla larga con cabeceras intercaladas.
+- **Una fila con foto nunca lleva el hueco estirado a la derecha.** El hueco va DEBAJO de la
+  imagen, que es lo que pide el enunciado del libro («escribe debajo qué actividad es»). Al
+  marcarla como `.tail-blank` la fila se vuelve flex y la casilla sube al costado de la foto,
+  que además deja de estar centrada porque el envoltorio anula sus `margin: auto`. La
+  detección excluye estas filas (`!row.querySelector(".foto-act")`). En móvil no se notaba
+  —el hueco no cabe al lado y baja igual—, así que solo salía en escritorio.
 - **Si tocas cómo se construye una fila, comprueba `extraer.mjs`.** Al pasar el ejercicio 5
   de Practica más 3 a columnas, el `.md` archivado empezó a salir con las respuestas pegadas
   (`**habla****regular**`): el separador que antes ponía el texto de `item.t` había
