@@ -916,7 +916,13 @@
               // estirarlo hasta el borde derecho partiría la oración por la mitad.
               let cola = "", n = huecos[0].nextSibling;
               while (n) { cola += n.textContent || ""; n = n.nextSibling; }
-              if (/^[\s.,;:!?¿¡…"»)]*$/.test(cola)) {
+              // Si el autor puso un salto de línea justo antes del hueco, es que quiere la
+              // casilla en su propia línea a ancho completo (respuestas de frase entera):
+              // estirarla en la misma línea la dejaría flotando a media altura del texto.
+              let antes = huecos[0].previousSibling;
+              while (antes && antes.nodeType === 3 && !antes.textContent.trim()) antes = antes.previousSibling;
+              const saltoAntes = !!antes && antes.nodeName === "BR";
+              if (!saltoAntes && /^[\s.,;:!?¿¡…"»)]*$/.test(cola)) {
                 row.classList.add("tail-blank");
                 // Todo lo anterior al hueco (número + frase) va en UN solo envoltorio.
                 // Si se dejan sueltos, cada nodo de texto es un elemento flex distinto y
@@ -1042,7 +1048,13 @@
               // estirarlo hasta el borde derecho partiría la oración por la mitad.
               let cola = "", n = huecos[0].nextSibling;
               while (n) { cola += n.textContent || ""; n = n.nextSibling; }
-              if (/^[\s.,;:!?¿¡…"»)]*$/.test(cola)) {
+              // Si el autor puso un salto de línea justo antes del hueco, es que quiere la
+              // casilla en su propia línea a ancho completo (respuestas de frase entera):
+              // estirarla en la misma línea la dejaría flotando a media altura del texto.
+              let antes = huecos[0].previousSibling;
+              while (antes && antes.nodeType === 3 && !antes.textContent.trim()) antes = antes.previousSibling;
+              const saltoAntes = !!antes && antes.nodeName === "BR";
+              if (!saltoAntes && /^[\s.,;:!?¿¡…"»)]*$/.test(cola)) {
                 row.classList.add("tail-blank");
                 // Todo lo anterior al hueco (número + frase) va en UN solo envoltorio.
                 // Si se dejan sueltos, cada nodo de texto es un elemento flex distinto y

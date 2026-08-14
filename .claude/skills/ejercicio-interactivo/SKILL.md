@@ -32,7 +32,13 @@ PR #22 invertía el orden que PR #20 daba por bueno.
 
    1. **Mira primero `docencia-espanol/fuentes/`** (ver su README). Ahí están, en texto
       plano y con sus respuestas, todos los capítulos ya transcritos. Si el que necesitas
-      está, no pidas fotos ni vuelvas a transcribir: parte de ese archivo.
+      está, no pidas fotos ni vuelvas a transcribir: parte de ese archivo. Mira también
+      **`fuentes/pendientes/`**: ahí se deja el material de partida de un capítulo que se
+      preparó en una sesión y se construye en otra —el PDF adjunto no sobrevive al cambio
+      de sesión, el repositorio sí—. Si el capítulo que te piden está ahí, tienes ya el
+      texto, las respuestas, la transcripción del audio y los dibujos recortados, y no hace
+      falta el PDF. Al publicarlo, genera su archivo con `extraer.mjs` y **borra su carpeta
+      de `pendientes/`**, o quedarán dos versiones del mismo capítulo.
    2. **Si no está, baja el PDF entero a disco.** Lo que hace falta siempre es el archivo,
       no su texto: con él funciona todo `poppler`, y `docencia-espanol/fuentes/paginas.sh`
       saca de un tirón el diagnóstico, el texto en orden de lectura, la página renderizada
@@ -290,10 +296,12 @@ no las deshagas sin querer al modificar la plantilla.
   inventes**: una transcripción escrita por Claude puesta como si fuera la del libro es
   material falso, y encima el alumno la usaría para autocorregirse.
 - **El cuaderno de B1 también trae solucionario y transcripciones**, con el mismo reparto:
-  **54-55 y 64-68 transcripciones, 69-77 soluciones** (el PDF de B1 tiene 77 páginas y su
-  numeración coincide con la del libro, sin desfase). Ojo: el índice del principio lista la
-  página en la que EMPIEZA cada unidad, no la de cada sección — la unidad 5 empieza en la
-  20, así que 5A está en la 20, 5B en la 21 y 5C en la 22. Este PDF sí tiene capa de texto,
+  **64-68 transcripciones, 69-76 soluciones** (las 52-63 son los textos de «Leer más», la
+  76 son las soluciones de esas lecturas y la 77 es la contracubierta; el PDF tiene 77
+  páginas y su numeración coincide con la del libro, sin desfase). Lo dice tal cual el
+  índice de la página 3; aun así, confírmalo renderizando los límites. Ojo con una trampa
+  de ese índice: lista la página en la que EMPIEZA cada unidad, no la de cada sección — la
+  unidad 5 empieza en la 20, así que 5A está en la 20, 5B en la 21 y 5C en la 22. Este PDF sí tiene capa de texto,
   pero es OCR de ABBYY con codificación Custom y sale sucio («senala», «Buenos dlas»): vale
   para localizar en qué página está algo, no para copiar. Transcribe mirando la página.
 - **Dónde están las transcripciones y el solucionario del cuaderno de A1.** El PDF del
@@ -443,8 +451,11 @@ no las deshagas sin querer al modificar la plantilla.
   número) cada número queda debajo de su propia foto y pegado a la siguiente, y no se sabe a
   cuál se refiere. La foto se declara como campo del ítem, no como HTML dentro de `item.t`:
   meter marcado en el texto de los enunciados abre una puerta que no hace falta abrir.
-- **Muchos dibujos pequeños van en rejilla, no en columna** (`.items:has(.foto-act)` con
-  `grid-template-columns: repeat(auto-fill, minmax(140px, 1fr))`). Los 18 alimentos de la 5A
+- **Muchos dibujos pequeños van en rejilla, no en columna** (`ex.grid: true`, que pone la
+  clase `.items-grid` con `grid-template-columns: repeat(auto-fill, minmax(140px, 1fr))`).
+  Va activada por el ejercicio a propósito, no por `:has(.foto-act)`: con el selector
+  genérico, las fotos grandes de Practica más 3 pasarían también a celdas de 140 px con alto
+  fijo, que es justo lo que no debe pasar. Los 18 alimentos de la 5A
   en una sola columna eran una tira interminable para un ejercicio que en el libro cabe en
   media página; con 140 px de mínimo salen cuatro por fila en el ordenador y dos en el
   móvil, sin tocar nada más. Y dales a todos la **misma caja**
@@ -649,7 +660,9 @@ parezca más "controlable" desde JS — ya se demostró que rompe el caso más b
   archivo (`pdffonts`, `pdfdetach`), saca el texto con `pdftotext -layout`, renderiza cada
   página a JPEG para poder mirarla, y extrae las imágenes incrustadas. Es la herramienta del
   paso 1 cuando el profesor adjunta el PDF. Escribe fuera del repo a propósito: las páginas
-  de un libro con copyright son material de trabajo intermedio, no se versionan; lo que se
+  de un libro con copyright son material de trabajo intermedio, no se versionan (la única
+  excepción es `fuentes/pendientes/`, donde sí se guarda lo justo para poder construir un
+  capítulo en otra sesión, y que se borra en cuanto ese capítulo se publica); lo que se
   archiva es la transcripción.
 - **`/mnt/skills/public/pdf-reading/SKILL.md`** — guía completa de lectura de PDF que viene
   con el entorno pero **no aparece entre las skills activables**, así que hay que abrirla con

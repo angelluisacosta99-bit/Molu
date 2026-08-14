@@ -7,6 +7,15 @@ sobre un capítulo que ya está aquí, se parte de este texto.
 
 Cada archivo trae la teoría, los enunciados y **las respuestas en negrita**, en Markdown.
 
+## Capítulos preparados pero sin publicar: `pendientes/`
+
+Los PDF que el profesor adjunta al chat **viven solo en esa sesión** (`/root/.claude/uploads/`)
+y desaparecen con ella; el repositorio, en cambio, se hereda entero. Por eso, cuando un
+capítulo se va a construir en otra sesión, su material de partida —texto de la página,
+respuestas del solucionario, transcripción del audio y dibujos recortados— se deja en
+`pendientes/`. Ver el README de esa carpeta: **no se confunde con este archivo**, que es de
+capítulos ya publicados y lo genera `extraer.mjs`.
+
 ## Cómo se generan
 
 No se escriben a mano. Se extraen del artefacto interactivo ya publicado y verificado, con:
@@ -103,6 +112,10 @@ Deja el texto en orden de lectura (`pdftotext -layout`, que respeta columnas y t
 página renderizada a JPEG, y las imágenes incrustadas a resolución original. Escribe fuera
 del repo: las páginas del libro son material intermedio con copyright, aquí solo se archiva
 la transcripción.
+
+La única excepción es `pendientes/`: ahí sí se guardan la página y sus recortes, porque
+son lo único que le quedará a la sesión que construya el capítulo cuando el PDF ya no
+esté. Se borran en cuanto el capítulo se publica.
 
 **Mira siempre el render antes de cerrar un capítulo**, aunque el texto haya salido
 perfecto. Hay cosas que el texto no puede representar y que cambian las respuestas: las

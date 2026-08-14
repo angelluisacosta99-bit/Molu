@@ -209,6 +209,27 @@
     color: var(--ink-soft); font-family: -apple-system, sans-serif; display: block; margin-bottom: 0.3rem;
   }
   .exercise-ref .ref-options { display: flex; flex-wrap: wrap; gap: 0.4rem 0.9rem; }
+  /* ex.grid: para ejercicios de muchos dibujos pequeños (nombrar 18 alimentos). En una
+     sola columna serían una tira interminable. NO se activa con :has(.foto-act): las
+     fotografías grandes de una actividad deben seguir yendo una por fila. */
+  .items.items-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1.1rem 0.9rem;
+  }
+  .items.items-grid .item-row {
+    margin: 0; display: flex; flex-direction: column; align-items: center; text-align: center;
+  }
+  /* Caja de tamaño único: los dibujos son de proporciones muy distintas y, a su ancho
+     natural, unos se salen de su celda y los números quedan a distinta altura. */
+  .items.items-grid .foto-act {
+    width: 100%; height: 100px; object-fit: contain; margin: 0.15rem 0 0.35rem;
+  }
+  .items.items-grid input.blank { width: 100%; max-width: 9.5em; }
+  /* Turnos de un diálogo dentro de un mismo ítem: cada persona en su línea, y el primero
+     pegado al número para que no se quede huérfano arriba. */
+  .turno { display: block; }
+  .item-letter + .turno { display: inline; }
+  .turno b { color: var(--gold); margin-right: 0.35rem; }
   /* Opciones que son frases enteras, no palabras sueltas: una por línea. En fila y con
      nowrap, una sola opción larga se sale de la pantalla en el móvil y arrastra scroll
      horizontal a TODA la página. */
@@ -1001,7 +1022,7 @@
 
       if (ex.type === "items") {
         const wrap = document.createElement("div");
-        wrap.className = "items";
+        wrap.className = "items" + (ex.grid ? " items-grid" : "");
         ex.items.forEach(function (item, i) {
           const row = document.createElement("div");
           row.className = "item-row";
@@ -1192,7 +1213,7 @@
         twrap.appendChild(table);
         card.appendChild(twrap);
         const wrap = document.createElement("div");
-        wrap.className = "items";
+        wrap.className = "items" + (ex.grid ? " items-grid" : "");
         ex.items.forEach(function (item, i) {
           const row = document.createElement("div");
           row.className = "item-row";
