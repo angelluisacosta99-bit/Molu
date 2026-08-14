@@ -453,6 +453,14 @@
   .channel-copied { font-size: 0.8rem; color: var(--rp-accent); margin-top: 0.6rem; display: none; width: 100%; }
 
   /* ---------- REGLA DE CENTRADO ---------- */
+  /* Hueco de frase entera en una fila SIN columna de etiqueta: baja a su propia línea y
+     ocupa todo el ancho. Con enunciados de largo muy distinto —hay alguno de 114
+     caracteres— no existe ninguna columna que valga, y dejando la casilla en línea cada
+     una acaba de un tamaño. Así todas miden lo mismo, empiecen donde empiecen. */
+  .item-row:not(:has(.item-pre)) input.blank.full {
+    display: block; width: 100%; max-width: none; margin: 0.25rem 0 0;
+  }
+
   /* Fotos, tablas y sopas de letras van SIEMPRE centradas en su tarjeta. Por defecto un
      bloque se queda pegado a la izquierda y, con el texto del ejercicio alrededor, se lee
      como si estuviera descolocado. */
@@ -480,8 +488,11 @@
   }
   /* Ancho fijo, no mínimo: con min-width, una etiqueta más larga que el resto (aquí
      «sentarse») empuja su fila unos píxeles y rompe la columna. */
-  .item-pre { flex: 0 0 8.8em; }
+  .item-pre { flex: 0 0 var(--pre-w, 8.8em); }
   .item-row:has(.item-pre) input.blank { flex: 0 0 auto; }
+  /* Un hueco de frase entera ocupa lo que sobra: como la columna de la etiqueta es fija,
+     «lo que sobra» es lo mismo en todas las filas y las casillas salen iguales. */
+  .item-row:has(.item-pre) input.blank.full { flex: 1 1 auto; width: auto; min-width: 0; }
   /* La letra del ítem también entra en la columna: «i.» y «m.» no miden lo mismo, y
      sin fijarla arrastra unos píxeles de diferencia a todo lo que va detrás. */
   .item-row:has(.item-pre) .item-letter { flex: 0 0 1.7em; margin-right: 0; }
@@ -489,7 +500,9 @@
   .item-row:has(.item-pre) .reveal.show { flex-basis: 100%; margin-left: 0; }
   .vf-toggle.vf-words .vf-btn { width: 6.4em; padding: 0; }
   @media (max-width: 560px) {
-    .item-pre { flex: 0 0 6em; }
+    /* En pantalla estrecha la etiqueta ocupa su propia línea y el hueco va debajo: así
+       siguen alineados sin robarle ancho a la casilla. */
+    .item-pre { flex: 0 0 100%; }
     .vf-toggle.vf-words .vf-btn { width: 5.6em; }
   }
   /* Una fila con foto se centra entera —número, imagen y casilla—, para que quede una
@@ -917,6 +930,8 @@
     block.exercises.forEach(function (ex) {
       const card = document.createElement("div");
       card.className = "exercise";
+      // ex.preWidth: ancho de la columna de item.pre para ESTE ejercicio.
+      if (ex.preWidth) card.style.setProperty("--pre-w", ex.preWidth);
       const startIdx = allInputs.length;
       const hdr = exerciseHeader(ex);
       card.appendChild(hdr.head);

@@ -478,6 +478,14 @@
   .channel-copied { font-size: 0.8rem; color: var(--rp-accent); margin-top: 0.6rem; display: none; width: 100%; }
 
   /* ---------- REGLA DE CENTRADO ---------- */
+  /* Hueco de frase entera en una fila SIN columna de etiqueta: baja a su propia línea y
+     ocupa todo el ancho. Con enunciados de largo muy distinto —hay alguno de 114
+     caracteres— no existe ninguna columna que valga, y dejando la casilla en línea cada
+     una acaba de un tamaño. Así todas miden lo mismo, empiecen donde empiecen. */
+  .item-row:not(:has(.item-pre)) input.blank.full {
+    display: block; width: 100%; max-width: none; margin: 0.25rem 0 0;
+  }
+
   /* Fotos, tablas y sopas de letras van SIEMPRE centradas en su tarjeta. Por defecto un
      bloque se queda pegado a la izquierda y, con el texto del ejercicio alrededor, se lee
      como si estuviera descolocado. */
@@ -505,8 +513,11 @@
   }
   /* Ancho fijo, no mínimo: con min-width, una etiqueta más larga que el resto (aquí
      «sentarse») empuja su fila unos píxeles y rompe la columna. */
-  .item-pre { flex: 0 0 8.8em; }
+  .item-pre { flex: 0 0 var(--pre-w, 8.8em); }
   .item-row:has(.item-pre) input.blank { flex: 0 0 auto; }
+  /* Un hueco de frase entera ocupa lo que sobra: como la columna de la etiqueta es fija,
+     «lo que sobra» es lo mismo en todas las filas y las casillas salen iguales. */
+  .item-row:has(.item-pre) input.blank.full { flex: 1 1 auto; width: auto; min-width: 0; }
   /* La letra del ítem también entra en la columna: «i.» y «m.» no miden lo mismo, y
      sin fijarla arrastra unos píxeles de diferencia a todo lo que va detrás. */
   .item-row:has(.item-pre) .item-letter { flex: 0 0 1.7em; margin-right: 0; }
@@ -514,7 +525,9 @@
   .item-row:has(.item-pre) .reveal.show { flex-basis: 100%; margin-left: 0; }
   .vf-toggle.vf-words .vf-btn { width: 6.4em; padding: 0; }
   @media (max-width: 560px) {
-    .item-pre { flex: 0 0 6em; }
+    /* En pantalla estrecha la etiqueta ocupa su propia línea y el hueco va debajo: así
+       siguen alineados sin robarle ancho a la casilla. */
+    .item-pre { flex: 0 0 100%; }
     .vf-toggle.vf-words .vf-btn { width: 5.6em; }
   }
   /* Una fila con foto se centra entera —número, imagen y casilla—, para que quede una
@@ -743,18 +756,19 @@
           instr: "Busca en la sopa de letras diez alimentos. HUEVO ya viene marcado en el libro. Como los huecos hay que corregirlos en un orden fijo, cada uno lleva de pista sus dos primeras letras.",
           refHTML: '<span class="ref-label">Sopa de letras</span><div class="wordsearch">' + SOPA + "</div>",
           type: "items",
+          preWidth: "5em",
           numbered: true,
           items: [
             { t: "huevo (ya marcado en el libro)", solved: true },
-            { t: "ja… → {0}", a: [conSinTildes(["jamón"])] },
-            { t: "le… → {0}", a: [conSinTildes(["lechuga"])] },
-            { t: "li… → {0}", a: [conSinTildes(["limón"])] },
-            { t: "na… → {0}", a: [conSinTildes(["naranja"])] },
-            { t: "pa… → {0}", a: [conSinTildes(["patata"])] },
-            { t: "pl… → {0}", a: [conSinTildes(["plátano"])] },
-            { t: "po… → {0}", a: [conSinTildes(["pollo"])] },
-            { t: "qu… → {0}", a: [conSinTildes(["queso"])] },
-            { t: "to… → {0}", a: [conSinTildes(["tomate"])] }
+            { pre: "ja… →", t: "{0}", a: [conSinTildes(["jamón"])] },
+            { pre: "le… →", t: "{0}", a: [conSinTildes(["lechuga"])] },
+            { pre: "li… →", t: "{0}", a: [conSinTildes(["limón"])] },
+            { pre: "na… →", t: "{0}", a: [conSinTildes(["naranja"])] },
+            { pre: "pa… →", t: "{0}", a: [conSinTildes(["patata"])] },
+            { pre: "pl… →", t: "{0}", a: [conSinTildes(["plátano"])] },
+            { pre: "po… →", t: "{0}", a: [conSinTildes(["pollo"])] },
+            { pre: "qu… →", t: "{0}", a: [conSinTildes(["queso"])] },
+            { pre: "to… →", t: "{0}", a: [conSinTildes(["tomate"])] }
           ]
         },
         {
@@ -768,16 +782,17 @@
             '<span class="ref-opt"><b translate="no">e</b> sopa</span>' +
             '<span class="ref-opt"><b translate="no">f</b> paella</span></div>',
           type: "items",
+          preWidth: "7em",
           numbered: true,
           items: [
             { t: "arroz → f", solved: true },
-            { t: "huevo → {0}", a: [combos(["a", "c"])], wide: true },
-            { t: "fideos → {0}", a: [combos(["e"])], wide: true },
-            { t: "lechuga → {0}", a: [combos(["d"])], wide: true },
-            { t: "tomate → {0}", a: [combos(["d", "b"])], wide: true },
-            { t: "patatas → {0}", a: [combos(["c"])], wide: true },
-            { t: "leche → {0}", a: [combos(["a"])], wide: true },
-            { t: "aceite → {0}", a: [combos(["b", "c", "d"])], wide: true }
+            { pre: "huevo →", t: "{0}", a: [combos(["a", "c"])], wide: true },
+            { pre: "fideos →", t: "{0}", a: [combos(["e"])], wide: true },
+            { pre: "lechuga →", t: "{0}", a: [combos(["d"])], wide: true },
+            { pre: "tomate →", t: "{0}", a: [combos(["d", "b"])], wide: true },
+            { pre: "patatas →", t: "{0}", a: [combos(["c"])], wide: true },
+            { pre: "leche →", t: "{0}", a: [combos(["a"])], wide: true },
+            { pre: "aceite →", t: "{0}", a: [combos(["b", "c", "d"])], wide: true }
           ]
         },
         {
@@ -804,19 +819,20 @@
           refHTML: '<span class="ref-label">Gustos de Ana y Raúl</span>' + TABLA_GUSTOS,
           type: "items",
           numbered: true,
+          preWidth: "12.5em",
           items: [
             { t: "El cine → A Ana y a Raúl les gusta el cine.", solved: true },
             { t: "Ir de compras → A Ana le gusta ir de compras, pero a Raúl no.", solved: true },
-            { t: "La música clásica → {0}", a: [conSinTildes(["A Ana no le gusta la música clásica, pero a Raúl sí."])], wide: "full" },
-            { t: "Nadar → {0}", a: [conSinTildes(["A Ana no le gusta nadar, pero a Raúl sí."])], wide: "full" },
-            { t: "Leer → {0}", a: [conSinTildes(["A Ana y a Raúl les gusta leer."])], wide: "full" },
-            { t: "Andar → {0}", a: [conSinTildes(["A Ana no le gusta andar, pero a Raúl sí."])], wide: "full" },
-            { t: "Viajar → {0}", a: [conSinTildes(["A Ana y a Raúl les gusta viajar."])], wide: "full" },
-            { t: "Bailar → A los dos {0}", a: [conSinTildes(["les gusta bailar."])], wide: "full" },
-            { t: "Internet → {0}", a: [conSinTildes(["A Ana le gusta navegar por internet, pero a Raúl no."])], wide: "full" },
-            { t: "Las motos → {0}", a: [conSinTildes(["A Ana y a Raúl no les gustan las motos."])], wide: "full" },
-            { t: "Las plantas → {0}", a: [conSinTildes(["A Ana no le gustan las plantas, pero a Raúl sí."])], wide: "full" },
-            { t: "El fútbol → {0}", a: [conSinTildes(["A Ana no le gusta el fútbol, pero a Raúl sí."])], wide: "full" }
+            { pre: "La música clásica →", t: "{0}", a: [conSinTildes(["A Ana no le gusta la música clásica, pero a Raúl sí."])], wide: "full" },
+            { pre: "Nadar →", t: "{0}", a: [conSinTildes(["A Ana no le gusta nadar, pero a Raúl sí."])], wide: "full" },
+            { pre: "Leer →", t: "{0}", a: [conSinTildes(["A Ana y a Raúl les gusta leer."])], wide: "full" },
+            { pre: "Andar →", t: "{0}", a: [conSinTildes(["A Ana no le gusta andar, pero a Raúl sí."])], wide: "full" },
+            { pre: "Viajar →", t: "{0}", a: [conSinTildes(["A Ana y a Raúl les gusta viajar."])], wide: "full" },
+            { pre: "Bailar → A los dos", t: "{0}", a: [conSinTildes(["les gusta bailar."])], wide: "full" },
+            { pre: "Internet →", t: "{0}", a: [conSinTildes(["A Ana le gusta navegar por internet, pero a Raúl no."])], wide: "full" },
+            { pre: "Las motos →", t: "{0}", a: [conSinTildes(["A Ana y a Raúl no les gustan las motos."])], wide: "full" },
+            { pre: "Las plantas →", t: "{0}", a: [conSinTildes(["A Ana no le gustan las plantas, pero a Raúl sí."])], wide: "full" },
+            { pre: "El fútbol →", t: "{0}", a: [conSinTildes(["A Ana no le gusta el fútbol, pero a Raúl sí."])], wide: "full" }
           ]
         },
         {
@@ -1070,6 +1086,8 @@
     block.exercises.forEach(function (ex) {
       const card = document.createElement("div");
       card.className = "exercise";
+      // ex.preWidth: ancho de la columna de item.pre para ESTE ejercicio.
+      if (ex.preWidth) card.style.setProperty("--pre-w", ex.preWidth);
       const startIdx = allInputs.length;
       const hdr = exerciseHeader(ex);
       card.appendChild(hdr.head);
