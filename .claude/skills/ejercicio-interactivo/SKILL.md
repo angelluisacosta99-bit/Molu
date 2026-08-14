@@ -290,8 +290,10 @@ no las deshagas sin querer al modificar la plantilla.
   inventes**: una transcripción escrita por Claude puesta como si fuera la del libro es
   material falso, y encima el alumno la usaría para autocorregirse.
 - **El cuaderno de B1 también trae solucionario y transcripciones**, con el mismo reparto:
-  **54-55 y 64-68 transcripciones, 69-77 soluciones** (el PDF de B1 tiene 77 páginas y su
-  numeración coincide con la del libro, sin desfase). Ojo: el índice del principio lista la
+  **64-68 transcripciones, 69-76 soluciones** (las 52-63 son los textos de «Leer más», la
+  76 son las soluciones de esas lecturas y la 77 es la contracubierta; el PDF tiene 77
+  páginas y su numeración coincide con la del libro, sin desfase). El índice del principio,
+  en la página 3, lo dice tal cual: fíate de él y confírmalo renderizando. Ojo: el índice del principio lista la
   página en la que EMPIEZA cada unidad, no la de cada sección — la unidad 5 empieza en la
   20, así que 5A está en la 20, 5B en la 21 y 5C en la 22. Este PDF sí tiene capa de texto,
   pero es OCR de ABBYY con codificación Custom y sale sucio («senala», «Buenos dlas»): vale
@@ -443,8 +445,11 @@ no las deshagas sin querer al modificar la plantilla.
   número) cada número queda debajo de su propia foto y pegado a la siguiente, y no se sabe a
   cuál se refiere. La foto se declara como campo del ítem, no como HTML dentro de `item.t`:
   meter marcado en el texto de los enunciados abre una puerta que no hace falta abrir.
-- **Muchos dibujos pequeños van en rejilla, no en columna** (`.items:has(.foto-act)` con
-  `grid-template-columns: repeat(auto-fill, minmax(140px, 1fr))`). Los 18 alimentos de la 5A
+- **Muchos dibujos pequeños van en rejilla, no en columna** (`ex.grid: true`, que pone la
+  clase `.items-grid` con `grid-template-columns: repeat(auto-fill, minmax(140px, 1fr))`).
+  Va activada por el ejercicio a propósito, no por `:has(.foto-act)`: con el selector
+  genérico, las fotos grandes de Practica más 3 pasarían también a celdas de 140 px con alto
+  fijo, que es justo lo que no debe pasar. Los 18 alimentos de la 5A
   en una sola columna eran una tira interminable para un ejercicio que en el libro cabe en
   media página; con 140 px de mínimo salen cuatro por fila en el ordenador y dos en el
   móvil, sin tocar nada más. Y dales a todos la **misma caja**
