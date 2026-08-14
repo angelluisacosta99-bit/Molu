@@ -77,6 +77,31 @@ le vuelven a pedir fotos de algo ya transcrito.** Y todo lo que se
 transcriba de nuevo se archiva ahí (ver el paso 8 de la skill
 `ejercicio-interactivo`).
 
+## Cuando el profesor nombra un capítulo, quiere su ejercicio interactivo
+
+Si el mensaje es «haz la 5B», «ahora el 7B», «la unidad 8A» o «continúa con
+Practica más 4» —aunque no diga nada más—, lo que pide es **construir el
+ejercicio interactivo de ese capítulo** con la skill `ejercicio-interactivo`
+(`.claude/skills/ejercicio-interactivo/`). No hay ningún otro formato en el
+que se hagan los capítulos, así que no hay que preguntarle qué quiere: se
+invoca la skill y se sigue su flujo de trabajo entero, incluidos publicar el
+artefacto, añadirlo al índice y a la lista de códigos, y archivar la
+transcripción.
+
+**Antes de pedirle nada, mira `docencia-espanol/fuentes/`:**
+
+- `fuentes/nuevo-espanol-en-marcha/` — capítulos ya publicados, con sus
+  respuestas. Si el capítulo está aquí, no hace falta ni el libro.
+- `fuentes/pendientes/` — capítulos **preparados en otra sesión y todavía
+  sin construir**. Traen el texto de la página, las respuestas del
+  solucionario, la transcripción del audio y los dibujos ya recortados.
+  Existen porque los PDF que él adjunta al chat **no sobreviven al cambio de
+  sesión**, y el repositorio sí. Si el capítulo que te pide está ahí, tienes
+  todo y **no hay que pedirle el PDF**.
+
+Solo si no está en ninguno de los dos sitios hay que buscar el material
+(Drive, o pedirle que adjunte el PDF).
+
 ## Nombre del profesor: sin tilde
 
 El nombre del usuario/profesor es **Angel Luis Acosta González**.
