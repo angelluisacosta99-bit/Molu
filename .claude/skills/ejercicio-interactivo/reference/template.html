@@ -210,6 +210,17 @@
   }
   .exercise-ref .ref-options { display: flex; flex-wrap: wrap; gap: 0.4rem 0.9rem; }
   .exercise-ref .ref-opt { white-space: nowrap; }
+
+  /* Ejercicio sin respuesta única (una encuesta, marcar algo en un plano, una redacción):
+     se muestra porque está en el libro y el alumno tiene que poder verlo, pero no puntúa
+     ni lleva botón "Corregir" — uno que al pulsarlo no hace nada es peor que no tenerlo. */
+  .open-block {
+    background: var(--gold-soft); border-radius: 10px; padding: 0.9rem 1.1rem;
+    font-size: 0.9rem; line-height: 1.7; color: var(--ink-soft);
+    max-width: 64ch; margin-left: auto; margin-right: auto;
+  }
+  .open-block b { color: var(--ink); }
+  .open-block img { max-width: 100%; border-radius: 8px; display: block; margin: 0.6rem auto 0; }
   .exercise-ref img { max-width: 100%; border-radius: 8px; display: block; margin: 0.5rem auto 0; }
 
   .check-btn {
@@ -226,6 +237,29 @@
   /* Fila ya resuelta en el libro: se ve, sirve de modelo, pero no se pide rellenarla. */
   .solved-row { color: var(--ink-soft); font-style: italic; }
   .solved-row .item-letter { color: var(--pencil); }
+
+  /* Foto delante del hueco (ej. "escribe el nombre de la actividad"): item.img. */
+  .foto-act {
+    display: block; margin: 0.35rem 0 0.5rem;
+    max-width: 260px; width: 100%;
+    border-radius: 8px; border: 1px solid var(--border);
+  }
+
+  /* Sopa de letras: rejilla monoespaciada, para que las columnas cuadren. */
+  .wordsearch {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.9rem; line-height: 1.6; letter-spacing: 0.18em;
+    white-space: pre; overflow-x: auto;
+    background: var(--paper-raised); border: 1px solid var(--border);
+    border-radius: 8px; padding: 0.8rem 0.9rem; margin-top: 0.5rem;
+  }
+
+  /* Texto de partida que hay que leer o reescribir (una postal, un párrafo). */
+  .postcard {
+    background: var(--input-bg); border: 1px solid var(--border); border-radius: 10px;
+    padding: 0.9rem 1.1rem; font-size: 0.9rem; line-height: 1.75;
+    max-width: 60ch; margin: 0.5rem auto 0;
+  }
 
   /* Diálogos: cada réplica en su línea y con el interlocutor destacado. Sin esto, A y B
      —que son dos personas distintas— se leen como una sola frase corrida. */
@@ -267,7 +301,7 @@
   .vf-btn {
     background: var(--input-bg); color: var(--ink);
     border: 2px solid var(--pencil); border-radius: 6px;
-    width: 2.1em; height: 2.1em;
+    min-width: 2.1em; height: 2.1em; padding: 0 0.55rem;
     font-size: 0.88rem; font-weight: 700; line-height: 1;
     cursor: pointer;
   }
@@ -587,7 +621,8 @@
             { t: "Yo trabajo en un hospital y vivo en Madrid.", solved: true },
             { t: "María {0} (trabajar) en un hospital y {1} (vivir) en Madrid.", a: [["trabaja"], ["vive"]] },
             { t: "¿Tú {0} (comer) en casa o en la oficina normalmente?", a: [["comes"]] },
-            // vf: true en un item cambia el hueco de texto libre por dos botones "V"/"F"
+            // vf: true cambia el hueco de texto libre por dos botones "V"/"F". Para otro
+            // par de opciones, pásalo como lista: vf: ["regular", "irregular"].
             // que el alumno pulsa en vez de escribir — pensado para ejercicios de
             // verdadero/falso. La respuesta (a) sigue siendo ["V"] o ["F"], igual que
             // cualquier otro hueco de texto; el motor de corrección no cambia.
@@ -697,14 +732,14 @@
   // exactamente igual — solo cambia cómo el alumno rellena el valor. Úsalo poniendo
   // vf: true en el item (ver ejemplo de "items" más abajo); la respuesta (item.a) sigue
   // siendo ["V"] o ["F"] como cualquier otro hueco de texto.
-  function makeVfButtons(spec, label) {
+  function makeVfButtons(spec, label, opciones) {
     const inp = document.createElement("input");
     inp.type = "hidden";
     inp.className = "blank";
     const wrap = document.createElement("span");
     wrap.className = "vf-toggle";
     const rec = { el: inp, spec: spec, label: label || "" };
-    ["V", "F"].forEach(function (letter) {
+    (opciones && opciones.length ? opciones : ["V", "F"]).forEach(function (letter) {
       const b = document.createElement("button");
       b.type = "button";
       b.className = "vf-btn";
@@ -735,6 +770,19 @@
     return holder;
   }
 
+  // Qué botones lleva el hueco número `idx` de un ítem, según su campo `vf`:
+  //   vf: true                      -> V/F en todos los huecos del ítem
+  //   vf: ["regular", "irregular"]  -> ese par en todos los huecos del ítem
+  //   vf: { 1: ["sí", "no"] }       -> solo en el hueco {1}; los demás siguen siendo texto
+  // El tercer caso es el que hace falta cuando un ítem mezcla un hueco de escribir con uno
+  // de elegir, como "hablar → [imperativo] · [regular|irregular]".
+  function opcionesDe(vf, idx) {
+    if (!vf) return null;
+    if (vf === true) return ["V", "F"];
+    if (Array.isArray(vf)) return vf;
+    return vf[idx] || null;
+  }
+
   function renderTemplate(container, template, answers, wide, labelBase, forceIndex, vf, dialog) {
     const parts = template.split(/\{(\d+)\}/g);
     let blankCount = 0;
@@ -744,7 +792,10 @@
         const tokenIdx = parseInt(part, 10);
         const spec = answers[tokenIdx];
         const label = (blankCount > 1 || forceIndex) ? labelBase + " (" + (tokenIdx + 1) + ")" : labelBase;
-        container.appendChild(vf ? makeVfButtons(spec, label) : makeInput(spec, wide, label));
+        const opts = opcionesDe(vf, tokenIdx);
+        container.appendChild(opts
+          ? makeVfButtons(spec, label, opts)
+          : makeInput(spec, wide, label));
         const reveal = document.createElement("span");
         reveal.className = "reveal";
         container.appendChild(reveal);
@@ -758,7 +809,11 @@
           if (!linea) return;
           // En un diálogo, la letra del interlocutor al principio de línea se marca como
           // tal en vez de quedar suelta dentro de la frase.
-          const m = dialog && (li > 0 || i === 0) ? linea.match(/^([AB])\s+/) : null;
+          // Interlocutor: la «A»/«B» del libro, o un nombre en mayúsculas seguido de dos
+          // puntos (ROSA:, ANDRÉS:), que es como el propio cuaderno marca los diálogos con
+          // personajes. Solo se aplica dentro de ejercicios con dialog: true.
+          const m = dialog && (li > 0 || i === 0)
+            ? linea.match(/^([A-ZÁÉÍÓÚÑÜ]{2,12}:|[AB])\s+/) : null;
           if (m) {
             const who = document.createElement("span");
             who.className = "speaker";
@@ -783,6 +838,8 @@
     h3.textContent = ex.title;
     titleWrap.appendChild(h3);
     head.appendChild(titleWrap);
+    // Los ejercicios "open" no puntúan, así que no llevan botón: ver .open-block.
+    if (ex.type === "open") return { head: head, btn: null };
     const btn = document.createElement("button");
     btn.className = "check-btn";
     btn.textContent = "Corregir";
@@ -852,6 +909,16 @@
           letter.setAttribute("translate", "no");
           letter.textContent = marca;
           row.appendChild(letter);
+          // item.img: la foto va DESPUÉS del número y antes del hueco. Al revés, el
+          // número quedaba debajo de su propia foto y pegado a la siguiente, y no se sabía
+          // a cuál se refería. Se declara como campo propio, no como HTML dentro de item.t.
+          if (item.img) {
+            const im = document.createElement("img");
+            im.className = "foto-act";
+            im.src = item.img;
+            im.alt = item.alt || "Fotografía del ejercicio";
+            row.appendChild(im);
+          }
           renderTemplate(row, item.t, item.a, item.wide, "Ej. " + ex.num + " " + marca.replace(".", ""), false, item.vf, ex.dialog);
           wrap.appendChild(row);
         });
@@ -926,6 +993,11 @@
         table.appendChild(tbody);
         twrap.appendChild(table);
         card.appendChild(twrap);
+      } else if (ex.type === "open") {
+        const box = document.createElement("div");
+        box.className = "open-block";
+        box.innerHTML = ex.html;
+        card.appendChild(box);
       } else if (ex.type === "agenda") {
         const twrap = document.createElement("div");
         twrap.className = "table-wrap";
@@ -961,6 +1033,16 @@
           letter.setAttribute("translate", "no");
           letter.textContent = marca;
           row.appendChild(letter);
+          // item.img: la foto va DESPUÉS del número y antes del hueco. Al revés, el
+          // número quedaba debajo de su propia foto y pegado a la siguiente, y no se sabía
+          // a cuál se refería. Se declara como campo propio, no como HTML dentro de item.t.
+          if (item.img) {
+            const im = document.createElement("img");
+            im.className = "foto-act";
+            im.src = item.img;
+            im.alt = item.alt || "Fotografía del ejercicio";
+            row.appendChild(im);
+          }
           renderTemplate(row, item.t, item.a, item.wide, "Ej. " + ex.num + " " + marca.replace(".", ""), false, item.vf, ex.dialog);
           wrap.appendChild(row);
         });
@@ -984,7 +1066,7 @@
       }
 
       const endIdx = allInputs.length;
-      hdr.btn.addEventListener("click", function () {
+      if (hdr.btn) hdr.btn.addEventListener("click", function () {
         gradeRange(startIdx, endIdx);
         updateScore();
       });
