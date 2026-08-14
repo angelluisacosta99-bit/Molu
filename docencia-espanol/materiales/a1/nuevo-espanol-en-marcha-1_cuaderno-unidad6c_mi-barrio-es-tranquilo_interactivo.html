@@ -1,9 +1,19 @@
 <!--
-  TEMPLATE — plantilla de ejercicio interactivo con corrección instantánea.
-  Ver .claude/skills/ejercicio-interactivo/SKILL.md para el proceso completo.
-  Busca todos los marcadores {{...}} y sustitúyelos; no dejes ninguno sin reemplazar.
+  Nuevo Español en Marcha 1 (A1), Cuaderno de Ejercicios, Unidad 6C — «Mi barrio es
+  tranquilo» (páginas 30-31). El tema es ser/estar aplicado a describir viviendas y
+  barrios, más léxico de adjetivos opuestos, transportes y música latina.
+
+  Enunciados y respuestas salen del PDF del cuaderno (Drive del profesor), cuyo propio
+  solucionario cubre los nueve ejercicios.
+
+  FALTAN los dos ejercicios que dependen de dibujos del libro, pendientes de que el
+  profesor mande las páginas: el 1 (describir cuatro cuadernos dibujados y escribir su
+  letra) y el 5 (relacionar cada transporte con su lugar y con su dibujo). Sin la imagen
+  el ejercicio 1 es literalmente irresoluble, así que no se incluye a medias — ver la
+  lección de refHTML en SKILL.md. El 6 es una encuesta de respuesta libre y el
+  solucionario lo da como «actividad libre».
 -->
-<title>{{TITLE}}</title>
+<title>Nuevo Español en Marcha · A1 · Cuaderno 6C — Mi barrio es tranquilo</title>
 <style>
   :root {
     --paper: #F3F5F0;
@@ -420,18 +430,18 @@
 </style>
 
 <script>
-  // {{STORAGE_KEY}} here MUST be byte-identical to the one set further down in the gate
+  // unlocked-a1-cuaderno-6c-barrio here MUST be byte-identical to the one set further down in the gate
   // script (search "STORAGE_KEY =") — same placeholder, same value, both occurrences.
   document.documentElement.setAttribute(
     "data-locked",
-    localStorage.getItem("{{STORAGE_KEY}}") === "1" ? "false" : "true"
+    localStorage.getItem("unlocked-a1-cuaderno-6c-barrio") === "1" ? "false" : "true"
   );
 </script>
 
 <div class="gate-overlay">
   <div class="gate-card">
     <div class="eyebrow">Acceso privado</div>
-    <h2>{{GATE_TITLE}}</h2>
+    <h2>Cuaderno A1 · Unidad 6C</h2>
     <p>Pídele el código a tu profesor para entrar.</p>
     <input type="text" id="gateInput" placeholder="CÓDIGO" autocomplete="off" autocapitalize="characters" />
     <button id="gateBtn">Entrar</button>
@@ -442,10 +452,10 @@
   (function () {
     // El código es solo un disuasivo, no seguridad real — cualquiera que vea el HTML
     // fuente lo ve. Elige una palabra corta, memorable y ligada al tema, en MAYÚSCULAS.
-    const CODE = "{{GATE_CODE}}";
-    // MUST be byte-identical al {{STORAGE_KEY}} usado arriba (ver comentario junto al
+    const CODE = "BARRIO";
+    // MUST be byte-identical al unlocked-a1-cuaderno-6c-barrio usado arriba (ver comentario junto al
     // primer occurrence). Usa un valor único por ejercicio, p. ej. "unlocked-b2-13a-tema".
-    const STORAGE_KEY = "{{STORAGE_KEY}}";
+    const STORAGE_KEY = "unlocked-a1-cuaderno-6c-barrio";
     function tryUnlock() {
       const val = document.getElementById("gateInput").value.trim().toUpperCase();
       if (val === CODE) {
@@ -465,9 +475,8 @@
 <div class="topbar gated-content">
   <div class="topbar-inner">
     <div class="brand">
-      <!-- Ejemplo real (A1): {{BRAND_TITLE}} = "Ejercicios A1", {{BRAND_SUB}} = "Presente · Gerundio · Indefinido" -->
-      <span class="brand-title">{{BRAND_TITLE}}</span>
-      <span class="brand-sub">{{BRAND_SUB}}</span>
+      <span class="brand-title">Cuaderno A1 · 6C</span>
+      <span class="brand-sub">Mi barrio es tranquilo</span>
     </div>
     <nav class="nav-dots" id="navDots"></nav>
     <div class="score-wrap">
@@ -478,13 +487,13 @@
 </div>
 
 <div class="hero gated-content">
-  <div class="eyebrow">{{EYEBROW}}</div>
-  <h1>{{HEADLINE}}</h1>
-  <p>{{SUBTITLE}}</p>
+  <div class="eyebrow">Nuevo Español en Marcha 1 · Cuaderno de ejercicios</div>
+  <h1>Mi barrio es tranquilo</h1>
+  <p>Ser y estar para describir tu casa y tu barrio, adjetivos opuestos, transportes y música latina.</p>
   <div class="hero-meta">
     <span><strong id="totalBlanksLabel" translate="no">—</strong> huecos en total</span>
-    <span><strong>{{N_BLOCKS}}</strong> bloques</span>
-    <span><strong>{{N_EXERCISES}}</strong> ejercicios</span>
+    <span><strong>1</strong> bloque</span>
+    <span><strong>6</strong> ejercicios</span>
   </div>
 </div>
 
@@ -516,7 +525,7 @@
 </div>
 
 <footer class="gated-content">
-  <span>{{FOOTER_LEFT}}</span>
+  <span>Nuevo Español en Marcha 1 · Cuaderno · Unidad 6C</span>
   <span>© Angel Luis Acosta González</span>
 </footer>
 
@@ -564,112 +573,119 @@
 
   // ---------- exercise data ----------
   // template blanks use {0},{1}... matched to item.answers[i]
+  // Amplía una lista con su versión sin tildes. Se usa donde la tilde NO es lo evaluado
+  // (léxico del ejercicio 3, correcciones del 4): exigirla ahí convierte el ejercicio en un
+  // dictado. En ser/estar la tilde no distingue nada, así que no estorba.
+  function conSinTildes(list) {
+    const out = [];
+    list.forEach(function (s) {
+      out.push(s);
+      const sin = s.normalize("NFD").replace(/[̀-ͯ]/g, "");
+      if (sin !== s) out.push(sin);
+    });
+    return out;
+  }
+  // Una frase del ejercicio 4 que ya está bien. Se aceptan las formas naturales de decirlo.
+  const YA_CORRECTA = conSinTildes([
+    "correcta", "correcto", "está bien", "esta bien", "bien", "es correcta", "ya está bien"
+  ]);
+
   const blocks = [
-    // Cada bloque agrupa varios ejercicios bajo un mismo subtema. {{BLOCKS}} — sustituye
-    // este array completo por los bloques/ejercicios reales del capítulo, basados en el
-    // material del profesor (ver SKILL.md paso 1). Lo que sigue es un ejemplo de cada uno
-    // de los 5 tipos soportados por el renderizador (busca 'ex.type ===' en este archivo);
-    // si necesitas un tipo nuevo, tendrás que extender también el renderizador.
     {
-      id: "{{BLOCK_ID}}", num: 1, title: "{{BLOCK_TITLE}}",
-      sub: "{{BLOCK_SUBTITLE}}",
+      id: "unidad-6c", num: 1, title: "El barrio",
+      sub: "Unidad 6C · Mi barrio es tranquilo",
       exercises: [
         {
-          // Tipo "items": una lista de frases sueltas, cada una con sus propios huecos
-          // {0}, {1}... numerados desde 0 DENTRO de esa frase (no del ejercicio entero).
-          // "a" es un array paralelo a los huecos: a[i] es la lista de respuestas
-          // aceptadas para el hueco {i} (varias formas válidas si aplica).
-          num: 1, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
+          num: 2, title: "Completa con es / está",
+          instr: "Rosa y Andrés hablan de sus pisos. Completa con la forma correcta de ser o estar. La primera la trae resuelta el libro.",
           type: "items",
+          dialog: true,
+          numbered: true,
           items: [
-            // Ítem sin huecos y con solved: true = el que el libro trae resuelto como modelo.
-            { t: "Yo trabajo en un hospital y vivo en Madrid.", solved: true },
-            { t: "María {0} (trabajar) en un hospital y {1} (vivir) en Madrid.", a: [["trabaja"], ["vive"]] },
-            { t: "¿Tú {0} (comer) en casa o en la oficina normalmente?", a: [["comes"]] },
-            // vf: true en un item cambia el hueco de texto libre por dos botones "V"/"F"
-            // que el alumno pulsa en vez de escribir — pensado para ejercicios de
-            // verdadero/falso. La respuesta (a) sigue siendo ["V"] o ["F"], igual que
-            // cualquier otro hueco de texto; el motor de corrección no cambia.
-            { t: "Madrid es la capital de España. → {0}", a: [["V"]], vf: true }
-            // wide: true en un item hace el input más ancho — úsalo para respuestas largas.
-          ],
-          // Ejercicio de comprensión oral: transcriptHTML añade la transcripción al final
-          // de la tarjeta, dentro de un <details> plegado (la transcripción es la solución,
-          // así que no puede quedar a la vista mientras el alumno responde). Opcional:
-          // transcriptLabel cambia el texto del desplegable.
-          transcriptLabel: "Ver la transcripción del audio (ábrela solo después de responder)",
-          transcriptHTML:
-            '<span class="line"><span class="who">ANA:</span> ¿Dónde vives?</span>' +
-            '<span class="line"><span class="who">LUIS:</span> En Madrid, cerca del centro.</span>'
+            { t: "ROSA: ¿Tu piso es grande?", solved: true },
+            { t: "ANDRÉS: No, solo tiene 40 m², {0} muy pequeño, pero me gusta porque {1} en un barrio muy céntrico.", a: [["es"], ["está"]], wide: true },
+            { t: "ROSA: ¿{0} cerca del trabajo?", a: [["Está"]], wide: true },
+            { t: "ANDRÉS: Sí, muy cerca. Solo tiene un problema: que mi calle {0} muy ruidosa y no duermo bien por las noches. ¿Y tu piso, cómo {1}?", a: [["es"], ["es"]], wide: true },
+            { t: "ROSA: Pues {0} muy tranquilo y tiene mucha luz, me encanta. Pero tengo un problema: {1} muy lejos del trabajo. Tardo casi una hora en llegar todos los días.", a: [["es"], ["está"]], wide: true }
+          ]
         },
         {
-          // Tipo "text": un único párrafo continuo con huecos numerados {0}, {1}... a lo
-          // largo de TODO el texto (no se reinicia por línea). "\n" en `text` inserta un
-          // salto de línea visual. "a" es un array paralelo a los huecos del texto entero.
-          num: 2, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
+          num: 3, title: "Escribe el adjetivo contrario",
+          instr: "El primero lo trae resuelto el libro.",
+          type: "items",
+          numbered: true,
+          items: [
+            { t: "largo → corto", solved: true },
+            { t: "rápido → {0}", a: [conSinTildes(["lento"])] },
+            { t: "alto → {0}", a: [conSinTildes(["bajo"])] },
+            { t: "grande → {0}", a: [conSinTildes(["pequeño"])] },
+            { t: "fácil → {0}", a: [conSinTildes(["difícil"])] },
+            { t: "ruidoso → {0}", a: [conSinTildes(["tranquilo"])] },
+            { t: "barato → {0}", a: [conSinTildes(["caro"])] },
+            { t: "bonito → {0}", a: [conSinTildes(["feo"])] },
+            { t: "ancho → {0}", a: [conSinTildes(["estrecho"])] },
+            { t: "claro → {0}", a: [conSinTildes(["oscuro"])] },
+            { t: "delgado → {0}", a: [conSinTildes(["gordo"])] }
+          ]
+        },
+        {
+          num: 4, title: "Busca los errores de ser y estar",
+          instr: "De estas quince frases solo dos son correctas. En las demás hay un error de ser/estar: escribe únicamente la forma corregida (en la 13 hay dos, sepáralas con una coma). Si la frase ya es correcta, escribe «correcta».",
+          type: "items",
+          numbered: true,
+          items: [
+            { t: "Salamanca está una ciudad muy bonita, tiene muchos monumentos importantes. → {0}", a: [conSinTildes(["es"])], wide: true },
+            { t: "Mi casa es en un barrio muy tranquilo y silencioso. → {0}", a: [conSinTildes(["está"])], wide: true },
+            { t: "Este problema de matemáticas es muy difícil. → {0}", a: [YA_CORRECTA], wide: true },
+            { t: "Roberto está rubio, delgado y bastante alto, está ahora en el colegio. → {0}", a: [conSinTildes(["es rubio", "es"])], wide: true },
+            { t: "Fumar está malo para la salud. → {0}", a: [conSinTildes(["es"])], wide: true },
+            { t: "Esa estación de metro es al lado de mi casa y la parada del autobús está enfrente. → {0}", a: [conSinTildes(["está al lado", "está"])], wide: true },
+            { t: "Los alumnos son en la clase de historia. → {0}", a: [conSinTildes(["están"])], wide: true },
+            { t: "¿Está cerca de aquí la estación del metro? → {0}", a: [YA_CORRECTA], wide: true },
+            { t: "Estos ejercicios no son bien. → {0}", a: [conSinTildes(["están"])], wide: true },
+            { t: "¿Es tu hermano en tu casa? → {0}", a: [conSinTildes(["Está"])], wide: true },
+            { t: "Mi correo electrónico es lleno. → {0}", a: [conSinTildes(["está"])], wide: true },
+            { t: "La taza es vacía. → {0}", a: [conSinTildes(["está"])], wide: true },
+            { t: "Mi hermano es en cama, porque es enfermo. → {0}", a: [conSinTildes(["está, está", "está está", "está y está"])], wide: "full" },
+            { t: "Este ejercicio no es bien. → {0}", a: [conSinTildes(["está"])], wide: true },
+            { t: "Este libro está muy bueno. → {0}", a: [conSinTildes(["es"])], wide: true }
+          ]
+        },
+        {
+          num: 7, title: "Los cuatro ritmos latinos",
+          instr: "Este ejercicio es de audio: escucha la pista 8 del CD del cuaderno (o la que ponga tu profesor) y escribe qué ritmo suena en cada una. Las opciones son tango, ranchera, flamenco y salsa.",
+          refHTML: '<span class="ref-label">Ritmos</span><div class="ref-options"><span class="ref-opt">tango</span><span class="ref-opt">ranchera</span><span class="ref-opt">flamenco</span><span class="ref-opt">salsa</span></div>',
+          type: "items",
+          numbered: true,
+          items: [
+            { t: "Primer ritmo → {0}", a: [["salsa"]] },
+            { t: "Segundo ritmo → {0}", a: [["flamenco"]] },
+            { t: "Tercer ritmo → {0}", a: [["tango"]] },
+            { t: "Cuarto ritmo → {0}", a: [["ranchera"]] }
+          ]
+        },
+        {
+          num: 8, title: "Música latina",
+          instr: "Completa el texto con las palabras del recuadro. La primera la trae resuelta el libro.",
+          refHTML: '<span class="ref-label">Palabras</span><div class="ref-options"><span class="ref-opt">ritmos</span><span class="ref-opt">cultura</span><span class="ref-opt">cantantes</span><span class="ref-opt">baila</span><span class="ref-opt">salsa</span><span class="ref-opt">canciones</span><span class="ref-opt">popular</span></div>',
           type: "text",
-          text: "Hoy Carmen {0} (trabajar) todo el día, pero ahora mismo {1} (preparar) la cena.",
-          a: [["trabaja"], ["está preparando"]]
+          text: "La música es un elemento muy importante de la (1) cultura hispanoamericana. En América se mezclan los {0} indígenas con los africanos y con los que llevaron los españoles.\nAdemás del tango, la ranchera o la {1}, son famosos el merengue, la cumbia, el bolero y, sobre todo, la bachata, que se {2} en la República Dominicana y en muchos otros lugares del mundo. La bachata aparece en los pueblos, pero en los años 70 se hace también muy {3} en las ciudades.\nLos temas de estas {4} hablan casi siempre de amor y se acompañan de instrumentos de cuerda y percusión. Uno de los {5} más famosos es Juan Luis Guerra.",
+          a: [["ritmos"], ["salsa"], ["baila"], ["popular"], ["canciones"], ["cantantes"]]
         },
         {
-          // Tipo "table2": tabla de 2 columnas, "rows" es [valor_fijo, respuestas_aceptadas].
-          // OJO: "respuestas_aceptadas" es el mismo spec que usa isCorrect() para "a" en los
-          // demás tipos — casi siempre un array de UNA lista de alternativas, es decir
-          // [["hablando"]] (doble corchete), no ["hablando"] a secas; el renderizador hace
-          // makeInput(r[1][0], ...), así que r[1][0] debe ser el array de alternativas.
-          // WARNING: los encabezados ("Infinitivo"/"Gerundio") están HARDCODEADOS en el
-          // renderizador (busca 'ex.type === "table2"' más abajo), no se leen de este
-          // array — si necesitas otros encabezados, edita el renderizador o usa "conjTable".
-          num: 3, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          type: "table2",
-          rows: [
-            ["hablar", [["hablando"]]],
-            ["comer", [["comiendo"]]]
-          ]
-        },
-        {
-          // Tipo "conjTable": tabla de conjugación con columnas configurables. "subjects"
-          // es la columna izquierda fija (sujetos); "cols" define cada columna de la
-          // derecha con su encabezado ("label") y sus respuestas ("a", un array paralelo
-          // a "subjects" — a[i] son las alternativas aceptadas para subjects[i] en esa
-          // columna, es decir CADA elemento de "a" es a su vez un array de alternativas,
-          // p. ej. a: [["hablo"], ["hablas"], ["habla"]], no a: ["hablo", "hablas", "habla"]
-          // — el renderizador hace makeInput(c.a[si], ...) y espera ese array ahí).
-          num: 4, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          // ex.subjectLabel cambia el encabezado de la primera columna (por defecto "Sujeto").
-          // Una celda cuyo spec es una CADENA en vez de un array se pinta fija: es la que el
-          // libro ya trae resuelta, y no cuenta como hueco.
-          type: "conjTable",
-          subjectLabel: "Sujeto",
-          subjects: ["yo", "tú", "él/ella"],
-          cols: [
-            { label: "Presente", a: ["hablo", ["hablas"], ["habla"]] },
-            { label: "Indefinido", a: [["hablé"], ["hablaste"], ["habló"]] }
-          ]
-        },
-        {
-          // Tipo "agenda": tabla de referencia (solo lectura, sin huecos) seguida de una
-          // lista "items" tipo "items" que se responde consultando esa tabla.
-          // WARNING: igual que table2, los encabezados ("Día"/"Actividad") están
-          // HARDCODEADOS en el renderizador, no se leen de `table` aquí abajo.
-          num: 5, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          type: "agenda",
-          table: [
-            ["lunes", "reunión con el equipo"],
-            ["martes", "clase de español"]
-          ],
+          num: 9, title: "Verdadero o falso",
+          instr: "Después de completar el texto del ejercicio 8, marca V (verdadero) o F (falso).",
+          type: "items",
+          numbered: true,
           items: [
-            { t: "El lunes María {0} (tener) una reunión con el equipo.", a: [["tiene"]] }
+            { t: "El tango, la salsa y el flamenco son ritmos típicos de Hispanoamérica. → {0}", a: [["F"]], vf: true },
+            { t: "La bachata nace en las ciudades. → {0}", a: [["F"]], vf: true },
+            { t: "Las canciones de bachata suelen tratar de amor. → {0}", a: [["V"]], vf: true },
+            { t: "La bachata se toca solo con un instrumento. → {0}", a: [["F"]], vf: true }
           ]
         }
       ]
     }
-    // Añade más bloques ({ id, num, title, sub, exercises: [...] }) según haga falta.
   ];
 
   // ---------- render ----------
@@ -1045,7 +1061,7 @@
   });
 
   // ---------- results panel: motivational message + send to teacher ----------
-  const TITLE_LABEL = "{{TITLE_LABEL}}"; // short label used in email subject / summary header
+  const TITLE_LABEL = "Cuaderno A1 · 6C Mi barrio es tranquilo"; // short label used in email subject / summary header
   // These are Angel's real, reusable contact details — copy verbatim into every new
   // exercise unless he says they changed. IMPORTANT: telegram MUST be his @username
   // (no @, no phone number) — t.me/+<phone> links silently ignore ?text= and never
