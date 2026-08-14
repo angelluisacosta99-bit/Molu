@@ -278,9 +278,13 @@
   /* Los cuadros de conjugación llegan a tener 5 columnas: los huecos van más estrechos que
      los de las frases sueltas para que quepan sin obligar a desplazar la tabla a mano. */
   .exercise-table input.blank { width: 6.4em; }
+  /* Un cuadro de solo dos columnas de respuesta (sujeto + 2) tiene sitio de sobra: ahí los
+     huecos van más anchos, porque formas como "no vengáis" no caben en 6.4em. */
+  .exercise-table tr:has(td:nth-child(3)):not(:has(td:nth-child(4))) input.blank { width: 8.2em; }
   .exercise-table td, .exercise-table th { white-space: nowrap; }
   @media (max-width: 560px) {
     .exercise-table input.blank { width: 5.1em; font-size: 0.85rem; }
+    .exercise-table tr:has(td:nth-child(3)):not(:has(td:nth-child(4))) input.blank { width: 6.6em; }
     .exercise-table th, .exercise-table td { padding: 0.35rem 0.4rem; font-size: 0.82rem; }
   }
   /* Aviso de que la tabla se puede desplazar en horizontal si no cabe entera. */
@@ -544,6 +548,7 @@
   .item-row.tail-blank input.blank {
     flex: 1 1 8em; width: auto; max-width: none; min-width: 6em; text-align: left;
   }
+  .item-row.tail-blank .tail-text { flex: 0 1 auto; min-width: 0; }
   .item-row.tail-blank .reveal.show { flex-basis: 100%; margin-left: 0; }
 </style>
 
@@ -1684,25 +1689,41 @@
         },
         {
           num: 4, title: "Imperativos irregulares",
-          instr: "Completa las formas que faltan. (En DECIR ya están resueltas dos: tú negativo «no digas» y usted afirmativo «diga».)",
-          type: "items",
-          items: [
-            { t: "DECIR · tú → afirmativo {0}", a: [["di"]] },
-            { t: "DECIR · usted → negativo {0}", a: [["no diga"]] },
-            { t: "DECIR · vosotros/as → afirmativo {0}, negativo {1}", a: [["decid"], ["no digáis"]] },
-            { t: "DECIR · ustedes → afirmativo {0}, negativo {1}", a: [["digan"], ["no digan"]] },
-            { t: "IR · tú → afirmativo {0}, negativo {1}", a: [["ve"], ["no vayas"]] },
-            { t: "IR · usted → afirmativo {0}, negativo {1}", a: [["vaya"], ["no vaya"]] },
-            { t: "IR · vosotros/as → afirmativo {0}, negativo {1}", a: [["id"], ["no vayáis"]] },
-            { t: "IR · ustedes → afirmativo {0}, negativo {1}", a: [["vayan"], ["no vayan"]] },
-            { t: "HACER · tú → afirmativo {0}, negativo {1}", a: [["haz"], ["no hagas"]] },
-            { t: "HACER · usted → afirmativo {0}, negativo {1}", a: [["haga"], ["no haga"]] },
-            { t: "HACER · vosotros/as → afirmativo {0}, negativo {1}", a: [["haced"], ["no hagáis"]] },
-            { t: "HACER · ustedes → afirmativo {0}, negativo {1}", a: [["hagan"], ["no hagan"]] },
-            { t: "VENIR · tú → afirmativo {0}, negativo {1}", a: [["ven"], ["no vengas"]] },
-            { t: "VENIR · usted → afirmativo {0}, negativo {1}", a: [["venga"], ["no venga"]] },
-            { t: "VENIR · vosotros/as → afirmativo {0}, negativo {1}", a: [["venid"], ["no vengáis"]] },
-            { t: "VENIR · ustedes → afirmativo {0}, negativo {1}", a: [["vengan"], ["no vengan"]] }
+          instr: "Completa las formas que faltan. Las formas en verde ya vienen dadas en el libro (en DECIR: «no digas» y «diga»).",
+          type: "conjTables",
+          tables: [
+            {
+              corner: "DECIR",
+              subjects: ["tú", "usted", "vosotros/as", "ustedes"],
+              cols: [
+                { label: "Afirmativo", a: [["di"], "diga", ["decid"], ["digan"]] },
+                { label: "Negativo", a: ["no digas", ["no diga"], ["no digáis"], ["no digan"]] }
+              ]
+            },
+            {
+              corner: "IR",
+              subjects: ["tú", "usted", "vosotros/as", "ustedes"],
+              cols: [
+                { label: "Afirmativo", a: [["ve"], ["vaya"], ["id"], ["vayan"]] },
+                { label: "Negativo", a: [["no vayas"], ["no vaya"], ["no vayáis"], ["no vayan"]] }
+              ]
+            },
+            {
+              corner: "HACER",
+              subjects: ["tú", "usted", "vosotros/as", "ustedes"],
+              cols: [
+                { label: "Afirmativo", a: [["haz"], ["haga"], ["haced"], ["hagan"]] },
+                { label: "Negativo", a: [["no hagas"], ["no haga"], ["no hagáis"], ["no hagan"]] }
+              ]
+            },
+            {
+              corner: "VENIR",
+              subjects: ["tú", "usted", "vosotros/as", "ustedes"],
+              cols: [
+                { label: "Afirmativo", a: [["ven"], ["venga"], ["venid"], ["vengan"]] },
+                { label: "Negativo", a: [["no vengas"], ["no venga"], ["no vengáis"], ["no vengan"]] }
+              ]
+            }
           ]
         },
         {
@@ -3291,11 +3312,28 @@
               // estirarlo hasta el borde derecho partiría la oración por la mitad.
               let cola = "", n = huecos[0].nextSibling;
               while (n) { cola += n.textContent || ""; n = n.nextSibling; }
-              if (/^[\s.,;:!?¿¡…"»)]*$/.test(cola)) row.classList.add("tail-blank");
+              if (/^[\s.,;:!?¿¡…"»)]*$/.test(cola)) {
+                row.classList.add("tail-blank");
+                // Todo lo anterior al hueco (número + frase) va en UN solo envoltorio.
+                // Si se dejan sueltos, cada nodo de texto es un elemento flex distinto y
+                // una frase larga salta de línea entera, dejando el "e." solo en la
+                // línea de arriba. Con el envoltorio, el número siempre va pegado a su
+                // frase y es la frase la que parte por dentro.
+                const head = document.createElement("span");
+                head.className = "tail-text";
+                while (row.firstChild && row.firstChild !== huecos[0]) head.appendChild(row.firstChild);
+                row.insertBefore(head, huecos[0]);
+              }
             }
           }
           wrap.appendChild(row);
         });
+        // Estirar el hueco hasta el borde derecho solo tiene sentido si hay VARIAS
+        // filas que acaben así: es lo que las hace terminar todas en el mismo sitio.
+        // Una sola, rodeada de frases con el hueco dentro, se ve como una raya larga
+        // y suelta; en ese caso se deja con el ancho normal.
+        const colas = wrap.querySelectorAll(".item-row.tail-blank");
+        if (colas.length === 1) colas[0].classList.remove("tail-blank");
         card.appendChild(wrap);
       } else if (ex.type === "text") {
         const p = document.createElement("div");
@@ -3379,11 +3417,28 @@
               // estirarlo hasta el borde derecho partiría la oración por la mitad.
               let cola = "", n = huecos[0].nextSibling;
               while (n) { cola += n.textContent || ""; n = n.nextSibling; }
-              if (/^[\s.,;:!?¿¡…"»)]*$/.test(cola)) row.classList.add("tail-blank");
+              if (/^[\s.,;:!?¿¡…"»)]*$/.test(cola)) {
+                row.classList.add("tail-blank");
+                // Todo lo anterior al hueco (número + frase) va en UN solo envoltorio.
+                // Si se dejan sueltos, cada nodo de texto es un elemento flex distinto y
+                // una frase larga salta de línea entera, dejando el "e." solo en la
+                // línea de arriba. Con el envoltorio, el número siempre va pegado a su
+                // frase y es la frase la que parte por dentro.
+                const head = document.createElement("span");
+                head.className = "tail-text";
+                while (row.firstChild && row.firstChild !== huecos[0]) head.appendChild(row.firstChild);
+                row.insertBefore(head, huecos[0]);
+              }
             }
           }
           wrap.appendChild(row);
         });
+        // Estirar el hueco hasta el borde derecho solo tiene sentido si hay VARIAS
+        // filas que acaben así: es lo que las hace terminar todas en el mismo sitio.
+        // Una sola, rodeada de frases con el hueco dentro, se ve como una raya larga
+        // y suelta; en ese caso se deja con el ancho normal.
+        const colas = wrap.querySelectorAll(".item-row.tail-blank");
+        if (colas.length === 1) colas[0].classList.remove("tail-blank");
         card.appendChild(wrap);
       } else if (ex.type === "open") {
         // Redacción libre: no hay una respuesta única, así que no genera huecos ni entra en

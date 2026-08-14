@@ -376,6 +376,29 @@ no las deshagas sin querer al modificar la plantilla.
   al hueco son nodos de TEXTO, no elementos, y con eso se colaban frases del tipo «¿Qué ___
   (hacer) ayer?» —donde el hueco va dentro de la frase y estirarlo la parte por la mitad—.
   Hay que mirar los nodos posteriores y aceptar solo puntuación de cierre.
+  Dos correcciones más, ambas detectadas por el profesor mirando el resultado:
+  **(a) Envuelve número + frase en un solo `<span class="tail-text">`.** Si se dejan sueltos,
+  cada nodo de texto es un elemento flex independiente: una frase larga no cabe al lado del
+  número, salta entera a la línea siguiente y el número se queda solo arriba (se veía una
+  «e.» huérfana en «Formación de contrarios»). Con el envoltorio, el número va siempre pegado
+  a su frase y es la frase la que parte por dentro.
+  **(b) Estira solo si hay más de una fila así en el ejercicio.** El estirón existe para que
+  varias filas acaben en el mismo sitio; una sola, rodeada de frases con el hueco en medio, se
+  ve como una raya larga y arbitraria (ejercicio 6 de 12B). Tras montar las filas se cuentan
+  las `.tail-blank` y, si hay exactamente una, se le quita la clase.
+- **Un listado que en realidad es una tabla, hazlo tabla (`conjTable`/`conjTables`).** El
+  ejercicio 4 de Repaso B1 (imperativos irregulares) eran 16 filas «VERBO · persona →
+  afirmativo ___, negativo ___» como `items`. Ahí no hay alineación posible: la etiqueta mide
+  distinto en cada fila y arrastra todo lo demás, y encima las dos filas que el libro trae
+  medio resueltas tenían un solo hueco, así que se estiraban (`.tail-blank`) mientras las
+  otras catorce no — el desorden que vio el profesor. Como cuadro de conjugación (un cuadro
+  por verbo, columnas «Afirmativo»/«Negativo», y las formas dadas como **cadena** en vez de
+  array para que salgan fijas y no cuenten como hueco) todo cae en columnas solo. Regla
+  general: si las filas comparten estructura y no son frases, es una tabla, no una lista.
+  Al hacerlo, revisa el ancho de los huecos: `.exercise-table input.blank` va estrecho
+  (6.4 em) porque los cuadros de cinco columnas no caben de otra forma, y ahí «no vengáis» se
+  cortaba; un cuadro de solo dos columnas de respuesta tiene sitio de sobra y se ensancha con
+  `tr:has(td:nth-child(3)):not(:has(td:nth-child(4)))`.
 - **Si tocas cómo se construye una fila, comprueba `extraer.mjs`.** Al pasar el ejercicio 5
   de Practica más 3 a columnas, el `.md` archivado empezó a salir con las respuestas pegadas
   (`**habla****regular**`): el separador que antes ponía el texto de `item.t` había

@@ -469,6 +469,7 @@
   .item-row.tail-blank input.blank {
     flex: 1 1 8em; width: auto; max-width: none; min-width: 6em; text-align: left;
   }
+  .item-row.tail-blank .tail-text { flex: 0 1 auto; min-width: 0; }
   .item-row.tail-blank .reveal.show { flex-basis: 100%; margin-left: 0; }
 </style>
 
@@ -945,11 +946,28 @@
               // estirarlo hasta el borde derecho partiría la oración por la mitad.
               let cola = "", n = huecos[0].nextSibling;
               while (n) { cola += n.textContent || ""; n = n.nextSibling; }
-              if (/^[\s.,;:!?¿¡…"»)]*$/.test(cola)) row.classList.add("tail-blank");
+              if (/^[\s.,;:!?¿¡…"»)]*$/.test(cola)) {
+                row.classList.add("tail-blank");
+                // Todo lo anterior al hueco (número + frase) va en UN solo envoltorio.
+                // Si se dejan sueltos, cada nodo de texto es un elemento flex distinto y
+                // una frase larga salta de línea entera, dejando el "e." solo en la
+                // línea de arriba. Con el envoltorio, el número siempre va pegado a su
+                // frase y es la frase la que parte por dentro.
+                const head = document.createElement("span");
+                head.className = "tail-text";
+                while (row.firstChild && row.firstChild !== huecos[0]) head.appendChild(row.firstChild);
+                row.insertBefore(head, huecos[0]);
+              }
             }
           }
           wrap.appendChild(row);
         });
+        // Estirar el hueco hasta el borde derecho solo tiene sentido si hay VARIAS
+        // filas que acaben así: es lo que las hace terminar todas en el mismo sitio.
+        // Una sola, rodeada de frases con el hueco dentro, se ve como una raya larga
+        // y suelta; en ese caso se deja con el ancho normal.
+        const colas = wrap.querySelectorAll(".item-row.tail-blank");
+        if (colas.length === 1) colas[0].classList.remove("tail-blank");
         card.appendChild(wrap);
       } else if (ex.type === "text") {
         const p = document.createElement("div");
@@ -1069,11 +1087,28 @@
               // estirarlo hasta el borde derecho partiría la oración por la mitad.
               let cola = "", n = huecos[0].nextSibling;
               while (n) { cola += n.textContent || ""; n = n.nextSibling; }
-              if (/^[\s.,;:!?¿¡…"»)]*$/.test(cola)) row.classList.add("tail-blank");
+              if (/^[\s.,;:!?¿¡…"»)]*$/.test(cola)) {
+                row.classList.add("tail-blank");
+                // Todo lo anterior al hueco (número + frase) va en UN solo envoltorio.
+                // Si se dejan sueltos, cada nodo de texto es un elemento flex distinto y
+                // una frase larga salta de línea entera, dejando el "e." solo en la
+                // línea de arriba. Con el envoltorio, el número siempre va pegado a su
+                // frase y es la frase la que parte por dentro.
+                const head = document.createElement("span");
+                head.className = "tail-text";
+                while (row.firstChild && row.firstChild !== huecos[0]) head.appendChild(row.firstChild);
+                row.insertBefore(head, huecos[0]);
+              }
             }
           }
           wrap.appendChild(row);
         });
+        // Estirar el hueco hasta el borde derecho solo tiene sentido si hay VARIAS
+        // filas que acaben así: es lo que las hace terminar todas en el mismo sitio.
+        // Una sola, rodeada de frases con el hueco dentro, se ve como una raya larga
+        // y suelta; en ese caso se deja con el ancho normal.
+        const colas = wrap.querySelectorAll(".item-row.tail-blank");
+        if (colas.length === 1) colas[0].classList.remove("tail-blank");
         card.appendChild(wrap);
       }
 
