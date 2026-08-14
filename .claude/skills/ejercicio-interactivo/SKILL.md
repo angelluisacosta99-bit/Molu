@@ -336,6 +336,16 @@ no las deshagas sin querer al modificar la plantilla.
   [regular|irregular]»—, y nació de un fallo real: con `vf` declarado en el ítem, el hueco
   del imperativo también se convirtió en botones. Si un ejercicio del libro pide repartir
   cosas en dos columnas, esto es lo que traduce esa decisión a la pantalla.
+- **Fotos, tablas y sopas de letras van SIEMPRE centradas.** Instrucción explícita del
+  profesor, y hay una regla al final del `<style>` de la plantilla que lo garantiza para
+  `.foto-act`, `.wordsearch`, `table.gustos`, las imágenes de `.exercise-ref` y de
+  `.open-block`, y `.postcard`. Ojo con dos trampas: un bloque con `max-width` **no** se
+  centra solo, necesita `margin-left/right: auto` (esto ya causó un arreglo real en
+  `.open-block` y `.postcard`); y un elemento con `white-space: pre` como la sopa de letras
+  necesita además `width: fit-content`, porque si no ocupa todo el ancho y centrar no hace
+  nada visible. Para una **fila de opciones que son dibujos** el centrado no es del elemento
+  sino de su contenido: `.ref-options:has(img) { justify-content: center }`. Las filas de
+  opciones que son palabras se quedan a la izquierda a propósito — una lista se lee así.
 - **`item.img` pone una foto en la fila, y va DESPUÉS del número.** Al revés (foto y luego
   número) cada número queda debajo de su propia foto y pegado a la siguiente, y no se sabe a
   cuál se refiere. La foto se declara como campo del ítem, no como HTML dentro de `item.t`:
