@@ -341,6 +341,19 @@
   .item-row:not(:has(.item-pre)) input.blank.full {
     display: block; width: 100%; max-width: none; margin: 0.25rem 0 0;
   }
+
+  /* Fila que acaba en el hueco: la casilla se estira hasta el borde derecho. El hueco es la
+     continuación natural de la frase, así que empieza justo donde acaba el texto —no baja a
+     una línea aparte— pero todas las de un ejercicio TERMINAN en el mismo sitio, que es lo
+     que hace que se vean parejas. La fila es flex: los nodos de texto se convierten en
+     items anónimos y la casilla, con flex:1, se queda con lo que sobra. */
+  .item-row.tail-blank {
+    display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 0.3rem;
+  }
+  .item-row.tail-blank input.blank {
+    flex: 1 1 8em; width: auto; max-width: none; min-width: 6em; text-align: left;
+  }
+  .item-row.tail-blank .reveal.show { flex-basis: 100%; margin-left: 0; }
 </style>
 
 <script>
@@ -674,6 +687,22 @@
           letter.textContent = String.fromCharCode(97 + i) + ".";
           row.appendChild(letter);
           renderTemplate(row, item.t, item.a, item.wide, "Ej. " + ex.num + String.fromCharCode(97 + i));
+          // Si la fila termina en el hueco (enunciado + «→» + casilla), se marca para que la
+          // casilla baje a su propia línea a ancho completo: así todas las de un ejercicio
+          // miden y empiezan igual, por larga que sea su frase. No se toca cuando el hueco
+          // va DENTRO de la frase (un rellenar-el-espacio), donde alinear no tiene sentido,
+          // ni cuando la fila ya usa la columna de item.pre.
+          if (!item.pre) {
+            const huecos = row.querySelectorAll("input.blank");
+            if (huecos.length === 1) {
+              // Después del hueco solo puede quedar puntuación de cierre. Si hay palabras,
+              // el hueco está DENTRO de la frase (un rellenar-el-espacio) y no se toca:
+              // estirarlo hasta el borde derecho partiría la oración por la mitad.
+              let cola = "", n = huecos[0].nextSibling;
+              while (n) { cola += n.textContent || ""; n = n.nextSibling; }
+              if (/^[\s.,;:!?¿¡…"»)]*$/.test(cola)) row.classList.add("tail-blank");
+            }
+          }
           wrap.appendChild(row);
         });
         card.appendChild(wrap);
@@ -765,6 +794,22 @@
           letter.textContent = String.fromCharCode(97 + i) + ".";
           row.appendChild(letter);
           renderTemplate(row, item.t, item.a, item.wide, "Ej. " + ex.num + String.fromCharCode(97 + i));
+          // Si la fila termina en el hueco (enunciado + «→» + casilla), se marca para que la
+          // casilla baje a su propia línea a ancho completo: así todas las de un ejercicio
+          // miden y empiezan igual, por larga que sea su frase. No se toca cuando el hueco
+          // va DENTRO de la frase (un rellenar-el-espacio), donde alinear no tiene sentido,
+          // ni cuando la fila ya usa la columna de item.pre.
+          if (!item.pre) {
+            const huecos = row.querySelectorAll("input.blank");
+            if (huecos.length === 1) {
+              // Después del hueco solo puede quedar puntuación de cierre. Si hay palabras,
+              // el hueco está DENTRO de la frase (un rellenar-el-espacio) y no se toca:
+              // estirarlo hasta el borde derecho partiría la oración por la mitad.
+              let cola = "", n = huecos[0].nextSibling;
+              while (n) { cola += n.textContent || ""; n = n.nextSibling; }
+              if (/^[\s.,;:!?¿¡…"»)]*$/.test(cola)) row.classList.add("tail-blank");
+            }
+          }
           wrap.appendChild(row);
         });
         card.appendChild(wrap);

@@ -365,6 +365,17 @@ no las deshagas sin querer al modificar la plantilla.
   va detrás) y el **ancho de los botones** cuando son palabras (`.vf-toggle.vf-words`, que
   `makeVfButtons` marca sola al ver opciones de más de un carácter). Y usa `flex-basis`
   fijo, no `min-width`: con `min-width`, la etiqueta más larga del grupo empuja su fila.
+- **Hueco al final de la frase: se estira hasta el borde derecho, no baja de línea.** Es el
+  caso más común («Pedro se encuentra mejor ______.»), y el criterio del profesor es claro:
+  el hueco es la **continuación natural** de la oración, así que empieza justo donde acaba el
+  texto, pero **todos terminan en el mismo sitio**. Eso es lo que hace que se vean parejos.
+  La fila se marca sola como `.tail-blank` y pasa a ser flex con la casilla en `flex: 1`.
+  Primero se probó bajando la casilla a su propia línea a ancho completo: iguala tamaños,
+  sí, pero parte la oración en dos y el profesor lo rechazó.
+  **Ojo con detectar «al final»**: no vale `row.lastElementChild`, porque el texto que sigue
+  al hueco son nodos de TEXTO, no elementos, y con eso se colaban frases del tipo «¿Qué ___
+  (hacer) ayer?» —donde el hueco va dentro de la frase y estirarlo la parte por la mitad—.
+  Hay que mirar los nodos posteriores y aceptar solo puntuación de cierre.
 - **Si tocas cómo se construye una fila, comprueba `extraer.mjs`.** Al pasar el ejercicio 5
   de Practica más 3 a columnas, el `.md` archivado empezó a salir con las respuestas pegadas
   (`**habla****regular**`): el separador que antes ponía el texto de `item.t` había
