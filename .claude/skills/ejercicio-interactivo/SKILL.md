@@ -336,6 +336,89 @@ no las deshagas sin querer al modificar la plantilla.
   [regular|irregular]»—, y nació de un fallo real: con `vf` declarado en el ítem, el hueco
   del imperativo también se convirtió en botones. Si un ejercicio del libro pide repartir
   cosas en dos columnas, esto es lo que traduce esa decisión a la pantalla.
+- **Fotos, tablas y sopas de letras van SIEMPRE centradas.** Instrucción explícita del
+  profesor, y hay una regla al final del `<style>` de la plantilla que lo garantiza para
+  `.foto-act`, `.wordsearch`, `table.gustos`, las imágenes de `.exercise-ref` y de
+  `.open-block`, y `.postcard`. Ojo con dos trampas: un bloque con `max-width` **no** se
+  centra solo, necesita `margin-left/right: auto` (esto ya causó un arreglo real en
+  `.open-block` y `.postcard`); y un elemento con `white-space: pre` como la sopa de letras
+  necesita además `width: fit-content`, porque si no ocupa todo el ancho y centrar no hace
+  nada visible. Para una **fila de opciones que son dibujos** el centrado no es del elemento
+  sino de su contenido: `.ref-options:has(img) { justify-content: center }`. Las filas de
+  opciones que son palabras se quedan a la izquierda a propósito — una lista se lee así.
+- **Y el recuadro `.exercise-ref` se ajusta a su contenido (`width: fit-content`), no al
+  ancho de la tarjeta.** Centrar la sopa de letras no bastaba: el fondo dorado seguía yendo
+  de borde a borde y dejaba una franja de color enorme y vacía alrededor de una rejilla que
+  ocupa un tercio. Con `fit-content` el recuadro encoge hasta su contenido, y cuando ese
+  contenido ya es ancho —una lista larga de opciones— se queda a lo ancho como antes, sin
+  necesidad de distinguir casos. Medido tras el cambio: la sopa ocupa el 38 % del ancho
+  disponible, la tabla de gustos el 42 %, y las listas largas siguen al 100 %. El título del
+  recuadro (`.ref-label`) va centrado también: con la caja ya ajustada, una etiqueta pegada a
+  la esquina izquierda queda descolgada.
+- **Cuando todas las filas de un ejercicio tienen la misma forma, alinéalas en columnas con
+  `item.pre`.** Un listado de «palabra → casilla → botones» donde la palabra va dentro de
+  `item.t` empieza cada casilla donde acaba su palabra: casillas de distinto ancho, botones a
+  distinta altura, y el conjunto se ve descuadrado aunque cada fila por separado esté bien.
+  `item.pre` saca esa etiqueta a un elemento propio de ancho fijo y la fila pasa a ser un
+  flex con columnas. Tres cosas hay que fijar, no una: la etiqueta (`flex: 0 0 8.8em`), la
+  **letra del ítem** (`i.` y `m.` no miden lo mismo y arrastran la diferencia a todo lo que
+  va detrás) y el **ancho de los botones** cuando son palabras (`.vf-toggle.vf-words`, que
+  `makeVfButtons` marca sola al ver opciones de más de un carácter). Y usa `flex-basis`
+  fijo, no `min-width`: con `min-width`, la etiqueta más larga del grupo empuja su fila.
+- **Hueco al final de la frase: se estira hasta el borde derecho, no baja de línea.** Es el
+  caso más común («Pedro se encuentra mejor ______.»), y el criterio del profesor es claro:
+  el hueco es la **continuación natural** de la oración, así que empieza justo donde acaba el
+  texto, pero **todos terminan en el mismo sitio**. Eso es lo que hace que se vean parejos.
+  La fila se marca sola como `.tail-blank` y pasa a ser flex con la casilla en `flex: 1`.
+  Primero se probó bajando la casilla a su propia línea a ancho completo: iguala tamaños,
+  sí, pero parte la oración en dos y el profesor lo rechazó.
+  **Ojo con detectar «al final»**: no vale `row.lastElementChild`, porque el texto que sigue
+  al hueco son nodos de TEXTO, no elementos, y con eso se colaban frases del tipo «¿Qué ___
+  (hacer) ayer?» —donde el hueco va dentro de la frase y estirarlo la parte por la mitad—.
+  Hay que mirar los nodos posteriores y aceptar solo puntuación de cierre.
+  Dos correcciones más, ambas detectadas por el profesor mirando el resultado:
+  **(a) Envuelve número + frase en un solo `<span class="tail-text">`.** Si se dejan sueltos,
+  cada nodo de texto es un elemento flex independiente: una frase larga no cabe al lado del
+  número, salta entera a la línea siguiente y el número se queda solo arriba (se veía una
+  «e.» huérfana en «Formación de contrarios»). Con el envoltorio, el número va siempre pegado
+  a su frase y es la frase la que parte por dentro.
+  **(b) Estira solo si hay más de una fila así en el ejercicio.** El estirón existe para que
+  varias filas acaben en el mismo sitio; una sola, rodeada de frases con el hueco en medio, se
+  ve como una raya larga y arbitraria (ejercicio 6 de 12B). Tras montar las filas se cuentan
+  las `.tail-blank` y, si hay exactamente una, se le quita la clase.
+- **Un listado que en realidad es una tabla, hazlo tabla (`conjTable`/`conjTables`).** El
+  ejercicio 4 de Repaso B1 (imperativos irregulares) eran 16 filas «VERBO · persona →
+  afirmativo ___, negativo ___» como `items`. Ahí no hay alineación posible: la etiqueta mide
+  distinto en cada fila y arrastra todo lo demás, y encima las dos filas que el libro trae
+  medio resueltas tenían un solo hueco, así que se estiraban (`.tail-blank`) mientras las
+  otras catorce no — el desorden que vio el profesor. Como cuadro de conjugación (un cuadro
+  por verbo, columnas «Afirmativo»/«Negativo», y las formas dadas como **cadena** en vez de
+  array para que salgan fijas y no cuenten como hueco) todo cae en columnas solo. Regla
+  general: si las filas comparten estructura y no son frases, es una tabla, no una lista.
+  La plantilla trae `conjTable` (un cuadro); **`conjTables`** (varios cuadros en el mismo
+  ejercicio, con un solo botón «Corregir») es un añadido de Repaso B1: si lo necesitas,
+  cópialo de ahí. Y si el documento estrecha los huecos de las tablas —Repaso B1 pone
+  `.exercise-table input.blank` a 6.4 em porque sus cuadros de cinco columnas no caben de
+  otra forma—, ensancha los cuadros de solo dos columnas de respuesta con
+  `tr:has(td:nth-child(3)):not(:has(td:nth-child(4)))`: con 6.4 em, «no vengáis» se cortaba.
+  Y da aire entre cuadros consecutivos (`.table-wrap + .table-wrap`), o los cuatro se leen
+  como una sola tabla larga con cabeceras intercaladas.
+- **Una fila con foto nunca lleva el hueco estirado a la derecha.** El hueco va DEBAJO de la
+  imagen, que es lo que pide el enunciado del libro («escribe debajo qué actividad es»). Al
+  marcarla como `.tail-blank` la fila se vuelve flex y la casilla sube al costado de la foto,
+  que además deja de estar centrada porque el envoltorio anula sus `margin: auto`. La
+  detección excluye estas filas (`!row.querySelector(".foto-act")`). En móvil no se notaba
+  —el hueco no cabe al lado y baja igual—, así que solo salía en escritorio.
+- **Si tocas cómo se construye una fila, comprueba `extraer.mjs`.** Al pasar el ejercicio 5
+  de Practica más 3 a columnas, el `.md` archivado empezó a salir con las respuestas pegadas
+  (`**habla****regular**`): el separador que antes ponía el texto de `item.t` había
+  desaparecido. `extraer.mjs` necesitó reconocer `.item-pre` y añadir un espacio entre dos
+  huecos consecutivos. Regenera y compara con `diff` **todos** los `.md` después de cualquier
+  cambio estructural, no solo el del capítulo que estás tocando.
+- **Una fila con foto se centra entera, no solo la foto** (`.item-row:has(.foto-act)`):
+  número, imagen y casilla de escribir. Centrar solo la imagen deja el número y el hueco
+  pegados a la izquierda y la fila se lee descolocada — lo detectó el profesor en cuanto se
+  centró la foto sola.
 - **`item.img` pone una foto en la fila, y va DESPUÉS del número.** Al revés (foto y luego
   número) cada número queda debajo de su propia foto y pegado a la siguiente, y no se sabe a
   cuál se refiere. La foto se declara como campo del ítem, no como HTML dentro de `item.t`:

@@ -476,6 +476,85 @@
   }
   .channel-btn:hover { background: var(--rp-accent); }
   .channel-copied { font-size: 0.8rem; color: var(--rp-accent); margin-top: 0.6rem; display: none; width: 100%; }
+
+  /* ---------- REGLA DE CENTRADO ---------- */
+  /* Hueco de frase entera en una fila SIN columna de etiqueta: baja a su propia línea y
+     ocupa todo el ancho. Con enunciados de largo muy distinto —hay alguno de 114
+     caracteres— no existe ninguna columna que valga, y dejando la casilla en línea cada
+     una acaba de un tamaño. Así todas miden lo mismo, empiecen donde empiecen. */
+  .item-row:not(:has(.item-pre)) input.blank.full {
+    display: block; width: 100%; max-width: none; margin: 0.25rem 0 0;
+  }
+
+  /* Fotos, tablas y sopas de letras van SIEMPRE centradas en su tarjeta. Por defecto un
+     bloque se queda pegado a la izquierda y, con el texto del ejercicio alrededor, se lee
+     como si estuviera descolocado. */
+  .foto-act, .wordsearch, table.gustos, .exercise-ref img, .open-block img, .postcard {
+    margin-left: auto; margin-right: auto;
+  }
+  .wordsearch, table.gustos { display: block; width: fit-content; max-width: 100%; }
+  table.gustos { display: table; }
+  /* Una fila de opciones que son dibujos se centra; si son palabras, se deja a la
+     izquierda, que es como se lee una lista. */
+  .exercise-ref .ref-options:has(img) { justify-content: center; }
+  /* El recuadro se ajusta a su contenido en vez de ocupar todo el ancho: con una sopa de
+     letras o una foto estrecha dentro, un fondo de borde a borde deja una franja de color
+     enorme y vacía. fit-content lo encoge hasta lo que mide su contenido y, si ese contenido
+     ya es ancho (una lista larga de opciones), se queda a lo ancho igual que antes. */
+  .exercise-ref { width: fit-content; max-width: 100%; margin-left: auto; margin-right: auto; }
+  /* El título del recuadro, centrado sobre su contenido: ahora que la caja se ajusta a lo
+     que hay dentro, una etiqueta pegada a la esquina izquierda queda descolgada. */
+  .exercise-ref .ref-label { text-align: center; }
+  /* Filas en columnas (item.pre): etiqueta, casilla y botones alineados entre sí. Sin esto
+     cada fila empieza el hueco donde acaba su palabra, y las casillas y los botones quedan
+     a distinta altura — se ve descuadrado aunque cada fila por separado esté bien. */
+  .item-row:has(.item-pre) {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 0.55rem;
+  }
+  /* Ancho fijo, no mínimo: con min-width, una etiqueta más larga que el resto (aquí
+     «sentarse») empuja su fila unos píxeles y rompe la columna. */
+  .item-pre { flex: 0 0 var(--pre-w, 8.8em); }
+  .item-row:has(.item-pre) input.blank { flex: 0 0 auto; }
+  /* Un hueco de frase entera ocupa lo que sobra: como la columna de la etiqueta es fija,
+     «lo que sobra» es lo mismo en todas las filas y las casillas salen iguales. */
+  .item-row:has(.item-pre) input.blank.full { flex: 1 1 auto; width: auto; min-width: 0; }
+  /* La letra del ítem también entra en la columna: «i.» y «m.» no miden lo mismo, y
+     sin fijarla arrastra unos píxeles de diferencia a todo lo que va detrás. */
+  .item-row:has(.item-pre) .item-letter { flex: 0 0 1.7em; margin-right: 0; }
+  /* Un aviso de corrección ocupa su propia línea y no descoloca las columnas. */
+  .item-row:has(.item-pre) .reveal.show { flex-basis: 100%; margin-left: 0; }
+  .vf-toggle.vf-words .vf-btn { width: 6.4em; padding: 0; }
+  @media (max-width: 560px) {
+    /* En pantalla estrecha la etiqueta y el hueco se reparten el ancho, y el hueco baja
+       a su propia línea: siguen alineados sin robarle ancho a la casilla. La etiqueta
+       NO se lleva la línea entera (`flex: 0 0 100%`), porque entonces el número se
+       quedaba solo en la línea de arriba y cada ítem pasaba a ocupar tres o cuatro
+       líneas — el mismo defecto del número huérfano que ya se corrigió en las filas
+       que acaban en hueco. */
+    .item-row:has(.item-pre) .item-letter { flex: 0 0 auto; }
+    .item-pre { flex: 1 1 auto; }
+    .item-row:has(.item-pre) input.blank { flex: 1 1 100%; }
+    .vf-toggle.vf-words .vf-btn { width: 5.6em; }
+  }
+  /* Una fila con foto se centra entera —número, imagen y casilla—, para que quede una
+     columna ordenada. Con la casilla pegada a la izquierda y la foto en el centro, la fila
+     se lee descolocada. */
+  .item-row:has(.foto-act) { text-align: center; }
+  .item-row:has(.foto-act) .item-letter { display: block; margin: 0 0 0.1rem; }
+
+  /* Fila que acaba en el hueco: la casilla se estira hasta el borde derecho. El hueco es la
+     continuación natural de la frase, así que empieza justo donde acaba el texto —no baja a
+     una línea aparte— pero todas las de un ejercicio TERMINAN en el mismo sitio, que es lo
+     que hace que se vean parejas. La fila es flex: los nodos de texto se convierten en
+     items anónimos y la casilla, con flex:1, se queda con lo que sobra. */
+  .item-row.tail-blank {
+    display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 0.3rem;
+  }
+  .item-row.tail-blank input.blank {
+    flex: 1 1 8em; width: auto; max-width: none; min-width: 6em; text-align: left;
+  }
+  .item-row.tail-blank .tail-text { flex: 0 1 auto; min-width: 0; }
+  .item-row.tail-blank .reveal.show { flex-basis: 100%; margin-left: 0; }
 </style>
 
 <script>
@@ -697,18 +776,19 @@
           instr: "Busca en la sopa de letras diez alimentos. HUEVO ya viene marcado en el libro. Como los huecos hay que corregirlos en un orden fijo, cada uno lleva de pista sus dos primeras letras.",
           refHTML: '<span class="ref-label">Sopa de letras</span><div class="wordsearch">' + SOPA + "</div>",
           type: "items",
+          preWidth: "5em",
           numbered: true,
           items: [
             { t: "huevo (ya marcado en el libro)", solved: true },
-            { t: "ja… → {0}", a: [conSinTildes(["jamón"])] },
-            { t: "le… → {0}", a: [conSinTildes(["lechuga"])] },
-            { t: "li… → {0}", a: [conSinTildes(["limón"])] },
-            { t: "na… → {0}", a: [conSinTildes(["naranja"])] },
-            { t: "pa… → {0}", a: [conSinTildes(["patata"])] },
-            { t: "pl… → {0}", a: [conSinTildes(["plátano"])] },
-            { t: "po… → {0}", a: [conSinTildes(["pollo"])] },
-            { t: "qu… → {0}", a: [conSinTildes(["queso"])] },
-            { t: "to… → {0}", a: [conSinTildes(["tomate"])] }
+            { pre: "ja… →", t: "{0}", a: [conSinTildes(["jamón"])] },
+            { pre: "le… →", t: "{0}", a: [conSinTildes(["lechuga"])] },
+            { pre: "li… →", t: "{0}", a: [conSinTildes(["limón"])] },
+            { pre: "na… →", t: "{0}", a: [conSinTildes(["naranja"])] },
+            { pre: "pa… →", t: "{0}", a: [conSinTildes(["patata"])] },
+            { pre: "pl… →", t: "{0}", a: [conSinTildes(["plátano"])] },
+            { pre: "po… →", t: "{0}", a: [conSinTildes(["pollo"])] },
+            { pre: "qu… →", t: "{0}", a: [conSinTildes(["queso"])] },
+            { pre: "to… →", t: "{0}", a: [conSinTildes(["tomate"])] }
           ]
         },
         {
@@ -722,16 +802,17 @@
             '<span class="ref-opt"><b translate="no">e</b> sopa</span>' +
             '<span class="ref-opt"><b translate="no">f</b> paella</span></div>',
           type: "items",
+          preWidth: "7em",
           numbered: true,
           items: [
             { t: "arroz → f", solved: true },
-            { t: "huevo → {0}", a: [combos(["a", "c"])], wide: true },
-            { t: "fideos → {0}", a: [combos(["e"])], wide: true },
-            { t: "lechuga → {0}", a: [combos(["d"])], wide: true },
-            { t: "tomate → {0}", a: [combos(["d", "b"])], wide: true },
-            { t: "patatas → {0}", a: [combos(["c"])], wide: true },
-            { t: "leche → {0}", a: [combos(["a"])], wide: true },
-            { t: "aceite → {0}", a: [combos(["b", "c", "d"])], wide: true }
+            { pre: "huevo →", t: "{0}", a: [combos(["a", "c"])], wide: true },
+            { pre: "fideos →", t: "{0}", a: [combos(["e"])], wide: true },
+            { pre: "lechuga →", t: "{0}", a: [combos(["d"])], wide: true },
+            { pre: "tomate →", t: "{0}", a: [combos(["d", "b"])], wide: true },
+            { pre: "patatas →", t: "{0}", a: [combos(["c"])], wide: true },
+            { pre: "leche →", t: "{0}", a: [combos(["a"])], wide: true },
+            { pre: "aceite →", t: "{0}", a: [combos(["b", "c", "d"])], wide: true }
           ]
         },
         {
@@ -758,19 +839,20 @@
           refHTML: '<span class="ref-label">Gustos de Ana y Raúl</span>' + TABLA_GUSTOS,
           type: "items",
           numbered: true,
+          preWidth: "12.5em",
           items: [
             { t: "El cine → A Ana y a Raúl les gusta el cine.", solved: true },
             { t: "Ir de compras → A Ana le gusta ir de compras, pero a Raúl no.", solved: true },
-            { t: "La música clásica → {0}", a: [conSinTildes(["A Ana no le gusta la música clásica, pero a Raúl sí."])], wide: "full" },
-            { t: "Nadar → {0}", a: [conSinTildes(["A Ana no le gusta nadar, pero a Raúl sí."])], wide: "full" },
-            { t: "Leer → {0}", a: [conSinTildes(["A Ana y a Raúl les gusta leer."])], wide: "full" },
-            { t: "Andar → {0}", a: [conSinTildes(["A Ana no le gusta andar, pero a Raúl sí."])], wide: "full" },
-            { t: "Viajar → {0}", a: [conSinTildes(["A Ana y a Raúl les gusta viajar."])], wide: "full" },
-            { t: "Bailar → A los dos {0}", a: [conSinTildes(["les gusta bailar."])], wide: "full" },
-            { t: "Internet → {0}", a: [conSinTildes(["A Ana le gusta navegar por internet, pero a Raúl no."])], wide: "full" },
-            { t: "Las motos → {0}", a: [conSinTildes(["A Ana y a Raúl no les gustan las motos."])], wide: "full" },
-            { t: "Las plantas → {0}", a: [conSinTildes(["A Ana no le gustan las plantas, pero a Raúl sí."])], wide: "full" },
-            { t: "El fútbol → {0}", a: [conSinTildes(["A Ana no le gusta el fútbol, pero a Raúl sí."])], wide: "full" }
+            { pre: "La música clásica →", t: "{0}", a: [conSinTildes(["A Ana no le gusta la música clásica, pero a Raúl sí."])], wide: "full" },
+            { pre: "Nadar →", t: "{0}", a: [conSinTildes(["A Ana no le gusta nadar, pero a Raúl sí."])], wide: "full" },
+            { pre: "Leer →", t: "{0}", a: [conSinTildes(["A Ana y a Raúl les gusta leer."])], wide: "full" },
+            { pre: "Andar →", t: "{0}", a: [conSinTildes(["A Ana no le gusta andar, pero a Raúl sí."])], wide: "full" },
+            { pre: "Viajar →", t: "{0}", a: [conSinTildes(["A Ana y a Raúl les gusta viajar."])], wide: "full" },
+            { pre: "Bailar → A los dos", t: "{0}", a: [conSinTildes(["les gusta bailar."])], wide: "full" },
+            { pre: "Internet →", t: "{0}", a: [conSinTildes(["A Ana le gusta navegar por internet, pero a Raúl no."])], wide: "full" },
+            { pre: "Las motos →", t: "{0}", a: [conSinTildes(["A Ana y a Raúl no les gustan las motos."])], wide: "full" },
+            { pre: "Las plantas →", t: "{0}", a: [conSinTildes(["A Ana no le gustan las plantas, pero a Raúl sí."])], wide: "full" },
+            { pre: "El fútbol →", t: "{0}", a: [conSinTildes(["A Ana no le gusta el fútbol, pero a Raúl sí."])], wide: "full" }
           ]
         },
         {
@@ -778,22 +860,22 @@
           instr: "Para cada verbo, escribe el imperativo de tú y di si es regular o irregular. «Terminar» y «empezar» vienen tachados en el libro porque ya están puestos como ejemplo.",
           type: "items",
           items: [
-            { t: "hablar → {0} {1}", a: [conSinTildes(["habla"]), ["regular"]], wide: true, vf: { 1: ["regular", "irregular"] } },
-            { t: "abrir → {0} {1}", a: [conSinTildes(["abre"]), ["regular"]], wide: true, vf: { 1: ["regular", "irregular"] } },
-            { t: "venir → {0} {1}", a: [conSinTildes(["ven"]), ["irregular"]], wide: true, vf: { 1: ["regular", "irregular"] } },
-            { t: "hacer → {0} {1}", a: [conSinTildes(["haz"]), ["irregular"]], wide: true, vf: { 1: ["regular", "irregular"] } },
-            { t: "mirar → {0} {1}", a: [conSinTildes(["mira"]), ["regular"]], wide: true, vf: { 1: ["regular", "irregular"] } },
-            { t: "pasar → {0} {1}", a: [conSinTildes(["pasa"]), ["regular"]], wide: true, vf: { 1: ["regular", "irregular"] } },
-            { t: "poner → {0} {1}", a: [conSinTildes(["pon"]), ["irregular"]], wide: true, vf: { 1: ["regular", "irregular"] } },
-            { t: "cerrar → {0} {1}", a: [conSinTildes(["cierra"]), ["irregular"]], wide: true, vf: { 1: ["regular", "irregular"] } },
-            { t: "coger → {0} {1}", a: [conSinTildes(["coge"]), ["regular"]], wide: true, vf: { 1: ["regular", "irregular"] } },
-            { t: "dar → {0} {1}", a: [conSinTildes(["da"]), ["irregular"]], wide: true, vf: { 1: ["regular", "irregular"] } },
-            { t: "tomar → {0} {1}", a: [conSinTildes(["toma"]), ["regular"]], wide: true, vf: { 1: ["regular", "irregular"] } },
-            { t: "escribir → {0} {1}", a: [conSinTildes(["escribe"]), ["regular"]], wide: true, vf: { 1: ["regular", "irregular"] } },
-            { t: "sentarse → {0} {1}", a: [conSinTildes(["siéntate"]), ["irregular"]], wide: true, vf: { 1: ["regular", "irregular"] } },
-            { t: "comer → {0} {1}", a: [conSinTildes(["come"]), ["regular"]], wide: true, vf: { 1: ["regular", "irregular"] } },
-            { t: "decir → {0} {1}", a: [conSinTildes(["di"]), ["irregular"]], wide: true, vf: { 1: ["regular", "irregular"] } },
-            { t: "volver → {0} {1}", a: [conSinTildes(["vuelve"]), ["irregular"]], wide: true, vf: { 1: ["regular", "irregular"] } }
+            { pre: "hablar →", t: "{0}{1}", a: [conSinTildes(["habla"]), ["regular"]], wide: true, vf: { 1: ["regular", "irregular"] } },
+            { pre: "abrir →", t: "{0}{1}", a: [conSinTildes(["abre"]), ["regular"]], wide: true, vf: { 1: ["regular", "irregular"] } },
+            { pre: "venir →", t: "{0}{1}", a: [conSinTildes(["ven"]), ["irregular"]], wide: true, vf: { 1: ["regular", "irregular"] } },
+            { pre: "hacer →", t: "{0}{1}", a: [conSinTildes(["haz"]), ["irregular"]], wide: true, vf: { 1: ["regular", "irregular"] } },
+            { pre: "mirar →", t: "{0}{1}", a: [conSinTildes(["mira"]), ["regular"]], wide: true, vf: { 1: ["regular", "irregular"] } },
+            { pre: "pasar →", t: "{0}{1}", a: [conSinTildes(["pasa"]), ["regular"]], wide: true, vf: { 1: ["regular", "irregular"] } },
+            { pre: "poner →", t: "{0}{1}", a: [conSinTildes(["pon"]), ["irregular"]], wide: true, vf: { 1: ["regular", "irregular"] } },
+            { pre: "cerrar →", t: "{0}{1}", a: [conSinTildes(["cierra"]), ["irregular"]], wide: true, vf: { 1: ["regular", "irregular"] } },
+            { pre: "coger →", t: "{0}{1}", a: [conSinTildes(["coge"]), ["regular"]], wide: true, vf: { 1: ["regular", "irregular"] } },
+            { pre: "dar →", t: "{0}{1}", a: [conSinTildes(["da"]), ["irregular"]], wide: true, vf: { 1: ["regular", "irregular"] } },
+            { pre: "tomar →", t: "{0}{1}", a: [conSinTildes(["toma"]), ["regular"]], wide: true, vf: { 1: ["regular", "irregular"] } },
+            { pre: "escribir →", t: "{0}{1}", a: [conSinTildes(["escribe"]), ["regular"]], wide: true, vf: { 1: ["regular", "irregular"] } },
+            { pre: "sentarse →", t: "{0}{1}", a: [conSinTildes(["siéntate"]), ["irregular"]], wide: true, vf: { 1: ["regular", "irregular"] } },
+            { pre: "comer →", t: "{0}{1}", a: [conSinTildes(["come"]), ["regular"]], wide: true, vf: { 1: ["regular", "irregular"] } },
+            { pre: "decir →", t: "{0}{1}", a: [conSinTildes(["di"]), ["irregular"]], wide: true, vf: { 1: ["regular", "irregular"] } },
+            { pre: "volver →", t: "{0}{1}", a: [conSinTildes(["vuelve"]), ["irregular"]], wide: true, vf: { 1: ["regular", "irregular"] } }
           ]
         },
         {
@@ -891,8 +973,12 @@
     inp.className = "blank";
     const wrap = document.createElement("span");
     wrap.className = "vf-toggle";
+    const lista = opciones && opciones.length ? opciones : ["V", "F"];
+    // Un par de opciones que son palabras («regular»/«irregular») necesita que los dos
+    // botones midan lo mismo; si no, cada fila los coloca a una altura distinta.
+    if (lista.some(function (o) { return o.length > 1; })) wrap.classList.add("vf-words");
     const rec = { el: inp, spec: spec, label: label || "" };
-    (opciones && opciones.length ? opciones : ["V", "F"]).forEach(function (letter) {
+    lista.forEach(function (letter) {
       const b = document.createElement("button");
       b.type = "button";
       b.className = "vf-btn";
@@ -1020,6 +1106,8 @@
     block.exercises.forEach(function (ex) {
       const card = document.createElement("div");
       card.className = "exercise";
+      // ex.preWidth: ancho de la columna de item.pre para ESTE ejercicio.
+      if (ex.preWidth) card.style.setProperty("--pre-w", ex.preWidth);
       const startIdx = allInputs.length;
       const hdr = exerciseHeader(ex);
       card.appendChild(hdr.head);
@@ -1062,6 +1150,15 @@
           letter.setAttribute("translate", "no");
           letter.textContent = marca;
           row.appendChild(letter);
+          // item.pre: etiqueta fija al principio de la fila (el verbo, la palabra que se
+          // clasifica...). Existe para poder alinear en columnas: metida dentro de item.t
+          // sería un nodo de texto suelto y cada fila empezaría el hueco en un sitio.
+          if (item.pre) {
+            const pre = document.createElement("span");
+            pre.className = "item-pre";
+            pre.textContent = item.pre;
+            row.appendChild(pre);
+          }
           // item.img: la foto va DESPUÉS del número y antes del hueco. Al revés, el
           // número quedaba debajo de su propia foto y pegado a la siguiente, y no se sabía
           // a cuál se refería. Se declara como campo propio, no como HTML dentro de item.t.
@@ -1073,8 +1170,43 @@
             row.appendChild(im);
           }
           renderTemplate(row, item.t, item.a, item.wide, "Ej. " + ex.num + " " + marca.replace(".", ""), false, item.vf, ex.dialog);
+          // Si la fila termina en el hueco (enunciado + «→» + casilla), se marca para que la
+          // casilla se estire hasta el borde derecho: empieza justo donde acaba el texto,
+          // pero todas las del ejercicio terminan en el mismo sitio. No se toca cuando el
+          // hueco va DENTRO de la frase (un rellenar-el-espacio), donde alinear no tiene
+          // sentido, ni cuando la fila ya usa la columna de item.pre, ni cuando la fila
+          // lleva foto: ahí el hueco va DEBAJO de la imagen (así lo pide el enunciado del
+          // libro, «escribe debajo qué actividad es») y al volverse flex se subía a su lado.
+          if (!item.pre && !row.querySelector(".foto-act")) {
+            const huecos = row.querySelectorAll("input.blank");
+            if (huecos.length === 1) {
+              // Después del hueco solo puede quedar puntuación de cierre. Si hay palabras,
+              // el hueco está DENTRO de la frase (un rellenar-el-espacio) y no se toca:
+              // estirarlo hasta el borde derecho partiría la oración por la mitad.
+              let cola = "", n = huecos[0].nextSibling;
+              while (n) { cola += n.textContent || ""; n = n.nextSibling; }
+              if (/^[\s.,;:!?¿¡…"»)]*$/.test(cola)) {
+                row.classList.add("tail-blank");
+                // Todo lo anterior al hueco (número + frase) va en UN solo envoltorio.
+                // Si se dejan sueltos, cada nodo de texto es un elemento flex distinto y
+                // una frase larga salta de línea entera, dejando el "e." solo en la
+                // línea de arriba. Con el envoltorio, el número siempre va pegado a su
+                // frase y es la frase la que parte por dentro.
+                const head = document.createElement("span");
+                head.className = "tail-text";
+                while (row.firstChild && row.firstChild !== huecos[0]) head.appendChild(row.firstChild);
+                row.insertBefore(head, huecos[0]);
+              }
+            }
+          }
           wrap.appendChild(row);
         });
+        // Estirar el hueco hasta el borde derecho solo tiene sentido si hay VARIAS
+        // filas que acaben así: es lo que las hace terminar todas en el mismo sitio.
+        // Una sola, rodeada de frases con el hueco dentro, se ve como una raya larga
+        // y suelta; en ese caso se deja con el ancho normal.
+        const colas = wrap.querySelectorAll(".item-row.tail-blank");
+        if (colas.length === 1) colas[0].classList.remove("tail-blank");
         card.appendChild(wrap);
       } else if (ex.type === "text") {
         const p = document.createElement("div");
@@ -1186,6 +1318,15 @@
           letter.setAttribute("translate", "no");
           letter.textContent = marca;
           row.appendChild(letter);
+          // item.pre: etiqueta fija al principio de la fila (el verbo, la palabra que se
+          // clasifica...). Existe para poder alinear en columnas: metida dentro de item.t
+          // sería un nodo de texto suelto y cada fila empezaría el hueco en un sitio.
+          if (item.pre) {
+            const pre = document.createElement("span");
+            pre.className = "item-pre";
+            pre.textContent = item.pre;
+            row.appendChild(pre);
+          }
           // item.img: la foto va DESPUÉS del número y antes del hueco. Al revés, el
           // número quedaba debajo de su propia foto y pegado a la siguiente, y no se sabía
           // a cuál se refería. Se declara como campo propio, no como HTML dentro de item.t.
@@ -1197,8 +1338,43 @@
             row.appendChild(im);
           }
           renderTemplate(row, item.t, item.a, item.wide, "Ej. " + ex.num + " " + marca.replace(".", ""), false, item.vf, ex.dialog);
+          // Si la fila termina en el hueco (enunciado + «→» + casilla), se marca para que la
+          // casilla se estire hasta el borde derecho: empieza justo donde acaba el texto,
+          // pero todas las del ejercicio terminan en el mismo sitio. No se toca cuando el
+          // hueco va DENTRO de la frase (un rellenar-el-espacio), donde alinear no tiene
+          // sentido, ni cuando la fila ya usa la columna de item.pre, ni cuando la fila
+          // lleva foto: ahí el hueco va DEBAJO de la imagen (así lo pide el enunciado del
+          // libro, «escribe debajo qué actividad es») y al volverse flex se subía a su lado.
+          if (!item.pre && !row.querySelector(".foto-act")) {
+            const huecos = row.querySelectorAll("input.blank");
+            if (huecos.length === 1) {
+              // Después del hueco solo puede quedar puntuación de cierre. Si hay palabras,
+              // el hueco está DENTRO de la frase (un rellenar-el-espacio) y no se toca:
+              // estirarlo hasta el borde derecho partiría la oración por la mitad.
+              let cola = "", n = huecos[0].nextSibling;
+              while (n) { cola += n.textContent || ""; n = n.nextSibling; }
+              if (/^[\s.,;:!?¿¡…"»)]*$/.test(cola)) {
+                row.classList.add("tail-blank");
+                // Todo lo anterior al hueco (número + frase) va en UN solo envoltorio.
+                // Si se dejan sueltos, cada nodo de texto es un elemento flex distinto y
+                // una frase larga salta de línea entera, dejando el "e." solo en la
+                // línea de arriba. Con el envoltorio, el número siempre va pegado a su
+                // frase y es la frase la que parte por dentro.
+                const head = document.createElement("span");
+                head.className = "tail-text";
+                while (row.firstChild && row.firstChild !== huecos[0]) head.appendChild(row.firstChild);
+                row.insertBefore(head, huecos[0]);
+              }
+            }
+          }
           wrap.appendChild(row);
         });
+        // Estirar el hueco hasta el borde derecho solo tiene sentido si hay VARIAS
+        // filas que acaben así: es lo que las hace terminar todas en el mismo sitio.
+        // Una sola, rodeada de frases con el hueco dentro, se ve como una raya larga
+        // y suelta; en ese caso se deja con el ancho normal.
+        const colas = wrap.querySelectorAll(".item-row.tail-blank");
+        if (colas.length === 1) colas[0].classList.remove("tail-blank");
         card.appendChild(wrap);
       }
 

@@ -739,24 +739,35 @@ j. R… (7 letras) → **rodilla**
 
 #### Ej. 4 — Imperativos irregulares
 
-*Completa las formas que faltan. (En DECIR ya están resueltas dos: tú negativo «no digas» y usted afirmativo «diga».)*
+*Completa las formas que faltan. Las formas en verde ya vienen dadas en el libro (en DECIR: «no digas» y «diga»).*
 
-a. DECIR · tú → afirmativo **di**
-b. DECIR · usted → negativo **no diga**
-c. DECIR · vosotros/as → afirmativo **decid**, negativo **no digáis**
-d. DECIR · ustedes → afirmativo **digan**, negativo **no digan**
-e. IR · tú → afirmativo **ve**, negativo **no vayas**
-f. IR · usted → afirmativo **vaya**, negativo **no vaya**
-g. IR · vosotros/as → afirmativo **id**, negativo **no vayáis**
-h. IR · ustedes → afirmativo **vayan**, negativo **no vayan**
-i. HACER · tú → afirmativo **haz**, negativo **no hagas**
-j. HACER · usted → afirmativo **haga**, negativo **no haga**
-k. HACER · vosotros/as → afirmativo **haced**, negativo **no hagáis**
-l. HACER · ustedes → afirmativo **hagan**, negativo **no hagan**
-m. VENIR · tú → afirmativo **ven**, negativo **no vengas**
-n. VENIR · usted → afirmativo **venga**, negativo **no venga**
-o. VENIR · vosotros/as → afirmativo **venid**, negativo **no vengáis**
-p. VENIR · ustedes → afirmativo **vengan**, negativo **no vengan**
+| DECIR | Afirmativo | Negativo |
+| --- | --- | --- |
+| tú | **di** | no digas |
+| usted | diga | **no diga** |
+| vosotros/as | **decid** | **no digáis** |
+| ustedes | **digan** | **no digan** |
+
+| IR | Afirmativo | Negativo |
+| --- | --- | --- |
+| tú | **ve** | **no vayas** |
+| usted | **vaya** | **no vaya** |
+| vosotros/as | **id** | **no vayáis** |
+| ustedes | **vayan** | **no vayan** |
+
+| HACER | Afirmativo | Negativo |
+| --- | --- | --- |
+| tú | **haz** | **no hagas** |
+| usted | **haga** | **no haga** |
+| vosotros/as | **haced** | **no hagáis** |
+| ustedes | **hagan** | **no hagan** |
+
+| VENIR | Afirmativo | Negativo |
+| --- | --- | --- |
+| tú | **ven** | **no vengas** |
+| usted | **venga** | **no venga** |
+| vosotros/as | **venid** | **no vengáis** |
+| ustedes | **vengan** | **no vengan** |
 
 #### Ej. 5 — La nota de Nando y Susana
 
