@@ -282,15 +282,19 @@ const md = await page.evaluate(() => {
 
       // Crucigrama (type: "crossword"): no hay .item-row que recorrer, así que se
       // reconstruye cada palabra a partir de las celdas data-w<num>="<índice>" que deja el
-      // renderizador — no hay .reveal por celda (no cabe uno en una casilla de 2 letras),
-      // así que la respuesta correcta se lee de data-letter, siempre presente, gane o
-      // pierda el alumno la partida.
+      // renderizador. Las CELDAS no llevan .reveal propio (no cabe uno en una casilla de
+      // una letra) — la respuesta se lee de data-letter, siempre presente, gane o pierda
+      // el alumno. La definición sí lleva un .reveal (junto al texto, para avisar de la
+      // palabra completa al corregir): hay que quitarlo del clon antes de leer el texto,
+      // o su "→ respuesta" se cuela duplicado dentro de clueText.
       const cw = ex.querySelector(".crossword-grid");
       if (cw) {
         for (const p of ex.querySelectorAll(".cw-clue")) {
           const num = clean(p.querySelector("b")?.textContent);
           const solved = /\(ya resuelta\)$/.test(p.textContent);
-          let clueText = clean(p.textContent);
+          const clone = p.cloneNode(true);
+          clone.querySelector(".reveal")?.remove();
+          let clueText = clean(clone.textContent);
           if (num) clueText = clueText.replace(new RegExp("^" + num + "\\s*"), "");
           clueText = clueText.replace(/\(ya resuelta\)$/, "").trim();
           const cellsForWord = [...cw.querySelectorAll('[data-w' + num + ']')]

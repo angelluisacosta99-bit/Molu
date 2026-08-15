@@ -883,6 +883,7 @@
   const main = document.getElementById("main");
   const navDots = document.getElementById("navDots");
   const allInputs = []; // {el, spec}
+  const allExercises = []; // ex objects, para poder llamar a ex._onGraded desde "Corregir todos"
 
   // wide: true  -> input intermedio (una o dos palabras)
   // wide: "full" -> input de frase entera, para los ejercicios de transformar oraciones:
@@ -1041,6 +1042,7 @@
     navDots.appendChild(navA);
 
     block.exercises.forEach(function (ex) {
+      allExercises.push(ex);
       const card = document.createElement("div");
       card.className = "exercise";
       // ex.preWidth: ancho de la columna de item.pre para ESTE ejercicio.
@@ -1259,6 +1261,11 @@
         // normaliza. word.solved (como item.solved) pinta la palabra entera fija, sin
         // huecos — para la primera palabra, que el libro trae ya resuelta.
         const cells = new Map(); // "r,c" -> { letter, num, solved, words: [[wordNum, index]] }
+        // inputs de cada palabra, en orden, para poder revelar la respuesta completa junto
+        // a su definición al corregir (ver ex._onGraded más abajo) — las celdas no llevan
+        // .reveal propio, no cabe uno en una casilla de una letra.
+        const wordInputs = {};
+        ex.words.forEach(function (w) { if (!w.solved) wordInputs[w.num] = new Array(w.answer.length).fill(null); });
         let minR = Infinity, minC = Infinity, maxR = -Infinity, maxC = -Infinity;
         ex.words.forEach(function (w) {
           for (let i = 0; i < w.answer.length; i++) {
@@ -1314,6 +1321,9 @@
                 const inp = makeInput([info.letter], false, "Crucigrama " + info.letter);
                 inp.maxLength = 1;
                 cell.appendChild(inp);
+                info.words.forEach(function (pair) {
+                  if (wordInputs[pair[0]]) wordInputs[pair[0]][pair[1]] = inp;
+                });
               }
             }
             cgrid.appendChild(cell);
@@ -1326,6 +1336,7 @@
         const down = ex.words.filter(function (w) { return w.dir === "D"; });
         const clues = document.createElement("div");
         clues.className = "crossword-clues";
+        const wordReveals = {}; // num -> span.reveal, solo para las palabras no resueltas
         [["Horizontales", across], ["Verticales", down]].forEach(function (pair) {
           if (!pair[1].length) return;
           const group = document.createElement("div");
@@ -1338,11 +1349,38 @@
             p.className = "cw-clue";
             p.innerHTML = '<b translate="no">' + w.num + "</b>" + escapeHtml(w.clue) +
               (w.solved ? " <i>(ya resuelta)</i>" : "");
+            if (!w.solved) {
+              const reveal = document.createElement("span");
+              reveal.className = "reveal";
+              p.appendChild(reveal);
+              wordReveals[w.num] = reveal;
+            }
             group.appendChild(p);
           });
           clues.appendChild(group);
         });
         card.appendChild(clues);
+
+        // Al corregir, cada palabra sin resolver del todo revela su respuesta junto a la
+        // definición — igual que "→ respuesta" en cualquier otro hueco, solo que aquí el
+        // chip vive junto al texto de la definición en vez de junto a la celda.
+        ex._onGraded = function () {
+          ex.words.forEach(function (w) {
+            if (w.solved) return;
+            const reveal = wordReveals[w.num];
+            const inputs = wordInputs[w.num];
+            // Una celda de cruce con una palabra YA resuelta (ej. la 1) no lleva input —
+            // se pinta fija, "gratis" — así que esa posición queda null en la lista: cuenta
+            // como correcta sola, no hay nada que el alumno tuviera que rellenar ahí.
+            const allCorrect = inputs.every(function (inp) { return !inp || inp.classList.contains("correct"); });
+            if (allCorrect) {
+              reveal.classList.remove("show", "bad-reveal");
+            } else {
+              reveal.textContent = "→ " + w.answer;
+              reveal.classList.add("show", "bad-reveal");
+            }
+          });
+        };
       } else if (ex.type === "agenda") {
         const twrap = document.createElement("div");
         twrap.className = "table-wrap";
@@ -1481,6 +1519,12 @@
       if (hdr.btn) hdr.btn.addEventListener("click", function () {
         gradeRange(startIdx, endIdx);
         updateScore();
+        // Hook para tipos que necesitan hacer algo MÁS después de colorear los inputs de
+        // este rango — nació con "crossword": sus celdas no llevan .reveal propio (no cabe
+        // uno en una casilla de una letra), así que la respuesta se revela junto a la
+        // definición en vez de junto a la celda. Debe ir DESPUÉS de gradeRange, para poder
+        // mirar qué quedó .correct/.incorrect.
+        if (typeof ex._onGraded === "function") ex._onGraded();
       });
 
       sec.appendChild(card);
@@ -1532,6 +1576,7 @@
   document.getElementById("correctAllBtn").addEventListener("click", function () {
     gradeRange(0, allInputs.length);
     updateScore();
+    allExercises.forEach(function (ex) { if (typeof ex._onGraded === "function") ex._onGraded(); });
   });
 
   // ---------- results panel: motivational message + send to teacher ----------

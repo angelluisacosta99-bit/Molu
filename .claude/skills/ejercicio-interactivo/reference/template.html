@@ -195,6 +195,11 @@
   .exnum { color: var(--gold); font-weight: 700; font-size: 0.85rem; }
   .exercise-title h3 { font-size: 1.02rem; font-weight: 700; }
   .exercise-instr { color: var(--pencil); font-size: 0.85rem; font-style: italic; margin-bottom: 0.85rem; }
+  .audio-label {
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--ink-soft); margin-bottom: 0.3rem;
+  }
+  .exercise-audio { width: 100%; max-width: 420px; display: block; margin-bottom: 0.9rem; }
   .exercise-model { color: var(--pencil); font-size: 0.85rem; font-style: italic; margin-bottom: 0.7rem; }
 
   /* Recuadro de referencia dentro de un ejercicio (banco de opciones, lista de verbos...).
@@ -803,7 +808,13 @@
           // Ejercicio de comprensión oral: transcriptHTML añade la transcripción al final
           // de la tarjeta, dentro de un <details> plegado (la transcripción es la solución,
           // así que no puede quedar a la vista mientras el alumno responde). Opcional:
-          // transcriptLabel cambia el texto del desplegable.
+          // transcriptLabel cambia el texto del desplegable. Si además hay grabación real
+          // (no siempre la hay), ex.audioSrc pone un <audio controls> justo debajo del
+          // enunciado — un data: URI en base64, un artefacto no puede enlazar un archivo
+          // externo. ex.audioLabel le pone una etiqueta encima ("Pista 6", etc.). La
+          // transcripción NO se quita aunque haya audio: sigue siendo la regla del
+          // profesor, y ahora es apoyo en vez de la única vía para resolver el ejercicio.
+          // audioSrc: "data:audio/mpeg;base64,...", audioLabel: "Pista 6",
           transcriptLabel: "Ver la transcripción del audio (ábrela solo después de responder)",
           transcriptHTML:
             '<span class="line"><span class="who">ANA:</span> ¿Dónde vives?</span>' +
@@ -900,6 +911,7 @@
   const main = document.getElementById("main");
   const navDots = document.getElementById("navDots");
   const allInputs = []; // {el, spec}
+  const allExercises = []; // ex objects, para poder llamar a ex._onGraded desde "Corregir todos"
 
   // wide: true  -> input intermedio (una o dos palabras)
   // wide: "full" -> input de frase entera, para los ejercicios de transformar oraciones:
@@ -1058,6 +1070,7 @@
     navDots.appendChild(navA);
 
     block.exercises.forEach(function (ex) {
+      allExercises.push(ex);
       const card = document.createElement("div");
       card.className = "exercise";
       // ex.preWidth: ancho de la columna de item.pre para ESTE ejercicio.
@@ -1071,6 +1084,26 @@
         instr.className = "exercise-instr";
         instr.textContent = ex.instr;
         card.appendChild(instr);
+      }
+      // ex.audioSrc: la grabación de verdad (data: URI, incrustada en base64 — un artefacto
+      // no puede referenciar un archivo externo). Antes de tener el audio, el único recurso
+      // era la transcripción plegada (ex.transcriptHTML), y la regla del profesor sigue
+      // aplicando igual: aunque ahora SÍ haya audio, la transcripción no se quita, se queda
+      // como apoyo. preload="none" porque un documento puede llevar varios audios y no hace
+      // falta descargarlos todos solo por abrir la página.
+      if (ex.audioSrc) {
+        if (ex.audioLabel) {
+          const label = document.createElement("div");
+          label.className = "audio-label";
+          label.textContent = ex.audioLabel;
+          card.appendChild(label);
+        }
+        const audio = document.createElement("audio");
+        audio.className = "exercise-audio";
+        audio.controls = true;
+        audio.preload = "none";
+        audio.src = ex.audioSrc;
+        card.appendChild(audio);
       }
       if (ex.refHTML) {
         const ref = document.createElement("div");
@@ -1276,6 +1309,11 @@
         // normaliza. word.solved (como item.solved) pinta la palabra entera fija, sin
         // huecos — para la primera palabra, que el libro trae ya resuelta.
         const cells = new Map(); // "r,c" -> { letter, num, solved, words: [[wordNum, index]] }
+        // inputs de cada palabra, en orden, para poder revelar la respuesta completa junto
+        // a su definición al corregir (ver ex._onGraded más abajo) — las celdas no llevan
+        // .reveal propio, no cabe uno en una casilla de una letra.
+        const wordInputs = {};
+        ex.words.forEach(function (w) { if (!w.solved) wordInputs[w.num] = new Array(w.answer.length).fill(null); });
         let minR = Infinity, minC = Infinity, maxR = -Infinity, maxC = -Infinity;
         ex.words.forEach(function (w) {
           for (let i = 0; i < w.answer.length; i++) {
@@ -1331,6 +1369,9 @@
                 const inp = makeInput([info.letter], false, "Crucigrama " + info.letter);
                 inp.maxLength = 1;
                 cell.appendChild(inp);
+                info.words.forEach(function (pair) {
+                  if (wordInputs[pair[0]]) wordInputs[pair[0]][pair[1]] = inp;
+                });
               }
             }
             cgrid.appendChild(cell);
@@ -1343,6 +1384,7 @@
         const down = ex.words.filter(function (w) { return w.dir === "D"; });
         const clues = document.createElement("div");
         clues.className = "crossword-clues";
+        const wordReveals = {}; // num -> span.reveal, solo para las palabras no resueltas
         [["Horizontales", across], ["Verticales", down]].forEach(function (pair) {
           if (!pair[1].length) return;
           const group = document.createElement("div");
@@ -1355,11 +1397,38 @@
             p.className = "cw-clue";
             p.innerHTML = '<b translate="no">' + w.num + "</b>" + escapeHtml(w.clue) +
               (w.solved ? " <i>(ya resuelta)</i>" : "");
+            if (!w.solved) {
+              const reveal = document.createElement("span");
+              reveal.className = "reveal";
+              p.appendChild(reveal);
+              wordReveals[w.num] = reveal;
+            }
             group.appendChild(p);
           });
           clues.appendChild(group);
         });
         card.appendChild(clues);
+
+        // Al corregir, cada palabra sin resolver del todo revela su respuesta junto a la
+        // definición — igual que "→ respuesta" en cualquier otro hueco, solo que aquí el
+        // chip vive junto al texto de la definición en vez de junto a la celda.
+        ex._onGraded = function () {
+          ex.words.forEach(function (w) {
+            if (w.solved) return;
+            const reveal = wordReveals[w.num];
+            const inputs = wordInputs[w.num];
+            // Una celda de cruce con una palabra YA resuelta (ej. la 1) no lleva input —
+            // se pinta fija, "gratis" — así que esa posición queda null en la lista: cuenta
+            // como correcta sola, no hay nada que el alumno tuviera que rellenar ahí.
+            const allCorrect = inputs.every(function (inp) { return !inp || inp.classList.contains("correct"); });
+            if (allCorrect) {
+              reveal.classList.remove("show", "bad-reveal");
+            } else {
+              reveal.textContent = "→ " + w.answer;
+              reveal.classList.add("show", "bad-reveal");
+            }
+          });
+        };
       } else if (ex.type === "agenda") {
         const twrap = document.createElement("div");
         twrap.className = "table-wrap";
@@ -1498,6 +1567,12 @@
       if (hdr.btn) hdr.btn.addEventListener("click", function () {
         gradeRange(startIdx, endIdx);
         updateScore();
+        // Hook para tipos que necesitan hacer algo MÁS después de colorear los inputs de
+        // este rango — nació con "crossword": sus celdas no llevan .reveal propio (no cabe
+        // uno en una casilla de una letra), así que la respuesta se revela junto a la
+        // definición en vez de junto a la celda. Debe ir DESPUÉS de gradeRange, para poder
+        // mirar qué quedó .correct/.incorrect.
+        if (typeof ex._onGraded === "function") ex._onGraded();
       });
 
       sec.appendChild(card);
@@ -1549,6 +1624,7 @@
   document.getElementById("correctAllBtn").addEventListener("click", function () {
     gradeRange(0, allInputs.length);
     updateScore();
+    allExercises.forEach(function (ex) { if (typeof ex._onGraded === "function") ex._onGraded(); });
   });
 
   // ---------- results panel: motivational message + send to teacher ----------
