@@ -336,6 +336,47 @@
   .reveal.show { display: inline; }
   .reveal.bad-reveal { color: var(--bad); }
 
+  /* Crucigrama real (type: "crossword") — celdas que se cruzan, no una lista de
+     definiciones con la foto de la rejilla al lado. Nació en la 5B de B1: hasta entonces
+     un crucigrama del libro se resolvía como lista (ver ex.refHTML con la imagen de la
+     rejilla), porque una rejilla interactiva parecía mucho trabajo para poco. Si vuelve a
+     hacer falta, esto es el punto de partida — no reinventarlo.
+     .cw-cell vacía (sin letra) no lleva borde: es hueco de la rejilla, no una casilla. */
+  .crossword-wrap { overflow-x: auto; margin-bottom: 1rem; }
+  .crossword-grid {
+    display: inline-grid; gap: 2px; margin: 0 auto; padding: 0.4rem;
+  }
+  .cw-cell {
+    position: relative; width: 2.1em; height: 2.1em;
+  }
+  .cw-cell.cw-empty { visibility: hidden; }
+  .cw-num {
+    position: absolute; top: 0; left: 0.15em; font-size: 0.52em; line-height: 1;
+    color: var(--ink-soft); font-weight: 700; pointer-events: none;
+  }
+  .cw-cell input.blank {
+    width: 100%; height: 100%; padding: 0; margin: 0;
+    text-align: center; text-transform: uppercase;
+    font-size: 1rem; border: 1px solid var(--border); border-radius: 4px;
+  }
+  .cw-cell input.blank:focus { border-color: var(--focus); }
+  .cw-cell .cw-solved {
+    display: flex; align-items: center; justify-content: center;
+    width: 100%; height: 100%; border: 1px solid var(--border); border-radius: 4px;
+    background: var(--paper); color: var(--ink-soft); font-style: italic;
+    text-transform: uppercase; font-size: 1rem;
+  }
+  .crossword-clues {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.3rem 1.2rem; font-size: 0.88rem; margin-top: 0.6rem;
+  }
+  .crossword-clues .cw-clue-group h4 {
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--ink-soft); margin: 0.6rem 0 0.3rem;
+  }
+  .crossword-clues .cw-clue { margin: 0.15rem 0; }
+  .crossword-clues .cw-clue b { color: var(--gold); margin-right: 0.3rem; }
+
   /* Hueco de verdadero/falso con botones — ver item.vf en "items" más abajo. */
   .vf-toggle { display: inline-flex; gap: 0.35rem; margin: 0 0.15rem; vertical-align: middle; }
   .vf-btn {
@@ -732,7 +773,7 @@
     // Cada bloque agrupa varios ejercicios bajo un mismo subtema. {{BLOCKS}} — sustituye
     // este array completo por los bloques/ejercicios reales del capítulo, basados en el
     // material del profesor (ver SKILL.md paso 1). Lo que sigue es un ejemplo de cada uno
-    // de los 5 tipos soportados por el renderizador (busca 'ex.type ===' en este archivo);
+    // de los 6 tipos soportados por el renderizador (busca 'ex.type ===' en este archivo);
     // si necesitas un tipo nuevo, tendrás que extender también el renderizador.
     {
       id: "{{BLOCK_ID}}", num: 1, title: "{{BLOCK_TITLE}}",
@@ -830,6 +871,24 @@
           ],
           items: [
             { t: "El lunes María {0} (tener) una reunión con el equipo.", a: [["tiene"]] }
+          ]
+        },
+        {
+          // Tipo "crossword": un crucigrama real, con celdas que se cruzan — no una lista
+          // de definiciones con la foto de la rejilla al lado (esa es la alternativa
+          // cuando el crucigrama no compensa el esfuerzo; ver ex.refHTML en "items").
+          // `words`: cada palabra con su `num` (el de la definición del libro), `clue`,
+          // `answer`, `row`/`col` (0-based, celda de la PRIMERA letra) y `dir` ("A" =
+          // horizontal, "D" = vertical). Dos palabras que se cruzan comparten fila/columna
+          // en la letra común — el renderizador calcula la celda compartida solo, no
+          // duplica el input. `solved: true` en una palabra la pinta fija, sin huecos
+          // (para la que el libro ya trae resuelta, normalmente la 1).
+          num: 6, title: "{{EXERCISE_TITLE}}",
+          instr: "{{EXERCISE_INSTRUCTIONS}}",
+          type: "crossword",
+          words: [
+            { num: 1, clue: "Lo que hacen los médicos.", answer: "curar", row: 0, col: 3, dir: "D", solved: true },
+            { num: 2, clue: "Une esta palabra en horizontal.", answer: "cerrar", row: 2, col: 0, dir: "A" }
           ]
         }
       ]
@@ -1209,6 +1268,98 @@
         box.className = "open-block";
         box.innerHTML = ex.html;
         card.appendChild(box);
+      } else if (ex.type === "crossword") {
+        // ex.words: [{ num, clue, answer, row, col, dir: "A"|"D", solved? }]. row/col
+        // empiezan en 0. Dos palabras que se cruzan comparten la MISMA celda del grid: se
+        // calcula una vez por coordenada, no una vez por palabra, para no crear dos inputs
+        // en el mismo sitio. answer va en mayúsculas o minúsculas, da igual: isCorrect ya
+        // normaliza. word.solved (como item.solved) pinta la palabra entera fija, sin
+        // huecos — para la primera palabra, que el libro trae ya resuelta.
+        const cells = new Map(); // "r,c" -> { letter, num, solved, words: [[wordNum, index]] }
+        let minR = Infinity, minC = Infinity, maxR = -Infinity, maxC = -Infinity;
+        ex.words.forEach(function (w) {
+          for (let i = 0; i < w.answer.length; i++) {
+            const r = w.dir === "A" ? w.row : w.row + i;
+            const c = w.dir === "A" ? w.col + i : w.col;
+            minR = Math.min(minR, r); maxR = Math.max(maxR, r);
+            minC = Math.min(minC, c); maxC = Math.max(maxC, c);
+            const key = r + "," + c;
+            const letter = w.answer[i].toLowerCase();
+            const existing = cells.get(key);
+            if (!existing) {
+              cells.set(key, { letter: letter, num: i === 0 ? w.num : null, solved: !!w.solved, words: [[w.num, i]] });
+            } else {
+              if (i === 0) existing.num = w.num;
+              if (w.solved) existing.solved = true;
+              existing.words.push([w.num, i]);
+            }
+          }
+        });
+        const wrap = document.createElement("div");
+        wrap.className = "crossword-wrap";
+        const cgrid = document.createElement("div");
+        cgrid.className = "crossword-grid";
+        cgrid.style.gridTemplateColumns = "repeat(" + (maxC - minC + 1) + ", 2.1em)";
+        cgrid.style.gridTemplateRows = "repeat(" + (maxR - minR + 1) + ", 2.1em)";
+        for (let r = minR; r <= maxR; r++) {
+          for (let c = minC; c <= maxC; c++) {
+            const info = cells.get(r + "," + c);
+            const cell = document.createElement("div");
+            if (!info) {
+              cell.className = "cw-cell cw-empty";
+            } else {
+              cell.className = "cw-cell";
+              // data-w<num>="<índice>" por cada palabra que pasa por esta celda, y
+              // data-letter con la letra correcta: lo que extraer.mjs necesita para
+              // reconstruir cada respuesta sin depender de un .reveal (aquí no cabe uno,
+              // las celdas son minúsculas). No se lee del DOM en ningún otro sitio.
+              info.words.forEach(function (pair) { cell.dataset["w" + pair[0]] = pair[1]; });
+              cell.dataset.letter = info.letter;
+              if (info.num != null) {
+                const label = document.createElement("span");
+                label.className = "cw-num";
+                label.setAttribute("translate", "no");
+                label.textContent = info.num;
+                cell.appendChild(label);
+              }
+              if (info.solved) {
+                const fixed = document.createElement("span");
+                fixed.className = "cw-solved";
+                fixed.textContent = info.letter;
+                cell.appendChild(fixed);
+              } else {
+                const inp = makeInput([info.letter], false, "Crucigrama " + info.letter);
+                inp.maxLength = 1;
+                cell.appendChild(inp);
+              }
+            }
+            cgrid.appendChild(cell);
+          }
+        }
+        wrap.appendChild(cgrid);
+        card.appendChild(wrap);
+
+        const across = ex.words.filter(function (w) { return w.dir === "A"; });
+        const down = ex.words.filter(function (w) { return w.dir === "D"; });
+        const clues = document.createElement("div");
+        clues.className = "crossword-clues";
+        [["Horizontales", across], ["Verticales", down]].forEach(function (pair) {
+          if (!pair[1].length) return;
+          const group = document.createElement("div");
+          group.className = "cw-clue-group";
+          const h = document.createElement("h4");
+          h.textContent = pair[0];
+          group.appendChild(h);
+          pair[1].forEach(function (w) {
+            const p = document.createElement("p");
+            p.className = "cw-clue";
+            p.innerHTML = '<b translate="no">' + w.num + "</b>" + escapeHtml(w.clue) +
+              (w.solved ? " <i>(ya resuelta)</i>" : "");
+            group.appendChild(p);
+          });
+          clues.appendChild(group);
+        });
+        card.appendChild(clues);
       } else if (ex.type === "agenda") {
         const twrap = document.createElement("div");
         twrap.className = "table-wrap";

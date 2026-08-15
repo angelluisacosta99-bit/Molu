@@ -503,6 +503,36 @@ no las deshagas sin querer al modificar la plantilla.
   impreso, y el total de huecos deja de coincidir con lo que hay que rellenar de verdad.
   `ex.subjectLabel` cambia además el encabezado de la primera columna, que estaba fijado a
   «Sujeto» y en una tabla de infinitivos no significa nada.
+- **Crucigrama real (`type: "crossword"`), añadido en la 5B de B1.** Hasta entonces un
+  crucigrama del libro se resolvía como lista de definiciones con la foto de la rejilla al
+  lado (`ex.refHTML`) — funcionaba, pero el profesor pidió expresamente probar a construir
+  la rejilla de verdad, con casillas que se cruzan. `ex.words` es una lista de
+  `{ num, clue, answer, row, col, dir: "A"|"D", solved? }`; el renderizador calcula una
+  sola vez la celda de cada cruce (no crea dos inputs superpuestos) y reutiliza el motor de
+  corrección de siempre — cada celda es un `makeInput([letra], ...)` normal, así que se
+  colorea sola en verde/rojo sin código nuevo. `extraer.mjs` no sabía leer esto (no hay
+  `.item-row` que recorrer): las celdas llevan `data-w<num>="<índice>"` y `data-letter`
+  precisamente para que el archivador reconstruya cada palabra sin depender de un
+  `.reveal` — no cabe uno en una casilla de una letra.
+  **La lección de verdad, la que hizo falta corregir a mitad de camino:** intentar leer
+  las coordenadas EXACTAS de la rejilla del libro a partir del escaneo, celda a celda, con
+  análisis de píxeles (`PIL`+`numpy`, detectando líneas de rejilla por franjas de
+  oscuridad) es viable para los primeros cruces pero se vuelve poco fiable cuanto más se
+  aleja uno de una referencia clara — en la 5B, los cinco primeros cruces (con
+  `risoterapia` y `medicamento`) salieron confirmados dos veces por mediciones
+  independientes y cuadraban perfectamente con las letras reales de las palabras; los dos
+  últimos (filas 7 y 8) empezaron a dar posiciones inconsistentes según de qué zona se
+  partiera, y forzar una coordenada dudosa en un crucigrama es peor que en cualquier otro
+  ejercicio: un cruce mal leído no marca una respuesta como incorrecta, **hace el
+  crucigrama irresoluble** (dos palabras que deberían compartir letra y no la comparten).
+  La salida, y la que hay que repetir si esto vuelve a pasar: en cuanto la lectura de
+  píxeles deje de ser sólida, dejar de perseguir el layout exacto del libro y **diseñar
+  una rejilla propia** con las mismas palabras y definiciones, colocando los cruces que sí
+  se confirmaron y buscando por código (no a ojo) una letra compartida real para los que
+  faltan — ver el bloque de placement con `can_place`/`find_crossings` que se escribió
+  para esto, reutilizable tal cual. El resultado no es pixel-perfect al libro, pero está
+  garantizado correcto por construcción, que es lo que de verdad importa en un ejercicio
+  que se publica para que un alumno lo resuelva.
 
 ### Canal por canal (la parte que más costó)
 

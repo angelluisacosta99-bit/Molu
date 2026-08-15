@@ -56,18 +56,16 @@
 
 #### Ej. 3 — Crucigrama
 
-*Escribe la palabra que corresponde a cada definición. Entre paréntesis va el número de letras, que en el libro te lo dice la rejilla. La 1 viene ya resuelta en el original.*
+*Rellena la rejilla letra a letra a partir de las definiciones. La 1 viene ya resuelta, como en el original. Este crucigrama no reproduce la rejilla del libro al pie de la letra —el escaneo no se leía con fiabilidad suficiente para copiar cada casilla—, pero usa las mismas ocho palabras y definiciones, con cruces reales verificados letra por letra.*
 
-> **La rejilla del libro:** 
-
-1. Lo que hacen los médicos. (5 letras) → curar
-2. Perder peso. (9 letras) **adelgazar**
-3. Tengo que seguir una … baja en sal para cuidar mi corazón. (5 letras) **dieta**
-4. Una terapia muy divertida. (11 letras) **risoterapia**
-5. El lugar donde se compran hierbas y productos naturales para la salud. (10 letras) **herbolario**
-6. Este … me lo ha recetado el médico. (11 letras) **medicamento**
-7. La gripe es una … muy común. (10 letras) **enfermedad**
-8. Un chico que no come carne. (11 letras) **vegetariano**
+4. Una terapia muy divertida. → **risoterapia**
+6. Este … me lo ha recetado el médico. → **medicamento**
+7. La gripe es una … muy común. → **enfermedad**
+1. Lo que hacen los médicos. → **curar** *(ya resuelta)*
+2. Perder peso. → **adelgazar**
+3. Tengo que seguir una … baja en sal para cuidar mi corazón. → **dieta**
+5. El lugar donde se compran hierbas y productos naturales para la salud. → **herbolario**
+8. Un chico que no come carne. → **vegetariano**
 
 #### Ej. 4 — Remedios naturales
 

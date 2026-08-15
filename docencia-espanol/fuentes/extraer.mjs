@@ -280,6 +280,27 @@ const md = await page.evaluate(() => {
       // tablas de conjugación
       for (const tw of ex.querySelectorAll(".table-wrap table")) { push(); emitTable(tw); }
 
+      // Crucigrama (type: "crossword"): no hay .item-row que recorrer, así que se
+      // reconstruye cada palabra a partir de las celdas data-w<num>="<índice>" que deja el
+      // renderizador — no hay .reveal por celda (no cabe uno en una casilla de 2 letras),
+      // así que la respuesta correcta se lee de data-letter, siempre presente, gane o
+      // pierda el alumno la partida.
+      const cw = ex.querySelector(".crossword-grid");
+      if (cw) {
+        for (const p of ex.querySelectorAll(".cw-clue")) {
+          const num = clean(p.querySelector("b")?.textContent);
+          const solved = /\(ya resuelta\)$/.test(p.textContent);
+          let clueText = clean(p.textContent);
+          if (num) clueText = clueText.replace(new RegExp("^" + num + "\\s*"), "");
+          clueText = clueText.replace(/\(ya resuelta\)$/, "").trim();
+          const cellsForWord = [...cw.querySelectorAll('[data-w' + num + ']')]
+            .sort((a, b) => Number(a.dataset["w" + num]) - Number(b.dataset["w" + num]));
+          const answer = cellsForWord.map((c) => c.dataset.letter).join("");
+          push(num + ". " + clueText + (answer ? " → **" + answer + "**" : "") + (solved ? " *(ya resuelta)*" : ""));
+        }
+        push();
+      }
+
       // Transcripción del audio (plegada en el artefacto). Es contenido del libro, así que
       // tiene que quedar archivado igual que lo demás — si no, este archivo dejaría de ser
       // suficiente para reconstruir el capítulo sin volver al PDF.
