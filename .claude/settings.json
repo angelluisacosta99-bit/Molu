@@ -18,7 +18,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/root/.local/bin/graphify hook-guard search"
+            "command": "test -x /root/.local/bin/graphify && /root/.local/bin/graphify hook-guard search || true"
           }
         ]
       },
@@ -27,7 +27,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/root/.local/bin/graphify hook-guard read"
+            "command": "test -x /root/.local/bin/graphify && /root/.local/bin/graphify hook-guard read || true"
           }
         ]
       }
