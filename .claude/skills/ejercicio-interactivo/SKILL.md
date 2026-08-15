@@ -295,6 +295,41 @@ no las deshagas sin querer al modificar la plantilla.
   y si de verdad no aparece, dilo en el enunciado y pídesela al profesor, pero **nunca la
   inventes**: una transcripción escrita por Claude puesta como si fuera la del libro es
   material falso, y encima el alumno la usaría para autocorregirse.
+- **Cuando sí hay grabación real, incrústala (`ex.audioSrc`) — no basta con la
+  transcripción.** Nació al añadir las pistas 6, 7 y 8 de B1 (5B y 5C). Dos lecciones
+  reales de ese proceso:
+  - **No te fíes de una carpeta de Drive por el nombre solo.** La primera carpeta que
+    parecía obvia («АУДИО B1 Nuevo español en marcha», con archivos «PISTA NN.mp3»)
+    resultó ser del **libro del alumno**, no del cuaderno de ejercicios — mismo manual,
+    audio distinto. Se detectó a tiempo (antes de publicar) porque el profesor dudó y
+    porque la propia sección de «Transcripciones» del cuaderno (páginas 64-68) cita
+    explícitamente el número de pista más alto que usa en todo el libro — en B1 no pasa de
+    la **19**, mientras que esa carpeta llegaba hasta la 69 por lo menos. Ese máximo,
+    sacado del propio PDF con una regex simple sobre esas páginas, es la verificación
+    barata: si la carpeta candidata tiene pistas por encima de ese máximo, no es la del
+    cuaderno.
+  - **Las grabaciones de este archivo pueden venir en `.wma` (Windows Media Audio), que
+    casi ningún navegador reproduce en `<audio>`** (ni Chrome, ni Safari, ni el navegador
+    del móvil). Hace falta convertirlas a mp3 antes de incrustarlas. Este contenedor no
+    tiene `ffmpeg` del sistema (y `apt-get install` falla con 404, mismo problema que con
+    `poppler-utils`), pero `pip install imageio-ffmpeg` **sí funciona** y trae un binario
+    de ffmpeg estático listo para usar:
+    ```python
+    import imageio_ffmpeg; print(imageio_ffmpeg.get_ffmpeg_exe())  # ruta al binario
+    ```
+    ```bash
+    "$FFMPEG" -y -i entrada.wma -codec:a libmp3lame -b:a 128k salida.mp3
+    ```
+    Comprueba después con `mutagen` (`from mutagen.mp3 import MP3; MP3(ruta).info.length`)
+    que la duración del mp3 convertido coincide con la del wma original
+    (`from mutagen.asf import ASF`) — si no coincide, la conversión se cortó a medias.
+  - El audio va como `data:` URI en base64 (un artefacto no puede enlazar un archivo
+    externo), igual que las imágenes. **La transcripción no se quita aunque haya audio
+    real** — sigue siendo la regla del profesor de arriba, ahora como apoyo en vez de
+    único recurso. Verifica con Playwright que carga de verdad: `preload="none"` en el
+    motor por defecto significa que hay que forzar `audio.load()` y esperar el evento
+    `loadedmetadata` (o `error`) para comprobar la duración, no basta con contar
+    `<audio>` en el DOM.
 - **El cuaderno de B1 también trae solucionario y transcripciones**, con el mismo reparto:
   **64-68 transcripciones, 69-76 soluciones** (las 52-63 son los textos de «Leer más», la
   76 son las soluciones de esas lecturas y la 77 es la contracubierta; el PDF tiene 77
@@ -503,6 +538,36 @@ no las deshagas sin querer al modificar la plantilla.
   impreso, y el total de huecos deja de coincidir con lo que hay que rellenar de verdad.
   `ex.subjectLabel` cambia además el encabezado de la primera columna, que estaba fijado a
   «Sujeto» y en una tabla de infinitivos no significa nada.
+- **Crucigrama real (`type: "crossword"`), añadido en la 5B de B1.** Hasta entonces un
+  crucigrama del libro se resolvía como lista de definiciones con la foto de la rejilla al
+  lado (`ex.refHTML`) — funcionaba, pero el profesor pidió expresamente probar a construir
+  la rejilla de verdad, con casillas que se cruzan. `ex.words` es una lista de
+  `{ num, clue, answer, row, col, dir: "A"|"D", solved? }`; el renderizador calcula una
+  sola vez la celda de cada cruce (no crea dos inputs superpuestos) y reutiliza el motor de
+  corrección de siempre — cada celda es un `makeInput([letra], ...)` normal, así que se
+  colorea sola en verde/rojo sin código nuevo. `extraer.mjs` no sabía leer esto (no hay
+  `.item-row` que recorrer): las celdas llevan `data-w<num>="<índice>"` y `data-letter`
+  precisamente para que el archivador reconstruya cada palabra sin depender de un
+  `.reveal` — no cabe uno en una casilla de una letra.
+  **La lección de verdad, la que hizo falta corregir a mitad de camino:** intentar leer
+  las coordenadas EXACTAS de la rejilla del libro a partir del escaneo, celda a celda, con
+  análisis de píxeles (`PIL`+`numpy`, detectando líneas de rejilla por franjas de
+  oscuridad) es viable para los primeros cruces pero se vuelve poco fiable cuanto más se
+  aleja uno de una referencia clara — en la 5B, los cinco primeros cruces (con
+  `risoterapia` y `medicamento`) salieron confirmados dos veces por mediciones
+  independientes y cuadraban perfectamente con las letras reales de las palabras; los dos
+  últimos (filas 7 y 8) empezaron a dar posiciones inconsistentes según de qué zona se
+  partiera, y forzar una coordenada dudosa en un crucigrama es peor que en cualquier otro
+  ejercicio: un cruce mal leído no marca una respuesta como incorrecta, **hace el
+  crucigrama irresoluble** (dos palabras que deberían compartir letra y no la comparten).
+  La salida, y la que hay que repetir si esto vuelve a pasar: en cuanto la lectura de
+  píxeles deje de ser sólida, dejar de perseguir el layout exacto del libro y **diseñar
+  una rejilla propia** con las mismas palabras y definiciones, colocando los cruces que sí
+  se confirmaron y buscando por código (no a ojo) una letra compartida real para los que
+  faltan — ver el bloque de placement con `can_place`/`find_crossings` que se escribió
+  para esto, reutilizable tal cual. El resultado no es pixel-perfect al libro, pero está
+  garantizado correcto por construcción, que es lo que de verdad importa en un ejercicio
+  que se publica para que un alumno lo resuelva.
 
 ### Canal por canal (la parte que más costó)
 
@@ -677,10 +742,33 @@ parezca más "controlable" desde JS — ya se demostró que rompe el caso más b
 - **Lo que NO funciona en este contenedor**, comprobado, para no volver a intentarlo: no hay
   `tesseract` ni OCR, ni `qpdf`, ni `mutool`, ni `pdftk`. Y de las librerías de Python para
   PDF: `pypdf` y `pdfplumber` **se instalan pero revientan al importarse** (el binding de
-  `cryptography` lanza un `PanicException` de Rust), y PyMuPDF (`fitz`) directamente no está
-  y no se ha conseguido instalar. O sea que de todo lo que propone `pdf-reading`, aquí solo
-  sirve la vía de línea de comandos de `poppler`, que es la que usa `paginas.sh`. No hace falta OCR para transcribir —leer el render con `Read` acierta donde
-  `pdftotext` se equivoca— pero sí impide generar un PDF con capa de texto buscable.
+  `cryptography` lanza un `PanicException` de Rust). No hace falta OCR para transcribir
+  —leer el render con `Read` acierta donde `pdftotext` se equivoca— pero sí impide generar un
+  PDF con capa de texto buscable.
+- **`poppler` NO está en todos los contenedores, y `PyMuPDF` sí se instala: es el plan B.**
+  Medido en la sesión de la 5C: `pdftoppm`/`pdftotext`/`pdffonts` no existían, `apt-get
+  install poppler-utils` falla con **404** (el índice de paquetes viene caducado y
+  `apt-get update` tampoco lo arregla), y sin `pdftoppm` **la herramienta `Read` tampoco
+  puede abrir un PDF** — no solo `paginas.sh`. Parecía un callejón sin salida y no lo es:
+  `python3 -m pip install pymupdf` **funciona** (la nota anterior de esta skill decía lo
+  contrario; era de otro contenedor). Con eso se hace todo lo que hacía `paginas.sh`:
+
+  ```python
+  import pymupdf
+  d = pymupdf.open(PDF)
+  print(d.page_count)                       # y d[n].get_text() para localizar
+  d[n-1].get_pixmap(dpi=170).save("p.png")  # renderizar y MIRAR la página con Read
+  # y para leer letra pequeña, un recorte a más dpi:
+  # d[n-1].get_pixmap(dpi=300, clip=pymupdf.Rect(x0, y0, x1, y1)).save("crop.png")
+  ```
+
+  El recorte a 300 dpi es lo que hace legibles el artículo del ejercicio 1 y el prospecto
+  del 5 de la 5C, que a página completa no se leen.
+- **No te fíes del número de páginas que anuncia el harness al adjuntar el PDF.** Con el
+  cuaderno de B1 dijo «103 pages» cuando el archivo tiene **77**, que es justo lo que dice
+  la nota de más arriba (numeración del PDF = numeración del libro, sin desfase).
+  Compruébalo con `d.page_count` y localiza el capítulo buscando su título con `get_text()`
+  antes de renderizar nada.
 - `PRODUCT.md` y `DESIGN.md` (raíz del repo) — el sistema de diseño compartido por todos los
   artefactos de esta biblioteca (paleta papel/tinta, tipografía, componentes). Cualquier
   página nueva (ejercicio o índice) debe extender estos tokens, no inventar los suyos — ver
