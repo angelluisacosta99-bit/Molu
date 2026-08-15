@@ -163,9 +163,14 @@ Qué hacer si pasa esto:
 - **`graphify query/path/explain`** en vez de leer archivos crudos para
   preguntas sobre el código — ya reforzado por el hook `PreToolUse`.
 - **`skillOverrides` en `.claude/settings.json`** — las skills que se usan
-  poco se marcan como `"name-only"` (siguen funcionando con `/nombre`,
-  pero no aparecen con descripción completa en cada turno de la
-  conversación). Revisar y ajustar si el patrón de uso cambia.
+  poco se pueden marcar como `"name-only"` (siguen funcionando con
+  `/nombre`, pero no aparecen con descripción completa en cada turno).
+  **Cuidado:** esto solo es seguro para skills sin una regla de "usar
+  siempre" en este archivo — quitar la descripción le quita también la
+  señal que permite reconocer cuándo activarla por lenguaje natural. Por
+  eso `impeccable` (que sí tiene esa regla, más arriba) se queda fuera de
+  `skillOverrides`; no aplicarlo ahí sin revisar antes si existe una
+  regla equivalente para la skill en cuestión.
 - **`/compact`** — en conversaciones largas, correrlo en puntos de corte
   naturales (por ejemplo, al terminar una tarea grande y empezar otra sin
   relación) comprime el historial en vez de dejar que crezca sin límite.
