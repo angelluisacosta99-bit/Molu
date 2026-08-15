@@ -11,6 +11,9 @@
     ],
     "defaultMode": "dontAsk"
   },
+  "skillOverrides": {
+    "impeccable": "name-only"
+  },
   "hooks": {
     "PreToolUse": [
       {

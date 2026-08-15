@@ -155,3 +155,19 @@ Qué hacer si pasa esto:
    volver a correr `/graphify --update`; lo pendiente se completará vía
    subagentes de Claude. Restaurar la key después si se quiere seguir
    usando Gemini en corridas futuras.
+
+## Ahorro de tokens: prácticas activas en este repo
+
+- **`GEMINI_API_KEY` para graphify** (ver sección anterior) — evita
+  subagentes de Claude en la extracción semántica.
+- **`graphify query/path/explain`** en vez de leer archivos crudos para
+  preguntas sobre el código — ya reforzado por el hook `PreToolUse`.
+- **`skillOverrides` en `.claude/settings.json`** — las skills que se usan
+  poco se marcan como `"name-only"` (siguen funcionando con `/nombre`,
+  pero no aparecen con descripción completa en cada turno de la
+  conversación). Revisar y ajustar si el patrón de uso cambia.
+- **`/compact`** — en conversaciones largas, correrlo en puntos de corte
+  naturales (por ejemplo, al terminar una tarea grande y empezar otra sin
+  relación) comprime el historial en vez de dejar que crezca sin límite.
+  No hace falta automatizarlo; es una práctica a tener presente cuando la
+  sesión se alarga mucho.
