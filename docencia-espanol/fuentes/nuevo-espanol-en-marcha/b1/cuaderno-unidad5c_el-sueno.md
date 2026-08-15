@@ -154,7 +154,7 @@ j. **No dejes** de soñar.
 
 #### Ej. 8 — Escucha y comprueba
 
-*En el libro este ejercicio es la grabación que confirma los diálogos del ejercicio 7 (pista 7). No tenemos el audio, así que abajo tienes su transcripción: ábrela cuando hayas escrito tus cuatro diálogos.*
+*En el libro este ejercicio es la grabación que confirma los diálogos del ejercicio 7 (pista 7). Escúchala y compara con lo que has escrito; si te falta el sonido, abajo tienes también la transcripción.*
 
 > Compara lo que has escrito en el ejercicio 7 con la grabación.
 
@@ -169,11 +169,11 @@ j. **No dejes** de soñar.
 
 #### Ej. 9 — ¿Se escriben con «g» o con «j»?
 
-*Completa los huecos de la lista. No tenemos el audio de esta pista: abre la transcripción del final de la tarjeta y trabaja con ella — las palabras en cursiva son las diez que faltan, en el mismo orden. Escribe una sola palabra en cada hueco.*
+*Escucha la pista y completa los huecos de la lista. Escribe una sola palabra en cada hueco; si te falta el sonido, la transcripción del final de la tarjeta marca en cursiva las diez palabras que faltan, en el mismo orden.*
 
 gabardina, **gato**, gota, **jarrón**, **gente**, hoguera, **lentejas**, **gigante**, jirafa, **guerra**, **jersey**, jota, **guitarra**, **juego**, guepardo, **girar**.
 
-**Ver la transcripción de la pista 8 (la necesitas: no tenemos la grabación)**
+**Ver la transcripción de la pista 8 (por si te hace falta el apoyo por escrito)**
 
 > gabardina, gato, gota, jarrón, gente, hoguera, lentejas, gigante, jirafa, guerra, jersey, jota, guitarra, juego, guepardo, girar.
 

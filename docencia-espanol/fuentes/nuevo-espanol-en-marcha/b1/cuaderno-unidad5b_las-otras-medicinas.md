@@ -6,7 +6,7 @@
 
 #### Ej. 1 — Escribe las partes del cuerpo que se mencionan
 
-*En el libro se escribe encima de las líneas de los dos dibujos; aquí va como lista, en el mismo orden en que la grabación va nombrando cada parte. Escribe solo el nombre, sin artículo. No tenemos el audio de esta pista: abre la transcripción del final de la tarjeta y trabaja con ella — las palabras que son respuesta van en cursiva, cada una la primera vez que se nombra. Se acepta el singular y el plural.*
+*En el libro se escribe encima de las líneas de los dos dibujos; aquí va como lista, en el mismo orden en que la grabación va nombrando cada parte. Escribe solo el nombre, sin artículo. Escucha la pista de abajo (o abre la transcripción, si te falta el sonido) — las palabras que son respuesta van en cursiva, cada una la primera vez que se nombra. Se acepta el singular y el plural.*
 
 > **Los dibujos del libro:** 
 
@@ -33,7 +33,7 @@
 21. **talón**
 22. **dedos**
 
-**Ver la transcripción de la pista 6 (la necesitas: no tenemos la grabación)**
+**Ver la transcripción de la pista 6 (por si te hace falta el apoyo por escrito)**
 
 > Visualice su cuerpo mientras respira lenta y profundamente. Haga un recorrido desde los pies a la cabeza. Empiece por relajar la cara, la lengua, los labios… Relaje los músculos de sus ojos: sus cejas, sus pestañas… Sienta su frente relajada e imagine que alguien está pasando despacio un cepillo muy suave por sus cabellos.
 > Deje que cada parte de su cuerpo sea atraída por la gravedad: la cabeza, el cuello, los hombros, la espalda… Ahora cada parte de su cuerpo es muy pesada: los brazos, el pecho, el abdomen… Sus piernas son cada vez más pesadas: sienta como poco a poco se relajan sus caderas, sus muslos, sus tobillos… Sienta sus pies más y más relajados: el talón, cada uno de los dedos… Cualquier tensión desaparece poco a poco…

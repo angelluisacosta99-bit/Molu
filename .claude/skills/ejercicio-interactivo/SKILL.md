@@ -295,6 +295,41 @@ no las deshagas sin querer al modificar la plantilla.
   y si de verdad no aparece, dilo en el enunciado y pídesela al profesor, pero **nunca la
   inventes**: una transcripción escrita por Claude puesta como si fuera la del libro es
   material falso, y encima el alumno la usaría para autocorregirse.
+- **Cuando sí hay grabación real, incrústala (`ex.audioSrc`) — no basta con la
+  transcripción.** Nació al añadir las pistas 6, 7 y 8 de B1 (5B y 5C). Dos lecciones
+  reales de ese proceso:
+  - **No te fíes de una carpeta de Drive por el nombre solo.** La primera carpeta que
+    parecía obvia («АУДИО B1 Nuevo español en marcha», con archivos «PISTA NN.mp3»)
+    resultó ser del **libro del alumno**, no del cuaderno de ejercicios — mismo manual,
+    audio distinto. Se detectó a tiempo (antes de publicar) porque el profesor dudó y
+    porque la propia sección de «Transcripciones» del cuaderno (páginas 64-68) cita
+    explícitamente el número de pista más alto que usa en todo el libro — en B1 no pasa de
+    la **19**, mientras que esa carpeta llegaba hasta la 69 por lo menos. Ese máximo,
+    sacado del propio PDF con una regex simple sobre esas páginas, es la verificación
+    barata: si la carpeta candidata tiene pistas por encima de ese máximo, no es la del
+    cuaderno.
+  - **Las grabaciones de este archivo pueden venir en `.wma` (Windows Media Audio), que
+    casi ningún navegador reproduce en `<audio>`** (ni Chrome, ni Safari, ni el navegador
+    del móvil). Hace falta convertirlas a mp3 antes de incrustarlas. Este contenedor no
+    tiene `ffmpeg` del sistema (y `apt-get install` falla con 404, mismo problema que con
+    `poppler-utils`), pero `pip install imageio-ffmpeg` **sí funciona** y trae un binario
+    de ffmpeg estático listo para usar:
+    ```python
+    import imageio_ffmpeg; print(imageio_ffmpeg.get_ffmpeg_exe())  # ruta al binario
+    ```
+    ```bash
+    "$FFMPEG" -y -i entrada.wma -codec:a libmp3lame -b:a 128k salida.mp3
+    ```
+    Comprueba después con `mutagen` (`from mutagen.mp3 import MP3; MP3(ruta).info.length`)
+    que la duración del mp3 convertido coincide con la del wma original
+    (`from mutagen.asf import ASF`) — si no coincide, la conversión se cortó a medias.
+  - El audio va como `data:` URI en base64 (un artefacto no puede enlazar un archivo
+    externo), igual que las imágenes. **La transcripción no se quita aunque haya audio
+    real** — sigue siendo la regla del profesor de arriba, ahora como apoyo en vez de
+    único recurso. Verifica con Playwright que carga de verdad: `preload="none"` en el
+    motor por defecto significa que hay que forzar `audio.load()` y esperar el evento
+    `loadedmetadata` (o `error`) para comprobar la duración, no basta con contar
+    `<audio>` en el DOM.
 - **El cuaderno de B1 también trae solucionario y transcripciones**, con el mismo reparto:
   **64-68 transcripciones, 69-76 soluciones** (las 52-63 son los textos de «Leer más», la
   76 son las soluciones de esas lecturas y la 77 es la contracubierta; el PDF tiene 77
