@@ -34,3 +34,7 @@ venv/
 # resultado final consultable); esto solo ignora el trabajo en curso.
 graphify-out/.graphify_*
 graphify-out/cache/
+
+# Configuración local de Claude Code: overrides personales y, en su caso,
+# API keys (ej. GEMINI_API_KEY para graphify). Nunca debe subirse al repo.
+.claude/settings.local.json

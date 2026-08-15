@@ -131,3 +131,48 @@ Rules:
 - If graphify-out/wiki/index.md exists, use it for broad navigation instead of raw source browsing.
 - Read graphify-out/GRAPH_REPORT.md only for broad architecture review or when query/path/explain do not surface enough context.
 - After modifying code, run `graphify update .` to keep the graph current (AST-only, no API cost).
+
+### Extracción semántica: `GEMINI_API_KEY` y qué hacer si se agota la cuota
+
+Este repo tiene configurada `GEMINI_API_KEY` en `.claude/settings.local.json`
+(nunca en Git). Con la key presente, `/graphify` usa la API de Gemini para
+la extracción semántica de documentos/imágenes en vez de subagentes de
+Claude — más rápido y sin gastar tokens de Claude en esa parte.
+
+La decisión de "Gemini vs. subagentes" se toma una sola vez al arrancar
+`/graphify`, según si la key está configurada — no se re-evalúa a mitad de
+la corrida. Si un chunk falla porque la cuota está agotada (no es un 429
+transitorio, que ya se reintenta solo), graphify lo salta y sigue con el
+resto — no aborta la corrida completa, pero tampoco cae automáticamente en
+subagentes de Claude para ese chunk. Como el resultado de cada archivo se
+cachea, los que fallaron quedan pendientes, no perdidos.
+
+Qué hacer si pasa esto:
+1. **Esperar y reintentar más tarde** — el free tier de Gemini se resetea
+   diariamente. Correr `graphify --update` reprocesa solo lo pendiente.
+2. **Terminar ahora con subagentes** — quitar temporalmente
+   `GEMINI_API_KEY` de `.claude/settings.local.json` (o vaciar su valor) y
+   volver a correr `/graphify --update`; lo pendiente se completará vía
+   subagentes de Claude. Restaurar la key después si se quiere seguir
+   usando Gemini en corridas futuras.
+
+## Ahorro de tokens: prácticas activas en este repo
+
+- **`GEMINI_API_KEY` para graphify** (ver sección anterior) — evita
+  subagentes de Claude en la extracción semántica.
+- **`graphify query/path/explain`** en vez de leer archivos crudos para
+  preguntas sobre el código — ya reforzado por el hook `PreToolUse`.
+- **`skillOverrides` en `.claude/settings.json`** — las skills que se usan
+  poco se pueden marcar como `"name-only"` (siguen funcionando con
+  `/nombre`, pero no aparecen con descripción completa en cada turno).
+  **Cuidado:** esto solo es seguro para skills sin una regla de "usar
+  siempre" en este archivo — quitar la descripción le quita también la
+  señal que permite reconocer cuándo activarla por lenguaje natural. Por
+  eso `impeccable` (que sí tiene esa regla, más arriba) se queda fuera de
+  `skillOverrides`; no aplicarlo ahí sin revisar antes si existe una
+  regla equivalente para la skill en cuestión.
+- **`/compact`** — en conversaciones largas, correrlo en puntos de corte
+  naturales (por ejemplo, al terminar una tarea grande y empezar otra sin
+  relación) comprime el historial en vez de dejar que crezca sin límite.
+  No hace falta automatizarlo; es una práctica a tener presente cuando la
+  sesión se alarga mucho.
