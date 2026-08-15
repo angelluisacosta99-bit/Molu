@@ -99,6 +99,29 @@ El pie de página con el nombre del autor (ej. "© Angel Luis Acosta
 González" o "Material elaborado por...") sí puede mantenerse, pero no
 esa línea de firma personalizada al final del mensaje de cierre.
 
+## Organización de carpetas: subcarpetas temáticas en kebab-case
+
+Cada carpeta de primer nivel del repositorio (`python/`, `docencia-espanol/`,
+`telecomunicaciones/`, etc.) se organiza internamente en **subcarpetas por
+tema o área**, no en una lista plana de archivos sueltos — por ejemplo
+`python/ejercicios/` + `python/proyectos/`, o
+`docencia-espanol/planificacion/` + `materiales/` + `grabaciones/`.
+
+Nombres de subcarpeta siempre en **kebab-case** (minúsculas, sin tildes,
+palabras separadas por guiones), igual que la regla ya existente para
+archivos en el `README.md` raíz.
+
+Al crear una carpeta de primer nivel nueva (o al añadir contenido que no
+encaje en la estructura actual de una carpeta existente), aplicar este
+mismo patrón por defecto en vez de inventar una organización distinta
+cada vez.
+
+*(Este patrón ya se repetía de forma independiente en varias áreas del
+repo — `graphify` lo detectó como una conexión semántica entre
+`python/README.md` y `docencia-espanol/README.md` sin que estuviera
+escrito como regla en ningún sitio; se formaliza aquí para que sea
+explícito y consistente hacia adelante.)*
+
 ## graphify
 
 This project has a knowledge graph at graphify-out/ with god nodes, community structure, and cross-file relationships.
