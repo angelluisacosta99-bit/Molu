@@ -28,3 +28,9 @@ venv/
 # Archivos temporales
 *.tmp
 *.log
+
+# graphify: archivos intermedios del pipeline y caché local.
+# graph.json, GRAPH_REPORT.md y graph.html sí se versionan (son el
+# resultado final consultable); esto solo ignora el trabajo en curso.
+graphify-out/.graphify_*
+graphify-out/cache/
