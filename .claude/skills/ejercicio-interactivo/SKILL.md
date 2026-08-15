@@ -677,10 +677,33 @@ parezca más "controlable" desde JS — ya se demostró que rompe el caso más b
 - **Lo que NO funciona en este contenedor**, comprobado, para no volver a intentarlo: no hay
   `tesseract` ni OCR, ni `qpdf`, ni `mutool`, ni `pdftk`. Y de las librerías de Python para
   PDF: `pypdf` y `pdfplumber` **se instalan pero revientan al importarse** (el binding de
-  `cryptography` lanza un `PanicException` de Rust), y PyMuPDF (`fitz`) directamente no está
-  y no se ha conseguido instalar. O sea que de todo lo que propone `pdf-reading`, aquí solo
-  sirve la vía de línea de comandos de `poppler`, que es la que usa `paginas.sh`. No hace falta OCR para transcribir —leer el render con `Read` acierta donde
-  `pdftotext` se equivoca— pero sí impide generar un PDF con capa de texto buscable.
+  `cryptography` lanza un `PanicException` de Rust). No hace falta OCR para transcribir
+  —leer el render con `Read` acierta donde `pdftotext` se equivoca— pero sí impide generar un
+  PDF con capa de texto buscable.
+- **`poppler` NO está en todos los contenedores, y `PyMuPDF` sí se instala: es el plan B.**
+  Medido en la sesión de la 5C: `pdftoppm`/`pdftotext`/`pdffonts` no existían, `apt-get
+  install poppler-utils` falla con **404** (el índice de paquetes viene caducado y
+  `apt-get update` tampoco lo arregla), y sin `pdftoppm` **la herramienta `Read` tampoco
+  puede abrir un PDF** — no solo `paginas.sh`. Parecía un callejón sin salida y no lo es:
+  `python3 -m pip install pymupdf` **funciona** (la nota anterior de esta skill decía lo
+  contrario; era de otro contenedor). Con eso se hace todo lo que hacía `paginas.sh`:
+
+  ```python
+  import pymupdf
+  d = pymupdf.open(PDF)
+  print(d.page_count)                       # y d[n].get_text() para localizar
+  d[n-1].get_pixmap(dpi=170).save("p.png")  # renderizar y MIRAR la página con Read
+  # y para leer letra pequeña, un recorte a más dpi:
+  # d[n-1].get_pixmap(dpi=300, clip=pymupdf.Rect(x0, y0, x1, y1)).save("crop.png")
+  ```
+
+  El recorte a 300 dpi es lo que hace legibles el artículo del ejercicio 1 y el prospecto
+  del 5 de la 5C, que a página completa no se leen.
+- **No te fíes del número de páginas que anuncia el harness al adjuntar el PDF.** Con el
+  cuaderno de B1 dijo «103 pages» cuando el archivo tiene **77**, que es justo lo que dice
+  la nota de más arriba (numeración del PDF = numeración del libro, sin desfase).
+  Compruébalo con `d.page_count` y localiza el capítulo buscando su título con `get_text()`
+  antes de renderizar nada.
 - `PRODUCT.md` y `DESIGN.md` (raíz del repo) — el sistema de diseño compartido por todos los
   artefactos de esta biblioteca (paleta papel/tinta, tipografía, componentes). Cualquier
   página nueva (ejercicio o índice) debe extender estos tokens, no inventar los suyos — ver

@@ -1,9 +1,21 @@
 <!--
-  TEMPLATE — plantilla de ejercicio interactivo con corrección instantánea.
-  Ver .claude/skills/ejercicio-interactivo/SKILL.md para el proceso completo.
-  Busca todos los marcadores {{...}} y sustitúyelos; no dejes ninguno sin reemplazar.
+  Unidad 5C del cuaderno de ejercicios de Nuevo Español en Marcha 3 (B1), páginas 22-23:
+  "El sueño". Transcrito mirando las páginas renderizadas del PDF que adjuntó el profesor
+  (el PDF trae capa de texto, pero es OCR de ABBYY con codificación Custom y sale sucio).
+  Las respuestas salen del solucionario oficial del propio cuaderno (página 71) y las
+  transcripciones de los audios, de la página 65.
+  Construido sobre .claude/skills/ejercicio-interactivo/reference/template.html.
+  Dos avisos sobre las respuestas:
+  - El solucionario NO trae la fila de «oír» del cuadro del ejercicio 2, aunque el cuadro
+    de la página 22 sí la tiene. Sus dos huecos («oye» para tú y «oiga» para usted) están
+    deducidos, no copiados; las otras dos formas de esa fila («oíd», «oigan») vienen ya
+    impresas en el libro.
+  - Los ejercicios 7 y 8 son de escribir diálogos y de escuchar para comprobar, así que no
+    puntúan: van con los enunciados a la vista y las respuestas del libro en un plegable.
+  El cuaderno numera dos veces el verbo «jugar» en el cuadro del ejercicio 2, con huecos
+  distintos en cada fila. Se respeta tal cual está en el libro.
 -->
-<title>{{TITLE}}</title>
+<title>Cuaderno B1 · 5C — El sueño</title>
 <style>
   :root {
     --paper: #F3F5F0;
@@ -581,21 +593,35 @@
   .item-row.vf-tail .vf-wrap { flex: 0 0 auto; }
   .item-row.vf-tail .reveal.show { flex-basis: 100%; margin-left: 0; }
   .item-row.tail-blank .reveal.show { flex-basis: 100%; margin-left: 0; }
+
+  /* Los cuatro recuadros de dolencias del ejercicio 7: en el libro son cajas grises con el
+     título en mayúsculas y los remedios centrados debajo. */
+  .remedios { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.9rem; margin-bottom: 1rem; }
+  .remedio {
+    background: var(--gold-soft); border-radius: 10px; padding: 0.85rem 1rem;
+    text-align: center; font-size: 0.88rem;
+  }
+  .remedio b {
+    display: block; text-transform: uppercase; letter-spacing: 0.04em;
+    font-size: 0.78rem; color: var(--ink); margin-bottom: 0.4rem;
+  }
+  .remedio span { display: block; color: var(--ink-soft); }
+  .remedio span + span { margin-top: 0.15rem; }
 </style>
 
 <script>
-  // {{STORAGE_KEY}} here MUST be byte-identical to the one set further down in the gate
+  // unlocked-cuaderno-b1-5c here MUST be byte-identical to the one set further down in the gate
   // script (search "STORAGE_KEY =") — same placeholder, same value, both occurrences.
   document.documentElement.setAttribute(
     "data-locked",
-    localStorage.getItem("{{STORAGE_KEY}}") === "1" ? "false" : "true"
+    localStorage.getItem("unlocked-cuaderno-b1-5c") === "1" ? "false" : "true"
   );
 </script>
 
 <div class="gate-overlay">
   <div class="gate-card">
     <div class="eyebrow">Acceso privado</div>
-    <h2>{{GATE_TITLE}}</h2>
+    <h2>Unidad 5C · El sueño</h2>
     <p>Pídele el código a tu profesor para entrar.</p>
     <input type="text" id="gateInput" placeholder="CÓDIGO" autocomplete="off" autocapitalize="characters" />
     <button id="gateBtn">Entrar</button>
@@ -606,10 +632,10 @@
   (function () {
     // El código es solo un disuasivo, no seguridad real — cualquiera que vea el HTML
     // fuente lo ve. Elige una palabra corta, memorable y ligada al tema, en MAYÚSCULAS.
-    const CODE = "{{GATE_CODE}}";
-    // MUST be byte-identical al {{STORAGE_KEY}} usado arriba (ver comentario junto al
+    const CODE = "SUENO";
+    // MUST be byte-identical al unlocked-cuaderno-b1-5c usado arriba (ver comentario junto al
     // primer occurrence). Usa un valor único por ejercicio, p. ej. "unlocked-b2-13a-tema".
-    const STORAGE_KEY = "{{STORAGE_KEY}}";
+    const STORAGE_KEY = "unlocked-cuaderno-b1-5c";
     function tryUnlock() {
       const val = document.getElementById("gateInput").value.trim().toUpperCase();
       if (val === CODE) {
@@ -629,9 +655,8 @@
 <div class="topbar gated-content">
   <div class="topbar-inner">
     <div class="brand">
-      <!-- Ejemplo real (A1): {{BRAND_TITLE}} = "Ejercicios A1", {{BRAND_SUB}} = "Presente · Gerundio · Indefinido" -->
-      <span class="brand-title">{{BRAND_TITLE}}</span>
-      <span class="brand-sub">{{BRAND_SUB}}</span>
+      <span class="brand-title">Cuaderno B1 · Unidad 5C</span>
+      <span class="brand-sub">El sueño</span>
     </div>
     <nav class="nav-dots" id="navDots"></nav>
     <div class="score-wrap">
@@ -642,13 +667,13 @@
 </div>
 
 <div class="hero gated-content">
-  <div class="eyebrow">{{EYEBROW}}</div>
-  <h1>{{HEADLINE}}</h1>
-  <p>{{SUBTITLE}}</p>
+  <div class="eyebrow">Nuevo Español en Marcha 3 · Cuaderno de ejercicios · Unidad 5 · Salud y enfermedad</div>
+  <h1>El sueño</h1>
+  <p>Dormir en el trabajo, y el imperativo de arriba abajo: afirmativo, negativo y con usted. Escribe tus respuestas, corrige al instante y envía el resultado a tu profesor.</p>
   <div class="hero-meta">
     <span><strong id="totalBlanksLabel" translate="no">—</strong> huecos en total</span>
-    <span><strong>{{N_BLOCKS}}</strong> bloques</span>
-    <span><strong>{{N_EXERCISES}}</strong> ejercicios</span>
+    <span><strong>1</strong> bloque</span>
+    <span><strong>9</strong> ejercicios</span>
   </div>
 </div>
 
@@ -680,7 +705,7 @@
 </div>
 
 <footer class="gated-content">
-  <span>{{FOOTER_LEFT}}</span>
+  <span>Nuevo Español en Marcha 3 (B1), cuaderno de ejercicios, unidad 5C (págs. 22-23)</span>
   <span>© Angel Luis Acosta González</span>
 </footer>
 
@@ -729,112 +754,157 @@
   // ---------- exercise data ----------
   // template blanks use {0},{1}... matched to item.answers[i]
   const blocks = [
-    // Cada bloque agrupa varios ejercicios bajo un mismo subtema. {{BLOCKS}} — sustituye
-    // este array completo por los bloques/ejercicios reales del capítulo, basados en el
-    // material del profesor (ver SKILL.md paso 1). Lo que sigue es un ejemplo de cada uno
-    // de los 5 tipos soportados por el renderizador (busca 'ex.type ===' en este archivo);
-    // si necesitas un tipo nuevo, tendrás que extender también el renderizador.
     {
-      id: "{{BLOCK_ID}}", num: 1, title: "{{BLOCK_TITLE}}",
-      sub: "{{BLOCK_SUBTITLE}}",
+      id: "seccion-1", num: 1, title: "El sueño",
+      sub: "Dormir en el trabajo, y el imperativo: afirmativo, negativo y con usted",
       exercises: [
         {
-          // Tipo "items": una lista de frases sueltas, cada una con sus propios huecos
-          // {0}, {1}... numerados desde 0 DENTRO de esa frase (no del ejercicio entero).
-          // "a" es un array paralelo a los huecos: a[i] es la lista de respuestas
-          // aceptadas para el hueco {i} (varias formas válidas si aplica).
-          num: 1, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          type: "items",
-          items: [
-            // Ítem sin huecos y con solved: true = el que el libro trae resuelto como modelo.
-            { t: "Yo trabajo en un hospital y vivo en Madrid.", solved: true },
-            { t: "María {0} (trabajar) en un hospital y {1} (vivir) en Madrid.", a: [["trabaja"], ["vive"]] },
-            { t: "¿Tú {0} (comer) en casa o en la oficina normalmente?", a: [["comes"]] },
-            // vf: true cambia el hueco de texto libre por dos botones "V"/"F". Para otro
-            // par de opciones, pásalo como lista: vf: ["regular", "irregular"].
-            // que el alumno pulsa en vez de escribir — pensado para ejercicios de
-            // verdadero/falso. La respuesta (a) sigue siendo ["V"] o ["F"], igual que
-            // cualquier otro hueco de texto; el motor de corrección no cambia.
-            { t: "Madrid es la capital de España. → {0}", a: [["V"]], vf: true }
-            // wide: true en un item hace el input más ancho — úsalo para respuestas largas.
-          ],
-          // Ejercicio de comprensión oral: transcriptHTML añade la transcripción al final
-          // de la tarjeta, dentro de un <details> plegado (la transcripción es la solución,
-          // así que no puede quedar a la vista mientras el alumno responde). Opcional:
-          // transcriptLabel cambia el texto del desplegable.
-          transcriptLabel: "Ver la transcripción del audio (ábrela solo después de responder)",
-          transcriptHTML:
-            '<span class="line"><span class="who">ANA:</span> ¿Dónde vives?</span>' +
-            '<span class="line"><span class="who">LUIS:</span> En Madrid, cerca del centro.</span>'
-        },
-        {
-          // Tipo "text": un único párrafo continuo con huecos numerados {0}, {1}... a lo
-          // largo de TODO el texto (no se reinicia por línea). "\n" en `text` inserta un
-          // salto de línea visual. "a" es un array paralelo a los huecos del texto entero.
-          num: 2, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
+          num: 1, title: "Lee el texto y completa los huecos",
+          instr: "Completa con una de las palabras del recuadro. Sobran dos. La primera ya la trae resuelta el libro.",
           type: "text",
-          text: "Hoy Carmen {0} (trabajar) todo el día, pero ahora mismo {1} (preparar) la cena.",
-          a: [["trabaja"], ["está preparando"]]
+          refHTML: '<span class="ref-label">Palabras para completar</span>' +
+            '<div class="ref-options">' +
+            '<span class="ref-opt">demuestran</span><span class="ref-opt">descanso</span>' +
+            '<span class="ref-opt">tranquilidad</span><span class="ref-opt">gente</span>' +
+            '<span class="ref-opt">persona</span><span class="ref-opt">echar</span>' +
+            '<span class="ref-opt">comida</span><span class="ref-opt">masaje</span>' +
+            '<span class="ref-opt">británicas</span><span class="ref-opt"><s>de moda</s></span>' +
+            '<span class="ref-opt">a oscuras</span><span class="ref-opt">estrés</span>' +
+            '<span class="ref-opt">sin</span><span class="ref-opt">despido</span>' +
+            '<span class="ref-opt">con</span>' +
+            '</div>',
+          text: "DORMIR en el trabajo\n\nEcharse la siesta en la oficina empieza a ponerse (1) de moda. Estudios científicos demuestran que dormir 20 minutos mejora la productividad.\n\nDormirse en el trabajo puede ser motivo de sanción o incluso de {0}. Sin embargo, ahora algunas compañías animan a sus empleados a {1} una cabezadita en la misma oficina para reponer fuerzas.\n\nSegún las experiencias recogidas en el diario Financial Times, empresas {2} están preparando salas especiales de descanso para que sus empleados puedan dormir durante 15 o 20 minutos. En la sala, que está {3}, hay un sillón y música relajante, y los responsables de la idea afirman, {4} ninguna duda, que el sueño es uno de los pilares de la salud.\n\nOtro objetivo de las salas de {5} es evitar el {6} y el cansancio. Algunos trabajadores no utilizan la sala para dormir, sino simplemente para tener un momento de silencio y {7}, lejos de los teléfonos. Según la regla informal de funcionamiento de la sala, solo puede permanecer en el interior una {8} y por un tiempo máximo de 20 minutos.\n\nEn otros casos se han instalado algunas sillas electrónicas de {9} shiatsu. Este corto período de tiempo que el trabajador pierde merece la pena cuando vuelve a su tarea fresco y {10} ganas de seguir trabajando.\n\nEstas experiencias, pioneras en Europa, llevan años aplicándose en Japón, donde incluso existen ya estudios científicos que {11} la rentabilidad de estas salas de descanso. En Estados Unidos, un informe de la Fundación Nacional del Sueño afirmaba que la falta de sueño de los trabajadores cuesta a la economía unos 13 500 millones de euros anuales.\n\n(Extraído de Metro Directo)",
+          a: [["despido"], ["echar"], ["británicas"], ["a oscuras"], ["sin"], ["descanso"],
+              ["estrés"], ["tranquilidad"], ["persona"], ["masaje"], ["con"], ["demuestran"]]
         },
         {
-          // Tipo "table2": tabla de 2 columnas, "rows" es [valor_fijo, respuestas_aceptadas].
-          // OJO: "respuestas_aceptadas" es el mismo spec que usa isCorrect() para "a" en los
-          // demás tipos — casi siempre un array de UNA lista de alternativas, es decir
-          // [["hablando"]] (doble corchete), no ["hablando"] a secas; el renderizador hace
-          // makeInput(r[1][0], ...), así que r[1][0] debe ser el array de alternativas.
-          // WARNING: los encabezados ("Infinitivo"/"Gerundio") están HARDCODEADOS en el
-          // renderizador (busca 'ex.type === "table2"' más abajo), no se leen de este
-          // array — si necesitas otros encabezados, edita el renderizador o usa "conjTable".
-          num: 3, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          type: "table2",
-          rows: [
-            ["hablar", [["hablando"]]],
-            ["comer", [["comiendo"]]]
-          ]
-        },
-        {
-          // Tipo "conjTable": tabla de conjugación con columnas configurables. "subjects"
-          // es la columna izquierda fija (sujetos); "cols" define cada columna de la
-          // derecha con su encabezado ("label") y sus respuestas ("a", un array paralelo
-          // a "subjects" — a[i] son las alternativas aceptadas para subjects[i] en esa
-          // columna, es decir CADA elemento de "a" es a su vez un array de alternativas,
-          // p. ej. a: [["hablo"], ["hablas"], ["habla"]], no a: ["hablo", "hablas", "habla"]
-          // — el renderizador hace makeInput(c.a[si], ...) y espera ese array ahí).
-          num: 4, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          // ex.subjectLabel cambia el encabezado de la primera columna (por defecto "Sujeto").
-          // Una celda cuyo spec es una CADENA en vez de un array se pinta fija: es la que el
-          // libro ya trae resuelta, y no cuenta como hueco.
+          num: 2, title: "Completa el cuadro del imperativo",
+          instr: "Las cuatro formas del imperativo afirmativo de cada verbo. Los encabezados de las columnas los añade este ejercicio: en el libro el cuadro no los lleva, y la primera fila hace de modelo. El cuaderno repite «jugar» en dos filas, con huecos distintos en cada una; se deja como está en el original.",
           type: "conjTable",
-          subjectLabel: "Sujeto",
-          subjects: ["yo", "tú", "él/ella"],
+          subjectLabel: "Infinitivo",
+          subjects: ["escribir", "mirar", "jugar", "leer", "salir", "dormir", "oír", "poner", "decir", "jugar", "cerrar", "empezar"],
           cols: [
-            { label: "Presente", a: ["hablo", ["hablas"], ["habla"]] },
-            { label: "Indefinido", a: [["hablé"], ["hablaste"], ["habló"]] }
+            { label: "tú", a: ["escribe", "mira", ["juega"], "lee", ["sal"], "duerme", ["oye"], "pon", ["di"], "juega", ["cierra"], ["empieza"]] },
+            { label: "usted", a: ["escriba", ["mire"], "juegue", "lea", "salga", ["duerma"], ["oiga"], ["ponga"], "diga", ["juegue"], ["cierre"], ["empiece"]] },
+            { label: "vosotros", a: ["escribid", "mirad", ["jugad"], ["leed"], ["salid"], ["dormid"], "oíd", ["poned"], ["decid"], ["jugad"], "cerrad", ["empezad"]] },
+            { label: "ustedes", a: ["escriban", ["miren"], "jueguen", ["lean"], "salgan", "duerman", "oigan", ["pongan"], ["digan"], ["jueguen"], ["cierren"], "empiecen"] }
           ]
         },
         {
-          // Tipo "agenda": tabla de referencia (solo lectura, sin huecos) seguida de una
-          // lista "items" tipo "items" que se responde consultando esa tabla.
-          // WARNING: igual que table2, los encabezados ("Día"/"Actividad") están
-          // HARDCODEADOS en el renderizador, no se leen de `table` aquí abajo.
-          num: 5, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          type: "agenda",
-          table: [
-            ["lunes", "reunión con el equipo"],
-            ["martes", "clase de español"]
-          ],
+          num: 3, title: "Escribe en forma negativa",
+          instr: "Pasa cada orden a su forma negativa, con la misma persona (tú). La primera ya la trae resuelta el libro.",
+          type: "items",
+          numbered: true,
           items: [
-            { t: "El lunes María {0} (tener) una reunión con el equipo.", a: [["tiene"]] }
+            { t: "Dame más papel.\n→ No me des más papel.", solved: true },
+            { t: "Habla más alto.\n{0}", a: [["No hables tan alto."]], wide: "full" },
+            { t: "Escríbelo aquí.\n{0}", a: [["No lo escribas aquí."]], wide: "full" },
+            { t: "Siéntate ahí.\n{0}", a: [["No te sientes ahí."]], wide: "full" },
+            { t: "Llévale el café.\n{0}", a: [["No le lleves el café."]], wide: "full" },
+            { t: "Préstale el coche a Luis.\n{0}", a: [["No le prestes el coche a Luis."]], wide: "full" },
+            { t: "Díselo a María.\n{0}", a: [["No se lo digas a María."]], wide: "full" },
+            { t: "Dámelo.\n{0}", a: [["No me lo des."]], wide: "full" },
+            { t: "Levántate temprano.\n{0}", a: [["No te levantes temprano."]], wide: "full" },
+            { t: "Dale el diccionario a Rosa.\n{0}", a: [["No le des el diccionario a Rosa."]], wide: "full" },
+            { t: "Maquíllate más.\n{0}", a: [["No te maquilles más."]], wide: "full" },
+            { t: "Ponle el vestido rosa a María.\n{0}", a: [["No le pongas el vestido rosa a María."]], wide: "full" },
+            { t: "Empieza a cantar.\n{0}", a: [["No empieces a cantar."]], wide: "full" },
+            { t: "Dale este libro a Pepe.\n{0}", a: [["No le des este libro a Pepe."]], wide: "full" }
           ]
+        },
+        {
+          num: 4, title: "Repite el ejercicio anterior, con la forma usted",
+          instr: "Las mismas catorce órdenes, ahora en negativo y tratando de usted. La primera ya la trae resuelta el libro.",
+          type: "items",
+          numbered: true,
+          items: [
+            { t: "Dame más papel.\n→ No me dé más papel.", solved: true },
+            { t: "Habla más alto.\n{0}", a: [["No hable tan alto."]], wide: "full" },
+            { t: "Escríbelo aquí.\n{0}", a: [["No lo escriba aquí."]], wide: "full" },
+            { t: "Siéntate ahí.\n{0}", a: [["No se siente ahí."]], wide: "full" },
+            { t: "Llévale el café.\n{0}", a: [["No le lleve el café."]], wide: "full" },
+            { t: "Préstale el coche a Luis.\n{0}", a: [["No le preste el coche a Luis."]], wide: "full" },
+            { t: "Díselo a María.\n{0}", a: [["No se lo diga a María."]], wide: "full" },
+            { t: "Dámelo.\n{0}", a: [["No me lo dé."]], wide: "full" },
+            { t: "Levántate temprano.\n{0}", a: [["No se levante temprano."]], wide: "full" },
+            { t: "Dale el diccionario a Rosa.\n{0}", a: [["No le dé el diccionario a Rosa."]], wide: "full" },
+            { t: "Maquíllate más.\n{0}", a: [["No se maquille más."]], wide: "full" },
+            { t: "Ponle el vestido rosa a María.\n{0}", a: [["No le ponga el vestido rosa a María."]], wide: "full" },
+            { t: "Empieza a cantar.\n{0}", a: [["No empiece a cantar."]], wide: "full" },
+            { t: "Dale este libro a Pepe.\n{0}", a: [["No le dé el libro a Pepe.", "No le dé este libro a Pepe."]], wide: "full" }
+          ]
+        },
+        {
+          num: 5, title: "El prospecto de un analgésico",
+          instr: "Completa el prospecto con los verbos del recuadro en forma imperativa, tratando de usted. La primera ya la trae resuelta el libro, y por eso «leer» aparece tachada entre las opciones.",
+          type: "text",
+          refHTML: '<span class="ref-label">Verbos para completar</span>' +
+            '<div class="ref-options">' +
+            '<span class="ref-opt">interrumpir</span><span class="ref-opt">tomar</span>' +
+            '<span class="ref-opt">conservar</span><span class="ref-opt">consultar (x2)</span>' +
+            '<span class="ref-opt"><s>leer</s></span>' +
+            '</div>',
+          text: "GELOCATIL\n\nLea (1) todo el prospecto detenidamente porque contiene información importante para usted. Este medicamento puede obtenerse sin receta, para el tratamiento de afecciones menores sin la intervención de un médico.\n\n· {0} este prospecto. Puede tener que volver a leerlo.\n\n· Si necesita información adicional o consejo, {1} a su farmacéutico.\n\n· Si los síntomas empeoran o persisten después de 10 días, o la fiebre continúa más de 3 días, {2} a un médico.\n\nANTES DE TOMAR GELOCATIL 1 G COMPRIMIDOS\n\nNo {3} Gelocatil 1 g Comprimidos:\n\n· Si ha experimentado una reacción alérgica al paracetamol o a algún otro componente de Gelocatil 1 g comprimidos.\n\n· Si padece alguna enfermedad en el hígado.\n\nSi el dolor se mantiene durante más de 10 días, la fiebre durante más de 3 días o bien el dolor o la fiebre empeoran o aparecen otros síntomas, {4} el tratamiento y consulte al médico.",
+          a: [["Conserve", "conserve"], ["consulte"], ["consulte"], ["tome"], ["interrumpa"]]
+        },
+        {
+          num: 6, title: "Completa los consejos",
+          instr: "Para ser feliz… Completa cada consejo con uno de los verbos del recuadro, en imperativo de tú. El primero ya lo trae resuelto el libro, y por eso «vivir» aparece tachada.",
+          type: "items",
+          refHTML: '<span class="ref-label">Verbos para completar</span>' +
+            '<div class="ref-options">' +
+            '<span class="ref-opt"><s>vivir</s></span><span class="ref-opt">no tener</span>' +
+            '<span class="ref-opt">no enfadarse</span><span class="ref-opt">escuchar</span>' +
+            '<span class="ref-opt">respirar</span><span class="ref-opt">expresar</span>' +
+            '<span class="ref-opt">no dejar</span><span class="ref-opt">reír</span>' +
+            '<span class="ref-opt">ser</span><span class="ref-opt">no perder</span>' +
+            '</div>',
+          items: [
+            { t: "Vive el presente.", solved: true },
+            { t: "{0} miedo al futuro.", a: [["No tengas"]] },
+            { t: "{0} optimista.", a: [["Sé"]] },
+            { t: "{0} mucho.", a: [["Ríe"]] },
+            { t: "{0} profundamente.", a: [["Respira"]] },
+            { t: "{0} por tonterías.", a: [["No te enfades"]] },
+            { t: "{0} el canto de los pájaros.", a: [["Escucha"]] },
+            { t: "{0} tus sentimientos.", a: [["Expresa"]] },
+            { t: "{0} nunca la confianza en ti mismo.", a: [["No pierdas"]] },
+            { t: "{0} de soñar.", a: [["No dejes"]] }
+          ]
+        },
+        {
+          num: 7, title: "Escribe diálogos como el del ejemplo",
+          instr: "Este ejercicio no se corrige: es de escribir, y el libro solo da una versión posible. Escribe los cuatro diálogos en tu cuaderno usando los remedios de cada recuadro, y compáralos después con la grabación del ejercicio 8.",
+          type: "open",
+          html: '<div class="remedios"><div class="remedio"><b>TENER DOLOR DE MUELAS</b><span>No comer tantos dulces.</span><span>No tomar alimentos muy calientes ni muy fríos.</span><span>Ir enseguida al dentista.</span></div><div class="remedio"><b>ESTAR MUY ESTRESADO</b><span>No trabajar tanto.</span><span>Buscar algún momento para relajarse.</span><span>Oír música suave.</span><span>Salir y distraerse.</span></div><div class="remedio"><b>ESTAR RESFRIADO</b><span>Abrigarse bien.</span><span>Tomar alguna infusión bien caliente.</span><span>Ir al médico.</span></div><div class="remedio"><b>DOLER LA RODILLA</b><span>Poner la pierna en alto.</span><span>No hacer movimientos bruscos con la rodilla.</span><span>No subir escaleras.</span><span>Dejar de montar en bicicleta.</span></div></div>' +
+            '<p class="pista-gramatical"><b>El ejemplo del libro, ya completo:</b></p>' +
+            '<ol class="frases-abiertas"><li><b>A</b> ¿Qué te pasa?<br><b>B</b> Tengo dolor de muelas.<br>' +
+            '<b>A</b> Pues hombre, no comas tantos dulces. Y no tomes alimentos ni muy calientes ni muy fríos. ' +
+            'Y sobre todo ve enseguida al dentista.</li></ol>' +
+            '<p class="pista-gramatical"><b>Ojo:</b> los remedios están en infinitivo en los recuadros ' +
+            '(<i>no comer</i>, <i>abrigarse</i>, <i>ir</i>). En el diálogo van en <b>imperativo de tú</b>, ' +
+            'afirmativo o negativo según el caso.</p>'
+        },
+        {
+          num: 8, title: "Escucha y comprueba",
+          instr: "En el libro este ejercicio es la grabación que confirma los diálogos del ejercicio 7 (pista 7). No tenemos el audio, así que abajo tienes su transcripción: ábrela cuando hayas escrito tus cuatro diálogos.",
+          type: "open",
+          html: '<p>Compara lo que has escrito en el ejercicio 7 con la grabación.</p>',
+          transcriptLabel: "Ver la transcripción de la pista 7 (ábrela después de escribir tus diálogos)",
+          transcriptHTML: '<span class="line"><span class="who">1</span> Si tienes dolor de muelas: No comas tantos dulces. Y no tomes alimentos ni muy calientes ni muy fríos. Y sobre todo ve enseguida al dentista.</span><span class="line"><span class="who">2</span> Si estás muy estresado: No trabajes tanto. Busca algún momento para relajarte. Oye música suave. Sal y distráete.</span><span class="line"><span class="who">3</span> Si estás resfriado: Abrígate bien. Toma alguna infusión bien caliente. Ve al médico.</span><span class="line"><span class="who">4</span> Si te duele la rodilla: Pon la pierna en alto. No hagas movimientos bruscos con la rodilla. No subas las escaleras y deja de montar en bicicleta.</span><div class="transcript-note">Transcripción de la pista 7 del cuaderno (página 65). Es a la vez la grabación del ejercicio 8 y la solución del 7: el solucionario de la página 71 da exactamente estas cuatro respuestas.</div>'
+        },
+        {
+          num: 9, title: "¿Se escriben con «g» o con «j»?",
+          instr: "Completa los huecos de la lista. No tenemos el audio de esta pista: abre la transcripción del final de la tarjeta y trabaja con ella — las palabras en cursiva son las diez que faltan, en el mismo orden. Escribe una sola palabra en cada hueco.",
+          type: "text",
+          text: "gabardina, {0}, gota, {1}, {2}, hoguera, {3}, {4}, jirafa, {5}, {6}, jota, {7}, {8}, guepardo, {9}.",
+          a: [["gato"], ["jarrón"], ["gente"], ["lentejas"], ["gigante"], ["guerra"],
+              ["jersey"], ["guitarra"], ["juego"], ["girar"]],
+          transcriptLabel: "Ver la transcripción de la pista 8 (la necesitas: no tenemos la grabación)",
+          transcriptHTML: '<span class="line">gabardina, <i>gato</i>, gota, <i>jarrón</i>, <i>gente</i>, hoguera, <i>lentejas</i>, <i>gigante</i>, jirafa, <i>guerra</i>, <i>jersey</i>, jota, <i>guitarra</i>, <i>juego</i>, guepardo, <i>girar</i>.</span><div class="transcript-note">Transcripción de la pista 8 del cuaderno (página 65). La cursiva no está en el original: la añade este ejercicio para marcar cuáles son las diez palabras que hay que escribir; las otras seis vienen ya impresas en el libro.</div>'
         }
       ]
     }
-    // Añade más bloques ({ id, num, title, sub, exercises: [...] }) según haga falta.
   ];
 
   // ---------- render ----------
@@ -1401,7 +1471,7 @@
   });
 
   // ---------- results panel: motivational message + send to teacher ----------
-  const TITLE_LABEL = "{{TITLE_LABEL}}"; // short label used in email subject / summary header
+  const TITLE_LABEL = "Cuaderno B1 · 5C El sueño"; // short label used in email subject / summary header
   // These are Angel's real, reusable contact details — copy verbatim into every new
   // exercise unless he says they changed. IMPORTANT: telegram MUST be his @username
   // (no @, no phone number) — t.me/+<phone> links silently ignore ?text= and never
