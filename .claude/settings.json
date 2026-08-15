@@ -10,5 +10,27 @@
       "Artifact"
     ],
     "defaultMode": "dontAsk"
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash|Grep",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -x /root/.local/bin/graphify ]; then exec /root/.local/bin/graphify hook-guard search; fi"
+          }
+        ]
+      },
+      {
+        "matcher": "Read|Glob",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -x /root/.local/bin/graphify ]; then exec /root/.local/bin/graphify hook-guard read; fi"
+          }
+        ]
+      }
+    ]
   }
 }
