@@ -37,7 +37,7 @@ con subagente antes de dar algo por terminado, y automatización
 
 **Por qué le sirve a Angel:** aplicado ya mismo — `CLAUDE.md` había
 crecido de 178 a 359 líneas en una sola sesión (Groq/Gemini + el propio
-radar); podado a 300 líneas siguiendo el criterio de la guía ("¿quitar
+radar); podado a poco más de 300 líneas siguiendo el criterio de la guía ("¿quitar
 esta línea causaría un error? si no, córtala"). La primera pasada de
 poda sí se pasó de tijera — una revisión independiente encontró varios
 hechos verificados que se habían caído (la distinción 429-transitorio

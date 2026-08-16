@@ -287,8 +287,8 @@ tarjeta y se documentan en prosa. Para los que sí aplica, cada hallazgo
 nuevo va acompañado, en el mismo turno, de `SuggestConnectors`
 (conectores, vía `directoryUuid` de `SearchMcpRegistry`),
 `SuggestPluginInstall` (`pluginId` de `SearchPlugins`) o `SuggestSkills`
-(de `SearchSkills`) — nunca solo texto, la tarjeta es el mecanismo real
-de un clic.
+(de `SearchSkills`, solo para skills que Angel no tenga ya) — nunca solo
+texto, la tarjeta es el mecanismo real de un clic.
 
 **Antes de volver a mencionar algo ya registrado**, comprobar con
 `ListConnectors`/`ListPlugins`/`ListSkills`: si ya está activo, marcar
