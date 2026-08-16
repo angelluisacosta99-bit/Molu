@@ -160,7 +160,8 @@ Rules:
 
 En `.claude/settings.local.json` (nunca en Git) puede haber:
 - `GEMINI_API_KEY` / `GOOGLE_API_KEY` — backend `gemini` nativo de graphify.
-- `OPENAI_API_KEY` + `OPENAI_BASE_URL=https://api.groq.com/openai/v1` +
+- `OPENAI_API_KEY` (la key de Groq — empieza por `gsk_`) +
+  `OPENAI_BASE_URL=https://api.groq.com/openai/v1` +
   `OPENAI_MODEL` (ej. `llama-3.3-70b-versatile`) — backend `openai` de
   graphify apuntado a Groq. graphify no tiene backend `groq` propio (la
   lista real es `gemini|kimi|openai|deepseek|claude-cli`, ver

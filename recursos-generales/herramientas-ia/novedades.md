@@ -39,13 +39,17 @@ con subagente antes de dar algo por terminado, y automatización
 crecido de 178 a 359 líneas en una sola sesión (Groq/Gemini + el propio
 radar); podado a poco más de 300 líneas siguiendo el criterio de la guía ("¿quitar
 esta línea causaría un error? si no, córtala"). La primera pasada de
-poda sí se pasó de tijera — una revisión independiente encontró varios
-hechos verificados que se habían caído (la distinción 429-transitorio
-vs. cuota agotada, el "sin preguntar", una excepción de re-mención, y
-varias citas exactas de línea) — se restauraron todos antes de fusionar
-esta entrada. El resto de prácticas (subagentes para explorar, revisión
-adversarial antes de fusionar) ya eran costumbre en este repo antes de
-leer la guía — confirma que van en la dirección correcta.
+poda sí se pasó de tijera — cuatro rondas de revisión independiente
+fueron encontrando hechos verificados que se habían caído (la
+distinción 429-transitorio vs. cuota agotada, el "sin preguntar", una
+excepción de re-mención, citas exactas de línea, el prefijo `gsk_` de
+la key de Groq, entre otros) y se fueron restaurando uno a uno — la
+lección real es que podar contenido técnico denso necesita revisión
+tan cuidadosa como escribirlo, no una garantía de que "esta vez sí" se
+capturó todo a la primera. El resto de prácticas (subagentes para
+explorar, revisión adversarial antes de fusionar) ya eran costumbre en
+este repo antes de leer la guía — confirma que van en la dirección
+correcta.
 
 **Cómo aplicarlo:** no hace falta activar nada — es una guía de
 comportamiento, no una herramienta. Releerla periódicamente (el radar
