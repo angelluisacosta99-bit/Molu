@@ -12,7 +12,7 @@ git rev-parse --is-inside-work-tree >/dev/null 2>&1 || exit 0
 
 STATUS=$(git status --short 2>/dev/null)
 if [ -n "$STATUS" ]; then
-  echo "[git status] Cambios sin commitear:"
+  echo "[git status: $(pwd)] Cambios sin commitear:"
   echo "$STATUS"
 fi
 
