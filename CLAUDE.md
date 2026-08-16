@@ -313,3 +313,47 @@ hallazgos podría igualmente generar una notificación de "corrida
 completada". Si eso resulta molesto en la práctica, ajustar
 `notifications` de la Routine (`trig_01Jx2UqBq8ezuTzpknMj7SAW`) para
 desactivarlas y depender solo del registro versionado.
+
+**Proponer instalación, no solo describirla — pero sin poder instalar
+nada por Angel.** Ninguna herramienta disponible conecta un conector
+MCP, instala un plugin, ni añade una skill de forma silenciosa en su
+cuenta — es una barrera de la plataforma (conectores requieren su
+login/autorización; plugins y skills requieren que él pulse la
+tarjeta). Esto aplica a hallazgos que sean **conectores MCP, plugins o
+skills concretas** (con `directoryUuid`/`pluginId`/id de skill real) —
+no a los otros tipos que cubre este radar (funciones nativas de Claude
+Code, modelos, o cosas como un marketplace en sí, que no tienen tarjeta
+de instalación propia; esos se documentan en prosa igual que hasta
+ahora, no hay herramienta `Suggest*` para ellos). Para los que sí
+aplica, cada hallazgo nuevo que se añada al registro debe ir
+acompañado, en el mismo turno, de:
+- `SearchMcpRegistry` → `SuggestConnectors` con el `directoryUuid` real,
+  para conectores MCP.
+- `SearchPlugins` → `SuggestPluginInstall` con el `pluginId` real, para
+  plugins.
+- `SearchSkills` → `SuggestSkills` para skills independientes que Angel
+  no tenga ya.
+
+Nunca limitarse a describir un conector, plugin o skill en texto y
+dejar que Angel lo busque él mismo — la tarjeta es el mecanismo real de
+instalación de un clic, describirlo sin la tarjeta es un trabajo a
+medias.
+
+**Antes de volver a mencionar un conector/plugin/skill ya registrado**,
+comprobar con `ListConnectors`/`ListPlugins`/`ListSkills` si Angel ya
+lo activó desde la vez anterior:
+- **Ya activo:** marcar esa entrada de `novedades.md` como adoptada
+  (una línea al final, ej. "✅ Activado el AAAA-MM-DD") y no volver a
+  mencionarla.
+- **Todavía no activo:** no insistir cada semana — Angel ya vio la
+  tarjeta la primera vez y decide él cuándo actuar. No tocar la entrada
+  ni volver a mostrar la tarjeta, salvo que haya algo *nuevo* que añadir
+  sobre esa herramienta concreta.
+- **Estado desconocido (solo aplica a `ListConnectors`):** su propio
+  campo `connected` puede venir nulo cuando la comprobación de la
+  plataforma falla esa semana — eso significa "desconocido", no que
+  Angel no lo haya activado. Si pasa, no asumir que sigue sin activar:
+  dejar la entrada tal cual y probar de nuevo en la siguiente pasada.
+  `ListPlugins`/`ListSkills` no documentan un estado nulo equivalente
+  (su campo `enabled` es un booleano simple) — para plugins y skills,
+  tratar lo que devuelvan como fiable, sin esta rama de duda.
