@@ -1,9 +1,19 @@
 <!--
-  TEMPLATE — plantilla de ejercicio interactivo con corrección instantánea.
-  Ver .claude/skills/ejercicio-interactivo/SKILL.md para el proceso completo.
-  Busca todos los marcadores {{...}} y sustitúyelos; no dejes ninguno sin reemplazar.
+  Unidad 6B del cuaderno de ejercicios de Nuevo Español en Marcha 3 (B1), página 25:
+  "Menos humos, por favor". Transcrito mirando las páginas renderizadas del PDF que
+  adjuntó el profesor. Las respuestas salen del solucionario oficial del propio cuaderno
+  (página 72).
+  Construido sobre .claude/skills/ejercicio-interactivo/reference/template.html.
+  El ejercicio 2 es de redacción libre (escribir normas para ahorrar energía en casa): no
+  tiene respuesta única, así que usa type "open" — el motor añade automáticamente la caja
+  de texto y el aviso de que lo revisará el profesor.
+  El ejercicio 3 es el más peculiar del capítulo: cada frase (1-8) se completa con una
+  cláusula intermedia (a-h) Y un final (1-8, segunda numeración) — el propio libro da el
+  ejemplo resuelto («Para ser paracaidista hace falta tener mucho valor» = 1+d+2). Se pide
+  escribir la respuesta como "letra, número" (p. ej. "d, 2"), tal como aparece en el propio
+  solucionario del libro, con las dos listas de referencia a la vista.
 -->
-<title>{{TITLE}}</title>
+<title>Cuaderno B1 · 6B — Menos humos, por favor</title>
 <style>
   :root {
     --paper: #F3F5F0;
@@ -646,18 +656,18 @@
 </style>
 
 <script>
-  // {{STORAGE_KEY}} here MUST be byte-identical to the one set further down in the gate
+  // unlocked-cuaderno-b1-6b here MUST be byte-identical to the one set further down in the gate
   // script (search "STORAGE_KEY =") — same placeholder, same value, both occurrences.
   document.documentElement.setAttribute(
     "data-locked",
-    localStorage.getItem("{{STORAGE_KEY}}") === "1" ? "false" : "true"
+    localStorage.getItem("unlocked-cuaderno-b1-6b") === "1" ? "false" : "true"
   );
 </script>
 
 <div class="gate-overlay">
   <div class="gate-card">
     <div class="eyebrow">Acceso privado</div>
-    <h2>{{GATE_TITLE}}</h2>
+    <h2>Unidad 6B · Menos humos, por favor</h2>
     <p>Pídele el código a tu profesor para entrar.</p>
     <input type="text" id="gateInput" placeholder="CÓDIGO" autocomplete="off" autocapitalize="characters" />
     <button id="gateBtn">Entrar</button>
@@ -668,10 +678,10 @@
   (function () {
     // El código es solo un disuasivo, no seguridad real — cualquiera que vea el HTML
     // fuente lo ve. Elige una palabra corta, memorable y ligada al tema, en MAYÚSCULAS.
-    const CODE = "{{GATE_CODE}}";
-    // MUST be byte-identical al {{STORAGE_KEY}} usado arriba (ver comentario junto al
+    const CODE = "HUMOS";
+    // MUST be byte-identical al unlocked-cuaderno-b1-6b usado arriba (ver comentario junto al
     // primer occurrence). Usa un valor único por ejercicio, p. ej. "unlocked-b2-13a-tema".
-    const STORAGE_KEY = "{{STORAGE_KEY}}";
+    const STORAGE_KEY = "unlocked-cuaderno-b1-6b";
     function tryUnlock() {
       const val = document.getElementById("gateInput").value.trim().toUpperCase();
       if (val === CODE) {
@@ -691,9 +701,8 @@
 <div class="topbar gated-content">
   <div class="topbar-inner">
     <div class="brand">
-      <!-- Ejemplo real (A1): {{BRAND_TITLE}} = "Ejercicios A1", {{BRAND_SUB}} = "Presente · Gerundio · Indefinido" -->
-      <span class="brand-title">{{BRAND_TITLE}}</span>
-      <span class="brand-sub">{{BRAND_SUB}}</span>
+      <span class="brand-title">Cuaderno B1 · Unidad 6B</span>
+      <span class="brand-sub">Menos humos, por favor</span>
     </div>
     <nav class="nav-dots" id="navDots"></nav>
     <div class="score-wrap">
@@ -704,13 +713,13 @@
 </div>
 
 <div class="hero gated-content">
-  <div class="eyebrow">{{EYEBROW}}</div>
-  <h1>{{HEADLINE}}</h1>
-  <p>{{SUBTITLE}}</p>
+  <div class="eyebrow">Nuevo Español en Marcha 3 · Cuaderno de ejercicios · Unidad 6 · Nuestro mundo</div>
+  <h1>Menos humos, por favor</h1>
+  <p>Consejos con subjuntivo para prevenir incendios, y frases con «hace falta», «es necesario», «es conveniente». Escribe tus respuestas, corrige al instante y envía el resultado a tu profesor.</p>
   <div class="hero-meta">
     <span><strong id="totalBlanksLabel" translate="no">—</strong> huecos en total</span>
-    <span><strong>{{N_BLOCKS}}</strong> bloques</span>
-    <span><strong>{{N_EXERCISES}}</strong> ejercicios</span>
+    <span><strong>1</strong> bloque</span>
+    <span><strong>3</strong> ejercicios</span>
   </div>
 </div>
 
@@ -742,7 +751,7 @@
 </div>
 
 <footer class="gated-content">
-  <span>{{FOOTER_LEFT}}</span>
+  <span>Nuevo Español en Marcha 3 (B1), cuaderno de ejercicios, unidad 6B (pág. 25)</span>
   <span>© Angel Luis Acosta González</span>
 </footer>
 
@@ -791,136 +800,77 @@
   // ---------- exercise data ----------
   // template blanks use {0},{1}... matched to item.answers[i]
   const blocks = [
-    // Cada bloque agrupa varios ejercicios bajo un mismo subtema. {{BLOCKS}} — sustituye
-    // este array completo por los bloques/ejercicios reales del capítulo, basados en el
-    // material del profesor (ver SKILL.md paso 1). Lo que sigue es un ejemplo de cada uno
-    // de los 6 tipos soportados por el renderizador (busca 'ex.type ===' en este archivo);
-    // si necesitas un tipo nuevo, tendrás que extender también el renderizador.
     {
-      id: "{{BLOCK_ID}}", num: 1, title: "{{BLOCK_TITLE}}",
-      sub: "{{BLOCK_SUBTITLE}}",
+      id: "seccion-1", num: 1, title: "Menos humos, por favor",
+      sub: "Prevenir incendios y dar consejos con subjuntivo",
       exercises: [
         {
-          // Tipo "items": una lista de frases sueltas, cada una con sus propios huecos
-          // {0}, {1}... numerados desde 0 DENTRO de esa frase (no del ejercicio entero).
-          // "a" es un array paralelo a los huecos: a[i] es la lista de respuestas
-          // aceptadas para el hueco {i} (varias formas válidas si aplica).
-          num: 1, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          type: "items",
-          items: [
-            // Ítem sin huecos y con solved: true = el que el libro trae resuelto como modelo.
-            { t: "Yo trabajo en un hospital y vivo en Madrid.", solved: true },
-            { t: "María {0} (trabajar) en un hospital y {1} (vivir) en Madrid.", a: [["trabaja"], ["vive"]] },
-            { t: "¿Tú {0} (comer) en casa o en la oficina normalmente?", a: [["comes"]] },
-            // vf: true cambia el hueco de texto libre por dos botones "V"/"F". Para otro
-            // par de opciones, pásalo como lista: vf: ["regular", "irregular"].
-            // que el alumno pulsa en vez de escribir — pensado para ejercicios de
-            // verdadero/falso. La respuesta (a) sigue siendo ["V"] o ["F"], igual que
-            // cualquier otro hueco de texto; el motor de corrección no cambia.
-            { t: "Madrid es la capital de España. → {0}", a: [["V"]], vf: true }
-            // wide: true en un item hace el input más ancho — úsalo para respuestas largas.
-          ],
-          // Ejercicio de comprensión oral: transcriptHTML añade la transcripción al final
-          // de la tarjeta, dentro de un <details> plegado (la transcripción es la solución,
-          // así que no puede quedar a la vista mientras el alumno responde). Opcional:
-          // transcriptLabel cambia el texto del desplegable. Si además hay grabación real
-          // (no siempre la hay), ex.audioSrc pone un <audio controls> justo debajo del
-          // enunciado — un data: URI en base64, un artefacto no puede enlazar un archivo
-          // externo. ex.audioLabel le pone una etiqueta encima ("Pista 6", etc.). La
-          // transcripción NO se quita aunque haya audio: sigue siendo la regla del
-          // profesor, y ahora es apoyo en vez de la única vía para resolver el ejercicio.
-          // audioSrc: "data:audio/mpeg;base64,...", audioLabel: "Pista 6",
-          transcriptLabel: "Ver la transcripción del audio (ábrela solo después de responder)",
-          transcriptHTML:
-            '<span class="line"><span class="who">ANA:</span> ¿Dónde vives?</span>' +
-            '<span class="line"><span class="who">LUIS:</span> En Madrid, cerca del centro.</span>'
-        },
-        {
-          // Tipo "text": un único párrafo continuo con huecos numerados {0}, {1}... a lo
-          // largo de TODO el texto (no se reinicia por línea). "\n" en `text` inserta un
-          // salto de línea visual. "a" es un array paralelo a los huecos del texto entero.
-          num: 2, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
+          num: 1, title: "Lee y completa el texto con los verbos del recuadro",
+          instr: "Completa el cartel con el verbo correcto de la lista, en la forma que corresponda. El primer hueco («ser») ya viene resuelto como ejemplo.",
           type: "text",
-          text: "Hoy Carmen {0} (trabajar) todo el día, pero ahora mismo {1} (preparar) la cena.",
-          a: [["trabaja"], ["está preparando"]]
+          refHTML: '<span class="ref-label">Verbos para elegir</span>' +
+            '<div class="ref-options">' +
+            '<span class="ref-opt">tires</span><span class="ref-opt">colaboremos</span>' +
+            '<span class="ref-opt">dejar</span><span class="ref-opt">seguir</span>' +
+            '<span class="ref-opt">encender</span><span class="ref-opt">avises</span>' +
+            '<span class="ref-opt">utilizar</span><span class="ref-opt">acampar</span>' +
+            '</div>',
+          text: "TODOS PODEMOS COLABORAR\n" +
+            "No hace falta ser un héroe para combatir los incendios forestales. No es necesario {0} de ir al campo. Tan solo hay que {1} unas sencillas normas.\n" +
+            "No hay que {2} el fuego para el trabajo agrario sin pedir primero el permiso correspondiente a las autoridades.\n" +
+            "Si vamos a comer y pasar el día con los amigos al campo, no hay que {3} fuego, es mejor llevar la comida preparada en casa. Un poco de viento puede avivar el fuego y producir graves daños.\n" +
+            "Es fundamental que no {4} desperdicios. Las botellas abandonadas y los trozos de vidrio, además de ensuciar el monte, pueden ocasionar incendios.\n" +
+            "Es conveniente {5} solamente en las zonas autorizadas.\n" +
+            "Es importante que todos nosotros {6} con los profesionales que realizan la vigilancia y protección de la naturaleza.\n" +
+            "Por último, es imprescindible que {7} a las autoridades cuando veas un fuego llamando al teléfono de emergencia 112.",
+          a: [["dejar"], ["seguir"], ["utilizar"], ["encender"], ["tires"], ["acampar"], ["colaboremos"], ["avises"]]
         },
         {
-          // Tipo "table2": tabla de 2 columnas, "rows" es [valor_fijo, respuestas_aceptadas].
-          // OJO: "respuestas_aceptadas" es el mismo spec que usa isCorrect() para "a" en los
-          // demás tipos — casi siempre un array de UNA lista de alternativas, es decir
-          // [["hablando"]] (doble corchete), no ["hablando"] a secas; el renderizador hace
-          // makeInput(r[1][0], ...), así que r[1][0] debe ser el array de alternativas.
-          // WARNING: los encabezados ("Infinitivo"/"Gerundio") están HARDCODEADOS en el
-          // renderizador (busca 'ex.type === "table2"' más abajo), no se leen de este
-          // array — si necesitas otros encabezados, edita el renderizador o usa "conjTable".
-          num: 3, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          type: "table2",
-          rows: [
-            ["hablar", [["hablando"]]],
-            ["comer", [["comiendo"]]]
-          ]
+          num: 2, title: "Ahora tú: escribe un pequeño texto",
+          instr: "Escribe algunas normas para ahorrar energía en casa, usando las mismas estructuras del ejercicio anterior (hace falta, es necesario, es conveniente, hay que...). El libro trae esta plantilla como modelo — complétala en el cuadro de abajo.",
+          type: "open",
+          html: '<p><i>Para <u>ahorrar energía en casa</u> no hace falta <u>esforzarse mucho</u>. Solo hay que ______. En primer lugar, es necesario que ______. También hace falta ______. No es necesario ______, pero es conveniente que ______. Además, hace falta que ______. Y, sobre todo, no hay que ______. Por último, es importante ______.</i></p>'
         },
         {
-          // Tipo "conjTable": tabla de conjugación con columnas configurables. "subjects"
-          // es la columna izquierda fija (sujetos); "cols" define cada columna de la
-          // derecha con su encabezado ("label") y sus respuestas ("a", un array paralelo
-          // a "subjects" — a[i] son las alternativas aceptadas para subjects[i] en esa
-          // columna, es decir CADA elemento de "a" es a su vez un array de alternativas,
-          // p. ej. a: [["hablo"], ["hablas"], ["habla"]], no a: ["hablo", "hablas", "habla"]
-          // — el renderizador hace makeInput(c.a[si], ...) y espera ese array ahí).
-          num: 4, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          // ex.subjectLabel cambia el encabezado de la primera columna (por defecto "Sujeto").
-          // Una celda cuyo spec es una CADENA en vez de un array se pinta fija: es la que el
-          // libro ya trae resuelta, y no cuenta como hueco.
-          type: "conjTable",
-          subjectLabel: "Sujeto",
-          subjects: ["yo", "tú", "él/ella"],
-          cols: [
-            { label: "Presente", a: ["hablo", ["hablas"], ["habla"]] },
-            { label: "Indefinido", a: [["hablé"], ["hablaste"], ["habló"]] }
-          ]
-        },
-        {
-          // Tipo "agenda": tabla de referencia (solo lectura, sin huecos) seguida de una
-          // lista "items" tipo "items" que se responde consultando esa tabla.
-          // WARNING: igual que table2, los encabezados ("Día"/"Actividad") están
-          // HARDCODEADOS en el renderizador, no se leen de `table` aquí abajo.
-          num: 5, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          type: "agenda",
-          table: [
-            ["lunes", "reunión con el equipo"],
-            ["martes", "clase de español"]
-          ],
+          num: 3, title: "Construye frases",
+          instr: "Cada frase se completa con una pieza intermedia (a-h) y un final (1-8): escribe tu respuesta como «letra, número», por ejemplo «d, 2». El primer caso ya viene resuelto como modelo, tal como en el libro.",
+          type: "items",
+          numbered: true,
+          refHTML: '<span class="ref-label">Piezas intermedias</span>' +
+            '<div class="ref-options ref-list">' +
+            '<span class="ref-opt"><b>a</b> ...hagas...</span>' +
+            '<span class="ref-opt"><b>b</b> ...ser tolerante...</span>' +
+            '<span class="ref-opt"><b>c</b> ...hacer...</span>' +
+            '<span class="ref-opt"><b>d</b> ...hace falta...</span>' +
+            '<span class="ref-opt"><b>e</b> ...me regales nada...</span>' +
+            '<span class="ref-opt"><b>f</b> ...friegues los platos...</span>' +
+            '<span class="ref-opt"><b>g</b> ...que estudies un poco...</span>' +
+            '<span class="ref-opt"><b>h</b> ...hacer un gran esfuerzo para mantener...</span>' +
+            '</div>' +
+            '<span class="ref-label">Finales</span>' +
+            '<div class="ref-options ref-list">' +
+            '<span class="ref-opt"><b>1</b> ...porque ya lo hago yo.</span>' +
+            '<span class="ref-opt"><b>2</b> ...tener mucho valor.</span>' +
+            '<span class="ref-opt"><b>3</b> ...con las opiniones de los demás.</span>' +
+            '<span class="ref-opt"><b>4</b> ...algunas reformas en la casa.</span>' +
+            '<span class="ref-opt"><b>5</b> ...algo de ejercicio a diario.</span>' +
+            '<span class="ref-opt"><b>6</b> ...por mi cumpleaños.</span>' +
+            '<span class="ref-opt"><b>7</b> ...todos los días.</span>' +
+            '<span class="ref-opt"><b>8</b> ...la casa ordenada.</span>' +
+            '</div>',
           items: [
-            { t: "El lunes María {0} (tener) una reunión con el equipo.", a: [["tiene"]] }
-          ]
-        },
-        {
-          // Tipo "crossword": un crucigrama real, con celdas que se cruzan — no una lista
-          // de definiciones con la foto de la rejilla al lado (esa es la alternativa
-          // cuando el crucigrama no compensa el esfuerzo; ver ex.refHTML en "items").
-          // `words`: cada palabra con su `num` (el de la definición del libro), `clue`,
-          // `answer`, `row`/`col` (0-based, celda de la PRIMERA letra) y `dir` ("A" =
-          // horizontal, "D" = vertical). Dos palabras que se cruzan comparten fila/columna
-          // en la letra común — el renderizador calcula la celda compartida solo, no
-          // duplica el input. `solved: true` en una palabra la pinta fija, sin huecos
-          // (para la que el libro ya trae resuelta, normalmente la 1).
-          num: 6, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          type: "crossword",
-          words: [
-            { num: 1, clue: "Lo que hacen los médicos.", answer: "curar", row: 0, col: 3, dir: "D", solved: true },
-            { num: 2, clue: "Une esta palabra en horizontal.", answer: "cerrar", row: 2, col: 0, dir: "A" }
+            { t: "Para ser paracaidista...\n→ Para ser paracaidista hace falta tener mucho valor. (d, 2)", solved: true },
+            { t: "No es necesario que...\n{0}", a: [["f, 1", "f,1", "f 1", "f1"]] },
+            { t: "Hay que...\n{0}", a: [["b, 3", "b,3", "b 3", "b3"]] },
+            { t: "Es conveniente que...\n{0}", a: [["a, 5", "a,5", "a 5", "a5"]] },
+            { t: "No hace falta que...\n{0}", a: [["e, 6", "e,6", "e 6", "e6"]] },
+            { t: "Es necesario...\n{0}", a: [["c, 4", "c,4", "c 4", "c4"]] },
+            { t: "No es necesario...\n{0}", a: [["h, 8", "h,8", "h 8", "h8"]] },
+            { t: "Es fundamental...\n{0}", a: [["g, 7", "g,7", "g 7", "g7"]] }
           ]
         }
       ]
     }
-    // Añade más bloques ({ id, num, title, sub, exercises: [...] }) según haga falta.
   ];
 
   // ---------- render ----------
@@ -1662,7 +1612,7 @@
   });
 
   // ---------- results panel: motivational message + send to teacher ----------
-  const TITLE_LABEL = "{{TITLE_LABEL}}"; // short label used in email subject / summary header
+  const TITLE_LABEL = "Cuaderno B1 · 6B Menos humos, por favor"; // short label used in email subject / summary header
   // These are Angel's real, reusable contact details — copy verbatim into every new
   // exercise unless he says they changed. IMPORTANT: telegram MUST be his @username
   // (no @, no phone number) — t.me/+<phone> links silently ignore ?text= and never

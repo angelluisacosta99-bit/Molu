@@ -1,9 +1,21 @@
 <!--
-  TEMPLATE — plantilla de ejercicio interactivo con corrección instantánea.
-  Ver .claude/skills/ejercicio-interactivo/SKILL.md para el proceso completo.
-  Busca todos los marcadores {{...}} y sustitúyelos; no dejes ninguno sin reemplazar.
+  Unidad 6C del cuaderno de ejercicios de Nuevo Español en Marcha 3 (B1), páginas 26-27:
+  "La ecologista del Himalaya" (el título de la sección es de la unidad del libro del
+  alumno; el texto de lectura del cuaderno es "Volver al campo"). Transcrito mirando las
+  páginas renderizadas del PDF que adjuntó el profesor. Las respuestas salen del
+  solucionario oficial del propio cuaderno (página 72).
+  Construido sobre .claude/skills/ejercicio-interactivo/reference/template.html.
+  El ejercicio 1 (preguntas de comprensión) usa spec {flex:[...]} en vez de un array de
+  frases exactas: son preguntas abiertas de comprensión lectora y lo que importa es que
+  aparezca la idea clave, no que el alumno reproduzca la frase exacta del solucionario.
+  El texto de lectura "Volver al campo" se enseña en un refHTML del ejercicio 1 — sin
+  él, las preguntas de comprensión serían irresolubles.
+  El ejercicio 2 es un pasatiempo de vocales que faltan: en vez de recrear huecos letra a
+  letra (el libro los deja en blanco solo en las vocales), se da la palabra enmascarada
+  como pista y se pide la palabra completa — el mismo criterio que ya se aplicó en 5B con
+  el crucigrama: mejor una interacción distinta y verificada que una réplica a medias.
 -->
-<title>{{TITLE}}</title>
+<title>Cuaderno B1 · 6C — La ecologista del Himalaya</title>
 <style>
   :root {
     --paper: #F3F5F0;
@@ -646,18 +658,18 @@
 </style>
 
 <script>
-  // {{STORAGE_KEY}} here MUST be byte-identical to the one set further down in the gate
+  // unlocked-cuaderno-b1-6c here MUST be byte-identical to the one set further down in the gate
   // script (search "STORAGE_KEY =") — same placeholder, same value, both occurrences.
   document.documentElement.setAttribute(
     "data-locked",
-    localStorage.getItem("{{STORAGE_KEY}}") === "1" ? "false" : "true"
+    localStorage.getItem("unlocked-cuaderno-b1-6c") === "1" ? "false" : "true"
   );
 </script>
 
 <div class="gate-overlay">
   <div class="gate-card">
     <div class="eyebrow">Acceso privado</div>
-    <h2>{{GATE_TITLE}}</h2>
+    <h2>Unidad 6C · La ecologista del Himalaya</h2>
     <p>Pídele el código a tu profesor para entrar.</p>
     <input type="text" id="gateInput" placeholder="CÓDIGO" autocomplete="off" autocapitalize="characters" />
     <button id="gateBtn">Entrar</button>
@@ -668,10 +680,10 @@
   (function () {
     // El código es solo un disuasivo, no seguridad real — cualquiera que vea el HTML
     // fuente lo ve. Elige una palabra corta, memorable y ligada al tema, en MAYÚSCULAS.
-    const CODE = "{{GATE_CODE}}";
-    // MUST be byte-identical al {{STORAGE_KEY}} usado arriba (ver comentario junto al
+    const CODE = "HIMALAYA";
+    // MUST be byte-identical al unlocked-cuaderno-b1-6c usado arriba (ver comentario junto al
     // primer occurrence). Usa un valor único por ejercicio, p. ej. "unlocked-b2-13a-tema".
-    const STORAGE_KEY = "{{STORAGE_KEY}}";
+    const STORAGE_KEY = "unlocked-cuaderno-b1-6c";
     function tryUnlock() {
       const val = document.getElementById("gateInput").value.trim().toUpperCase();
       if (val === CODE) {
@@ -691,9 +703,8 @@
 <div class="topbar gated-content">
   <div class="topbar-inner">
     <div class="brand">
-      <!-- Ejemplo real (A1): {{BRAND_TITLE}} = "Ejercicios A1", {{BRAND_SUB}} = "Presente · Gerundio · Indefinido" -->
-      <span class="brand-title">{{BRAND_TITLE}}</span>
-      <span class="brand-sub">{{BRAND_SUB}}</span>
+      <span class="brand-title">Cuaderno B1 · Unidad 6C</span>
+      <span class="brand-sub">La ecologista del Himalaya</span>
     </div>
     <nav class="nav-dots" id="navDots"></nav>
     <div class="score-wrap">
@@ -704,13 +715,13 @@
 </div>
 
 <div class="hero gated-content">
-  <div class="eyebrow">{{EYEBROW}}</div>
-  <h1>{{HEADLINE}}</h1>
-  <p>{{SUBTITLE}}</p>
+  <div class="eyebrow">Nuevo Español en Marcha 3 · Cuaderno de ejercicios · Unidad 6 · Nuestro mundo</div>
+  <h1>La ecologista del Himalaya</h1>
+  <p>Lectura sobre quienes se van a vivir al campo, vocabulario de medioambiente y comparativos/superlativos. Escribe tus respuestas, corrige al instante y envía el resultado a tu profesor.</p>
   <div class="hero-meta">
     <span><strong id="totalBlanksLabel" translate="no">—</strong> huecos en total</span>
-    <span><strong>{{N_BLOCKS}}</strong> bloques</span>
-    <span><strong>{{N_EXERCISES}}</strong> ejercicios</span>
+    <span><strong>1</strong> bloque</span>
+    <span><strong>6</strong> ejercicios</span>
   </div>
 </div>
 
@@ -742,7 +753,7 @@
 </div>
 
 <footer class="gated-content">
-  <span>{{FOOTER_LEFT}}</span>
+  <span>Nuevo Español en Marcha 3 (B1), cuaderno de ejercicios, unidad 6C (págs. 26-27)</span>
   <span>© Angel Luis Acosta González</span>
 </footer>
 
@@ -791,136 +802,114 @@
   // ---------- exercise data ----------
   // template blanks use {0},{1}... matched to item.answers[i]
   const blocks = [
-    // Cada bloque agrupa varios ejercicios bajo un mismo subtema. {{BLOCKS}} — sustituye
-    // este array completo por los bloques/ejercicios reales del capítulo, basados en el
-    // material del profesor (ver SKILL.md paso 1). Lo que sigue es un ejemplo de cada uno
-    // de los 6 tipos soportados por el renderizador (busca 'ex.type ===' en este archivo);
-    // si necesitas un tipo nuevo, tendrás que extender también el renderizador.
     {
-      id: "{{BLOCK_ID}}", num: 1, title: "{{BLOCK_TITLE}}",
-      sub: "{{BLOCK_SUBTITLE}}",
+      id: "seccion-1", num: 1, title: "La ecologista del Himalaya",
+      sub: "Lectura, vocabulario de medioambiente y comparativos/superlativos",
       exercises: [
         {
-          // Tipo "items": una lista de frases sueltas, cada una con sus propios huecos
-          // {0}, {1}... numerados desde 0 DENTRO de esa frase (no del ejercicio entero).
-          // "a" es un array paralelo a los huecos: a[i] es la lista de respuestas
-          // aceptadas para el hueco {i} (varias formas válidas si aplica).
-          num: 1, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
+          num: 1, title: "Lee el texto y contesta a las preguntas",
+          instr: "Lee «Volver al campo» (recuadro de abajo) y responde con la idea principal — no hace falta copiar la frase exacta del texto.",
           type: "items",
+          numbered: false,
+          refHTML: '<span class="ref-label">Texto: «Volver al campo»</span><div class="ref-options ref-list"><span class="ref-opt"><b>Christoph Gaupp Berghussen</b> tenía 24 años cuando llegó a Torronteras, una aldea abandonada de Guadalajara. En la aventura le acompañaba su mujer, Sarah. Ahora tienen 46 y 44 años, son apicultores y padres de tres hijos: Malva, de 12 años; Ángela, de 10, y Daniel, de 6. Ni la soledad, ni la falta de agua y electricidad de los primeros años han sido un obstáculo insalvable para esta familia. Malva, la hija mayor, cuenta que, aunque tiene que madrugar bastante para ir al instituto, no le gustaría vivir en una ciudad: «Hay más cines, más tiendas, pero también más ruido».</span><span class="ref-opt"><b>Ágata Blanco</b>, de 25 años, que vive en La Vera, Cáceres, opina que «la mejor manera de ser ecológico es irse a vivir al campo. No son solo pueblos, hay muchas tierras de cultivo muy fértiles abandonadas. Solo están esperando que alguien las trabaje». Ágata es agricultora y, además, está estudiando Psicología en la Universidad a Distancia. Está muy contenta de que su niño haya nacido en el campo, pero no todo son ventajas: «Por un lado, piensas que para el bebé va a ser más sano, más seguro, y luego resulta que en invierno no hay bomberos en la zona y que tienes la central nuclear de Almaraz a un paso».</span><span class="ref-opt">Según <b>Carlos Marín</b>, que cambió su trabajo en la ciudad en una compañía eléctrica por ser pastor de cabras en un pueblo de Huesca, «la vida es dura, pero también sencilla y barata. Por ejemplo, todas las verduras y la carne las sacamos de aquí». Él y su mujer consideran que el campo es una salida para los que están en paro. «Es difícil estar aislado, pero siempre te puedes acercar a la ciudad». Cuando van a Madrid a ver a la familia, aprovechan para ir al cine y de tiendas. Pero siempre con el billete de vuelta cerrado: «Una semana allí y ya te apetece volver a casa».</span></div>',
           items: [
-            // Ítem sin huecos y con solved: true = el que el libro trae resuelto como modelo.
-            { t: "Yo trabajo en un hospital y vivo en Madrid.", solved: true },
-            { t: "María {0} (trabajar) en un hospital y {1} (vivir) en Madrid.", a: [["trabaja"], ["vive"]] },
-            { t: "¿Tú {0} (comer) en casa o en la oficina normalmente?", a: [["comes"]] },
-            // vf: true cambia el hueco de texto libre por dos botones "V"/"F". Para otro
-            // par de opciones, pásalo como lista: vf: ["regular", "irregular"].
-            // que el alumno pulsa en vez de escribir — pensado para ejercicios de
-            // verdadero/falso. La respuesta (a) sigue siendo ["V"] o ["F"], igual que
-            // cualquier otro hueco de texto; el motor de corrección no cambia.
-            { t: "Madrid es la capital de España. → {0}", a: [["V"]], vf: true }
-            // wide: true en un item hace el input más ancho — úsalo para respuestas largas.
-          ],
-          // Ejercicio de comprensión oral: transcriptHTML añade la transcripción al final
-          // de la tarjeta, dentro de un <details> plegado (la transcripción es la solución,
-          // así que no puede quedar a la vista mientras el alumno responde). Opcional:
-          // transcriptLabel cambia el texto del desplegable. Si además hay grabación real
-          // (no siempre la hay), ex.audioSrc pone un <audio controls> justo debajo del
-          // enunciado — un data: URI en base64, un artefacto no puede enlazar un archivo
-          // externo. ex.audioLabel le pone una etiqueta encima ("Pista 6", etc.). La
-          // transcripción NO se quita aunque haya audio: sigue siendo la regla del
-          // profesor, y ahora es apoyo en vez de la única vía para resolver el ejercicio.
-          // audioSrc: "data:audio/mpeg;base64,...", audioLabel: "Pista 6",
-          transcriptLabel: "Ver la transcripción del audio (ábrela solo después de responder)",
-          transcriptHTML:
-            '<span class="line"><span class="who">ANA:</span> ¿Dónde vives?</span>' +
-            '<span class="line"><span class="who">LUIS:</span> En Madrid, cerca del centro.</span>'
-        },
-        {
-          // Tipo "text": un único párrafo continuo con huecos numerados {0}, {1}... a lo
-          // largo de TODO el texto (no se reinicia por línea). "\n" en `text` inserta un
-          // salto de línea visual. "a" es un array paralelo a los huecos del texto entero.
-          num: 2, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          type: "text",
-          text: "Hoy Carmen {0} (trabajar) todo el día, pero ahora mismo {1} (preparar) la cena.",
-          a: [["trabaja"], ["está preparando"]]
-        },
-        {
-          // Tipo "table2": tabla de 2 columnas, "rows" es [valor_fijo, respuestas_aceptadas].
-          // OJO: "respuestas_aceptadas" es el mismo spec que usa isCorrect() para "a" en los
-          // demás tipos — casi siempre un array de UNA lista de alternativas, es decir
-          // [["hablando"]] (doble corchete), no ["hablando"] a secas; el renderizador hace
-          // makeInput(r[1][0], ...), así que r[1][0] debe ser el array de alternativas.
-          // WARNING: los encabezados ("Infinitivo"/"Gerundio") están HARDCODEADOS en el
-          // renderizador (busca 'ex.type === "table2"' más abajo), no se leen de este
-          // array — si necesitas otros encabezados, edita el renderizador o usa "conjTable".
-          num: 3, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          type: "table2",
-          rows: [
-            ["hablar", [["hablando"]]],
-            ["comer", [["comiendo"]]]
+            { t: "¿Qué tiene que hacer Malva Gaupp para estudiar? {0}", a: [{ flex: ["madrugar"] }] },
+            { t: "¿Por qué Malva prefiere el campo a la ciudad? {0}", a: [{ flex: ["ruido"] }] },
+            { t: "Según Ágata, ¿cuáles son las desventajas de vivir en La Vera? {0}", a: [{ flex: ["bomberos", "central"] }] },
+            { t: "¿En qué trabajaba antes Carlos? ¿Y ahora? {0}", a: [{ flex: ["electrica", "pastor"] }] },
+            { t: "¿Dónde consiguen gran parte de los alimentos Carlos y su familia? {0}", a: [{ flex: ["campo"] }] }
           ]
         },
         {
-          // Tipo "conjTable": tabla de conjugación con columnas configurables. "subjects"
-          // es la columna izquierda fija (sujetos); "cols" define cada columna de la
-          // derecha con su encabezado ("label") y sus respuestas ("a", un array paralelo
-          // a "subjects" — a[i] son las alternativas aceptadas para subjects[i] en esa
-          // columna, es decir CADA elemento de "a" es a su vez un array de alternativas,
-          // p. ej. a: [["hablo"], ["hablas"], ["habla"]], no a: ["hablo", "hablas", "habla"]
-          // — el renderizador hace makeInput(c.a[si], ...) y espera ese array ahí).
-          num: 4, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          // ex.subjectLabel cambia el encabezado de la primera columna (por defecto "Sujeto").
-          // Una celda cuyo spec es una CADENA en vez de un array se pinta fija: es la que el
-          // libro ya trae resuelta, y no cuenta como hueco.
-          type: "conjTable",
-          subjectLabel: "Sujeto",
-          subjects: ["yo", "tú", "él/ella"],
-          cols: [
-            { label: "Presente", a: ["hablo", ["hablas"], ["habla"]] },
-            { label: "Indefinido", a: [["hablé"], ["hablaste"], ["habló"]] }
-          ]
-        },
-        {
-          // Tipo "agenda": tabla de referencia (solo lectura, sin huecos) seguida de una
-          // lista "items" tipo "items" que se responde consultando esa tabla.
-          // WARNING: igual que table2, los encabezados ("Día"/"Actividad") están
-          // HARDCODEADOS en el renderizador, no se leen de `table` aquí abajo.
-          num: 5, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          type: "agenda",
-          table: [
-            ["lunes", "reunión con el equipo"],
-            ["martes", "clase de español"]
-          ],
+          num: 2, title: "Completa las vocales que faltan",
+          instr: "Cada palabra de esta unidad ha perdido sus vocales. Descúbrela y escríbela completa.",
+          type: "items",
+          numbered: false,
           items: [
-            { t: "El lunes María {0} (tener) una reunión con el equipo.", a: [["tiene"]] }
+            { t: "L_GO {0}", a: [["lago"]] },
+            { t: "C_NT_M_N_C__N _C_ST_C_ {0}", a: [["contaminación acústica", "contaminacion acustica"]] },
+            { t: "C_RD_LL_R_ {0}", a: [["cordillera"]] },
+            { t: "S_LV_ {0}", a: [["selva"]] },
+            { t: "M_D__ _MB__NT_ {0}", a: [["medioambiente", "medio ambiente"]] },
+            { t: "_SL_ {0}", a: [["isla"]] },
+            { t: "_C__NO {0}", a: [["océano", "oceano"]] },
+            { t: "_NC_ND__ F_R_ST_L {0}", a: [["incendio forestal"]] },
+            { t: "C_NT_N_NT_ {0}", a: [["continente"]] },
+            { t: "C_P_ D_ _Z_N_ {0}", a: [["capa de ozono"]] },
+            { t: "C_Ñ_N {0}", a: [["cañón", "cañon"]] },
+            { t: "D_S__RT_ {0}", a: [["desierto"]] }
           ]
         },
         {
-          // Tipo "crossword": un crucigrama real, con celdas que se cruzan — no una lista
-          // de definiciones con la foto de la rejilla al lado (esa es la alternativa
-          // cuando el crucigrama no compensa el esfuerzo; ver ex.refHTML en "items").
-          // `words`: cada palabra con su `num` (el de la definición del libro), `clue`,
-          // `answer`, `row`/`col` (0-based, celda de la PRIMERA letra) y `dir` ("A" =
-          // horizontal, "D" = vertical). Dos palabras que se cruzan comparten fila/columna
-          // en la letra común — el renderizador calcula la celda compartida solo, no
-          // duplica el input. `solved: true` en una palabra la pinta fija, sin huecos
-          // (para la que el libro ya trae resuelta, normalmente la 1).
-          num: 6, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          type: "crossword",
-          words: [
-            { num: 1, clue: "Lo que hacen los médicos.", answer: "curar", row: 0, col: 3, dir: "D", solved: true },
-            { num: 2, clue: "Une esta palabra en horizontal.", answer: "cerrar", row: 2, col: 0, dir: "A" }
+          num: 3, title: "Completa con el comparativo correspondiente",
+          instr: "Usa más/menos/tan + que/como, según corresponda. La primera frase ya viene resuelta como modelo.",
+          type: "items",
+          numbered: true,
+          items: [
+            { t: "La vida es más tranquila en los pueblos que en las ciudades.", solved: true },
+            { t: "La comida rápida es {0} sana {1} la tradicional.", a: [["menos"], ["que"]] },
+            { t: "Me gusta mi nuevo trabajo: es {0} estresante {1} el anterior.", a: [["menos"], ["que"]] },
+            { t: "Los niños de hoy leen {0} {1} los de antes. Ahora prefieren ver la televisión.", a: [["menos"], ["que"]] },
+            { t: "Por culpa del cambio climático, ahora hace {0} calor {1} hace unos años.", a: [["más", "mas"], ["que"]] },
+            { t: "El piso de Ana es más espacioso, pero tiene {0} luz {1} el mío.", a: [["menos"], ["que"]] },
+            { t: "Coge la caja más pesada, tú tienes {0} fuerza {1} yo.", a: [["más", "mas"], ["que"]] },
+            { t: "En otros países se genera {0} basura {1} aquí porque la gente es más ecológica.", a: [["menos"], ["que"]] },
+            { t: "Este barrio es {0} ruidoso {1} el mío porque también hay muchos bares y discotecas.", a: [["tan"], ["como"]] }
+          ]
+        },
+        {
+          num: 4, title: "Pon el adjetivo entre paréntesis en la forma más adecuada",
+          instr: "Comparativo o superlativo, según el sentido de la frase. La primera ya viene resuelta como modelo.",
+          type: "items",
+          numbered: true,
+          items: [
+            { t: "México es la ciudad más contaminada del mundo. (contaminada)", solved: true },
+            { t: "El verano pasado fue una de las {0} temporadas de incendios forestales en nuestro país. (malo)", a: [["peores"]] },
+            { t: "La selva amazónica es el {0} pulmón del planeta. (grande)", a: [["mayor"]] },
+            { t: "La hormiga es el animal {0}, porque puede levantar 12 veces su propio peso. (fuerte)", a: [["más fuerte", "mas fuerte"]] },
+            { t: "El elefante asiático es {0} que el africano. (pequeño)", a: [["más pequeño", "mas pequeño"]] },
+            { t: "Valencia es casi {0} como Tokio. (ruidosa)", a: [["tan ruidosa"]] },
+            { t: "Reciclar está muy bien, pero es mucho {0} producir poca basura. (bueno)", a: [["mejor"]] },
+            { t: "La bicicleta es un medio de transporte {0} como agradable. (ecológico)", a: [["tan ecológico", "tan ecologico"]] },
+            { t: "Australia es uno de los países {0} del mundo. (seco)", a: [["más secos", "mas secos"]] }
+          ]
+        },
+        {
+          num: 5, title: "Escribe el superlativo de estos adjetivos",
+          instr: "Como en el ejemplo. La primera ya viene resuelta.",
+          type: "items",
+          numbered: true,
+          items: [
+            { t: "interesante → interesantísimo.", solved: true },
+            { t: "grande {0}", a: [["grandísimo"]] },
+            { t: "seco {0}", a: [["sequísimo"]] },
+            { t: "ruidoso {0}", a: [["ruidosísimo"]] },
+            { t: "vago {0}", a: [["vaguísimo"]] },
+            { t: "pequeño {0}", a: [["pequeñísimo"]] },
+            { t: "lento {0}", a: [["lentísimo"]] },
+            { t: "fuerte {0}", a: [["fortísimo"]] }
+          ]
+        },
+        {
+          num: 6, title: "Completa con tan, tanto, tanta, tantos, tantas",
+          instr: "La primera frase ya viene resuelta como modelo.",
+          type: "items",
+          numbered: true,
+          items: [
+            { t: "Mi hijo no es tan estudioso como el tuyo.", solved: true },
+            { t: "En Madrid hay {0} tráfico como en mi ciudad.", a: [["tanto"]] },
+            { t: "Antes había muchísimas truchas en este río, pero últimamente ya no hay {0}.", a: [["tantas"]] },
+            { t: "Este coche tiene {0} prestaciones como ese otro y, además, es más barato.", a: [["tantas"]] },
+            { t: "Nosotros lo pasamos {0} bien en la playa como en la montaña.", a: [["tan"]] },
+            { t: "En algunas ciudades hay {0} coches como personas.", a: [["tantos"]] },
+            { t: "Yo no tengo {0} confianza en mí misma como tú.", a: [["tanta"]] },
+            { t: "Este año la empresa no ha obtenido unos resultados {0} buenos como el anterior.", a: [["tan"]] },
+            { t: "Nunca había visto {0} libros antiguos.", a: [["tantos"]] },
+            { t: "Mi sobrino duerme {0} como un lirón.", a: [["tanto"]] }
           ]
         }
       ]
     }
-    // Añade más bloques ({ id, num, title, sub, exercises: [...] }) según haga falta.
   ];
 
   // ---------- render ----------
@@ -1662,7 +1651,7 @@
   });
 
   // ---------- results panel: motivational message + send to teacher ----------
-  const TITLE_LABEL = "{{TITLE_LABEL}}"; // short label used in email subject / summary header
+  const TITLE_LABEL = "Cuaderno B1 · 6C La ecologista del Himalaya"; // short label used in email subject / summary header
   // These are Angel's real, reusable contact details — copy verbatim into every new
   // exercise unless he says they changed. IMPORTANT: telegram MUST be his @username
   // (no @, no phone number) — t.me/+<phone> links silently ignore ?text= and never

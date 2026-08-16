@@ -704,6 +704,15 @@ parezca más "controlable" desde JS — ya se demostró que rompe el caso más b
       incluye porque está en el libro y el alumno tiene que poder verlo. Cuando un ejercicio
       del original no tenga respuesta única, esta es la salida: transcribirlo así, no
       omitirlo ni inventarle una respuesta correcta.
+      Desde que el profesor lo pidió, el motor añade automáticamente debajo de `ex.html`
+      un aviso ("esto no se corrige aquí, lo revisará tu profesor") y un `<textarea>`
+      (`.open-answer`) donde el alumno escribe su respuesta — no hay que montar nada de eso
+      a mano en el chapter script. Ese texto se guarda en `openAnswers` (junto a `allInputs`
+      y `allExercises`) y `buildSummary()` lo añade tal cual, con el número y título del
+      ejercicio, al final del resumen que se envía por WhatsApp/Telegram/correo/Teams — así
+      el profesor recibe la redacción del alumno en el mismo mensaje que la puntuación,
+      sin tener que pedírsela aparte. No hace falta ninguna respuesta "correcta" para esto:
+      es contenido libre que se reenvía tal cual, no se evalúa.
     - Cuando `flex` se quede corto, cambia el diseño del hueco antes que la respuesta.
       `flex` es un **Y** de palabras clave: no sabe expresar alternativas. Si el ejercicio
       admite de verdad varias respuestas distintas (vosotros/ustedes, `-ara`/`-ase`,

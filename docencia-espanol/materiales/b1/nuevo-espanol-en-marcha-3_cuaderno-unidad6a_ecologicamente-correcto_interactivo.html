@@ -1,9 +1,18 @@
 <!--
-  TEMPLATE — plantilla de ejercicio interactivo con corrección instantánea.
-  Ver .claude/skills/ejercicio-interactivo/SKILL.md para el proceso completo.
-  Busca todos los marcadores {{...}} y sustitúyelos; no dejes ninguno sin reemplazar.
+  Unidad 6A del cuaderno de ejercicios de Nuevo Español en Marcha 3 (B1), páginas 24-25:
+  "Ecológicamente correcto". Transcrito mirando las páginas renderizadas del PDF que
+  adjuntó el profesor (el PDF trae capa de texto, pero es OCR de ABBYY con codificación
+  Custom y sale sucio). Las respuestas salen del solucionario oficial del propio cuaderno
+  (página 72).
+  Construido sobre .claude/skills/ejercicio-interactivo/reference/template.html.
+  El ejercicio 5 es de audio (pista 9): no tenemos la grabación, así que lleva su
+  transcripción (página 65) en un plegable, avisado en el enunciado.
+  El ejercicio 3 (relacionar anuncios con perfiles) trae un perfil de sobra a propósito
+  («sobra un grupo», letra c sin pareja) — se deja fuera de los huecos y se enseña en el
+  recuadro de referencia igual que los demás, para que el alumno vea que existe y lo
+  descarte él mismo.
 -->
-<title>{{TITLE}}</title>
+<title>Cuaderno B1 · 6A — Ecológicamente correcto</title>
 <style>
   :root {
     --paper: #F3F5F0;
@@ -646,18 +655,18 @@
 </style>
 
 <script>
-  // {{STORAGE_KEY}} here MUST be byte-identical to the one set further down in the gate
+  // unlocked-cuaderno-b1-6a here MUST be byte-identical to the one set further down in the gate
   // script (search "STORAGE_KEY =") — same placeholder, same value, both occurrences.
   document.documentElement.setAttribute(
     "data-locked",
-    localStorage.getItem("{{STORAGE_KEY}}") === "1" ? "false" : "true"
+    localStorage.getItem("unlocked-cuaderno-b1-6a") === "1" ? "false" : "true"
   );
 </script>
 
 <div class="gate-overlay">
   <div class="gate-card">
     <div class="eyebrow">Acceso privado</div>
-    <h2>{{GATE_TITLE}}</h2>
+    <h2>Unidad 6A · Ecológicamente correcto</h2>
     <p>Pídele el código a tu profesor para entrar.</p>
     <input type="text" id="gateInput" placeholder="CÓDIGO" autocomplete="off" autocapitalize="characters" />
     <button id="gateBtn">Entrar</button>
@@ -668,10 +677,10 @@
   (function () {
     // El código es solo un disuasivo, no seguridad real — cualquiera que vea el HTML
     // fuente lo ve. Elige una palabra corta, memorable y ligada al tema, en MAYÚSCULAS.
-    const CODE = "{{GATE_CODE}}";
-    // MUST be byte-identical al {{STORAGE_KEY}} usado arriba (ver comentario junto al
+    const CODE = "PLANETA";
+    // MUST be byte-identical al unlocked-cuaderno-b1-6a usado arriba (ver comentario junto al
     // primer occurrence). Usa un valor único por ejercicio, p. ej. "unlocked-b2-13a-tema".
-    const STORAGE_KEY = "{{STORAGE_KEY}}";
+    const STORAGE_KEY = "unlocked-cuaderno-b1-6a";
     function tryUnlock() {
       const val = document.getElementById("gateInput").value.trim().toUpperCase();
       if (val === CODE) {
@@ -691,9 +700,8 @@
 <div class="topbar gated-content">
   <div class="topbar-inner">
     <div class="brand">
-      <!-- Ejemplo real (A1): {{BRAND_TITLE}} = "Ejercicios A1", {{BRAND_SUB}} = "Presente · Gerundio · Indefinido" -->
-      <span class="brand-title">{{BRAND_TITLE}}</span>
-      <span class="brand-sub">{{BRAND_SUB}}</span>
+      <span class="brand-title">Cuaderno B1 · Unidad 6A</span>
+      <span class="brand-sub">Ecológicamente correcto</span>
     </div>
     <nav class="nav-dots" id="navDots"></nav>
     <div class="score-wrap">
@@ -704,13 +712,13 @@
 </div>
 
 <div class="hero gated-content">
-  <div class="eyebrow">{{EYEBROW}}</div>
-  <h1>{{HEADLINE}}</h1>
-  <p>{{SUBTITLE}}</p>
+  <div class="eyebrow">Nuevo Español en Marcha 3 · Cuaderno de ejercicios · Unidad 6 · Nuestro mundo</div>
+  <h1>Ecológicamente correcto</h1>
+  <p>Lo que te molesta, te preocupa o te alegra — con subjuntivo. Escribe tus respuestas, corrige al instante y envía el resultado a tu profesor.</p>
   <div class="hero-meta">
     <span><strong id="totalBlanksLabel" translate="no">—</strong> huecos en total</span>
-    <span><strong>{{N_BLOCKS}}</strong> bloques</span>
-    <span><strong>{{N_EXERCISES}}</strong> ejercicios</span>
+    <span><strong>1</strong> bloque</span>
+    <span><strong>6</strong> ejercicios</span>
   </div>
 </div>
 
@@ -742,7 +750,7 @@
 </div>
 
 <footer class="gated-content">
-  <span>{{FOOTER_LEFT}}</span>
+  <span>Nuevo Español en Marcha 3 (B1), cuaderno de ejercicios, unidad 6A (págs. 24-25)</span>
   <span>© Angel Luis Acosta González</span>
 </footer>
 
@@ -791,136 +799,116 @@
   // ---------- exercise data ----------
   // template blanks use {0},{1}... matched to item.answers[i]
   const blocks = [
-    // Cada bloque agrupa varios ejercicios bajo un mismo subtema. {{BLOCKS}} — sustituye
-    // este array completo por los bloques/ejercicios reales del capítulo, basados en el
-    // material del profesor (ver SKILL.md paso 1). Lo que sigue es un ejemplo de cada uno
-    // de los 6 tipos soportados por el renderizador (busca 'ex.type ===' en este archivo);
-    // si necesitas un tipo nuevo, tendrás que extender también el renderizador.
     {
-      id: "{{BLOCK_ID}}", num: 1, title: "{{BLOCK_TITLE}}",
-      sub: "{{BLOCK_SUBTITLE}}",
+      id: "seccion-1", num: 1, title: "Ecológicamente correcto",
+      sub: "Lo que te molesta, te preocupa o te alegra — con subjuntivo",
       exercises: [
         {
-          // Tipo "items": una lista de frases sueltas, cada una con sus propios huecos
-          // {0}, {1}... numerados desde 0 DENTRO de esa frase (no del ejercicio entero).
-          // "a" es un array paralelo a los huecos: a[i] es la lista de respuestas
-          // aceptadas para el hueco {i} (varias formas válidas si aplica).
-          num: 1, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
+          num: 1, title: "Escribe frases siguiendo el modelo",
+          instr: "Completa con «me molesta muchísimo que» y el verbo en subjuntivo. La primera ya la trae resuelta el libro, como modelo.",
+          type: "items",
+          numbered: true,
+          items: [
+            { t: "Tirar desperdicios en el campo.\n→ Me molesta muchísimo que la gente tire desperdicios en el campo.", solved: true },
+            { t: "Hacer fuego en el bosque sin tomar precauciones.\n{0}", a: [["Me molesta muchísimo que la gente haga fuego en el bosque sin tomar precauciones."]], wide: "full" },
+            { t: "Comerciar con especies protegidas.\n{0}", a: [["Me molesta muchísimo que la gente comercie con especies protegidas."]], wide: "full" },
+            { t: "Usar abrigos de piel.\n{0}", a: [["Me molesta muchísimo que la gente use abrigos de piel."]], wide: "full" },
+            { t: "Malgastar el agua.\n{0}", a: [["Me molesta muchísimo que la gente malgaste el agua."]], wide: "full" },
+            { t: "Ensuciar los ríos.\n{0}", a: [["Me molesta muchísimo que la gente ensucie los ríos."]], wide: "full" },
+            { t: "Abandonar sus mascotas.\n{0}", a: [["Me molesta muchísimo que la gente abandone sus mascotas."]], wide: "full" },
+            { t: "No esforzarse lo suficiente en cuidar el medioambiente.\n{0}", a: [["Me molesta muchísimo que la gente no se esfuerce lo suficiente en cuidar el medioambiente."]], wide: "full" },
+            { t: "No separar la basura.\n{0}", a: [["Me molesta muchísimo que la gente no separe la basura."]], wide: "full" }
+          ]
+        },
+        {
+          num: 2, title: "Construye frases",
+          instr: "Relaciona cada verbo con su final, y escribe la letra correspondiente.",
+          type: "items",
+          numbered: true,
+          refHTML: '<span class="ref-label">Finales de la frase «Me preocupa…»</span>' +
+            '<div class="ref-options ref-list">' +
+            '<span class="ref-opt"><b>a</b> demasiado.</span>' +
+            '<span class="ref-opt"><b>b</b> basura en el mar.</span>' +
+            '<span class="ref-opt"><b>c</b> tantos pueblos abandonados.</span>' +
+            '<span class="ref-opt"><b>d</b> la capa de ozono.</span>' +
+            '<span class="ref-opt"><b>e</b> sustancias tóxicas para el medioambiente.</span>' +
+            '<span class="ref-opt"><b>f</b> en la radio las advertencias de las organizaciones ecologistas.</span>' +
+            '<span class="ref-opt"><b>g</b> lo suficiente por conservar el medioambiente.</span>' +
+            '<span class="ref-opt"><b>h</b> los recursos naturales.</span>' +
+            '</div>',
+          items: [
+            { t: "Me preocupa contaminar {0}.", a: [["a"]] },
+            { t: "Me preocupa dañar {0}.", a: [["d"]] },
+            { t: "Me preocupa encontrar {0}.", a: [["b"]] },
+            { t: "Me preocupa derrochar {0}.", a: [["h"]] },
+            { t: "Me preocupa escuchar {0}.", a: [["f"]] },
+            { t: "Me preocupa ver {0}.", a: [["c"]] },
+            { t: "Me preocupa utilizar {0}.", a: [["e"]] },
+            { t: "Me preocupa no hacer {0}.", a: [["g"]] }
+          ]
+        },
+        {
+          num: 3, title: "¿Qué anuncio recomiendas a cada grupo?",
+          instr: "Lee las propuestas de fin de semana y escribe, para cada anuncio, la letra del grupo al que se lo recomendarías. ¡Cuidado! Sobra un grupo.",
+          type: "items",
+          numbered: true,
+          refHTML: '<span class="ref-label">Los grupos</span>' +
+            '<div class="ref-options ref-list">' +
+            '<span class="ref-opt"><b>a</b> Una familia con un niño de 10 años.</span>' +
+            '<span class="ref-opt"><b>b</b> Un grupo de vecinos que quieren crear un huerto urbano y necesitan aprender sin gastar dinero.</span>' +
+            '<span class="ref-opt"><b>c</b> Unos amigos que quieren quedar el domingo a partir de las 17:00.</span>' +
+            '<span class="ref-opt"><b>d</b> Un grupo de amigos que buscan una actividad al aire libre para pasar la mañana.</span>' +
+            '</div>',
+          items: [
+            { t: "1 APRENDER SOBRE SETAS. La previsión de lluvias moderadas sobre Madrid no deben encerrarnos en casa. Todo lo contrario: Navalmedio Eventos de Naturaleza invita a una salida para reconocer las setas de nuestros montes. Sábado 13 de 10.00 a 17.00. Consultar punto de encuentro. Precio: 35 euros. Niños hasta 12 años: 23 euros. Incluye comida.\n¿Para qué grupo (a-d) es? {0}", a: [["a"]], wide: "full" },
+            { t: "2 TESOROS BOTÁNICOS. Son los árboles del Retiro, una muestra vegetal que generalmente pasa inadvertida en los paseos de los madrileños por el parque, pero que representan una gran variedad de especies, historias y curiosidades. Domingo 14. Salida, a las 11.00, desde la puerta de la plaza de la Independencia de los jardines del Buen Retiro. Precio: 10 euros. Dirigida al público adulto. Imprescindible reservar.\n¿Para qué grupo (a-d) es? {0}", a: [["d"]], wide: "full" },
+            { t: "3 AGRICULTURA ECOLÓGICA. Un suelo muy vivo. Desde el centro de educación ambiental del parque Polvoranca enseñan que uno de los pilares de la agricultura ecológica es el manejo del suelo. Domingo 14. De 11.30 a 13.30 en el CEA Polvoranca, en Leganés. ACTIVIDAD GRATUITA. A partir de los 16 años.\n¿Para qué grupo (a-d) es? {0}", a: [["b"]], wide: "full" }
+          ]
+        },
+        {
+          num: 4, title: "Escribe frases siguiendo el modelo",
+          instr: "Igual que en el ejercicio 1, pero con verbos como «gustar», «molestar», «alegrar»: el sujeto que siente la emoción va con pronombre (me, te, le…) y lo que la provoca, en subjuntivo. El modelo ya viene resuelto.",
+          type: "items",
+          numbered: true,
+          items: [
+            { t: "A mis padres / salir de noche / yo. (no gustar)\n→ A mis padres no les gusta que yo salga de noche.", solved: true },
+            { t: "¿A ti / casarse / Julia y Hugo? (alegrar)\n{0}", a: [["¿A ti te alegra que se casen Julia y Hugo?"]], wide: "full" },
+            { t: "A vosotros / ser feliz / Carlos. (fastidiar)\n{0}", a: [["A vosotros os fastidia que Carlos sea feliz."]], wide: "full" },
+            { t: "A nosotros / sacar malas notas / tú. (preocupar)\n{0}", a: [["A nosotros nos preocupa que tú saques malas notas."]], wide: "full" },
+            { t: "A mí no / venir a mi casa / vosotros. (molestar)\n{0}", a: [["A mí no me molesta que vengáis a mi casa."]], wide: "full" },
+            { t: "A los políticos / creer en ellos / la gente. (interesar)\n{0}", a: [["A los políticos les interesa que la gente crea en ellos."]], wide: "full" },
+            { t: "A usted / visitarle / sus hijos. (encantar)\n{0}", a: [["A usted le encanta que sus hijos le visiten."]], wide: "full" },
+            { t: "A mi vecina / jugar en el patio / mis hijos. (molestar)\n{0}", a: [["A mi vecina le molesta que mis hijos jueguen en el patio."]], wide: "full" },
+            { t: "A Pablo / hablar todos a la vez / vosotros. (irritar)\n{0}", a: [["A Pablo le irrita que habléis todos a la vez."]], wide: "full" },
+            { t: "A nosotros / escribirnos postales cuando viajas / tú. (gustar mucho)\n{0}", a: [["A nosotros nos gusta mucho que nos escribas postales cuando viajas."]], wide: "full" }
+          ]
+        },
+        {
+          num: 5, title: "Escucha y marca lo que más les molesta",
+          instr: "En el libro se escucha una conversación y se marcan en la lista las cosas que más molestan a cada persona. No tenemos el audio de esta pista: abre la transcripción del final de la tarjeta y contesta sí o no según lo que dice cada persona.",
           type: "items",
           items: [
-            // Ítem sin huecos y con solved: true = el que el libro trae resuelto como modelo.
-            { t: "Yo trabajo en un hospital y vivo en Madrid.", solved: true },
-            { t: "María {0} (trabajar) en un hospital y {1} (vivir) en Madrid.", a: [["trabaja"], ["vive"]] },
-            { t: "¿Tú {0} (comer) en casa o en la oficina normalmente?", a: [["comes"]] },
-            // vf: true cambia el hueco de texto libre por dos botones "V"/"F". Para otro
-            // par de opciones, pásalo como lista: vf: ["regular", "irregular"].
-            // que el alumno pulsa en vez de escribir — pensado para ejercicios de
-            // verdadero/falso. La respuesta (a) sigue siendo ["V"] o ["F"], igual que
-            // cualquier otro hueco de texto; el motor de corrección no cambia.
-            { t: "Madrid es la capital de España. → {0}", a: [["V"]], vf: true }
-            // wide: true en un item hace el input más ancho — úsalo para respuestas largas.
+            { t: "Que enciendan un cigarrillo sin permiso en su casa. {0}", a: [["sí"]], vf: ["sí", "no"] },
+            { t: "Que le aconsejen sobre la educación de sus hijos. {0}", a: [["sí"]], vf: ["sí", "no"] },
+            { t: "La impuntualidad. {0}", a: [["sí"]], vf: ["sí", "no"] },
+            { t: "Que la gente fume. {0}", a: [["no"]], vf: ["sí", "no"] },
+            { t: "Que le mientan. {0}", a: [["no"]], vf: ["sí", "no"] },
+            { t: "Que alguien hable demasiado alto. {0}", a: [["no"]], vf: ["sí", "no"] },
+            { t: "Que le insistan para que coma alguna cosa. {0}", a: [["sí"]], vf: ["sí", "no"] },
+            { t: "Que alguien le empuje en el autobús. {0}", a: [["no"]], vf: ["sí", "no"] }
           ],
-          // Ejercicio de comprensión oral: transcriptHTML añade la transcripción al final
-          // de la tarjeta, dentro de un <details> plegado (la transcripción es la solución,
-          // así que no puede quedar a la vista mientras el alumno responde). Opcional:
-          // transcriptLabel cambia el texto del desplegable. Si además hay grabación real
-          // (no siempre la hay), ex.audioSrc pone un <audio controls> justo debajo del
-          // enunciado — un data: URI en base64, un artefacto no puede enlazar un archivo
-          // externo. ex.audioLabel le pone una etiqueta encima ("Pista 6", etc.). La
-          // transcripción NO se quita aunque haya audio: sigue siendo la regla del
-          // profesor, y ahora es apoyo en vez de la única vía para resolver el ejercicio.
-          // audioSrc: "data:audio/mpeg;base64,...", audioLabel: "Pista 6",
-          transcriptLabel: "Ver la transcripción del audio (ábrela solo después de responder)",
-          transcriptHTML:
-            '<span class="line"><span class="who">ANA:</span> ¿Dónde vives?</span>' +
-            '<span class="line"><span class="who">LUIS:</span> En Madrid, cerca del centro.</span>'
+          transcriptLabel: "Ver la transcripción de la pista 9 (la necesitas: no tenemos la grabación)",
+          transcriptHTML: '<span class="line"><span class="who">CARLOS:</span> A mí me molesta muchísimo que alguien llegue tarde a una cita. Es que no lo soporto…</span><span class="line"><span class="who">SANDRA:</span> Sí, sí, tienes razón, a mí tampoco me gusta nada. Me parece de muy mala educación.</span><span class="line"><span class="who">DIANA:</span> Pues yo no soporto que me insistan para que coma más de algo. Mi tía siempre lo hace cuando voy de visita a su casa y, vamos, me pone de los nervios.</span><span class="line"><span class="who">SANDRA:</span> A mí, lo que más me fastidia es que alguien se ponga a fumar en mi casa sin pedirme permiso.</span><span class="line"><span class="who">ALBERTO:</span> Bueno, pero eso no es muy normal, ¿no? Normalmente se pide permiso.</span><span class="line"><span class="who">SANDRA:</span> Sí, pero no te creas, ¿eh?, que hay gente que lo hace.</span><span class="line"><span class="who">ALBERTO:</span> Oye, ¿y no os pasa que todo el mundo os da consejos sobre cómo cuidar a vuestros hijos? ¡Incluso gente que no los tiene! A mí es una cosa que me da mucha rabia.</span><div class="transcript-note">Transcripción de la pista 9 del cuaderno (página 65), tal como aparece en el propio libro.</div>'
         },
         {
-          // Tipo "text": un único párrafo continuo con huecos numerados {0}, {1}... a lo
-          // largo de TODO el texto (no se reinicia por línea). "\n" en `text` inserta un
-          // salto de línea visual. "a" es un array paralelo a los huecos del texto entero.
-          num: 2, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          type: "text",
-          text: "Hoy Carmen {0} (trabajar) todo el día, pero ahora mismo {1} (preparar) la cena.",
-          a: [["trabaja"], ["está preparando"]]
-        },
-        {
-          // Tipo "table2": tabla de 2 columnas, "rows" es [valor_fijo, respuestas_aceptadas].
-          // OJO: "respuestas_aceptadas" es el mismo spec que usa isCorrect() para "a" en los
-          // demás tipos — casi siempre un array de UNA lista de alternativas, es decir
-          // [["hablando"]] (doble corchete), no ["hablando"] a secas; el renderizador hace
-          // makeInput(r[1][0], ...), así que r[1][0] debe ser el array de alternativas.
-          // WARNING: los encabezados ("Infinitivo"/"Gerundio") están HARDCODEADOS en el
-          // renderizador (busca 'ex.type === "table2"' más abajo), no se leen de este
-          // array — si necesitas otros encabezados, edita el renderizador o usa "conjTable".
-          num: 3, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          type: "table2",
-          rows: [
-            ["hablar", [["hablando"]]],
-            ["comer", [["comiendo"]]]
-          ]
-        },
-        {
-          // Tipo "conjTable": tabla de conjugación con columnas configurables. "subjects"
-          // es la columna izquierda fija (sujetos); "cols" define cada columna de la
-          // derecha con su encabezado ("label") y sus respuestas ("a", un array paralelo
-          // a "subjects" — a[i] son las alternativas aceptadas para subjects[i] en esa
-          // columna, es decir CADA elemento de "a" es a su vez un array de alternativas,
-          // p. ej. a: [["hablo"], ["hablas"], ["habla"]], no a: ["hablo", "hablas", "habla"]
-          // — el renderizador hace makeInput(c.a[si], ...) y espera ese array ahí).
-          num: 4, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          // ex.subjectLabel cambia el encabezado de la primera columna (por defecto "Sujeto").
-          // Una celda cuyo spec es una CADENA en vez de un array se pinta fija: es la que el
-          // libro ya trae resuelta, y no cuenta como hueco.
-          type: "conjTable",
-          subjectLabel: "Sujeto",
-          subjects: ["yo", "tú", "él/ella"],
-          cols: [
-            { label: "Presente", a: ["hablo", ["hablas"], ["habla"]] },
-            { label: "Indefinido", a: [["hablé"], ["hablaste"], ["habló"]] }
-          ]
-        },
-        {
-          // Tipo "agenda": tabla de referencia (solo lectura, sin huecos) seguida de una
-          // lista "items" tipo "items" que se responde consultando esa tabla.
-          // WARNING: igual que table2, los encabezados ("Día"/"Actividad") están
-          // HARDCODEADOS en el renderizador, no se leen de `table` aquí abajo.
-          num: 5, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          type: "agenda",
-          table: [
-            ["lunes", "reunión con el equipo"],
-            ["martes", "clase de español"]
-          ],
-          items: [
-            { t: "El lunes María {0} (tener) una reunión con el equipo.", a: [["tiene"]] }
-          ]
-        },
-        {
-          // Tipo "crossword": un crucigrama real, con celdas que se cruzan — no una lista
-          // de definiciones con la foto de la rejilla al lado (esa es la alternativa
-          // cuando el crucigrama no compensa el esfuerzo; ver ex.refHTML en "items").
-          // `words`: cada palabra con su `num` (el de la definición del libro), `clue`,
-          // `answer`, `row`/`col` (0-based, celda de la PRIMERA letra) y `dir` ("A" =
-          // horizontal, "D" = vertical). Dos palabras que se cruzan comparten fila/columna
-          // en la letra común — el renderizador calcula la celda compartida solo, no
-          // duplica el input. `solved: true` en una palabra la pinta fija, sin huecos
-          // (para la que el libro ya trae resuelta, normalmente la 1).
-          num: 6, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          type: "crossword",
-          words: [
-            { num: 1, clue: "Lo que hacen los médicos.", answer: "curar", row: 0, col: 3, dir: "D", solved: true },
-            { num: 2, clue: "Une esta palabra en horizontal.", answer: "cerrar", row: 2, col: 0, dir: "A" }
-          ]
+          num: 6, title: "¿Y a ti?",
+          instr: "Este ejercicio no se corrige: el libro lo da como respuesta libre.",
+          type: "open",
+          html: '<p>¿Qué es lo que más te <i>molesta, fastidia, preocupa, gusta, alegra, sorprende</i>?</p>' +
+            '<p class="pista-gramatical">Lo que más me ______ es que ______.</p>'
         }
       ]
     }
-    // Añade más bloques ({ id, num, title, sub, exercises: [...] }) según haga falta.
   ];
 
   // ---------- render ----------
@@ -1662,7 +1650,7 @@
   });
 
   // ---------- results panel: motivational message + send to teacher ----------
-  const TITLE_LABEL = "{{TITLE_LABEL}}"; // short label used in email subject / summary header
+  const TITLE_LABEL = "Cuaderno B1 · 6A Ecológicamente correcto"; // short label used in email subject / summary header
   // These are Angel's real, reusable contact details — copy verbatim into every new
   // exercise unless he says they changed. IMPORTANT: telegram MUST be his @username
   // (no @, no phone number) — t.me/+<phone> links silently ignore ?text= and never
