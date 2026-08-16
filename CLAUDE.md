@@ -82,6 +82,43 @@ como referencia para una clase, usar `/graphify add <url>` para meterlo
 directo en el corpus del grafo de conocimiento en vez de copiar el
 contenido a mano — ver la sección `## graphify` más abajo.
 
+### Procesar PDFs escaneados: OCR local antes que visión
+
+Cuando el profesor envíe un PDF/foto para transcribir (capítulos de
+`docencia-espanol/fuentes/`, documentos como el del consulado, etc.),
+seguir este orden — ahorra tokens porque evita transcribir la imagen
+desde cero:
+
+1. **`pdftotext archivo.pdf -`** primero, siempre. Si el PDF ya tiene
+   texto real (no es una foto/escaneo), listo — no hace falta leer
+   ninguna imagen.
+2. **Si no hay texto** (PDF escaneado): renderizar la página con
+   `pdftoppm -png -r 150 -f N -l N archivo.pdf salida` y pasarla por
+   `tesseract salida-N.png stdout -l spa` (o `-l rus` si el documento
+   está en ruso, como las cartas del consulado) para obtener un borrador
+   gratis y local. 150 DPI es suficiente para OCR y evita el error de
+   "imagen demasiado grande" que da tesseract a 300 DPI en páginas
+   grandes.
+3. **Verificar el borrador contra la imagen** en vez de transcribir en
+   blanco — leer la imagen solo para corregir, no para transcribir
+   desde cero. Mucho más barato en tokens.
+4. **Para dibujos, crucigramas o manuscrito** (donde el OCR no aporta
+   nada): saltar el paso 2 y leer la imagen directamente, pero solo esas
+   páginas específicas, no el PDF completo.
+
+**Para extraer imágenes ya incrustadas** en un PDF (ilustraciones dentro
+de un documento digital, no una página entera escaneada): usar
+`pdfimages -all archivo.pdf prefijo` — las saca a archivos directamente,
+sin IA de por medio, cero tokens.
+
+**Auto-instalación (el contenedor es efímero, esto no persiste solo):**
+si `tesseract`/`pdftotext`/`pdftoppm`/`pdfimages` no existen al empezar,
+instalarlos con
+`apt-get install -y poppler-utils tesseract-ocr tesseract-ocr-spa tesseract-ocr-rus`
+antes de usarlos — igual que `graphify` se auto-instala solo si falta.
+No asumir que ya están ahí solo porque lo estuvieron en una sesión
+anterior.
+
 ## Nombre del profesor: sin tilde
 
 El nombre del usuario/profesor es **Angel Luis Acosta González**.
