@@ -45,31 +45,39 @@ depender de acordarse.
 **Cómo probarlo:** ya está activo — se ve solo al final de cualquier
 turno con cambios pendientes.
 
-### Anotado, no aplicado: hooks para reglas duras, no solo CLAUDE.md
+### Aplicado (tras profundizar): hook que bloquea merge sin revisión
 
-**Qué es:** hallazgo de una búsqueda general (no una fuente única
-citable): las instrucciones de `CLAUDE.md` se siguen ~70% de las veces
-según reportan varios desarrolladores — aceptable para preferencias de
-estilo, pero arriesgado para reglas críticas tipo "nunca fusionar sin
-revisión". Un hook sí garantiza el 100%, porque es determinista, no una
-instrucción que el modelo pueda pasar por alto.
+**Qué es:** hallazgo de una búsqueda general: las instrucciones de
+`CLAUDE.md` se siguen ~70% de las veces según reportan varios
+desarrolladores — aceptable para preferencias de estilo, arriesgado
+para reglas críticas. Un hook sí garantiza el 100%, porque es
+determinista. Implementado como `check-pr-review.sh`
+(`PreToolUse`, matcher `mcp__github__merge_pull_request`,
+ver `.claude/settings.json`): bloquea la llamada de fusión si no
+encuentra, para ese PR exacto, un marcador escrito en los últimos 60
+minutos por `.claude/hooks/mark-pr-reviewed.sh` (documentado como paso
+obligatorio en la regla dura de `CLAUDE.md`).
 
-**Por qué le sirve a Angel:** este repo tiene una regla dura exacta de
-ese tipo ("nunca hacer merge sin revisión independiente previa",
-`CLAUDE.md`) y además usa `defaultMode: dontAsk`, que quita el
-cortafuegos de permisos interactivo por completo. Hoy esa regla se
-cumplió siempre porque se le puso énfasis fuerte ("Regla dura, sin
-excepciones") y porque la seguí con disciplina turno a turno — pero
-nada la hace estructuralmente imposible de saltarse en una sesión
-futura.
+**Por qué le sirve a Angel:** este repo tiene esa regla dura exacta
+("nunca fusionar sin revisión") y además usa `defaultMode: dontAsk`,
+que quita el cortafuegos de permisos interactivo por completo — así que
+antes no había ninguna red de seguridad técnica, solo disciplina de
+turno a turno. Verificado en vivo (probando las 4 combinaciones: sin
+marcador, marcador fresco, marcador viejo, `pullNumber` ausente) que el
+hook responde como se espera en cada caso.
 
-**Por qué no se aplicó ya:** un hook que bloquee de verdad el merge sin
-revisión necesitaría alguna forma de que la skill de revisión deje
-constancia verificable (ej. un archivo marcador) que el hook pueda
-comprobar antes de permitir `merge_pull_request` — eso significa tocar
-también cómo se invoca la skill `code-review`, no es un cambio trivial
-de una tarde. Queda anotado para diseñarlo con calma si Angel lo quiere,
-en vez de montar algo a medias bajo prisa.
+**Límites honestos, para que no se lea como más de lo que es:**
+- No verifica la calidad de la revisión, solo que el paso de "dejar
+  constancia" ocurrió hace poco para ese número de PR — el hook no
+  tiene credenciales de GitHub propias para comparar contra el SHA en
+  vivo del PR.
+- No protege contra que yo decida ignorar mis propias reglas a
+  propósito (soy quien escribe el marcador) — el problema real que
+  ataca es el olvido bajo sesión larga, que es justo lo que reporta el
+  hallazgo del 70%, y es exactamente lo que me pasó hoy mismo con el
+  trigger de Groq que se me olvidó crear.
+- El marcador vive en `.claude/.pr-review-state/` (gitignored, estado
+  de sesión efímero, no versionado).
 
 ### Anotado, no aplicado: patrones de `awattar/claude-code-best-practices`
 
