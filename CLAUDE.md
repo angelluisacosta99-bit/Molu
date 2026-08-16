@@ -77,6 +77,11 @@ le vuelven a pedir fotos de algo ya transcrito.** Y todo lo que se
 transcriba de nuevo se archiva ahí (ver el paso 8 de la skill
 `ejercicio-interactivo`).
 
+Si el profesor comparte un enlace externo (un artículo, un vídeo, un PDF)
+como referencia para una clase, usar `/graphify add <url>` para meterlo
+directo en el corpus del grafo de conocimiento en vez de copiar el
+contenido a mano — ver la sección `## graphify` más abajo.
+
 ## Nombre del profesor: sin tilde
 
 El nombre del usuario/profesor es **Angel Luis Acosta González**.
@@ -128,9 +133,25 @@ This project has a knowledge graph at graphify-out/ with god nodes, community st
 
 Rules:
 - For codebase questions, first run `graphify query "<question>"` when graphify-out/graph.json exists. Use `graphify path "<A>" "<B>"` for relationships and `graphify explain "<concept>"` for focused concepts. These return a scoped subgraph, usually much smaller than GRAPH_REPORT.md or raw grep output.
-- If graphify-out/wiki/index.md exists, use it for broad navigation instead of raw source browsing.
+- If graphify-out/wiki/index.md exists, use it for broad navigation instead of raw source browsing. Regenerar con `graphify export wiki` tras cambios grandes en el grafo (no lo actualiza ningún hook automáticamente). Si `graphify-out/.graphify_labels.json` no existe en la sesión (es intermedio, no se versiona), reconstruirlo primero a partir del campo `community_name` que ya trae cada nodo de `graph.json` — si no, la wiki sale con nombres de comunidad genéricos en vez de los curados.
 - Read graphify-out/GRAPH_REPORT.md only for broad architecture review or when query/path/explain do not surface enough context.
 - After modifying code, run `graphify update .` to keep the graph current (AST-only, no API cost).
+- Tras responder con `graphify query`/`path`/`explain`, guardar el resultado con
+  `graphify save-result --question "..." --answer "..." --type query --nodes N1 N2 --outcome useful|dead_end|corrected`
+  (y `--correction "..."` si se corrige algo). Esto alimenta
+  `graphify-out/reflections/LESSONS.md` — fuentes preferidas, caminos muertos
+  a evitar, y correcciones previas. Al empezar a trabajar con el grafo, correr
+  `graphify reflect --if-stale` (barato, determinista, sin LLM) y leer ese
+  archivo antes de repetir una búsqueda ya hecha.
+- `/graphify add <url>` mete una URL directo al corpus (YouTube, artículos,
+  PDFs, tuits, arXiv) y actualiza el grafo — preferible a copiar contenido a
+  mano cuando se referencia un recurso externo, sobre todo para
+  docencia-espanol (ver esa sección más abajo).
+- Si `GRAPH_REPORT.md` muestra nombres de comunidad genéricos (nombre de
+  archivo/función en vez de un nombre curado) después de varios rebuilds de
+  código, es la señal de que toca recurar con `graphify label` — necesita un
+  backend LLM (Gemini o Groq, ver la sección de abajo) o, si no hay ninguno
+  configurado, repetir el proceso manual del Step 5 de la skill.
 
 ### Extracción semántica: orden de prioridad Gemini → Groq → subagentes
 
