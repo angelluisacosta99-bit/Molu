@@ -318,20 +318,35 @@ desactivarlas y depender solo del registro versionado.
 nada por Angel.** Ninguna herramienta disponible conecta un conector
 MCP ni instala un plugin de forma silenciosa en su cuenta — es una
 barrera de la plataforma (conectores requieren su login/autorización;
-plugins requieren que él pulse la tarjeta). Así que cada hallazgo nuevo
-que se añada al registro debe ir acompañado, en el mismo turno, de:
+plugins requieren que él pulse la tarjeta). Esto solo aplica a
+hallazgos que sean **conectores MCP o plugins concretos** (con
+`directoryUuid`/`pluginId` real) — no a los otros tipos que cubre este
+radar (funciones nativas de Claude Code, skills, modelos, o cosas como
+un marketplace en sí, que no tienen tarjeta de instalación propia; esos
+se documentan en prosa igual que hasta ahora, no hay herramienta
+`Suggest*` para ellos). Para los que sí aplica, cada hallazgo nuevo que
+se añada al registro debe ir acompañado, en el mismo turno, de:
 - `SearchMcpRegistry` → `SuggestConnectors` con el `directoryUuid` real,
   para conectores MCP.
 - `SearchPlugins` → `SuggestPluginInstall` con el `pluginId` real, para
   plugins.
 
-Nunca limitarse a describir la herramienta en texto y dejar que Angel
-la busque él mismo — la tarjeta es el mecanismo real de instalación de
-un clic, describirla sin la tarjeta es un trabajo a medias.
+Nunca limitarse a describir un conector o plugin en texto y dejar que
+Angel lo busque él mismo — la tarjeta es el mecanismo real de
+instalación de un clic, describirlo sin la tarjeta es un trabajo a
+medias.
 
-**Antes de volver a sugerir algo ya registrado**, comprobar con
-`ListConnectors`/`ListPlugins` si Angel ya lo activó desde la vez
-anterior. Si ya está activo, no repetir la sugerencia — en su lugar,
-marcar esa entrada de `novedades.md` como adoptada (una línea al final
-de la entrada, ej. "✅ Activado el AAAA-MM-DD") en vez de dejarla como
-pendiente para siempre.
+**Antes de volver a mencionar un conector/plugin ya registrado**,
+comprobar con `ListConnectors`/`ListPlugins` si Angel ya lo activó
+desde la vez anterior:
+- **Ya activo:** marcar esa entrada de `novedades.md` como adoptada
+  (una línea al final, ej. "✅ Activado el AAAA-MM-DD") y no volver a
+  mencionarla.
+- **Todavía no activo:** no insistir cada semana — Angel ya vio la
+  tarjeta la primera vez y decide él cuándo actuar. No tocar la entrada
+  ni volver a mostrar la tarjeta, salvo que haya algo *nuevo* que añadir
+  sobre esa herramienta concreta.
+- **Estado desconocido** (`connected`/estado nulo porque la
+  comprobación de la plataforma falló esa semana, no porque Angel no lo
+  haya activado): no asumir que sigue sin activar. Dejar la entrada tal
+  cual y probar de nuevo en la siguiente pasada.
