@@ -12,11 +12,13 @@ Routine semanal de Claude Code (ver `## Radar de herramientas de IA` en
   inverso — lo más reciente primero).
 - Antes de añadir una entrada, revisar que no esté ya aquí, para no
   repetir la misma recomendación dos veces.
-- Solo se registra lo que parece genuinamente útil para el trabajo real
-  de este repo (docencia de español, traducción, Python, telecomunicaciones,
-  el máster) — no un volcado de todo lo que existe en el mercado.
 - Formato por entrada: qué es, por qué le sirve a Angel en concreto, y
   cómo activarlo o probarlo.
+
+El criterio de qué cuenta como "relevante" (para no acabar volcando aquí
+todo lo que existe en el mercado) vive en `CLAUDE.md`, sección
+`## Radar de herramientas de IA` — no se repite aquí para no tener dos
+copias que puedan desincronizarse.
 
 ---
 
