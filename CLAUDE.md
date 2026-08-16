@@ -167,16 +167,21 @@ En `.claude/settings.local.json` (nunca en Git) puede haber:
   lista real es `gemini|kimi|openai|deepseek|claude-cli`, ver
   `references/github-and-merge.md`), pero el SDK de OpenAI que usa por
   debajo lee `OPENAI_API_KEY`/`OPENAI_BASE_URL` de forma nativa.
-  `OPENAI_MODEL` no es del SDK — verificado en vivo que graphify sí la
-  lee, pero no contra su código fuente; si un día no surte efecto,
-  probar `GRAPHIFY_OPENAI_MODEL` (el prefijo que sí documenta el resto
-  de overrides de modelo de esta skill: `GRAPHIFY_GEMINI_MODEL` en
-  SKILL.md:162, `GRAPHIFY_WHISPER_MODEL` en `references/transcribe.md`).
+  `OPENAI_MODEL` no es una variable del SDK (el SDK de OpenAI no lee el
+  modelo del entorno, se pasa explícito en cada llamada) — que graphify
+  sí la lea está verificado en vivo (llamada real de chat completion
+  contra Groq con las tres variables puestas así) pero no contra su
+  código fuente; si un día no surte efecto, probar `GRAPHIFY_OPENAI_MODEL`
+  (el prefijo que sí documenta el resto de overrides de modelo de esta
+  skill: `GRAPHIFY_GEMINI_MODEL` en SKILL.md:162, `GRAPHIFY_WHISPER_MODEL`
+  en `references/transcribe.md`).
 
-**Orden obligatorio, anulando la autodetección de
-`.claude/skills/graphify/SKILL.md` (líneas 157, 164 — dice que no lee
-`OPENAI_API_KEY` y que sin Gemini cae a subagentes; eso describe su
-comportamiento por defecto, no un límite real de graphify):**
+**Orden obligatorio para la extracción semántica (docs, papers,
+imágenes) de `/graphify`, anulando la autodetección de
+`.claude/skills/graphify/SKILL.md` (líneas 157, 164 — dice, citando
+textual, que graphify "no lee `OPENAI_API_KEY` ni ninguna otra key" y
+que sin Gemini cae a subagentes; eso describe su comportamiento por
+defecto, no un límite real de graphify):**
 
 1. **Gemini primero**, sin cambios, si `GEMINI_API_KEY`/`GOOGLE_API_KEY`
    está puesta.
@@ -204,9 +209,11 @@ comportamiento por defecto, no un límite real de graphify):**
    fresca, no incremental, y podría reprocesar contra Groq lo que Gemini
    ya resolvió. No hace falta tocar `settings.local.json` — solo forzar
    el backend en la llamada puntual.
-3. **Subagentes de Claude, solo como último recurso** — si ni Gemini ni
-   Groq están configuradas o ambas se agotaron. Es lo único que gasta
-   tokens de Claude aquí.
+3. **Subagentes de Claude, solo como último recurso** — únicamente si
+   ni Gemini ni Groq están configuradas, o ambas se agotaron y aun así
+   quedan archivos pendientes. Es lo único que gasta tokens de Claude en
+   esta extracción, así que es intencionalmente la última opción, no la
+   primera alternativa a Gemini.
 
 **Nunca pegar una API key en el chat ni en una captura.** Si pasa,
 rotarla ya en la consola del proveedor — quedar expuesta en una
@@ -247,8 +254,9 @@ conversación cuenta como comprometida aunque el archivo esté fuera de Git.
 Una Routine semanal (`trig_01Jx2UqBq8ezuTzpknMj7SAW`, configurada fuera
 del repo vía `create_trigger`) busca novedades para el trabajo de Angel:
 funciones nuevas de Claude Code, skills, plugins, conectores MCP,
-modelos, terceros (como graphify), **y estrategias/buenas prácticas de
-uso** — cómo sacarle más partido a Claude Code (gestión de contexto,
+modelos, terceros (como graphify, que Angel encontró navegando por su
+cuenta antes de que existiera este radar), **y estrategias/buenas
+prácticas de uso** — cómo sacarle más partido a Claude Code (gestión de contexto,
 subagentes, hooks, automatización) de fuentes como
 `code.claude.com/docs/en/best-practices` y el canal oficial de Anthropic
 (igual criterio de relevancia de abajo decide si algo encontrado por
@@ -270,15 +278,15 @@ lleva tarjeta — se aplica directamente si es claramente buena (ej.
 podar este archivo, ajustar cómo delego en subagentes) y se anota en
 `novedades.md` en una línea.
 
-**Relevancia:** debe resolver una necesidad real de una carpeta del
-repo o del propio flujo de Claude Code aquí — no volcar todo el
-mercado. Sin hallazgos, no se toca el registro ni se crea rama/PR, y el
-mensaje final lo dice explícito. Eso sí lo controla este repo; lo que
-no: la Routine tiene notificaciones push/email a nivel de plataforma
-("cuando termine con algo que merezca la pena"), criterio que decide la
-plataforma, no este texto — una pasada en blanco podría igual notificar
-"corrida completada". Si molesta, desactivar `notifications` en el
-trigger.
+**Relevancia:** debe resolver una necesidad real de una carpeta de
+primer nivel del repo o del propio flujo de Claude Code aquí — no
+volcar todo el mercado. Sin hallazgos, no se toca el registro ni se
+crea rama/PR, y el mensaje final lo dice explícito. Eso sí lo controla
+este repo; lo que no: la Routine tiene notificaciones push/email a
+nivel de plataforma ("cuando termine con algo que merezca la pena"),
+criterio que decide la plataforma, no este texto — una pasada en blanco
+podría igual notificar "corrida completada". Si molesta, desactivar
+`notifications` en el trigger y depender solo del registro versionado.
 
 **Proponer instalación con tarjeta, nunca instalar por Angel** (barrera
 de plataforma: conectores piden su login, plugins/skills su clic).
