@@ -569,6 +569,45 @@ no las deshagas sin querer al modificar la plantilla.
   garantizado correcto por construcción, que es lo que de verdad importa en un ejercicio
   que se publica para que un alumno lo resuelva.
 
+- **"Relaciona" con columnas de verdad (`type: "match"`), añadido tras la unidad 6 de B1.**
+  Hasta entonces, un ejercicio de "relaciona" (verbo → final, columna A → columna B) se
+  resolvía escribiendo la letra/número de la pareja en un hueco de texto (ver 6A ej. 2 y 6B
+  ej. 3, que se quedaron así — no se retocaron). Funcionaba, pero tenía dos problemas: no
+  se parecía en nada al ejercicio real del libro (tocar/unir), y obligaba a aceptar un
+  montón de variantes de tecleo para la misma respuesta (`"d, 2"`, `"d,2"`, `"d 2"`, `"d2"`)
+  porque `norm()` quita comas y puntos pero no espacios internos, así que dos formas
+  "iguales" a ojo no siempre normalizan a la misma cadena.
+  El profesor pidió una interacción de tocar-para-conectar en vez de otra ronda de aceptar
+  variantes de texto. `ex.columns` es un array de columnas (`{ label, items: [...] }`);
+  `columns[0]` es la columna ancla, fija, una por fila — las demás son elegibles. `ex.rows`
+  es paralelo a `columns[0].items`: `{ solved: true }` para una fila ya resuelta en el
+  libro (sin huecos, sin botones), o `{ a: [spec1, spec2, ...] }` con un spec de
+  `isCorrect()` por cada columna elegible, en orden. Se toca primero un elemento de la
+  columna ancla (se arma, queda resaltado en dorado) y luego su pareja en la columna
+  siguiente: se guarda en un `input type="hidden"` (el mismo truco que ya usaba el V/F de
+  "items" para que `gradeRange`/gradeRange lo trate exactamente igual que cualquier otro
+  hueco de texto) y se dibuja una línea de color entre ambos con un `<svg>` superpuesto a
+  `.match-wrap`. Con 3 columnas la interacción encadena: primero columna ancla → columna 1,
+  y sin desarmar la fila, columna 1 → columna 2 (la línea sigue el camino elegido tramo a
+  tramo). Una opción solo puede pertenecer a una fila a la vez — tocarla desde otra fila se
+  la quita a la que la tenía antes, para que no se pueda "hacer trampa" repitiendo la misma
+  pareja en dos sitios.
+  **Trampa de timing que costó encontrar:** `getBoundingClientRect()` de las fichas da
+  0,0,0,0 si se llama durante la propia construcción del ejercicio, porque `<section>` del
+  bloque todavía no está insertado en `#main` en ese momento (se inserta una vez por
+  bloque, al final de `block.exercises.forEach`, no ejercicio a ejercicio). La función
+  `drawLines()` de cada ejercicio "match" se guarda en un array (`pendingMatchDraws`) y se
+  llama a TODAS una sola vez, justo después de que `blocks.forEach(...)` termina — ahí el
+  documento ya tiene el layout real. Un solo listener de `resize` (no uno por ejercicio)
+  las vuelve a llamar si la ventana cambia de tamaño.
+  `extraer.mjs` no sabía leer esto (no hay `.item-row` ni `.reveal` por celda): como el
+  archivador nunca toca los botones (solo rellena `input.blank` de texto y pulsa
+  "Corregir"), cada fila de "match" llega sin ninguna opción elegida — exactamente el caso
+  que hace que `ex._onGraded()` rellene su `.match-row-reveal` con la respuesta completa,
+  el mismo mecanismo que ya usaba el crucigrama para su reveal-junto-a-la-definición. El
+  archivador solo tiene que leer `.match-anchor`/`.match-solved` + el `.match-row-reveal`
+  siguiente, si lo hay.
+
 ### Canal por canal (la parte que más costó)
 
 Cada botón de "enviar al profesor" tuvo su propia trampa específica de plataforma. La regla

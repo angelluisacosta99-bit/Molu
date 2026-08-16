@@ -305,6 +305,28 @@ const md = await page.evaluate(() => {
         push();
       }
 
+      // Relaciona con columnas (type: "match"): no hay .item-row que recorrer, sus filas
+      // son botones .match-anchor/.match-solved dentro de la primera .match-col. Como no
+      // se toca nada al extraer, cada fila no resuelta llega marcada "incorrecta" sin
+      // ninguna opción elegida — exactamente lo que hace falta para que el motor rellene
+      // su .match-row-reveal con la respuesta correcta completa, igual que .reveal en
+      // los demás tipos. Una fila resuelta no lleva .match-row-reveal: se archiva tal
+      // cual su propio texto, que ya trae la resolución (convención de "items"/solved).
+      const mw = ex.querySelector(".match-wrap");
+      if (mw) {
+        const anchorCol = mw.querySelector(".match-col");
+        const anchors = anchorCol ? [...anchorCol.querySelectorAll(".match-anchor, .match-solved")] : [];
+        anchors.forEach((a, i) => {
+          push((i + 1) + ". " + clean(a.textContent));
+          const reveal = a.nextElementSibling;
+          if (reveal && reveal.classList.contains("match-row-reveal")) {
+            const t = clean(reveal.textContent);
+            if (t) push("   " + t);
+          }
+        });
+        push();
+      }
+
       // Transcripción del audio (plegada en el artefacto). Es contenido del libro, así que
       // tiene que quedar archivado igual que lo demás — si no, este archivo dejaría de ser
       // suficiente para reconstruir el capítulo sin volver al PDF.
