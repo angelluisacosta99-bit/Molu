@@ -1,14 +1,10 @@
-# Repo Navigation Docs
+# Repo Navigation Docs (4)
 
-> 5 nodes
+> 1 nodes
 
 ## Key Concepts
 
-- **Máster en Sistemas Inteligentes overview** (3 connections) — `master-sistemas-inteligentes/README.md`
-- **Telecomunicaciones overview** (2 connections) — `telecomunicaciones/README.md`
-- **aprendizaje-automatico/ subfolder (ejemplo)** (1 connections) — `master-sistemas-inteligentes/README.md`
-- **procesamiento-lenguaje-natural/ subfolder (ejemplo)** (1 connections) — `master-sistemas-inteligentes/README.md`
-- **Ferroviario overview** (1 connections) — `telecomunicaciones/ferroviario/README.md`
+- **Molu — README del repositorio** (0 connections) — `README.md`
 
 ## Relationships
 
@@ -16,14 +12,12 @@
 
 ## Source Files
 
-- `master-sistemas-inteligentes/README.md`
-- `telecomunicaciones/README.md`
-- `telecomunicaciones/ferroviario/README.md`
+- `README.md`
 
 ## Audit Trail
 
-- EXTRACTED: 3 (75%)
-- INFERRED: 1 (25%)
+- EXTRACTED: 0 (0%)
+- INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 
 ---

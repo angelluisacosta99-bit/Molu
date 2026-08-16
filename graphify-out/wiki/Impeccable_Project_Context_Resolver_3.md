@@ -1,4 +1,4 @@
-# Impeccable Project Context Resolver
+# Impeccable Project Context Resolver (3)
 
 > 12 nodes
 
@@ -19,8 +19,10 @@
 
 ## Relationships
 
-- [Impeccable Project Context Resolver](Impeccable_Project_Context_Resolver.md) (19 shared connections)
+- [Impeccable Project Context Resolver (1)](Impeccable_Project_Context_Resolver_1.md) (13 shared connections)
+- [Impeccable Project Context Resolver (2)](Impeccable_Project_Context_Resolver_2.md) (4 shared connections)
 - [Impeccable Live Command Entry](Impeccable_Live_Command_Entry.md) (2 shared connections)
+- [Impeccable Project Context Resolver (5)](Impeccable_Project_Context_Resolver_5.md) (2 shared connections)
 - [Impeccable Path Resolution](Impeccable_Path_Resolution.md) (1 shared connections)
 
 ## Source Files

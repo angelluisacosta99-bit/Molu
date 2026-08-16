@@ -41,7 +41,7 @@
 - [Impeccable Live Insert UI](Impeccable_Live_Insert_UI.md) (3 shared connections)
 - [Impeccable Path Resolution](Impeccable_Path_Resolution.md) (3 shared connections)
 - [Impeccable Live Wrap Mode](Impeccable_Live_Wrap_Mode.md) (2 shared connections)
-- [Impeccable CSS Cascade Resolver](Impeccable_CSS_Cascade_Resolver.md) (1 shared connections)
+- [Impeccable CSS Cascade Resolver (1)](Impeccable_CSS_Cascade_Resolver_1.md) (1 shared connections)
 
 ## Source Files
 

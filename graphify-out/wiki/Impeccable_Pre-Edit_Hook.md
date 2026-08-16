@@ -33,7 +33,10 @@
 
 ## Relationships
 
-- [Impeccable Hook Library](Impeccable_Hook_Library.md) (29 shared connections)
+- [Impeccable Hook Library (1)](Impeccable_Hook_Library_1.md) (14 shared connections)
+- [Impeccable Hook Library (2)](Impeccable_Hook_Library_2.md) (9 shared connections)
+- [Impeccable Hook Library (3)](Impeccable_Hook_Library_3.md) (4 shared connections)
+- [Impeccable Hook Library (4)](Impeccable_Hook_Library_4.md) (2 shared connections)
 - [Impeccable Hook Admin CLI](Impeccable_Hook_Admin_CLI.md) (2 shared connections)
 
 ## Source Files

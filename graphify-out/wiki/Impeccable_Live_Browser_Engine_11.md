@@ -1,23 +1,26 @@
-# Impeccable Live Browser Engine
+# Impeccable Live Browser Engine (11)
 
 > 10 nodes
 
 ## Key Concepts
 
-- **syncEditBadgeHitProxies()** (8 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **initEditBadgeHitProxies()** (5 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **positionEditBadge()** (4 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **usesShadowChromeRoot()** (4 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **bindEditBadgeProxy()** (3 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **editBadgeProxyTargets()** (3 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **initEditBadge()** (3 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **setImportantStyle()** (3 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **styleEditBadgeProxy()** (3 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **proxyMouseEvent()** (2 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **scheduleSteerFocusRecover()** (7 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **shouldFocusSteerChat()** (7 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **attachSteerFocusGuard()** (6 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **shouldSteerAutoFocus()** (5 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **isPageEditableActive()** (4 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **pageHasHostTextSelection()** (4 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **clearSteerFocusRecoverTimer()** (3 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **isInlineEditActive()** (3 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **isPageEditableElement()** (3 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **notePagePointerDown()** (3 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
 
 ## Relationships
 
-- [Impeccable Live Browser Engine](Impeccable_Live_Browser_Engine.md) (14 shared connections)
+- [Impeccable Live Browser Engine (1)](Impeccable_Live_Browser_Engine_1.md) (10 shared connections)
+- [Impeccable Live Browser Engine (4)](Impeccable_Live_Browser_Engine_4.md) (5 shared connections)
+- [Impeccable Live Browser Engine (5)](Impeccable_Live_Browser_Engine_5.md) (4 shared connections)
+- [Impeccable Live Browser Engine (8)](Impeccable_Live_Browser_Engine_8.md) (2 shared connections)
 
 ## Source Files
 
@@ -25,7 +28,7 @@
 
 ## Audit Trail
 
-- EXTRACTED: 26 (100%)
+- EXTRACTED: 33 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

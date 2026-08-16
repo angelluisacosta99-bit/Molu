@@ -32,15 +32,15 @@
 - [Impeccable Live Mode Server](Impeccable_Live_Mode_Server.md) (11 shared connections)
 - [Impeccable Live Session Resume](Impeccable_Live_Session_Resume.md) (8 shared connections)
 - [Impeccable Manual Edit Apply](Impeccable_Manual_Edit_Apply.md) (4 shared connections)
-- [Impeccable Project Context Resolver](Impeccable_Project_Context_Resolver.md) (3 shared connections)
 - [Impeccable Critique Storage](Impeccable_Critique_Storage.md) (3 shared connections)
 - [Impeccable Live Session Store](Impeccable_Live_Session_Store.md) (3 shared connections)
 - [Impeccable Manual Edits Buffer](Impeccable_Manual_Edits_Buffer.md) (3 shared connections)
 - [Impeccable Target Args Parsing](Impeccable_Target_Args_Parsing.md) (2 shared connections)
+- [Impeccable Project Context Resolver (1)](Impeccable_Project_Context_Resolver_1.md) (2 shared connections)
 - [Impeccable Live Script Injection](Impeccable_Live_Script_Injection.md) (2 shared connections)
+- [Impeccable Project Context Resolver (3)](Impeccable_Project_Context_Resolver_3.md) (1 shared connections)
 - [Impeccable Context Signal Detection](Impeccable_Context_Signal_Detection.md) (1 shared connections)
 - [Impeccable Live Command Entry](Impeccable_Live_Command_Entry.md) (1 shared connections)
-- [Impeccable Live Session Polling](Impeccable_Live_Session_Polling.md) (1 shared connections)
 
 ## Source Files
 

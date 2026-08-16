@@ -2,7 +2,7 @@
 
 > God node · 26 connections · `.claude/skills/impeccable/scripts/detector/detect-antipatterns-browser.js`
 
-**Community:** [Impeccable Browser Antipattern Bundle](Impeccable_Browser_Antipattern_Bundle.md)
+**Community:** [Impeccable Browser Antipattern Bundle (7)](Impeccable_Browser_Antipattern_Bundle_7.md)
 
 ## Connections by Relation
 

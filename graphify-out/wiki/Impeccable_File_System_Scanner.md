@@ -34,11 +34,12 @@
 ## Relationships
 
 - [Impeccable Text Antipattern Detector](Impeccable_Text_Antipattern_Detector.md) (36 shared connections)
-- [Impeccable Design Antipattern Checks](Impeccable_Design_Antipattern_Checks.md) (18 shared connections)
 - [Impeccable Design System Detector](Impeccable_Design_System_Detector.md) (16 shared connections)
 - [Impeccable Shared Constants](Impeccable_Shared_Constants.md) (16 shared connections)
+- [Impeccable Design Antipattern Checks (1)](Impeccable_Design_Antipattern_Checks_1.md) (9 shared connections)
+- [Impeccable Design Antipattern Checks (2)](Impeccable_Design_Antipattern_Checks_2.md) (9 shared connections)
 - [Impeccable Config Management](Impeccable_Config_Management.md) (7 shared connections)
-- [Impeccable CSS Cascade Resolver](Impeccable_CSS_Cascade_Resolver.md) (4 shared connections)
+- [Impeccable CSS Cascade Resolver (1)](Impeccable_CSS_Cascade_Resolver_1.md) (4 shared connections)
 - [Impeccable Inline Ignore Comments](Impeccable_Inline_Ignore_Comments.md) (2 shared connections)
 
 ## Source Files

@@ -1,39 +1,49 @@
-# Impeccable Live Browser Engine
+# Impeccable Live Browser Engine (4)
 
-> 65 nodes
+> 50 nodes
 
 ## Key Concepts
 
-- **resumeSession()** (25 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **connectSSE()** (23 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **injectVariantsFromSource()** (22 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **startVariantObserver()** (22 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **injectSvelteComponentsFromManifest()** (20 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **restoreSessionWithoutWrapper()** (16 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **refreshParamsPanel()** (14 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **disableInlineEdit()** (13 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **saveSession()** (13 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **showOrUpdateCyclingBar()** (12 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **tick()** (11 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **positionBar()** (10 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **selectVariant()** (10 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **showVariantInDOM()** (10 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **buildParamsPanel()** (9 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **ensureInsertPlaceholder()** (9 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **enterRecoveryWaitingForAnchor()** (9 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **mountSvelteComponentVariant()** (9 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **queueCheckpoint()** (9 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **hideShaderOverlay()** (8 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **startScrollTracking()** (8 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **maybeCompleteAcceptedSession()** (7 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **positionParamsPanel()** (7 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **rememberSessionFileMeta()** (7 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **resolveBarAnchor()** (7 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- *... and 40 more nodes in this community*
+- **setLiveState()** (29 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **handleKeyDown()** (26 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **handleClick()** (23 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **hideBar()** (19 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **renderEditBadge()** (19 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **showManualApplyBusyToast()** (19 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **syncPageChatFocus()** (17 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **cleanup()** (16 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **cancelInsertConfigure()** (15 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **toggleInsert()** (13 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **togglePick()** (13 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **abortSvelteComponentInjection()** (12 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **cancelEditingToPicking()** (12 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **handleAccept()** (12 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **hideHighlight()** (12 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **updateGlobalBarState()** (12 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **cleanupAcceptedSession()** (11 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **handleServerLost()** (11 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **clearAnnotations()** (10 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **refreshLiveControlsForManualApply()** (10 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **cancelEditing()** (9 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **exitConfigureToPicking()** (9 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **hideActionPicker()** (9 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **hideAnnotOverlay()** (9 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **teardownConfigureChrome()** (9 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- *... and 25 more nodes in this community*
 
 ## Relationships
 
-- [Impeccable Live Browser Engine](Impeccable_Live_Browser_Engine.md) (164 shared connections)
+- [Impeccable Live Browser Engine (1)](Impeccable_Live_Browser_Engine_1.md) (61 shared connections)
+- [Impeccable Live Browser Engine (2)](Impeccable_Live_Browser_Engine_2.md) (38 shared connections)
+- [Impeccable Live Browser Engine (3)](Impeccable_Live_Browser_Engine_3.md) (22 shared connections)
+- [Impeccable Live Browser Engine (8)](Impeccable_Live_Browser_Engine_8.md) (22 shared connections)
+- [Impeccable Live Browser Engine (5)](Impeccable_Live_Browser_Engine_5.md) (16 shared connections)
+- [Impeccable Live Browser Engine (7)](Impeccable_Live_Browser_Engine_7.md) (11 shared connections)
+- [Impeccable Live Browser Engine (6)](Impeccable_Live_Browser_Engine_6.md) (6 shared connections)
+- [Impeccable Live Browser Engine (11)](Impeccable_Live_Browser_Engine_11.md) (5 shared connections)
+- [Impeccable Live Browser Engine (9)](Impeccable_Live_Browser_Engine_9.md) (3 shared connections)
+- [Impeccable Live Browser Engine (10)](Impeccable_Live_Browser_Engine_10.md) (2 shared connections)
+- [Impeccable Live Browser Engine (12)](Impeccable_Live_Browser_Engine_12.md) (2 shared connections)
 
 ## Source Files
 
@@ -41,8 +51,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 316 (99%)
-- INFERRED: 2 (1%)
+- EXTRACTED: 327 (98%)
+- INFERRED: 5 (2%)
 - AMBIGUOUS: 0 (0%)
 
 ---

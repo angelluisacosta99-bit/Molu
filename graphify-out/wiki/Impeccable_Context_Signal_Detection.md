@@ -21,9 +21,10 @@
 
 ## Relationships
 
-- [Impeccable Project Context Resolver](Impeccable_Project_Context_Resolver.md) (3 shared connections)
+- [Impeccable Project Context Resolver (1)](Impeccable_Project_Context_Resolver_1.md) (2 shared connections)
 - [Impeccable Live Command Entry](Impeccable_Live_Command_Entry.md) (2 shared connections)
 - [Impeccable Critique Storage](Impeccable_Critique_Storage.md) (2 shared connections)
+- [Impeccable Project Context Resolver (4)](Impeccable_Project_Context_Resolver_4.md) (1 shared connections)
 - [Impeccable Path Resolution](Impeccable_Path_Resolution.md) (1 shared connections)
 
 ## Source Files

@@ -1,4 +1,4 @@
-# Impeccable CSS Cascade Resolver
+# Impeccable CSS Cascade Resolver (1)
 
 > 43 nodes
 
@@ -34,12 +34,13 @@
 ## Relationships
 
 - [Impeccable Shared Constants](Impeccable_Shared_Constants.md) (6 shared connections)
-- [Impeccable Design Antipattern Checks](Impeccable_Design_Antipattern_Checks.md) (6 shared connections)
 - [Impeccable Text Antipattern Detector](Impeccable_Text_Antipattern_Detector.md) (5 shared connections)
+- [Impeccable Design Antipattern Checks (1)](Impeccable_Design_Antipattern_Checks_1.md) (5 shared connections)
 - [Impeccable File System Scanner](Impeccable_File_System_Scanner.md) (4 shared connections)
 - [Impeccable Design System Detector](Impeccable_Design_System_Detector.md) (2 shared connections)
 - [Impeccable Manual Edits Buffer](Impeccable_Manual_Edits_Buffer.md) (1 shared connections)
-- [Impeccable CSS Cascade Resolver](Impeccable_CSS_Cascade_Resolver.md) (1 shared connections)
+- [Impeccable Design Antipattern Checks (2)](Impeccable_Design_Antipattern_Checks_2.md) (1 shared connections)
+- [Impeccable CSS Cascade Resolver (2)](Impeccable_CSS_Cascade_Resolver_2.md) (1 shared connections)
 
 ## Source Files
 

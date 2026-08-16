@@ -1,4 +1,4 @@
-# Impeccable Browser Antipattern Bundle
+# Impeccable Browser Antipattern Bundle (1)
 
 > 43 nodes
 
@@ -33,7 +33,15 @@
 
 ## Relationships
 
-- [Impeccable Browser Antipattern Bundle](Impeccable_Browser_Antipattern_Bundle.md) (142 shared connections)
+- [Impeccable Browser Antipattern Bundle (2)](Impeccable_Browser_Antipattern_Bundle_2.md) (32 shared connections)
+- [Impeccable Browser Antipattern Bundle (3)](Impeccable_Browser_Antipattern_Bundle_3.md) (21 shared connections)
+- [Impeccable Browser Antipattern Bundle (7)](Impeccable_Browser_Antipattern_Bundle_7.md) (19 shared connections)
+- [Impeccable Browser Antipattern Bundle (4)](Impeccable_Browser_Antipattern_Bundle_4.md) (19 shared connections)
+- [Impeccable Browser Antipattern Bundle (5)](Impeccable_Browser_Antipattern_Bundle_5.md) (15 shared connections)
+- [Impeccable Browser Antipattern Bundle (6)](Impeccable_Browser_Antipattern_Bundle_6.md) (13 shared connections)
+- [Impeccable Browser Antipattern Bundle (9)](Impeccable_Browser_Antipattern_Bundle_9.md) (9 shared connections)
+- [Impeccable Browser Antipattern Bundle (8)](Impeccable_Browser_Antipattern_Bundle_8.md) (9 shared connections)
+- [Impeccable Browser Antipattern Bundle (10)](Impeccable_Browser_Antipattern_Bundle_10.md) (5 shared connections)
 
 ## Source Files
 

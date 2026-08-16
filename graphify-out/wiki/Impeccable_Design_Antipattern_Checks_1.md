@@ -1,4 +1,4 @@
-# Impeccable Design Antipattern Checks
+# Impeccable Design Antipattern Checks (1)
 
 > 85 nodes
 
@@ -33,11 +33,11 @@
 
 ## Relationships
 
-- [Impeccable Design Antipattern Checks](Impeccable_Design_Antipattern_Checks.md) (27 shared connections)
+- [Impeccable Design Antipattern Checks (2)](Impeccable_Design_Antipattern_Checks_2.md) (27 shared connections)
 - [Impeccable Shared Constants](Impeccable_Shared_Constants.md) (21 shared connections)
 - [Impeccable Design System Detector](Impeccable_Design_System_Detector.md) (11 shared connections)
 - [Impeccable File System Scanner](Impeccable_File_System_Scanner.md) (9 shared connections)
-- [Impeccable CSS Cascade Resolver](Impeccable_CSS_Cascade_Resolver.md) (5 shared connections)
+- [Impeccable CSS Cascade Resolver (1)](Impeccable_CSS_Cascade_Resolver_1.md) (5 shared connections)
 - [Impeccable Text Antipattern Detector](Impeccable_Text_Antipattern_Detector.md) (2 shared connections)
 
 ## Source Files

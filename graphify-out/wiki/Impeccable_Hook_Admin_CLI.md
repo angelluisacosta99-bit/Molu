@@ -33,7 +33,9 @@
 
 ## Relationships
 
-- [Impeccable Hook Library](Impeccable_Hook_Library.md) (19 shared connections)
+- [Impeccable Hook Library (1)](Impeccable_Hook_Library_1.md) (9 shared connections)
+- [Impeccable Hook Library (4)](Impeccable_Hook_Library_4.md) (5 shared connections)
+- [Impeccable Hook Library (3)](Impeccable_Hook_Library_3.md) (5 shared connections)
 - [Impeccable Pre-Edit Hook](Impeccable_Pre-Edit_Hook.md) (2 shared connections)
 
 ## Source Files

@@ -1,39 +1,47 @@
-# Impeccable Live Browser Engine
+# Impeccable Live Browser Engine (5)
 
-> 29 nodes
+> 45 nodes
 
 ## Key Concepts
 
-- **handleGo()** (21 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **handleInsertCreate()** (19 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **captureElementToBlob()** (15 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **showShaderOverlay()** (8 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **captureAndEmit()** (6 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **sendCheckpoint()** (6 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **startScrollLock()** (6 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **captureElementFromRenderedAncestor()** (5 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **extractContext()** (5 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **isTransparentColor()** (5 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **resolvePaperRgb()** (5 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **paintsBackdrop()** (4 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **paintsShaderProxySurface()** (4 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **writeScrollY()** (4 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **averageRgb01()** (3 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **cssColorToRgb01()** (3 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **findBackdropAncestor()** (3 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **findShaderProxyCaptureRoot()** (3 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **resolveCanvasBackground()** (3 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **buildInsertPlaceholderSnapshotFromDom()** (2 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **buildPickedAnchorSnapshot()** (2 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **checkpointPayload()** (2 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **compileShader()** (2 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **dominantRgb01()** (2 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **loadModernScreenshot()** (2 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- *... and 4 more nodes in this community*
+- **showToast()** (25 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **initPageChat()** (14 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **startVoice()** (14 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **stopVoice()** (13 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **unlockSteerChat()** (12 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **sendEvent()** (10 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **syncPageChatChrome()** (10 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **focusSteerChat()** (9 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **steerFocusLog()** (9 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **submitSteerMessage()** (9 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **syncPageChatFocusRing()** (9 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **expandPageChat()** (7 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **focusPageChatInput()** (7 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **lockSteerChat()** (7 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **preparePageChatInputForTyping()** (7 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **armPageChatForTyping()** (6 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **collapsePageChat()** (6 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **syncConfigureInputChrome()** (6 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **syncGlobalBarExpandedLabels()** (6 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **syncPageChatVisual()** (6 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **syncVoiceUi()** (6 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **attachSteerFocusDebug()** (5 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **pageChatExpandedWidth()** (5 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **steerFocusTargetLabel()** (5 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **toggleSteerVoice()** (5 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- *... and 20 more nodes in this community*
 
 ## Relationships
 
-- [Impeccable Live Browser Engine](Impeccable_Live_Browser_Engine.md) (67 shared connections)
+- [Impeccable Live Browser Engine (1)](Impeccable_Live_Browser_Engine_1.md) (46 shared connections)
+- [Impeccable Live Browser Engine (4)](Impeccable_Live_Browser_Engine_4.md) (16 shared connections)
+- [Impeccable Live Browser Engine (8)](Impeccable_Live_Browser_Engine_8.md) (9 shared connections)
+- [Impeccable Live Browser Engine (3)](Impeccable_Live_Browser_Engine_3.md) (8 shared connections)
+- [Impeccable Live Browser Engine (11)](Impeccable_Live_Browser_Engine_11.md) (4 shared connections)
+- [Impeccable Live Browser Engine (7)](Impeccable_Live_Browser_Engine_7.md) (4 shared connections)
+- [Impeccable Live Browser Engine (9)](Impeccable_Live_Browser_Engine_9.md) (4 shared connections)
+- [Impeccable Live Browser Engine (2)](Impeccable_Live_Browser_Engine_2.md) (3 shared connections)
+- [Impeccable Live Browser Engine (6)](Impeccable_Live_Browser_Engine_6.md) (3 shared connections)
 
 ## Source Files
 
@@ -41,8 +49,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 107 (100%)
-- INFERRED: 0 (0%)
+- EXTRACTED: 186 (99%)
+- INFERRED: 2 (1%)
 - AMBIGUOUS: 0 (0%)
 
 ---

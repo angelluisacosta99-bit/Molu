@@ -19,12 +19,15 @@
 
 ## Relationships
 
-- [Impeccable Project Context Resolver](Impeccable_Project_Context_Resolver.md) (10 shared connections)
+- [Impeccable Project Context Resolver (1)](Impeccable_Project_Context_Resolver_1.md) (4 shared connections)
+- [Impeccable Project Context Resolver (4)](Impeccable_Project_Context_Resolver_4.md) (3 shared connections)
 - [Impeccable Live Script Injection](Impeccable_Live_Script_Injection.md) (3 shared connections)
 - [Impeccable Target Args Parsing](Impeccable_Target_Args_Parsing.md) (3 shared connections)
+- [Impeccable Project Context Resolver (3)](Impeccable_Project_Context_Resolver_3.md) (2 shared connections)
 - [Impeccable Context Signal Detection](Impeccable_Context_Signal_Detection.md) (2 shared connections)
 - [Impeccable Live Session Resume](Impeccable_Live_Session_Resume.md) (2 shared connections)
 - [Impeccable Live Mode Server](Impeccable_Live_Mode_Server.md) (1 shared connections)
+- [Impeccable Project Context Resolver (2)](Impeccable_Project_Context_Resolver_2.md) (1 shared connections)
 - [Impeccable Path Resolution](Impeccable_Path_Resolution.md) (1 shared connections)
 
 ## Source Files

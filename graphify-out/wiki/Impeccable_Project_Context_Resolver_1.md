@@ -1,4 +1,4 @@
-# Impeccable Project Context Resolver
+# Impeccable Project Context Resolver (1)
 
 > 25 nodes
 
@@ -32,7 +32,10 @@
 
 ## Relationships
 
-- [Impeccable Project Context Resolver](Impeccable_Project_Context_Resolver.md) (46 shared connections)
+- [Impeccable Project Context Resolver (2)](Impeccable_Project_Context_Resolver_2.md) (18 shared connections)
+- [Impeccable Project Context Resolver (3)](Impeccable_Project_Context_Resolver_3.md) (13 shared connections)
+- [Impeccable Project Context Resolver (4)](Impeccable_Project_Context_Resolver_4.md) (9 shared connections)
+- [Impeccable Project Context Resolver (5)](Impeccable_Project_Context_Resolver_5.md) (6 shared connections)
 - [Impeccable Live Command Entry](Impeccable_Live_Command_Entry.md) (4 shared connections)
 - [Impeccable Target Args Parsing](Impeccable_Target_Args_Parsing.md) (3 shared connections)
 - [Impeccable Context Signal Detection](Impeccable_Context_Signal_Detection.md) (2 shared connections)

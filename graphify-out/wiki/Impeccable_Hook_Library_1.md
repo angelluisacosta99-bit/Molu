@@ -1,4 +1,4 @@
-# Impeccable Hook Library
+# Impeccable Hook Library (1)
 
 > 47 nodes
 
@@ -33,8 +33,10 @@
 
 ## Relationships
 
-- [Impeccable Hook Library](Impeccable_Hook_Library.md) (54 shared connections)
+- [Impeccable Hook Library (2)](Impeccable_Hook_Library_2.md) (30 shared connections)
 - [Impeccable Pre-Edit Hook](Impeccable_Pre-Edit_Hook.md) (14 shared connections)
+- [Impeccable Hook Library (4)](Impeccable_Hook_Library_4.md) (12 shared connections)
+- [Impeccable Hook Library (3)](Impeccable_Hook_Library_3.md) (12 shared connections)
 - [Impeccable Hook Admin CLI](Impeccable_Hook_Admin_CLI.md) (9 shared connections)
 
 ## Source Files

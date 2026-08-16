@@ -1,4 +1,4 @@
-# Impeccable CSS Cascade Resolver
+# Impeccable CSS Cascade Resolver (2)
 
 > 14 nodes
 
@@ -21,7 +21,7 @@
 
 ## Relationships
 
-- [Impeccable CSS Cascade Resolver](Impeccable_CSS_Cascade_Resolver.md) (1 shared connections)
+- [Impeccable CSS Cascade Resolver (1)](Impeccable_CSS_Cascade_Resolver_1.md) (1 shared connections)
 - [Impeccable Shared Constants](Impeccable_Shared_Constants.md) (1 shared connections)
 
 ## Source Files

@@ -2,7 +2,7 @@
 
 > God node · 29 connections · `.claude/skills/impeccable/scripts/hook-lib.mjs`
 
-**Community:** [Impeccable Hook Library](Impeccable_Hook_Library.md)
+**Community:** [Impeccable Hook Library (2)](Impeccable_Hook_Library_2.md)
 
 ## Connections by Relation
 

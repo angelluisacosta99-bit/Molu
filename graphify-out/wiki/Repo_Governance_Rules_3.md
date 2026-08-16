@@ -1,12 +1,10 @@
-# Repo Governance Rules
+# Repo Governance Rules (3)
 
-> 3 nodes
+> 1 nodes
 
 ## Key Concepts
 
-- **Skill: graphify** (2 connections) — `.claude/skills/graphify/SKILL.md`
-- **Regla: trigger /graphify en .claude/CLAUDE.md** (1 connections) — `.claude/CLAUDE.md`
-- **Reglas de uso de graphify en este proyecto** (1 connections) — `CLAUDE.md`
+- **Regla: nombre del profesor sin tilde (Angel)** (0 connections) — `CLAUDE.md`
 
 ## Relationships
 
@@ -14,13 +12,11 @@
 
 ## Source Files
 
-- `.claude/CLAUDE.md`
-- `.claude/skills/graphify/SKILL.md`
 - `CLAUDE.md`
 
 ## Audit Trail
 
-- EXTRACTED: 2 (100%)
+- EXTRACTED: 0 (0%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

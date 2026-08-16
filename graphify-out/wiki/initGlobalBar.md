@@ -2,7 +2,7 @@
 
 > God node · 29 connections · `.claude/skills/impeccable/scripts/live-browser.js`
 
-**Community:** [Impeccable Live Browser Engine](Impeccable_Live_Browser_Engine.md)
+**Community:** [Impeccable Live Browser Engine (8)](Impeccable_Live_Browser_Engine_8.md)
 
 ## Connections by Relation
 

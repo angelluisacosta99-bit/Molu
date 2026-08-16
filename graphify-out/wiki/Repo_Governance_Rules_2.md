@@ -1,10 +1,10 @@
-# Repo Governance Rules
+# Repo Governance Rules (2)
 
 > 1 nodes
 
 ## Key Concepts
 
-- **Regla: nombre del profesor sin tilde (Angel)** (0 connections) — `CLAUDE.md`
+- **Regla: presentaciones .pptx sin firma final** (0 connections) — `CLAUDE.md`
 
 ## Relationships
 

@@ -1,4 +1,4 @@
-# Skill Entry Points
+# Skill Entry Points (2)
 
 > 10 nodes
 

@@ -1,4 +1,4 @@
-# Impeccable Live Browser Engine
+# Impeccable Live Browser Engine (13)
 
 > 7 nodes
 
@@ -14,7 +14,8 @@
 
 ## Relationships
 
-- [Impeccable Live Browser Engine](Impeccable_Live_Browser_Engine.md) (13 shared connections)
+- [Impeccable Live Browser Engine (1)](Impeccable_Live_Browser_Engine_1.md) (8 shared connections)
+- [Impeccable Live Browser Engine (2)](Impeccable_Live_Browser_Engine_2.md) (5 shared connections)
 
 ## Source Files
 
