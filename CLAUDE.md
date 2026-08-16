@@ -313,3 +313,25 @@ hallazgos podría igualmente generar una notificación de "corrida
 completada". Si eso resulta molesto en la práctica, ajustar
 `notifications` de la Routine (`trig_01Jx2UqBq8ezuTzpknMj7SAW`) para
 desactivarlas y depender solo del registro versionado.
+
+**Proponer instalación, no solo describirla — pero sin poder instalar
+nada por Angel.** Ninguna herramienta disponible conecta un conector
+MCP ni instala un plugin de forma silenciosa en su cuenta — es una
+barrera de la plataforma (conectores requieren su login/autorización;
+plugins requieren que él pulse la tarjeta). Así que cada hallazgo nuevo
+que se añada al registro debe ir acompañado, en el mismo turno, de:
+- `SearchMcpRegistry` → `SuggestConnectors` con el `directoryUuid` real,
+  para conectores MCP.
+- `SearchPlugins` → `SuggestPluginInstall` con el `pluginId` real, para
+  plugins.
+
+Nunca limitarse a describir la herramienta en texto y dejar que Angel
+la busque él mismo — la tarjeta es el mecanismo real de instalación de
+un clic, describirla sin la tarjeta es un trabajo a medias.
+
+**Antes de volver a sugerir algo ya registrado**, comprobar con
+`ListConnectors`/`ListPlugins` si Angel ya lo activó desde la vez
+anterior. Si ya está activo, no repetir la sugerencia — en su lugar,
+marcar esa entrada de `novedades.md` como adoptada (una línea al final
+de la entrada, ej. "✅ Activado el AAAA-MM-DD") en vez de dejarla como
+pendiente para siempre.
