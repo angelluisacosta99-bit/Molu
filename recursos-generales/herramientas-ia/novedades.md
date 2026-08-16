@@ -2,9 +2,10 @@
 
 Registro de novedades relevantes para el trabajo de Angel en este
 repositorio: funciones nuevas de Claude Code, skills, plugins,
-conectores MCP, modelos, o herramientas de terceros. Mantenido por una
-Routine semanal de Claude Code (ver `## Radar de herramientas de IA` en
-`CLAUDE.md`), más las pasadas que se hagan a mano.
+conectores MCP, modelos, herramientas de terceros, y estrategias/buenas
+prácticas de uso (cómo sacarle más partido a Claude Code). Mantenido por
+una Routine semanal de Claude Code (ver `## Radar de herramientas de IA`
+en `CLAUDE.md`), más las pasadas que se hagan a mano.
 
 ## Cómo se usa
 
@@ -19,6 +20,41 @@ El criterio de qué cuenta como "relevante" (para no acabar volcando aquí
 todo lo que existe en el mercado) vive en `CLAUDE.md`, sección
 `## Radar de herramientas de IA` — no se repite aquí para no tener dos
 copias que puedan desincronizarse.
+
+---
+
+## 2026-08-16 — Guía oficial de buenas prácticas de Claude Code
+
+**Qué es:** `code.claude.com/docs/en/best-practices` — la guía oficial de
+Anthropic sobre cómo sacarle más partido a Claude Code: gestión de
+contexto (es el recurso más limitado, el rendimiento cae al llenarse),
+`CLAUDE.md` conciso ("bloated CLAUDE.md files cause Claude to ignore
+your actual instructions"), verificación del trabajo (tests/build/capturas
+en vez de confiar a ciegas), modo plan para tareas grandes, subagentes
+para investigación sin gastar el contexto principal, revisión adversarial
+con subagente antes de dar algo por terminado, y automatización
+(`claude -p`, fan-out, sesiones paralelas).
+
+**Por qué le sirve a Angel:** aplicado ya mismo — `CLAUDE.md` había
+crecido de 178 a 359 líneas en una sola sesión (Groq/Gemini + el propio
+radar); podado a poco más de 300 líneas siguiendo el criterio de la guía ("¿quitar
+esta línea causaría un error? si no, córtala"). La primera pasada de
+poda sí se pasó de tijera — cuatro rondas de revisión independiente
+fueron encontrando hechos verificados que se habían caído (la
+distinción 429-transitorio vs. cuota agotada, el "sin preguntar", una
+excepción de re-mención, citas exactas de línea, el prefijo `gsk_` de
+la key de Groq, entre otros) y se fueron restaurando uno a uno — la
+lección real es que podar contenido técnico denso necesita revisión
+tan cuidadosa como escribirlo, no una garantía de que "esta vez sí" se
+capturó todo a la primera. El resto de prácticas (subagentes para
+explorar, revisión adversarial antes de fusionar) ya eran costumbre en
+este repo antes de leer la guía — confirma que van en la dirección
+correcta.
+
+**Cómo aplicarlo:** no hace falta activar nada — es una guía de
+comportamiento, no una herramienta. Releerla periódicamente (el radar
+la revisita cada semana por si cambia) y aplicar la poda de `CLAUDE.md`
+cuando una sección crezca mucho.
 
 ---
 
