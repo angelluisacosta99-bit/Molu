@@ -132,55 +132,48 @@ Rules:
 - Read graphify-out/GRAPH_REPORT.md only for broad architecture review or when query/path/explain do not surface enough context.
 - After modifying code, run `graphify update .` to keep the graph current (AST-only, no API cost).
 
-### Extracción semántica: `GEMINI_API_KEY` y qué hacer si se agota la cuota
+### Extracción semántica: orden de prioridad Gemini → Groq → subagentes
 
-Este repo tiene configurada `GEMINI_API_KEY` en `.claude/settings.local.json`
-(nunca en Git). Con la key presente, `/graphify` usa la API de Gemini para
-la extracción semántica de documentos/imágenes en vez de subagentes de
-Claude — más rápido y sin gastar tokens de Claude en esa parte.
+Este repo tiene (o puede tener) configuradas en `.claude/settings.local.json`
+(nunca en Git):
+- `GEMINI_API_KEY` / `GOOGLE_API_KEY` — backend `gemini` nativo de graphify.
+- `OPENAI_API_KEY` + `OPENAI_BASE_URL` + `OPENAI_MODEL` — backend `openai`
+  de graphify apuntado a la API de Groq (compatible con OpenAI), usado
+  como respaldo. graphify no tiene un backend `groq` propio (no existe
+  `--backend groq`; es una petición abierta sin resolver en su
+  repositorio upstream), pero su backend `openai` usa el SDK oficial de
+  OpenAI por debajo, que respeta esas variables de entorno estándar para
+  redirigir a cualquier endpoint compatible — incluido el de Groq:
+  - `OPENAI_API_KEY` — la key de Groq (empieza por `gsk_`).
+  - `OPENAI_BASE_URL` — `https://api.groq.com/openai/v1`.
+  - `OPENAI_MODEL` — el modelo de Groq a usar (ej. `llama-3.3-70b-versatile`).
 
-La decisión de "Gemini vs. subagentes" se toma una sola vez al arrancar
-`/graphify`, según si la key está configurada — no se re-evalúa a mitad de
-la corrida. Si un chunk falla porque la cuota está agotada (no es un 429
-transitorio, que ya se reintenta solo), graphify lo salta y sigue con el
-resto — no aborta la corrida completa, pero tampoco cae automáticamente en
-subagentes de Claude para ese chunk. Como el resultado de cada archivo se
-cachea, los que fallaron quedan pendientes, no perdidos.
+**Orden de prioridad exigido para la extracción semántica (docs, papers,
+imágenes) en `/graphify`, en este repo — anula lo que dice
+`.claude/skills/graphify/SKILL.md` sobre no leer `OPENAI_API_KEY`:**
 
-Qué hacer si pasa esto:
-1. **Esperar y reintentar más tarde** — el free tier de Gemini se resetea
-   diariamente. Correr `graphify --update` reprocesa solo lo pendiente.
-2. **Terminar ahora con subagentes** — quitar temporalmente
-   `GEMINI_API_KEY` de `.claude/settings.local.json` (o vaciar su valor) y
-   volver a correr `/graphify --update`; lo pendiente se completará vía
-   subagentes de Claude. Restaurar la key después si se quiere seguir
-   usando Gemini en corridas futuras.
-3. **Terminar ahora con Groq** — ver la sección siguiente. Es más rápido
-   que esperar al reset diario y no gasta tokens de Claude como la
-   opción 2.
-
-### Groq como respaldo de `GEMINI_API_KEY`
-
-graphify no tiene un backend `groq` propio (no existe un flag
-`--backend groq`; es una petición abierta y sin resolver en su
-repositorio upstream). Pero su backend `openai` usa el SDK oficial de
-OpenAI por debajo, y ese SDK respeta las variables de entorno estándar
-de OpenAI para redirigir a cualquier endpoint compatible — incluido el
-de Groq. Así que Groq funciona hoy como respaldo, aunque no sea un
-backend soportado oficialmente por graphify:
-
-- `OPENAI_API_KEY` — la key de Groq (empieza por `gsk_`).
-- `OPENAI_BASE_URL` — `https://api.groq.com/openai/v1`.
-- `OPENAI_MODEL` — el modelo de Groq a usar (ej.
-  `llama-3.3-70b-versatile`).
-
-Igual que `GEMINI_API_KEY`, estas tres van en
-`.claude/settings.local.json` (nunca en Git). Usarlas junto con
-`GEMINI_API_KEY` — no en lugar de ella — funciona como la opción 3 de
-la lista anterior: cuando la cuota de Gemini se agota, quitar
-`GEMINI_API_KEY` temporalmente hace que graphify caiga al backend
-`openai`/Groq en vez de a subagentes de Claude, siempre que estas tres
-variables ya estén puestas.
+1. **Gemini primero.** Si `GEMINI_API_KEY`/`GOOGLE_API_KEY` está
+   configurada, úsala (comportamiento por defecto de la skill).
+2. **Groq si Gemini falta o se agota.** graphify decide backend una sola
+   vez al arrancar y no se re-evalúa a mitad de la corrida: si un chunk
+   falla porque la cuota de Gemini está agotada (no un 429 transitorio,
+   que ya se reintenta solo), lo salta y sigue con el resto — nada se
+   pierde, cada archivo resuelto queda cacheado. Cuando la corrida
+   termine con archivos pendientes por cuota agotada (o si
+   `GEMINI_API_KEY` no estaba configurada desde el principio), **sin
+   preguntar**, quita `GEMINI_API_KEY` del entorno para esa siguiente
+   pasada y corre `graphify --update` (o
+   `graphify.llm.extract_corpus_parallel(files, backend="openai")`) para
+   completar lo pendiente vía Groq, siempre que
+   `OPENAI_API_KEY`+`OPENAI_BASE_URL` estén configuradas. Restaura
+   `GEMINI_API_KEY` después para que la próxima corrida completa vuelva
+   a intentar Gemini primero.
+3. **Subagentes de Claude, solo como último recurso.** Únicamente si ni
+   Gemini ni Groq están configuradas, o ambas se agotaron y aun así
+   quedan archivos pendientes, cae a dispatch de subagentes (Part B de
+   la skill) — esto es lo único que gasta tokens de Claude en esta
+   extracción, así que es intencionalmente la última opción, no la
+   primera alternativa a Gemini.
 
 **Nunca pegar una API key (de Groq, Gemini o cualquier otra) en el
 chat ni en una captura de pantalla.** Si ocurre por accidente, rotarla
