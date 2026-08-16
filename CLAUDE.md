@@ -101,37 +101,47 @@ sueltos sin script dedicado), el mismo procedimiento a mano:
 1. **`pdftotext -layout archivo.pdf -`** primero, siempre — con
    `-layout`, nunca sin él: sin esa opción, una página con una tabla o
    un gráfico incrustado mezcla las etiquetas con el cuerpo del texto
-   (pasó con un plano de metro en un capítulo real). Si el PDF ya tiene
-   texto real (no es una foto/escaneo) y `pdffonts archivo.pdf` no
-   muestra encoding `Custom`/`Identity-H`, listo — no hace falta leer
-   ninguna imagen. Si sí lo muestra, el texto puede salir con caracteres
-   cambiados aunque parezca correcto (visto de verdad: «tъ»/«йl» en vez
-   de «tú»/«él») — tratarlo como si no hubiera texto y seguir al paso 2.
-2. **Si no hay texto fiable** (PDF escaneado, o encoding sospechoso):
-   renderizar a un directorio fuera del repo —
-   `OUT="${TMPDIR:-/tmp}/paginas-$(basename "${archivo%.*}")"; mkdir -p "$OUT"`
+   (pasó con un plano de metro en un capítulo real). Correr también
+   `pdffonts archivo.pdf`: si muestra encoding `Custom`/`Identity-H`, el
+   texto puede salir con caracteres cambiados aunque parezca correcto
+   (visto de verdad: «tъ»/«йl» en vez de «tú»/«él») — tratarlo como si
+   no hubiera texto y seguir al paso 2. Este paso da un borrador rápido,
+   pero **no decide por sí solo si hace falta ver la imagen** — eso lo
+   decide el paso 3, siempre, sin excepción: incluso con texto perfecto,
+   solo la imagen muestra líneas dibujadas, ítems ya resueltos o marcas
+   a mano (ver paso 3).
+2. **Renderizar la página**, siempre, incluso si el paso 1 dio texto
+   limpio (el render hace falta para el paso 3, no es opcional): a un
+   directorio fuera del repo — por ejemplo, sustituyendo `archivo.pdf`
+   por la ruta real:
+   `OUT="${TMPDIR:-/tmp}/paginas-$(basename archivo.pdf .pdf)"; mkdir -p "$OUT"`
    (nunca escribir páginas escaneadas de material con copyright dentro
    del repositorio) — con
-   `pdftoppm -jpeg -r 150 -f N -l N archivo.pdf "$OUT/pagina"` y pasar
-   **todos** los `pagina-*.jpg` resultantes (glob, no un nombre fijo tipo
+   `pdftoppm -jpeg -r 150 -f N -l N archivo.pdf "$OUT/pagina"`. 150 DPI
+   basta para OCR y evita el error de "imagen demasiado grande" que da
+   tesseract a 300 DPI en páginas grandes. Si el paso 1 no dio texto
+   fiable (escaneado, o encoding sospechoso), pasar además **todos** los
+   `pagina-*.jpg` resultantes (glob, no un nombre fijo tipo
    `pagina-N.jpg`: con 10+ páginas el nombre real lleva ceros a la
    izquierda y un nombre fijo no encuentra el archivo) por
    `tesseract "$f" stdout -l spa` (o `-l rus` para las cartas del
-   consulado) para un borrador gratis y local. 150 DPI basta para OCR y
-   evita el error de "imagen demasiado grande" que da tesseract a 300
-   DPI en páginas grandes.
+   consulado) para tener un borrador gratis y local antes de leer la
+   imagen.
 3. **Leer siempre la imagen renderizada antes de dar la página por
    cerrada** — no es un paso opcional de corregir errores puntuales del
-   OCR, es una lectura completa obligatoria: hay contenido que el texto
-   (ni el OCR) puede representar y que cambia las respuestas — líneas de
-   relacionar, ítems que el documento ya trae resueltos (aunque no sea
-   con un dibujo evidente, a veces solo una línea a mano marcando un
-   hueco como ya resuelto), respuestas rodeadas, flechas, manuscrito.
-   Usar el borrador de OCR como plantilla para no transcribir de cero,
-   pero la fuente de verdad final es siempre la imagen, vista entera.
+   texto/OCR, es una lectura completa obligatoria, incluso cuando el
+   paso 1 dio texto limpio: hay contenido que el texto (ni el OCR) puede
+   representar y que cambia las respuestas — líneas de relacionar,
+   ítems que el documento ya trae resueltos (aunque no sea con un dibujo
+   evidente, a veces solo una línea a mano marcando un hueco como ya
+   resuelto), respuestas rodeadas, flechas, manuscrito. Usar el texto o
+   el borrador de OCR como plantilla para no transcribir de cero, pero
+   la fuente de verdad final es siempre la imagen, vista entera.
 4. **Para dibujos, crucigramas o manuscrito puro** (donde el OCR no
-   aporta ni un borrador): saltar el paso 2 y leer la imagen
-   directamente, pero solo esas páginas específicas, no el PDF completo.
+   aporta ni un borrador): en el paso 2, seguir renderizando la página
+   igual, pero saltar el paso de OCR con tesseract — no hace falta
+   borrador, se lee la imagen directamente en el paso 3. En cualquier
+   caso, renderizar solo esas páginas específicas, no el PDF completo.
 
 **Para extraer imágenes ya incrustadas** en un PDF (ilustraciones dentro
 de un documento digital, no una página entera escaneada): usar
