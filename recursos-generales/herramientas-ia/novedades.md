@@ -23,6 +23,75 @@ copias que puedan desincronizarse.
 
 ---
 
+## 2026-08-16 — Segunda pasada: hooks vs. CLAUDE.md, y prácticas de la comunidad
+
+Angel señaló que la primera pasada se quedó corta — solo profundizó en
+una fuente (la guía oficial) en vez de seguir con el resto de resultados
+de búsqueda ya localizados. Esta pasada sí los recorre.
+
+### Aplicado: hook `Stop` con estado de git ("radical transparency")
+
+**Qué es:** `.claude/hooks/session-end-status.sh`, registrado como hook
+`Stop` en `.claude/settings.json` — al final de cada turno imprime
+`git status --short` si hay cambios sin commitear. Patrón tomado de
+`awattar/claude-code-best-practices` (repo comunitario, no oficial).
+
+**Por qué le sirve a Angel:** en esta misma sesión hubo varias veces en
+las que el hook `post-checkout`/`post-commit` de graphify dejó
+`graphify-out/` con cambios sin comitear sin que se notara hasta el
+siguiente `git status` manual. Este hook lo hace visible siempre, sin
+depender de acordarse.
+
+**Cómo probarlo:** ya está activo — se ve solo al final de cualquier
+turno con cambios pendientes.
+
+### Anotado, no aplicado: hooks para reglas duras, no solo CLAUDE.md
+
+**Qué es:** hallazgo de una búsqueda general (no una fuente única
+citable): las instrucciones de `CLAUDE.md` se siguen ~70% de las veces
+según reportan varios desarrolladores — aceptable para preferencias de
+estilo, pero arriesgado para reglas críticas tipo "nunca fusionar sin
+revisión". Un hook sí garantiza el 100%, porque es determinista, no una
+instrucción que el modelo pueda pasar por alto.
+
+**Por qué le sirve a Angel:** este repo tiene una regla dura exacta de
+ese tipo ("nunca hacer merge sin revisión independiente previa",
+`CLAUDE.md`) y además usa `defaultMode: dontAsk`, que quita el
+cortafuegos de permisos interactivo por completo. Hoy esa regla se
+cumplió siempre porque se le puso énfasis fuerte ("Regla dura, sin
+excepciones") y porque la seguí con disciplina turno a turno — pero
+nada la hace estructuralmente imposible de saltarse en una sesión
+futura.
+
+**Por qué no se aplicó ya:** un hook que bloquee de verdad el merge sin
+revisión necesitaría alguna forma de que la skill de revisión deje
+constancia verificable (ej. un archivo marcador) que el hook pueda
+comprobar antes de permitir `merge_pull_request` — eso significa tocar
+también cómo se invoca la skill `code-review`, no es un cambio trivial
+de una tarde. Queda anotado para diseñarlo con calma si Angel lo quiere,
+en vez de montar algo a medias bajo prisa.
+
+### Anotado, no aplicado: patrones de `awattar/claude-code-best-practices`
+
+Repo comunitario (no oficial) con varios patrones más, ninguno aplicado
+todavía por no encajar de forma obvia con este repo (personal,
+multi-dominio, sin CI):
+- **Permisos por nivel de riesgo** (`allow` para comandos seguros, `ask`
+  para arriesgados, `deny` para secretos) — este repo ya usa
+  `defaultMode: dontAsk`, lo opuesto; cambiarlo es una decisión de
+  fondo sobre fricción vs. seguridad, no algo para decidir de pasada.
+- **Subagentes de dominio** (`.claude/agents/`, ej. un revisor de
+  seguridad dedicado) — este repo no tiene subagentes propios definidos
+  todavía; podría valer la pena para tareas recurrentes específicas
+  (ej. revisión de ejercicios interactivos) si aparece la necesidad.
+- **Comandos personalizados** (`/commit`, `/issue`, `/reviewpr`) para
+  flujos repetibles con entrada explícita — este repo ya cubre buena
+  parte de esto con skills que se activan solas (`graphify`,
+  `impeccable`, `ejercicio-interactivo`); no está claro que comandos
+  explícitos añadan algo que no exista ya.
+
+---
+
 ## 2026-08-16 — Guía oficial de buenas prácticas de Claude Code
 
 **Qué es:** `code.claude.com/docs/en/best-practices` — la guía oficial de
