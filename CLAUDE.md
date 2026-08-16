@@ -168,8 +168,9 @@ En `.claude/settings.local.json` (nunca en Git) puede haber:
   debajo lee `OPENAI_API_KEY`/`OPENAI_BASE_URL` de forma nativa.
   `OPENAI_MODEL` no es del SDK — verificado en vivo que graphify sí la
   lee, pero no contra su código fuente; si un día no surte efecto,
-  probar `GRAPHIFY_OPENAI_MODEL` (el prefijo que usa el resto de
-  overrides de modelo de esta skill).
+  probar `GRAPHIFY_OPENAI_MODEL` (el prefijo que sí documenta el resto
+  de overrides de modelo de esta skill: `GRAPHIFY_GEMINI_MODEL` en
+  SKILL.md:162, `GRAPHIFY_WHISPER_MODEL` en `references/transcribe.md`).
 
 **Orden obligatorio, anulando la autodetección de
 `.claude/skills/graphify/SKILL.md` (líneas 157, 164 — dice que no lee
@@ -180,18 +181,20 @@ comportamiento por defecto, no un límite real de graphify):**
    está puesta.
 2. **Groq si Gemini falta o se agota — invocando el backend `openai`
    explícitamente**, nunca quitando solo `GEMINI_API_KEY` y esperando
-   que la skill elija Groq sola (su autodetección solo mira las keys de
-   Gemini; sin ellas va directa a subagentes, nunca a `OPENAI_API_KEY`).
+   que la skill elija Groq sola: su autodetección solo mira las keys de
+   Gemini, nunca `OPENAI_API_KEY` — un `graphify --update` sin Gemini
+   cae directo a subagentes, no a Groq.
    graphify fija el backend una vez al arrancar y no se re-evalúa a
-   mitad de corrida: un chunk que falla por cuota se salta (no aborta),
-   y lo ya resuelto queda cacheado. Para completar lo pendiente por
-   Groq, hacerlo **dentro de Part B de la siguiente pasada**, no
+   mitad de corrida: un chunk que falla por cuota agotada (no un 429
+   transitorio, que ya se reintenta solo) se salta, no aborta, y lo ya
+   resuelto queda cacheado. Completar lo pendiente por Groq **sin
+   preguntar**, pero **dentro de Part B de la siguiente pasada**, no
    después: `.graphify_uncached.txt` es temporal y Part B lo borra al
    terminar (SKILL.md:357), pero el manifest incremental (Step 9) deja
    sin "stampear" los archivos fallidos, así que el próximo
-   `graphify --update` los vuelve a detectar. En el momento en que esa
-   pasada recalcule `.graphify_uncached.txt` (antes de que ella misma lo
-   borre), llamar
+   `graphify --update` los vuelve a detectar. En el momento en que el
+   propio Step B0 de esa pasada recalcule `.graphify_uncached.txt`
+   (antes de que la misma pasada lo borre), llamar
    `graphify.llm.extract_corpus_parallel(uncached_files, backend="openai")`
    sobre esa lista — la misma función que usa Part B para Gemini
    (SKILL.md:162), con el backend fijado a mano. No usar
@@ -245,8 +248,10 @@ funciones nuevas de Claude Code, skills, plugins, conectores MCP,
 modelos, terceros (como graphify), **y estrategias/buenas prácticas de
 uso** — cómo sacarle más partido a Claude Code (gestión de contexto,
 subagentes, hooks, automatización) de fuentes como
-`code.claude.com/docs/en/best-practices`, el canal oficial de Anthropic,
-y desarrolladores reconocidos. Registro:
+`code.claude.com/docs/en/best-practices` y el canal oficial de Anthropic
+(igual criterio de relevancia de abajo decide si algo encontrado por
+búsqueda web general cuenta, sin una lista aparte de fuentes
+"reconocidas"). Registro:
 `recursos-generales/herramientas-ia/novedades.md` — leerlo antes de
 proponer algo, para no repetir una recomendación.
 
@@ -287,7 +292,9 @@ de un clic.
 **Antes de volver a mencionar algo ya registrado**, comprobar con
 `ListConnectors`/`ListPlugins`/`ListSkills`: si ya está activo, marcar
 la entrada como adoptada ("✅ Activado el AAAA-MM-DD") y no repetirla;
-si sigue sin activar, no insistir cada semana (Angel ya la vio); si
+si sigue sin activar, no insistir cada semana (Angel ya la vio), salvo
+que haya algo *nuevo* que añadir sobre esa herramienta concreta; si
 `ListConnectors` devuelve `connected: null` (falló la comprobación esa
-semana, `ListPlugins`/`ListSkills` no tienen este estado), tratarlo como
-desconocido, no como "sigue sin activar".
+semana — `ListPlugins`/`ListSkills` no tienen este estado), tratarlo
+como desconocido, no como "sigue sin activar": dejar la entrada tal
+cual y probar de nuevo en la siguiente pasada.
