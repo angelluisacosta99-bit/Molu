@@ -155,11 +155,45 @@ Qué hacer si pasa esto:
    volver a correr `/graphify --update`; lo pendiente se completará vía
    subagentes de Claude. Restaurar la key después si se quiere seguir
    usando Gemini en corridas futuras.
+3. **Terminar ahora con Groq** — ver la sección siguiente. Es más rápido
+   que esperar al reset diario y no gasta tokens de Claude como la
+   opción 2.
+
+### Groq como respaldo de `GEMINI_API_KEY`
+
+graphify no tiene un backend `groq` propio (no existe un flag
+`--backend groq`; es una petición abierta y sin resolver en su
+repositorio upstream). Pero su backend `openai` usa el SDK oficial de
+OpenAI por debajo, y ese SDK respeta las variables de entorno estándar
+de OpenAI para redirigir a cualquier endpoint compatible — incluido el
+de Groq. Así que Groq funciona hoy como respaldo, aunque no sea un
+backend soportado oficialmente por graphify:
+
+- `OPENAI_API_KEY` — la key de Groq (empieza por `gsk_`).
+- `OPENAI_BASE_URL` — `https://api.groq.com/openai/v1`.
+- `OPENAI_MODEL` — el modelo de Groq a usar (ej.
+  `llama-3.3-70b-versatile`).
+
+Igual que `GEMINI_API_KEY`, estas tres van en
+`.claude/settings.local.json` (nunca en Git). Usarlas junto con
+`GEMINI_API_KEY` — no en lugar de ella — funciona como la opción 3 de
+la lista anterior: cuando la cuota de Gemini se agota, quitar
+`GEMINI_API_KEY` temporalmente hace que graphify caiga al backend
+`openai`/Groq en vez de a subagentes de Claude, siempre que estas tres
+variables ya estén puestas.
+
+**Nunca pegar una API key (de Groq, Gemini o cualquier otra) en el
+chat ni en una captura de pantalla.** Si ocurre por accidente, rotarla
+cuanto antes en la consola del proveedor — quedar expuesta en una
+conversación cuenta como comprometida aunque el archivo donde se
+guarde esté fuera de Git.
 
 ## Ahorro de tokens: prácticas activas en este repo
 
 - **`GEMINI_API_KEY` para graphify** (ver sección anterior) — evita
-  subagentes de Claude en la extracción semántica.
+  subagentes de Claude en la extracción semántica. `OPENAI_API_KEY` +
+  `OPENAI_BASE_URL` + `OPENAI_MODEL` apuntando a Groq sirven de
+  respaldo con el mismo efecto.
 - **`graphify query/path/explain`** en vez de leer archivos crudos para
   preguntas sobre el código — ya reforzado por el hook `PreToolUse`.
 - **`skillOverrides` en `.claude/settings.json`** — las skills que se usan
