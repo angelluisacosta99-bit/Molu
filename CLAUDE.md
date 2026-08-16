@@ -32,14 +32,17 @@ no terminó, el PR no se fusiona hasta que exista esa revisión. Y nunca
 lanzar la revisión (ni fusionar) solo por haber abierto el PR — hace
 falta que el profesor pida fusionar primero.
 
-**Esta regla ya no depende solo de que la recuerde.** Un hook
-`PreToolUse` (`check-pr-review.sh`) bloquea `merge_pull_request` si no
-encuentra un marcador reciente (<60 min) para ese PR. En cuanto la
-revisión de un PR salga limpia (o tras corregir sus hallazgos), antes
-de fusionar, dejar constancia con:
+**Refuerzo técnico parcial, no sustituye la disciplina.** Un hook
+`PreToolUse` (`check-pr-review.sh`) bloquea las llamadas MCP
+`merge_pull_request` y `enable_pr_auto_merge` si no encuentra, para ese
+PR, un marcador reciente (<60 min, fail-closed ante cualquier error).
+En cuanto la revisión de un PR salga limpia (o tras corregir sus
+hallazgos), antes de fusionar, dejar constancia con:
 `.claude/hooks/mark-pr-reviewed.sh <PR> <head_sha> "<resumen>"`.
-Detalle completo del diseño y sus límites en
-`recursos-generales/herramientas-ia/novedades.md`.
+**No cubre** fusionar por otras vías (ej. `gh pr merge` por Bash, si
+`gh` estuviera disponible) — la regla dura sigue aplicando igual a esos
+caminos, solo que sin gate técnico. Detalle completo del diseño y sus
+límites en `recursos-generales/herramientas-ia/novedades.md`.
 
 ## Diseño visual: usar siempre la skill `impeccable`
 

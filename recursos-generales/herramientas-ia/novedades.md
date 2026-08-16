@@ -51,20 +51,31 @@ turno con cambios pendientes.
 `CLAUDE.md` se siguen ~70% de las veces según reportan varios
 desarrolladores — aceptable para preferencias de estilo, arriesgado
 para reglas críticas. Un hook sí garantiza el 100%, porque es
-determinista. Implementado como `check-pr-review.sh`
-(`PreToolUse`, matcher `mcp__github__merge_pull_request`,
-ver `.claude/settings.json`): bloquea la llamada de fusión si no
-encuentra, para ese PR exacto, un marcador escrito en los últimos 60
-minutos por `.claude/hooks/mark-pr-reviewed.sh` (documentado como paso
-obligatorio en la regla dura de `CLAUDE.md`).
+determinista. Implementado como `check-pr-review.sh` (`PreToolUse`,
+matcher `mcp__github__merge_pull_request|mcp__github__enable_pr_auto_merge`,
+ver `.claude/settings.json`): bloquea la llamada si no encuentra, para
+ese PR exacto, un marcador escrito en los últimos 60 minutos por
+`.claude/hooks/mark-pr-reviewed.sh` (documentado como paso obligatorio
+en la regla dura de `CLAUDE.md`).
 
 **Por qué le sirve a Angel:** este repo tiene esa regla dura exacta
 ("nunca fusionar sin revisión") y además usa `defaultMode: dontAsk`,
 que quita el cortafuegos de permisos interactivo por completo — así que
 antes no había ninguna red de seguridad técnica, solo disciplina de
-turno a turno. Verificado en vivo (probando las 4 combinaciones: sin
-marcador, marcador fresco, marcador viejo, `pullNumber` ausente) que el
-hook responde como se espera en cada caso.
+turno a turno.
+
+**Iteración real, no de un tirón:** la primera versión fallaba
+**abierta** exactamente en los casos que debía bloquear — un marcador
+corrupto o `jq` ausente hacían que el script muriera bajo `set -e` con
+un exit code que Claude Code trata como "sin decisión" (permite la
+herramienta), justo lo contrario de lo que un gate de seguridad debe
+hacer. Una revisión independiente lo encontró probando esos casos de
+verdad, no solo leyendo el script. Rediseñado fail-closed: sin `set -e`,
+con una función `deny()` que no depende de `jq` (usa `printf` a mano)
+para que no falle precisamente cuando más se la necesita. Verificado en
+vivo con 7 casos (sin marcador, marcador corrupto, `jq` ausente del
+PATH, marcador fresco, marcador viejo, `pullNumber` ausente, input no
+JSON) — los 6 primeros deniegan, solo el marcador fresco permite.
 
 **Límites honestos, para que no se lea como más de lo que es:**
 - No verifica la calidad de la revisión, solo que el paso de "dejar
@@ -76,6 +87,11 @@ hook responde como se espera en cada caso.
   ataca es el olvido bajo sesión larga, que es justo lo que reporta el
   hallazgo del 70%, y es exactamente lo que me pasó hoy mismo con el
   trigger de Groq que se me olvidó crear.
+- **Cobertura parcial, no total:** solo intercepta esas dos llamadas
+  MCP concretas. Fusionar por otra vía (ej. `gh pr merge` por Bash, si
+  `gh` estuviera disponible en el entorno) no pasa por este hook. La
+  regla dura de `CLAUDE.md` sigue aplicando por disciplina en esos
+  caminos, sin gate técnico.
 - El marcador vive en `.claude/.pr-review-state/` (gitignored, estado
   de sesión efímero, no versionado).
 
