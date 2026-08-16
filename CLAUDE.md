@@ -349,7 +349,11 @@ lo activó desde la vez anterior:
   tarjeta la primera vez y decide él cuándo actuar. No tocar la entrada
   ni volver a mostrar la tarjeta, salvo que haya algo *nuevo* que añadir
   sobre esa herramienta concreta.
-- **Estado desconocido** (`connected`/estado nulo porque la
-  comprobación de la plataforma falló esa semana, no porque Angel no lo
-  haya activado): no asumir que sigue sin activar. Dejar la entrada tal
-  cual y probar de nuevo en la siguiente pasada.
+- **Estado desconocido (solo aplica a `ListConnectors`):** su propio
+  campo `connected` puede venir nulo cuando la comprobación de la
+  plataforma falla esa semana — eso significa "desconocido", no que
+  Angel no lo haya activado. Si pasa, no asumir que sigue sin activar:
+  dejar la entrada tal cual y probar de nuevo en la siguiente pasada.
+  `ListPlugins`/`ListSkills` no documentan un estado nulo equivalente
+  (su campo `enabled` es un booleano simple) — para plugins y skills,
+  tratar lo que devuelvan como fiable, sin esta rama de duda.
