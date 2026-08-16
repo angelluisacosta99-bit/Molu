@@ -316,29 +316,32 @@ desactivarlas y depender solo del registro versionado.
 
 **Proponer instalación, no solo describirla — pero sin poder instalar
 nada por Angel.** Ninguna herramienta disponible conecta un conector
-MCP ni instala un plugin de forma silenciosa en su cuenta — es una
-barrera de la plataforma (conectores requieren su login/autorización;
-plugins requieren que él pulse la tarjeta). Esto solo aplica a
-hallazgos que sean **conectores MCP o plugins concretos** (con
-`directoryUuid`/`pluginId` real) — no a los otros tipos que cubre este
-radar (funciones nativas de Claude Code, skills, modelos, o cosas como
-un marketplace en sí, que no tienen tarjeta de instalación propia; esos
-se documentan en prosa igual que hasta ahora, no hay herramienta
-`Suggest*` para ellos). Para los que sí aplica, cada hallazgo nuevo que
-se añada al registro debe ir acompañado, en el mismo turno, de:
+MCP, instala un plugin, ni añade una skill de forma silenciosa en su
+cuenta — es una barrera de la plataforma (conectores requieren su
+login/autorización; plugins y skills requieren que él pulse la
+tarjeta). Esto aplica a hallazgos que sean **conectores MCP, plugins o
+skills concretas** (con `directoryUuid`/`pluginId`/id de skill real) —
+no a los otros tipos que cubre este radar (funciones nativas de Claude
+Code, modelos, o cosas como un marketplace en sí, que no tienen tarjeta
+de instalación propia; esos se documentan en prosa igual que hasta
+ahora, no hay herramienta `Suggest*` para ellos). Para los que sí
+aplica, cada hallazgo nuevo que se añada al registro debe ir
+acompañado, en el mismo turno, de:
 - `SearchMcpRegistry` → `SuggestConnectors` con el `directoryUuid` real,
   para conectores MCP.
 - `SearchPlugins` → `SuggestPluginInstall` con el `pluginId` real, para
   plugins.
+- `SearchSkills` → `SuggestSkills` para skills independientes que Angel
+  no tenga ya.
 
-Nunca limitarse a describir un conector o plugin en texto y dejar que
-Angel lo busque él mismo — la tarjeta es el mecanismo real de
+Nunca limitarse a describir un conector, plugin o skill en texto y
+dejar que Angel lo busque él mismo — la tarjeta es el mecanismo real de
 instalación de un clic, describirlo sin la tarjeta es un trabajo a
 medias.
 
-**Antes de volver a mencionar un conector/plugin ya registrado**,
-comprobar con `ListConnectors`/`ListPlugins` si Angel ya lo activó
-desde la vez anterior:
+**Antes de volver a mencionar un conector/plugin/skill ya registrado**,
+comprobar con `ListConnectors`/`ListPlugins`/`ListSkills` si Angel ya
+lo activó desde la vez anterior:
 - **Ya activo:** marcar esa entrada de `novedades.md` como adoptada
   (una línea al final, ej. "✅ Activado el AAAA-MM-DD") y no volver a
   mencionarla.
