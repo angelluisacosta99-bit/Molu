@@ -20,7 +20,9 @@ fi
 
 if ! command -v graphify >/dev/null 2>&1; then
   if command -v uv >/dev/null 2>&1; then
-    uv tool install --upgrade graphifyy -q >/dev/null 2>&1
+    # Capped so a slow/unreachable package index can't stall session start —
+    # "non-blocking" must also cover a hung network call, not just a failed one.
+    timeout 60 uv tool install --upgrade graphifyy -q >/dev/null 2>&1
   fi
 fi
 
