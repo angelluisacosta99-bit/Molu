@@ -156,101 +156,56 @@ Rules:
   configuradas — ver la sección de abajo), y regenerar el reporte pasando
   ese diccionario de labels.
 
-### Extracción semántica: orden de prioridad Gemini → Groq → subagentes
+### Extracción semántica: prioridad Gemini → Groq → subagentes
 
-Este repo tiene (o puede tener) configuradas en `.claude/settings.local.json`
-(nunca en Git):
+En `.claude/settings.local.json` (nunca en Git) puede haber:
 - `GEMINI_API_KEY` / `GOOGLE_API_KEY` — backend `gemini` nativo de graphify.
-- `OPENAI_API_KEY` + `OPENAI_BASE_URL` + `OPENAI_MODEL` — backend `openai`
-  de graphify apuntado a la API de Groq (compatible con OpenAI), usado
-  como respaldo. graphify no tiene un backend `groq` propio — no existe
-  `--backend groq` (ver la lista real de backends en
-  `.claude/skills/graphify/references/github-and-merge.md`:
-  `gemini|kimi|openai|deepseek|claude-cli`) — pero su backend `openai`
-  usa el SDK oficial de OpenAI por debajo, y ese SDK sí lee de forma
-  nativa las dos variables estándar `OPENAI_API_KEY` y `OPENAI_BASE_URL`
-  para redirigir a cualquier endpoint compatible — incluido el de Groq.
-  `OPENAI_MODEL` no es una variable del SDK (el SDK de OpenAI no lee el
-  modelo del entorno; se pasa explícito en cada llamada). Que sea
-  graphify quien la lee bajo ese nombre exacto está verificado en vivo
-  (llamada real de chat completion contra Groq, con las tres variables
-  puestas así) pero no confirmado contra el código fuente de graphify —
-  el resto de overrides de modelo que sí documenta esta skill usan el
-  prefijo `GRAPHIFY_` (`GRAPHIFY_GEMINI_MODEL` en SKILL.md:162,
-  `GRAPHIFY_WHISPER_MODEL` en `references/transcribe.md`). Si
-  `OPENAI_MODEL` sola no surte efecto en una corrida futura, probar
-  también `GRAPHIFY_OPENAI_MODEL` antes de asumir que el backend está
-  roto:
-  - `OPENAI_API_KEY` — la key de Groq (empieza por `gsk_`).
-  - `OPENAI_BASE_URL` — `https://api.groq.com/openai/v1`.
-  - `OPENAI_MODEL` — el modelo de Groq a usar (ej. `llama-3.3-70b-versatile`).
+- `OPENAI_API_KEY` + `OPENAI_BASE_URL=https://api.groq.com/openai/v1` +
+  `OPENAI_MODEL` (ej. `llama-3.3-70b-versatile`) — backend `openai` de
+  graphify apuntado a Groq. graphify no tiene backend `groq` propio (la
+  lista real es `gemini|kimi|openai|deepseek|claude-cli`, ver
+  `references/github-and-merge.md`), pero el SDK de OpenAI que usa por
+  debajo lee `OPENAI_API_KEY`/`OPENAI_BASE_URL` de forma nativa.
+  `OPENAI_MODEL` no es del SDK — verificado en vivo que graphify sí la
+  lee, pero no contra su código fuente; si un día no surte efecto,
+  probar `GRAPHIFY_OPENAI_MODEL` (el prefijo que usa el resto de
+  overrides de modelo de esta skill).
 
-**Orden de prioridad exigido para la extracción semántica (docs, papers,
-imágenes) en `/graphify`, en este repo.** `.claude/skills/graphify/SKILL.md`
-(líneas 157 y 164) dice explícitamente que graphify "no lee
-`OPENAI_API_KEY` ni ninguna otra key" y que sin `GEMINI_API_KEY` cae
-directo a subagentes — esa frase describe la **detección automática** de
-la skill (Part B), no una limitación real de graphify. Para este repo,
-esa detección automática queda anulada por lo siguiente, que sí hay que
-seguir:
+**Orden obligatorio, anulando la autodetección de
+`.claude/skills/graphify/SKILL.md` (líneas 157, 164 — dice que no lee
+`OPENAI_API_KEY` y que sin Gemini cae a subagentes; eso describe su
+comportamiento por defecto, no un límite real de graphify):**
 
-1. **Gemini primero.** Si `GEMINI_API_KEY`/`GOOGLE_API_KEY` está
-   configurada, úsala (comportamiento por defecto de la skill, sin
-   cambios).
-2. **Groq si Gemini falta o se agota — invocar el backend `openai`
-   explícitamente, nunca simplemente quitar `GEMINI_API_KEY` y esperar
-   que la skill elija Groq sola.** Quitar las variables de Gemini NO
-   activa Groq: la detección automática de Part B (SKILL.md:157,164)
-   solo comprueba `GEMINI_API_KEY`/`GOOGLE_API_KEY`; si no las
-   encuentra, su único otro camino documentado es despachar subagentes
-   de Claude — nunca revisa `OPENAI_API_KEY`. Así que un comando como
-   `graphify --update` sin la key de Gemini cae directo a subagentes,
-   no a Groq, y no cumple este orden de prioridad.
-
-   graphify decide backend una sola vez al arrancar y no se re-evalúa a
-   mitad de la corrida: si un chunk falla porque la cuota de Gemini está
-   agotada (no un 429 transitorio, que ya se reintenta solo), lo salta y
-   sigue con el resto — nada se pierde, cada archivo resuelto queda
-   cacheado. Cuando queden archivos pendientes por cuota agotada (o si
-   `GEMINI_API_KEY` no estaba configurada desde el principio), y
-   `OPENAI_API_KEY`+`OPENAI_BASE_URL` estén configuradas, completar lo
-   pendiente por Groq **sin preguntar**, pero **dentro de la propia
-   ejecución de Part B de la siguiente pasada** — no después de que la
-   corrida termine. `graphify-out/.graphify_uncached.txt` es un archivo
-   temporal de esa misma pasada: Part B lo borra en su propio paso de
-   limpieza nada más terminar (SKILL.md:357), así que no sirve como
-   fuente a la que volver luego. Lo que sí persiste es el manifest
-   incremental (Step 9): un archivo cuyo chunk falló por cuota queda sin
-   "stampear", así que el siguiente `graphify --update` lo vuelve a
-   detectar como pendiente por sí solo. Concretamente: al lanzar esa
-   siguiente pasada, en el momento en que su propio Step B0 calcule de
-   nuevo `.graphify_uncached.txt` (ahora con solo lo que de verdad sigue
-   pendiente) y antes de que esa misma pasada lo borre, usar esa lista
-   ahí mismo para llamar
+1. **Gemini primero**, sin cambios, si `GEMINI_API_KEY`/`GOOGLE_API_KEY`
+   está puesta.
+2. **Groq si Gemini falta o se agota — invocando el backend `openai`
+   explícitamente**, nunca quitando solo `GEMINI_API_KEY` y esperando
+   que la skill elija Groq sola (su autodetección solo mira las keys de
+   Gemini; sin ellas va directa a subagentes, nunca a `OPENAI_API_KEY`).
+   graphify fija el backend una vez al arrancar y no se re-evalúa a
+   mitad de corrida: un chunk que falla por cuota se salta (no aborta),
+   y lo ya resuelto queda cacheado. Para completar lo pendiente por
+   Groq, hacerlo **dentro de Part B de la siguiente pasada**, no
+   después: `.graphify_uncached.txt` es temporal y Part B lo borra al
+   terminar (SKILL.md:357), pero el manifest incremental (Step 9) deja
+   sin "stampear" los archivos fallidos, así que el próximo
+   `graphify --update` los vuelve a detectar. En el momento en que esa
+   pasada recalcule `.graphify_uncached.txt` (antes de que ella misma lo
+   borre), llamar
    `graphify.llm.extract_corpus_parallel(uncached_files, backend="openai")`
-   — la misma función que Part B ya usa para Gemini en SKILL.md:162,
-   aquí con el backend fijado a mano en vez de dejar que la detección de
-   claves lo decida. No usar `graphify extract
-   <path>` como atajo: esa es una extracción completa y fresca sobre
-   todo el path (ver
-   `.claude/skills/graphify/references/github-and-merge.md`), no hay
-   nada documentado que la limite a lo pendiente, así que podría
-   reprocesar contra Groq archivos que Gemini ya resolvió. No hace falta
-   tocar `.claude/settings.local.json` para nada de esto — no se quita
-   ni se restaura ninguna key, solo se fuerza el backend en la llamada
-   puntual.
-3. **Subagentes de Claude, solo como último recurso.** Únicamente si ni
-   Gemini ni Groq están configuradas, o ambas se agotaron y aun así
-   quedan archivos pendientes, cae a dispatch de subagentes (Part B de
-   la skill) — esto es lo único que gasta tokens de Claude en esta
-   extracción, así que es intencionalmente la última opción, no la
-   primera alternativa a Gemini.
+   sobre esa lista — la misma función que usa Part B para Gemini
+   (SKILL.md:162), con el backend fijado a mano. No usar
+   `graphify extract <path>` como atajo: es una extracción completa y
+   fresca, no incremental, y podría reprocesar contra Groq lo que Gemini
+   ya resolvió. No hace falta tocar `settings.local.json` — solo forzar
+   el backend en la llamada puntual.
+3. **Subagentes de Claude, solo como último recurso** — si ni Gemini ni
+   Groq están configuradas o ambas se agotaron. Es lo único que gasta
+   tokens de Claude aquí.
 
-**Nunca pegar una API key (de Groq, Gemini o cualquier otra) en el
-chat ni en una captura de pantalla.** Si ocurre por accidente, rotarla
-cuanto antes en la consola del proveedor — quedar expuesta en una
-conversación cuenta como comprometida aunque el archivo donde se
-guarde esté fuera de Git.
+**Nunca pegar una API key en el chat ni en una captura.** Si pasa,
+rotarla ya en la consola del proveedor — quedar expuesta en una
+conversación cuenta como comprometida aunque el archivo esté fuera de Git.
 
 ## Ahorro de tokens: prácticas activas en este repo
 
@@ -274,86 +229,65 @@ guarde esté fuera de Git.
   relación) comprime el historial en vez de dejar que crezca sin límite.
   No hace falta automatizarlo; es una práctica a tener presente cuando la
   sesión se alarga mucho.
+- **Podar este archivo, no solo hacerlo crecer.** Según la guía oficial
+  (`code.claude.com/docs/en/best-practices`): "Bloated CLAUDE.md files
+  cause Claude to ignore your actual instructions" — para cada línea,
+  preguntar si quitarla haría que Claude se equivocara; si no, cortarla.
+  Al añadir una sección grande (como pasó con Groq/Gemini y el radar),
+  revisar después si se puede decir lo mismo con menos palabras sin
+  perder ningún hecho verificado.
 
 ## Radar de herramientas de IA
 
-Una Routine semanal (self-service, configurada vía `create_trigger` en
-la sesión que la creó — no aparece como código en este repo) busca
-novedades relevantes para el trabajo de Angel: funciones nuevas de
-Claude Code, skills, plugins, conectores MCP, modelos, y herramientas de
-terceros (como graphify, que Angel encontró navegando por su cuenta
-antes de que existiera este radar).
+Una Routine semanal (`trig_01Jx2UqBq8ezuTzpknMj7SAW`, configurada fuera
+del repo vía `create_trigger`) busca novedades para el trabajo de Angel:
+funciones nuevas de Claude Code, skills, plugins, conectores MCP,
+modelos, terceros (como graphify), **y estrategias/buenas prácticas de
+uso** — cómo sacarle más partido a Claude Code (gestión de contexto,
+subagentes, hooks, automatización) de fuentes como
+`code.claude.com/docs/en/best-practices`, el canal oficial de Anthropic,
+y desarrolladores reconocidos. Registro:
+`recursos-generales/herramientas-ia/novedades.md` — leerlo antes de
+proponer algo, para no repetir una recomendación.
 
-**Registro:** `recursos-generales/herramientas-ia/novedades.md` — leerlo
-antes de proponer algo nuevo, para no repetir una recomendación ya hecha.
+**Fuentes:** (1) oficiales — lo de arriba más `whats-new`, el blog de
+`claude.com`, `anthropic.com/news`, los marketplaces
+`anthropics/claude-plugins-official`/`-community`; (2) terceros
+relevantes para docencia de español, traducción, Python,
+telecomunicaciones o el máster, vía
+`SearchMcpRegistry`/`SearchPlugins`/`SearchSkills` (catálogo real de
+Angel, más fiable que la web genérica) y búsqueda web como respaldo.
 
-**Fuentes que cubre cada pasada:**
-1. Oficiales de Anthropic/Claude: `code.claude.com/docs/en/whats-new`,
-   el blog de `claude.com`, `anthropic.com/news`, y los marketplaces de
-   plugins (`anthropics/claude-plugins-official`,
-   `anthropics/claude-plugins-community`).
-2. Terceros relevantes para el tipo de trabajo de este repo (docencia de
-   español, traducción, Python, telecomunicaciones, el máster) — vía
-   `SearchMcpRegistry`/`SearchPlugins`/`SearchSkills` (catálogo real de
-   Angel, no solo búsqueda web) y búsqueda web general cuando esas
-   herramientas no cubren algo.
+Un hallazgo de práctica/estrategia (no una herramienta instalable) no
+lleva tarjeta — se aplica directamente si es claramente buena (ej.
+podar este archivo, ajustar cómo delego en subagentes) y se anota en
+`novedades.md` en una línea.
 
-**Criterio de relevancia:** antes de añadir algo al registro, comprobar
-que resuelve una necesidad real de una de las carpetas de primer nivel
-de este repo o del propio flujo de Claude Code aquí — no volcar todo lo
-que exista en el mercado. Si no hay nada nuevo o relevante en una
-pasada, no se añade nada al registro, no se crea rama ni PR, y el
-mensaje final de esa pasada lo dice explícitamente en vez de simular
-una novedad. Eso es lo que sí controla este repo. Lo que no controla:
-la Routine que dispara estas pasadas tiene notificaciones push/email
-activadas a nivel de plataforma ("cuando la corrida termine con algo
-que merezca la pena"), y ese criterio de "merece la pena" lo decide la
-plataforma, no el texto de esta sección — así que una pasada sin
-hallazgos podría igualmente generar una notificación de "corrida
-completada". Si eso resulta molesto en la práctica, ajustar
-`notifications` de la Routine (`trig_01Jx2UqBq8ezuTzpknMj7SAW`) para
-desactivarlas y depender solo del registro versionado.
+**Relevancia:** debe resolver una necesidad real de una carpeta del
+repo o del propio flujo de Claude Code aquí — no volcar todo el
+mercado. Sin hallazgos, no se toca el registro ni se crea rama/PR, y el
+mensaje final lo dice explícito. Eso sí lo controla este repo; lo que
+no: la Routine tiene notificaciones push/email a nivel de plataforma
+("cuando termine con algo que merezca la pena"), criterio que decide la
+plataforma, no este texto — una pasada en blanco podría igual notificar
+"corrida completada". Si molesta, desactivar `notifications` en el
+trigger.
 
-**Proponer instalación, no solo describirla — pero sin poder instalar
-nada por Angel.** Ninguna herramienta disponible conecta un conector
-MCP, instala un plugin, ni añade una skill de forma silenciosa en su
-cuenta — es una barrera de la plataforma (conectores requieren su
-login/autorización; plugins y skills requieren que él pulse la
-tarjeta). Esto aplica a hallazgos que sean **conectores MCP, plugins o
-skills concretas** (con `directoryUuid`/`pluginId`/id de skill real) —
-no a los otros tipos que cubre este radar (funciones nativas de Claude
-Code, modelos, o cosas como un marketplace en sí, que no tienen tarjeta
-de instalación propia; esos se documentan en prosa igual que hasta
-ahora, no hay herramienta `Suggest*` para ellos). Para los que sí
-aplica, cada hallazgo nuevo que se añada al registro debe ir
-acompañado, en el mismo turno, de:
-- `SearchMcpRegistry` → `SuggestConnectors` con el `directoryUuid` real,
-  para conectores MCP.
-- `SearchPlugins` → `SuggestPluginInstall` con el `pluginId` real, para
-  plugins.
-- `SearchSkills` → `SuggestSkills` para skills independientes que Angel
-  no tenga ya.
+**Proponer instalación con tarjeta, nunca instalar por Angel** (barrera
+de plataforma: conectores piden su login, plugins/skills su clic).
+Aplica solo a hallazgos con `directoryUuid`/`pluginId`/id de skill real
+— no a funciones nativas, modelos o marketplaces en sí, que no tienen
+tarjeta y se documentan en prosa. Para los que sí aplica, cada hallazgo
+nuevo va acompañado, en el mismo turno, de `SuggestConnectors`
+(conectores, vía `directoryUuid` de `SearchMcpRegistry`),
+`SuggestPluginInstall` (`pluginId` de `SearchPlugins`) o `SuggestSkills`
+(de `SearchSkills`) — nunca solo texto, la tarjeta es el mecanismo real
+de un clic.
 
-Nunca limitarse a describir un conector, plugin o skill en texto y
-dejar que Angel lo busque él mismo — la tarjeta es el mecanismo real de
-instalación de un clic, describirlo sin la tarjeta es un trabajo a
-medias.
-
-**Antes de volver a mencionar un conector/plugin/skill ya registrado**,
-comprobar con `ListConnectors`/`ListPlugins`/`ListSkills` si Angel ya
-lo activó desde la vez anterior:
-- **Ya activo:** marcar esa entrada de `novedades.md` como adoptada
-  (una línea al final, ej. "✅ Activado el AAAA-MM-DD") y no volver a
-  mencionarla.
-- **Todavía no activo:** no insistir cada semana — Angel ya vio la
-  tarjeta la primera vez y decide él cuándo actuar. No tocar la entrada
-  ni volver a mostrar la tarjeta, salvo que haya algo *nuevo* que añadir
-  sobre esa herramienta concreta.
-- **Estado desconocido (solo aplica a `ListConnectors`):** su propio
-  campo `connected` puede venir nulo cuando la comprobación de la
-  plataforma falla esa semana — eso significa "desconocido", no que
-  Angel no lo haya activado. Si pasa, no asumir que sigue sin activar:
-  dejar la entrada tal cual y probar de nuevo en la siguiente pasada.
-  `ListPlugins`/`ListSkills` no documentan un estado nulo equivalente
-  (su campo `enabled` es un booleano simple) — para plugins y skills,
-  tratar lo que devuelvan como fiable, sin esta rama de duda.
+**Antes de volver a mencionar algo ya registrado**, comprobar con
+`ListConnectors`/`ListPlugins`/`ListSkills`: si ya está activo, marcar
+la entrada como adoptada ("✅ Activado el AAAA-MM-DD") y no repetirla;
+si sigue sin activar, no insistir cada semana (Angel ya la vio); si
+`ListConnectors` devuelve `connected: null` (falló la comprobación esa
+semana, `ListPlugins`/`ListSkills` no tienen este estado), tratarlo como
+desconocido, no como "sigue sin activar".
