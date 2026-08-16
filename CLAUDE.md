@@ -132,7 +132,7 @@ Rules:
 - Read graphify-out/GRAPH_REPORT.md only for broad architecture review or when query/path/explain do not surface enough context.
 - After modifying code, run `graphify update .` to keep the graph current (AST-only, no API cost).
 
-### Extracción semántica: `GEMINI_API_KEY` y qué hacer si se agota la cuota
+### Extracción semántica: `GEMINI_API_KEY`, respaldo con Groq, y qué hacer si se agota la cuota
 
 Este repo tiene configurada `GEMINI_API_KEY` en `.claude/settings.local.json`
 (nunca en Git). Con la key presente, `/graphify` usa la API de Gemini para
@@ -155,6 +155,17 @@ Qué hacer si pasa esto:
    volver a correr `/graphify --update`; lo pendiente se completará vía
    subagentes de Claude. Restaurar la key después si se quiere seguir
    usando Gemini en corridas futuras.
+3. **Usar Groq como respaldo** — también gratis (sin tarjeta), y ya está
+   configurado y verificado en `.claude/settings.local.json`
+   (`OPENAI_API_KEY`, `OPENAI_BASE_URL=https://api.groq.com/openai/v1`,
+   `OPENAI_MODEL=llama-3.3-70b-versatile`). A diferencia de Gemini, **no
+   se activa solo** — el flujo automático de `/graphify` solo detecta
+   Gemini. Hay que invocarlo a mano:
+   `graphify extract . --backend openai`
+   Requiere que `api.groq.com` esté en la lista de dominios permitidos
+   del entorno de Claude Code (ya está añadido en el entorno "Angeldrive"
+   — si se usa otro entorno, hay que añadirlo ahí también, y el cambio
+   solo aplica a sesiones nuevas).
 
 ## Ahorro de tokens: prácticas activas en este repo
 
