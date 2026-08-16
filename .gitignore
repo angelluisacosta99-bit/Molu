@@ -35,6 +35,11 @@ venv/
 graphify-out/.graphify_*
 graphify-out/cache/
 
+# Respaldos automáticos con fecha que graphify crea antes de sobrescribir
+# el grafo curado cuando las comunidades cambian mucho (ej. tras relabel).
+# Son una copia de seguridad transitoria, no el resultado final.
+graphify-out/[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/
+
 # Configuración local de Claude Code: overrides personales y, en su caso,
 # API keys (ej. GEMINI_API_KEY para graphify). Nunca debe subirse al repo.
 .claude/settings.local.json
