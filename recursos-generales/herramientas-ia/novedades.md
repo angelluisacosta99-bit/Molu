@@ -40,6 +40,8 @@ claude.ai (buscar "DeepL"). Una vez conectado, pedir una traducción
 mencionando el conector, o dejar que yo lo use automáticamente cuando
 detecte una tarea de traducción.
 
+✅ Activado el 2026-08-16.
+
 ### Brisk Teaching (conector MCP)
 
 **Qué es:** conector para generar actividades interactivas para
