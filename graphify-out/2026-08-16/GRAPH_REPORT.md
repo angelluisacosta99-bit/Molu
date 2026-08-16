@@ -1,16 +1,16 @@
 # Graph Report - Molu  (2026-08-16)
 
 ## Corpus Check
-- 155 files · ~481,195 words
+- 152 files · ~442,541 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2360 nodes · 5734 edges · 109 communities (99 shown, 10 thin omitted)
+- 2343 nodes · 5720 edges · 105 communities (95 shown, 10 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 121 edges (avg confidence: 0.59)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `a8875d53`
+- Built from commit: `5355ab5a`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -28,7 +28,7 @@
 - impeccable-config.mjs
 - live-server.mjs
 - svelte-component.mjs
-- detect-html.mjs
+- detect-text.mjs
 - hook-lib.mjs
 - initPageChat
 - live-inject.mjs
@@ -56,9 +56,9 @@
 - handleManualEditActivity
 - parseRgb
 - impeccable-paths.mjs
-- readLiveServerInfo
+- session-store.mjs
 - parseAnyColor
-- live-copy-edit-agent.mjs
+- detect-html.mjs
 - resolveLengthPx
 - onAnnotDown
 - createLiveBrowserSessionState
@@ -83,7 +83,6 @@
 - Clarify Reference (UX Copy)
 - inline-ignores.mjs
 - normalizeIgnoreValueEntries
-- session-store.mjs
 - syncEditBadgeHitProxies
 - ui-core.mjs
 - impeccable skill
@@ -106,8 +105,6 @@
 - Colorize Reference (Color Strategy)
 - graphify: Extra Exports & Benchmark
 - detect.mjs
-- Ejercicios
-- Ejercicios
 - Hooks Reference (Design Detector Hook)
 - Layout Reference (Space & Hierarchy)
 - Skill: graphify
@@ -123,19 +120,18 @@
 - Regla: nombre del profesor sin tilde (Angel)
 - Molu — README del repositorio
 - Notas sueltas
-- Ejercicios
 
 ## God Nodes (most connected - your core abstractions)
-1. `initGlobalBar()` - 29 edges
-2. `runHook()` - 29 edges
-3. `setLiveState()` - 29 edges
+1. `runHook()` - 29 edges
+2. `setLiveState()` - 29 edges
+3. `initGlobalBar()` - 29 edges
 4. `detectHtml()` - 27 edges
 5. `el()` - 27 edges
-6. `buildInsertConfigureRow()` - 26 edges
-7. `collectBrowserFindings()` - 26 edges
+6. `collectBrowserFindings()` - 26 edges
+7. `buildInsertConfigureRow()` - 26 edges
 8. `handleKeyDown()` - 26 edges
-9. `resumeSession()` - 25 edges
-10. `showToast()` - 25 edges
+9. `showToast()` - 25 edges
+10. `resumeSession()` - 25 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `Python overview` --semantically_similar_to--> `Docencia de español overview`  [INFERRED] [semantically similar]
@@ -164,14 +160,14 @@
 - **Impeccable Product-Register Reference Set** — claude_skills_impeccable_reference_product_product, claude_skills_impeccable_reference_quieter_quieter, claude_skills_impeccable_reference_typeset_typeset [INFERRED 0.85]
 - **A1 Interactive Exercise Apps — Shared Paper/Ink Design Template** — docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_cuaderno_unidad6a_como_se_va_a_goya_interactivo_unidad6a_interactivo, docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_cuaderno_unidad6b_cierra_la_ventana_interactivo_unidad6b_interactivo, docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_cuaderno_unidad6c_mi_barrio_es_tranquilo_interactivo_unidad6c_interactivo, docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_cuaderno_practica_mas_3_interactivo_practica_mas_3_interactivo [INFERRED 0.90]
 
-## Communities (109 total, 10 thin omitted)
+## Communities (105 total, 10 thin omitted)
 
 ### Community 0 - "live-browser.js"
 Cohesion: 0.03
 Nodes (143): acceptedDomAlreadyClean(), addManualContextText(), applyGlobalBarLabelState(), applyPlaceholderSizingStyles(), applySvelteComponentVariantStyle(), bufferToBase64(), buildCollapsible(), buildColorModels() (+135 more)
 
 ### Community 1 - "checks.mjs"
-Cohesion: 0.05
+Cohesion: 0.04
 Nodes (83): borderColorsFromStyle(), borderWidthsFromStyle(), checkBorders(), checkClippedOverflow(), checkCreamPalette(), checkElementBorders(), checkElementBordersDOM(), checkElementClippedOverflow() (+75 more)
 
 ### Community 2 - "index.mjs"
@@ -199,12 +195,12 @@ Cohesion: 0.08
 Nodes (69): abortSvelteComponentInjection(), applyEditing(), buildInsertPlaceholderSnapshotFromDom(), buildLocatorForLeaf(), buildPickedAnchorSnapshot(), cancelEditing(), cancelEditingToPicking(), cancelInsertConfigure() (+61 more)
 
 ### Community 8 - "live-commit-manual-edits.mjs"
-Cohesion: 0.10
-Nodes (49): allEntryIds(), argVal(), buildRepairBatch(), candidatesForEntry(), changedFilesSinceSnapshot(), clearAppliedEntries(), collectApplyOwnedFiles(), collectRollbackFiles() (+41 more)
+Cohesion: 0.06
+Nodes (80): allEntryIds(), argVal(), buildRepairBatch(), candidatesForEntry(), changedFilesSinceSnapshot(), clearAppliedEntries(), collectApplyOwnedFiles(), collectRollbackFiles() (+72 more)
 
 ### Community 9 - "design-system.mjs"
 Cohesion: 0.10
-Nodes (46): addColorObject(), addDesignColor(), addRoundedScale(), addRoundedToken(), addSidecarColors(), addSidecarRadii(), addTypographyFonts(), canonicalDesignFindingKey() (+38 more)
+Nodes (48): addColorObject(), addDesignColor(), addRoundedScale(), addRoundedToken(), addSidecarColors(), addSidecarRadii(), addTypographyFonts(), canonicalDesignFindingKey() (+40 more)
 
 ### Community 10 - "impeccable-config.mjs"
 Cohesion: 0.10
@@ -212,15 +208,15 @@ Nodes (47): applyDetectionConfigSource(), clampByte(), cleanIgnoreValueDisplay()
 
 ### Community 11 - "live-server.mjs"
 Cohesion: 0.09
-Nodes (46): assembleLiveBrowserScript(), assertLiveBrowserScriptParts(), LIVE_BROWSER_SCRIPT_PARTS, readLiveBrowserScriptParts(), resolveLiveBrowserScriptParts(), acknowledgePendingEvent(), activeSessionSummaries(), agentPollingConnected() (+38 more)
+Nodes (45): assembleLiveBrowserScript(), assertLiveBrowserScriptParts(), LIVE_BROWSER_SCRIPT_PARTS, readLiveBrowserScriptParts(), resolveLiveBrowserScriptParts(), acknowledgePendingEvent(), activeSessionSummaries(), agentPollingConnected() (+37 more)
 
 ### Community 12 - "svelte-component.mjs"
-Cohesion: 0.10
-Nodes (46): appendCssToSvelteStyle(), appendSanitizedCssRule(), applyDeferredSvelteComponentAccepts(), bakeParamValuesInCss(), buildInsertVariantStub(), buildPropContract(), buildPropsScript(), buildVariantStub() (+38 more)
+Cohesion: 0.09
+Nodes (47): applyLegacyDeferredAcceptsOnStartup(), appendCssToSvelteStyle(), appendSanitizedCssRule(), applyDeferredSvelteComponentAccepts(), bakeParamValuesInCss(), buildInsertVariantStub(), buildPropContract(), buildPropsScript() (+39 more)
 
-### Community 13 - "detect-html.mjs"
-Cohesion: 0.08
-Nodes (46): mergeDesignSystemFindings(), detectUrl(), runVisualContrastFallback(), serializeDesignSystemForBrowser(), CSS_IN_JS_EXTENSIONS, detectText(), extFromFilePath(), extractCSSinJS() (+38 more)
+### Community 13 - "detect-text.mjs"
+Cohesion: 0.09
+Nodes (36): detectUrl(), runVisualContrastFallback(), serializeDesignSystemForBrowser(), CSS_IN_JS_EXTENSIONS, extFromFilePath(), isNeutralBorderColor(), PAGE_ANALYZER_EXTS, REGEX_ANALYZERS (+28 more)
 
 ### Community 14 - "hook-lib.mjs"
 Cohesion: 0.07
@@ -240,7 +236,7 @@ Nodes (37): checkBorders(), checkClippedOverflow(), checkElementBorders(), check
 
 ### Community 18 - "css-cascade.mjs"
 Cohesion: 0.09
-Nodes (30): applyStaticDeclaration(), buildBorderOverrideMap(), parseShorthand(), buildStaticStyleMap(), collectStaticCssRules(), compareStaticPriority(), cssPropToCamel(), expandStaticBoxValues() (+22 more)
+Nodes (32): applyStaticDeclaration(), buildBorderOverrideMap(), parseShorthand(), buildStaticStyleMap(), buildStaticWindow(), collectStaticCssRules(), compareStaticPriority(), cssPropToCamel() (+24 more)
 
 ### Community 19 - "insert-ui.mjs"
 Cohesion: 0.07
@@ -259,8 +255,8 @@ Cohesion: 0.12
 Nodes (37): allow(), bumpCursorDenial(), cursorBlockMessage(), deny(), done(), escapeRegExp(), findingSignature(), firstMatch() (+29 more)
 
 ### Community 23 - "live-wrap.mjs"
-Cohesion: 0.14
-Nodes (34): argVal(), buildInsertWrapperLines(), computeInsertLine(), INSERT_POSITIONS, insertCli(), isInsertPosition(), resolveElementMatch(), buildSvelteComponentCssAuthoring() (+26 more)
+Cohesion: 0.13
+Nodes (35): argVal(), buildInsertWrapperLines(), computeInsertLine(), INSERT_POSITIONS, insertCli(), isInsertPosition(), resolveElementMatch(), buildSvelteComponentCssAuthoring() (+27 more)
 
 ### Community 24 - "Skill: ejercicio-interactivo"
 Cohesion: 0.08
@@ -275,8 +271,8 @@ Cohesion: 0.15
 Nodes (33): buildColor(), CANONICAL_SECTIONS, collectBullets(), collectColorValues(), collectParagraphs(), detectFormat(), extractColors(), extractComponents() (+25 more)
 
 ### Community 27 - "detect-antipatterns.mjs"
-Cohesion: 0.10
-Nodes (35): confirm(), detectCli(), formatFindings(), formatFindingSummary(), handleStdin(), printUsage(), loadDesignSystemForCwd(), parseFrontmatter() (+27 more)
+Cohesion: 0.14
+Nodes (28): confirm(), detectCli(), formatFindings(), formatFindingSummary(), handleStdin(), printUsage(), loadDesignSystemForCwd(), parseFrontmatter() (+20 more)
 
 ### Community 28 - "live-accept.mjs"
 Cohesion: 0.14
@@ -307,12 +303,12 @@ Cohesion: 0.12
 Nodes (25): bumpEditCount(), clampGroupedToBudget(), clampToBudget(), dedupeAgainstCache(), depthIsSet(), directiveFooter(), ensureFile(), ensureSession() (+17 more)
 
 ### Community 35 - "manual-edit-routes.mjs"
-Cohesion: 0.18
-Nodes (22): args, buffer, cwd, pageUrlFilter, remaining, compactManualLogText(), summarizeManualApplyFailures(), summarizeManualDiagnostics() (+14 more)
+Cohesion: 0.17
+Nodes (23): args, buffer, cwd, pageUrlFilter, remaining, compactManualLogText(), summarizeManualApplyFailures(), summarizeManualDiagnostics() (+15 more)
 
 ### Community 36 - "live-manual-edit-evidence.mjs"
-Cohesion: 0.15
-Nodes (25): analyzeSourceHint(), buildCandidatesForOp(), buildContextHintsByRef(), collectSearchFiles(), countOps(), decodeBasicHtml(), escapeRegExp(), findContextMatches() (+17 more)
+Cohesion: 0.16
+Nodes (24): analyzeSourceHint(), buildCandidatesForOp(), buildContextHintsByRef(), collectSearchFiles(), decodeBasicHtml(), escapeRegExp(), findContextMatches(), findLiteralMatches() (+16 more)
 
 ### Community 37 - "context.mjs"
 Cohesion: 0.13
@@ -330,17 +326,17 @@ Nodes (22): checkColors(), checkElementAIPaletteDOM(), checkElementColors(), che
 Cohesion: 0.17
 Nodes (21): resolveProjectRoot(), CRITIQUE_DIR, firstExisting(), getDesignSidecarCandidates(), getDesignSidecarPath(), getImpeccableDir(), getLegacyLiveAnnotationsDir(), getLegacyLiveConfigPath() (+13 more)
 
-### Community 41 - "readLiveServerInfo"
-Cohesion: 0.18
-Nodes (19): isLiveServerPidReachable(), readLiveServerInfo(), completeCli(), completeThroughServer(), parseArgs(), readServerInfo(), collectManualApplyFiles(), manualApplyReplyCommand() (+11 more)
+### Community 41 - "session-store.mjs"
+Cohesion: 0.12
+Nodes (28): isLiveServerPidReachable(), readLiveServerInfo(), completeCli(), completeThroughServer(), parseArgs(), readServerInfo(), collectManualApplyFiles(), manualApplyReplyCommand() (+20 more)
 
 ### Community 42 - "parseAnyColor"
 Cohesion: 0.12
 Nodes (21): borderColorsFromStyle(), borderWidthsFromStyle(), browserColorsClose(), browserHasDirectText(), browserRadiusTokens(), browserSampleText(), checkCreamPalette(), checkElementDesignSystemDOM() (+13 more)
 
-### Community 43 - "live-copy-edit-agent.mjs"
-Cohesion: 0.14
-Nodes (31): applyMockWrites(), buildCopyEditBatchPrompt(), checkFrameworkSourceSyntax(), chooseCopyEditAgent(), COMMAND_AUTH_CACHE, commandAuthed(), commandExists(), compactBatchForPrompt() (+23 more)
+### Community 43 - "detect-html.mjs"
+Cohesion: 0.11
+Nodes (13): collectStaticCssText(), STATIC_ELEMENT_RULES, checkPageQualityDOM(), checkPageQualityFromDoc(), BORDER_SAFE_TAGS, BRAND_FONT_DOMAINS, GENERIC_FONTS, GITHUB_DOMAINS (+5 more)
 
 ### Community 44 - "resolveLengthPx"
 Cohesion: 0.15
@@ -430,10 +426,6 @@ Nodes (9): addRules(), applyInlineIgnores(), getSet(), hasDirectives(), isInline
 Cohesion: 0.36
 Nodes (10): cleanIgnoreValueDisplay(), extractFindingIgnoreValue(), extractFindingIgnoreValueRaw(), extractMotionIgnoreValue(), filterFindings(), formatFindingIgnoreCommand(), isIgnoredFindingValue(), normalizeIgnoreRule() (+2 more)
 
-### Community 68 - "session-store.mjs"
-Cohesion: 0.26
-Nodes (9): applyEvent(), baseSnapshot(), COMPLETED_PHASES, getJournalPath(), getSnapshotPath(), rebuildSnapshotFromJournal(), safeSessionId(), toPendingEvent() (+1 more)
-
 ### Community 69 - "syncEditBadgeHitProxies"
 Cohesion: 0.27
 Nodes (10): bindEditBadgeProxy(), editBadgeProxyTargets(), initEditBadge(), initEditBadgeHitProxies(), positionEditBadge(), proxyMouseEvent(), setImportantStyle(), styleEditBadgeProxy() (+2 more)
@@ -503,8 +495,8 @@ Cohesion: 0.40
 Nodes (5): checkElementHeroEyebrow(), checkElementHeroEyebrowDOM(), checkHeroEyebrow(), isAccentColor(), resolveVarRefs()
 
 ### Community 86 - "isGeneratedFile"
-Cohesion: 0.47
-Nodes (5): hasGeneratedHeader(), HEADER_MARKERS, isGeneratedFile(), isGitIgnored(), searchDir()
+Cohesion: 0.60
+Nodes (4): hasGeneratedHeader(), HEADER_MARKERS, isGeneratedFile(), isGitIgnored()
 
 ### Community 87 - "Máster en Sistemas Inteligentes overview"
 Cohesion: 0.40
@@ -521,14 +513,6 @@ Nodes (4): graphify: Extra Exports & Benchmark, FalkorDB Export / Push, graphify
 ### Community 90 - "detect.mjs"
 Cohesion: 0.50
 Nodes (3): candidates, detectorPath, __dirname
-
-### Community 91 - "Ejercicios"
-Cohesion: 0.22
-Nodes (8): 1. Ecológicamente correcto, Ej. 1 — Escribe frases siguiendo el modelo, Ej. 2 — Construye frases, Ej. 3 — ¿Qué anuncio recomiendas a cada grupo?, Ej. 4 — Escribe frases siguiendo el modelo, Ej. 5 — Escucha y marca lo que más les molesta, Ej. 6 — ¿Y a ti?, Ejercicios
-
-### Community 92 - "Ejercicios"
-Cohesion: 0.22
-Nodes (8): 1. La ecologista del Himalaya, Ej. 1 — Lee el texto y contesta a las preguntas, Ej. 2 — Completa las vocales que faltan, Ej. 3 — Completa con el comparativo correspondiente, Ej. 4 — Pon el adjetivo entre paréntesis en la forma más adecuada, Ej. 5 — Escribe el superlativo de estos adjetivos, Ej. 6 — Completa con tan, tanto, tanta, tantos, tantas, Ejercicios
 
 ### Community 93 - "Hooks Reference (Design Detector Hook)"
 Cohesion: 0.67
@@ -558,29 +542,25 @@ Nodes (3): Design Brief (structured output), Impeccable: Shape (Design Brief), V
 Cohesion: 0.67
 Nodes (3): NEM1 Cuaderno Unidad 6A — ¿Cómo se va a Goya?, NEM1 Cuaderno Unidad 7A — ¿Dónde quedamos?, NEM1 A1 Interactivo — Unidad 6A ¿Cómo se va a Goya?
 
-### Community 108 - "Ejercicios"
-Cohesion: 0.33
-Nodes (5): 1. Menos humos, por favor, Ej. 1 — Lee y completa el texto con los verbos del recuadro, Ej. 2 — Ahora tú: escribe un pequeño texto, Ej. 3 — Construye frases, Ejercicios
-
 ## Knowledge Gaps
-- **257 isolated node(s):** `Ej. 1 — Escribe frases siguiendo el modelo`, `Ej. 2 — Construye frases`, `Ej. 3 — ¿Qué anuncio recomiendas a cada grupo?`, `Ej. 4 — Escribe frases siguiendo el modelo`, `Ej. 5 — Escucha y marca lo que más les molesta` (+252 more)
+- **242 isolated node(s):** `COMMON_DEV_PORTS`, `SCANNABLE_EXT`, `SOURCE_DIRS`, `PRODUCT_NAMES`, `DESIGN_NAMES` (+237 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **10 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
+- **Why does `enableInlineEdit()` connect `live-browser.js` to `createLiveBrowserDomHelpers`, `setLiveState`?**
+  _High betweenness centrality (0.003) - this node is a cross-community bridge._
 - **Why does `readBuffer()` connect `manual-edit-routes.mjs` to `live-manual-edit-evidence.mjs`, `manual-apply.mjs`, `live-commit-manual-edits.mjs`, `live-wrap.mjs`, `live-accept.mjs`?**
   _High betweenness centrality (0.003) - this node is a cross-community bridge._
-- **Why does `StaticElement` connect `StaticElement` to `css-cascade.mjs`?**
-  _High betweenness centrality (0.002) - this node is a cross-community bridge._
-- **Why does `getCritiqueDir()` connect `critique-storage.mjs` to `impeccable-paths.mjs`, `context-signals.mjs`?**
+- **Why does `countByPage()` connect `manual-edit-routes.mjs` to `live-commit-manual-edits.mjs`, `live-server.mjs`?**
   _High betweenness centrality (0.002) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `initGlobalBar()` (e.g. with `hideAgentPollTooltip()` and `onDetectMessage()`) actually correct?**
   _`initGlobalBar()` has 7 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `Ej. 1 — Escribe frases siguiendo el modelo`, `Ej. 2 — Construye frases`, `Ej. 3 — ¿Qué anuncio recomiendas a cada grupo?` to the rest of the system?**
-  _257 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `COMMON_DEV_PORTS`, `SCANNABLE_EXT`, `SOURCE_DIRS` to the rest of the system?**
+  _242 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `live-browser.js` be split into smaller, more focused modules?**
   _Cohesion score 0.02863984674329502 - nodes in this community are weakly interconnected._
 - **Should `checks.mjs` be split into smaller, more focused modules?**
-  _Cohesion score 0.045658263305322126 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.04453781512605042 - nodes in this community are weakly interconnected._
