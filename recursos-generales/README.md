@@ -14,5 +14,5 @@ del repositorio.
 `notas-sueltas.md`, en la raíz de esta carpeta, es la única excepción
 deliberada a la regla de subcarpetas por tema (ver `CLAUDE.md`): un
 catch-all transitorio para apuntes que aún no encajan en ninguna
-subcarpeta. En cuanto un tema ahí crece lo suficiente, se mueve a su
-propia subcarpeta — como acaba de pasar con `herramientas-ia/`.
+subcarpeta. En cuanto un tema ahí crezca lo suficiente, se mueve a su
+propia subcarpeta.
