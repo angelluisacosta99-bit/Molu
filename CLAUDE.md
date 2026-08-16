@@ -143,9 +143,14 @@ Este repo tiene (o puede tener) configuradas en `.claude/settings.local.json`
   `--backend groq` (ver la lista real de backends en
   `.claude/skills/graphify/references/github-and-merge.md`:
   `gemini|kimi|openai|deepseek|claude-cli`) — pero su backend `openai`
-  usa el SDK oficial de OpenAI por debajo, que respeta esas variables de
-  entorno estándar para redirigir a cualquier endpoint compatible —
-  incluido el de Groq:
+  usa el SDK oficial de OpenAI por debajo, y ese SDK sí lee de forma
+  nativa las dos variables estándar `OPENAI_API_KEY` y `OPENAI_BASE_URL`
+  para redirigir a cualquier endpoint compatible — incluido el de Groq.
+  `OPENAI_MODEL` no es una variable del SDK (el SDK de OpenAI no lee el
+  modelo del entorno; se pasa explícito en cada llamada) — es graphify
+  quien la lee para decidir qué modelo pedir. Las tres, funcionando
+  juntas contra Groq, quedaron verificadas con una llamada real de chat
+  completion (no solo inferidas de la documentación):
   - `OPENAI_API_KEY` — la key de Groq (empieza por `gsk_`).
   - `OPENAI_BASE_URL` — `https://api.groq.com/openai/v1`.
   - `OPENAI_MODEL` — el modelo de Groq a usar (ej. `llama-3.3-70b-versatile`).
@@ -180,15 +185,22 @@ seguir:
    agotada (o si `GEMINI_API_KEY` no estaba configurada desde el
    principio), y `OPENAI_API_KEY`+`OPENAI_BASE_URL` estén configuradas,
    completar lo pendiente por Groq **sin preguntar**, invocando el
-   backend `openai` de forma explícita en vez de por autodetección —
-   por ejemplo `graphify extract . --backend openai` sobre la lista de
-   archivos pendientes, o llamando directamente
-   `graphify.llm.extract_corpus_parallel(files, backend="openai")` (la
-   misma función que Part B ya usa para Gemini en SKILL.md:162, aquí con
-   el backend fijado a mano en vez de dejar que la detección de claves
-   lo decida). No hace falta tocar `.claude/settings.local.json` para
-   esto — no se quita ni se restaura ninguna key, solo se fuerza el
-   backend en el comando puntual.
+   backend `openai` de forma explícita en vez de por autodetección: usar
+   la misma lista de archivos sin cachear que Part B ya calcula en el
+   Step B0 (`graphify-out/.graphify_uncached.txt`, vía
+   `check_semantic_cache`) y llamar
+   `graphify.llm.extract_corpus_parallel(uncached_files, backend="openai")`
+   sobre exactamente esa lista — la misma función que Part B ya usa para
+   Gemini en SKILL.md:162, aquí con el backend fijado a mano en vez de
+   dejar que la detección de claves lo decida. No usar `graphify extract
+   <path>` como atajo: esa es una extracción completa y fresca sobre
+   todo el path (ver
+   `.claude/skills/graphify/references/github-and-merge.md`), no hay
+   nada documentado que la limite a lo pendiente, así que podría
+   reprocesar contra Groq archivos que Gemini ya resolvió. No hace falta
+   tocar `.claude/settings.local.json` para nada de esto — no se quita
+   ni se restaura ninguna key, solo se fuerza el backend en la llamada
+   puntual.
 3. **Subagentes de Claude, solo como último recurso.** Únicamente si ni
    Gemini ni Groq están configuradas, o ambas se agotaron y aun así
    quedan archivos pendientes, cae a dispatch de subagentes (Part B de
