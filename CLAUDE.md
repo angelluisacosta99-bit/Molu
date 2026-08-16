@@ -188,8 +188,9 @@ comportamiento por defecto, no un límite real de graphify):**
    mitad de corrida: un chunk que falla por cuota agotada (no un 429
    transitorio, que ya se reintenta solo) se salta, no aborta, y lo ya
    resuelto queda cacheado. Completar lo pendiente por Groq **sin
-   preguntar**, pero **dentro de Part B de la siguiente pasada**, no
-   después: `.graphify_uncached.txt` es temporal y Part B lo borra al
+   preguntar**, pero **dentro de Part B (la fase de extracción semántica
+   de la skill) de la siguiente pasada**, no después:
+   `.graphify_uncached.txt` es temporal y Part B lo borra al
    terminar (SKILL.md:357), pero el manifest incremental (Step 9) deja
    sin "stampear" los archivos fallidos, así que el próximo
    `graphify --update` los vuelve a detectar. En el momento en que el
@@ -295,6 +296,8 @@ la entrada como adoptada ("✅ Activado el AAAA-MM-DD") y no repetirla;
 si sigue sin activar, no insistir cada semana (Angel ya la vio), salvo
 que haya algo *nuevo* que añadir sobre esa herramienta concreta; si
 `ListConnectors` devuelve `connected: null` (falló la comprobación esa
-semana — `ListPlugins`/`ListSkills` no tienen este estado), tratarlo
-como desconocido, no como "sigue sin activar": dejar la entrada tal
-cual y probar de nuevo en la siguiente pasada.
+semana), tratarlo como desconocido, no como "sigue sin activar": dejar
+la entrada tal cual y probar de nuevo en la siguiente pasada.
+`ListPlugins`/`ListSkills` no documentan ese estado nulo (su `enabled`
+es un booleano simple) — para plugins y skills, tratar lo que devuelvan
+como fiable, sin esta rama de duda.
