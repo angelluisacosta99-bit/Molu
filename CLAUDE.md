@@ -274,3 +274,42 @@ guarde esté fuera de Git.
   relación) comprime el historial en vez de dejar que crezca sin límite.
   No hace falta automatizarlo; es una práctica a tener presente cuando la
   sesión se alarga mucho.
+
+## Radar de herramientas de IA
+
+Una Routine semanal (self-service, configurada vía `create_trigger` en
+la sesión que la creó — no aparece como código en este repo) busca
+novedades relevantes para el trabajo de Angel: funciones nuevas de
+Claude Code, skills, plugins, conectores MCP, modelos, y herramientas de
+terceros (como graphify, que Angel encontró navegando por su cuenta
+antes de que existiera este radar).
+
+**Registro:** `recursos-generales/herramientas-ia/novedades.md` — leerlo
+antes de proponer algo nuevo, para no repetir una recomendación ya hecha.
+
+**Fuentes que cubre cada pasada:**
+1. Oficiales de Anthropic/Claude: `code.claude.com/docs/en/whats-new`,
+   el blog de `claude.com`, `anthropic.com/news`, y los marketplaces de
+   plugins (`anthropics/claude-plugins-official`,
+   `anthropics/claude-plugins-community`).
+2. Terceros relevantes para el tipo de trabajo de este repo (docencia de
+   español, traducción, Python, telecomunicaciones, el máster) — vía
+   `SearchMcpRegistry`/`SearchPlugins`/`SearchSkills` (catálogo real de
+   Angel, no solo búsqueda web) y búsqueda web general cuando esas
+   herramientas no cubren algo.
+
+**Criterio de relevancia:** antes de añadir algo al registro, comprobar
+que resuelve una necesidad real de una de las carpetas de primer nivel
+de este repo o del propio flujo de Claude Code aquí — no volcar todo lo
+que exista en el mercado. Si no hay nada nuevo o relevante en una
+pasada, no se añade nada al registro, no se crea rama ni PR, y el
+mensaje final de esa pasada lo dice explícitamente en vez de simular
+una novedad. Eso es lo que sí controla este repo. Lo que no controla:
+la Routine que dispara estas pasadas tiene notificaciones push/email
+activadas a nivel de plataforma ("cuando la corrida termine con algo
+que merezca la pena"), y ese criterio de "merece la pena" lo decide la
+plataforma, no el texto de esta sección — así que una pasada sin
+hallazgos podría igualmente generar una notificación de "corrida
+completada". Si eso resulta molesto en la práctica, ajustar
+`notifications` de la Routine (`trig_01Jx2UqBq8ezuTzpknMj7SAW`) para
+desactivarlas y depender solo del registro versionado.

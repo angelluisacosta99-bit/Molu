@@ -14,7 +14,7 @@ mi aprendizaje de Python.
 | [`traduccion/`](traduccion/README.md) | Encargos y proyectos de traducción. |
 | [`python/`](python/README.md) | Ejercicios y proyectos mientras aprendo Python. |
 | [`master-sistemas-inteligentes/`](master-sistemas-inteligentes/README.md) | Apuntes y trabajos del máster en Salamanca. |
-| [`recursos-generales/`](recursos-generales/README.md) | Notas sueltas que aún no encajan en ninguna otra carpeta. |
+| [`recursos-generales/`](recursos-generales/README.md) | Radar de herramientas de IA y notas sueltas que aún no encajan en ninguna otra carpeta. |
 
 ## Reglas básicas
 
