@@ -90,10 +90,10 @@ Cuando el profesor envíe un PDF/foto para transcribir, seguir este orden
 **Si es un capítulo de `docencia-espanol/fuentes/`** (libro de texto con
 páginas numeradas): usar directamente
 `./docencia-espanol/fuentes/paginas.sh <archivo.pdf> <primera> [última]`
-— ya resuelve todo lo de abajo (texto con `-layout`, render a `/tmp` sin
-zero-padding, aviso de fuente Custom/Identity-H, imágenes incrustadas) y
-es la referencia hardened para este caso. Ver su cabecera para el porqué
-de cada detalle.
+— ya resuelve todo lo de abajo (texto con `-layout`, render a `/tmp`
+leído por glob en vez de un nombre fijo, aviso de fuente
+Custom/Identity-H, imágenes incrustadas) y es la referencia hardened
+para este caso. Ver su cabecera para el porqué de cada detalle.
 
 **Para cualquier otro PDF escaneado** (cartas del consulado, documentos
 sueltos sin script dedicado), el mismo procedimiento a mano:
