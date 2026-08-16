@@ -42,6 +42,15 @@ graphify-out/cache/
 # (el hook post-commit/post-checkout) los degrada a nombres genéricos sin
 # que nadie se dé cuenta. Sí se versiona.
 
+# Exportaciones puntuales de graphify (para incrustar en una presentación,
+# abrir en Gephi/yEd, etc.): pesan varios MB, no las mantiene al día
+# ningún hook, y quedarían obsoletas en el próximo rebuild automático de
+# código. Se generan bajo demanda con `graphify export svg|graphml`, no
+# se versionan. graphify-out/wiki/ sí se versiona (es texto, ligero, y es
+# el resultado final consultable, como graph.json/GRAPH_REPORT.md).
+graphify-out/graph.svg
+graphify-out/graph.graphml
+
 # Configuración local de Claude Code: overrides personales y, en su caso,
 # API keys (ej. GEMINI_API_KEY para graphify). Nunca debe subirse al repo.
 .claude/settings.local.json
