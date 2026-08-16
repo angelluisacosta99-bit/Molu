@@ -147,10 +147,16 @@ Este repo tiene (o puede tener) configuradas en `.claude/settings.local.json`
   nativa las dos variables estándar `OPENAI_API_KEY` y `OPENAI_BASE_URL`
   para redirigir a cualquier endpoint compatible — incluido el de Groq.
   `OPENAI_MODEL` no es una variable del SDK (el SDK de OpenAI no lee el
-  modelo del entorno; se pasa explícito en cada llamada) — es graphify
-  quien la lee para decidir qué modelo pedir. Las tres, funcionando
-  juntas contra Groq, quedaron verificadas con una llamada real de chat
-  completion (no solo inferidas de la documentación):
+  modelo del entorno; se pasa explícito en cada llamada). Que sea
+  graphify quien la lee bajo ese nombre exacto está verificado en vivo
+  (llamada real de chat completion contra Groq, con las tres variables
+  puestas así) pero no confirmado contra el código fuente de graphify —
+  el resto de overrides de modelo que sí documenta esta skill usan el
+  prefijo `GRAPHIFY_` (`GRAPHIFY_GEMINI_MODEL` en SKILL.md:162,
+  `GRAPHIFY_WHISPER_MODEL` en `references/transcribe.md`). Si
+  `OPENAI_MODEL` sola no surte efecto en una corrida futura, probar
+  también `GRAPHIFY_OPENAI_MODEL` antes de asumir que el backend está
+  roto:
   - `OPENAI_API_KEY` — la key de Groq (empieza por `gsk_`).
   - `OPENAI_BASE_URL` — `https://api.groq.com/openai/v1`.
   - `OPENAI_MODEL` — el modelo de Groq a usar (ej. `llama-3.3-70b-versatile`).
@@ -181,18 +187,26 @@ seguir:
    mitad de la corrida: si un chunk falla porque la cuota de Gemini está
    agotada (no un 429 transitorio, que ya se reintenta solo), lo salta y
    sigue con el resto — nada se pierde, cada archivo resuelto queda
-   cacheado. Cuando la corrida termine con archivos pendientes por cuota
-   agotada (o si `GEMINI_API_KEY` no estaba configurada desde el
-   principio), y `OPENAI_API_KEY`+`OPENAI_BASE_URL` estén configuradas,
-   completar lo pendiente por Groq **sin preguntar**, invocando el
-   backend `openai` de forma explícita en vez de por autodetección: usar
-   la misma lista de archivos sin cachear que Part B ya calcula en el
-   Step B0 (`graphify-out/.graphify_uncached.txt`, vía
-   `check_semantic_cache`) y llamar
+   cacheado. Cuando queden archivos pendientes por cuota agotada (o si
+   `GEMINI_API_KEY` no estaba configurada desde el principio), y
+   `OPENAI_API_KEY`+`OPENAI_BASE_URL` estén configuradas, completar lo
+   pendiente por Groq **sin preguntar**, pero **dentro de la propia
+   ejecución de Part B de la siguiente pasada** — no después de que la
+   corrida termine. `graphify-out/.graphify_uncached.txt` es un archivo
+   temporal de esa misma pasada: Part B lo borra en su propio paso de
+   limpieza nada más terminar (SKILL.md:357), así que no sirve como
+   fuente a la que volver luego. Lo que sí persiste es el manifest
+   incremental (Step 9): un archivo cuyo chunk falló por cuota queda sin
+   "stampear", así que el siguiente `graphify --update` lo vuelve a
+   detectar como pendiente por sí solo. Concretamente: al lanzar esa
+   siguiente pasada, en el momento en que su propio Step B0 calcule de
+   nuevo `.graphify_uncached.txt` (ahora con solo lo que de verdad sigue
+   pendiente) y antes de que esa misma pasada lo borre, usar esa lista
+   ahí mismo para llamar
    `graphify.llm.extract_corpus_parallel(uncached_files, backend="openai")`
-   sobre exactamente esa lista — la misma función que Part B ya usa para
-   Gemini en SKILL.md:162, aquí con el backend fijado a mano en vez de
-   dejar que la detección de claves lo decida. No usar `graphify extract
+   — la misma función que Part B ya usa para Gemini en SKILL.md:162,
+   aquí con el backend fijado a mano en vez de dejar que la detección de
+   claves lo decida. No usar `graphify extract
    <path>` como atajo: esa es una extracción completa y fresca sobre
    todo el path (ver
    `.claude/skills/graphify/references/github-and-merge.md`), no hay
