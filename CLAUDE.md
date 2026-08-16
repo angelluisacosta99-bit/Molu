@@ -84,36 +84,66 @@ contenido a mano — ver la sección `## graphify` más abajo.
 
 ### Procesar PDFs escaneados: OCR local antes que visión
 
-Cuando el profesor envíe un PDF/foto para transcribir (capítulos de
-`docencia-espanol/fuentes/`, documentos como el del consulado, etc.),
-seguir este orden — ahorra tokens porque evita transcribir la imagen
-desde cero:
+Cuando el profesor envíe un PDF/foto para transcribir, seguir este orden
+— ahorra tokens porque evita transcribir la imagen desde cero.
 
-1. **`pdftotext archivo.pdf -`** primero, siempre. Si el PDF ya tiene
-   texto real (no es una foto/escaneo), listo — no hace falta leer
-   ninguna imagen.
-2. **Si no hay texto** (PDF escaneado): renderizar la página con
-   `pdftoppm -png -r 150 -f N -l N archivo.pdf salida` y pasarla por
-   `tesseract salida-N.png stdout -l spa` (o `-l rus` si el documento
-   está en ruso, como las cartas del consulado) para obtener un borrador
-   gratis y local. 150 DPI es suficiente para OCR y evita el error de
-   "imagen demasiado grande" que da tesseract a 300 DPI en páginas
-   grandes.
-3. **Verificar el borrador contra la imagen** en vez de transcribir en
-   blanco — leer la imagen solo para corregir, no para transcribir
-   desde cero. Mucho más barato en tokens.
-4. **Para dibujos, crucigramas o manuscrito** (donde el OCR no aporta
-   nada): saltar el paso 2 y leer la imagen directamente, pero solo esas
-   páginas específicas, no el PDF completo.
+**Si es un capítulo de `docencia-espanol/fuentes/`** (libro de texto con
+páginas numeradas): usar directamente
+`./docencia-espanol/fuentes/paginas.sh <archivo.pdf> <primera> [última]`
+— ya resuelve todo lo de abajo (texto con `-layout`, render a `/tmp` sin
+zero-padding, aviso de fuente Custom/Identity-H, imágenes incrustadas) y
+es la referencia hardened para este caso. Ver su cabecera para el porqué
+de cada detalle.
+
+**Para cualquier otro PDF escaneado** (cartas del consulado, documentos
+sueltos sin script dedicado), el mismo procedimiento a mano:
+
+1. **`pdftotext -layout archivo.pdf -`** primero, siempre — con
+   `-layout`, nunca sin él: sin esa opción, una página con una tabla o
+   un gráfico incrustado mezcla las etiquetas con el cuerpo del texto
+   (pasó con un plano de metro en un capítulo real). Si el PDF ya tiene
+   texto real (no es una foto/escaneo) y `pdffonts archivo.pdf` no
+   muestra encoding `Custom`/`Identity-H`, listo — no hace falta leer
+   ninguna imagen. Si sí lo muestra, el texto puede salir con caracteres
+   cambiados aunque parezca correcto (visto de verdad: «tъ»/«йl» en vez
+   de «tú»/«él») — tratarlo como si no hubiera texto y seguir al paso 2.
+2. **Si no hay texto fiable** (PDF escaneado, o encoding sospechoso):
+   renderizar a un directorio fuera del repo —
+   `OUT="${TMPDIR:-/tmp}/paginas-$(basename "${archivo%.*}")"; mkdir -p "$OUT"`
+   (nunca escribir páginas escaneadas de material con copyright dentro
+   del repositorio) — con
+   `pdftoppm -jpeg -r 150 -f N -l N archivo.pdf "$OUT/pagina"` y pasar
+   **todos** los `pagina-*.jpg` resultantes (glob, no un nombre fijo tipo
+   `pagina-N.jpg`: con 10+ páginas el nombre real lleva ceros a la
+   izquierda y un nombre fijo no encuentra el archivo) por
+   `tesseract "$f" stdout -l spa` (o `-l rus` para las cartas del
+   consulado) para un borrador gratis y local. 150 DPI basta para OCR y
+   evita el error de "imagen demasiado grande" que da tesseract a 300
+   DPI en páginas grandes.
+3. **Leer siempre la imagen renderizada antes de dar la página por
+   cerrada** — no es un paso opcional de corregir errores puntuales del
+   OCR, es una lectura completa obligatoria: hay contenido que el texto
+   (ni el OCR) puede representar y que cambia las respuestas — líneas de
+   relacionar, ítems que el documento ya trae resueltos (aunque no sea
+   con un dibujo evidente, a veces solo una línea a mano marcando un
+   hueco como ya resuelto), respuestas rodeadas, flechas, manuscrito.
+   Usar el borrador de OCR como plantilla para no transcribir de cero,
+   pero la fuente de verdad final es siempre la imagen, vista entera.
+4. **Para dibujos, crucigramas o manuscrito puro** (donde el OCR no
+   aporta ni un borrador): saltar el paso 2 y leer la imagen
+   directamente, pero solo esas páginas específicas, no el PDF completo.
 
 **Para extraer imágenes ya incrustadas** en un PDF (ilustraciones dentro
 de un documento digital, no una página entera escaneada): usar
-`pdfimages -all archivo.pdf prefijo` — las saca a archivos directamente,
-sin IA de por medio, cero tokens.
+`pdfimages -f N -l N -png archivo.pdf prefijo` — las saca a archivos
+directamente, sin IA de por medio, cero tokens. Si no aparece ninguna y
+la página sí tiene dibujos, son vectoriales (parte del contenido de la
+página, no una imagen embebida) — recortarlos del render con PIL en vez
+de buscarlos con `pdfimages`.
 
 **Auto-instalación (el contenedor es efímero, esto no persiste solo):**
-si `tesseract`/`pdftotext`/`pdftoppm`/`pdfimages` no existen al empezar,
-instalarlos con
+si `tesseract`/`pdftotext`/`pdftoppm`/`pdfimages`/`pdffonts` no existen
+al empezar, instalarlos con
 `apt-get install -y poppler-utils tesseract-ocr tesseract-ocr-spa tesseract-ocr-rus`
 antes de usarlos — igual que `graphify` se auto-instala solo si falta.
 No asumir que ya están ahí solo porque lo estuvieron en una sesión
