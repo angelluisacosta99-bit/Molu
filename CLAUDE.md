@@ -98,7 +98,7 @@ para este caso. Ver su cabecera para el porqué de cada detalle.
 **Para cualquier otro PDF escaneado** (cartas del consulado, documentos
 sueltos sin script dedicado), el mismo procedimiento a mano:
 
-1. **`pdftotext -layout archivo.pdf -`** primero, siempre — con
+1. **`pdftotext -layout -f N -l N archivo.pdf -`** primero, siempre — con
    `-layout`, nunca sin él: sin esa opción, una página con una tabla o
    un gráfico incrustado mezcla las etiquetas con el cuerpo del texto
    (pasó con un plano de metro en un capítulo real). Correr también
