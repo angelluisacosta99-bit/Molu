@@ -2,16 +2,26 @@
 # Deja constancia de que una revisión independiente (skill code-review)
 # terminó limpia para un PR concreto, justo antes de fusionarlo. La
 # consume el hook PreToolUse check-pr-review.sh, que bloquea
-# mcp__github__merge_pull_request si no encuentra un marcador reciente.
+# mcp__github__merge_pull_request/enable_pr_auto_merge si no encuentra
+# un marcador reciente y con el SHA correcto.
 #
 # Uso: mark-pr-reviewed.sh <pr_number> <head_sha> <resumen corto>
-# Ej:  mark-pr-reviewed.sh 65 a1b2c3d "limpia, sin hallazgos"
+# Ej:  mark-pr-reviewed.sh 65 a1b2c3d4e5f6... "limpia, sin hallazgos"
 
 set -euo pipefail
 
 PR_NUMBER="${1:?falta el número de PR}"
 HEAD_SHA="${2:?falta el head SHA revisado}"
 SUMMARY="${3:-revisión completada}"
+
+if ! [[ "$PR_NUMBER" =~ ^[0-9]+$ ]]; then
+  echo "mark-pr-reviewed.sh: <pr_number> debe ser un entero (recibido: $PR_NUMBER)" >&2
+  exit 1
+fi
+if ! [[ "$HEAD_SHA" =~ ^[0-9a-fA-F]{7,40}$ ]]; then
+  echo "mark-pr-reviewed.sh: <head_sha> no parece un SHA de git válido (recibido: $HEAD_SHA)" >&2
+  exit 1
+fi
 
 DIR="${CLAUDE_PROJECT_DIR:-.}/.claude/.pr-review-state"
 mkdir -p "$DIR"

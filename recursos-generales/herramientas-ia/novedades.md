@@ -64,24 +64,42 @@ que quita el cortafuegos de permisos interactivo por completo — así que
 antes no había ninguna red de seguridad técnica, solo disciplina de
 turno a turno.
 
-**Iteración real, no de un tirón:** la primera versión fallaba
-**abierta** exactamente en los casos que debía bloquear — un marcador
-corrupto o `jq` ausente hacían que el script muriera bajo `set -e` con
-un exit code que Claude Code trata como "sin decisión" (permite la
-herramienta), justo lo contrario de lo que un gate de seguridad debe
-hacer. Una revisión independiente lo encontró probando esos casos de
-verdad, no solo leyendo el script. Rediseñado fail-closed: sin `set -e`,
-con una función `deny()` que no depende de `jq` (usa `printf` a mano)
-para que no falle precisamente cuando más se la necesita. Verificado en
-vivo con 7 casos (sin marcador, marcador corrupto, `jq` ausente del
-PATH, marcador fresco, marcador viejo, `pullNumber` ausente, input no
-JSON) — los 6 primeros deniegan, solo el marcador fresco permite.
+**Iteración real, no de un tirón — tres rondas de revisión, cada una
+encontrando algo que de verdad rompía el propósito del hook:**
 
-**Límites honestos, para que no se lea como más de lo que es:**
-- No verifica la calidad de la revisión, solo que el paso de "dejar
-  constancia" ocurrió hace poco para ese número de PR — el hook no
-  tiene credenciales de GitHub propias para comparar contra el SHA en
-  vivo del PR.
+1. La primera versión fallaba **abierta** exactamente en los casos que
+   debía bloquear — un marcador corrupto o `jq` ausente hacían que el
+   script muriera bajo `set -e` con un exit code que Claude Code trata
+   como "sin decisión" (permite la herramienta). Rediseñado fail-closed:
+   sin `set -e`, con una función `deny()` que no depende de `jq` (usa
+   `printf` a mano) para que no falle precisamente cuando más se la
+   necesita.
+2. Solo cubría `merge_pull_request`, no `enable_pr_auto_merge` — otro
+   camino real de fusión sin gate. Añadido al matcher.
+3. `reviewed_at` se validaba solo con `date -d`, que acepta texto suelto
+   tipo `"now"` como si fuera una fecha real -- un marcador con ese
+   valor pasaba como "reciente" sin serlo. Y el campo `head_sha` se
+   grababa pero **nunca se comparaba con nada** — un PR con commits
+   nuevos después de la revisión seguía fusionándose sin problema
+   dentro de la ventana de 60 minutos. Corregido de raíz: `reviewed_at`
+   ahora exige el formato exacto AAAA-MM-DDTHH:MM:SSZ antes de
+   parsearlo, y el hook **consulta en vivo la API de GitHub**
+   (`GITHUB_TOKEN`/`GH_TOKEN` sí están disponibles en el entorno) para
+   comparar el SHA grabado contra el HEAD actual del PR — un push nuevo
+   tras la revisión invalida el marcador aunque sea reciente. También
+   se validó que `pullNumber`/`owner`/`repo` tengan formato razonable
+   antes de usarlos para construir una ruta de archivo o una URL.
+
+Verificado en vivo con 6+ casos contra el PR real #66 (sin marcador,
+`reviewed_at` con formato laxo, SHA equivocado, SHA real correcto,
+`pullNumber` con intento de path traversal, sin `GITHUB_TOKEN`) — todos
+deniegan salvo el del SHA real correcto.
+
+**Límites honestos que siguen en pie, para que no se lea como más de lo
+que es:**
+- No verifica la calidad de la revisión en sí (que de verdad se leyera
+  el diff, que los hallazgos se tomaran en serio) — solo que el paso de
+  "dejar constancia" ocurrió, para el SHA correcto, hace poco.
 - No protege contra que yo decida ignorar mis propias reglas a
   propósito (soy quien escribe el marcador) — el problema real que
   ataca es el olvido bajo sesión larga, que es justo lo que reporta el
