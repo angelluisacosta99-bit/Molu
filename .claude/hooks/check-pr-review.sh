@@ -160,10 +160,18 @@ if [ -z "$TOKEN" ]; then
   deny "check-pr-review.sh: no hay GITHUB_TOKEN/GH_TOKEN en el entorno para verificar el PR en vivo -- bloqueando por seguridad (fail-closed)."
 fi
 
-# El token va por -K - (config leída de stdin), no como -H en la línea
-# de comandos: un argumento de línea de comandos es legible por
-# cualquier proceso con permiso para ver /proc/<pid>/cmdline mientras
-# curl corre, mientras que la config por stdin no queda expuesta ahí.
+# El token va por -K - (config leída de stdin, no -H en argv, para que
+# no quede expuesto vía /proc/<pid>/cmdline mientras curl corre) -- pero
+# ese formato de config usa `"` para delimitar valores y `\n` para
+# separar directivas, así que un token con esos caracteres podría
+# inyectar una directiva nueva (ej. una segunda URL que reenvíe la
+# cabecera Authorization real a un host distinto). Los tokens de GitHub
+# reales no llevan comillas, saltos de línea ni espacios, así que
+# valida el charset antes de interpolarlo -- si no cumple, no se
+# interpola nunca en el config.
+if ! [[ "$TOKEN" =~ ^[A-Za-z0-9._~+/=:-]+$ ]]; then
+  deny "check-pr-review.sh: GITHUB_TOKEN/GH_TOKEN tiene un formato inesperado (caracteres fuera de lo típico de un token de GitHub) -- bloqueando por seguridad (fail-closed) para evitar inyección en la config de curl."
+fi
 API_RESPONSE=$(curl -sS --max-time 15 -K - <<CURLCFG 2>/dev/null
 url = "https://api.github.com/repos/$OWNER/$REPO/pulls/$PR_NUMBER"
 header = "Authorization: Bearer $TOKEN"

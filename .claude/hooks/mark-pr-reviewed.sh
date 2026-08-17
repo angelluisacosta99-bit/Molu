@@ -41,6 +41,7 @@ MARKER="$DIR/${OWNER_LOWER}__${REPO_LOWER}__${PR_NUMBER}.json"
 # nunca puede leer un archivo a medio escribir (truncado, con 0 bytes o
 # contenido parcial) si ambos scripts llegan a solaparse en el tiempo.
 TMP="$(mktemp "$DIR/.tmp.${OWNER_LOWER}__${REPO_LOWER}__${PR_NUMBER}.XXXXXX")"
+trap 'rm -f "$TMP"' EXIT
 jq -n \
   --arg owner "$OWNER" \
   --arg repo "$REPO" \

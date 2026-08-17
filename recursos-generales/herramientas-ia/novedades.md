@@ -166,6 +166,34 @@ exacto), incluso en un repo personal, pero real -- queda anotado en los
 comentarios del propio script en vez de reclamar una garantía que este
 diseño no puede dar.
 
+**Séptima ronda (encontró una regresión introducida por la sexta):** el
+cambio de la sexta ronda -- pasar el token por `curl -K -` en vez de
+`-H` en argv, para no exponerlo vía `/proc/<pid>/cmdline` -- interpolaba
+`$TOKEN` sin validar dentro del heredoc que `curl -K` parsea como
+config, donde `"` cierra un valor y `\n` empieza una directiva nueva.
+Probado en vivo con un token fabricado con un salto de línea seguido de
+una directiva `url = "..."`: `curl` hacía **una segunda petición HTTP**
+a esa URL inyectada, reenviando la cabecera `Authorization: Bearer
+<token real>` también ahí -- una vía de exfiltración nueva, peor que el
+problema que la sexta ronda arreglaba, y que el código *anterior* a esa
+ronda no tenía. Corregido validando `$TOKEN` contra una lista blanca de
+caracteres (`^[A-Za-z0-9._~+/=:-]+$`, el charset real de un token de
+GitHub) **antes** de interpolarlo en cualquier parte -- si no cumple, se
+deniega sin siquiera intentar la petición. También cerró un hallazgo
+menor: `mark-pr-reviewed.sh` podía dejar un archivo temporal huérfano en
+`.claude/.pr-review-state/` si `jq` fallaba a mitad de escritura (sin
+impacto de seguridad, solo basura) -- añadido un `trap 'rm -f "$TMP"'
+EXIT`.
+
+**Lección de esta ronda:** un arreglo de seguridad puede introducir un
+problema peor que el que resuelve, si mueve el dato sensible de un
+contexto ya bien entendido (argv) a otro con sus propias reglas de
+escapado que no se validaron con el mismo cuidado (aquí, la sintaxis de
+config de `curl`). Cada ronda de este hook se sigue verificando en vivo,
+no solo por lectura -- fue precisamente esa prueba en vivo (un servidor
+HTTP local recibiendo la segunda petición) la que confirmó el problema
+en vez de quedarse en una sospecha teórica.
+
 **Límites honestos que siguen en pie, para que no se lea como más de lo
 que es:**
 - No verifica la calidad de la revisión en sí (que de verdad se leyera
