@@ -45,31 +45,172 @@ depender de acordarse.
 **Cómo probarlo:** ya está activo — se ve solo al final de cualquier
 turno con cambios pendientes.
 
-### Anotado, no aplicado: hooks para reglas duras, no solo CLAUDE.md
+### Aplicado (tras profundizar): hook que bloquea merge sin revisión
 
-**Qué es:** hallazgo de una búsqueda general (no una fuente única
-citable): las instrucciones de `CLAUDE.md` se siguen ~70% de las veces
-según reportan varios desarrolladores — aceptable para preferencias de
-estilo, pero arriesgado para reglas críticas tipo "nunca fusionar sin
-revisión". Un hook sí garantiza el 100%, porque es determinista, no una
-instrucción que el modelo pueda pasar por alto.
+**Qué es:** hallazgo de una búsqueda general: las instrucciones de
+`CLAUDE.md` se siguen ~70% de las veces según reportan varios
+desarrolladores — aceptable para preferencias de estilo, arriesgado
+para reglas críticas. Un hook sí garantiza el 100%, porque es
+determinista. Implementado como `check-pr-review.sh` (`PreToolUse`,
+matcher `mcp__github__merge_pull_request|mcp__github__enable_pr_auto_merge`,
+ver `.claude/settings.json`): bloquea la llamada si no encuentra, para
+ese PR exacto, un marcador escrito en los últimos 60 minutos por
+`.claude/hooks/mark-pr-reviewed.sh` (documentado como paso obligatorio
+en la regla dura de `CLAUDE.md`).
 
-**Por qué le sirve a Angel:** este repo tiene una regla dura exacta de
-ese tipo ("nunca hacer merge sin revisión independiente previa",
-`CLAUDE.md`) y además usa `defaultMode: dontAsk`, que quita el
-cortafuegos de permisos interactivo por completo. Hoy esa regla se
-cumplió siempre porque se le puso énfasis fuerte ("Regla dura, sin
-excepciones") y porque la seguí con disciplina turno a turno — pero
-nada la hace estructuralmente imposible de saltarse en una sesión
-futura.
+**Por qué le sirve a Angel:** este repo tiene esa regla dura exacta
+("nunca fusionar sin revisión") y además usa `defaultMode: dontAsk`,
+que quita el cortafuegos de permisos interactivo por completo — así que
+antes no había ninguna red de seguridad técnica, solo disciplina de
+turno a turno.
 
-**Por qué no se aplicó ya:** un hook que bloquee de verdad el merge sin
-revisión necesitaría alguna forma de que la skill de revisión deje
-constancia verificable (ej. un archivo marcador) que el hook pueda
-comprobar antes de permitir `merge_pull_request` — eso significa tocar
-también cómo se invoca la skill `code-review`, no es un cambio trivial
-de una tarde. Queda anotado para diseñarlo con calma si Angel lo quiere,
-en vez de montar algo a medias bajo prisa.
+**Iteración real, no de un tirón — tres rondas de revisión, cada una
+encontrando algo que de verdad rompía el propósito del hook:**
+
+1. La primera versión fallaba **abierta** exactamente en los casos que
+   debía bloquear — un marcador corrupto o `jq` ausente hacían que el
+   script muriera bajo `set -e` con un exit code que Claude Code trata
+   como "sin decisión" (permite la herramienta). Rediseñado fail-closed:
+   sin `set -e`, con una función `deny()` que no depende de `jq` (usa
+   `printf` a mano) para que no falle precisamente cuando más se la
+   necesita.
+2. Solo cubría `merge_pull_request`, no `enable_pr_auto_merge` — otro
+   camino real de fusión sin gate. Añadido al matcher.
+3. `reviewed_at` se validaba solo con `date -d`, que acepta texto suelto
+   tipo `"now"` como si fuera una fecha real -- un marcador con ese
+   valor pasaba como "reciente" sin serlo. Y el campo `head_sha` se
+   grababa pero **nunca se comparaba con nada** — un PR con commits
+   nuevos después de la revisión seguía fusionándose sin problema
+   dentro de la ventana de 60 minutos. Corregido de raíz: `reviewed_at`
+   ahora exige el formato exacto AAAA-MM-DDTHH:MM:SSZ antes de
+   parsearlo, y el hook **consulta en vivo la API de GitHub**
+   (`GITHUB_TOKEN`/`GH_TOKEN` sí están disponibles en el entorno) para
+   comparar el SHA grabado contra el HEAD actual del PR — un push nuevo
+   tras la revisión invalida el marcador aunque sea reciente. También
+   se validó que `pullNumber`/`owner`/`repo` tengan formato razonable
+   antes de usarlos para construir una ruta de archivo o una URL.
+
+Verificado en vivo con 6+ casos contra el PR real #66 (sin marcador,
+`reviewed_at` con formato laxo, SHA equivocado, SHA real correcto,
+`pullNumber` con intento de path traversal, sin `GITHUB_TOKEN`) — todos
+deniegan salvo el del SHA real correcto.
+
+**Cuarta ronda, tras la verificación en vivo:** una tercera revisión
+encontró que cubrir `enable_pr_auto_merge` con el mismo marcador daba
+**falsa** confianza, no protección real -- ese comando no fusiona en el
+momento, programa que GitHub fusione más tarde, de forma asíncrona,
+cuando pasen los checks, en el commit que sea HEAD *en ese momento
+futuro*. El hook no tiene forma de interceptar ese evento posterior, así
+que "permitirlo si hay marcador fresco" no protegía nada — un push
+nuevo después de activar auto-merge se fusionaría igual, sin revisión,
+sin que el hook se enterara. Corregido: `enable_pr_auto_merge` se
+deniega siempre, sin excepción, con el mensaje de usar
+`merge_pull_request` directo en su lugar. También encontró que el
+marcador se identificaba solo por número de PR, no por owner/repo — como
+los SHA de git son direcciones de contenido portables entre repos,
+alguien con acceso de escritura a cualquier repo podía reproducir el
+mismo commit ahí y reusar la revisión de un PR ajeno con el mismo
+número. Corregido añadiendo owner/repo a la clave del marcador (y a los
+argumentos de `mark-pr-reviewed.sh`). Y la comparación de SHA era
+sensible a mayúsculas y exigía coincidencia exacta, así que un SHA corto
+o en mayúsculas (como los que uso yo mismo al citar commits en esta
+conversación) hacía fallar la comparación contra un PR sin cambios de
+verdad — corregido a comparación por prefijo, insensible a mayúsculas.
+
+**Quinta ronda:** también encontró que `check-pr-review.sh` confiaba en
+que `head_sha` del marcador ya venía validado por `mark-pr-reviewed.sh`
+— pero un marcador escrito por otra vía (a mano, por un bug) con un
+`head_sha` corto y basura (ej. un solo carácter) que por casualidad
+fuera prefijo del SHA real en vivo pasaba la comparación igual,
+reproducido en vivo contra el PR #66 real. Corregido validando el mismo
+formato `^[0-9a-fA-F]{7,40}$` dentro del propio script gate, sin confiar
+en el escritor. Y el escapado a mano de `deny()` (con `sed`) solo cubría
+backslash y comillas, no caracteres de control como un salto de línea —
+un marcador manipulado con `\n` dentro de `head_sha` o `reviewed_at`
+producía JSON de salida inválido, que por el propio diseño fail-open de
+Claude Code ante salida no reconocible se trataría como "sin decisión ->
+permite", justo lo contrario de la intención. Corregido usando `jq -cn
+--arg` para construir el JSON de `deny()` (escapa todo correctamente),
+dejando el escapado a mano solo para el único `deny()` que dispara antes
+de confirmar que `jq` existe (mensaje fijo, sin datos externos). También
+se combinaron dos lecturas separadas del marcador en una sola invocación
+de `jq` con salida `@tsv`, para evitar una lectura no atómica si el
+archivo se reescribe a mitad de lectura (severidad baja dado el flujo
+secuencial de un solo agente, pero real). Verificado con 10 casos en
+vivo contra el PR #66 real, incluyendo un `head_sha` con salto de línea
+embebido (confirma que la salida de `deny()` sigue siendo JSON válido) y
+`jq` ausente del `PATH` (confirma que sigue fallando cerrado).
+
+**Sexta ronda:** encontró tres cosas más. (1) El token
+(`GITHUB_TOKEN`/`GH_TOKEN`) se pasaba a `curl` como `-H "Authorization:
+Bearer $TOKEN"` en la línea de comandos, legible por cualquier otro
+proceso con permiso para ver `/proc/<pid>/cmdline` mientras `curl`
+corría -- corregido pasándolo por `curl -K -` (config leída de stdin),
+que no queda expuesto ahí. (2) `mark-pr-reviewed.sh` escribía el
+marcador con una redirección `>` directa (trunca y luego escribe), no
+atómica -- una lectura de `check-pr-review.sh` justo en ese hueco podía
+ver un archivo vacío o a medio escribir y denegar por "marcador
+corrupto" aunque uno válido se estuviera escribiendo (falla cerrado, no
+explotable, pero contradice el propósito de la lectura atómica de la
+quinta ronda). Corregido escribiendo a un temporal en el mismo
+directorio y moviéndolo (`mv` es atómico dentro del mismo filesystem).
+(3) **Límite estructural sin arreglo posible desde este hook, documentado
+en vez de corregido:** entre que este script consulta el SHA en vivo y
+la llamada real a `merge_pull_request`, hay una ventana -- un push justo
+ahí se fusionaría sin revisar. `mcp__github__merge_pull_request` no
+expone un parámetro de SHA esperado para que GitHub rechace la fusión si
+el HEAD cambió, y un hook `PreToolUse` no puede reescribir los
+argumentos de la llamada que autoriza, solo permitir o denegar. Riesgo
+bajo en la práctica (requiere un push adversario en ese instante
+exacto), incluso en un repo personal, pero real -- queda anotado en los
+comentarios del propio script en vez de reclamar una garantía que este
+diseño no puede dar.
+
+**Séptima ronda (encontró una regresión introducida por la sexta):** el
+cambio de la sexta ronda -- pasar el token por `curl -K -` en vez de
+`-H` en argv, para no exponerlo vía `/proc/<pid>/cmdline` -- interpolaba
+`$TOKEN` sin validar dentro del heredoc que `curl -K` parsea como
+config, donde `"` cierra un valor y `\n` empieza una directiva nueva.
+Probado en vivo con un token fabricado con un salto de línea seguido de
+una directiva `url = "..."`: `curl` hacía **una segunda petición HTTP**
+a esa URL inyectada, reenviando la cabecera `Authorization: Bearer
+<token real>` también ahí -- una vía de exfiltración nueva, peor que el
+problema que la sexta ronda arreglaba, y que el código *anterior* a esa
+ronda no tenía. Corregido validando `$TOKEN` contra una lista blanca de
+caracteres (`^[A-Za-z0-9._~+/=:-]+$`, el charset real de un token de
+GitHub) **antes** de interpolarlo en cualquier parte -- si no cumple, se
+deniega sin siquiera intentar la petición. También cerró un hallazgo
+menor: `mark-pr-reviewed.sh` podía dejar un archivo temporal huérfano en
+`.claude/.pr-review-state/` si `jq` fallaba a mitad de escritura (sin
+impacto de seguridad, solo basura) -- añadido un `trap 'rm -f "$TMP"'
+EXIT`.
+
+**Lección de esta ronda:** un arreglo de seguridad puede introducir un
+problema peor que el que resuelve, si mueve el dato sensible de un
+contexto ya bien entendido (argv) a otro con sus propias reglas de
+escapado que no se validaron con el mismo cuidado (aquí, la sintaxis de
+config de `curl`). Cada ronda de este hook se sigue verificando en vivo,
+no solo por lectura -- fue precisamente esa prueba en vivo (un servidor
+HTTP local recibiendo la segunda petición) la que confirmó el problema
+en vez de quedarse en una sospecha teórica.
+
+**Límites honestos que siguen en pie, para que no se lea como más de lo
+que es:**
+- No verifica la calidad de la revisión en sí (que de verdad se leyera
+  el diff, que los hallazgos se tomaran en serio) — solo que el paso de
+  "dejar constancia" ocurrió, para el SHA correcto, hace poco.
+- No protege contra que yo decida ignorar mis propias reglas a
+  propósito (soy quien escribe el marcador) — el problema real que
+  ataca es el olvido bajo sesión larga, que es justo lo que reporta el
+  hallazgo del 70%, y es exactamente lo que me pasó hoy mismo con el
+  trigger de Groq que se me olvidó crear.
+- **Cobertura parcial, no total:** solo intercepta esas dos llamadas
+  MCP concretas. Fusionar por otra vía (ej. `gh pr merge` por Bash, si
+  `gh` estuviera disponible en el entorno) no pasa por este hook. La
+  regla dura de `CLAUDE.md` sigue aplicando por disciplina en esos
+  caminos, sin gate técnico.
+- El marcador vive en `.claude/.pr-review-state/` (gitignored, estado
+  de sesión efímero, no versionado).
 
 ### Anotado, no aplicado: patrones de `awattar/claude-code-best-practices`
 

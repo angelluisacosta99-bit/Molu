@@ -50,6 +50,15 @@
             "command": "if [ -x /root/.local/bin/graphify ]; then exec /root/.local/bin/graphify hook-guard read; fi"
           }
         ]
+      },
+      {
+        "matcher": "mcp__github__merge_pull_request|mcp__github__enable_pr_auto_merge",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR/.claude/hooks/check-pr-review.sh\""
+          }
+        ]
       }
     ]
   }
