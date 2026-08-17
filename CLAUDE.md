@@ -119,7 +119,8 @@ sueltos sin script dedicado), el mismo procedimiento a mano:
    del repositorio) — con
    `pdftoppm -jpeg -r 150 -f N -l N archivo.pdf "$OUT/pagina"`. 150 DPI
    basta para OCR y evita el error de "imagen demasiado grande" que da
-   tesseract a 300 DPI en páginas grandes. Si el paso 1 no dio texto
+   `pdftoppm` a 300 DPI en páginas grandes (medido: `Error in
+   pixCreateHeader: requested bytes >= 2^31`). Si el paso 1 no dio texto
    fiable (escaneado, o encoding sospechoso), pasar además **todos** los
    `pagina-*.jpg` resultantes (glob, no un nombre fijo tipo
    `pagina-N.jpg`: con 10+ páginas el nombre real lleva ceros a la
@@ -161,12 +162,15 @@ anterior: `.claude/skills/ejercicio-interactivo/SKILL.md` tiene medido
 que ni `poppler-utils` ni `tesseract` están garantizados en todos los
 contenedores, y que `apt-get install poppler-utils` puede fallar con
 404 (índice de paquetes caducado, sin arreglo con `apt-get update`). Si
-eso pasa, el plan B medido que sí funciona es `python3 -m pip install
-pymupdf` — sustituye a `pdftoppm` para renderizar la página
-(`pymupdf.open(pdf)[n-1].get_pixmap(dpi=170).save("p.png")`, ver esa
-skill para el detalle). Sin OCR tampoco pasa nada: leer el render con
-`Read` es la fuente de verdad de todos modos (paso 3);
-tesseract solo ahorra el borrador previo, nunca es imprescindible.
+eso pasa, `poppler` entero (no solo `pdftoppm`) falta, así que hace
+falta un plan B para los tres pasos, no solo para el render: el medido
+que sí funciona es `python3 -m pip install pymupdf`, que sustituye a
+`pdftoppm` (`pymupdf.open(pdf)[n-1].get_pixmap(dpi=170).save("p.png")`),
+a `pdftotext` (`.get_text()` de esa misma página) y a `pdfimages`
+(`.get_images()`) — ver esa skill para el detalle de cada llamada. Sin
+tesseract tampoco pasa nada: leer el render con `Read` es la fuente de
+verdad de todos modos (paso 3), tesseract solo ahorra el borrador
+previo, nunca es imprescindible.
 
 ## Nombre del profesor: sin tilde
 
