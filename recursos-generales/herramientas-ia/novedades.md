@@ -95,6 +95,28 @@ Verificado en vivo con 6+ casos contra el PR real #66 (sin marcador,
 `pullNumber` con intento de path traversal, sin `GITHUB_TOKEN`) — todos
 deniegan salvo el del SHA real correcto.
 
+**Cuarta ronda, tras la verificación en vivo:** una tercera revisión
+encontró que cubrir `enable_pr_auto_merge` con el mismo marcador daba
+**falsa** confianza, no protección real -- ese comando no fusiona en el
+momento, programa que GitHub fusione más tarde, de forma asíncrona,
+cuando pasen los checks, en el commit que sea HEAD *en ese momento
+futuro*. El hook no tiene forma de interceptar ese evento posterior, así
+que "permitirlo si hay marcador fresco" no protegía nada — un push
+nuevo después de activar auto-merge se fusionaría igual, sin revisión,
+sin que el hook se enterara. Corregido: `enable_pr_auto_merge` se
+deniega siempre, sin excepción, con el mensaje de usar
+`merge_pull_request` directo en su lugar. También encontró que el
+marcador se identificaba solo por número de PR, no por owner/repo — como
+los SHA de git son direcciones de contenido portables entre repos,
+alguien con acceso de escritura a cualquier repo podía reproducir el
+mismo commit ahí y reusar la revisión de un PR ajeno con el mismo
+número. Corregido añadiendo owner/repo a la clave del marcador (y a los
+argumentos de `mark-pr-reviewed.sh`). Y la comparación de SHA era
+sensible a mayúsculas y exigía coincidencia exacta, así que un SHA corto
+o en mayúsculas (como los que uso yo mismo al citar commits en esta
+conversación) hacía fallar la comparación contra un PR sin cambios de
+verdad — corregido a comparación por prefijo, insensible a mayúsculas.
+
 **Límites honestos que siguen en pie, para que no se lea como más de lo
 que es:**
 - No verifica la calidad de la revisión en sí (que de verdad se leyera

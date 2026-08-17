@@ -33,15 +33,19 @@ lanzar la revisión (ni fusionar) solo por haber abierto el PR — hace
 falta que el profesor pida fusionar primero.
 
 **Refuerzo técnico parcial, no sustituye la disciplina.** Un hook
-`PreToolUse` (`check-pr-review.sh`) bloquea las llamadas MCP
-`merge_pull_request` y `enable_pr_auto_merge` si no encuentra, para ese
-PR, un marcador reciente (<60 min, fail-closed ante cualquier error) **y
-con el mismo SHA que el HEAD actual del PR** — lo comprueba en vivo
-contra la API de GitHub con el `GITHUB_TOKEN`/`GH_TOKEN` del entorno, así
-que un push nuevo tras la revisión invalida el marcador aunque sea
-reciente. En cuanto la revisión de un PR salga limpia (o tras corregir
-sus hallazgos), antes de fusionar, dejar constancia con:
-`.claude/hooks/mark-pr-reviewed.sh <PR> <head_sha> "<resumen>"`.
+`PreToolUse` (`check-pr-review.sh`) bloquea la llamada MCP
+`merge_pull_request` si no encuentra, para ese owner/repo/PR exacto, un
+marcador reciente (<60 min, fail-closed ante cualquier error) **y con el
+mismo SHA que el HEAD actual del PR** — lo comprueba en vivo contra la
+API de GitHub con el `GITHUB_TOKEN`/`GH_TOKEN` del entorno, así que un
+push nuevo tras la revisión invalida el marcador aunque sea reciente.
+`enable_pr_auto_merge` se deniega siempre, sin excepción: fusiona más
+tarde de forma asíncrona en el commit que sea HEAD en ese momento
+futuro, algo que este hook no puede verificar ahora — usar
+`merge_pull_request` directo tras revisar, no auto-merge. En cuanto la
+revisión de un PR salga limpia (o tras corregir sus hallazgos), antes
+de fusionar, dejar constancia con:
+`.claude/hooks/mark-pr-reviewed.sh <owner> <repo> <PR> <head_sha> "<resumen>"`.
 **No cubre** fusionar por otras vías (ej. `gh pr merge` por Bash, si
 `gh` estuviera disponible) — la regla dura sigue aplicando igual a esos
 caminos, solo que sin gate técnico. Detalle completo del diseño y sus
