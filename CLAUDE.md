@@ -104,22 +104,23 @@ sueltos sin script dedicado), el mismo procedimiento a mano:
    (pasó con un plano de metro en un capítulo real). Correr también
    `pdffonts archivo.pdf`: si muestra encoding `Custom`/`Identity-H`, el
    texto puede salir con caracteres cambiados aunque parezca correcto
-   (incidente real, documentado en la cabecera de `paginas.sh`) —
-   tratarlo como si no hubiera texto y seguir al paso 2. Este paso da un
-   borrador rápido, pero **no decide por sí solo si hace falta ver la
-   imagen** — eso lo decide el paso 3, siempre, sin excepción: incluso
-   con texto perfecto, solo la imagen muestra líneas dibujadas, ítems ya
-   resueltos o marcas a mano (ver paso 3).
+   (incidente real, documentado en el diagnóstico `pdffonts` de
+   `paginas.sh`) — tratarlo como si no hubiera texto y seguir al paso 2.
+   Este paso da un borrador rápido, pero **no decide por sí solo si hace
+   falta ver la imagen** — eso lo decide el paso 3, siempre, sin
+   excepción: incluso con texto perfecto, solo la imagen muestra líneas
+   dibujadas, ítems ya resueltos o marcas a mano (ver paso 3).
 2. **Renderizar la página**, siempre, incluso si el paso 1 dio texto
    limpio (el render hace falta para el paso 3, no es opcional): a un
-   directorio fuera del repo — por ejemplo, sustituyendo `archivo.pdf`
-   por la ruta real:
-   `OUT="${TMPDIR:-/tmp}/paginas-$(basename archivo.pdf .pdf)"; mkdir -p "$OUT"`
+   directorio fuera del repo — por ejemplo (sustituyendo `archivo.pdf`
+   por la ruta real):
+   `ARCHIVO="archivo.pdf"; OUT="${TMPDIR:-/tmp}/paginas-$(basename "${ARCHIVO%.*}")"; mkdir -p "$OUT"`
    (nunca escribir páginas escaneadas de material con copyright dentro
    del repositorio) — con
    `pdftoppm -jpeg -r 150 -f N -l N archivo.pdf "$OUT/pagina"`. 150 DPI
    basta para OCR y evita el error de "imagen demasiado grande" que da
-   `pdftoppm` a 300 DPI en páginas grandes (medido: `Error in
+   `tesseract` (vía Leptonica, no Poppler) al procesar una imagen
+   renderizada a 300 DPI en páginas grandes (medido: `Error in
    pixCreateHeader: requested bytes >= 2^31`). Si el paso 1 no dio texto
    fiable (escaneado, o encoding sospechoso), pasar además **todos** los
    `pagina-*.jpg` resultantes (glob, no un nombre fijo tipo
@@ -164,13 +165,16 @@ contenedores, y que `apt-get install poppler-utils` puede fallar con
 404 (índice de paquetes caducado, sin arreglo con `apt-get update`). Si
 eso pasa, `poppler` entero (no solo `pdftoppm`) falta, así que hace
 falta un plan B para los tres pasos, no solo para el render: el medido
-que sí funciona es `python3 -m pip install pymupdf`, que sustituye a
-`pdftoppm` (`pymupdf.open(pdf)[n-1].get_pixmap(dpi=170).save("p.png")`),
-a `pdftotext` (`.get_text()` de esa misma página) y a `pdfimages`
-(`.get_images()`) — ver esa skill para el detalle de cada llamada. Sin
-tesseract tampoco pasa nada: leer el render con `Read` es la fuente de
-verdad de todos modos (paso 3), tesseract solo ahorra el borrador
-previo, nunca es imprescindible.
+que sí funciona es `python3 -m pip install pymupdf`. Sustituye a
+`pdftoppm` y `pdftotext` con la llamada que ya documenta esa skill —
+`pymupdf.open(pdf)[n-1].get_pixmap(dpi=170).save("p.png")` para
+renderizar, `[n-1].get_text()` para el texto — y a `pdfimages`, no
+documentado ahí, con `for xref, *_ in pagina.get_images(): datos =
+doc.extract_image(xref)` (`get_images()` solo lista referencias; hace
+falta `extract_image()` para sacar los bytes reales). Sin tesseract
+tampoco pasa nada: leer el render con `Read` es la fuente de verdad de
+todos modos (paso 3), tesseract solo ahorra el borrador previo, nunca es
+imprescindible.
 
 ## Nombre del profesor: sin tilde
 
