@@ -577,7 +577,7 @@ a. Antes Juanjo siempre **estaba** gastando bromas. (estaba / estuvo)
 b. Conozco a una chica que **estaba** estudiando en Berlín cuando cayó el muro. (ha estado / estaba)
 c. Anoche no pude dormir porque el gato de la vecina **estuvo** maullando sin parar. (ha estado / estuvo)
 d. Anoche **estábamos** celebrando el cumpleaños de Gema en un bar cuando vimos la noticia del terremoto en televisión. (estábamos / estuvimos)
-e. Durante estos últimos años, **ha estado** viajando para perfeccionar sus conocimientos de inglés, pero ahora ha vuelto a su ciudad. (ha estado / estuvo)
+e. Durante estos últimos años, **estuvo** viajando para perfeccionar sus conocimientos de inglés, pero ahora ha vuelto a su ciudad. (ha estado / estuvo)
 f. Cuando éramos jóvenes, **estuvimos** saliendo juntos una temporada. (estuvimos / estábamos)
 
 #### Ej. 4 — Formación de contrarios
