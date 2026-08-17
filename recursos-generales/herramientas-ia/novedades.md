@@ -141,6 +141,31 @@ vivo contra el PR #66 real, incluyendo un `head_sha` con salto de línea
 embebido (confirma que la salida de `deny()` sigue siendo JSON válido) y
 `jq` ausente del `PATH` (confirma que sigue fallando cerrado).
 
+**Sexta ronda:** encontró tres cosas más. (1) El token
+(`GITHUB_TOKEN`/`GH_TOKEN`) se pasaba a `curl` como `-H "Authorization:
+Bearer $TOKEN"` en la línea de comandos, legible por cualquier otro
+proceso con permiso para ver `/proc/<pid>/cmdline` mientras `curl`
+corría -- corregido pasándolo por `curl -K -` (config leída de stdin),
+que no queda expuesto ahí. (2) `mark-pr-reviewed.sh` escribía el
+marcador con una redirección `>` directa (trunca y luego escribe), no
+atómica -- una lectura de `check-pr-review.sh` justo en ese hueco podía
+ver un archivo vacío o a medio escribir y denegar por "marcador
+corrupto" aunque uno válido se estuviera escribiendo (falla cerrado, no
+explotable, pero contradice el propósito de la lectura atómica de la
+quinta ronda). Corregido escribiendo a un temporal en el mismo
+directorio y moviéndolo (`mv` es atómico dentro del mismo filesystem).
+(3) **Límite estructural sin arreglo posible desde este hook, documentado
+en vez de corregido:** entre que este script consulta el SHA en vivo y
+la llamada real a `merge_pull_request`, hay una ventana -- un push justo
+ahí se fusionaría sin revisar. `mcp__github__merge_pull_request` no
+expone un parámetro de SHA esperado para que GitHub rechace la fusión si
+el HEAD cambió, y un hook `PreToolUse` no puede reescribir los
+argumentos de la llamada que autoriza, solo permitir o denegar. Riesgo
+bajo en la práctica (requiere un push adversario en ese instante
+exacto), incluso en un repo personal, pero real -- queda anotado en los
+comentarios del propio script en vez de reclamar una garantía que este
+diseño no puede dar.
+
 **Límites honestos que siguen en pie, para que no se lea como más de lo
 que es:**
 - No verifica la calidad de la revisión en sí (que de verdad se leyera

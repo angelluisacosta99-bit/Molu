@@ -34,7 +34,13 @@ mkdir -p "$DIR"
 
 OWNER_LOWER=$(printf '%s' "$OWNER" | tr '[:upper:]' '[:lower:]')
 REPO_LOWER=$(printf '%s' "$REPO" | tr '[:upper:]' '[:lower:]')
+MARKER="$DIR/${OWNER_LOWER}__${REPO_LOWER}__${PR_NUMBER}.json"
 
+# Escribe en un archivo temporal en el mismo directorio y luego lo mueve
+# (mv dentro del mismo filesystem es atómico): así check-pr-review.sh
+# nunca puede leer un archivo a medio escribir (truncado, con 0 bytes o
+# contenido parcial) si ambos scripts llegan a solaparse en el tiempo.
+TMP="$(mktemp "$DIR/.tmp.${OWNER_LOWER}__${REPO_LOWER}__${PR_NUMBER}.XXXXXX")"
 jq -n \
   --arg owner "$OWNER" \
   --arg repo "$REPO" \
@@ -43,6 +49,7 @@ jq -n \
   --arg summary "$SUMMARY" \
   --arg ts "$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
   '{owner: $owner, repo: $repo, pr_number: $pr, head_sha: $sha, summary: $summary, reviewed_at: $ts}' \
-  > "$DIR/${OWNER_LOWER}__${REPO_LOWER}__${PR_NUMBER}.json"
+  > "$TMP"
+mv -f "$TMP" "$MARKER"
 
 echo "Marcador escrito: $OWNER/$REPO#$PR_NUMBER revisado en $HEAD_SHA ($SUMMARY)"

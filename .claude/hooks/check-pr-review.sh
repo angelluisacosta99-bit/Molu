@@ -30,6 +30,19 @@
 #
 # Cobertura conocida y limitada: solo intercepta esas dos llamadas MCP.
 # No cubre `gh pr merge` por Bash -- ver la nota en CLAUDE.md.
+#
+# Límite estructural sin arreglo posible desde este hook: entre que este
+# script consulta el SHA en vivo y devuelve "allow", y que la llamada
+# merge_pull_request de verdad se ejecuta, hay una ventana -- si alguien
+# empuja un commit nuevo justo en ese hueco, se fusiona sin revisar.
+# mcp__github__merge_pull_request no expone un parámetro de SHA esperado
+# (confirmado en su esquema: solo owner/repo/pullNumber/merge_method/
+# commit_title/commit_message) para que GitHub rechace la fusión si el
+# HEAD cambió desde la comprobación, y un hook PreToolUse no puede
+# reescribir los argumentos de la llamada que autoriza, solo permitir o
+# denegar. Riesgo bajo en la práctica (requiere un push adversario justo
+# en ese instante), pero real -- documentado en vez de reclamar una
+# garantía que este diseño no puede dar.
 
 MAX_AGE_SECONDS=3600  # 60 minutos
 
@@ -147,10 +160,16 @@ if [ -z "$TOKEN" ]; then
   deny "check-pr-review.sh: no hay GITHUB_TOKEN/GH_TOKEN en el entorno para verificar el PR en vivo -- bloqueando por seguridad (fail-closed)."
 fi
 
-API_RESPONSE=$(curl -sS --max-time 15 \
-  -H "Authorization: Bearer $TOKEN" \
-  -H "Accept: application/vnd.github+json" \
-  "https://api.github.com/repos/$OWNER/$REPO/pulls/$PR_NUMBER" 2>/dev/null)
+# El token va por -K - (config leída de stdin), no como -H en la línea
+# de comandos: un argumento de línea de comandos es legible por
+# cualquier proceso con permiso para ver /proc/<pid>/cmdline mientras
+# curl corre, mientras que la config por stdin no queda expuesta ahí.
+API_RESPONSE=$(curl -sS --max-time 15 -K - <<CURLCFG 2>/dev/null
+url = "https://api.github.com/repos/$OWNER/$REPO/pulls/$PR_NUMBER"
+header = "Authorization: Bearer $TOKEN"
+header = "Accept: application/vnd.github+json"
+CURLCFG
+)
 CURL_EXIT=$?
 
 if [ "$CURL_EXIT" -ne 0 ] || [ -z "$API_RESPONSE" ]; then
