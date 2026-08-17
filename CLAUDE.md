@@ -98,11 +98,11 @@ para este caso. Ver su cabecera para el porqué de cada detalle.
 **Para cualquier otro PDF escaneado** (cartas del consulado, documentos
 sueltos sin script dedicado), el mismo procedimiento a mano:
 
-1. **`pdftotext -layout -f N -l N archivo.pdf -`** primero, siempre — con
+1. **`pdftotext -layout -f N -l N "archivo.pdf" -`** primero, siempre — con
    `-layout`, nunca sin él: sin esa opción, una página con una tabla o
    un gráfico incrustado mezcla las etiquetas con el cuerpo del texto
    (pasó con un plano de metro en un capítulo real). Correr también
-   `pdffonts archivo.pdf`: si muestra encoding `Custom`/`Identity-H`, el
+   `pdffonts "archivo.pdf"`: si muestra encoding `Custom`/`Identity-H`, el
    texto puede salir con caracteres cambiados aunque parezca correcto
    (incidente real, documentado en el diagnóstico `pdffonts` de
    `paginas.sh`) — tratarlo como si no hubiera texto y seguir al paso 2.
@@ -117,12 +117,15 @@ sueltos sin script dedicado), el mismo procedimiento a mano:
    `ARCHIVO="archivo.pdf"; OUT="${TMPDIR:-/tmp}/paginas-$(basename "${ARCHIVO%.*}")"; mkdir -p "$OUT"`
    (nunca escribir páginas escaneadas de material con copyright dentro
    del repositorio) — con
-   `pdftoppm -jpeg -r 150 -f N -l N archivo.pdf "$OUT/pagina"`. 150 DPI
-   basta para OCR y evita el error de "imagen demasiado grande" que da
-   `tesseract` (vía Leptonica, no Poppler) al procesar una imagen
-   renderizada a 300 DPI en páginas grandes (medido: `Error in
-   pixCreateHeader: requested bytes >= 2^31`). Si el paso 1 no dio texto
-   fiable (escaneado, o encoding sospechoso), pasar además **todos** los
+   `pdftoppm -jpeg -r 150 -f N -l N "archivo.pdf" "$OUT/pagina"`. 150
+   DPI basta para OCR en la mayoría de páginas; para letra muy menuda en
+   una página de tamaño normal sí conviene subir a 200-300 DPI, como
+   recomienda `paginas.sh`. La excepción es una página físicamente
+   grande (un póster, un plano doblado): ahí sí evitar 300 DPI, porque
+   `tesseract` (vía Leptonica, no Poppler) puede dar "imagen demasiado
+   grande" al procesarla (medido: `Error in pixCreateHeader: requested
+   bytes >= 2^31`). Si el paso 1 no dio texto fiable (escaneado, o
+   encoding sospechoso), pasar además **todos** los
    `pagina-*.jpg` resultantes (glob, no un nombre fijo tipo
    `pagina-N.jpg`: con 10+ páginas el nombre real lleva ceros a la
    izquierda y un nombre fijo no encuentra el archivo) por
@@ -147,7 +150,7 @@ sueltos sin script dedicado), el mismo procedimiento a mano:
 
 **Para extraer imágenes ya incrustadas** en un PDF (ilustraciones dentro
 de un documento digital, no una página entera escaneada): usar
-`pdfimages -f N -l N -png archivo.pdf prefijo` — las saca a archivos
+`pdfimages -f N -l N -png "archivo.pdf" prefijo` — las saca a archivos
 directamente, sin IA de por medio, cero tokens. Si no aparece ninguna y
 la página sí tiene dibujos, son vectoriales (parte del contenido de la
 página, no una imagen embebida) — recortarlos del render con PIL en vez
