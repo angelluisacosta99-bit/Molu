@@ -14,6 +14,11 @@ artifact). No sustituye a `impeccable` — la aportación de Vercel es una
 lista de comprobación externa y ya validada por la comunidad, útil como
 segunda pasada tras el trabajo de diseño de `impeccable`.
 
+> Copyright (c) 2025 Vercel Labs. Licencia MIT — permiso concedido para
+> usar, copiar, modificar y redistribuir, siempre que se incluyan este
+> aviso de copyright y el de permiso. Texto completo de la licencia:
+> <https://github.com/vercel-labs/web-interface-guidelines/blob/main/LICENSE>.
+
 ---
 
 Interfaces succeed because of hundreds of choices. This is a living, non-exhaustive list of those decisions. Most guidelines are framework-agnostic, some specific to React/Next.js. [Feedback is welcome](https://github.com/vercel-labs/web-interface-guidelines/tree/main).
@@ -80,7 +85,7 @@ Interfaces succeed because of hundreds of choices. This is a living, non-exhaust
 - **Accurate page titles.** `<title>` reflects the current context.
 - **No dead ends.** Every screen offers a next step or recovery path.
 - **All states designed.** Empty, sparse, dense, & error states.
-- **Typographic quotes.** Prefer curly quotes (" ") over straight quotes (" ").
+- **Typographic quotes.** Prefer curly quotes (“ ”) over straight quotes (" ").
 - **Avoid widows/orphans.** Tidy rag & line breaks.
 - **Tabular numbers for comparisons.** Use `font-variant-numeric: tabular-nums` or a monospace like [Geist Mono](https://vercel.com/font).
 - **Redundant status cues.** Don't rely on color alone; include text labels.
