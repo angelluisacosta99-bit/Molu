@@ -104,8 +104,9 @@ sueltos sin script dedicado), el mismo procedimiento a mano:
    (pasó con un plano de metro en un capítulo real). Correr también
    `pdffonts archivo.pdf`: si muestra encoding `Custom`/`Identity-H`, el
    texto puede salir con caracteres cambiados aunque parezca correcto
-   (visto de verdad: «tъ»/«йl» en vez de «tú»/«él») — tratarlo como si
-   no hubiera texto y seguir al paso 2. Este paso da un borrador rápido,
+   (incidente real documentado en `paginas.sh`, línea 69) — tratarlo
+   como si no hubiera texto y seguir al paso 2. Este paso da un borrador
+   rápido,
    pero **no decide por sí solo si hace falta ver la imagen** — eso lo
    decide el paso 3, siempre, sin excepción: incluso con texto perfecto,
    solo la imagen muestra líneas dibujadas, ítems ya resueltos o marcas
