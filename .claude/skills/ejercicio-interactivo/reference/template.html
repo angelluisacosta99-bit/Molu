@@ -834,12 +834,28 @@
   function escapeHtml(s) {
     return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   }
-  // answer spec: array of accepted exact strings, OR {flex:[...]} meaning all keywords must appear (accent-insensitive)
+  // answer spec: array of accepted exact strings, OR {flex:[...]} meaning all keywords must
+  // appear (accent-insensitive). An array can also mix in {flex:[...]} entries alongside
+  // plain strings — each one is its own alternative, so this is how you accept several
+  // genuinely different phrasings of a free-response answer (a different tense, a
+  // different-but-valid perífrasis...) where a single flex clause can't express an OR: flex
+  // itself is an AND of keywords within ONE string, it has no way to say "this substring OR
+  // that other substring". Use it when the SAME meaning has more than one correct surface
+  // form and rejecting the alternate one would be marking a genuinely right answer wrong —
+  // not as a blanket loosener for a whole exercise (see the accent-strictness note above:
+  // same principle, don't reach for this to paper over an exercise that just needs a
+  // different accepted-answer design).
   function isCorrect(input, spec) {
     const n = norm(input);
     if (!n) return false;
     if (Array.isArray(spec)) {
-      return spec.some(function (a) { return norm(a) === n; });
+      return spec.some(function (a) {
+        if (a && typeof a === "object" && a.flex) {
+          const hay = stripAccents(n);
+          return a.flex.every(function (k) { return hay.indexOf(stripAccents(k)) !== -1; });
+        }
+        return norm(a) === n;
+      });
     }
     if (spec && spec.flex) {
       const hay = stripAccents(n);
@@ -1946,8 +1962,16 @@
   document.getElementById("totalBlanksLabel").textContent = allInputs.length;
   document.getElementById("scoreTotal").textContent = allInputs.length;
 
+  // spec[0] es el ejemplo que se enseña al fallar — el de siempre (norm() lo compara tal
+  // cual si es texto) o, si es un {flex:[...]} (una de las alternativas de un array mixto,
+  // ver isCorrect arriba), su .show si lo trae o la lista de palabras clave si no.
+  function textOf(s) {
+    if (typeof s === "string") return s;
+    if (s && typeof s === "object") return s.show || (s.flex ? s.flex.join(" / ") : "");
+    return "";
+  }
   function correctTextFor(spec) {
-    const t = Array.isArray(spec) ? spec[0] : (spec.show || (spec.flex ? spec.flex.join(" / ") : ""));
+    const t = Array.isArray(spec) ? textOf(spec[0]) : textOf(spec);
     return typeof t === "string" ? t : "";
   }
 

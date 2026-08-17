@@ -683,12 +683,23 @@
   function escapeHtml(s) {
     return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   }
-  // answer spec: array of accepted exact strings, OR {flex:[...]} meaning all keywords must appear (accent-insensitive)
+  // answer spec: array of accepted exact strings, OR {flex:[...]} meaning all keywords must
+  // appear (accent-insensitive). Un array puede además MEZCLAR cadenas exactas y objetos
+  // {flex:[...]}: cada elemento es su propia alternativa completa, así que esto es un O de
+  // cláusulas flex — la vía para aceptar dos respuestas de verdad distintas (un tiempo
+  // verbal diferente, incluso una perífrasis distinta) que no comparten ninguna palabra
+  // clave y por eso un solo flex no puede expresarlas como una sola cláusula.
   function isCorrect(input, spec) {
     const n = norm(input);
     if (!n) return false;
     if (Array.isArray(spec)) {
-      return spec.some(function (a) { return norm(a) === n; });
+      return spec.some(function (a) {
+        if (a && typeof a === "object" && a.flex) {
+          const hay = stripAccents(n);
+          return a.flex.every(function (k) { return hay.indexOf(stripAccents(k)) !== -1; });
+        }
+        return norm(a) === n;
+      });
     }
     if (spec && spec.flex) {
       const hay = stripAccents(n);
@@ -1476,10 +1487,19 @@
           model: "Ejemplo: Mi marido ya no conduce. → Mi marido ha dejado de conducir.",
           type: "items",
           items: [
-            { t: "Mañana me apuntaré otra vez a yoga. → {0}", a: [{ flex: ["volveré a apuntarme"], show: "Mañana volveré a apuntarme a yoga." }], wide: true },
-            { t: "Luisa me ha llamado justo ahora. → {0}", a: [{ flex: ["acaba de llamar"], show: "Luisa acaba de llamarme." }], wide: true },
+            { t: "Mañana me apuntaré otra vez a yoga. → {0}", a: [[
+              { flex: ["volveré a apuntarme"], show: "Mañana volveré a apuntarme a yoga." },
+              { flex: ["vuelvo a apuntarme"] }
+            ]], wide: true },
+            { t: "Luisa me ha llamado justo ahora. → {0}", a: [[
+              { flex: ["acaba de llamar"], show: "Luisa acaba de llamarme." },
+              { flex: ["acabó de llamar"] }
+            ]], wide: true },
             { t: "Todavía echo de menos mi antiguo barrio. → {0}", a: [{ flex: ["sigo echando"], show: "Sigo echando de menos mi antiguo barrio." }], wide: true },
-            { t: "El niño llora desde hace un rato. → {0}", a: [{ flex: ["lleva", "llorando"], show: "El niño lleva llorando un rato." }], wide: true },
+            { t: "El niño llora desde hace un rato. → {0}", a: [[
+              { flex: ["lleva", "llorando"], show: "El niño lleva llorando un rato." },
+              { flex: ["empezó a llorar"] }
+            ]], wide: true },
             { t: "¿Todavía usas esas gafas tan viejas? → {0}", a: [{ flex: ["sigues usando"], show: "¿Sigues usando esas gafas tan viejas?" }], wide: true },
             { t: "En cuanto termino de limpiar los cristales, llueve. → {0}", a: [{ flex: ["empieza a llover"], show: "En cuanto termino de limpiar los cristales, empieza a llover." }], wide: true },
             { t: "Hemos puesto la televisión ahora mismo. → {0}", a: [{ flex: ["acabamos de poner"], show: "Acabamos de poner la televisión." }], wide: true },
@@ -3556,8 +3576,15 @@
   attachNote(NOTE_NO_SALDRIAN, "Igual que el anterior: «mañana» dicho ayer equivale a «hoy» → «me dijeron ayer que hoy no saldrían». Hay que cambiar también la expresión de tiempo, no solo el verbo.");
   attachNote(NOTE_TU_SABES_QUE, "Aquí hay dos tildes: «tú» (pronombre, no el posesivo «tu hermano») y «qué» (interrogativo indirecto, aunque no lleve signos de pregunta propios).");
 
+  // spec[0] es el ejemplo que se enseña al fallar — su .show si es un {flex:...} (una
+  // alternativa de un array mixto, ver isCorrect arriba) o la cadena tal cual si no.
+  function textOf(s) {
+    if (typeof s === "string") return s;
+    if (s && typeof s === "object") return s.show || (s.flex ? s.flex.join(" / ") : "");
+    return "";
+  }
   function correctTextFor(spec) {
-    const t = Array.isArray(spec) ? spec[0] : (spec.show || (spec.flex ? spec.flex.join(" / ") : ""));
+    const t = Array.isArray(spec) ? textOf(spec[0]) : textOf(spec);
     return typeof t === "string" ? t : "";
   }
 

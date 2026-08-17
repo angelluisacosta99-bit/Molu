@@ -753,12 +753,28 @@ parezca más "controlable" desde JS — ya se demostró que rompe el caso más b
       sin tener que pedírsela aparte. No hace falta ninguna respuesta "correcta" para esto:
       es contenido libre que se reenvía tal cual, no se evalúa.
     - Cuando `flex` se quede corto, cambia el diseño del hueco antes que la respuesta.
-      `flex` es un **Y** de palabras clave: no sabe expresar alternativas. Si el ejercicio
-      admite de verdad varias respuestas distintas (vosotros/ustedes, `-ara`/`-ase`,
-      *«Hacía calor»*/*«Hacía sol»*), hace falta un array —que sí es un **O**— con
-      `conSinTildes`. Y al revés: para descartar un error concreto sin castigar la tilde,
-      una clave de `flex` bien elegida lo hace sola (`"le dé azúcar"` acepta *dé* y *de*,
-      pero rechaza *des*, que es justo lo que el ejercicio persigue).
+      `flex` por sí solo es un **Y** de palabras clave: no sabe expresar alternativas
+      dentro de una misma cláusula. Si el ejercicio admite de verdad varias respuestas
+      distintas con la MISMA forma de palabra (vosotros/ustedes, `-ara`/`-ase`, *«Hacía
+      calor»*/*«Hacía sol»*), hace falta un array —que sí es un **O**— con `conSinTildes`.
+      Y al revés: para descartar un error concreto sin castigar la tilde, una clave de
+      `flex` bien elegida lo hace sola (`"le dé azúcar"` acepta *dé* y *de*, pero rechaza
+      *des*, que es justo lo que el ejercicio persigue).
+      **Para varias respuestas de verdad distintas** (no solo una variante de tilde, sino
+      un tiempo verbal diferente o incluso una perífrasis distinta de las que enseña el
+      ejercicio, ambas correctas), `isCorrect()`/`correctTextFor()` aceptan un array que
+      MEZCLA cadenas exactas y objetos `{flex:[...], show:"..."}` — cada elemento del
+      array es su propia alternativa completa, así que esto sí es un **O de cláusulas
+      flex**, no un flex más largo. Nació en el Repaso B1, ejercicio de perífrasis
+      verbales (ej. 2): el profesor pidió aceptar *"vuelvo a apuntarme"* (presente) además
+      de *"volveré a apuntarme"* (futuro, la del solucionario) para la misma frase, y
+      *"empezó a llorar"* (una perífrasis distinta, `empezar a`) como alternativa válida a
+      *"lleva llorando"* (`llevar` + gerundio, la esperada) — dos frases con significado
+      equivalente pero sin ninguna palabra clave en común, así que ni un `flex` ni un
+      `conSinTildes` bastaban. `a: [[{ flex: ["volveré a apuntarme"] }, { flex: ["vuelvo a
+      apuntarme"] }]]` — el `show` de la PRIMERA alternativa (o su cadena literal, si esa
+      alternativa es texto exacto en vez de `flex`) es el que se enseña al fallar, así que
+      pon siempre la respuesta del libro primero y las variantes aceptadas después.
 - `docencia-espanol/materiales/indice-clases-de-espanol.html` — el artefacto "Clases de
   Español", índice manual → nivel → capítulo de toda la biblioteca (ver paso 6 del flujo de
   trabajo). Actualízalo cada vez que publiques un capítulo nuevo. Este es público (o puede
