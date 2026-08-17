@@ -63,6 +63,12 @@ Nota de alcance: `impeccable` es para interfaces frontend, no genera ni
 edita documentos de Word ni presentaciones de PowerPoint. Para esos
 formatos usar las skills `docx` y `pptx` respectivamente.
 
+Como segunda pasada tras `impeccable` (no como sustituto), repasar
+`recursos-generales/herramientas-ia/vercel-web-interface-guidelines.md`
+— checklist externo de más de 100 reglas concretas de calidad de
+interfaz (Vercel, MIT), copiado en local para no depender de una
+petición web en cada sesión.
+
 ## Materiales de referencia para clases de español
 
 Al crear tareas, ejercicios, presentaciones o cualquier material nuevo
