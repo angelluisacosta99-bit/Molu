@@ -117,6 +117,30 @@ o en mayúsculas (como los que uso yo mismo al citar commits en esta
 conversación) hacía fallar la comparación contra un PR sin cambios de
 verdad — corregido a comparación por prefijo, insensible a mayúsculas.
 
+**Quinta ronda:** también encontró que `check-pr-review.sh` confiaba en
+que `head_sha` del marcador ya venía validado por `mark-pr-reviewed.sh`
+— pero un marcador escrito por otra vía (a mano, por un bug) con un
+`head_sha` corto y basura (ej. un solo carácter) que por casualidad
+fuera prefijo del SHA real en vivo pasaba la comparación igual,
+reproducido en vivo contra el PR #66 real. Corregido validando el mismo
+formato `^[0-9a-fA-F]{7,40}$` dentro del propio script gate, sin confiar
+en el escritor. Y el escapado a mano de `deny()` (con `sed`) solo cubría
+backslash y comillas, no caracteres de control como un salto de línea —
+un marcador manipulado con `\n` dentro de `head_sha` o `reviewed_at`
+producía JSON de salida inválido, que por el propio diseño fail-open de
+Claude Code ante salida no reconocible se trataría como "sin decisión ->
+permite", justo lo contrario de la intención. Corregido usando `jq -cn
+--arg` para construir el JSON de `deny()` (escapa todo correctamente),
+dejando el escapado a mano solo para el único `deny()` que dispara antes
+de confirmar que `jq` existe (mensaje fijo, sin datos externos). También
+se combinaron dos lecturas separadas del marcador en una sola invocación
+de `jq` con salida `@tsv`, para evitar una lectura no atómica si el
+archivo se reescribe a mitad de lectura (severidad baja dado el flujo
+secuencial de un solo agente, pero real). Verificado con 10 casos en
+vivo contra el PR #66 real, incluyendo un `head_sha` con salto de línea
+embebido (confirma que la salida de `deny()` sigue siendo JSON válido) y
+`jq` ausente del `PATH` (confirma que sigue fallando cerrado).
+
 **Límites honestos que siguen en pie, para que no se lea como más de lo
 que es:**
 - No verifica la calidad de la revisión en sí (que de verdad se leyera

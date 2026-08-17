@@ -8,9 +8,17 @@
 #
 # Diseño fail-closed a propósito: NO usa `set -e` (un error a mitad de
 # script bajo set -e sale con un exit code que Claude Code trata como
-# "sin decisión" -> permite la herramienta). deny() no depende de jq
-# (usa printf a mano) para que un jq roto o ausente no impida denegar.
-# Cualquier fallo de red/API al verificar el SHA también deniega.
+# "sin decisión" -> permite la herramienta). deny() usa `jq` para
+# construir el JSON de salida (escapa comillas, backslashes Y
+# caracteres de control como saltos de línea correctamente -- un
+# escapado a mano con sed/printf se dejaba los de control, y un
+# marcador manipulado con un salto de línea en head_sha producía JSON
+# de salida inválido, que cae en el mismo "sin decisión -> permite" de
+# arriba). jq ya está confirmado disponible en todo punto donde deny()
+# recibe texto no controlado por este script (el único deny() antes de
+# esa comprobación es el propio "jq no disponible", con mensaje fijo,
+# sin datos externos). Cualquier fallo de red/API al verificar el SHA
+# también deniega.
 #
 # enable_pr_auto_merge se deniega SIEMPRE, sin excepción: ese comando
 # no fusiona en el momento, solo programa que GitHub fusione más tarde
@@ -26,12 +34,21 @@
 MAX_AGE_SECONDS=3600  # 60 minutos
 
 deny() {
-  # $1 = razón, en texto plano. Escapado a mano (comillas y backslashes)
-  # para no depender de jq -- este es el único camino que debe funcionar
-  # siempre, pase lo que pase con el resto del script.
-  local reason_escaped
-  reason_escaped=$(printf '%s' "$1" | sed 's/\\/\\\\/g; s/"/\\"/g')
-  printf '{"hookSpecificOutput":{"hookEventName":"PreToolUse","permissionDecision":"deny","permissionDecisionReason":"%s"}}\n' "$reason_escaped"
+  # $1 = razón, en texto plano (puede contener cualquier cosa si viene
+  # de un campo de marcador no fiable). jq -n --arg lo escapa entero y
+  # correctamente, incluidos saltos de línea y otros caracteres de
+  # control, a diferencia de un escapado a mano con sed.
+  if command -v jq >/dev/null 2>&1; then
+    jq -cn --arg reason "$1" \
+      '{hookSpecificOutput: {hookEventName: "PreToolUse", permissionDecision: "deny", permissionDecisionReason: $reason}}'
+  else
+    # Solo se llega aquí para el deny() de "jq no disponible" (mensaje
+    # fijo, sin datos externos interpolados) -- el escapado a mano es
+    # seguro en ese único caso porque el texto lo controlamos nosotros.
+    local reason_escaped
+    reason_escaped=$(printf '%s' "$1" | sed 's/\\/\\\\/g; s/"/\\"/g')
+    printf '{"hookSpecificOutput":{"hookEventName":"PreToolUse","permissionDecision":"deny","permissionDecisionReason":"%s"}}\n' "$reason_escaped"
+  fi
   exit 0
 }
 
@@ -82,11 +99,16 @@ if [ ! -f "$MARKER" ]; then
   deny "No hay marcador de revisión para $OWNER/$REPO#$PR_NUMBER. Corre una revisión independiente (skill code-review) sobre el estado actual del PR y, si sale limpia, deja constancia con: .claude/hooks/mark-pr-reviewed.sh $OWNER $REPO $PR_NUMBER <head_sha> \"<resumen>\" -- antes de intentar fusionar de nuevo."
 fi
 
-REVIEWED_AT=$(jq -r '.reviewed_at // empty' "$MARKER" 2>/dev/null)
-REVIEWED_SHA=$(jq -r '.head_sha // empty' "$MARKER" 2>/dev/null)
+# Una sola invocación de jq (un solo open()+parse del archivo) para leer
+# ambos campos, en vez de dos llamadas separadas -- evita una lectura
+# "rota" si mark-pr-reviewed.sh reescribe el marcador justo a mitad de
+# la lectura. @tsv escapa tabs/saltos de línea dentro de cada campo, así
+# que dividir por el tab real entre campos es seguro.
+IFS=$'\t' read -r REVIEWED_AT REVIEWED_SHA < <(jq -r '[.reviewed_at // "", .head_sha // ""] | @tsv' "$MARKER" 2>/dev/null)
 if [ -z "$REVIEWED_AT" ] || [ -z "$REVIEWED_SHA" ]; then
   deny "Marcador de revisión de $OWNER/$REPO#$PR_NUMBER está corrupto, incompleto, o no es JSON válido -- bloqueando por seguridad (fail-closed). Vuelve a correr la revisión y a escribir el marcador."
 fi
+
 # No confiar en que head_sha ya viene validado por mark-pr-reviewed.sh
 # -- este script es el gate de seguridad real, así que valida su propio
 # input igual de estricto, por si el marcador se escribió por otra vía
