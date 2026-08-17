@@ -87,6 +87,14 @@ REVIEWED_SHA=$(jq -r '.head_sha // empty' "$MARKER" 2>/dev/null)
 if [ -z "$REVIEWED_AT" ] || [ -z "$REVIEWED_SHA" ]; then
   deny "Marcador de revisión de $OWNER/$REPO#$PR_NUMBER está corrupto, incompleto, o no es JSON válido -- bloqueando por seguridad (fail-closed). Vuelve a correr la revisión y a escribir el marcador."
 fi
+# No confiar en que head_sha ya viene validado por mark-pr-reviewed.sh
+# -- este script es el gate de seguridad real, así que valida su propio
+# input igual de estricto, por si el marcador se escribió por otra vía
+# (a mano, por un bug, etc.). Sin esto, un SHA corto/basura que por
+# casualidad sea prefijo del SHA real pasaría la comparación.
+if ! [[ "$REVIEWED_SHA" =~ ^[0-9a-fA-F]{7,40}$ ]]; then
+  deny "Marcador de revisión de $OWNER/$REPO#$PR_NUMBER tiene head_sha con formato inválido (\"$REVIEWED_SHA\") -- bloqueando por seguridad (fail-closed)."
+fi
 REVIEWED_SHA_LOWER=$(printf '%s' "$REVIEWED_SHA" | tr '[:upper:]' '[:lower:]')
 
 # Formato estricto AAAA-MM-DDTHH:MM:SSZ (el que escribe mark-pr-reviewed.sh
