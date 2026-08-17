@@ -104,13 +104,12 @@ sueltos sin script dedicado), el mismo procedimiento a mano:
    (pasó con un plano de metro en un capítulo real). Correr también
    `pdffonts archivo.pdf`: si muestra encoding `Custom`/`Identity-H`, el
    texto puede salir con caracteres cambiados aunque parezca correcto
-   (incidente real documentado en `paginas.sh`, línea 69) — tratarlo
-   como si no hubiera texto y seguir al paso 2. Este paso da un borrador
-   rápido,
-   pero **no decide por sí solo si hace falta ver la imagen** — eso lo
-   decide el paso 3, siempre, sin excepción: incluso con texto perfecto,
-   solo la imagen muestra líneas dibujadas, ítems ya resueltos o marcas
-   a mano (ver paso 3).
+   (incidente real, documentado en la cabecera de `paginas.sh`) —
+   tratarlo como si no hubiera texto y seguir al paso 2. Este paso da un
+   borrador rápido, pero **no decide por sí solo si hace falta ver la
+   imagen** — eso lo decide el paso 3, siempre, sin excepción: incluso
+   con texto perfecto, solo la imagen muestra líneas dibujadas, ítems ya
+   resueltos o marcas a mano (ver paso 3).
 2. **Renderizar la página**, siempre, incluso si el paso 1 dio texto
    limpio (el render hace falta para el paso 3, no es opcional): a un
    directorio fuera del repo — por ejemplo, sustituyendo `archivo.pdf`
@@ -158,7 +157,16 @@ al empezar, instalarlos con
 `apt-get install -y poppler-utils tesseract-ocr tesseract-ocr-spa tesseract-ocr-rus`
 antes de usarlos — igual que `graphify` se auto-instala solo si falta.
 No asumir que ya están ahí solo porque lo estuvieron en una sesión
-anterior.
+anterior: `.claude/skills/ejercicio-interactivo/SKILL.md` tiene medido
+que ni `poppler-utils` ni `tesseract` están garantizados en todos los
+contenedores, y que `apt-get install poppler-utils` puede fallar con
+404 (índice de paquetes caducado, sin arreglo con `apt-get update`). Si
+eso pasa, el plan B medido que sí funciona es `python3 -m pip install
+pymupdf` — sustituye a `pdftoppm` para renderizar la página
+(`pymupdf.open(pdf)[n-1].get_pixmap(dpi=170).save("p.png")`, ver esa
+skill para el detalle). Sin OCR tampoco pasa nada: leer el render con
+`Read` es la fuente de verdad de todos modos (paso 3);
+tesseract solo ahorra el borrador previo, nunca es imprescindible.
 
 ## Nombre del profesor: sin tilde
 
