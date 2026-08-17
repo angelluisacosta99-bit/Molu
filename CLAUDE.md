@@ -117,15 +117,19 @@ sueltos sin script dedicado), el mismo procedimiento a mano:
    `ARCHIVO="archivo.pdf"; OUT="${TMPDIR:-/tmp}/paginas-$(basename "${ARCHIVO%.*}")"; mkdir -p "$OUT"`
    (nunca escribir páginas escaneadas de material con copyright dentro
    del repositorio) — con
-   `pdftoppm -jpeg -r 150 -f N -l N "archivo.pdf" "$OUT/pagina"`. 150
-   DPI basta para OCR en la mayoría de páginas; para letra muy menuda en
-   una página de tamaño normal sí conviene subir a 200-300 DPI, como
+   `pdftoppm -jpeg -r 150 -f N -l N "$ARCHIVO" "$OUT/pagina"`. 150 DPI
+   basta para OCR en la mayoría de páginas; para letra muy menuda en una
+   página de tamaño normal sí conviene subir a 200-300 DPI, como
    recomienda `paginas.sh`. La excepción es una página físicamente
-   grande (un póster, un plano doblado): ahí sí evitar 300 DPI, porque
-   `tesseract` (vía Leptonica, no Poppler) puede dar "imagen demasiado
-   grande" al procesarla (medido: `Error in pixCreateHeader: requested
-   bytes >= 2^31`). Si el paso 1 no dio texto fiable (escaneado, o
-   encoding sospechoso), pasar además **todos** los
+   grande (un póster, un plano doblado): ahí, en vez de subir el DPI de
+   toda la página (`tesseract`, vía Leptonica, no Poppler, puede dar
+   "imagen demasiado grande" — medido: `Error in pixCreateHeader:
+   requested bytes >= 2^31`), bajar el DPI general (100 o menos) y, si
+   hace falta leer letra pequeña en una zona concreta, recortar esa zona
+   con `pymupdf` a mayor resolución en vez de rasterizar la página
+   entera (`clip=pymupdf.Rect(x0, y0, x1, y1)` en la llamada de abajo).
+   Si el paso 1 no dio texto fiable (escaneado, o encoding sospechoso),
+   pasar además **todos** los
    `pagina-*.jpg` resultantes (glob, no un nombre fijo tipo
    `pagina-N.jpg`: con 10+ páginas el nombre real lleva ceros a la
    izquierda y un nombre fijo no encuentra el archivo) por
@@ -168,11 +172,12 @@ contenedores, y que `apt-get install poppler-utils` puede fallar con
 404 (índice de paquetes caducado, sin arreglo con `apt-get update`). Si
 eso pasa, `poppler` entero (no solo `pdftoppm`) falta, así que hace
 falta un plan B para los tres pasos, no solo para el render: el medido
-que sí funciona es `python3 -m pip install pymupdf`. Sustituye a
-`pdftoppm` y `pdftotext` con la llamada que ya documenta esa skill —
-`pymupdf.open(pdf)[n-1].get_pixmap(dpi=170).save("p.png")` para
-renderizar, `[n-1].get_text()` para el texto — y a `pdfimages`, no
-documentado ahí, con `for xref, *_ in pagina.get_images(): datos =
+que sí funciona es `python3 -m pip install pymupdf`. Con
+`doc = pymupdf.open(pdf); pagina = doc[n-1]`, sustituye a `pdftoppm` y
+`pdftotext` con lo que ya documenta esa skill —
+`pagina.get_pixmap(dpi=170).save("p.png")` para renderizar,
+`pagina.get_text()` para el texto — y a `pdfimages`, no documentado
+ahí, con `for xref, *_ in pagina.get_images(): datos =
 doc.extract_image(xref)` (`get_images()` solo lista referencias; hace
 falta `extract_image()` para sacar los bytes reales). Sin tesseract
 tampoco pasa nada: leer el render con `Read` es la fuente de verdad de
