@@ -23,6 +23,20 @@ copias que puedan desincronizarse.
 
 ---
 
+## 2026-08-18 — Práctica: desplazar la ventana de 5h de límite de uso
+
+Hallazgo de práctica, no herramienta instalable (sin tarjeta). La
+ventana de uso de 5 horas de Claude no reinicia a una hora fija: empieza
+a contar desde el primer mensaje que se envía. Mandar un mensaje corto
+en cuanto se empieza a trabajar (en vez de dejar que la ventana llevara
+un rato corriendo antes del primer uso real) desplaza el reinicio hacia
+el horario real de trabajo, en vez de perder parte del bloque al
+principio. Aplica sobre todo a sesiones largas como las de revisión de
+PRs de este repo. Fuente: [soporte oficial de Claude](https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work)
+(no se pudo verificar el texto exacto en esta sesión — `support.claude.com`
+está bloqueado por la política de red del entorno — reconstruido por
+búsqueda cruzando varias fuentes que lo citan).
+
 ## 2026-08-16 — Segunda pasada: hooks vs. CLAUDE.md, y prácticas de la comunidad
 
 Angel señaló que la primera pasada se quedó corta — solo profundizó en
