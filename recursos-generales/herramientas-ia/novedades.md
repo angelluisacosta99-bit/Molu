@@ -37,6 +37,31 @@ PRs de este repo. Fuente: [soporte oficial de Claude](https://support.claude.com
 está bloqueado por la política de red del entorno — reconstruido por
 búsqueda cruzando varias fuentes que lo citan).
 
+## 2026-08-18 — MarkItDown (Microsoft): herramienta puntual, no instalada
+
+**Qué es:** `markitdown` (Microsoft, MIT,
+[github.com/microsoft/markitdown](https://github.com/microsoft/markitdown)) —
+librería/CLI de Python que convierte PDF, DOCX, PPTX, XLSX, HTML, audio,
+EPUB, ZIP y más a Markdown limpio. No es un conector MCP instalable
+(`SearchMcpRegistry` no devuelve nada para este nombre) — es un paquete
+pip que se instala bajo demanda, igual que `tesseract`/`poppler`.
+
+**Por qué no se activa como dependencia fija:** los formatos que más usa
+Angel ya están cubiertos por skills dedicadas y más completas
+(`docx`/`pptx`/`xlsx`, que además editan, no solo leen) o por el flujo
+ya hardened de `docencia-espanol/fuentes/paginas.sh` para PDF
+escaneados — ahí el coste en tokens no está en la extracción de texto
+(que ya es gratis con `pdftotext -layout`), sino en el paso 3
+obligatorio de ver la imagen renderizada, algo que MarkItDown no puede
+sustituir (es solo extracción de texto, no lee líneas dibujadas, ítems
+ya resueltos a mano ni manuscrito).
+
+**Cuándo sí usarlo:** formatos sueltos sin skill propia en este repo —
+`.epub`, `.html` guardado en local, transcripción de audio, o
+convertir varios archivos mixtos con una sola llamada. Instalar con
+`pip install markitdown` (o `markitdown[all]` para todos los formatos
+opcionales) solo cuando aparezca ese caso concreto, no de antemano.
+
 ## 2026-08-16 — Segunda pasada: hooks vs. CLAUDE.md, y prácticas de la comunidad
 
 Angel señaló que la primera pasada se quedó corta — solo profundizó en
