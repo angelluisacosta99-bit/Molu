@@ -23,6 +23,40 @@ copias que puedan desincronizarse.
 
 ---
 
+## 2026-08-20 — agent-browser (Vercel Labs): activado
+
+**Qué es:** `agent-browser` — CLI de automatización de navegador en Rust
+puro (Apache-2.0, [vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser),
+41.000+ estrellas). Controla Chrome/Chromium vía CDP con snapshots de
+árbol de accesibilidad y referencias compactas `@eN` en vez de
+coordenadas de píxel — pensado para agentes de código, no para
+navegación genérica.
+
+**Por qué le sirve a Angel:** los ejercicios interactivos de
+`docencia-espanol/materiales/` (HTML autocontenido con JS de corrección
+instantánea) hoy solo se verifican leyendo el código o probándolos a
+mano. `agent-browser` permite clicar, rellenar huecos y comprobar que la
+lógica de corrección funciona de verdad en un navegador real, con
+auditoría de accesibilidad (axe-core) incluida — cosa que ni
+`impeccable` (trae su propia automatización de navegador, pero para
+crítica de diseño visual, no QA funcional) ni ningún otro skill del
+repo hacían hasta ahora.
+
+**Cómo se activó:** en dos partes, porque el contenedor de cada sesión
+es efímero:
+1. **Skill** (`npx skills add vercel-labs/agent-browser`) — deja el
+   stub en `.agents/skills/agent-browser/SKILL.md` con
+   `.claude/skills/agent-browser` como symlink hacia él. Es texto
+   ligero, versionado en Git, así que sobrevive solo con el commit —
+   no hace falta reinstalarlo cada sesión.
+2. **Binario CLI** (`npm install -g agent-browser && agent-browser
+   install`) — no sobrevive a un contenedor nuevo, igual que los git
+   hooks de graphify. Añadido a `.claude/hooks/session-start.sh`
+   (sección nueva, con timeout y sin bloquear el arranque de la sesión
+   si falla) para que se reinstale solo al principio de cada sesión.
+
+✅ Activado el 2026-08-20.
+
 ## 2026-08-18 — Práctica: desplazar la ventana de 5h de límite de uso
 
 Hallazgo de práctica, no herramienta instalable (sin tarjeta). La
