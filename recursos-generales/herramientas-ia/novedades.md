@@ -23,6 +23,38 @@ copias que puedan desincronizarse.
 
 ---
 
+## 2026-08-21 — find-skills (Vercel Labs): activado
+
+**Nota sobre cómo se activó:** igual que `agent-browser`, a petición
+explícita de Angel en esta misma conversación, no de la Routine
+semanal del radar.
+
+**Qué es:** `find-skills` — skill del mismo repo `vercel-labs/skills`
+(el CLI `npx skills`, ya usado para instalar `agent-browser`). Cuando
+alguien pregunta "¿cómo hago X?" o "¿hay una skill para X?", busca en
+el ranking de [skills.sh](https://skills.sh/), en GitHub, y con
+`npx skills find <consulta>`, y solo ofrece instalar tras presentar
+opciones y recibir confirmación — no busca ni instala nada por su
+cuenta sin que se le pida.
+
+**Por qué le sirve a Angel:** las herramientas propias (`SearchSkills`/
+`SearchPlugins`) solo ven el catálogo de su cuenta de claude.ai;
+`find-skills` llega también al ecosistema abierto de GitHub (de donde
+salió `agent-browser`), así que son complementarias. Aplica un filtro
+de calidad explícito: prefiere skills con 1.000+ instalaciones,
+desconfía de menos de 100, y valida fuentes oficiales (Vercel Labs,
+Anthropic, Microsoft) frente a repos con pocas estrellas.
+
+**Cómo se activó:** una sola parte, a diferencia de `agent-browser` —
+es puro Markdown (`npx skills add vercel-labs/skills --skill
+find-skills`, deja el stub en `.agents/skills/find-skills/SKILL.md`
+symlinkeado desde `.claude/skills/find-skills`), sin binario propio
+que instalar ni reinstalar cada sesión: invoca `npx skills find/add`
+bajo demanda cuando de verdad se usa, no al arrancar la sesión. No hizo
+falta tocar `.claude/hooks/session-start.sh`.
+
+✅ Activado el 2026-08-21.
+
 ## 2026-08-20 — agent-browser (Vercel Labs): activado
 
 **Nota sobre cómo se activó esta vez:** a diferencia del resto de este
