@@ -23,6 +23,56 @@ copias que puedan desincronizarse.
 
 ---
 
+## 2026-08-21 — mcp-server-dev (Anthropic): activado, deshabilitado por defecto
+
+**Nota sobre cómo se activó:** a petición explícita de Angel ("actívalo
+para un futuro"), tras preguntar por las ventajas de MCP Builder sobre
+lo que ya tiene. No es un conector — es una skill guía para *construir*
+un servidor MCP nuevo cuando exista un sistema concreto sin conector
+todavía (ej. el campus del máster, una herramienta interna del sector
+ferroviario/telecom). No aporta nada sobre los conectores ya activos.
+
+**Qué es:** plugin oficial `mcp-server-dev` (Anthropic,
+`anthropics/claude-plugins-official`), con 3 skills:
+`build-mcp-server`, `build-mcpb`, `build-mcp-app`. Antes de escribir
+código, interroga sobre el caso de uso y recomienda una arquitectura
+concreta (servidor HTTP remoto, local `stdio` solo para prototipo,
+etc.), un patrón de herramientas, y el SDK (TypeScript oficial o
+FastMCP 3.x en Python).
+
+**Cómo se activó (a nivel de usuario, no del proyecto):**
+`claude plugin marketplace add anthropics/claude-plugins-official` +
+`claude plugin install mcp-server-dev@claude-plugins-official`. Se
+guarda en `~/.claude/`, no en el repo, así que — como los git hooks de
+graphify y el binario de `agent-browser` — no sobrevive a un
+contenedor nuevo. Añadido a `.claude/hooks/session-start.sh` para
+reinstalarlo cada sesión (ambos comandos confirmados idempotentes en
+vivo, con `timeout` y verificación del estado real vía `claude plugin
+list`, no solo del código de salida).
+
+**Decisión: instalado pero deshabilitado por defecto.** `claude plugin
+details mcp-server-dev` reporta ~502 tokens siempre-activos por sesión
+solo por estar habilitado, y esto es "para un futuro", no de uso
+inmediato — no tiene sentido pagar ese coste sesión tras sesión sin una
+tarea concreta todavía. Se intentó primero `skillOverrides:
+"name-only"` (el mecanismo que ya usa este repo para skills de poco
+uso) pero **no aplica a skills de plugins** — la documentación oficial
+de Claude Code lo dice explícitamente ("Plugin skills are not affected
+by skillOverrides. Manage those through /plugin instead."),
+comprobado antes de aplicarlo mal. La alternativa real:
+`claude plugin disable mcp-server-dev` tras cada instalación (también
+en `session-start.sh`, porque un contenedor nuevo activaría el plugin
+por defecto al instalarlo, deshaciendo la decisión). Reactivarlo cuando
+haga falta de verdad: `claude plugin enable mcp-server-dev`.
+
+Verificado en vivo con `claude plugin marketplace remove` +
+`claude plugin uninstall` para simular un contenedor limpio de
+verdad (no binarios de mentira): el hook reinstala y deja deshabilitado
+correctamente, es idempotente en una segunda corrida, y se degrada sin
+romper nada si el CLI `claude` no está en el PATH.
+
+✅ Activado (deshabilitado) el 2026-08-21.
+
 ## 2026-08-21 — find-skills (Vercel Labs): activado
 
 **Nota sobre cómo se activó:** igual que `agent-browser`, a petición
