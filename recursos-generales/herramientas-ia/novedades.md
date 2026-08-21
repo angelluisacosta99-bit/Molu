@@ -74,17 +74,31 @@ intentar conectar con `googlechromelabs.github.io`, ver
 la política: apuntar `agent-browser` al Chromium que este entorno ya
 trae preinstalado para Playwright (`/opt/pw-browsers/chromium`) vía
 `AGENT_BROWSER_EXECUTABLE_PATH`, en vez de dejar que intente descargar
-el suyo. Como esta variable tiene que llegar a los shells que arranque
-el Bash tool *después* de que este hook termine (y un `export` dentro
-del hook no se propaga a un shell nuevo), se escribe en
-`/etc/profile.d/agent-browser-executable.sh` — el mismo mecanismo que
-ya usa el proxy de este contenedor para `HTTPS_PROXY`
-(`/etc/profile.d/ccr-agent-proxy-ca.sh`). Se reescribe en cada sesión,
-como todo lo demás en `/etc/`, que tampoco sobrevive a un contenedor
-nuevo. Probado de punta a punta en un shell limpio (`env -i ... bash
--lc`, sin nada exportado a mano): abre un HTML local de
-`docencia-espanol/materiales/` y devuelve un snapshot de accesibilidad
-real.
+el suyo.
+
+**Primer intento fallido, corregido en la siguiente revisión:** esa
+variable tiene que llegar a los shells que arranca el Bash tool
+*después* de que este hook termine, y un `export` dentro del hook no
+se propaga a un shell nuevo. El primer intento la escribía en
+`/etc/profile.d/agent-browser-executable.sh` (mismo mecanismo que usa
+el proxy de este contenedor para `HTTPS_PROXY`) y se dio por probado de
+punta a punta — pero esa prueba usó `bash -lc` (shell de *login* a
+propósito), y el Bash tool real invoca cada comando como `bash -c` (sin
+`-l`), que nunca lee `/etc/profile.d/`. Confirmado en vivo con una
+llamada nueva del propio Bash tool: la variable salía vacía pese al
+archivo de profile.d ya escrito. Corregido usando `$CLAUDE_ENV_FILE`
+(mecanismo documentado en la skill `session-start-hook` para persistir
+variables de sesión — `echo 'export X=Y' >> "$CLAUDE_ENV_FILE"`),
+verificado con una llamada real del Bash tool tras el fix, no solo con
+un shell manual.
+
+Misma revisión encontró y corrigió otros dos "éxito falso": `graphify
+hook install` no comprobaba su código de salida tras el `timeout`
+añadido (un cuelgue/fallo se reportaba igual como instalado), y el pin
+de versión de `agent-browser` solo se comprobaba con `command -v`
+(presencia), no con la versión real instalada — un contenedor cacheado
+con una versión distinta nunca habría reinstalado. Ambos ahora
+comparan explícitamente antes de reportar éxito.
 
 ✅ Activado el 2026-08-20.
 
