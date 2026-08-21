@@ -362,6 +362,12 @@ conversación cuenta como comprometida aunque el archivo esté fuera de Git.
   eso `impeccable` (que sí tiene esa regla, más arriba) se queda fuera de
   `skillOverrides`; no aplicarlo ahí sin revisar antes si existe una
   regla equivalente para la skill en cuestión.
+- **Skill `hook-hardening`** (`.claude/skills/hook-hardening/`) — checklist
+  de 6 puntos a correr antes de declarar "hecho"/"probado" cualquier
+  script de hook (SessionStart/PreToolUse/Stop). Nace de dos sagas reales
+  en este repo (7 y 6 rondas de revisión respectivamente) donde la misma
+  familia de errores se repitió una y otra vez — se activa sola por su
+  descripción, no hace falta invocarla a mano.
 - **`/compact`** — en conversaciones largas, correrlo en puntos de corte
   naturales (por ejemplo, al terminar una tarea grande y empezar otra sin
   relación) comprime el historial en vez de dejar que crezca sin límite.
