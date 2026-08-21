@@ -1,9 +1,19 @@
 <!--
-  TEMPLATE — plantilla de ejercicio interactivo con corrección instantánea.
-  Ver .claude/skills/ejercicio-interactivo/SKILL.md para el proceso completo.
-  Busca todos los marcadores {{...}} y sustitúyelos; no dejes ninguno sin reemplazar.
+  Unidad 1C del cuaderno de ejercicios de Nuevo Español en Marcha 3 (B1), páginas 6-7:
+  "El futuro que nos espera". Transcrito mirando las páginas renderizadas del PDF que
+  adjuntó el profesor. Las respuestas salen del solucionario oficial del propio cuaderno
+  (página 69).
+  Construido sobre .claude/skills/ejercicio-interactivo/reference/template.html.
+  El ejercicio 3 (relaciona sujeto con predicción) es una relación de VARIOS-a-uno (el
+  viento admite tres finales distintos, a/d/h) — no encaja en el molde 1-a-1 de type
+  "match", así que se resuelve como "items": el alumno escribe las letras separadas por
+  comas, en cualquier orden (se aceptan todas las permutaciones).
+  El ejercicio 4 (tildes) pide reescribir la frase completa con los acentos correctos —
+  igual que cualquier otro "cambia la frase", no una lista de palabras sueltas. El libro
+  añade un ejercicio 5 de solo escuchar y comprobar (pista 1): no aporta contenido nuevo
+  que archivar, así que se menciona en el enunciado del 4 en vez de crear un ejercicio aparte.
 -->
-<title>{{TITLE}}</title>
+<title>Cuaderno B1 · 1C — El futuro que nos espera</title>
 <style>
   :root {
     --paper: #F3F5F0;
@@ -696,18 +706,18 @@
 </style>
 
 <script>
-  // {{STORAGE_KEY}} here MUST be byte-identical to the one set further down in the gate
+  // unlocked-cuaderno-b1-1c here MUST be byte-identical to the one set further down in the gate
   // script (search "STORAGE_KEY =") — same placeholder, same value, both occurrences.
   document.documentElement.setAttribute(
     "data-locked",
-    localStorage.getItem("{{STORAGE_KEY}}") === "1" ? "false" : "true"
+    localStorage.getItem("unlocked-cuaderno-b1-1c") === "1" ? "false" : "true"
   );
 </script>
 
 <div class="gate-overlay">
   <div class="gate-card">
     <div class="eyebrow">Acceso privado</div>
-    <h2>{{GATE_TITLE}}</h2>
+    <h2>Unidad 1C · El futuro que nos espera</h2>
     <p>Pídele el código a tu profesor para entrar.</p>
     <input type="text" id="gateInput" placeholder="CÓDIGO" autocomplete="off" autocapitalize="characters" />
     <button id="gateBtn">Entrar</button>
@@ -718,10 +728,10 @@
   (function () {
     // El código es solo un disuasivo, no seguridad real — cualquiera que vea el HTML
     // fuente lo ve. Elige una palabra corta, memorable y ligada al tema, en MAYÚSCULAS.
-    const CODE = "{{GATE_CODE}}";
-    // MUST be byte-identical al {{STORAGE_KEY}} usado arriba (ver comentario junto al
+    const CODE = "FUTURO";
+    // MUST be byte-identical al unlocked-cuaderno-b1-1c usado arriba (ver comentario junto al
     // primer occurrence). Usa un valor único por ejercicio, p. ej. "unlocked-b2-13a-tema".
-    const STORAGE_KEY = "{{STORAGE_KEY}}";
+    const STORAGE_KEY = "unlocked-cuaderno-b1-1c";
     function tryUnlock() {
       const val = document.getElementById("gateInput").value.trim().toUpperCase();
       if (val === CODE) {
@@ -751,9 +761,8 @@
 <div class="topbar gated-content">
   <div class="topbar-inner">
     <div class="brand">
-      <!-- Ejemplo real (A1): {{BRAND_TITLE}} = "Ejercicios A1", {{BRAND_SUB}} = "Presente · Gerundio · Indefinido" -->
-      <span class="brand-title">{{BRAND_TITLE}}</span>
-      <span class="brand-sub">{{BRAND_SUB}}</span>
+      <span class="brand-title">Cuaderno B1 · Unidad 1C</span>
+      <span class="brand-sub">El futuro que nos espera</span>
     </div>
     <nav class="nav-dots" id="navDots"></nav>
     <div class="score-wrap">
@@ -764,13 +773,13 @@
 </div>
 
 <div class="hero gated-content">
-  <div class="eyebrow">{{EYEBROW}}</div>
-  <h1>{{HEADLINE}}</h1>
-  <p>{{SUBTITLE}}</p>
+  <div class="eyebrow">Nuevo Español en Marcha 3 · Cuaderno de ejercicios · Unidad 1 · Gente</div>
+  <h1>El futuro que nos espera</h1>
+  <p>Futuro imperfecto: diálogos, la predicción del tiempo y las tildes. Escribe tus respuestas, corrige al instante y envía el resultado a tu profesor.</p>
   <div class="hero-meta">
     <span><strong id="totalBlanksLabel" translate="no">—</strong> huecos en total</span>
-    <span><strong>{{N_BLOCKS}}</strong> bloques</span>
-    <span><strong>{{N_EXERCISES}}</strong> ejercicios</span>
+    <span><strong>1</strong> bloque</span>
+    <span><strong>4</strong> ejercicios</span>
   </div>
 </div>
 
@@ -802,7 +811,7 @@
 </div>
 
 <footer class="gated-content">
-  <span>{{FOOTER_LEFT}}</span>
+  <span>Nuevo Español en Marcha 3 (B1), cuaderno de ejercicios, unidad 1C (págs. 6-7)</span>
   <span>© Angel Luis Acosta González</span>
 </footer>
 
@@ -851,161 +860,96 @@
   // ---------- exercise data ----------
   // template blanks use {0},{1}... matched to item.answers[i]
   const blocks = [
-    // Cada bloque agrupa varios ejercicios bajo un mismo subtema. {{BLOCKS}} — sustituye
-    // este array completo por los bloques/ejercicios reales del capítulo, basados en el
-    // material del profesor (ver SKILL.md paso 1). Lo que sigue es un ejemplo de cada uno
-    // de los 7 tipos soportados por el renderizador (busca 'ex.type ===' en este archivo);
-    // si necesitas un tipo nuevo, tendrás que extender también el renderizador.
     {
-      id: "{{BLOCK_ID}}", num: 1, title: "{{BLOCK_TITLE}}",
-      sub: "{{BLOCK_SUBTITLE}}",
+      id: "seccion-1", num: 1, title: "El futuro que nos espera",
+      sub: "Futuro imperfecto, predicción del tiempo y tildes",
       exercises: [
         {
-          // Tipo "items": una lista de frases sueltas, cada una con sus propios huecos
-          // {0}, {1}... numerados desde 0 DENTRO de esa frase (no del ejercicio entero).
-          // "a" es un array paralelo a los huecos: a[i] es la lista de respuestas
-          // aceptadas para el hueco {i} (varias formas válidas si aplica).
-          num: 1, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
+          num: 1, title: "Completa con uno de los verbos del recuadro en futuro",
+          instr: "El primer diálogo ya viene resuelto como modelo: «se lo diré cuando encuentre el momento adecuado».",
+          dialog: true,
+          refHTML: '<span class="ref-label">Verbos para elegir</span>' +
+            '<div class="ref-options">' +
+            '<span class="ref-opt">volver</span><span class="ref-opt">ganar (x2)</span>' +
+            '<span class="ref-opt">hacer (x2)</span><span class="ref-opt">estar</span>' +
+            '<span class="ref-opt">ser (x2)</span><span class="ref-opt">ofrecer</span>' +
+            '<span class="ref-opt">conocer</span><span class="ref-opt">aprobar</span>' +
+            '<span class="ref-opt">sentirse</span><span class="ref-opt">llegar</span>' +
+            '<span class="ref-opt">engordar</span><span class="ref-opt">casarse</span>' +
+            '<span class="ref-opt">ir</span>' +
+            '</div>',
           type: "items",
+          numbered: true,
           items: [
-            // Ítem sin huecos y con solved: true = el que el libro trae resuelto como modelo.
-            { t: "Yo trabajo en un hospital y vivo en Madrid.", solved: true },
-            { t: "María {0} (trabajar) en un hospital y {1} (vivir) en Madrid.", a: [["trabaja"], ["vive"]] },
-            { t: "¿Tú {0} (comer) en casa o en la oficina normalmente?", a: [["comes"]] },
-            // vf: true cambia el hueco de texto libre por dos botones "V"/"F". Para otro
-            // par de opciones, pásalo como lista: vf: ["regular", "irregular"].
-            // que el alumno pulsa en vez de escribir — pensado para ejercicios de
-            // verdadero/falso. La respuesta (a) sigue siendo ["V"] o ["F"], igual que
-            // cualquier otro hueco de texto; el motor de corrección no cambia.
-            { t: "Madrid es la capital de España. → {0}", a: [["V"]], vf: true }
-            // wide: true en un item hace el input más ancho — úsalo para respuestas largas.
-          ],
-          // Ejercicio de comprensión oral: transcriptHTML añade la transcripción al final
-          // de la tarjeta, dentro de un <details> plegado (la transcripción es la solución,
-          // así que no puede quedar a la vista mientras el alumno responde). Opcional:
-          // transcriptLabel cambia el texto del desplegable. Si además hay grabación real
-          // (no siempre la hay), ex.audioSrc pone un <audio controls> justo debajo del
-          // enunciado — un data: URI en base64, un artefacto no puede enlazar un archivo
-          // externo. ex.audioLabel le pone una etiqueta encima ("Pista 6", etc.). La
-          // transcripción NO se quita aunque haya audio: sigue siendo la regla del
-          // profesor, y ahora es apoyo en vez de la única vía para resolver el ejercicio.
-          // audioSrc: "data:audio/mpeg;base64,...", audioLabel: "Pista 6",
-          transcriptLabel: "Ver la transcripción del audio (ábrela solo después de responder)",
-          transcriptHTML:
-            '<span class="line"><span class="who">ANA:</span> ¿Dónde vives?</span>' +
-            '<span class="line"><span class="who">LUIS:</span> En Madrid, cerca del centro.</span>'
+            { t: "A ¿Le has dicho ya a tu hermano que quieres vender la casa del pueblo?\nB No, todavía no, se lo diré cuando encuentre el momento adecuado.", solved: true },
+            { t: "A ¿Crees que Marta {0} con Pablo? Llevan ya tres años saliendo juntos.\nB No estoy segura, pero si no lo hace este año, lo {1} el que viene.", a: [["se casará"], ["hará"]] },
+            { t: "A Supongo que {0} a la fiesta que ha organizado Celia, ¿no?\nB No sé, todavía no lo he decidido.", a: [["irás"]] },
+            { t: "A ¿{0} de vacaciones a Menorca el año que viene?\nB No. El año que viene {1} viviendo en México y el viaje {2} muy caro.", a: [["Volverás"], ["estaré"], ["será"]] },
+            { t: "¿Sabes? He ido a la echadora de cartas y me ha dicho que este verano {0} el mejor de mi vida: {1} a un hombre maravilloso en la playa, y me {2} un trabajo bien pagado y con un buen horario.", a: [["será"], ["conoceré"], ["ofrecerán"]] },
+            { t: "A ¿Cómo va tu hijo en los estudios?\nB Bien, creo que {0} todas las asignaturas en junio.", a: [["aprobará"]] },
+            { t: "No hagas la compra, ya la {0} yo.", a: [["haré"]] },
+            { t: "Si sigues comiendo así, {0}.", a: [["engordarás"]] },
+            { t: "Si no salimos pronto, {0} tarde otra vez a la reunión.", a: [["llegaremos"]] },
+            { t: "A Estoy seguro de que este año {0} la liga el Atlético de Madrid.\nB ¿Sí?, pues yo creo que no, que la {1} el Barcelona.", a: [["ganará"], ["ganará"]] },
+            { t: "A Mamá, me duele la cabeza.\nB Pues túmbate en la cama un rato y {0} mejor.", a: [["te sentirás"]] }
+          ]
         },
         {
-          // Tipo "text": un único párrafo continuo con huecos numerados {0}, {1}... a lo
-          // largo de TODO el texto (no se reinicia por línea). "\n" en `text` inserta un
-          // salto de línea visual. "a" es un array paralelo a los huecos del texto entero.
-          num: 2, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
+          num: 2, title: "Completa los huecos con la forma adecuada del futuro imperfecto",
+          instr: "El texto lleva el título ya resuelto como modelo.",
           type: "text",
-          text: "Hoy Carmen {0} (trabajar) todo el día, pero ahora mismo {1} (preparar) la cena.",
-          a: [["trabaja"], ["está preparando"]]
+          text: "EL TIEMPO\nEl sol se impone en toda la Península con temperaturas que alcanzarán los 23 grados. MADRID, 7 (EUROPA PRESS)\nLos cielos despejados {0} (imponerse) durante la jornada de este viernes en toda la Península y los dos archipiélagos, con temperaturas en moderado ascenso que {1} (llegar) a alcanzar los 23 grados en varios puntos de la geografía, según informa la Agencia Estatal de Meteorología (Aemet).\nLas temperaturas diurnas {2} (subir) moderadamente en Baleares y las islas Canarias. En el litoral cantábrico {3} (cambiar) poco. {4} (bajar) en Andalucía, donde Huelva y Córdoba {5} (alcanzar) los 23 grados.\nLa Agencia Estatal de Meteorología (Aemet) prevé para mañana sábado, temperaturas en ligero ascenso y cielos despejados en general, al tiempo que {6} (continuar) el viento fuerte en el área del estrecho de Gibraltar.\n{7} (estar) poco nuboso o despejado en la Península y Baleares. El cielo de la Comunitat Valenciana {8} (estar) mañana poco nuboso o despejado, los vientos {9} (ser) flojos y las temperaturas mínimas {10} (subir) moderadamente.\nEn Madrid, hoy {11} (predominar) el cielo poco nuboso, los vientos {12} (ser) flojos y las temperaturas {13} (experimentar) un ligero descenso.\nEn las aguas costeras de Castellón {14} (soplar) el viento del noroeste, fuerza 2 a 3.",
+          a: [["se impondrán"], ["llegarán"], ["subirán"], ["cambiarán"], ["Bajarán"], ["alcanzarán"], ["continuará"], ["Estará"], ["estará"], ["serán"], ["subirán"], ["predominará"], ["serán"], ["experimentarán"], ["soplará"]]
         },
         {
-          // Tipo "table2": tabla de 2 columnas, "rows" es [valor_fijo, respuestas_aceptadas].
-          // OJO: "respuestas_aceptadas" es el mismo spec que usa isCorrect() para "a" en los
-          // demás tipos — casi siempre un array de UNA lista de alternativas, es decir
-          // [["hablando"]] (doble corchete), no ["hablando"] a secas; el renderizador hace
-          // makeInput(r[1][0], ...), así que r[1][0] debe ser el array de alternativas.
-          // WARNING: los encabezados ("Infinitivo"/"Gerundio") están HARDCODEADOS en el
-          // renderizador (busca 'ex.type === "table2"' más abajo), no se leen de este
-          // array — si necesitas otros encabezados, edita el renderizador o usa "conjTable".
-          num: 3, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          type: "table2",
-          rows: [
-            ["hablar", [["hablando"]]],
-            ["comer", [["comiendo"]]]
-          ]
-        },
-        {
-          // Tipo "conjTable": tabla de conjugación con columnas configurables. "subjects"
-          // es la columna izquierda fija (sujetos); "cols" define cada columna de la
-          // derecha con su encabezado ("label") y sus respuestas ("a", un array paralelo
-          // a "subjects" — a[i] son las alternativas aceptadas para subjects[i] en esa
-          // columna, es decir CADA elemento de "a" es a su vez un array de alternativas,
-          // p. ej. a: [["hablo"], ["hablas"], ["habla"]], no a: ["hablo", "hablas", "habla"]
-          // — el renderizador hace makeInput(c.a[si], ...) y espera ese array ahí).
-          num: 4, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          // ex.subjectLabel cambia el encabezado de la primera columna (por defecto "Sujeto").
-          // Una celda cuyo spec es una CADENA en vez de un array se pinta fija: es la que el
-          // libro ya trae resuelta, y no cuenta como hueco.
-          type: "conjTable",
-          subjectLabel: "Sujeto",
-          subjects: ["yo", "tú", "él/ella"],
-          cols: [
-            { label: "Presente", a: ["hablo", ["hablas"], ["habla"]] },
-            { label: "Indefinido", a: [["hablé"], ["hablaste"], ["habló"]] }
-          ]
-        },
-        {
-          // Tipo "agenda": tabla de referencia (solo lectura, sin huecos) seguida de una
-          // lista "items" tipo "items" que se responde consultando esa tabla.
-          // WARNING: igual que table2, los encabezados ("Día"/"Actividad") están
-          // HARDCODEADOS en el renderizador, no se leen de `table` aquí abajo.
-          num: 5, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          type: "agenda",
-          table: [
-            ["lunes", "reunión con el equipo"],
-            ["martes", "clase de español"]
-          ],
+          num: 3, title: "Forma frases con estos términos que se utilizan en la predicción del tiempo",
+          instr: "Escribe, para cada sujeto, las letras de los finales que le corresponden, separadas por comas (algunos sujetos tienen más de un final correcto).",
+          type: "items",
+          numbered: false,
+          refHTML: '<span class="ref-label">Finales</span>' +
+            '<div class="ref-options ref-list">' +
+            '<span class="ref-opt"><b>a</b> será flojo</span>' +
+            '<span class="ref-opt"><b>b</b> estará despejado</span>' +
+            '<span class="ref-opt"><b>c</b> irán en ascenso</span>' +
+            '<span class="ref-opt"><b>d</b> será ligero</span>' +
+            '<span class="ref-opt"><b>e</b> estará poco nuboso</span>' +
+            '<span class="ref-opt"><b>f</b> no experimentarán cambios</span>' +
+            '<span class="ref-opt"><b>g</b> alcanzarán los 30 grados</span>' +
+            '<span class="ref-opt"><b>h</b> soplará con fuerza</span>' +
+            '</div>',
           items: [
-            { t: "El lunes María {0} (tener) una reunión con el equipo.", a: [["tiene"]] }
+            { t: "El viento {0}", a: [["a, d, h", "a, h, d", "d, a, h", "d, h, a", "h, a, d", "h, d, a"]] },
+            { t: "Las temperaturas {0}", a: [["c, f, g", "c, g, f", "f, c, g", "f, g, c", "g, c, f", "g, f, c"]] },
+            { t: "El cielo {0}", a: [["b"]] },
+            { t: "El tiempo {0}", a: [["e"]] }
           ]
         },
         {
-          // Tipo "crossword": un crucigrama real, con celdas que se cruzan — no una lista
-          // de definiciones con la foto de la rejilla al lado (esa es la alternativa
-          // cuando el crucigrama no compensa el esfuerzo; ver ex.refHTML en "items").
-          // `words`: cada palabra con su `num` (el de la definición del libro), `clue`,
-          // `answer`, `row`/`col` (0-based, celda de la PRIMERA letra) y `dir` ("A" =
-          // horizontal, "D" = vertical). Dos palabras que se cruzan comparten fila/columna
-          // en la letra común — el renderizador calcula la celda compartida solo, no
-          // duplica el input. `solved: true` en una palabra la pinta fija, sin huecos
-          // (para la que el libro ya trae resuelta, normalmente la 1).
-          num: 6, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          type: "crossword",
-          words: [
-            { num: 1, clue: "Lo que hacen los médicos.", answer: "curar", row: 0, col: 3, dir: "D", solved: true },
-            { num: 2, clue: "Une esta palabra en horizontal.", answer: "cerrar", row: 2, col: 0, dir: "A" }
-          ]
-        },
-        {
-          // Tipo "match": "relaciona" tocando, no escribiendo la letra en un hueco de
-          // texto — nació porque esa vía anterior obligaba a aceptar mil variantes de
-          // tecleo ("d, 2" / "d,2" / "d 2"...) y no se parecía en nada al ejercicio real
-          // del libro. Se toca un elemento de columns[0] (la columna ancla, fija) y luego
-          // su pareja en la columna siguiente; se dibuja una línea de color entre ambos.
-          // columns[0] son los elementos fijos (uno por fila); columns[1], columns[2]...
-          // son las columnas elegibles. rows es PARALELO a columns[0].items: { solved:
-          // true } para una fila ya resuelta en el libro (sin huecos), o { a: [spec1,
-          // spec2, ...] } con un spec de isCorrect() por cada columna elegible, en orden
-          // (spec1 para columns[1], spec2 para columns[2]...). Con solo dos columnas es
-          // el "relaciona" clásico; con tres, una cadena (el ejemplo de abajo: cada verbo
-          // se une primero a un final y ese final, a su vez, a un motivo).
-          num: 7, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          type: "match",
-          columns: [
-            { label: "Verbo", items: ["reciclar", "contaminar"] },
-            { label: "Final", items: ["el vidrio y el papel", "el aire con humo"] }
-          ],
-          rows: [
-            { a: [["el vidrio y el papel"]] },
-            { a: [["el aire con humo"]] }
+          num: 4, title: "Escribe las tildes que faltan en las frases siguientes",
+          instr: "Escribe cada frase completa, con las tildes correctas. El libro añade después un ejercicio de solo escuchar y comprobar (pista 1); aquí lo compruebas al corregir.",
+          type: "items",
+          numbered: true,
+          items: [
+            { t: "Se hablar aleman, espanol e ingles.\n{0}", a: [["Sé hablar alemán, español e inglés."]], wide: "full" },
+            { t: "Ayer vino a clase un chico muy timido que tenia unos ojos preciosos.\n{0}", a: [["Ayer vino a clase un chico muy tímido que tenía unos ojos preciosos."]], wide: "full" },
+            { t: "¿Cuando llego Alvaro de Malaga?\n{0}", a: [["¿Cuándo llegó Álvaro de Málaga?"]], wide: "full" },
+            { t: "Me gustan muchisimo los pajaros.\n{0}", a: [["Me gustan muchísimo los pájaros."]], wide: "full" },
+            { t: "¡Que tengais un buen viaje!\n{0}", a: [["¡Que tengáis un buen viaje!"]], wide: "full" },
+            { t: "¡Que simpatico es Luis!\n{0}", a: [["¡Qué simpático es Luis!"]], wide: "full" },
+            { t: "Llego tarde a la oficina todos los dias por culpa del autobus.\n{0}", a: [["Llegó tarde a la oficina todos los días por culpa del autobús."]], wide: "full" },
+            { t: "Deberias hablar con el.\n{0}", a: [["Deberías hablar con él."]], wide: "full" },
+            { t: "El examen de matematicas es la proxima semana.\n{0}", a: [["El examen de matemáticas es la próxima semana."]], wide: "full" },
+            { t: "Anteayer estudie gramatica toda la tarde.\n{0}", a: [["Anteayer estudié gramática toda la tarde."]], wide: "full" },
+            { t: "Alvaro se compro un coche de segunda mano y a los dos meses se le estropeo.\n{0}", a: [["Álvaro se compró un coche de segunda mano y a los dos meses se le estropeó."]], wide: "full" },
+            { t: "¿Por que no vino Maria a la reunion de Biologia?\n{0}", a: [["¿Por qué no vino María a la reunión de Biología?"]], wide: "full" },
+            { t: "Ramon, ¿cuantas veces te he dicho que no juegues con el balon en el jardin?\n{0}", a: [["Ramón, ¿cuántas veces te he dicho que no juegues con el balón en el jardín?"]], wide: "full" },
+            { t: "No me acorde de que habia quedado con Ursula y la deje plantada, no fui a la cita.\n{0}", a: [["No me acordé de que había quedado con Úrsula y la dejé plantada, no fui a la cita."]], wide: "full" },
+            { t: "Oscar no abrio la boca y su jefe le pregunto si no tenia nada que decir.\n{0}", a: [["Óscar no abrió la boca y su jefe le preguntó si no tenía nada que decir."]], wide: "full" },
+            { t: "Si no te das prisa, llegaras tarde.\n{0}", a: [["Si no te das prisa, llegarás tarde."]], wide: "full" }
           ]
         }
       ]
     }
-    // Añade más bloques ({ id, num, title, sub, exercises: [...] }) según haga falta.
   ];
 
   // ---------- render ----------
@@ -1990,7 +1934,7 @@
   });
 
   // ---------- results panel: motivational message + send to teacher ----------
-  const TITLE_LABEL = "{{TITLE_LABEL}}"; // short label used in email subject / summary header
+  const TITLE_LABEL = "Cuaderno B1 · 1C El futuro que nos espera"; // short label used in email subject / summary header
   // These are Angel's real, reusable contact details — copy verbatim into every new
   // exercise unless he says they changed. IMPORTANT: telegram MUST be his @username
   // (no @, no phone number) — t.me/+<phone> links silently ignore ?text= and never

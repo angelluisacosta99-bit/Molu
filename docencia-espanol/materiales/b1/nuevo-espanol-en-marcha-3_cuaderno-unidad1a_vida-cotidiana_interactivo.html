@@ -1,9 +1,15 @@
 <!--
-  TEMPLATE — plantilla de ejercicio interactivo con corrección instantánea.
-  Ver .claude/skills/ejercicio-interactivo/SKILL.md para el proceso completo.
-  Busca todos los marcadores {{...}} y sustitúyelos; no dejes ninguno sin reemplazar.
+  Unidad 1A del cuaderno de ejercicios de Nuevo Español en Marcha 3 (B1), página 4:
+  "Vida cotidiana". Transcrito mirando las páginas renderizadas del PDF que adjuntó el
+  profesor. Las respuestas salen del solucionario oficial del propio cuaderno (página 69).
+  Construido sobre .claude/skills/ejercicio-interactivo/reference/template.html.
+  El ejercicio 1 (comprensión lectora) enseña el artículo completo en un refHTML — sin él,
+  las preguntas de opción múltiple serían irresolubles.
+  El ejercicio 3 es de redacción libre (inventar respuestas a las preguntas del ej. 2): no
+  tiene respuesta única, así que usa type "open" — el motor añade automáticamente la caja
+  de texto y el aviso de que lo revisará el profesor.
 -->
-<title>{{TITLE}}</title>
+<title>Cuaderno B1 · 1A — Vida cotidiana</title>
 <style>
   :root {
     --paper: #F3F5F0;
@@ -696,18 +702,18 @@
 </style>
 
 <script>
-  // {{STORAGE_KEY}} here MUST be byte-identical to the one set further down in the gate
+  // unlocked-cuaderno-b1-1a here MUST be byte-identical to the one set further down in the gate
   // script (search "STORAGE_KEY =") — same placeholder, same value, both occurrences.
   document.documentElement.setAttribute(
     "data-locked",
-    localStorage.getItem("{{STORAGE_KEY}}") === "1" ? "false" : "true"
+    localStorage.getItem("unlocked-cuaderno-b1-1a") === "1" ? "false" : "true"
   );
 </script>
 
 <div class="gate-overlay">
   <div class="gate-card">
     <div class="eyebrow">Acceso privado</div>
-    <h2>{{GATE_TITLE}}</h2>
+    <h2>Unidad 1A · Vida cotidiana</h2>
     <p>Pídele el código a tu profesor para entrar.</p>
     <input type="text" id="gateInput" placeholder="CÓDIGO" autocomplete="off" autocapitalize="characters" />
     <button id="gateBtn">Entrar</button>
@@ -718,10 +724,10 @@
   (function () {
     // El código es solo un disuasivo, no seguridad real — cualquiera que vea el HTML
     // fuente lo ve. Elige una palabra corta, memorable y ligada al tema, en MAYÚSCULAS.
-    const CODE = "{{GATE_CODE}}";
-    // MUST be byte-identical al {{STORAGE_KEY}} usado arriba (ver comentario junto al
+    const CODE = "CANILLITA";
+    // MUST be byte-identical al unlocked-cuaderno-b1-1a usado arriba (ver comentario junto al
     // primer occurrence). Usa un valor único por ejercicio, p. ej. "unlocked-b2-13a-tema".
-    const STORAGE_KEY = "{{STORAGE_KEY}}";
+    const STORAGE_KEY = "unlocked-cuaderno-b1-1a";
     function tryUnlock() {
       const val = document.getElementById("gateInput").value.trim().toUpperCase();
       if (val === CODE) {
@@ -751,9 +757,8 @@
 <div class="topbar gated-content">
   <div class="topbar-inner">
     <div class="brand">
-      <!-- Ejemplo real (A1): {{BRAND_TITLE}} = "Ejercicios A1", {{BRAND_SUB}} = "Presente · Gerundio · Indefinido" -->
-      <span class="brand-title">{{BRAND_TITLE}}</span>
-      <span class="brand-sub">{{BRAND_SUB}}</span>
+      <span class="brand-title">Cuaderno B1 · Unidad 1A</span>
+      <span class="brand-sub">Vida cotidiana</span>
     </div>
     <nav class="nav-dots" id="navDots"></nav>
     <div class="score-wrap">
@@ -764,13 +769,13 @@
 </div>
 
 <div class="hero gated-content">
-  <div class="eyebrow">{{EYEBROW}}</div>
-  <h1>{{HEADLINE}}</h1>
-  <p>{{SUBTITLE}}</p>
+  <div class="eyebrow">Nuevo Español en Marcha 3 · Cuaderno de ejercicios · Unidad 1 · Gente</div>
+  <h1>Vida cotidiana</h1>
+  <p>Comprensión lectora y preguntas con hace que / desde / cuándo / cuánto. Escribe tus respuestas, corrige al instante y envía el resultado a tu profesor.</p>
   <div class="hero-meta">
     <span><strong id="totalBlanksLabel" translate="no">—</strong> huecos en total</span>
-    <span><strong>{{N_BLOCKS}}</strong> bloques</span>
-    <span><strong>{{N_EXERCISES}}</strong> ejercicios</span>
+    <span><strong>1</strong> bloque</span>
+    <span><strong>3</strong> ejercicios</span>
   </div>
 </div>
 
@@ -802,7 +807,7 @@
 </div>
 
 <footer class="gated-content">
-  <span>{{FOOTER_LEFT}}</span>
+  <span>Nuevo Español en Marcha 3 (B1), cuaderno de ejercicios, unidad 1A (pág. 4)</span>
   <span>© Angel Luis Acosta González</span>
 </footer>
 
@@ -851,161 +856,49 @@
   // ---------- exercise data ----------
   // template blanks use {0},{1}... matched to item.answers[i]
   const blocks = [
-    // Cada bloque agrupa varios ejercicios bajo un mismo subtema. {{BLOCKS}} — sustituye
-    // este array completo por los bloques/ejercicios reales del capítulo, basados en el
-    // material del profesor (ver SKILL.md paso 1). Lo que sigue es un ejemplo de cada uno
-    // de los 7 tipos soportados por el renderizador (busca 'ex.type ===' en este archivo);
-    // si necesitas un tipo nuevo, tendrás que extender también el renderizador.
     {
-      id: "{{BLOCK_ID}}", num: 1, title: "{{BLOCK_TITLE}}",
-      sub: "{{BLOCK_SUBTITLE}}",
+      id: "seccion-1", num: 1, title: "Vida cotidiana",
+      sub: "Comprensión lectora y hace que / desde / cuándo / cuánto",
       exercises: [
         {
-          // Tipo "items": una lista de frases sueltas, cada una con sus propios huecos
-          // {0}, {1}... numerados desde 0 DENTRO de esa frase (no del ejercicio entero).
-          // "a" es un array paralelo a los huecos: a[i] es la lista de respuestas
-          // aceptadas para el hueco {i} (varias formas válidas si aplica).
-          num: 1, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
+          num: 1, title: "Lee el artículo y elige la opción adecuada",
+          instr: "Lee el texto (recuadro de abajo) y escribe la letra de la opción correcta en cada pregunta.",
           type: "items",
+          numbered: true,
+          refHTML: '<span class="ref-label">Texto: «En la moto lleva información y cultura»</span><div class="ref-options ref-list"><span class="ref-opt"><b>Desde hace 30 años, Juan Carlos Valenzuela reparte el diario El Comercio. Antes usaba la bicicleta.</b></span><span class="ref-opt">Juan Carlos tiene 45 años y desde hace 30 es repartidor y vendedor de periódicos. Ahora, desde hace tres semanas tiene una moto, financiada por este periódico. Su esposa Lidia lo ayuda montada en el asiento trasero.</span><span class="ref-opt"><b>Un día en su vida.</b> Juan Carlos vive en Surquillo con su esposa Lidia y sus cuatro hijas: María, de 19 años; Joana, de 17; Clara, de 14, y Paola, de 4. Las tres mayores lo ayudan también en el quiosco.</span><span class="ref-opt">A las 4.30 la pareja recoge los diarios que tienen que repartir. Necesitan 30 minutos para empacar correctamente los periódicos y a continuación salen a recorrer Miraflores hasta las 7 a.m. Luego montan el quiosco para vender prensa durante todo el día. Dice que el secreto para ser buen vendedor está en el buen trato y la buena relación con los clientes.</span><span class="ref-opt">Por su parte, el diario El Comercio ha impartido a sus vendedores un cursillo de atención al cliente con el fin de mejorar el servicio de venta y distribución del periódico. Dentro del plan está también el programa de financiación de motos a tres años, con una tasa muy baja para permitir a los *canillitas realizar su trabajo con más comodidad y rapidez.</span><span class="ref-opt"><i>(Extraído de El Comercio) · *Canillita: vendedor callejero de periódicos.</i></span></div>',
           items: [
-            // Ítem sin huecos y con solved: true = el que el libro trae resuelto como modelo.
-            { t: "Yo trabajo en un hospital y vivo en Madrid.", solved: true },
-            { t: "María {0} (trabajar) en un hospital y {1} (vivir) en Madrid.", a: [["trabaja"], ["vive"]] },
-            { t: "¿Tú {0} (comer) en casa o en la oficina normalmente?", a: [["comes"]] },
-            // vf: true cambia el hueco de texto libre por dos botones "V"/"F". Para otro
-            // par de opciones, pásalo como lista: vf: ["regular", "irregular"].
-            // que el alumno pulsa en vez de escribir — pensado para ejercicios de
-            // verdadero/falso. La respuesta (a) sigue siendo ["V"] o ["F"], igual que
-            // cualquier otro hueco de texto; el motor de corrección no cambia.
-            { t: "Madrid es la capital de España. → {0}", a: [["V"]], vf: true }
-            // wide: true en un item hace el input más ancho — úsalo para respuestas largas.
-          ],
-          // Ejercicio de comprensión oral: transcriptHTML añade la transcripción al final
-          // de la tarjeta, dentro de un <details> plegado (la transcripción es la solución,
-          // así que no puede quedar a la vista mientras el alumno responde). Opcional:
-          // transcriptLabel cambia el texto del desplegable. Si además hay grabación real
-          // (no siempre la hay), ex.audioSrc pone un <audio controls> justo debajo del
-          // enunciado — un data: URI en base64, un artefacto no puede enlazar un archivo
-          // externo. ex.audioLabel le pone una etiqueta encima ("Pista 6", etc.). La
-          // transcripción NO se quita aunque haya audio: sigue siendo la regla del
-          // profesor, y ahora es apoyo en vez de la única vía para resolver el ejercicio.
-          // audioSrc: "data:audio/mpeg;base64,...", audioLabel: "Pista 6",
-          transcriptLabel: "Ver la transcripción del audio (ábrela solo después de responder)",
-          transcriptHTML:
-            '<span class="line"><span class="who">ANA:</span> ¿Dónde vives?</span>' +
-            '<span class="line"><span class="who">LUIS:</span> En Madrid, cerca del centro.</span>'
-        },
-        {
-          // Tipo "text": un único párrafo continuo con huecos numerados {0}, {1}... a lo
-          // largo de TODO el texto (no se reinicia por línea). "\n" en `text` inserta un
-          // salto de línea visual. "a" es un array paralelo a los huecos del texto entero.
-          num: 2, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          type: "text",
-          text: "Hoy Carmen {0} (trabajar) todo el día, pero ahora mismo {1} (preparar) la cena.",
-          a: [["trabaja"], ["está preparando"]]
-        },
-        {
-          // Tipo "table2": tabla de 2 columnas, "rows" es [valor_fijo, respuestas_aceptadas].
-          // OJO: "respuestas_aceptadas" es el mismo spec que usa isCorrect() para "a" en los
-          // demás tipos — casi siempre un array de UNA lista de alternativas, es decir
-          // [["hablando"]] (doble corchete), no ["hablando"] a secas; el renderizador hace
-          // makeInput(r[1][0], ...), así que r[1][0] debe ser el array de alternativas.
-          // WARNING: los encabezados ("Infinitivo"/"Gerundio") están HARDCODEADOS en el
-          // renderizador (busca 'ex.type === "table2"' más abajo), no se leen de este
-          // array — si necesitas otros encabezados, edita el renderizador o usa "conjTable".
-          num: 3, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          type: "table2",
-          rows: [
-            ["hablar", [["hablando"]]],
-            ["comer", [["comiendo"]]]
+            { t: "Según el texto, Juan Carlos Valenzuela:\na Reparte el periódico en bicicleta.\nb Reparte y vende el periódico desde hace tres semanas.\nc Desde hace tres semanas puede repartir el periódico en moto.\n{0}", a: [["c"]] },
+            { t: "El texto nos informa de que:\na Las hijas mayores de Juan Carlos y su mujer lo ayudan en su trabajo.\nb La pareja reparte los periódicos y todas las hijas están en el quiosco.\nc Su mujer se queda en casa.\n{0}", a: [["a"]] },
+            { t: "Según el artículo:\na El diario El Comercio vende motos a muy buen precio a sus clientes.\nb Juan Carlos ha comprado una moto con ayuda del diario El Comercio.\nc El diario El Comercio no tiene interés en mejorar el servicio de venta y distribución del periódico.\n{0}", a: [["b"]] }
           ]
         },
         {
-          // Tipo "conjTable": tabla de conjugación con columnas configurables. "subjects"
-          // es la columna izquierda fija (sujetos); "cols" define cada columna de la
-          // derecha con su encabezado ("label") y sus respuestas ("a", un array paralelo
-          // a "subjects" — a[i] son las alternativas aceptadas para subjects[i] en esa
-          // columna, es decir CADA elemento de "a" es a su vez un array de alternativas,
-          // p. ej. a: [["hablo"], ["hablas"], ["habla"]], no a: ["hablo", "hablas", "habla"]
-          // — el renderizador hace makeInput(c.a[si], ...) y espera ese array ahí).
-          num: 4, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          // ex.subjectLabel cambia el encabezado de la primera columna (por defecto "Sujeto").
-          // Una celda cuyo spec es una CADENA en vez de un array se pinta fija: es la que el
-          // libro ya trae resuelta, y no cuenta como hueco.
-          type: "conjTable",
-          subjectLabel: "Sujeto",
-          subjects: ["yo", "tú", "él/ella"],
-          cols: [
-            { label: "Presente", a: ["hablo", ["hablas"], ["habla"]] },
-            { label: "Indefinido", a: [["hablé"], ["hablaste"], ["habló"]] }
-          ]
-        },
-        {
-          // Tipo "agenda": tabla de referencia (solo lectura, sin huecos) seguida de una
-          // lista "items" tipo "items" que se responde consultando esa tabla.
-          // WARNING: igual que table2, los encabezados ("Día"/"Actividad") están
-          // HARDCODEADOS en el renderizador, no se leen de `table` aquí abajo.
-          num: 5, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          type: "agenda",
-          table: [
-            ["lunes", "reunión con el equipo"],
-            ["martes", "clase de español"]
-          ],
+          num: 2, title: "Completa las preguntas con hace que, desde, cuándo, cuánto",
+          instr: "La primera pregunta ya viene resuelta como modelo, tal como en el libro.",
+          type: "items",
+          numbered: true,
           items: [
-            { t: "El lunes María {0} (tener) una reunión con el equipo.", a: [["tiene"]] }
+            { t: "¿Cuánto tiempo hace que no vas al cine?", solved: true },
+            { t: "¿Desde {0} vives aquí?", a: [["cuándo"]] },
+            { t: "¿Cuánto tiempo {0} sales con Laura?", a: [["hace que"]] },
+            { t: "¿{0} cuándo conoces a Carlos?", a: [["Desde"]] },
+            { t: "¿Cuánto tiempo {0} ha empezado la película?", a: [["hace que"]] },
+            { t: "¿{0} tiempo hace que tienes esta bici?", a: [["Cuánto"]] },
+            { t: "¿Desde {0} trabajas en esta oficina?", a: [["cuándo"]] },
+            { t: "¿Cuánto tiempo {0} empezaste a estudiar español?", a: [["hace que"]] },
+            { t: "¿{0} tiempo hace que viniste a vivir a México?", a: [["Cuánto"]] },
+            { t: "¿{0} estudias japonés?", a: [["Cuándo"]] }
           ]
         },
         {
-          // Tipo "crossword": un crucigrama real, con celdas que se cruzan — no una lista
-          // de definiciones con la foto de la rejilla al lado (esa es la alternativa
-          // cuando el crucigrama no compensa el esfuerzo; ver ex.refHTML en "items").
-          // `words`: cada palabra con su `num` (el de la definición del libro), `clue`,
-          // `answer`, `row`/`col` (0-based, celda de la PRIMERA letra) y `dir` ("A" =
-          // horizontal, "D" = vertical). Dos palabras que se cruzan comparten fila/columna
-          // en la letra común — el renderizador calcula la celda compartida solo, no
-          // duplica el input. `solved: true` en una palabra la pinta fija, sin huecos
-          // (para la que el libro ya trae resuelta, normalmente la 1).
-          num: 6, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          type: "crossword",
-          words: [
-            { num: 1, clue: "Lo que hacen los médicos.", answer: "curar", row: 0, col: 3, dir: "D", solved: true },
-            { num: 2, clue: "Une esta palabra en horizontal.", answer: "cerrar", row: 2, col: 0, dir: "A" }
-          ]
-        },
-        {
-          // Tipo "match": "relaciona" tocando, no escribiendo la letra en un hueco de
-          // texto — nació porque esa vía anterior obligaba a aceptar mil variantes de
-          // tecleo ("d, 2" / "d,2" / "d 2"...) y no se parecía en nada al ejercicio real
-          // del libro. Se toca un elemento de columns[0] (la columna ancla, fija) y luego
-          // su pareja en la columna siguiente; se dibuja una línea de color entre ambos.
-          // columns[0] son los elementos fijos (uno por fila); columns[1], columns[2]...
-          // son las columnas elegibles. rows es PARALELO a columns[0].items: { solved:
-          // true } para una fila ya resuelta en el libro (sin huecos), o { a: [spec1,
-          // spec2, ...] } con un spec de isCorrect() por cada columna elegible, en orden
-          // (spec1 para columns[1], spec2 para columns[2]...). Con solo dos columnas es
-          // el "relaciona" clásico; con tres, una cadena (el ejemplo de abajo: cada verbo
-          // se une primero a un final y ese final, a su vez, a un motivo).
-          num: 7, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          type: "match",
-          columns: [
-            { label: "Verbo", items: ["reciclar", "contaminar"] },
-            { label: "Final", items: ["el vidrio y el papel", "el aire con humo"] }
-          ],
-          rows: [
-            { a: [["el vidrio y el papel"]] },
-            { a: [["el aire con humo"]] }
-          ]
+          num: 3, title: "Inventa una respuesta para cada una de las preguntas anteriores",
+          instr: "Este ejercicio no se corrige: el libro lo da como respuesta libre. La primera pregunta ya viene resuelta como modelo («Dos meses.») — escribe tus respuestas a las preguntas 2-10 numeradas.",
+          type: "open",
+          html: '<p>1 <i>Dos meses.</i></p>' +
+            '<p>2 …</p><p>3 …</p><p>4 …</p><p>5 …</p><p>6 …</p><p>7 …</p><p>8 …</p><p>9 …</p><p>10 …</p>'
         }
       ]
     }
-    // Añade más bloques ({ id, num, title, sub, exercises: [...] }) según haga falta.
   ];
 
   // ---------- render ----------
@@ -1990,7 +1883,7 @@
   });
 
   // ---------- results panel: motivational message + send to teacher ----------
-  const TITLE_LABEL = "{{TITLE_LABEL}}"; // short label used in email subject / summary header
+  const TITLE_LABEL = "Cuaderno B1 · 1A Vida cotidiana"; // short label used in email subject / summary header
   // These are Angel's real, reusable contact details — copy verbatim into every new
   // exercise unless he says they changed. IMPORTANT: telegram MUST be his @username
   // (no @, no phone number) — t.me/+<phone> links silently ignore ?text= and never

@@ -1,9 +1,15 @@
 <!--
-  TEMPLATE — plantilla de ejercicio interactivo con corrección instantánea.
-  Ver .claude/skills/ejercicio-interactivo/SKILL.md para el proceso completo.
-  Busca todos los marcadores {{...}} y sustitúyelos; no dejes ninguno sin reemplazar.
+  Unidad 1B del cuaderno de ejercicios de Nuevo Español en Marcha 3 (B1), página 5:
+  "¿Qué hiciste? ¿Qué has hecho?". Transcrito mirando las páginas renderizadas del PDF que
+  adjuntó el profesor. Las respuestas salen del solucionario oficial del propio cuaderno
+  (página 69).
+  Construido sobre .claude/skills/ejercicio-interactivo/reference/template.html.
+  El ejercicio 1 usa type "match" (tocar para conectar): siete marcadores temporales, cada
+  uno con un único final correcto — el caso clásico de "relaciona" de una sola columna.
+  El ejercicio 3 (biografía de Frida Kahlo) usa type "text": un párrafo continuo donde cada
+  hueco sustituye al verbo en presente histórico subrayado en el libro.
 -->
-<title>{{TITLE}}</title>
+<title>Cuaderno B1 · 1B — ¿Qué hiciste? ¿Qué has hecho?</title>
 <style>
   :root {
     --paper: #F3F5F0;
@@ -696,18 +702,18 @@
 </style>
 
 <script>
-  // {{STORAGE_KEY}} here MUST be byte-identical to the one set further down in the gate
+  // unlocked-cuaderno-b1-1b here MUST be byte-identical to the one set further down in the gate
   // script (search "STORAGE_KEY =") — same placeholder, same value, both occurrences.
   document.documentElement.setAttribute(
     "data-locked",
-    localStorage.getItem("{{STORAGE_KEY}}") === "1" ? "false" : "true"
+    localStorage.getItem("unlocked-cuaderno-b1-1b") === "1" ? "false" : "true"
   );
 </script>
 
 <div class="gate-overlay">
   <div class="gate-card">
     <div class="eyebrow">Acceso privado</div>
-    <h2>{{GATE_TITLE}}</h2>
+    <h2>Unidad 1B · ¿Qué hiciste? ¿Qué has hecho?</h2>
     <p>Pídele el código a tu profesor para entrar.</p>
     <input type="text" id="gateInput" placeholder="CÓDIGO" autocomplete="off" autocapitalize="characters" />
     <button id="gateBtn">Entrar</button>
@@ -718,10 +724,10 @@
   (function () {
     // El código es solo un disuasivo, no seguridad real — cualquiera que vea el HTML
     // fuente lo ve. Elige una palabra corta, memorable y ligada al tema, en MAYÚSCULAS.
-    const CODE = "{{GATE_CODE}}";
-    // MUST be byte-identical al {{STORAGE_KEY}} usado arriba (ver comentario junto al
+    const CODE = "KAHLO";
+    // MUST be byte-identical al unlocked-cuaderno-b1-1b usado arriba (ver comentario junto al
     // primer occurrence). Usa un valor único por ejercicio, p. ej. "unlocked-b2-13a-tema".
-    const STORAGE_KEY = "{{STORAGE_KEY}}";
+    const STORAGE_KEY = "unlocked-cuaderno-b1-1b";
     function tryUnlock() {
       const val = document.getElementById("gateInput").value.trim().toUpperCase();
       if (val === CODE) {
@@ -751,9 +757,8 @@
 <div class="topbar gated-content">
   <div class="topbar-inner">
     <div class="brand">
-      <!-- Ejemplo real (A1): {{BRAND_TITLE}} = "Ejercicios A1", {{BRAND_SUB}} = "Presente · Gerundio · Indefinido" -->
-      <span class="brand-title">{{BRAND_TITLE}}</span>
-      <span class="brand-sub">{{BRAND_SUB}}</span>
+      <span class="brand-title">Cuaderno B1 · Unidad 1B</span>
+      <span class="brand-sub">¿Qué hiciste? ¿Qué has hecho?</span>
     </div>
     <nav class="nav-dots" id="navDots"></nav>
     <div class="score-wrap">
@@ -764,13 +769,13 @@
 </div>
 
 <div class="hero gated-content">
-  <div class="eyebrow">{{EYEBROW}}</div>
-  <h1>{{HEADLINE}}</h1>
-  <p>{{SUBTITLE}}</p>
+  <div class="eyebrow">Nuevo Español en Marcha 3 · Cuaderno de ejercicios · Unidad 1 · Gente</div>
+  <h1>¿Qué hiciste? ¿Qué has hecho?</h1>
+  <p>Marcadores temporales, pretérito indefinido/imperfecto y biografías de personajes famosos. Escribe tus respuestas, corrige al instante y envía el resultado a tu profesor.</p>
   <div class="hero-meta">
     <span><strong id="totalBlanksLabel" translate="no">—</strong> huecos en total</span>
-    <span><strong>{{N_BLOCKS}}</strong> bloques</span>
-    <span><strong>{{N_EXERCISES}}</strong> ejercicios</span>
+    <span><strong>1</strong> bloque</span>
+    <span><strong>4</strong> ejercicios</span>
   </div>
 </div>
 
@@ -802,7 +807,7 @@
 </div>
 
 <footer class="gated-content">
-  <span>{{FOOTER_LEFT}}</span>
+  <span>Nuevo Español en Marcha 3 (B1), cuaderno de ejercicios, unidad 1B (pág. 5)</span>
   <span>© Angel Luis Acosta González</span>
 </footer>
 
@@ -851,161 +856,73 @@
   // ---------- exercise data ----------
   // template blanks use {0},{1}... matched to item.answers[i]
   const blocks = [
-    // Cada bloque agrupa varios ejercicios bajo un mismo subtema. {{BLOCKS}} — sustituye
-    // este array completo por los bloques/ejercicios reales del capítulo, basados en el
-    // material del profesor (ver SKILL.md paso 1). Lo que sigue es un ejemplo de cada uno
-    // de los 7 tipos soportados por el renderizador (busca 'ex.type ===' en este archivo);
-    // si necesitas un tipo nuevo, tendrás que extender también el renderizador.
     {
-      id: "{{BLOCK_ID}}", num: 1, title: "{{BLOCK_TITLE}}",
-      sub: "{{BLOCK_SUBTITLE}}",
+      id: "seccion-1", num: 1, title: "¿Qué hiciste? ¿Qué has hecho?",
+      sub: "Pretérito indefinido, imperfecto y marcadores temporales",
       exercises: [
         {
-          // Tipo "items": una lista de frases sueltas, cada una con sus propios huecos
-          // {0}, {1}... numerados desde 0 DENTRO de esa frase (no del ejercicio entero).
-          // "a" es un array paralelo a los huecos: a[i] es la lista de respuestas
-          // aceptadas para el hueco {i} (varias formas válidas si aplica).
-          num: 1, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          type: "items",
-          items: [
-            // Ítem sin huecos y con solved: true = el que el libro trae resuelto como modelo.
-            { t: "Yo trabajo en un hospital y vivo en Madrid.", solved: true },
-            { t: "María {0} (trabajar) en un hospital y {1} (vivir) en Madrid.", a: [["trabaja"], ["vive"]] },
-            { t: "¿Tú {0} (comer) en casa o en la oficina normalmente?", a: [["comes"]] },
-            // vf: true cambia el hueco de texto libre por dos botones "V"/"F". Para otro
-            // par de opciones, pásalo como lista: vf: ["regular", "irregular"].
-            // que el alumno pulsa en vez de escribir — pensado para ejercicios de
-            // verdadero/falso. La respuesta (a) sigue siendo ["V"] o ["F"], igual que
-            // cualquier otro hueco de texto; el motor de corrección no cambia.
-            { t: "Madrid es la capital de España. → {0}", a: [["V"]], vf: true }
-            // wide: true en un item hace el input más ancho — úsalo para respuestas largas.
-          ],
-          // Ejercicio de comprensión oral: transcriptHTML añade la transcripción al final
-          // de la tarjeta, dentro de un <details> plegado (la transcripción es la solución,
-          // así que no puede quedar a la vista mientras el alumno responde). Opcional:
-          // transcriptLabel cambia el texto del desplegable. Si además hay grabación real
-          // (no siempre la hay), ex.audioSrc pone un <audio controls> justo debajo del
-          // enunciado — un data: URI en base64, un artefacto no puede enlazar un archivo
-          // externo. ex.audioLabel le pone una etiqueta encima ("Pista 6", etc.). La
-          // transcripción NO se quita aunque haya audio: sigue siendo la regla del
-          // profesor, y ahora es apoyo en vez de la única vía para resolver el ejercicio.
-          // audioSrc: "data:audio/mpeg;base64,...", audioLabel: "Pista 6",
-          transcriptLabel: "Ver la transcripción del audio (ábrela solo después de responder)",
-          transcriptHTML:
-            '<span class="line"><span class="who">ANA:</span> ¿Dónde vives?</span>' +
-            '<span class="line"><span class="who">LUIS:</span> En Madrid, cerca del centro.</span>'
-        },
-        {
-          // Tipo "text": un único párrafo continuo con huecos numerados {0}, {1}... a lo
-          // largo de TODO el texto (no se reinicia por línea). "\n" en `text` inserta un
-          // salto de línea visual. "a" es un array paralelo a los huecos del texto entero.
-          num: 2, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          type: "text",
-          text: "Hoy Carmen {0} (trabajar) todo el día, pero ahora mismo {1} (preparar) la cena.",
-          a: [["trabaja"], ["está preparando"]]
-        },
-        {
-          // Tipo "table2": tabla de 2 columnas, "rows" es [valor_fijo, respuestas_aceptadas].
-          // OJO: "respuestas_aceptadas" es el mismo spec que usa isCorrect() para "a" en los
-          // demás tipos — casi siempre un array de UNA lista de alternativas, es decir
-          // [["hablando"]] (doble corchete), no ["hablando"] a secas; el renderizador hace
-          // makeInput(r[1][0], ...), así que r[1][0] debe ser el array de alternativas.
-          // WARNING: los encabezados ("Infinitivo"/"Gerundio") están HARDCODEADOS en el
-          // renderizador (busca 'ex.type === "table2"' más abajo), no se leen de este
-          // array — si necesitas otros encabezados, edita el renderizador o usa "conjTable".
-          num: 3, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          type: "table2",
-          rows: [
-            ["hablar", [["hablando"]]],
-            ["comer", [["comiendo"]]]
-          ]
-        },
-        {
-          // Tipo "conjTable": tabla de conjugación con columnas configurables. "subjects"
-          // es la columna izquierda fija (sujetos); "cols" define cada columna de la
-          // derecha con su encabezado ("label") y sus respuestas ("a", un array paralelo
-          // a "subjects" — a[i] son las alternativas aceptadas para subjects[i] en esa
-          // columna, es decir CADA elemento de "a" es a su vez un array de alternativas,
-          // p. ej. a: [["hablo"], ["hablas"], ["habla"]], no a: ["hablo", "hablas", "habla"]
-          // — el renderizador hace makeInput(c.a[si], ...) y espera ese array ahí).
-          num: 4, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          // ex.subjectLabel cambia el encabezado de la primera columna (por defecto "Sujeto").
-          // Una celda cuyo spec es una CADENA en vez de un array se pinta fija: es la que el
-          // libro ya trae resuelta, y no cuenta como hueco.
-          type: "conjTable",
-          subjectLabel: "Sujeto",
-          subjects: ["yo", "tú", "él/ella"],
-          cols: [
-            { label: "Presente", a: ["hablo", ["hablas"], ["habla"]] },
-            { label: "Indefinido", a: [["hablé"], ["hablaste"], ["habló"]] }
-          ]
-        },
-        {
-          // Tipo "agenda": tabla de referencia (solo lectura, sin huecos) seguida de una
-          // lista "items" tipo "items" que se responde consultando esa tabla.
-          // WARNING: igual que table2, los encabezados ("Día"/"Actividad") están
-          // HARDCODEADOS en el renderizador, no se leen de `table` aquí abajo.
-          num: 5, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          type: "agenda",
-          table: [
-            ["lunes", "reunión con el equipo"],
-            ["martes", "clase de español"]
-          ],
-          items: [
-            { t: "El lunes María {0} (tener) una reunión con el equipo.", a: [["tiene"]] }
-          ]
-        },
-        {
-          // Tipo "crossword": un crucigrama real, con celdas que se cruzan — no una lista
-          // de definiciones con la foto de la rejilla al lado (esa es la alternativa
-          // cuando el crucigrama no compensa el esfuerzo; ver ex.refHTML en "items").
-          // `words`: cada palabra con su `num` (el de la definición del libro), `clue`,
-          // `answer`, `row`/`col` (0-based, celda de la PRIMERA letra) y `dir` ("A" =
-          // horizontal, "D" = vertical). Dos palabras que se cruzan comparten fila/columna
-          // en la letra común — el renderizador calcula la celda compartida solo, no
-          // duplica el input. `solved: true` en una palabra la pinta fija, sin huecos
-          // (para la que el libro ya trae resuelta, normalmente la 1).
-          num: 6, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          type: "crossword",
-          words: [
-            { num: 1, clue: "Lo que hacen los médicos.", answer: "curar", row: 0, col: 3, dir: "D", solved: true },
-            { num: 2, clue: "Une esta palabra en horizontal.", answer: "cerrar", row: 2, col: 0, dir: "A" }
-          ]
-        },
-        {
-          // Tipo "match": "relaciona" tocando, no escribiendo la letra en un hueco de
-          // texto — nació porque esa vía anterior obligaba a aceptar mil variantes de
-          // tecleo ("d, 2" / "d,2" / "d 2"...) y no se parecía en nada al ejercicio real
-          // del libro. Se toca un elemento de columns[0] (la columna ancla, fija) y luego
-          // su pareja en la columna siguiente; se dibuja una línea de color entre ambos.
-          // columns[0] son los elementos fijos (uno por fila); columns[1], columns[2]...
-          // son las columnas elegibles. rows es PARALELO a columns[0].items: { solved:
-          // true } para una fila ya resuelta en el libro (sin huecos), o { a: [spec1,
-          // spec2, ...] } con un spec de isCorrect() por cada columna elegible, en orden
-          // (spec1 para columns[1], spec2 para columns[2]...). Con solo dos columnas es
-          // el "relaciona" clásico; con tres, una cadena (el ejemplo de abajo: cada verbo
-          // se une primero a un final y ese final, a su vez, a un motivo).
-          num: 7, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
+          num: 1, title: "Relaciona",
+          instr: "Toca un marcador temporal y luego el final de frase que le corresponde.",
           type: "match",
           columns: [
-            { label: "Verbo", items: ["reciclar", "contaminar"] },
-            { label: "Final", items: ["el vidrio y el papel", "el aire con humo"] }
+            { label: "Marcador temporal", items: ["Hace mucho tiempo", "La semana pasada", "El mes que viene", "Normalmente", "En 1945", "De vez en cuando", "Mañana"] },
+            { label: "Final de la frase", items: ["que no veo a Antonio.", "voy a ir de viaje a Sevilla.", "no salgo los domingos.", "me encontré con Rosa en la calle.", "salgo a correr por la playa.", "acabó la Segunda Guerra Mundial.", "voy a jugar al fútbol con mis amigos."] }
           ],
           rows: [
-            { a: [["el vidrio y el papel"]] },
-            { a: [["el aire con humo"]] }
+            { a: [["que no veo a Antonio."]] },
+            { a: [["me encontré con Rosa en la calle."]] },
+            { a: [["voy a ir de viaje a Sevilla."]] },
+            { a: [["no salgo los domingos."]] },
+            { a: [["acabó la Segunda Guerra Mundial."]] },
+            { a: [["salgo a correr por la playa."]] },
+            { a: [["voy a jugar al fútbol con mis amigos."]] }
+          ]
+        },
+        {
+          num: 2, title: "Completa las frases con el marcador temporal adecuado",
+          instr: "En algún caso hay más de una posibilidad; se acepta la del solucionario oficial del libro.",
+          refHTML: '<span class="ref-label">Marcadores para elegir</span>' +
+            '<div class="ref-options">' +
+            '<span class="ref-opt">varias veces</span><span class="ref-opt">todos los días</span>' +
+            '<span class="ref-opt">siempre</span><span class="ref-opt">muchos años</span>' +
+            '<span class="ref-opt">la semana pasada</span><span class="ref-opt">hace poco tiempo</span>' +
+            '<span class="ref-opt">nunca</span><span class="ref-opt">tres años</span>' +
+            '<span class="ref-opt">tres días a la semana</span>' +
+            '</div>',
+          type: "items",
+          numbered: true,
+          items: [
+            { t: "Roberto ha estado varias veces en México.", solved: true },
+            { t: "Juanjo va al mismo restaurante {0}.", a: [["siempre"]], wide: true },
+            { t: "Eugenia escribe un montón de correos {0}.", a: [["todos los días"]], wide: true },
+            { t: "Hace {0} que no voy de vacaciones porque mi trabajo no me lo permite.", a: [["muchos años"]], wide: true },
+            { t: "Eduardo no ha estado en el extranjero {0}.", a: [["nunca"]], wide: true },
+            { t: "Federica va al gimnasio {0}.", a: [["tres días a la semana"]], wide: true },
+            { t: "Margarita ha estado en Brasil {0} y ahora va a volver otra vez.", a: [["hace poco tiempo"]], wide: true },
+            { t: "Eugenio acabó sus estudios hace {0} y ahora trabaja en una empresa de telecomunicaciones.", a: [["tres años"]], wide: true },
+            { t: "Estuve en el cine con Ricardo {0}.", a: [["la semana pasada"]], wide: true }
+          ]
+        },
+        {
+          num: 3, title: "Frida Kahlo — pretérito indefinido o imperfecto",
+          instr: "La siguiente biografía está escrita en presente histórico. Cambia los verbos subrayados a pretérito indefinido o imperfecto en algún caso.",
+          type: "text",
+          text: "Esta pintora mexicana, hija de un fotógrafo alemán y de una mestiza mexicana, {0} en Coyoacán, en 1907. Cuando {1} tres años, {2} de polio. En 1925, cuando estaba aprendiendo la técnica del grabado, {3} un accidente de autobús que le obligó a estar en cama mucho tiempo. En este tiempo {4} a pintar.\nEn 1928 {5} en el Partido Comunista y {6} a Diego Rivera, con quien {7} al año siguiente. Entre 1931 y 1934 {8} en Nueva York y Detroit con su marido.\nEn 1938 Breton {9} su obra como surrealista, pero ella misma {10} más tarde: «Creían que yo era surrealista, pero no lo era. Nunca pinté los sueños. Pinté mi propia realidad».\nEn 1939 {11} en París en la galería Renon et Colle. Cuatro años más tarde {12} dando clases en Ciudad de México. En 1953 la Galería de Arte Contemporáneo de la capital mexicana le {13} una importante exposición. {14} en Coyoacán en 1954.\nCuatro años más tarde, su casa familiar se convirtió en el Museo Frida Kahlo.",
+          a: [["nació"], ["tenía"], ["enfermó"], ["tuvo"], ["empezó"], ["entró"], ["conoció"], ["se casó"], ["vivió"], ["calificó"], ["declaraba", "declaró"], ["expuso"], ["trabajó"], ["organizó"], ["Murió"]]
+        },
+        {
+          num: 4, title: "Lee las siguientes biografías. ¿Sabes a qué personaje famoso corresponden?",
+          instr: "Escribe el nombre del personaje famoso al final de cada biografía.",
+          type: "items",
+          numbered: true,
+          items: [
+            { t: "Fue un cantante, compositor y bailarín estadounidense de música pop, disco y dance. Conocido como el «Rey del Pop», fue incluido en el Libro Guinness de los récords en numerosas ocasiones, entre ellos: por ser el artista musical más premiado de la historia. Su contribución a la música, al baile y a la moda, lo convirtieron en una figura de la cultura popular mundial. Murió a los 53 años, en 2011.\n{0}", a: [["Michael Jackson"]] },
+            { t: "Luchó contra el apartheid en su país y fue arrestado y condenado a cadena perpetua por sus acciones. Pasó más de 27 años en la cárcel. Después de su liberación, el 11 de febrero de 1990, trabajó con el entonces presidente de su país en las negociaciones para conseguir una democracia multirracial que dieron paso a las primeras elecciones con sufragio universal de 1994. Tras el aplastante triunfo de su partido, fue elegido presidente por el parlamento. Recibió el Premio Nobel de la Paz de 1993. Trabajó por la reconciliación nacional, el progreso de su país y la alfabetización de la infancia. Falleció el día 5 de diciembre del año 2013.\n{0}", a: [["Nelson Mandela"]] },
+            { t: "Además de actriz y política, fue primera dama de su país. Impulsó y logró la aprobación en 1947 de la ley de sufragio femenino en Argentina. Desarrolló una amplia acción social a través de su fundación: construyó hospitales, asilos y escuelas, impulsó el turismo social creando colonias de vacaciones, difundió el deporte entre los niños mediante campeonatos que abarcaron a toda la población, otorgó becas para estudiantes, ayudas para la vivienda y promocionó a la mujer en diversas facetas. Falleció el 26 de julio de 1952, a la edad de 33 años.\n{0}", a: [["Evita Perón"]] }
           ]
         }
       ]
     }
-    // Añade más bloques ({ id, num, title, sub, exercises: [...] }) según haga falta.
   ];
 
   // ---------- render ----------
@@ -1990,7 +1907,7 @@
   });
 
   // ---------- results panel: motivational message + send to teacher ----------
-  const TITLE_LABEL = "{{TITLE_LABEL}}"; // short label used in email subject / summary header
+  const TITLE_LABEL = "Cuaderno B1 · 1B ¿Qué hiciste? ¿Qué has hecho?"; // short label used in email subject / summary header
   // These are Angel's real, reusable contact details — copy verbatim into every new
   // exercise unless he says they changed. IMPORTANT: telegram MUST be his @username
   // (no @, no phone number) — t.me/+<phone> links silently ignore ?text= and never
