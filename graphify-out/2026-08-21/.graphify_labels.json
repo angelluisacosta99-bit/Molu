@@ -46,7 +46,7 @@
   "44": "resolveLengthPx",
   "45": "onAnnotDown",
   "46": "createLiveBrowserSessionState",
-  "47": "normalizeWorkspacePattern",
+  "47": "discoverTargetCandidates",
   "48": "createLiveBrowserDomHelpers",
   "49": "sampleCssBackground",
   "50": "Critique Reference (Design Review)",
@@ -56,7 +56,7 @@
   "54": "critique-storage.mjs",
   "55": "scheduleLazyVisualContrast",
   "56": "collectBrowserFindings",
-  "57": "readWorkspacePatterns",
+  "57": "resolveContext",
   "58": "live.mjs",
   "59": "readConfig",
   "60": "session-store.mjs",
@@ -65,7 +65,7 @@
   "63": "pin.mjs",
   "64": "Ser / Estar (contraste)",
   "65": "Clarify Reference (UX Copy)",
-  "66": "inline-ignores.mjs",
+  "66": "detect-text.mjs",
   "67": "normalizeIgnoreValueEntries",
   "68": "Web Interface Guidelines (Vercel)",
   "69": "syncEditBadgeHitProxies",
@@ -115,5 +115,9 @@
   "113": "session-end-status.sh",
   "114": "session-start.sh",
   "115": "Ejercicios",
-  "116": "discoverTargetCandidates"
+  "116": "handleGo",
+  "117": "Ejercicios",
+  "118": "Ejercicios",
+  "119": "resolveCandidateContextSummary",
+  "120": "Ejercicios"
 }
