@@ -100,6 +100,24 @@ de versión de `agent-browser` solo se comprobaba con `command -v`
 con una versión distinta nunca habría reinstalado. Ambos ahora
 comparan explícitamente antes de reportar éxito.
 
+**Tercera pasada, con el revisor puesto en modo escéptico a propósito**
+(la ronda anterior de "arreglado y probado" había resultado no
+funcionar de verdad): encontró que la propia comprobación de versión
+nueva (`agent-browser --version`) no tenía `timeout`, así que un
+binario colgado bloquearía el arranque de la sesión indefinidamente —
+justo el mismo tipo de fallo que este archivo ya llevaba dos rondas
+corrigiendo en otros puntos, reintroducido en el código nuevo de esta
+misma ronda. Y si la reinstalación por pin fallaba (red bloqueada,
+igual que con el Chrome de `agent-browser install`), el script no
+volvía a comprobar la versión después del intento — seguía reportando
+"listo" con el binario viejo, sin avisar de que el pin no se había
+podido aplicar. Ambos corregidos: `timeout` en las dos llamadas a
+`--version`, y una segunda comprobación tras el intento de
+reinstalación, que ahora sí avisa explícitamente si sigue en una
+versión distinta a la fijada. Verificado con binarios simulados
+(`agent-browser`/`npm` de mentira) para los tres casos: colgado,
+reinstalación fallida, y caso normal.
+
 ✅ Activado el 2026-08-20.
 
 ## 2026-08-18 — Práctica: desplazar la ventana de 5h de límite de uso

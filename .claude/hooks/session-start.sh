@@ -62,14 +62,25 @@ if [ -d ".claude/skills/agent-browser" ]; then
   # cached container from a session before the pin was bumped could already
   # have a different version on PATH, and `command -v` alone would then
   # skip reinstalling forever, leaving the pin and the real binary silently
-  # out of sync.
-  CURRENT_AGENT_BROWSER_VERSION="$(agent-browser --version 2>/dev/null | awk '{print $2}')"
+  # out of sync. Capped like every other external call in this file -- a
+  # hanging binary here would otherwise block session start indefinitely.
+  CURRENT_AGENT_BROWSER_VERSION="$(timeout 10 agent-browser --version 2>/dev/null | awk '{print $2}')"
   if [ "$CURRENT_AGENT_BROWSER_VERSION" != "$AGENT_BROWSER_VERSION" ]; then
     # Capped for the same reason as the graphify install above.
     timeout 120 npm install -g "agent-browser@${AGENT_BROWSER_VERSION}" >/dev/null 2>&1
+    # Re-check after attempting the reinstall -- don't assume it worked.
+    # A failed/timed-out install here (this container's own network policy
+    # already blocks one npm-adjacent download below, for the same kind of
+    # reason) would otherwise leave the stale binary on PATH while the
+    # script still claims the pin is enforced.
+    CURRENT_AGENT_BROWSER_VERSION="$(timeout 10 agent-browser --version 2>/dev/null | awk '{print $2}')"
   fi
 
   if command -v agent-browser >/dev/null 2>&1; then
+    if [ "$CURRENT_AGENT_BROWSER_VERSION" != "$AGENT_BROWSER_VERSION" ]; then
+      echo "[session-start] agent-browser present but reinstall to pinned ${AGENT_BROWSER_VERSION} failed (still on ${CURRENT_AGENT_BROWSER_VERSION:-unknown}) - continuing with what's on PATH (non-blocking)"
+    fi
+
     # This session's egress policy blocks googlechromelabs.github.io (403,
     # confirmed live), so `agent-browser install`'s own Chrome download
     # cannot complete here -- not a transient failure, a policy denial (see
