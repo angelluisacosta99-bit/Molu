@@ -76,11 +76,7 @@ if [ -d ".claude/skills/agent-browser" ]; then
     CURRENT_AGENT_BROWSER_VERSION="$(timeout 10 agent-browser --version 2>/dev/null | awk '{print $2}')"
   fi
 
-  if command -v agent-browser >/dev/null 2>&1; then
-    if [ "$CURRENT_AGENT_BROWSER_VERSION" != "$AGENT_BROWSER_VERSION" ]; then
-      echo "[session-start] agent-browser present but reinstall to pinned ${AGENT_BROWSER_VERSION} failed (still on ${CURRENT_AGENT_BROWSER_VERSION:-unknown}) - continuing with what's on PATH (non-blocking)"
-    fi
-
+  if command -v agent-browser >/dev/null 2>&1 && [ "$CURRENT_AGENT_BROWSER_VERSION" = "$AGENT_BROWSER_VERSION" ]; then
     # This session's egress policy blocks googlechromelabs.github.io (403,
     # confirmed live), so `agent-browser install`'s own Chrome download
     # cannot complete here -- not a transient failure, a policy denial (see
@@ -113,6 +109,15 @@ if [ -d ".claude/skills/agent-browser" ]; then
         echo "[session-start] agent-browser on PATH but no browser available (no Playwright Chromium, and its own download is blocked here) - may not be usable (non-blocking)"
       fi
     fi
+  elif command -v agent-browser >/dev/null 2>&1; then
+    # Don't fall through and use it anyway: the pin exists specifically so
+    # a future compromised/hijacked npm release can't run under this
+    # skill's pre-authorized blanket `Bash(agent-browser:*)` with no
+    # re-review (see comment above AGENT_BROWSER_VERSION). A binary that
+    # isn't the pinned version hasn't had that review either way, whatever
+    # its actual origin -- so it's simply not used this session rather than
+    # used-with-a-warning.
+    echo "[session-start] agent-browser present but not at pinned version ${AGENT_BROWSER_VERSION} (still on ${CURRENT_AGENT_BROWSER_VERSION:-unknown}) after reinstall attempt - skipping this session rather than running an unverified version (non-blocking)"
   else
     echo "[session-start] agent-browser not available - skipping (non-blocking)"
   fi

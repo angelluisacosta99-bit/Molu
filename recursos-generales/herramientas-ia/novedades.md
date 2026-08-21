@@ -118,6 +118,20 @@ versión distinta a la fijada. Verificado con binarios simulados
 (`agent-browser`/`npm` de mentira) para los tres casos: colgado,
 reinstalación fallida, y caso normal.
 
+**Cuarta pasada** (siguiendo escéptica a propósito, dado el historial de
+esta misma sección): encontró que avisar del desajuste de versión y
+*seguir adelante igual* con el binario no vetado deshacía el propósito
+del pin declarado en el propio comentario del script — cualquier
+comando de `agent-browser` corriendo el resto de la sesión lo haría con
+el permiso general `Bash(agent-browser:*)` que la skill preautoriza,
+sin ninguna revisión, sobre una versión que nunca se vetó para eso.
+Corregido: si la versión sigue sin coincidir con el pin tras el intento
+de reinstalación, esa sesión simplemente no configura ni usa
+`agent-browser` (se trata como si no estuviera disponible), en vez de
+usarlo con una advertencia. Verificado que el caso normal sigue
+funcionando igual y que el caso de desajuste ya no escribe
+`AGENT_BROWSER_EXECUTABLE_PATH` en ningún sitio.
+
 ✅ Activado el 2026-08-20.
 
 ## 2026-08-18 — Práctica: desplazar la ventana de 5h de límite de uso
