@@ -23,6 +23,173 @@ copias que puedan desincronizarse.
 
 ---
 
+## 2026-08-20 — agent-browser (Vercel Labs): activado
+
+**Nota sobre cómo se activó esta vez:** a diferencia del resto de este
+registro, esto no salió de la Routine semanal del radar ni de una
+tarjeta de sugerencia — Angel pidió explícitamente en esta misma
+conversación "instala para todas las sesiones", tras haber preguntado
+por la herramienta y haber recibido la comparación con las otras
+opciones de navegador (Claude in Chrome, `browser-use`). La regla del
+radar de "proponer con tarjeta, nunca instalar por Angel" es para
+hallazgos que yo traigo por iniciativa propia — no aplica cuando el
+propio Angel pide la instalación directamente, como aquí.
+
+**Qué es:** `agent-browser` — CLI de automatización de navegador en Rust
+puro (Apache-2.0, [vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser),
+41.000+ estrellas). Controla Chrome/Chromium vía CDP con snapshots de
+árbol de accesibilidad y referencias compactas `@eN` en vez de
+coordenadas de píxel — pensado para agentes de código, no para
+navegación genérica.
+
+**Por qué le sirve a Angel:** los ejercicios interactivos de
+`docencia-espanol/materiales/` (HTML autocontenido con JS de corrección
+instantánea) hoy solo se verifican leyendo el código o probándolos a
+mano. `agent-browser` permite clicar, rellenar huecos y comprobar que la
+lógica de corrección funciona de verdad en un navegador real, con
+auditoría de accesibilidad (axe-core) incluida — cosa que ni
+`impeccable` (trae su propia automatización de navegador, pero para
+crítica de diseño visual, no QA funcional) ni ningún otro skill del
+repo hacían hasta ahora.
+
+**Cómo se activó:** en dos partes, porque el contenedor de cada sesión
+es efímero:
+1. **Skill** (`npx skills add vercel-labs/agent-browser`) — deja el
+   stub en `.agents/skills/agent-browser/SKILL.md` con
+   `.claude/skills/agent-browser` como symlink hacia él. Es texto
+   ligero, versionado en Git, así que sobrevive solo con el commit —
+   no hace falta reinstalarlo cada sesión.
+2. **Binario CLI** (`npm install -g agent-browser`, versión fijada a
+   propósito por seguridad de cadena de suministro) — no sobrevive a
+   un contenedor nuevo, igual que los git hooks de graphify. Añadido a
+   `.claude/hooks/session-start.sh` para que se reinstale solo al
+   principio de cada sesión, con `timeout` en cada paso para que un
+   fallo o cuelgue nunca bloquee el arranque de la sesión.
+
+**Hallazgo durante la instalación:** `agent-browser install` (el paso
+que descarga su propio Chrome) falla siempre aquí — no es un fallo de
+red pasajero, es una denegación de política confirmada en vivo (403 al
+intentar conectar con `googlechromelabs.github.io`, ver
+`/root/.ccr/README.md`: reportar, no rodear). Solución real, sin rodear
+la política: apuntar `agent-browser` al Chromium que este entorno ya
+trae preinstalado para Playwright (`/opt/pw-browsers/chromium`) vía
+`AGENT_BROWSER_EXECUTABLE_PATH`, en vez de dejar que intente descargar
+el suyo.
+
+**Primer intento fallido, corregido en la siguiente revisión:** esa
+variable tiene que llegar a los shells que arranca el Bash tool
+*después* de que este hook termine, y un `export` dentro del hook no
+se propaga a un shell nuevo. El primer intento la escribía en
+`/etc/profile.d/agent-browser-executable.sh` (mismo mecanismo que usa
+el proxy de este contenedor para `HTTPS_PROXY`) y se dio por probado de
+punta a punta — pero esa prueba usó `bash -lc` (shell de *login* a
+propósito), y el Bash tool real invoca cada comando como `bash -c` (sin
+`-l`), que nunca lee `/etc/profile.d/`. Confirmado en vivo con una
+llamada nueva del propio Bash tool: la variable salía vacía pese al
+archivo de profile.d ya escrito. Corregido usando `$CLAUDE_ENV_FILE`
+(mecanismo documentado en la skill `session-start-hook` para persistir
+variables de sesión — `echo 'export X=Y' >> "$CLAUDE_ENV_FILE"`),
+verificado con una llamada real del Bash tool tras el fix, no solo con
+un shell manual.
+
+Misma revisión encontró y corrigió otros dos "éxito falso": `graphify
+hook install` no comprobaba su código de salida tras el `timeout`
+añadido (un cuelgue/fallo se reportaba igual como instalado), y el pin
+de versión de `agent-browser` solo se comprobaba con `command -v`
+(presencia), no con la versión real instalada — un contenedor cacheado
+con una versión distinta nunca habría reinstalado. Ambos ahora
+comparan explícitamente antes de reportar éxito.
+
+**Tercera pasada, con el revisor puesto en modo escéptico a propósito**
+(la ronda anterior de "arreglado y probado" había resultado no
+funcionar de verdad): encontró que la propia comprobación de versión
+nueva (`agent-browser --version`) no tenía `timeout`, así que un
+binario colgado bloquearía el arranque de la sesión indefinidamente —
+justo el mismo tipo de fallo que este archivo ya llevaba dos rondas
+corrigiendo en otros puntos, reintroducido en el código nuevo de esta
+misma ronda. Y si la reinstalación por pin fallaba (red bloqueada,
+igual que con el Chrome de `agent-browser install`), el script no
+volvía a comprobar la versión después del intento — seguía reportando
+"listo" con el binario viejo, sin avisar de que el pin no se había
+podido aplicar. Ambos corregidos: `timeout` en las dos llamadas a
+`--version`, y una segunda comprobación tras el intento de
+reinstalación, que ahora sí avisa explícitamente si sigue en una
+versión distinta a la fijada. Verificado con binarios simulados
+(`agent-browser`/`npm` de mentira) para los tres casos: colgado,
+reinstalación fallida, y caso normal.
+
+**Cuarta pasada** (siguiendo escéptica a propósito, dado el historial de
+esta misma sección): encontró que avisar del desajuste de versión y
+*seguir adelante igual* con el binario no vetado deshacía el propósito
+del pin declarado en el propio comentario del script — cualquier
+comando de `agent-browser` corriendo el resto de la sesión lo haría con
+el permiso general `Bash(agent-browser:*)` que la skill preautoriza,
+sin ninguna revisión, sobre una versión que nunca se vetó para eso.
+Corregido: si la versión sigue sin coincidir con el pin tras el intento
+de reinstalación, esa sesión simplemente no configura ni usa
+`agent-browser` (se trata como si no estuviera disponible), en vez de
+usarlo con una advertencia. Verificado que el caso normal sigue
+funcionando igual y que el caso de desajuste ya no escribe
+`AGENT_BROWSER_EXECUTABLE_PATH` en ningún sitio.
+
+**Quinta pasada, límite honesto que queda sin cerrar del todo:**
+encontró que ese "saltar la sesión" solo evita que este *hook* configure
+o dependa del binario no vetado — no impide técnicamente que se le
+llame por Bash directamente el resto de la sesión, a diferencia del
+gate real que sí existe para fusionar PRs
+(`.claude/hooks/check-pr-review.sh`, con su propio `PreToolUse` en
+`.claude/settings.json`). Aquí no hay un hook equivalente para
+`agent-browser`, así que el pin de versión protege el paso de
+*instalación* (este script nunca instala nada sin fijar versión) pero
+no un paso de *ejecución* — cerrarlo del todo pediría un gate técnico
+dedicado, coste desproporcionado para instalar una herramienta de
+navegador, así que queda documentado como límite conocido en los
+propios comentarios del script en vez de resuelto. Corregido en la
+misma pasada un comentario impreciso (atribuía un `$CLAUDE_ENV_FILE`
+vacío a "un entorno no remoto" sin haberlo comprobado — reproducido en
+vivo que puede pasar igual con `CLAUDE_CODE_REMOTE=true`).
+
+✅ Activado el 2026-08-20.
+
+## 2026-08-18 — Práctica: desplazar la ventana de 5h de límite de uso
+
+Hallazgo de práctica, no herramienta instalable (sin tarjeta). La
+ventana de uso de 5 horas de Claude no reinicia a una hora fija: empieza
+a contar desde el primer mensaje que se envía. Mandar un mensaje corto
+en cuanto se empieza a trabajar (en vez de dejar que la ventana llevara
+un rato corriendo antes del primer uso real) desplaza el reinicio hacia
+el horario real de trabajo, en vez de perder parte del bloque al
+principio. Aplica sobre todo a sesiones largas como las de revisión de
+PRs de este repo. Fuente: [soporte oficial de Claude](https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work)
+(no se pudo verificar el texto exacto en esta sesión — `support.claude.com`
+está bloqueado por la política de red del entorno — reconstruido por
+búsqueda cruzando varias fuentes que lo citan).
+
+## 2026-08-18 — MarkItDown (Microsoft): herramienta puntual, no instalada
+
+**Qué es:** `markitdown` (Microsoft, MIT,
+[github.com/microsoft/markitdown](https://github.com/microsoft/markitdown)) —
+librería/CLI de Python que convierte PDF, DOCX, PPTX, XLSX, HTML, audio,
+EPUB, ZIP y más a Markdown limpio. No es un conector MCP instalable
+(`SearchMcpRegistry` no devuelve nada para este nombre) — es un paquete
+pip que se instala bajo demanda, igual que `tesseract`/`poppler`.
+
+**Por qué no se activa como dependencia fija:** los formatos que más usa
+Angel ya están cubiertos por skills dedicadas y más completas
+(`docx`/`pptx`/`xlsx`, que además editan, no solo leen) o por el flujo
+ya hardened de `docencia-espanol/fuentes/paginas.sh` para PDF
+escaneados — ahí el coste en tokens no está en la extracción de texto
+(que ya es gratis con `pdftotext -layout`), sino en el paso 3
+obligatorio de ver la imagen renderizada, algo que MarkItDown no puede
+sustituir (es solo extracción de texto, no lee líneas dibujadas, ítems
+ya resueltos a mano ni manuscrito).
+
+**Cuándo sí usarlo:** formatos sueltos sin skill propia en este repo —
+`.epub`, `.html` guardado en local, transcripción de audio, o
+convertir varios archivos mixtos con una sola llamada. Instalar con
+`pip install markitdown` (o `markitdown[all]` para todos los formatos
+opcionales) solo cuando aparezca ese caso concreto, no de antemano.
+
 ## 2026-08-16 — Segunda pasada: hooks vs. CLAUDE.md, y prácticas de la comunidad
 
 Angel señaló que la primera pasada se quedó corta — solo profundizó en
