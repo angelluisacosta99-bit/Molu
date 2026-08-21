@@ -25,6 +25,16 @@ copias que puedan desincronizarse.
 
 ## 2026-08-20 — agent-browser (Vercel Labs): activado
 
+**Nota sobre cómo se activó esta vez:** a diferencia del resto de este
+registro, esto no salió de la Routine semanal del radar ni de una
+tarjeta de sugerencia — Angel pidió explícitamente en esta misma
+conversación "instala para todas las sesiones", tras haber preguntado
+por la herramienta y haber recibido la comparación con las otras
+opciones de navegador (Claude in Chrome, `browser-use`). La regla del
+radar de "proponer con tarjeta, nunca instalar por Angel" es para
+hallazgos que yo traigo por iniciativa propia — no aplica cuando el
+propio Angel pide la instalación directamente, como aquí.
+
 **Qué es:** `agent-browser` — CLI de automatización de navegador en Rust
 puro (Apache-2.0, [vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser),
 41.000+ estrellas). Controla Chrome/Chromium vía CDP con snapshots de
@@ -49,11 +59,32 @@ es efímero:
    `.claude/skills/agent-browser` como symlink hacia él. Es texto
    ligero, versionado en Git, así que sobrevive solo con el commit —
    no hace falta reinstalarlo cada sesión.
-2. **Binario CLI** (`npm install -g agent-browser && agent-browser
-   install`) — no sobrevive a un contenedor nuevo, igual que los git
-   hooks de graphify. Añadido a `.claude/hooks/session-start.sh`
-   (sección nueva, con timeout y sin bloquear el arranque de la sesión
-   si falla) para que se reinstale solo al principio de cada sesión.
+2. **Binario CLI** (`npm install -g agent-browser`, versión fijada a
+   propósito por seguridad de cadena de suministro) — no sobrevive a
+   un contenedor nuevo, igual que los git hooks de graphify. Añadido a
+   `.claude/hooks/session-start.sh` para que se reinstale solo al
+   principio de cada sesión, con `timeout` en cada paso para que un
+   fallo o cuelgue nunca bloquee el arranque de la sesión.
+
+**Hallazgo durante la instalación:** `agent-browser install` (el paso
+que descarga su propio Chrome) falla siempre aquí — no es un fallo de
+red pasajero, es una denegación de política confirmada en vivo (403 al
+intentar conectar con `googlechromelabs.github.io`, ver
+`/root/.ccr/README.md`: reportar, no rodear). Solución real, sin rodear
+la política: apuntar `agent-browser` al Chromium que este entorno ya
+trae preinstalado para Playwright (`/opt/pw-browsers/chromium`) vía
+`AGENT_BROWSER_EXECUTABLE_PATH`, en vez de dejar que intente descargar
+el suyo. Como esta variable tiene que llegar a los shells que arranque
+el Bash tool *después* de que este hook termine (y un `export` dentro
+del hook no se propaga a un shell nuevo), se escribe en
+`/etc/profile.d/agent-browser-executable.sh` — el mismo mecanismo que
+ya usa el proxy de este contenedor para `HTTPS_PROXY`
+(`/etc/profile.d/ccr-agent-proxy-ca.sh`). Se reescribe en cada sesión,
+como todo lo demás en `/etc/`, que tampoco sobrevive a un contenedor
+nuevo. Probado de punta a punta en un shell limpio (`env -i ... bash
+-lc`, sin nada exportado a mano): abre un HTML local de
+`docencia-espanol/materiales/` y devuelve un snapshot de accesibilidad
+real.
 
 ✅ Activado el 2026-08-20.
 
