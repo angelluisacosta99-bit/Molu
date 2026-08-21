@@ -55,7 +55,7 @@ d. El tiempo **e**
 
 #### Ej. 4 — Escribe las tildes que faltan en las frases siguientes
 
-*Escribe cada frase completa, con las tildes correctas. El libro añade después un ejercicio de solo escuchar y comprobar (pista 1); aquí lo compruebas al corregir.*
+*Escribe cada frase completa, con las tildes correctas. El libro añade después un ejercicio de solo escuchar y comprobar (pista 1) — dale al play de abajo para comprobar tu respuesta con el audio real.*
 
 1. Se hablar aleman, espanol e ingles.
    **Sé hablar alemán, español e inglés.**
