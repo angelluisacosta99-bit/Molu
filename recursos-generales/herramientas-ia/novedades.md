@@ -23,6 +23,126 @@ copias que puedan desincronizarse.
 
 ---
 
+## 2026-08-21 — mcp-server-dev (Anthropic): activado, deshabilitado por defecto
+
+**Nota sobre cómo se activó:** a petición explícita de Angel ("actívalo
+para un futuro"), tras preguntar por las ventajas de MCP Builder sobre
+lo que ya tiene. No es un conector — es una skill guía para *construir*
+un servidor MCP nuevo cuando exista un sistema concreto sin conector
+todavía (ej. el campus del máster, una herramienta interna del sector
+ferroviario/telecom). No aporta nada sobre los conectores ya activos.
+
+**Qué es:** plugin oficial `mcp-server-dev` (Anthropic,
+`anthropics/claude-plugins-official`), con 3 skills:
+`build-mcp-server`, `build-mcpb`, `build-mcp-app`. Antes de escribir
+código, interroga sobre el caso de uso y recomienda una arquitectura
+concreta (servidor HTTP remoto, local `stdio` solo para prototipo,
+etc.), un patrón de herramientas, y el SDK (TypeScript oficial o
+FastMCP 3.x en Python).
+
+**Cómo se activó (a nivel de usuario, no del proyecto):**
+`claude plugin marketplace add anthropics/claude-plugins-official` +
+`claude plugin install mcp-server-dev@claude-plugins-official`. Se
+guarda en `~/.claude/`, no en el repo, así que — como los git hooks de
+graphify y el binario de `agent-browser` — no sobrevive a un
+contenedor nuevo. Añadido a `.claude/hooks/session-start.sh` para
+reinstalarlo cada sesión (ambos comandos confirmados idempotentes en
+vivo, con `timeout` y verificación del estado real vía `claude plugin
+list`, no solo del código de salida).
+
+**Decisión: instalado pero deshabilitado por defecto.** `claude plugin
+details mcp-server-dev` reporta ~502 tokens siempre-activos por sesión
+solo por estar habilitado, y esto es "para un futuro", no de uso
+inmediato — no tiene sentido pagar ese coste sesión tras sesión sin una
+tarea concreta todavía. Se intentó primero `skillOverrides:
+"name-only"` (el mecanismo que ya usa este repo para skills de poco
+uso) pero **no aplica a skills de plugins** — la documentación oficial
+de Claude Code lo dice explícitamente ("Plugin skills are not affected
+by skillOverrides. Manage those through /plugin instead."),
+comprobado antes de aplicarlo mal. La alternativa real:
+`claude plugin disable mcp-server-dev` tras cada instalación (también
+en `session-start.sh`, porque un contenedor nuevo activaría el plugin
+por defecto al instalarlo, deshaciendo la decisión). Reactivarlo cuando
+haga falta de verdad: `claude plugin enable mcp-server-dev`.
+
+Verificado en vivo con `claude plugin marketplace remove` +
+`claude plugin uninstall` para simular un contenedor limpio de
+verdad (no binarios de mentira): el hook reinstala y deja deshabilitado
+correctamente, es idempotente en una segunda corrida, y se degrada sin
+romper nada si el CLI `claude` no está en el PATH.
+
+**Segunda ronda (revisión antes de fusionar):** encontró, con razón,
+que la propia sección nueva no aplicaba el checklist de `hook-hardening`
+que este mismo PR añadía. Tres problemas reales: (1) `claude plugin
+install` no es un no-op sobre un plugin ya deshabilitado — reproducido
+en vivo que lo vuelve a activar cada vez que corre — así que el diseño
+original dependía por completo de que el `disable` posterior
+funcionara, sin comprobar su código de salida ni re-verificar el
+estado después; un `disable` real puede fallar (reproducido en vivo
+contra un nombre de plugin inventado, exit 1), y en ese caso el script
+seguía imprimiendo "deshabilitado por defecto" con el plugin en
+realidad activo. (2) Los `grep` contra `claude plugin list`/
+`marketplace list` no anclaban la coincidencia, así que cualquier otra
+entrada que contuviera el mismo texto como subcadena podría dar un
+falso positivo. (3) El timeout de `disable` (30s) no tenía por qué ser
+distinto del resto (90s), sin ninguna razón declarada. Corregido:
+ahora solo se llama a `install`/`disable` cuando el estado real (leído
+con un `grep` anclado a la línea exacta `> nombre`) muestra que hace
+falta, y se vuelve a comprobar el estado tras `disable` antes de
+reportar nada — si sigue activo, lo dice explícitamente en vez de
+mentir. Verificado en vivo con cuatro casos reales: ya
+instalado-y-deshabilitado (más rápido ahora, sin llamadas de más),
+estaba activado a mano y vuelve a desactivarse, `disable` fallando de
+verdad (con un `claude` envuelto que solo intercepta ese subcomando) y
+avisando en vez de mentir, y contenedor limpio desde cero.
+
+**Tercera ronda:** encontró que las propias lecturas de solo consulta
+(`claude plugin list`/`marketplace list`, añadidas para verificar el
+estado en vez de asumirlo) no tenían `timeout` — verificado con
+`strace` que sí hacen una conexión de red real, y que con una ruta
+bloqueada pueden tardar varios segundos en vez de fallar rápido — y que
+se repetía la misma consulta varias veces sin motivo (hasta 6 llamadas
+en el caso normal). Corregido: cada lectura lleva su propio `timeout`,
+y el resultado se guarda en una variable y solo se vuelve a pedir justo
+después de algo que pudiera haberlo cambiado (`add`/`install`/
+`disable`), no de forma repetida para el mismo estado. El caso normal
+(ya instalado y deshabilitado) bajó de ~4,5s a ~1,6s. Reverificados los
+cuatro casos en vivo tras el cambio: todos siguen correctos.
+
+✅ Activado (deshabilitado) el 2026-08-21.
+
+## 2026-08-21 — find-skills (Vercel Labs): activado
+
+**Nota sobre cómo se activó:** igual que `agent-browser`, a petición
+explícita de Angel en esta misma conversación, no de la Routine
+semanal del radar.
+
+**Qué es:** `find-skills` — skill del mismo repo `vercel-labs/skills`
+(el CLI `npx skills`, ya usado para instalar `agent-browser`). Cuando
+alguien pregunta "¿cómo hago X?" o "¿hay una skill para X?", busca en
+el ranking de [skills.sh](https://skills.sh/), en GitHub, y con
+`npx skills find <consulta>`, y solo ofrece instalar tras presentar
+opciones y recibir confirmación — no busca ni instala nada por su
+cuenta sin que se le pida.
+
+**Por qué le sirve a Angel:** las herramientas propias (`SearchSkills`/
+`SearchPlugins`) solo ven el catálogo de su cuenta de claude.ai;
+`find-skills` llega también al ecosistema abierto de GitHub (de donde
+salió `agent-browser`), así que son complementarias. Aplica un filtro
+de calidad explícito: prefiere skills con 1.000+ instalaciones,
+desconfía de menos de 100, y valida fuentes oficiales (Vercel Labs,
+Anthropic, Microsoft) frente a repos con pocas estrellas.
+
+**Cómo se activó:** una sola parte, a diferencia de `agent-browser` —
+es puro Markdown (`npx skills add vercel-labs/skills --skill
+find-skills`, deja el stub en `.agents/skills/find-skills/SKILL.md`
+symlinkeado desde `.claude/skills/find-skills`), sin binario propio
+que instalar ni reinstalar cada sesión: invoca `npx skills find/add`
+bajo demanda cuando de verdad se usa, no al arrancar la sesión. No hizo
+falta tocar `.claude/hooks/session-start.sh`.
+
+✅ Activado el 2026-08-21.
+
 ## 2026-08-20 — agent-browser (Vercel Labs): activado
 
 **Nota sobre cómo se activó esta vez:** a diferencia del resto de este

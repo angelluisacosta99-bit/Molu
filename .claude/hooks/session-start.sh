@@ -137,4 +137,71 @@ if [ -d ".claude/skills/agent-browser" ]; then
   fi
 fi
 
+# --- mcp-server-dev plugin: reinstall each session, kept disabled ----------
+# Installed at user scope (~/.claude/), not project-local like the skill
+# stubs above, so it doesn't survive a fresh container either.
+#
+# Activated "for a future need" (Angel's request), not for active use today
+# -- it adds ~502 tokens to every session just by being enabled (`claude
+# plugin details mcp-server-dev`), which isn't worth paying session after
+# session for a capability with no concrete task yet. skillOverrides
+# (name-only) does NOT apply here -- Claude Code's own docs say plugin
+# skills aren't affected by it, unlike the project-local skills managed
+# that way elsewhere in this repo. So it stays installed but disabled;
+# re-enable in one command when an actual MCP server is needed:
+# `claude plugin enable mcp-server-dev`.
+#
+# `install` is NOT a no-op on an already-disabled plugin -- verified live
+# it force-re-enables it every time it actually runs. So this only calls
+# `install`/`disable` when the anchored check below shows they're actually
+# needed, instead of running both unconditionally every session: that
+# both avoids the churn and avoids re-triggering the re-enable on every
+# firing. `disable`'s own result is checked and re-verified too (it can
+# genuinely fail -- verified live against a bogus plugin name, exit 1),
+# so a failed disable is reported honestly instead of assumed to have
+# worked. All matches below are anchored to the exact `> name` line
+# `claude plugin`/`marketplace list` print, not a bare substring grep,
+# so an unrelated entry that happens to contain the same text can't
+# false-positive.
+#
+# Read-only `list` calls are NOT free or local -- verified live with
+# strace that they make a real outbound network connection, and with a
+# blocked route that they can take several seconds instead of failing
+# fast. So every one is capped with `timeout` too (not just the
+# mutating add/install/disable calls), and the output is cached in a
+# variable and only re-fetched right after something that could have
+# changed it (add/install/disable), instead of re-running the same
+# read-only command repeatedly for the same snapshot of state.
+if command -v claude >/dev/null 2>&1; then
+  MARKETPLACE_LIST="$(timeout 15 claude plugin marketplace list 2>/dev/null)"
+  if ! printf '%s\n' "$MARKETPLACE_LIST" | grep -qE '^\s*>\s*claude-plugins-official\s*$'; then
+    timeout 90 claude plugin marketplace add anthropics/claude-plugins-official >/dev/null 2>&1
+    MARKETPLACE_LIST="$(timeout 15 claude plugin marketplace list 2>/dev/null)"
+  fi
+
+  PLUGIN_LIST="$(timeout 15 claude plugin list 2>/dev/null)"
+  if printf '%s\n' "$MARKETPLACE_LIST" | grep -qE '^\s*>\s*claude-plugins-official\s*$' && \
+     ! printf '%s\n' "$PLUGIN_LIST" | grep -qE '^\s*>\s*mcp-server-dev@claude-plugins-official\s*$'; then
+    timeout 90 claude plugin install mcp-server-dev@claude-plugins-official >/dev/null 2>&1
+    PLUGIN_LIST="$(timeout 15 claude plugin list 2>/dev/null)"
+  fi
+
+  if printf '%s\n' "$PLUGIN_LIST" | grep -qE '^\s*>\s*mcp-server-dev@claude-plugins-official\s*$'; then
+    if printf '%s\n' "$PLUGIN_LIST" | grep -A3 -E '^\s*>\s*mcp-server-dev@claude-plugins-official\s*$' | grep -q 'Status:.*enabled'; then
+      timeout 90 claude plugin disable mcp-server-dev >/dev/null 2>&1
+      PLUGIN_LIST="$(timeout 15 claude plugin list 2>/dev/null)"
+    fi
+
+    if printf '%s\n' "$PLUGIN_LIST" | grep -A3 -E '^\s*>\s*mcp-server-dev@claude-plugins-official\s*$' | grep -q 'Status:.*disabled'; then
+      echo "[session-start] mcp-server-dev plugin installed, disabled by default (claude plugin enable mcp-server-dev when needed)"
+    else
+      echo "[session-start] mcp-server-dev plugin installed but could not confirm disabled state (non-blocking)"
+    fi
+  else
+    echo "[session-start] mcp-server-dev plugin not available (non-blocking)"
+  fi
+else
+  echo "[session-start] claude CLI not available - skipping mcp-server-dev plugin (non-blocking)"
+fi
+
 exit 0
