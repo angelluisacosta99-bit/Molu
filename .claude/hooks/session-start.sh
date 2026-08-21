@@ -139,14 +139,7 @@ fi
 
 # --- mcp-server-dev plugin: reinstall each session, kept disabled ----------
 # Installed at user scope (~/.claude/), not project-local like the skill
-# stubs above, so it doesn't survive a fresh container either. Both
-# `marketplace add` and `install` are confirmed idempotent (verified live:
-# exit 0 whether adding fresh or already present), so there's no
-# version-pin dance needed here like agent-browser's -- just run both every
-# session, capped with timeout, and verify the actual resulting state via
-# `claude plugin list`/`marketplace list` rather than trust exit codes
-# alone (a wrapped command can exit 0 while still not doing what its name
-# suggests, e.g. printing a warning to stderr and continuing).
+# stubs above, so it doesn't survive a fresh container either.
 #
 # Activated "for a future need" (Angel's request), not for active use today
 # -- it adds ~502 tokens to every session just by being enabled (`claude
@@ -154,20 +147,43 @@ fi
 # session for a capability with no concrete task yet. skillOverrides
 # (name-only) does NOT apply here -- Claude Code's own docs say plugin
 # skills aren't affected by it, unlike the project-local skills managed
-# that way elsewhere in this repo. So: install it, but explicitly disable
-# it every session too (a fresh container would otherwise default a new
-# install to enabled, silently undoing this). Re-enable in one command
-# when an actual MCP server is needed: `claude plugin enable mcp-server-dev`.
+# that way elsewhere in this repo. So it stays installed but disabled;
+# re-enable in one command when an actual MCP server is needed:
+# `claude plugin enable mcp-server-dev`.
+#
+# `install` is NOT a no-op on an already-disabled plugin -- verified live
+# it force-re-enables it every time it actually runs. So this only calls
+# `install`/`disable` when the anchored check below shows they're actually
+# needed, instead of running both unconditionally every session: that
+# both avoids the churn and avoids re-triggering the re-enable on every
+# firing. `disable`'s own result is checked and re-verified too (it can
+# genuinely fail -- verified live against a bogus plugin name, exit 1),
+# so a failed disable is reported honestly instead of assumed to have
+# worked. All matches below are anchored to the exact `> name` line
+# `claude plugin`/`marketplace list` print, not a bare substring grep,
+# so an unrelated entry that happens to contain the same text can't
+# false-positive.
 if command -v claude >/dev/null 2>&1; then
-  timeout 90 claude plugin marketplace add anthropics/claude-plugins-official >/dev/null 2>&1
-
-  if claude plugin marketplace list 2>/dev/null | grep -q "claude-plugins-official"; then
-    timeout 90 claude plugin install mcp-server-dev@claude-plugins-official >/dev/null 2>&1
+  if ! claude plugin marketplace list 2>/dev/null | grep -qE '^\s*>\s*claude-plugins-official\s*$'; then
+    timeout 90 claude plugin marketplace add anthropics/claude-plugins-official >/dev/null 2>&1
   fi
 
-  if claude plugin list 2>/dev/null | grep -q "mcp-server-dev@claude-plugins-official"; then
-    timeout 30 claude plugin disable mcp-server-dev >/dev/null 2>&1
-    echo "[session-start] mcp-server-dev plugin installed, disabled by default (claude plugin enable mcp-server-dev when needed)"
+  if claude plugin marketplace list 2>/dev/null | grep -qE '^\s*>\s*claude-plugins-official\s*$'; then
+    if ! claude plugin list 2>/dev/null | grep -qE '^\s*>\s*mcp-server-dev@claude-plugins-official\s*$'; then
+      timeout 90 claude plugin install mcp-server-dev@claude-plugins-official >/dev/null 2>&1
+    fi
+  fi
+
+  if claude plugin list 2>/dev/null | grep -qE '^\s*>\s*mcp-server-dev@claude-plugins-official\s*$'; then
+    if claude plugin list 2>/dev/null | grep -A3 -E '^\s*>\s*mcp-server-dev@claude-plugins-official\s*$' | grep -q 'Status:.*enabled'; then
+      timeout 90 claude plugin disable mcp-server-dev >/dev/null 2>&1
+    fi
+
+    if claude plugin list 2>/dev/null | grep -A3 -E '^\s*>\s*mcp-server-dev@claude-plugins-official\s*$' | grep -q 'Status:.*disabled'; then
+      echo "[session-start] mcp-server-dev plugin installed, disabled by default (claude plugin enable mcp-server-dev when needed)"
+    else
+      echo "[session-start] mcp-server-dev plugin installed but could not confirm disabled state (non-blocking)"
+    fi
   else
     echo "[session-start] mcp-server-dev plugin not available (non-blocking)"
   fi

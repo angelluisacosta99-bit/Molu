@@ -71,6 +71,31 @@ verdad (no binarios de mentira): el hook reinstala y deja deshabilitado
 correctamente, es idempotente en una segunda corrida, y se degrada sin
 romper nada si el CLI `claude` no está en el PATH.
 
+**Segunda ronda (revisión antes de fusionar):** encontró, con razón,
+que la propia sección nueva no aplicaba el checklist de `hook-hardening`
+que este mismo PR añadía. Tres problemas reales: (1) `claude plugin
+install` no es un no-op sobre un plugin ya deshabilitado — reproducido
+en vivo que lo vuelve a activar cada vez que corre — así que el diseño
+original dependía por completo de que el `disable` posterior
+funcionara, sin comprobar su código de salida ni re-verificar el
+estado después; un `disable` real puede fallar (reproducido en vivo
+contra un nombre de plugin inventado, exit 1), y en ese caso el script
+seguía imprimiendo "deshabilitado por defecto" con el plugin en
+realidad activo. (2) Los `grep` contra `claude plugin list`/
+`marketplace list` no anclaban la coincidencia, así que cualquier otra
+entrada que contuviera el mismo texto como subcadena podría dar un
+falso positivo. (3) El timeout de `disable` (30s) no tenía por qué ser
+distinto del resto (90s), sin ninguna razón declarada. Corregido:
+ahora solo se llama a `install`/`disable` cuando el estado real (leído
+con un `grep` anclado a la línea exacta `> nombre`) muestra que hace
+falta, y se vuelve a comprobar el estado tras `disable` antes de
+reportar nada — si sigue activo, lo dice explícitamente en vez de
+mentir. Verificado en vivo con cuatro casos reales: ya
+instalado-y-deshabilitado (más rápido ahora, sin llamadas de más),
+estaba activado a mano y vuelve a desactivarse, `disable` fallando de
+verdad (con un `claude` envuelto que solo intercepta ese subcomando) y
+avisando en vez de mentir, y contenedor limpio desde cero.
+
 ✅ Activado (deshabilitado) el 2026-08-21.
 
 ## 2026-08-21 — find-skills (Vercel Labs): activado
