@@ -132,6 +132,23 @@ usarlo con una advertencia. Verificado que el caso normal sigue
 funcionando igual y que el caso de desajuste ya no escribe
 `AGENT_BROWSER_EXECUTABLE_PATH` en ningún sitio.
 
+**Quinta pasada, límite honesto que queda sin cerrar del todo:**
+encontró que ese "saltar la sesión" solo evita que este *hook* configure
+o dependa del binario no vetado — no impide técnicamente que se le
+llame por Bash directamente el resto de la sesión, a diferencia del
+gate real que sí existe para fusionar PRs
+(`.claude/hooks/check-pr-review.sh`, con su propio `PreToolUse` en
+`.claude/settings.json`). Aquí no hay un hook equivalente para
+`agent-browser`, así que el pin de versión protege el paso de
+*instalación* (este script nunca instala nada sin fijar versión) pero
+no un paso de *ejecución* — cerrarlo del todo pediría un gate técnico
+dedicado, coste desproporcionado para instalar una herramienta de
+navegador, así que queda documentado como límite conocido en los
+propios comentarios del script en vez de resuelto. Corregido en la
+misma pasada un comentario impreciso (atribuía un `$CLAUDE_ENV_FILE`
+vacío a "un entorno no remoto" sin haberlo comprobado — reproducido en
+vivo que puede pasar igual con `CLAUDE_CODE_REMOTE=true`).
+
 ✅ Activado el 2026-08-20.
 
 ## 2026-08-18 — Práctica: desplazar la ventana de 5h de límite de uso

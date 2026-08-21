@@ -51,10 +51,22 @@ fi
 # redone every session.
 #
 # Version pinned deliberately (supply-chain hardening): the skill's own
-# frontmatter pre-authorizes `Bash(agent-browser:*)`, so an unpinned install
-# would let a future compromised or hijacked npm release run under that
-# blanket approval with no re-review. Bump this pin by hand when there's a
+# frontmatter pre-authorizes `Bash(agent-browser:*)`, so this script itself
+# only ever installs this exact pinned version -- never an unpinned
+# `npm install -g agent-browser` that could silently pull a future
+# compromised or hijacked release. Bump this pin by hand when there's a
 # reason to (a real new feature/fix needed), not automatically.
+#
+# Honest limit: this pin governs what THIS SCRIPT sets up and points
+# AGENT_BROWSER_EXECUTABLE_PATH at, not what's technically callable. If a
+# non-pinned binary ends up on PATH some other way (a stale one from
+# before this pin existed, manual install, etc.), skipping it here stops
+# this hook from configuring/relying on it, but doesn't itself stop a
+# direct `Bash(agent-browser ...)` call the same session -- there's no
+# PreToolUse gate on this tool the way there is on merge_pull_request
+# (.claude/hooks/check-pr-review.sh). Closing that would need an
+# equivalent technical gate, which is out of scope for what this section
+# does today.
 AGENT_BROWSER_VERSION="0.27.0"
 
 if [ -d ".claude/skills/agent-browser" ]; then
@@ -92,8 +104,10 @@ if [ -d ".claude/skills/agent-browser" ]; then
       # confirmed live that those calls run as `bash -c` (non-login), which
       # never sources /etc/profile.d/; an earlier version of this script
       # used profile.d and silently didn't work. Exit status checked here
-      # too: if the write fails (e.g. $CLAUDE_ENV_FILE unset on some
-      # non-remote harness), that must not be reported as ready.
+      # too: if the write fails (e.g. $CLAUDE_ENV_FILE isn't set for
+      # whatever reason -- observed live even with CLAUDE_CODE_REMOTE=true,
+      # so don't assume it's tied to that flag), that must not be reported
+      # as ready.
       if [ -n "${CLAUDE_ENV_FILE:-}" ] && \
          echo "export AGENT_BROWSER_EXECUTABLE_PATH=\"$PLAYWRIGHT_CHROMIUM\"" >> "$CLAUDE_ENV_FILE" 2>/dev/null; then
         echo "[session-start] agent-browser CLI ready (using pre-installed Playwright Chromium)"
