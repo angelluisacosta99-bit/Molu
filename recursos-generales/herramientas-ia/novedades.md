@@ -96,6 +96,19 @@ estaba activado a mano y vuelve a desactivarse, `disable` fallando de
 verdad (con un `claude` envuelto que solo intercepta ese subcomando) y
 avisando en vez de mentir, y contenedor limpio desde cero.
 
+**Tercera ronda:** encontró que las propias lecturas de solo consulta
+(`claude plugin list`/`marketplace list`, añadidas para verificar el
+estado en vez de asumirlo) no tenían `timeout` — verificado con
+`strace` que sí hacen una conexión de red real, y que con una ruta
+bloqueada pueden tardar varios segundos en vez de fallar rápido — y que
+se repetía la misma consulta varias veces sin motivo (hasta 6 llamadas
+en el caso normal). Corregido: cada lectura lleva su propio `timeout`,
+y el resultado se guarda en una variable y solo se vuelve a pedir justo
+después de algo que pudiera haberlo cambiado (`add`/`install`/
+`disable`), no de forma repetida para el mismo estado. El caso normal
+(ya instalado y deshabilitado) bajó de ~4,5s a ~1,6s. Reverificados los
+cuatro casos en vivo tras el cambio: todos siguen correctos.
+
 ✅ Activado (deshabilitado) el 2026-08-21.
 
 ## 2026-08-21 — find-skills (Vercel Labs): activado

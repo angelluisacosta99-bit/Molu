@@ -163,23 +163,36 @@ fi
 # `claude plugin`/`marketplace list` print, not a bare substring grep,
 # so an unrelated entry that happens to contain the same text can't
 # false-positive.
+#
+# Read-only `list` calls are NOT free or local -- verified live with
+# strace that they make a real outbound network connection, and with a
+# blocked route that they can take several seconds instead of failing
+# fast. So every one is capped with `timeout` too (not just the
+# mutating add/install/disable calls), and the output is cached in a
+# variable and only re-fetched right after something that could have
+# changed it (add/install/disable), instead of re-running the same
+# read-only command repeatedly for the same snapshot of state.
 if command -v claude >/dev/null 2>&1; then
-  if ! claude plugin marketplace list 2>/dev/null | grep -qE '^\s*>\s*claude-plugins-official\s*$'; then
+  MARKETPLACE_LIST="$(timeout 15 claude plugin marketplace list 2>/dev/null)"
+  if ! printf '%s\n' "$MARKETPLACE_LIST" | grep -qE '^\s*>\s*claude-plugins-official\s*$'; then
     timeout 90 claude plugin marketplace add anthropics/claude-plugins-official >/dev/null 2>&1
+    MARKETPLACE_LIST="$(timeout 15 claude plugin marketplace list 2>/dev/null)"
   fi
 
-  if claude plugin marketplace list 2>/dev/null | grep -qE '^\s*>\s*claude-plugins-official\s*$'; then
-    if ! claude plugin list 2>/dev/null | grep -qE '^\s*>\s*mcp-server-dev@claude-plugins-official\s*$'; then
-      timeout 90 claude plugin install mcp-server-dev@claude-plugins-official >/dev/null 2>&1
-    fi
+  PLUGIN_LIST="$(timeout 15 claude plugin list 2>/dev/null)"
+  if printf '%s\n' "$MARKETPLACE_LIST" | grep -qE '^\s*>\s*claude-plugins-official\s*$' && \
+     ! printf '%s\n' "$PLUGIN_LIST" | grep -qE '^\s*>\s*mcp-server-dev@claude-plugins-official\s*$'; then
+    timeout 90 claude plugin install mcp-server-dev@claude-plugins-official >/dev/null 2>&1
+    PLUGIN_LIST="$(timeout 15 claude plugin list 2>/dev/null)"
   fi
 
-  if claude plugin list 2>/dev/null | grep -qE '^\s*>\s*mcp-server-dev@claude-plugins-official\s*$'; then
-    if claude plugin list 2>/dev/null | grep -A3 -E '^\s*>\s*mcp-server-dev@claude-plugins-official\s*$' | grep -q 'Status:.*enabled'; then
+  if printf '%s\n' "$PLUGIN_LIST" | grep -qE '^\s*>\s*mcp-server-dev@claude-plugins-official\s*$'; then
+    if printf '%s\n' "$PLUGIN_LIST" | grep -A3 -E '^\s*>\s*mcp-server-dev@claude-plugins-official\s*$' | grep -q 'Status:.*enabled'; then
       timeout 90 claude plugin disable mcp-server-dev >/dev/null 2>&1
+      PLUGIN_LIST="$(timeout 15 claude plugin list 2>/dev/null)"
     fi
 
-    if claude plugin list 2>/dev/null | grep -A3 -E '^\s*>\s*mcp-server-dev@claude-plugins-official\s*$' | grep -q 'Status:.*disabled'; then
+    if printf '%s\n' "$PLUGIN_LIST" | grep -A3 -E '^\s*>\s*mcp-server-dev@claude-plugins-official\s*$' | grep -q 'Status:.*disabled'; then
       echo "[session-start] mcp-server-dev plugin installed, disabled by default (claude plugin enable mcp-server-dev when needed)"
     else
       echo "[session-start] mcp-server-dev plugin installed but could not confirm disabled state (non-blocking)"
