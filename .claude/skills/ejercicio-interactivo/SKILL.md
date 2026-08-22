@@ -330,6 +330,15 @@ no las deshagas sin querer al modificar la plantilla.
     motor por defecto significa que hay que forzar `audio.load()` y esperar el evento
     `loadedmetadata` (o `error`) para comprobar la duración, no basta con contar
     `<audio>` en el DOM.
+  - **Esto es una excepción deliberada, no un descuido, a la regla general de
+    `README.md` raíz** («archivos pesados de audio/video no se suben a este
+    repositorio»): esa regla apunta a grabaciones de clase enteras
+    (`docencia-espanol/grabaciones/`), que sí viven solo en Drive. Aquí el audio
+    incrustado *es* el contenido del ejercicio publicado, no un archivo aparte que
+    archivar — el artefacto tiene que ser autocontenido para funcionar (nada de
+    referencias externas), así que no hay alternativa a incrustarlo. Precedente ya
+    fusionado en `main`: 5B y 5C de B1 (PR #52), cada uno con su propio `data:` URI de
+    varios MB.
 - **El cuaderno de B1 también trae solucionario y transcripciones**, con el mismo reparto:
   **64-68 transcripciones, 69-76 soluciones** (las 52-63 son los textos de «Leer más», la
   76 son las soluciones de esas lecturas y la 77 es la contracubierta; el PDF tiene 77

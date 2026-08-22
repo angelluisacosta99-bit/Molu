@@ -432,15 +432,15 @@
     "semantic_hash": "9b31786b637be3c13978bec4c2330752"
   },
   ".claude/skills/ejercicio-interactivo/SKILL.md": {
-    "mtime": 1787390310.0052032,
-    "seen": 1787390456.9675431,
-    "ast_hash": "e899cecf93de4f2d8e91a05ed2d04475",
+    "mtime": 1787393434.0491319,
+    "seen": 1787393448.6420503,
+    "ast_hash": "c6392c705cd4b975a704348cac1b70c9",
     "semantic_hash": ""
   },
   ".claude/skills/ejercicio-interactivo/reference/template.html": {
-    "mtime": 1787391988.8131647,
-    "seen": 1787392491.062176,
-    "ast_hash": "ba4cb16ccb0472b61db2fa9c0f0f0932",
+    "mtime": 1787393297.789135,
+    "seen": 1787393448.6420522,
+    "ast_hash": "ab1a5e22c2de9037dcd8bf492059a6ed",
     "semantic_hash": ""
   },
   ".claude/skills/graphify/SKILL.md": {
@@ -702,9 +702,9 @@
     "semantic_hash": "033e2f08cbb62857a73f98c5cdb076df"
   },
   "docencia-espanol/fuentes/README.md": {
-    "mtime": 1787390138.9372072,
-    "seen": 1787390456.967624,
-    "ast_hash": "f91c4158b60f407a4b5ce5ff358321e4",
+    "mtime": 1787393275.1691353,
+    "seen": 1787393448.6421013,
+    "ast_hash": "ab0a89b70768c999b03ac4dbae5738fb",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad6a_como-se-va-a-goya.md": {

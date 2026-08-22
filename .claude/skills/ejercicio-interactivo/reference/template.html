@@ -998,8 +998,12 @@
           // true } para una fila ya resuelta en el libro (sin huecos), o { a: [spec1,
           // spec2, ...] } con un spec de isCorrect() por cada columna elegible, en orden
           // (spec1 para columns[1], spec2 para columns[2]...). Con solo dos columnas es
-          // el "relaciona" clásico; con tres, una cadena (el ejemplo de abajo: cada verbo
-          // se une primero a un final y ese final, a su vez, a un motivo).
+          // el "relaciona" clásico (el ejemplo de abajo); con tres, sería una cadena
+          // (cada verbo se une primero a un final y ese final, a su vez, a un motivo) —
+          // sin ejemplo real todavía en ningún capítulo publicado, así que antes de usarlo
+          // verifica a mano con Playwright que robar una ficha de un tramo de la cadena
+          // invalida también el otro tramo de esa misma fila (invalidateGrading() de
+          // abajo solo se llama para la columna que cambia en el propio clic).
           num: 7, title: "{{EXERCISE_TITLE}}",
           instr: "{{EXERCISE_INSTRUCTIONS}}",
           type: "match",
