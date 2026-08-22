@@ -175,7 +175,11 @@ fi
 if command -v claude >/dev/null 2>&1; then
   MARKETPLACE_LIST="$(timeout 15 claude plugin marketplace list 2>/dev/null)"
   if ! printf '%s\n' "$MARKETPLACE_LIST" | grep -qE '^\s*>\s*claude-plugins-official\s*$'; then
-    timeout 90 claude plugin marketplace add anthropics/claude-plugins-official >/dev/null 2>&1
+    # 130s, not 90s: `claude plugin marketplace add/update` prints its own
+    # "timeout: 120s" clone budget -- verified live -- so 90s could kill a
+    # legitimately slow-but-succeeding clone before the tool's own logic
+    # finishes. install/disable below don't clone anything, so they keep 90s.
+    timeout 130 claude plugin marketplace add anthropics/claude-plugins-official >/dev/null 2>&1
     MARKETPLACE_LIST="$(timeout 15 claude plugin marketplace list 2>/dev/null)"
   fi
 
@@ -235,12 +239,13 @@ if command -v claude >/dev/null 2>&1; then
   # above the mcp-server-dev block) -- this specific call was missing it
   # and could hang session start indefinitely, reproduced live.
   if ! timeout 15 claude plugin marketplace list 2>/dev/null | grep -qE '^\s*>\s*ponytail\s*$'; then
-    timeout 90 claude plugin marketplace add DietrichGebert/ponytail --scope project >/dev/null 2>&1
+    # 130s: see the identical note above the mcp-server-dev marketplace add.
+    timeout 130 claude plugin marketplace add DietrichGebert/ponytail --scope project >/dev/null 2>&1
   fi
 
   PONYTAIL_LIST="$(timeout 15 claude plugin list 2>/dev/null)"
   if ! printf '%s\n' "$PONYTAIL_LIST" | grep -A3 -E '^\s*>\s*ponytail@ponytail\s*$' | grep -q 'Status:.*enabled'; then
-    timeout 90 claude plugin marketplace update ponytail >/dev/null 2>&1
+    timeout 130 claude plugin marketplace update ponytail >/dev/null 2>&1
     PONYTAIL_LIST="$(timeout 15 claude plugin list 2>/dev/null)"
   fi
 

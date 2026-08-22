@@ -81,20 +81,46 @@ También verificado que el peor caso combinado con `agent-browser`/
 acota en ~65s, muy por debajo del límite real de 600s del hook
 `SessionStart`.
 
-**Segunda ronda (revisión antes de fusionar):** encontró que la primera
-lectura de `claude plugin marketplace list` en esta misma sección se
-quedó sin `timeout`, a pesar de que el bloque gemelo de `mcp-server-dev`
-justo arriba sí lo tenía — reproducido en vivo que un colgado ahí
-bloqueaba el arranque de la sesión sin límite. Corregido con el mismo
-`timeout 15` que ya usa el resto de lecturas. También se planteó
-extraer una función compartida entre los bloques de `mcp-server-dev` y
-`ponytail` (dado que este mismo tipo de bug ya se había colado dos
-veces por duplicación) — descartado: los dos usan mecanismos de
-recuperación distintos (`install`+`disable` en uno, `update` en el
-otro), así que una función común metería parámetros/ramas para casos
-que en realidad no son iguales. Se prefirió el arreglo puntual de una
-línea. Reverificados en vivo los tres escenarios (normal, caché
-corrompida) tras el cambio.
+**Segunda ronda (revisión antes de fusionar):** tres hallazgos.
+
+1. La primera lectura de `claude plugin marketplace list` en esta misma
+   sección se quedó sin `timeout`, a pesar de que el bloque gemelo de
+   `mcp-server-dev` justo arriba sí lo tenía — reproducido en vivo que
+   un colgado ahí bloqueaba el arranque de la sesión sin límite.
+   Corregido con el mismo `timeout 15` que ya usa el resto de lecturas.
+   Se planteó extraer una función compartida entre `mcp-server-dev` y
+   `ponytail` (dado que este mismo tipo de bug ya se había colado dos
+   veces por duplicación) — descartado: usan mecanismos de recuperación
+   distintos (`install`+`disable` en uno, `update` en el otro), así que
+   una función común metería ramas para casos que no son iguales. Se
+   prefirió el arreglo puntual de una línea.
+2. `claude plugin marketplace add`/`update` imprimen su propio
+   presupuesto de clonado ("timeout: 120s") — verificado en vivo — pero
+   el script los envolvía con `timeout 90`, pudiendo matar un clonado
+   legítimamente lento pero que iba a terminar bien. Subido a `timeout
+   130` en las tres llamadas de este tipo (la de `mcp-server-dev`
+   incluida, con el mismo problema desde antes). `install`/`disable` no
+   clonan nada, se quedan en 90s.
+3. La cifra de "~65s" de peor caso combinado (arriba) era de antes de
+   que esta sección tuviera su propio `timeout`, y nunca se sumó al
+   cálculo. Recalculado con los timeouts reales de todo el archivo tras
+   este arreglo: graphify (90s) + agent-browser (hasta 200s, contando
+   la rama sin Chromium de Playwright) + mcp-server-dev (385s) +
+   ponytail (305s) = **hasta ~980s en el peor caso absoluto** — por
+   encima del límite real de 600s del hook `SessionStart` si de verdad
+   *todas* las llamadas de *las cuatro* secciones se cuelgan a la vez.
+   Decisión: no reducir más los timeouts individuales (ya están
+   ajustados a presupuestos reales de red observados, no arbitrarios) ni
+   añadir un circuito de corte global — ese escenario exige un fallo de
+   red total y sostenido sobre cuatro integraciones independientes a la
+   vez, y si ocurriera, la consecuencia es que el hook se corta y la
+   sesión arranca igual sin alguna integración opcional lista esa
+   sesión — no pérdida de datos ni fallo de seguridad. Documentado como
+   límite conocido y aceptado en vez de sobre-diseñar contra un
+   escenario extremo.
+
+Reverificados en vivo los tres escenarios (normal, caché corrompida,
+contenedor 100% fresco) tras ambos cambios.
 
 ✅ Activado el 2026-08-22.
 
