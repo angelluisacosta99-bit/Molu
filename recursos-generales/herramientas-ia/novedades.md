@@ -23,6 +23,107 @@ copias que puedan desincronizarse.
 
 ---
 
+## 2026-08-22 — ponytail (DietrichGebert): activado para todas las sesiones
+
+**Nota sobre cómo se activó:** a petición explícita de Angel ("sí, pero
+actívalo para todas las sesiones actuales y futuras"), tras preguntar
+por la herramienta.
+
+**Qué es:** `ponytail` (MIT,
+[github.com/DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail),
+106.000+ estrellas). Inyecta una "escalera de decisiones" antes de
+escribir código: ¿hace falta que exista? → omitir; ¿ya existe en el
+repo? → reutilizar; ¿lo tiene la stdlib? → usarla; ¿una línea basta? →
+una línea; solo entonces, lo mínimo viable. Resultados medidos por el
+autor sobre un repo real: -54% líneas de código, -22% tokens, -20%
+coste, sin perder validación ni manejo de errores.
+
+**Por qué le sirve a Angel:** es el problema inverso a `hook-hardening`
+— esa skill evita que yo me salte comprobaciones necesarias en código
+crítico (hooks); `ponytail` evita que añada complejidad innecesaria en
+el resto del código. Complementarios, no se pisan. También encaja
+directo con reglas ya existentes del propio repo (no añadir
+abstracciones más allá de lo necesario, tres líneas parecidas mejor que
+una prematura) — automatiza algo que ya se pedía a mano.
+
+**Cómo se activó (a nivel de proyecto, no de usuario):**
+`claude plugin marketplace add DietrichGebert/ponytail --scope project`
++ `claude plugin install ponytail@ponytail --scope project`. A
+diferencia de `mcp-server-dev`/`agent-browser`, la *declaración*
+(`extraKnownMarketplaces`/`enabledPlugins` en `.claude/settings.json`)
+queda commiteada en el repo, así que el proyecto "sabe" del plugin
+desde el primer momento en cualquier sesión futura — no hace falta
+volver a declararlo. Pero el contenido real clonado del marketplace
+vive en `~/.claude/plugins/marketplaces/`, que sigue siendo caché de
+contenedor, no parte del repo — verificado en vivo que si se borra esa
+carpeta pero `settings.json` queda intacto, el plugin pasa a `Status: x
+failed to load / cache-miss`. Por eso también hace falta una sección en
+`.claude/hooks/session-start.sh` para repoblar esa caché cada sesión.
+
+**Hallazgo real durante la instalación:** `claude plugin marketplace
+add` no arregla de forma fiable una caché corrompida — verificado en
+vivo que si el manifest global de marketplaces conocidos todavía tiene
+un registro de "ponytail" pero su carpeta de clon ha desaparecido, `add`
+responde "already on disk" y no vuelve a clonar, dejando el plugin
+roto. `claude plugin marketplace update <nombre>` sí fuerza un
+re-clonado real. Diseño final: `add` solo si el marketplace no se
+conoce en absoluto todavía (contenedor nunca visto), `update` solo si el
+plugin no aparece ya como `enabled` tras comprobar el estado real — no
+las dos siempre, y siempre re-verificando el estado en vez de asumir
+que el comando funcionó.
+
+Verificado en vivo con tres escenarios reales (marketplace/caché
+borrados de verdad, no simulados): estado normal (ya cacheado y
+activo), caché corrompida (registrado pero sin clonar — el bug de
+arriba), y contenedor 100% fresco (ni rastro en el manifest global).
+También verificado que el peor caso combinado con `agent-browser`/
+`mcp-server-dev` colgados a la vez (con un `claude` de mentira) se
+acota en ~65s, muy por debajo del límite real de 600s del hook
+`SessionStart`.
+
+**Segunda ronda (revisión antes de fusionar):** tres hallazgos.
+
+1. La primera lectura de `claude plugin marketplace list` en esta misma
+   sección se quedó sin `timeout`, a pesar de que el bloque gemelo de
+   `mcp-server-dev` justo arriba sí lo tenía — reproducido en vivo que
+   un colgado ahí bloqueaba el arranque de la sesión sin límite.
+   Corregido con el mismo `timeout 15` que ya usa el resto de lecturas.
+   Se planteó extraer una función compartida entre `mcp-server-dev` y
+   `ponytail` (dado que este mismo tipo de bug ya se había colado dos
+   veces por duplicación) — descartado: usan mecanismos de recuperación
+   distintos (`install`+`disable` en uno, `update` en el otro), así que
+   una función común metería ramas para casos que no son iguales. Se
+   prefirió el arreglo puntual de una línea.
+2. `claude plugin marketplace add`/`update` imprimen su propio
+   presupuesto de clonado ("timeout: 120s") — verificado en vivo — pero
+   el script los envolvía con `timeout 90`, pudiendo matar un clonado
+   legítimamente lento pero que iba a terminar bien. Subido a `timeout
+   130` en las tres llamadas de este tipo (la de `mcp-server-dev`
+   incluida, con el mismo problema desde antes). `install`/`disable` no
+   clonan nada, se quedan en 90s.
+3. La cifra de "~65s" de peor caso combinado (arriba) era de antes de
+   que esta sección tuviera su propio `timeout`, y nunca se sumó al
+   cálculo. Recalculado con los timeouts reales de todo el archivo tras
+   este arreglo: graphify (90s) + agent-browser (hasta 200s, contando
+   la rama sin Chromium de Playwright) + mcp-server-dev (385s) +
+   ponytail (305s) = **hasta ~980s en el peor caso absoluto** — por
+   encima del límite real de 600s del hook `SessionStart` si de verdad
+   *todas* las llamadas de *las cuatro* secciones se cuelgan a la vez.
+   Decisión: no reducir más los timeouts individuales (ya están
+   ajustados a presupuestos reales de red observados, no arbitrarios) ni
+   añadir un circuito de corte global — ese escenario exige un fallo de
+   red total y sostenido sobre cuatro integraciones independientes a la
+   vez, y si ocurriera, la consecuencia es que el hook se corta y la
+   sesión arranca igual sin alguna integración opcional lista esa
+   sesión — no pérdida de datos ni fallo de seguridad. Documentado como
+   límite conocido y aceptado en vez de sobre-diseñar contra un
+   escenario extremo.
+
+Reverificados en vivo los tres escenarios (normal, caché corrompida,
+contenedor 100% fresco) tras ambos cambios.
+
+✅ Activado el 2026-08-22.
+
 ## 2026-08-21 — mcp-server-dev (Anthropic): activado, deshabilitado por defecto
 
 **Nota sobre cómo se activó:** a petición explícita de Angel ("actívalo

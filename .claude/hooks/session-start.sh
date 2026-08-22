@@ -175,7 +175,11 @@ fi
 if command -v claude >/dev/null 2>&1; then
   MARKETPLACE_LIST="$(timeout 15 claude plugin marketplace list 2>/dev/null)"
   if ! printf '%s\n' "$MARKETPLACE_LIST" | grep -qE '^\s*>\s*claude-plugins-official\s*$'; then
-    timeout 90 claude plugin marketplace add anthropics/claude-plugins-official >/dev/null 2>&1
+    # 130s, not 90s: `claude plugin marketplace add/update` prints its own
+    # "timeout: 120s" clone budget -- verified live -- so 90s could kill a
+    # legitimately slow-but-succeeding clone before the tool's own logic
+    # finishes. install/disable below don't clone anything, so they keep 90s.
+    timeout 130 claude plugin marketplace add anthropics/claude-plugins-official >/dev/null 2>&1
     MARKETPLACE_LIST="$(timeout 15 claude plugin marketplace list 2>/dev/null)"
   fi
 
@@ -202,6 +206,56 @@ if command -v claude >/dev/null 2>&1; then
   fi
 else
   echo "[session-start] claude CLI not available - skipping mcp-server-dev plugin (non-blocking)"
+fi
+
+# --- ponytail plugin: reinstall each session, kept enabled ------------------
+# Unlike mcp-server-dev/agent-browser, installed at PROJECT scope
+# (`--scope project`): the marketplace/plugin declaration itself
+# (`extraKnownMarketplaces`/`enabledPlugins` in .claude/settings.json) is
+# committed to the repo, so it's known from the moment the project loads --
+# no user-scope re-declaration needed. But the actual cloned marketplace
+# content still lives under ~/.claude/plugins/marketplaces/, which is
+# per-container cache, not part of the repo, so it still needs
+# repopulating every fresh session (verified live: deleting just that
+# cache dir while the repo's settings.json stays intact produces
+# `Status: x failed to load / Error: ... cache-miss`).
+#
+# Wanted enabled for every session (Angel's request), unlike
+# mcp-server-dev's "for a future need" -- no disable step here.
+#
+# `marketplace add` alone is not a reliable fix for a stale cache: verified
+# live that if the global known-marketplaces manifest still has a record
+# for "ponytail" but its clone directory is missing, `add` reports
+# "already on disk" and skips re-cloning, leaving the plugin broken.
+# `marketplace update` is what actually forces a real re-clone in that
+# case (verified live) -- `add` is only needed once, to register the name
+# at all in a container that has genuinely never seen it (verified live:
+# `update` alone fails with "marketplace not found" if it was never
+# added even once). So: add only if not yet known at all, then update only
+# if the plugin isn't already showing enabled -- re-verifying state at
+# each step rather than assuming either command worked.
+if command -v claude >/dev/null 2>&1; then
+  # Capped like every other `list` read in this file (see the comment
+  # above the mcp-server-dev block) -- this specific call was missing it
+  # and could hang session start indefinitely, reproduced live.
+  if ! timeout 15 claude plugin marketplace list 2>/dev/null | grep -qE '^\s*>\s*ponytail\s*$'; then
+    # 130s: see the identical note above the mcp-server-dev marketplace add.
+    timeout 130 claude plugin marketplace add DietrichGebert/ponytail --scope project >/dev/null 2>&1
+  fi
+
+  PONYTAIL_LIST="$(timeout 15 claude plugin list 2>/dev/null)"
+  if ! printf '%s\n' "$PONYTAIL_LIST" | grep -A3 -E '^\s*>\s*ponytail@ponytail\s*$' | grep -q 'Status:.*enabled'; then
+    timeout 130 claude plugin marketplace update ponytail >/dev/null 2>&1
+    PONYTAIL_LIST="$(timeout 15 claude plugin list 2>/dev/null)"
+  fi
+
+  if printf '%s\n' "$PONYTAIL_LIST" | grep -A3 -E '^\s*>\s*ponytail@ponytail\s*$' | grep -q 'Status:.*enabled'; then
+    echo "[session-start] ponytail plugin ready"
+  else
+    echo "[session-start] ponytail plugin not ready this session (non-blocking)"
+  fi
+else
+  echo "[session-start] claude CLI not available - skipping ponytail plugin (non-blocking)"
 fi
 
 exit 0
