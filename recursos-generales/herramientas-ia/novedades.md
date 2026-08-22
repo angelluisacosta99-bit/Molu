@@ -23,6 +23,66 @@ copias que puedan desincronizarse.
 
 ---
 
+## 2026-08-22 — ponytail (DietrichGebert): activado para todas las sesiones
+
+**Nota sobre cómo se activó:** a petición explícita de Angel ("sí, pero
+actívalo para todas las sesiones actuales y futuras"), tras preguntar
+por la herramienta.
+
+**Qué es:** `ponytail` (MIT,
+[github.com/DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail),
+106.000+ estrellas). Inyecta una "escalera de decisiones" antes de
+escribir código: ¿hace falta que exista? → omitir; ¿ya existe en el
+repo? → reutilizar; ¿lo tiene la stdlib? → usarla; ¿una línea basta? →
+una línea; solo entonces, lo mínimo viable. Resultados medidos por el
+autor sobre un repo real: -54% líneas de código, -22% tokens, -20%
+coste, sin perder validación ni manejo de errores.
+
+**Por qué le sirve a Angel:** es el problema inverso a `hook-hardening`
+— esa skill evita que yo me salte comprobaciones necesarias en código
+crítico (hooks); `ponytail` evita que añada complejidad innecesaria en
+el resto del código. Complementarios, no se pisan. También encaja
+directo con reglas ya existentes del propio repo (no añadir
+abstracciones más allá de lo necesario, tres líneas parecidas mejor que
+una prematura) — automatiza algo que ya se pedía a mano.
+
+**Cómo se activó (a nivel de proyecto, no de usuario):**
+`claude plugin marketplace add DietrichGebert/ponytail --scope project`
++ `claude plugin install ponytail@ponytail --scope project`. A
+diferencia de `mcp-server-dev`/`agent-browser`, la *declaración*
+(`extraKnownMarketplaces`/`enabledPlugins` en `.claude/settings.json`)
+queda commiteada en el repo, así que el proyecto "sabe" del plugin
+desde el primer momento en cualquier sesión futura — no hace falta
+volver a declararlo. Pero el contenido real clonado del marketplace
+vive en `~/.claude/plugins/marketplaces/`, que sigue siendo caché de
+contenedor, no parte del repo — verificado en vivo que si se borra esa
+carpeta pero `settings.json` queda intacto, el plugin pasa a `Status: x
+failed to load / cache-miss`. Por eso también hace falta una sección en
+`.claude/hooks/session-start.sh` para repoblar esa caché cada sesión.
+
+**Hallazgo real durante la instalación:** `claude plugin marketplace
+add` no arregla de forma fiable una caché corrompida — verificado en
+vivo que si el manifest global de marketplaces conocidos todavía tiene
+un registro de "ponytail" pero su carpeta de clon ha desaparecido, `add`
+responde "already on disk" y no vuelve a clonar, dejando el plugin
+roto. `claude plugin marketplace update <nombre>` sí fuerza un
+re-clonado real. Diseño final: `add` solo si el marketplace no se
+conoce en absoluto todavía (contenedor nunca visto), `update` solo si el
+plugin no aparece ya como `enabled` tras comprobar el estado real — no
+las dos siempre, y siempre re-verificando el estado en vez de asumir
+que el comando funcionó.
+
+Verificado en vivo con tres escenarios reales (marketplace/caché
+borrados de verdad, no simulados): estado normal (ya cacheado y
+activo), caché corrompida (registrado pero sin clonar — el bug de
+arriba), y contenedor 100% fresco (ni rastro en el manifest global).
+También verificado que el peor caso combinado con `agent-browser`/
+`mcp-server-dev` colgados a la vez (con un `claude` de mentira) se
+acota en ~65s, muy por debajo del límite real de 600s del hook
+`SessionStart`.
+
+✅ Activado el 2026-08-22.
+
 ## 2026-08-21 — mcp-server-dev (Anthropic): activado, deshabilitado por defecto
 
 **Nota sobre cómo se activó:** a petición explícita de Angel ("actívalo
