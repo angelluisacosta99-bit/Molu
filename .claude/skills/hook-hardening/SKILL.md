@@ -5,14 +5,15 @@ description: "Use before declaring \"done\", \"tested\", or \"ready to commit\" 
 
 # hook-hardening
 
-Nace de dos sagas reales en este repo — `.claude/hooks/check-pr-review.sh`
-(7 rondas de revisión) y `.claude/hooks/session-start.sh` (6 rondas,
-instalación de `agent-browser`) — donde la misma familia de errores se
-repitió una y otra vez, cada vez detectada por una revisión externa en
-vez de por mí mismo antes de declarar el trabajo terminado. Esta skill
-es esa lista de comprobación, para correrla *antes* de decir "hecho",
-no como sustituto de la revisión, sino para que la revisión encuentre
-cada vez menos.
+Nace de varias sagas reales en este repo — `.claude/hooks/check-pr-review.sh`
+(7 rondas de revisión), y `.claude/hooks/session-start.sh` a lo largo de
+la instalación de `agent-browser` (6 rondas), `mcp-server-dev` (4 rondas)
+y `ponytail` (3 rondas) — donde la misma familia de errores se repitió
+una y otra vez, cada vez detectada por una revisión externa en vez de
+por mí mismo antes de declarar el trabajo terminado. Esta skill es esa
+lista de comprobación, para correrla *antes* de decir "hecho", no como
+sustituto de la revisión, sino para que la revisión encuentre cada vez
+menos.
 
 **No es una lista de buenas intenciones — cada punto lleva el
 comando/patrón exacto que lo comprueba.** Si no puedes marcar un punto
@@ -128,9 +129,36 @@ conveniencia de configuración (algo que deja de prepararse, pero sigue
 siendo posible por otra vía). Si es lo segundo, decirlo así — "evita
 que X se configure/dependa de esto", no "impide usar X".
 
+## 7. Probar en vivo contra estado compartido puede ensuciar lo que vas a comitear
+
+**El error real:** al probar en vivo hooks que llaman a un CLI con
+estado global compartido fuera del repo (`claude plugin`,
+`~/.claude/settings.json`, `~/.claude/plugins/...`), tanto mis propias
+pruebas como las de una revisión posterior (que también reproduce en
+vivo, incluso desde un worktree — comparte el mismo `HOME`) pueden
+mutar ese estado compartido como efecto secundario. Si una parte de ese
+estado compartido también se escribe en un archivo del *proyecto*
+(`.claude/settings.json`, no solo en `~/.claude/`), una prueba ajena
+puede dejar ahí un cambio que yo nunca pedí ni entiendo, listo para
+comitearse sin que nadie lo note — pasó de verdad: apareció una entrada
+de marketplace registrada a nivel de proyecto que no coincidía con el
+diseño documentado, y no se pudo reproducir qué comando exacto la
+escribió.
+
+**Comprobación:** antes de comitear cualquier cambio en un archivo de
+configuración compartido (`.claude/settings.json` y similares) tras una
+tanda de pruebas en vivo — las tuyas o las de una revisión — mirar el
+diff completo de ese archivo, no solo los archivos que creías haber
+tocado. Si aparece algo que no coincide con lo que se pidió hacer
+explícitamente, no comitearlo a ciegas: investigar primero (¿el comando
+exacto documentado lo reproduce de nuevo, en un estado limpio?), y si
+no se puede explicar su origen, descartarlo (`git stash drop` o
+similar) en vez de asumir que es inofensivo solo porque no rompe nada
+visible.
+
 ## Antes de pedir/lanzar la revisión externa
 
-Repasar estos 6 puntos uno por uno contra el diff, con al menos un
+Repasar estos 7 puntos uno por uno contra el diff, con al menos un
 comando ejecutado en vivo por punto que lo confirme (no solo "leído y
 parece bien") — así cada ronda de revisión encuentra menos, en vez de
 encontrar la misma clase de bug que un pase manual ya podría haber
