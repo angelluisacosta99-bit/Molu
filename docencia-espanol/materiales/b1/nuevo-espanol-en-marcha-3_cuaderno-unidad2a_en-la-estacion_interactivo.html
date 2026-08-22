@@ -1,9 +1,16 @@
 <!--
-  TEMPLATE — plantilla de ejercicio interactivo con corrección instantánea.
-  Ver .claude/skills/ejercicio-interactivo/SKILL.md para el proceso completo.
-  Busca todos los marcadores {{...}} y sustitúyelos; no dejes ninguno sin reemplazar.
+  Unidad 2A del cuaderno de ejercicios de Nuevo Español en Marcha 3 (B1), página 8:
+  "En la estación". Transcrito mirando las páginas renderizadas del PDF que adjuntó el
+  profesor. Las respuestas salen del solucionario oficial del propio cuaderno (página 69).
+  Construido sobre .claude/skills/ejercicio-interactivo/reference/template.html.
+  El ejercicio 1 (comprensión lectora) enseña el artículo completo en un refHTML.
+  Los ejercicios 2 y 3 son de redacción libre (traducir palabras / listar vocabulario
+  propio): no tienen respuesta única, así que usan type "open".
+  El ejercicio 7 ("Subraya la forma correcta") no tiene un tipo "subrayar": cada frase
+  se reescribe como dos huecos {0}/{1} mostrando ambas opciones entre paréntesis, y el
+  alumno escribe la que sea correcta — el motor la corrige igual que cualquier hueco.
 -->
-<title>{{TITLE}}</title>
+<title>Cuaderno B1 · 2A — En la estación</title>
 <style>
   :root {
     --paper: #F3F5F0;
@@ -696,18 +703,18 @@
 </style>
 
 <script>
-  // {{STORAGE_KEY}} here MUST be byte-identical to the one set further down in the gate
+  // unlocked-cuaderno-b1-2a here MUST be byte-identical to the one set further down in the gate
   // script (search "STORAGE_KEY =") — same placeholder, same value, both occurrences.
   document.documentElement.setAttribute(
     "data-locked",
-    localStorage.getItem("{{STORAGE_KEY}}") === "1" ? "false" : "true"
+    localStorage.getItem("unlocked-cuaderno-b1-2a") === "1" ? "false" : "true"
   );
 </script>
 
 <div class="gate-overlay">
   <div class="gate-card">
     <div class="eyebrow">Acceso privado</div>
-    <h2>{{GATE_TITLE}}</h2>
+    <h2>Unidad 2A · En la estación</h2>
     <p>Pídele el código a tu profesor para entrar.</p>
     <input type="text" id="gateInput" placeholder="CÓDIGO" autocomplete="off" autocapitalize="characters" />
     <button id="gateBtn">Entrar</button>
@@ -718,10 +725,10 @@
   (function () {
     // El código es solo un disuasivo, no seguridad real — cualquiera que vea el HTML
     // fuente lo ve. Elige una palabra corta, memorable y ligada al tema, en MAYÚSCULAS.
-    const CODE = "{{GATE_CODE}}";
-    // MUST be byte-identical al {{STORAGE_KEY}} usado arriba (ver comentario junto al
+    const CODE = "FANTASMA";
+    // MUST be byte-identical al unlocked-cuaderno-b1-2a usado arriba (ver comentario junto al
     // primer occurrence). Usa un valor único por ejercicio, p. ej. "unlocked-b2-13a-tema".
-    const STORAGE_KEY = "{{STORAGE_KEY}}";
+    const STORAGE_KEY = "unlocked-cuaderno-b1-2a";
     function tryUnlock() {
       const val = document.getElementById("gateInput").value.trim().toUpperCase();
       if (val === CODE) {
@@ -751,9 +758,8 @@
 <div class="topbar gated-content">
   <div class="topbar-inner">
     <div class="brand">
-      <!-- Ejemplo real (A1): {{BRAND_TITLE}} = "Ejercicios A1", {{BRAND_SUB}} = "Presente · Gerundio · Indefinido" -->
-      <span class="brand-title">{{BRAND_TITLE}}</span>
-      <span class="brand-sub">{{BRAND_SUB}}</span>
+      <span class="brand-title">Cuaderno B1 · Unidad 2A</span>
+      <span class="brand-sub">En la estación</span>
     </div>
     <nav class="nav-dots" id="navDots"></nav>
     <div class="score-wrap">
@@ -764,13 +770,13 @@
 </div>
 
 <div class="hero gated-content">
-  <div class="eyebrow">{{EYEBROW}}</div>
-  <h1>{{HEADLINE}}</h1>
-  <p>{{SUBTITLE}}</p>
+  <div class="eyebrow">Nuevo Español en Marcha 3 · Cuaderno de ejercicios · Unidad 2 · Lugares</div>
+  <h1>En la estación</h1>
+  <p>Comprensión lectora, vocabulario del transporte y pretérito pluscuamperfecto. Escribe tus respuestas, corrige al instante y envía el resultado a tu profesor.</p>
   <div class="hero-meta">
     <span><strong id="totalBlanksLabel" translate="no">—</strong> huecos en total</span>
-    <span><strong>{{N_BLOCKS}}</strong> bloques</span>
-    <span><strong>{{N_EXERCISES}}</strong> ejercicios</span>
+    <span><strong>1</strong> bloque</span>
+    <span><strong>7</strong> ejercicios</span>
   </div>
 </div>
 
@@ -802,7 +808,7 @@
 </div>
 
 <footer class="gated-content">
-  <span>{{FOOTER_LEFT}}</span>
+  <span>Nuevo Español en Marcha 3 (B1), cuaderno de ejercicios, unidad 2A (pág. 8-9)</span>
   <span>© Angel Luis Acosta González</span>
 </footer>
 
@@ -860,165 +866,99 @@
   // ---------- exercise data ----------
   // template blanks use {0},{1}... matched to item.answers[i]
   const blocks = [
-    // Cada bloque agrupa varios ejercicios bajo un mismo subtema. {{BLOCKS}} — sustituye
-    // este array completo por los bloques/ejercicios reales del capítulo, basados en el
-    // material del profesor (ver SKILL.md paso 1). Lo que sigue es un ejemplo de cada uno
-    // de los 8 tipos soportados por el renderizador (busca 'ex.type ===' en este archivo);
-    // si necesitas un tipo nuevo, tendrás que extender también el renderizador.
     {
-      id: "{{BLOCK_ID}}", num: 1, title: "{{BLOCK_TITLE}}",
-      sub: "{{BLOCK_SUBTITLE}}",
+      id: "seccion-1", num: 1, title: "En la estación",
+      sub: "Comprensión lectora, vocabulario del transporte y pretérito pluscuamperfecto",
       exercises: [
         {
-          // Tipo "items": una lista de frases sueltas, cada una con sus propios huecos
-          // {0}, {1}... numerados desde 0 DENTRO de esa frase (no del ejercicio entero).
-          // "a" es un array paralelo a los huecos: a[i] es la lista de respuestas
-          // aceptadas para el hueco {i} (varias formas válidas si aplica).
-          num: 1, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
+          num: 1, title: "Lee el texto y contesta a las preguntas",
+          instr: "Lee el artículo (recuadro de abajo) y responde con tus palabras.",
           type: "items",
+          numbered: true,
+          refHTML: '<span class="ref-label">CHAMBERÍ, la estación fantasma</span><div class="ref-options ref-list"><span class="ref-opt">Quien la ha visto alguna vez, pegado a la ventanilla entre las estaciones de Iglesia y Bilbao, se habrá preguntado qué hace una ruinosa estación en mitad de la nada de la Línea 1 del metro de Madrid. Quienes han cruzado las vías para averiguar qué hay detrás aseguran que es como viajar en el tiempo. Cuarenta años después de su clausura, tras 15 meses de rehabilitación y 3,8 millones de euros, la estación de Chamberí volvió a la vida. No como parada, sino convertida en <i>Andén 0</i>, el museo de la historia del Metro de Madrid.</span><span class="ref-opt">Situada en la esquina entre las calles de Luchana y de Santa Engracia, la estación de Chamberí cerró el 21 de mayo de 1966 debido a la ampliación de la Línea 1. Por su situación en curva, que hacía técnicamente imposible su reforma, y tan próxima a las estaciones de Iglesia y Bilbao que obligaba a los trenes a mantener una velocidad muy reducida, el ministerio de Obras Públicas decidió clausurarla.</span><span class="ref-opt">Desde su cierre, cientos de leyendas urbanas han acompañado a esta misteriosa estación. Jóvenes grafiteros han dejado su firma en ella, e incluso sirvió de escenario para algunas escenas de la película <i>Barrio</i>.</span><span class="ref-opt">El visitante de <i>Andén 0</i> Chamberí, al que se entra por una espiral de cristal que alberga la escalera y el ascensor, se encontrará con las taquillas, barreras de acceso e indicadores de la estación original. Su rehabilitación consistió en la restauración del interior, suelos, muros, bóvedas y carteles, así como la recuperación del mobiliario y de los andenes originales. También se conservan los logotipos originales de Metro y los anuncios publicitarios en paños de azulejos de productos que ya no existen y de comercios ya cerrados. Además, se han incorporado pantallas gigantes que proyectan documentales de la época. Mientras, en las taquillas, un cartel amarillento informa de unas "rebajas de tarifas" y otro ofrece un pase especial para ir a los toros por 0,50 céntimos.</span><span class="ref-opt"><i>Extraído de Público.es</i></span></div>',
           items: [
-            // Ítem sin huecos y con solved: true = el que el libro trae resuelto como modelo.
-            { t: "Yo trabajo en un hospital y vivo en Madrid.", solved: true },
-            { t: "María {0} (trabajar) en un hospital y {1} (vivir) en Madrid.", a: [["trabaja"], ["vive"]] },
-            { t: "¿Tú {0} (comer) en casa o en la oficina normalmente?", a: [["comes"]] },
-            // vf: true cambia el hueco de texto libre por dos botones "V"/"F". Para otro
-            // par de opciones, pásalo como lista: vf: ["regular", "irregular"].
-            // que el alumno pulsa en vez de escribir — pensado para ejercicios de
-            // verdadero/falso. La respuesta (a) sigue siendo ["V"] o ["F"], igual que
-            // cualquier otro hueco de texto; el motor de corrección no cambia.
-            { t: "Madrid es la capital de España. → {0}", a: [["V"]], vf: true }
-            // wide: true en un item hace el input más ancho — úsalo para respuestas largas.
-          ],
-          // Ejercicio de comprensión oral: transcriptHTML añade la transcripción al final
-          // de la tarjeta, dentro de un <details> plegado (la transcripción es la solución,
-          // así que no puede quedar a la vista mientras el alumno responde). Opcional:
-          // transcriptLabel cambia el texto del desplegable. Si además hay grabación real
-          // (no siempre la hay), ex.audioSrc pone un <audio controls> justo debajo del
-          // enunciado — un data: URI en base64, un artefacto no puede enlazar un archivo
-          // externo. ex.audioLabel le pone una etiqueta encima ("Pista 6", etc.). La
-          // transcripción NO se quita aunque haya audio: sigue siendo la regla del
-          // profesor, y ahora es apoyo en vez de la única vía para resolver el ejercicio.
-          // audioSrc: "data:audio/mpeg;base64,...", audioLabel: "Pista 6",
-          transcriptLabel: "Ver la transcripción del audio (ábrela solo después de responder)",
-          transcriptHTML:
-            '<span class="line"><span class="who">ANA:</span> ¿Dónde vives?</span>' +
-            '<span class="line"><span class="who">LUIS:</span> En Madrid, cerca del centro.</span>'
+            { t: "¿Por qué llaman a Chamberí \"la estación fantasma\"?\n{0}", a: [["Porque era una estación abandonada y verla era como viajar en el tiempo."]] },
+            { t: "¿Qué es Andén 0?\n{0}", a: [["El museo de la historia del Metro de Madrid."]] },
+            { t: "¿Por qué se cerró la estación de Chamberí?\n{0}", a: [["Debido a la ampliación de la Línea 1 de Metro."]] },
+            { t: "¿Para qué se usó la estación después de su cierre y antes de convertirse en Andén 0?\n{0}", a: [["Se usó como escenario para algunas escenas de la película Barrio."]] },
+            { t: "¿Qué se puede ver en Andén 0?\n{0}", a: [["Taquillas, barreras de acceso e indicadores de la estación original. También hay pantallas gigantes que proyectan documentales de la época."]] }
+          ]
         },
         {
-          // Tipo "text": un único párrafo continuo con huecos numerados {0}, {1}... a lo
-          // largo de TODO el texto (no se reinicia por línea). "\n" en `text` inserta un
-          // salto de línea visual. "a" es un array paralelo a los huecos del texto entero.
-          num: 2, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
+          num: 2, title: "¿Cómo se dicen estas palabras en tu lengua?",
+          instr: "Puedes usar el diccionario.",
+          type: "open",
+          html: '<p><i>conductor</i></p><p><i>intercambiador</i></p><p><i>andén</i></p>' +
+            '<p><i>asiento</i></p>'
+        },
+        {
+          num: 3, title: "¿Conoces más palabras relacionadas con los medios de transporte?",
+          instr: "Haz una lista y enséñasela a tu compañero.",
+          type: "open",
+          html: '<p>Escribe aquí tu lista de palabras.</p>'
+        },
+        {
+          num: 4, title: "Completa los diálogos con las siguientes palabras",
+          instr: "parada · hacer transbordo · billete · plano · línea · sencillo",
+          type: "items",
+          numbered: true,
+          items: [
+            { t: "(En la taquilla del metro)\nA Un {0}, por favor\nB ¿De diez viajes o {1}?\nA De diez.\nB Aquí tiene.\nA Gracias. Por favor, ¿puede darme también un {2}?\nB Claro, tome.", a: [["billete"], ["sencillo"], ["plano"]] },
+            { t: "(Hablando con el conductor del autobús)\nA Perdone, ¿para ir al Centro de Salud?\nB Es la tercera {0}.\nA Ah, vale, gracias.", a: [["parada"]] },
+            { t: "(En el metro)\nA Perdone, ¿para ir a Sol?\nB Tiene que tomar la {0} cinco y {1} en Ventas.", a: [["línea"], ["hacer transbordo"]] }
+          ]
+        },
+        {
+          num: 5, title: "Construye frases",
+          instr: "Une las dos frases con el pretérito pluscuamperfecto, como en el "
+            + "modelo. El primer par ya viene resuelto como modelo.",
+          type: "items",
+          numbered: true,
+          items: [
+            { t: "19:30 Rosa llegar.\n19:00 La clase empezar.\nCuando Rosa llegó, la clase ya había empezado.", solved: true },
+            { t: "12:15 Yo arreglar el televisor.\n12:35 Venir el técnico.\n{0}", a: [["Cuando vino el técnico, yo ya había arreglado el televisor."]] },
+            { t: "16:00 Mercedes volver.\n15:40 Su hijo fregar los platos y recoger la cocina.\n{0}", a: [["Cuando Mercedes volvió, su hijo ya había fregado los platos y recogido la cocina."]] },
+            { t: "Lunes 9 El dueño venderlo.\nMartes 10 Hugo preguntar por aquel piso.\n{0}", a: [["Cuando Hugo preguntó por aquel piso, el dueño ya lo había vendido."]] },
+            { t: "1981 Gustavo Carrascosa ganar el Premio Nobel de Literatura.\n1978 Escribir La jaula de cristal.\n{0}", a: [["Cuando Gustavo Carrascosa ganó el Premio Nobel de Literatura, ya había escrito La jaula de cristal."]] },
+            { t: "Por la mañana Yo escuchar tu mensaje en el contestador.\nPor la tarde Tú telefonearme otra vez.\n{0}", a: [["Cuando me telefoneaste otra vez, yo ya había escuchado tu mensaje en el contestador."]] },
+            { t: "1990 Yo terminar mis estudios.\n1988 Yo empezar a trabajar.\n{0}", a: [["Cuando terminé mis estudios, yo ya había empezado a trabajar."]] },
+            { t: "Febrero Nuestro hijo aprender a andar.\n23 de marzo Nuestro hijo cumplir diez meses.\n{0}", a: [["Cuando nuestro hijo cumplió diez meses, ya había aprendido a andar."]] }
+          ]
+        },
+        {
+          num: 6, title: "Gema y Víctor están viendo un reportaje sobre una actriz",
+          instr: "Completa el diálogo con los verbos del recuadro en pretérito "
+            + "pluscuamperfecto: abrir · morir · casarse · divorciarse · nacer · hacer. "
+            + "El primer hueco ya viene resuelto como modelo.",
           type: "text",
-          text: "Hoy Carmen {0} (trabajar) todo el día, pero ahora mismo {1} (preparar) la cena.",
-          a: [["trabaja"], ["está preparando"]]
-        },
-        {
-          // Tipo "table2": tabla de 2 columnas, "rows" es [valor_fijo, respuestas_aceptadas].
-          // OJO: "respuestas_aceptadas" es el mismo spec que usa isCorrect() para "a" en los
-          // demás tipos — casi siempre un array de UNA lista de alternativas, es decir
-          // [["hablando"]] (doble corchete), no ["hablando"] a secas; el renderizador hace
-          // makeInput(r[1][0], ...), así que r[1][0] debe ser el array de alternativas.
-          // WARNING: los encabezados ("Infinitivo"/"Gerundio") están HARDCODEADOS en el
-          // renderizador (busca 'ex.type === "table2"' más abajo), no se leen de este
-          // array — si necesitas otros encabezados, edita el renderizador o usa "conjTable".
-          num: 3, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          type: "table2",
-          rows: [
-            ["hablar", [["hablando"]]],
-            ["comer", [["comiendo"]]]
+          text: 'GEMA: ¡Mira, mira, mira! Aquí tenía 21 años. Todavía no se había casado con Pedro Manzanares.\nVÍCTOR: Sí, pero ella era ya famosa, {0} ya 4 o 5 películas.\nGEMA: Y pone aquí que su infancia fue muy triste: tuvo que irse a vivir con una tía porque sus padres {1} en la guerra.\nVÍCTOR: ¡Pobre!\nGEMA: Y mira, aquí están en Nueva York.\nVÍCTOR: ¿En Nueva York?\nGEMA: Sí, fueron porque unos amigos {2} un restaurante de lujo allí y están celebrando una fiesta.\nVÍCTOR: En esta foto está espectacular.\nGEMA: Pues aquí {3} ya tres veces.\nVÍCTOR: Parecen fotos muy antiguas.\nGEMA: ¡Claro! En esta época tú y yo todavía no {4}.',
+          a: [
+            ["había hecho"],
+            ["se habían muerto"],
+            ["habían abierto"],
+            ["se había divorciado"],
+            ["habíamos nacido"]
           ]
         },
         {
-          // Tipo "conjTable": tabla de conjugación con columnas configurables. "subjects"
-          // es la columna izquierda fija (sujetos); "cols" define cada columna de la
-          // derecha con su encabezado ("label") y sus respuestas ("a", un array paralelo
-          // a "subjects" — a[i] son las alternativas aceptadas para subjects[i] en esa
-          // columna, es decir CADA elemento de "a" es a su vez un array de alternativas,
-          // p. ej. a: [["hablo"], ["hablas"], ["habla"]], no a: ["hablo", "hablas", "habla"]
-          // — el renderizador hace makeInput(c.a[si], ...) y espera ese array ahí).
-          num: 4, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          // ex.subjectLabel cambia el encabezado de la primera columna (por defecto "Sujeto").
-          // Una celda cuyo spec es una CADENA en vez de un array se pinta fija: es la que el
-          // libro ya trae resuelta, y no cuenta como hueco.
-          type: "conjTable",
-          subjectLabel: "Sujeto",
-          subjects: ["yo", "tú", "él/ella"],
-          cols: [
-            { label: "Presente", a: ["hablo", ["hablas"], ["habla"]] },
-            { label: "Indefinido", a: [["hablé"], ["hablaste"], ["habló"]] }
-          ]
-        },
-        {
-          // Tipo "agenda": tabla de referencia (solo lectura, sin huecos) seguida de una
-          // lista "items" tipo "items" que se responde consultando esa tabla.
-          // WARNING: igual que table2, los encabezados ("Día"/"Actividad") están
-          // HARDCODEADOS en el renderizador, no se leen de `table` aquí abajo.
-          num: 5, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          type: "agenda",
-          table: [
-            ["lunes", "reunión con el equipo"],
-            ["martes", "clase de español"]
-          ],
+          num: 7, title: "Subraya la forma correcta",
+          instr: "Elige la forma correcta entre las dos que se muestran entre paréntesis "
+            + "y escríbela en el hueco.",
+          type: "items",
+          numbered: true,
           items: [
-            { t: "El lunes María {0} (tener) una reunión con el equipo.", a: [["tiene"]] }
-          ]
-        },
-        {
-          // Tipo "crossword": un crucigrama real, con celdas que se cruzan — no una lista
-          // de definiciones con la foto de la rejilla al lado (esa es la alternativa
-          // cuando el crucigrama no compensa el esfuerzo; ver ex.refHTML en "items").
-          // `words`: cada palabra con su `num` (el de la definición del libro), `clue`,
-          // `answer`, `row`/`col` (0-based, celda de la PRIMERA letra) y `dir` ("A" =
-          // horizontal, "D" = vertical). Dos palabras que se cruzan comparten fila/columna
-          // en la letra común — el renderizador calcula la celda compartida solo, no
-          // duplica el input. `solved: true` en una palabra la pinta fija, sin huecos
-          // (para la que el libro ya trae resuelta, normalmente la 1).
-          num: 6, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          type: "crossword",
-          words: [
-            { num: 1, clue: "Lo que hacen los médicos.", answer: "curar", row: 0, col: 3, dir: "D", solved: true },
-            { num: 2, clue: "Une esta palabra en horizontal.", answer: "cerrar", row: 2, col: 0, dir: "A" }
-          ]
-        },
-        {
-          // Tipo "match": "relaciona" tocando, no escribiendo la letra en un hueco de
-          // texto — nació porque esa vía anterior obligaba a aceptar mil variantes de
-          // tecleo ("d, 2" / "d,2" / "d 2"...) y no se parecía en nada al ejercicio real
-          // del libro. Se toca un elemento de columns[0] (la columna ancla, fija) y luego
-          // su pareja en la columna siguiente; se dibuja una línea de color entre ambos.
-          // columns[0] son los elementos fijos (uno por fila); columns[1], columns[2]...
-          // son las columnas elegibles. rows es PARALELO a columns[0].items: { solved:
-          // true } para una fila ya resuelta en el libro (sin huecos), o { a: [spec1,
-          // spec2, ...] } con un spec de isCorrect() por cada columna elegible, en orden
-          // (spec1 para columns[1], spec2 para columns[2]...). Con solo dos columnas es
-          // el "relaciona" clásico (el ejemplo de abajo); con tres, sería una cadena
-          // (cada verbo se une primero a un final y ese final, a su vez, a un motivo) —
-          // sin ejemplo real todavía en ningún capítulo publicado, así que antes de usarlo
-          // verifica a mano con Playwright que robar una ficha de un tramo de la cadena
-          // invalida también el otro tramo de esa misma fila (invalidateGrading() de
-          // abajo solo se llama para la columna que cambia en el propio clic).
-          num: 7, title: "{{EXERCISE_TITLE}}",
-          instr: "{{EXERCISE_INSTRUCTIONS}}",
-          type: "match",
-          columns: [
-            { label: "Verbo", items: ["reciclar", "contaminar"] },
-            { label: "Final", items: ["el vidrio y el papel", "el aire con humo"] }
-          ],
-          rows: [
-            { a: [["el vidrio y el papel"]] },
-            { a: [["el aire con humo"]] }
+            { t: "Cuando mis hermanos y yo {0} (éramos / fuimos) pequeños nos {1} (mudamos / habíamos mudado) de casa.", a: [["éramos"], ["nos mudamos"]] },
+            { t: "Cuando {0} (volvió / había vuelto) mi prima, las dos {1} (lloramos / habíamos llorado) de alegría.", a: [["volvió"], ["lloramos"]] },
+            { t: "Ayer por la mañana no {0} (contesté / contestaba) a tu llamada porque en ese momento no {1} (había estado / estaba) en casa.", a: [["contesté"], ["estaba"]] },
+            { t: "El mes pasado {0} (habíamos comprado / compramos) la casa que {1} (vimos / habíamos visto) en internet.", a: [["compramos"], ["habíamos visto"]] },
+            { t: "Cuando {0} (vivíamos / habíamos vivido) en el pueblo, {1} (nadábamos / nadamos) en el río todos los días.", a: [["vivíamos"], ["nadábamos"]] },
+            { t: "El día en que {0} (conocí / conocía) a Teresa yo todavía no {1} (había salido / salí) con ninguna chica.", a: [["conocí"], ["había salido"]] },
+            { t: "Hace un par de días se nos {0} (había roto / rompió) el jarrón que nos {1} (habías regalado / regalabas) en Navidad.", a: [["rompió"], ["habías regalado"]] },
+            { t: "Antes siempre {0} (pasábamos / pasamos) las vacaciones en la playa, pero el verano pasado {1} (estuvimos / estábamos) en un pueblo de montaña.", a: [["pasábamos"], ["estuvimos"]] }
           ]
         }
       ]
     }
-    // Añade más bloques ({ id, num, title, sub, exercises: [...] }) según haga falta.
   ];
 
   // ---------- render ----------
@@ -2044,7 +1984,7 @@
   });
 
   // ---------- results panel: motivational message + send to teacher ----------
-  const TITLE_LABEL = "{{TITLE_LABEL}}"; // short label used in email subject / summary header
+  const TITLE_LABEL = "Cuaderno B1 · 2A En la estación"; // short label used in email subject / summary header
   // These are Angel's real, reusable contact details — copy verbatim into every new
   // exercise unless he says they changed. IMPORTANT: telegram MUST be his @username
   // (no @, no phone number) — t.me/+<phone> links silently ignore ?text= and never
