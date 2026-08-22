@@ -1579,6 +1579,15 @@
         // ex.rows es paralelo a columns[0].items: { solved: true } para una fila ya resuelta
         // en el libro (sin huecos, sin interacción), o { a: [spec1, spec2, ...] } con un spec
         // de isCorrect() por cada columna elegible (columns[1], columns[2]...), en ese orden.
+        if (ex.rows.length !== ex.columns[0].items.length) {
+          // Sin este chequeo, un rows/columns[0].items desalineados (copiar/pegar de otro
+          // capítulo, un elemento de más o de menos) no revienta aquí con un mensaje claro,
+          // sino más tarde y críptico: el primer clic en el ancla sobrante deja armedRow
+          // apuntando a un índice sin fila en `state`, y state[i][c] revienta con
+          // "Cannot read properties of undefined" dentro del listener de clic, sin pista de
+          // cuál es la causa real ni de que el problema son los datos, no el motor.
+          throw new Error('type "match": ex.rows.length (' + ex.rows.length + ') debe coincidir con ex.columns[0].items.length (' + ex.columns[0].items.length + ')');
+        }
         const state = ex.rows.map(function () { return {}; }); // state[i][c] = índice elegido en columns[c] para la fila i
         const usedBy = Object.create(null); // usedBy["c-idx"] = qué fila reclama esa opción (una opción, una fila)
         const columnEls = []; // columnEls[c][idx] = elemento <button> de esa opción
