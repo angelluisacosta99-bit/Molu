@@ -438,9 +438,9 @@
     "semantic_hash": ""
   },
   ".claude/skills/ejercicio-interactivo/reference/template.html": {
-    "mtime": 1787390969.985188,
-    "seen": 1787391236.2269797,
-    "ast_hash": "53c0907abcc12daadb749fbfd64f1f2c",
+    "mtime": 1787391988.8131647,
+    "seen": 1787392491.062176,
+    "ast_hash": "ba4cb16ccb0472b61db2fa9c0f0f0932",
     "semantic_hash": ""
   },
   ".claude/skills/graphify/SKILL.md": {
@@ -1074,21 +1074,21 @@
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad1a_vida-cotidiana_interactivo.html": {
-    "mtime": 1787391017.42354,
-    "seen": 1787391236.2270732,
-    "ast_hash": "35448de608e5fa31533a2ae4f7165235",
+    "mtime": 1787392110.19742,
+    "seen": 1787392491.0622635,
+    "ast_hash": "7008b8e63982ddf442728f63fa15c842",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad1b_que-hiciste-que-has-hecho_interactivo.html": {
-    "mtime": 1787391017.42472,
-    "seen": 1787391236.2270746,
-    "ast_hash": "7a8782ee010afa4cd82679dc5178567d",
+    "mtime": 1787392140.0531614,
+    "seen": 1787392491.062265,
+    "ast_hash": "827cac948ba44a948f005baa1699f89c",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad1c_el-futuro-que-nos-espera_interactivo.html": {
-    "mtime": 1787391137.2593675,
-    "seen": 1787391236.2270756,
-    "ast_hash": "f83a1f5ea2b059fc94493a8006c5b7cb",
+    "mtime": 1787392187.7811604,
+    "seen": 1787392491.062266,
+    "ast_hash": "adc2b9bc74186952fa348d618dafb664",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad2a_en-la-estacion.md": {
@@ -1110,21 +1110,21 @@
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad2a_en-la-estacion_interactivo.html": {
-    "mtime": 1787391017.4257593,
-    "seen": 1787391236.227077,
-    "ast_hash": "ee76a9a2b248380428f5adfb840720a5",
+    "mtime": 1787392110.1985512,
+    "seen": 1787392491.062267,
+    "ast_hash": "e56a57ce4e17f17183954a99caac16e5",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad2b_como-vas-al-trabajo_interactivo.html": {
-    "mtime": 1787391017.43409,
-    "seen": 1787391236.2270782,
-    "ast_hash": "c878be02b685cafea8ff68db426480d4",
+    "mtime": 1787392110.205162,
+    "seen": 1787392491.0622683,
+    "ast_hash": "600dc36ba99919c78711afd914c53671",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad2c_intercambio-de-casa_interactivo.html": {
-    "mtime": 1787391017.447958,
-    "seen": 1787391236.2270792,
-    "ast_hash": "1608d98c609c8df6a2e36dd932e85e88",
+    "mtime": 1787392110.215639,
+    "seen": 1787392491.062269,
+    "ast_hash": "e8c8b0400bbe68a823967210ca9b978b",
     "semantic_hash": ""
   }
 }

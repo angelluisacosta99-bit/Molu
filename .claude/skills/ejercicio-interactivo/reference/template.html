@@ -1821,6 +1821,20 @@
           if (line) line.setAttribute("stroke", color);
         }
 
+        // Sin esto, un hueco ya corregido (dataset.checked="1" + .correct/.incorrect,
+        // que updateScore()/buildSummary() leen tal cual, sin volver a mirar el valor
+        // actual) sigue contando como "respondido bien" aunque su pareja se le acabe de
+        // quitar (se la roba otra fila) o cambie a otra distinta — el marcador y el
+        // resumen que se envía al profesor podían mostrar más aciertos de los reales
+        // hasta que el alumno pulsara "Corregir" de nuevo. Se marca sin corregir para que
+        // vuelva a contar como pendiente, no como acertado.
+        function invalidateGrading(rowIdx, col) {
+          const inp = hiddenByRowCol[rowIdx + "-" + col];
+          if (!inp) return;
+          delete inp.dataset.checked;
+          inp.classList.remove("correct", "incorrect");
+        }
+
         mwrap.addEventListener("click", function (e) {
           const btn = e.target.closest(".match-item");
           if (!btn || btn.disabled) return;
@@ -1844,6 +1858,7 @@
           if (prev === idx) {
             delete state[i][c];
             delete usedBy[claimKey];
+            invalidateGrading(i, c);
             // Sin esto, una ficha que ya se había corregido (.match-correct/-incorrect)
             // se queda coloreada para siempre al desmarcarla — nada más la vuelve a tocar
             // tras gradeRange(), solo ex._onGraded() la recolorea, y eso solo pasa si sigue
@@ -1852,7 +1867,10 @@
           } else {
             const priorRow = usedBy[claimKey];
             // Cada opción, una sola fila a la vez: si ya la tenía otra fila, se la quita.
-            if (priorRow !== undefined && priorRow !== i) delete state[priorRow][c];
+            if (priorRow !== undefined && priorRow !== i) {
+              delete state[priorRow][c];
+              invalidateGrading(priorRow, c);
+            }
             if (prev !== undefined) {
               delete usedBy[c + "-" + prev];
               // Igual que arriba: la ficha que se abandona (el alumno cambia de opción en
@@ -1862,6 +1880,7 @@
               columnEls[c][prev].classList.remove("match-correct", "match-incorrect");
             }
             btn.classList.remove("match-correct", "match-incorrect");
+            invalidateGrading(i, c);
             state[i][c] = idx;
             usedBy[claimKey] = i;
           }
