@@ -208,6 +208,17 @@ El fallo no fue no saber los pasos, fue no volver a mirarlos al final.
       "Nuevo Español en Marcha 3" por parecido de formato; el profesor confirmó después que
       era correcto, pero la deducción se dio por buena sin preguntar y podría no haberlo
       sido. Preguntar cuesta una frase; moverlo después, rehacer índice y códigos.
+- [ ] Si índice/códigos/README se sincronizaron copiando el estado ya publicado de una
+      rama hermana todavía sin fusionar (para no revertir sus filas en vivo — ver más
+      abajo), **revisa fila por fila que cada una tenga su archivo real en ESTA rama**
+      antes de commitear. Copiar el `README.md` de otra rama trae también SUS filas de
+      archivo (`.md` de unidades que esa otra rama sí construyó pero la tuya no) — índice
+      y códigos solo enlazan a artefactos ya publicados (válido, aunque el `.html` fuente
+      no esté en tu rama), pero una fila de README que dice "archivado, ver este .md" para
+      un archivo que no existe en tu checkout es una afirmación falsa, no una excepción
+      aceptable. Encontrado en revisión de PR (unidad 2 de B1): tres filas de unidad 6
+      quedaron copiadas del README de la rama de la unidad 6, sin que sus `.md` vinieran
+      con ellas.
 
 ## Lecciones aprendidas (no las repitas)
 
@@ -215,6 +226,18 @@ Cada una de estas causó un PR de corrección real. Están en `reference/templat
 resueltas — esta lista es para que entiendas *por qué* el código está como está, y para que
 no las deshagas sin querer al modificar la plantilla.
 
+- **Un bug de motor encontrado por revisión hay que arreglarlo en `reference/template.html`
+  Y en la copia horneada de CADA capítulo ya construido en esa misma rama** — cada
+  `..._interactivo.html` es una copia independiente del motor con los datos ya insertados,
+  no algo que herede de la plantilla en tiempo real. Arreglar solo el capítulo donde se vio
+  el bug dos veces seguidas (en la revisión de la unidad 2 de B1, un bug de "match" se
+  parcheó primero solo en 1B — el único con un ejercicio "match" real — y quedó sin
+  propagar a 1A/1C/2A/2B/2C, que llevan el mismo código de motor aunque no lo usen; en la
+  siguiente ronda, al propagar el SIGUIENTE bug a los seis archivos, 1C se quedó otra vez
+  fuera porque el script de parcheo asumía por error que ya tenía el primer arreglo). Antes
+  de dar por cerrado un arreglo de motor: `grep` el patrón roto (o su versión ya arreglada)
+  en los seis `..._interactivo.html` de la rama, uno por uno, y confirma que todos
+  coinciden — no solo el que disparó el hallazgo.
 - **El panel de resultados debe ser de un solo tema, no adaptable.** Usa sus propias
   variables CSS fijas (`--rp-bg`, `--rp-text`, etc., definidas dentro de `.results-panel`),
   nunca los tokens intercambiables `--ink`/`--paper-raised`/`--gold` del resto de la página
@@ -529,8 +552,13 @@ no las deshagas sin querer al modificar la plantilla.
   12C hasta el borde derecho, igual que las casillas de texto y los botones V/F. El profesor
   lo vio y lo rechazó: los desplegables no necesitan alinearse. No lo vuelvas a proponer.
 - **Un «relaciona» donde un ítem admite varias letras: genera las permutaciones.** En
-  Practica más 3 el aceite está en tres platos. `norm()` ya se come las comas, así que basta
-  con generar cada orden con y sin espacio (la función `combos()` de ese capítulo).
+  Practica más 3 el aceite está en tres platos. Basta con generar cada orden con espacio
+  después de la coma (`"a, b, c"`) — **ya no hace falta además la variante sin espacio**
+  (`"a,b,c"`, lo que hacía la función `combos()` de ese capítulo): `norm()` sustituye la
+  coma por un espacio y colapsa espacios seguidos, así que las dos formas —y cualquier
+  mezcla de espaciado— ya normalizan a la misma cadena (arreglado en revisión de PR,
+  unidad 2 de B1; antes `norm()` solo borraba la coma sin más, y "a,b,c" sin espacio
+  normalizaba distinto de "a, b, c").
 - **Una sopa de letras necesita una pista por hueco, y comprobar la rejilla por programa.**
   Los huecos se corrigen en un orden fijo, así que sin pista cualquier palabra valdría en
   cualquier hueco: se añaden las dos primeras letras (y se dice en el enunciado que es un
