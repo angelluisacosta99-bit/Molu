@@ -836,7 +836,16 @@
   function norm(s) {
     return (s || "")
       .toLowerCase()
-      .replace(/[¿?¡!.,]/g, "")
+      .replace(/[¿?¡!.]/g, "")
+      // La coma se sustituye por un espacio, no se borra sin más: borrarla trataba
+      // "a,d,h" (sin espacio) y "a, d, h" (con espacio) como cadenas distintas —
+      // "adh" vs "a d h" — así que una respuesta de varias letras separadas por
+      // comas se marcaba mal si al alumno se le olvidaba el espacio (bug real,
+      // encontrado en revisión de PR). Sustituir por espacio y luego colapsar
+      // espacios seguidos normaliza las dos formas (y cualquier mezcla de las
+      // dos) a la misma cadena. No afecta a una frase normal con coma ("Sí,
+      // gracias" ya lleva un espacio después de la coma en el texto real).
+      .replace(/,/g, " ")
       .trim()
       .replace(/\s+/g, " ");
   }
