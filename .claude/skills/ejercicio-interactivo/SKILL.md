@@ -250,6 +250,24 @@ no las deshagas sin querer al modificar la plantilla.
   corregir. Sin él, si el alumno se salta un ejercicio en una página larga, no aparece
   ninguna señal de por qué no sale el resumen final — "no pasa nada" desde su punto de
   vista.
+- **`isCorrect()` NO soporta mezclar cadenas exactas y `{flex:[...]}` dentro del mismo
+  array — un solo hueco con varias formas cortas aceptadas va TODO como cadenas.** Spec
+  real: `a: [["curar"]]` (array de cadenas, comparación exacta) O `a: {flex:["curar"]}`
+  (objeto suelto, todas las claves deben aparecer) — nunca los dos mezclados dentro de un
+  mismo array (`a: [["curar"], {flex:["cura"]}]`). `isCorrect()` hace
+  `spec.some(a => norm(a) === n)` sobre cada elemento cuando `spec` es un array: si un
+  elemento es un objeto `{flex:...}` en vez de una cadena, `norm(objeto)` revienta
+  (`objeto.toLowerCase is not a function`), y esa excepción sin capturar **aborta
+  silenciosamente `gradeRange()` para TODOS los huecos restantes de la página**, no solo
+  el roto — sin ningún error visible para el alumno, solo en la consola del navegador.
+  Encontrado en revisión de PR (unidad 2 de B1, ej. 5 de 2C: `reproductor de música` /
+  `lavaplatos` con alternativas `{flex:...}` mezcladas) y agravado por una trampa real:
+  **la suite de regresión que rellena siempre la respuesta PRIMARIA nunca lo detecta**,
+  porque `Array.prototype.some()` corta en cuanto encuentra la cadena correcta (la
+  primera, siempre una cadena válida) sin llegar a evaluar el elemento roto — hace falta
+  una prueba dedicada que escriba explícitamente cada alternativa. Para aceptar varias
+  formas cortas en un mismo hueco, simplemente lístalas todas como cadenas:
+  `a: [["reproductor de música", "reproductor", "mp3"]]`.
 - **Escapa el texto que escribe el alumno antes de insertarlo en `innerHTML`**
   (`escapeHtml()`, usado en la lista de fallos del panel de resultados). Sin esto, un
   alumno que escribe `<algo>` en un hueco rompe el renderizado o ejecuta su propio HTML

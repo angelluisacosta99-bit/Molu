@@ -432,15 +432,15 @@
     "semantic_hash": "9b31786b637be3c13978bec4c2330752"
   },
   ".claude/skills/ejercicio-interactivo/SKILL.md": {
-    "mtime": 1787411576.0185716,
-    "seen": 1787411597.4878175,
-    "ast_hash": "cddf4644ee7b0baa53cdc0580d0d7734",
+    "mtime": 1787412734.1386404,
+    "seen": 1787412760.3269541,
+    "ast_hash": "baabd046adaed494ff7c1c2624e054a9",
     "semantic_hash": ""
   },
   ".claude/skills/ejercicio-interactivo/reference/template.html": {
-    "mtime": 1787393297.789135,
-    "seen": 1787393448.6420522,
-    "ast_hash": "ab1a5e22c2de9037dcd8bf492059a6ed",
+    "mtime": 1787412401.8826208,
+    "seen": 1787412760.3269565,
+    "ast_hash": "f3695480ae1a49e95469a4eda148b7fd",
     "semantic_hash": ""
   },
   ".claude/skills/graphify/SKILL.md": {
@@ -1122,9 +1122,9 @@
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad2c_intercambio-de-casa_interactivo.html": {
-    "mtime": 1787392110.215639,
-    "seen": 1787392491.062269,
-    "ast_hash": "e8c8b0400bbe68a823967210ca9b978b",
+    "mtime": 1787412614.1106334,
+    "seen": 1787412760.3270576,
+    "ast_hash": "9dbec0e67a861e8e935e166c4d6e6451",
     "semantic_hash": ""
   }
 }
