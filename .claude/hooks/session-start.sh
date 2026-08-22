@@ -231,7 +231,10 @@ fi
 # if the plugin isn't already showing enabled -- re-verifying state at
 # each step rather than assuming either command worked.
 if command -v claude >/dev/null 2>&1; then
-  if ! claude plugin marketplace list 2>/dev/null | grep -qE '^\s*>\s*ponytail\s*$'; then
+  # Capped like every other `list` read in this file (see the comment
+  # above the mcp-server-dev block) -- this specific call was missing it
+  # and could hang session start indefinitely, reproduced live.
+  if ! timeout 15 claude plugin marketplace list 2>/dev/null | grep -qE '^\s*>\s*ponytail\s*$'; then
     timeout 90 claude plugin marketplace add DietrichGebert/ponytail --scope project >/dev/null 2>&1
   fi
 

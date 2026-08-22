@@ -81,6 +81,21 @@ También verificado que el peor caso combinado con `agent-browser`/
 acota en ~65s, muy por debajo del límite real de 600s del hook
 `SessionStart`.
 
+**Segunda ronda (revisión antes de fusionar):** encontró que la primera
+lectura de `claude plugin marketplace list` en esta misma sección se
+quedó sin `timeout`, a pesar de que el bloque gemelo de `mcp-server-dev`
+justo arriba sí lo tenía — reproducido en vivo que un colgado ahí
+bloqueaba el arranque de la sesión sin límite. Corregido con el mismo
+`timeout 15` que ya usa el resto de lecturas. También se planteó
+extraer una función compartida entre los bloques de `mcp-server-dev` y
+`ponytail` (dado que este mismo tipo de bug ya se había colado dos
+veces por duplicación) — descartado: los dos usan mecanismos de
+recuperación distintos (`install`+`disable` en uno, `update` en el
+otro), así que una función común metería parámetros/ramas para casos
+que en realidad no son iguales. Se prefirió el arreglo puntual de una
+línea. Reverificados en vivo los tres escenarios (normal, caché
+corrompida) tras el cambio.
+
 ✅ Activado el 2026-08-22.
 
 ## 2026-08-21 — mcp-server-dev (Anthropic): activado, deshabilitado por defecto
