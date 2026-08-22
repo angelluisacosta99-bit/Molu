@@ -1752,11 +1752,16 @@
           if (prev === idx) {
             delete state[i][c];
             delete usedBy[claimKey];
+            btn.classList.remove("match-correct", "match-incorrect");
           } else {
             const priorRow = usedBy[claimKey];
             // Cada opción, una sola fila a la vez: si ya la tenía otra fila, se la quita.
             if (priorRow !== undefined && priorRow !== i) delete state[priorRow][c];
-            if (prev !== undefined) delete usedBy[c + "-" + prev];
+            if (prev !== undefined) {
+              delete usedBy[c + "-" + prev];
+              columnEls[c][prev].classList.remove("match-correct", "match-incorrect");
+            }
+            btn.classList.remove("match-correct", "match-incorrect");
             state[i][c] = idx;
             usedBy[claimKey] = i;
           }

@@ -432,15 +432,15 @@
     "semantic_hash": "9b31786b637be3c13978bec4c2330752"
   },
   ".claude/skills/ejercicio-interactivo/SKILL.md": {
-    "mtime": 1787390310.0052032,
-    "seen": 1787390456.9675431,
-    "ast_hash": "e899cecf93de4f2d8e91a05ed2d04475",
+    "mtime": 1787338630.2347236,
+    "seen": 1787339574.4491775,
+    "ast_hash": "816a95c172ebface3459137ea695c75b",
     "semantic_hash": ""
   },
   ".claude/skills/ejercicio-interactivo/reference/template.html": {
-    "mtime": 1787390239.3852048,
-    "seen": 1787390456.9675453,
-    "ast_hash": "bc705b68b763490cddf94e1ed1efb18f",
+    "mtime": 1787338630.2347236,
+    "seen": 1787339574.4491787,
+    "ast_hash": "904ef5833dfa55290af4080671f88f8e",
     "semantic_hash": ""
   },
   ".claude/skills/graphify/SKILL.md": {
@@ -702,9 +702,9 @@
     "semantic_hash": "033e2f08cbb62857a73f98c5cdb076df"
   },
   "docencia-espanol/fuentes/README.md": {
-    "mtime": 1787390138.9372072,
-    "seen": 1787390456.967624,
-    "ast_hash": "f91c4158b60f407a4b5ce5ff358321e4",
+    "mtime": 1787341438.1387503,
+    "seen": 1787341459.601657,
+    "ast_hash": "34f4c5da4f6daf087279a65805c0e297",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad6a_como-se-va-a-goya.md": {
@@ -1080,15 +1080,15 @@
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad1b_que-hiciste-que-has-hecho_interactivo.html": {
-    "mtime": 1787390334.8372025,
-    "seen": 1787390456.9677076,
-    "ast_hash": "c23e1f84768ade118fc8f95828bad838",
+    "mtime": 1787338888.8311296,
+    "seen": 1787339574.449252,
+    "ast_hash": "92d0683a31ebc81a69af870ec6df37f9",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad1c_el-futuro-que-nos-espera_interactivo.html": {
-    "mtime": 1787390068.2692087,
-    "seen": 1787390456.9677086,
-    "ast_hash": "e940632833a96e582b90e4befbdb1669",
+    "mtime": 1787343621.774002,
+    "seen": 1787343767.6416502,
+    "ast_hash": "1d1b1cf9e0889b599f78071b624393f0",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad2a_en-la-estacion.md": {

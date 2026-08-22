@@ -1835,11 +1835,24 @@
           if (prev === idx) {
             delete state[i][c];
             delete usedBy[claimKey];
+            // Sin esto, una ficha que ya se había corregido (.match-correct/-incorrect)
+            // se queda coloreada para siempre al desmarcarla — nada más la vuelve a tocar
+            // tras gradeRange(), solo ex._onGraded() la recolorea, y eso solo pasa si sigue
+            // elegida por alguna fila.
+            btn.classList.remove("match-correct", "match-incorrect");
           } else {
             const priorRow = usedBy[claimKey];
             // Cada opción, una sola fila a la vez: si ya la tenía otra fila, se la quita.
             if (priorRow !== undefined && priorRow !== i) delete state[priorRow][c];
-            if (prev !== undefined) delete usedBy[c + "-" + prev];
+            if (prev !== undefined) {
+              delete usedBy[c + "-" + prev];
+              // Igual que arriba: la ficha que se abandona (el alumno cambia de opción en
+              // esta misma fila) puede llevar un color de una corrección anterior que ya
+              // no aplica a nada — visto en vivo: se corrige, se re-arma la fila y se elige
+              // otra opción, y la ficha vieja se queda roja/verde para siempre.
+              columnEls[c][prev].classList.remove("match-correct", "match-incorrect");
+            }
+            btn.classList.remove("match-correct", "match-incorrect");
             state[i][c] = idx;
             usedBy[claimKey] = i;
           }

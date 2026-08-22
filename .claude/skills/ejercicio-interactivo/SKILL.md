@@ -607,6 +607,14 @@ no las deshagas sin querer al modificar la plantilla.
   el mismo mecanismo que ya usaba el crucigrama para su reveal-junto-a-la-definición. El
   archivador solo tiene que leer `.match-anchor`/`.match-solved` + el `.match-row-reveal`
   siguiente, si lo hay.
+  **Bug real encontrado en revisión de PR (color de corrección que se queda pegado):**
+  `ex._onGraded()` solo añade `.match-correct`/`.match-incorrect` a la ficha elegida en ese
+  momento; nada las quitaba al desmarcar una ficha o al cambiar de elección dentro de la
+  misma fila. Caso real: el alumno corrige, ve una ficha en rojo, rearma la fila y elige
+  otra opción (correcta) — la ficha vieja se quedaba roja para siempre, porque nada vuelve
+  a tocarla salvo que otra fila la reclame y la corrija de nuevo. Arreglado quitando esas
+  dos clases de la ficha abandonada (y de la recién elegida, por si venía de otra fila ya
+  corregida) en el propio manejador de clic de `mwrap`, no solo en `_onGraded()`.
 
 ### Canal por canal (la parte que más costó)
 
