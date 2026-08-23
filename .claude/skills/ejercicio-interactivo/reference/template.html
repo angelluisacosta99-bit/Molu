@@ -239,7 +239,13 @@
      nowrap, una sola opción larga se sale de la pantalla en el móvil y arrastra scroll
      horizontal a TODA la página. */
   .exercise-ref .ref-options.ref-list { display: block; }
-  .exercise-ref .ref-options.ref-list .ref-opt { display: block; white-space: normal; }
+  /* Convención del profesor para prosa corrida (textos de lectura): justificado, con
+     sangría de 1.25cm solo en la primera línea de cada párrafo — como en un documento
+     impreso. Solo aplica aquí (.ref-list, prosa de varias frases), no a .ref-opt suelto
+     fuera de .ref-list, que son opciones/palabras cortas, no párrafos. */
+  .exercise-ref .ref-options.ref-list .ref-opt {
+    display: block; white-space: normal; text-align: justify; text-indent: 1.25cm;
+  }
   .exercise-ref .ref-options.ref-list .ref-opt + .ref-opt { margin-top: 0.3rem; }
   .exercise-ref .ref-opt { white-space: nowrap; }
   @media (max-width: 560px) {

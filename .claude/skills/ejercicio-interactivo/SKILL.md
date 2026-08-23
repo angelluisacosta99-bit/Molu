@@ -784,6 +784,13 @@ parezca más "controlable" desde JS — ya se demostró que rompe el caso más b
       opciones, sopa de letras). **Si el original enseña al alumno unas opciones, el
       artefacto también tiene que enseñárselas**: un ejercicio de relacionar sin las
       opciones a la vista es imposible de hacer, y así se publicó la primera versión.
+    - **Textos de lectura (prosa corrida, varios párrafos) van justificados y con sangría
+      de 1.25cm en la primera línea de cada párrafo** — convención del profesor para
+      cualquier documento con párrafos de texto corrido (ver `CLAUDE.md`), aplicada aquí en
+      `reference/template.html` vía `.exercise-ref .ref-options.ref-list .ref-opt` (cada
+      `<span class="ref-opt">` dentro de un `.ref-list` es un párrafo). Solo afecta a ese
+      selector — el `.ref-opt` suelto sin `.ref-list` son opciones/palabras cortas de un
+      banco, no párrafos, y no debe llevar sangría ni justificado.
     - `type: "conjTables"` — varios cuadros de conjugación en un mismo ejercicio, con un
       único botón "Corregir". Si el spec de una celda es una **cadena** en vez de un array,
       se pinta fija (ya resuelta en el libro) y no cuenta como hueco.
