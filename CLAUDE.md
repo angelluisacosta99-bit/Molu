@@ -51,6 +51,32 @@ de fusionar, dejar constancia con:
 caminos, solo que sin gate técnico. Detalle completo del diseño y sus
 límites en `recursos-generales/herramientas-ia/novedades.md`.
 
+## Regla: 3+ rondas de revisión sobre lo mismo → guardar la lección
+
+Si corregir un mismo archivo/hook/PR para dejarlo limpio necesita **3 o
+más rondas** del ciclo revisión→corrección→revisión (la misma familia
+de fallo reaparece una y otra vez, no hallazgos nuevos e independientes
+cada vez), eso es la señal: antes de dar el trabajo por terminado,
+parar y guardar explícitamente qué patrón de error se repitió y cómo se
+corrigió, para no repetirlo en una tarea futura. No hace falta que el
+profesor lo pida cada vez — aplicar esto solo, siempre que pase.
+
+Dónde guardarlo, según el caso:
+- Si es un hook de Claude Code (`.claude/hooks/*.sh`): añadir un punto
+  nuevo a `.claude/skills/hook-hardening/SKILL.md` (ya es el lugar
+  pensado para esto — así nacieron sus puntos actuales).
+- Si no es un hook pero el patrón es específico de un dominio de código
+  con una skill propia en este repo, añadirlo ahí en vez de en
+  `hook-hardening`.
+- Si no encaja en ninguna skill existente, anotarlo como entrada propia
+  en `recursos-generales/herramientas-ia/novedades.md` (mismo formato
+  que ya se usa para sagas de varias rondas), o crear una skill nueva
+  si el patrón es lo bastante recurrente para merecerla.
+
+No es solo para hooks de seguridad — aplica a cualquier tipo de tarea
+(código, configuración, contenido) donde el mismo tipo de error se
+repita 3+ veces antes de salir limpio.
+
 ## Diseño visual: usar siempre la skill `impeccable`
 
 Cuando la tarea implique diseñar, rediseñar, criticar, auditar o pulir

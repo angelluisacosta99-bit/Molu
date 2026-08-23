@@ -6,14 +6,22 @@ description: "Use before declaring \"done\", \"tested\", or \"ready to commit\" 
 # hook-hardening
 
 Nace de varias sagas reales en este repo — `.claude/hooks/check-pr-review.sh`
-(7 rondas de revisión), y `.claude/hooks/session-start.sh` a lo largo de
+(7 rondas de revisión), `.claude/hooks/session-start.sh` a lo largo de
 la instalación de `agent-browser` (6 rondas), `mcp-server-dev` (4 rondas)
-y `ponytail` (3 rondas) — donde la misma familia de errores se repitió
-una y otra vez, cada vez detectada por una revisión externa en vez de
-por mí mismo antes de declarar el trabajo terminado. Esta skill es esa
-lista de comprobación, para correrla *antes* de decir "hecho", no como
-sustituto de la revisión, sino para que la revisión encuentre cada vez
-menos.
+y `ponytail` (3 rondas), y `.claude/hooks/restrict-cavecrew-bash.sh`
+(4 rondas solo para cerrar los bypasses de su filtro de comandos) —
+donde la misma familia de errores se repitió una y otra vez, cada vez
+detectada por una revisión externa en vez de por mí mismo antes de
+declarar el trabajo terminado. Esta skill es esa lista de comprobación,
+para correrla *antes* de decir "hecho", no como sustituto de la
+revisión, sino para que la revisión encuentre cada vez menos.
+
+**Regla general, no solo para hooks:** si corregir el mismo
+archivo/hook/PR para dejarlo limpio necesita 3 o más rondas de
+revisión→corrección, eso es la señal de guardar la lección — para un
+hook, aquí; para otro tipo de código, en la skill de ese dominio o en
+`recursos-generales/herramientas-ia/novedades.md` (ver
+`CLAUDE.md`, sección "3+ rondas de revisión sobre lo mismo").
 
 **No es una lista de buenas intenciones — cada punto lleva el
 comando/patrón exacto que lo comprueba.** Si no puedes marcar un punto
@@ -156,9 +164,37 @@ no se puede explicar su origen, descartarlo (`git stash drop` o
 similar) en vez de asumir que es inofensivo solo porque no rompe nada
 visible.
 
+## 8. Un filtro de texto sobre un comando de shell debe operar sobre lo
+que la shell real interpreta, no sobre la cadena cruda
+
+**El error real:** `restrict-cavecrew-bash.sh` denegaba cualquier token
+que empezara por `-` con un `grep` de texto crudo sobre
+`tool_input.command` — pero comillas y barras invertidas no son "un
+`-`" para ese `grep`, aunque para la shell real que ejecuta el comando
+sí lo sean una vez las quita. `git log '--output=/tmp/x'` (o con
+comillas dobles, o con `\-\-output=` escapado) esconde el `-` inicial
+detrás de una comilla en la cadena literal, pasa el filtro, y la shell
+real entrega el flag peligroso a `git` igual — reproducido en vivo
+escribiendo en archivos reales antes del arreglo. Cuatro rondas
+completas hicieron falta solo en este hook: una para el diseño inicial
+del filtro, dos para bypasses de RCE vía flags concretos (`git grep
+-O`, `git log --output=`) y salto de línea embebido, y una cuarta para
+este bypass de comillas.
+
+**Comprobación:** cualquier chequeo de "¿este comando tiene X"
+(un flag, un subcomando, una palabra prohibida) sobre una variable de
+shell debe tokenizar primero con las mismas reglas de comillas que
+usará la shell que ejecute el comando de verdad (`eval "set --
+$CMD"` puebla `$@` así, y es seguro de invocar únicamente si un chequeo
+previo ya rechazó metacaracteres de encadenado/sustitución como
+`;&|<>`, backtick y `$(` — si no, el propio `eval` reabre justo el
+hueco que se intenta cerrar) — nunca hacer `grep`/`case` sobre el texto
+crudo cuando el objetivo es razonar sobre argumentos ya separados por
+espacios/comillas.
+
 ## Antes de pedir/lanzar la revisión externa
 
-Repasar estos 7 puntos uno por uno contra el diff, con al menos un
+Repasar estos 8 puntos uno por uno contra el diff, con al menos un
 comando ejecutado en vivo por punto que lo confirme (no solo "leído y
 parece bien") — así cada ronda de revisión encuentra menos, en vez de
 encontrar la misma clase de bug que un pase manual ya podría haber
