@@ -23,6 +23,33 @@ copias que puedan desincronizarse.
 
 ---
 
+## 2026-08-23 — statusline de ponytail: configurado
+
+**Qué es:** badge (`[PONYTAIL]` / `[PONYTAIL:ULTRA]`) en la barra de
+estado de Claude Code que muestra si `ponytail` está activo y en qué
+nivel de intensidad, sin tener que preguntármelo. El propio plugin lo
+trae (`ponytail-statusline.sh`), pero no se activa solo al instalarlo —
+hace falta declarar `statusLine` en `settings.json` a mano.
+
+**Cómo se configuró (con un ajuste sobre el aviso original del
+plugin):** el aviso de `ponytail` sugería apuntar a
+`~/.claude/plugins/cache/ponytail/ponytail/4.9.0/hooks/...` — una ruta
+con el número de versión incrustado, que se rompería en cuanto
+`ponytail` se actualice. Se apuntó en su lugar a
+`~/.claude/plugins/marketplaces/ponytail/hooks/ponytail-statusline.sh`
+— la copia dentro del propio clon del marketplace, sin versión en la
+ruta, y que además ya se mantiene poblada cada sesión gracias a la
+sección de `ponytail` que ya existía en `.claude/hooks/session-start.sh`
+(no hizo falta tocar ese archivo para nada esta vez).
+
+Verificado en vivo simulando un contenedor limpio de verdad (caché de
+`ponytail` borrada): `session-start.sh` repuebla el clon del
+marketplace, el script del statusline existe en la ruta correcta
+después, y el comando exacto de `settings.json` lo ejecuta y devuelve
+el badge esperado.
+
+✅ Configurado el 2026-08-23.
+
 ## 2026-08-22 — caveman (JuliusBrussee): activado para todas las sesiones
 
 **Nota sobre cómo se activó:** a petición explícita de Angel, tras

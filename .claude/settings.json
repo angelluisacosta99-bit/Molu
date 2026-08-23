@@ -62,6 +62,10 @@
       }
     ]
   },
+  "statusLine": {
+    "type": "command",
+    "command": "bash \"$HOME/.claude/plugins/marketplaces/ponytail/hooks/ponytail-statusline.sh\""
+  },
   "enabledPlugins": {
     "ponytail@ponytail": true
   },
