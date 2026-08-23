@@ -55,6 +55,19 @@ sin cambios (comparado con una copia guardada justo antes de instalar,
 per el punto 7 de `hook-hardening`). Puro Markdown, sin binario propio
 — no hizo falta tocar `session-start.sh`.
 
+**Revisión antes de fusionar encontró un hallazgo real:** `cavecrew`
+instrucciona delegar en tres subagentes
+(`cavecrew-investigator`/`-builder`/`-reviewer`), pero `npx skills add
+--skill cavecrew` solo trae la guía en Markdown, no las definiciones de
+esos subagentes — esas viven en `agents/` en el repo original y solo
+las instala el plugin completo (`claude plugin install`), no el CLI de
+skills. Sin ellas, `cavecrew` quedaba decorativo: la delegación habría
+fallado o caído a un agente genérico sin las instrucciones
+comprimidas. Corregido copiando los tres archivos de agente reales
+(verificados fieles al repo original) a `.claude/agents/` — la
+convención real de Claude Code para subagentes de proyecto — en vez de
+dejar la skill a medias o quitarla.
+
 ✅ Activadas el 2026-08-23.
 
 ## 2026-08-23 — statusline de ponytail: configurado
