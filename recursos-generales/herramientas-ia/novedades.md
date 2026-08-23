@@ -68,23 +68,48 @@ comprimidas. Corregido copiando los tres archivos de agente reales
 convención real de Claude Code para subagentes de proyecto — en vez de
 dejar la skill a medias o quitarla.
 
-**Segunda ronda, límite honesto aceptado (no arreglado con código):**
-`cavecrew-investigator` y `cavecrew-reviewer` se describen a sí mismos
-como "solo lectura"/"nunca comandos que mutan", pero ambos declaran
-`Bash` sin acotar en su `tools:` — comprobado contra la documentación
-oficial que el campo `tools:` de un subagente no admite patrones tipo
-`Bash(git log:*)` como sí admite el sistema de permisos general, así
-que esa promesa de "solo lectura" la sostiene el texto del prompt, no
-el permiso técnico real. No se corrigió: quitar `Bash` del todo dejaría
-a `cavecrew-reviewer` sin poder ver diffs de verdad (su trabajo
-descrito), y modificar los archivos los alejaría de la copia fiel al
-repo original ya verificada byte a byte. El riesgo incremental
-tampoco es nuevo en este repo — ya opera con `defaultMode: dontAsk` y
-mi propio hilo principal ya tiene `Bash` sin restringir leyendo
-contenido no confiable constantemente; delegar en un subagente con el
-mismo permiso no añade una categoría de riesgo distinta, solo la
-extiende. Aceptado y documentado, no resuelto con un gate técnico que
-Claude Code no permite construir a este nivel.
+**Segunda ronda:** `cavecrew-investigator` y `cavecrew-reviewer` se
+describen a sí mismos como "solo lectura"/"nunca comandos que mutan",
+pero ambos declaran `Bash` sin acotar en su `tools:` — comprobado que
+el campo `tools:` de un subagente no admite patrones tipo `Bash(git
+log:*)` como sí admite el sistema de permisos general, así que esa
+promesa de "solo lectura" la sostenía solo el texto del prompt. Primer
+intento: documentarlo como límite aceptado, sin arreglo técnico
+posible.
+
+**Tercera ronda, corrigiendo el propio diagnóstico de la segunda:** esa
+conclusión era incorrecta — sí existe un gate técnico real. Confirmado
+contra la documentación oficial de hooks que el input de `PreToolUse`
+lleva `agent_type` cuando la llamada viene de un subagente, y este repo
+ya tiene las dos mitades del patrón funcionando (`check-pr-review.sh`
+ya parsea `tool_name`/`tool_input` del JSON del hook; el propio
+`matcher: "Bash|Grep"` del hook-guard de graphify ya prueba que un hook
+sobre `Bash` funciona en este `settings.json`). Añadido
+`.claude/hooks/restrict-cavecrew-bash.sh`: un `PreToolUse` nuevo sobre
+`Bash` que, solo si `agent_type` es `cavecrew-investigator` o
+`cavecrew-reviewer`, exige un único comando `git` de lectura
+(`log`/`blame`/`show`/`diff`/`grep`/`status`/`ls-files`/`rev-parse`)
+sin metacaracteres de encadenado, sustitución, o redirección — deniega
+cualquier otra cosa. El hilo principal y cualquier otro subagente no se
+tocan. Fail-open a propósito si `jq` falta o el input no se puede leer
+(es una restricción nueva sobre un permiso que ya existía, no una
+garantía crítica que se esté quitando).
+
+Verificado en vivo con 8 casos: hilo principal sin restringir,
+`cavecrew-investigator`/`-reviewer` con comandos de lectura permitidos,
+comando mutante denegado, tres formas de escape (`;`, `$()`, `|`)
+denegadas, y `jq` ausente permitiendo (fail-open confirmado).
+
+**Notas menores sin corregir (contenido vendido tal cual del repo
+original, no tocado para no perder la fidelidad byte a byte):** el
+`README.md` de `cavecrew` enlaza a `../../agents/*.md` y
+`../../README.md`, rutas del layout del repo original que no existen
+en este repo (los agentes reales están en `.claude/agents/`, no en
+`.agents/agents/`); documenta variables `CAVECREW_*_MODEL` que solo
+funcionan con una instalación vía plugin completo, no con este método
+de copiar archivos a mano; y el `SKILL.md` de `cavecrew` recomienda
+`feature-dev:code-architect` para refactors grandes, una skill que no
+está instalada en este repo.
 
 ✅ Activadas el 2026-08-23.
 
