@@ -230,6 +230,21 @@ El pie de página con el nombre del autor (ej. "© Angel Luis Acosta
 González" o "Material elaborado por...") sí puede mantenerse, pero no
 esa línea de firma personalizada al final del mensaje de cierre.
 
+## Formato de párrafos en documentos de texto: justificado + sangría 1.25
+
+En los párrafos de texto corrido de cualquier documento que se genere
+(Word/`.docx` sobre todo, y cualquier otro formato de documento
+imprimible/exportable donde aplique — PDF, etc.), a partir de ahora:
+
+- **Alineación justificada** (los márgenes izquierdo y derecho del
+  párrafo quedan rectos).
+- **Sangría de primera línea de 1.25 cm** (no sangría en las demás
+  líneas del párrafo, solo en la primera).
+
+Aplica a los párrafos de prosa normal (cuerpo del texto). No aplica a
+títulos, listas, tablas, pies de página/imagen ni bloques de código,
+salvo que el profesor pida lo contrario para un documento concreto.
+
 ## Organización de carpetas: subcarpetas temáticas en kebab-case
 
 Cada carpeta de primer nivel del repositorio (`python/`, `docencia-espanol/`,
