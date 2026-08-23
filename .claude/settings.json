@@ -59,8 +59,21 @@
             "command": "\"$CLAUDE_PROJECT_DIR/.claude/hooks/check-pr-review.sh\""
           }
         ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR/.claude/hooks/restrict-cavecrew-bash.sh\""
+          }
+        ]
       }
     ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bash \"$HOME/.claude/plugins/marketplaces/ponytail/hooks/ponytail-statusline.sh\""
   },
   "enabledPlugins": {
     "ponytail@ponytail": true

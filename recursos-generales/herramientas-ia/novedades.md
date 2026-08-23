@@ -23,6 +23,199 @@ copias que puedan desincronizarse.
 
 ---
 
+## 2026-08-23 — 7 skills más de JuliusBrussee/caveman: activadas
+
+**Nota sobre cómo se activó:** a petición explícita de Angel, tras
+preguntar qué más se recomendaba en combinación con lo ya activo. Del
+mismo repo que `caveman`, del que ya se conocían estas 7 skills desde
+la instalación accidental de antes (revisadas byte a byte en aquella
+revisión, así que no eran una sorpresa esta vez).
+
+**Qué son:** `investigate-first` (diagnostica la causa real antes de
+tocar código), `safe-refactor` (reestructura preservando
+comportamiento), `surgical-patch` (arregla en la capa más estrecha
+posible), `lean-build` (construye funcionalidad nueva con alcance
+estricto), `verify-and-stop` (comprueba que un trabajo cumple lo
+pedido sin ampliar alcance), `migration` (transiciones reversibles de
+esquema/API/dependencias), y `cavecrew` (guía para delegar en
+subagentes con salida comprimida estilo `caveman`, ahorra contexto).
+
+**Por qué le sirven a Angel:** complementan a `ponytail` (anti
+sobre-ingeniería) y `hook-hardening` (checklist propio) desde ángulos
+que esos dos no cubren — diagnóstico antes de editar, alcance
+disciplinado en features nuevas, verificación sin ampliar el trabajo.
+
+**Cómo se activaron:** `npx skills add JuliusBrussee/caveman --skill
+investigate-first safe-refactor surgical-patch lean-build
+verify-and-stop migration cavecrew` — especificando los 7 nombres
+exactos para no repetir el error de la instalación de `caveman` (que
+sin `--skill` trajo 19). Verificado tras instalar: exactamente 7
+carpetas nuevas en `.agents/skills/`, ninguna de más; `.claude/settings.json`
+sin cambios (comparado con una copia guardada justo antes de instalar,
+per el punto 7 de `hook-hardening`). Puro Markdown, sin binario propio
+— no hizo falta tocar `session-start.sh`.
+
+**Revisión antes de fusionar encontró un hallazgo real:** `cavecrew`
+instrucciona delegar en tres subagentes
+(`cavecrew-investigator`/`-builder`/`-reviewer`), pero `npx skills add
+--skill cavecrew` solo trae la guía en Markdown, no las definiciones de
+esos subagentes — esas viven en `agents/` en el repo original y solo
+las instala el plugin completo (`claude plugin install`), no el CLI de
+skills. Sin ellas, `cavecrew` quedaba decorativo: la delegación habría
+fallado o caído a un agente genérico sin las instrucciones
+comprimidas. Corregido copiando los tres archivos de agente reales
+(verificados fieles al repo original) a `.claude/agents/` — la
+convención real de Claude Code para subagentes de proyecto — en vez de
+dejar la skill a medias o quitarla.
+
+**Segunda ronda:** `cavecrew-investigator` y `cavecrew-reviewer` se
+describen a sí mismos como "solo lectura"/"nunca comandos que mutan",
+pero ambos declaran `Bash` sin acotar en su `tools:` — comprobado que
+el campo `tools:` de un subagente no admite patrones tipo `Bash(git
+log:*)` como sí admite el sistema de permisos general, así que esa
+promesa de "solo lectura" la sostenía solo el texto del prompt. Primer
+intento: documentarlo como límite aceptado, sin arreglo técnico
+posible.
+
+**Tercera ronda, corrigiendo el propio diagnóstico de la segunda:** esa
+conclusión era incorrecta — sí existe un gate técnico real. Confirmado
+contra la documentación oficial de hooks que el input de `PreToolUse`
+lleva `agent_type` cuando la llamada viene de un subagente, y este repo
+ya tiene las dos mitades del patrón funcionando (`check-pr-review.sh`
+ya parsea `tool_name`/`tool_input` del JSON del hook; el propio
+`matcher: "Bash|Grep"` del hook-guard de graphify ya prueba que un hook
+sobre `Bash` funciona en este `settings.json`). Añadido
+`.claude/hooks/restrict-cavecrew-bash.sh`: un `PreToolUse` nuevo sobre
+`Bash` que, solo si `agent_type` es `cavecrew-investigator` o
+`cavecrew-reviewer`, exige un único comando `git` de lectura
+(`log`/`blame`/`show`/`diff`/`grep`/`status`/`ls-files`/`rev-parse`)
+sin metacaracteres de encadenado, sustitución, o redirección — deniega
+cualquier otra cosa. El hilo principal y cualquier otro subagente no se
+tocan. Fail-open a propósito si `jq` falta o el input no se puede leer
+(es una restricción nueva sobre un permiso que ya existía, no una
+garantía crítica que se esté quitando).
+
+Verificado en vivo con 8 casos: hilo principal sin restringir,
+`cavecrew-investigator`/`-reviewer` con comandos de lectura permitidos,
+comando mutante denegado, tres formas de escape (`;`, `$()`, `|`)
+denegadas, y `jq` ausente permitiendo (fail-open confirmado).
+
+**Cuarta ronda, tres bypasses de RCE reales en el diseño de la
+tercera:** permitir un subcomando de `git` sin restringir sus flags no
+cierra nada — `git grep -O'sh -c "..."'` (`--open-files-in-pager`)
+ejecuta un comando arbitrario como "paginador", y `git log
+--output=<ruta>` escribe contenido controlado por el propio comando en
+cualquier archivo — ambos pasaban el filtro anterior (ningún
+metacarácter de shell, subcomando permitido) y se reprodujeron en vivo
+creando/escribiendo archivos de verdad. Además, un salto de línea
+*literal* dentro de `tool_input.command` rompía tanto la lista negra de
+metacaracteres como la de subcomandos permitidos, porque `grep -q` sin
+`-z` ancla `^`/`$` por línea, no por cadena completa — una segunda
+línea sin restringir se colaba entera.
+
+Corregido con una regla mucho más simple que enumerar flags peligrosos
+subcomando por subcomando (imposible de cerrar del todo — `git` tiene
+demasiados escapes distintos): **ningún token puede empezar por `-` en
+ningún punto del comando**, sin excepción — ni siquiera flags
+realmente inocuos como `--oneline`. Y el salto de línea se comprueba
+aparte, con un patrón de bash sobre la cadena completa, no con `grep`
+línea a línea. Reverificados en vivo los 8 casos anteriores (sin
+regresión) más los 3 bypasses nuevos, ahora denegados los tres, y un
+caso de referencia bare sin flags (`git show HEAD`) que sigue
+permitido.
+
+**Quinta ronda, la regla de la cuarta se leía sobre texto crudo, no
+sobre lo que la shell real ve:** `grep -qE '(^|[[:space:]])-'` mira la
+cadena literal de `tool_input.command`, pero comillas y barras
+invertidas no son "un `-`" para ese `grep` aunque sí lo sean para la
+shell que ejecuta el comando de verdad. `git log '--output=/tmp/x'`,
+`git log "--output=/tmp/x"`, y `git log \--output=/tmp/x` esconden el
+`-` inicial detrás de una comilla o una barra en el texto que ve el
+`grep`, pasan el filtro, y la shell real —que sí quita esas comillas
+antes de invocar a `git`— entrega el flag peligroso igual. Reproducido
+en vivo escribiendo en tres archivos de marca distintos antes de este
+arreglo.
+
+Corregido tokenizando el comando con las mismas reglas de comillas que
+usaría la shell real, en vez de mirar el texto crudo: `eval "set --
+$CMD"` puebla `$@` exactamente como lo haría la shell al ejecutar
+`$CMD`, y cada `$TOK` ya resuelto (sin comillas) se comprueba por
+separado. Seguro de invocar aquí porque el bloque de metacaracteres
+(`;&|<>`, backtick, `$(`) ya corrió antes y ya rechazó cualquier cosa
+que permita encadenar o sustituir — este `eval` no puede ejecutar nada
+que ese bloque no dejara pasar primero. Un `eval` que falla (comillas
+sin cerrar) también deniega, en vez de dejar pasar un comando que ni
+siquiera se pudo interpretar con seguridad.
+
+Reverificados en vivo los casos de la tercera y cuarta ronda (9, sin
+regresión) más los 4 nuevos de esta ronda (`--output=` entre comillas
+simples, dobles, escapado con barra, y `-O` de `git grep` entre
+comillas simples) — los 4 ahora denegados, cero archivos de marca
+escritos.
+
+**Riesgo residual aceptado, no corregido — depende de una condición
+previa fuera del alcance de este filtro:** `git diff`/`git status` sin
+ningún flag pueden disparar ejecución de código igualmente si
+`.git/config` ya trae `diff.external`/`core.fsmonitor` apuntando a un
+programa, o `.gitattributes` ya trae una regla `textconv` — pero solo
+si esa configuración maliciosa ya estaba plantada por otro medio
+*antes* de que este hook entre en juego. Ninguno de los dos subagentes
+restringidos puede escribir esa configuración ellos mismos (`config` no
+está en la lista de subcomandos permitidos), así que cerrar esto
+exigiría que el hook se convirtiera en un auditor completo de la
+configuración de git, no un filtro del texto de un comando — fuera de
+alcance para lo que este filtro intenta ser. Mismo criterio que otros
+límites ya aceptados en este repo: depende de un compromiso previo que
+un filtro de argumentos de Bash no está pensado para cubrir.
+
+**Coste aceptado, no corregido:** `cavecrew-investigator.md` documenta
+`find` como atajo válido ("`find` when faster") — ahora denegado,
+porque `find` tiene sus propios escapes (`-exec`, `-delete`) tan
+peligrosos como los de `git`, y no compensa reabrir esa puerta para un
+atajo opcional cuando el subagente ya tiene `Read`/`Grep`/`Glob` para
+lo mismo. Restricción más estrecha que lo que el propio subagente dice
+usar, a propósito.
+
+**Notas menores sin corregir (contenido vendido tal cual del repo
+original, no tocado para no perder la fidelidad byte a byte):** el
+`README.md` de `cavecrew` enlaza a `../../agents/*.md` y
+`../../README.md`, rutas del layout del repo original que no existen
+en este repo (los agentes reales están en `.claude/agents/`, no en
+`.agents/agents/`); documenta variables `CAVECREW_*_MODEL` que solo
+funcionan con una instalación vía plugin completo, no con este método
+de copiar archivos a mano; y el `SKILL.md` de `cavecrew` recomienda
+`feature-dev:code-architect` para refactors grandes, una skill que no
+está instalada en este repo.
+
+✅ Activadas el 2026-08-23.
+
+## 2026-08-23 — statusline de ponytail: configurado
+
+**Qué es:** badge (`[PONYTAIL]` / `[PONYTAIL:ULTRA]`) en la barra de
+estado de Claude Code que muestra si `ponytail` está activo y en qué
+nivel de intensidad, sin tener que preguntármelo. El propio plugin lo
+trae (`ponytail-statusline.sh`), pero no se activa solo al instalarlo —
+hace falta declarar `statusLine` en `settings.json` a mano.
+
+**Cómo se configuró (con un ajuste sobre el aviso original del
+plugin):** el aviso de `ponytail` sugería apuntar a
+`~/.claude/plugins/cache/ponytail/ponytail/4.9.0/hooks/...` — una ruta
+con el número de versión incrustado, que se rompería en cuanto
+`ponytail` se actualice. Se apuntó en su lugar a
+`~/.claude/plugins/marketplaces/ponytail/hooks/ponytail-statusline.sh`
+— la copia dentro del propio clon del marketplace, sin versión en la
+ruta, y que además ya se mantiene poblada cada sesión gracias a la
+sección de `ponytail` que ya existía en `.claude/hooks/session-start.sh`
+(no hizo falta tocar ese archivo para nada esta vez).
+
+Verificado en vivo simulando un contenedor limpio de verdad (caché de
+`ponytail` borrada): `session-start.sh` repuebla el clon del
+marketplace, el script del statusline existe en la ruta correcta
+después, y el comando exacto de `settings.json` lo ejecuta y devuelve
+el badge esperado.
+
+✅ Configurado el 2026-08-23.
+
 ## 2026-08-22 — caveman (JuliusBrussee): activado para todas las sesiones
 
 **Nota sobre cómo se activó:** a petición explícita de Angel, tras
