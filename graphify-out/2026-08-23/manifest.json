@@ -1,8 +1,8 @@
 {
   ".claude/settings.json": {
-    "mtime": 1787477223.9364336,
-    "seen": 1787477234.1996324,
-    "ast_hash": "64306960caece68b34304e751972a108",
+    "mtime": 1787338532.8857543,
+    "seen": 1787341459.6013567,
+    "ast_hash": "5b4bbf6c39a41b5fa9142b39e240ac2f",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/scripts/command-metadata.json": {
@@ -438,9 +438,9 @@
     "semantic_hash": ""
   },
   ".claude/skills/ejercicio-interactivo/reference/template.html": {
-    "mtime": 1787414344.3067362,
-    "seen": 1787477234.199779,
-    "ast_hash": "00651ce7845c55e52cbd98886977e80a",
+    "mtime": 1787412401.8826208,
+    "seen": 1787412760.3269565,
+    "ast_hash": "f3695480ae1a49e95469a4eda148b7fd",
     "semantic_hash": ""
   },
   ".claude/skills/graphify/SKILL.md": {
@@ -672,9 +672,9 @@
     "semantic_hash": "8e8e3a58858713ff62de8ffa1a740cc6"
   },
   "CLAUDE.md": {
-    "mtime": 1787477224.1945908,
-    "seen": 1787477234.1998472,
-    "ast_hash": "087b852cabc48a6df6e5ee25013c1203",
+    "mtime": 1787338532.8857543,
+    "seen": 1787339574.449219,
+    "ast_hash": "4849310c396f1300e6cf59a2f8f4976c",
     "semantic_hash": ""
   },
   "DESIGN.md": {
@@ -990,9 +990,9 @@
     "semantic_hash": ""
   },
   ".claude/hooks/session-start.sh": {
-    "mtime": 1787477223.9364336,
-    "seen": 1787477234.1996298,
-    "ast_hash": "bf3a5c94ec3906d6d895b80ac5db90a8",
+    "mtime": 1787338532.8857543,
+    "seen": 1787339574.449064,
+    "ast_hash": "2ba44e851a37480d5dc250173c6b0e97",
     "semantic_hash": ""
   },
   ".agents/skills/agent-browser/SKILL.md": {
@@ -1032,9 +1032,9 @@
     "semantic_hash": ""
   },
   "recursos-generales/herramientas-ia/novedades.md": {
-    "mtime": 1787477223.9364495,
-    "seen": 1787477234.1999185,
-    "ast_hash": "dee69083163b35f6fb165f41e6357280",
+    "mtime": 1787338533.0987225,
+    "seen": 1787339574.4492798,
+    "ast_hash": "ac2ebd9a8769bbf5b74a944a97908ef1",
     "semantic_hash": ""
   },
   "recursos-generales/herramientas-ia/vercel-web-interface-guidelines.md": {
@@ -1050,9 +1050,9 @@
     "semantic_hash": ""
   },
   "skills-lock.json": {
-    "mtime": 1787477223.9364495,
-    "seen": 1787477234.199766,
-    "ast_hash": "9105e7a061e6340b77c4aad0891c0e26",
+    "mtime": 1787338533.1059034,
+    "seen": 1787341459.601568,
+    "ast_hash": "11eb18d9e760af5227c238d38841251e",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad1a_vida-cotidiana.md": {
@@ -1074,21 +1074,21 @@
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad1a_vida-cotidiana_interactivo.html": {
-    "mtime": 1787414377.7067382,
-    "seen": 1787477234.1998863,
-    "ast_hash": "4e5365d62d7c3e023d00d626c8ef3a91",
+    "mtime": 1787392110.19742,
+    "seen": 1787392491.0622635,
+    "ast_hash": "7008b8e63982ddf442728f63fa15c842",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad1b_que-hiciste-que-has-hecho_interactivo.html": {
-    "mtime": 1787414383.2027385,
-    "seen": 1787477234.199887,
-    "ast_hash": "bfa23bb74141593d44c75d6d0207bc88",
+    "mtime": 1787392140.0531614,
+    "seen": 1787392491.062265,
+    "ast_hash": "827cac948ba44a948f005baa1699f89c",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad1c_el-futuro-que-nos-espera_interactivo.html": {
-    "mtime": 1787414388.6947389,
-    "seen": 1787477234.1998882,
-    "ast_hash": "788db02a72d36612c984f8711c2e957e",
+    "mtime": 1787392187.7811604,
+    "seen": 1787392491.062266,
+    "ast_hash": "adc2b9bc74186952fa348d618dafb664",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad2a_en-la-estacion.md": {
@@ -1110,45 +1110,21 @@
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad2a_en-la-estacion_interactivo.html": {
-    "mtime": 1787414393.9467392,
-    "seen": 1787477234.1998897,
-    "ast_hash": "ea6f8d7475aeb8fa0f4a476a517537e7",
+    "mtime": 1787392110.1985512,
+    "seen": 1787392491.062267,
+    "ast_hash": "e56a57ce4e17f17183954a99caac16e5",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad2b_como-vas-al-trabajo_interactivo.html": {
-    "mtime": 1787414399.6627395,
-    "seen": 1787477234.1998906,
-    "ast_hash": "bca8af9a52f0c5c110572f2f583763c6",
+    "mtime": 1787392110.205162,
+    "seen": 1787392491.0622683,
+    "ast_hash": "600dc36ba99919c78711afd914c53671",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad2c_intercambio-de-casa_interactivo.html": {
-    "mtime": 1787414405.91074,
-    "seen": 1787477234.1998918,
-    "ast_hash": "39ba1dec950a141b81449db6705d4f39",
-    "semantic_hash": ""
-  },
-  ".agents/skills/caveman/README.md": {
-    "mtime": 1787477223.9343684,
-    "seen": 1787477234.1997702,
-    "ast_hash": "14801a83830df3284b11a2752da83a39",
-    "semantic_hash": ""
-  },
-  ".agents/skills/caveman/SKILL.md": {
-    "mtime": 1787477223.9364336,
-    "seen": 1787477234.199772,
-    "ast_hash": "5c05422ff18a4b8a75d4f78725a7ae87",
-    "semantic_hash": ""
-  },
-  ".agents/skills/find-skills/SKILL.md": {
-    "mtime": 1787477223.9364336,
-    "seen": 1787477234.1997736,
-    "ast_hash": "62b297abdee9aea84c577ab2e04e1974",
-    "semantic_hash": ""
-  },
-  ".claude/skills/hook-hardening/SKILL.md": {
-    "mtime": 1787477223.9364336,
-    "seen": 1787477234.1997972,
-    "ast_hash": "b50ecf029d6531e4ca542dff223ee2ef",
+    "mtime": 1787412614.1106334,
+    "seen": 1787412760.3270576,
+    "ast_hash": "9dbec0e67a861e8e935e166c4d6e6451",
     "semantic_hash": ""
   }
 }
