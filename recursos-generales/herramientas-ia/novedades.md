@@ -100,6 +100,38 @@ Verificado en vivo con 8 casos: hilo principal sin restringir,
 comando mutante denegado, tres formas de escape (`;`, `$()`, `|`)
 denegadas, y `jq` ausente permitiendo (fail-open confirmado).
 
+**Cuarta ronda, tres bypasses de RCE reales en el diseño de la
+tercera:** permitir un subcomando de `git` sin restringir sus flags no
+cierra nada — `git grep -O'sh -c "..."'` (`--open-files-in-pager`)
+ejecuta un comando arbitrario como "paginador", y `git log
+--output=<ruta>` escribe contenido controlado por el propio comando en
+cualquier archivo — ambos pasaban el filtro anterior (ningún
+metacarácter de shell, subcomando permitido) y se reprodujeron en vivo
+creando/escribiendo archivos de verdad. Además, un salto de línea
+*literal* dentro de `tool_input.command` rompía tanto la lista negra de
+metacaracteres como la de subcomandos permitidos, porque `grep -q` sin
+`-z` ancla `^`/`$` por línea, no por cadena completa — una segunda
+línea sin restringir se colaba entera.
+
+Corregido con una regla mucho más simple que enumerar flags peligrosos
+subcomando por subcomando (imposible de cerrar del todo — `git` tiene
+demasiados escapes distintos): **ningún token puede empezar por `-` en
+ningún punto del comando**, sin excepción — ni siquiera flags
+realmente inocuos como `--oneline`. Y el salto de línea se comprueba
+aparte, con un patrón de bash sobre la cadena completa, no con `grep`
+línea a línea. Reverificados en vivo los 8 casos anteriores (sin
+regresión) más los 3 bypasses nuevos, ahora denegados los tres, y un
+caso de referencia bare sin flags (`git show HEAD`) que sigue
+permitido.
+
+**Coste aceptado, no corregido:** `cavecrew-investigator.md` documenta
+`find` como atajo válido ("`find` when faster") — ahora denegado,
+porque `find` tiene sus propios escapes (`-exec`, `-delete`) tan
+peligrosos como los de `git`, y no compensa reabrir esa puerta para un
+atajo opcional cuando el subagente ya tiene `Read`/`Grep`/`Glob` para
+lo mismo. Restricción más estrecha que lo que el propio subagente dice
+usar, a propósito.
+
 **Notas menores sin corregir (contenido vendido tal cual del repo
 original, no tocado para no perder la fidelidad byte a byte):** el
 `README.md` de `cavecrew` enlaza a `../../agents/*.md` y
