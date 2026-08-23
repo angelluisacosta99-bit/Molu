@@ -23,6 +23,44 @@ copias que puedan desincronizarse.
 
 ---
 
+## 2026-08-22 — caveman (JuliusBrussee): activado para todas las sesiones
+
+**Nota sobre cómo se activó:** a petición explícita de Angel, tras
+preguntar por la herramienta al ver que el propio `ponytail` la
+recomienda en su FAQ ("Caveman shrinks what the agent says; ponytail
+shrinks what it builds").
+
+**Qué es:** modo de comunicación ultra-comprimido — quita relleno,
+cortesías y hedging de mis respuestas en el chat, manteniendo intacta
+la exactitud técnica (código, comandos, mensajes de error). Seis
+niveles (`lite`/`full`/`ultra`/`wenyan-*`), activable con `/caveman
+[modo]`. Recupera prosa normal automáticamente ante avisos de
+seguridad, confirmaciones irreversibles, o si la compresión crearía
+ambigüedad. **No afecta a lo que queda escrito en el repo** (código,
+comentarios, mensajes de commit, documentación) — solo al chat.
+
+**Hallazgo real durante la instalación:** `npx skills add
+JuliusBrussee/caveman` sin especificar skill instaló **19 skills**, no
+solo la pedida — incluyendo varias atadas a un servicio de pago
+("Caveman Cloud": `caveman-setup`, `caveman-manage`, `caveman-optimize`,
+`caveman-discover`, `caveman-evidence-review`, que piden URL de gateway
+y API key) y otras sin relación con "prosa breve" en absoluto
+(`lean-build`, `migration`, `safe-refactor`, `surgical-patch`,
+`investigate-first`, `verify-and-stop`, `cavecrew`). Descubierto
+*antes* de comitear (comprobando `git status` tras instalar, per el
+punto 7 de `hook-hardening`) — descartado todo con `rm -rf` y
+reinstalado con `npx skills add JuliusBrussee/caveman --skill caveman`,
+que sí trae solo la skill pedida.
+
+**Cómo se activó:** igual que `find-skills` — puro Markdown
+(`.agents/skills/caveman/SKILL.md`, symlinkeado desde
+`.claude/skills/caveman`), sin binario ni CLI propio que instalar. No
+hizo falta tocar `.claude/hooks/session-start.sh`. Verificado que
+`.claude/settings.json` no cambió ni un byte tras la instalación (se
+guardó una copia de antes para comparar).
+
+✅ Activado el 2026-08-22.
+
 ## 2026-08-22 — ponytail (DietrichGebert): activado para todas las sesiones
 
 **Nota sobre cómo se activó:** a petición explícita de Angel ("sí, pero
