@@ -76,9 +76,29 @@ fi
 # también bloquee flags realmente inocuos como "--oneline": preferible
 # a intentar enumerar cuáles de las decenas de flags de cada subcomando
 # de git son de verdad seguras.
-if printf '%s' "$CMD" | grep -qE '(^|[[:space:]])-'; then
-  deny "$AGENT_TYPE es de solo lectura -- no se permite ningún flag/opción (demasiados subcomandos de git tienen escapes vía flags): $CMD"
+#
+# Comprobar esto sobre el texto crudo de $CMD no basta: `git log
+# '--output=/tmp/x'` (o con comillas dobles, o con \-\- escapado) oculta
+# el "-" inicial detrás de una comilla/barra en la cadena literal, así
+# que un grep de texto no lo detecta -- pero la shell real que ejecuta
+# el comando sí quita esas comillas antes de invocar a git, y el flag
+# peligroso llega igual. Verificado en vivo como bypass real (escribió
+# en /tmp) antes de este cambio. Arreglo: tokenizar con las mismas
+# reglas de comillas que usaría la shell real, vía `eval "set -- $CMD"`
+# (seguro aquí porque el bloque de metacaracteres de arriba ya rechazó
+# `;&|<>` backtick y `$(` antes de llegar a este punto -- no hay forma
+# de que este eval encadene o sustituya nada), y comprobar cada token ya
+# separado en vez del texto crudo.
+if ! eval "set -- $CMD" 2>/dev/null; then
+  deny "$AGENT_TYPE es de solo lectura -- comando no se pudo interpretar de forma segura (comillas mal formadas): $CMD"
 fi
+for TOK in "$@"; do
+  case "$TOK" in
+    -*)
+      deny "$AGENT_TYPE es de solo lectura -- no se permite ningún flag/opción, ni siquiera entre comillas (demasiados subcomandos de git tienen escapes vía flags): $CMD"
+      ;;
+  esac
+done
 
 if printf '%s' "$CMD" | grep -qE '^[[:space:]]*git[[:space:]]+(log|blame|show|diff|grep|status|ls-files|rev-parse)([[:space:]]|$)'; then
   allow

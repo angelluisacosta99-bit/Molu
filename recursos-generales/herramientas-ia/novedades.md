@@ -124,6 +124,50 @@ regresión) más los 3 bypasses nuevos, ahora denegados los tres, y un
 caso de referencia bare sin flags (`git show HEAD`) que sigue
 permitido.
 
+**Quinta ronda, la regla de la cuarta se leía sobre texto crudo, no
+sobre lo que la shell real ve:** `grep -qE '(^|[[:space:]])-'` mira la
+cadena literal de `tool_input.command`, pero comillas y barras
+invertidas no son "un `-`" para ese `grep` aunque sí lo sean para la
+shell que ejecuta el comando de verdad. `git log '--output=/tmp/x'`,
+`git log "--output=/tmp/x"`, y `git log \--output=/tmp/x` esconden el
+`-` inicial detrás de una comilla o una barra en el texto que ve el
+`grep`, pasan el filtro, y la shell real —que sí quita esas comillas
+antes de invocar a `git`— entrega el flag peligroso igual. Reproducido
+en vivo escribiendo en tres archivos de marca distintos antes de este
+arreglo.
+
+Corregido tokenizando el comando con las mismas reglas de comillas que
+usaría la shell real, en vez de mirar el texto crudo: `eval "set --
+$CMD"` puebla `$@` exactamente como lo haría la shell al ejecutar
+`$CMD`, y cada `$TOK` ya resuelto (sin comillas) se comprueba por
+separado. Seguro de invocar aquí porque el bloque de metacaracteres
+(`;&|<>`, backtick, `$(`) ya corrió antes y ya rechazó cualquier cosa
+que permita encadenar o sustituir — este `eval` no puede ejecutar nada
+que ese bloque no dejara pasar primero. Un `eval` que falla (comillas
+sin cerrar) también deniega, en vez de dejar pasar un comando que ni
+siquiera se pudo interpretar con seguridad.
+
+Reverificados en vivo los casos de la tercera y cuarta ronda (9, sin
+regresión) más los 4 nuevos de esta ronda (`--output=` entre comillas
+simples, dobles, escapado con barra, y `-O` de `git grep` entre
+comillas simples) — los 4 ahora denegados, cero archivos de marca
+escritos.
+
+**Riesgo residual aceptado, no corregido — depende de una condición
+previa fuera del alcance de este filtro:** `git diff`/`git status` sin
+ningún flag pueden disparar ejecución de código igualmente si
+`.git/config` ya trae `diff.external`/`core.fsmonitor` apuntando a un
+programa, o `.gitattributes` ya trae una regla `textconv` — pero solo
+si esa configuración maliciosa ya estaba plantada por otro medio
+*antes* de que este hook entre en juego. Ninguno de los dos subagentes
+restringidos puede escribir esa configuración ellos mismos (`config` no
+está en la lista de subcomandos permitidos), así que cerrar esto
+exigiría que el hook se convirtiera en un auditor completo de la
+configuración de git, no un filtro del texto de un comando — fuera de
+alcance para lo que este filtro intenta ser. Mismo criterio que otros
+límites ya aceptados en este repo: depende de un compromiso previo que
+un filtro de argumentos de Bash no está pensado para cubrir.
+
 **Coste aceptado, no corregido:** `cavecrew-investigator.md` documenta
 `find` como atajo válido ("`find` when faster") — ahora denegado,
 porque `find` tiene sus propios escapes (`-exec`, `-delete`) tan
