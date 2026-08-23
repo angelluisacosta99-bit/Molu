@@ -68,6 +68,24 @@ comprimidas. Corregido copiando los tres archivos de agente reales
 convención real de Claude Code para subagentes de proyecto — en vez de
 dejar la skill a medias o quitarla.
 
+**Segunda ronda, límite honesto aceptado (no arreglado con código):**
+`cavecrew-investigator` y `cavecrew-reviewer` se describen a sí mismos
+como "solo lectura"/"nunca comandos que mutan", pero ambos declaran
+`Bash` sin acotar en su `tools:` — comprobado contra la documentación
+oficial que el campo `tools:` de un subagente no admite patrones tipo
+`Bash(git log:*)` como sí admite el sistema de permisos general, así
+que esa promesa de "solo lectura" la sostiene el texto del prompt, no
+el permiso técnico real. No se corrigió: quitar `Bash` del todo dejaría
+a `cavecrew-reviewer` sin poder ver diffs de verdad (su trabajo
+descrito), y modificar los archivos los alejaría de la copia fiel al
+repo original ya verificada byte a byte. El riesgo incremental
+tampoco es nuevo en este repo — ya opera con `defaultMode: dontAsk` y
+mi propio hilo principal ya tiene `Bash` sin restringir leyendo
+contenido no confiable constantemente; delegar en un subagente con el
+mismo permiso no añade una categoría de riesgo distinta, solo la
+extiende. Aceptado y documentado, no resuelto con un gate técnico que
+Claude Code no permite construir a este nivel.
+
 ✅ Activadas el 2026-08-23.
 
 ## 2026-08-23 — statusline de ponytail: configurado
