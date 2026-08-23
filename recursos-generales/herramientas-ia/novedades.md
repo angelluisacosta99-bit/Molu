@@ -23,6 +23,40 @@ copias que puedan desincronizarse.
 
 ---
 
+## 2026-08-23 — 7 skills más de JuliusBrussee/caveman: activadas
+
+**Nota sobre cómo se activó:** a petición explícita de Angel, tras
+preguntar qué más se recomendaba en combinación con lo ya activo. Del
+mismo repo que `caveman`, del que ya se conocían estas 7 skills desde
+la instalación accidental de antes (revisadas byte a byte en aquella
+revisión, así que no eran una sorpresa esta vez).
+
+**Qué son:** `investigate-first` (diagnostica la causa real antes de
+tocar código), `safe-refactor` (reestructura preservando
+comportamiento), `surgical-patch` (arregla en la capa más estrecha
+posible), `lean-build` (construye funcionalidad nueva con alcance
+estricto), `verify-and-stop` (comprueba que un trabajo cumple lo
+pedido sin ampliar alcance), `migration` (transiciones reversibles de
+esquema/API/dependencias), y `cavecrew` (guía para delegar en
+subagentes con salida comprimida estilo `caveman`, ahorra contexto).
+
+**Por qué le sirven a Angel:** complementan a `ponytail` (anti
+sobre-ingeniería) y `hook-hardening` (checklist propio) desde ángulos
+que esos dos no cubren — diagnóstico antes de editar, alcance
+disciplinado en features nuevas, verificación sin ampliar el trabajo.
+
+**Cómo se activaron:** `npx skills add JuliusBrussee/caveman --skill
+investigate-first safe-refactor surgical-patch lean-build
+verify-and-stop migration cavecrew` — especificando los 7 nombres
+exactos para no repetir el error de la instalación de `caveman` (que
+sin `--skill` trajo 19). Verificado tras instalar: exactamente 7
+carpetas nuevas en `.agents/skills/`, ninguna de más; `.claude/settings.json`
+sin cambios (comparado con una copia guardada justo antes de instalar,
+per el punto 7 de `hook-hardening`). Puro Markdown, sin binario propio
+— no hizo falta tocar `session-start.sh`.
+
+✅ Activadas el 2026-08-23.
+
 ## 2026-08-23 — statusline de ponytail: configurado
 
 **Qué es:** badge (`[PONYTAIL]` / `[PONYTAIL:ULTRA]`) en la barra de
