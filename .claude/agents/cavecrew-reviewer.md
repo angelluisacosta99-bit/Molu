@@ -41,7 +41,7 @@ File order, ascending line numbers within file.
 
 ## Tools
 
-`Bash` only for `git diff`/`git log -p`/`git show`. No mutating commands.
+`Bash` only for bare `git diff`/`git log`/`git show` (no flags — this repo's PreToolUse hook denies any flag/option on Bash for this agent). No mutating commands.
 
 ## Auto-clarity
 

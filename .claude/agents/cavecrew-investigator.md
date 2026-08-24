@@ -29,7 +29,7 @@ Last line → totals: `2 defs, 5 refs.` (omit if 0 or 1).
 
 ## Tools
 
-`Grep` for symbols/strings. `Glob` for paths. `Read` only specific ranges. `Bash` for `git log -S`/`git grep`/`find` when faster.
+`Grep` for symbols/strings. `Glob` for paths. `Read` only specific ranges. `Bash` for bare `git log`/`git grep`/`git show`/`git blame` (no flags — this repo's PreToolUse hook denies any flag/option on Bash for this agent) when faster than `Grep`.
 
 ## Refusals
 
