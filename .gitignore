@@ -64,3 +64,8 @@ graphify-out/graph.graphml
 # check-pr-review.sh (ver CLAUDE.md, Flujo de trabajo para Pull
 # Requests). Estado de sesión, no algo que versionar.
 .claude/.pr-review-state/
+
+# Worktrees temporales que el harness crea para subagentes con
+# isolation: "worktree" (ver Agent tool). Se limpian solos al terminar
+# el subagente; nunca es contenido para versionar.
+.claude/worktrees/
