@@ -35,6 +35,11 @@ venv/
 graphify-out/.graphify_*
 graphify-out/cache/
 
+# graphify-out/converted/: sidecars .md que graphify genera solo (de
+# .docx/.xlsx/Google Workspace) para poder leerlos — se regeneran solos
+# en el próximo `graphify update`, no son contenido original.
+graphify-out/converted/
+
 # NOTA: graphify-out/YYYY-MM-DD/ (respaldos con fecha que graphify crea
 # antes de sobrescribir el grafo curado cuando las comunidades cambian
 # mucho) NO se ignora a propósito — es la única red de seguridad para
@@ -59,3 +64,8 @@ graphify-out/graph.graphml
 # check-pr-review.sh (ver CLAUDE.md, Flujo de trabajo para Pull
 # Requests). Estado de sesión, no algo que versionar.
 .claude/.pr-review-state/
+
+# Worktrees temporales que el harness crea para subagentes con
+# isolation: "worktree" (ver Agent tool). Se limpian solos al terminar
+# el subagente; nunca es contenido para versionar.
+.claude/worktrees/
