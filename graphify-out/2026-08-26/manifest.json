@@ -1,7 +1,7 @@
 {
   ".claude/settings.json": {
-    "mtime": 1787739185.6058898,
-    "seen": 1787739569.239356,
+    "mtime": 1787562673.663336,
+    "seen": 1787562746.7344327,
     "ast_hash": "174343810b52012027f6057cb3c75416",
     "semantic_hash": ""
   },
@@ -702,9 +702,9 @@
     "semantic_hash": "033e2f08cbb62857a73f98c5cdb076df"
   },
   "docencia-espanol/fuentes/README.md": {
-    "mtime": 1787739561.1693976,
-    "seen": 1787739569.2395163,
-    "ast_hash": "32dac0fb8cd0f2f24226e23d4e3da218",
+    "mtime": 1787563988.028049,
+    "seen": 1787564014.3392427,
+    "ast_hash": "b940b6a2a74bd2ae073cdf137823592d",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad6a_como-se-va-a-goya.md": {
@@ -1296,8 +1296,8 @@
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad8c_que-tiempo-hace-hoy.md": {
-    "mtime": 1787739516.777882,
-    "seen": 1787739569.2395267,
+    "mtime": 1787563959.7640474,
+    "seen": 1787564014.339253,
     "ast_hash": "0864f23a2dfed8696de5ad19dd9f715a",
     "semantic_hash": ""
   },
@@ -1326,9 +1326,9 @@
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad8c_que-tiempo-hace-hoy_interactivo.html": {
-    "mtime": 1787739561.1693976,
-    "seen": 1787739569.239559,
-    "ast_hash": "18cc68eaf6aac6ed50aee204afd9deca",
+    "mtime": 1787563825.7620828,
+    "seen": 1787564014.3392894,
+    "ast_hash": "3d49e2d13d9a42762566c1e57e016240",
     "semantic_hash": ""
   }
 }
