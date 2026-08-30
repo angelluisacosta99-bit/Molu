@@ -310,9 +310,10 @@ Todos los días, Marta **se levanta** (levantarse) a las siete. **Se ducha** (Du
 1. El pintor tiene el pelo corto. **F**
 2. La infanta lleva gafas. **F**
 3. Las meninas son rubias. **F**
-4. El pintor tiene barba y bigote. **V**
-5. El pintor es calvo. **F**
-6. La infanta es alta. **F**
+4. Una menina es rubia. **V**
+5. El pintor tiene barba y bigote. **V**
+6. El pintor es calvo. **F**
+7. La infanta es alta. **F**
 
 #### Ej. 28 — Completa el diálogo por teléfono
 
@@ -348,7 +349,7 @@ A Sí, de acuerdo. Hasta el sábado.
 3. ¿Qué tiempo **hizo** (hacer) ayer?
 4. Nosotros **estuvimos** (estar) tres días en Cuzco.
 5. Marina **vio** (ver) animales increíbles en la Amazonía.
-6. ¿**Fuiste** (Ser, tú) al final a la fiesta?
+6. ¿**Fuiste** (Ir, tú) al final a la fiesta?
 
 #### Ej. 31 — El tiempo: hoy y ayer
 
