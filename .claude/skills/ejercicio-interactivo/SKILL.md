@@ -555,6 +555,25 @@ no las deshagas sin querer al modificar la plantilla.
   dibujos vecinos), recorta el blanco sobrante de cada uno y **monta una hoja de contacto
   con los recortes y míralos** antes de incrustarlos. Es la única forma de ver que están
   enteros y que cada uno corresponde a la respuesta que dice el solucionario.
+- **Un "recorte que parece limpio" a menudo no lo está — no te fíes de tu propio primer
+  vistazo.** En la guía de repaso A1 (unidades 1-10), 7 de 10 recortes de cuaderno dados
+  por buenos en una primera pasada tenían defectos reales al reexaminarlos con ojo crítico:
+  texto de un enunciado vecino colándose por arriba (el "3 Mira el árbol genealógico..."
+  metido en el recorte del árbol), contenido cortado por abajo (la fila de fotos d-g de un
+  ejercicio de profesiones, con "Hospital" partido a la mitad), y márgenes puestos a ojo sin
+  anclarlos a nada (una habitación desordenada con la cama y el brazo cortados por el borde).
+  Esto pasó en varias imágenes de la misma tarea antes de que el usuario lo señalara — la
+  señal de las "3+ rondas" de CLAUDE.md, aquí repartida entre imágenes en vez de en una sola.
+  La causa no era la técnica de rejilla (que funciona bien), sino dar por bueno un recorte
+  sin releerlo con ojo escéptico. Corrección aplicada desde entonces: (1) si la fuente tiene
+  un borde de caja limpio (sopa de letras, tabla), ancla el recorte a ese borde exacto, no a
+  un margen estimado cerca del texto; (2) si no hay borde (una ilustración suelta), usa la
+  rejilla sobre la página COMPLETA sin recortar antes, lee los bordes reales del dibujo antes
+  de cortar; (3) tras cada recorte, vuelve a leerlo con el propósito explícito de buscarle un
+  defecto, no de confirmar que "parece que está bien" — son dos lecturas distintas y solo la
+  primera encuentra el problema; (4) si el recorte no cabe entero sin arrastrar un elemento
+  ajeno (como un pie de página), recorta al máximo real y tapa de blanco solo la franja
+  ajena, en vez de aceptar el corte o encoger el contenido bueno.
 - **Un salto de línea justo antes del hueco significa «esta respuesta va en su propia
   línea».** La detección de hueco-de-cola lo respeta y no estira la casilla: si lo hace,
   queda flotando a media altura, ni en línea ni debajo. Es el caso de los ejercicios de
