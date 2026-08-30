@@ -23,6 +23,60 @@ copias que puedan desincronizarse.
 
 ---
 
+## 2026-08-30 — Pasada del radar: dos funciones nativas nuevas, sin hallazgos de terceros
+
+**Contexto:** pasada pedida explícitamente por Angel tras preguntar por
+Gemini Notebook, para repasar qué se ha recomendado y no se ha instalado
+(ver correcciones más arriba: Brisk Teaching y Learn with Coursera
+resultaron ya activos, sin que este registro lo reflejara) y qué hay
+nuevo hoy. Fuentes consultadas: `code.claude.com/docs/en/whats-new`
+(semana 34, 17-21 agosto 2026), `SearchMcpRegistry`/`SearchPlugins`
+para telecomunicaciones/ferrocarril/traducción/Python/docencia (sin
+resultados relevantes — solo herramientas de empresa sin relación,
+tipo Honeycomb/DataRobot/Twilio/Auth0), y `anthropic.com/news` (solo
+anuncios corporativos: chips propios, Model Hardware Standard para
+robots/laboratorio, marca de agua en contenido generado — ninguno
+aplica a este repo).
+
+### Auto-continue al resetear el límite de uso (nativo, activado por defecto)
+
+**Qué es:** Claude Code sigue la sesión automáticamente en cuanto se
+resetea el límite de uso de 5h, en vez de quedarse parado esperando a
+que Angel vuelva a escribir. Activado por defecto desde la versión
+2.1.234; se puede desactivar en `/config` → "Continue automatically at
+usage limit".
+
+**Por qué le sirve a Angel:** complementa directamente la práctica ya
+registrada el 2026-08-18 ("desplazar la ventana de 5h mandando un
+mensaje corto al empezar") — ahora, además de desplazar cuándo empieza
+la ventana, Claude Code no pierde tiempo muerto en cuanto se resetea.
+
+**Cómo probarlo:** nada que instalar — ya viene activado. Revisar
+`/config` si se prefiere desactivarlo.
+
+### Estilo de salida "Concise" (nativo)
+
+**Qué es:** nuevo output style incorporado (`/config` o `settings.json`,
+desde la versión 2.1.237) que recorta la narración de relleno y
+antepone el resultado a la explicación.
+
+**Por qué probablemente no aporta aquí:** `caveman` (activo en todas las
+sesiones) ya cubre ese mismo objetivo con más matices propios
+(niveles de intensidad, reglas de cuándo NO comprimir). Mencionado por
+completitud, no se recomienda activarlo también — redundante con lo
+que ya tienes.
+
+### Sin hallazgos nuevos de terceros en los dominios de Angel
+
+Ninguna skill, plugin o conector nuevo relevante para
+docencia-espanol/python/telecomunicaciones/traduccion/máster esta
+pasada — los resultados de `SearchMcpRegistry`/`SearchPlugins` para esos
+dominios fueron herramientas de empresa (DevOps, observability, CRM) sin
+relación real. No se crea nada más en este registro por esta parte de
+la pasada.
+
+---
+
 ## 2026-08-30 — Gemini Notebook (antes NotebookLM): sin opción segura, no adoptado
 
 **Nota sobre cómo se activó:** a petición explícita de Angel ("quiero
@@ -972,6 +1026,13 @@ claude.ai (buscar "Brisk Teaching"). Está pensado sobre todo para K-12
 en inglés — probar con un caso concreto antes de adoptarlo, puede que
 no encaje igual de bien con adultos rusohablantes aprendiendo español.
 
+✅ Activado (visto conectado vía `ListConnectors` el 2026-08-30, sin
+fecha exacta de activación registrada — corregido este marcador con
+retraso). Nota: `connected: true` pero `enabledInChat: false` la última
+vez que se comprobó — está autenticado a nivel de cuenta pero apagado
+para esta conversación en concreto; activarlo en los ajustes de
+conectores de este chat si se quiere usar aquí.
+
 ### Marketplaces de plugins de Claude Code (oficial y comunidad)
 
 **Qué es:** Anthropic mantiene dos catálogos navegables de plugins
@@ -999,3 +1060,11 @@ Dos hallazgos menos prioritarios, mencionados por completitud:
   aprendizaje en una ruta personalizada de cursos de Coursera. Podría
   servirte para tu propio aprendizaje de Python o para el máster,
   requiere el conector de Coursera.
+  ✅ Activado (visto `enabled: true` vía `ListPlugins` el 2026-08-30, sin
+  fecha exacta de activación registrada — corregido este marcador con
+  retraso).
+
+**Learning Commons sigue sin activar** (`ListConnectors` no lo encuentra,
+comprobado el 2026-08-30) — sigue siendo de baja prioridad para el
+perfil de alumnos de Angel (adultos rusohablantes, no K-12), no se
+insiste más salvo que aparezca algo nuevo sobre él.
