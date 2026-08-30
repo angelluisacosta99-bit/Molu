@@ -432,9 +432,9 @@
     "semantic_hash": "9b31786b637be3c13978bec4c2330752"
   },
   ".claude/skills/ejercicio-interactivo/SKILL.md": {
-    "mtime": 1787562673.663336,
-    "seen": 1787562746.7345252,
-    "ast_hash": "baabd046adaed494ff7c1c2624e054a9",
+    "mtime": 1788107947.4339538,
+    "seen": 1788108609.1292167,
+    "ast_hash": "cad88349d85ae37becff9517c2d3763d",
     "semantic_hash": ""
   },
   ".claude/skills/ejercicio-interactivo/reference/template.html": {
@@ -1260,9 +1260,9 @@
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad7b_que-estas-haciendo.md": {
-    "mtime": 1787741651.6281998,
-    "seen": 1788092177.3590076,
-    "ast_hash": "476fdf67bf70b25953ae513cb30889a1",
+    "mtime": 1788109220.0500295,
+    "seen": 1788109315.068562,
+    "ast_hash": "696a2773e8e6e21284451d77e41b9ca0",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad7c_como-es.md": {
@@ -1272,9 +1272,9 @@
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad7b_que-estas-haciendo_interactivo.html": {
-    "mtime": 1787740262.8530726,
-    "seen": 1788092177.3590596,
-    "ast_hash": "02916dd820548b23a438fc80bf91f4eb",
+    "mtime": 1788109225.4140298,
+    "seen": 1788109315.0685956,
+    "ast_hash": "fc739f8ca1203da78f1ec2382e2768c4",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad7c_como-es_interactivo.html": {
@@ -1332,15 +1332,15 @@
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/guia-repaso-unidades-1-10.md": {
-    "mtime": 1788094812.5482528,
-    "seen": 1788105736.0447462,
-    "ast_hash": "4dd37084b322b0f387a3f87103beb297",
+    "mtime": 1788108595.9699924,
+    "seen": 1788108609.1292639,
+    "ast_hash": "92547316ef5ade91d46a83bebba038eb",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_guia-repaso-unidades-1-10_interactivo.html": {
-    "mtime": 1788094800.2043586,
-    "seen": 1788105736.0447733,
-    "ast_hash": "0c0e2bfbada148b0d3470c6f00db6951",
+    "mtime": 1788108551.1659896,
+    "seen": 1788108609.1292884,
+    "ast_hash": "926a786313368be4b00ef6a9875d7801",
     "semantic_hash": ""
   }
 }
