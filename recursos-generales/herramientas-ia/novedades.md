@@ -23,6 +23,58 @@ copias que puedan desincronizarse.
 
 ---
 
+## 2026-08-30 — Memory de Anthropic: memoria compartida entre chats (nativo, oficial)
+
+**Contexto:** Angel pidió explícitamente algo para que Claude "tenga
+memoria de todos los chats" y conecte lo hablado en una conversación con
+otra independiente. Fuentes oficiales:
+[claude.com/blog/memory](https://claude.com/blog/memory) y
+[anthropic.com/news/memory](https://www.anthropic.com/news/memory)
+(anuncio del 2026-08-25, cinco días antes de esta pasada).
+
+**Qué es:** función nativa de Anthropic, no un conector ni un plugin —
+nada que instalar. Claude procesa las conversaciones automáticamente
+(aprox. cada 24h) y extrae un resumen de lo que vale la pena recordar a
+largo plazo (profesión, preferencias, herramientas que usas a menudo,
+contexto personal recurrente) — no guarda la transcripción literal.
+Activada por defecto desde marzo de 2026 para cuentas Free/Pro/Max.
+La novedad del 25 de agosto es que ahora esa memoria se **comparte
+entre el chat normal de claude.ai y Claude Cowork** — lo que se cuenta
+en un chat puede informar una tarea de Cowork, y viceversa.
+
+**Por qué le sirve a Angel en concreto:** es justo lo que pidió — deja
+de tener que re-explicar contexto (qué libro de texto usa, qué alumnos
+tiene, qué convenciones sigue en `telecomunicaciones/` o el máster) cada
+vez que abre un chat nuevo sin relación con este repo. Y si usa
+**Proyectos** en claude.ai, la memoria queda separada por proyecto — un
+proyecto de "docencia de español" no mezcla su memoria con uno de
+"máster" o "traducción", que es exactamente como ya tiene organizado
+este propio repositorio por carpetas de dominio.
+
+**Seguridad/privacidad, la parte que Angel pidió comprobar
+explícitamente ("no malignas"):** la memoria queda ligada solo a la
+cuenta de Angel, nunca se comparte con otros usuarios, y no se usa para
+entrenar a Claude salvo que él mismo active compartir datos de
+entrenamiento (`Ajustes > Privacidad > Help improve Claude`, opt-in, no
+por defecto). Desde el propio anuncio del 25 de agosto, además, hay
+categorías sensibles que se excluyen por defecto sin acción suya: salud,
+raza/etnia, creencias religiosas, política, identidad de género.
+
+**Cómo comprobarlo/gestionarlo:** `Ajustes > Capacidades > Memory` en
+claude.ai — ver, editar o borrar recuerdos concretos, pausar la memoria,
+o resetearla entera. Es un ajuste de cuenta personal, no algo que se
+pueda activar desde aquí (barrera de plataforma, igual que un
+conector) — Angel tiene que revisarlo él mismo en sus ajustes.
+
+**Duda honesta sin verificar:** no está confirmado si la unificación
+chat↔Cowork del 25 de agosto ya cubre su plan concreto — varias fuentes
+la describen empezando a desplegarse primero para cuentas Team/Enterprise;
+la memoria base (desde marzo) sí debería estar activa ya para Free/Pro/Max.
+Comprobar en `Ajustes > Capacidades > Memory` si ya aparece la opción
+compartida con Cowork, en vez de asumirlo.
+
+---
+
 ## 2026-08-30 — Compactación de contexto: palancas oficiales para ahorrar tokens
 
 **Contexto:** pedido explícito de Angel — herramientas "realmente
