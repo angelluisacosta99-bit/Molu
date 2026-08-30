@@ -12,7 +12,7 @@
   "10": "impeccable-config.mjs",
   "11": "live-server.mjs",
   "12": "svelte-component.mjs",
-  "13": "detect-html.mjs",
+  "13": "detect-url.mjs",
   "14": "hook-lib.mjs",
   "15": "initPageChat",
   "16": "live-inject.mjs",
@@ -38,7 +38,7 @@
   "36": "live-manual-edit-evidence.mjs",
   "37": "context.mjs",
   "38": "handleManualEditActivity",
-  "39": "resolveLengthPx",
+  "39": "parseRgb",
   "40": "impeccable-paths.mjs",
   "41": "readLiveServerInfo",
   "42": "parseAnyColor",
@@ -82,7 +82,7 @@
   "80": "resolveLiveInjectionAnchor",
   "81": "extraer.mjs",
   "82": "Animate Reference (Motion Design)",
-  "83": "StaticElement",
+  "83": "detect-html.mjs",
   "84": "graphify: Query, Path, Explain",
   "85": "checkElementHeroEyebrow",
   "86": "cavecrew/SKILL.md",
@@ -139,5 +139,6 @@
   "137": "Ejercicios",
   "138": "Ejercicios",
   "139": "Ejercicios",
-  "140": "Ejercicios"
+  "140": "Ejercicios",
+  "141": "handleGo"
 }
