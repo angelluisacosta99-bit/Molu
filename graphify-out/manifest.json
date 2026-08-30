@@ -438,9 +438,9 @@
     "semantic_hash": ""
   },
   ".claude/skills/ejercicio-interactivo/reference/template.html": {
-    "mtime": 1787663931.956231,
-    "seen": 1788120131.1721516,
-    "ast_hash": "00651ce7845c55e52cbd98886977e80a",
+    "mtime": 1788121381.962543,
+    "seen": 1788122178.896872,
+    "ast_hash": "614d2e49cb0b3083fe9d0ced04ebfe2e",
     "semantic_hash": ""
   },
   ".claude/skills/graphify/SKILL.md": {
@@ -1350,9 +1350,9 @@
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a2/nuevo-espanol-en-marcha-2_cuaderno-unidad0_antes-de-empezar_interactivo.html": {
-    "mtime": 1788120935.3065531,
-    "seen": 1788121073.428075,
-    "ast_hash": "059dfee7e97f0f234e7ad398d046b1fb",
+    "mtime": 1788121459.6585412,
+    "seen": 1788122178.897,
+    "ast_hash": "58ddd6f8f134c60de10966eacccf33a4",
     "semantic_hash": ""
   }
 }
