@@ -574,6 +574,20 @@ no las deshagas sin querer al modificar la plantilla.
   primera encuentra el problema; (4) si el recorte no cabe entero sin arrastrar un elemento
   ajeno (como un pie de página), recorta al máximo real y tapa de blanco solo la franja
   ajena, en vez de aceptar el corte o encoger el contenido bueno.
+  **Punto (1) en la práctica: incluso ancladas "al borde", las coordenadas leídas a ojo sobre
+  la rejilla pueden fallar por poco.** El recorte de la sopa de letras del capítulo 1, ya
+  "corregido" y revisado visualmente, seguía sin la columna de letras más a la derecha (9 de
+  10) — un defecto sutil que ni la lectura de la rejilla ni la relectura crítica pillaron,
+  porque las 9 columnas visibles ya parecían un cuadro completo. Se encontró y confirmó con
+  `opencv-python` (`pip install opencv-python-headless`, gratis, sin cuenta):
+  `cv2.adaptiveThreshold` + `cv2.morphologyEx(..., MORPH_CLOSE)` + `cv2.findContours` sobre la
+  página completa, filtrando por área (2-60% de la página) y por relación área-contorno/
+  área-caja (>0.5, para exigir un rectángulo relleno de verdad y no una silueta cualquiera),
+  encuentra el rectángulo de tinta exacto de una caja con borde — sopa de letras, tabla — sin
+  intervención manual. Cuando la fuente tiene un borde de caja limpio, es más fiable que leer
+  la rejilla a ojo: úsalo como primer intento y usa la rejilla solo si no hay contorno
+  rectangular claro (dibujos sueltos sin caja, como el árbol genealógico o la habitación
+  desordenada, donde este método no aplica).
 - **Un salto de línea justo antes del hueco significa «esta respuesta va en su propia
   línea».** La detección de hueco-de-cola lo respeta y no estira la casilla: si lo hace,
   queda flotando a media altura, ni en línea ni debajo. Es el caso de los ejercicios de
