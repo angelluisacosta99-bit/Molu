@@ -22,3 +22,46 @@ kebab-case:
 | [Robots autónomos](robots-autonomos/) | 304474 | 3 | Obligatoria |
 | [Tecnologías del habla](tecnologias-del-habla/) | 304487 | 3 | Optativa |
 | [Trabajo Fin de Máster](trabajo-fin-de-master/) | 304489 | 15 | Trabajo fin de máster |
+
+## Calendario de clases
+
+Fuente: "Horarios y Distribución de Grupos" de la Guía Académica 2026-2027
+del MUSI (USAL). Aula fija: **F3, Facultad de Ciencias**. Clases en
+bloques intensivos de 2 semanas, de lunes a viernes.
+
+> **Nota sobre las fechas**: el propio documento oficial trae una fecha
+> inconsistente (dice que la Semana 1 es "28 de septiembre de **2027**",
+> pero las semanas siguientes ya usan 2026, y la cabecera de su página 2
+> pone "Guía Académica 2027-2027"). Se verificó por calendario que el 28
+> de septiembre de **2026** cae en lunes — encaja con el patrón de la
+> tabla — así que se asume 2026 como año correcto en todo lo de abajo.
+> Confirmar con la secretaría si hay dudas.
+
+Ya añadidas como eventos recurrentes en Google Calendar (16:00-18:00 y
+18:00-20:00 hora de Madrid, lunes a viernes, durante cada bloque).
+
+### 1er cuatrimestre
+
+| Semanas | Fechas | 16–18h | 18–20h |
+|---|---|---|---|
+| 1–2 | 28 sep. – 9 oct. 2026 | Metodología de la Investigación | Computación Neuroborrosa |
+| 3–4 | 12 – 23 oct. 2026 | Inteligencia Ambiental y Sist. Multiagente | Robots Autónomos |
+| 5–6 | 26 oct. – 6 nov. 2026 | Minería de Datos | Control Inteligente |
+| 7–8 | 9 – 20 nov. 2026 | Analítica Visual y Visualización de la Información | Lógica para la Web Semántica |
+| 9–10 | 23 nov. – 4 dic. 2026 | Recuperación Avanzada de la Información | *(Navegación de Robots — no es de este plan)* |
+| 11–12 | 7 – 18 dic. 2026 | Cibermetría | *(Técnicas de Planificación de Robots — no es de este plan)* |
+
+Acogida de estudiantes y presentación del máster: 28 de septiembre de 2026, 16:00.
+
+### 2º cuatrimestre
+
+| Semanas | Fechas | 16–18h | 18–20h |
+|---|---|---|---|
+| 1–2 | 1 – 12 feb. 2027 | Tecnologías del Habla | *(Interacción Gestual — no es de este plan)* |
+| 3–4 | 15 – 26 feb. 2027 | Minería de Datos Aplicada a la Bioinformática | *(Minería Web — no es de este plan)* |
+| 5–6 | 1 – 12 mar. 2027 | Procesos y Métodos de Modelado para la Ingeniería Web y Web Semántica | Herramientas Interactivas de Simulación y Control |
+
+**Nuevas Tendencias en Sistemas Inteligentes**: sin horario fijo, se
+imparte por seminarios y conferencias anunciadas durante el curso.
+
+**Trabajo Fin de Máster**: sin docencia presencial programada.
