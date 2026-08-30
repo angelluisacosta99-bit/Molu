@@ -23,6 +23,53 @@ copias que puedan desincronizarse.
 
 ---
 
+## 2026-08-30 — Gemini Notebook (antes NotebookLM): sin opción segura, no adoptado
+
+**Nota sobre cómo se activó:** a petición explícita de Angel ("quiero
+conectarte a Gemini Notebook, encuentra todas las formas que existen y
+selecciona la más segura"). Búsqueda vía `SearchMcpRegistry` (nada
+relevante — el único resultado fue "Goodnotes", sin relación),
+`SearchSkills` (vacío) y búsqueda web.
+
+**Qué es:** Google renombró NotebookLM a **Gemini Notebook** el
+2026-07-16. Es la herramienta de notas/investigación con fuentes
+propias de Google — encajaría con `docencia-espanol/`, `python/`,
+`telecomunicaciones/` y el máster como espacio de apuntes con RAG sobre
+material propio.
+
+**Por qué no se adoptó ninguna opción:** no existe API de consumidor
+todavía (Google la tiene "en desarrollo", sin fecha) ni conector MCP
+oficial. Solo hay una API Enterprise (requiere proyecto de Google Cloud
++ licencia Gemini Enterprise/Education Premium, no aplica a una cuenta
+personal) y un puñado de proyectos de comunidad no oficiales
+(`teng-lin/notebooklm-py` ~18.5k★, `roomi-fields/notebooklm-mcp` 16★,
+más wrappers finos de menor reputación como `DevstackK/Notebooklm-Unofficial-API-MCP`
+y `moodRobotics/notebooklm-mcp-server`) — todos hacen ingeniería inversa
+de la API interna de Google o automatizan el navegador con Playwright.
+
+La diferencia real frente a los conectores ya activos (Google
+Drive/Calendar): esos usan OAuth con alcance acotado y revocable en un
+clic; **todas** las opciones de Gemini Notebook necesitan en cambio las
+cookies completas de la sesión de Google (`__Secure-1PSID`/`-1PSIDTS`)
+o un login real vía Playwright — acceso de facto a toda la cuenta
+(Gmail, Drive, Calendar...), no solo a Notebook, y con el añadido de
+incumplir los términos de Google sobre acceso automatizado. Ningún
+proyecto de la lista cambia esa arquitectura de fondo, así que ninguno
+cruza la barra de seguridad que sí cumplen los conectores oficiales que
+Angel ya usa.
+
+**Decisión:** no instalar nada ahora. Si en el futuro Angel quiere
+probarlo pese al riesgo, hacerlo solo desde una cuenta de Google
+secundaria (nunca la personal) y con `teng-lin/notebooklm-py` (el más
+usado y mantenido de los no oficiales) en vez de los forks con menos
+reputación. Revisar de nuevo cuando Google publique la API de
+consumidor que ya confirmó — en ese momento sí encajaría con el criterio
+normal de esta lista.
+
+❌ No adoptado — revisar si Google publica una API de consumidor oficial.
+
+---
+
 ## 2026-08-23 — 7 skills más de JuliusBrussee/caveman: activadas
 
 **Nota sobre cómo se activó:** a petición explícita de Angel, tras
