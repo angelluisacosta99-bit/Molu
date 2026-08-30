@@ -23,6 +23,62 @@ copias que puedan desincronizarse.
 
 ---
 
+## 2026-08-30 — Compactación de contexto: palancas oficiales para ahorrar tokens
+
+**Contexto:** pedido explícito de Angel — herramientas "realmente
+efectivas y oficiales, no malignas" para ahorrar tokens. Fuentes, todas
+oficiales esta vez: `code.claude.com/docs/en/context-window`,
+`code.claude.com/docs/en/costs`, `code.claude.com/docs/en/best-practices`.
+
+### Aplicado: instrucción de preservación al compactar, en `CLAUDE.md`
+
+**Qué es:** Claude Code respeta instrucciones explícitas en `CLAUDE.md`
+sobre qué conservar durante el resumen automático de contexto (ej.
+"When compacting, always preserve the full list of modified files and
+any test commands").
+
+**Por qué le sirve a Angel en concreto:** este mismo archivo ya sufrió
+el problema contrario (PR #63, entrada del 2026-08-16): podar
+`CLAUDE.md` perdió hechos verificados y hicieron falta 6-7 rondas de
+revisión para recuperarlos. Esta instrucción ataca la causa (qué
+sobrevive a una compactación), no solo el síntoma de podar con cuidado
+después del hecho.
+
+**Cómo se aplicó:** nueva línea en la sección "Ahorro de tokens" de
+`CLAUDE.md`, en el bloque de `/compact`.
+
+### Anotado, no aplicado (palancas oficiales sin necesidad clara todavía)
+
+- **`/autocompact <tamaño>`** — fija a mano el umbral de compactación
+  automática (ej. `/autocompact 500k`) en vez de esperar al límite del
+  modelo. Útil para sesiones largas como las de revisión de PRs de este
+  repo, pero no se ha fijado un valor por defecto — depende del modelo
+  activo en cada sesión, sin un tamaño "típico" claro todavía.
+- **`/compact <instrucciones>`** — variante manual, dirige qué preservar
+  en una compactación puntual (ej. `/compact Focus on the API changes`).
+- **Umbral ~60-70% de contexto** para lanzar `/compact`, en vez de
+  esperar al 90%+ — ya añadido como práctica en `CLAUDE.md`.
+- **`MAX_THINKING_TOKENS`** (variable de entorno) — limita el gasto en
+  tokens de pensamiento extendido. No activada: sin evidencia de que las
+  sesiones de este repo gasten de más ahí, y capar el límite arriesga
+  recortar razonamiento donde sí hace falta.
+- **Delegar en subagentes las tareas de lectura pesada de contexto** —
+  confirmado como práctica oficial recomendada
+  (`code.claude.com/docs/en/costs`). Este repo ya lo hace de forma
+  consistente (`Explore`, `cavecrew`) — sin acción nueva, solo confirma
+  que la práctica actual va en la dirección correcta.
+
+### Fuera de alcance de Claude Code, mencionado para completar el cuadro
+
+**Context Editing API + Memory Tool** (Claude Developer Platform, beta,
+`claude.com/blog/context-management`) — recorta hasta 84% el consumo de
+tokens en bucles largos de uso de herramientas, pero es una función de
+la API/SDK de Anthropic, no del chat de Claude Code. Solo relevante si
+Angel construye sus propios agentes con el SDK (la skill `claude-api`
+ya instalada cubre esto) — no aplica a esta sesión directamente.
+
+---
+
 ## 2026-08-30 — Pasada del radar: dos funciones nativas nuevas, sin hallazgos de terceros
 
 **Contexto:** pasada pedida explícitamente por Angel tras preguntar por
