@@ -175,20 +175,29 @@ Ayer Virginia (1) tuvo un día ocupadísimo. (2) **Se levantó** a las seis y me
 
 *Relaciona.*
 
-> **Opciones:** a) Estoy harta de mi jefe. · b) Ya voy, mamá. · c) Hola, Martina, ¿qué tal? · d) Claro, ahora mismo. · e) Sí, hay una aquí cerca. · f) Vale, ¿a qué hora quedamos? · g) Un flan y un helado. · h) No, pero tengo novia. · i) Una ensalada y un gazpacho. · j) No, no lo he visto. · k) Sí, tengo dos, un niño y una niña. · l) Estoy estudiando Medicina.
-
-1. Mira, David, te presento a Martina, la compañera nueva. → c) Hola, Martina, ¿qué tal?
-2. Perdone, ¿hay una farmacia por aquí cerca? **e**
-3. ¿Puedes abrir la ventana, por favor? **d**
-4. Óscar, levántate ya, son las once de la mañana. **b**
-5. ¿Quieres salir a tomar algo? **f**
-6. ¿Qué van a tomar de primero? **i**
-7. ¿Qué estás estudiando? **l**
-8. ¿Has visto a mi hermano? **j**
-9. ¿Y de postre? **g**
-10. ¿Qué te pasa? **a**
-11. ¿Estás casado? **h**
-12. ¿Tienes hijos? **k**
+1. Mira, David, te presento a Martina, la compañera nueva.
+2. Perdone, ¿hay una farmacia por aquí cerca?
+   → Sí, hay una aquí cerca.
+3. ¿Puedes abrir la ventana, por favor?
+   → Claro, ahora mismo.
+4. Óscar, levántate ya, son las once de la mañana.
+   → Ya voy, mamá.
+5. ¿Quieres salir a tomar algo?
+   → Vale, ¿a qué hora quedamos?
+6. ¿Qué van a tomar de primero?
+   → Una ensalada y un gazpacho.
+7. ¿Qué estás estudiando?
+   → Estoy estudiando Medicina.
+8. ¿Has visto a mi hermano?
+   → No, no lo he visto.
+9. ¿Y de postre?
+   → Un flan y un helado.
+10. ¿Qué te pasa?
+   → Estoy harta de mi jefe.
+11. ¿Estás casado?
+   → No, pero tengo novia.
+12. ¿Tienes hijos?
+   → Sí, tengo dos, un niño y una niña.
 
 #### Ej. 9 — Conjunciones
 
@@ -273,10 +282,12 @@ Ayer Virginia (1) tuvo un día ocupadísimo. (2) **Se levantó** a las seis y me
 
 *Relaciona.*
 
-> **Opciones:** a) México · b) Perú · c) Bilbao · d) Barcelona · e) Granada
-
-1. La Sagrada Familia → d) Barcelona
-2. Machu Picchu **b**
-3. La Alhambra **e**
-4. Museo Guggenheim **c**
-5. Pirámide de Teotihuacán **a**
+1. La Sagrada Familia
+2. Machu Picchu
+   → Perú
+3. La Alhambra
+   → Granada
+4. Museo Guggenheim
+   → Bilbao
+5. Pirámide de Teotihuacán
+   → México

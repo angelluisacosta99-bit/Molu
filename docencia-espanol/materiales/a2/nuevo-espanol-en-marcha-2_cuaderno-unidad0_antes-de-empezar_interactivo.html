@@ -377,6 +377,56 @@
   .crossword-clues .cw-clue { margin: 0.15rem 0; }
   .crossword-clues .cw-clue b { color: var(--gold); margin-right: 0.3rem; }
 
+  /* Relaciona con columnas (type: "match") — se toca un elemento de la columna ancla
+     (la primera, fija) y luego su pareja en la(s) columna(s) siguiente(s); se dibuja una
+     línea de color entre ambos. Nació porque el truco anterior para "relaciona" (escribir
+     la letra en un hueco de texto) obligaba a aceptar mil variantes de tecleo ("d, 2",
+     "d,2", "d 2"...) y no se parecía en nada al ejercicio de tocar/unir del libro.
+     .match-wrap tiene overflow-x propio: con 3+ columnas puede no caber en 390px, y debe
+     desplazarse ella sola, nunca la página entera (ver la regla general de tablas anchas). */
+  .match-wrap { position: relative; display: flex; gap: 1.6rem; margin-top: 0.6rem; overflow-x: auto; padding-bottom: 0.3rem; }
+  .match-col { display: flex; flex-direction: column; gap: 0.5rem; min-width: 11em; flex: 1 0 auto; }
+  .match-col-label {
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--pencil); margin-bottom: 0.1rem;
+  }
+  .match-item {
+    text-align: left; font: inherit; font-size: 0.88rem; line-height: 1.4;
+    background: var(--paper-raised); border: 1.5px solid var(--border); border-radius: 8px;
+    padding: 0.5rem 0.7rem; color: var(--ink); cursor: pointer;
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+  .match-item.match-armed { border-color: var(--gold); background: var(--gold-soft); box-shadow: 0 0 0 2px var(--gold-soft); }
+  .match-item.match-solved { border-style: dashed; color: var(--ink-soft); font-style: italic; cursor: default; }
+  .match-item.match-correct { border-color: var(--good); background: var(--good-bg); }
+  .match-item.match-incorrect { border-color: var(--bad); background: var(--bad-bg); }
+  .match-row-reveal {
+    font-size: 0.76rem; color: var(--bad); margin: -0.25rem 0 0; display: none;
+  }
+  .match-row-reveal.show { display: block; }
+  .match-svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
+  .match-svg line { stroke-width: 2.5; }
+  /* Con 3+ columnas, .match-wrap suele necesitar scroll horizontal propio en móvil — y sin
+     ningún aviso visual, la columna final queda fuera de pantalla sin que nada indique que
+     sigue ahí (se descubrió mirando la propia captura de móvil: la columna "Final" del
+     ejemplo de 3 columnas desaparecía entera, sin rastro). .match-outer no se desplaza —
+     solo lo hace .match-wrap, que va dentro — así que estos degradados se quedan fijos en
+     los bordes mientras el contenido se mueve debajo, y JS los muestra/oculta según haga
+     falta (ver refreshFades() en el renderizador). El color va a juego con el fondo de la
+     tarjeta (--paper-raised) para que el degradado se funda con ella. */
+  .match-outer { position: relative; }
+  .match-fade {
+    position: absolute; top: 0; bottom: 0; width: 1.6rem;
+    pointer-events: none; opacity: 0; transition: opacity 0.15s ease; z-index: 2;
+  }
+  .match-fade.show { opacity: 1; }
+  .match-fade-left { left: 0; background: linear-gradient(to right, var(--paper-raised), transparent); }
+  .match-fade-right { right: 0; background: linear-gradient(to left, var(--paper-raised), transparent); }
+  @media (max-width: 560px) {
+    .match-col { min-width: 8.5em; font-size: 0.92em; }
+    .match-wrap { gap: 0.9rem; }
+  }
+
   /* Hueco de verdadero/falso con botones — ver item.vf en "items" más abajo. */
   .vf-toggle { display: inline-flex; gap: 0.35rem; margin: 0 0.15rem; vertical-align: middle; }
   .vf-btn {
@@ -656,6 +706,16 @@
       if (val === CODE) {
         localStorage.setItem(STORAGE_KEY, "1");
         document.documentElement.setAttribute("data-locked", "false");
+        // #main lleva la clase "gated-content", que la CSS de arriba pone a display:none
+        // mientras data-locked="true" — así que en la primera visita (sin el localStorage
+        // de una vez anterior) el script de más abajo que monta los bloques se ejecuta
+        // con #main todavía oculto, y cualquier medida de layout que tome en ese momento
+        // (scrollWidth, getBoundingClientRect...) sale a 0. Para ejercicios "match", eso
+        // deja mal calculado si hace falta el aviso de scroll horizontal (ver
+        // refreshFades() en el motor) — nada más lo vuelve a comprobar después, así que
+        // sin este evento se quedaría mal para siempre en la primera visita. Este evento
+        // avisa al motor, ya cargado, de que el contenido acaba de hacerse visible.
+        document.dispatchEvent(new CustomEvent("cuaderno:unlocked"));
       } else {
         document.getElementById("gateError").textContent = "Código incorrecto. Inténtalo de nuevo.";
       }
@@ -939,37 +999,56 @@
         {
           num: 8, title: "Relaciona (I)",
           instr: "Relaciona.",
-          type: "items",
-          numbered: true,
-          refHTML:
-            '<span class="ref-label">Opciones</span>' +
-            '<div class="ref-options ref-list">' +
-            '<span class="ref-opt">a) Estoy harta de mi jefe.</span>' +
-            '<span class="ref-opt">b) Ya voy, mamá.</span>' +
-            '<span class="ref-opt">c) Hola, Martina, ¿qué tal?</span>' +
-            '<span class="ref-opt">d) Claro, ahora mismo.</span>' +
-            '<span class="ref-opt">e) Sí, hay una aquí cerca.</span>' +
-            '<span class="ref-opt">f) Vale, ¿a qué hora quedamos?</span>' +
-            '<span class="ref-opt">g) Un flan y un helado.</span>' +
-            '<span class="ref-opt">h) No, pero tengo novia.</span>' +
-            '<span class="ref-opt">i) Una ensalada y un gazpacho.</span>' +
-            '<span class="ref-opt">j) No, no lo he visto.</span>' +
-            '<span class="ref-opt">k) Sí, tengo dos, un niño y una niña.</span>' +
-            '<span class="ref-opt">l) Estoy estudiando Medicina.</span>' +
-            '</div>',
-          items: [
-            { t: "Mira, David, te presento a Martina, la compañera nueva. → c) Hola, Martina, ¿qué tal?", solved: true },
-            { t: "Perdone, ¿hay una farmacia por aquí cerca? {0}", a: [["e"]] },
-            { t: "¿Puedes abrir la ventana, por favor? {0}", a: [["d"]] },
-            { t: "Óscar, levántate ya, son las once de la mañana. {0}", a: [["b"]] },
-            { t: "¿Quieres salir a tomar algo? {0}", a: [["f"]] },
-            { t: "¿Qué van a tomar de primero? {0}", a: [["i"]] },
-            { t: "¿Qué estás estudiando? {0}", a: [["l"]] },
-            { t: "¿Has visto a mi hermano? {0}", a: [["j"]] },
-            { t: "¿Y de postre? {0}", a: [["g"]] },
-            { t: "¿Qué te pasa? {0}", a: [["a"]] },
-            { t: "¿Estás casado? {0}", a: [["h"]] },
-            { t: "¿Tienes hijos? {0}", a: [["k"]] }
+          type: "match",
+          columns: [
+            {
+              label: "Pregunta",
+              items: [
+                "Mira, David, te presento a Martina, la compañera nueva.",
+                "Perdone, ¿hay una farmacia por aquí cerca?",
+                "¿Puedes abrir la ventana, por favor?",
+                "Óscar, levántate ya, son las once de la mañana.",
+                "¿Quieres salir a tomar algo?",
+                "¿Qué van a tomar de primero?",
+                "¿Qué estás estudiando?",
+                "¿Has visto a mi hermano?",
+                "¿Y de postre?",
+                "¿Qué te pasa?",
+                "¿Estás casado?",
+                "¿Tienes hijos?"
+              ]
+            },
+            {
+              label: "Respuesta",
+              items: [
+                "Estoy harta de mi jefe.",
+                "Ya voy, mamá.",
+                "Hola, Martina, ¿qué tal?",
+                "Claro, ahora mismo.",
+                "Sí, hay una aquí cerca.",
+                "Vale, ¿a qué hora quedamos?",
+                "Un flan y un helado.",
+                "No, pero tengo novia.",
+                "Una ensalada y un gazpacho.",
+                "No, no lo he visto.",
+                "Sí, tengo dos, un niño y una niña.",
+                "Estoy estudiando Medicina."
+              ]
+            }
+          ],
+          rows: [
+            { solved: true, to: [2] },
+            { a: [["Sí, hay una aquí cerca."]] },
+            { a: [["Claro, ahora mismo."]] },
+            { a: [["Ya voy, mamá."]] },
+            { a: [["Vale, ¿a qué hora quedamos?"]] },
+            { a: [["Una ensalada y un gazpacho."]] },
+            { a: [["Estoy estudiando Medicina."]] },
+            { a: [["No, no lo he visto."]] },
+            { a: [["Un flan y un helado."]] },
+            { a: [["Estoy harta de mi jefe."]] },
+            { a: [["No, pero tengo novia."]] },
+            { a: [["Sí, tengo dos, un niño y una niña."]] }
           ]
         },
         {
@@ -1064,23 +1143,23 @@
         {
           num: 12, title: "Relaciona (II)",
           instr: "Relaciona.",
-          type: "items",
-          numbered: true,
-          refHTML:
-            '<span class="ref-label">Opciones</span>' +
-            '<div class="ref-options">' +
-            '<span class="ref-opt">a) México</span>' +
-            '<span class="ref-opt">b) Perú</span>' +
-            '<span class="ref-opt">c) Bilbao</span>' +
-            '<span class="ref-opt">d) Barcelona</span>' +
-            '<span class="ref-opt">e) Granada</span>' +
-            '</div>',
-          items: [
-            { t: "La Sagrada Familia → d) Barcelona", solved: true },
-            { t: "Machu Picchu {0}", a: [["b"]] },
-            { t: "La Alhambra {0}", a: [["e"]] },
-            { t: "Museo Guggenheim {0}", a: [["c"]] },
-            { t: "Pirámide de Teotihuacán {0}", a: [["a"]] }
+          type: "match",
+          columns: [
+            {
+              label: "Lugar",
+              items: ["La Sagrada Familia", "Machu Picchu", "La Alhambra", "Museo Guggenheim", "Pirámide de Teotihuacán"]
+            },
+            {
+              label: "País / ciudad",
+              items: ["México", "Perú", "Bilbao", "Barcelona", "Granada"]
+            }
+          ],
+          rows: [
+            { solved: true, to: [3] },
+            { a: [["Perú"]] },
+            { a: [["Granada"]] },
+            { a: [["Bilbao"]] },
+            { a: [["México"]] }
           ]
         }
       ]
@@ -1092,6 +1171,12 @@
   const navDots = document.getElementById("navDots");
   const allInputs = []; // {el, spec}
   const allExercises = []; // ex objects, para poder llamar a ex._onGraded desde "Corregir todos"
+  // Funciones drawLines() de cada ejercicio "match", pendientes de la primera pasada: al
+  // construirse, .match-wrap todavía no está insertado en el documento (su <section> se
+  // añade a #main una vez terminado TODO el bloque, no ejercicio a ejercicio), así que
+  // getBoundingClientRect() daría 0 en todos los puntos. Se llaman todas juntas al final,
+  // cuando el DOM ya está montado — ver más abajo, después de blocks.forEach(...).
+  const pendingMatchDraws = [];
 
   // wide: true  -> input intermedio (una o dos palabras)
   // wide: "full" -> input de frase entera, para los ejercicios de transformar oraciones:
@@ -1725,6 +1810,290 @@
         const colas = wrap.querySelectorAll(".item-row.tail-blank");
         if (colas.length === 1) colas[0].classList.remove("tail-blank");
         card.appendChild(wrap);
+      } else if (ex.type === "match") {
+        // Relaciona con columnas: se toca un elemento de la columna ancla (columns[0], fija)
+        // y luego su pareja en la(s) columna(s) siguiente(s) — se dibuja una línea de color
+        // entre ambos. ex.columns = [{label, items:[...]}, ...]; columns[0] son las anclas.
+        // ex.rows es paralelo a columns[0].items: { solved: true, to: [idx1, idx2, ...] }
+        // para una fila ya resuelta en el libro (sin huecos, sin interacción — "to" son los
+        // ÍNDICES en columns[1], columns[2]... a los que esa fila se conecta, para poder
+        // dibujar su línea igual que las demás; casi todos los ejercicios de este cuaderno
+        // traen el primer ítem ya resuelto como modelo, así que esto no es un caso raro),
+        // o { a: [spec1, spec2, ...] } con un spec de isCorrect() por cada columna elegible
+        // (columns[1], columns[2]...), en ese orden.
+        if (ex.rows.length !== ex.columns[0].items.length) {
+          // Sin este chequeo, un rows/columns[0].items desalineados (copiar/pegar de otro
+          // capítulo, un elemento de más o de menos) no revienta aquí con un mensaje claro,
+          // sino más tarde y críptico: el primer clic en el ancla sobrante deja armedRow
+          // apuntando a un índice sin fila en `state`, y state[i][c] revienta con
+          // "Cannot read properties of undefined" dentro del listener de clic, sin pista de
+          // cuál es la causa real ni de que el problema son los datos, no el motor.
+          throw new Error('type "match": ex.rows.length (' + ex.rows.length + ') debe coincidir con ex.columns[0].items.length (' + ex.columns[0].items.length + ')');
+        }
+        const state = ex.rows.map(function () { return {}; }); // state[i][c] = índice elegido en columns[c] para la fila i
+        const usedBy = Object.create(null); // usedBy["c-idx"] = qué fila reclama esa opción (una opción, una fila)
+        const columnEls = []; // columnEls[c][idx] = elemento <button> de esa opción
+        const anchorRevealEls = []; // anchorRevealEls[i] = <div> con la respuesta correcta si falla
+        const hiddenByRowCol = Object.create(null); // hiddenByRowCol["i-c"] = <input type=hidden>
+        let armedRow = null;
+        // Paleta corta y fija (no depende del tema claro/oscuro: son colores ya diferenciados
+        // en ambos) para que dos o más conexiones a la vez no se confundan entre sí.
+        const PALETTE = ["#62744c", "#b04e72", "#5b7596", "#a3651f", "#7a6ba8", "#3f7a75"];
+        function rowColor(i) { return PALETTE[i % PALETTE.length]; }
+
+        const mouter = document.createElement("div");
+        mouter.className = "match-outer";
+        const fadeLeft = document.createElement("div");
+        fadeLeft.className = "match-fade match-fade-left";
+        const fadeRight = document.createElement("div");
+        fadeRight.className = "match-fade match-fade-right";
+        mouter.appendChild(fadeLeft);
+        mouter.appendChild(fadeRight);
+
+        const mwrap = document.createElement("div");
+        mwrap.className = "match-wrap";
+        mouter.appendChild(mwrap);
+        const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        svg.classList.add("match-svg");
+        mwrap.appendChild(svg);
+
+        // Qué opciones de cada columna (c>0) ya están "gastadas" por una fila resuelta —
+        // sin esto, la ficha de destino del ejemplo del libro (p. ej. "Barcelona" en
+        // "La Sagrada Familia → Barcelona") se queda con pinta de ficha libre, tocable
+        // como cualquier otra, aunque el ancla ya esté desactivada. Se marca igual que el
+        // ancla (dashed, disabled) para que se lea de un vistazo que ese emparejamiento
+        // ya está hecho y no hay que repetirlo.
+        const solvedByCol = []; // solvedByCol[c] = Set de índices reclamados por una fila resuelta
+        for (let c = 1; c < ex.columns.length; c++) solvedByCol[c] = new Set();
+        ex.rows.forEach(function (row) {
+          if (row.solved && row.to) {
+            row.to.forEach(function (idx, j) { if (idx != null) solvedByCol[j + 1].add(idx); });
+          }
+        });
+
+        ex.columns.forEach(function (colDef, c) {
+          const colEl = document.createElement("div");
+          colEl.className = "match-col";
+          if (colDef.label) {
+            const lab = document.createElement("div");
+            lab.className = "match-col-label";
+            lab.textContent = colDef.label;
+            colEl.appendChild(lab);
+          }
+          columnEls[c] = [];
+          colDef.items.forEach(function (text, idx) {
+            const isAnchor = c === 0;
+            const rowSpec = isAnchor ? ex.rows[idx] : null;
+            const solvedAnchor = isAnchor && rowSpec && rowSpec.solved;
+            const solvedTarget = !isAnchor && solvedByCol[c].has(idx);
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "match-item" + (isAnchor ? " match-anchor" : "") + ((solvedAnchor || solvedTarget) ? " match-solved" : "");
+            btn.textContent = text;
+            btn.dataset.col = String(c);
+            btn.dataset.idx = String(idx);
+            if (solvedAnchor || solvedTarget) btn.disabled = true;
+            columnEls[c][idx] = btn;
+            colEl.appendChild(btn);
+            if (isAnchor && !solvedAnchor) {
+              const reveal = document.createElement("div");
+              reveal.className = "match-row-reveal";
+              anchorRevealEls[idx] = reveal;
+              colEl.appendChild(reveal);
+            }
+          });
+          mwrap.appendChild(colEl);
+        });
+
+        // Un hueco (input oculto, como en el V/F de "items") por cada columna elegible de
+        // cada fila NO resuelta. gradeRange() los corrige exactamente igual que a cualquier
+        // otro: los lee, los colorea .correct/.incorrect y los cuenta en el total — todo el
+        // resto (colorear la ficha y la línea, mostrar la respuesta si falla) lo hace
+        // ex._onGraded() más abajo, después de que gradeRange termine, leyendo esas clases.
+        ex.rows.forEach(function (row, i) {
+          if (row.solved) return;
+          for (let j = 0; j < ex.columns.length - 1; j++) {
+            const c = j + 1;
+            const inp = document.createElement("input");
+            inp.type = "hidden";
+            inp.className = "blank";
+            const spec = row.a[j];
+            const label = "Ej. " + ex.num + " " + (i + 1) + " → " + (ex.columns[c].label || "columna " + c);
+            allInputs.push({ el: inp, spec: spec, label: label });
+            hiddenByRowCol[i + "-" + c] = inp;
+            mwrap.appendChild(inp);
+          }
+        });
+
+        function syncHiddenInputs() {
+          ex.rows.forEach(function (row, i) {
+            if (row.solved) return;
+            for (let j = 0; j < ex.columns.length - 1; j++) {
+              const c = j + 1;
+              const idx = state[i][c];
+              hiddenByRowCol[i + "-" + c].value = idx !== undefined ? ex.columns[c].items[idx] : "";
+            }
+          });
+        }
+
+        function refreshArmedStyles() {
+          columnEls[0].forEach(function (btn, idx) {
+            btn.classList.toggle("match-armed", armedRow === idx);
+          });
+          for (let c = 1; c < ex.columns.length; c++) {
+            columnEls[c].forEach(function (btn, idx) {
+              btn.classList.toggle("match-armed", armedRow !== null && state[armedRow][c] === idx);
+            });
+          }
+        }
+
+        function drawLines() {
+          while (svg.lastChild) svg.lastChild.remove();
+          const wrapRect = mwrap.getBoundingClientRect();
+          function pointFor(el, side) {
+            const r = el.getBoundingClientRect();
+            return { x: (side === "right" ? r.right : r.left) - wrapRect.left, y: r.top + r.height / 2 - wrapRect.top };
+          }
+          ex.rows.forEach(function (row, i) {
+            // Una fila resuelta (el ejemplo del libro) también dibuja su línea, con
+            // row.to en vez del estado interactivo — si no, el ejemplo se ve como un
+            // ancla tachada suelta, sin ninguna pista visual de a qué se conecta.
+            let fromEl = columnEls[0][i];
+            for (let j = 0; j < ex.columns.length - 1; j++) {
+              const c = j + 1;
+              const idx = row.solved ? (row.to ? row.to[j] : undefined) : state[i][c];
+              if (idx === undefined) break; // cadena incompleta: no se dibuja lo que falta
+              const toEl = columnEls[c][idx];
+              const p1 = pointFor(fromEl, "right");
+              const p2 = pointFor(toEl, "left");
+              const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+              line.setAttribute("x1", p1.x); line.setAttribute("y1", p1.y);
+              line.setAttribute("x2", p2.x); line.setAttribute("y2", p2.y);
+              // Línea de un ejemplo ya resuelto: color neutro (a juego con el punteado de
+              // .match-solved), no el color asignado a la fila — ese color distingue
+              // conexiones activas entre sí, y una fila fija no compite por distinguirse.
+              line.setAttribute("stroke", row.solved ? "var(--pencil)" : rowColor(i));
+              line.dataset.row = String(i);
+              line.dataset.col = String(c);
+              svg.appendChild(line);
+              fromEl = toEl;
+            }
+          });
+        }
+        function colorLine(i, c, color) {
+          const line = svg.querySelector('line[data-row="' + i + '"][data-col="' + c + '"]');
+          if (line) line.setAttribute("stroke", color);
+        }
+
+        // Sin esto, un hueco ya corregido (dataset.checked="1" + .correct/.incorrect,
+        // que updateScore()/buildSummary() leen tal cual, sin volver a mirar el valor
+        // actual) sigue contando como "respondido bien" aunque su pareja se le acabe de
+        // quitar (se la roba otra fila) o cambie a otra distinta — el marcador y el
+        // resumen que se envía al profesor podían mostrar más aciertos de los reales
+        // hasta que el alumno pulsara "Corregir" de nuevo. Se marca sin corregir para que
+        // vuelva a contar como pendiente, no como acertado.
+        function invalidateGrading(rowIdx, col) {
+          const inp = hiddenByRowCol[rowIdx + "-" + col];
+          if (!inp) return;
+          delete inp.dataset.checked;
+          inp.classList.remove("correct", "incorrect");
+        }
+
+        mwrap.addEventListener("click", function (e) {
+          const btn = e.target.closest(".match-item");
+          if (!btn || btn.disabled) return;
+          const c = parseInt(btn.dataset.col, 10);
+          const idx = parseInt(btn.dataset.idx, 10);
+          if (c === 0) {
+            // Siempre arma la fila tocada, nunca la desarma (antes alternaba y volver a
+            // tocar la misma ancla —el gesto natural de "quiero repetir esta pareja"—
+            // desarmaba en vez de dejarla lista para elegir de nuevo). No hace falta un
+            // gesto explícito de "desarmar nada": tocar una opción ya elegida en esa
+            // columna la desasigna (ver más abajo), así que "nada armado" solo pasa antes
+            // de la primera vez que se toca cualquier ancla.
+            armedRow = idx;
+            refreshArmedStyles();
+            return;
+          }
+          if (armedRow === null) return; // hay que armar primero una fila de la columna ancla
+          const i = armedRow;
+          const prev = state[i][c];
+          const claimKey = c + "-" + idx;
+          if (prev === idx) {
+            delete state[i][c];
+            delete usedBy[claimKey];
+            invalidateGrading(i, c);
+            // Sin esto, una ficha que ya se había corregido (.match-correct/-incorrect)
+            // se queda coloreada para siempre al desmarcarla — nada más la vuelve a tocar
+            // tras gradeRange(), solo ex._onGraded() la recolorea, y eso solo pasa si sigue
+            // elegida por alguna fila.
+            btn.classList.remove("match-correct", "match-incorrect");
+          } else {
+            const priorRow = usedBy[claimKey];
+            // Cada opción, una sola fila a la vez: si ya la tenía otra fila, se la quita.
+            if (priorRow !== undefined && priorRow !== i) {
+              delete state[priorRow][c];
+              invalidateGrading(priorRow, c);
+            }
+            if (prev !== undefined) {
+              delete usedBy[c + "-" + prev];
+              // Igual que arriba: la ficha que se abandona (el alumno cambia de opción en
+              // esta misma fila) puede llevar un color de una corrección anterior que ya
+              // no aplica a nada — visto en vivo: se corrige, se re-arma la fila y se elige
+              // otra opción, y la ficha vieja se queda roja/verde para siempre.
+              columnEls[c][prev].classList.remove("match-correct", "match-incorrect");
+            }
+            btn.classList.remove("match-correct", "match-incorrect");
+            invalidateGrading(i, c);
+            state[i][c] = idx;
+            usedBy[claimKey] = i;
+          }
+          syncHiddenInputs();
+          refreshArmedStyles();
+          drawLines();
+        });
+
+        ex._onGraded = function () {
+          ex.rows.forEach(function (row, i) {
+            if (row.solved) return;
+            let anyChecked = false, allOk = true;
+            for (let j = 0; j < ex.columns.length - 1; j++) {
+              const c = j + 1;
+              const inp = hiddenByRowCol[i + "-" + c];
+              if (inp.dataset.checked !== "1") continue;
+              anyChecked = true;
+              const ok = inp.classList.contains("correct");
+              if (!ok) allOk = false;
+              const idx = state[i][c];
+              if (idx !== undefined) {
+                const chip = columnEls[c][idx];
+                chip.classList.remove("match-correct", "match-incorrect");
+                chip.classList.add(ok ? "match-correct" : "match-incorrect");
+                colorLine(i, c, ok ? "var(--good)" : "var(--bad)");
+              }
+            }
+            const revealEl = anchorRevealEls[i];
+            if (!revealEl) return;
+            if (anyChecked && !allOk) {
+              const parts = [];
+              for (let j = 0; j < ex.columns.length - 1; j++) parts.push(correctTextFor(row.a[j]));
+              revealEl.textContent = "→ " + parts.join(" · ");
+              revealEl.classList.add("show");
+            } else {
+              revealEl.classList.remove("show");
+            }
+          });
+        };
+
+        function refreshFades() {
+          const canLeft = mwrap.scrollLeft > 2;
+          const canRight = mwrap.scrollLeft < mwrap.scrollWidth - mwrap.clientWidth - 2;
+          fadeLeft.classList.toggle("show", canLeft);
+          fadeRight.classList.toggle("show", canRight);
+        }
+        mwrap.addEventListener("scroll", refreshFades);
+        pendingMatchDraws.push(function () { drawLines(); refreshFades(); });
+        card.appendChild(mouter);
       }
 
       // Transcripción de audio, si el ejercicio la trae. Va al final de la tarjeta, después
@@ -1760,6 +2129,24 @@
 
     main.appendChild(sec);
   });
+
+  // Cada .match-wrap ya está insertado en el documento (su <section> se acaba de añadir a
+  // #main arriba), así que getBoundingClientRect()/scrollWidth dan medidas reales — PERO
+  // solo si #main es visible. En la primera visita (sin el localStorage de una vez
+  // anterior) #main sigue con display:none tras la puerta de acceso en este mismo
+  // instante, así que esta primera pasada mide un contenedor de tamaño 0 (nada grave para
+  // drawLines(), que no tiene nada que dibujar todavía; sí importa para refreshFades(), que
+  // necesita saber YA si hace falta el aviso de scroll horizontal). Por eso se repite: una
+  // vez aquí (sirve tal cual en visitas ya desbloqueadas) y otra vez en cuanto se dispara
+  // "cuaderno:unlocked" (ver tryUnlock() más arriba), que es el único momento en que #main
+  // pasa de oculto a visible en una primera visita. Un solo listener de resize (y uno de
+  // desbloqueo) redibuja TODOS los ejercicios "match" a la vez, no uno por ejercicio — de
+  // sobra para el puñado de estos que puede llevar un capítulo.
+  pendingMatchDraws.forEach(function (fn) { fn(); });
+  if (pendingMatchDraws.length) {
+    window.addEventListener("resize", function () { pendingMatchDraws.forEach(function (fn) { fn(); }); });
+    document.addEventListener("cuaderno:unlocked", function () { pendingMatchDraws.forEach(function (fn) { fn(); }); });
+  }
 
   document.getElementById("totalBlanksLabel").textContent = allInputs.length;
   document.getElementById("scoreTotal").textContent = allInputs.length;
