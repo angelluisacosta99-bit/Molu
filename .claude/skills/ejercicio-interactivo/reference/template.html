@@ -1687,9 +1687,13 @@
         // Relaciona con columnas: se toca un elemento de la columna ancla (columns[0], fija)
         // y luego su pareja en la(s) columna(s) siguiente(s) — se dibuja una línea de color
         // entre ambos. ex.columns = [{label, items:[...]}, ...]; columns[0] son las anclas.
-        // ex.rows es paralelo a columns[0].items: { solved: true } para una fila ya resuelta
-        // en el libro (sin huecos, sin interacción), o { a: [spec1, spec2, ...] } con un spec
-        // de isCorrect() por cada columna elegible (columns[1], columns[2]...), en ese orden.
+        // ex.rows es paralelo a columns[0].items: { solved: true, to: [idx1, idx2, ...] }
+        // para una fila ya resuelta en el libro (sin huecos, sin interacción — "to" son los
+        // ÍNDICES en columns[1], columns[2]... a los que esa fila se conecta, para poder
+        // dibujar su línea igual que las demás; casi todos los ejercicios de este cuaderno
+        // traen el primer ítem ya resuelto como modelo, así que esto no es un caso raro),
+        // o { a: [spec1, spec2, ...] } con un spec de isCorrect() por cada columna elegible
+        // (columns[1], columns[2]...), en ese orden.
         if (ex.rows.length !== ex.columns[0].items.length) {
           // Sin este chequeo, un rows/columns[0].items desalineados (copiar/pegar de otro
           // capítulo, un elemento de más o de menos) no revienta aquí con un mensaje claro,
@@ -1726,6 +1730,20 @@
         svg.classList.add("match-svg");
         mwrap.appendChild(svg);
 
+        // Qué opciones de cada columna (c>0) ya están "gastadas" por una fila resuelta —
+        // sin esto, la ficha de destino del ejemplo del libro (p. ej. "Barcelona" en
+        // "La Sagrada Familia → Barcelona") se queda con pinta de ficha libre, tocable
+        // como cualquier otra, aunque el ancla ya esté desactivada. Se marca igual que el
+        // ancla (dashed, disabled) para que se lea de un vistazo que ese emparejamiento
+        // ya está hecho y no hay que repetirlo.
+        const solvedByCol = []; // solvedByCol[c] = Set de índices reclamados por una fila resuelta
+        for (let c = 1; c < ex.columns.length; c++) solvedByCol[c] = new Set();
+        ex.rows.forEach(function (row) {
+          if (row.solved && row.to) {
+            row.to.forEach(function (idx, j) { if (idx != null) solvedByCol[j + 1].add(idx); });
+          }
+        });
+
         ex.columns.forEach(function (colDef, c) {
           const colEl = document.createElement("div");
           colEl.className = "match-col";
@@ -1740,13 +1758,14 @@
             const isAnchor = c === 0;
             const rowSpec = isAnchor ? ex.rows[idx] : null;
             const solvedAnchor = isAnchor && rowSpec && rowSpec.solved;
+            const solvedTarget = !isAnchor && solvedByCol[c].has(idx);
             const btn = document.createElement("button");
             btn.type = "button";
-            btn.className = "match-item" + (isAnchor ? " match-anchor" : "") + (solvedAnchor ? " match-solved" : "");
+            btn.className = "match-item" + (isAnchor ? " match-anchor" : "") + ((solvedAnchor || solvedTarget) ? " match-solved" : "");
             btn.textContent = text;
             btn.dataset.col = String(c);
             btn.dataset.idx = String(idx);
-            if (solvedAnchor) btn.disabled = true;
+            if (solvedAnchor || solvedTarget) btn.disabled = true;
             columnEls[c][idx] = btn;
             colEl.appendChild(btn);
             if (isAnchor && !solvedAnchor) {
@@ -1809,11 +1828,13 @@
             return { x: (side === "right" ? r.right : r.left) - wrapRect.left, y: r.top + r.height / 2 - wrapRect.top };
           }
           ex.rows.forEach(function (row, i) {
-            if (row.solved) return;
+            // Una fila resuelta (el ejemplo del libro) también dibuja su línea, con
+            // row.to en vez del estado interactivo — si no, el ejemplo se ve como un
+            // ancla tachada suelta, sin ninguna pista visual de a qué se conecta.
             let fromEl = columnEls[0][i];
             for (let j = 0; j < ex.columns.length - 1; j++) {
               const c = j + 1;
-              const idx = state[i][c];
+              const idx = row.solved ? (row.to ? row.to[j] : undefined) : state[i][c];
               if (idx === undefined) break; // cadena incompleta: no se dibuja lo que falta
               const toEl = columnEls[c][idx];
               const p1 = pointFor(fromEl, "right");
@@ -1821,7 +1842,10 @@
               const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
               line.setAttribute("x1", p1.x); line.setAttribute("y1", p1.y);
               line.setAttribute("x2", p2.x); line.setAttribute("y2", p2.y);
-              line.setAttribute("stroke", rowColor(i));
+              // Línea de un ejemplo ya resuelto: color neutro (a juego con el punteado de
+              // .match-solved), no el color asignado a la fila — ese color distingue
+              // conexiones activas entre sí, y una fila fija no compite por distinguirse.
+              line.setAttribute("stroke", row.solved ? "var(--pencil)" : rowColor(i));
               line.dataset.row = String(i);
               line.dataset.col = String(c);
               svg.appendChild(line);
