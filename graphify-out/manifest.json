@@ -702,9 +702,9 @@
     "semantic_hash": "033e2f08cbb62857a73f98c5cdb076df"
   },
   "docencia-espanol/fuentes/README.md": {
-    "mtime": 1787739561.1693976,
-    "seen": 1787739569.2395163,
-    "ast_hash": "32dac0fb8cd0f2f24226e23d4e3da218",
+    "mtime": 1787741685.904199,
+    "seen": 1788092177.3589993,
+    "ast_hash": "e2509dc1842b68581ddea10b6f8c0204",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad6a_como-se-va-a-goya.md": {
@@ -1260,32 +1260,32 @@
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad7b_que-estas-haciendo.md": {
-    "mtime": 1787562170.043941,
-    "seen": 1787562746.7345722,
+    "mtime": 1787741651.6281998,
+    "seen": 1788092177.3590076,
     "ast_hash": "476fdf67bf70b25953ae513cb30889a1",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad7c_como-es.md": {
-    "mtime": 1787562172.5519412,
-    "seen": 1787562746.7345734,
+    "mtime": 1787741654.6601996,
+    "seen": 1788092177.3590088,
     "ast_hash": "df9f819f7ed67ebc92baf6ebef5daf34",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad7b_que-estas-haciendo_interactivo.html": {
-    "mtime": 1787561758.9759166,
-    "seen": 1787562746.7345953,
-    "ast_hash": "5d0adde7b8bb643f64698638bc2ed6c5",
+    "mtime": 1787740262.8530726,
+    "seen": 1788092177.3590596,
+    "ast_hash": "02916dd820548b23a438fc80bf91f4eb",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad7c_como-es_interactivo.html": {
-    "mtime": 1787561979.0039296,
-    "seen": 1787562746.7345963,
-    "ast_hash": "6d4f13c23eaed7deade68442b9f0b7bd",
+    "mtime": 1787740262.8560488,
+    "seen": 1788092177.359061,
+    "ast_hash": "d38417cfbca29dcddea1ec291888a992",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad8a_por-favor-para-ir-a-la-catedral.md": {
-    "mtime": 1787563954.604047,
-    "seen": 1787564014.339251,
+    "mtime": 1787741662.3081994,
+    "seen": 1788092177.3590105,
     "ast_hash": "f85ef7358869872518fc2e8f394478fd",
     "semantic_hash": ""
   },
@@ -1296,27 +1296,27 @@
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad8c_que-tiempo-hace-hoy.md": {
-    "mtime": 1787739516.777882,
-    "seen": 1787739569.2395267,
+    "mtime": 1787741664.9721994,
+    "seen": 1788092177.3590138,
     "ast_hash": "0864f23a2dfed8696de5ad19dd9f715a",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/practica-mas-4_unidades-7-8.md": {
-    "mtime": 1787563962.5680475,
-    "seen": 1787564014.3392553,
+    "mtime": 1787741667.9081993,
+    "seen": 1788092177.3590171,
     "ast_hash": "32b7c5354d7765e203bbb78c369848f9",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-practica-mas-4_interactivo.html": {
-    "mtime": 1787563825.7612581,
-    "seen": 1787564014.3392801,
-    "ast_hash": "ea1141b095cd8c8c1693247c0423dc67",
+    "mtime": 1787740252.9378653,
+    "seen": 1788092177.359051,
+    "ast_hash": "0947dab02b7326973ad95cc0072d0c25",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad8a_por-favor-para-ir-a-la-catedral_interactivo.html": {
-    "mtime": 1787563825.759936,
-    "seen": 1787564014.3392873,
-    "ast_hash": "6e748a8618a212efff4bd113a34c4257",
+    "mtime": 1787740167.9668417,
+    "seen": 1788092177.3590624,
+    "ast_hash": "6100eeb73df05a4758bdf44beb3f4eb1",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad8b_que-hizo-rosa-ayer_interactivo.html": {
@@ -1326,9 +1326,9 @@
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad8c_que-tiempo-hace-hoy_interactivo.html": {
-    "mtime": 1787739561.1693976,
-    "seen": 1787739569.239559,
-    "ast_hash": "18cc68eaf6aac6ed50aee204afd9deca",
+    "mtime": 1787740167.9833202,
+    "seen": 1788092177.359066,
+    "ast_hash": "50133e8beefc7676b113ff4aeae58e0d",
     "semantic_hash": ""
   }
 }
