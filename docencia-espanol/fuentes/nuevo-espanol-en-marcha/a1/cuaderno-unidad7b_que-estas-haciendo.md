@@ -23,7 +23,7 @@
 2. ¿Dónde está Juan? **Está haciendo** la comida.
 3. ¿Qué periódico **lees** últimamente?
 4. Todas las mañanas **hago** deporte.
-5. No te entiendo, no **estoy hablando** francés.
+5. No te entiendo, no **hablo** francés.
 6. ¿Cuántos años **tienes**?
 7. Lo siento, no puede ponerse en este momento porque **está durmiendo**.
 8. No podemos hablar con él ahora. **Está trabajando** en este momento.

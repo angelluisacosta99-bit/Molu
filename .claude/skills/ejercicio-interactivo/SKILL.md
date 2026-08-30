@@ -555,6 +555,39 @@ no las deshagas sin querer al modificar la plantilla.
   dibujos vecinos), recorta el blanco sobrante de cada uno y **monta una hoja de contacto
   con los recortes y míralos** antes de incrustarlos. Es la única forma de ver que están
   enteros y que cada uno corresponde a la respuesta que dice el solucionario.
+- **Un "recorte que parece limpio" a menudo no lo está — no te fíes de tu propio primer
+  vistazo.** En la guía de repaso A1 (unidades 1-10), 7 de 10 recortes de cuaderno dados
+  por buenos en una primera pasada tenían defectos reales al reexaminarlos con ojo crítico:
+  texto de un enunciado vecino colándose por arriba (el "3 Mira el árbol genealógico..."
+  metido en el recorte del árbol), contenido cortado por abajo (la fila de fotos d-g de un
+  ejercicio de profesiones, con "Hospital" partido a la mitad), y márgenes puestos a ojo sin
+  anclarlos a nada (una habitación desordenada con la cama y el brazo cortados por el borde).
+  Esto pasó en varias imágenes de la misma tarea antes de que el usuario lo señalara — la
+  señal de las "3+ rondas" de CLAUDE.md, aquí repartida entre imágenes en vez de en una sola.
+  La causa no era la técnica de rejilla (que funciona bien), sino dar por bueno un recorte
+  sin releerlo con ojo escéptico. Corrección aplicada desde entonces: (1) si la fuente tiene
+  un borde de caja limpio (sopa de letras, tabla), ancla el recorte a ese borde exacto, no a
+  un margen estimado cerca del texto; (2) si no hay borde (una ilustración suelta), usa la
+  rejilla sobre la página COMPLETA sin recortar antes, lee los bordes reales del dibujo antes
+  de cortar; (3) tras cada recorte, vuelve a leerlo con el propósito explícito de buscarle un
+  defecto, no de confirmar que "parece que está bien" — son dos lecturas distintas y solo la
+  primera encuentra el problema; (4) si el recorte no cabe entero sin arrastrar un elemento
+  ajeno (como un pie de página), recorta al máximo real y tapa de blanco solo la franja
+  ajena, en vez de aceptar el corte o encoger el contenido bueno.
+  **Punto (1) en la práctica: incluso ancladas "al borde", las coordenadas leídas a ojo sobre
+  la rejilla pueden fallar por poco.** El recorte de la sopa de letras del capítulo 1, ya
+  "corregido" y revisado visualmente, seguía sin la columna de letras más a la derecha (9 de
+  10) — un defecto sutil que ni la lectura de la rejilla ni la relectura crítica pillaron,
+  porque las 9 columnas visibles ya parecían un cuadro completo. Se encontró y confirmó con
+  `opencv-python` (`pip install opencv-python-headless`, gratis, sin cuenta):
+  `cv2.adaptiveThreshold` + `cv2.morphologyEx(..., MORPH_CLOSE)` + `cv2.findContours` sobre la
+  página completa, filtrando por área (2-60% de la página) y por relación área-contorno/
+  área-caja (>0.5, para exigir un rectángulo relleno de verdad y no una silueta cualquiera),
+  encuentra el rectángulo de tinta exacto de una caja con borde — sopa de letras, tabla — sin
+  intervención manual. Cuando la fuente tiene un borde de caja limpio, es más fiable que leer
+  la rejilla a ojo: úsalo como primer intento y usa la rejilla solo si no hay contorno
+  rectangular claro (dibujos sueltos sin caja, como el árbol genealógico o la habitación
+  desordenada, donde este método no aplica).
 - **Un salto de línea justo antes del hueco significa «esta respuesta va en su propia
   línea».** La detección de hueco-de-cola lo respeta y no estira la casilla: si lo hace,
   queda flotando a media altura, ni en línea ni debajo. Es el caso de los ejercicios de
