@@ -6,9 +6,9 @@ su trayectoria académica.
 
 | Archivo | Contenido |
 |---|---|
-| [`formacion-academica.md`](formacion-academica.md) | Estudios previos, titulación de ingeniería en Rusia (RUT MIIT), idiomas, cursos complementarios y proceso de solicitud de máster en España. |
+| [`formacion-academica.md`](formacion-academica.md) | Estudios previos, titulación de ingeniería en Rusia (RUT MIIT), idiomas, CV, cartas de recomendación, cartas de motivación y proceso de solicitud de máster en España. |
 
 **Nota de privacidad:** aquí solo se guardan datos con valor de
-referencia académica. Números de pasaporte, DNI/NIE, visado y domicilio
-particular se quedan en Google Drive y no se versionan en este
-repositorio.
+referencia académica y profesional. Números de pasaporte, DNI/NIE,
+visado, domicilio particular y teléfono se quedan en Google Drive y no
+se versionan en este repositorio.
