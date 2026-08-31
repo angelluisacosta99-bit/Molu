@@ -10750,6 +10750,18 @@
       "source_location": "L95"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_runcopyeditpostapplychecks",
+      "label": "runCopyEditPostApplyChecks()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "live-copy-edit-agent.mjs",
+      "file_type": "code",
+      "norm_label": "runcopyeditpostapplychecks()",
+      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
+      "source_location": "L137"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_runmanualeditvalidationscript",
       "label": "runManualEditValidationScript()",
       "_callable": true,
@@ -21742,18 +21754,6 @@
       "source_location": "L405"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_runcopyeditpostapplychecks",
-      "label": "runCopyEditPostApplyChecks()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "live-commit-manual-edits.mjs",
-      "file_type": "code",
-      "norm_label": "runcopyeditpostapplychecks()",
-      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
-      "source_location": "L137"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_browser_buildsvelteexpressiontextmap",
       "label": "buildSvelteExpressionTextMap()",
       "_callable": true,
@@ -23842,6 +23842,18 @@
       "source_location": "L1"
     },
     {
+      "id": "personal_formacion_academica_actividad_profesional_paralela_docencia_de_espa\u00f1ol_y_traducci\u00f3n",
+      "label": "Actividad profesional paralela: docencia de espa\u00f1ol y traducci\u00f3n",
+      "_origin": "ast",
+      "community": 25,
+      "community_name": "Formaci\u00f3n acad\u00e9mica de Angel Luis Acosta Gonz\u00e1lez",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "actividad profesional paralela: docencia de espanol y traduccion",
+      "source_file": "personal/formacion-academica.md",
+      "source_location": "L80"
+    },
+    {
       "id": "personal_formacion_academica_cartas_de_motivaci\u00f3n",
       "label": "Cartas de motivaci\u00f3n",
       "_origin": "ast",
@@ -23851,7 +23863,7 @@
       "node_kind": "heading",
       "norm_label": "cartas de motivacion",
       "source_file": "personal/formacion-academica.md",
-      "source_location": "L223"
+      "source_location": "L241"
     },
     {
       "id": "personal_formacion_academica_cartas_de_recomendaci\u00f3n",
@@ -23863,7 +23875,7 @@
       "node_kind": "heading",
       "norm_label": "cartas de recomendacion",
       "source_file": "personal/formacion-academica.md",
-      "source_location": "L192"
+      "source_location": "L210"
     },
     {
       "id": "personal_formacion_academica_competencias_personales_soft_skills",
@@ -23875,7 +23887,7 @@
       "node_kind": "heading",
       "norm_label": "competencias personales (soft skills)",
       "source_file": "personal/formacion-academica.md",
-      "source_location": "L117"
+      "source_location": "L135"
     },
     {
       "id": "personal_formacion_academica_competencias_t\u00e9cnicas_hard_skills",
@@ -23887,7 +23899,7 @@
       "node_kind": "heading",
       "norm_label": "competencias tecnicas (hard skills)",
       "source_file": "personal/formacion-academica.md",
-      "source_location": "L107"
+      "source_location": "L125"
     },
     {
       "id": "personal_formacion_academica_curr\u00edculum_cv_perfil_profesional",
@@ -23899,7 +23911,7 @@
       "node_kind": "heading",
       "norm_label": "curriculum (cv) \u2014 perfil profesional",
       "source_file": "personal/formacion-academica.md",
-      "source_location": "L101"
+      "source_location": "L119"
     },
     {
       "id": "personal_formacion_academica_educaci\u00f3n_previa_cuba",
@@ -23923,7 +23935,7 @@
       "node_kind": "heading",
       "norm_label": "equivalencia academica en espana",
       "source_file": "personal/formacion-academica.md",
-      "source_location": "L80"
+      "source_location": "L98"
     },
     {
       "id": "personal_formacion_academica_estudios_superiores_rusia",
@@ -23947,7 +23959,7 @@
       "node_kind": "heading",
       "norm_label": "experiencia profesional (practicas)",
       "source_file": "personal/formacion-academica.md",
-      "source_location": "L124"
+      "source_location": "L142"
     },
     {
       "id": "personal_formacion_academica_formaci\u00f3n_acad\u00e9mica_de_angel_luis_acosta_gonz\u00e1lez",
@@ -23971,7 +23983,7 @@
       "node_kind": "heading",
       "norm_label": "formacion complementaria (cursos en linea)",
       "source_file": "personal/formacion-academica.md",
-      "source_location": "L177"
+      "source_location": "L195"
     },
     {
       "id": "personal_formacion_academica_fuente",
@@ -23983,7 +23995,7 @@
       "node_kind": "heading",
       "norm_label": "fuente",
       "source_file": "personal/formacion-academica.md",
-      "source_location": "L267"
+      "source_location": "L285"
     },
     {
       "id": "personal_formacion_academica_idiomas",
@@ -23995,7 +24007,7 @@
       "node_kind": "heading",
       "norm_label": "idiomas",
       "source_file": "personal/formacion-academica.md",
-      "source_location": "L93"
+      "source_location": "L111"
     },
     {
       "id": "personal_formacion_academica_intereses_personales_seg\u00fan_el_cv",
@@ -24007,7 +24019,7 @@
       "node_kind": "heading",
       "norm_label": "intereses personales (segun el cv)",
       "source_file": "personal/formacion-academica.md",
-      "source_location": "L170"
+      "source_location": "L188"
     },
     {
       "id": "personal_formacion_academica_premios_y_reconocimientos",
@@ -24019,7 +24031,7 @@
       "node_kind": "heading",
       "norm_label": "premios y reconocimientos",
       "source_file": "personal/formacion-academica.md",
-      "source_location": "L142"
+      "source_location": "L160"
     },
     {
       "id": "personal_formacion_academica_segundo_programa_diploma_de_reciclaje_profesional_simult\u00e1neo",
@@ -24043,7 +24055,7 @@
       "node_kind": "heading",
       "norm_label": "vida universitaria / proceso en curso",
       "source_file": "personal/formacion-academica.md",
-      "source_location": "L246"
+      "source_location": "L264"
     },
     {
       "id": "personal_formacion_academica_voluntariado",
@@ -24055,7 +24067,7 @@
       "node_kind": "heading",
       "norm_label": "voluntariado",
       "source_file": "personal/formacion-academica.md",
-      "source_location": "L158"
+      "source_location": "L176"
     },
     {
       "id": "personal_readme",
@@ -90944,7 +90956,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "personal/formacion-academica.md",
-      "source_location": "L107",
+      "source_location": "L125",
       "weight": 1.0
     },
     {
@@ -90955,7 +90967,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "personal/formacion-academica.md",
-      "source_location": "L117",
+      "source_location": "L135",
       "weight": 1.0
     },
     {
@@ -90966,7 +90978,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "personal/formacion-academica.md",
-      "source_location": "L124",
+      "source_location": "L142",
       "weight": 1.0
     },
     {
@@ -90977,7 +90989,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "personal/formacion-academica.md",
-      "source_location": "L142",
+      "source_location": "L160",
       "weight": 1.0
     },
     {
@@ -90988,7 +91000,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "personal/formacion-academica.md",
-      "source_location": "L158",
+      "source_location": "L176",
       "weight": 1.0
     },
     {
@@ -90999,7 +91011,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "personal/formacion-academica.md",
-      "source_location": "L170",
+      "source_location": "L188",
       "weight": 1.0
     },
     {
@@ -91015,17 +91027,6 @@
     },
     {
       "source": "personal_formacion_academica_formaci\u00f3n_acad\u00e9mica_de_angel_luis_acosta_gonz\u00e1lez",
-      "target": "personal_formacion_academica_curr\u00edculum_cv_perfil_profesional",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "personal/formacion-academica.md",
-      "source_location": "L101",
-      "weight": 1.0
-    },
-    {
-      "source": "personal_formacion_academica_formaci\u00f3n_acad\u00e9mica_de_angel_luis_acosta_gonz\u00e1lez",
       "target": "personal_formacion_academica_educaci\u00f3n_previa_cuba",
       "relation": "contains",
       "_origin": "ast",
@@ -91037,13 +91038,35 @@
     },
     {
       "source": "personal_formacion_academica_formaci\u00f3n_acad\u00e9mica_de_angel_luis_acosta_gonz\u00e1lez",
+      "target": "personal_formacion_academica_idiomas",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "personal/formacion-academica.md",
+      "source_location": "L111",
+      "weight": 1.0
+    },
+    {
+      "source": "personal_formacion_academica_formaci\u00f3n_acad\u00e9mica_de_angel_luis_acosta_gonz\u00e1lez",
+      "target": "personal_formacion_academica_curr\u00edculum_cv_perfil_profesional",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "personal/formacion-academica.md",
+      "source_location": "L119",
+      "weight": 1.0
+    },
+    {
+      "source": "personal_formacion_academica_formaci\u00f3n_acad\u00e9mica_de_angel_luis_acosta_gonz\u00e1lez",
       "target": "personal_formacion_academica_formaci\u00f3n_complementaria_cursos_en_l\u00ednea",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "personal/formacion-academica.md",
-      "source_location": "L177",
+      "source_location": "L195",
       "weight": 1.0
     },
     {
@@ -91054,7 +91077,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "personal/formacion-academica.md",
-      "source_location": "L192",
+      "source_location": "L210",
       "weight": 1.0
     },
     {
@@ -91065,7 +91088,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "personal/formacion-academica.md",
-      "source_location": "L223",
+      "source_location": "L241",
       "weight": 1.0
     },
     {
@@ -91076,18 +91099,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "personal/formacion-academica.md",
-      "source_location": "L246",
-      "weight": 1.0
-    },
-    {
-      "source": "personal_formacion_academica_formaci\u00f3n_acad\u00e9mica_de_angel_luis_acosta_gonz\u00e1lez",
-      "target": "personal_formacion_academica_fuente",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "personal/formacion-academica.md",
-      "source_location": "L267",
+      "source_location": "L264",
       "weight": 1.0
     },
     {
@@ -91103,7 +91115,18 @@
     },
     {
       "source": "personal_formacion_academica_formaci\u00f3n_acad\u00e9mica_de_angel_luis_acosta_gonz\u00e1lez",
-      "target": "personal_formacion_academica_equivalencia_acad\u00e9mica_en_espa\u00f1a",
+      "target": "personal_formacion_academica_fuente",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "personal/formacion-academica.md",
+      "source_location": "L285",
+      "weight": 1.0
+    },
+    {
+      "source": "personal_formacion_academica_formaci\u00f3n_acad\u00e9mica_de_angel_luis_acosta_gonz\u00e1lez",
+      "target": "personal_formacion_academica_actividad_profesional_paralela_docencia_de_espa\u00f1ol_y_traducci\u00f3n",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -91114,13 +91137,13 @@
     },
     {
       "source": "personal_formacion_academica_formaci\u00f3n_acad\u00e9mica_de_angel_luis_acosta_gonz\u00e1lez",
-      "target": "personal_formacion_academica_idiomas",
+      "target": "personal_formacion_academica_equivalencia_acad\u00e9mica_en_espa\u00f1a",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "personal/formacion-academica.md",
-      "source_location": "L93",
+      "source_location": "L98",
       "weight": 1.0
     },
     {
@@ -95235,5 +95258,5 @@
       "source_file": "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad6a_como-se-va-a-goya_interactivo.html"
     }
   ],
-  "built_at_commit": "298c9ca24f7fe77e5289ca8da1ef26efabaa4f6c"
+  "built_at_commit": "70ae26eec606e208c15ea48d88dfc6271aae4720"
 }
