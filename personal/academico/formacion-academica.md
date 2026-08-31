@@ -284,23 +284,22 @@ biográfica (CUJAE → beca "100 Becas Cuba-Rusia" → RUT MIIT) pero con
 
 ## Vida universitaria / proceso en curso
 
-- Actualmente en proceso de solicitud a **másteres oficiales en España**
-  en telecomunicaciones, electrónica, energías renovables y sistemas
-  inteligentes, con apoyo de una agencia de asesoría académica.
-- El máster mejor priorizado según la lista de candidaturas y el
-  énfasis de su carta de motivación es el **Máster Universitario en
-  Sistemas Inteligentes de la Universidad de Salamanca** — coincide con
-  la carpeta `master-sistemas-inteligentes/` ya existente en este
-  repositorio.
-- Otros programas en la lista de prioridades: Universidad de Málaga
-  (Telemática y Redes de Telecomunicación; Sistemas Electrónicos),
-  Universidad de Granada (Electrónica Industrial), Universidad
-  Internacional de Andalucía (Tecnología Ambiental), Universidad de
-  Cádiz, Universidad de Huelva, Universidad de Jaén, Universidad de
-  Córdoba, Universidad de Almería, Universidad del País Vasco,
-  Universidad Castilla-La Mancha, entre otros.
+- **Admisión confirmada**: el **Máster Universitario en Sistemas
+  Inteligentes de la Universidad de Salamanca** ya no es una
+  candidatura — Angel fue admitido para el curso 2026/27. Carta oficial
+  del director académico del máster (Roberto Therón Sánchez,
+  Departamento de Informática y Automática, Facultad de Ciencias),
+  emitida el 6/07/2026: admisión confirmada, primer plazo de la
+  matrícula ya pagado. Clases del 28 de septiembre de 2026 al 30 de
+  julio de 2027, presencial, de lunes a viernes 16:00–20:00 (20 h/semana,
+  60 créditos ECTS). Coincide con la carpeta `master-sistemas-inteligentes/`
+  ya existente en este repositorio.
+- El resto de universidades de la lista de prioridades (Málaga,
+  Granada, Andalucía, Cádiz, Huelva, Jaén, Córdoba, Almería, País
+  Vasco, Castilla-La Mancha) quedan como candidaturas de respaldo,
+  no elegidas — Salamanca es la definitiva.
 - Búsqueda de alojamiento de estudiante en Salamanca (residencias y
-  habitaciones) para el curso 2026/2027, con inicio previsto en
+  habitaciones) para el curso 2026/2027, con inicio el 28 de
   septiembre.
 
 ## Fuente
@@ -309,4 +308,7 @@ Google Drive, carpeta «Анхель Луис Акоста Гонсалес»
 (`1HsMYC7RgquAGklJENtMXlvBb1O9wiYe2`), subcarpetas «Готовые документы»
 («Certificados», «Виза» → «Títulos», «Виза» → «Certificados»),
 «Черновики» («CV», «Рек.письма»), «Примеры» → «Мот. письма» y hoja
-«Онлайн курсы». Revisado el 2026-08-31.
+«Онлайн курсы». Más la carta de admisión al máster de Salamanca
+(`Matrícula MUSI 2026-2027`, firmada por el director académico Roberto
+Therón Sánchez, 6/07/2026), compartida directamente por Angel.
+Revisado el 2026-08-31.
