@@ -7,6 +7,7 @@ su trayectoria académica.
 | Archivo | Contenido |
 |---|---|
 | [`formacion-academica.md`](formacion-academica.md) | Estudios previos, titulación de ingeniería en Rusia (RUT MIIT), idiomas, CV, cartas de recomendación, cartas de motivación y proceso de solicitud de máster en España. |
+| [`cv-mindrift.docx`](cv-mindrift.docx) | CV corto orientado a plataformas de entrenamiento de IA (Mindrift y similares): trilingüe (ES/RU/EN) + ingeniería en telecomunicaciones. Falta añadir el teléfono español cuando lo tenga. |
 
 **Nota de privacidad:** aquí solo se guardan datos con valor de
 referencia académica y profesional. Números de pasaporte, DNI/NIE,
