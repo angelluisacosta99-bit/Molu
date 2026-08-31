@@ -22,6 +22,12 @@ plantilla/normativa).
   Word alternativa completa del informe técnico y pesa poco.
 - `Bibliografia.bib` — bibliografía de ejemplo de la plantilla LaTeX.
 - `picins.sty` — paquete LaTeX (inclusión de imágenes) que usa la plantilla.
+- `main.tex` — el archivo maestro LaTeX de la plantilla. Se recuperó en una
+  pasada posterior verificando manualmente que el contenido decodificado es
+  coherente y termina correctamente en `\end{document}` (el tamaño en bytes
+  no coincide exactamente con el de Drive, muy probablemente por una
+  normalización de saltos de línea CRLF→LF al descargarlo como texto plano,
+  no por una copia incompleta).
 
 ## Copiado (`figures/`)
 
@@ -29,18 +35,17 @@ plantilla/normativa).
 - `LogoDIA.jpg`
 - `1280px-Linear_regression.jpg`
 
-## Excluido — problema técnico de transferencia en esta pasada
+## Excluido — problema técnico de transferencia
 
-- `Normativa Interna TFM 2023.pdf` (≈32 KB)
-- `main.tex` (≈15 KB) — el archivo maestro LaTeX de la plantilla
+- `Normativa Interna TFM 2023.pdf` (≈32 KB) — al copiarlo a mano no se pudo
+  verificar que el contenido binario llegara completo (los PDF no se pueden
+  revisar a simple vista como el LaTeX), así que se descartó para no dejar
+  un archivo corrupto en el repo. Consultar el original en Drive:
+  https://drive.google.com/file/d/1e8ACxp37vJaxnF3wRTd-u5bKN9zLMejo/view
 
-En ambos casos el contenido copiado no coincidió en tamaño de bytes con el
-original de Drive; para evitar dejar un archivo corrupto en el repo se
-descartaron en vez de arriesgar el contenido. La plantilla sigue siendo
-usable de todas formas a través de `Plantilla_IT_Dep_Inf_y_Aut_USAL (1).zip`
-(alternativa Word completa) o de `picins.sty` + `Bibliografia.bib` como base
-si se reconstruye `main.tex` a mano o se reintenta la copia en una pasada
-futura.
+La plantilla sigue siendo usable de todas formas a través de
+`Plantilla_IT_Dep_Inf_y_Aut_USAL (1).zip` (alternativa Word completa) o del
+propio `main.tex` ya recuperado arriba.
 
 ## No copiado, deliberadamente
 
