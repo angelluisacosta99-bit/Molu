@@ -294,19 +294,25 @@ biográfica (CUJAE → beca "100 Becas Cuba-Rusia" → RUT MIIT) pero con
   julio de 2027, presencial, de lunes a viernes 16:00–20:00 (20 h/semana,
   60 créditos ECTS). Coincide con la carpeta `master-sistemas-inteligentes/`
   ya existente en este repositorio.
-- El resto de universidades de la lista de prioridades (Málaga,
-  Granada, Andalucía, Cádiz, Huelva, Jaén, Córdoba, Almería, País
-  Vasco, Castilla-La Mancha) quedan como candidaturas de respaldo,
-  no elegidas — Salamanca es la definitiva.
+- El resto de universidades quedan como candidaturas de respaldo, no
+  elegidas — Salamanca es la definitiva. De ellas, solo Málaga
+  (Telemática y Sistemas Electrónicos), Jaén y Castilla-La Mancha
+  tienen carta de motivación confirmada (ver arriba); Granada,
+  Universidad Internacional de Andalucía, Cádiz, Huelva, Córdoba,
+  Almería y País Vasco solo aparecían en la hoja de prioridades de
+  Drive, sin que se haya verificado una carta de motivación para
+  ellas.
 - Búsqueda de alojamiento de estudiante en Salamanca (residencias y
   habitaciones) para el curso 2026/2027, con inicio el 28 de
   septiembre.
 
 ## Fuente
 
-Google Drive, carpeta «Анхель Луис Акоста Гонсалес»
-(`1HsMYC7RgquAGklJENtMXlvBb1O9wiYe2`), subcarpetas «Готовые документы»
-(«Certificados», «Виза» → «Títulos», «Виза» → «Certificados»),
+Google Drive, carpeta compartida por la agencia de asesoría académica
+(«Анхель Луис Акоста Гонсалес»; ID de carpeta omitido aquí a
+propósito — este repositorio es público y ese ID resolvería
+directamente a los documentos sin redactar), subcarpetas «Готовые
+документы» («Certificados», «Виза» → «Títulos», «Виза» → «Certificados»),
 «Черновики» («CV», «Рек.письма»), «Примеры» → «Мот. письма» y hoja
 «Онлайн курсы». Más la carta de admisión al máster de Salamanca
 (`Matrícula MUSI 2026-2027`, firmada por el director académico Roberto
