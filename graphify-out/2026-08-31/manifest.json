@@ -1080,9 +1080,9 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/mineria-de-datos/FUENTE.md": {
-    "mtime": 1788164313.505753,
-    "seen": 1788178336.6876595,
-    "ast_hash": "12ef5f41af95e786ccf7af205c94e98d",
+    "mtime": 1788193350.4786134,
+    "seen": 1788193366.187388,
+    "ast_hash": "50583be96e71d94c81cc4ef74848d72b",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/procesos-y-metodos-de-modelado-para-la-ingenieria-web-y-web-semantica/FUENTE.md": {
@@ -1092,9 +1092,9 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/robots-autonomos/FUENTE.md": {
-    "mtime": 1788192891.598586,
-    "seen": 1788193012.1597204,
-    "ast_hash": "ed29e46329b55a8ca5cf5df53c748152",
+    "mtime": 1788193345.730613,
+    "seen": 1788193366.1873894,
+    "ast_hash": "708276f89259e0a9ae15459a29e6bc4e",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/tecnologias-del-habla/FUENTE.md": {
@@ -1404,21 +1404,15 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py": {
-    "mtime": 1788164796.6327415,
-    "seen": 1788193012.1595678,
-    "ast_hash": "59888af73e6373d5d6a586daa3095e27",
+    "mtime": 1788193328.990612,
+    "seen": 1788193366.1872969,
+    "ast_hash": "acbaff103c8af04340f1ec08e1d72954",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/robots-autonomos/roomba/irobot/funciones.py": {
     "mtime": 1788165620.5577538,
     "seen": 1788193012.1595695,
     "ast_hash": "2e90381bb6edd64c86446c83aebf2812",
-    "semantic_hash": ""
-  },
-  "master-sistemas-inteligentes/robots-autonomos/roomba/irobot/iRobot.sln": {
-    "mtime": 1788165321.2291613,
-    "seen": 1788193012.159571,
-    "ast_hash": "6a81b79a9faa5eb51e77363031f92892",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/robots-autonomos/roomba/irobot/irobot_2.py": {
