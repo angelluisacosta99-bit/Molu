@@ -77,6 +77,24 @@ Moscú.
   y construcción de un modelo de predicción de reparación no
   planificada en los próximos 14 días"* — calificación: sobresaliente
 
+## Actividad profesional paralela: docencia de español y traducción
+
+Independiente de su carrera de ingeniería, Angel ejerce en Rusia como
+**Индивидуальный предприниматель (ИП — empresario individual/autónomo)
+desde hace 5 años**, dando clases de español a rusohablantes y
+trabajando como traductor — la actividad que ya organiza en las
+carpetas `docencia-espanol/` y `traduccion/` de este mismo repositorio.
+No es una afición: es un negocio propio sostenido con formación
+pedagógica formal detrás, cursada en la ООО "Centro de Formación
+Continua y Reciclaje Profesional «Luch Znaniy»" (Луч знаний):
+
+- **"Profesor de español. Teoría y metodología de la enseñanza de
+  lenguas extranjeras en una organización educativa"** — 2022
+- **"Especificidad de la enseñanza del español conforme a los
+  requisitos del FGOS"** (estándar educativo federal ruso) — 2023
+- **"Metodologías eficaces para el aprendizaje de idiomas
+  extranjeros"** — 2025
+
 ## Equivalencia académica en España
 
 Declaraciones de equivalencia de nota media emitidas por la Secretaría
