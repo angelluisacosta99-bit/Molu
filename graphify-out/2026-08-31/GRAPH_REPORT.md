@@ -1,7 +1,7 @@
 # Graph Report - Molu  (2026-08-31)
 
 ## Corpus Check
-- 178 files · ~527,427 words
+- 178 files · ~527,385 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `ca8e6e31`
+- Built from commit: `f08accfb`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -146,8 +146,8 @@
 6. `buildInsertConfigureRow()` - 26 edges
 7. `collectBrowserFindings()` - 26 edges
 8. `handleKeyDown()` - 26 edges
-9. `resumeSession()` - 25 edges
-10. `showToast()` - 25 edges
+9. `showToast()` - 25 edges
+10. `resumeSession()` - 25 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `Python overview` --semantically_similar_to--> `Docencia de español overview`  [INFERRED] [semantically similar]
@@ -576,7 +576,7 @@ Nodes (3): NEM1 Cuaderno Unidad 6A — ¿Cómo se va a Goya?, NEM1 Cuaderno Unid
 
 ### Community 108 - "Fuente del material"
 Cohesion: 0.33
-Nodes (5): Copiado (`figures/`), Copiado (raíz), Excluido — problema técnico de transferencia, Fuente del material, No copiado, deliberadamente
+Nodes (5): Copiado (`figures/`), Copiado (raíz), Excluido — problema técnico de transferencia en esta pasada, Fuente del material, No copiado, deliberadamente
 
 ### Community 109 - "mineria-de-datos/FUENTE.md"
 Cohesion: 0.40
@@ -611,22 +611,22 @@ Cohesion: 0.83
 Nodes (3): ang_degree(), dist(), odometry()
 
 ## Knowledge Gaps
-- **279 isolated node(s):** `Copiado (raíz)`, `Copiado (`figures/`)`, `Excluido — problema técnico de transferencia`, `No copiado, deliberadamente`, `HEADING_TAGS` (+274 more)
+- **279 isolated node(s):** `Copiado`, `Excluido por tamaño (regla de 8 MB)`, `Excluido por un problema técnico de transferencia en esta pasada`, `Excluido por las reglas del profesor (nunca copiar)`, `No copiado (fuera del alcance pedido para esta asignatura)` (+274 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **13 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
+- **Why does `createManualEditRoutes()` connect `manual-edit-routes.mjs` to `live-commit-manual-edits.mjs`, `live-server.mjs`, `css-cascade.mjs`, `insert-ui.mjs`?**
+  _High betweenness centrality (0.084) - this node is a cross-community bridge._
 - **Why does `StaticDocument` connect `css-cascade.mjs` to `detect-html.mjs`?**
   _High betweenness centrality (0.083) - this node is a cross-community bridge._
-- **Why does `createManualEditRoutes()` connect `manual-edit-routes.mjs` to `live-commit-manual-edits.mjs`, `live-server.mjs`, `css-cascade.mjs`, `insert-ui.mjs`?**
-  _High betweenness centrality (0.082) - this node is a cross-community bridge._
 - **Why does `commitManualEdits()` connect `live-commit-manual-edits.mjs` to `manual-edit-routes.mjs`, `live-copy-edit-agent.mjs`?**
-  _High betweenness centrality (0.009) - this node is a cross-community bridge._
+  _High betweenness centrality (0.008) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `initGlobalBar()` (e.g. with `hideAgentPollTooltip()` and `onDetectMessage()`) actually correct?**
   _`initGlobalBar()` has 7 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `Copiado (raíz)`, `Copiado (`figures/`)`, `Excluido — problema técnico de transferencia` to the rest of the system?**
+- **What connects `Copiado`, `Excluido por tamaño (regla de 8 MB)`, `Excluido por un problema técnico de transferencia en esta pasada` to the rest of the system?**
   _279 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `live-browser.js` be split into smaller, more focused modules?**
   _Cohesion score 0.028169014084507043 - nodes in this community are weakly interconnected._
