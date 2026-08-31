@@ -12,6 +12,17 @@ Material heredado del Drive de Arlet Acosta González (MSI), copiado el 2026-08-
 - deposito_PID.slx
 - Informe depositos simulink Pastora.docx
 
+> Nota sobre "Pastora" en dos de los nombres de archivo de arriba: la
+> revisión independiente lo marcó como posible nombre de compañera de
+> grupo, pero **no lo es** — es Pastora Vega Cruz, profesora del máster
+> (co-autora del temario oficial de Control Inteligente, confirmado en
+> `control-inteligente/confs/CI2023_Parte1_FundamentosControl.pdf`: "Pastora
+> Vega Cruz — Belén Pérez Lancho — Máster Universitario en Sistemas
+> Inteligentes"). Comprobado además que el `.docx` no la lista como
+> coautora (solo Arlet Acosta González en los metadatos), consistente con
+> que Arlet simplemente nombrara así el archivo para entregárselo a la
+> profesora. No se excluye.
+
 **exposiciones/:**
 - TF Simulink.pptx, Presentación1.pptx, Trabajo Final Simulink.docx
 
