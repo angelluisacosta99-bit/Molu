@@ -1,16 +1,16 @@
 # Graph Report - Molu  (2026-08-31)
 
 ## Corpus Check
-- 177 files · ~527,636 words
+- 177 files · ~527,712 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2404 nodes · 5787 edges · 117 communities (105 shown, 12 thin omitted)
+- 2405 nodes · 5788 edges · 117 communities (105 shown, 12 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 135 edges (avg confidence: 0.58)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `64219be8`
+- Built from commit: `f71ae531`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -567,8 +567,8 @@ Cohesion: 0.33
 Nodes (5): Copiado (`figures/`), Copiado (raíz), Excluido — problema técnico de transferencia, Fuente del material, No copiado, deliberadamente
 
 ### Community 109 - "mineria-de-datos/FUENTE.md"
-Cohesion: 0.40
-Nodes (4): Copiado, Excluido por el límite de 8 MB, Excluido por las reglas del profesor / fuera de alcance, Excluido por un problema técnico de transferencia en esta pasada
+Cohesion: 0.33
+Nodes (5): Copiado, Excluido por el límite de 8 MB, Excluido por las reglas del profesor / fuera de alcance, Excluido por un problema técnico de transferencia en esta pasada, Excluido tras la revisión independiente (contenido problemático)
 
 ### Community 110 - "robots-autonomos/FUENTE.md"
 Cohesion: 0.33
@@ -595,7 +595,7 @@ Cohesion: 0.50
 Nodes (3): Copiado, Excluido por el límite de 8 MB, No copiado (fuera de alcance)
 
 ## Knowledge Gaps
-- **281 isolated node(s):** `Copiado`, `Excluido por las reglas del profesor (nunca copiar)`, `No copiado (duplicado o fuera de alcance)`, `HEADING_TAGS`, `LAYOUT_TRANSITION_PROPS` (+276 more)
+- **282 isolated node(s):** `Copiado`, `Excluido tras la revisión independiente (contenido problemático)`, `Excluido por el límite de 8 MB`, `Excluido por un problema técnico de transferencia en esta pasada`, `Excluido por las reglas del profesor / fuera de alcance` (+277 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **12 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -603,15 +603,15 @@ Nodes (3): Copiado, Excluido por el límite de 8 MB, No copiado (fuera de alcanc
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `createManualEditRoutes()` connect `manual-edit-routes.mjs` to `live-commit-manual-edits.mjs`, `live-server.mjs`, `css-cascade.mjs`, `insert-ui.mjs`?**
-  _High betweenness centrality (0.079) - this node is a cross-community bridge._
+  _High betweenness centrality (0.081) - this node is a cross-community bridge._
 - **Why does `StaticDocument` connect `css-cascade.mjs` to `detect-html.mjs`?**
-  _High betweenness centrality (0.078) - this node is a cross-community bridge._
-- **Why does `commitManualEdits()` connect `live-commit-manual-edits.mjs` to `manual-edit-routes.mjs`, `live-copy-edit-agent.mjs`?**
-  _High betweenness centrality (0.010) - this node is a cross-community bridge._
+  _High betweenness centrality (0.081) - this node is a cross-community bridge._
+- **Why does `readBuffer()` connect `manual-edit-routes.mjs` to `live-manual-edit-evidence.mjs`, `manual-apply.mjs`, `live-commit-manual-edits.mjs`, `live-wrap.mjs`, `live-accept.mjs`?**
+  _High betweenness centrality (0.009) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `initGlobalBar()` (e.g. with `hideAgentPollTooltip()` and `onDetectMessage()`) actually correct?**
   _`initGlobalBar()` has 7 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `Copiado`, `Excluido por las reglas del profesor (nunca copiar)`, `No copiado (duplicado o fuera de alcance)` to the rest of the system?**
-  _281 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `Copiado`, `Excluido tras la revisión independiente (contenido problemático)`, `Excluido por el límite de 8 MB` to the rest of the system?**
+  _282 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `live-browser.js` be split into smaller, more focused modules?**
   _Cohesion score 0.02863984674329502 - nodes in this community are weakly interconnected._
 - **Should `checks.mjs` be split into smaller, more focused modules?**
