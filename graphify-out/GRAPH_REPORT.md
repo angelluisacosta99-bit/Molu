@@ -1,7 +1,7 @@
 # Graph Report - Molu  (2026-08-31)
 
 ## Corpus Check
-- 177 files · ~527,533 words
+- 177 files · ~527,636 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `c6fdcc20`
+- Built from commit: `64219be8`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -595,7 +595,7 @@ Cohesion: 0.50
 Nodes (3): Copiado, Excluido por el límite de 8 MB, No copiado (fuera de alcance)
 
 ## Knowledge Gaps
-- **281 isolated node(s):** `Copiado (raíz)`, `Copiado (`entrega-1/`)`, `Excluido tras la revisión independiente (contenido problemático)`, `Copiado (`entrega-2/`)`, `Excluido (`entrega-2/`)` (+276 more)
+- **281 isolated node(s):** `Copiado`, `Excluido por las reglas del profesor (nunca copiar)`, `No copiado (duplicado o fuera de alcance)`, `HEADING_TAGS`, `LAYOUT_TRANSITION_PROPS` (+276 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **12 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -603,14 +603,14 @@ Nodes (3): Copiado, Excluido por el límite de 8 MB, No copiado (fuera de alcanc
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `createManualEditRoutes()` connect `manual-edit-routes.mjs` to `live-commit-manual-edits.mjs`, `live-server.mjs`, `css-cascade.mjs`, `insert-ui.mjs`?**
-  _High betweenness centrality (0.081) - this node is a cross-community bridge._
+  _High betweenness centrality (0.079) - this node is a cross-community bridge._
 - **Why does `StaticDocument` connect `css-cascade.mjs` to `detect-html.mjs`?**
-  _High betweenness centrality (0.080) - this node is a cross-community bridge._
-- **Why does `readLiveServerInfo()` connect `readLiveServerInfo` to `impeccable-paths.mjs`, `live-poll.mjs`, `live.mjs`, `live-server.mjs`?**
-  _High betweenness centrality (0.013) - this node is a cross-community bridge._
+  _High betweenness centrality (0.078) - this node is a cross-community bridge._
+- **Why does `commitManualEdits()` connect `live-commit-manual-edits.mjs` to `manual-edit-routes.mjs`, `live-copy-edit-agent.mjs`?**
+  _High betweenness centrality (0.010) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `initGlobalBar()` (e.g. with `hideAgentPollTooltip()` and `onDetectMessage()`) actually correct?**
   _`initGlobalBar()` has 7 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `Copiado (raíz)`, `Copiado (`entrega-1/`)`, `Excluido tras la revisión independiente (contenido problemático)` to the rest of the system?**
+- **What connects `Copiado`, `Excluido por las reglas del profesor (nunca copiar)`, `No copiado (duplicado o fuera de alcance)` to the rest of the system?**
   _281 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `live-browser.js` be split into smaller, more focused modules?**
   _Cohesion score 0.02863984674329502 - nodes in this community are weakly interconnected._
