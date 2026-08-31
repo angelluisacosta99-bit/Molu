@@ -11,14 +11,14 @@ Material heredado del Drive de Arlet Acosta González (MSI), copiado el 2026-08-
 - WEKA TFM_Asier_Arostegui.pdf
 - Weka-EjemploAplicación.pdf
 
-**dataset/** (5 de 7 archivos):
+**dataset/** (5 de 9 archivos):
 - Rice_Cammeo_Osmancik.arff
 - Thyroid_Diff.csv
 - database_pos.csv
 - drug_consumption.data
 - secondary_data.csv
 
-**data/** (20 de 25 archivos .arff de ejemplo para WEKA):
+**data/** (21 de 25 archivos .arff de ejemplo para WEKA):
 - airline.arff, contact-lenses.arff, cpu.arff, cpu.with.vendor.arff,
   credit-g.arff, hypothyroid.arff, ionosphere.arff, iris.arff, iris.2D.arff,
   ReutersCorn-test.arff, ReutersCorn-train.arff, ReutersGrain-test.arff,

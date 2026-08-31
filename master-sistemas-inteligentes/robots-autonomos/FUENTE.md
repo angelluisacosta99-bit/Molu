@@ -13,7 +13,7 @@ Material heredado del Drive de Arlet Acosta González (MSI), copiado el 2026-08-
 
 **roomba/irobot/** (de la subcarpeta "salva iRobot funcional 25.04.2024", la versión
 más reciente/funcional según el propio nombre de la carpeta de Arlet):
-- mio.py, funciones.py, irobot_2.py, iRobot.pyproj, iRobot.sln
+- mio.py, funciones.py, irobot_2.py
 
 **roomba/:**
 - TPR OMPL - copia sin videos.pptx
@@ -22,6 +22,20 @@ más reciente/funcional según el propio nombre de la carpeta de Arlet):
 - presentación robots autónomos.pptx
 - presentación robots autónomos_ FINAL.pdf
 - robots sists de navegación.docx
+
+## Excluido tras la revisión independiente (contenido problemático)
+
+- `roomba/irobot/iRobot.pyproj` y `iRobot.sln` — el proyecto de Visual
+  Studio apuntaba como único archivo de arranque a `iRobot.py`, que nunca
+  se copió (ver más abajo), así que el `.sln` no habría cargado y no
+  referenciaba ninguno de los scripts sí copiados (`mio.py`, `funciones.py`,
+  `irobot_2.py`). Se descartan por engañosos; el código real sigue
+  disponible en los `.py` sí copiados.
+- En `roomba/codigo-roomba/roomba.py` se eliminó de la primera línea del
+  comentario el nombre de dos compañeras de grupo (código, no ruta de
+  archivo, por lo que la comprobación automática de nombres en rutas no lo
+  detectó) — mismo criterio que excluye archivos/carpetas con nombre de
+  compañeros en el resto de esta carpeta y de las demás asignaturas.
 
 ## Excluido por un problema técnico de transferencia en esta pasada
 

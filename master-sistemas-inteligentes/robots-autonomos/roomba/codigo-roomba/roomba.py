@@ -1,4 +1,4 @@
-## código de odometría Maria Jose Sanchez y Leidy Karina Duran - Robots autonomos
+## código de odometría - Robots autonomos
 
 # Libreria para funciones matematicas
 import math
