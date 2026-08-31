@@ -42,9 +42,16 @@ Moscú.
 - Titulación obtenida: **Diploma de Especialista con Distinción**
   (`ДИПЛОМ СПЕЦИАЛИСТА С ОТЛИЧИЕМ`), serie 107704 № 0468100,
   expedido el 30/06/2026
-- Cualificación conferida: **Ingeniero de Vías de Comunicación**
-  (`Инженер путей сообщения`), resolución del tribunal de examen
-  estatal del 16/06/2026
+- Cualificación conferida: **Ingeniero ferroviario**
+  (`Инженер путей сообщения`, literalmente "ingeniero de vías de
+  comunicación" — término histórico ruso, en el RUT equivale en la
+  práctica a "ingeniero ferroviario"), resolución del tribunal de
+  examen estatal del 16/06/2026. **Pendiente de traducción jurada
+  oficial**: el diploma (`Título.pdf`) aún no tiene traducción jurada
+  al español — solo la справка del periodo de estudios la tiene
+  (`LOSJUR - 2516.pdf`). "Ingeniero ferroviario" es el término usado
+  en el CV de Angel mientras tanto; cuando exista la traducción jurada
+  del diploma, esa versión prevalece y hay que ajustar el CV si difiere.
 - Créditos del expediente: 279 (según declaración de equivalencia
   española)
 - Distribución de calificaciones: mayoría de asignaturas evaluadas como
