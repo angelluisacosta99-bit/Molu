@@ -10,7 +10,7 @@ Material heredado del Drive de Arlet Acosta González (MSI), copiado el 2026-08-
   ign_scores.csv, insurance.csv, iris.csv, iris_setosa.csv, iris_versicolor.csv,
   iris_virginica.csv, museum_visitors.csv
 
-**Carpeta `Data_set/`** (parcial, ver exclusiones abajo):
+**Carpeta `data-set/`** (parcial, ver exclusiones abajo):
 - Auto Sales data.csv, Catálogo de conjuntos de datos.csv, Marketing_Data.csv,
   PRESUPUESTO_GASTOS_AREAS_2017.csv, Popular_Spotify_Songs.csv, Walmart_sales.csv,
   citations.csv, drug200.csv, heart_failure_clinical_records_dataset.csv,
@@ -20,8 +20,8 @@ Material heredado del Drive de Arlet Acosta González (MSI), copiado el 2026-08-
 
 ## Excluido por tamaño (regla de 8 MB)
 
-- `Electric_Vehicle_Population_Data.csv` (Data_set) — 44 MB
-- `Crime_Data_from_2020_to_Present too large.csv` (Data_set) — 238 MB
+- `Electric_Vehicle_Population_Data.csv` (data-set) — 44 MB
+- `Crime_Data_from_2020_to_Present too large.csv` (data-set) — 238 MB
 
 ## Excluido por un problema técnico de transferencia en esta pasada
 
@@ -30,9 +30,9 @@ descarga falló repetidamente en esta sesión (conector de Drive inestable).
 Angel puede volver a intentarlo o cogerlos directamente de Drive:
 
 - `spotify.csv` (raíz, ~16 KB)
-- `2018-2019_Daily_Attendance_20240429.csv` (Data_set, ~7.7 MB)
-- `registro-de-turismo-de-castilla-y-leon.csv` (Data_set, ~6.2 MB)
-- `ok Gasto Turístico.csv` (Data_set, ~19.8 KB)
+- `2018-2019_Daily_Attendance_20240429.csv` (data-set, ~7.7 MB)
+- `registro-de-turismo-de-castilla-y-leon.csv` (data-set, ~6.2 MB)
+- `ok Gasto Turístico.csv` (data-set, ~19.8 KB)
 
 ## Excluido por las reglas del profesor (nunca copiar)
 
@@ -48,5 +48,5 @@ González.docx`, `Trabajo Final Analítica.docx`, `world-countries.json`,
 `Lista de videos para el trabajo.txt`, `Informe pablo.pdf`, y los PDFs de
 temario (`01 Intro.pdf`, `03/04/05 Infovis.pdf`, `06_Grammar_of_graphics.pdf`,
 `Infovis_Lab.pdf`, `RD_Agenda_VisualAnalytics.pdf`, `Vis_03_Percepción.pdf`) —
-las instrucciones de esta pasada pedían solo `Data_set/`, los CSV sueltos y la
+las instrucciones de esta pasada pedían solo `data-set/`, los CSV sueltos y la
 nota de librerías; estos otros documentos siguen en Drive si se quieren luego.

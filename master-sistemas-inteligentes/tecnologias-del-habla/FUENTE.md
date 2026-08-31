@@ -11,20 +11,20 @@ Material heredado del Drive de Arlet Acosta González (MSI), copiado el 2026-08-
 - `Trabajo final PP.pptx`
 - `Arlet Acosta González Trabajo final TH.pdf`
 
-## Copiado (`Entrega 1/`)
+## Copiado (`entrega-1/`)
 
 - `Entrega 1.pdf`, `Entrega 1.docx`, `entrega1.pptx`
 - `Formantes_vocales.xlsx`, `Formantes_vocales.txt`
 - `3vocals.wav`, `vocales.wav`, `Ej1_sec1.wav`, `Ej1_sec2.wav`,
   `Ej1_sec3.wav`, `Ej1_sec4.wav`
 
-## Copiado (`Entrega 2/`)
+## Copiado (`entrega-2/`)
 
 - `Entrega 2.pdf`
 - `Entrega 2.docx`
 - `pitch_list.txt`
 
-## Excluido (`Entrega 2/`)
+## Excluido (`entrega-2/`)
 
 - El zip `Arlet Acosta González, Entrega 2.zip` — regla general de no copiar
   archivos comprimidos (sin excepción autorizada para este, a diferencia del
@@ -43,10 +43,10 @@ Material heredado del Drive de Arlet Acosta González (MSI), copiado el 2026-08-
 - `Algunas explicaciones del trabajo.docx` (≈22.8 KB) — excluido por el mismo
   problema técnico de transferencia que arriba (tamaño de bytes no coincidente
   tras la copia). Pendiente de reintentar.
-- La subcarpeta `Ejercicio 1/` dentro de `Entrega 1/` — duplicado, ya excluido
+- La subcarpeta `ejercicio-1/` dentro de `entrega-1/` — duplicado, ya excluido
   en una pasada anterior.
 - `a.txt`, `e.txt`, `i.txt`, `o.txt`, `u.txt`, `Vocales_pos.txt`,
-  `vocales_rest.txt`, `Ej2tapo2.wav`, `Ej2topo2.wav`, el zip de `Entrega 1` —
+  `vocales_rest.txt`, `Ej2tapo2.wav`, `Ej2topo2.wav`, el zip de `entrega-1` —
   ya excluidos en una pasada anterior (duplicados o fuera de alcance).
 
 ## Trabajo final (papers) — NO copiado, deliberadamente

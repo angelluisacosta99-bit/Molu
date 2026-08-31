@@ -3,8 +3,8 @@ Material heredado del Drive de Arlet Acosta González (MSI), copiado el 2026-08-
 ## Copiado
 
 - Arlet Acosta González, IoT and IoT in Medicine and Healthcare sector.pdf
-- word template/Word Template Paper/ADCAIJ-WordTemplate2016_V4.dotx.pdf
-- word template/Word Template Paper/ADCAIJ-WordTemplate2016_V4.dotx (plantilla
+- word-template/word-template-paper/ADCAIJ-WordTemplate2016_V4.dotx.pdf
+- word-template/word-template-paper/ADCAIJ-WordTemplate2016_V4.dotx (plantilla
   Word oficial)
 
 ## Excluido por un problema técnico de transferencia en esta pasada
