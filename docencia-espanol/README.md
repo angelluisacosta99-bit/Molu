@@ -12,6 +12,8 @@ Todo lo relacionado con las clases online de español para alumnos rusos.
   Drive por ser archivos pesados). Aquí solo se guarda un índice en
   Markdown con el enlace a cada grabación. Ver
   `grabaciones/README.md`.
+- [`avito/`](avito/README.md) — perfil de profesor en Avito: precios,
+  descripción del anuncio y reseñas de alumnos.
 
 ## Convención de nombres
 
