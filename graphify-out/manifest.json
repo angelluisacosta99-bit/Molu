@@ -1008,15 +1008,9 @@
     "semantic_hash": ""
   },
   "personal/README.md": {
-    "mtime": 1788213948.3229737,
-    "seen": 1788213954.3586035,
-    "ast_hash": "da4bf3271d443518ffd63256050f0bd8",
-    "semantic_hash": ""
-  },
-  "personal/formacion-academica.md": {
-    "mtime": 1788218002.2096055,
-    "seen": 1788218038.8560915,
-    "ast_hash": "b8ae84de8d08068ef045adbef01f39cf",
+    "mtime": 1788218647.4495907,
+    "seen": 1788218663.7860165,
+    "ast_hash": "afb405fd03eb7b5e2749486fb1573fb0",
     "semantic_hash": ""
   },
   "recursos-generales/README.md": {
@@ -1053,6 +1047,12 @@
     "mtime": 1788217658.1656134,
     "seen": 1788217703.778628,
     "ast_hash": "0de886b3de09be57b39f14d3c3d04fba",
+    "semantic_hash": ""
+  },
+  "personal/academico/formacion-academica.md": {
+    "mtime": 1788218002.2096055,
+    "seen": 1788218663.7860188,
+    "ast_hash": "b8ae84de8d08068ef045adbef01f39cf",
     "semantic_hash": ""
   }
 }
