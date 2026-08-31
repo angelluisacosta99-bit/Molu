@@ -696,10 +696,10 @@
     "semantic_hash": ""
   },
   "docencia-espanol/README.md": {
-    "mtime": 1788091558.1535718,
-    "seen": 1788211922.9743142,
-    "ast_hash": "033e2f08cbb62857a73f98c5cdb076df",
-    "semantic_hash": "033e2f08cbb62857a73f98c5cdb076df"
+    "mtime": 1788217695.5816123,
+    "seen": 1788217703.7786238,
+    "ast_hash": "72c14d5b826ac096761c1cd16119dccf",
+    "semantic_hash": ""
   },
   "docencia-espanol/fuentes/README.md": {
     "mtime": 1788091558.156984,
@@ -1035,6 +1035,24 @@
     "mtime": 1788091558.3798544,
     "seen": 1788211922.9744012,
     "ast_hash": "6aab0363b0fe6bdc1be48fe2512f46e6",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/avito/README.md": {
+    "mtime": 1788217581.705615,
+    "seen": 1788217703.7786257,
+    "ast_hash": "be2d3f2cf86c224dfb6878ebdb572298",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/avito/perfil-y-precios.md": {
+    "mtime": 1788217688.1176126,
+    "seen": 1788217703.7786272,
+    "ast_hash": "3276c908a003d8e4fcda8835d233e4dc",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/avito/resenas.md": {
+    "mtime": 1788217658.1656134,
+    "seen": 1788217703.778628,
+    "ast_hash": "0de886b3de09be57b39f14d3c3d04fba",
     "semantic_hash": ""
   }
 }
