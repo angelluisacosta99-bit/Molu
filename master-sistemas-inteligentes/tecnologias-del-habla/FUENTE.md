@@ -15,8 +15,19 @@ Material heredado del Drive de Arlet Acosta González (MSI), copiado el 2026-08-
 
 - `Entrega 1.pdf`, `Entrega 1.docx`, `entrega1.pptx`
 - `Formantes_vocales.xlsx`, `Formantes_vocales.txt`
-- `3vocals.wav`, `vocales.wav`, `Ej1_sec1.wav`, `Ej1_sec2.wav`,
-  `Ej1_sec3.wav`, `Ej1_sec4.wav`
+
+## Excluido tras la revisión independiente (contenido problemático)
+
+- Los seis `.wav` (`3vocals.wav`, `vocales.wav`, `Ej1_sec1.wav`,
+  `Ej1_sec2.wav`, `Ej1_sec3.wav`, `Ej1_sec4.wav`) — pese a que este
+  documento antes decía que se habían copiado, en realidad el `.gitignore`
+  raíz del repo (`*.wav`, audio pesado gestionado aparte en Drive) los
+  excluyó correctamente de git; solo quedaron descargados sueltos en el
+  disco de la sesión, nunca llegaron a versionarse.
+- `Ej1_sec2` (sin extensión `.wav`, 400 KB) — un archivo binario
+  corrupto/no reconocible (cabecera `ooBinaryFile`, no es un `.wav` válido
+  pese al nombre) que sí se coló al repo porque, al faltarle la extensión,
+  esquivó la regla `*.wav` del `.gitignore`. Se ha quitado del repositorio.
 
 ## Copiado (`entrega-2/`)
 
