@@ -88,12 +88,26 @@ No es una afición: es un negocio propio sostenido con formación
 pedagógica formal detrás, cursada en la ООО "Centro de Formación
 Continua y Reciclaje Profesional «Luch Znaniy»" (Луч знаний):
 
-- **"Profesor de español. Teoría y metodología de la enseñanza de
-  lenguas extranjeras en una organización educativa"** — 2022
-- **"Especificidad de la enseñanza del español conforme a los
-  requisitos del FGOS"** (estándar educativo federal ruso) — 2023
-- **"Metodologías eficaces para el aprendizaje de idiomas
-  extranjeros"** — 2025
+- **Diploma de Reciclaje Profesional** — programa *"Español: teoría
+  y metodología de la enseñanza de lenguas extranjeras en una
+  organización educativa"*, **300 horas académicas**, 1–28 septiembre
+  2022, Krasnoyarsk (reg. 180000665699, diploma № 41665) — otorga la
+  cualificación **«Учитель испанского языка» (Profesor de español)**.
+  Todas las asignaturas del expediente aprobadas con "отлично"
+  (sobresaliente): Psicología y pedagogía, Tecnologías de la
+  información en la enseñanza de idiomas, Fundamentos de la teoría del
+  español, Curso práctico de español (x2), Estudios sobre España,
+  Lingüoculturología, y examen final — 42-44 h cada una.
+- **Certificado de formación continua** — *"Especificidad de la
+  enseñanza del español conforme a los requisitos del FGOS"*
+  (estándar educativo federal ruso), 36 horas, 25–28 diciembre 2023,
+  Krasnoyarsk (reg. 180003697248, certificado № 168815).
+- **Certificado de formación continua** — *"Metodologías eficaces
+  para el aprendizaje de idiomas extranjeros"*, 36 horas, 11–14 mayo
+  2025, Moscú (reg. 180004157053, certificado № 230430).
+
+Las tres, emitidas por ООО "Centro de Formación Continua y Reciclaje
+Profesional «Luch Znaniy»" (Луч знаний).
 
 ## Equivalencia académica en España
 
