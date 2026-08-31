@@ -85,6 +85,11 @@ para el expediente de la especialidad ferroviaria, con vistas al acceso
 a másteres oficiales españoles — rama de conocimiento **Ingeniería y
 Arquitectura**, código ISCED 0719.
 
+El expediente (справка о периоде обучения, registro 210/4) cuenta
+además con **traducción jurada al español**, firmada por el
+traductor-intérprete jurado de ruso Enrique Bernaldo de Quirós Martín
+(27/04/2026), con el listado completo de asignaturas y calificaciones.
+
 ## Idiomas
 
 - **Español:** nativo.
