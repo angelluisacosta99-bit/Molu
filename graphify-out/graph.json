@@ -152,19 +152,6 @@
       "source_location": "L799"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement",
-      "label": "StaticElement",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "css-cascade.mjs",
-      "file_type": "code",
-      "norm_label": "staticelement",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L721"
-    },
-    {
       "id": "master_sistemas_inteligentes_robots_autonomos_roomba_codigo_roomba_roomba_roombacontroller",
       "label": "RoombaController",
       "_callable": true,
@@ -174,8 +161,21 @@
       "community_name": "RoombaController",
       "file_type": "code",
       "norm_label": "roombacontroller",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L20"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement",
+      "label": "StaticElement",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 68,
+      "community_name": "StaticElement",
+      "file_type": "code",
+      "norm_label": "staticelement",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L721"
     },
     {
       "id": "claude_skills_impeccable_scripts_lib_target_args_targetargerror",
@@ -2207,6 +2207,18 @@
       "source_location": "L2235"
     },
     {
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkpagetypography",
+      "label": "checkPageTypography()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "checks.mjs",
+      "file_type": "code",
+      "norm_label": "checkpagetypography()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
+      "source_location": "L2014"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkquality",
       "label": "checkQuality()",
       "_callable": true,
@@ -2241,18 +2253,6 @@
       "norm_label": "checkrepeatedsectionkickersdom()",
       "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
       "source_location": "L1113"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkrepeatedsectionkickersfromdoc",
-      "label": "checkRepeatedSectionKickersFromDoc()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "checks.mjs",
-      "file_type": "code",
-      "norm_label": "checkrepeatedsectionkickersfromdoc()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L1881"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_rules_checks_checktypography",
@@ -3371,18 +3371,6 @@
       "source_location": "L285"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_server_applylegacydeferredacceptsonstartup",
-      "label": "applyLegacyDeferredAcceptsOnStartup()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "live-server.mjs",
-      "file_type": "code",
-      "norm_label": "applylegacydeferredacceptsonstartup()",
-      "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
-      "source_location": "L974"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_server_broadcast",
       "label": "broadcast()",
       "_callable": true,
@@ -3707,40 +3695,16 @@
       "source_location": "L732"
     },
     {
-      "id": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2_ang_degree",
-      "label": "ang_degree()",
+      "id": "claude_skills_impeccable_scripts_live_server_applylegacydeferredacceptsonstartup",
+      "label": "applyLegacyDeferredAcceptsOnStartup()",
       "_callable": true,
       "_origin": "ast",
-      "community": 116,
-      "community_name": "irobot_2.py",
+      "community": 12,
+      "community_name": "svelte-component.mjs",
       "file_type": "code",
-      "norm_label": "ang_degree()",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/irobot_2.py",
-      "source_location": "L20"
-    },
-    {
-      "id": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2_dist",
-      "label": "dist()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 116,
-      "community_name": "irobot_2.py",
-      "file_type": "code",
-      "norm_label": "dist()",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/irobot_2.py",
-      "source_location": "L17"
-    },
-    {
-      "id": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2_odometry",
-      "label": "odometry()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 116,
-      "community_name": "irobot_2.py",
-      "file_type": "code",
-      "norm_label": "odometry()",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/irobot_2.py",
-      "source_location": "L39"
+      "norm_label": "applylegacydeferredacceptsonstartup()",
+      "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
+      "source_location": "L974"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_svelte_component_appendcsstosveltestyle",
@@ -4379,6 +4343,18 @@
       "source_location": "L14"
     },
     {
+      "id": "claude_skills_impeccable_scripts_detector_engines_regex_detect_text_isneutralbordercolor",
+      "label": "isNeutralBorderColor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "detect-html.mjs",
+      "file_type": "code",
+      "norm_label": "isneutralbordercolor()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/regex/detect-text.mjs",
+      "source_location": "L41"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_detector_engines_regex_detect_text_issafeelement",
       "label": "isSafeElement()",
       "_callable": true,
@@ -4559,6 +4535,18 @@
       "source_location": "L3"
     },
     {
+      "id": "claude_skills_impeccable_scripts_detector_profile_profiler_createdetectorprofile",
+      "label": "createDetectorProfile()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "detect-html.mjs",
+      "file_type": "code",
+      "norm_label": "createdetectorprofile()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/profile/profiler.mjs",
+      "source_location": "L7"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_detector_profile_profiler_extractfindingids",
       "label": "extractFindingIds()",
       "_callable": true,
@@ -4737,6 +4725,30 @@
       "norm_label": "checkpagequalityfromdoc()",
       "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
       "source_location": "L1678"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkrepeatedsectionkickersfromdoc",
+      "label": "checkRepeatedSectionKickersFromDoc()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "detect-html.mjs",
+      "file_type": "code",
+      "norm_label": "checkrepeatedsectionkickersfromdoc()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
+      "source_location": "L1881"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_shared_color_isneutralcolor",
+      "label": "isNeutralColor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "detect-html.mjs",
+      "file_type": "code",
+      "norm_label": "isneutralcolor()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/shared/color.mjs",
+      "source_location": "L3"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_shared_page_isfullpage",
@@ -7005,162 +7017,6 @@
       "norm_label": ".wrap()",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
       "source_location": "L809"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_childnodes",
-      "label": ".childNodes()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "css-cascade.mjs",
-      "file_type": "code",
-      "norm_label": ".childnodes()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L742"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_children",
-      "label": ".children()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "css-cascade.mjs",
-      "file_type": "code",
-      "norm_label": ".children()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L739"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_classname",
-      "label": ".className()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "css-cascade.mjs",
-      "file_type": "code",
-      "norm_label": ".classname()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L752"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_closest",
-      "label": ".closest()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "css-cascade.mjs",
-      "file_type": "code",
-      "norm_label": ".closest()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L776"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_constructor",
-      "label": ".constructor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "css-cascade.mjs",
-      "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L722"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_contains",
-      "label": ".contains()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "css-cascade.mjs",
-      "file_type": "code",
-      "norm_label": ".contains()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L789"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_getattribute",
-      "label": ".getAttribute()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "css-cascade.mjs",
-      "file_type": "code",
-      "norm_label": ".getattribute()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L758"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_id",
-      "label": ".id()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "css-cascade.mjs",
-      "file_type": "code",
-      "norm_label": ".id()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L755"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_parentelement",
-      "label": ".parentElement()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "css-cascade.mjs",
-      "file_type": "code",
-      "norm_label": ".parentelement()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L729"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_previouselementsibling",
-      "label": ".previousElementSibling()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "css-cascade.mjs",
-      "file_type": "code",
-      "norm_label": ".previouselementsibling()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L734"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_queryselector",
-      "label": ".querySelector()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "css-cascade.mjs",
-      "file_type": "code",
-      "norm_label": ".queryselector()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L761"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_queryselectorall",
-      "label": ".querySelectorAll()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "css-cascade.mjs",
-      "file_type": "code",
-      "norm_label": ".queryselectorall()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L769"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_textcontent",
-      "label": ".textContent()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "css-cascade.mjs",
-      "file_type": "code",
-      "norm_label": ".textcontent()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L749"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticspecificity",
@@ -9659,6 +9515,18 @@
       "source_location": "L502"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_wrap_searchdir",
+      "label": "searchDir()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 23,
+      "community_name": "live-wrap.mjs",
+      "file_type": "code",
+      "norm_label": "searchdir()",
+      "source_file": ".claude/skills/impeccable/scripts/live-wrap.mjs",
+      "source_location": "L667"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_wrap_splitclasslist",
       "label": "splitClassList()",
       "_callable": true,
@@ -9691,7 +9559,7 @@
       "community_name": "RoombaController",
       "file_type": "code",
       "norm_label": ".avoid_obstacle()",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L273"
     },
     {
@@ -9703,7 +9571,7 @@
       "community_name": "RoombaController",
       "file_type": "code",
       "norm_label": ".connect()",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L85"
     },
     {
@@ -9715,7 +9583,7 @@
       "community_name": "RoombaController",
       "file_type": "code",
       "norm_label": ".distance()",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L229"
     },
     {
@@ -9727,7 +9595,7 @@
       "community_name": "RoombaController",
       "file_type": "code",
       "norm_label": ".exit()",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L98"
     },
     {
@@ -9739,7 +9607,7 @@
       "community_name": "RoombaController",
       "file_type": "code",
       "norm_label": ".__init__()",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L21"
     },
     {
@@ -9751,7 +9619,7 @@
       "community_name": "RoombaController",
       "file_type": "code",
       "norm_label": ".is_obstacle_detected()",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L254"
     },
     {
@@ -9763,7 +9631,7 @@
       "community_name": "RoombaController",
       "file_type": "code",
       "norm_label": ".main_loop()",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L289"
     },
     {
@@ -9775,7 +9643,7 @@
       "community_name": "RoombaController",
       "file_type": "code",
       "norm_label": ".move_backward()",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L106"
     },
     {
@@ -9787,7 +9655,7 @@
       "community_name": "RoombaController",
       "file_type": "code",
       "norm_label": ".move_forward()",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L103"
     },
     {
@@ -9799,7 +9667,7 @@
       "community_name": "RoombaController",
       "file_type": "code",
       "norm_label": ".odometry()",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L243"
     },
     {
@@ -9811,7 +9679,7 @@
       "community_name": "RoombaController",
       "file_type": "code",
       "norm_label": ".plot_trajectory()",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L281"
     },
     {
@@ -9823,7 +9691,7 @@
       "community_name": "RoombaController",
       "file_type": "code",
       "norm_label": ".route()",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L118"
     },
     {
@@ -9835,7 +9703,7 @@
       "community_name": "RoombaController",
       "file_type": "code",
       "norm_label": ".stop()",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L115"
     },
     {
@@ -9847,7 +9715,7 @@
       "community_name": "RoombaController",
       "file_type": "code",
       "norm_label": ".turn_left()",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L109"
     },
     {
@@ -9859,7 +9727,7 @@
       "community_name": "RoombaController",
       "file_type": "code",
       "norm_label": ".turn_right()",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L112"
     },
     {
@@ -9871,7 +9739,7 @@
       "community_name": "RoombaController",
       "file_type": "code",
       "norm_label": ".update()",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L125"
     },
     {
@@ -10343,6 +10211,54 @@
       "source_location": "L86"
     },
     {
+      "id": "claude_skills_impeccable_scripts_detector_design_system_loaddesignsystemforcwd",
+      "label": "loadDesignSystemForCwd()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 27,
+      "community_name": "detect-antipatterns.mjs",
+      "file_type": "code",
+      "norm_label": "loaddesignsystemforcwd()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/design-system.mjs",
+      "source_location": "L358"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_design_system_parsefrontmatter",
+      "label": "parseFrontmatter()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 27,
+      "community_name": "detect-antipatterns.mjs",
+      "file_type": "code",
+      "norm_label": "parsefrontmatter()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/design-system.mjs",
+      "source_location": "L53"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_design_system_resolvedesignsidecarpath",
+      "label": "resolveDesignSidecarPath()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 27,
+      "community_name": "detect-antipatterns.mjs",
+      "file_type": "code",
+      "norm_label": "resolvedesignsidecarpath()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/design-system.mjs",
+      "source_location": "L42"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_design_system_safereadjson",
+      "label": "safeReadJson()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 27,
+      "community_name": "detect-antipatterns.mjs",
+      "file_type": "code",
+      "norm_label": "safereadjson()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/design-system.mjs",
+      "source_location": "L147"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_detector_engines_browser_detect_url_createbrowserdetector",
       "label": "createBrowserDetector()",
       "_callable": true,
@@ -10415,18 +10331,6 @@
       "source_location": "L21"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_profile_profiler_createdetectorprofile",
-      "label": "createDetectorProfile()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 27,
-      "community_name": "detect-antipatterns.mjs",
-      "file_type": "code",
-      "norm_label": "createdetectorprofile()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/profile/profiler.mjs",
-      "source_location": "L7"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_detector_registry_antipatterns_getruleenginesupport",
       "label": "getRuleEngineSupport()",
       "_callable": true,
@@ -10449,18 +10353,6 @@
       "norm_label": "getrulesforcategory()",
       "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
       "source_location": "L414"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkpagetypography",
-      "label": "checkPageTypography()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 27,
-      "community_name": "detect-antipatterns.mjs",
-      "file_type": "code",
-      "norm_label": "checkpagetypography()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L2014"
     },
     {
       "id": "claude_skills_impeccable_scripts_lib_impeccable_config_shouldignoredetectionfile",
@@ -14435,18 +14327,6 @@
       "source_location": "L3735"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_engines_regex_detect_text_isneutralbordercolor",
-      "label": "isNeutralBorderColor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 39,
-      "community_name": "parseRgb",
-      "file_type": "code",
-      "norm_label": "isneutralbordercolor()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/regex/detect-text.mjs",
-      "source_location": "L41"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkcolors",
       "label": "checkColors()",
       "_callable": true,
@@ -14673,18 +14553,6 @@
       "norm_label": "haschroma()",
       "source_file": ".claude/skills/impeccable/scripts/detector/shared/color.mjs",
       "source_location": "L92"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_shared_color_isneutralcolor",
-      "label": "isNeutralColor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 39,
-      "community_name": "parseRgb",
-      "file_type": "code",
-      "norm_label": "isneutralcolor()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/shared/color.mjs",
-      "source_location": "L3"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_shared_color_parsegradientcolors",
@@ -20099,76 +19967,160 @@
       "source_location": "L385"
     },
     {
-      "id": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_ang_degree",
-      "label": "ang_degree()",
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_childnodes",
+      "label": ".childNodes()",
       "_callable": true,
       "_origin": "ast",
       "community": 68,
-      "community_name": "funciones.py",
+      "community_name": "StaticElement",
       "file_type": "code",
-      "norm_label": "ang_degree()",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/funciones.py",
-      "source_location": "L291"
+      "norm_label": ".childnodes()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L742"
     },
     {
-      "id": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_automatico",
-      "label": "automatico()",
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_children",
+      "label": ".children()",
       "_callable": true,
       "_origin": "ast",
       "community": 68,
-      "community_name": "funciones.py",
+      "community_name": "StaticElement",
       "file_type": "code",
-      "norm_label": "automatico()",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/funciones.py",
-      "source_location": "L11"
+      "norm_label": ".children()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L739"
     },
     {
-      "id": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_cuadrado",
-      "label": "cuadrado()",
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_classname",
+      "label": ".className()",
       "_callable": true,
       "_origin": "ast",
       "community": 68,
-      "community_name": "funciones.py",
+      "community_name": "StaticElement",
       "file_type": "code",
-      "norm_label": "cuadrado()",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/funciones.py",
-      "source_location": "L167"
+      "norm_label": ".classname()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L752"
     },
     {
-      "id": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_dist",
-      "label": "dist()",
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_closest",
+      "label": ".closest()",
       "_callable": true,
       "_origin": "ast",
       "community": 68,
-      "community_name": "funciones.py",
+      "community_name": "StaticElement",
       "file_type": "code",
-      "norm_label": "dist()",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/funciones.py",
-      "source_location": "L288"
+      "norm_label": ".closest()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L776"
     },
     {
-      "id": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_get_entero",
-      "label": "get_entero()",
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_constructor",
+      "label": ".constructor()",
       "_callable": true,
       "_origin": "ast",
       "community": 68,
-      "community_name": "funciones.py",
+      "community_name": "StaticElement",
       "file_type": "code",
-      "norm_label": "get_entero()",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/funciones.py",
-      "source_location": "L295"
+      "norm_label": ".constructor()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L722"
     },
     {
-      "id": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_graph",
-      "label": "graph()",
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_contains",
+      "label": ".contains()",
       "_callable": true,
       "_origin": "ast",
       "community": 68,
-      "community_name": "funciones.py",
+      "community_name": "StaticElement",
       "file_type": "code",
-      "norm_label": "graph()",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/funciones.py",
-      "source_location": "L278"
+      "norm_label": ".contains()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L789"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_getattribute",
+      "label": ".getAttribute()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 68,
+      "community_name": "StaticElement",
+      "file_type": "code",
+      "norm_label": ".getattribute()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L758"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_id",
+      "label": ".id()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 68,
+      "community_name": "StaticElement",
+      "file_type": "code",
+      "norm_label": ".id()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L755"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_parentelement",
+      "label": ".parentElement()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 68,
+      "community_name": "StaticElement",
+      "file_type": "code",
+      "norm_label": ".parentelement()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L729"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_previouselementsibling",
+      "label": ".previousElementSibling()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 68,
+      "community_name": "StaticElement",
+      "file_type": "code",
+      "norm_label": ".previouselementsibling()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L734"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_queryselector",
+      "label": ".querySelector()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 68,
+      "community_name": "StaticElement",
+      "file_type": "code",
+      "norm_label": ".queryselector()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L761"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_queryselectorall",
+      "label": ".querySelectorAll()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 68,
+      "community_name": "StaticElement",
+      "file_type": "code",
+      "norm_label": ".queryselectorall()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L769"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_textcontent",
+      "label": ".textContent()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 68,
+      "community_name": "StaticElement",
+      "file_type": "code",
+      "norm_label": ".textcontent()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L749"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_browser_bindeditbadgeproxy",
@@ -22415,18 +22367,6 @@
       "source_location": "L42"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_wrap_searchdir",
-      "label": "searchDir()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 86,
-      "community_name": "isGeneratedFile",
-      "file_type": "code",
-      "norm_label": "searchdir()",
-      "source_file": ".claude/skills/impeccable/scripts/live-wrap.mjs",
-      "source_location": "L667"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_detector_design_system_addcolorobject",
       "label": "addColorObject()",
       "_callable": true,
@@ -22787,18 +22727,6 @@
       "source_location": "L421"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_design_system_loaddesignsystemforcwd",
-      "label": "loadDesignSystemForCwd()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "design-system.mjs",
-      "file_type": "code",
-      "norm_label": "loaddesignsystemforcwd()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/design-system.mjs",
-      "source_location": "L358"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_detector_design_system_makedesignfinding",
       "label": "makeDesignFinding()",
       "_callable": true,
@@ -22847,18 +22775,6 @@
       "source_location": "L225"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_design_system_parsefrontmatter",
-      "label": "parseFrontmatter()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "design-system.mjs",
-      "file_type": "code",
-      "norm_label": "parsefrontmatter()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/design-system.mjs",
-      "source_location": "L53"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_detector_design_system_parsescalar",
       "label": "parseScalar()",
       "_callable": true,
@@ -22905,30 +22821,6 @@
       "norm_label": "resolvedesignmdpath()",
       "source_file": ".claude/skills/impeccable/scripts/detector/design-system.mjs",
       "source_location": "L29"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_design_system_resolvedesignsidecarpath",
-      "label": "resolveDesignSidecarPath()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "design-system.mjs",
-      "file_type": "code",
-      "norm_label": "resolvedesignsidecarpath()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/design-system.mjs",
-      "source_location": "L42"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_design_system_safereadjson",
-      "label": "safeReadJson()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "design-system.mjs",
-      "file_type": "code",
-      "norm_label": "safereadjson()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/design-system.mjs",
-      "source_location": "L147"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_design_system_sampletext",
@@ -23538,7 +23430,7 @@
       "node_kind": "heading",
       "norm_label": "excluido por las reglas del profesor (nunca copiar)",
       "source_file": "master-sistemas-inteligentes/robots-autonomos/FUENTE.md",
-      "source_location": "L43"
+      "source_location": "L57"
     },
     {
       "id": "master_sistemas_inteligentes_robots_autonomos_fuente_excluido_por_un_problema_t\u00e9cnico_de_transferencia_en_esta_pasada",
@@ -23549,6 +23441,18 @@
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "excluido por un problema tecnico de transferencia en esta pasada",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/FUENTE.md",
+      "source_location": "L40"
+    },
+    {
+      "id": "master_sistemas_inteligentes_robots_autonomos_fuente_excluido_tras_la_revisi\u00f3n_independiente_contenido_problem\u00e1tico",
+      "label": "Excluido tras la revisi\u00f3n independiente (contenido problem\u00e1tico)",
+      "_origin": "ast",
+      "community": 110,
+      "community_name": "robots-autonomos/FUENTE.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "excluido tras la revision independiente (contenido problematico)",
       "source_file": "master-sistemas-inteligentes/robots-autonomos/FUENTE.md",
       "source_location": "L26"
     },
@@ -23562,7 +23466,7 @@
       "node_kind": "heading",
       "norm_label": "no copiado (fuera de alcance / duplicado / dependencias de terceros)",
       "source_file": "master-sistemas-inteligentes/robots-autonomos/FUENTE.md",
-      "source_location": "L52"
+      "source_location": "L66"
     },
     {
       "id": "master_sistemas_inteligentes_control_inteligente_fuente",
@@ -23805,17 +23709,6 @@
       "source_location": "L15"
     },
     {
-      "id": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2",
-      "label": "irobot_2.py",
-      "_origin": "ast",
-      "community": 116,
-      "community_name": "irobot_2.py",
-      "file_type": "code",
-      "norm_label": "irobot_2.py",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/irobot_2.py",
-      "source_location": "L1"
-    },
-    {
       "id": "master_sistemas_inteligentes_logica_para_web_semantica_fuente",
       "label": "logica-para-web-semantica/FUENTE.md",
       "_origin": "ast",
@@ -23954,17 +23847,6 @@
       "norm_label": "svelte_runtime_file",
       "source_file": ".claude/skills/impeccable/scripts/live/svelte-component.mjs",
       "source_location": "L15"
-    },
-    {
-      "id": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot",
-      "label": "iRobot",
-      "_origin": "ast",
-      "community": 120,
-      "community_name": "iRobot",
-      "file_type": "code",
-      "norm_label": "irobot",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/iRobot.pyproj",
-      "source_location": null
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_engines_browser_detect_url",
@@ -24700,7 +24582,7 @@
       "community_name": "RoombaController",
       "file_type": "code",
       "norm_label": "roomba.py",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L1"
     },
     {
@@ -25915,28 +25797,6 @@
       "source_location": "L1"
     },
     {
-      "id": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones",
-      "label": "funciones.py",
-      "_origin": "ast",
-      "community": 68,
-      "community_name": "funciones.py",
-      "file_type": "code",
-      "norm_label": "funciones.py",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/funciones.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_mio",
-      "label": "mio.py",
-      "_origin": "ast",
-      "community": 68,
-      "community_name": "funciones.py",
-      "file_type": "code",
-      "norm_label": "mio.py",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/mio.py",
-      "source_location": "L1"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_ui_core",
       "label": "ui-core.mjs",
       "_origin": "ast",
@@ -26203,25 +26063,25 @@
     },
     {
       "id": "master_sistemas_inteligentes_tecnologias_del_habla_fuente_copiado_entrega_1",
-      "label": "Copiado (`Entrega 1/`)",
+      "label": "Copiado (`entrega-1/`)",
       "_origin": "ast",
       "community": 91,
       "community_name": "Fuente del material",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "copiado (`entrega 1/`)",
+      "norm_label": "copiado (`entrega-1/`)",
       "source_file": "master-sistemas-inteligentes/tecnologias-del-habla/FUENTE.md",
       "source_location": "L14"
     },
     {
       "id": "master_sistemas_inteligentes_tecnologias_del_habla_fuente_copiado_entrega_2",
-      "label": "Copiado (`Entrega 2/`)",
+      "label": "Copiado (`entrega-2/`)",
       "_origin": "ast",
       "community": 91,
       "community_name": "Fuente del material",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "copiado (`entrega 2/`)",
+      "norm_label": "copiado (`entrega-2/`)",
       "source_file": "master-sistemas-inteligentes/tecnologias-del-habla/FUENTE.md",
       "source_location": "L21"
     },
@@ -26239,13 +26099,13 @@
     },
     {
       "id": "master_sistemas_inteligentes_tecnologias_del_habla_fuente_excluido_entrega_2",
-      "label": "Excluido (`Entrega 2/`)",
+      "label": "Excluido (`entrega-2/`)",
       "_origin": "ast",
       "community": 91,
       "community_name": "Fuente del material",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "excluido (`entrega 2/`)",
+      "norm_label": "excluido (`entrega-2/`)",
       "source_file": "master-sistemas-inteligentes/tecnologias-del-habla/FUENTE.md",
       "source_location": "L27"
     },
@@ -65739,7 +65599,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L78",
       "weight": 1.0
     },
@@ -65751,7 +65611,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L130",
       "weight": 1.0
     },
@@ -65763,7 +65623,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L139",
       "weight": 1.0
     },
@@ -65775,92 +65635,8 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L157",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_ang_degree",
-      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_dist",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/funciones.py",
-      "source_location": "L292",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_automatico",
-      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_get_entero",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/funciones.py",
-      "source_location": "L13",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_automatico",
-      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_graph",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/funciones.py",
-      "source_location": "L162",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_cuadrado",
-      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_get_entero",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/funciones.py",
-      "source_location": "L175",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_cuadrado",
-      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_graph",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/funciones.py",
-      "source_location": "L274",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2_ang_degree",
-      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2_dist",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/irobot_2.py",
-      "source_location": "L21",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2_odometry",
-      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2_dist",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/irobot_2.py",
-      "source_location": "L54",
       "weight": 1.0
     },
     {
@@ -68789,18 +68565,6 @@
       "context": "import",
       "source_file": ".claude/skills/impeccable/scripts/live-wrap.mjs",
       "source_location": "L18",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_mio",
-      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/mio.py",
-      "source_location": "L4",
       "weight": 1.0
     },
     {
@@ -92456,7 +92220,7 @@
     },
     {
       "source": "master_sistemas_inteligentes_robots_autonomos_fuente",
-      "target": "master_sistemas_inteligentes_robots_autonomos_fuente_excluido_por_un_problema_t\u00e9cnico_de_transferencia_en_esta_pasada",
+      "target": "master_sistemas_inteligentes_robots_autonomos_fuente_excluido_tras_la_revisi\u00f3n_independiente_contenido_problem\u00e1tico",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -92478,13 +92242,24 @@
     },
     {
       "source": "master_sistemas_inteligentes_robots_autonomos_fuente",
+      "target": "master_sistemas_inteligentes_robots_autonomos_fuente_excluido_por_un_problema_t\u00e9cnico_de_transferencia_en_esta_pasada",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/FUENTE.md",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_robots_autonomos_fuente",
       "target": "master_sistemas_inteligentes_robots_autonomos_fuente_excluido_por_las_reglas_del_profesor_nunca_copiar",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/robots-autonomos/FUENTE.md",
-      "source_location": "L43",
+      "source_location": "L57",
       "weight": 1.0
     },
     {
@@ -92495,7 +92270,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/robots-autonomos/FUENTE.md",
-      "source_location": "L52",
+      "source_location": "L66",
       "weight": 1.0
     },
     {
@@ -92505,117 +92280,8 @@
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L20",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones",
-      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_automatico",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/funciones.py",
-      "source_location": "L11",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones",
-      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_cuadrado",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/funciones.py",
-      "source_location": "L167",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones",
-      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_graph",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/funciones.py",
-      "source_location": "L278",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones",
-      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_dist",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/funciones.py",
-      "source_location": "L288",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones",
-      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_ang_degree",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/funciones.py",
-      "source_location": "L291",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones",
-      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_get_entero",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/funciones.py",
-      "source_location": "L295",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot",
-      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/iRobot.sln",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2",
-      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2_dist",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/irobot_2.py",
-      "source_location": "L17",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2",
-      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2_ang_degree",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/irobot_2.py",
-      "source_location": "L20",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2",
-      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2_odometry",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/irobot_2.py",
-      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -92999,7 +92665,7 @@
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L103",
       "weight": 1.0
     },
@@ -93010,7 +92676,7 @@
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L106",
       "weight": 1.0
     },
@@ -93021,7 +92687,7 @@
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L109",
       "weight": 1.0
     },
@@ -93032,7 +92698,7 @@
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L112",
       "weight": 1.0
     },
@@ -93043,7 +92709,7 @@
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L115",
       "weight": 1.0
     },
@@ -93054,7 +92720,7 @@
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L118",
       "weight": 1.0
     },
@@ -93065,7 +92731,7 @@
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L125",
       "weight": 1.0
     },
@@ -93076,7 +92742,7 @@
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L21",
       "weight": 1.0
     },
@@ -93087,7 +92753,7 @@
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L229",
       "weight": 1.0
     },
@@ -93098,7 +92764,7 @@
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L243",
       "weight": 1.0
     },
@@ -93109,7 +92775,7 @@
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L254",
       "weight": 1.0
     },
@@ -93120,7 +92786,7 @@
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L273",
       "weight": 1.0
     },
@@ -93131,7 +92797,7 @@
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L281",
       "weight": 1.0
     },
@@ -93142,7 +92808,7 @@
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L289",
       "weight": 1.0
     },
@@ -93153,7 +92819,7 @@
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L85",
       "weight": 1.0
     },
@@ -93164,7 +92830,7 @@
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L98",
       "weight": 1.0
     },
@@ -97027,5 +96693,5 @@
       "source_file": "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad6a_como-se-va-a-goya_interactivo.html"
     }
   ],
-  "built_at_commit": "ca8e6e3145a7159508966147a767f89049856bfa"
+  "built_at_commit": "ac1bcf30928982c53f88cadb04a4c111f55e8259"
 }

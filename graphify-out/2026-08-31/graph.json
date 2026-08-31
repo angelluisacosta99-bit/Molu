@@ -174,7 +174,7 @@
       "community_name": "RoombaController",
       "file_type": "code",
       "norm_label": "roombacontroller",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L20"
     },
     {
@@ -3707,36 +3707,36 @@
       "source_location": "L732"
     },
     {
-      "id": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2_ang_degree",
+      "id": "home_user_molu_master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2_ang_degree",
       "label": "ang_degree()",
       "_callable": true,
       "_origin": "ast",
       "community": 116,
-      "community_name": "irobot_2.py",
+      "community_name": "dist",
       "file_type": "code",
       "norm_label": "ang_degree()",
       "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/irobot_2.py",
       "source_location": "L20"
     },
     {
-      "id": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2_dist",
+      "id": "home_user_molu_master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2_dist",
       "label": "dist()",
       "_callable": true,
       "_origin": "ast",
       "community": 116,
-      "community_name": "irobot_2.py",
+      "community_name": "dist",
       "file_type": "code",
       "norm_label": "dist()",
       "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/irobot_2.py",
       "source_location": "L17"
     },
     {
-      "id": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2_odometry",
+      "id": "home_user_molu_master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2_odometry",
       "label": "odometry()",
       "_callable": true,
       "_origin": "ast",
       "community": 116,
-      "community_name": "irobot_2.py",
+      "community_name": "dist",
       "file_type": "code",
       "norm_label": "odometry()",
       "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/irobot_2.py",
@@ -9691,7 +9691,7 @@
       "community_name": "RoombaController",
       "file_type": "code",
       "norm_label": ".avoid_obstacle()",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L273"
     },
     {
@@ -9703,7 +9703,7 @@
       "community_name": "RoombaController",
       "file_type": "code",
       "norm_label": ".connect()",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L85"
     },
     {
@@ -9715,7 +9715,7 @@
       "community_name": "RoombaController",
       "file_type": "code",
       "norm_label": ".distance()",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L229"
     },
     {
@@ -9727,7 +9727,7 @@
       "community_name": "RoombaController",
       "file_type": "code",
       "norm_label": ".exit()",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L98"
     },
     {
@@ -9739,7 +9739,7 @@
       "community_name": "RoombaController",
       "file_type": "code",
       "norm_label": ".__init__()",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L21"
     },
     {
@@ -9751,7 +9751,7 @@
       "community_name": "RoombaController",
       "file_type": "code",
       "norm_label": ".is_obstacle_detected()",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L254"
     },
     {
@@ -9763,7 +9763,7 @@
       "community_name": "RoombaController",
       "file_type": "code",
       "norm_label": ".main_loop()",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L289"
     },
     {
@@ -9775,7 +9775,7 @@
       "community_name": "RoombaController",
       "file_type": "code",
       "norm_label": ".move_backward()",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L106"
     },
     {
@@ -9787,7 +9787,7 @@
       "community_name": "RoombaController",
       "file_type": "code",
       "norm_label": ".move_forward()",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L103"
     },
     {
@@ -9799,7 +9799,7 @@
       "community_name": "RoombaController",
       "file_type": "code",
       "norm_label": ".odometry()",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L243"
     },
     {
@@ -9811,7 +9811,7 @@
       "community_name": "RoombaController",
       "file_type": "code",
       "norm_label": ".plot_trajectory()",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L281"
     },
     {
@@ -9823,7 +9823,7 @@
       "community_name": "RoombaController",
       "file_type": "code",
       "norm_label": ".route()",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L118"
     },
     {
@@ -9835,7 +9835,7 @@
       "community_name": "RoombaController",
       "file_type": "code",
       "norm_label": ".stop()",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L115"
     },
     {
@@ -9847,7 +9847,7 @@
       "community_name": "RoombaController",
       "file_type": "code",
       "norm_label": ".turn_left()",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L109"
     },
     {
@@ -9859,7 +9859,7 @@
       "community_name": "RoombaController",
       "file_type": "code",
       "norm_label": ".turn_right()",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L112"
     },
     {
@@ -9871,7 +9871,7 @@
       "community_name": "RoombaController",
       "file_type": "code",
       "norm_label": ".update()",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L125"
     },
     {
@@ -20099,7 +20099,7 @@
       "source_location": "L385"
     },
     {
-      "id": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_ang_degree",
+      "id": "home_user_molu_master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_ang_degree",
       "label": "ang_degree()",
       "_callable": true,
       "_origin": "ast",
@@ -20111,7 +20111,7 @@
       "source_location": "L291"
     },
     {
-      "id": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_automatico",
+      "id": "home_user_molu_master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_automatico",
       "label": "automatico()",
       "_callable": true,
       "_origin": "ast",
@@ -20123,7 +20123,7 @@
       "source_location": "L11"
     },
     {
-      "id": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_cuadrado",
+      "id": "home_user_molu_master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_cuadrado",
       "label": "cuadrado()",
       "_callable": true,
       "_origin": "ast",
@@ -20135,7 +20135,7 @@
       "source_location": "L167"
     },
     {
-      "id": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_dist",
+      "id": "home_user_molu_master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_dist",
       "label": "dist()",
       "_callable": true,
       "_origin": "ast",
@@ -20147,7 +20147,7 @@
       "source_location": "L288"
     },
     {
-      "id": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_get_entero",
+      "id": "home_user_molu_master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_get_entero",
       "label": "get_entero()",
       "_callable": true,
       "_origin": "ast",
@@ -20159,7 +20159,7 @@
       "source_location": "L295"
     },
     {
-      "id": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_graph",
+      "id": "home_user_molu_master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_graph",
       "label": "graph()",
       "_callable": true,
       "_origin": "ast",
@@ -23240,7 +23240,7 @@
       "node_kind": "heading",
       "norm_label": "copiado (`figures/`)",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/FUENTE.md",
-      "source_location": "L26"
+      "source_location": "L32"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_fuente_copiado_ra\u00edz",
@@ -23255,16 +23255,16 @@
       "source_location": "L13"
     },
     {
-      "id": "master_sistemas_inteligentes_trabajo_fin_de_master_fuente_excluido_problema_t\u00e9cnico_de_transferencia_en_esta_pasada",
-      "label": "Excluido \u2014 problema t\u00e9cnico de transferencia en esta pasada",
+      "id": "master_sistemas_inteligentes_trabajo_fin_de_master_fuente_excluido_problema_t\u00e9cnico_de_transferencia",
+      "label": "Excluido \u2014 problema t\u00e9cnico de transferencia",
       "_origin": "ast",
       "community": 108,
       "community_name": "Fuente del material",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "excluido \u2014 problema tecnico de transferencia en esta pasada",
+      "norm_label": "excluido \u2014 problema tecnico de transferencia",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/FUENTE.md",
-      "source_location": "L32"
+      "source_location": "L38"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_fuente_fuente_del_material",
@@ -23288,7 +23288,7 @@
       "node_kind": "heading",
       "norm_label": "no copiado, deliberadamente",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/FUENTE.md",
-      "source_location": "L45"
+      "source_location": "L50"
     },
     {
       "id": "master_sistemas_inteligentes_mineria_de_datos_fuente",
@@ -23809,7 +23809,7 @@
       "label": "irobot_2.py",
       "_origin": "ast",
       "community": 116,
-      "community_name": "irobot_2.py",
+      "community_name": "dist",
       "file_type": "code",
       "norm_label": "irobot_2.py",
       "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/irobot_2.py",
@@ -23965,6 +23965,17 @@
       "norm_label": "irobot",
       "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/iRobot.pyproj",
       "source_location": null
+    },
+    {
+      "id": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_mio",
+      "label": "mio.py",
+      "_origin": "ast",
+      "community": 121,
+      "community_name": "mio.py",
+      "file_type": "code",
+      "norm_label": "mio.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/mio.py",
+      "source_location": "L1"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_engines_browser_detect_url",
@@ -24700,7 +24711,7 @@
       "community_name": "RoombaController",
       "file_type": "code",
       "norm_label": "roomba.py",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L1"
     },
     {
@@ -25926,17 +25937,6 @@
       "source_location": "L1"
     },
     {
-      "id": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_mio",
-      "label": "mio.py",
-      "_origin": "ast",
-      "community": 68,
-      "community_name": "funciones.py",
-      "file_type": "code",
-      "norm_label": "mio.py",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/mio.py",
-      "source_location": "L1"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_ui_core",
       "label": "ui-core.mjs",
       "_origin": "ast",
@@ -26203,25 +26203,25 @@
     },
     {
       "id": "master_sistemas_inteligentes_tecnologias_del_habla_fuente_copiado_entrega_1",
-      "label": "Copiado (`Entrega 1/`)",
+      "label": "Copiado (`entrega-1/`)",
       "_origin": "ast",
       "community": 91,
       "community_name": "Fuente del material",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "copiado (`entrega 1/`)",
+      "norm_label": "copiado (`entrega-1/`)",
       "source_file": "master-sistemas-inteligentes/tecnologias-del-habla/FUENTE.md",
       "source_location": "L14"
     },
     {
       "id": "master_sistemas_inteligentes_tecnologias_del_habla_fuente_copiado_entrega_2",
-      "label": "Copiado (`Entrega 2/`)",
+      "label": "Copiado (`entrega-2/`)",
       "_origin": "ast",
       "community": 91,
       "community_name": "Fuente del material",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "copiado (`entrega 2/`)",
+      "norm_label": "copiado (`entrega-2/`)",
       "source_file": "master-sistemas-inteligentes/tecnologias-del-habla/FUENTE.md",
       "source_location": "L21"
     },
@@ -26239,13 +26239,13 @@
     },
     {
       "id": "master_sistemas_inteligentes_tecnologias_del_habla_fuente_excluido_entrega_2",
-      "label": "Excluido (`Entrega 2/`)",
+      "label": "Excluido (`entrega-2/`)",
       "_origin": "ast",
       "community": 91,
       "community_name": "Fuente del material",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "excluido (`entrega 2/`)",
+      "norm_label": "excluido (`entrega-2/`)",
       "source_file": "master-sistemas-inteligentes/tecnologias-del-habla/FUENTE.md",
       "source_location": "L27"
     },
@@ -65732,6 +65732,90 @@
       "weight": 1.0
     },
     {
+      "source": "home_user_molu_master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_ang_degree",
+      "target": "home_user_molu_master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_dist",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/funciones.py",
+      "source_location": "L292",
+      "weight": 1.0
+    },
+    {
+      "source": "home_user_molu_master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_automatico",
+      "target": "home_user_molu_master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_get_entero",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/funciones.py",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "home_user_molu_master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_automatico",
+      "target": "home_user_molu_master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_graph",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/funciones.py",
+      "source_location": "L162",
+      "weight": 1.0
+    },
+    {
+      "source": "home_user_molu_master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_cuadrado",
+      "target": "home_user_molu_master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_get_entero",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/funciones.py",
+      "source_location": "L175",
+      "weight": 1.0
+    },
+    {
+      "source": "home_user_molu_master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_cuadrado",
+      "target": "home_user_molu_master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_graph",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/funciones.py",
+      "source_location": "L274",
+      "weight": 1.0
+    },
+    {
+      "source": "home_user_molu_master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2_ang_degree",
+      "target": "home_user_molu_master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2_dist",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/irobot_2.py",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "home_user_molu_master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2_odometry",
+      "target": "home_user_molu_master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2_dist",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/irobot_2.py",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
       "source": "master_sistemas_inteligentes_robots_autonomos_roomba_codigo_roomba_roomba_roombacontroller_init",
       "target": "master_sistemas_inteligentes_robots_autonomos_roomba_codigo_roomba_roomba_roombacontroller_connect",
       "relation": "calls",
@@ -65739,7 +65823,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L78",
       "weight": 1.0
     },
@@ -65751,7 +65835,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L130",
       "weight": 1.0
     },
@@ -65763,7 +65847,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L139",
       "weight": 1.0
     },
@@ -65775,92 +65859,8 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L157",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_ang_degree",
-      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_dist",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/funciones.py",
-      "source_location": "L292",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_automatico",
-      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_get_entero",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/funciones.py",
-      "source_location": "L13",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_automatico",
-      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_graph",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/funciones.py",
-      "source_location": "L162",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_cuadrado",
-      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_get_entero",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/funciones.py",
-      "source_location": "L175",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_cuadrado",
-      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_graph",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/funciones.py",
-      "source_location": "L274",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2_ang_degree",
-      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2_dist",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/irobot_2.py",
-      "source_location": "L21",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2_odometry",
-      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2_dist",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/irobot_2.py",
-      "source_location": "L54",
       "weight": 1.0
     },
     {
@@ -68789,18 +68789,6 @@
       "context": "import",
       "source_file": ".claude/skills/impeccable/scripts/live-wrap.mjs",
       "source_location": "L18",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_mio",
-      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/iRobot/mio.py",
-      "source_location": "L4",
       "weight": 1.0
     },
     {
@@ -92505,13 +92493,13 @@
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L20",
       "weight": 1.0
     },
     {
       "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones",
-      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_automatico",
+      "target": "home_user_molu_master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_automatico",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -92522,7 +92510,7 @@
     },
     {
       "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones",
-      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_cuadrado",
+      "target": "home_user_molu_master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_cuadrado",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -92533,7 +92521,7 @@
     },
     {
       "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones",
-      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_graph",
+      "target": "home_user_molu_master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_graph",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -92544,7 +92532,7 @@
     },
     {
       "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones",
-      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_dist",
+      "target": "home_user_molu_master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_dist",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -92555,7 +92543,7 @@
     },
     {
       "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones",
-      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_ang_degree",
+      "target": "home_user_molu_master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_ang_degree",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -92566,7 +92554,7 @@
     },
     {
       "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones",
-      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_get_entero",
+      "target": "home_user_molu_master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_get_entero",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -92587,7 +92575,7 @@
     },
     {
       "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2",
-      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2_dist",
+      "target": "home_user_molu_master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2_dist",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -92598,7 +92586,7 @@
     },
     {
       "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2",
-      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2_ang_degree",
+      "target": "home_user_molu_master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2_ang_degree",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -92609,7 +92597,7 @@
     },
     {
       "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2",
-      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2_odometry",
+      "target": "home_user_molu_master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2_odometry",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -92725,18 +92713,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/FUENTE.md",
-      "source_location": "L26",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
       "source": "master_sistemas_inteligentes_trabajo_fin_de_master_fuente_fuente_del_material",
-      "target": "master_sistemas_inteligentes_trabajo_fin_de_master_fuente_excluido_problema_t\u00e9cnico_de_transferencia_en_esta_pasada",
+      "target": "master_sistemas_inteligentes_trabajo_fin_de_master_fuente_excluido_problema_t\u00e9cnico_de_transferencia",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/FUENTE.md",
-      "source_location": "L32",
+      "source_location": "L38",
       "weight": 1.0
     },
     {
@@ -92747,7 +92735,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/FUENTE.md",
-      "source_location": "L45",
+      "source_location": "L50",
       "weight": 1.0
     },
     {
@@ -92999,7 +92987,7 @@
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L103",
       "weight": 1.0
     },
@@ -93010,7 +92998,7 @@
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L106",
       "weight": 1.0
     },
@@ -93021,7 +93009,7 @@
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L109",
       "weight": 1.0
     },
@@ -93032,7 +93020,7 @@
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L112",
       "weight": 1.0
     },
@@ -93043,7 +93031,7 @@
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L115",
       "weight": 1.0
     },
@@ -93054,7 +93042,7 @@
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L118",
       "weight": 1.0
     },
@@ -93065,7 +93053,7 @@
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L125",
       "weight": 1.0
     },
@@ -93076,7 +93064,7 @@
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L21",
       "weight": 1.0
     },
@@ -93087,7 +93075,7 @@
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L229",
       "weight": 1.0
     },
@@ -93098,7 +93086,7 @@
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L243",
       "weight": 1.0
     },
@@ -93109,7 +93097,7 @@
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L254",
       "weight": 1.0
     },
@@ -93120,7 +93108,7 @@
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L273",
       "weight": 1.0
     },
@@ -93131,7 +93119,7 @@
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L281",
       "weight": 1.0
     },
@@ -93142,7 +93130,7 @@
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L289",
       "weight": 1.0
     },
@@ -93153,7 +93141,7 @@
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L85",
       "weight": 1.0
     },
@@ -93164,7 +93152,7 @@
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/robots-autonomos/ROOMBA/codigo roomba/roomba.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py",
       "source_location": "L98",
       "weight": 1.0
     },
@@ -97027,5 +97015,5 @@
       "source_file": "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad6a_como-se-va-a-goya_interactivo.html"
     }
   ],
-  "built_at_commit": "f08accfbaa15bc1f85da57c0ccb1971fc3b96c44"
+  "built_at_commit": "ee4d5dc863f4fcb08163d02c781e9f5308a4a165"
 }

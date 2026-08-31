@@ -1,16 +1,16 @@
 # Graph Report - Molu  (2026-08-31)
 
 ## Corpus Check
-- 178 files · ~527,385 words
+- 178 files · ~527,388 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2415 nodes · 5803 edges · 121 communities (108 shown, 13 thin omitted)
+- 2415 nodes · 5802 edges · 122 communities (109 shown, 13 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 135 edges (avg confidence: 0.58)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `f08accfb`
+- Built from commit: `ee4d5dc8`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -131,7 +131,7 @@
 - inteligencia-ambiental-y-sistemas-multiagente/FUENTE.md
 - metodologia-de-la-investigacion/FUENTE.md
 - procesos-y-metodos-de-modelado-para-la-ingenieria-web-y-web-semantica/FUENTE.md
-- irobot_2.py
+- dist
 - logica-para-web-semantica/FUENTE.md
 - mineria-de-datos-aplicada-a-la-bioinformatica/FUENTE.md
 - overleaf-trabajo-mi/README.md
@@ -146,8 +146,8 @@
 6. `buildInsertConfigureRow()` - 26 edges
 7. `collectBrowserFindings()` - 26 edges
 8. `handleKeyDown()` - 26 edges
-9. `showToast()` - 25 edges
-10. `resumeSession()` - 25 edges
+9. `resumeSession()` - 25 edges
+10. `showToast()` - 25 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `Python overview` --semantically_similar_to--> `Docencia de español overview`  [INFERRED] [semantically similar]
@@ -176,7 +176,7 @@
 - **Impeccable Product-Register Reference Set** — claude_skills_impeccable_reference_product_product, claude_skills_impeccable_reference_quieter_quieter, claude_skills_impeccable_reference_typeset_typeset [INFERRED 0.85]
 - **A1 Interactive Exercise Apps — Shared Paper/Ink Design Template** — docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_cuaderno_unidad6a_como_se_va_a_goya_interactivo_unidad6a_interactivo, docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_cuaderno_unidad6b_cierra_la_ventana_interactivo_unidad6b_interactivo, docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_cuaderno_unidad6c_mi_barrio_es_tranquilo_interactivo_unidad6c_interactivo, docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_cuaderno_practica_mas_3_interactivo_practica_mas_3_interactivo [INFERRED 0.90]
 
-## Communities (121 total, 13 thin omitted)
+## Communities (122 total, 13 thin omitted)
 
 ### Community 0 - "live-browser.js"
 Cohesion: 0.03
@@ -447,7 +447,7 @@ Cohesion: 0.36
 Nodes (10): cleanIgnoreValueDisplay(), extractFindingIgnoreValue(), extractFindingIgnoreValueRaw(), extractMotionIgnoreValue(), filterFindings(), formatFindingIgnoreCommand(), isIgnoredFindingValue(), normalizeIgnoreRule() (+2 more)
 
 ### Community 68 - "funciones.py"
-Cohesion: 0.43
+Cohesion: 0.52
 Nodes (6): ang_degree(), automatico(), cuadrado(), dist(), get_entero(), graph()
 
 ### Community 69 - "syncEditBadgeHitProxies"
@@ -540,7 +540,7 @@ Nodes (3): candidates, detectorPath, __dirname
 
 ### Community 91 - "Fuente del material"
 Cohesion: 0.25
-Nodes (7): Copiado (`Entrega 1/`), Copiado (`Entrega 2/`), Copiado (raíz), Excluido (`Entrega 2/`), Excluido (raíz), Fuente del material, Trabajo final (papers) — NO copiado, deliberadamente
+Nodes (7): Copiado (`entrega-1/`), Copiado (`entrega-2/`), Copiado (raíz), Excluido (`entrega-2/`), Excluido (raíz), Fuente del material, Trabajo final (papers) — NO copiado, deliberadamente
 
 ### Community 92 - "analitica-visual-y-visualizacion-de-la-informacion/FUENTE.md"
 Cohesion: 0.33
@@ -576,7 +576,7 @@ Nodes (3): NEM1 Cuaderno Unidad 6A — ¿Cómo se va a Goya?, NEM1 Cuaderno Unid
 
 ### Community 108 - "Fuente del material"
 Cohesion: 0.33
-Nodes (5): Copiado (`figures/`), Copiado (raíz), Excluido — problema técnico de transferencia en esta pasada, Fuente del material, No copiado, deliberadamente
+Nodes (5): Copiado (`figures/`), Copiado (raíz), Excluido — problema técnico de transferencia, Fuente del material, No copiado, deliberadamente
 
 ### Community 109 - "mineria-de-datos/FUENTE.md"
 Cohesion: 0.40
@@ -606,7 +606,7 @@ Nodes (3): Copiado, Excluido por las reglas del profesor (nunca copiar), No copi
 Cohesion: 0.50
 Nodes (3): Copiado, Excluido por el límite de 8 MB, No copiado (fuera de alcance)
 
-### Community 116 - "irobot_2.py"
+### Community 116 - "dist"
 Cohesion: 0.83
 Nodes (3): ang_degree(), dist(), odometry()
 
@@ -619,11 +619,11 @@ Nodes (3): ang_degree(), dist(), odometry()
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `createManualEditRoutes()` connect `manual-edit-routes.mjs` to `live-commit-manual-edits.mjs`, `live-server.mjs`, `css-cascade.mjs`, `insert-ui.mjs`?**
-  _High betweenness centrality (0.084) - this node is a cross-community bridge._
+  _High betweenness centrality (0.089) - this node is a cross-community bridge._
 - **Why does `StaticDocument` connect `css-cascade.mjs` to `detect-html.mjs`?**
-  _High betweenness centrality (0.083) - this node is a cross-community bridge._
+  _High betweenness centrality (0.089) - this node is a cross-community bridge._
 - **Why does `commitManualEdits()` connect `live-commit-manual-edits.mjs` to `manual-edit-routes.mjs`, `live-copy-edit-agent.mjs`?**
-  _High betweenness centrality (0.008) - this node is a cross-community bridge._
+  _High betweenness centrality (0.010) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `initGlobalBar()` (e.g. with `hideAgentPollTooltip()` and `onDetectMessage()`) actually correct?**
   _`initGlobalBar()` has 7 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `Copiado`, `Excluido por tamaño (regla de 8 MB)`, `Excluido por un problema técnico de transferencia en esta pasada` to the rest of the system?**
