@@ -261,9 +261,12 @@ personal privada sobre Angel como estas cuatro cartas.)
   propia: ambos ya aparecen en la sección de Experiencia profesional, y
   esa combinación con un departamento pequeño podría identificarlo.)
 - **Docente del mismo departamento** (área de modelado matemático,
-  redes neuronales y sistemas de gestión de calidad) — destaca que fue
-  capitán del equipo de proyecto estudiantil y creador de la app
-  "Navegador RUT (MIIT)".
+  redes neuronales y sistemas de gestión de calidad) — destaca su
+  liderazgo como capitán del equipo de proyecto estudiantil durante
+  la carrera. (No se repite aquí el nombre del proyecto que dirigió:
+  ya aparece, con año, en las secciones de Premios y Cartas de
+  motivación, y esa combinación con una especialidad tan concreta
+  podría identificarla.)
 - **Docente del mismo departamento** (área de sistemas de
   transmisión y líneas de comunicación) — destaca su capacidad
   analítica, sus proyectos de curso sobre transmisión de datos y
