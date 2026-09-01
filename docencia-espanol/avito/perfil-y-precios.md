@@ -8,8 +8,9 @@ completas.
 ## Valoración
 
 **5,0 / 5 sobre 38 reseñas — 0 valoraciones por debajo de 5 estrellas.**
-Rango: marzo 2022 – 2026, sin ni un solo bajón de calidad en más de
-tres años y medio.
+Rango: marzo 2022 – julio 2025 o 2026 (la reseña más reciente no trae
+año en el original; ver nota en `resenas.md`), sin ni un solo bajón de
+calidad en al menos dos años y medio, posiblemente tres y medio.
 
 ## Прайс-лист — estado actual (tal como está publicado)
 

@@ -231,33 +231,36 @@ posible refuerzo del perfil antes de la solicitud del máster.
 ## Cartas de recomendación
 
 Cuatro cartas, todas centradas en su etapa en RUT MIIT (docentes) y en
-sus prácticas profesionales (supervisor de empresa):
+sus prácticas profesionales (supervisor de empresa). Nombres
+anonimizados aquí: son cartas privadas, escritas solo para un comité
+de admisión, nunca pensadas para publicarse — a diferencia de una
+reseña de Avito, no hay consentimiento previo para que su nombre real
+quede indexado en un repositorio público.
 
-- **Olga Malikova** (profesora, doctora en ciencias técnicas, docente
-  de «Redes digitales y sistemas de conmutación» y «Líneas eléctricas
-  y de fibra óptica», directora de su TFG) — destaca sus proyectos de
-  curso (diseño de línea de cable/aérea, estación de conmutación
-  digital), su desenvoltura en ruso pese a no ser su lengua materna, y
-  su TFG sobre la red DWDM/IP-MPLS-TP Moscú-Riazán.
-- **Alexánder Majanyuk** (jefe electromecánico de comunicaciones,
-  Estación de Kazán) — supervisor de sus dos últimas prácticas
-  (verano 2025 y prácticas de fin de carrera 2026); destaca su
-  progresión de becario a "ingeniero maduro", su iniciativa (redactó
-  por su cuenta una guía de uso de la radio RS-46MC para el personal
-  de turno) y lo recomienda "sin reservas".
-- **Irina Lemdyanova** (profesora, doctora en ciencias técnicas,
-  docente de «Modelado matemático de sistemas y procesos» —redes
-  neuronales, MATLAB—, «Monitoreo y mediciones especiales» —Julia,
-  estándares UIT-T—, «Sistemas de gestión de calidad» —ISO 9000— y
-  «Actividad de proyecto» durante 5 años) — destaca que fue capitán del
-  equipo de proyecto estudiantil y creador de la app "Navegador
-  RUT (MIIT)".
-- **Vasili Kuzyukov** (profesor, doctor en ciencias técnicas, docente
-  de «Sistemas de transmisión digital», prácticas de «Dispositivos
-  formadores de canales TSS» y «Líneas eléctricas y de fibra óptica»)
-  — destaca su capacidad analítica, sus proyectos de curso sobre
-  transmisión de datos y sistemas ópticos, y su destreza práctica
-  soldando fibra óptica.
+- **Profesora, doctora en ciencias técnicas**, docente de «Redes
+  digitales y sistemas de conmutación» y «Líneas eléctricas y de fibra
+  óptica», directora de su TFG — destaca sus proyectos de curso (diseño
+  de línea de cable/aérea, estación de conmutación digital), su
+  desenvoltura en ruso pese a no ser su lengua materna, y su TFG sobre
+  la red DWDM/IP-MPLS-TP Moscú-Riazán.
+- **Jefe electromecánico de comunicaciones, Estación de Kazán** —
+  supervisor de sus dos últimas prácticas (verano 2025 y prácticas de
+  fin de carrera 2026); destaca su progresión de becario a "ingeniero
+  maduro", su iniciativa (redactó por su cuenta una guía de uso de la
+  radio RS-46MC para el personal de turno) y lo recomienda "sin
+  reservas".
+- **Profesora, doctora en ciencias técnicas**, docente de «Modelado
+  matemático de sistemas y procesos» —redes neuronales, MATLAB—,
+  «Monitoreo y mediciones especiales» —Julia, estándares UIT-T—,
+  «Sistemas de gestión de calidad» —ISO 9000— y «Actividad de
+  proyecto» durante 5 años — destaca que fue capitán del equipo de
+  proyecto estudiantil y creador de la app "Navegador RUT (MIIT)".
+- **Profesor, doctor en ciencias técnicas**, docente de «Sistemas de
+  transmisión digital», prácticas de «Dispositivos formadores de
+  canales TSS» y «Líneas eléctricas y de fibra óptica» — destaca su
+  capacidad analítica, sus proyectos de curso sobre transmisión de
+  datos y sistemas ópticos, y su destreza práctica soldando fibra
+  óptica.
 
 ## Cartas de motivación
 
