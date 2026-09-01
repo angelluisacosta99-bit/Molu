@@ -86,14 +86,34 @@ PR #22 invertía el orden que PR #20 daba por bueno.
 
 2. **Copia la plantilla, no la reescribas.** `cp .claude/skills/ejercicio-interactivo/reference/template.html <destino>`.
    Sustituye **todos** los marcadores `{{...}}` (grep por `{{` para confirmar que no quede
-   ninguno) y rellena `blocks` con los ejercicios reales, siguiendo los cinco tipos ya
-   soportados por el motor de renderizado (`items`, `text`, `table2`, `conjTable`,
-   `agenda` — documentados con ejemplos dentro de la propia plantilla). Si necesitas un tipo
-   nuevo, tendrás que extender también el renderizador (busca `ex.type ===` en el archivo).
+   ninguno) y rellena `blocks` con los ejercicios reales, siguiendo los tipos ya soportados
+   por el motor de renderizado (`items`, `text`, `table2`, `conjTable`, `open`, `crossword`,
+   `agenda`, `match` — documentados con ejemplos dentro de la propia plantilla, y con más
+   detalle en la sección de lecciones más abajo). Si necesitas un tipo nuevo, tendrás que
+   extender también el renderizador (busca `ex.type ===` en el archivo).
    Dentro de `items`, para un hueco de verdadero/falso pon `vf: true` en el item en vez de
    escribir un tipo de ejercicio nuevo — cambia el input de texto por dos botones "V"/"F"
    sin tocar el motor de corrección (la respuesta sigue siendo `["V"]`/`["F"]`); ver el
    ejemplo ya incluido en la propia plantilla y la lección más abajo.
+
+   **REGLA DURA, sin excepciones — pedida expresamente por el profesor, incumplida ya una
+   vez: un ejercicio de "relaciona" (el libro pide unir una columna con otra) usa SIEMPRE
+   `type: "match"` — columnas de verdad, tocar para conectar — nunca un hueco de texto donde
+   el alumno escribe la letra/número de la pareja.** Esto aplica igual si el ejercicio se
+   llama "Relaciona", "Une cada X con Y", o pide emparejar dos listas de cualquier forma. El
+   patrón antiguo (escribir la letra en un `input` de `items`) quedó obsoleto tras la unidad
+   6 de B1 — ver la lección `"Relaciona" con columnas de verdad` más abajo para el porqué y
+   el formato exacto de `columns`/`rows`. Antes de dar un capítulo por terminado, busca en su
+   propio archivo cada exercise cuyo `title` contenga "Relaciona" o "relaciona" y confirma
+   que su `type` es `"match"` — si no lo es, corrígelo antes de publicar, no lo dejes para
+   después. **`reference/template.html` sí trae el motor de `match`, pero varios capítulos ya
+   construidos en `docencia-espanol/materiales/` NO** (se copiaron de una base más antigua
+   que el propio `template.html`, no de la plantilla más reciente) — antes de copiar un
+   capítulo existente como base para uno nuevo, comprueba con
+   `grep -c '"match"' <archivo-base>`: si da 0 y el capítulo nuevo tiene algún "relaciona",
+   hay que portar el motor completo (CSS + rama de renderizado + `pendingMatchDraws`) desde
+   `reference/template.html` antes de escribir el primer ejercicio, no después de
+   descubrir que falta.
 
 3. **Tildes: decide, no asumas.** La corrección del camino principal (`isCorrect`/`norm`)
    exige tilde exacta por diseño — en la mayoría de ejercicios de gramática la tilde
@@ -703,6 +723,18 @@ no las deshagas sin querer al modificar la plantilla.
   a tocarla salvo que otra fila la reclame y la corrija de nuevo. Arreglado quitando esas
   dos clases de la ficha abandonada (y de la recién elegida, por si venía de otra fila ya
   corregida) en el propio manejador de clic de `mwrap`, no solo en `_onGraded()`.
+  **`columns[1].items` (y cualquier columna no ancla) van SIEMPRE en un orden distinto al
+  de `columns[0]` — nunca fila i con fila i.** Error real cometido al construir 10C de A1:
+  las dos columnas se escribieron en el mismo orden que la pareja correcta (pregunta 1 con
+  su respuesta en la posición 1, país 1 con su actividad en la posición 1…), así que el
+  ejercicio de "relaciona" salía ya resuelto con solo unir en horizontal — cero dificultad
+  real, aunque técnicamente usara `type: "match"` y puntuara bien. El profesor lo vio de un
+  vistazo en la captura. La corrección no toca `rows` (el emparejamiento correcto sigue
+  siendo por contenido de texto, no por posición): basta con revolver el array `items` de
+  la columna no ancla a un orden distinto — un derangement completo si es fácil, o al menos
+  que ninguna fila quede alineada por casualidad. Antes de publicar un `match`, mira la
+  captura del ejercicio ya renderizado y confirma a ojo que ninguna pareja correcta queda
+  en la misma fila visual entre columnas.
 
 ### Canal por canal (la parte que más costó)
 

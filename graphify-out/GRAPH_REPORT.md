@@ -1,16 +1,16 @@
 # Graph Report - Molu  (2026-09-01)
 
 ## Corpus Check
-- 217 files · ~745,324 words
+- 224 files · ~833,181 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2781 nodes · 6135 edges · 170 communities (146 shown, 24 thin omitted)
-- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 135 edges (avg confidence: 0.81)
+- 2836 nodes · 6168 edges · 177 communities (153 shown, 24 thin omitted)
+- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 121 edges (avg confidence: 0.84)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `5157a3ea`
+- Built from commit: `a6744418`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -62,7 +62,7 @@
 - resolveLengthPx
 - onAnnotDown
 - createLiveBrowserSessionState
-- normalizeWorkspacePattern
+- discoverTargetCandidates
 - createLiveBrowserDomHelpers
 - sampleCssBackground
 - Critique Reference (Design Review)
@@ -72,7 +72,7 @@
 - critique-storage.mjs
 - scheduleLazyVisualContrast
 - collectBrowserFindings
-- parseRgb
+- handleGo
 - live.mjs
 - readConfig
 - RoombaController
@@ -90,7 +90,7 @@
 - Craft Flow Reference
 - Init Reference (Project Setup)
 - postSerializedFindings
-- readWorkspacePatterns
+- resolveContext
 - isScreenReaderOnlyTextStyle
 - graphify: Incremental Update & Cluster-only
 - Impeccable: Polish
@@ -182,9 +182,16 @@
 - session-start.sh
 - overleaf-trabajo-mi/README.md
 - funciones.py
-- discoverTargetCandidates
+- Ejercicios
 - live-target.mjs
 - irobot_2.py
+- Ejercicios
+- Ejercicios
+- Ejercicios
+- Ejercicios
+- Ejercicios
+- Ejercicios
+- resolveCandidateContextSummary
 
 ## God Nodes (most connected - your core abstractions)
 1. `initGlobalBar()` - 29 edges
@@ -213,15 +220,15 @@
 ## Import Cycles
 - None detected.
 
-## Communities (170 total, 24 thin omitted)
+## Communities (177 total, 24 thin omitted)
 
 ### Community 0 - "live-browser.js"
 Cohesion: 0.03
-Nodes (143): acceptedDomAlreadyClean(), addManualContextText(), applyGlobalBarLabelState(), applyPlaceholderSizingStyles(), applySvelteComponentVariantStyle(), bufferToBase64(), buildCollapsible(), buildColorModels() (+135 more)
+Nodes (141): acceptedDomAlreadyClean(), addManualContextText(), applyGlobalBarLabelState(), applyPlaceholderSizingStyles(), applySvelteComponentVariantStyle(), bufferToBase64(), buildCollapsible(), buildColorModels() (+133 more)
 
 ### Community 1 - "checks.mjs"
 Cohesion: 0.04
-Nodes (86): borderColorsFromStyle(), borderWidthsFromStyle(), checkBorders(), checkClippedOverflow(), checkCreamPalette(), checkElementBorders(), checkElementBordersDOM(), checkElementClippedOverflow() (+78 more)
+Nodes (102): borderColorsFromStyle(), borderWidthsFromStyle(), checkClippedOverflow(), checkColors(), checkCreamPalette(), checkElementAIPaletteDOM(), checkElementClippedOverflow(), checkElementClippedOverflowDOM() (+94 more)
 
 ### Community 2 - "index.mjs"
 Cohesion: 0.06
@@ -229,10 +236,10 @@ Nodes (68): addBrowserFindings(), addVisualContrastFindings(), addVisualContrast
 
 ### Community 3 - "resumeSession"
 Cohesion: 0.07
-Nodes (66): applyOriginalAttrsToSvelteAnchor(), applyParamDefaults(), applyParamValue(), applyPlaceholderDimensions(), applySavedSessionMeta(), buildParamsPanel(), clampVariantIndex(), closedClipPath() (+58 more)
+Nodes (69): applyOriginalAttrsToSvelteAnchor(), applyParamDefaults(), applyParamValue(), applyPlaceholderDimensions(), applySavedSessionMeta(), buildParamsPanel(), buildPlaceholderResizeHandles(), clampVariantIndex() (+61 more)
 
 ### Community 4 - "modern-screenshot.umd.js"
-Cohesion: 0.10
+Cohesion: 0.09
 Nodes (55): ae(), be(), bt(), Ce(), s(), Ct(), de(), dt() (+47 more)
 
 ### Community 5 - "el"
@@ -240,16 +247,16 @@ Cohesion: 0.08
 Nodes (49): actionLabel(), applyConfigureBarChrome(), bindConfigureCountPillTooltip(), bindConfigureInlineControlHover(), bindConfigureModifierPillHover(), buildConfigureActionControl(), buildConfigureCountControl(), buildConfigureRow() (+41 more)
 
 ### Community 6 - "manual-apply.mjs"
-Cohesion: 0.09
-Nodes (49): addOpToManualApplyChunk(), APPLY_EVENT_HARD_TIMEOUT_MS, APPLY_EVENT_SOFT_DEADLINE_MS, buildManualApplyAgentAction(), clearManualApplyTransaction(), collectManualApplyFiles(), compactManualApplyBatch(), compactManualApplyCandidates() (+41 more)
+Cohesion: 0.08
+Nodes (53): addOpToManualApplyChunk(), APPLY_EVENT_HARD_TIMEOUT_MS, APPLY_EVENT_SOFT_DEADLINE_MS, buildManualApplyAgentAction(), clearManualApplyTransaction(), collectManualApplyFiles(), compactManualApplyBatch(), compactManualApplyCandidates() (+45 more)
 
 ### Community 7 - "setLiveState"
-Cohesion: 0.08
-Nodes (69): abortSvelteComponentInjection(), applyEditing(), buildInsertPlaceholderSnapshotFromDom(), buildLocatorForLeaf(), buildPickedAnchorSnapshot(), cancelEditing(), cancelEditingToPicking(), cancelInsertConfigure() (+61 more)
+Cohesion: 0.10
+Nodes (63): abortSvelteComponentInjection(), applyEditing(), cancelEditing(), cancelEditingToPicking(), cancelInsertConfigure(), cleanup(), cleanupAcceptedSession(), clearAnnotations() (+55 more)
 
 ### Community 8 - "live-commit-manual-edits.mjs"
-Cohesion: 0.10
-Nodes (49): allEntryIds(), argVal(), buildRepairBatch(), candidatesForEntry(), changedFilesSinceSnapshot(), clearAppliedEntries(), collectApplyOwnedFiles(), collectRollbackFiles() (+41 more)
+Cohesion: 0.11
+Nodes (48): allEntryIds(), argVal(), buildRepairBatch(), candidatesForEntry(), changedFilesSinceSnapshot(), collectApplyOwnedFiles(), collectRollbackFiles(), commitManualEdits() (+40 more)
 
 ### Community 9 - "design-system.mjs"
 Cohesion: 0.09
@@ -268,20 +275,20 @@ Cohesion: 0.09
 Nodes (47): applyLegacyDeferredAcceptsOnStartup(), appendCssToSvelteStyle(), appendSanitizedCssRule(), applyDeferredSvelteComponentAccepts(), bakeParamValuesInCss(), buildInsertVariantStub(), buildPropContract(), buildPropsScript() (+39 more)
 
 ### Community 13 - "detect-url.mjs"
-Cohesion: 0.20
-Nodes (20): detectUrl(), runVisualContrastFallback(), serializeDesignSystemForBrowser(), runRegexMatchers(), captureVisualContrastCandidate(), compareScreenshotContrast(), sanitizeScreenshotClip(), finding() (+12 more)
+Cohesion: 0.15
+Nodes (25): detectUrl(), runVisualContrastFallback(), serializeDesignSystemForBrowser(), runRegexMatchers(), captureVisualContrastCandidate(), compareScreenshotContrast(), sanitizeScreenshotClip(), finding() (+17 more)
 
 ### Community 14 - "hook-lib.mjs"
 Cohesion: 0.07
 Nodes (45): ACK_EXTS, ALLOWED_EXTS, applyPatchText(), clampByte(), CO_SCAN_STYLE_NAMES, coLocatedStylesheets(), colorIgnoreKey(), DEFAULT_CONFIG (+37 more)
 
 ### Community 15 - "initPageChat"
-Cohesion: 0.13
-Nodes (33): armPageChatForTyping(), clearSteerAwaitTimer(), collapsePageChat(), expandPageChat(), finishVoiceSession(), focusPageChatInput(), initPageChat(), isEmbeddedPreviewBrowser() (+25 more)
+Cohesion: 0.09
+Nodes (48): armPageChatForTyping(), attachSteerFocusDebug(), attachSteerFocusGuard(), clearSteerAwaitTimer(), clearSteerFocusRecoverTimer(), collapsePageChat(), expandPageChat(), finishVoiceSession() (+40 more)
 
 ### Community 16 - "live-inject.mjs"
 Cohesion: 0.09
-Nodes (41): appendOriginToDirective(), buildTagBlock(), commentClose(), commentOpen(), CONFIG_PATH, detectLineEnding(), __dirname, ensureLiveGitIgnores() (+33 more)
+Nodes (43): appendOriginToDirective(), buildTagBlock(), commentClose(), commentOpen(), CONFIG_PATH, detectLineEnding(), __dirname, ensureLiveGitIgnores() (+35 more)
 
 ### Community 17 - "detect-antipatterns-browser.js"
 Cohesion: 0.08
@@ -325,7 +332,7 @@ Nodes (33): buildColor(), CANONICAL_SECTIONS, collectBullets(), collectColorValu
 
 ### Community 27 - "detect-antipatterns.mjs"
 Cohesion: 0.07
-Nodes (50): confirm(), detectCli(), formatFindings(), formatFindingSummary(), handleStdin(), printUsage(), createBrowserDetector(), CSS_IN_JS_EXTENSIONS (+42 more)
+Nodes (51): confirm(), detectCli(), formatFindings(), formatFindingSummary(), handleStdin(), printUsage(), createBrowserDetector(), CSS_IN_JS_EXTENSIONS (+43 more)
 
 ### Community 28 - "live-accept.mjs"
 Cohesion: 0.14
@@ -344,8 +351,8 @@ Cohesion: 0.12
 Nodes (20): averageRgb01(), captureChromeNodes(), captureElementFromRenderedAncestor(), captureElementToBlob(), compileShader(), cssColorToRgb01(), dominantRgb01(), findBackdropAncestor() (+12 more)
 
 ### Community 32 - "initGlobalBar"
-Cohesion: 0.09
-Nodes (41): attachSteerFocusDebug(), attachSteerFocusGuard(), barPaletteForTheme(), brandMarkSvg(), buildSteerProcessingDots(), clearSteerFocusRecoverTimer(), detectPageTheme(), ensureAgentPollTooltip() (+33 more)
+Cohesion: 0.16
+Nodes (19): barPaletteForTheme(), brandMarkSvg(), buildSteerProcessingDots(), designPanelCss(), detectPageTheme(), ensureAgentPollTooltip(), hideAgentPollTooltip(), initActionPicker() (+11 more)
 
 ### Community 33 - "live-poll.mjs"
 Cohesion: 0.15
@@ -356,20 +363,20 @@ Cohesion: 0.12
 Nodes (25): bumpEditCount(), clampGroupedToBudget(), clampToBudget(), dedupeAgainstCache(), depthIsSet(), directiveFooter(), ensureFile(), ensureSession() (+17 more)
 
 ### Community 35 - "manual-edit-routes.mjs"
-Cohesion: 0.18
-Nodes (22): args, buffer, cwd, pageUrlFilter, remaining, compactManualLogText(), summarizeManualApplyFailures(), summarizeManualDiagnostics() (+14 more)
+Cohesion: 0.19
+Nodes (19): clearAppliedEntries(), args, buffer, cwd, pageUrlFilter, remaining, buildManualEditEvidence(), createManualEditRoutes() (+11 more)
 
 ### Community 36 - "live-manual-edit-evidence.mjs"
 Cohesion: 0.15
 Nodes (25): analyzeSourceHint(), buildCandidatesForOp(), buildContextHintsByRef(), collectSearchFiles(), countOps(), decodeBasicHtml(), escapeRegExp(), findContextMatches() (+17 more)
 
 ### Community 37 - "context.mjs"
-Cohesion: 0.11
-Nodes (29): buildUpdateDirective(), compareSemver(), computeUpdateDirective(), contextSourcePath(), contextSourceStatus(), DESIGN_NAMES, FALLBACK_DIRS, fetchLatestSkillVersion() (+21 more)
+Cohesion: 0.13
+Nodes (23): buildUpdateDirective(), compareSemver(), computeUpdateDirective(), DESIGN_NAMES, FALLBACK_DIRS, fetchLatestSkillVersion(), MONOREPO_FALLBACK_PROJECT_DIRS, MONOREPO_MARKER_FILES (+15 more)
 
 ### Community 38 - "handleManualEditActivity"
 Cohesion: 0.18
-Nodes (26): clearStoredManualApplyState(), fetchPendingCount(), handleManualEditActivity(), hidePendingApplyDock(), manualApplyLoadingText(), manualApplyStateKey(), manualEditEventForCurrentPage(), numberOrNull() (+18 more)
+Nodes (25): clearStoredManualApplyState(), fetchPendingCount(), handleManualEditActivity(), hidePendingApplyDock(), manualApplyLoadingText(), manualApplyStateKey(), manualEditEventForCurrentPage(), numberOrNull() (+17 more)
 
 ### Community 40 - "impeccable-paths.mjs"
 Cohesion: 0.17
@@ -399,13 +406,13 @@ Nodes (17): beginEditPin(), buildAnnotationsForCapture(), buildPinElement(), can
 Cohesion: 0.20
 Nodes (14): createLiveBrowserSessionState(), clearHandled(), clearScrollY(), clearSession(), isHandled(), loadSession(), markHandled(), nextCheckpointRevision() (+6 more)
 
-### Community 47 - "normalizeWorkspacePattern"
-Cohesion: 0.33
-Nodes (9): escapeRegExp(), isExcludedByWorkspacePattern(), nearestProjectLikeRoot(), normalizeWorkspacePattern(), projectRootFromDoubleStarPattern(), projectRootFromWorkspacePattern(), resolveWorkspaceProjectRoot(), segmentMatches() (+1 more)
+### Community 47 - "discoverTargetCandidates"
+Cohesion: 0.20
+Nodes (16): directChildDirs(), discoverRootsForPattern(), discoverTargetCandidates(), escapeRegExp(), expandSimplePattern(), findTargetExample(), hasFallbackWorkspaceChildren(), isExcludedByWorkspacePattern() (+8 more)
 
 ### Community 48 - "createLiveBrowserDomHelpers"
-Cohesion: 0.19
-Nodes (10): createLiveBrowserDomHelpers(), cssId(), liveUiRoot(), makeFrozenAnchor(), own(), pickable(), rectIsUsableAnchor(), uiAppend() (+2 more)
+Cohesion: 0.17
+Nodes (11): createLiveBrowserDomHelpers(), cssId(), liveUiRoot(), makeFrozenAnchor(), own(), pickable(), rectIsUsableAnchor(), uiAppend() (+3 more)
 
 ### Community 49 - "sampleCssBackground"
 Cohesion: 0.20
@@ -439,13 +446,13 @@ Nodes (13): addBrowserFindings(), addVisualContrastFindings(), addVisualContrast
 Cohesion: 0.18
 Nodes (13): browserDesignSystemConfig(), browserFindingsFromMap(), browserPrimaryFont(), checkBrowserDesignSystemSources(), checkHtmlPatterns(), checkPageQualityDOM(), checkPageQualityFromDoc(), checkTypography() (+5 more)
 
-### Community 57 - "parseRgb"
-Cohesion: 0.20
-Nodes (22): checkColors(), checkElementAIPaletteDOM(), checkElementColors(), checkElementColorsDOM(), checkElementGlow(), checkElementGlowDOM(), checkElementIconTile(), checkElementIconTileDOM() (+14 more)
+### Community 57 - "handleGo"
+Cohesion: 0.23
+Nodes (12): buildInsertPlaceholderSnapshotFromDom(), buildPickedAnchorSnapshot(), captureAndEmit(), checkpointPayload(), extractContext(), handleGo(), handleInsertCreate(), maybePrefetchPage() (+4 more)
 
 ### Community 58 - "live.mjs"
-Cohesion: 0.26
-Nodes (13): loadContext(), resolveTargetSelection(), safeRead(), __dirname, ensureServerRunning(), globToRegex(), globToRegex(), resolveFiles() (+5 more)
+Cohesion: 0.32
+Nodes (11): loadContext(), resolveTargetSelection(), safeRead(), __dirname, ensureServerRunning(), globToRegex(), liveCli(), missingLiveContext() (+3 more)
 
 ### Community 59 - "readConfig"
 Cohesion: 0.18
@@ -507,9 +514,9 @@ Nodes (9): Document Reference (DESIGN.md Generation), .impeccable/design.json Si
 Cohesion: 0.25
 Nodes (9): buildSelectorSegment(), generateSelector(), isElementHidden(), isLikelyHashedClass(), postSerializedFindings(), renderBrowserFindings(), scanResultMeta(), serializeFindings() (+1 more)
 
-### Community 75 - "readWorkspacePatterns"
+### Community 75 - "resolveContext"
 Cohesion: 0.20
-Nodes (12): findMonorepoRoot(), hasFallbackWorkspaceChildren(), hasGitBoundary(), isMonorepoRoot(), parseYamlFlowList(), readJson(), readLernaWorkspaces(), readPackageWorkspaces() (+4 more)
+Nodes (12): findMonorepoRoot(), firstExisting(), hasGitBoundary(), isCandidateProjectRoot(), nearestProjectLikeRoot(), resolveContext(), resolveContextDir(), resolveEnvContextDir() (+4 more)
 
 ### Community 76 - "isScreenReaderOnlyTextStyle"
 Cohesion: 0.32
@@ -787,9 +794,9 @@ Nodes (3): Copiado, Excluido por el límite de 8 MB, No copiado (fuera de alcanc
 Cohesion: 0.43
 Nodes (6): ang_degree(), automatico(), cuadrado(), dist(), get_entero(), graph()
 
-### Community 167 - "discoverTargetCandidates"
-Cohesion: 0.43
-Nodes (7): directChildDirs(), discoverRootsForPattern(), discoverTargetCandidates(), expandSimplePattern(), findTargetExample(), isIgnoredWorkspaceDiscoveryDir(), walkDirs()
+### Community 167 - "Ejercicios"
+Cohesion: 0.20
+Nodes (9): 1. Practica más 5, Ej. 1 — Sustituye el nombre por el pronombre objeto, Ej. 2 — Elige el adjetivo correcto de cada pareja, Ej. 3 — Elige la opción correcta, Ej. 4 — Completa la tabla con el pretérito imperfecto de los verbos (I), Ej. 5 — Completa la tabla con el pretérito imperfecto de los verbos (II), Ej. 6 — Completa las siguientes frases con el pretérito imperfecto de los verbos del recuadro, Ej. 7 — Ordena las preguntas y contéstalas mirando los planes de Juanjo para el próximo curso (+1 more)
 
 ### Community 168 - "live-target.mjs"
 Cohesion: 0.43
@@ -799,25 +806,53 @@ Nodes (4): parseTargetOptions(), parseTargetPath(), TargetArgError, resolveLiveT
 Cohesion: 0.83
 Nodes (3): ang_degree(), dist(), odometry()
 
+### Community 170 - "Ejercicios"
+Cohesion: 0.22
+Nodes (8): 1. Voy a trabajar en un hotel, Ej. 1 — Relaciona las siguientes preguntas con sus respuestas, Ej. 2 — ¿Qué planes tienen los siguientes personajes para el fin de semana?, Ej. 3 — Completa la conversación, Ej. 4 — Relaciona cada país o ciudad con una actividad, Ej. 5 — Di qué van a hacer las siguientes personas en sus vacaciones, Ej. 6 — Lee el texto y di si las frases siguientes son verdaderas o falsas, Ejercicios
+
+### Community 171 - "Ejercicios"
+Cohesion: 0.25
+Nodes (7): 1. La salud, Ej. 1 — Mira el dibujo y escribe el nombre de las distintas partes del cuerpo, Ej. 2 — ¿Qué palabra no pertenece a su grupo?, Ej. 3 — Crucigrama: escribe las respuestas, Ej. 4 — Ordena la siguiente conversación entre Sonia y Alfonso, Ej. 5 — Completa las siguientes frases con el verbo doler, Ejercicios
+
+### Community 172 - "Ejercicios"
+Cohesion: 0.25
+Nodes (7): 1. Buenos Aires es más grande que Toledo, Ej. 1 — Escribe una frase con el mismo significado, Ej. 2 — Completa las frases, Ej. 3 — Completa este texto utilizando los comparativos del recuadro, Ej. 4 — ¿Dónde prefieres ir tú de vacaciones?, Ej. 5 — Lee el texto y completa los huecos con las palabras del recuadro, Ejercicios
+
+### Community 173 - "Ejercicios"
+Cohesion: 0.29
+Nodes (6): 1. Antes salíamos con los amigos, Ej. 1 — Relaciona las frases y completa con el pretérito imperfecto, Ej. 2 — Completa las frases con el pretérito imperfecto de los verbos del recuadro, Ej. 3 — Completa la siguiente entrevista con el pretérito imperfecto de los verbos entre paréntesis, Ej. 4 — Vuelve a leer la entrevista con Marcos y contesta a las preguntas, Ejercicios
+
+### Community 174 - "Ejercicios"
+Cohesion: 0.29
+Nodes (6): 1. Mi novio lleva corbata, Ej. 1 — Busca el nombre de esta ropa en la sopa de letras, Ej. 2 — Completa, Ej. 3 — Escribe los adjetivos contrarios, Ej. 4 — Completa con las palabras del recuadro, Ejercicios
+
+### Community 175 - "Ejercicios"
+Cohesion: 0.33
+Nodes (5): 1. ¿Cuánto cuestan estos zapatos?, Ej. 1 — Completa estas conversaciones con las palabras que faltan, Ej. 2 — Completa con el pronombre de objeto directo, Ej. 3 — Completa las frases con los pronombres del recuadro, Ejercicios
+
+### Community 176 - "resolveCandidateContextSummary"
+Cohesion: 0.33
+Nodes (6): contextSourcePath(), contextSourceStatus(), isPathInside(), isPathInsideOrEqual(), nearestPackageRootBetween(), resolveCandidateContextSummary()
+
 ## Knowledge Gaps
-- **523 isolated node(s):** `Start here`, `Specialized skills`, `Why agent-browser`, `Observability Dashboard`, `What it does` (+518 more)
+- **557 isolated node(s):** `Ej. 1 — Relaciona las frases y completa con el pretérito imperfecto`, `Ej. 2 — Completa las frases con el pretérito imperfecto de los verbos del recuadro`, `Ej. 3 — Completa la siguiente entrevista con el pretérito imperfecto de los verbos entre paréntesis`, `Ej. 4 — Vuelve a leer la entrevista con Marcos y contesta a las preguntas`, `HEADING_TAGS` (+552 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **24 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `createManualEditRoutes()` connect `manual-edit-routes.mjs` to `live-commit-manual-edits.mjs`, `live-server.mjs`, `css-cascade.mjs`, `insert-ui.mjs`?**
-  _High betweenness centrality (0.070) - this node is a cross-community bridge._
-- **Why does `StaticDocument` connect `css-cascade.mjs` to `detect-antipatterns.mjs`?**
-  _High betweenness centrality (0.070) - this node is a cross-community bridge._
-- **Why does `StaticElement` connect `StaticElement` to `css-cascade.mjs`?**
-  _High betweenness centrality (0.009) - this node is a cross-community bridge._
+- **Why does `readLiveServerInfo()` connect `readLiveServerInfo` to `impeccable-paths.mjs`, `live-poll.mjs`, `live.mjs`, `live-server.mjs`?**
+  _High betweenness centrality (0.004) - this node is a cross-community bridge._
+- **Why does `readBuffer()` connect `manual-edit-routes.mjs` to `live-manual-edit-evidence.mjs`, `manual-apply.mjs`, `live-commit-manual-edits.mjs`, `live-wrap.mjs`, `live-accept.mjs`?**
+  _High betweenness centrality (0.003) - this node is a cross-community bridge._
+- **Why does `loadContext()` connect `live.mjs` to `context.mjs`, `live-server.mjs`, `resolveContext`, `context-signals.mjs`, `cli`?**
+  _High betweenness centrality (0.002) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `initGlobalBar()` (e.g. with `hideAgentPollTooltip()` and `onDetectMessage()`) actually correct?**
   _`initGlobalBar()` has 7 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `Start here`, `Specialized skills`, `Why agent-browser` to the rest of the system?**
-  _523 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `Ej. 1 — Relaciona las frases y completa con el pretérito imperfecto`, `Ej. 2 — Completa las frases con el pretérito imperfecto de los verbos del recuadro`, `Ej. 3 — Completa la siguiente entrevista con el pretérito imperfecto de los verbos entre paréntesis` to the rest of the system?**
+  _557 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `live-browser.js` be split into smaller, more focused modules?**
-  _Cohesion score 0.02863984674329502 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.028169014084507043 - nodes in this community are weakly interconnected._
 - **Should `checks.mjs` be split into smaller, more focused modules?**
-  _Cohesion score 0.04467084639498432 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.04377289377289377 - nodes in this community are weakly interconnected._
