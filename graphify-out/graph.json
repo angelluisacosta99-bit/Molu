@@ -23995,7 +23995,7 @@
       "node_kind": "heading",
       "norm_label": "fuente",
       "source_file": "personal/academico/formacion-academica.md",
-      "source_location": "L305"
+      "source_location": "L309"
     },
     {
       "id": "personal_academico_formacion_academica_idiomas",
@@ -91410,7 +91410,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "personal/academico/formacion-academica.md",
-      "source_location": "L305",
+      "source_location": "L309",
       "weight": 1.0
     },
     {
@@ -95580,5 +95580,5 @@
       "source_file": "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad6a_como-se-va-a-goya_interactivo.html"
     }
   ],
-  "built_at_commit": "104a8aa60c0987968a6a618d5e3a0a14dcc01cc0"
+  "built_at_commit": "0603d0ddff7f0b5e848057c90e97458bc5e7c133"
 }

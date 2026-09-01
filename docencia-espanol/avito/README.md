@@ -10,7 +10,9 @@ independiente desde hace 5 años (ИП — empresario individual).
   (actual y propuesto) y descripción del anuncio (actual y propuesta),
   con el análisis de por qué se sugiere cada cambio.
 - [`resenas.md`](resenas.md) — las 38 reseñas de alumnos tal como
-  aparecen en el perfil público de Avito (nombre, fecha, texto), más un
-  resumen de los patrones que se repiten. Es información abierta
-  (pública en el perfil), guardada aquí con autorización expresa de
-  Angel.
+  aparecen en el perfil público de Avito (fecha, texto íntegro), más un
+  resumen de los patrones que se repiten. El texto es público (visible
+  en el perfil), pero los nombres de los alumnos están anonimizados
+  ("Alumno/a N") porque este repositorio es público y esos alumnos no
+  dieron su consentimiento para que su nombre completo quedara
+  agregado y permanente en un repositorio de GitHub indexable.
