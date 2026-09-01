@@ -250,11 +250,8 @@ personal privada sobre Angel como estas cuatro cartas.)
   de línea de cable/aérea, estación de conmutación digital), su
   desenvoltura en ruso pese a no ser su lengua materna, y su TFG sobre
   la red DWDM/IP-MPLS-TP Moscú-Riazán.
-- **Supervisor de sus prácticas profesionales** (Dirección de
-  Comunicaciones de Moscú) en sus dos últimas prácticas (verano 2025 y
-  prácticas de fin de carrera 2026; fechas exactas en la sección de
-  Experiencia profesional, sin repetir aquí el cargo exacto para no
-  facilitar la reidentificación); destaca su progresión de becario a "ingeniero
+- **Supervisor de sus prácticas profesionales**, sus dos últimas
+  (verano 2025 y prácticas de fin de carrera 2026) — destaca su progresión de becario a "ingeniero
   maduro", su iniciativa (redactó por su cuenta una guía de uso de la
   radio RS-46MC para el personal de turno) y lo recomienda "sin
   reservas".
