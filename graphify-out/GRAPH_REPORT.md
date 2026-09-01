@@ -1,7 +1,7 @@
 # Graph Report - Molu  (2026-09-01)
 
 ## Corpus Check
-- 161 files · ~451,373 words
+- 161 files · ~451,348 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `2c642995`
+- Built from commit: `ed04c4eb`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
