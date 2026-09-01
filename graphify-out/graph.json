@@ -28210,7 +28210,7 @@
       "node_kind": "heading",
       "norm_label": "ej. 2 \u2014 completa las frases con el preterito imperfecto de los verbos del recuadro",
       "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad10b_antes-saliamos-con-los-amigos.md",
-      "source_location": "L18"
+      "source_location": "L23"
     },
     {
       "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad10b_antes_saliamos_con_los_amigos_ej_3_completa_la_siguiente_entrevista_con_el_pret\u00e9rito_imperfecto_de_los_verbos_entre_par\u00e9ntesis",
@@ -28222,7 +28222,7 @@
       "node_kind": "heading",
       "norm_label": "ej. 3 \u2014 completa la siguiente entrevista con el preterito imperfecto de los verbos entre parentesis",
       "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad10b_antes-saliamos-con-los-amigos.md",
-      "source_location": "L32"
+      "source_location": "L37"
     },
     {
       "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad10b_antes_saliamos_con_los_amigos_ej_4_vuelve_a_leer_la_entrevista_con_marcos_y_contesta_a_las_preguntas",
@@ -28234,7 +28234,7 @@
       "node_kind": "heading",
       "norm_label": "ej. 4 \u2014 vuelve a leer la entrevista con marcos y contesta a las preguntas",
       "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad10b_antes-saliamos-con-los-amigos.md",
-      "source_location": "L47"
+      "source_location": "L52"
     },
     {
       "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad10b_antes_saliamos_con_los_amigos_ejercicios",
@@ -98170,7 +98170,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad10b_antes-saliamos-con-los-amigos.md",
-      "source_location": "L18",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -98181,7 +98181,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad10b_antes-saliamos-con-los-amigos.md",
-      "source_location": "L32",
+      "source_location": "L37",
       "weight": 1.0
     },
     {
@@ -98192,7 +98192,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad10b_antes-saliamos-con-los-amigos.md",
-      "source_location": "L47",
+      "source_location": "L52",
       "weight": 1.0
     },
     {
@@ -105922,5 +105922,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "26d4ea8ec4ffd0887c237e500328015891093841"
+  "built_at_commit": "a6744418e9693d05e4b8ec3281d2dfd48fe06d31"
 }

@@ -1,7 +1,7 @@
 # Graph Report - Molu  (2026-09-01)
 
 ## Corpus Check
-- 224 files · ~833,085 words
+- 224 files · ~833,181 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `26d4ea8e`
+- Built from commit: `a6744418`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -835,24 +835,24 @@ Cohesion: 0.33
 Nodes (6): contextSourcePath(), contextSourceStatus(), isPathInside(), isPathInsideOrEqual(), nearestPackageRootBetween(), resolveCandidateContextSummary()
 
 ## Knowledge Gaps
-- **557 isolated node(s):** `Ej. 1 — Mira el dibujo y escribe el nombre de las distintas partes del cuerpo`, `Ej. 2 — ¿Qué palabra no pertenece a su grupo?`, `Ej. 3 — Crucigrama: escribe las respuestas`, `Ej. 4 — Ordena la siguiente conversación entre Sonia y Alfonso`, `Ej. 5 — Completa las siguientes frases con el verbo doler` (+552 more)
+- **557 isolated node(s):** `Ej. 1 — Relaciona las frases y completa con el pretérito imperfecto`, `Ej. 2 — Completa las frases con el pretérito imperfecto de los verbos del recuadro`, `Ej. 3 — Completa la siguiente entrevista con el pretérito imperfecto de los verbos entre paréntesis`, `Ej. 4 — Vuelve a leer la entrevista con Marcos y contesta a las preguntas`, `HEADING_TAGS` (+552 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **24 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `runCopyEditBatchAgent()` connect `live-copy-edit-agent.mjs` to `live-commit-manual-edits.mjs`?**
-  _High betweenness centrality (0.003) - this node is a cross-community bridge._
+- **Why does `readLiveServerInfo()` connect `readLiveServerInfo` to `impeccable-paths.mjs`, `live-poll.mjs`, `live.mjs`, `live-server.mjs`?**
+  _High betweenness centrality (0.004) - this node is a cross-community bridge._
 - **Why does `readBuffer()` connect `manual-edit-routes.mjs` to `live-manual-edit-evidence.mjs`, `manual-apply.mjs`, `live-commit-manual-edits.mjs`, `live-wrap.mjs`, `live-accept.mjs`?**
   _High betweenness centrality (0.003) - this node is a cross-community bridge._
+- **Why does `loadContext()` connect `live.mjs` to `context.mjs`, `live-server.mjs`, `resolveContext`, `context-signals.mjs`, `cli`?**
+  _High betweenness centrality (0.002) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `initGlobalBar()` (e.g. with `hideAgentPollTooltip()` and `onDetectMessage()`) actually correct?**
   _`initGlobalBar()` has 7 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `Ej. 1 — Mira el dibujo y escribe el nombre de las distintas partes del cuerpo`, `Ej. 2 — ¿Qué palabra no pertenece a su grupo?`, `Ej. 3 — Crucigrama: escribe las respuestas` to the rest of the system?**
+- **What connects `Ej. 1 — Relaciona las frases y completa con el pretérito imperfecto`, `Ej. 2 — Completa las frases con el pretérito imperfecto de los verbos del recuadro`, `Ej. 3 — Completa la siguiente entrevista con el pretérito imperfecto de los verbos entre paréntesis` to the rest of the system?**
   _557 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `live-browser.js` be split into smaller, more focused modules?**
   _Cohesion score 0.028169014084507043 - nodes in this community are weakly interconnected._
 - **Should `checks.mjs` be split into smaller, more focused modules?**
   _Cohesion score 0.04377289377289377 - nodes in this community are weakly interconnected._
-- **Should `index.mjs` be split into smaller, more focused modules?**
-  _Cohesion score 0.06142410015649452 - nodes in this community are weakly interconnected._
