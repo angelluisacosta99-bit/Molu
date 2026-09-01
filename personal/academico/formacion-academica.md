@@ -246,10 +246,13 @@ personal privada sobre Angel como estas cuatro cartas.)
 
 - **Docente del departamento de Automática, Telemecánica y
   Comunicaciones Ferroviarias, RUT MIIT** (área de redes de
-  telecomunicaciones), directora de su TFG — destaca sus proyectos de
-  curso en diseño de líneas de comunicación y conmutación digital, su
-  desenvoltura en ruso pese a no ser su lengua materna, y su TFG sobre
-  la red DWDM/IP-MPLS-TP Moscú-Riazán.
+  telecomunicaciones), directora de su trabajo de fin de grado —
+  destaca sus proyectos de curso en diseño de líneas de comunicación y
+  conmutación digital, su desenvoltura en ruso pese a no ser su lengua
+  materna, y el trabajo de fin de grado sobre redes ópticas de
+  transporte ferroviario (sin repetir aquí el título exacto, que ya
+  aparece en la sección de Estudios superiores — la combinación de
+  título de tesis + rol de directora podría identificarla).
 - **Supervisor de sus prácticas profesionales**, sus dos últimas
   (verano 2025 y prácticas de fin de carrera 2026) — destaca su
   progresión de becario a "ingeniero maduro", su iniciativa (redactó

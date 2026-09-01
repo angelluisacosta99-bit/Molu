@@ -6,11 +6,17 @@ reseñas, todas 5 estrellas, marzo 2022 – 2026. El texto de cada
 reseña es público (visible en el perfil), pero los nombres de los
 alumnos se han anonimizado aquí ("Alumno/a N") porque este
 repositorio es público y esos alumnos no dieron su consentimiento
-para que su nombre completo quedara agregado y permanente en un
-repositorio de GitHub indexable — a diferencia de aparecer disperso,
-uno por uno, en la página de Avito. Numerados en el mismo orden en
-que aparecen en el perfil (del más reciente al más antiguo). Todas
-bajo el servicio "Репетитор по испанскому языку (носитель)" salvo
+para que su nombre completo quedara permanentemente indexado en un
+repositorio de GitHub, con su historial de commits, buscadores web y
+rastreadores de IA incluidos — una permanencia y alcance distintos a
+los de su perfil de Avito. **Límite real de esta anonimización:**
+como el enlace al perfil sigue aquí arriba, cualquiera que quiera
+cruzar el texto de una reseña con el nombre real puede abrir Avito y
+buscarlo — este archivo por sí solo ya no expone el nombre, pero no
+puede impedir esa comprobación manual en la fuente original, que sigue
+siendo pública. Numerados en el mismo orden en que aparecen en el
+perfil (del más reciente al más antiguo). Todas bajo el servicio
+"Репетитор по испанскому языку (носитель)" salvo
 donde se indica otro (club de conversación).
 
 ## Índice de patrones (resumen del análisis)
@@ -28,7 +34,8 @@ la mayoría de las 38 reseñas:
    describen empezar a construir frases o hablar tras solo 3-14
    clases.
 4. **Variedad de perfil de alumno**: adultos empezando de cero, gente
-   retomando el español tras 20-25 años sin practicarlo, parejas
+   retomando el español tras 25 años sin practicarlo (Alumno/a 3),
+   parejas
    aprendiendo juntas, un niño, y un formato de club de conversación
    para nivel más alto.
 5. **Profesionalidad**: revisa deberes, responde fuera de clase,
