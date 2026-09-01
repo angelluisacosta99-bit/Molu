@@ -246,18 +246,20 @@ personal privada sobre Angel como estas cuatro cartas.)
 
 - **Docente del departamento de Automática, Telemecánica y
   Comunicaciones Ferroviarias, RUT MIIT** (área de redes de
-  telecomunicaciones), directora de su trabajo de fin de grado —
-  destaca sus proyectos de curso en diseño de líneas de comunicación y
-  conmutación digital, su desenvoltura en ruso pese a no ser su lengua
-  materna, y el trabajo de fin de grado sobre redes ópticas de
-  transporte ferroviario (sin repetir aquí el título exacto, que ya
-  aparece en la sección de Estudios superiores — la combinación de
-  título de tesis + rol de directora podría identificarla).
-- **Supervisor de sus prácticas profesionales**, sus dos últimas
-  (verano 2025 y prácticas de fin de carrera 2026) — destaca su
-  progresión de becario a "ingeniero maduro", su iniciativa (redactó
-  por su cuenta una guía de uso de un equipo de radio para el personal
-  de turno) y lo recomienda "sin reservas".
+  telecomunicaciones) — destaca sus proyectos de curso en diseño de
+  líneas de comunicación y conmutación digital, y su desenvoltura en
+  ruso pese a no ser su lengua materna. (No se indica aquí que dirigió
+  su TFG: esa relación, combinada con el título exacto de la tesis que
+  sí aparece en la sección de Estudios superiores, sería suficiente
+  para identificarla vía los registros públicos de defensas de RUT
+  MIIT — omitir el vínculo es la única protección real posible
+  mientras el título de la tesis siga publicado.)
+- **Supervisor de sus prácticas profesionales** en la Dirección de
+  Comunicaciones de Moscú — destaca su progresión de becario a
+  "ingeniero maduro" y lo recomienda "sin reservas". (No se repiten
+  aquí las fechas exactas ni el detalle de qué redactó por iniciativa
+  propia: ambos ya aparecen en la sección de Experiencia profesional, y
+  esa combinación con un departamento pequeño podría identificarlo.)
 - **Docente del mismo departamento** (área de modelado matemático,
   redes neuronales y sistemas de gestión de calidad) — destaca que fue
   capitán del equipo de proyecto estudiantil y creador de la app
