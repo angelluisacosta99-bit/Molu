@@ -1,16 +1,16 @@
 # Graph Report - Molu  (2026-08-31)
 
 ## Corpus Check
-- 177 files · ~527,712 words
+- 161 files · ~450,987 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2405 nodes · 5788 edges · 117 communities (105 shown, 12 thin omitted)
+- 2350 nodes · 5743 edges · 105 communities (96 shown, 9 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 135 edges (avg confidence: 0.58)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `f71ae531`
+- Built from commit: `104a8aa6`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -40,7 +40,7 @@
 - hook-before-edit.mjs
 - live-wrap.mjs
 - Skill: ejercicio-interactivo
-- RoombaController
+- Formación académica de Angel Luis Acosta González
 - design-parser.mjs
 - detect-antipatterns.mjs
 - live-accept.mjs
@@ -58,6 +58,7 @@
 - impeccable-paths.mjs
 - readLiveServerInfo
 - parseAnyColor
+- StaticElement
 - resolveLengthPx
 - onAnnotDown
 - createLiveBrowserSessionState
@@ -66,7 +67,7 @@
 - sampleCssBackground
 - Critique Reference (Design Review)
 - context-signals.mjs
-- Gemini [![Build Status](https://github.com/anishathalye/gemini/workflows/CI/badge.svg)](https://github.com/anishathalye/gemini/actions?query=workflow%3ACI)
+- Perfil de Avito: valoración, precios y descripción
 - Live Reference (Interactive Variant Mode)
 - critique-storage.mjs
 - scheduleLazyVisualContrast
@@ -104,8 +105,6 @@
 - Colorize Reference (Color Strategy)
 - graphify: Extra Exports & Benchmark
 - detect.mjs
-- Fuente del material
-- analitica-visual-y-visualizacion-de-la-informacion/FUENTE.md
 - Hooks Reference (Design Detector Hook)
 - Layout Reference (Space & Hierarchy)
 - Skill: graphify
@@ -121,17 +120,6 @@
 - Regla: nombre del profesor sin tilde (Angel)
 - Molu — README del repositorio
 - Notas sueltas
-- Fuente del material
-- mineria-de-datos/FUENTE.md
-- robots-autonomos/FUENTE.md
-- control-inteligente/FUENTE.md
-- herramientas-interactivas-de-simulacion-y-control/FUENTE.md
-- inteligencia-ambiental-y-sistemas-multiagente/FUENTE.md
-- metodologia-de-la-investigacion/FUENTE.md
-- procesos-y-metodos-de-modelado-para-la-ingenieria-web-y-web-semantica/FUENTE.md
-- logica-para-web-semantica/FUENTE.md
-- mineria-de-datos-aplicada-a-la-bioinformatica/FUENTE.md
-- overleaf-trabajo-mi/README.md
 
 ## God Nodes (most connected - your core abstractions)
 1. `initGlobalBar()` - 29 edges
@@ -172,7 +160,7 @@
 - **Impeccable Product-Register Reference Set** — claude_skills_impeccable_reference_product_product, claude_skills_impeccable_reference_quieter_quieter, claude_skills_impeccable_reference_typeset_typeset [INFERRED 0.85]
 - **A1 Interactive Exercise Apps — Shared Paper/Ink Design Template** — docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_cuaderno_unidad6a_como_se_va_a_goya_interactivo_unidad6a_interactivo, docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_cuaderno_unidad6b_cierra_la_ventana_interactivo_unidad6b_interactivo, docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_cuaderno_unidad6c_mi_barrio_es_tranquilo_interactivo_unidad6c_interactivo, docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_cuaderno_practica_mas_3_interactivo_practica_mas_3_interactivo [INFERRED 0.90]
 
-## Communities (117 total, 12 thin omitted)
+## Communities (105 total, 9 thin omitted)
 
 ### Community 0 - "live-browser.js"
 Cohesion: 0.03
@@ -211,8 +199,8 @@ Cohesion: 0.10
 Nodes (49): allEntryIds(), argVal(), buildRepairBatch(), candidatesForEntry(), changedFilesSinceSnapshot(), clearAppliedEntries(), collectApplyOwnedFiles(), collectRollbackFiles() (+41 more)
 
 ### Community 9 - "design-system.mjs"
-Cohesion: 0.09
-Nodes (50): addColorObject(), addDesignColor(), addRoundedScale(), addRoundedToken(), addSidecarColors(), addSidecarRadii(), addTypographyFonts(), canonicalDesignFindingKey() (+42 more)
+Cohesion: 0.10
+Nodes (46): addColorObject(), addDesignColor(), addRoundedScale(), addRoundedToken(), addSidecarColors(), addSidecarRadii(), addTypographyFonts(), canonicalDesignFindingKey() (+38 more)
 
 ### Community 10 - "impeccable-config.mjs"
 Cohesion: 0.10
@@ -227,8 +215,8 @@ Cohesion: 0.09
 Nodes (47): applyLegacyDeferredAcceptsOnStartup(), appendCssToSvelteStyle(), appendSanitizedCssRule(), applyDeferredSvelteComponentAccepts(), bakeParamValuesInCss(), buildInsertVariantStub(), buildPropContract(), buildPropsScript() (+39 more)
 
 ### Community 13 - "detect-html.mjs"
-Cohesion: 0.09
-Nodes (42): mergeDesignSystemFindings(), detectUrl(), runVisualContrastFallback(), serializeDesignSystemForBrowser(), CSS_IN_JS_EXTENSIONS, detectText(), extFromFilePath(), extractCSSinJS() (+34 more)
+Cohesion: 0.08
+Nodes (46): mergeDesignSystemFindings(), detectUrl(), runVisualContrastFallback(), serializeDesignSystemForBrowser(), CSS_IN_JS_EXTENSIONS, detectText(), extFromFilePath(), extractCSSinJS() (+38 more)
 
 ### Community 14 - "hook-lib.mjs"
 Cohesion: 0.07
@@ -247,8 +235,8 @@ Cohesion: 0.08
 Nodes (37): checkBorders(), checkClippedOverflow(), checkElementBorders(), checkElementBordersDOM(), checkElementClippedOverflow(), checkElementClippedOverflowDOM(), checkElementItalicSerif(), checkElementItalicSerifDOM() (+29 more)
 
 ### Community 18 - "css-cascade.mjs"
-Cohesion: 0.06
-Nodes (31): applyStaticDeclaration(), buildBorderOverrideMap(), parseShorthand(), buildStaticStyleMap(), collectStaticCssRules(), compareStaticPriority(), cssPropToCamel(), expandStaticBoxValues() (+23 more)
+Cohesion: 0.09
+Nodes (30): applyStaticDeclaration(), buildBorderOverrideMap(), parseShorthand(), buildStaticStyleMap(), collectStaticCssRules(), compareStaticPriority(), cssPropToCamel(), expandStaticBoxValues() (+22 more)
 
 ### Community 19 - "insert-ui.mjs"
 Cohesion: 0.07
@@ -274,13 +262,17 @@ Nodes (35): argVal(), buildInsertWrapperLines(), computeInsertLine(), INSERT_POS
 Cohesion: 0.08
 Nodes (37): Regla: usar siempre la skill impeccable para diseño frontend, Flujo de trabajo obligatorio para Pull Requests, Plantilla base: template.html, Skill: ejercicio-interactivo, Regla: enlaces <a> reales, nunca window.open(), para botones de envío, extraer.mjs — archivador de transcripciones, Checklist de publicación de un capítulo, Regla: hueco al final de la frase se estira (.tail-blank) (+29 more)
 
+### Community 25 - "Formación académica de Angel Luis Acosta González"
+Cohesion: 0.09
+Nodes (21): Actividad profesional paralela: docencia de español y traducción, Cartas de motivación, Cartas de recomendación, Competencias personales (soft skills), Competencias técnicas (hard skills), Currículum (CV) — perfil profesional, Educación previa (Cuba), Equivalencia académica en España (+13 more)
+
 ### Community 26 - "design-parser.mjs"
 Cohesion: 0.15
 Nodes (33): buildColor(), CANONICAL_SECTIONS, collectBullets(), collectColorValues(), collectParagraphs(), detectFormat(), extractColors(), extractComponents() (+25 more)
 
 ### Community 27 - "detect-antipatterns.mjs"
-Cohesion: 0.11
-Nodes (33): confirm(), detectCli(), formatFindings(), formatFindingSummary(), handleStdin(), printUsage(), createBrowserDetector(), buildImportGraph() (+25 more)
+Cohesion: 0.10
+Nodes (35): confirm(), detectCli(), formatFindings(), formatFindingSummary(), handleStdin(), printUsage(), loadDesignSystemForCwd(), parseFrontmatter() (+27 more)
 
 ### Community 28 - "live-accept.mjs"
 Cohesion: 0.14
@@ -327,8 +319,8 @@ Cohesion: 0.18
 Nodes (26): clearStoredManualApplyState(), fetchPendingCount(), handleManualEditActivity(), hidePendingApplyDock(), manualApplyLoadingText(), manualApplyStateKey(), manualEditEventForCurrentPage(), numberOrNull() (+18 more)
 
 ### Community 39 - "parseRgb"
-Cohesion: 0.18
-Nodes (24): isNeutralBorderColor(), checkColors(), checkElementAIPaletteDOM(), checkElementColors(), checkElementColorsDOM(), checkElementGlow(), checkElementGlowDOM(), checkElementIconTile() (+16 more)
+Cohesion: 0.20
+Nodes (22): checkColors(), checkElementAIPaletteDOM(), checkElementColors(), checkElementColorsDOM(), checkElementGlow(), checkElementGlowDOM(), checkElementIconTile(), checkElementIconTileDOM() (+14 more)
 
 ### Community 40 - "impeccable-paths.mjs"
 Cohesion: 0.17
@@ -374,9 +366,9 @@ Nodes (14): Audit Reference (Technical Quality Diagnostic), Five Diagnostic Dime
 Cohesion: 0.24
 Nodes (12): extractRegister(), cli(), COMMON_DEV_PORTS, devServerSignals(), gatherSignals(), gitSignals(), hasCode(), latestCritique() (+4 more)
 
-### Community 52 - "Gemini [![Build Status](https://github.com/anishathalye/gemini/workflows/CI/badge.svg)](https://github.com/anishathalye/gemini/actions?query=workflow%3ACI)"
+### Community 52 - "Perfil de Avito: valoración, precios y descripción"
 Cohesion: 0.17
-Nodes (10): Contributing, Dependencies, Design goals, FAQ, Gemini [![Build Status](https://github.com/anishathalye/gemini/workflows/CI/badge.svg)](https://github.com/anishathalye/gemini/actions?query=workflow%3ACI), LabSix theme, License, MIT theme (+2 more)
+Nodes (10): Descripción — propuesta, Perfil de Avito: valoración, precios y descripción, Valoración, Прайс-лист — estado actual (tal como está publicado), Прайс-лист — propuesta, Archivos, Avito — perfil de profesor de español, Reseñas completas (+2 more)
 
 ### Community 53 - "Live Reference (Interactive Variant Mode)"
 Cohesion: 0.17
@@ -526,14 +518,6 @@ Nodes (4): graphify: Extra Exports & Benchmark, FalkorDB Export / Push, graphify
 Cohesion: 0.50
 Nodes (3): candidates, detectorPath, __dirname
 
-### Community 91 - "Fuente del material"
-Cohesion: 0.22
-Nodes (8): Copiado (`entrega-1/`), Copiado (`entrega-2/`), Copiado (raíz), Excluido (`entrega-2/`), Excluido (raíz), Excluido tras la revisión independiente (contenido problemático), Fuente del material, Trabajo final (papers) — NO copiado, deliberadamente
-
-### Community 92 - "analitica-visual-y-visualizacion-de-la-informacion/FUENTE.md"
-Cohesion: 0.33
-Nodes (5): Copiado, Excluido por las reglas del profesor (nunca copiar), Excluido por tamaño (regla de 8 MB), Excluido por un problema técnico de transferencia en esta pasada, No copiado (fuera del alcance pedido para esta asignatura)
-
 ### Community 93 - "Hooks Reference (Design Detector Hook)"
 Cohesion: 0.67
 Nodes (3): Hooks Reference (Design Detector Hook), Design Detector Hook, hook-admin.mjs Script
@@ -562,57 +546,25 @@ Nodes (3): Design Brief (structured output), Impeccable: Shape (Design Brief), V
 Cohesion: 0.67
 Nodes (3): NEM1 Cuaderno Unidad 6A — ¿Cómo se va a Goya?, NEM1 Cuaderno Unidad 7A — ¿Dónde quedamos?, NEM1 A1 Interactivo — Unidad 6A ¿Cómo se va a Goya?
 
-### Community 108 - "Fuente del material"
-Cohesion: 0.33
-Nodes (5): Copiado (`figures/`), Copiado (raíz), Excluido — problema técnico de transferencia, Fuente del material, No copiado, deliberadamente
-
-### Community 109 - "mineria-de-datos/FUENTE.md"
-Cohesion: 0.33
-Nodes (5): Copiado, Excluido por el límite de 8 MB, Excluido por las reglas del profesor / fuera de alcance, Excluido por un problema técnico de transferencia en esta pasada, Excluido tras la revisión independiente (contenido problemático)
-
-### Community 110 - "robots-autonomos/FUENTE.md"
-Cohesion: 0.33
-Nodes (5): Copiado, Excluido por las reglas del profesor (nunca copiar), Excluido por un problema técnico de transferencia en esta pasada, Excluido tras la revisión independiente (contenido problemático), No copiado (fuera de alcance / duplicado / dependencias de terceros)
-
-### Community 111 - "control-inteligente/FUENTE.md"
-Cohesion: 0.50
-Nodes (3): Copiado, Excluido por las reglas del profesor (nunca copiar), No copiado en esta pasada (limitación técnica / de alcance)
-
-### Community 112 - "herramientas-interactivas-de-simulacion-y-control/FUENTE.md"
-Cohesion: 0.50
-Nodes (3): Copiado, Excluido por las reglas del profesor (nunca copiar), No copiado (duplicado o fuera de alcance)
-
-### Community 113 - "inteligencia-ambiental-y-sistemas-multiagente/FUENTE.md"
-Cohesion: 0.50
-Nodes (3): Copiado, Excluido por un problema técnico de transferencia en esta pasada, No copiado (fuera del alcance pedido para esta pasada)
-
-### Community 114 - "metodologia-de-la-investigacion/FUENTE.md"
-Cohesion: 0.50
-Nodes (3): Copiado, Excluido por las reglas del profesor (nunca copiar), No copiado (fuera de alcance)
-
-### Community 115 - "procesos-y-metodos-de-modelado-para-la-ingenieria-web-y-web-semantica/FUENTE.md"
-Cohesion: 0.50
-Nodes (3): Copiado, Excluido por el límite de 8 MB, No copiado (fuera de alcance)
-
 ## Knowledge Gaps
-- **282 isolated node(s):** `Copiado`, `Excluido tras la revisión independiente (contenido problemático)`, `Excluido por el límite de 8 MB`, `Excluido por un problema técnico de transferencia en esta pasada`, `Excluido por las reglas del profesor / fuera de alcance` (+277 more)
+- **252 isolated node(s):** `Educación previa (Cuba)`, `Segundo programa / diploma de reciclaje profesional (simultáneo)`, `Actividad profesional paralela: docencia de español y traducción`, `Equivalencia académica en España`, `Idiomas` (+247 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **12 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `createManualEditRoutes()` connect `manual-edit-routes.mjs` to `live-commit-manual-edits.mjs`, `live-server.mjs`, `css-cascade.mjs`, `insert-ui.mjs`?**
-  _High betweenness centrality (0.081) - this node is a cross-community bridge._
+  _High betweenness centrality (0.092) - this node is a cross-community bridge._
 - **Why does `StaticDocument` connect `css-cascade.mjs` to `detect-html.mjs`?**
-  _High betweenness centrality (0.081) - this node is a cross-community bridge._
-- **Why does `readBuffer()` connect `manual-edit-routes.mjs` to `live-manual-edit-evidence.mjs`, `manual-apply.mjs`, `live-commit-manual-edits.mjs`, `live-wrap.mjs`, `live-accept.mjs`?**
-  _High betweenness centrality (0.009) - this node is a cross-community bridge._
+  _High betweenness centrality (0.090) - this node is a cross-community bridge._
+- **Why does `readLiveServerInfo()` connect `readLiveServerInfo` to `impeccable-paths.mjs`, `live-poll.mjs`, `live.mjs`, `live-server.mjs`?**
+  _High betweenness centrality (0.012) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `initGlobalBar()` (e.g. with `hideAgentPollTooltip()` and `onDetectMessage()`) actually correct?**
   _`initGlobalBar()` has 7 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `Copiado`, `Excluido tras la revisión independiente (contenido problemático)`, `Excluido por el límite de 8 MB` to the rest of the system?**
-  _282 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `Educación previa (Cuba)`, `Segundo programa / diploma de reciclaje profesional (simultáneo)`, `Actividad profesional paralela: docencia de español y traducción` to the rest of the system?**
+  _252 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `live-browser.js` be split into smaller, more focused modules?**
   _Cohesion score 0.02863984674329502 - nodes in this community are weakly interconnected._
 - **Should `checks.mjs` be split into smaller, more focused modules?**
-  _Cohesion score 0.04649859943977591 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.045658263305322126 - nodes in this community are weakly interconnected._

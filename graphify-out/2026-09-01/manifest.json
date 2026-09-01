@@ -1,7 +1,7 @@
 {
   ".claude/settings.json": {
-    "mtime": 1788250114.607925,
-    "seen": 1788250184.471101,
+    "mtime": 1788194857.230271,
+    "seen": 1788194879.066652,
     "ast_hash": "174343810b52012027f6057cb3c75416",
     "semantic_hash": ""
   },
@@ -414,8 +414,8 @@
     "semantic_hash": "9f5c83fdf6d32bba387557665c63d5f4"
   },
   "docencia-espanol/fuentes/extraer.mjs": {
-    "mtime": 1788250114.6103284,
-    "seen": 1788250184.4713292,
+    "mtime": 1788194857.2321305,
+    "seen": 1788194879.0667164,
     "ast_hash": "e48d32faa192e90ab794ec243260a159",
     "semantic_hash": ""
   },
@@ -432,14 +432,14 @@
     "semantic_hash": "9b31786b637be3c13978bec4c2330752"
   },
   ".claude/skills/ejercicio-interactivo/SKILL.md": {
-    "mtime": 1788250114.608706,
-    "seen": 1788250184.47142,
+    "mtime": 1788194857.230271,
+    "seen": 1788194879.0667374,
     "ast_hash": "cad88349d85ae37becff9517c2d3763d",
     "semantic_hash": ""
   },
   ".claude/skills/ejercicio-interactivo/reference/template.html": {
-    "mtime": 1788250114.608706,
-    "seen": 1788250184.4714224,
+    "mtime": 1788194857.230271,
+    "seen": 1788194879.0667381,
     "ast_hash": "614d2e49cb0b3083fe9d0ced04ebfe2e",
     "semantic_hash": ""
   },
@@ -672,8 +672,8 @@
     "semantic_hash": "8e8e3a58858713ff62de8ffa1a740cc6"
   },
   "CLAUDE.md": {
-    "mtime": 1788250114.6103284,
-    "seen": 1788250184.471569,
+    "mtime": 1788194857.2321305,
+    "seen": 1788194879.0667663,
     "ast_hash": "9115c2ff3a753cadf684a9179d8ab174",
     "semantic_hash": ""
   },
@@ -690,20 +690,20 @@
     "semantic_hash": "50778de9645a47c0517fd94833d0c423"
   },
   "README.md": {
-    "mtime": 1788211912.4470203,
-    "seen": 1788250184.4715774,
-    "ast_hash": "4ea6f0ad02fa777a3ecee666ef19a811",
+    "mtime": 1788091558.1535718,
+    "seen": 1788178336.6876051,
+    "ast_hash": "887e00f5f7942138e259de19bd2dfb30",
     "semantic_hash": ""
   },
   "docencia-espanol/README.md": {
-    "mtime": 1788217695.5816123,
-    "seen": 1788250184.4715803,
-    "ast_hash": "72c14d5b826ac096761c1cd16119dccf",
-    "semantic_hash": ""
+    "mtime": 1788091558.1535718,
+    "seen": 1788178336.687606,
+    "ast_hash": "033e2f08cbb62857a73f98c5cdb076df",
+    "semantic_hash": "033e2f08cbb62857a73f98c5cdb076df"
   },
   "docencia-espanol/fuentes/README.md": {
-    "mtime": 1788250114.6103284,
-    "seen": 1788250184.4715917,
+    "mtime": 1788194857.2321305,
+    "seen": 1788194879.0667698,
     "ast_hash": "e30d63d3fcda1939a0788724f198281f",
     "semantic_hash": ""
   },
@@ -846,14 +846,14 @@
     "semantic_hash": "64aea90e57ba88187f9bd9f56c6fab03"
   },
   "docencia-espanol/materiales/codigos-acceso.html": {
-    "mtime": 1788250114.6585622,
-    "seen": 1788250184.4717753,
+    "mtime": 1788194857.298703,
+    "seen": 1788194879.0668077,
     "ast_hash": "e9b005e1072465c139e822992cf27ab9",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/indice-clases-de-espanol.html": {
-    "mtime": 1788250114.6585622,
-    "seen": 1788250184.4717784,
+    "mtime": 1788194857.298703,
+    "seen": 1788194879.0668085,
     "ast_hash": "679bd5668b1466666e5ef623299d7709",
     "semantic_hash": ""
   },
@@ -924,8 +924,8 @@
     "semantic_hash": "cf07e404a789c5b8061fd74922e49ecb"
   },
   "master-sistemas-inteligentes/README.md": {
-    "mtime": 1788250114.8105621,
-    "seen": 1788250184.4718134,
+    "mtime": 1788124399.4772847,
+    "seen": 1788178336.687646,
     "ast_hash": "628cbb39e7a79a8d96809f63a53ecb9f",
     "semantic_hash": ""
   },
@@ -978,14 +978,14 @@
     "semantic_hash": ""
   },
   ".claude/hooks/session-start.sh": {
-    "mtime": 1788250114.607925,
-    "seen": 1788250184.471097,
+    "mtime": 1788194857.230271,
+    "seen": 1788194879.0666494,
     "ast_hash": "bf3a5c94ec3906d6d895b80ac5db90a8",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/herramientas-interactivas-de-simulacion-y-control/p_carrito.m": {
-    "mtime": 1788250115.2185621,
-    "seen": 1788250184.471336,
+    "mtime": 1788162385.8281164,
+    "seen": 1788178336.687552,
     "ast_hash": "7718abded8d607de6cea8538086aa84c",
     "semantic_hash": ""
   },
@@ -1014,98 +1014,98 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/analitica-visual-y-visualizacion-de-la-informacion/FUENTE.md": {
-    "mtime": 1788250114.8105621,
-    "seen": 1788250184.4718168,
+    "mtime": 1788192962.6105902,
+    "seen": 1788193012.1596985,
     "ast_hash": "7f98b67c1bd52efb50ab93336842e9bd",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/analitica-visual-y-visualizacion-de-la-informacion/Librer\u00edas de python para visualizaci\u00f3n de datos.txt": {
-    "mtime": 1788250114.812706,
-    "seen": 1788250184.4718225,
+    "mtime": 1788162024.389688,
+    "seen": 1788178336.6876495,
     "ast_hash": "4408bfb17bd89eff42d12160b2660dc8",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/control-inteligente/FUENTE.md": {
-    "mtime": 1788250114.8425622,
-    "seen": 1788250184.4718258,
+    "mtime": 1788192933.8105886,
+    "seen": 1788193012.1597037,
     "ast_hash": "6718f36b43b0cb7c7bbb7cd50144f144",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/herramientas-interactivas-de-simulacion-y-control/FUENTE.md": {
-    "mtime": 1788250115.1385622,
-    "seen": 1788250184.4718285,
+    "mtime": 1788193990.9306514,
+    "seen": 1788194003.0930324,
     "ast_hash": "abc09e57a8c27e83d33e5dd09f304404",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/inteligencia-ambiental-y-sistemas-multiagente/FUENTE.md": {
-    "mtime": 1788250115.226562,
-    "seen": 1788250184.4718313,
+    "mtime": 1788192899.3545866,
+    "seen": 1788193012.1597066,
     "ast_hash": "026f66e4e9b4bab60b5bc711d23bc5f6",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/logica-para-web-semantica/FUENTE.md": {
-    "mtime": 1788250115.2396295,
-    "seen": 1788250184.4718347,
+    "mtime": 1788162779.2057674,
+    "seen": 1788178336.6876528,
     "ast_hash": "73ccd786e9caf9f5ea51ac98f9bc7bb5",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/FUENTE.md": {
-    "mtime": 1788250115.2396295,
-    "seen": 1788250184.4718382,
+    "mtime": 1788162820.369767,
+    "seen": 1788178336.6876538,
     "ast_hash": "1176bf27d3f8e6820f9857c7adff6376",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/overleaf-poster-mi/LICENSE.md": {
-    "mtime": 1788250115.242562,
-    "seen": 1788250184.4718413,
+    "mtime": 1788162809.8379033,
+    "seen": 1788178336.687655,
     "ast_hash": "1aba168df65f00a09839c546d315d930",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/overleaf-poster-mi/README.md": {
-    "mtime": 1788250115.247832,
-    "seen": 1788250184.4718444,
+    "mtime": 1788162809.8384235,
+    "seen": 1788178336.6876557,
     "ast_hash": "dc427cd4d442a60468818f847b00b930",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/overleaf-trabajo-mi/README.md": {
-    "mtime": 1788250115.2545621,
-    "seen": 1788250184.4718475,
+    "mtime": 1788162809.8336294,
+    "seen": 1788178336.6876569,
     "ast_hash": "d6dd42f8227423c90b5bc04c967792ca",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/mineria-de-datos-aplicada-a-la-bioinformatica/FUENTE.md": {
-    "mtime": 1788250115.3785622,
-    "seen": 1788250184.4718502,
+    "mtime": 1788164360.5817525,
+    "seen": 1788178336.6876583,
     "ast_hash": "515ab4bb438087ebbf67c5683e8b04b3",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/mineria-de-datos/FUENTE.md": {
-    "mtime": 1788250115.406562,
-    "seen": 1788250184.4718614,
+    "mtime": 1788194313.7066705,
+    "seen": 1788194324.2765691,
     "ast_hash": "7edd6cc58edb892beb8ca355e8e2b0d8",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/procesos-y-metodos-de-modelado-para-la-ingenieria-web-y-web-semantica/FUENTE.md": {
-    "mtime": 1788250115.966562,
-    "seen": 1788250184.4718645,
+    "mtime": 1788164401.985752,
+    "seen": 1788178336.6876607,
     "ast_hash": "b7d9a4297aaf6f3bbeffc66fbb165554",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/robots-autonomos/FUENTE.md": {
-    "mtime": 1788250116.034562,
-    "seen": 1788250184.4718673,
+    "mtime": 1788193345.730613,
+    "seen": 1788193366.1873894,
     "ast_hash": "708276f89259e0a9ae15459a29e6bc4e",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/tecnologias-del-habla/FUENTE.md": {
-    "mtime": 1788250116.1625621,
-    "seen": 1788250184.4718704,
+    "mtime": 1788193615.1786292,
+    "seen": 1788193627.9272485,
     "ast_hash": "5d785a445fb804225bd1959ca910a27e",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/trabajo-fin-de-master/FUENTE.md": {
-    "mtime": 1788250116.278562,
-    "seen": 1788250184.4718797,
+    "mtime": 1788179224.6742768,
+    "seen": 1788179247.6974268,
     "ast_hash": "59c513126fa4ee6d49265bc194caa99e",
     "semantic_hash": ""
   },
@@ -1116,8 +1116,8 @@
     "semantic_hash": ""
   },
   "recursos-generales/herramientas-ia/novedades.md": {
-    "mtime": 1788250116.3105621,
-    "seen": 1788250184.471901,
+    "mtime": 1788194857.586703,
+    "seen": 1788194879.0668368,
     "ast_hash": "40931aced00be356f3e6704f62ebfbeb",
     "semantic_hash": ""
   },
@@ -1128,747 +1128,717 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/herramientas-interactivas-de-simulacion-y-control/Arlet Acosta Gonzalez, Trabajo Final EJS.pdf": {
-    "mtime": 1788250115.074562,
-    "seen": 1788250184.4719427,
+    "mtime": 1788162385.761369,
+    "seen": 1788178336.6876934,
     "ast_hash": "760b95d729c60dfc1a430b23dcd889f2",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/herramientas-interactivas-de-simulacion-y-control/Arlet Acosta Gonz\u00e1lez, Trabajo Final Simulink.pdf": {
-    "mtime": 1788250115.1385622,
-    "seen": 1788250184.4719462,
+    "mtime": 1788162385.7212064,
+    "seen": 1788178336.687695,
     "ast_hash": "3bc4d03f7aff0381e9eb3e496a1d2d71",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/herramientas-interactivas-de-simulacion-y-control/PI en un dep\u00f3sito.pdf": {
-    "mtime": 1788250115.154562,
-    "seen": 1788250184.4719496,
+    "mtime": 1788162385.766178,
+    "seen": 1788178336.687697,
     "ast_hash": "763138de82ce2c70c87107f45e763a07",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/inteligencia-ambiental-y-sistemas-multiagente/Arlet Acosta Gonz\u00e1lez, IoT and IoT in Medicine and Healthcare sector.pdf": {
-    "mtime": 1788250115.226562,
-    "seen": 1788250184.4719565,
+    "mtime": 1788162421.9852824,
+    "seen": 1788178336.6877007,
     "ast_hash": "07a4fb5b61d191f955129d7b02372e0b",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/logica-para-web-semantica/Arlet Acosta Gonz\u00e1lez, TF de L\u00f3gica para la web sem\u00e1ntica.pdf": {
-    "mtime": 1788250115.2345622,
-    "seen": 1788250184.4719634,
+    "mtime": 1788162509.5617023,
+    "seen": 1788178336.6877043,
     "ast_hash": "469504761515311c9ce8df48919cee0f",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/logica-para-web-semantica/Huertas 2006.pdf": {
-    "mtime": 1788250115.2396295,
-    "seen": 1788250184.4719667,
+    "mtime": 1788162509.5631757,
+    "seen": 1788178336.6877058,
     "ast_hash": "5b3531d57e9f10d907499fc2725bd455",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/Poster_MI.pdf": {
-    "mtime": 1788250115.2405436,
-    "seen": 1788250184.4719696,
+    "mtime": 1788162798.1307335,
+    "seen": 1788178336.6877072,
     "ast_hash": "4618535902e1188955c3809deb85c5f2",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/Trabajo_de_MI.pdf": {
-    "mtime": 1788250115.242562,
-    "seen": 1788250184.471973,
+    "mtime": 1788162798.1255805,
+    "seen": 1788178336.6877084,
     "ast_hash": "9ecf25457d289bad59e05fd16842a50d",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/mineria-de-datos-aplicada-a-la-bioinformatica/01-Biologia4bioinformaticos_r.pdf": {
-    "mtime": 1788250115.330562,
-    "seen": 1788250184.471976,
+    "mtime": 1788164353.4737313,
+    "seen": 1788178336.6877093,
     "ast_hash": "2c8cc5d260804e13348566aa9fdd51b1",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/mineria-de-datos-aplicada-a-la-bioinformatica/03-Genotipado y microarrays_r.pdf": {
-    "mtime": 1788250115.3785622,
-    "seen": 1788250184.4719787,
+    "mtime": 1788164353.3989706,
+    "seen": 1788178336.6877108,
     "ast_hash": "83e5ccce7d1017f876c01c385ee953e5",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/mineria-de-datos/0-Presentaci\u00f3n asignatura.pdf": {
-    "mtime": 1788250115.386562,
-    "seen": 1788250184.4719818,
+    "mtime": 1788162899.3972762,
+    "seen": 1788178336.6877122,
     "ast_hash": "dae64cdd41c046ee628275902a482287",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/mineria-de-datos/Arlet Acosta Gonz\u00e1lez, Trabajo Miner\u00eda de datos.pdf": {
-    "mtime": 1788250115.406562,
-    "seen": 1788250184.471985,
+    "mtime": 1788162899.1149716,
+    "seen": 1788178336.6877139,
     "ast_hash": "eab140cdb6cd6481ddb2ff5e7c3d5639",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/mineria-de-datos/MANUAL WEKA.pdf": {
-    "mtime": 1788250115.4225621,
-    "seen": 1788250184.4719875,
+    "mtime": 1788162899.0977664,
+    "seen": 1788178336.6877148,
     "ast_hash": "6ee215679b9a8428245fe52304dc0479",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/mineria-de-datos/Miner\u00edaDatos Tema1.pdf": {
-    "mtime": 1788250115.4545622,
-    "seen": 1788250184.4719906,
+    "mtime": 1788162899.1440504,
+    "seen": 1788178336.6877162,
     "ast_hash": "44f75505a871842ecf69c40334423e47",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/mineria-de-datos/Miner\u00edaDatos Tema2.pdf": {
-    "mtime": 1788250115.5305622,
-    "seen": 1788250184.4719942,
+    "mtime": 1788162899.2295985,
+    "seen": 1788178336.687718,
     "ast_hash": "37e941392282b544eb57e0cae5b346a1",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/mineria-de-datos/Miner\u00edaDatos Tema3.pdf": {
-    "mtime": 1788250115.5705621,
-    "seen": 1788250184.4719975,
+    "mtime": 1788162899.2898548,
+    "seen": 1788178336.6877193,
     "ast_hash": "d0b3e8b81bf887b219519299cac26876",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/mineria-de-datos/Miner\u00edaDatos Tema4.pdf": {
-    "mtime": 1788250115.650562,
-    "seen": 1788250184.472001,
+    "mtime": 1788162899.3620164,
+    "seen": 1788178336.687721,
     "ast_hash": "96aaca7be651c74d26bf0075956f090a",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/mineria-de-datos/Trabajo obligatorio (2023-2024).pdf": {
-    "mtime": 1788250115.654562,
-    "seen": 1788250184.4720037,
+    "mtime": 1788163506.899447,
+    "seen": 1788178336.687722,
     "ast_hash": "c915397b676cd132bac35eb117144822",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/mineria-de-datos/Weka-EjemploAplicaci\u00f3n.pdf": {
-    "mtime": 1788250115.6745622,
-    "seen": 1788250184.4720843,
+    "mtime": 1788163506.9093316,
+    "seen": 1788178336.6877248,
     "ast_hash": "35dc46d93f0eb12524c5d3ee6463d3f7",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/procesos-y-metodos-de-modelado-para-la-ingenieria-web-y-web-semantica/Arlet Acosta Gonz\u00e1lez, TF Mapping TFM.pdf": {
-    "mtime": 1788250115.966562,
-    "seen": 1788250184.4720922,
+    "mtime": 1788164394.7380953,
+    "seen": 1788178336.6877265,
     "ast_hash": "7ae64a4e49896f4aeef0814ae2b4fc8f",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/procesos-y-metodos-de-modelado-para-la-ingenieria-web-y-web-semantica/ejemplo de mapping.pdf": {
-    "mtime": 1788250116.0305622,
-    "seen": 1788250184.4720962,
+    "mtime": 1788164394.7935467,
+    "seen": 1788178336.687728,
     "ast_hash": "909daace3d44a2906e791cc102e25839",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/robots-autonomos/Comportamientos_odometria.pdf": {
-    "mtime": 1788250116.034562,
-    "seen": 1788250184.4720988,
+    "mtime": 1788159642.091849,
+    "seen": 1788178336.687729,
     "ast_hash": "a4236af97617d7df097083067f317c28",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/robots-autonomos/RA0-Inicio2023Evaluacion.pdf": {
-    "mtime": 1788250116.034562,
-    "seen": 1788250184.4721017,
+    "mtime": 1788164549.529562,
+    "seen": 1788178336.6877298,
     "ast_hash": "2eb56d4f82e0b6424ec92b7f498cd034",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/robots-autonomos/RA0-Inicio2023Trabajos.pdf": {
-    "mtime": 1788250116.038562,
-    "seen": 1788250184.4721038,
+    "mtime": 1788164549.527872,
+    "seen": 1788178336.6877313,
     "ast_hash": "312510878da2a51db948d1f6561585df",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/tecnologias-del-habla/Arlet Acosta Gonz\u00e1lez Trabajo final TH.pdf": {
-    "mtime": 1788250116.1625621,
-    "seen": 1788250184.4721134,
+    "mtime": 1788165782.517941,
+    "seen": 1788178336.687736,
     "ast_hash": "cbcdf77e8fdcdc109d93abe7d3cc76d7",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/tecnologias-del-habla/SINTESIS DE HABLA_TH2022.pdf": {
-    "mtime": 1788250116.170562,
-    "seen": 1788250184.4721162,
+    "mtime": 1788165782.5555456,
+    "seen": 1788178336.6877396,
     "ast_hash": "94b0061517cc636e2b761d1d7efd79d7",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/tecnologias-del-habla/T0_2022.pdf": {
-    "mtime": 1788250116.190562,
-    "seen": 1788250184.4721189,
+    "mtime": 1788165782.5736992,
+    "seen": 1788178336.6877403,
     "ast_hash": "707a5bb2e6b7deec9912ee3168bfd499",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/tecnologias-del-habla/T1_2022.pdf": {
-    "mtime": 1788250116.210562,
-    "seen": 1788250184.472122,
+    "mtime": 1788165782.53643,
+    "seen": 1788178336.6877418,
     "ast_hash": "e61987399690083cf1a673ef022e6357",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/tecnologias-del-habla/T2_2022.pdf": {
-    "mtime": 1788250116.2145622,
-    "seen": 1788250184.4721248,
+    "mtime": 1788165782.5908585,
+    "seen": 1788178336.6877427,
     "ast_hash": "1d94aa7595b2e05b7dd1d85eede9de23",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/tecnologias-del-habla/ejercicios-fonetica-y-fonologiaSordo-Sonoro.pdf": {
-    "mtime": 1788250116.230562,
-    "seen": 1788250184.4721277,
+    "mtime": 1788165782.5497391,
+    "seen": 1788178336.6877437,
     "ast_hash": "c263abb7da47140c6e9e1e1da5b5330a",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/trabajo-fin-de-master/1-publicacion-en-gredos.-autorizacion-y-datos.pdf": {
-    "mtime": 1788250116.266562,
-    "seen": 1788250184.472136,
+    "mtime": 1788175150.669014,
+    "seen": 1788178336.6877449,
     "ast_hash": "d44312c4dfa3703cd07c22b6735028e6",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/trabajo-fin-de-master/ESTE OK -- DPTOIA-IT-2000-001.pdf": {
-    "mtime": 1788250116.278562,
-    "seen": 1788250184.4721386,
+    "mtime": 1788175150.675089,
+    "seen": 1788178336.6877458,
     "ast_hash": "fbb8aa324fe1032e3a345f7219e8225a",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/trabajo-fin-de-master/Reglamento de los Trabajos de Fin de Master de la Universidad de Salamanca..pdf": {
-    "mtime": 1788250116.294562,
-    "seen": 1788250184.4721417,
+    "mtime": 1788175150.665454,
+    "seen": 1788178336.687747,
     "ast_hash": "9a94657b93a04822f0fa7da7027480a6",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/trabajo-fin-de-master/modelo.tfm-anexo-iii-sol.defensa.ingles.pdf": {
-    "mtime": 1788250116.3105621,
-    "seen": 1788250184.472144,
+    "mtime": 1788175150.6668713,
+    "seen": 1788178336.6877484,
     "ast_hash": "f4caa608b0923ac60f266ec481959a83",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/overleaf-poster-mi/high_res.jpg": {
-    "mtime": 1788250115.2545621,
-    "seen": 1788250184.4721463,
+    "mtime": 1788162809.8401477,
+    "seen": 1788178336.6877494,
     "ast_hash": "cd2f3bb8668586073845f47dd1d5d0e9",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/overleaf-poster-mi/logo_usal_footer2.png": {
-    "mtime": 1788250115.2545621,
-    "seen": 1788250184.4721484,
+    "mtime": 1788162809.8408012,
+    "seen": 1788178336.6877506,
     "ast_hash": "6ebaa1661ff490cf771601252df1d10e",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/overleaf-trabajo-mi/high_res.jpg": {
-    "mtime": 1788250115.262562,
-    "seen": 1788250184.472151,
+    "mtime": 1788162809.8336933,
+    "seen": 1788178336.687752,
     "ast_hash": "cd2f3bb8668586073845f47dd1d5d0e9",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/overleaf-trabajo-mi/image/Imagen1.png": {
-    "mtime": 1788250115.2665622,
-    "seen": 1788250184.4721534,
+    "mtime": 1788162809.8352106,
+    "seen": 1788178336.6877537,
     "ast_hash": "94a0d59b94c9e6938a3861ad74feb5f6",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/overleaf-trabajo-mi/image/frog.jpg": {
-    "mtime": 1788250115.2665622,
-    "seen": 1788250184.4721565,
+    "mtime": 1788162809.8346777,
+    "seen": 1788178336.687755,
     "ast_hash": "45d6bf5c480ba5646ad481a1aebf0b45",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/overleaf-trabajo-mi/image/logo.png": {
-    "mtime": 1788250115.2665622,
-    "seen": 1788250184.472159,
+    "mtime": 1788162809.8347483,
+    "seen": 1788178336.6877565,
     "ast_hash": "a830b26fe42da139f23759b07406b51a",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/overleaf-trabajo-mi/logo_usal_footer2.png": {
-    "mtime": 1788250115.2665622,
-    "seen": 1788250184.4721627,
+    "mtime": 1788162809.8353126,
+    "seen": 1788178336.6877577,
     "ast_hash": "6ebaa1661ff490cf771601252df1d10e",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/trabajo-fin-de-master/figures/1280px-Linear_regression.jpg": {
-    "mtime": 1788250116.298562,
-    "seen": 1788250184.472166,
+    "mtime": 1788175150.6868901,
+    "seen": 1788178336.6877592,
     "ast_hash": "f3f975fde5754bc0f2d8d85ab1ce6215",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/trabajo-fin-de-master/figures/LogoDIA.jpg": {
-    "mtime": 1788250116.302562,
-    "seen": 1788250184.472169,
+    "mtime": 1788175150.6855392,
+    "seen": 1788178336.68776,
     "ast_hash": "66670fc3ced1939c67a214ce22ba9153",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/trabajo-fin-de-master/figures/usal_en_ver.jpg": {
-    "mtime": 1788250116.3065622,
-    "seen": 1788250184.4721715,
+    "mtime": 1788175150.6833744,
+    "seen": 1788178336.6877613,
     "ast_hash": "f3e34b19cdfa68d4d1f59546d4fb98de",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/herramientas-interactivas-de-simulacion-y-control/practica-1-simulink/deposito.m": {
-    "mtime": 1788250115.222562,
-    "seen": 1788250184.471339,
+    "mtime": 1788162385.8283215,
+    "seen": 1788193012.1595657,
     "ast_hash": "0eefd57c9fbb89262ee00afd71685d69",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py": {
-    "mtime": 1788250116.1225622,
-    "seen": 1788250184.4713426,
+    "mtime": 1788193328.990612,
+    "seen": 1788193366.1872969,
     "ast_hash": "acbaff103c8af04340f1ec08e1d72954",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/robots-autonomos/roomba/irobot/funciones.py": {
-    "mtime": 1788250116.1225622,
-    "seen": 1788250184.4713454,
+    "mtime": 1788165620.5577538,
+    "seen": 1788193012.1595695,
     "ast_hash": "2e90381bb6edd64c86446c83aebf2812",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/robots-autonomos/roomba/irobot/irobot_2.py": {
-    "mtime": 1788250116.1259236,
-    "seen": 1788250184.4713483,
+    "mtime": 1788165620.5584896,
+    "seen": 1788193012.159572,
     "ast_hash": "62a27e867efa53a9352f6ed9a33f2e8f",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/robots-autonomos/roomba/irobot/mio.py": {
-    "mtime": 1788250116.1259236,
-    "seen": 1788250184.4713507,
+    "mtime": 1788164796.6328802,
+    "seen": 1788193012.1595728,
     "ast_hash": "cc2c6b6fd002a7109f0afa77b8ad5cba",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/tecnologias-del-habla/entrega-1/Formantes_vocales.txt": {
-    "mtime": 1788250116.238562,
-    "seen": 1788250184.4718735,
+    "mtime": 1788165843.2207832,
+    "seen": 1788193012.1597226,
     "ast_hash": "1ef5af125670ca8505535ffff04e2c8c",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/tecnologias-del-habla/entrega-2/pitch_list.txt": {
-    "mtime": 1788250116.266562,
-    "seen": 1788250184.4718764,
+    "mtime": 1788176647.297818,
+    "seen": 1788193012.159724,
     "ast_hash": "7eab6ae2f471e34857afaddec340a740",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/control-inteligente/confs/CI2023_Parte1_FundamentosControl.pdf": {
-    "mtime": 1788250114.870562,
-    "seen": 1788250184.4719214,
+    "mtime": 1788162286.6907763,
+    "seen": 1788193012.1597404,
     "ast_hash": "f4629f073fca96b3a5cff88b83b08e2a",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/control-inteligente/confs/CI2023_Parte1_FundamentosControl__ESTU.pdf": {
-    "mtime": 1788250114.890562,
-    "seen": 1788250184.4719245,
+    "mtime": 1788162286.6507595,
+    "seen": 1788193012.1597416,
     "ast_hash": "711debd76418845c074ea0829f864265",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/control-inteligente/confs/QueeselControlPredictivoyHaciaDonde.pdf": {
-    "mtime": 1788250114.9185622,
-    "seen": 1788250184.4719276,
+    "mtime": 1788162286.5261724,
+    "seen": 1788193012.1597428,
     "ast_hash": "d042c25da58cfc0ac12ff30bf90fca2d",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/control-inteligente/confs/SistemasInteligentesencontrolintroduccion2019.pdf": {
-    "mtime": 1788250114.926562,
-    "seen": 1788250184.4719307,
+    "mtime": 1788162286.618659,
+    "seen": 1788193012.1597438,
     "ast_hash": "3026e5896f7d8dbf2da29000007a3634",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/control-inteligente/confs/Tema 2 Control con Redes Neuronales2022.pdf": {
-    "mtime": 1788250114.942562,
-    "seen": 1788250184.4719331,
+    "mtime": 1788162286.7168365,
+    "seen": 1788193012.159745,
     "ast_hash": "445ddf6d04237096419b8c39e1d43002",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/control-inteligente/practicas-control-inteligente/gravity-drain-tank-loop-pro/PRACTICA1_LOOP-PRO_2023.pdf": {
-    "mtime": 1788250114.950562,
-    "seen": 1788250184.4719362,
+    "mtime": 1788162286.8689888,
+    "seen": 1788193012.1597457,
     "ast_hash": "c991adb77868f013808d11aa18af3c13",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/control-inteligente/practicas-control-inteligente/heat-exchanger-loop-pro/Arlet Acosta Gonz\u00e1lez, Heat Exchanger LOOP-PRO.pdf": {
-    "mtime": 1788250114.978562,
-    "seen": 1788250184.4719398,
+    "mtime": 1788162286.7756698,
+    "seen": 1788193012.1597476,
     "ast_hash": "620d00903ed1cb1ea3bb16dd1bde12fb",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/herramientas-interactivas-de-simulacion-y-control/practica-1-simulink/Arlet Acosta Gonz\u00e1lez, Informe depositos simulink .pdf": {
-    "mtime": 1788250115.222562,
-    "seen": 1788250184.4719532,
+    "mtime": 1788162385.8267143,
+    "seen": 1788193012.1597557,
     "ast_hash": "cdde7f04abc2d1b182fdab790f608e49",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/inteligencia-ambiental-y-sistemas-multiagente/word-template/word-template-paper/ADCAIJ-WordTemplate2016_V4.dotx.pdf": {
-    "mtime": 1788250115.2345622,
-    "seen": 1788250184.4719598,
+    "mtime": 1788162421.925295,
+    "seen": 1788193012.1597595,
     "ast_hash": "65bca73542f07b15ca6351d4ac84d3a0",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/2018-07-19_iRobot_Roomba_600_Open_Interface_Spec (Recuperado 1).pdf": {
-    "mtime": 1788250116.1225622,
-    "seen": 1788250184.4721065,
+    "mtime": 1788164549.5570614,
+    "seen": 1788193012.159807,
     "ast_hash": "ebf8ca6e522d8cb83ee54cffe7e07587",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/robots-autonomos/trabajo-teorico/presentaci\u00f3n robots aut\u00f3nomos_ FINAL.pdf": {
-    "mtime": 1788250116.146562,
-    "seen": 1788250184.4721096,
+    "mtime": 1788164549.6450796,
+    "seen": 1788193012.1598084,
     "ast_hash": "a9d23b306234894c7468f5458905ab17",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/tecnologias-del-habla/entrega-1/Entrega 1.pdf": {
-    "mtime": 1788250116.238562,
-    "seen": 1788250184.4721303,
+    "mtime": 1788165843.1976526,
+    "seen": 1788193012.1598203,
     "ast_hash": "0e7d0e6f4c2f96bf0fa8a3bd3b3ccabe",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/tecnologias-del-habla/entrega-2/Entrega 2.pdf": {
-    "mtime": 1788250116.266562,
-    "seen": 1788250184.4721332,
+    "mtime": 1788175150.6326065,
+    "seen": 1788193012.1598215,
     "ast_hash": "42dc776efce9709b70e1996f13b6df88",
     "semantic_hash": ""
   },
   ".claude/hooks/check-pr-review.sh": {
-    "mtime": 1788250114.607925,
-    "seen": 1788250184.4710782,
+    "mtime": 1788194857.230271,
+    "seen": 1788194879.066633,
     "ast_hash": "601c21183100af822ee4d60944285b0a",
     "semantic_hash": ""
   },
   ".claude/hooks/mark-pr-reviewed.sh": {
-    "mtime": 1788250114.607925,
-    "seen": 1788250184.4710846,
+    "mtime": 1788194857.230271,
+    "seen": 1788194879.0666423,
     "ast_hash": "0acd3b0acf53c917d67d6f6acbdfe76c",
     "semantic_hash": ""
   },
   ".claude/hooks/restrict-cavecrew-bash.sh": {
-    "mtime": 1788250114.607925,
-    "seen": 1788250184.471088,
+    "mtime": 1788194857.230271,
+    "seen": 1788194879.066644,
     "ast_hash": "7d2a0a66d9c7489723257329fb0923db",
     "semantic_hash": ""
   },
   "skills-lock.json": {
-    "mtime": 1788250116.3105621,
-    "seen": 1788250184.4713535,
+    "mtime": 1788194857.586703,
+    "seen": 1788194879.066723,
     "ast_hash": "9550adc8aebe995fd0663a353e6f09f2",
     "semantic_hash": ""
   },
   ".agents/skills/agent-browser/SKILL.md": {
-    "mtime": 1788250114.602482,
-    "seen": 1788250184.4713564,
+    "mtime": 1788194857.2280853,
+    "seen": 1788194879.0667238,
     "ast_hash": "ed92243681e40e1c279a284e1c7e9735",
     "semantic_hash": ""
   },
   ".agents/skills/cavecrew/README.md": {
-    "mtime": 1788250114.602482,
-    "seen": 1788250184.4713593,
+    "mtime": 1788194857.2280853,
+    "seen": 1788194879.0667243,
     "ast_hash": "14eec7b6e3c9020b6302be4763dcf5fa",
     "semantic_hash": ""
   },
   ".agents/skills/cavecrew/SKILL.md": {
-    "mtime": 1788250114.6030338,
-    "seen": 1788250184.4713619,
+    "mtime": 1788194857.2287521,
+    "seen": 1788194879.066725,
     "ast_hash": "f184873cd9c507fa872cc86fd36722e3",
     "semantic_hash": ""
   },
   ".agents/skills/caveman/README.md": {
-    "mtime": 1788250114.6030338,
-    "seen": 1788250184.471365,
+    "mtime": 1788194857.2287521,
+    "seen": 1788194879.066726,
     "ast_hash": "14801a83830df3284b11a2752da83a39",
     "semantic_hash": ""
   },
   ".agents/skills/caveman/SKILL.md": {
-    "mtime": 1788250114.6032093,
-    "seen": 1788250184.4713686,
+    "mtime": 1788194857.228853,
+    "seen": 1788194879.0667267,
     "ast_hash": "5c05422ff18a4b8a75d4f78725a7ae87",
     "semantic_hash": ""
   },
   ".agents/skills/find-skills/SKILL.md": {
-    "mtime": 1788250114.6032093,
-    "seen": 1788250184.4713724,
+    "mtime": 1788194857.228853,
+    "seen": 1788194879.0667272,
     "ast_hash": "62b297abdee9aea84c577ab2e04e1974",
     "semantic_hash": ""
   },
   ".agents/skills/investigate-first/SKILL.md": {
-    "mtime": 1788250114.6032093,
-    "seen": 1788250184.471376,
+    "mtime": 1788194857.228853,
+    "seen": 1788194879.0667276,
     "ast_hash": "521931896078b281b65861c28cee19e6",
     "semantic_hash": ""
   },
   ".agents/skills/investigate-first/agents/openai.yaml": {
-    "mtime": 1788250114.6034942,
-    "seen": 1788250184.471379,
+    "mtime": 1788194857.2290409,
+    "seen": 1788194879.0667284,
     "ast_hash": "2e40d635059c35d5e15efdac38ae5e75",
     "semantic_hash": ""
   },
   ".agents/skills/lean-build/SKILL.md": {
-    "mtime": 1788250114.6034942,
-    "seen": 1788250184.471383,
+    "mtime": 1788194857.2290409,
+    "seen": 1788194879.066729,
     "ast_hash": "dc89b03c34bd2bcae8b0e4d6ab3bd982",
     "semantic_hash": ""
   },
   ".agents/skills/lean-build/agents/openai.yaml": {
-    "mtime": 1788250114.6041753,
-    "seen": 1788250184.4713852,
+    "mtime": 1788194857.2291021,
+    "seen": 1788194879.0667295,
     "ast_hash": "aa929ee1d741fc29c8e743110a081f38",
     "semantic_hash": ""
   },
   ".agents/skills/migration/SKILL.md": {
-    "mtime": 1788250114.6041753,
-    "seen": 1788250184.471388,
+    "mtime": 1788194857.2291021,
+    "seen": 1788194879.0667303,
     "ast_hash": "aa0ffea732f9e5e900dbf7929a6da704",
     "semantic_hash": ""
   },
   ".agents/skills/migration/agents/openai.yaml": {
-    "mtime": 1788250114.605345,
-    "seen": 1788250184.4713905,
+    "mtime": 1788194857.22916,
+    "seen": 1788194879.0667307,
     "ast_hash": "3f9eea1166d8e521f431614d458ae06b",
     "semantic_hash": ""
   },
   ".agents/skills/safe-refactor/SKILL.md": {
-    "mtime": 1788250114.605345,
-    "seen": 1788250184.471393,
+    "mtime": 1788194857.22916,
+    "seen": 1788194879.0667312,
     "ast_hash": "1695e48c4cba2ccbbbb4f5703f8964cd",
     "semantic_hash": ""
   },
   ".agents/skills/safe-refactor/agents/openai.yaml": {
-    "mtime": 1788250114.6062012,
-    "seen": 1788250184.4713955,
+    "mtime": 1788194857.2296576,
+    "seen": 1788194879.0667317,
     "ast_hash": "ef7571ec17e45892f66acf5cf3820344",
     "semantic_hash": ""
   },
   ".agents/skills/surgical-patch/SKILL.md": {
-    "mtime": 1788250114.6062012,
-    "seen": 1788250184.4713984,
+    "mtime": 1788194857.2296576,
+    "seen": 1788194879.0667324,
     "ast_hash": "47e717800975837013361bde6707c598",
     "semantic_hash": ""
   },
   ".agents/skills/surgical-patch/agents/openai.yaml": {
-    "mtime": 1788250114.606775,
-    "seen": 1788250184.471401,
+    "mtime": 1788194857.2298431,
+    "seen": 1788194879.066733,
     "ast_hash": "59a79fa5b6bcae061f2922d81a0b1016",
     "semantic_hash": ""
   },
   ".agents/skills/verify-and-stop/SKILL.md": {
-    "mtime": 1788250114.606775,
-    "seen": 1788250184.4714038,
+    "mtime": 1788194857.2298431,
+    "seen": 1788194879.0667338,
     "ast_hash": "31d8303e3b11303f3aa38c7105765736",
     "semantic_hash": ""
   },
   ".agents/skills/verify-and-stop/agents/openai.yaml": {
-    "mtime": 1788250114.6073868,
-    "seen": 1788250184.4714062,
+    "mtime": 1788194857.2298946,
+    "seen": 1788194879.066734,
     "ast_hash": "0fcf3d3b783820fdd064244e95912b15",
     "semantic_hash": ""
   },
   ".claude/agents/cavecrew-builder.md": {
-    "mtime": 1788250114.6073868,
-    "seen": 1788250184.4714122,
+    "mtime": 1788194857.2298946,
+    "seen": 1788194879.0667355,
     "ast_hash": "6f3649a6cc4db33c31dfff788703057f",
     "semantic_hash": ""
   },
   ".claude/agents/cavecrew-investigator.md": {
-    "mtime": 1788250114.607925,
-    "seen": 1788250184.4714148,
+    "mtime": 1788194857.230271,
+    "seen": 1788194879.0667365,
     "ast_hash": "d7f6af8a21a84244710d19b65fd1effa",
     "semantic_hash": ""
   },
   ".claude/agents/cavecrew-reviewer.md": {
-    "mtime": 1788250114.607925,
-    "seen": 1788250184.4714177,
+    "mtime": 1788194857.230271,
+    "seen": 1788194879.066737,
     "ast_hash": "20a28dd438babfa70be41fac696220b2",
     "semantic_hash": ""
   },
   ".claude/skills/hook-hardening/SKILL.md": {
-    "mtime": 1788250114.6103284,
-    "seen": 1788250184.47145,
+    "mtime": 1788194857.2321305,
+    "seen": 1788194879.0667458,
     "ast_hash": "df855b0bee570a83c4b0baa062fe94fe",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad7b_que-estas-haciendo.md": {
-    "mtime": 1788250114.610562,
-    "seen": 1788250184.4716058,
+    "mtime": 1788194857.2321305,
+    "seen": 1788194879.0667737,
     "ast_hash": "696a2773e8e6e21284451d77e41b9ca0",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad7c_como-es.md": {
-    "mtime": 1788250114.610562,
-    "seen": 1788250184.4716086,
+    "mtime": 1788194857.2321305,
+    "seen": 1788194879.0667744,
     "ast_hash": "df9f819f7ed67ebc92baf6ebef5daf34",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad8a_por-favor-para-ir-a-la-catedral.md": {
-    "mtime": 1788250114.610562,
-    "seen": 1788250184.471611,
+    "mtime": 1788194857.2321305,
+    "seen": 1788194879.0667748,
     "ast_hash": "f85ef7358869872518fc2e8f394478fd",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad8b_que-hizo-rosa-ayer.md": {
-    "mtime": 1788250114.610562,
-    "seen": 1788250184.471614,
+    "mtime": 1788194857.2321305,
+    "seen": 1788194879.0667753,
     "ast_hash": "6c8570b706533afcd070219d03234e6c",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad8c_que-tiempo-hace-hoy.md": {
-    "mtime": 1788250114.610562,
-    "seen": 1788250184.4716165,
+    "mtime": 1788194857.2321305,
+    "seen": 1788194879.0667758,
     "ast_hash": "0864f23a2dfed8696de5ad19dd9f715a",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/guia-repaso-unidades-1-10.md": {
-    "mtime": 1788250114.610562,
-    "seen": 1788250184.4716194,
+    "mtime": 1788194857.2321305,
+    "seen": 1788194879.0667765,
     "ast_hash": "92547316ef5ade91d46a83bebba038eb",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/practica-mas-4_unidades-7-8.md": {
-    "mtime": 1788250114.610562,
-    "seen": 1788250184.4716256,
+    "mtime": 1788194857.2321305,
+    "seen": 1788194879.0667782,
     "ast_hash": "32b7c5354d7765e203bbb78c369848f9",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a2/cuaderno-unidad0_antes-de-empezar.md": {
-    "mtime": 1788250114.610562,
-    "seen": 1788250184.4716313,
+    "mtime": 1788194857.2347028,
+    "seen": 1788194879.0667794,
     "ast_hash": "8c760d014a521f0e434adb858966137f",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad1a_vida-cotidiana.md": {
-    "mtime": 1788250114.610562,
-    "seen": 1788250184.4716341,
+    "mtime": 1788194857.2347028,
+    "seen": 1788194879.06678,
     "ast_hash": "f29358b27039e4e66844374fa7c24d16",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad1b_que-hiciste-que-has-hecho.md": {
-    "mtime": 1788250114.614562,
-    "seen": 1788250184.4716382,
+    "mtime": 1788194857.238703,
+    "seen": 1788194879.0667806,
     "ast_hash": "ba207e6e51c6a78069623625d25a0ac4",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad1c_el-futuro-que-nos-espera.md": {
-    "mtime": 1788250114.614562,
-    "seen": 1788250184.4716418,
+    "mtime": 1788194857.238703,
+    "seen": 1788194879.0667813,
     "ast_hash": "0f5e6b3e9e984b0b6cc50d0f21045f5b",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad2a_en-la-estacion.md": {
-    "mtime": 1788250114.614562,
-    "seen": 1788250184.4716444,
+    "mtime": 1788194857.238703,
+    "seen": 1788194879.066782,
     "ast_hash": "39231b248bd36c5781538b066fbb3842",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad2b_como-vas-al-trabajo.md": {
-    "mtime": 1788250114.614562,
-    "seen": 1788250184.4716475,
+    "mtime": 1788194857.238703,
+    "seen": 1788194879.0667825,
     "ast_hash": "30ac4c3e5d4cd032919762a039a4e1be",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad2c_intercambio-de-casa.md": {
-    "mtime": 1788250114.614562,
-    "seen": 1788250184.4716504,
+    "mtime": 1788194857.238703,
+    "seen": 1788194879.066783,
     "ast_hash": "1776cea0914bafb6f41bd8325c771c02",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-practica-mas-4_interactivo.html": {
-    "mtime": 1788250114.6185622,
-    "seen": 1788250184.4716802,
+    "mtime": 1788194857.242703,
+    "seen": 1788194879.0667903,
     "ast_hash": "0947dab02b7326973ad95cc0072d0c25",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad7b_que-estas-haciendo_interactivo.html": {
-    "mtime": 1788250114.6185622,
-    "seen": 1788250184.4716954,
+    "mtime": 1788194857.242703,
+    "seen": 1788194879.0667942,
     "ast_hash": "fc739f8ca1203da78f1ec2382e2768c4",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad7c_como-es_interactivo.html": {
-    "mtime": 1788250114.6185622,
-    "seen": 1788250184.471699,
+    "mtime": 1788194857.242703,
+    "seen": 1788194879.066795,
     "ast_hash": "d38417cfbca29dcddea1ec291888a992",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad8a_por-favor-para-ir-a-la-catedral_interactivo.html": {
-    "mtime": 1788250114.6185622,
-    "seen": 1788250184.4717023,
+    "mtime": 1788194857.246703,
+    "seen": 1788194879.0667958,
     "ast_hash": "6100eeb73df05a4758bdf44beb3f4eb1",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad8b_que-hizo-rosa-ayer_interactivo.html": {
-    "mtime": 1788250114.6225622,
-    "seen": 1788250184.4717054,
+    "mtime": 1788194857.2507029,
+    "seen": 1788194879.0667965,
     "ast_hash": "6cdca093fa79ddcb75f6db94bad3da31",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad8c_que-tiempo-hace-hoy_interactivo.html": {
-    "mtime": 1788250114.6225622,
-    "seen": 1788250184.471709,
+    "mtime": 1788194857.2547028,
+    "seen": 1788194879.0667973,
     "ast_hash": "50133e8beefc7676b113ff4aeae58e0d",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_guia-repaso-unidades-1-10_interactivo.html": {
-    "mtime": 1788250114.646562,
-    "seen": 1788250184.4717147,
+    "mtime": 1788194857.2707028,
+    "seen": 1788194879.066799,
     "ast_hash": "926a786313368be4b00ef6a9875d7801",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a2/nuevo-espanol-en-marcha-2_cuaderno-unidad0_antes-de-empezar_interactivo.html": {
-    "mtime": 1788250114.646562,
-    "seen": 1788250184.4717176,
+    "mtime": 1788194857.2707028,
+    "seen": 1788194879.0667994,
     "ast_hash": "58ddd6f8f134c60de10966eacccf33a4",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad1a_vida-cotidiana_interactivo.html": {
-    "mtime": 1788250114.646562,
-    "seen": 1788250184.4717207,
+    "mtime": 1788194857.2707028,
+    "seen": 1788194879.0667999,
     "ast_hash": "4e5365d62d7c3e023d00d626c8ef3a91",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad1b_que-hiciste-que-has-hecho_interactivo.html": {
-    "mtime": 1788250114.650562,
-    "seen": 1788250184.4717236,
+    "mtime": 1788194857.282703,
+    "seen": 1788194879.0668004,
     "ast_hash": "bfa23bb74141593d44c75d6d0207bc88",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad1c_el-futuro-que-nos-espera_interactivo.html": {
-    "mtime": 1788250114.6545622,
-    "seen": 1788250184.4717352,
+    "mtime": 1788194857.2867029,
+    "seen": 1788194879.0668008,
     "ast_hash": "788db02a72d36612c984f8711c2e957e",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad2a_en-la-estacion_interactivo.html": {
-    "mtime": 1788250114.6545622,
-    "seen": 1788250184.4717402,
+    "mtime": 1788194857.2867029,
+    "seen": 1788194879.0668013,
     "ast_hash": "ea6f8d7475aeb8fa0f4a476a517537e7",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad2b_como-vas-al-trabajo_interactivo.html": {
-    "mtime": 1788250114.6585622,
-    "seen": 1788250184.4717429,
+    "mtime": 1788194857.298703,
+    "seen": 1788194879.0668023,
     "ast_hash": "bca8af9a52f0c5c110572f2f583763c6",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad2c_intercambio-de-casa_interactivo.html": {
-    "mtime": 1788250114.6585622,
-    "seen": 1788250184.471746,
+    "mtime": 1788194857.298703,
+    "seen": 1788194879.0668027,
     "ast_hash": "39ba1dec950a141b81449db6705d4f39",
     "semantic_hash": ""
   },
   "recursos-generales/herramientas-ia/vercel-web-interface-guidelines.md": {
-    "mtime": 1788250116.3105621,
-    "seen": 1788250184.4719038,
+    "mtime": 1788194857.586703,
+    "seen": 1788194879.0668373,
     "ast_hash": "0833b7ad5b0e2df9b83f62e70bb50631",
-    "semantic_hash": ""
-  },
-  "docencia-espanol/avito/README.md": {
-    "mtime": 1788246200.3386621,
-    "seen": 1788250184.4715836,
-    "ast_hash": "9c6bbc7595f9b2bd62fdb4da3308b2f3",
-    "semantic_hash": ""
-  },
-  "docencia-espanol/avito/perfil-y-precios.md": {
-    "mtime": 1788247413.2066312,
-    "seen": 1788250184.4715862,
-    "ast_hash": "3e3bdaf883f351e8d8e5804bc2fdebae",
-    "semantic_hash": ""
-  },
-  "docencia-espanol/avito/resenas.md": {
-    "mtime": 1788249039.1185896,
-    "seen": 1788250184.4715889,
-    "ast_hash": "3c04183337fe84c34894d0b2a98fd894",
-    "semantic_hash": ""
-  },
-  "personal/README.md": {
-    "mtime": 1788246498.9586546,
-    "seen": 1788250184.4718826,
-    "ast_hash": "baa159064bee9eb658bb76382c9b0cb2",
-    "semantic_hash": ""
-  },
-  "personal/academico/formacion-academica.md": {
-    "mtime": 1788249673.1865735,
-    "seen": 1788250184.471885,
-    "ast_hash": "c365b48b3c4c17f437ca555a19c97cfb",
     "semantic_hash": ""
   }
 }
