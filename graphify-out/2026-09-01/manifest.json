@@ -846,9 +846,9 @@
     "semantic_hash": "64aea90e57ba88187f9bd9f56c6fab03"
   },
   "docencia-espanol/materiales/codigos-acceso.html": {
-    "mtime": 1788273291.1164649,
-    "seen": 1788273297.3875155,
-    "ast_hash": "168c19a930a257b8dc16dfc1c6afe44a",
+    "mtime": 1788273317.3124664,
+    "seen": 1788273344.3376045,
+    "ast_hash": "504fc936397fef235c7a41209048bee4",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/indice-clases-de-espanol.html": {
@@ -1869,6 +1869,90 @@
     "mtime": 1788273288.6258125,
     "seen": 1788273297.3875568,
     "ast_hash": "c365b48b3c4c17f437ca555a19c97cfb",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad10a_la-salud.md": {
+    "mtime": 1788273291.108465,
+    "seen": 1788273344.3375294,
+    "ast_hash": "2c1f5c9e1c842ef914d6c87b98ce612d",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad10b_antes-saliamos-con-los-amigos.md": {
+    "mtime": 1788273291.108465,
+    "seen": 1788273344.337531,
+    "ast_hash": "e105ff169516cf26cc4cc6a2b6d65c1e",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad10c_voy-a-trabajar-en-un-hotel.md": {
+    "mtime": 1788273291.108465,
+    "seen": 1788273344.337532,
+    "ast_hash": "79916fedfdb85d1fa154544f1106f5f5",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad9a_cuanto-cuestan-estos-zapatos.md": {
+    "mtime": 1788273291.108465,
+    "seen": 1788273344.337545,
+    "ast_hash": "70cee8fc629436f1b38795bbffebdbba",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad9b_mi-novio-lleva-corbata.md": {
+    "mtime": 1788273291.108465,
+    "seen": 1788273344.3375456,
+    "ast_hash": "6edfb2fd9a821dc8c2719ef2606de911",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad9c_buenos-aires-es-mas-grande-que-toledo.md": {
+    "mtime": 1788273291.108465,
+    "seen": 1788273344.337547,
+    "ast_hash": "83318c466acc07118e56d373637dc7cc",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/practica-mas-5_unidades-9-10.md": {
+    "mtime": 1788273291.108465,
+    "seen": 1788273344.3375514,
+    "ast_hash": "59ec4e060ee9888dc7c9c0f04bef2a5d",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-practica-mas-5_interactivo.html": {
+    "mtime": 1788273291.108465,
+    "seen": 1788273344.337571,
+    "ast_hash": "4cef905fa5e3d9d99d0f718cde57f145",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad10a_la-salud_interactivo.html": {
+    "mtime": 1788273291.112465,
+    "seen": 1788273344.3375719,
+    "ast_hash": "44882352b72e2fce3f969d2a7f83c517",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad10b_antes-saliamos-con-los-amigos_interactivo.html": {
+    "mtime": 1788273291.112465,
+    "seen": 1788273344.3375728,
+    "ast_hash": "139f2439598e40597ab0cb7dbd7abca5",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad10c_voy-a-trabajar-en-un-hotel_interactivo.html": {
+    "mtime": 1788273291.112465,
+    "seen": 1788273344.337574,
+    "ast_hash": "ef425dbfa7658ba7d137a5d8dd8f99f5",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad9a_cuanto-cuestan-estos-zapatos_interactivo.html": {
+    "mtime": 1788273291.112465,
+    "seen": 1788273344.3375857,
+    "ast_hash": "86d2fe2abee269694e563f5427558bf1",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad9b_mi-novio-lleva-corbata_interactivo.html": {
+    "mtime": 1788273291.1164649,
+    "seen": 1788273344.3375866,
+    "ast_hash": "fa1b22fb77a179c8ced9454c480b93a4",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad9c_buenos-aires-es-mas-grande-que-toledo_interactivo.html": {
+    "mtime": 1788273291.1164649,
+    "seen": 1788273344.3375874,
+    "ast_hash": "4aeca290a8d857a85cb6d30b53752740",
     "semantic_hash": ""
   }
 }
