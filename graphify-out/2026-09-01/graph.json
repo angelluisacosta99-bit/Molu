@@ -23863,7 +23863,7 @@
       "node_kind": "heading",
       "norm_label": "cartas de motivacion",
       "source_file": "personal/academico/formacion-academica.md",
-      "source_location": "L271"
+      "source_location": "L267"
     },
     {
       "id": "personal_academico_formacion_academica_cartas_de_recomendaci\u00f3n",
@@ -23995,7 +23995,7 @@
       "node_kind": "heading",
       "norm_label": "fuente",
       "source_file": "personal/academico/formacion-academica.md",
-      "source_location": "L318"
+      "source_location": "L314"
     },
     {
       "id": "personal_academico_formacion_academica_idiomas",
@@ -24055,7 +24055,7 @@
       "node_kind": "heading",
       "norm_label": "vida universitaria / proceso en curso",
       "source_file": "personal/academico/formacion-academica.md",
-      "source_location": "L294"
+      "source_location": "L290"
     },
     {
       "id": "personal_academico_formacion_academica_voluntariado",
@@ -91371,6 +91371,17 @@
     },
     {
       "source": "personal_academico_formacion_academica_formaci\u00f3n_acad\u00e9mica_de_angel_luis_acosta_gonz\u00e1lez",
+      "target": "personal_academico_formacion_academica_cartas_de_motivaci\u00f3n",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "personal/academico/formacion-academica.md",
+      "source_location": "L267",
+      "weight": 1.0
+    },
+    {
+      "source": "personal_academico_formacion_academica_formaci\u00f3n_acad\u00e9mica_de_angel_luis_acosta_gonz\u00e1lez",
       "target": "personal_academico_formacion_academica_estudios_superiores_rusia",
       "relation": "contains",
       "_origin": "ast",
@@ -91382,24 +91393,13 @@
     },
     {
       "source": "personal_academico_formacion_academica_formaci\u00f3n_acad\u00e9mica_de_angel_luis_acosta_gonz\u00e1lez",
-      "target": "personal_academico_formacion_academica_cartas_de_motivaci\u00f3n",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "personal/academico/formacion-academica.md",
-      "source_location": "L271",
-      "weight": 1.0
-    },
-    {
-      "source": "personal_academico_formacion_academica_formaci\u00f3n_acad\u00e9mica_de_angel_luis_acosta_gonz\u00e1lez",
       "target": "personal_academico_formacion_academica_vida_universitaria_proceso_en_curso",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "personal/academico/formacion-academica.md",
-      "source_location": "L294",
+      "source_location": "L290",
       "weight": 1.0
     },
     {
@@ -91410,7 +91410,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "personal/academico/formacion-academica.md",
-      "source_location": "L318",
+      "source_location": "L314",
       "weight": 1.0
     },
     {
@@ -95580,5 +95580,5 @@
       "source_file": "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad6a_como-se-va-a-goya_interactivo.html"
     }
   ],
-  "built_at_commit": "ed04c4eb96f975769fd7afedfbaa7ff45d70295f"
+  "built_at_commit": "558acb3391e443f39cf92adeebeffb0e899d02db"
 }
