@@ -4,8 +4,10 @@
   escaneado sin texto extraíble, así que el contenido se transcribió mirando la página
   renderizada, y las respuestas salen del solucionario oficial que el propio cuaderno trae
   al final (página 61). El ejercicio 1 en el libro es un "relaciona" (columna de frases en
-  presente numeradas 1-6, columna de finales en imperfecto con letras a-f) que aquí se
-  adapta a frases ya combinadas en una sola, con el verbo como hueco -- la pareja
+  presente numeradas 1-6, columna de finales en imperfecto con letras a-f). Construido con
+  el motor type:"match" (regla dura del profesor: todo "relaciona" usa columnas de
+  match, nunca escribir la letra/número en un hueco de texto), con la columna "antes"
+  barajada para que ninguna fila quede alineada con su pareja por posición. La pareja
   número-letra la da el propio solucionario ("1 d. trabajaba; 2 f. íbamos..."). Sin
   ejercicios de audio.
   Construido sobre .claude/skills/ejercicio-interactivo/reference/template.html.
@@ -784,15 +786,19 @@
       exercises: [
         {
           num: 1, title: "Relaciona las frases y completa con el pretérito imperfecto",
-          instr: "La primera ya la trae resuelta el libro.",
-          type: "items",
-          items: [
-            { t: "Ahora trabajo en una oficina, antes trabajaba en un restaurante.", solved: true },
-            { t: "Ahora vamos al cine, antes {0} al teatro.", a: [["íbamos"]], wide: "full" },
-            { t: "Ahora Juan viene los martes a clase, antes {0} los jueves.", a: [["venía"]], wide: "full" },
-            { t: "Ahora compro el periódico, antes {0} revistas.", a: [["compraba"]], wide: "full" },
-            { t: "Ahora me gusta la música clásica, antes {0} el rock.", a: [["me gustaba"]], wide: "full" },
-            { t: "Ahora haces la comida, antes {0} la cena.", a: [["hacías"]], wide: "full" }
+          instr: "Toca una frase con \"ahora\" y después su continuación con \"antes\". La primera ya la trae resuelta el libro.",
+          type: "match",
+          columns: [
+            { label: "Ahora", items: ["Ahora trabajo en una oficina.", "Ahora vamos al cine.", "Ahora Juan viene los martes a clase.", "Ahora compro el periódico.", "Ahora me gusta la música clásica.", "Ahora haces la comida."] },
+            { label: "Antes", items: ["antes venía los jueves.", "antes compraba revistas.", "antes hacías la cena.", "antes me gustaba el rock.", "antes trabajaba en un restaurante.", "antes íbamos al teatro."] }
+          ],
+          rows: [
+            { solved: true },
+            { a: [["antes íbamos al teatro."]] },
+            { a: [["antes venía los jueves."]] },
+            { a: [["antes compraba revistas."]] },
+            { a: [["antes me gustaba el rock."]] },
+            { a: [["antes hacías la cena."]] }
           ]
         },
         {

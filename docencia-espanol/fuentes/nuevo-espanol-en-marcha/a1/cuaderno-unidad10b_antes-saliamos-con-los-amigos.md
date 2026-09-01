@@ -6,14 +6,19 @@
 
 #### Ej. 1 — Relaciona las frases y completa con el pretérito imperfecto
 
-*La primera ya la trae resuelta el libro.*
+*Toca una frase con "ahora" y después su continuación con "antes". La primera ya la trae resuelta el libro.*
 
-a. Ahora trabajo en una oficina, antes trabajaba en un restaurante.
-b. Ahora vamos al cine, antes **íbamos** al teatro.
-c. Ahora Juan viene los martes a clase, antes **venía** los jueves.
-d. Ahora compro el periódico, antes **compraba** revistas.
-e. Ahora me gusta la música clásica, antes **me gustaba** el rock.
-f. Ahora haces la comida, antes **hacías** la cena.
+1. Ahora trabajo en una oficina.
+2. Ahora vamos al cine.
+   → antes íbamos al teatro.
+3. Ahora Juan viene los martes a clase.
+   → antes venía los jueves.
+4. Ahora compro el periódico.
+   → antes compraba revistas.
+5. Ahora me gusta la música clásica.
+   → antes me gustaba el rock.
+6. Ahora haces la comida.
+   → antes hacías la cena.
 
 #### Ej. 2 — Completa las frases con el pretérito imperfecto de los verbos del recuadro
 
