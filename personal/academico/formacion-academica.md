@@ -237,15 +237,24 @@ de admisión, nunca pensadas para publicarse — a diferencia de una
 reseña de Avito, no hay consentimiento previo para que su nombre real
 quede indexado en un repositorio público.
 
+(Nota sobre el criterio: por eso aquí sí aparecen con nombre completo
+el traductor-intérprete jurado de ruso y el director académico del
+máster de Salamanca más abajo — actúan en capacidad pública/oficial
+firmando un documento oficial con su nombre y número de registro
+exigidos por ley o por su cargo institucional, no dando una opinión
+personal privada sobre Angel como estas cuatro cartas.)
+
 - **Profesora, doctora en ciencias técnicas**, docente de «Redes
   digitales y sistemas de conmutación» y «Líneas eléctricas y de fibra
   óptica», directora de su TFG — destaca sus proyectos de curso (diseño
   de línea de cable/aérea, estación de conmutación digital), su
   desenvoltura en ruso pese a no ser su lengua materna, y su TFG sobre
   la red DWDM/IP-MPLS-TP Moscú-Riazán.
-- **Jefe electromecánico de comunicaciones, Estación de Kazán** —
-  supervisor de sus dos últimas prácticas (verano 2025 y prácticas de
-  fin de carrera 2026); destaca su progresión de becario a "ingeniero
+- **Supervisor de sus prácticas profesionales** (Dirección de
+  Comunicaciones de Moscú) en sus dos últimas prácticas (verano 2025 y
+  prácticas de fin de carrera 2026; fechas exactas en la sección de
+  Experiencia profesional, sin repetir aquí el cargo exacto para no
+  facilitar la reidentificación); destaca su progresión de becario a "ingeniero
   maduro", su iniciativa (redactó por su cuenta una guía de uso de la
   radio RS-46MC para el personal de turno) y lo recomienda "sin
   reservas".
