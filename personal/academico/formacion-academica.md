@@ -244,29 +244,25 @@ firmando un documento oficial con su nombre y número de registro
 exigidos por ley o por su cargo institucional, no dando una opinión
 personal privada sobre Angel como estas cuatro cartas.)
 
-- **Profesora, doctora en ciencias técnicas**, docente de «Redes
-  digitales y sistemas de conmutación» y «Líneas eléctricas y de fibra
-  óptica», directora de su TFG — destaca sus proyectos de curso (diseño
-  de línea de cable/aérea, estación de conmutación digital), su
+- **Docente del departamento de Automática, Telemecánica y
+  Comunicaciones Ferroviarias, RUT MIIT** (área de redes de
+  telecomunicaciones), directora de su TFG — destaca sus proyectos de
+  curso en diseño de líneas de comunicación y conmutación digital, su
   desenvoltura en ruso pese a no ser su lengua materna, y su TFG sobre
   la red DWDM/IP-MPLS-TP Moscú-Riazán.
 - **Supervisor de sus prácticas profesionales**, sus dos últimas
-  (verano 2025 y prácticas de fin de carrera 2026) — destaca su progresión de becario a "ingeniero
-  maduro", su iniciativa (redactó por su cuenta una guía de uso de la
-  radio RS-46MC para el personal de turno) y lo recomienda "sin
-  reservas".
-- **Profesora, doctora en ciencias técnicas**, docente de «Modelado
-  matemático de sistemas y procesos» —redes neuronales, MATLAB—,
-  «Monitoreo y mediciones especiales» —Julia, estándares UIT-T—,
-  «Sistemas de gestión de calidad» —ISO 9000— y «Actividad de
-  proyecto» durante 5 años — destaca que fue capitán del equipo de
-  proyecto estudiantil y creador de la app "Navegador RUT (MIIT)".
-- **Profesor, doctor en ciencias técnicas**, docente de «Sistemas de
-  transmisión digital», prácticas de «Dispositivos formadores de
-  canales TSS» y «Líneas eléctricas y de fibra óptica» — destaca su
-  capacidad analítica, sus proyectos de curso sobre transmisión de
-  datos y sistemas ópticos, y su destreza práctica soldando fibra
-  óptica.
+  (verano 2025 y prácticas de fin de carrera 2026) — destaca su
+  progresión de becario a "ingeniero maduro", su iniciativa (redactó
+  por su cuenta una guía de uso de un equipo de radio para el personal
+  de turno) y lo recomienda "sin reservas".
+- **Docente del mismo departamento** (área de modelado matemático,
+  redes neuronales y sistemas de gestión de calidad) — destaca que fue
+  capitán del equipo de proyecto estudiantil y creador de la app
+  "Navegador RUT (MIIT)".
+- **Docente del mismo departamento** (área de sistemas de
+  transmisión y líneas de comunicación) — destaca su capacidad
+  analítica, sus proyectos de curso sobre transmisión de datos y
+  sistemas ópticos, y su destreza práctica soldando fibra óptica.
 
 ## Cartas de motivación
 
