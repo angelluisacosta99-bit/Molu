@@ -23863,7 +23863,7 @@
       "node_kind": "heading",
       "norm_label": "cartas de motivacion",
       "source_file": "personal/academico/formacion-academica.md",
-      "source_location": "L262"
+      "source_location": "L265"
     },
     {
       "id": "personal_academico_formacion_academica_cartas_de_recomendaci\u00f3n",
@@ -23995,7 +23995,7 @@
       "node_kind": "heading",
       "norm_label": "fuente",
       "source_file": "personal/academico/formacion-academica.md",
-      "source_location": "L309"
+      "source_location": "L312"
     },
     {
       "id": "personal_academico_formacion_academica_idiomas",
@@ -24055,7 +24055,7 @@
       "node_kind": "heading",
       "norm_label": "vida universitaria / proceso en curso",
       "source_file": "personal/academico/formacion-academica.md",
-      "source_location": "L285"
+      "source_location": "L288"
     },
     {
       "id": "personal_academico_formacion_academica_voluntariado",
@@ -24897,7 +24897,7 @@
       "node_kind": "heading",
       "norm_label": "descripcion \u2014 propuesta",
       "source_file": "docencia-espanol/avito/perfil-y-precios.md",
-      "source_location": "L69"
+      "source_location": "L70"
     },
     {
       "id": "docencia_espanol_avito_perfil_y_precios_perfil_de_avito_valoraci\u00f3n_precios_y_descripci\u00f3n",
@@ -24933,7 +24933,7 @@
       "node_kind": "heading",
       "norm_label": "\u043f\u0440\u0430\u0438\u0441-\u043b\u0438\u0441\u0442 \u2014 estado actual (tal como esta publicado)",
       "source_file": "docencia-espanol/avito/perfil-y-precios.md",
-      "source_location": "L14"
+      "source_location": "L15"
     },
     {
       "id": "docencia_espanol_avito_perfil_y_precios_\u043f\u0440\u0430\u0439\u0441_\u043b\u0438\u0441\u0442_propuesta",
@@ -24945,7 +24945,7 @@
       "node_kind": "heading",
       "norm_label": "\u043f\u0440\u0430\u0438\u0441-\u043b\u0438\u0441\u0442 \u2014 propuesta",
       "source_file": "docencia-espanol/avito/perfil-y-precios.md",
-      "source_location": "L37"
+      "source_location": "L38"
     },
     {
       "id": "docencia_espanol_avito_readme",
@@ -91047,7 +91047,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docencia-espanol/avito/perfil-y-precios.md",
-      "source_location": "L14",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -91058,7 +91058,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docencia-espanol/avito/perfil-y-precios.md",
-      "source_location": "L37",
+      "source_location": "L38",
       "weight": 1.0
     },
     {
@@ -91069,7 +91069,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docencia-espanol/avito/perfil-y-precios.md",
-      "source_location": "L69",
+      "source_location": "L70",
       "weight": 1.0
     },
     {
@@ -91377,7 +91377,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "personal/academico/formacion-academica.md",
-      "source_location": "L262",
+      "source_location": "L265",
       "weight": 1.0
     },
     {
@@ -91399,7 +91399,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "personal/academico/formacion-academica.md",
-      "source_location": "L285",
+      "source_location": "L288",
       "weight": 1.0
     },
     {
@@ -91410,7 +91410,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "personal/academico/formacion-academica.md",
-      "source_location": "L309",
+      "source_location": "L312",
       "weight": 1.0
     },
     {
@@ -95580,5 +95580,5 @@
       "source_file": "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad6a_como-se-va-a-goya_interactivo.html"
     }
   ],
-  "built_at_commit": "a11222d220478c1960b2cbaacdf44f8fb69fcc39"
+  "built_at_commit": "0c295db1f38fbce5c183d36a8fe3f93090a03cb8"
 }
