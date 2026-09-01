@@ -24897,7 +24897,7 @@
       "node_kind": "heading",
       "norm_label": "descripcion \u2014 propuesta",
       "source_file": "docencia-espanol/avito/perfil-y-precios.md",
-      "source_location": "L70"
+      "source_location": "L73"
     },
     {
       "id": "docencia_espanol_avito_perfil_y_precios_perfil_de_avito_valoraci\u00f3n_precios_y_descripci\u00f3n",
@@ -24933,7 +24933,7 @@
       "node_kind": "heading",
       "norm_label": "\u043f\u0440\u0430\u0438\u0441-\u043b\u0438\u0441\u0442 \u2014 estado actual (tal como esta publicado)",
       "source_file": "docencia-espanol/avito/perfil-y-precios.md",
-      "source_location": "L15"
+      "source_location": "L18"
     },
     {
       "id": "docencia_espanol_avito_perfil_y_precios_\u043f\u0440\u0430\u0439\u0441_\u043b\u0438\u0441\u0442_propuesta",
@@ -24945,7 +24945,7 @@
       "node_kind": "heading",
       "norm_label": "\u043f\u0440\u0430\u0438\u0441-\u043b\u0438\u0441\u0442 \u2014 propuesta",
       "source_file": "docencia-espanol/avito/perfil-y-precios.md",
-      "source_location": "L38"
+      "source_location": "L41"
     },
     {
       "id": "docencia_espanol_avito_readme",
@@ -91047,7 +91047,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docencia-espanol/avito/perfil-y-precios.md",
-      "source_location": "L15",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -91058,7 +91058,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docencia-espanol/avito/perfil-y-precios.md",
-      "source_location": "L38",
+      "source_location": "L41",
       "weight": 1.0
     },
     {
@@ -91069,7 +91069,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docencia-espanol/avito/perfil-y-precios.md",
-      "source_location": "L70",
+      "source_location": "L73",
       "weight": 1.0
     },
     {
@@ -95580,5 +95580,5 @@
       "source_file": "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad6a_como-se-va-a-goya_interactivo.html"
     }
   ],
-  "built_at_commit": "0c295db1f38fbce5c183d36a8fe3f93090a03cb8"
+  "built_at_commit": "63ad2936a8c7d4f51cb37af724f37e3adbb73aff"
 }
