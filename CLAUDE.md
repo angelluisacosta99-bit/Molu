@@ -32,6 +32,51 @@ no terminó, el PR no se fusiona hasta que exista esa revisión. Y nunca
 lanzar la revisión (ni fusionar) solo por haber abierto el PR — hace
 falta que el profesor pida fusionar primero.
 
+**Refuerzo técnico parcial, no sustituye la disciplina.** Un hook
+`PreToolUse` (`check-pr-review.sh`) bloquea la llamada MCP
+`merge_pull_request` si no encuentra, para ese owner/repo/PR exacto, un
+marcador reciente (<60 min, fail-closed ante cualquier error) **y con el
+mismo SHA que el HEAD actual del PR** — lo comprueba en vivo contra la
+API de GitHub con el `GITHUB_TOKEN`/`GH_TOKEN` del entorno, así que un
+push nuevo tras la revisión invalida el marcador aunque sea reciente.
+`enable_pr_auto_merge` se deniega siempre, sin excepción: fusiona más
+tarde de forma asíncrona en el commit que sea HEAD en ese momento
+futuro, algo que este hook no puede verificar ahora — usar
+`merge_pull_request` directo tras revisar, no auto-merge. En cuanto la
+revisión de un PR salga limpia (o tras corregir sus hallazgos), antes
+de fusionar, dejar constancia con:
+`.claude/hooks/mark-pr-reviewed.sh <owner> <repo> <PR> <head_sha> "<resumen>"`.
+**No cubre** fusionar por otras vías (ej. `gh pr merge` por Bash, si
+`gh` estuviera disponible) — la regla dura sigue aplicando igual a esos
+caminos, solo que sin gate técnico. Detalle completo del diseño y sus
+límites en `recursos-generales/herramientas-ia/novedades.md`.
+
+## Regla: 3+ rondas de revisión sobre lo mismo → guardar la lección
+
+Si corregir un mismo archivo/hook/PR para dejarlo limpio necesita **3 o
+más rondas** del ciclo revisión→corrección→revisión (la misma familia
+de fallo reaparece una y otra vez, no hallazgos nuevos e independientes
+cada vez), eso es la señal: antes de dar el trabajo por terminado,
+parar y guardar explícitamente qué patrón de error se repitió y cómo se
+corrigió, para no repetirlo en una tarea futura. No hace falta que el
+profesor lo pida cada vez — aplicar esto solo, siempre que pase.
+
+Dónde guardarlo, según el caso:
+- Si es un hook de Claude Code (`.claude/hooks/*.sh`): añadir un punto
+  nuevo a `.claude/skills/hook-hardening/SKILL.md` (ya es el lugar
+  pensado para esto — así nacieron sus puntos actuales).
+- Si no es un hook pero el patrón es específico de un dominio de código
+  con una skill propia en este repo, añadirlo ahí en vez de en
+  `hook-hardening`.
+- Si no encaja en ninguna skill existente, anotarlo como entrada propia
+  en `recursos-generales/herramientas-ia/novedades.md` (mismo formato
+  que ya se usa para sagas de varias rondas), o crear una skill nueva
+  si el patrón es lo bastante recurrente para merecerla.
+
+No es solo para hooks de seguridad — aplica a cualquier tipo de tarea
+(código, configuración, contenido) donde el mismo tipo de error se
+repita 3+ veces antes de salir limpio.
+
 ## Diseño visual: usar siempre la skill `impeccable`
 
 Cuando la tarea implique diseñar, rediseñar, criticar, auditar o pulir
@@ -43,6 +88,12 @@ lugar de hacer el trabajo de diseño "a mano".
 Nota de alcance: `impeccable` es para interfaces frontend, no genera ni
 edita documentos de Word ni presentaciones de PowerPoint. Para esos
 formatos usar las skills `docx` y `pptx` respectivamente.
+
+Como segunda pasada tras `impeccable` (no como sustituto), repasar
+`recursos-generales/herramientas-ia/vercel-web-interface-guidelines.md`
+— checklist externo de más de 100 reglas concretas de calidad de
+interfaz (Vercel, MIT), copiado en local para no depender de una
+petición web en cada sesión.
 
 ## Materiales de referencia para clases de español
 
@@ -337,6 +388,12 @@ conversación cuenta como comprometida aunque el archivo esté fuera de Git.
   eso `impeccable` (que sí tiene esa regla, más arriba) se queda fuera de
   `skillOverrides`; no aplicarlo ahí sin revisar antes si existe una
   regla equivalente para la skill en cuestión.
+- **Skill `hook-hardening`** (`.claude/skills/hook-hardening/`) — checklist
+  de 6 puntos a correr antes de declarar "hecho"/"probado" cualquier
+  script de hook (SessionStart/PreToolUse/Stop). Nace de dos sagas reales
+  en este repo (7 y 6 rondas de revisión respectivamente) donde la misma
+  familia de errores se repitió una y otra vez — se activa sola por su
+  descripción, no hace falta invocarla a mano.
 - **`/compact`** — en conversaciones largas, correrlo en puntos de corte
   naturales (por ejemplo, al terminar una tarea grande y empezar otra sin
   relación) comprime el historial en vez de dejar que crezca sin límite.

@@ -86,14 +86,34 @@ PR #22 invertía el orden que PR #20 daba por bueno.
 
 2. **Copia la plantilla, no la reescribas.** `cp .claude/skills/ejercicio-interactivo/reference/template.html <destino>`.
    Sustituye **todos** los marcadores `{{...}}` (grep por `{{` para confirmar que no quede
-   ninguno) y rellena `blocks` con los ejercicios reales, siguiendo los cinco tipos ya
-   soportados por el motor de renderizado (`items`, `text`, `table2`, `conjTable`,
-   `agenda` — documentados con ejemplos dentro de la propia plantilla). Si necesitas un tipo
-   nuevo, tendrás que extender también el renderizador (busca `ex.type ===` en el archivo).
+   ninguno) y rellena `blocks` con los ejercicios reales, siguiendo los tipos ya soportados
+   por el motor de renderizado (`items`, `text`, `table2`, `conjTable`, `open`, `crossword`,
+   `agenda`, `match` — documentados con ejemplos dentro de la propia plantilla, y con más
+   detalle en la sección de lecciones más abajo). Si necesitas un tipo nuevo, tendrás que
+   extender también el renderizador (busca `ex.type ===` en el archivo).
    Dentro de `items`, para un hueco de verdadero/falso pon `vf: true` en el item en vez de
    escribir un tipo de ejercicio nuevo — cambia el input de texto por dos botones "V"/"F"
    sin tocar el motor de corrección (la respuesta sigue siendo `["V"]`/`["F"]`); ver el
    ejemplo ya incluido en la propia plantilla y la lección más abajo.
+
+   **REGLA DURA, sin excepciones — pedida expresamente por el profesor, incumplida ya una
+   vez: un ejercicio de "relaciona" (el libro pide unir una columna con otra) usa SIEMPRE
+   `type: "match"` — columnas de verdad, tocar para conectar — nunca un hueco de texto donde
+   el alumno escribe la letra/número de la pareja.** Esto aplica igual si el ejercicio se
+   llama "Relaciona", "Une cada X con Y", o pide emparejar dos listas de cualquier forma. El
+   patrón antiguo (escribir la letra en un `input` de `items`) quedó obsoleto tras la unidad
+   6 de B1 — ver la lección `"Relaciona" con columnas de verdad` más abajo para el porqué y
+   el formato exacto de `columns`/`rows`. Antes de dar un capítulo por terminado, busca en su
+   propio archivo cada exercise cuyo `title` contenga "Relaciona" o "relaciona" y confirma
+   que su `type` es `"match"` — si no lo es, corrígelo antes de publicar, no lo dejes para
+   después. **`reference/template.html` sí trae el motor de `match`, pero varios capítulos ya
+   construidos en `docencia-espanol/materiales/` NO** (se copiaron de una base más antigua
+   que el propio `template.html`, no de la plantilla más reciente) — antes de copiar un
+   capítulo existente como base para uno nuevo, comprueba con
+   `grep -c '"match"' <archivo-base>`: si da 0 y el capítulo nuevo tiene algún "relaciona",
+   hay que portar el motor completo (CSS + rama de renderizado + `pendingMatchDraws`) desde
+   `reference/template.html` antes de escribir el primer ejercicio, no después de
+   descubrir que falta.
 
 3. **Tildes: decide, no asumas.** La corrección del camino principal (`isCorrect`/`norm`)
    exige tilde exacta por diseño — en la mayoría de ejercicios de gramática la tilde
@@ -208,6 +228,17 @@ El fallo no fue no saber los pasos, fue no volver a mirarlos al final.
       "Nuevo Español en Marcha 3" por parecido de formato; el profesor confirmó después que
       era correcto, pero la deducción se dio por buena sin preguntar y podría no haberlo
       sido. Preguntar cuesta una frase; moverlo después, rehacer índice y códigos.
+- [ ] Si índice/códigos/README se sincronizaron copiando el estado ya publicado de una
+      rama hermana todavía sin fusionar (para no revertir sus filas en vivo — ver más
+      abajo), **revisa fila por fila que cada una tenga su archivo real en ESTA rama**
+      antes de commitear. Copiar el `README.md` de otra rama trae también SUS filas de
+      archivo (`.md` de unidades que esa otra rama sí construyó pero la tuya no) — índice
+      y códigos solo enlazan a artefactos ya publicados (válido, aunque el `.html` fuente
+      no esté en tu rama), pero una fila de README que dice "archivado, ver este .md" para
+      un archivo que no existe en tu checkout es una afirmación falsa, no una excepción
+      aceptable. Encontrado en revisión de PR (unidad 2 de B1): tres filas de unidad 6
+      quedaron copiadas del README de la rama de la unidad 6, sin que sus `.md` vinieran
+      con ellas.
 
 ## Lecciones aprendidas (no las repitas)
 
@@ -215,6 +246,18 @@ Cada una de estas causó un PR de corrección real. Están en `reference/templat
 resueltas — esta lista es para que entiendas *por qué* el código está como está, y para que
 no las deshagas sin querer al modificar la plantilla.
 
+- **Un bug de motor encontrado por revisión hay que arreglarlo en `reference/template.html`
+  Y en la copia horneada de CADA capítulo ya construido en esa misma rama** — cada
+  `..._interactivo.html` es una copia independiente del motor con los datos ya insertados,
+  no algo que herede de la plantilla en tiempo real. Arreglar solo el capítulo donde se vio
+  el bug dos veces seguidas (en la revisión de la unidad 2 de B1, un bug de "match" se
+  parcheó primero solo en 1B — el único con un ejercicio "match" real — y quedó sin
+  propagar a 1A/1C/2A/2B/2C, que llevan el mismo código de motor aunque no lo usen; en la
+  siguiente ronda, al propagar el SIGUIENTE bug a los seis archivos, 1C se quedó otra vez
+  fuera porque el script de parcheo asumía por error que ya tenía el primer arreglo). Antes
+  de dar por cerrado un arreglo de motor: `grep` el patrón roto (o su versión ya arreglada)
+  en los seis `..._interactivo.html` de la rama, uno por uno, y confirma que todos
+  coinciden — no solo el que disparó el hallazgo.
 - **El panel de resultados debe ser de un solo tema, no adaptable.** Usa sus propias
   variables CSS fijas (`--rp-bg`, `--rp-text`, etc., definidas dentro de `.results-panel`),
   nunca los tokens intercambiables `--ink`/`--paper-raised`/`--gold` del resto de la página
@@ -227,6 +270,24 @@ no las deshagas sin querer al modificar la plantilla.
   corregir. Sin él, si el alumno se salta un ejercicio en una página larga, no aparece
   ninguna señal de por qué no sale el resumen final — "no pasa nada" desde su punto de
   vista.
+- **`isCorrect()` NO soporta mezclar cadenas exactas y `{flex:[...]}` dentro del mismo
+  array — un solo hueco con varias formas cortas aceptadas va TODO como cadenas.** Spec
+  real: `a: [["curar"]]` (array de cadenas, comparación exacta) O `a: {flex:["curar"]}`
+  (objeto suelto, todas las claves deben aparecer) — nunca los dos mezclados dentro de un
+  mismo array (`a: [["curar"], {flex:["cura"]}]`). `isCorrect()` hace
+  `spec.some(a => norm(a) === n)` sobre cada elemento cuando `spec` es un array: si un
+  elemento es un objeto `{flex:...}` en vez de una cadena, `norm(objeto)` revienta
+  (`objeto.toLowerCase is not a function`), y esa excepción sin capturar **aborta
+  silenciosamente `gradeRange()` para TODOS los huecos restantes de la página**, no solo
+  el roto — sin ningún error visible para el alumno, solo en la consola del navegador.
+  Encontrado en revisión de PR (unidad 2 de B1, ej. 5 de 2C: `reproductor de música` /
+  `lavaplatos` con alternativas `{flex:...}` mezcladas) y agravado por una trampa real:
+  **la suite de regresión que rellena siempre la respuesta PRIMARIA nunca lo detecta**,
+  porque `Array.prototype.some()` corta en cuanto encuentra la cadena correcta (la
+  primera, siempre una cadena válida) sin llegar a evaluar el elemento roto — hace falta
+  una prueba dedicada que escriba explícitamente cada alternativa. Para aceptar varias
+  formas cortas en un mismo hueco, simplemente lístalas todas como cadenas:
+  `a: [["reproductor de música", "reproductor", "mp3"]]`.
 - **Escapa el texto que escribe el alumno antes de insertarlo en `innerHTML`**
   (`escapeHtml()`, usado en la lista de fallos del panel de resultados). Sin esto, un
   alumno que escribe `<algo>` en un hueco rompe el renderizado o ejecuta su propio HTML
@@ -330,6 +391,15 @@ no las deshagas sin querer al modificar la plantilla.
     motor por defecto significa que hay que forzar `audio.load()` y esperar el evento
     `loadedmetadata` (o `error`) para comprobar la duración, no basta con contar
     `<audio>` en el DOM.
+  - **Esto es una excepción deliberada, no un descuido, a la regla general de
+    `README.md` raíz** («archivos pesados de audio/video no se suben a este
+    repositorio»): esa regla apunta a grabaciones de clase enteras
+    (`docencia-espanol/grabaciones/`), que sí viven solo en Drive. Aquí el audio
+    incrustado *es* el contenido del ejercicio publicado, no un archivo aparte que
+    archivar — el artefacto tiene que ser autocontenido para funcionar (nada de
+    referencias externas), así que no hay alternativa a incrustarlo. Precedente ya
+    fusionado en `main`: 5B y 5C de B1 (PR #52), cada uno con su propio `data:` URI de
+    varios MB.
 - **El cuaderno de B1 también trae solucionario y transcripciones**, con el mismo reparto:
   **64-68 transcripciones, 69-76 soluciones** (las 52-63 son los textos de «Leer más», la
   76 son las soluciones de esas lecturas y la 77 es la contracubierta; el PDF tiene 77
@@ -505,6 +575,39 @@ no las deshagas sin querer al modificar la plantilla.
   dibujos vecinos), recorta el blanco sobrante de cada uno y **monta una hoja de contacto
   con los recortes y míralos** antes de incrustarlos. Es la única forma de ver que están
   enteros y que cada uno corresponde a la respuesta que dice el solucionario.
+- **Un "recorte que parece limpio" a menudo no lo está — no te fíes de tu propio primer
+  vistazo.** En la guía de repaso A1 (unidades 1-10), 7 de 10 recortes de cuaderno dados
+  por buenos en una primera pasada tenían defectos reales al reexaminarlos con ojo crítico:
+  texto de un enunciado vecino colándose por arriba (el "3 Mira el árbol genealógico..."
+  metido en el recorte del árbol), contenido cortado por abajo (la fila de fotos d-g de un
+  ejercicio de profesiones, con "Hospital" partido a la mitad), y márgenes puestos a ojo sin
+  anclarlos a nada (una habitación desordenada con la cama y el brazo cortados por el borde).
+  Esto pasó en varias imágenes de la misma tarea antes de que el usuario lo señalara — la
+  señal de las "3+ rondas" de CLAUDE.md, aquí repartida entre imágenes en vez de en una sola.
+  La causa no era la técnica de rejilla (que funciona bien), sino dar por bueno un recorte
+  sin releerlo con ojo escéptico. Corrección aplicada desde entonces: (1) si la fuente tiene
+  un borde de caja limpio (sopa de letras, tabla), ancla el recorte a ese borde exacto, no a
+  un margen estimado cerca del texto; (2) si no hay borde (una ilustración suelta), usa la
+  rejilla sobre la página COMPLETA sin recortar antes, lee los bordes reales del dibujo antes
+  de cortar; (3) tras cada recorte, vuelve a leerlo con el propósito explícito de buscarle un
+  defecto, no de confirmar que "parece que está bien" — son dos lecturas distintas y solo la
+  primera encuentra el problema; (4) si el recorte no cabe entero sin arrastrar un elemento
+  ajeno (como un pie de página), recorta al máximo real y tapa de blanco solo la franja
+  ajena, en vez de aceptar el corte o encoger el contenido bueno.
+  **Punto (1) en la práctica: incluso ancladas "al borde", las coordenadas leídas a ojo sobre
+  la rejilla pueden fallar por poco.** El recorte de la sopa de letras del capítulo 1, ya
+  "corregido" y revisado visualmente, seguía sin la columna de letras más a la derecha (9 de
+  10) — un defecto sutil que ni la lectura de la rejilla ni la relectura crítica pillaron,
+  porque las 9 columnas visibles ya parecían un cuadro completo. Se encontró y confirmó con
+  `opencv-python` (`pip install opencv-python-headless`, gratis, sin cuenta):
+  `cv2.adaptiveThreshold` + `cv2.morphologyEx(..., MORPH_CLOSE)` + `cv2.findContours` sobre la
+  página completa, filtrando por área (2-60% de la página) y por relación área-contorno/
+  área-caja (>0.5, para exigir un rectángulo relleno de verdad y no una silueta cualquiera),
+  encuentra el rectángulo de tinta exacto de una caja con borde — sopa de letras, tabla — sin
+  intervención manual. Cuando la fuente tiene un borde de caja limpio, es más fiable que leer
+  la rejilla a ojo: úsalo como primer intento y usa la rejilla solo si no hay contorno
+  rectangular claro (dibujos sueltos sin caja, como el árbol genealógico o la habitación
+  desordenada, donde este método no aplica).
 - **Un salto de línea justo antes del hueco significa «esta respuesta va en su propia
   línea».** La detección de hueco-de-cola lo respeta y no estira la casilla: si lo hace,
   queda flotando a media altura, ni en línea ni debajo. Es el caso de los ejercicios de
@@ -520,8 +623,13 @@ no las deshagas sin querer al modificar la plantilla.
   12C hasta el borde derecho, igual que las casillas de texto y los botones V/F. El profesor
   lo vio y lo rechazó: los desplegables no necesitan alinearse. No lo vuelvas a proponer.
 - **Un «relaciona» donde un ítem admite varias letras: genera las permutaciones.** En
-  Practica más 3 el aceite está en tres platos. `norm()` ya se come las comas, así que basta
-  con generar cada orden con y sin espacio (la función `combos()` de ese capítulo).
+  Practica más 3 el aceite está en tres platos. Basta con generar cada orden con espacio
+  después de la coma (`"a, b, c"`) — **ya no hace falta además la variante sin espacio**
+  (`"a,b,c"`, lo que hacía la función `combos()` de ese capítulo): `norm()` sustituye la
+  coma por un espacio y colapsa espacios seguidos, así que las dos formas —y cualquier
+  mezcla de espaciado— ya normalizan a la misma cadena (arreglado en revisión de PR,
+  unidad 2 de B1; antes `norm()` solo borraba la coma sin más, y "a,b,c" sin espacio
+  normalizaba distinto de "a, b, c").
 - **Una sopa de letras necesita una pista por hueco, y comprobar la rejilla por programa.**
   Los huecos se corrigen en un orden fijo, así que sin pista cualquier palabra valdría en
   cualquier hueco: se añaden las dos primeras letras (y se dice en el enunciado que es un
@@ -568,6 +676,65 @@ no las deshagas sin querer al modificar la plantilla.
   para esto, reutilizable tal cual. El resultado no es pixel-perfect al libro, pero está
   garantizado correcto por construcción, que es lo que de verdad importa en un ejercicio
   que se publica para que un alumno lo resuelva.
+
+- **"Relaciona" con columnas de verdad (`type: "match"`), añadido tras la unidad 6 de B1.**
+  Hasta entonces, un ejercicio de "relaciona" (verbo → final, columna A → columna B) se
+  resolvía escribiendo la letra/número de la pareja en un hueco de texto (ver 6A ej. 2 y 6B
+  ej. 3, que se quedaron así — no se retocaron). Funcionaba, pero tenía dos problemas: no
+  se parecía en nada al ejercicio real del libro (tocar/unir), y obligaba a aceptar un
+  montón de variantes de tecleo para la misma respuesta (`"d, 2"`, `"d,2"`, `"d 2"`, `"d2"`)
+  porque `norm()` quita comas y puntos pero no espacios internos, así que dos formas
+  "iguales" a ojo no siempre normalizan a la misma cadena.
+  El profesor pidió una interacción de tocar-para-conectar en vez de otra ronda de aceptar
+  variantes de texto. `ex.columns` es un array de columnas (`{ label, items: [...] }`);
+  `columns[0]` es la columna ancla, fija, una por fila — las demás son elegibles. `ex.rows`
+  es paralelo a `columns[0].items`: `{ solved: true }` para una fila ya resuelta en el
+  libro (sin huecos, sin botones), o `{ a: [spec1, spec2, ...] }` con un spec de
+  `isCorrect()` por cada columna elegible, en orden. Se toca primero un elemento de la
+  columna ancla (se arma, queda resaltado en dorado) y luego su pareja en la columna
+  siguiente: se guarda en un `input type="hidden"` (el mismo truco que ya usaba el V/F de
+  "items" para que `gradeRange`/gradeRange lo trate exactamente igual que cualquier otro
+  hueco de texto) y se dibuja una línea de color entre ambos con un `<svg>` superpuesto a
+  `.match-wrap`. Con 3 columnas la interacción encadena: primero columna ancla → columna 1,
+  y sin desarmar la fila, columna 1 → columna 2 (la línea sigue el camino elegido tramo a
+  tramo). Una opción solo puede pertenecer a una fila a la vez — tocarla desde otra fila se
+  la quita a la que la tenía antes, para que no se pueda "hacer trampa" repitiendo la misma
+  pareja en dos sitios.
+  **Trampa de timing que costó encontrar:** `getBoundingClientRect()` de las fichas da
+  0,0,0,0 si se llama durante la propia construcción del ejercicio, porque `<section>` del
+  bloque todavía no está insertado en `#main` en ese momento (se inserta una vez por
+  bloque, al final de `block.exercises.forEach`, no ejercicio a ejercicio). La función
+  `drawLines()` de cada ejercicio "match" se guarda en un array (`pendingMatchDraws`) y se
+  llama a TODAS una sola vez, justo después de que `blocks.forEach(...)` termina — ahí el
+  documento ya tiene el layout real. Un solo listener de `resize` (no uno por ejercicio)
+  las vuelve a llamar si la ventana cambia de tamaño.
+  `extraer.mjs` no sabía leer esto (no hay `.item-row` ni `.reveal` por celda): como el
+  archivador nunca toca los botones (solo rellena `input.blank` de texto y pulsa
+  "Corregir"), cada fila de "match" llega sin ninguna opción elegida — exactamente el caso
+  que hace que `ex._onGraded()` rellene su `.match-row-reveal` con la respuesta completa,
+  el mismo mecanismo que ya usaba el crucigrama para su reveal-junto-a-la-definición. El
+  archivador solo tiene que leer `.match-anchor`/`.match-solved` + el `.match-row-reveal`
+  siguiente, si lo hay.
+  **Bug real encontrado en revisión de PR (color de corrección que se queda pegado):**
+  `ex._onGraded()` solo añade `.match-correct`/`.match-incorrect` a la ficha elegida en ese
+  momento; nada las quitaba al desmarcar una ficha o al cambiar de elección dentro de la
+  misma fila. Caso real: el alumno corrige, ve una ficha en rojo, rearma la fila y elige
+  otra opción (correcta) — la ficha vieja se quedaba roja para siempre, porque nada vuelve
+  a tocarla salvo que otra fila la reclame y la corrija de nuevo. Arreglado quitando esas
+  dos clases de la ficha abandonada (y de la recién elegida, por si venía de otra fila ya
+  corregida) en el propio manejador de clic de `mwrap`, no solo en `_onGraded()`.
+  **`columns[1].items` (y cualquier columna no ancla) van SIEMPRE en un orden distinto al
+  de `columns[0]` — nunca fila i con fila i.** Error real cometido al construir 10C de A1:
+  las dos columnas se escribieron en el mismo orden que la pareja correcta (pregunta 1 con
+  su respuesta en la posición 1, país 1 con su actividad en la posición 1…), así que el
+  ejercicio de "relaciona" salía ya resuelto con solo unir en horizontal — cero dificultad
+  real, aunque técnicamente usara `type: "match"` y puntuara bien. El profesor lo vio de un
+  vistazo en la captura. La corrección no toca `rows` (el emparejamiento correcto sigue
+  siendo por contenido de texto, no por posición): basta con revolver el array `items` de
+  la columna no ancla a un orden distinto — un derangement completo si es fácil, o al menos
+  que ninguna fila quede alineada por casualidad. Antes de publicar un `match`, mira la
+  captura del ejercicio ya renderizado y confirma a ojo que ninguna pareja correcta queda
+  en la misma fila visual entre columnas.
 
 ### Canal por canal (la parte que más costó)
 
@@ -704,6 +871,15 @@ parezca más "controlable" desde JS — ya se demostró que rompe el caso más b
       incluye porque está en el libro y el alumno tiene que poder verlo. Cuando un ejercicio
       del original no tenga respuesta única, esta es la salida: transcribirlo así, no
       omitirlo ni inventarle una respuesta correcta.
+      Desde que el profesor lo pidió, el motor añade automáticamente debajo de `ex.html`
+      un aviso ("esto no se corrige aquí, lo revisará tu profesor") y un `<textarea>`
+      (`.open-answer`) donde el alumno escribe su respuesta — no hay que montar nada de eso
+      a mano en el chapter script. Ese texto se guarda en `openAnswers` (junto a `allInputs`
+      y `allExercises`) y `buildSummary()` lo añade tal cual, con el número y título del
+      ejercicio, al final del resumen que se envía por WhatsApp/Telegram/correo/Teams — así
+      el profesor recibe la redacción del alumno en el mismo mensaje que la puntuación,
+      sin tener que pedírsela aparte. No hace falta ninguna respuesta "correcta" para esto:
+      es contenido libre que se reenvía tal cual, no se evalúa.
     - Cuando `flex` se quede corto, cambia el diseño del hueco antes que la respuesta.
       `flex` es un **Y** de palabras clave: no sabe expresar alternativas. Si el ejercicio
       admite de verdad varias respuestas distintas (vosotros/ustedes, `-ara`/`-ase`,
