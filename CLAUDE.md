@@ -398,7 +398,19 @@ conversación cuenta como comprometida aunque el archivo esté fuera de Git.
   naturales (por ejemplo, al terminar una tarea grande y empezar otra sin
   relación) comprime el historial en vez de dejar que crezca sin límite.
   No hace falta automatizarlo; es una práctica a tener presente cuando la
-  sesión se alarga mucho.
+  sesión se alarga mucho. Mejor antes de que el contexto llegue al
+  90%+ (~60-70% ya es buen momento, según `code.claude.com/docs/en/costs`)
+  — cuanto antes se compacta, más margen tiene el resumen para quedarse
+  con lo importante.
+- **Instrucción de preservación al compactar** — `code.claude.com/docs/en/context-window`
+  documenta que Claude Code respeta instrucciones explícitas de qué
+  conservar durante el resumen automático. Este mismo archivo sufrió el
+  problema contrario (PR #63: podar `CLAUDE.md` perdió hechos verificados,
+  hicieron falta 6-7 rondas de revisión para recuperarlos) — la
+  instrucción es: **al compactar, preservar siempre la rama de trabajo
+  actual, la lista de archivos modificados sin comitear, los comandos de
+  verificación/test relevantes, y las decisiones de diseño ya tomadas en
+  la tarea en curso.**
 - **Podar este archivo, no solo hacerlo crecer.** Según la guía oficial
   (`code.claude.com/docs/en/best-practices`): "Bloated CLAUDE.md files
   cause Claude to ignore your actual instructions" — para cada línea,

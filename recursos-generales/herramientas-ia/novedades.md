@@ -23,6 +23,251 @@ copias que puedan desincronizarse.
 
 ---
 
+## 2026-08-30 — Carrusel "4 conectores que le dan superpoderes a Claude": revisado, nada que instalar
+
+**Contexto:** Angel compartió una captura de estilo carrusel de redes
+sociales listando 4 "conectores": Perplexity, Firecrawl, Playwright,
+Composio. Mismo patrón que el carrusel de Instagram del PR #67 —
+verificado contra el catálogo real en vez de fiarse del texto de la
+imagen.
+
+**Verificado con `SearchMcpRegistry`/`SearchPlugins`/`ListConnectors`:**
+- **Perplexity** — no existe como conector en este catálogo.
+- **Playwright** — no existe como conector en este catálogo, y su
+  función (Claude operando un navegador real) ya la cubre `agent-browser`
+  (Vercel Labs), activo en este repo desde el 2026-08-20.
+- **Composio** — no existe como conector en este catálogo. Aunque
+  existiera, agregar el acceso a "cientos de apps" a través de un único
+  intermediario externo concentra el riesgo de una filtración en un
+  solo punto — el mismo motivo por el que se descartaron las opciones de
+  Gemini Notebook, ver entrada de más abajo — en vez de conectores
+  oficiales uno a uno, que es como ya están conectados Drive, Calendar,
+  Gmail, GitHub, DeepL, Brisk Teaching, Figma, Canva, Gamma, Zoom y
+  Microsoft Learn.
+- **Firecrawl** — el único real: sí existe como conector oficial
+  (`directoryUuid: 8bedbd43-e074-4a82-8bc3-53ef89afc032`, sin instalar).
+  Pero sus herramientas reales aquí (`firecrawl_search`,
+  `firecrawl_research_*` para papers/GitHub) son más estrechas que lo
+  que promete la imagen ("cualquier sitio web, análisis de marca,
+  research de competencia") — y lo que sí hace se solapa con
+  `WebSearch`/`WebFetch`, ya nativos de Claude Code sin instalar nada.
+
+**Decisión:** no instalar ninguno. Ninguno resuelve una necesidad real
+que no esté ya cubierta (Firecrawl) o no exista siquiera como conector
+(los otros tres). Registrado para no volver a investigar el mismo
+carrusel si se repite.
+
+---
+
+## 2026-08-30 — Memory de Anthropic: memoria compartida entre chats (nativo, oficial)
+
+**Contexto:** Angel pidió explícitamente algo para que Claude "tenga
+memoria de todos los chats" y conecte lo hablado en una conversación con
+otra independiente. Fuentes oficiales:
+[claude.com/blog/memory](https://claude.com/blog/memory) y
+[anthropic.com/news/memory](https://www.anthropic.com/news/memory)
+(anuncio del 2026-08-25, cinco días antes de esta pasada).
+
+**Qué es:** función nativa de Anthropic, no un conector ni un plugin —
+nada que instalar. Claude procesa las conversaciones automáticamente
+(aprox. cada 24h) y extrae un resumen de lo que vale la pena recordar a
+largo plazo (profesión, preferencias, herramientas que usas a menudo,
+contexto personal recurrente) — no guarda la transcripción literal.
+Activada por defecto desde marzo de 2026 para cuentas Free/Pro/Max.
+La novedad del 25 de agosto es que ahora esa memoria se **comparte
+entre el chat normal de claude.ai y Claude Cowork** — lo que se cuenta
+en un chat puede informar una tarea de Cowork, y viceversa.
+
+**Por qué le sirve a Angel en concreto:** es justo lo que pidió — deja
+de tener que re-explicar contexto (qué libro de texto usa, qué alumnos
+tiene, qué convenciones sigue en `telecomunicaciones/` o el máster) cada
+vez que abre un chat nuevo sin relación con este repo. Y si usa
+**Proyectos** en claude.ai, la memoria queda separada por proyecto — un
+proyecto de "docencia de español" no mezcla su memoria con uno de
+"máster" o "traducción", que es exactamente como ya tiene organizado
+este propio repositorio por carpetas de dominio.
+
+**Seguridad/privacidad, la parte que Angel pidió comprobar
+explícitamente ("no malignas"):** la memoria queda ligada solo a la
+cuenta de Angel, nunca se comparte con otros usuarios, y no se usa para
+entrenar a Claude salvo que él mismo active compartir datos de
+entrenamiento (`Ajustes > Privacidad > Help improve Claude`, opt-in, no
+por defecto). Desde el propio anuncio del 25 de agosto, además, hay
+categorías sensibles que se excluyen por defecto sin acción suya: salud,
+raza/etnia, creencias religiosas, política, identidad de género.
+
+**Cómo comprobarlo/gestionarlo:** `Ajustes > Capacidades > Memory` en
+claude.ai — ver, editar o borrar recuerdos concretos, pausar la memoria,
+o resetearla entera. Es un ajuste de cuenta personal, no algo que se
+pueda activar desde aquí (barrera de plataforma, igual que un
+conector) — Angel tiene que revisarlo él mismo en sus ajustes.
+
+**Duda honesta sin verificar:** no está confirmado si la unificación
+chat↔Cowork del 25 de agosto ya cubre su plan concreto — varias fuentes
+la describen empezando a desplegarse primero para cuentas Team/Enterprise;
+la memoria base (desde marzo) sí debería estar activa ya para Free/Pro/Max.
+Comprobar en `Ajustes > Capacidades > Memory` si ya aparece la opción
+compartida con Cowork, en vez de asumirlo.
+
+---
+
+## 2026-08-30 — Compactación de contexto: palancas oficiales para ahorrar tokens
+
+**Contexto:** pedido explícito de Angel — herramientas "realmente
+efectivas y oficiales, no malignas" para ahorrar tokens. Fuentes, todas
+oficiales esta vez: `code.claude.com/docs/en/context-window`,
+`code.claude.com/docs/en/costs`, `code.claude.com/docs/en/best-practices`.
+
+### Aplicado: instrucción de preservación al compactar, en `CLAUDE.md`
+
+**Qué es:** Claude Code respeta instrucciones explícitas en `CLAUDE.md`
+sobre qué conservar durante el resumen automático de contexto (ej.
+"When compacting, always preserve the full list of modified files and
+any test commands").
+
+**Por qué le sirve a Angel en concreto:** este mismo archivo ya sufrió
+el problema contrario (PR #63, entrada del 2026-08-16): podar
+`CLAUDE.md` perdió hechos verificados y hicieron falta 6-7 rondas de
+revisión para recuperarlos. Esta instrucción ataca la causa (qué
+sobrevive a una compactación), no solo el síntoma de podar con cuidado
+después del hecho.
+
+**Cómo se aplicó:** nueva línea en la sección "Ahorro de tokens" de
+`CLAUDE.md`, en el bloque de `/compact`.
+
+### Anotado, no aplicado (palancas oficiales sin necesidad clara todavía)
+
+- **`/autocompact <tamaño>`** — fija a mano el umbral de compactación
+  automática (ej. `/autocompact 500k`) en vez de esperar al límite del
+  modelo. Útil para sesiones largas como las de revisión de PRs de este
+  repo, pero no se ha fijado un valor por defecto — depende del modelo
+  activo en cada sesión, sin un tamaño "típico" claro todavía.
+- **`/compact <instrucciones>`** — variante manual, dirige qué preservar
+  en una compactación puntual (ej. `/compact Focus on the API changes`).
+- **Umbral ~60-70% de contexto** para lanzar `/compact`, en vez de
+  esperar al 90%+ — ya añadido como práctica en `CLAUDE.md`.
+- **`MAX_THINKING_TOKENS`** (variable de entorno) — limita el gasto en
+  tokens de pensamiento extendido. No activada: sin evidencia de que las
+  sesiones de este repo gasten de más ahí, y capar el límite arriesga
+  recortar razonamiento donde sí hace falta.
+- **Delegar en subagentes las tareas de lectura pesada de contexto** —
+  confirmado como práctica oficial recomendada
+  (`code.claude.com/docs/en/costs`). Este repo ya lo hace de forma
+  consistente (`Explore`, `cavecrew`) — sin acción nueva, solo confirma
+  que la práctica actual va en la dirección correcta.
+
+### Fuera de alcance de Claude Code, mencionado para completar el cuadro
+
+**Context Editing API + Memory Tool** (Claude Developer Platform, beta,
+`claude.com/blog/context-management`) — recorta hasta 84% el consumo de
+tokens en bucles largos de uso de herramientas, pero es una función de
+la API/SDK de Anthropic, no del chat de Claude Code. Solo relevante si
+Angel construye sus propios agentes con el SDK (la skill `claude-api`
+ya instalada cubre esto) — no aplica a esta sesión directamente.
+
+---
+
+## 2026-08-30 — Pasada del radar: dos funciones nativas nuevas, sin hallazgos de terceros
+
+**Contexto:** pasada pedida explícitamente por Angel tras preguntar por
+Gemini Notebook, para repasar qué se ha recomendado y no se ha instalado
+(ver correcciones más arriba: Brisk Teaching y Learn with Coursera
+resultaron ya activos, sin que este registro lo reflejara) y qué hay
+nuevo hoy. Fuentes consultadas: `code.claude.com/docs/en/whats-new`
+(semana 34, 17-21 agosto 2026), `SearchMcpRegistry`/`SearchPlugins`
+para telecomunicaciones/ferrocarril/traducción/Python/docencia (sin
+resultados relevantes — solo herramientas de empresa sin relación,
+tipo Honeycomb/DataRobot/Twilio/Auth0), y `anthropic.com/news` (solo
+anuncios corporativos: chips propios, Model Hardware Standard para
+robots/laboratorio, marca de agua en contenido generado — ninguno
+aplica a este repo).
+
+### Auto-continue al resetear el límite de uso (nativo, activado por defecto)
+
+**Qué es:** Claude Code sigue la sesión automáticamente en cuanto se
+resetea el límite de uso de 5h, en vez de quedarse parado esperando a
+que Angel vuelva a escribir. Activado por defecto desde la versión
+2.1.234; se puede desactivar en `/config` → "Continue automatically at
+usage limit".
+
+**Por qué le sirve a Angel:** complementa directamente la práctica ya
+registrada el 2026-08-18 ("desplazar la ventana de 5h mandando un
+mensaje corto al empezar") — ahora, además de desplazar cuándo empieza
+la ventana, Claude Code no pierde tiempo muerto en cuanto se resetea.
+
+**Cómo probarlo:** nada que instalar — ya viene activado. Revisar
+`/config` si se prefiere desactivarlo.
+
+### Estilo de salida "Concise" (nativo)
+
+**Qué es:** nuevo output style incorporado (`/config` o `settings.json`,
+desde la versión 2.1.237) que recorta la narración de relleno y
+antepone el resultado a la explicación.
+
+**Por qué probablemente no aporta aquí:** `caveman` (activo en todas las
+sesiones) ya cubre ese mismo objetivo con más matices propios
+(niveles de intensidad, reglas de cuándo NO comprimir). Mencionado por
+completitud, no se recomienda activarlo también — redundante con lo
+que ya tienes.
+
+### Sin hallazgos nuevos de terceros en los dominios de Angel
+
+Ninguna skill, plugin o conector nuevo relevante para
+docencia-espanol/python/telecomunicaciones/traduccion/máster esta
+pasada — los resultados de `SearchMcpRegistry`/`SearchPlugins` para esos
+dominios fueron herramientas de empresa (DevOps, observability, CRM) sin
+relación real. No se crea nada más en este registro por esta parte de
+la pasada.
+
+---
+
+## 2026-08-30 — Gemini Notebook (antes NotebookLM): sin opción segura, no adoptado
+
+**Nota sobre cómo se activó:** a petición explícita de Angel ("quiero
+conectarte a Gemini Notebook, encuentra todas las formas que existen y
+selecciona la más segura"). Búsqueda vía `SearchMcpRegistry` (nada
+relevante — el único resultado fue "Goodnotes", sin relación),
+`SearchSkills` (vacío) y búsqueda web.
+
+**Qué es:** Google renombró NotebookLM a **Gemini Notebook** el
+2026-07-16. Es la herramienta de notas/investigación con fuentes
+propias de Google — encajaría con `docencia-espanol/`, `python/`,
+`telecomunicaciones/` y el máster como espacio de apuntes con RAG sobre
+material propio.
+
+**Por qué no se adoptó ninguna opción:** no existe API de consumidor
+todavía (Google la tiene "en desarrollo", sin fecha) ni conector MCP
+oficial. Solo hay una API Enterprise (requiere proyecto de Google Cloud
++ licencia Gemini Enterprise/Education Premium, no aplica a una cuenta
+personal) y un puñado de proyectos de comunidad no oficiales
+(`teng-lin/notebooklm-py` ~18.5k★, `roomi-fields/notebooklm-mcp` 16★,
+más wrappers finos de menor reputación como `DevstackK/Notebooklm-Unofficial-API-MCP`
+y `moodRobotics/notebooklm-mcp-server`) — todos hacen ingeniería inversa
+de la API interna de Google o automatizan el navegador con Playwright.
+
+La diferencia real frente a los conectores ya activos (Google
+Drive/Calendar): esos usan OAuth con alcance acotado y revocable en un
+clic; **todas** las opciones de Gemini Notebook necesitan en cambio las
+cookies completas de la sesión de Google (`__Secure-1PSID`/`-1PSIDTS`)
+o un login real vía Playwright — acceso de facto a toda la cuenta
+(Gmail, Drive, Calendar...), no solo a Notebook, y con el añadido de
+incumplir los términos de Google sobre acceso automatizado. Ningún
+proyecto de la lista cambia esa arquitectura de fondo, así que ninguno
+cruza la barra de seguridad que sí cumplen los conectores oficiales que
+Angel ya usa.
+
+**Decisión:** no instalar nada ahora. Si en el futuro Angel quiere
+probarlo pese al riesgo, hacerlo solo desde una cuenta de Google
+secundaria (nunca la personal) y con `teng-lin/notebooklm-py` (el más
+usado y mantenido de los no oficiales) en vez de los forks con menos
+reputación. Revisar de nuevo cuando Google publique la API de
+consumidor que ya confirmó — en ese momento sí encajaría con el criterio
+normal de esta lista.
+
+❌ No adoptado — revisar si Google publica una API de consumidor oficial.
+
+---
+
 ## 2026-08-23 — 7 skills más de JuliusBrussee/caveman: activadas
 
 **Nota sobre cómo se activó:** a petición explícita de Angel, tras
@@ -925,6 +1170,13 @@ claude.ai (buscar "Brisk Teaching"). Está pensado sobre todo para K-12
 en inglés — probar con un caso concreto antes de adoptarlo, puede que
 no encaje igual de bien con adultos rusohablantes aprendiendo español.
 
+✅ Activado (visto conectado vía `ListConnectors` el 2026-08-30, sin
+fecha exacta de activación registrada — corregido este marcador con
+retraso). Nota: `connected: true` pero `enabledInChat: false` la última
+vez que se comprobó — está autenticado a nivel de cuenta pero apagado
+para esta conversación en concreto; activarlo en los ajustes de
+conectores de este chat si se quiere usar aquí.
+
 ### Marketplaces de plugins de Claude Code (oficial y comunidad)
 
 **Qué es:** Anthropic mantiene dos catálogos navegables de plugins
@@ -952,3 +1204,11 @@ Dos hallazgos menos prioritarios, mencionados por completitud:
   aprendizaje en una ruta personalizada de cursos de Coursera. Podría
   servirte para tu propio aprendizaje de Python o para el máster,
   requiere el conector de Coursera.
+  ✅ Activado (visto `enabled: true` vía `ListPlugins` el 2026-08-30, sin
+  fecha exacta de activación registrada — corregido este marcador con
+  retraso).
+
+**Learning Commons sigue sin activar** (`ListConnectors` no lo encuentra,
+comprobado el 2026-08-30) — sigue siendo de baja prioridad para el
+perfil de alumnos de Angel (adultos rusohablantes, no K-12), no se
+insiste más salvo que aparezca algo nuevo sobre él.
