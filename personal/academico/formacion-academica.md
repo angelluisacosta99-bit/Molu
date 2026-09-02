@@ -39,7 +39,7 @@ Moscú.
 - Periodo: septiembre 2021 – junio 2026 (programa completo)
 - Nota media del expediente: **4,96/5** según la справка oficial de
   acceso a la magistratura (el CV del candidato la redondea a 4,98/5)
-- Titulación obtenida: **Diploma de Especialista con Distinción**
+- Titulación obtenida: **Diploma de Especialista con Honores**
   (`ДИПЛОМ СПЕЦИАЛИСТА С ОТЛИЧИЕМ`), serie 107704 № 0468100,
   expedido el 30/06/2026
 - Cualificación conferida: **Ingeniero ferroviario**
@@ -87,10 +87,15 @@ Moscú.
 ## Actividad profesional paralela: docencia de español y traducción
 
 Independiente de su carrera de ingeniería, Angel ejerce en Rusia como
-**Индивидуальный предприниматель (ИП — empresario individual/autónomo)
-desde hace 5 años**, dando clases de español a rusohablantes y
-trabajando como traductor — la actividad que ya organiza en las
-carpetas `docencia-espanol/` y `traduccion/` de este mismo repositorio.
+**Индивидуальный предприниматель (ИП — empresario individual/autónomo)**
+— alta oficial confirmada el 20/06/2025 (actividad principal:
+traducción escrita y oral; actividad secundaria: educación
+complementaria para niños y adultos) — dando clases de español a
+rusohablantes desde hace más de 4 años (ver reseñas en Avito, con
+historial desde marzo de 2022) y trabajando como traductor — la
+actividad que ya organiza en las carpetas `docencia-espanol/` y
+`traduccion/` de este mismo repositorio.
+
 No es una afición: es un negocio propio sostenido con formación
 pedagógica formal detrás, cursada en la ООО "Centro de Formación
 Continua y Reciclaje Profesional «Luch Znaniy»" (Луч знаний):
@@ -101,10 +106,11 @@ Continua y Reciclaje Profesional «Luch Znaniy»" (Луч знаний):
   2022, Krasnoyarsk (reg. 180000665699, diploma № 41665) — otorga la
   cualificación **«Учитель испанского языка» (Profesor de español)**.
   Todas las asignaturas del expediente aprobadas con "отлично"
-  (sobresaliente): Psicología y pedagogía, Tecnologías de la
-  información en la enseñanza de idiomas, Fundamentos de la teoría del
-  español, Curso práctico de español (x2), Estudios sobre España,
-  Lingüoculturología, y examen final — 42-44 h cada una.
+  (sobresaliente): Psicología y pedagogía (42h), Tecnologías de la
+  información en la enseñanza de idiomas (42h), Fundamentos de la
+  teoría del español (42h), Curso práctico de español (44h + 42h),
+  Estudios sobre España (42h), Lingüoculturología (42h), y examen
+  final (4h).
 - **Certificado de formación continua** — *"Especificidad de la
   enseñanza del español conforme a los requisitos del FGOS"*
   (estándar educativo federal ruso), 36 horas, 25–28 diciembre 2023,
@@ -115,6 +121,16 @@ Continua y Reciclaje Profesional «Luch Znaniy»" (Луч знаний):
 
 Las tres, emitidas por ООО "Centro de Formación Continua y Reciclaje
 Profesional «Luch Znaniy»" (Луч знаний).
+
+**Nota sobre una corrección temporal (2026-09-02):** en una revisión
+anterior de esta misma sesión, Angel indicó que no tenía esta
+certificación y el dato se retiró por un momento de este archivo (y de
+la descripción propuesta de Avito). Poco después envió directamente
+los 4 documentos escaneados (los 3 diplomas/certificados más el anexo
+con el expediente de asignaturas) que confirman que **sí son reales**
+— probablemente no los tenía a mano en el momento de responder. Se
+restaura el dato con los mismos números de registro ya verificados
+contra los propios documentos.
 
 ## Equivalencia académica en España
 
