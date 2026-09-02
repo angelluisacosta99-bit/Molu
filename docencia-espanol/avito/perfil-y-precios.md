@@ -47,10 +47,10 @@ sabe si es por hora, por clase suelta o por el curso completo.
 Повышение успеваемости — 2 000 ₽/час (индивидуально)
 ```
 
-**Preparación de exámenes** (+25%, justificado por la experiencia
-demostrada — 5,0/5 sobre 38 reseñas y más de 4 años sin un solo
-bajón — y el conocimiento específico del currículum de examen, no por
-ninguna certificación formal):
+**Preparación de exámenes** (+25%, justificado por la cualificación
+formal de profesor («Учитель испанского языка», Luch Znaniy) y la
+experiencia demostrada — 5,0/5 sobre 38 reseñas y más de 4 años sin un
+solo bajón):
 ```
 Подготовка к ЕГЭ — 2 500 ₽/час (индивидуально)
 Подготовка к ОГЭ — 2 500 ₽/час (индивидуально)
@@ -76,7 +76,7 @@ unidad de tiempo) es lo importante.
 
 ```
 Здравствуйте 👨🏻‍🏫!
-Меня зовут Анхель. Я кубинец, живущий в Москве. Инженер по профессии, учитель испанского по любви: более 4 лет опыта преподавания и 5,0/5 по 38 отзывам учеников. Я могу помочь выучить испанский язык коммуникативно и интересно, научить говорить.
+Меня зовут Анхель. Я кубинец, живущий в Москве. Инженер по профессии, учитель испанского по любви — и по диплому: квалификация «Учитель испанского языка» (диплом о профессиональной переподготовке, 300 ч., ООО «Луч знаний») плюс два удостоверения о повышении квалификации по методике преподавания. Более 4 лет опыта преподавания и 5,0/5 по 38 отзывам учеников. Я могу помочь выучить испанский язык коммуникативно и интересно, научить говорить.
 
 "Он умеет создать на уроке такую тёплую атмосферу, что язык учится сам собой" — из отзыва ученицы на Авито.
 
@@ -118,19 +118,20 @@ unidad de tiempo) es lo importante.
 Буду рад нашему сотрудничеству 💯!
 ```
 
-Cambios respecto al original: se añadió la mención de la experiencia
-(años + valoración) al principio, una cita textual de una reseña real,
-la categoría DELE, el marco CEFR A1–C2, y la aclaración de que el
-formato remoto sigue disponible tras la mudanza a España (para que
-los alumnos actuales no piensen que se quedan sin profesor en
-septiembre).
+Cambios respecto al original: se añadió la mención de la cualificación
+formal de profesor y la experiencia (años + valoración) al principio,
+una cita textual de una reseña real, la categoría DELE, el marco CEFR
+A1–C2, y la aclaración de que el formato remoto sigue disponible tras
+la mudanza a España (para que los alumnos actuales no piensen que se
+quedan sin profesor en septiembre).
 
-**Corrección (2026-09-02):** la versión anterior de este texto incluía
-una mención a certificaciones de profesor ELE («Luch Znaniy») que
-Angel confirmó no poseer — se ha retirado por completo, del texto y de
-la justificación de precios, y sustituido por la experiencia y
-valoración reales (ver también la corrección equivalente en
-`personal/academico/formacion-academica.md`).
+**Nota (2026-09-02):** los 3 diplomas/certificados de profesor citados
+arriba (Luch Znaniy) son reales — verificados directamente contra los
+documentos escaneados que Angel aportó. No son una certificación "ELE"
+en el sentido de Instituto Cervantes/España (por eso el texto usa la
+denominación exacta rusa, no "ELE"), pero sí son una cualificación
+pedagógica formal genuina — ver el detalle completo en
+`personal/academico/formacion-academica.md`.
 
 **Pendiente de resolver antes de la mudanza:** confirmar que el método
 de cobro actual (transferencia/tarjeta rusa) sigue funcionando una vez

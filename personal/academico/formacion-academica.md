@@ -96,16 +96,41 @@ historial desde marzo de 2022) y trabajando como traductor — la
 actividad que ya organiza en las carpetas `docencia-espanol/` y
 `traduccion/` de este mismo repositorio.
 
-**Corrección (2026-09-02):** una versión anterior de esta sección
-afirmaba que Angel tenía tres diplomas/certificados de profesor de
-español emitidos por «Luch Znaniy» (Krasnoyarsk/Moscú, 2022-2025), con
-números de registro concretos. Angel confirmó directamente que **no
-posee esa certificación** — no se ha podido verificar ningún documento
-de origen en su Drive que la respalde (solo hay cuadernos de ejercicios
-ELE de autoría propia, ninguna diploma o certificado). Se retira el
-dato por completo: su docencia se sostiene en la experiencia
-demostrada (reseñas de Avito) y el alta como autónomo, no en una
-credencial pedagógica formal.
+No es una afición: es un negocio propio sostenido con formación
+pedagógica formal detrás, cursada en la ООО "Centro de Formación
+Continua y Reciclaje Profesional «Luch Znaniy»" (Луч знаний):
+
+- **Diploma de Reciclaje Profesional** — programa *"Español: teoría
+  y metodología de la enseñanza de lenguas extranjeras en una
+  organización educativa"*, **300 horas académicas**, 1–28 septiembre
+  2022, Krasnoyarsk (reg. 180000665699, diploma № 41665) — otorga la
+  cualificación **«Учитель испанского языка» (Profesor de español)**.
+  Todas las asignaturas del expediente aprobadas con "отлично"
+  (sobresaliente): Psicología y pedagogía (42h), Tecnologías de la
+  información en la enseñanza de idiomas (42h), Fundamentos de la
+  teoría del español (42h), Curso práctico de español (44h + 42h),
+  Estudios sobre España (42h), Lingüoculturología (42h), y examen
+  final (4h).
+- **Certificado de formación continua** — *"Especificidad de la
+  enseñanza del español conforme a los requisitos del FGOS"*
+  (estándar educativo federal ruso), 36 horas, 25–28 diciembre 2023,
+  Krasnoyarsk (reg. 180003697248, certificado № 168815).
+- **Certificado de formación continua** — *"Metodologías eficaces
+  para el aprendizaje de idiomas extranjeros"*, 36 horas, 11–14 mayo
+  2025, Moscú (reg. 180004157053, certificado № 230430).
+
+Las tres, emitidas por ООО "Centro de Formación Continua y Reciclaje
+Profesional «Luch Znaniy»" (Луч знаний).
+
+**Nota sobre una corrección temporal (2026-09-02):** en una revisión
+anterior de esta misma sesión, Angel indicó que no tenía esta
+certificación y el dato se retiró por un momento de este archivo (y de
+la descripción propuesta de Avito). Poco después envió directamente
+los 4 documentos escaneados (los 3 diplomas/certificados más el anexo
+con el expediente de asignaturas) que confirman que **sí son reales**
+— probablemente no los tenía a mano en el momento de responder. Se
+restaura el dato con los mismos números de registro ya verificados
+contra los propios documentos.
 
 ## Equivalencia académica en España
 
