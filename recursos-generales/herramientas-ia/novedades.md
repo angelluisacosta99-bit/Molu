@@ -23,6 +23,42 @@ copias que puedan desincronizarse.
 
 ---
 
+## 2026-08-30 — Carrusel "4 conectores que le dan superpoderes a Claude": revisado, nada que instalar
+
+**Contexto:** Angel compartió una captura de estilo carrusel de redes
+sociales listando 4 "conectores": Perplexity, Firecrawl, Playwright,
+Composio. Mismo patrón que el carrusel de Instagram del PR #67 —
+verificado contra el catálogo real en vez de fiarse del texto de la
+imagen.
+
+**Verificado con `SearchMcpRegistry`/`SearchPlugins`/`ListConnectors`:**
+- **Perplexity** — no existe como conector en este catálogo.
+- **Playwright** — no existe como conector en este catálogo, y su
+  función (Claude operando un navegador real) ya la cubre `agent-browser`
+  (Vercel Labs), activo en este repo desde el 2026-08-20.
+- **Composio** — no existe como conector en este catálogo. Aunque
+  existiera, agregar el acceso a "cientos de apps" a través de un único
+  intermediario externo concentra el riesgo de una filtración en un
+  solo punto — el mismo motivo por el que se descartaron las opciones de
+  Gemini Notebook, ver entrada de más abajo — en vez de conectores
+  oficiales uno a uno, que es como ya están conectados Drive, Calendar,
+  Gmail, GitHub, DeepL, Brisk Teaching, Figma, Canva, Gamma, Zoom y
+  Microsoft Learn.
+- **Firecrawl** — el único real: sí existe como conector oficial
+  (`directoryUuid: 8bedbd43-e074-4a82-8bc3-53ef89afc032`, sin instalar).
+  Pero sus herramientas reales aquí (`firecrawl_search`,
+  `firecrawl_research_*` para papers/GitHub) son más estrechas que lo
+  que promete la imagen ("cualquier sitio web, análisis de marca,
+  research de competencia") — y lo que sí hace se solapa con
+  `WebSearch`/`WebFetch`, ya nativos de Claude Code sin instalar nada.
+
+**Decisión:** no instalar ninguno. Ninguno resuelve una necesidad real
+que no esté ya cubierta (Firecrawl) o no exista siquiera como conector
+(los otros tres). Registrado para no volver a investigar el mismo
+carrusel si se repite.
+
+---
+
 ## 2026-08-30 — Memory de Anthropic: memoria compartida entre chats (nativo, oficial)
 
 **Contexto:** Angel pidió explícitamente algo para que Claude "tenga
