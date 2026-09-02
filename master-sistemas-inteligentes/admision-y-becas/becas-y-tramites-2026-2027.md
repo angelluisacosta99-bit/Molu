@@ -205,7 +205,7 @@ compartido entre sesiones**:
 - `empleo.usal.es` da **503 Service Unavailable** de forma persistente —
   esto es un problema del propio servidor de la USAL, no del proxy.
 
-### Resuelto en sesión del 2026-09-02 (puntos 1-5)
+### Resuelto en sesión del 2026-09-02 por acceso directo (puntos 1-4)
 
 Otra sesión logró acceso a `becas.usal.es`, `bisite.usal.es`,
 `mastersi.usal.es` y `reina.usal.es`. `www.boe.es` y sus tres espejos
@@ -269,12 +269,15 @@ propio de la USAL sin cubrir en la tabla de arriba, pedirles el nombre
 concreto de la convocatoria en la próxima respuesta, en vez de que
 remitan a otro servicio genérico.
 
+### Investigado pese al bloqueo de red — indirectamente, sin acceso directo a la fuente (punto 5)
+
 **5. AUIP (Asociación Universitaria Iberoamericana de Postgrado) — becas
-de matrícula, comprobado en sesión del 2026-09-02, resultado a la baja:**
-`auip.org` y `solicitudes.auip.org` dan `EGRESS_BLOCKED` en esta
-sesión (mismo patrón que `boe.es`), así que no se pudo consultar su
-listado oficial completo de universidades participantes. Con lo que sí
-se pudo verificar por otras vías:
+de matrícula, sesión del 2026-09-02.** A diferencia de los puntos 1-4,
+esto **no** es un hallazgo resuelto por acceso directo: `auip.org` y
+`solicitudes.auip.org` dan `EGRESS_BLOCKED` en esta sesión, igual que
+`boe.es` (punto 6, más abajo) — la fuente primaria de AUIP nunca se
+pudo consultar. Lo que sigue es una conclusión **indirecta**, a partir
+de otras fuentes sí accesibles, con menos certeza que los puntos 1-4:
 - El único resultado "AUIP + USAL" (15 becas de matrícula, 60 ECTS,
   tasas incluidas) es una página archivada de AUIP cuya convocatoria
   real es del **ciclo 2009-2010** (plazo citado: "18 de septiembre de
@@ -299,7 +302,7 @@ este ciclo" — sin poder confirmarlo con certeza por el bloqueo de red.
 El único paso fiable que queda es escribir directamente a
 `becas.master@auip.org` preguntando si Salamanca participa este año.
 
-### Pendiente de verificar — acceso a boe.es (y ahora también auip.org) sigue bloqueado en toda sesión probada
+### Pendiente de verificar por acceso directo — boe.es y auip.org siguen bloqueados en toda sesión probada (punto 6)
 
 6. Texto literal del art. 4.1.d) del RD 1721/2007: **sigue bloqueado**,
    confirmado de nuevo en sesión del 2026-09-02 — tanto `www.boe.es`
