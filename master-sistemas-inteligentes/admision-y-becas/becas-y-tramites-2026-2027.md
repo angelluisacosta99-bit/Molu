@@ -39,7 +39,7 @@ distinto acceso de red) pueda continuar sin repetir la investigación.
 | Becas Luisa de Medrano | — | 🟡 Pendiente de publicación para 2026/2027, sin detalles aún |
 | Fundación Carolina (postgrado) | 12 ene – 2 mar 2026 | ❌ Ventana ya cerrada para este ciclo — revisar el año próximo |
 | MAEC-AECID Programa MÁSTER | ~21 may – 3 jun 2026 | ❌ Ventana cerrada; además sin confirmar si cubre MUSI o solo el máster propio de la Escuela Diplomática |
-| AUIP (becas de matrícula) | — | 🟡 Sin confirmar términos 2026-27; contacto: becas.master@auip.org |
+| AUIP (becas de matrícula) | — | 🟠 Improbable para la USAL este ciclo (ver detalle abajo); confirmar por email en becas.master@auip.org |
 | Convenios de reducción de tasas Cuba-España | — | 🟡 Preguntado a rrii@usal.es, sin respuesta aún a la fecha de este registro |
 
 ## Texto oficial de la convocatoria (documento firmado, aportado por Angel)
@@ -111,7 +111,7 @@ impide primero.
 > régimen de las becas y ayudas al estudio personalizadas.
 
 Confirma que esta convocatoria (Departamentos) remite al RD 1721/2007
-sin transcribirlo — sigue pendiente el punto 4 de la sección de acceso
+sin transcribirlo — sigue pendiente el punto 6 de la sección de acceso
 más abajo (leer el texto literal en boe.es).
 
 **Requisito adicional no registrado antes — aval del departamento**: la
@@ -186,7 +186,7 @@ pedir a Angel si hace falta recuperarlo).
   contratar servicios nuevos (traducción, gestoría), pueden tenerlo ya
   cubierto.
 
-## Acceso de red a dominios USAL/BOE (importante para la sesión que retome esto)
+## Acceso de red a dominios USAL/BOE/AUIP (importante para la sesión que retome esto)
 
 El bloqueo de red (`EGRESS_BLOCKED`) **es por sesión/contenedor, no
 compartido entre sesiones**:
@@ -199,14 +199,17 @@ compartido entre sesiones**:
   tres espejos legales alternativos (noticias.juridicas.com, iberley.es,
   legislacion.faam.es) — probablemente un bloqueo de política más amplia
   (cuenta u organización), no algo que cambie abriendo otra sesión.
+- `auip.org` y `solicitudes.auip.org` dan el mismo `EGRESS_BLOCKED`
+  persistente (comprobado en sesión del 2026-09-02) — mismo patrón que
+  boe.es, no algo específico de esta sesión.
 - `empleo.usal.es` da **503 Service Unavailable** de forma persistente —
   esto es un problema del propio servidor de la USAL, no del proxy.
 
-### Resuelto en sesión del 2026-09-02 (puntos 1-3)
+### Resuelto en sesión del 2026-09-02 por acceso directo (puntos 1-4)
 
 Otra sesión logró acceso a `becas.usal.es`, `bisite.usal.es`,
 `mastersi.usal.es` y `reina.usal.es`. `www.boe.es` y sus tres espejos
-siguieron bloqueados — el punto 4 sigue pendiente.
+siguieron bloqueados — el punto 6 sigue pendiente.
 
 **1. Tablón de `becas.usal.es` — convocatorias vigentes 2026/2027:**
 
@@ -247,13 +250,71 @@ Documentación), sin bolsa de trabajo. El portal correcto sigue siendo
 ofrece prácticas académicas externas en empresas reales, orientación
 profesional (grupal e individual), un programa de mentoring con un
 profesional del mismo campo, y asesoramiento en emprendimiento. Otros
-recursos relacionados sin verificar aún: `spio.usal.es` (preinscripción y
-vida académica, no específicamente empleo), `transferencia.usal.es`, y
+recursos relacionados sin verificar aún: `transferencia.usal.es` y
 `alumni.usal.es/formacion-y-empleo/empleo/` (también dio 503).
 
-### Pendiente de verificar en una sesión con acceso a boe.es
+**4. `spio.usal.es` (Servicio de Promoción, Información y Orientación)
+— comprobado en sesión del 2026-09-02, resultado negativo pero
+concluyente:** no tiene ninguna sección propia de becas, ayudas
+económicas o financiación. Su contenido es orientación al acceso
+(PAU/EBAU), jornadas de puertas abiertas, preinscripción, oficina del
+estudiante y alojamiento/intercambio de idiomas. El único enlace con la
+palabra "ayuda" es "Ayuda Preinscripción" — asistencia con el trámite
+de preinscripción en sí, no económica. Angel llegó aquí porque
+`bintmaster@usal.es` lo remitió a SPIO como sitio para "otras becas o
+ayudas existentes en la USAL" que Relaciones Internacionales no
+gestiona — con esta comprobación, esa pista queda descartada: SPIO no
+es la vía. Si Relaciones Internacionales insiste en que hay algo
+propio de la USAL sin cubrir en la tabla de arriba, pedirles el nombre
+concreto de la convocatoria en la próxima respuesta, en vez de que
+remitan a otro servicio genérico.
 
-4. Texto literal del art. 4.1.d) del RD 1721/2007 (bloqueado incluso donde
-   sí entra usal.es, y también en noticias.juridicas.com, iberley.es y
-   legislacion.faam.es — probar otra vía si aparece una sesión con acceso a
-   boe.es).
+### Investigado pese al bloqueo de red — indirectamente, sin acceso directo a la fuente (punto 5)
+
+**5. AUIP (Asociación Universitaria Iberoamericana de Postgrado) — becas
+de matrícula, sesión del 2026-09-02.** A diferencia de los puntos 1-4,
+esto **no** es un hallazgo resuelto por acceso directo: `auip.org` y
+`solicitudes.auip.org` dan `EGRESS_BLOCKED` en esta sesión, igual que
+`boe.es` (punto 6, más abajo) — la fuente primaria de AUIP nunca se
+pudo consultar. Lo que sigue es una conclusión **indirecta**, a partir
+de otras fuentes sí accesibles, con menos certeza que los puntos 1-4:
+- El único resultado "AUIP + USAL" (15 becas de matrícula, 60 ECTS,
+  tasas incluidas) es una página archivada de AUIP cuya convocatoria
+  real es del **ciclo 2009-2010** (plazo citado: "18 de septiembre de
+  2009") — el buscador la sigue indexando, pero no es vigente.
+- `becas.usal.es/convocatorias_externas.htm` (sí accesible) **no
+  menciona AUIP** entre las convocatorias externas actuales.
+- Las universidades con becas AUIP de máster localizadas para el ciclo
+  2026 son Alcalá, Cantabria, Santiago de Compostela y un consorcio de
+  universidades andaluzas — **Salamanca no aparece** en ninguna.
+- Aun si la USAL tuviera cupo este año, los plazos de las que sí se
+  encontraron son de **abril-mayo de 2026**, ya cerrados a la fecha de
+  este registro.
+- Requisitos generales del programa (de las bases de otras
+  universidades, probablemente plantilla común a todas): egresado de
+  universidad latinoamericana asociada a AUIP, no haber residido en
+  España más de 12 meses en los últimos 3 años, **nota media mínima
+  8/10** (Angel cumple de sobra con 9,47/10), cubre matrícula de 60
+  ECTS + tasas + seguro obligatorio, más una bolsa de estudios.
+
+Conclusión: se baja de 🟡 "pendiente" a 🟠 "improbable para la USAL
+este ciclo" — sin poder confirmarlo con certeza por el bloqueo de red.
+El único paso fiable que queda es escribir directamente a
+`becas.master@auip.org` preguntando si Salamanca participa este año.
+
+### Pendiente de verificar por acceso directo — boe.es sigue bloqueado en toda sesión probada (punto 6)
+
+6. Texto literal del art. 4.1.d) del RD 1721/2007: **sigue bloqueado**,
+   confirmado de nuevo en sesión del 2026-09-02 — tanto `www.boe.es`
+   (ruta directa `/buscar/act.php` y el permalink ELI `/eli/es/rd/2007/12/21/1721/con`)
+   como `noticias.juridicas.com` dieron `EGRESS_BLOCKED`. Con esta ya
+   son varias sesiones distintas bloqueadas para los mismos dominios —
+   refuerza que es un bloqueo de política de cuenta/organización, no
+   algo que cambie de sesión a sesión (a diferencia del bloqueo de
+   `becas.usal.es`/`bisite.usal.es` etc., que sí resultó ser por
+   sesión). El mismo bloqueo aplica a `auip.org` (ver punto 5, arriba).
+   Alternativas para una futura sesión: probar con
+   `agent-browser` (navegador con su propia salida de red, puede que no
+   pase por el mismo proxy) en vez de `WebFetch`, o pedirle directamente
+   a Angel que pegue el texto del artículo si lo consulta él desde su
+   propia conexión.
