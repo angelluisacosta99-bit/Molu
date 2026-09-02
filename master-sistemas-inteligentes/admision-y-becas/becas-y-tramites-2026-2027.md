@@ -42,6 +42,89 @@ distinto acceso de red) pueda continuar sin repetir la investigación.
 | AUIP (becas de matrícula) | — | 🟡 Sin confirmar términos 2026-27; contacto: becas.master@auip.org |
 | Convenios de reducción de tasas Cuba-España | — | 🟡 Preguntado a rrii@usal.es, sin respuesta aún a la fecha de este registro |
 
+## Texto oficial de la convocatoria (documento firmado, aportado por Angel)
+
+Angel compartió directamente el PDF firmado de esta convocatoria
+("convocatoria_becas_colaboración_20262027_firmada.pdf") — es la
+**Resolución de la Secretaría de Estado de Educación por la que se
+convocan Becas de Colaboración de estudiantes en departamentos
+universitarios para el curso académico 2026-2027** (la fila
+"Colaboración en Departamentos Universitarios" de la tabla de arriba).
+Firmante: Abelardo de la Rosa Díaz, Secretario de Estado de Educación,
+15/07/2026. CSV de verificación: `GEN-1463-d25c-6cb1-ab47-e02e-22a1-f113-a1fb`
+(`https://run.gob.es/hsblF8yLcR`).
+
+**Cifras clave:**
+- 2.111 becas en total, hasta 4.222.000 € con cargo al presupuesto 2027.
+- Cuantía por beca: **2.000 € único**, no exime del pago de precios
+  públicos (tasas de matrícula).
+- Cupo asignado a la **Universidad de Salamanca: 78 becas** (Anexo I).
+- Plazo de solicitud: **21 de julio de 2026, 8:00 — 22 de septiembre de
+  2026, 15:00 (hora peninsular)**, vía sede.educacion.gob.es.
+- Colaboración: 3 horas diarias presenciales durante 7 meses y medio
+  desde la incorporación, sin poder concluir después del 31/07/2027.
+
+**Requisitos académicos para estudiantes de primer curso de Máster**
+(art. 6.2 — el apartado que aplica a Angel, no el 6.1 de Grado):
+
+> a) No estar en posesión o en disposición legal de obtener un título
+> académico de Máster oficial o de Doctor. No tener superados todos los
+> créditos a excepción del trabajo fin de máster de un Máster diferente
+> de aquél para el que se solicita la beca.
+> b) Estar matriculado en el curso 2026-2027 en enseñanza oficial de la
+> totalidad de las asignaturas o créditos de primer curso de Máster.
+> **Los estudiantes con matrícula condicionada a la obtención del título
+> de grado deberán acogerse a lo dispuesto en el apartado 1.**
+> c) Estar en posesión de un título universitario que dé acceso al
+> Máster y haber obtenido en el expediente académico la nota media
+> establecida en el apartado 1 de este artículo en función de la rama
+> de conocimiento de procedencia.
+
+La frase en negrita del punto b) **confirma textualmente** el hallazgo
+crítico ya registrado más abajo: si la matrícula de Angel sigue
+condicionada a la entrega del título de grado a fecha de la solicitud,
+esta cláusula lo reclasifica bajo las reglas de Grado (apartado 1), que
+no encajan con su caso (ya tiene la formación superior completa). Hay
+que resolver la apostilla/matrícula definitiva **antes del 22 de
+septiembre de 2026**.
+
+**Nota mínima por rama de conocimiento** (art. 6.1.c / 7.2, aplica vía
+el punto c) de arriba):
+
+| Rama | Nota mínima (escala 0-10) |
+|---|---|
+| Ingeniería y Arquitectura / Enseñanzas Técnicas | **7,25** |
+| Ciencias / Ciencias Sociales y Jurídicas | 7,70 |
+| Ciencias de la Salud | 7,80 |
+| Artes y Humanidades | 8,00 |
+
+La rama de Angel es Ingeniería y Arquitectura → umbral **7,25/10**. Su
+nota media equivalente ya registrada arriba es **9,47/10** — cumple
+con holgura, **si** la reclasificación del punto anterior no se lo
+impide primero.
+
+**Nacionalidad** (art. 6.4, solo por referencia, igual que ya se sabía):
+
+> Los solicitantes deberán, asimismo, reunir los requisitos que
+> respecto de la nacionalidad establece el artículo 4.1 d) del Real
+> Decreto 1721/2007, de 21 de diciembre, por el que se establece el
+> régimen de las becas y ayudas al estudio personalizadas.
+
+Confirma que esta convocatoria (Departamentos) remite al RD 1721/2007
+sin transcribirlo — sigue pendiente el punto 4 de la sección de acceso
+más abajo (leer el texto literal en boe.es).
+
+**Requisito adicional no registrado antes — aval del departamento**: la
+solicitud (Anexo II) exige un **proyecto de colaboración avalado por
+el consejo del departamento** receptor, puntuado por ese departamento
+(hasta 4 puntos: contenido innovador, aplicabilidad, metodología,
+tecnología). Sin el aval firmado del departamento, la solicitud se
+desestima. Esto conecta directamente con el borrador de correo a
+`bisite@usal.es` de la sección de correspondencia — aunque BISITE no
+sirva para la beca de Institutos/Centros Propios, sí podría ser el
+departamento que avale el proyecto para *esta* beca (Departamentos),
+si el máster está adscrito a él — **pendiente de confirmar**.
+
 ## Hallazgo crítico: cláusula de nacionalidad/estancia
 
 La convocatoria de Becas de Colaboración en Institutos de Investigación y
