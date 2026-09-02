@@ -23,6 +23,15 @@ kebab-case:
 | [Tecnologías del habla](tecnologias-del-habla/) | 304487 | 3 | Optativa |
 | [Trabajo Fin de Máster](trabajo-fin-de-master/) | 304489 | 15 | Trabajo fin de máster |
 
+## admision-y-becas/
+
+Registro de investigación sobre becas, ayudas al estudio y trámites de
+matrícula/admisión para el curso 2026/2027 (contexto del alumno,
+convocatorias vigentes y su elegibilidad, hallazgo crítico sobre la
+cláusula de nacionalidad/estancia, correspondencia oficial, grupos de
+investigación relevantes y servicios de prácticas/empleo). Ver
+[`becas-y-tramites-2026-2027.md`](admision-y-becas/becas-y-tramites-2026-2027.md).
+
 ## Calendario de clases
 
 Fuente: "Horarios y Distribución de Grupos" de la Guía Académica 2026-2027

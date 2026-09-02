@@ -119,15 +119,58 @@ compartido entre sesiones**:
 - `empleo.usal.es` da **503 Service Unavailable** de forma persistente —
   esto es un problema del propio servidor de la USAL, no del proxy.
 
-### Pendiente de verificar en una sesión con acceso a usal.es
+### Resuelto en sesión del 2026-09-02 (puntos 1-3)
 
-1. Tablón completo de `becas.usal.es` — comprobar si hay convocatorias
-   nuevas desde la última revisión.
-2. `bisite.usal.es` — líneas de investigación actuales y si están adscritos
-   formalmente a algún departamento/instituto (para precisar el correo de
-   colaboración).
-3. `reina.usal.es` y `empleo.usal.es` (cuando el 503 se resuelva) — salidas
-   profesionales / prácticas para perfiles de Sistemas Inteligentes.
+Otra sesión logró acceso a `becas.usal.es`, `bisite.usal.es`,
+`mastersi.usal.es` y `reina.usal.es`. `www.boe.es` y sus tres espejos
+siguieron bloqueados — el punto 4 sigue pendiente.
+
+**1. Tablón de `becas.usal.es` — convocatorias vigentes 2026/2027:**
+
+| Beca | Plazo | Enlace |
+|---|---|---|
+| Colaboración en Servicios Universitarios | 10 jun – 30 sep 2026 | `colab_servicios_univ_listado.htm` |
+| Colaboración en Institutos de Investigación y Centros Propios | 22 jul – 22 sep 2026 | `Colab_instit.htm` |
+| Colaboración en Departamentos Universitarios | 21 jul – 22 sep 2026 | `COLAB_DPTO.htm` |
+| Gobierno Vasco | 16 jul – 16 sep 2026 | euskadi.eus |
+| Luisa de Medrano | pendiente de publicación | `luisa de medrano.htm` |
+| Santander-Ayuda Económica 2026 | 21 abr – 7 oct 2026 | `Santander_Ayudaeconomica.htm` |
+
+No apareció ninguna convocatoria nueva frente a las ya registradas arriba.
+Tablón de anuncios: enlaces a Sede Electrónica del Ministerio, SICUE y
+"Convocatorias Externas".
+
+**2. `bisite.usal.es` — líneas de investigación y adscripción:** confirma lo
+ya sabido (BISITE es "Grupo de Investigación", no Instituto ni Centro
+Propio — refuerza el descarte de la beca de Institutos/Centros Propios de
+la tabla de arriba). Las 15 líneas activas: Bioinformática, Blockchain,
+Ciberseguridad, Ciudades Inteligentes, Computación Social, Creatividad
+Computacional, Energía, Fintech, Inteligencia Artificial, Internet de las
+Cosas, Robótica, Sistemas Distribuidos Inteligentes, Tecnología Educativa,
+Tecnología Médica, Textiles Inteligentes. Sede: edificio Multiusos I+D+i.
+**Punto a tener en cuenta antes de escribirles**: una búsqueda web sacó
+noticias de 2024 sobre el rector de la USAL — que también dirige BISITE —
+por la retractación de 75 artículos en Nature y críticas a su praxis
+académica; sin verificar el fondo, pero vale la pena considerarlo antes de
+anclar la colaboración a ese grupo.
+
+**3. `reina.usal.es` y `empleo.usal.es` — salidas profesionales:**
+`reina.usal.es` **no tiene relación con empleo** — es un grupo de
+investigación en Recuperación de Información (Ciencias de la
+Documentación), sin bolsa de trabajo. El portal correcto sigue siendo
+`empleo.usal.es` — Servicio de Inserción Profesional, Prácticas y Empleo
+(SIPPE): sigue devolviendo 503 en todas sus rutas, pero por
+`usal.es/practicas-externas-empleo` (que sí respondió) se confirmó que
+ofrece prácticas académicas externas en empresas reales, orientación
+profesional (grupal e individual), un programa de mentoring con un
+profesional del mismo campo, y asesoramiento en emprendimiento. Otros
+recursos relacionados sin verificar aún: `spio.usal.es` (preinscripción y
+vida académica, no específicamente empleo), `transferencia.usal.es`, y
+`alumni.usal.es/formacion-y-empleo/empleo/` (también dio 503).
+
+### Pendiente de verificar en una sesión con acceso a boe.es
+
 4. Texto literal del art. 4.1.d) del RD 1721/2007 (bloqueado incluso donde
-   sí entra usal.es — probar otra vía si aparece una sesión con acceso a
+   sí entra usal.es, y también en noticias.juridicas.com, iberley.es y
+   legislacion.faam.es — probar otra vía si aparece una sesión con acceso a
    boe.es).
