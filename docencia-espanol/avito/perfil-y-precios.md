@@ -47,8 +47,10 @@ sabe si es por hora, por clase suelta o por el curso completo.
 Повышение успеваемости — 2 000 ₽/час (индивидуально)
 ```
 
-**Preparación de exámenes** (+25%, justificado por la certificación
-FGOS y el currículum oficial específico que domina):
+**Preparación de exámenes** (+25%, justificado por la experiencia
+demostrada — 5,0/5 sobre 38 reseñas y más de 4 años sin un solo
+bajón — y el conocimiento específico del currículum de examen, no por
+ninguna certificación formal):
 ```
 Подготовка к ЕГЭ — 2 500 ₽/час (индивидуально)
 Подготовка к ОГЭ — 2 500 ₽/час (индивидуально)
@@ -74,7 +76,7 @@ unidad de tiempo) es lo importante.
 
 ```
 Здравствуйте 👨🏻‍🏫!
-Меня зовут Анхель. Я кубинец, живущий в Москве. Инженер по профессии, учитель испанского по любви — и по диплому: сертифицированный преподаватель испанского языка (курсы «Учитель испанского языка. Теория и методика обучения иностранному языку», «Специфика преподавания испанского с учётом требований ФГОС» и «Эффективные методики изучения иностранных языков», Центр повышения квалификации «Луч знаний», 2022–2025). Я могу помочь выучить испанский язык коммуникативно и интересно, научить говорить.
+Меня зовут Анхель. Я кубинец, живущий в Москве. Инженер по профессии, учитель испанского по любви: более 4 лет опыта преподавания и 5,0/5 по 38 отзывам учеников. Я могу помочь выучить испанский язык коммуникативно и интересно, научить говорить.
 
 "Он умеет создать на уроке такую тёплую атмосферу, что язык учится сам собой" — из отзыва ученицы на Авито.
 
@@ -116,12 +118,19 @@ unidad de tiempo) es lo importante.
 Буду рад нашему сотрудничеству 💯!
 ```
 
-Cambios respecto al original: se añadió la mención de las 3
-certificaciones al principio, una cita textual de una reseña real, la
-categoría DELE, el marco CEFR A1–C2, y la aclaración de que el
+Cambios respecto al original: se añadió la mención de la experiencia
+(años + valoración) al principio, una cita textual de una reseña real,
+la categoría DELE, el marco CEFR A1–C2, y la aclaración de que el
 formato remoto sigue disponible tras la mudanza a España (para que
 los alumnos actuales no piensen que se quedan sin profesor en
 septiembre).
+
+**Corrección (2026-09-02):** la versión anterior de este texto incluía
+una mención a certificaciones de profesor ELE («Luch Znaniy») que
+Angel confirmó no poseer — se ha retirado por completo, del texto y de
+la justificación de precios, y sustituido por la experiencia y
+valoración reales (ver también la corrección equivalente en
+`personal/academico/formacion-academica.md`).
 
 **Pendiente de resolver antes de la mudanza:** confirmar que el método
 de cobro actual (transferencia/tarjeta rusa) sigue funcionando una vez

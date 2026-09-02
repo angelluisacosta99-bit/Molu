@@ -87,34 +87,25 @@ Moscú.
 ## Actividad profesional paralela: docencia de español y traducción
 
 Independiente de su carrera de ingeniería, Angel ejerce en Rusia como
-**Индивидуальный предприниматель (ИП — empresario individual/autónomo)
-desde hace 5 años**, dando clases de español a rusohablantes y
-trabajando como traductor — la actividad que ya organiza en las
-carpetas `docencia-espanol/` y `traduccion/` de este mismo repositorio.
-No es una afición: es un negocio propio sostenido con formación
-pedagógica formal detrás, cursada en la ООО "Centro de Formación
-Continua y Reciclaje Profesional «Luch Znaniy»" (Луч знаний):
+**Индивидуальный предприниматель (ИП — empresario individual/autónomo)**
+— alta oficial confirmada el 20/06/2025 (actividad principal:
+traducción escrita y oral; actividad secundaria: educación
+complementaria para niños y adultos) — dando clases de español a
+rusohablantes desde hace más de 4 años (ver reseñas en Avito, con
+historial desde marzo de 2022) y trabajando como traductor — la
+actividad que ya organiza en las carpetas `docencia-espanol/` y
+`traduccion/` de este mismo repositorio.
 
-- **Diploma de Reciclaje Profesional** — programa *"Español: teoría
-  y metodología de la enseñanza de lenguas extranjeras en una
-  organización educativa"*, **300 horas académicas**, 1–28 septiembre
-  2022, Krasnoyarsk (reg. 180000665699, diploma № 41665) — otorga la
-  cualificación **«Учитель испанского языка» (Profesor de español)**.
-  Todas las asignaturas del expediente aprobadas con "отлично"
-  (sobresaliente): Psicología y pedagogía, Tecnologías de la
-  información en la enseñanza de idiomas, Fundamentos de la teoría del
-  español, Curso práctico de español (x2), Estudios sobre España,
-  Lingüoculturología, y examen final — 42-44 h cada una.
-- **Certificado de formación continua** — *"Especificidad de la
-  enseñanza del español conforme a los requisitos del FGOS"*
-  (estándar educativo federal ruso), 36 horas, 25–28 diciembre 2023,
-  Krasnoyarsk (reg. 180003697248, certificado № 168815).
-- **Certificado de formación continua** — *"Metodologías eficaces
-  para el aprendizaje de idiomas extranjeros"*, 36 horas, 11–14 mayo
-  2025, Moscú (reg. 180004157053, certificado № 230430).
-
-Las tres, emitidas por ООО "Centro de Formación Continua y Reciclaje
-Profesional «Luch Znaniy»" (Луч знаний).
+**Corrección (2026-09-02):** una versión anterior de esta sección
+afirmaba que Angel tenía tres diplomas/certificados de profesor de
+español emitidos por «Luch Znaniy» (Krasnoyarsk/Moscú, 2022-2025), con
+números de registro concretos. Angel confirmó directamente que **no
+posee esa certificación** — no se ha podido verificar ningún documento
+de origen en su Drive que la respalde (solo hay cuadernos de ejercicios
+ELE de autoría propia, ninguna diploma o certificado). Se retira el
+dato por completo: su docencia se sostiene en la experiencia
+demostrada (reseñas de Avito) y el alta como autónomo, no en una
+credencial pedagógica formal.
 
 ## Equivalencia académica en España
 
