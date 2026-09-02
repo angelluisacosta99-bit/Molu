@@ -1,7 +1,7 @@
 # Graph Report - Molu  (2026-09-02)
 
 ## Corpus Check
-- 225 files · ~836,239 words
+- 225 files · ~836,225 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `1b1a286c`
+- Built from commit: `0cf1efb6`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -843,7 +843,7 @@ Cohesion: 0.33
 Nodes (6): Grabaciones de clases overview, Docencia de español overview, materiales/ subfolder, Python ejercicios overview, Python proyectos overview, Python overview
 
 ## Knowledge Gaps
-- **566 isolated node(s):** `HEADING_TAGS`, `LAYOUT_TRANSITION_PROPS`, `POSITIONED_CHILD_INTERACTIVE_SELECTOR`, `QUALITY_TEXT_TAGS`, `REPEATED_KICKER_CARD_CONTEXT_SELECTOR` (+561 more)
+- **566 isolated node(s):** `Valoración`, `Прайс-лист — estado actual (tal como está publicado)`, `Прайс-лист — propuesta`, `Descripción — propuesta`, `Educación previa (Cuba)` (+561 more)
   These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 716 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **22 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -851,14 +851,14 @@ Nodes (6): Grabaciones de clases overview, Docencia de español overview, materi
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `createManualEditRoutes()` connect `manual-edit-routes.mjs` to `manual-apply.mjs`, `live-commit-manual-edits.mjs`, `live-server.mjs`, `css-cascade.mjs`, `insert-ui.mjs`?**
-  _High betweenness centrality (0.052) - this node is a cross-community bridge._
+  _High betweenness centrality (0.064) - this node is a cross-community bridge._
 - **Why does `StaticDocument` connect `css-cascade.mjs` to `detect-antipatterns.mjs`, `detect-html.mjs`?**
-  _High betweenness centrality (0.051) - this node is a cross-community bridge._
+  _High betweenness centrality (0.061) - this node is a cross-community bridge._
 - **Why does `detectHtml()` connect `detect-antipatterns.mjs` to `checks.mjs`, `inline-ignores.mjs`, `design-system.mjs`, `detect-html.mjs`, `css-cascade.mjs`?**
-  _High betweenness centrality (0.011) - this node is a cross-community bridge._
+  _High betweenness centrality (0.015) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `initGlobalBar()` (e.g. with `hideAgentPollTooltip()` and `onDetectMessage()`) actually correct?**
   _`initGlobalBar()` has 7 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `HEADING_TAGS`, `LAYOUT_TRANSITION_PROPS`, `POSITIONED_CHILD_INTERACTIVE_SELECTOR` to the rest of the system?**
+- **What connects `Valoración`, `Прайс-лист — estado actual (tal como está publicado)`, `Прайс-лист — propuesta` to the rest of the system?**
   _566 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `live-browser.js` be split into smaller, more focused modules?**
   _Cohesion score 0.02863984674329502 - nodes in this community are weakly interconnected._
