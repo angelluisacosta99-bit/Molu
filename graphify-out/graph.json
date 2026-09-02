@@ -23191,14 +23191,14 @@
       "source_location": "L272"
     },
     {
-      "id": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_pendiente_de_verificar_por_acceso_directo_boe_es_y_auip_org_siguen_bloqueados_en_toda_sesi\u00f3n_probada_punto_6",
-      "label": "Pendiente de verificar por acceso directo \u2014 boe.es y auip.org siguen bloqueados en toda sesi\u00f3n probada (punto 6)",
+      "id": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_pendiente_de_verificar_por_acceso_directo_boe_es_sigue_bloqueado_en_toda_sesi\u00f3n_probada_punto_6",
+      "label": "Pendiente de verificar por acceso directo \u2014 boe.es sigue bloqueado en toda sesi\u00f3n probada (punto 6)",
       "_origin": "ast",
       "community": 106,
       "community_name": "Becas y tr\u00e1mites de admisi\u00f3n \u2014 MUSI 2026/2027",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "pendiente de verificar por acceso directo \u2014 boe.es y auip.org siguen bloqueados en toda sesion probada (punto 6)",
+      "norm_label": "pendiente de verificar por acceso directo \u2014 boe.es sigue bloqueado en toda sesion probada (punto 6)",
       "source_file": "master-sistemas-inteligentes/admision-y-becas/becas-y-tramites-2026-2027.md",
       "source_location": "L305"
     },
@@ -100723,7 +100723,7 @@
     },
     {
       "source": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_acceso_de_red_a_dominios_usal_boe_auip_importante_para_la_sesi\u00f3n_que_retome_esto",
-      "target": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_pendiente_de_verificar_por_acceso_directo_boe_es_y_auip_org_siguen_bloqueados_en_toda_sesi\u00f3n_probada_punto_6",
+      "target": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_pendiente_de_verificar_por_acceso_directo_boe_es_sigue_bloqueado_en_toda_sesi\u00f3n_probada_punto_6",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -106424,5 +106424,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "b351bd7565e144541ffc58eb3924a3aaf6528ae4"
+  "built_at_commit": "553ea8f15401e5527c1daff84471658d33e42dd1"
 }
