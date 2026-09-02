@@ -1960,17 +1960,5 @@
     "seen": 1788379310.9723272,
     "ast_hash": "9028e6ef6f1f11acc44da511e97d43b3",
     "semantic_hash": ""
-  },
-  "busqueda-empleo/README.md": {
-    "mtime": 1788379000.0095518,
-    "seen": 1788379310.9722505,
-    "ast_hash": "c1cd9a4c5598fea94a17717b54540182",
-    "semantic_hash": ""
-  },
-  "busqueda-empleo/cv/datos-perfil.md": {
-    "mtime": 1788379030.6215537,
-    "seen": 1788379310.9722517,
-    "ast_hash": "b0a2eb1d35fc0f7028475ca292d0bbd9",
-    "semantic_hash": ""
   }
 }
