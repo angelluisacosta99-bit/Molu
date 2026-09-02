@@ -111,7 +111,7 @@ impide primero.
 > régimen de las becas y ayudas al estudio personalizadas.
 
 Confirma que esta convocatoria (Departamentos) remite al RD 1721/2007
-sin transcribirlo — sigue pendiente el punto 4 de la sección de acceso
+sin transcribirlo — sigue pendiente el punto 6 de la sección de acceso
 más abajo (leer el texto literal en boe.es).
 
 **Requisito adicional no registrado antes — aval del departamento**: la
