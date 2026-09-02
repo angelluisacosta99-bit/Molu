@@ -35,7 +35,7 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 57,
+      "community": 39,
       "community_name": "StaticElement",
       "file_type": "code",
       "norm_label": "staticelement",
@@ -14624,6 +14624,162 @@
       "source_location": "L3735"
     },
     {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_childnodes",
+      "label": ".childNodes()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 39,
+      "community_name": "StaticElement",
+      "file_type": "code",
+      "norm_label": ".childnodes()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L742"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_children",
+      "label": ".children()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 39,
+      "community_name": "StaticElement",
+      "file_type": "code",
+      "norm_label": ".children()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L739"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_classname",
+      "label": ".className()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 39,
+      "community_name": "StaticElement",
+      "file_type": "code",
+      "norm_label": ".classname()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L752"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_closest",
+      "label": ".closest()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 39,
+      "community_name": "StaticElement",
+      "file_type": "code",
+      "norm_label": ".closest()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L776"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 39,
+      "community_name": "StaticElement",
+      "file_type": "code",
+      "norm_label": ".constructor()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L722"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_contains",
+      "label": ".contains()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 39,
+      "community_name": "StaticElement",
+      "file_type": "code",
+      "norm_label": ".contains()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L789"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_getattribute",
+      "label": ".getAttribute()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 39,
+      "community_name": "StaticElement",
+      "file_type": "code",
+      "norm_label": ".getattribute()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L758"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_id",
+      "label": ".id()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 39,
+      "community_name": "StaticElement",
+      "file_type": "code",
+      "norm_label": ".id()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L755"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_parentelement",
+      "label": ".parentElement()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 39,
+      "community_name": "StaticElement",
+      "file_type": "code",
+      "norm_label": ".parentelement()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L729"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_previouselementsibling",
+      "label": ".previousElementSibling()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 39,
+      "community_name": "StaticElement",
+      "file_type": "code",
+      "norm_label": ".previouselementsibling()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L734"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_queryselector",
+      "label": ".querySelector()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 39,
+      "community_name": "StaticElement",
+      "file_type": "code",
+      "norm_label": ".queryselector()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L761"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_queryselectorall",
+      "label": ".querySelectorAll()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 39,
+      "community_name": "StaticElement",
+      "file_type": "code",
+      "norm_label": ".queryselectorall()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L769"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_textcontent",
+      "label": ".textContent()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 39,
+      "community_name": "StaticElement",
+      "file_type": "code",
+      "norm_label": ".textcontent()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L749"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_modern_screenshot_umd_ae",
       "label": "ae()",
       "_callable": true,
@@ -18318,162 +18474,6 @@
       "norm_label": "normalizebrowserfontname()",
       "source_file": ".claude/skills/impeccable/scripts/detector/detect-antipatterns-browser.js",
       "source_location": "L4467"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_childnodes",
-      "label": ".childNodes()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 57,
-      "community_name": "StaticElement",
-      "file_type": "code",
-      "norm_label": ".childnodes()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L742"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_children",
-      "label": ".children()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 57,
-      "community_name": "StaticElement",
-      "file_type": "code",
-      "norm_label": ".children()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L739"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_classname",
-      "label": ".className()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 57,
-      "community_name": "StaticElement",
-      "file_type": "code",
-      "norm_label": ".classname()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L752"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_closest",
-      "label": ".closest()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 57,
-      "community_name": "StaticElement",
-      "file_type": "code",
-      "norm_label": ".closest()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L776"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_constructor",
-      "label": ".constructor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 57,
-      "community_name": "StaticElement",
-      "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L722"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_contains",
-      "label": ".contains()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 57,
-      "community_name": "StaticElement",
-      "file_type": "code",
-      "norm_label": ".contains()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L789"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_getattribute",
-      "label": ".getAttribute()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 57,
-      "community_name": "StaticElement",
-      "file_type": "code",
-      "norm_label": ".getattribute()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L758"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_id",
-      "label": ".id()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 57,
-      "community_name": "StaticElement",
-      "file_type": "code",
-      "norm_label": ".id()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L755"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_parentelement",
-      "label": ".parentElement()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 57,
-      "community_name": "StaticElement",
-      "file_type": "code",
-      "norm_label": ".parentelement()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L729"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_previouselementsibling",
-      "label": ".previousElementSibling()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 57,
-      "community_name": "StaticElement",
-      "file_type": "code",
-      "norm_label": ".previouselementsibling()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L734"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_queryselector",
-      "label": ".querySelector()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 57,
-      "community_name": "StaticElement",
-      "file_type": "code",
-      "norm_label": ".queryselector()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L761"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_queryselectorall",
-      "label": ".querySelectorAll()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 57,
-      "community_name": "StaticElement",
-      "file_type": "code",
-      "norm_label": ".queryselectorall()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L769"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_textcontent",
-      "label": ".textContent()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 57,
-      "community_name": "StaticElement",
-      "file_type": "code",
-      "norm_label": ".textcontent()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L749"
     },
     {
       "id": "claude_skills_impeccable_scripts_context_loadcontext",
@@ -23095,14 +23095,14 @@
       "source_location": "L1"
     },
     {
-      "id": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_acceso_de_red_a_dominios_usal_boe_auip_importante_para_la_sesi\u00f3n_que_retome_esto",
-      "label": "Acceso de red a dominios USAL/BOE/AUIP (importante para la sesi\u00f3n que retome esto)",
+      "id": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_acceso_de_red_a_dominios_usal_boe_importante_para_la_sesi\u00f3n_que_retome_esto",
+      "label": "Acceso de red a dominios USAL/BOE (importante para la sesi\u00f3n que retome esto)",
       "_origin": "ast",
       "community": 106,
       "community_name": "Becas y tr\u00e1mites de admisi\u00f3n \u2014 MUSI 2026/2027",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "acceso de red a dominios usal/boe/auip (importante para la sesion que retome esto)",
+      "norm_label": "acceso de red a dominios usal/boe (importante para la sesion que retome esto)",
       "source_file": "master-sistemas-inteligentes/admision-y-becas/becas-y-tramites-2026-2027.md",
       "source_location": "L189"
     },
@@ -23179,28 +23179,16 @@
       "source_location": "L128"
     },
     {
-      "id": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_investigado_pese_al_bloqueo_de_red_indirectamente_sin_acceso_directo_a_la_fuente_punto_5",
-      "label": "Investigado pese al bloqueo de red \u2014 indirectamente, sin acceso directo a la fuente (punto 5)",
+      "id": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_pendiente_de_verificar_en_una_sesi\u00f3n_con_acceso_a_boe_es",
+      "label": "Pendiente de verificar en una sesi\u00f3n con acceso a boe.es",
       "_origin": "ast",
       "community": 106,
       "community_name": "Becas y tr\u00e1mites de admisi\u00f3n \u2014 MUSI 2026/2027",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "investigado pese al bloqueo de red \u2014 indirectamente, sin acceso directo a la fuente (punto 5)",
+      "norm_label": "pendiente de verificar en una sesion con acceso a boe.es",
       "source_file": "master-sistemas-inteligentes/admision-y-becas/becas-y-tramites-2026-2027.md",
-      "source_location": "L272"
-    },
-    {
-      "id": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_pendiente_de_verificar_por_acceso_directo_boe_es_sigue_bloqueado_en_toda_sesi\u00f3n_probada_punto_6",
-      "label": "Pendiente de verificar por acceso directo \u2014 boe.es sigue bloqueado en toda sesi\u00f3n probada (punto 6)",
-      "_origin": "ast",
-      "community": 106,
-      "community_name": "Becas y tr\u00e1mites de admisi\u00f3n \u2014 MUSI 2026/2027",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "pendiente de verificar por acceso directo \u2014 boe.es sigue bloqueado en toda sesion probada (punto 6)",
-      "source_file": "master-sistemas-inteligentes/admision-y-becas/becas-y-tramites-2026-2027.md",
-      "source_location": "L305"
+      "source_location": "L254"
     },
     {
       "id": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_redactados_pendientes_de_enviar_a_la_espera_de_confirmaci\u00f3n_del_alumno",
@@ -23215,16 +23203,16 @@
       "source_location": "L158"
     },
     {
-      "id": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_resuelto_en_sesi\u00f3n_del_2026_09_02_por_acceso_directo_puntos_1_4",
-      "label": "Resuelto en sesi\u00f3n del 2026-09-02 por acceso directo (puntos 1-4)",
+      "id": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_resuelto_en_sesi\u00f3n_del_2026_09_02_puntos_1_3",
+      "label": "Resuelto en sesi\u00f3n del 2026-09-02 (puntos 1-3)",
       "_origin": "ast",
       "community": 106,
       "community_name": "Becas y tr\u00e1mites de admisi\u00f3n \u2014 MUSI 2026/2027",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "resuelto en sesion del 2026-09-02 por acceso directo (puntos 1-4)",
+      "norm_label": "resuelto en sesion del 2026-09-02 (puntos 1-3)",
       "source_file": "master-sistemas-inteligentes/admision-y-becas/becas-y-tramites-2026-2027.md",
-      "source_location": "L208"
+      "source_location": "L205"
     },
     {
       "id": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_texto_oficial_de_la_convocatoria_documento_firmado_aportado_por_angel",
@@ -30625,7 +30613,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-16 \u2014 guia oficial de buenas practicas de claude code",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L875"
+      "source_location": "L903"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_16_primera_pasada_del_radar",
@@ -30637,7 +30625,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-16 \u2014 primera pasada del radar",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L910"
+      "source_location": "L938"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_16_segunda_pasada_hooks_vs_claude_md_y_pr\u00e1cticas_de_la_comunidad",
@@ -30649,7 +30637,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-16 \u2014 segunda pasada: hooks vs. claude.md, y practicas de la comunidad",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L665"
+      "source_location": "L693"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_18_markitdown_microsoft_herramienta_puntual_no_instalada",
@@ -30661,7 +30649,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-18 \u2014 markitdown (microsoft): herramienta puntual, no instalada",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L640"
+      "source_location": "L668"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_18_pr\u00e1ctica_desplazar_la_ventana_de_5h_de_l\u00edmite_de_uso",
@@ -30673,7 +30661,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-18 \u2014 practica: desplazar la ventana de 5h de limite de uso",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L626"
+      "source_location": "L654"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_20_agent_browser_vercel_labs_activado",
@@ -30685,7 +30673,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-20 \u2014 agent-browser (vercel labs): activado",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L498"
+      "source_location": "L526"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_21_find_skills_vercel_labs_activado",
@@ -30697,7 +30685,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-21 \u2014 find-skills (vercel labs): activado",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L466"
+      "source_location": "L494"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_21_mcp_server_dev_anthropic_activado_deshabilitado_por_defecto",
@@ -30709,7 +30697,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-21 \u2014 mcp-server-dev (anthropic): activado, deshabilitado por defecto",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L378"
+      "source_location": "L406"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_22_caveman_juliusbrussee_activado_para_todas_las_sesiones",
@@ -30721,7 +30709,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-22 \u2014 caveman (juliusbrussee): activado para todas las sesiones",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L239"
+      "source_location": "L267"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_22_ponytail_dietrichgebert_activado_para_todas_las_sesiones",
@@ -30733,7 +30721,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-22 \u2014 ponytail (dietrichgebert): activado para todas las sesiones",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L277"
+      "source_location": "L305"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_23_7_skills_m\u00e1s_de_juliusbrussee_caveman_activadas",
@@ -30745,7 +30733,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-23 \u2014 7 skills mas de juliusbrussee/caveman: activadas",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L46"
+      "source_location": "L74"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_23_statusline_de_ponytail_configurado",
@@ -30757,7 +30745,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-23 \u2014 statusline de ponytail: configurado",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L212"
+      "source_location": "L240"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_anotado_no_aplicado_patrones_de_awattar_claude_code_best_practices",
@@ -30769,7 +30757,7 @@
       "node_kind": "heading",
       "norm_label": "anotado, no aplicado: patrones de `awattar/claude-code-best-practices`",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L854"
+      "source_location": "L882"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_aplicado_hook_stop_con_estado_de_git_radical_transparency",
@@ -30781,7 +30769,7 @@
       "node_kind": "heading",
       "norm_label": "aplicado: hook `stop` con estado de git (\"radical transparency\")",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L671"
+      "source_location": "L699"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_aplicado_tras_profundizar_hook_que_bloquea_merge_sin_revisi\u00f3n",
@@ -30793,7 +30781,7 @@
       "node_kind": "heading",
       "norm_label": "aplicado (tras profundizar): hook que bloquea merge sin revision",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L687"
+      "source_location": "L715"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_brisk_teaching_conector_mcp",
@@ -30805,7 +30793,7 @@
       "node_kind": "heading",
       "norm_label": "brisk teaching (conector mcp)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L930"
+      "source_location": "L958"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_c\u00f3mo_se_usa",
@@ -30829,7 +30817,7 @@
       "node_kind": "heading",
       "norm_label": "deepl (conector mcp)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L912"
+      "source_location": "L940"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_lecci\u00f3n_graphify_out_pending_changes_se_cuela_en_git_3a_vez",
@@ -30840,6 +30828,18 @@
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "leccion: `graphify-out/.pending_changes` se cuela en git (3a vez)",
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L54"
+    },
+    {
+      "id": "recursos_generales_herramientas_ia_novedades_lecci\u00f3n_numerar_puntos_1_2_3_en_un_documento_vivo_invita_a_referencias_cruzadas_rotas",
+      "label": "Lecci\u00f3n: numerar puntos \"1, 2, 3...\" en un documento vivo invita a referencias cruzadas rotas",
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "Novedades de herramientas de IA",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "leccion: numerar puntos \"1, 2, 3...\" en un documento vivo invita a referencias cruzadas rotas",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
       "source_location": "L26"
     },
@@ -30853,7 +30853,7 @@
       "node_kind": "heading",
       "norm_label": "marketplaces de plugins de claude code (oficial y comunidad)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L948"
+      "source_location": "L976"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_menor_learning_commons_y_learn_with_coursera",
@@ -30865,7 +30865,7 @@
       "node_kind": "heading",
       "norm_label": "(menor) learning commons y learn with coursera",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L965"
+      "source_location": "L993"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_novedades_de_herramientas_de_ia",
@@ -100700,36 +100700,25 @@
       "weight": 1.0
     },
     {
-      "source": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_acceso_de_red_a_dominios_usal_boe_auip_importante_para_la_sesi\u00f3n_que_retome_esto",
-      "target": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_resuelto_en_sesi\u00f3n_del_2026_09_02_por_acceso_directo_puntos_1_4",
+      "source": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_acceso_de_red_a_dominios_usal_boe_importante_para_la_sesi\u00f3n_que_retome_esto",
+      "target": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_resuelto_en_sesi\u00f3n_del_2026_09_02_puntos_1_3",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/admision-y-becas/becas-y-tramites-2026-2027.md",
-      "source_location": "L208",
+      "source_location": "L205",
       "weight": 1.0
     },
     {
-      "source": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_acceso_de_red_a_dominios_usal_boe_auip_importante_para_la_sesi\u00f3n_que_retome_esto",
-      "target": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_investigado_pese_al_bloqueo_de_red_indirectamente_sin_acceso_directo_a_la_fuente_punto_5",
+      "source": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_acceso_de_red_a_dominios_usal_boe_importante_para_la_sesi\u00f3n_que_retome_esto",
+      "target": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_pendiente_de_verificar_en_una_sesi\u00f3n_con_acceso_a_boe_es",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/admision-y-becas/becas-y-tramites-2026-2027.md",
-      "source_location": "L272",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_acceso_de_red_a_dominios_usal_boe_auip_importante_para_la_sesi\u00f3n_que_retome_esto",
-      "target": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_pendiente_de_verificar_por_acceso_directo_boe_es_sigue_bloqueado_en_toda_sesi\u00f3n_probada_punto_6",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/admision-y-becas/becas-y-tramites-2026-2027.md",
-      "source_location": "L305",
+      "source_location": "L254",
       "weight": 1.0
     },
     {
@@ -100767,7 +100756,7 @@
     },
     {
       "source": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_becas_y_tr\u00e1mites_de_admisi\u00f3n_musi_2026_2027",
-      "target": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_acceso_de_red_a_dominios_usal_boe_auip_importante_para_la_sesi\u00f3n_que_retome_esto",
+      "target": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_acceso_de_red_a_dominios_usal_boe_importante_para_la_sesi\u00f3n_que_retome_esto",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -101829,7 +101818,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L912",
+      "source_location": "L940",
       "weight": 1.0
     },
     {
@@ -101840,7 +101829,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L930",
+      "source_location": "L958",
       "weight": 1.0
     },
     {
@@ -101851,7 +101840,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L948",
+      "source_location": "L976",
       "weight": 1.0
     },
     {
@@ -101862,7 +101851,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L965",
+      "source_location": "L993",
       "weight": 1.0
     },
     {
@@ -101873,7 +101862,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L671",
+      "source_location": "L699",
       "weight": 1.0
     },
     {
@@ -101884,7 +101873,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L687",
+      "source_location": "L715",
       "weight": 1.0
     },
     {
@@ -101895,7 +101884,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L854",
+      "source_location": "L882",
+      "weight": 1.0
+    },
+    {
+      "source": "recursos_generales_herramientas_ia_novedades_c\u00f3mo_se_usa",
+      "target": "recursos_generales_herramientas_ia_novedades_lecci\u00f3n_numerar_puntos_1_2_3_en_un_documento_vivo_invita_a_referencias_cruzadas_rotas",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -101906,7 +101906,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L26",
+      "source_location": "L54",
       "weight": 1.0
     },
     {
@@ -101928,7 +101928,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L212",
+      "source_location": "L240",
       "weight": 1.0
     },
     {
@@ -101939,7 +101939,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L239",
+      "source_location": "L267",
       "weight": 1.0
     },
     {
@@ -101950,7 +101950,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L277",
+      "source_location": "L305",
       "weight": 1.0
     },
     {
@@ -101961,18 +101961,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L378",
-      "weight": 1.0
-    },
-    {
-      "source": "recursos_generales_herramientas_ia_novedades_novedades_de_herramientas_de_ia",
-      "target": "recursos_generales_herramientas_ia_novedades_2026_08_23_7_skills_m\u00e1s_de_juliusbrussee_caveman_activadas",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L46",
+      "source_location": "L406",
       "weight": 1.0
     },
     {
@@ -101983,7 +101972,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L466",
+      "source_location": "L494",
       "weight": 1.0
     },
     {
@@ -101994,7 +101983,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L498",
+      "source_location": "L526",
       "weight": 1.0
     },
     {
@@ -102005,7 +101994,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L626",
+      "source_location": "L654",
       "weight": 1.0
     },
     {
@@ -102016,7 +102005,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L640",
+      "source_location": "L668",
       "weight": 1.0
     },
     {
@@ -102027,7 +102016,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L665",
+      "source_location": "L693",
+      "weight": 1.0
+    },
+    {
+      "source": "recursos_generales_herramientas_ia_novedades_novedades_de_herramientas_de_ia",
+      "target": "recursos_generales_herramientas_ia_novedades_2026_08_23_7_skills_m\u00e1s_de_juliusbrussee_caveman_activadas",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L74",
       "weight": 1.0
     },
     {
@@ -102038,7 +102038,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L875",
+      "source_location": "L903",
       "weight": 1.0
     },
     {
@@ -102049,7 +102049,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L910",
+      "source_location": "L938",
       "weight": 1.0
     },
     {
@@ -106424,5 +106424,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "553ea8f15401e5527c1daff84471658d33e42dd1"
+  "built_at_commit": "b3cc8afacad53f7fbf1acb25102263b999181f94"
 }
