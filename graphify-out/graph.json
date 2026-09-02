@@ -30135,7 +30135,7 @@
       "node_kind": "heading",
       "norm_label": "archivos",
       "source_file": "docencia-espanol/avito/README.md",
-      "source_location": "L7"
+      "source_location": "L8"
     },
     {
       "id": "docencia_espanol_avito_readme_avito_perfil_de_profesor_de_espa\u00f1ol",
@@ -98189,7 +98189,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docencia-espanol/avito/README.md",
-      "source_location": "L7",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -102781,24 +102781,24 @@
     },
     {
       "source": "docencia_espanol_avito_readme",
-      "target": "docencia_espanol_avito_resenas",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docencia-espanol/avito/README.md",
-      "source_location": "L12",
-      "weight": 1.0
-    },
-    {
-      "source": "docencia_espanol_avito_readme",
       "target": "docencia_espanol_avito_perfil_y_precios",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docencia-espanol/avito/README.md",
-      "source_location": "L9",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "docencia_espanol_avito_readme",
+      "target": "docencia_espanol_avito_resenas",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docencia-espanol/avito/README.md",
+      "source_location": "L13",
       "weight": 1.0
     },
     {
@@ -106604,5 +106604,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "5209180d1e410bb9b5858afc10e77dd61d0b245e"
+  "built_at_commit": "3e8b36486b84b646d1e8502aec992466f2842804"
 }
