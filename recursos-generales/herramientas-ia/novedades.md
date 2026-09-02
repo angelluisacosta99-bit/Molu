@@ -23,6 +23,34 @@ copias que puedan desincronizarse.
 
 ---
 
+### Lección: numerar puntos "1, 2, 3..." en un documento vivo invita a referencias cruzadas rotas
+
+**Qué pasó:** en `master-sistemas-inteligentes/admision-y-becas/becas-y-tramites-2026-2027.md`
+(el registro compartido de becas del MUSI, pensado para que sesiones
+distintas lo sigan ampliando), al añadir dos hallazgos nuevos (SPIO,
+AUIP) como puntos numerados dentro de una sección que ya tenía puntos
+"1-4" fijos, cada inserción desplazaba la numeración de lo que venía
+detrás. La revisión independiente del PR (skill `code-review`, exigida
+por la regla dura de fusión) encontró el mismo tipo de fallo **tres
+veces seguidas** antes de salir limpia: (1) una frase en prosa que
+seguía diciendo "punto 4" tras convertirse en el punto 6; (2) un punto
+nuevo agrupado bajo un título "Resuelto (puntos 1-5)" que en realidad
+no se había resuelto por acceso directo, a diferencia de los demás; (3)
+el título del siguiente punto seguía mencionando un tema que ya se
+había movido a su propia sección aparte.
+
+**Corrección:** en documentos vivos con puntos numerados y referencias
+cruzadas en prosa ("ver punto N"), evitar intercalar puntos nuevos en
+medio de una secuencia ya numerada — añadirlos al final, o (si hace
+falta que queden agrupados por tema) usar anclas con nombre en vez de
+números ("ver la sección de AUIP" en vez de "ver punto 5"). Si aun así
+se renumera, tras el cambio buscar explícitamente todas las apariciones
+de "punto N" / "puntos 1-N" en el archivo (`grep`) antes de dar la
+edición por terminada, en vez de confiar en revisar solo las zonas que
+se tocaron a mano.
+
+---
+
 ### Lección: `graphify-out/.pending_changes` se cuela en git (3ª vez)
 
 **Qué pasó:** el `.gitignore` solo excluía `graphify-out/.graphify_*`, y

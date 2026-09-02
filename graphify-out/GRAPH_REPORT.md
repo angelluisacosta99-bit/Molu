@@ -1,7 +1,7 @@
 # Graph Report - Molu  (2026-09-02)
 
 ## Corpus Check
-- 225 files · ~836,239 words
+- 225 files · ~836,496 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `553ea8f1`
+- Built from commit: `b3cc8afa`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -54,6 +54,7 @@
 - live-manual-edit-evidence.mjs
 - context.mjs
 - handleManualEditActivity
+- StaticElement
 - impeccable-paths.mjs
 - readLiveServerInfo
 - parseAnyColor
@@ -71,7 +72,6 @@
 - critique-storage.mjs
 - scheduleLazyVisualContrast
 - collectBrowserFindings
-- StaticElement
 - live.mjs
 - readConfig
 - RoombaController
@@ -487,8 +487,8 @@ Cohesion: 0.20
 Nodes (9): Animations, Content, Design, Forms, Interactions, Layout, Performance, Vercel-specific (no aplican tal cual a este repo) (+1 more)
 
 ### Community 69 - "Novedades de herramientas de IA"
-Cohesion: 0.09
-Nodes (22): 2026-08-16 — Guía oficial de buenas prácticas de Claude Code, 2026-08-16 — Primera pasada del radar, 2026-08-16 — Segunda pasada: hooks vs. CLAUDE.md, y prácticas de la comunidad, 2026-08-18 — MarkItDown (Microsoft): herramienta puntual, no instalada, 2026-08-18 — Práctica: desplazar la ventana de 5h de límite de uso, 2026-08-20 — agent-browser (Vercel Labs): activado, 2026-08-21 — find-skills (Vercel Labs): activado, 2026-08-21 — mcp-server-dev (Anthropic): activado, deshabilitado por defecto (+14 more)
+Cohesion: 0.08
+Nodes (23): 2026-08-16 — Guía oficial de buenas prácticas de Claude Code, 2026-08-16 — Primera pasada del radar, 2026-08-16 — Segunda pasada: hooks vs. CLAUDE.md, y prácticas de la comunidad, 2026-08-18 — MarkItDown (Microsoft): herramienta puntual, no instalada, 2026-08-18 — Práctica: desplazar la ventana de 5h de límite de uso, 2026-08-20 — agent-browser (Vercel Labs): activado, 2026-08-21 — find-skills (Vercel Labs): activado, 2026-08-21 — mcp-server-dev (Anthropic): activado, deshabilitado por defecto (+15 more)
 
 ### Community 70 - "ui-core.mjs"
 Cohesion: 0.29
@@ -611,8 +611,8 @@ Cohesion: 0.67
 Nodes (3): NEM1 Cuaderno Unidad 6A — ¿Cómo se va a Goya?, NEM1 Cuaderno Unidad 7A — ¿Dónde quedamos?, NEM1 A1 Interactivo — Unidad 6A ¿Cómo se va a Goya?
 
 ### Community 106 - "Becas y trámites de admisión — MUSI 2026/2027"
-Cohesion: 0.15
-Nodes (13): Acceso de red a dominios USAL/BOE/AUIP (importante para la sesión que retome esto), Becas y trámites de admisión — MUSI 2026/2027, Contexto del alumno, Correspondencia oficial, Enviados, Estado de las becas evaluadas, Hallazgo crítico: cláusula de nacionalidad/estancia, Investigado pese al bloqueo de red — indirectamente, sin acceso directo a la fuente (punto 5) (+5 more)
+Cohesion: 0.17
+Nodes (12): Acceso de red a dominios USAL/BOE (importante para la sesión que retome esto), Becas y trámites de admisión — MUSI 2026/2027, Contexto del alumno, Correspondencia oficial, Enviados, Estado de las becas evaluadas, Hallazgo crítico: cláusula de nacionalidad/estancia, Pendiente de verificar en una sesión con acceso a boe.es (+4 more)
 
 ### Community 108 - "agent-browser"
 Cohesion: 0.33
@@ -843,24 +843,24 @@ Cohesion: 0.33
 Nodes (6): Grabaciones de clases overview, Docencia de español overview, materiales/ subfolder, Python ejercicios overview, Python proyectos overview, Python overview
 
 ## Knowledge Gaps
-- **566 isolated node(s):** `Contexto del alumno`, `Estado de las becas evaluadas`, `Texto oficial de la convocatoria (documento firmado, aportado por Angel)`, `Hallazgo crítico: cláusula de nacionalidad/estancia`, `Enviados` (+561 more)
+- **566 isolated node(s):** `Lección: numerar puntos "1, 2, 3..." en un documento vivo invita a referencias cruzadas rotas`, `Lección: `graphify-out/.pending_changes` se cuela en git (3ª vez)`, `2026-08-23 — 7 skills más de JuliusBrussee/caveman: activadas`, `2026-08-23 — statusline de ponytail: configurado`, `2026-08-22 — caveman (JuliusBrussee): activado para todas las sesiones` (+561 more)
   These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 716 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **22 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `isGeneratedFile()` connect `isGeneratedFile` to `live-commit-manual-edits.mjs`, `live-accept.mjs`, `live-manual-edit-evidence.mjs`, `live-wrap.mjs`?**
-  _High betweenness centrality (0.003) - this node is a cross-community bridge._
-- **Why does `readBuffer()` connect `manual-edit-routes.mjs` to `live-manual-edit-evidence.mjs`, `manual-apply.mjs`, `live-commit-manual-edits.mjs`, `live-wrap.mjs`, `live-accept.mjs`?**
-  _High betweenness centrality (0.003) - this node is a cross-community bridge._
 - **Why does `readLiveServerInfo()` connect `readLiveServerInfo` to `impeccable-paths.mjs`, `live-poll.mjs`, `live.mjs`, `live-server.mjs`?**
+  _High betweenness centrality (0.004) - this node is a cross-community bridge._
+- **Why does `readBuffer()` connect `manual-edit-routes.mjs` to `live-manual-edit-evidence.mjs`, `manual-apply.mjs`, `live-commit-manual-edits.mjs`, `live-wrap.mjs`, `live-accept.mjs`?**
   _High betweenness centrality (0.003) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `initGlobalBar()` (e.g. with `hideAgentPollTooltip()` and `onDetectMessage()`) actually correct?**
   _`initGlobalBar()` has 7 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `Contexto del alumno`, `Estado de las becas evaluadas`, `Texto oficial de la convocatoria (documento firmado, aportado por Angel)` to the rest of the system?**
+- **What connects `Lección: numerar puntos "1, 2, 3..." en un documento vivo invita a referencias cruzadas rotas`, `Lección: `graphify-out/.pending_changes` se cuela en git (3ª vez)`, `2026-08-23 — 7 skills más de JuliusBrussee/caveman: activadas` to the rest of the system?**
   _566 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `live-browser.js` be split into smaller, more focused modules?**
   _Cohesion score 0.02863984674329502 - nodes in this community are weakly interconnected._
 - **Should `checks.mjs` be split into smaller, more focused modules?**
   _Cohesion score 0.04078624078624079 - nodes in this community are weakly interconnected._
+- **Should `index.mjs` be split into smaller, more focused modules?**
+  _Cohesion score 0.06142410015649452 - nodes in this community are weakly interconnected._
