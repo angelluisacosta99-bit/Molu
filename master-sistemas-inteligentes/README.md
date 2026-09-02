@@ -72,4 +72,3 @@ Acogida de estudiantes y presentación del máster: 28 de septiembre de 2026, 16
 imparte por seminarios y conferencias anunciadas durante el curso.
 
 **Trabajo Fin de Máster**: sin docencia presencial programada.
->>>>>>> origin/main
