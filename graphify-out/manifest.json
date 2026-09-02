@@ -924,9 +924,9 @@
     "semantic_hash": "cf07e404a789c5b8061fd74922e49ecb"
   },
   "master-sistemas-inteligentes/README.md": {
-    "mtime": 1788340010.0690937,
-    "seen": 1788340198.042803,
-    "ast_hash": "518a82b8b4d5e221a4d16d39a23b0d39",
+    "mtime": 1788340531.9490817,
+    "seen": 1788340543.113437,
+    "ast_hash": "de67f556606d83271bd4b613352b3c4c",
     "semantic_hash": ""
   },
   "python/README.md": {
@@ -1956,15 +1956,9 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/admision-y-becas/becas-y-tramites-2026-2027.md": {
-    "mtime": 1788340181.8410897,
-    "seen": 1788340198.0428054,
-    "ast_hash": "24e35d26fbd6847a937a65bf018b92c7",
-    "semantic_hash": ""
-  },
-  "master-sistemas-inteligentes/admision-y-becas/becas-tramites-2026-2027.md": {
-    "mtime": 1788339491.6811056,
-    "seen": 1788340198.0428042,
-    "ast_hash": "a10c6fea83bdd1088253bd2920e560a5",
+    "mtime": 1788340521.689082,
+    "seen": 1788340543.1134384,
+    "ast_hash": "2233987d29c0956c1711a6a7fd2019cb",
     "semantic_hash": ""
   }
 }

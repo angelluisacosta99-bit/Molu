@@ -25,10 +25,12 @@ kebab-case:
 
 ## admision-y-becas/
 
-Notas de investigación sobre becas, ayudas al estudio y trámites de
-admisión para el curso 2026/2027 (convocatorias vigentes, grupos de
-investigación relevantes, servicios de prácticas/empleo). Ver
-[`becas-tramites-2026-2027.md`](admision-y-becas/becas-tramites-2026-2027.md).
+Registro de investigación sobre becas, ayudas al estudio y trámites de
+matrícula/admisión para el curso 2026/2027 (contexto del alumno,
+convocatorias vigentes y su elegibilidad, hallazgo crítico sobre la
+cláusula de nacionalidad/estancia, correspondencia oficial, grupos de
+investigación relevantes y servicios de prácticas/empleo). Ver
+[`becas-y-tramites-2026-2027.md`](admision-y-becas/becas-y-tramites-2026-2027.md).
 
 ## Calendario de clases
 
