@@ -23,6 +23,26 @@ copias que puedan desincronizarse.
 
 ---
 
+### Lección: `graphify-out/.pending_changes` se cuela en git (3ª vez)
+
+**Qué pasó:** el `.gitignore` solo excluía `graphify-out/.graphify_*`, y
+`.pending_changes` (la cola interna transitoria que un hook post-commit
+de graphify crea, y que el proceso de rebuild con el lock debería vaciar
+y borrar) no encaja en ese patrón. Se coló en el repo en al menos tres
+commits distintos y no relacionados entre sí (los dos primeros ya se
+habían corregido por separado; esta es la tercera vez que aparece), justo
+el tipo de fallo que la regla de "3+ rondas → guardar la lección" de
+`CLAUDE.md` pide registrar aunque no sea un hook.
+
+**Corrección:** se añadió `graphify-out/.pending_changes` como patrón
+explícito en `.gitignore`, en vez de intentar ampliar `.graphify_*` para
+cubrirlo (el nombre real no lleva ese prefijo). Si vuelve a aparecer un
+archivo transitorio de graphify sin cubrir, revisar primero
+`graphify-out/` completo contra lo que graphify diga que genera, en vez
+de asumir que el patrón `.graphify_*` ya lo cubre todo.
+
+---
+
 ## 2026-08-23 — 7 skills más de JuliusBrussee/caveman: activadas
 
 **Nota sobre cómo se activó:** a petición explícita de Angel, tras
