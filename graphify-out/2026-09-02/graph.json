@@ -23084,14 +23084,14 @@
       "source_location": "L1"
     },
     {
-      "id": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_acceso_de_red_a_dominios_usal_boe_importante_para_la_sesi\u00f3n_que_retome_esto",
-      "label": "Acceso de red a dominios USAL/BOE (importante para la sesi\u00f3n que retome esto)",
+      "id": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_acceso_de_red_a_dominios_usal_boe_auip_importante_para_la_sesi\u00f3n_que_retome_esto",
+      "label": "Acceso de red a dominios USAL/BOE/AUIP (importante para la sesi\u00f3n que retome esto)",
       "_origin": "ast",
       "community": 106,
       "community_name": "Becas y tr\u00e1mites de admisi\u00f3n \u2014 MUSI 2026/2027",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "acceso de red a dominios usal/boe (importante para la sesion que retome esto)",
+      "norm_label": "acceso de red a dominios usal/boe/auip (importante para la sesion que retome esto)",
       "source_file": "master-sistemas-inteligentes/admision-y-becas/becas-y-tramites-2026-2027.md",
       "source_location": "L189"
     },
@@ -23168,16 +23168,16 @@
       "source_location": "L128"
     },
     {
-      "id": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_pendiente_de_verificar_acceso_a_boe_es_sigue_bloqueado_en_toda_sesi\u00f3n_probada",
-      "label": "Pendiente de verificar \u2014 acceso a boe.es sigue bloqueado en toda sesi\u00f3n probada",
+      "id": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_pendiente_de_verificar_acceso_a_boe_es_y_ahora_tambi\u00e9n_auip_org_sigue_bloqueado_en_toda_sesi\u00f3n_probada",
+      "label": "Pendiente de verificar \u2014 acceso a boe.es (y ahora tambi\u00e9n auip.org) sigue bloqueado en toda sesi\u00f3n probada",
       "_origin": "ast",
       "community": 106,
       "community_name": "Becas y tr\u00e1mites de admisi\u00f3n \u2014 MUSI 2026/2027",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "pendiente de verificar \u2014 acceso a boe.es sigue bloqueado en toda sesion probada",
+      "norm_label": "pendiente de verificar \u2014 acceso a boe.es (y ahora tambien auip.org) sigue bloqueado en toda sesion probada",
       "source_file": "master-sistemas-inteligentes/admision-y-becas/becas-y-tramites-2026-2027.md",
-      "source_location": "L269"
+      "source_location": "L302"
     },
     {
       "id": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_redactados_pendientes_de_enviar_a_la_espera_de_confirmaci\u00f3n_del_alumno",
@@ -23192,16 +23192,16 @@
       "source_location": "L158"
     },
     {
-      "id": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_resuelto_en_sesi\u00f3n_del_2026_09_02_puntos_1_4",
-      "label": "Resuelto en sesi\u00f3n del 2026-09-02 (puntos 1-4)",
+      "id": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_resuelto_en_sesi\u00f3n_del_2026_09_02_puntos_1_5",
+      "label": "Resuelto en sesi\u00f3n del 2026-09-02 (puntos 1-5)",
       "_origin": "ast",
       "community": 106,
       "community_name": "Becas y tr\u00e1mites de admisi\u00f3n \u2014 MUSI 2026/2027",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "resuelto en sesion del 2026-09-02 (puntos 1-4)",
+      "norm_label": "resuelto en sesion del 2026-09-02 (puntos 1-5)",
       "source_file": "master-sistemas-inteligentes/admision-y-becas/becas-y-tramites-2026-2027.md",
-      "source_location": "L205"
+      "source_location": "L208"
     },
     {
       "id": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_texto_oficial_de_la_convocatoria_documento_firmado_aportado_por_angel",
@@ -100688,25 +100688,25 @@
       "weight": 1.0
     },
     {
-      "source": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_acceso_de_red_a_dominios_usal_boe_importante_para_la_sesi\u00f3n_que_retome_esto",
-      "target": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_resuelto_en_sesi\u00f3n_del_2026_09_02_puntos_1_4",
+      "source": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_acceso_de_red_a_dominios_usal_boe_auip_importante_para_la_sesi\u00f3n_que_retome_esto",
+      "target": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_resuelto_en_sesi\u00f3n_del_2026_09_02_puntos_1_5",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/admision-y-becas/becas-y-tramites-2026-2027.md",
-      "source_location": "L205",
+      "source_location": "L208",
       "weight": 1.0
     },
     {
-      "source": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_acceso_de_red_a_dominios_usal_boe_importante_para_la_sesi\u00f3n_que_retome_esto",
-      "target": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_pendiente_de_verificar_acceso_a_boe_es_sigue_bloqueado_en_toda_sesi\u00f3n_probada",
+      "source": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_acceso_de_red_a_dominios_usal_boe_auip_importante_para_la_sesi\u00f3n_que_retome_esto",
+      "target": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_pendiente_de_verificar_acceso_a_boe_es_y_ahora_tambi\u00e9n_auip_org_sigue_bloqueado_en_toda_sesi\u00f3n_probada",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/admision-y-becas/becas-y-tramites-2026-2027.md",
-      "source_location": "L269",
+      "source_location": "L302",
       "weight": 1.0
     },
     {
@@ -100744,7 +100744,7 @@
     },
     {
       "source": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_becas_y_tr\u00e1mites_de_admisi\u00f3n_musi_2026_2027",
-      "target": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_acceso_de_red_a_dominios_usal_boe_importante_para_la_sesi\u00f3n_que_retome_esto",
+      "target": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_acceso_de_red_a_dominios_usal_boe_auip_importante_para_la_sesi\u00f3n_que_retome_esto",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -106401,5 +106401,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "529b8885b04c09e4dba6aabe1b74004eae4b0411"
+  "built_at_commit": "5250afbe735e160a9b18d9c4dc973b9dc76dff2c"
 }
