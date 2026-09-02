@@ -39,7 +39,7 @@ Moscú.
 - Periodo: septiembre 2021 – junio 2026 (programa completo)
 - Nota media del expediente: **4,96/5** según la справка oficial de
   acceso a la magistratura (el CV del candidato la redondea a 4,98/5)
-- Titulación obtenida: **Diploma de Especialista con Distinción**
+- Titulación obtenida: **Diploma de Especialista con Honores**
   (`ДИПЛОМ СПЕЦИАЛИСТА С ОТЛИЧИЕМ`), serie 107704 № 0468100,
   expedido el 30/06/2026
 - Cualificación conferida: **Ingeniero ferroviario**
