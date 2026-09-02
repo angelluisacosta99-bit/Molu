@@ -1,16 +1,16 @@
-# Graph Report - Molu  (2026-09-02)
+# Graph Report - Molu  (2026-09-01)
 
 ## Corpus Check
-- 241 files · ~1,045,424 words
+- 224 files · ~833,181 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2982 nodes · 6297 edges · 194 communities (170 shown, 24 thin omitted)
+- 2836 nodes · 6168 edges · 177 communities (153 shown, 24 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 121 edges (avg confidence: 0.84)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `26401680`
+- Built from commit: `a6744418`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -62,7 +62,7 @@
 - resolveLengthPx
 - onAnnotDown
 - createLiveBrowserSessionState
-- normalizeWorkspacePattern
+- discoverTargetCandidates
 - createLiveBrowserDomHelpers
 - sampleCssBackground
 - Critique Reference (Design Review)
@@ -90,7 +90,7 @@
 - Craft Flow Reference
 - Init Reference (Project Setup)
 - postSerializedFindings
-- readWorkspacePatterns
+- resolveContext
 - isScreenReaderOnlyTextStyle
 - graphify: Incremental Update & Cluster-only
 - Impeccable: Polish
@@ -191,24 +191,7 @@
 - Ejercicios
 - Ejercicios
 - Ejercicios
-- Ejercicios
-- Ejercicios
-- Ejercicios
-- Ejercicios
-- Ejercicios
-- Ejercicios
-- Ejercicios
-- Ejercicios
-- Ejercicios
-- Ejercicios
-- Ejercicios
-- discoverTargetCandidates
-- Ejercicios
-- Ejercicios
-- Ejercicios
-- Ejercicios
-- Ejercicios
-- Ejercicios
+- resolveCandidateContextSummary
 
 ## God Nodes (most connected - your core abstractions)
 1. `initGlobalBar()` - 29 edges
@@ -237,7 +220,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (194 total, 24 thin omitted)
+## Communities (177 total, 24 thin omitted)
 
 ### Community 0 - "live-browser.js"
 Cohesion: 0.03
@@ -264,8 +247,8 @@ Cohesion: 0.08
 Nodes (49): actionLabel(), applyConfigureBarChrome(), bindConfigureCountPillTooltip(), bindConfigureInlineControlHover(), bindConfigureModifierPillHover(), buildConfigureActionControl(), buildConfigureCountControl(), buildConfigureRow() (+41 more)
 
 ### Community 6 - "manual-apply.mjs"
-Cohesion: 0.09
-Nodes (49): addOpToManualApplyChunk(), APPLY_EVENT_HARD_TIMEOUT_MS, APPLY_EVENT_SOFT_DEADLINE_MS, buildManualApplyAgentAction(), clearManualApplyTransaction(), collectManualApplyFiles(), compactManualApplyBatch(), compactManualApplyCandidates() (+41 more)
+Cohesion: 0.08
+Nodes (53): addOpToManualApplyChunk(), APPLY_EVENT_HARD_TIMEOUT_MS, APPLY_EVENT_SOFT_DEADLINE_MS, buildManualApplyAgentAction(), clearManualApplyTransaction(), collectManualApplyFiles(), compactManualApplyBatch(), compactManualApplyCandidates() (+45 more)
 
 ### Community 7 - "setLiveState"
 Cohesion: 0.10
@@ -292,8 +275,8 @@ Cohesion: 0.09
 Nodes (47): applyLegacyDeferredAcceptsOnStartup(), appendCssToSvelteStyle(), appendSanitizedCssRule(), applyDeferredSvelteComponentAccepts(), bakeParamValuesInCss(), buildInsertVariantStub(), buildPropContract(), buildPropsScript() (+39 more)
 
 ### Community 13 - "detect-url.mjs"
-Cohesion: 0.14
-Nodes (26): detectUrl(), runVisualContrastFallback(), serializeDesignSystemForBrowser(), runRegexMatchers(), captureVisualContrastCandidate(), compareScreenshotContrast(), sanitizeScreenshotClip(), finding() (+18 more)
+Cohesion: 0.15
+Nodes (25): detectUrl(), runVisualContrastFallback(), serializeDesignSystemForBrowser(), runRegexMatchers(), captureVisualContrastCandidate(), compareScreenshotContrast(), sanitizeScreenshotClip(), finding() (+17 more)
 
 ### Community 14 - "hook-lib.mjs"
 Cohesion: 0.07
@@ -305,7 +288,7 @@ Nodes (48): armPageChatForTyping(), attachSteerFocusDebug(), attachSteerFocusGua
 
 ### Community 16 - "live-inject.mjs"
 Cohesion: 0.09
-Nodes (41): appendOriginToDirective(), buildTagBlock(), commentClose(), commentOpen(), CONFIG_PATH, detectLineEnding(), __dirname, ensureLiveGitIgnores() (+33 more)
+Nodes (43): appendOriginToDirective(), buildTagBlock(), commentClose(), commentOpen(), CONFIG_PATH, detectLineEnding(), __dirname, ensureLiveGitIgnores() (+35 more)
 
 ### Community 17 - "detect-antipatterns-browser.js"
 Cohesion: 0.08
@@ -349,11 +332,11 @@ Nodes (33): buildColor(), CANONICAL_SECTIONS, collectBullets(), collectColorValu
 
 ### Community 27 - "detect-antipatterns.mjs"
 Cohesion: 0.07
-Nodes (50): confirm(), detectCli(), formatFindings(), formatFindingSummary(), handleStdin(), printUsage(), createBrowserDetector(), CSS_IN_JS_EXTENSIONS (+42 more)
+Nodes (51): confirm(), detectCli(), formatFindings(), formatFindingSummary(), handleStdin(), printUsage(), createBrowserDetector(), CSS_IN_JS_EXTENSIONS (+43 more)
 
 ### Community 28 - "live-accept.mjs"
-Cohesion: 0.15
-Nodes (30): acceptCli(), argVal(), buildCarbonizeReplacement(), decodeHtmlAttr(), deindentContent(), detectCommentSyntax(), escapeRegExp(), expandReplaceRange() (+22 more)
+Cohesion: 0.14
+Nodes (32): acceptCli(), argVal(), buildCarbonizeReplacement(), decodeHtmlAttr(), deindentContent(), detectCommentSyntax(), escapeRegExp(), expandReplaceRange() (+24 more)
 
 ### Community 29 - "live-copy-edit-agent.mjs"
 Cohesion: 0.14
@@ -380,16 +363,16 @@ Cohesion: 0.12
 Nodes (25): bumpEditCount(), clampGroupedToBudget(), clampToBudget(), dedupeAgainstCache(), depthIsSet(), directiveFooter(), ensureFile(), ensureSession() (+17 more)
 
 ### Community 35 - "manual-edit-routes.mjs"
-Cohesion: 0.15
-Nodes (24): scrubManualEditsAgainstFile(), scrubManualEditsAgainstOriginalBlock(), clearAppliedEntries(), args, buffer, cwd, pageUrlFilter, remaining (+16 more)
+Cohesion: 0.19
+Nodes (19): clearAppliedEntries(), args, buffer, cwd, pageUrlFilter, remaining, buildManualEditEvidence(), createManualEditRoutes() (+11 more)
 
 ### Community 36 - "live-manual-edit-evidence.mjs"
 Cohesion: 0.15
-Nodes (26): analyzeSourceHint(), buildCandidatesForOp(), buildContextHintsByRef(), buildManualEditEvidence(), collectSearchFiles(), countOps(), decodeBasicHtml(), escapeRegExp() (+18 more)
+Nodes (25): analyzeSourceHint(), buildCandidatesForOp(), buildContextHintsByRef(), collectSearchFiles(), countOps(), decodeBasicHtml(), escapeRegExp(), findContextMatches() (+17 more)
 
 ### Community 37 - "context.mjs"
-Cohesion: 0.11
-Nodes (29): buildUpdateDirective(), compareSemver(), computeUpdateDirective(), contextSourcePath(), contextSourceStatus(), DESIGN_NAMES, FALLBACK_DIRS, fetchLatestSkillVersion() (+21 more)
+Cohesion: 0.13
+Nodes (23): buildUpdateDirective(), compareSemver(), computeUpdateDirective(), DESIGN_NAMES, FALLBACK_DIRS, fetchLatestSkillVersion(), MONOREPO_FALLBACK_PROJECT_DIRS, MONOREPO_MARKER_FILES (+15 more)
 
 ### Community 38 - "handleManualEditActivity"
 Cohesion: 0.18
@@ -423,9 +406,9 @@ Nodes (17): beginEditPin(), buildAnnotationsForCapture(), buildPinElement(), can
 Cohesion: 0.20
 Nodes (14): createLiveBrowserSessionState(), clearHandled(), clearScrollY(), clearSession(), isHandled(), loadSession(), markHandled(), nextCheckpointRevision() (+6 more)
 
-### Community 47 - "normalizeWorkspacePattern"
-Cohesion: 0.33
-Nodes (9): escapeRegExp(), isExcludedByWorkspacePattern(), nearestProjectLikeRoot(), normalizeWorkspacePattern(), projectRootFromDoubleStarPattern(), projectRootFromWorkspacePattern(), resolveWorkspaceProjectRoot(), segmentMatches() (+1 more)
+### Community 47 - "discoverTargetCandidates"
+Cohesion: 0.20
+Nodes (16): directChildDirs(), discoverRootsForPattern(), discoverTargetCandidates(), escapeRegExp(), expandSimplePattern(), findTargetExample(), hasFallbackWorkspaceChildren(), isExcludedByWorkspacePattern() (+8 more)
 
 ### Community 48 - "createLiveBrowserDomHelpers"
 Cohesion: 0.17
@@ -468,8 +451,8 @@ Cohesion: 0.23
 Nodes (12): buildInsertPlaceholderSnapshotFromDom(), buildPickedAnchorSnapshot(), captureAndEmit(), checkpointPayload(), extractContext(), handleGo(), handleInsertCreate(), maybePrefetchPage() (+4 more)
 
 ### Community 58 - "live.mjs"
-Cohesion: 0.26
-Nodes (13): loadContext(), resolveTargetSelection(), safeRead(), __dirname, ensureServerRunning(), globToRegex(), globToRegex(), resolveFiles() (+5 more)
+Cohesion: 0.32
+Nodes (11): loadContext(), resolveTargetSelection(), safeRead(), __dirname, ensureServerRunning(), globToRegex(), liveCli(), missingLiveContext() (+3 more)
 
 ### Community 59 - "readConfig"
 Cohesion: 0.18
@@ -531,9 +514,9 @@ Nodes (9): Document Reference (DESIGN.md Generation), .impeccable/design.json Si
 Cohesion: 0.25
 Nodes (9): buildSelectorSegment(), generateSelector(), isElementHidden(), isLikelyHashedClass(), postSerializedFindings(), renderBrowserFindings(), scanResultMeta(), serializeFindings() (+1 more)
 
-### Community 75 - "readWorkspacePatterns"
+### Community 75 - "resolveContext"
 Cohesion: 0.20
-Nodes (12): findMonorepoRoot(), hasFallbackWorkspaceChildren(), hasGitBoundary(), isMonorepoRoot(), parseYamlFlowList(), readJson(), readLernaWorkspaces(), readPackageWorkspaces() (+4 more)
+Nodes (12): findMonorepoRoot(), firstExisting(), hasGitBoundary(), isCandidateProjectRoot(), nearestProjectLikeRoot(), resolveContext(), resolveContextDir(), resolveEnvContextDir() (+4 more)
 
 ### Community 76 - "isScreenReaderOnlyTextStyle"
 Cohesion: 0.32
@@ -847,97 +830,29 @@ Nodes (6): 1. Mi novio lleva corbata, Ej. 1 — Busca el nombre de esta ropa en 
 Cohesion: 0.33
 Nodes (5): 1. ¿Cuánto cuestan estos zapatos?, Ej. 1 — Completa estas conversaciones con las palabras que faltan, Ej. 2 — Completa con el pronombre de objeto directo, Ej. 3 — Completa las frases con los pronombres del recuadro, Ejercicios
 
-### Community 176 - "Ejercicios"
-Cohesion: 0.17
-Nodes (11): 1. ¿Qué hora es?, Ej. 1 — Escribe la hora correcta debajo de cada reloj, Ej. 2 — Completa, Ej. 3 — Escucha a esta persona hablar de los horarios de su país y escribe la hora, Ej. 4 — Escribe sobre los horarios en tu país, Ej. 5 — Lee el texto y señala verdadero o falso, Ej. 6 — Ordena las frases, Ej. 7 — Escucha y completa los datos (+3 more)
-
-### Community 177 - "Ejercicios"
-Cohesion: 0.17
-Nodes (11): 1. Practica más 1, Ej. 1 — Completa las tablas: trabajar, comer, vivir, Ej. 2 — Completa las tablas: tener, ser, Ej. 3 — Completa las frases con uno de los verbos del ejercicio anterior, Ej. 4 — Escribe en la columna correspondiente, Ej. 5 — Escribe las preguntas, Ej. 6 — Escribe el plural de estos nombres, Ej. 7 — Completa con el posesivo adecuado (+3 more)
-
-### Community 178 - "Ejercicios"
-Cohesion: 0.17
-Nodes (11): 1. Practica más 2, Ej. 1 — Relaciona, Ej. 2 — Escribe la forma correspondiente, Ej. 3 — Completa con el verbo entre paréntesis en la forma adecuada, Ej. 4 — Completa con las preposiciones, Ej. 5 — Completa las frases con información verdadera sobre ti, Ej. 6 — Relaciona, Ej. 7 — Completa la tabla (+3 more)
-
-### Community 179 - "Ejercicios"
-Cohesion: 0.18
-Nodes (10): 1. Interiores, Ej. 1 — ¿En qué parte de la casa pueden estar las siguientes cosas?, Ej. 2 — Completa los huecos con el artículo determinado (el / la / los / las), Ej. 3 — Completa los huecos con el artículo indeterminado (un / una / unos / unas), Ej. 4 — Completa los huecos con el artículo determinado o indeterminado correspondiente, Ej. 5 — Ordena las siguientes frases, Ej. 6 — Completa las frases con: hay · está · están · tiene · tienen, Ej. 7 — Escucha a Carmen hablar de su casa y di si las frases son verdaderas o falsas. Corrige las falsas (+2 more)
-
-### Community 180 - "Ejercicios"
-Cohesion: 0.20
-Nodes (9): 1. ¿Cuál es tu número de móvil?, Ej. 1 — Relaciona los números con su transcripción en letras, Ej. 2 — Escribe los números de teléfono, Ej. 3 — Completa, Ej. 4 — Escucha y completa las fichas, Ej. 5 — Completa la tarjeta con tus datos, Ej. 6 — Completa con la información correspondiente a las fichas, Ej. 7 — Completa con los verbos del recuadro (+1 more)
-
-### Community 181 - "Ejercicios"
-Cohesion: 0.22
-Nodes (8): 1. ¡Encantado!, Ej. 1 — Relaciona, Ej. 2 — Escribe las preguntas, Ej. 3 — Completa la tabla, Ej. 4 — Completa los diálogos con los elementos del recuadro, Ej. 5 — Completa la tabla, Ej. 6 — Escribe los nombres que se deletrean, Ejercicios
-
-### Community 182 - "Ejercicios"
-Cohesion: 0.22
-Nodes (8): 1. Rosa se levanta a las siete, Ej. 1 — Forma frases, Ej. 2 — Completa con la preposición adecuada, Ej. 3 — Relaciona, Ej. 4 — Completa la tabla, Ej. 5 — Busca en la sopa de letras estas formas verbales, Ej. 6 — Completa con el verbo en presente, Ejercicios
-
-### Community 183 - "Ejercicios"
-Cohesion: 0.22
-Nodes (8): 1. ¿Estudias o trabajas?, Ej. 1 — Une las fichas y encontrarás los días de la semana, Ej. 2 — Relaciona las imágenes con las profesiones, Ej. 3 — Relaciona, Ej. 4 — Escribe algunas frases sobre estas personas, Ej. 5 — Nuria vive en Granada con su hija. Mira los dibujos y escribe frases sobre su vida, Ej. 6 — Completa el texto con las palabras del recuadro, Ejercicios
-
-### Community 184 - "Ejercicios"
-Cohesion: 0.25
-Nodes (7): 1. ¿A qué te dedicas?, Ej. 1 — Busca en esta sopa de letras los nombres de ocho profesionales, Ej. 2 — Forma frases, como en el modelo, Ej. 3 — Completa la tabla, Ej. 4 — Completa las frases con tener o ser, Ej. 5 — Forma frases tomando un elemento de cada columna, Ejercicios
-
-### Community 185 - "Ejercicios"
-Cohesion: 0.25
-Nodes (7): 1. ¿Te gusta el cine?, Ej. 1 — Observa las habitaciones de Carmen y de Pablo. ¿Qué actividades les gusta realizar en su tiempo libre?, Ej. 2 — ¿Qué aficiones compartes y no compartes con Pablo y Carmen?, Ej. 3 — Ordena las siguientes preguntas. Después, contéstalas, Ej. 4 — Escribe frases con el verbo "gustar" y expresa tus gustos como en el ejemplo, Ej. 5 — Reacciona según tus gustos, Ejercicios
-
-### Community 186 - "Ejercicios"
-Cohesion: 0.25
-Nodes (7): 1. Receta del Caribe, Ej. 1 — Completa la tabla con el imperativo de los verbos, Ej. 2 — Completa la receta con el imperativo de los verbos del recuadro, Ej. 3 — Completa las frases con el imperativo de los verbos entre paréntesis, Ej. 4 — Clasifica estos platos en la carta del Menú, Ej. 5 — Lee y escucha el siguiente texto y contesta a las preguntas, Ejercicios
-
-### Community 187 - "discoverTargetCandidates"
-Cohesion: 0.43
-Nodes (7): directChildDirs(), discoverRootsForPattern(), discoverTargetCandidates(), expandSimplePattern(), findTargetExample(), isIgnoredWorkspaceDiscoveryDir(), walkDirs()
-
-### Community 188 - "Ejercicios"
-Cohesion: 0.29
-Nodes (6): 1. ¿Estás casado?, Ej. 1 — Relaciona, Ej. 2 — Completa la descripción de las familias con el verbo ser, tener o llamarse, Ej. 3 — Mira el árbol genealógico y completa las frases, Ej. 4 — Escribe el plural, Ejercicios
-
-### Community 189 - "Ejercicios"
-Cohesion: 0.29
-Nodes (6): 1. ¿Qué desayunas?, Ej. 1 — Cuatro personas están en una cafetería. Escucha y completa qué desayuna cada uno, Ej. 2 — Relaciona las palabras de la columna de la izquierda con las de la derecha, Ej. 3 — Responde a las siguientes preguntas, Ej. 4 — Completa con g o gu, Ejercicios
-
-### Community 190 - "Ejercicios"
+### Community 176 - "resolveCandidateContextSummary"
 Cohesion: 0.33
-Nodes (5): 1. ¿Dónde están mis gafas?, Ej. 1 — Encuentra el nombre de los objetos en la sopa de letras, Ej. 2 — Esta es la clase de idiomas, pero el profesor no está, Ej. 3 — Sigue el modelo, Ejercicios
-
-### Community 191 - "Ejercicios"
-Cohesion: 0.33
-Nodes (5): 1. ¿Dónde vives?, Ej. 1 — Mira las fotos y escribe debajo en qué lugar de la casa están, Ej. 2 — ¿En qué piso vive cada personaje?, Ej. 3 — Lee el anuncio de venta de pisos y completa las frases, Ejercicios
-
-### Community 192 - "Ejercicios"
-Cohesion: 0.33
-Nodes (5): 1. Visita a Córdoba, Ej. 1 — Pon las siguientes frases en un orden lógico, Ej. 2 — ¿Qué se dice en estas situaciones?, Ej. 3 — Lee el correo de María y contesta a las preguntas, Ejercicios
-
-### Community 193 - "Ejercicios"
-Cohesion: 0.33
-Nodes (5): 1. Comer fuera de casa, Ej. 1 — Mira los dibujos y escribe las comidas favoritas de Amalia y Juan, Ej. 2 — Localiza la palabra que no pertenece a su grupo, Ej. 3 — Ordena las frases y completa la conversación en el restaurante, Ejercicios
+Nodes (6): contextSourcePath(), contextSourceStatus(), isPathInside(), isPathInsideOrEqual(), nearestPackageRootBetween(), resolveCandidateContextSummary()
 
 ## Knowledge Gaps
-- **652 isolated node(s):** `Ej. 1 — Relaciona`, `Ej. 2 — Escribe las preguntas`, `Ej. 3 — Completa la tabla`, `Ej. 4 — Completa los diálogos con los elementos del recuadro`, `Ej. 5 — Completa la tabla` (+647 more)
+- **557 isolated node(s):** `Ej. 1 — Relaciona las frases y completa con el pretérito imperfecto`, `Ej. 2 — Completa las frases con el pretérito imperfecto de los verbos del recuadro`, `Ej. 3 — Completa la siguiente entrevista con el pretérito imperfecto de los verbos entre paréntesis`, `Ej. 4 — Vuelve a leer la entrevista con Marcos y contesta a las preguntas`, `HEADING_TAGS` (+552 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **24 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `createManualApplyController()` connect `manual-apply.mjs` to `live-server.mjs`?**
+- **Why does `readLiveServerInfo()` connect `readLiveServerInfo` to `impeccable-paths.mjs`, `live-poll.mjs`, `live.mjs`, `live-server.mjs`?**
   _High betweenness centrality (0.004) - this node is a cross-community bridge._
-- **Why does `enableInlineEdit()` connect `live-browser.js` to `createLiveBrowserDomHelpers`, `setLiveState`?**
+- **Why does `readBuffer()` connect `manual-edit-routes.mjs` to `live-manual-edit-evidence.mjs`, `manual-apply.mjs`, `live-commit-manual-edits.mjs`, `live-wrap.mjs`, `live-accept.mjs`?**
   _High betweenness centrality (0.003) - this node is a cross-community bridge._
+- **Why does `loadContext()` connect `live.mjs` to `context.mjs`, `live-server.mjs`, `resolveContext`, `context-signals.mjs`, `cli`?**
+  _High betweenness centrality (0.002) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `initGlobalBar()` (e.g. with `hideAgentPollTooltip()` and `onDetectMessage()`) actually correct?**
   _`initGlobalBar()` has 7 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `Ej. 1 — Relaciona`, `Ej. 2 — Escribe las preguntas`, `Ej. 3 — Completa la tabla` to the rest of the system?**
-  _652 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `Ej. 1 — Relaciona las frases y completa con el pretérito imperfecto`, `Ej. 2 — Completa las frases con el pretérito imperfecto de los verbos del recuadro`, `Ej. 3 — Completa la siguiente entrevista con el pretérito imperfecto de los verbos entre paréntesis` to the rest of the system?**
+  _557 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `live-browser.js` be split into smaller, more focused modules?**
   _Cohesion score 0.028169014084507043 - nodes in this community are weakly interconnected._
 - **Should `checks.mjs` be split into smaller, more focused modules?**
-  _Cohesion score 0.04358974358974359 - nodes in this community are weakly interconnected._
-- **Should `index.mjs` be split into smaller, more focused modules?**
-  _Cohesion score 0.06142410015649452 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.04377289377289377 - nodes in this community are weakly interconnected._

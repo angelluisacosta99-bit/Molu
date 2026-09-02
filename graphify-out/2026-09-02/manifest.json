@@ -702,9 +702,9 @@
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/README.md": {
-    "mtime": 1788378589.984024,
-    "seen": 1788378631.4788768,
-    "ast_hash": "d432943eac8b7627a0d8d847211ec539",
+    "mtime": 1788290856.4670258,
+    "seen": 1788290947.0914078,
+    "ast_hash": "7d27e52e6eefbf9d5f30a9f099e9777c",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad6a_como-se-va-a-goya.md": {
@@ -846,15 +846,15 @@
     "semantic_hash": "64aea90e57ba88187f9bd9f56c6fab03"
   },
   "docencia-espanol/materiales/codigos-acceso.html": {
-    "mtime": 1788378321.2360277,
-    "seen": 1788378631.4790387,
-    "ast_hash": "287c5ae4809db00e84f97f0804640f99",
+    "mtime": 1788273317.3124664,
+    "seen": 1788273344.3376045,
+    "ast_hash": "504fc936397fef235c7a41209048bee4",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/indice-clases-de-espanol.html": {
-    "mtime": 1788378265.1320286,
-    "seen": 1788378631.47904,
-    "ast_hash": "1f6db62a415ee01cb75f9fd5e7ee60b6",
+    "mtime": 1788273447.972474,
+    "seen": 1788290947.0914803,
+    "ast_hash": "79946c1f76a76992d7f065b02b1cc39e",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/quizlet/nuevo-espanol-en-marcha-1_unidad1.md": {
@@ -1953,210 +1953,6 @@
     "mtime": 1788273291.1164649,
     "seen": 1788273344.3375874,
     "ast_hash": "4aeca290a8d857a85cb6d30b53752740",
-    "semantic_hash": ""
-  },
-  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad1a_encantado.md": {
-    "mtime": 1788378418.2560265,
-    "seen": 1788378631.4788857,
-    "ast_hash": "2cb1bab04aa68cab32ed18b4a466aed4",
-    "semantic_hash": ""
-  },
-  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad1b_a-que-te-dedicas.md": {
-    "mtime": 1788378421.2720263,
-    "seen": 1788378631.478887,
-    "ast_hash": "d91176002e20e63a2465a023998975a7",
-    "semantic_hash": ""
-  },
-  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad1c_cual-es-tu-numero-de-movil.md": {
-    "mtime": 1788378424.3280263,
-    "seen": 1788378631.4788888,
-    "ast_hash": "d1dcd95e5d13711552a1e1e761ccb7f2",
-    "semantic_hash": ""
-  },
-  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad2a_estas-casado.md": {
-    "mtime": 1788378463.7360258,
-    "seen": 1788378631.4788902,
-    "ast_hash": "e9335fe3dd93b8e520558e0158b565b4",
-    "semantic_hash": ""
-  },
-  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad2b_donde-estan-mis-gafas.md": {
-    "mtime": 1788378466.5960257,
-    "seen": 1788378631.4788914,
-    "ast_hash": "d579cbaa0723b95eb25e300518cb039f",
-    "semantic_hash": ""
-  },
-  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad2c_que-hora-es.md": {
-    "mtime": 1788378469.8240256,
-    "seen": 1788378631.4788923,
-    "ast_hash": "00c49dfcc62f2ede94962924115e1175",
-    "semantic_hash": ""
-  },
-  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad3a_rosa-se-levanta-a-las-siete.md": {
-    "mtime": 1788378495.7960253,
-    "seen": 1788378631.4788933,
-    "ast_hash": "87b004c7ec6802e80a74eeded0a63bd5",
-    "semantic_hash": ""
-  },
-  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad3b_estudias-o-trabajas.md": {
-    "mtime": 1788378498.8360252,
-    "seen": 1788378631.4788942,
-    "ast_hash": "ee1cce9fff95764d60a360a503085411",
-    "semantic_hash": ""
-  },
-  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad3c_que-desayunas.md": {
-    "mtime": 1788378501.7120254,
-    "seen": 1788378631.4788954,
-    "ast_hash": "a3e1eb1fb943b6609c4bb6cf57ff3bbc",
-    "semantic_hash": ""
-  },
-  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad4a_donde-vives.md": {
-    "mtime": 1788378504.7160254,
-    "seen": 1788378631.4788966,
-    "ast_hash": "bdd1081e40f7a26aa5ce30ec355c9c25",
-    "semantic_hash": ""
-  },
-  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad4b_interiores.md": {
-    "mtime": 1788378507.9160252,
-    "seen": 1788378631.4788978,
-    "ast_hash": "2dd3c1adc4af4d69e5df565b3efccace",
-    "semantic_hash": ""
-  },
-  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad4c_visita-a-cordoba.md": {
-    "mtime": 1788378510.776025,
-    "seen": 1788378631.4788992,
-    "ast_hash": "1e04260b5ca6dcae395b04ad34e24002",
-    "semantic_hash": ""
-  },
-  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad5a_comer-fuera-de-casa.md": {
-    "mtime": 1788378533.4440248,
-    "seen": 1788378631.4789002,
-    "ast_hash": "e4d7df977e64c5798441866127218222",
-    "semantic_hash": ""
-  },
-  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad5b_te-gusta-el-cine.md": {
-    "mtime": 1788378536.3640249,
-    "seen": 1788378631.4789011,
-    "ast_hash": "f8ec81c93c1b3bbffd735d6e1dfdf615",
-    "semantic_hash": ""
-  },
-  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad5c_receta-del-caribe.md": {
-    "mtime": 1788378539.3960247,
-    "seen": 1788378631.4789026,
-    "ast_hash": "f28275f208c7ae4ab0effc1622cc15a2",
-    "semantic_hash": ""
-  },
-  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/practica-mas-1_unidades-1-2.md": {
-    "mtime": 1788378473.0040257,
-    "seen": 1788378631.4789255,
-    "ast_hash": "1025113cb94ddea2586ca52f71394dcd",
-    "semantic_hash": ""
-  },
-  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/practica-mas-2_unidades-3-4.md": {
-    "mtime": 1788378513.9560251,
-    "seen": 1788378631.4789357,
-    "ast_hash": "d4c3f36f27274615105f9d8cfc9e9871",
-    "semantic_hash": ""
-  },
-  "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-practica-mas-1_interactivo.html": {
-    "mtime": 1788378149.6478858,
-    "seen": 1788378631.4789662,
-    "ast_hash": "9fe1278d65a8fb61537cf87c7e715fcd",
-    "semantic_hash": ""
-  },
-  "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-practica-mas-2_interactivo.html": {
-    "mtime": 1788378149.663146,
-    "seen": 1788378631.4789677,
-    "ast_hash": "6162b8cea66fe2b71ea93fbfa48b13f2",
-    "semantic_hash": ""
-  },
-  "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad1a_encantado_interactivo.html": {
-    "mtime": 1788378149.6346729,
-    "seen": 1788378631.4789784,
-    "ast_hash": "b5427ae62c11d367c7e52810c87afef0",
-    "semantic_hash": ""
-  },
-  "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad1b_a-que-te-dedicas_interactivo.html": {
-    "mtime": 1788378149.6369736,
-    "seen": 1788378631.4789796,
-    "ast_hash": "222ec47a7f39778dd3099ea4af01643d",
-    "semantic_hash": ""
-  },
-  "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad1c_cual-es-tu-numero-de-movil_interactivo.html": {
-    "mtime": 1788378149.6390834,
-    "seen": 1788378631.4789808,
-    "ast_hash": "608e7bbd17261e71f96a072654fedbc2",
-    "semantic_hash": ""
-  },
-  "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad2a_estas-casado_interactivo.html": {
-    "mtime": 1788378149.6412556,
-    "seen": 1788378631.478982,
-    "ast_hash": "a1bdde07a337fc730e04bb0e6df9eee2",
-    "semantic_hash": ""
-  },
-  "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad2b_donde-estan-mis-gafas_interactivo.html": {
-    "mtime": 1788378149.6434584,
-    "seen": 1788378631.478983,
-    "ast_hash": "9ef7eb5cd5ae981c086af6fd795c2204",
-    "semantic_hash": ""
-  },
-  "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad2c_que-hora-es_interactivo.html": {
-    "mtime": 1788378149.6456647,
-    "seen": 1788378631.4789839,
-    "ast_hash": "452acdf62fb09800b4fb65d96119c257",
-    "semantic_hash": ""
-  },
-  "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad3a_rosa-se-levanta-a-las-siete_interactivo.html": {
-    "mtime": 1788378149.6500752,
-    "seen": 1788378631.4789853,
-    "ast_hash": "1b225bbdb5b0b5313ddd6c00f0c4e290",
-    "semantic_hash": ""
-  },
-  "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad3b_estudias-o-trabajas_interactivo.html": {
-    "mtime": 1788378149.6524982,
-    "seen": 1788378631.4789863,
-    "ast_hash": "d66435c4a1760d7352a6d94eb66b0709",
-    "semantic_hash": ""
-  },
-  "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad3c_que-desayunas_interactivo.html": {
-    "mtime": 1788378149.6545935,
-    "seen": 1788378631.4789875,
-    "ast_hash": "65362f4382e9ff72ee6cd14dcf227a91",
-    "semantic_hash": ""
-  },
-  "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad4a_donde-vives_interactivo.html": {
-    "mtime": 1788378149.6560302,
-    "seen": 1788378631.478989,
-    "ast_hash": "eda530acabbb2627164102fedc0bb432",
-    "semantic_hash": ""
-  },
-  "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad4b_interiores_interactivo.html": {
-    "mtime": 1788378149.6589162,
-    "seen": 1788378631.4789898,
-    "ast_hash": "1ce78d92dc209e1de85f463498bf0a53",
-    "semantic_hash": ""
-  },
-  "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad4c_visita-a-cordoba_interactivo.html": {
-    "mtime": 1788378149.6610456,
-    "seen": 1788378631.4789908,
-    "ast_hash": "e900db13013d0846344a9725493d9089",
-    "semantic_hash": ""
-  },
-  "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad5a_comer-fuera-de-casa_interactivo.html": {
-    "mtime": 1788378149.665557,
-    "seen": 1788378631.4789922,
-    "ast_hash": "f538402377fab193dd3405246ee2f8d0",
-    "semantic_hash": ""
-  },
-  "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad5b_te-gusta-el-cine_interactivo.html": {
-    "mtime": 1788378149.6675947,
-    "seen": 1788378631.4789937,
-    "ast_hash": "ed3d1376280fa0eb330b32adaf5ebc99",
-    "semantic_hash": ""
-  },
-  "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad5c_receta-del-caribe_interactivo.html": {
-    "mtime": 1788378149.6699502,
-    "seen": 1788378631.4789946,
-    "ast_hash": "b741fca58d53010c58b54a5b868d70b0",
     "semantic_hash": ""
   }
 }
