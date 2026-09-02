@@ -15,3 +15,12 @@ su trayectoria académica.
 referencia académica y profesional. Números de pasaporte, DNI/NIE,
 visado, domicilio particular y teléfono se quedan en Google Drive y no
 se versionan en este repositorio.
+
+**Formato de los CV (2026-09-02):** siguen las prácticas recomendadas
+por especialistas de selección y guías ATS actuales — orden
+estrictamente cronológico inverso dentro de cada sección (con la
+excepción, también recomendada para perfiles recién graduados, de que
+Formación académica va antes que Experiencia), una sola columna sin
+tablas ni gráficos, fuente estándar explícita (Calibri, antes no
+declarada), y tamaños de nombre/títulos/cuerpo dentro del rango
+recomendado (17 / 12,5 / 10 pt).
