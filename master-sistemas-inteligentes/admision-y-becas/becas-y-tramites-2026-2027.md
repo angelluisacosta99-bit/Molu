@@ -302,7 +302,7 @@ este ciclo" — sin poder confirmarlo con certeza por el bloqueo de red.
 El único paso fiable que queda es escribir directamente a
 `becas.master@auip.org` preguntando si Salamanca participa este año.
 
-### Pendiente de verificar por acceso directo — boe.es y auip.org siguen bloqueados en toda sesión probada (punto 6)
+### Pendiente de verificar por acceso directo — boe.es sigue bloqueado en toda sesión probada (punto 6)
 
 6. Texto literal del art. 4.1.d) del RD 1721/2007: **sigue bloqueado**,
    confirmado de nuevo en sesión del 2026-09-02 — tanto `www.boe.es`
@@ -312,7 +312,8 @@ El único paso fiable que queda es escribir directamente a
    refuerza que es un bloqueo de política de cuenta/organización, no
    algo que cambie de sesión a sesión (a diferencia del bloqueo de
    `becas.usal.es`/`bisite.usal.es` etc., que sí resultó ser por
-   sesión). Alternativas para una futura sesión: probar con
+   sesión). El mismo bloqueo aplica a `auip.org` (ver punto 5, arriba).
+   Alternativas para una futura sesión: probar con
    `agent-browser` (navegador con su propia salida de red, puede que no
    pase por el mismo proxy) en vez de `WebFetch`, o pedirle directamente
    a Angel que pegue el texto del artículo si lo consulta él desde su
