@@ -202,11 +202,11 @@ compartido entre sesiones**:
 - `empleo.usal.es` da **503 Service Unavailable** de forma persistente —
   esto es un problema del propio servidor de la USAL, no del proxy.
 
-### Resuelto en sesión del 2026-09-02 (puntos 1-3)
+### Resuelto en sesión del 2026-09-02 (puntos 1-4)
 
 Otra sesión logró acceso a `becas.usal.es`, `bisite.usal.es`,
 `mastersi.usal.es` y `reina.usal.es`. `www.boe.es` y sus tres espejos
-siguieron bloqueados — el punto 4 sigue pendiente.
+siguieron bloqueados — el punto 5 sigue pendiente.
 
 **1. Tablón de `becas.usal.es` — convocatorias vigentes 2026/2027:**
 
@@ -247,13 +247,37 @@ Documentación), sin bolsa de trabajo. El portal correcto sigue siendo
 ofrece prácticas académicas externas en empresas reales, orientación
 profesional (grupal e individual), un programa de mentoring con un
 profesional del mismo campo, y asesoramiento en emprendimiento. Otros
-recursos relacionados sin verificar aún: `spio.usal.es` (preinscripción y
-vida académica, no específicamente empleo), `transferencia.usal.es`, y
+recursos relacionados sin verificar aún: `transferencia.usal.es` y
 `alumni.usal.es/formacion-y-empleo/empleo/` (también dio 503).
 
-### Pendiente de verificar en una sesión con acceso a boe.es
+**4. `spio.usal.es` (Servicio de Promoción, Información y Orientación)
+— comprobado en sesión del 2026-09-02, resultado negativo pero
+concluyente:** no tiene ninguna sección propia de becas, ayudas
+económicas o financiación. Su contenido es orientación al acceso
+(PAU/EBAU), jornadas de puertas abiertas, preinscripción, oficina del
+estudiante y alojamiento/intercambio de idiomas. El único enlace con la
+palabra "ayuda" es "Ayuda Preinscripción" — asistencia con el trámite
+de preinscripción en sí, no económica. Angel llegó aquí porque
+`bintmaster@usal.es` lo remitió a SPIO como sitio para "otras becas o
+ayudas existentes en la USAL" que Relaciones Internacionales no
+gestiona — con esta comprobación, esa pista queda descartada: SPIO no
+es la vía. Si Relaciones Internacionales insiste en que hay algo
+propio de la USAL sin cubrir en la tabla de arriba, pedirles el nombre
+concreto de la convocatoria en la próxima respuesta, en vez de que
+remitan a otro servicio genérico.
 
-4. Texto literal del art. 4.1.d) del RD 1721/2007 (bloqueado incluso donde
-   sí entra usal.es, y también en noticias.juridicas.com, iberley.es y
-   legislacion.faam.es — probar otra vía si aparece una sesión con acceso a
-   boe.es).
+### Pendiente de verificar — acceso a boe.es sigue bloqueado en toda sesión probada
+
+5. Texto literal del art. 4.1.d) del RD 1721/2007: **sigue bloqueado**,
+   confirmado de nuevo en sesión del 2026-09-02 — tanto `www.boe.es`
+   (ruta directa `/buscar/act.php` y el permalink ELI `/eli/es/rd/2007/12/21/1721/con`)
+   como `noticias.juridicas.com` dieron `EGRESS_BLOCKED`. Con esta ya
+   son varias sesiones distintas bloqueadas para los mismos dominios —
+   refuerza que es un bloqueo de política de cuenta/organización, no
+   algo que cambie de sesión a sesión (a diferencia del bloqueo de
+   `becas.usal.es`/`bisite.usal.es` etc., que sí resultó ser por
+   sesión). Alternativas para una futura sesión: probar con
+   `agent-browser` (navegador con su propia salida de red, puede que no
+   pase por el mismo proxy) en vez de `WebFetch`, o pedirle directamente
+   a Angel que pegue el texto del artículo si lo consulta él desde su
+   propia conexión.
