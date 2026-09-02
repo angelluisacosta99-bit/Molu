@@ -151,7 +151,23 @@ red en todas las sesiones probadas hasta ahora (ver sección de acceso).
 
 - **`bintmaster@usal.es`** (enviado) — consulta sobre si existe una
   convocatoria de becas internacionales de máster vigente para 2026-2027
-  (la encontrada era de 2021-2022, cerrada). Sin respuesta aún.
+  (la encontrada era de 2021-2022, cerrada). **Respondido el 2026-09-02**
+  por Ana Belén Pozo Andrés (Sección de Colaboración Universitaria,
+  Servicio de Relaciones Internacionales): confirma que las becas
+  Santander-USAL para estudiantes latinoamericanos de máster **no han
+  vuelto a convocarse** — coincide con lo ya registrado en la tabla de
+  arriba (fila descartada). No aporta nada nuevo sobre esa beca en
+  concreto, pero redirige a dos vías sin explorar todavía:
+  - `master@usal.es` — para trámites y requisitos generales de acceso a
+    máster (gestión distinta de `mastersi@usal.es`, que es el máster
+    concreto de Angel).
+  - **SPIO — Servicio de Promoción, Información y Orientación**
+    (`spio.usal.es`) — mencionado explícitamente como el sitio a
+    consultar por "otras becas o ayudas existentes en la USAL" distintas
+    de las internacionales Santander. **Nueva vía sin explorar aún** —
+    no confundir con la preinscripción (uso ya conocido de `spio.usal.es`
+    en la sección de acceso de red más abajo); revisar si ese mismo
+    portal tiene un apartado de becas propio no visto todavía.
 - **`rrii@usal.es`** (enviado) — consulta sobre convenios de reducción de
   tasas para estudiantes cubanos. Sin respuesta aún.
 
