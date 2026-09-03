@@ -100,34 +100,32 @@ f. **En Bogotá hace mucho calor.**
 
 #### Ej. 8 — Encuentra los doce meses del año en esta sopa de letras
 
-*Escribe el mes que corresponde a cada pista (las dos primeras letras son un añadido de este ejercicio, no están en el libro).*
-
-> **Sopa de letras:** 
+*Toca la primera y la última letra de cada mes para marcarlo.*
 
 ```
-A M A R Z O B F C O
-B A C L I S E D L C
-N Y Z O Q B A A M T
-A O R T R A N G J U
-B P V E N E R O U B
-R S R I T F U S N R
-I O S V E X N T I E
-L N P R D M P O O T
-D I C I E M B R E F
-S E P T I E M B R E
-U A C J U L I O E H
-N O V I E M B R E O
+AMARZOBFCO
+BACLISEDLC
+NYZOQBAAMT
+AORTRANGJU
+BPVENEROUB
+RSRITFUSNR
+IOSVEXNTIE
+LNPRDMPOOT
+DICIEMBREF
+SEPTIEMBRE
+UACJULIOEH
+NOVIEMBREO
 ```
 
-1. EN… → **enero**
-2. FE… → **febrero**
-3. MA… → **marzo**
-4. AB… → **abril**
-5. MA… → **mayo**
-6. JU… → **junio**
-7. JU… → **julio**
-8. AG… → **agosto**
-9. SE… → **septiembre**
-10. OC… → **octubre**
-11. NO… → **noviembre**
-12. DI… → **diciembre**
+- enero
+- febrero
+- marzo
+- abril
+- mayo
+- junio
+- julio
+- agosto
+- septiembre
+- octubre
+- noviembre
+- diciembre

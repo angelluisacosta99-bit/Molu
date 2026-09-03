@@ -74,6 +74,22 @@ PR #22 invertía el orden que PR #20 daba por bueno.
    Todo lo que llegue por fotos hay que archivarlo después en `fuentes/` (paso 8): esa
    carpeta existe justo para que no se vuelva a fotografiar dos veces el mismo capítulo.
 
+   **Audio: busca siempre en Drive antes de asumir que no existe.** Si un capítulo hace
+   referencia a una "Pista N" (audición de comprensión oral, ej. "Escucha y completa"), NO
+   des por hecho que solo tienes la transcripción en texto del PDF — el profesor tiene los
+   mp3 reales en Drive y espera que se incrusten como audio de verdad, reproducible, no solo
+   como texto. Búscalos con `mcp__Google_Drive__search_files` (por ejemplo
+   `title contains 'AUDIO CUADERNO'` o navegando la carpeta de Google Drive de A1 —
+   `Nuevo Español en Marcha/A1/AUDIO CUADERNO A1 OK`, confirmada con el profesor) antes de
+   decir que el audio no está disponible. Los archivos ahí están nombrados solo con el
+   número de pista (`1.mp3`, `2.mp3`...). Descárgalos con `download_file_content` (mismo
+   límite de tamaño que los PDF, ver más arriba) y decodifícalos de base64. Incrusta el
+   resultado como `<audio controls>` con el mp3 en un `data:` URI base64 (los archivos
+   rondan 1-2 MB, muy por debajo del límite de artefacto) en vez de dejar solo la
+   transcripción en un `<details>`. Este es un error real ya cometido en este repo: se
+   afirmó que "solo había transcripción del PDF" sin haber buscado en Drive, y el profesor
+   tuvo que corregirlo — la carpeta sí existe y sí las tiene.
+
    **Y mires lo que mires, mira la página.** Antes de dar por buena una transcripción,
    renderiza la página y ábrela con `Read`, aunque el texto se haya extraído perfectamente.
    Hay contenido que el texto **no puede** representar y que cambia las respuestas: las
@@ -88,9 +104,9 @@ PR #22 invertía el orden que PR #20 daba por bueno.
    Sustituye **todos** los marcadores `{{...}}` (grep por `{{` para confirmar que no quede
    ninguno) y rellena `blocks` con los ejercicios reales, siguiendo los tipos ya soportados
    por el motor de renderizado (`items`, `text`, `table2`, `conjTable`, `open`, `crossword`,
-   `agenda`, `match` — documentados con ejemplos dentro de la propia plantilla, y con más
-   detalle en la sección de lecciones más abajo). Si necesitas un tipo nuevo, tendrás que
-   extender también el renderizador (busca `ex.type ===` en el archivo).
+   `agenda`, `match`, `wordsearch` — documentados con ejemplos dentro de la propia plantilla,
+   y con más detalle en la sección de lecciones más abajo). Si necesitas un tipo nuevo,
+   tendrás que extender también el renderizador (busca `ex.type ===` en el archivo).
    Dentro de `items`, para un hueco de verdadero/falso pon `vf: true` en el item en vez de
    escribir un tipo de ejercicio nuevo — cambia el input de texto por dos botones "V"/"F"
    sin tocar el motor de corrección (la respuesta sigue siendo `["V"]`/`["F"]`); ver el
@@ -246,6 +262,24 @@ Cada una de estas causó un PR de corrección real. Están en `reference/templat
 resueltas — esta lista es para que entiendas *por qué* el código está como está, y para que
 no las deshagas sin querer al modificar la plantilla.
 
+- **Una sopa de letras SIEMPRE va como `type: "wordsearch"` interactiva (rejilla real +
+  tocar dos letras para marcar la palabra), nunca como una lista de pistas de texto
+  inventadas.** Error real en este repo: la 1B sustituyó la sopa de letras del libro (ocho
+  profesiones, con dibujo cada una) por una lista "PR ___ (corta el pelo a un niño)" — ni la
+  rejilla era real ni la interacción se parecía al ejercicio del libro. El profesor lo
+  corrigió explícitamente: "cíñete al libro" + "busca una forma interactiva... donde el
+  alumno pueda seleccionar directamente en la sopa". La rejilla y las coordenadas de cada
+  palabra se calculan con un script de búsqueda direccional sobre la transcripción de la
+  página (nunca a mano — un error de una letra hace que `cells` no encaje con lo impreso),
+  ver `reference/template.html` para el motor ya resuelto.
+  **Segundo fallo en el mismo arreglo, ronda siguiente**: la primera versión corregida sí
+  puso la rejilla real, pero listaba el NOMBRE de cada profesión en texto junto al dibujo
+  — dándole la respuesta al alumno en vez de dejarle recordarla mirando la imagen, que es
+  justo lo que pide el ejercicio ("ellos deben recordar mirando las fotos, tú no debes
+  decírselo"). Regla general que sale de este segundo fallo, no solo para sopas de letras:
+  **cuando la pista del libro es un DIBUJO (no texto), el nombre/respuesta nunca va visible
+  hasta que el alumno la resuelve** — ni en `item.img` de "items" ni en `ex.words[i].img` de
+  "wordsearch". El texto solo se revela DESPUÉS de acertar, como un `.reveal` normal.
 - **Un bug de motor encontrado por revisión hay que arreglarlo en `reference/template.html`
   Y en la copia horneada de CADA capítulo ya construido en esa misma rama** — cada
   `..._interactivo.html` es una copia independiente del motor con los datos ya insertados,

@@ -6,19 +6,31 @@
 
 #### Ej. 1 — Encuentra el nombre de los objetos en la sopa de letras
 
-*El libro ilustra cada objeto con un dibujo; aquí van con pista de dos letras. "Mapa" ya lo trae resuelto el libro (rodeado en la sopa de letras).*
+*Mira cada foto y adivina el objeto — el nombre no aparece hasta que lo encuentres. "Mapa" ya lo trae resuelto el libro (rodeado en la sopa de letras).*
 
-1. MA → mapa
-2. LI **libro** (tiene muchas páginas y se lee)
-3. CO **coche** (vehículo con ruedas y volante)
-4. MO **móvil** (teléfono que se lleva en el bolsillo)
-5. RE **reloj** (marca la hora)
-6. SO **sofá** (mueble donde te sientas en el salón)
-7. GA **gafas** (se ponen para ver mejor)
-8. SI **silla** (mueble con una sola plaza para sentarse)
-9. DI **diccionario** (libro con el significado de las palabras)
-10. PA **paraguas** (se usa cuando llueve)
-11. OR **ordenador** (aparato con teclado y pantalla)
+```
+OBCRDPMGUVF
+RPOWSSBPWRM
+DICCIONARIO
+ENHGLFRREPV
+NBEULAMALPI
+AYBMAPAGOJL
+DNLIBROUJZW
+OBNMGAFASCP
+RZAELRPSRTU
+```
+
+- Mapa
+- Ordenador
+- Coche
+- Silla
+- Sofá
+- Paraguas
+- Reloj
+- Móvil
+- Diccionario
+- Libro
+- Gafas
 
 #### Ej. 2 — Esta es la clase de idiomas, pero el profesor no está
 

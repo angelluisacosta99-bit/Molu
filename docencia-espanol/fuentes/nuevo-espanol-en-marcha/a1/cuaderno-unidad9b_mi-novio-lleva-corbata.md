@@ -6,18 +6,29 @@
 
 #### Ej. 1 — Busca el nombre de esta ropa en la sopa de letras
 
-*Cada pista da las dos primeras letras de la palabra (añadido de este ejercicio, no está en el libro).*
+*Mira cada dibujo y adivina la prenda — el nombre no aparece hasta que la encuentres.*
 
-> **Sopa de letras:** 
+```
+RWJERSEYPO
+RPOYNBNSAZ
+ECVBERTDNM
+ASCAMISETA
+SOPBFALDAN
+ITVMSWCXLX
+MAXABRIGOM
+APXWETRYNU
+CALCETINES
+BZBRETGHSM
+```
 
-1. Prenda de punto con mangas, se pone sobre la camisa (JE__): **jersey**
-2. Se llevan dos, una en cada pierna (PA__): **pantalones**
-3. Prenda femenina que se lleva de cintura para abajo, en vez de pantalón (FA__): **falda**
-4. Se lleva debajo del jersey o sola en verano (CA__): **camiseta**
-5. Se llevan dentro de los zapatos, cubren el pie y el tobillo (CA__): **calcetines**
-6. Prenda larga que se pone encima de todo cuando hace frío (AB__): **abrigo**
-7. Con botones y cuello, se lleva con traje o corbata (CA__): **camisa**
-8. Se llevan en los pies, encima de los calcetines (ZA__): **zapatos**
+- Jersey
+- Pantalones
+- Falda
+- Camiseta
+- Calcetines
+- Abrigo
+- Camisa
+- Zapatos
 
 #### Ej. 2 — Completa
 
