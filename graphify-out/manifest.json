@@ -432,15 +432,15 @@
     "semantic_hash": "9b31786b637be3c13978bec4c2330752"
   },
   ".claude/skills/ejercicio-interactivo/SKILL.md": {
-    "mtime": 1788467707.1550634,
-    "seen": 1788468410.972112,
-    "ast_hash": "5b7c3578f4d469b36aba53f479402ff3",
+    "mtime": 1788469961.5511975,
+    "seen": 1788470148.2498608,
+    "ast_hash": "c54c5ecc282c485bffc6395c106c797c",
     "semantic_hash": ""
   },
   ".claude/skills/ejercicio-interactivo/reference/template.html": {
-    "mtime": 1788467707.1590636,
-    "seen": 1788468410.9721127,
-    "ast_hash": "efde43585873bf54d900184082ed41c7",
+    "mtime": 1788469828.1551895,
+    "seen": 1788470148.2498622,
+    "ast_hash": "634da975784fdf239183ff265a43fcf6",
     "semantic_hash": ""
   },
   ".claude/skills/graphify/SKILL.md": {
@@ -2172,15 +2172,15 @@
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a2/nuevo-espanol-en-marcha-2_cuaderno-unidad1_presentar-y-saludar_interactivo.html": {
-    "mtime": 1788469166.5511503,
-    "seen": 1788469403.4773526,
-    "ast_hash": "b0bedeff426c4028495f210e645f1536",
+    "mtime": 1788470076.2912042,
+    "seen": 1788470148.2499974,
+    "ast_hash": "75f469646386a31c3851145d82a0be3a",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a2/cuaderno-unidad1_presentar-y-saludar.md": {
-    "mtime": 1788469249.392301,
-    "seen": 1788469403.4772928,
-    "ast_hash": "cf3e113e8253987de05d0b1d9e745e26",
+    "mtime": 1788469987.6487079,
+    "seen": 1788470148.249942,
+    "ast_hash": "d6c8c711502975e5245c13edda4a0897",
     "semantic_hash": ""
   }
 }
