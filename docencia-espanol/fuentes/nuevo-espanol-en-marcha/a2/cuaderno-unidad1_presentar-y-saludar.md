@@ -1,6 +1,6 @@
-## 1. Unidad 1
+## A. ¡Encantado!
 
-*Presentar y saludar*
+*Unidad 1 · Presentar y saludar*
 
 ### Ejercicios
 
@@ -79,7 +79,13 @@
 8. admirar
    → el paisaje
 
-#### Ej. 5 — Un día en pareja
+## B. Duermo poco
+
+*Unidad 1 · Presentar y saludar*
+
+### Ejercicios
+
+#### Ej. 1 — Un día en pareja
 
 *Completa el texto con los verbos del recuadro.*
 
@@ -88,7 +94,7 @@
 Ángel Hervás y Susana Daza (1) viven en un chalé adosado en Pozuelo, cerca de Madrid. Ángel (2) **es** agente de tráfico aéreo, (3) **trabaja** en el aeropuerto de Barajas. Su horario de trabajo (4) **es** irregular porque depende del tráfico de aviones. En verano (5) **tiene** más trabajo que en invierno. Si trabaja por la mañana, (6) **se levanta** a las siete, (7) **lleva** a los niños al colegio y (8) **empieza** a trabajar a las nueve. (9) **Come** en el restaurante del aeropuerto y (10) **vuelve** a casa a las seis de la tarde.
 Susana, su mujer, (11) **es** psicóloga, trabaja en un departamento de orientación de mujeres. Su horario (12) **es** de ocho de la mañana a tres de la tarde, de lunes a viernes. (13) **sale** de su casa a las 7.30 y (14) **vuelve** a las 15.30. Normalmente (15) **come** en casa y luego (16) **va** a recoger a los niños al colegio. Por la tarde (17) **practica** yoga y también (18) **estudia** Historia del Arte.
 
-#### Ej. 6 — Preposiciones
+#### Ej. 2 — Preposiciones
 
 *Completa con las preposiciones adecuadas (a / de / desde / hasta / por / en / con) y las construcciones al y del.*
 
@@ -109,7 +115,7 @@ Susana, su mujer, (11) **es** psicóloga, trabaja en un departamento de orientac
 15. Todos los domingos **por** la tarde voy **con** mi familia **a** dar un paseo **por** el parque.
 16. Esta farmacia está cerrada por vacaciones **desde** el 15 **hasta** el 30 de agosto.
 
-#### Ej. 7 — Completa con el pronombre
+#### Ej. 3 — Completa con el pronombre
 
 *Completa las frases con el pronombre correspondiente.*
 
@@ -127,7 +133,7 @@ Susana, su mujer, (11) **es** psicóloga, trabaja en un departamento de orientac
 12. En verano siempre **me** pongo pantalones cortos.
 13. Tienes sueño porque ayer **te** acostaste muy tarde.
 
-#### Ej. 8 — La rutina de Lucía
+#### Ej. 4 — La rutina de Lucía
 
 *Escucha a Lucía hablar de su rutina y señala V o F.*
 
@@ -151,7 +157,13 @@ h. Lucía se acuesta a las 12. → **F**
 > **A:** ¿Cuándo haces las tareas de la casa?
 > **B:** Bueno, eso es a veces un problema porque yo tengo que preparar las clases por las tardes... Normalmente yo hago la comida y ellos se ocupan de fregar los platos. La compra la hacemos el fin de semana..., todos hacemos algo. La verdad es que después de cenar, a las 10.30 o las 11.00 ya estamos muy cansados y nos acostamos.
 
-#### Ej. 9 — Regular o irregular
+## C. Unas vacaciones inolvidables
+
+*Unidad 1 · Presentar y saludar*
+
+### Ejercicios
+
+#### Ej. 1 — Regular o irregular
 
 *Escribe la primera y la tercera persona del pretérito indefinido de los siguientes verbos. ¿Es regular o irregular?*
 
@@ -172,21 +184,21 @@ n. ver **vi** · **vio** · **irregular**
 o. poder **pude** · **pudo** · **irregular**
 p. venir **vine** · **vino** · **irregular**
 
-#### Ej. 10 — Un domingo con Chema
+#### Ej. 2 — Un domingo con Chema
 
 *Completa el diálogo con los verbos en pretérito indefinido.*
 
 CELIA: Hola, Ana, ¿qué tal el domingo?
 ANA: Bien. (1) Me levanté (levantarse, yo) temprano para correr un poco por el parque. (2) **Volví** (volver) a casa a las diez, (3) **me duché** (ducharse) y (4) **desayuné** (desayunar) con Chema. Luego (5) **salimos** (salir) los dos a dar una vuelta por el Rastro. (6) **Compré** (comprar, yo) una mesita antigua preciosa y muy barata. (7) **Me encontré** (encontrarse) con el hermano de Chema y su mujer y (8) **fuimos** (ir) todos a tomar unas tapas. A las dos (9) **comimos** (comer, nosotros) en casa y por la tarde no (10) **salimos** (salir). Bueno, Chema (11) **fue** (ir) a jugar al ajedrez con Eduardo y yo (12) **estuve** (estar) hablando por teléfono con mi madre y mis hermanas casi una hora.
 
-#### Ej. 11 — El sábado pasado
+#### Ej. 3 — El sábado pasado
 
 *Escribe 10 frases sobre lo que hiciste el sábado pasado.*
 
 > Ejemplo del libro: «El sábado pasado fui de compras con Carlos.»
 > Escribe tú 10 frases sobre lo que hiciste el sábado pasado, usando el pretérito indefinido.
 
-#### Ej. 12 — Completa el texto
+#### Ej. 4 — Completa el texto
 
 *Completa el texto con los verbos entre paréntesis en pretérito indefinido.*
 
@@ -205,7 +217,7 @@ ANA: Bien. (1) Me levanté (levantarse, yo) temprano para correr un poco por el 
 8. El mes pasado Gloria y Rafa (estar) **estuvieron** en Lisboa y dicen que (llover) **llovió** un poco, pero que lo (pasar) **pasaron** muy bien.
 9. El verano pasado, mi familia y yo (ir) **fuimos** de vacaciones a Canarias, (bañarse) **nos bañamos** todos los días en la playa y también (hacer) **hicimos** una excursión en camello. (ser) **Fue** muy divertido.
 
-#### Ej. 13 — La postal de Maribel
+#### Ej. 5 — La postal de Maribel
 
 *Maribel está de vacaciones en Barcelona con unos amigos. Completa la postal con las palabras del recuadro.*
 
@@ -217,7 +229,7 @@ Esta ciudad es preciosa, y cada día podemos hacer algo diferente. Ayer por la m
 Un (11) **abrazo** muy fuerte y hasta el sábado.
 Maribel
 
-#### Ej. 14 — Busca el error
+#### Ej. 6 — Busca el error
 
 *En cada frase hay un error. Búscalo y corrígelo.*
 

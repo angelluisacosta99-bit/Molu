@@ -1,6 +1,6 @@
-## 1. Unidad 2
+## A. ¿Quieres ser millonario?
 
-*Biografías*
+*Unidad 2 · Biografías*
 
 ### Ejercicios
 
@@ -77,7 +77,13 @@
 5. ¿**Qué** periódico lees habitualmente?
 6. ¿**Cuál** te gusta más: este o aquel?
 
-#### Ej. 5 — Frases en pretérito indefinido
+## B. Biografías
+
+*Unidad 2 · Biografías*
+
+### Ejercicios
+
+#### Ej. 1 — Frases en pretérito indefinido
 
 *Escribe frases en pretérito indefinido, como en el ejemplo.*
 
@@ -94,7 +100,7 @@
 6. Camilo José Cela / recibir / el Premio Nobel de Literatura en 1989.
    **Camilo José Cela recibió el Premio Nobel de Literatura en 1989.**
 
-#### Ej. 6 — Titulares
+#### Ej. 2 — Titulares
 
 *Lee los siguientes titulares y escribe las noticias en pretérito indefinido según el ejemplo.*
 
@@ -111,13 +117,13 @@
 6. Julio – 1789: «Comienza la Revolución francesa»
    **La Revolución francesa comenzó en julio de 1789.**
 
-#### Ej. 7 — Miguel de Cervantes
+#### Ej. 3 — Miguel de Cervantes
 
 *Completa el texto con el pretérito indefinido de los verbos.*
 
 Miguel de Cervantes Saavedra (1) nació (nacer) en Alcalá de Henares en 1547. En 1569 (2) **se fue** (irse) a Roma y allí (3) **se hizo** (hacerse) soldado. En una batalla importante (4) **perdió** (perder) el brazo izquierdo. (5) **Estuvo** (estar) en una cárcel de Argel durante cinco años y en 1580 finalmente (6) **volvió** (volver) a España. (7) **Se casó** (casarse) con Catalina de Salazar. (8) **Tuvo** (tener) problemas en su trabajo de recaudador de impuestos y (9) **fue** (ir) a la cárcel otra vez. Allí (10) **escribió** (escribir) su obra más importante: Don Quijote de la Mancha. (11) **Murió** (morir) en 1616.
 
-#### Ej. 8 — Juan López
+#### Ej. 4 — Juan López
 
 *Completa el texto con el pretérito indefinido de los verbos del recuadro.*
 
@@ -125,7 +131,13 @@ Miguel de Cervantes Saavedra (1) nació (nacer) en Alcalá de Henares en 1547. E
 
 Juan López siempre (1) quiso ser famoso. Él (2) **empezó** a jugar al fútbol cuando tenía seis años. Pero los buscadores de talentos no lo (3) **descubrieron**. Años más tarde, Juan lo intentó en el mundo de la música y (4) **estudió** violín durante varios años. Pero a los expertos no les (5) **gustó** su música. Después (6) **empezó** en el mundo del teatro, pero no (7) **tuvo** ningún éxito. Ante esta situación, Juan (8) **se dedicó** a los negocios. Él y su hermano (9) **crearon** una nueva empresa de ordenadores, donde por fin (10) **consiguió** el éxito deseado.
 
-#### Ej. 9 — Ganadores
+## C. Ganadores
+
+*Unidad 2 · Biografías*
+
+### Ejercicios
+
+#### Ej. 1 — Ganadores
 
 *Escucha y completa los textos con los números del recuadro.*
 
@@ -144,7 +156,7 @@ Miguel Induráin, el famoso ciclista español, nació en Navarra en (10) **1964*
 > PEDRO ALMODÓVAR, ganador de un Óscar. Desde que Pedro Almodóvar dirigió su primera película en 1980, se convirtió en uno de los directores más importantes del cine español. Dirigió más de 15 películas, hasta que en el año 2000 consiguió el Óscar de Hollywood a la Mejor Película de Habla no Inglesa con Todo sobre mi madre. Posteriormente, en el año 2003, ganó el Óscar al Mejor Guion Original con su película Hable con ella. En el año 2007 logró un gran éxito internacional con su película Volver.
 > MIGUEL INDURÁIN, ganador del Tour de Francia. Miguel Induráin, el famoso ciclista español, nació en Navarra en 1964. Comenzó su carrera de triunfos con su victoria en la Vuelta a España con sólo 21 años. Más tarde consiguió cinco Tours de Francia consecutivos entre 1991 y 1995.
 
-#### Ej. 10 — Preguntas sobre los ganadores
+#### Ej. 2 — Preguntas sobre los ganadores
 
 *Lee los textos otra vez y contesta las preguntas.*
 
@@ -154,7 +166,7 @@ Miguel Induráin, el famoso ciclista español, nació en Navarra en (10) **1964*
 4. ¿De dónde es Induráin? → **Miguel Induráin es de Navarra.**
 5. ¿Cuántos años tenía cuando ganó la Vuelta a España? → **Cuando ganó la Vuelta a España tenía 21 años.**
 
-#### Ej. 11 — Preposiciones
+#### Ej. 3 — Preposiciones
 
 *Completa las siguientes frases con las preposiciones del recuadro.*
 
@@ -171,14 +183,14 @@ Miguel Induráin, el famoso ciclista español, nació en Navarra en (10) **1964*
 9. No tuvimos ningún problema **en** el viaje.
 10. Estuve estudiando **hasta** las cuatro de la mañana.
 
-#### Ej. 12 — Lo que hiciste ayer
+#### Ej. 4 — Lo que hiciste ayer
 
 *Escribe una relación de las cosas que hiciste ayer.*
 
 > Ejemplo del libro: «Ayer leí el periódico.»
 > Escribe tú una relación de 10 cosas que hiciste ayer, usando el pretérito indefinido.
 
-#### Ej. 13 — Los números completos
+#### Ej. 5 — Los números completos
 
 *Contesta a las siguientes preguntas escribiendo los números completos. Busca la información en los distintos textos de la unidad.*
 

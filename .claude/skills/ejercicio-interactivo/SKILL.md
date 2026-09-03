@@ -1,7 +1,7 @@
 ---
 name: ejercicio-interactivo
 description: "Use when Angel asks to build a new interactive Spanish grammar/vocabulary exercise page with instant grading — a self-contained HTML artifact where a student fills in blanks, gets corrected instantly, and can send their results to the teacher via WhatsApp/Telegram/Teams/Correo. Also use when asked to add a new chapter/unit to this format, or to fix/extend an existing one (e.g. the A1 \"Presente, gerundio, indefinido\" or B2 12C \"¿Sigues pintando?\" exercises already in docencia-espanol/materiales/). Triggers: \"ejercicio interactivo\", \"como el de A1/12C\", \"corrección instantánea\", \"página interactiva para practicar\", \"haz lo mismo con otro capítulo\"."
-version: 1.10.0
+version: 1.11.0
 user-invocable: true
 license: Apache 2.0
 ---
@@ -273,6 +273,29 @@ Cada una de estas causó un PR de corrección real. Están en `reference/templat
 resueltas — esta lista es para que entiendas *por qué* el código está como está, y para que
 no las deshagas sin querer al modificar la plantilla.
 
+- **Cuando el libro organiza el capítulo en secciones con letra (A, B, C...), usa un
+  `block` de la plantilla POR SECCIÓN — nunca un único bloque con todos los ejercicios del
+  capítulo numerados seguidos del 1 al 14.** Error real, repetido en las dos primeras
+  unidades de A2 (Unidad 1 y Unidad 2) antes de corregirse: cada capítulo se construyó como
+  un solo `block` con `sub` = el tema del capítulo y los ejercicios de las secciones A/B/C
+  del libro todos numerados 1..N seguidos, perdiendo la estructura visual real del libro
+  (una franja de color con la letra A/B/C y su propio título, antes de cada grupo de
+  ejercicios). El profesor lo señaló directamente ("por qué no dividiste las unidades por
+  A, B y C") tras publicar ambos capítulos. `block.num` no tiene que ser numérico — es solo
+  texto interpolado en el badge de cabecera y en el texto "Bloque X" de la píldora de
+  navegación (`'<div class="block-num">' + block.num + '</div>'` y
+  `navA.textContent = "Bloque " + block.num;` en el renderizador) — pásale la letra
+  directamente (`num: "A"`) en vez de un número de bloque genérico, y dale a `block.title`
+  el título real de esa sección tal como lo imprime el libro (p. ej. "¡Encantado!", no "A —
+  ¡Encantado!": la letra ya va en el badge, repetirla en el título es redundante). Usa
+  `block.sub` para la ubicación dentro del capítulo (p. ej. "Unidad 1 · Presentar y
+  saludar"). Dentro de cada bloque, la numeración de `ex.num` se REINICIA en 1 (no es un
+  índice global — solo se usa como etiqueta "Ej. N" y en las etiquetas de accesibilidad de
+  cada hueco, nunca como clave de búsqueda), igual que el propio libro numera sus
+  ejercicios empezando en 1 dentro de cada sección A/B/C. Corregido ya en las unidades 1 y 2
+  de A2 (republicadas); al construir un capítulo nuevo, plantea los `blocks` por sección
+  desde el principio — reestructurar después de publicar obliga a volver a archivar con
+  `extraer.mjs` y volver a publicar el artefacto.
 - **Una sopa de letras SIEMPRE va como `type: "wordsearch"` interactiva (rejilla real +
   tocar dos letras para marcar la palabra), nunca como una lista de pistas de texto
   inventadas.** Error real en este repo: la 1B sustituyó la sopa de letras del libro (ocho
