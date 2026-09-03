@@ -74,6 +74,22 @@ PR #22 invertía el orden que PR #20 daba por bueno.
    Todo lo que llegue por fotos hay que archivarlo después en `fuentes/` (paso 8): esa
    carpeta existe justo para que no se vuelva a fotografiar dos veces el mismo capítulo.
 
+   **Audio: busca siempre en Drive antes de asumir que no existe.** Si un capítulo hace
+   referencia a una "Pista N" (audición de comprensión oral, ej. "Escucha y completa"), NO
+   des por hecho que solo tienes la transcripción en texto del PDF — el profesor tiene los
+   mp3 reales en Drive y espera que se incrusten como audio de verdad, reproducible, no solo
+   como texto. Búscalos con `mcp__Google_Drive__search_files` (por ejemplo
+   `title contains 'AUDIO CUADERNO'` o navegando la carpeta de Google Drive de A1 —
+   `Nuevo Español en Marcha/A1/AUDIO CUADERNO A1 OK`, confirmada con el profesor) antes de
+   decir que el audio no está disponible. Los archivos ahí están nombrados solo con el
+   número de pista (`1.mp3`, `2.mp3`...). Descárgalos con `download_file_content` (mismo
+   límite de tamaño que los PDF, ver más arriba) y decodifícalos de base64. Incrusta el
+   resultado como `<audio controls>` con el mp3 en un `data:` URI base64 (los archivos
+   rondan 1-2 MB, muy por debajo del límite de artefacto) en vez de dejar solo la
+   transcripción en un `<details>`. Este es un error real ya cometido en este repo: se
+   afirmó que "solo había transcripción del PDF" sin haber buscado en Drive, y el profesor
+   tuvo que corregirlo — la carpeta sí existe y sí las tiene.
+
    **Y mires lo que mires, mira la página.** Antes de dar por buena una transcripción,
    renderiza la página y ábrela con `Read`, aunque el texto se haya extraído perfectamente.
    Hay contenido que el texto **no puede** representar y que cambia las respuestas: las

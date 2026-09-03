@@ -6,16 +6,31 @@
 
 #### Ej. 1 — Busca en esta sopa de letras los nombres de ocho profesionales
 
-*El libro ilustra cada profesión con un dibujo; aquí van con pista de dos letras.*
+*El libro ya trae PELUQUERA resuelta como ejemplo. Toca la primera letra de una palabra y luego la última para marcarla.*
 
-1. PR **profesor** (corta el pelo a un niño)
-2. ME **médica** (mira la garganta a un paciente)
-3. CA **cartero** (reparte cartas)
-4. TA **taxista** (conduce un taxi)
-5. AC **actriz** (habla con un turbante puesto, gesto teatral)
-6. PE **peluquera** (peina a una mujer)
-7. CA **camarero** (lleva una bandeja con copas)
-8. AB **abogado** (con toga y birrete)
+```
+PELUQUERAB
+RTYÑPOUJKÑ
+OZCARTEROL
+FMETAXISTA
+ECRABOGADA
+SVWPDOSMOA
+ORERAMACLC
+REPTVEBWMT
+AYPOUDLUQR
+POUTRIMWDI
+ZQRTBCMNRZ
+ARVXLAPGFD
+```
+
+- Peluquera
+- Profesora
+- Médica
+- Cartero
+- Taxista
+- Actriz
+- Camarero
+- Abogada
 
 #### Ej. 2 — Forma frases, como en el modelo
 

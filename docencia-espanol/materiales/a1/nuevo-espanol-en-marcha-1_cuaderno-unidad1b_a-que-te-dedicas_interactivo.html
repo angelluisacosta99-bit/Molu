@@ -628,6 +628,43 @@
   .item-row.vf-tail .vf-wrap { flex: 0 0 auto; }
   .item-row.vf-tail .reveal.show { flex-basis: 100%; margin-left: 0; }
   .item-row.tail-blank .reveal.show { flex-basis: 100%; margin-left: 0; }
+
+  /* Sopa de letras interactiva (type: "wordsearch") — se toca una letra para armarla (igual
+     que la columna ancla de "match") y luego otra en línea recta (horizontal, vertical o
+     diagonal, en cualquiera de los dos sentidos) para completar la selección. Si las dos
+     letras no forman una línea recta, no pasa nada y se puede reintentar. Nace de un error
+     real: una versión anterior sustituía la sopa de letras por una lista de pistas
+     inventadas (dos letras + una descripción) en vez de digitalizar la rejilla real del
+     libro — nunca inventar el contenido, ni siquiera cuando falta una imagen. */
+  .ws-outer { display: flex; flex-wrap: wrap; gap: 1.6rem; margin-top: 0.6rem; align-items: flex-start; }
+  .ws-grid {
+    display: grid; gap: 2px; background: var(--border); padding: 3px; border-radius: 8px;
+    width: max-content; flex-shrink: 0;
+  }
+  .ws-cell {
+    width: 2rem; height: 2rem; display: flex; align-items: center; justify-content: center;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.88rem; font-weight: 700; line-height: 1;
+    background: var(--paper-raised); color: var(--ink); border: none; border-radius: 4px;
+    cursor: pointer; padding: 0; transition: background 0.1s ease, color 0.1s ease;
+  }
+  .ws-cell:hover { background: var(--gold-soft); }
+  .ws-cell.ws-armed { background: var(--gold); color: var(--paper-raised); }
+  .ws-cell.ws-found { background: var(--good-bg); color: var(--good); }
+  .ws-cell.ws-wrong { background: var(--bad-bg); color: var(--bad); }
+  .ws-words { list-style: none; margin: 0; padding: 0; min-width: 10em; }
+  .ws-words li {
+    padding: 0.4rem 0; font-size: 0.92rem; border-bottom: 1px dashed var(--border); color: var(--ink);
+  }
+  .ws-words li:last-child { border-bottom: none; }
+  .ws-words li.ws-solved { color: var(--ink-soft); font-style: italic; }
+  .ws-words li.ws-solved::before { content: "✓ "; }
+  .ws-words li.ws-found-item { color: var(--good); font-weight: 600; }
+  .ws-words li.ws-found-item::before { content: "✓ "; }
+  .ws-words li.ws-incorrect { color: var(--bad); }
+  @media (max-width: 560px) {
+    .ws-cell { width: 1.7rem; height: 1.7rem; font-size: 0.78rem; }
+  }
 </style>
 
 <script>
@@ -782,17 +819,31 @@
       exercises: [
         {
           num: 1, title: "Busca en esta sopa de letras los nombres de ocho profesionales",
-          instr: "El libro ilustra cada profesión con un dibujo; aquí van con pista de dos letras.",
-          type: "items", numbered: true,
-          items: [
-            { t: "PR {0} (corta el pelo a un niño)", a: [["profesor", "profesora"]], wide: "full" },
-            { t: "ME {0} (mira la garganta a un paciente)", a: [["médica", "médico"]], wide: "full" },
-            { t: "CA {0} (reparte cartas)", a: [["cartero", "cartera"]], wide: "full" },
-            { t: "TA {0} (conduce un taxi)", a: [["taxista"]], wide: "full" },
-            { t: "AC {0} (habla con un turbante puesto, gesto teatral)", a: [["actriz", "actor"]], wide: "full" },
-            { t: "PE {0} (peina a una mujer)", a: [["peluquera", "peluquero"]], wide: "full" },
-            { t: "CA {0} (lleva una bandeja con copas)", a: [["camarero", "camarera"]], wide: "full" },
-            { t: "AB {0} (con toga y birrete)", a: [["abogado", "abogada"]], wide: "full" }
+          instr: "El libro ya trae PELUQUERA resuelta como ejemplo. Toca la primera letra de una palabra y luego la última para marcarla.",
+          type: "wordsearch",
+          grid: [
+            "PELUQUERAB",
+            "RTYÑPOUJKÑ",
+            "OZCARTEROL",
+            "FMETAXISTA",
+            "ECRABOGADA",
+            "SVWPDOSMOA",
+            "ORERAMACLC",
+            "REPTVEBWMT",
+            "AYPOUDLUQR",
+            "POUTRIMWDI",
+            "ZQRTBCMNRZ",
+            "ARVXLAPGFD"
+          ],
+          words: [
+            { label: "Peluquera", cells: [[0,0],[0,1],[0,2],[0,3],[0,4],[0,5],[0,6],[0,7],[0,8]], solved: true },
+            { label: "Profesora", cells: [[0,0],[1,0],[2,0],[3,0],[4,0],[5,0],[6,0],[7,0],[8,0]] },
+            { label: "Médica", cells: [[6,5],[7,5],[8,5],[9,5],[10,5],[11,5]] },
+            { label: "Cartero", cells: [[2,2],[2,3],[2,4],[2,5],[2,6],[2,7],[2,8]] },
+            { label: "Taxista", cells: [[3,3],[3,4],[3,5],[3,6],[3,7],[3,8],[3,9]] },
+            { label: "Actriz", cells: [[5,9],[6,9],[7,9],[8,9],[9,9],[10,9]] },
+            { label: "Camarero", cells: [[6,7],[6,6],[6,5],[6,4],[6,3],[6,2],[6,1],[6,0]] },
+            { label: "Abogada", cells: [[4,3],[4,4],[4,5],[4,6],[4,7],[4,8],[4,9]] }
           ]
         },
         {
@@ -1606,6 +1657,119 @@
         mwrap.addEventListener("scroll", refreshFades);
         pendingMatchDraws.push(function () { drawLines(); refreshFades(); });
         card.appendChild(mouter);
+      } else if (ex.type === "wordsearch") {
+        // Sopa de letras interactiva. ex.grid = array de strings (una por fila); ex.words =
+        // [{ label, cells:[[r,c],...], solved? }]. `cells` es la secuencia exacta de
+        // casillas que forma la palabra en la rejilla real del libro (en cualquiera de las
+        // 8 direcciones), calculada una vez con un script de búsqueda, no a mano — así no
+        // hay duda de que coincide con lo impreso. Una palabra "solved" (el ejemplo que el
+        // libro ya trae resuelto) se pinta encontrada desde el principio, sin hueco de
+        // corrección; el resto se juega tocando la letra de inicio y luego la de fin.
+        const gridRows = ex.grid.length, gridCols = ex.grid[0].length;
+        const outer = document.createElement("div");
+        outer.className = "ws-outer";
+        const gridEl = document.createElement("div");
+        gridEl.className = "ws-grid";
+        gridEl.style.gridTemplateColumns = "repeat(" + gridCols + ", 1fr)";
+        const cellEls = [];
+        for (let r = 0; r < gridRows; r++) {
+          cellEls[r] = [];
+          for (let c = 0; c < gridCols; c++) {
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "ws-cell";
+            btn.textContent = ex.grid[r][c];
+            btn.dataset.r = String(r);
+            btn.dataset.c = String(c);
+            btn.setAttribute("translate", "no");
+            cellEls[r][c] = btn;
+            gridEl.appendChild(btn);
+          }
+        }
+        outer.appendChild(gridEl);
+
+        const wordsEl = document.createElement("ul");
+        wordsEl.className = "ws-words";
+        const wordRecs = []; // { word, li, input }
+        ex.words.forEach(function (w) {
+          const li = document.createElement("li");
+          li.textContent = w.label;
+          li.setAttribute("translate", "no");
+          if (w.solved) {
+            li.classList.add("ws-solved");
+            w.cells.forEach(function (rc) { cellEls[rc[0]][rc[1]].classList.add("ws-found"); });
+          } else {
+            const inp = document.createElement("input");
+            inp.type = "hidden";
+            inp.className = "blank";
+            const rec = { el: inp, spec: [w.label], label: "Ej. " + ex.num + " sopa de letras (" + w.label + ")" };
+            rec.onGrade = function (ok) {
+              li.classList.toggle("ws-found-item", ok);
+              li.classList.toggle("ws-incorrect", !ok);
+            };
+            allInputs.push(rec);
+            li.appendChild(inp);
+            wordRecs.push({ word: w, li: li, input: inp });
+          }
+          wordsEl.appendChild(li);
+        });
+        outer.appendChild(wordsEl);
+
+        // Dos casillas forman una selección válida solo si están en la misma fila, misma
+        // columna, o a igual distancia en ambos ejes (diagonal exacta) — cualquier otra
+        // combinación no es una línea recta y se ignora.
+        function pathBetween(r1, c1, r2, c2) {
+          const dr = Math.sign(r2 - r1), dc = Math.sign(c2 - c1);
+          if (r1 !== r2 && c1 !== c2 && Math.abs(r2 - r1) !== Math.abs(c2 - c1)) return null;
+          const dist = Math.max(Math.abs(r2 - r1), Math.abs(c2 - c1));
+          const path = [];
+          for (let i = 0; i <= dist; i++) path.push([r1 + dr * i, c1 + dc * i]);
+          return path;
+        }
+        function sameCells(a, b) {
+          if (a.length !== b.length) return false;
+          for (let i = 0; i < a.length; i++) if (a[i][0] !== b[i][0] || a[i][1] !== b[i][1]) return false;
+          return true;
+        }
+
+        let armed = null;
+        gridEl.addEventListener("click", function (e) {
+          // Las casillas NO se desactivan al encontrarse: dos palabras pueden compartir una
+          // letra (aquí "Peluquera" y "Profesora" comparten la P inicial), así que una
+          // casilla ya resuelta por una palabra tiene que seguir pudiendo tocarse como
+          // extremo de otra.
+          const btn = e.target.closest(".ws-cell");
+          if (!btn) return;
+          const r = parseInt(btn.dataset.r, 10), c = parseInt(btn.dataset.c, 10);
+          if (armed === null) {
+            armed = [r, c];
+            btn.classList.add("ws-armed");
+            return;
+          }
+          const ar = armed[0], ac = armed[1];
+          cellEls[ar][ac].classList.remove("ws-armed");
+          armed = null;
+          if (ar === r && ac === c) return; // tocar la misma casilla desarma sin seleccionar
+          const path = pathBetween(ar, ac, r, c);
+          if (!path) return; // no es línea recta: se ignora, se puede reintentar
+          const rev = path.slice().reverse();
+          const rec = wordRecs.find(function (wr) {
+            return wr.input.value !== wr.word.label &&
+              (sameCells(path, wr.word.cells) || sameCells(rev, wr.word.cells));
+          });
+          if (rec) {
+            rec.input.value = rec.word.label;
+            rec.li.classList.add("ws-found-item");
+            rec.word.cells.forEach(function (rc) { cellEls[rc[0]][rc[1]].classList.add("ws-found"); });
+          } else {
+            path.forEach(function (rc) { cellEls[rc[0]][rc[1]].classList.add("ws-wrong"); });
+            setTimeout(function () {
+              path.forEach(function (rc) { cellEls[rc[0]][rc[1]].classList.remove("ws-wrong"); });
+            }, 450);
+          }
+        });
+
+        card.appendChild(outer);
       }
 
       // Transcripción de audio, si el ejercicio la trae. Va al final de la tarjeta, después
