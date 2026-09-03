@@ -432,15 +432,15 @@
     "semantic_hash": "9b31786b637be3c13978bec4c2330752"
   },
   ".claude/skills/ejercicio-interactivo/SKILL.md": {
-    "mtime": 1788422202.2088425,
-    "seen": 1788422800.567749,
-    "ast_hash": "eeeb48d8df3b1b741c61d2d4b8e13df3",
+    "mtime": 1788423488.228919,
+    "seen": 1788423520.7939029,
+    "ast_hash": "5b7c3578f4d469b36aba53f479402ff3",
     "semantic_hash": ""
   },
   ".claude/skills/ejercicio-interactivo/reference/template.html": {
-    "mtime": 1788273287.9404647,
-    "seen": 1788419425.0809987,
-    "ast_hash": "614d2e49cb0b3083fe9d0ced04ebfe2e",
+    "mtime": 1788423462.1009173,
+    "seen": 1788423520.7939043,
+    "ast_hash": "efde43585873bf54d900184082ed41c7",
     "semantic_hash": ""
   },
   ".claude/skills/graphify/SKILL.md": {
@@ -1968,9 +1968,9 @@
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad1b_a-que-te-dedicas.md": {
-    "mtime": 1788422352.2168515,
-    "seen": 1788422800.5678093,
-    "ast_hash": "59a8cfdf8df2ac1cfcc56138a37802a5",
+    "mtime": 1788423357.4449112,
+    "seen": 1788423520.7939577,
+    "ast_hash": "41cd6ee770f8432e38189c6bf8ad3aca",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad1c_cual-es-tu-numero-de-movil.md": {
@@ -2082,9 +2082,9 @@
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad1b_a-que-te-dedicas_interactivo.html": {
-    "mtime": 1788422218.6848435,
-    "seen": 1788422800.5679038,
-    "ast_hash": "6aff6e983dd94e70f8b17a118ef9a677",
+    "mtime": 1788423296.3569076,
+    "seen": 1788423520.7940445,
+    "ast_hash": "2b4d7ab89b9e00f94a35d9db833336a0",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad1c_cual-es-tu-numero-de-movil_interactivo.html": {
