@@ -1,8 +1,9 @@
 # Avito — perfil de profesor de español
 
 Todo lo relacionado con el anuncio de clases de español en Avito
-(`avito.ru`), la plataforma donde Angel ejerce como profesor
-independiente desde hace 5 años (ИП — empresario individual).
+(`avito.ru`), la plataforma donde Angel da clases desde hace más de 4
+años (ver reseñas desde marzo de 2022), formalizado como ИП —
+empresario individual/autónomo — con alta oficial desde el 20/06/2025.
 
 ## Archivos
 
