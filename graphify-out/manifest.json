@@ -702,9 +702,9 @@
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/README.md": {
-    "mtime": 1788470821.3272486,
-    "seen": 1788470907.0330043,
-    "ast_hash": "b0e1a0fd2627045b5599f55136aaba9a",
+    "mtime": 1788474685.204074,
+    "seen": 1788474703.7180104,
+    "ast_hash": "b8943baff6b7a1c1faa82e16a3af07dd",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad6a_como-se-va-a-goya.md": {
@@ -846,15 +846,15 @@
     "semantic_hash": "64aea90e57ba88187f9bd9f56c6fab03"
   },
   "docencia-espanol/materiales/codigos-acceso.html": {
-    "mtime": 1788470875.8352518,
-    "seen": 1788470907.033119,
-    "ast_hash": "43839c7ad8a769f3c126a66c3d023fad",
+    "mtime": 1788474614.3960698,
+    "seen": 1788474703.718125,
+    "ast_hash": "4ce812d73a13e5ead7f80e916f8dadfd",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/indice-clases-de-espanol.html": {
-    "mtime": 1788470850.8872504,
-    "seen": 1788470907.0331197,
-    "ast_hash": "ec80093781981cba4dac0176ae122f59",
+    "mtime": 1788474605.5560691,
+    "seen": 1788474703.7181263,
+    "ast_hash": "6b18d9bbfcdeab343dd467e004c80a6b",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/quizlet/nuevo-espanol-en-marcha-1_unidad1.md": {
@@ -2172,9 +2172,9 @@
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a2/nuevo-espanol-en-marcha-2_cuaderno-unidad1_presentar-y-saludar_interactivo.html": {
-    "mtime": 1788473316.8159926,
-    "seen": 1788473501.1005788,
-    "ast_hash": "6d40b7b8a531e69c87a177a0fbe56c55",
+    "mtime": 1788474153.6400423,
+    "seen": 1788474703.7181108,
+    "ast_hash": "bcb4a8a19673c2a1663a0e11cd9e0de7",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a2/cuaderno-unidad1_presentar-y-saludar.md": {
@@ -2190,15 +2190,21 @@
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a2/nuevo-espanol-en-marcha-2_cuaderno-unidad2_biografias_interactivo.html": {
-    "mtime": 1788473273.16799,
-    "seen": 1788473501.10058,
-    "ast_hash": "671499b3e98a8a19d899c125d576e0df",
+    "mtime": 1788474156.0800426,
+    "seen": 1788474703.7181118,
+    "ast_hash": "da33e4a2b1392edbcce3b61ccae387f7",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a2/nuevo-espanol-en-marcha-2_cuaderno-unidad3_costumbres_interactivo.html": {
-    "mtime": 1788470956.5054436,
-    "seen": 1788471574.907324,
-    "ast_hash": "2138ee6c3d539eaddc58023af2d28bf1",
+    "mtime": 1788474503.0200632,
+    "seen": 1788474703.7181125,
+    "ast_hash": "9190f23c5a7729661e91125921c793ce",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a2/cuaderno-unidad3_costumbres.md": {
+    "mtime": 1788474578.9240677,
+    "seen": 1788474703.7180603,
+    "ast_hash": "c3f574bf45bfa1416be84c725ad51104",
     "semantic_hash": ""
   }
 }
