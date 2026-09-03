@@ -702,9 +702,9 @@
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/README.md": {
-    "mtime": 1788469263.1391559,
-    "seen": 1788469403.4772391,
-    "ast_hash": "49ebda4d7f9add844a2a6c62cef0cc4d",
+    "mtime": 1788470821.3272486,
+    "seen": 1788470907.0330043,
+    "ast_hash": "b0e1a0fd2627045b5599f55136aaba9a",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad6a_como-se-va-a-goya.md": {
@@ -846,15 +846,15 @@
     "semantic_hash": "64aea90e57ba88187f9bd9f56c6fab03"
   },
   "docencia-espanol/materiales/codigos-acceso.html": {
-    "mtime": 1788469355.5071614,
-    "seen": 1788469403.477366,
-    "ast_hash": "247e517726e2a5aa321c93aefd43db3f",
+    "mtime": 1788470875.8352518,
+    "seen": 1788470907.033119,
+    "ast_hash": "43839c7ad8a769f3c126a66c3d023fad",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/indice-clases-de-espanol.html": {
-    "mtime": 1788469300.039158,
-    "seen": 1788469403.477367,
-    "ast_hash": "02a3547b686a3fa428afcc76267271ac",
+    "mtime": 1788470850.8872504,
+    "seen": 1788470907.0331197,
+    "ast_hash": "ec80093781981cba4dac0176ae122f59",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/quizlet/nuevo-espanol-en-marcha-1_unidad1.md": {
@@ -2181,6 +2181,18 @@
     "mtime": 1788469987.6487079,
     "seen": 1788470148.249942,
     "ast_hash": "d6c8c711502975e5245c13edda4a0897",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a2/cuaderno-unidad2_biografias.md": {
+    "mtime": 1788470811.531133,
+    "seen": 1788470907.0330431,
+    "ast_hash": "e963ca608ff586de14ab9e216baae19e",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/materiales/a2/nuevo-espanol-en-marcha-2_cuaderno-unidad2_biografias_interactivo.html": {
+    "mtime": 1788470730.7632432,
+    "seen": 1788470907.0331056,
+    "ast_hash": "f54cf5423b0642c3a7de7bf2a2dbfc08",
     "semantic_hash": ""
   }
 }
