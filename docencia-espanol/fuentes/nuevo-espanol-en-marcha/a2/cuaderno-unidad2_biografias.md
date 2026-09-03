@@ -121,6 +121,8 @@
 
 *Completa el texto con el pretérito indefinido de los verbos.*
 
+> **Miguel de Cervantes:** 
+
 Miguel de Cervantes Saavedra (1) nació (nacer) en Alcalá de Henares en 1547. En 1569 (2) **se fue** (irse) a Roma y allí (3) **se hizo** (hacerse) soldado. En una batalla importante (4) **perdió** (perder) el brazo izquierdo. (5) **Estuvo** (estar) en una cárcel de Argel durante cinco años y en 1580 finalmente (6) **volvió** (volver) a España. (7) **Se casó** (casarse) con Catalina de Salazar. (8) **Tuvo** (tener) problemas en su trabajo de recaudador de impuestos y (9) **fue** (ir) a la cárcel otra vez. Allí (10) **escribió** (escribir) su obra más importante: Don Quijote de la Mancha. (11) **Murió** (morir) en 1616.
 
 #### Ej. 4 — Juan López

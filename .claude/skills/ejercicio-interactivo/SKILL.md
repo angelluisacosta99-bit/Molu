@@ -250,6 +250,25 @@ El fallo no fue no saber los pasos, fue no volver a mirarlos al final.
       porque ya se saltó dos veces (A1, y de nuevo en A2 Unidad 1) dando la transcripción
       por suficiente sin buscar en Drive primero. Ver la lección "Audio: busca siempre en
       Drive" más abajo para cómo buscarlo y embebido.
+- [ ] **Toda foto/ilustración real que el libro imprime junto a un ejercicio (retrato,
+      foto de ciudad, foto de premio, dibujo con nombre propio) se recorta de la página
+      renderizada y se incrusta como `ex.refHTML`/`item.img` — no basta con transcribir
+      solo el texto.** Encontrado en A2 Unidades 1 y 2: se publicaron sin ninguna de las
+      fotos reales del libro (Nicole Manderson, Sevilla/Córdoba, Cervantes, Gabriela
+      Mistral/Almodóvar/Induráin, Camilo José Cela) pese a que el propio flujo (paso 1,
+      "Y mires lo que mires, mira la página") ya exige mirar la página entera — mirarla
+      para no perderse contenido de texto no es lo mismo que decidir incrustar sus fotos.
+      El profesor tuvo que pedirlo explícitamente. Recórtalas con PIL sobre el render a
+      300 dpi (ver "Auto-instalación" más abajo para pymupdf si falta poppler), en blanco
+      y negro y compresión JPEG moderada (`quality=75-80`) para no disparar el tamaño del
+      artefacto, e incrústalas como `data:` URI — igual que el audio, un artefacto no
+      puede enlazar un archivo externo. `ex.refHTML` ya soporta HTML arbitrario (`<img>`,
+      `<figure>`), así que no hace falta un campo nuevo en el motor; dale siempre un
+      `style="max-width:XXXpx"` explícito a la imagen — sin él hereda el ancho completo
+      de `.exercise-ref` y sale desproporcionada (visto en vivo con el retrato de Nicole
+      Manderson, que salía más alto que toda la tarjeta antes de acotarlo). Si el bloque
+      ya tiene otro `refHTML` (un banco de palabras, por ejemplo), añade las fotos AL
+      PRINCIPIO de esa misma cadena — el campo es uno solo, no se puede repetir la clave.
 - [ ] Si el material no viene claramente de un manual concreto, **pregúntale al profesor**
       en vez de archivarlo por deducción. `RepasoB1.pdf` era un PDF suelto y se colocó bajo
       "Nuevo Español en Marcha 3" por parecido de formato; el profesor confirmó después que

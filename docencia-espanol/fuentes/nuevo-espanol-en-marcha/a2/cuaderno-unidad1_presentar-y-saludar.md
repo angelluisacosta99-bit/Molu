@@ -42,6 +42,8 @@
 
 *Escribe las preguntas.*
 
+> **Nicole Manderson:** 
+
 1. ¿Cómo te llamas?
    Nicole Manderson.
 2. • **¿De dónde eres?**
