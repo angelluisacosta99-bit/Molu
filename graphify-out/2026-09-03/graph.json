@@ -29760,7 +29760,7 @@
       "node_kind": "heading",
       "norm_label": "ej. 4 \u2014 completa las frases con tener o ser",
       "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad1b_a-que-te-dedicas.md",
-      "source_location": "L58"
+      "source_location": "L56"
     },
     {
       "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad1b_a_que_te_dedicas_ej_5_forma_frases_tomando_un_elemento_de_cada_columna",
@@ -29772,7 +29772,7 @@
       "node_kind": "heading",
       "norm_label": "ej. 5 \u2014 forma frases tomando un elemento de cada columna",
       "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad1b_a-que-te-dedicas.md",
-      "source_location": "L79"
+      "source_location": "L77"
     },
     {
       "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad1b_a_que_te_dedicas_ejercicios",
@@ -100373,41 +100373,8 @@
       "weight": 1.0
     },
     {
-      "source": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad1b_a_que_te_dedicas_ejercicios",
-      "target": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad1b_a_que_te_dedicas_ej_2_forma_frases_como_en_el_modelo",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad1b_a-que-te-dedicas.md",
-      "source_location": "L20",
-      "weight": 1.0
-    },
-    {
-      "source": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad1b_a_que_te_dedicas_ejercicios",
-      "target": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad1b_a_que_te_dedicas_ej_3_completa_la_tabla",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad1b_a-que-te-dedicas.md",
-      "source_location": "L45",
-      "weight": 1.0
-    },
-    {
-      "source": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad1b_a_que_te_dedicas_ejercicios",
-      "target": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad1b_a_que_te_dedicas_ej_4_completa_las_frases_con_tener_o_ser",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad1b_a-que-te-dedicas.md",
-      "source_location": "L58",
-      "weight": 1.0
-    },
-    {
-      "source": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad1b_a_que_te_dedicas_ejercicios",
-      "target": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad1b_a_que_te_dedicas_ej_1_busca_en_esta_sopa_de_letras_los_nombres_de_ocho_profesionales",
+      "source": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad1b_a_que_te_dedicas_ej_1_busca_en_esta_sopa_de_letras_los_nombres_de_ocho_profesionales",
+      "target": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad1b_a_que_te_dedicas_ejercicios",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -100417,14 +100384,47 @@
       "weight": 1.0
     },
     {
-      "source": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad1b_a_que_te_dedicas_ejercicios",
-      "target": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad1b_a_que_te_dedicas_ej_5_forma_frases_tomando_un_elemento_de_cada_columna",
+      "source": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad1b_a_que_te_dedicas_ej_2_forma_frases_como_en_el_modelo",
+      "target": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad1b_a_que_te_dedicas_ejercicios",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad1b_a-que-te-dedicas.md",
-      "source_location": "L79",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad1b_a_que_te_dedicas_ej_3_completa_la_tabla",
+      "target": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad1b_a_que_te_dedicas_ejercicios",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad1b_a-que-te-dedicas.md",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad1b_a_que_te_dedicas_ej_4_completa_las_frases_con_tener_o_ser",
+      "target": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad1b_a_que_te_dedicas_ejercicios",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad1b_a-que-te-dedicas.md",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad1b_a_que_te_dedicas_ej_5_forma_frases_tomando_un_elemento_de_cada_columna",
+      "target": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad1b_a_que_te_dedicas_ejercicios",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad1b_a-que-te-dedicas.md",
+      "source_location": "L77",
       "weight": 1.0
     },
     {
@@ -109595,5 +109595,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "4836a4fe8ed75779dc7fac464efb2399326a0bc5"
+  "built_at_commit": "759e0eb0657760708bdde4cc0ada913db1f66b6a"
 }
