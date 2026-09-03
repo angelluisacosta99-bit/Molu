@@ -28473,7 +28473,7 @@
       "node_kind": "heading",
       "norm_label": "ej. 2 \u2014 completa",
       "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad9b_mi-novio-lleva-corbata.md",
-      "source_location": "L22"
+      "source_location": "L33"
     },
     {
       "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad9b_mi_novio_lleva_corbata_ej_3_escribe_los_adjetivos_contrarios",
@@ -28485,7 +28485,7 @@
       "node_kind": "heading",
       "norm_label": "ej. 3 \u2014 escribe los adjetivos contrarios",
       "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad9b_mi-novio-lleva-corbata.md",
-      "source_location": "L36"
+      "source_location": "L47"
     },
     {
       "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad9b_mi_novio_lleva_corbata_ej_4_completa_con_las_palabras_del_recuadro",
@@ -28497,7 +28497,7 @@
       "node_kind": "heading",
       "norm_label": "ej. 4 \u2014 completa con las palabras del recuadro",
       "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad9b_mi-novio-lleva-corbata.md",
-      "source_location": "L47"
+      "source_location": "L58"
     },
     {
       "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad9b_mi_novio_lleva_corbata_ejercicios",
@@ -29557,7 +29557,7 @@
       "node_kind": "heading",
       "norm_label": "ej. 6 \u2014 completa con el verbo en presente",
       "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad3a_rosa-se-levanta-a-las-siete.md",
-      "source_location": "L86"
+      "source_location": "L97"
     },
     {
       "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad3a_rosa_se_levanta_a_las_siete_ejercicios",
@@ -30291,7 +30291,7 @@
       "node_kind": "heading",
       "norm_label": "ej. 2 \u2014 esta es la clase de idiomas, pero el profesor no esta",
       "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad2b_donde-estan-mis-gafas.md",
-      "source_location": "L23"
+      "source_location": "L35"
     },
     {
       "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad2b_donde_estan_mis_gafas_ej_3_sigue_el_modelo",
@@ -30303,7 +30303,7 @@
       "node_kind": "heading",
       "norm_label": "ej. 3 \u2014 sigue el modelo",
       "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad2b_donde-estan-mis-gafas.md",
-      "source_location": "L48"
+      "source_location": "L60"
     },
     {
       "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad2b_donde_estan_mis_gafas_ejercicios",
@@ -100654,7 +100654,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad2b_donde-estan-mis-gafas.md",
-      "source_location": "L23",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -100665,7 +100665,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad2b_donde-estan-mis-gafas.md",
-      "source_location": "L48",
+      "source_location": "L60",
       "weight": 1.0
     },
     {
@@ -100885,7 +100885,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad3a_rosa-se-levanta-a-las-siete.md",
-      "source_location": "L86",
+      "source_location": "L97",
       "weight": 1.0
     },
     {
@@ -101908,7 +101908,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad9b_mi-novio-lleva-corbata.md",
-      "source_location": "L22",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -101919,7 +101919,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad9b_mi-novio-lleva-corbata.md",
-      "source_location": "L36",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -101930,7 +101930,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad9b_mi-novio-lleva-corbata.md",
-      "source_location": "L47",
+      "source_location": "L58",
       "weight": 1.0
     },
     {
@@ -109671,5 +109671,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "464a16fb9c45e3fa42b789a1cbbc98fbb57f508c"
+  "built_at_commit": "c7e2c4c0a06cae279ff3cc1fe7890cc8671965b5"
 }

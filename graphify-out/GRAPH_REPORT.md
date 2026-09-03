@@ -1,7 +1,7 @@
 # Graph Report - Molu  (2026-09-03)
 
 ## Corpus Check
-- 243 files · ~1,050,527 words
+- 243 files · ~1,057,599 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `464a16fb`
+- Built from commit: `c7e2c4c0`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -952,24 +952,24 @@ Cohesion: 0.83
 Nodes (3): captureVisualContrastCandidate(), compareScreenshotContrast(), sanitizeScreenshotClip()
 
 ## Knowledge Gaps
-- **664 isolated node(s):** `require`, `{ chromium }`, `[file, code]`, `Ej. 1 — Busca en esta sopa de letras los nombres de ocho profesionales`, `Ej. 2 — Forma frases, como en el modelo` (+659 more)
+- **664 isolated node(s):** `Ej. 1 — Busca el nombre de esta ropa en la sopa de letras`, `Ej. 2 — Completa`, `Ej. 3 — Escribe los adjetivos contrarios`, `Ej. 4 — Completa con las palabras del recuadro`, `HEADING_TAGS` (+659 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **21 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `runCopyEditBatchAgent()` connect `live-copy-edit-agent.mjs` to `live-commit-manual-edits.mjs`?**
-  _High betweenness centrality (0.003) - this node is a cross-community bridge._
 - **Why does `readBuffer()` connect `manual-edit-routes.mjs` to `live-manual-edit-evidence.mjs`, `manual-apply.mjs`, `live-commit-manual-edits.mjs`, `live-wrap.mjs`, `live-accept.mjs`?**
-  _High betweenness centrality (0.002) - this node is a cross-community bridge._
-- **Why does `sendEvent()` connect `handleGo` to `live-browser.js`, `initGlobalBar`, `initPageChat`, `setLiveState`?**
+  _High betweenness centrality (0.003) - this node is a cross-community bridge._
+- **Why does `enableInlineEdit()` connect `live-browser.js` to `createLiveBrowserDomHelpers`, `setLiveState`?**
   _High betweenness centrality (0.002) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `initGlobalBar()` (e.g. with `hideAgentPollTooltip()` and `onDetectMessage()`) actually correct?**
   _`initGlobalBar()` has 7 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `require`, `{ chromium }`, `[file, code]` to the rest of the system?**
+- **What connects `Ej. 1 — Busca el nombre de esta ropa en la sopa de letras`, `Ej. 2 — Completa`, `Ej. 3 — Escribe los adjetivos contrarios` to the rest of the system?**
   _664 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `live-browser.js` be split into smaller, more focused modules?**
   _Cohesion score 0.028169014084507043 - nodes in this community are weakly interconnected._
 - **Should `checks.mjs` be split into smaller, more focused modules?**
   _Cohesion score 0.047898912724067 - nodes in this community are weakly interconnected._
+- **Should `index.mjs` be split into smaller, more focused modules?**
+  _Cohesion score 0.06142410015649452 - nodes in this community are weakly interconnected._
