@@ -6,7 +6,7 @@
 
 #### Ej. 1 — Busca en esta sopa de letras los nombres de ocho profesionales
 
-*El libro ya trae PELUQUERA resuelta como ejemplo. Toca la primera letra de una palabra y luego la última para marcarla.*
+*Mira cada foto y adivina la profesión — el nombre no aparece hasta que la encuentres. El libro ya trae PELUQUERA resuelta como ejemplo. Toca la primera letra de una palabra y luego la última para marcarla.*
 
 ```
 PELUQUERAB
