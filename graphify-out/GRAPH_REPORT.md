@@ -1,7 +1,7 @@
 # Graph Report - Molu  (2026-09-03)
 
 ## Corpus Check
-- 226 files · ~836,681 words
+- 226 files · ~836,843 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `a846bbc5`
+- Built from commit: `0da47d8e`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -836,22 +836,22 @@ Cohesion: 0.14
 Nodes (10): Contactos relevantes, Datos personales, Documentos ya traducidos al español (formato Word, para traductor jurado), Gestiones pendientes, Relación con la matrícula del máster (MUSI, USAL), Solicitudes de apostilla ante el MFC (presentadas 03.07.2026), Trámite de apostilla de títulos académicos rusos (MFC), Títulos académicos (RUT MIIT) (+2 more)
 
 ## Knowledge Gaps
-- **572 isolated node(s):** `Subcarpetas`, `Datos personales`, `Títulos académicos (RUT MIIT)`, `Solicitudes de apostilla ante el MFC (presentadas 03.07.2026)`, `Contactos relevantes` (+567 more)
+- **572 isolated node(s):** `Datos personales`, `Títulos académicos (RUT MIIT)`, `Solicitudes de apostilla ante el MFC (presentadas 03.07.2026)`, `Contactos relevantes`, `Gestiones pendientes` (+567 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **20 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `readBuffer()` connect `manual-edit-routes.mjs` to `live-manual-edit-evidence.mjs`, `manual-apply.mjs`, `live-commit-manual-edits.mjs`, `live-wrap.mjs`, `live-accept.mjs`?**
+- **Why does `readLiveServerInfo()` connect `readLiveServerInfo` to `impeccable-paths.mjs`, `live-poll.mjs`, `live.mjs`, `live-server.mjs`?**
   _High betweenness centrality (0.003) - this node is a cross-community bridge._
-- **Why does `countByPage()` connect `manual-edit-routes.mjs` to `live-commit-manual-edits.mjs`, `live-server.mjs`?**
+- **Why does `loadContext()` connect `context-signals.mjs` to `live-server.mjs`, `live.mjs`, `resolveContext`, `context.mjs`?**
   _High betweenness centrality (0.002) - this node is a cross-community bridge._
-- **Why does `isGeneratedFile()` connect `isGeneratedFile` to `live-commit-manual-edits.mjs`, `live-accept.mjs`, `live-manual-edit-evidence.mjs`, `live-wrap.mjs`?**
+- **Why does `readBuffer()` connect `manual-edit-routes.mjs` to `live-manual-edit-evidence.mjs`, `manual-apply.mjs`, `live-commit-manual-edits.mjs`, `live-wrap.mjs`, `live-accept.mjs`?**
   _High betweenness centrality (0.002) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `initGlobalBar()` (e.g. with `hideAgentPollTooltip()` and `onDetectMessage()`) actually correct?**
   _`initGlobalBar()` has 7 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `Subcarpetas`, `Datos personales`, `Títulos académicos (RUT MIIT)` to the rest of the system?**
+- **What connects `Datos personales`, `Títulos académicos (RUT MIIT)`, `Solicitudes de apostilla ante el MFC (presentadas 03.07.2026)` to the rest of the system?**
   _572 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `live-browser.js` be split into smaller, more focused modules?**
   _Cohesion score 0.02863984674329502 - nodes in this community are weakly interconnected._
