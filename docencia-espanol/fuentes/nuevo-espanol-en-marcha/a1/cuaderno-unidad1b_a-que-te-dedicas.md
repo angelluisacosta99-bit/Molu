@@ -44,14 +44,16 @@
 
 #### Ej. 3 — Completa la tabla
 
+*Algunas formas ya las trae resueltas el libro.*
+
 | Sujeto | Ser | Tener |
 | --- | --- | --- |
-| yo | soy | tengo |
-| tú | eres | tienes |
-| él/ella/usted | es | tiene |
-| nosotros/as | somos | tenemos |
-| vosotros/as | sois | tenéis |
-| ellos/as/ustedes | son | tienen |
+| yo | soy | **tengo** |
+| tú | **eres** | tienes |
+| él/ella/usted | **es** | **tiene** |
+| nosotros/as | somos | **tenemos** |
+| vosotros/as | **sois** | tenéis |
+| ellos/as/ustedes | **son** | **tienen** |
 
 #### Ej. 4 — Completa las frases con tener o ser
 

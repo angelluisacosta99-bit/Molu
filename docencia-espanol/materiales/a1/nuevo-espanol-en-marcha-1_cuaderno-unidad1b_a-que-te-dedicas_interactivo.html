@@ -814,12 +814,13 @@
         },
         {
           num: 3, title: "Completa la tabla",
+          instr: "Algunas formas ya las trae resueltas el libro.",
           type: "conjTable",
           subjectLabel: "",
           subjects: ["yo", "tú", "él/ella/usted", "nosotros/as", "vosotros/as", "ellos/as/ustedes"],
           cols: [
-            { label: "Ser", a: ["soy", "eres", "es", "somos", "sois", "son"] },
-            { label: "Tener", a: ["tengo", "tienes", "tiene", "tenemos", "tenéis", "tienen"] }
+            { label: "Ser", a: ["soy", ["eres"], ["es"], "somos", ["sois"], ["son"]] },
+            { label: "Tener", a: [["tengo"], "tienes", ["tiene"], ["tenemos"], "tenéis", ["tienen"]] }
           ]
         },
         {
