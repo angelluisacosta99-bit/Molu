@@ -71,17 +71,28 @@
 
 #### Ej. 5 — Busca en la sopa de letras estas formas verbales
 
-*El libro las presenta en una sopa de letras; aquí van con pista de la persona. "ir, yo" ya lo trae resuelto el libro (rodeado en la sopa de letras): voy.*
+*"ir, yo" ya lo trae resuelto el libro (rodeado en la sopa de letras): voy. Para las demás, piensa la forma correcta y búscala en la rejilla.*
 
-1. ir, yo → voy
-2. cerrar, ella → **cierra**
-3. empezar, nosotros → **empezamos**
-4. salir, yo → **salgo**
-5. venir, vosotros → **venís**
-6. cerrar, yo → **cierro**
-7. venir, yo → **vengo**
-8. empezar, usted → **empieza**
-9. salir, ellos → **salen**
+```
+CEMPEZAMOS
+IWRVOYÑEMA
+ECIERRAMHL
+RVENGOBPXG
+RMQIZMÑIKO
+OUZSSALENC
+ZWRTMBOZQL
+VBRETUMAXL
+```
+
+- ir, yo → voy
+- cerrar, ella
+- empezar, nosotros
+- salir, yo
+- venir, vosotros
+- cerrar, yo
+- venir, yo
+- empezar, usted
+- salir, ellos
 
 #### Ej. 6 — Completa con el verbo en presente
 
