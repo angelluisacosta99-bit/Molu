@@ -56,7 +56,7 @@
   "54": "critique-storage.mjs",
   "55": "scheduleLazyVisualContrast",
   "56": "collectBrowserFindings",
-  "57": "StaticElement",
+  "57": "parseAnyColor",
   "58": "live.mjs",
   "59": "readConfig",
   "60": "RoombaController",
@@ -148,7 +148,7 @@
   "146": "Ejercicios",
   "147": "Ejercicios",
   "148": "Ejercicios",
-  "149": "resolveProject",
+  "149": "resolveLengthPx",
   "150": "guia-repaso-unidades-1-10.md",
   "151": "Ejercicios",
   "152": "Ejercicios",
@@ -194,5 +194,6 @@
   "192": "Ejercicios",
   "193": "Ejercicios",
   "194": "Q: PR 90 re-review: verify 5 prior derangement/conjTable fixes on current HEAD",
-  "195": "personal/README.md"
+  "195": "personal/README.md",
+  "196": "resolveCandidateContextSummary"
 }
