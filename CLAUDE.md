@@ -248,6 +248,34 @@ un libro de texto que se está transcribiendo—, lleva su tilde normal:
 es el profesor es un error de ortografía, no una aplicación de esta
 regla.
 
+## Trámite de apostilla
+
+Angel tiene en curso un trámite de apostilla de sus títulos académicos
+rusos (RUT MIIT) ante el MFC de Moscú, necesario para la matrícula
+definitiva del máster (MUSI, USAL) y para varias becas — ver el riesgo
+de "matrícula condicionada" en
+`master-sistemas-inteligentes/admision-y-becas/becas-y-tramites-2026-2027.md`.
+
+El estado completo (expedientes, contactos, documentos ya traducidos,
+gestiones pendientes) vive en
+[`personal/academico/tramite-apostilla-mfc.md`](personal/academico/tramite-apostilla-mfc.md) —
+consultarlo antes de tocar temas relacionados con la apostilla o la
+matrícula del máster, en vez de partir de cero.
+
+**Cada vez que Angel dé una actualización sobre este trámite** (nueva
+respuesta del MFC, nuevo documento traducido, cambio de estado en algún
+expediente), actualizar ese archivo para reflejarla — no dejarla solo
+en el historial de la conversación. Si la actualización cambia algo que
+también afecta a `becas-y-tramites-2026-2027.md` (p. ej. resuelve o
+empeora el riesgo de matrícula condicionada), actualizar ese archivo
+también.
+
+Excepción de privacidad documentada en `personal/README.md`: ese
+archivo sí guarda pasaporte, teléfono y dirección exacta de Angel sin
+redactar, a petición suya explícita — no aplicar esta excepción a
+ningún otro archivo del repo sin que él lo pida de nuevo para ese caso
+concreto.
+
 ## Presentaciones (.pptx): sin firma final
 
 En la diapositiva de cierre de cualquier presentación, no añadir una
