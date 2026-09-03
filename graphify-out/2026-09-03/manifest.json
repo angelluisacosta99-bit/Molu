@@ -672,9 +672,9 @@
     "semantic_hash": "8e8e3a58858713ff62de8ffa1a740cc6"
   },
   "CLAUDE.md": {
-    "mtime": 1788444881.1534824,
-    "seen": 1788444904.52029,
-    "ast_hash": "66e270fbf7782871dfc6251a29427434",
+    "mtime": 1788250114.6103284,
+    "seen": 1788357298.1683922,
+    "ast_hash": "9115c2ff3a753cadf684a9179d8ab174",
     "semantic_hash": ""
   },
   "DESIGN.md": {
@@ -1860,9 +1860,9 @@
     "semantic_hash": ""
   },
   "personal/README.md": {
-    "mtime": 1788444858.501483,
-    "seen": 1788444904.5204551,
-    "ast_hash": "2f338078324d8c5feb62088eb5b68cc6",
+    "mtime": 1788246498.9586546,
+    "seen": 1788357298.168712,
+    "ast_hash": "baa159064bee9eb658bb76382c9b0cb2",
     "semantic_hash": ""
   },
   "personal/academico/formacion-academica.md": {
@@ -1959,12 +1959,6 @@
     "mtime": 1788357925.3802023,
     "seen": 1788357988.5758238,
     "ast_hash": "8efed54b3a375d858dd15eef9f54e538",
-    "semantic_hash": ""
-  },
-  "personal/academico/tramite-apostilla-mfc.md": {
-    "mtime": 1788444847.737483,
-    "seen": 1788444904.5204587,
-    "ast_hash": "23535f3792b4eddf9c2afe97f84d26a3",
     "semantic_hash": ""
   }
 }
