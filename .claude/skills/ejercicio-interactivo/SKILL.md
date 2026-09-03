@@ -1,7 +1,7 @@
 ---
 name: ejercicio-interactivo
 description: "Use when Angel asks to build a new interactive Spanish grammar/vocabulary exercise page with instant grading — a self-contained HTML artifact where a student fills in blanks, gets corrected instantly, and can send their results to the teacher via WhatsApp/Telegram/Teams/Correo. Also use when asked to add a new chapter/unit to this format, or to fix/extend an existing one (e.g. the A1 \"Presente, gerundio, indefinido\" or B2 12C \"¿Sigues pintando?\" exercises already in docencia-espanol/materiales/). Triggers: \"ejercicio interactivo\", \"como el de A1/12C\", \"corrección instantánea\", \"página interactiva para practicar\", \"haz lo mismo con otro capítulo\"."
-version: 1.9.0
+version: 1.10.0
 user-invocable: true
 license: Apache 2.0
 ---
@@ -86,9 +86,14 @@ PR #22 invertía el orden que PR #20 daba por bueno.
    límite de tamaño que los PDF, ver más arriba) y decodifícalos de base64. Incrusta el
    resultado como `<audio controls>` con el mp3 en un `data:` URI base64 (los archivos
    rondan 1-2 MB, muy por debajo del límite de artefacto) en vez de dejar solo la
-   transcripción en un `<details>`. Este es un error real ya cometido en este repo: se
-   afirmó que "solo había transcripción del PDF" sin haber buscado en Drive, y el profesor
-   tuvo que corregirlo — la carpeta sí existe y sí las tiene.
+   transcripción en un `<details>`. Este es un error real ya cometido en este repo **dos
+   veces**: la primera en A1, donde se afirmó que "solo había transcripción del PDF" sin
+   haber buscado en Drive; la segunda en A2 Unidad 1 (ejercicio de audio "Pista 1" sobre la
+   rutina de Lucía), publicado solo con transcripción sin ni siquiera intentar la búsqueda
+   en Drive primero. El profesor tuvo que corregirlo las dos veces — la carpeta sí existe y
+   sí las tiene. Por eso este paso está también en la checklist de cierre del capítulo, no
+   solo aquí: comprobar la existencia del audio real en Drive es obligatorio para CUALQUIER
+   ejercicio de audio, siempre, no una vez que "se acuerde".
 
    **Y mires lo que mires, mira la página.** Antes de dar por buena una transcripción,
    renderiza la página y ábrela con `Read`, aunque el texto se haya extraído perfectamente.
@@ -239,6 +244,12 @@ El fallo no fue no saber los pasos, fue no volver a mirarlos al final.
       en el README de esa carpeta indicando el origen de las respuestas (paso 8).
 - [ ] No queda ningún marcador `{{...}}` ni la cabecera de la plantilla sin adaptar (esa
       cabecera se publica en el código fuente que ve el alumno).
+- [ ] **Si algún ejercicio del capítulo es de audio ("Pista N", "Escucha y..."), se buscó
+      el mp3 real en Drive ANTES de conformarse con solo la transcripción.** No es
+      opcional ni "si hay tiempo": es un paso obligatorio del checklist, exactamente
+      porque ya se saltó dos veces (A1, y de nuevo en A2 Unidad 1) dando la transcripción
+      por suficiente sin buscar en Drive primero. Ver la lección "Audio: busca siempre en
+      Drive" más abajo para cómo buscarlo y embebido.
 - [ ] Si el material no viene claramente de un manual concreto, **pregúntale al profesor**
       en vez de archivarlo por deducción. `RepasoB1.pdf` era un PDF suelto y se colocó bajo
       "Nuevo Español en Marcha 3" por parecido de formato; el profesor confirmó después que
@@ -382,6 +393,44 @@ no las deshagas sin querer al modificar la plantilla.
   frase archivada (`→ **?**VF`) en vez de la respuesta real. Si añades otro hueco "no-texto"
   (chips, un slider, lo que sea) que también oculte el input real, revisa si necesita el
   mismo tipo de ajuste en `extraer.mjs` antes de darlo por archivable.
+- **En un diálogo A/B (o CELIA:/ANA:...), las réplicas van SIEMPRE una debajo de otra, nunca
+  corridas en la misma línea** — pedido explícitamente por el profesor tras verlo mal en A2
+  Unidad 1. Basta con `\n` entre las réplicas dentro de `item.t` (o de `ex.text` en tipo
+  `"text"`): el motor inserta un `<br>` real por cada `\n`, así que las réplicas SIEMPRE
+  quedan apiladas aunque el ejercicio no use `ex.dialog: true` — ese flag solo añade el
+  chip en negrita/dorado sobre la letra del interlocutor, no afecta a si las líneas se
+  apilan o no. Nunca escribas "A ... B ..." seguido seguido en la misma cadena sin `\n` — ni
+  siquiera como atajo temporal para evitar el bug de abajo.
+  - **Bug de motor real, ya arreglado en `reference/template.html`**: un ítem con un solo
+    hueco `{0}` cuyo texto tiene un `\n` ANTES de ese hueco (p. ej. `"A ¿Qué tal?\nB Muy
+    bien, fui. → {0}"`) hacía que la casilla se pintara flotando a media altura de la
+    PRIMERA línea en vez de pegada al final de la segunda — donde va de verdad. Causa: el
+    ajuste "estira el hueco final hasta el borde derecho" (clase `.tail-blank`, ver más
+    abajo) envuelve TODO lo anterior al hueco en un único `<span>` flex con
+    `align-items: baseline`; si ese span contiene un `<br>` interno (diálogo de 2+ líneas),
+    el alineado "baseline" del flex usa la línea de base de la PRIMERA línea del span, no la
+    de la última — de ahí que el hueco apareciera "descolgado" junto a la primera réplica.
+    El arreglo: antes de envolver, comprobar si hay algún `<br>` en CUALQUIER punto anterior
+    al hueco (no solo el nodo inmediatamente anterior, que es lo que ya comprobaba el caso
+    de "casilla en su propia línea a ancho completo") y, si lo hay, no envolver — el hueco
+    se queda en flujo normal, pegado a la última línea, sin el estirado a la derecha (que de
+    todas formas no tenía sentido con contenido multilínea). Si ves este síntoma (casilla
+    "flotando" en un ítem con `\n`), ya está resuelto en la plantilla; solo falta portarlo al
+    capítulo si se copió de una base más antigua (mismo aviso que con el motor de `match`).
+  - **`ex.dialog: true` detecta como interlocutor CUALQUIER línea que empiece por "A " o
+    "B " seguido de espacio, no solo cuando de verdad hay un personaje A/B.** Encontrado en
+    A2 Unidad 1: un ejercicio mezclaba turnos de diálogo reales ("A ¿Vienes al cine? / B
+    Vale...") con frases sueltas que, por gramática normal del español, también empiezan por
+    la preposición "A" ("A los jóvenes españoles les encanta...") — con `ex.dialog: true`
+    puesto a nivel de ejercicio, esa frase se leía como si "A" fuera el interlocutor,
+    dejando "los jóvenes españoles..." como si fuera lo que dice. No hay forma sintáctica
+    fiable de distinguir el "A" preposición del "A" interlocutor con una regex, así que la
+    solución es de contenido, no de motor: si un ejercicio mezcla diálogos reales con frases
+    sueltas que puedan empezar por "A "/"B ", dilo con "A ..."/"B ..." en el texto (sigue
+    apilándose por el `\n`, ver arriba) pero **no actives `ex.dialog: true`** para todo el
+    ejercicio — así pierdes el chip de color en las réplicas reales, pero evitas falsos
+    interlocutores en las frases sueltas. Actívalo solo cuando TODOS los ítems del ejercicio
+    son diálogo de verdad.
 
 - **REGLA DEL PROFESOR, sin excepciones: todo ejercicio con audio lleva su transcripción en
   un plegable.** No es opcional ni depende de si tenemos la grabación — de hecho es cuando

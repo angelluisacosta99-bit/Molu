@@ -223,9 +223,11 @@ Maribel
 
 1. El sábado pasado Manolo fui al cine. → fue
 2. ¿Apeteces una cerveza? → **Te apetece**
-3. A ¿Qué tal el fin de semana? B Muy bien, fui en la discoteca. → **a**
+3. A ¿Qué tal el fin de semana?
+   B Muy bien, fui en la discoteca. → **a**
 4. Anoche yo veo la tele hasta las doce de la noche. → **vi**
 5. A los jóvenes españoles le encantan salir por la noche. → **les encanta**
 6. El domingo Fernando se levanto a las once de la mañana. → **levantó**
-7. A ¿Vienes al cine? B Vale, ¿dónde nos quedamos? → **quedamos**
+7. A ¿Vienes al cine?
+   B Vale, ¿dónde nos quedamos? → **quedamos**
 8. ¿Qué hora volviste ayer a casa? → **A qué hora**

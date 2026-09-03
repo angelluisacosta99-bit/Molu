@@ -1414,13 +1414,22 @@
               // estirarlo hasta el borde derecho partiría la oración por la mitad.
               let cola = "", n = huecos[0].nextSibling;
               while (n) { cola += n.textContent || ""; n = n.nextSibling; }
-              // Si el autor puso un salto de línea justo antes del hueco, es que quiere la
-              // casilla en su propia línea a ancho completo (respuestas de frase entera):
-              // estirarla en la misma línea la dejaría flotando a media altura del texto.
-              let antes = huecos[0].previousSibling;
-              while (antes && antes.nodeType === 3 && !antes.textContent.trim()) antes = antes.previousSibling;
-              const saltoAntes = !!antes && antes.nodeName === "BR";
-              if (!saltoAntes && /^[\s.,;:!?¿¡…"»)]*$/.test(cola)) {
+              // Si hay un salto de línea en cualquier punto ANTES del hueco (no solo justo
+              // delante), no se envuelve: un diálogo A/B con el hueco en la segunda línea
+              // (item.t con "\n" y el hueco en la réplica de B) también entra aquí, y
+              // envolver TODO el head en un único span flex de una línea (con salto interno)
+              // rompe el alineado "baseline" del flex — el hueco se pinta a media altura de
+              // la PRIMERA línea, no pegado a la segunda, donde va el texto real. Bug real,
+              // encontrado con un diálogo A/B de dos líneas y un solo hueco al final de la
+              // réplica de B (unidad 1 de A2, ejercicio "busca el error"). Cuando el salto
+              // está PEGADO al hueco (caso ya cubierto antes), el resultado es el mismo que
+              // se buscaba con "saltoAntes": la casilla cae sola en su propia línea, a ancho
+              // completo, sin necesitar el estirado flex.
+              let saltoEnHead = false;
+              for (let n2 = row.firstChild; n2 && n2 !== huecos[0]; n2 = n2.nextSibling) {
+                if (n2.nodeName === "BR") { saltoEnHead = true; break; }
+              }
+              if (!saltoEnHead && /^[\s.,;:!?¿¡…"»)]*$/.test(cola)) {
                 row.classList.add("tail-blank");
                 // Todo lo anterior al hueco (número + frase) va en UN solo envoltorio.
                 // Si se dejan sueltos, cada nodo de texto es un elemento flex distinto y
@@ -1750,13 +1759,22 @@
               // estirarlo hasta el borde derecho partiría la oración por la mitad.
               let cola = "", n = huecos[0].nextSibling;
               while (n) { cola += n.textContent || ""; n = n.nextSibling; }
-              // Si el autor puso un salto de línea justo antes del hueco, es que quiere la
-              // casilla en su propia línea a ancho completo (respuestas de frase entera):
-              // estirarla en la misma línea la dejaría flotando a media altura del texto.
-              let antes = huecos[0].previousSibling;
-              while (antes && antes.nodeType === 3 && !antes.textContent.trim()) antes = antes.previousSibling;
-              const saltoAntes = !!antes && antes.nodeName === "BR";
-              if (!saltoAntes && /^[\s.,;:!?¿¡…"»)]*$/.test(cola)) {
+              // Si hay un salto de línea en cualquier punto ANTES del hueco (no solo justo
+              // delante), no se envuelve: un diálogo A/B con el hueco en la segunda línea
+              // (item.t con "\n" y el hueco en la réplica de B) también entra aquí, y
+              // envolver TODO el head en un único span flex de una línea (con salto interno)
+              // rompe el alineado "baseline" del flex — el hueco se pinta a media altura de
+              // la PRIMERA línea, no pegado a la segunda, donde va el texto real. Bug real,
+              // encontrado con un diálogo A/B de dos líneas y un solo hueco al final de la
+              // réplica de B (unidad 1 de A2, ejercicio "busca el error"). Cuando el salto
+              // está PEGADO al hueco (caso ya cubierto antes), el resultado es el mismo que
+              // se buscaba con "saltoAntes": la casilla cae sola en su propia línea, a ancho
+              // completo, sin necesitar el estirado flex.
+              let saltoEnHead = false;
+              for (let n2 = row.firstChild; n2 && n2 !== huecos[0]; n2 = n2.nextSibling) {
+                if (n2.nodeName === "BR") { saltoEnHead = true; break; }
+              }
+              if (!saltoEnHead && /^[\s.,;:!?¿¡…"»)]*$/.test(cola)) {
                 row.classList.add("tail-blank");
                 // Todo lo anterior al hueco (número + frase) va en UN solo envoltorio.
                 // Si se dejan sueltos, cada nodo de texto es un elemento flex distinto y
