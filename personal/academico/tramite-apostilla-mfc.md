@@ -49,8 +49,24 @@ conversación de Claude Code.
 
 ## Gestiones pendientes
 
+- **2026-09-03** — Alexander Evgenievich (RUT MIIT) confirmó que la
+  petición del MFC probablemente **se perdió dentro de la burocracia
+  interna de RUT MIIT** (no fue el MFC quien falló). Pasó el contacto de
+  un departamento concreto (`rut-miit.ru/depts/26467`, correo indicado
+  en esa página — bloqueada por política de red en esta sesión, sin
+  verificar el correo exacto) y se ofreció a ir en persona al MFC de la
+  propia RUT MIIT si hiciera falta. **Angel ya escribió a ese
+  departamento el mismo día — a la espera de respuesta.**
+- **2026-09-03** — Alexander propuso una vía alternativa: verificó los
+  datos de Angel en el **FIS FRDO** (registro federal ruso de
+  documentos de educación/cualificación,
+  `obrnadzor.gov.ru`/`school.kontur.ru` como guía de consulta) y
+  confirma que el diploma **sí figura registrado como genuino**. Podría
+  servir como prueba adicional ante el MFC o para la apostilla —
+  **pendiente de que Angel lo use si el departamento no responde**.
 - Esperar respuesta del MFC-RUT MIIT (spravka@rut-miit.ru) sobre el
-  envío de la confirmación pendiente al MFC de Moscú.
+  envío de la confirmación pendiente al MFC de Moscú — sigue en pie en
+  paralelo a lo de arriba.
 - Una vez el MFC reciba esa respuesta, presentar nueva solicitud de
   apostilla para el diploma de reconversión profesional (sin coste de
   tasa).
