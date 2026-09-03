@@ -254,6 +254,22 @@
     max-width: 64ch; margin-left: auto; margin-right: auto;
   }
   .open-block b { color: var(--ink); }
+  /* Nota + caja de texto de un ejercicio "open": el alumno escribe su respuesta aquí, no
+     se corrige en la página (no hay una única respuesta correcta que comparar), pero se
+     incluye tal cual en el resumen que se envía al profesor por WhatsApp/Telegram/correo/
+     Teams, para que la revise personalmente — ver openAnswers y buildSummary(). */
+  .open-note {
+    font-size: 0.82rem; color: var(--ink-soft); max-width: 64ch;
+    margin: 0.7rem auto 0.5rem; text-align: center;
+  }
+  .open-answer {
+    display: block; width: 100%; max-width: 64ch; margin: 0 auto;
+    font-family: inherit; font-size: 0.92rem; line-height: 1.6;
+    background: var(--paper-raised); border: 1px solid var(--border); border-radius: 8px;
+    padding: 0.65rem 0.85rem; color: var(--ink); resize: vertical;
+  }
+  .open-answer::placeholder { color: var(--pencil); }
+  .open-answer:focus { outline: none; border-color: var(--focus); }
   /* Enunciados y nota de un ejercicio de respuesta libre (type: "open"). Nacieron en la 5A
      de B1 y vivieron un tiempo solo en ese archivo; están aquí para que el siguiente
      capítulo que use "open" no se quede sin ellos. */
@@ -804,7 +820,16 @@
   function norm(s) {
     return (s || "")
       .toLowerCase()
-      .replace(/[¿?¡!.,]/g, "")
+      .replace(/[¿?¡!.]/g, "")
+      // La coma se sustituye por un espacio, no se borra sin más: borrarla trataba
+      // "a,d,h" (sin espacio) y "a, d, h" (con espacio) como cadenas distintas —
+      // "adh" vs "a d h" — así que una respuesta de varias letras separadas por
+      // comas se marcaba mal si al alumno se le olvidaba el espacio (bug real,
+      // encontrado en revisión de PR). Sustituir por espacio y luego colapsar
+      // espacios seguidos normaliza las dos formas (y cualquier mezcla de las
+      // dos) a la misma cadena. No afecta a una frase normal con coma ("Sí,
+      // gracias" ya lleva un espacio después de la coma en el texto real).
+      .replace(/,/g, " ")
       .trim()
       .replace(/\s+/g, " ");
   }
@@ -1177,6 +1202,7 @@
   // getBoundingClientRect() daría 0 en todos los puntos. Se llaman todas juntas al final,
   // cuando el DOM ya está montado — ver más abajo, después de blocks.forEach(...).
   const pendingMatchDraws = [];
+  const openAnswers = []; // { num, title, el } de cada textarea de un ejercicio "open", para incluirlas en buildSummary()
 
   // wide: true  -> input intermedio (una o dos palabras)
   // wide: "full" -> input de frase entera, para los ejercicios de transformar oraciones:
@@ -1566,6 +1592,23 @@
         box.className = "open-block";
         box.innerHTML = ex.html;
         card.appendChild(box);
+
+        // No hay una única respuesta correcta que comparar, así que esto no se corrige en
+        // la página — pero el profesor sí necesita leer lo que escribió el alumno. Se
+        // guarda su texto y se añade al resumen que se envía por WhatsApp/Telegram/correo/
+        // Teams, junto a la puntuación del resto del capítulo (ver openAnswers arriba y
+        // buildSummary() más abajo).
+        const note = document.createElement("p");
+        note.className = "open-note";
+        note.textContent = "✏️ Esta actividad no se corrige aquí: escribe tu respuesta y, cuando envíes tus resultados a tu profesor, se incluirá para que la revise personalmente.";
+        card.appendChild(note);
+
+        const ta = document.createElement("textarea");
+        ta.className = "open-answer";
+        ta.rows = 4;
+        ta.placeholder = "Escribe aquí tu respuesta…";
+        card.appendChild(ta);
+        openAnswers.push({ num: ex.num, title: ex.title, el: ta });
       } else if (ex.type === "crossword") {
         // ex.words: [{ num, clue, answer, row, col, dir: "A"|"D", solved? }]. row/col
         // empiezan en 0. Dos palabras que se cruzan comparten la MISMA celda del grid: se
@@ -2230,6 +2273,14 @@
       wrong.forEach(function (rec) {
         const given = rec.el.value.trim() || "(en blanco)";
         lines.push("- " + rec.label + ": escribió \"" + given + "\" → correcto: \"" + correctTextFor(rec.spec) + "\"");
+      });
+    }
+    if (openAnswers.length) {
+      lines.push("");
+      lines.push("📝 Respuestas de texto libre (para que las revises tú):");
+      openAnswers.forEach(function (rec) {
+        const text = rec.el.value.trim() || "(no ha escrito nada)";
+        lines.push("— Ej. " + rec.num + (rec.title ? " (" + rec.title + ")" : "") + ": " + text);
       });
     }
     return lines.join("\n");
