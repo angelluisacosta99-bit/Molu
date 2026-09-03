@@ -432,9 +432,9 @@
     "semantic_hash": "9b31786b637be3c13978bec4c2330752"
   },
   ".claude/skills/ejercicio-interactivo/SKILL.md": {
-    "mtime": 1788469961.5511975,
-    "seen": 1788470148.2498608,
-    "ast_hash": "c54c5ecc282c485bffc6395c106c797c",
+    "mtime": 1788471557.0952923,
+    "seen": 1788471574.9071896,
+    "ast_hash": "e881e81cff5ee7a644adae838581dbd4",
     "semantic_hash": ""
   },
   ".claude/skills/ejercicio-interactivo/reference/template.html": {
@@ -2172,27 +2172,33 @@
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a2/nuevo-espanol-en-marcha-2_cuaderno-unidad1_presentar-y-saludar_interactivo.html": {
-    "mtime": 1788470076.2912042,
-    "seen": 1788470148.2499974,
-    "ast_hash": "75f469646386a31c3851145d82a0be3a",
+    "mtime": 1788471357.2552805,
+    "seen": 1788471574.9073222,
+    "ast_hash": "98cef73b304c2b19f2d7dc948384c5f9",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a2/cuaderno-unidad1_presentar-y-saludar.md": {
-    "mtime": 1788469987.6487079,
-    "seen": 1788470148.249942,
-    "ast_hash": "d6c8c711502975e5245c13edda4a0897",
+    "mtime": 1788471407.606973,
+    "seen": 1788471574.9072719,
+    "ast_hash": "c649fb0dacc461bc1c630c0c71333a85",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a2/cuaderno-unidad2_biografias.md": {
-    "mtime": 1788470811.531133,
-    "seen": 1788470907.0330431,
-    "ast_hash": "e963ca608ff586de14ab9e216baae19e",
+    "mtime": 1788471520.2175717,
+    "seen": 1788471574.907273,
+    "ast_hash": "32de16b4b8acde4bc8880de93aae4e87",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a2/nuevo-espanol-en-marcha-2_cuaderno-unidad2_biografias_interactivo.html": {
-    "mtime": 1788470730.7632432,
-    "seen": 1788470907.0331056,
-    "ast_hash": "f54cf5423b0642c3a7de7bf2a2dbfc08",
+    "mtime": 1788471471.9192872,
+    "seen": 1788471574.9073231,
+    "ast_hash": "dc05a66089b4cef34fd92db09a1d1c0c",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/materiales/a2/nuevo-espanol-en-marcha-2_cuaderno-unidad3_costumbres_interactivo.html": {
+    "mtime": 1788470956.5054436,
+    "seen": 1788471574.907324,
+    "ast_hash": "2138ee6c3d539eaddc58023af2d28bf1",
     "semantic_hash": ""
   }
 }
