@@ -1,16 +1,16 @@
 # Graph Report - Molu  (2026-09-04)
 
 ## Corpus Check
-- 254 files · ~1,215,729 words
+- 254 files · ~1,215,779 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 3083 nodes · 6415 edges · 208 communities (186 shown, 22 thin omitted)
+- 3083 nodes · 6415 edges · 207 communities (185 shown, 22 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 135 edges (avg confidence: 0.81)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `7c3f4ecc`
+- Built from commit: `f55f493e`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -212,7 +212,7 @@
 - Q: PR 90 re-review: verify 5 prior derangement/conjTable fixes on current HEAD
 - personal/README.md
 - readLiveServerInfo
-- detect-html.mjs
+- Carta de candidatura espontánea — academias de español, Salamanca
 - parseRgb
 - cli
 - Ejercicios
@@ -222,7 +222,6 @@
 - Ejercicios
 - Ejercicios
 - resolveProject
-- Carta de candidatura espontánea — academias de español, Salamanca
 
 ## God Nodes (most connected - your core abstractions)
 1. `initGlobalBar()` - 29 edges
@@ -251,7 +250,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (208 total, 22 thin omitted)
+## Communities (207 total, 22 thin omitted)
 
 ### Community 0 - "live-browser.js"
 Cohesion: 0.03
@@ -259,7 +258,7 @@ Nodes (143): acceptedDomAlreadyClean(), addManualContextText(), applyGlobalBarLa
 
 ### Community 1 - "checks.mjs"
 Cohesion: 0.04
-Nodes (83): borderColorsFromStyle(), borderWidthsFromStyle(), checkBorders(), checkClippedOverflow(), checkCreamPalette(), checkElementBorders(), checkElementBordersDOM(), checkElementClippedOverflow() (+75 more)
+Nodes (86): borderColorsFromStyle(), borderWidthsFromStyle(), checkBorders(), checkClippedOverflow(), checkCreamPalette(), checkElementBorders(), checkElementBordersDOM(), checkElementClippedOverflow() (+78 more)
 
 ### Community 2 - "index.mjs"
 Cohesion: 0.06
@@ -291,7 +290,7 @@ Nodes (48): allEntryIds(), argVal(), buildRepairBatch(), candidatesForEntry(), c
 
 ### Community 9 - "design-system.mjs"
 Cohesion: 0.09
-Nodes (49): addColorObject(), addDesignColor(), addRoundedScale(), addRoundedToken(), addSidecarColors(), addSidecarRadii(), addTypographyFonts(), canonicalDesignFindingKey() (+41 more)
+Nodes (51): addColorObject(), addDesignColor(), addRoundedScale(), addRoundedToken(), addSidecarColors(), addSidecarRadii(), addTypographyFonts(), canonicalDesignFindingKey() (+43 more)
 
 ### Community 10 - "impeccable-config.mjs"
 Cohesion: 0.10
@@ -306,8 +305,8 @@ Cohesion: 0.09
 Nodes (47): applyLegacyDeferredAcceptsOnStartup(), appendCssToSvelteStyle(), appendSanitizedCssRule(), applyDeferredSvelteComponentAccepts(), bakeParamValuesInCss(), buildInsertVariantStub(), buildPropContract(), buildPropsScript() (+39 more)
 
 ### Community 13 - "detect-url.mjs"
-Cohesion: 0.28
-Nodes (14): detectUrl(), runVisualContrastFallback(), serializeDesignSystemForBrowser(), captureVisualContrastCandidate(), compareScreenshotContrast(), sanitizeScreenshotClip(), extractFindingIds(), percentile() (+6 more)
+Cohesion: 0.20
+Nodes (20): detectUrl(), runVisualContrastFallback(), serializeDesignSystemForBrowser(), runRegexMatchers(), captureVisualContrastCandidate(), compareScreenshotContrast(), sanitizeScreenshotClip(), finding() (+12 more)
 
 ### Community 14 - "hook-lib.mjs"
 Cohesion: 0.07
@@ -326,8 +325,8 @@ Cohesion: 0.08
 Nodes (37): checkBorders(), checkClippedOverflow(), checkElementBorders(), checkElementBordersDOM(), checkElementClippedOverflow(), checkElementClippedOverflowDOM(), checkElementItalicSerif(), checkElementItalicSerifDOM() (+29 more)
 
 ### Community 18 - "css-cascade.mjs"
-Cohesion: 0.12
-Nodes (31): applyStaticDeclaration(), buildBorderOverrideMap(), parseShorthand(), resolveVar(), buildStaticStyleMap(), collectStaticCssRules(), compareStaticPriority(), cssPropToCamel() (+23 more)
+Cohesion: 0.08
+Nodes (34): applyStaticDeclaration(), buildBorderOverrideMap(), parseShorthand(), resolveVar(), buildStaticStyleMap(), buildStaticWindow(), collectStaticCssRules(), compareStaticPriority() (+26 more)
 
 ### Community 19 - "insert-ui.mjs"
 Cohesion: 0.07
@@ -514,8 +513,8 @@ Cohesion: 0.20
 Nodes (10): Clarify Reference (UX Copy), Button Label Problem, Confirmation Dialogs Used Sparingly, Error Message Formula (What/Why/How to Fix), Writing for Translation (i18n Copy Expansion), Harden Reference (Edge Case Resilience), Internationalization Hardening, Interaction Design Reference (+2 more)
 
 ### Community 66 - "detect-antipatterns.mjs"
-Cohesion: 0.10
-Nodes (35): confirm(), detectCli(), formatFindings(), formatFindingSummary(), handleStdin(), printUsage(), loadDesignSystemForCwd(), resolveDesignSidecarPath() (+27 more)
+Cohesion: 0.07
+Nodes (50): confirm(), detectCli(), formatFindings(), formatFindingSummary(), handleStdin(), printUsage(), createBrowserDetector(), CSS_IN_JS_EXTENSIONS (+42 more)
 
 ### Community 67 - "normalizeIgnoreValueEntries"
 Cohesion: 0.36
@@ -953,9 +952,9 @@ Nodes (4): Answer, Outcome, Q: PR 90 re-review: verify 5 prior derangement/conjT
 Cohesion: 0.18
 Nodes (19): isLiveServerPidReachable(), readLiveServerInfo(), completeCli(), completeThroughServer(), parseArgs(), readServerInfo(), collectManualApplyFiles(), manualApplyReplyCommand() (+11 more)
 
-### Community 197 - "detect-html.mjs"
-Cohesion: 0.09
-Nodes (28): CSS_IN_JS_EXTENSIONS, detectText(), extFromFilePath(), extractCSSinJS(), extractStyleBlocks(), isNeutralBorderColor(), PAGE_ANALYZER_EXTS, REGEX_ANALYZERS (+20 more)
+### Community 197 - "Carta de candidatura espontánea — academias de español, Salamanca"
+Cohesion: 0.40
+Nodes (4): Asunto, Carta de candidatura espontánea — academias de español, Salamanca, Cuerpo, Notas
 
 ### Community 198 - "parseRgb"
 Cohesion: 0.20
@@ -993,29 +992,25 @@ Nodes (4): 1. Costumbres, Ej. 1 — Piscina Sol y Agua, Ej. 2 — Antes de un ex
 Cohesion: 0.33
 Nodes (6): findMonorepoRoot(), hasFallbackWorkspaceChildren(), hasGitBoundary(), isMonorepoRoot(), resolveProject(), resolveTargetDir()
 
-### Community 207 - "Carta de candidatura espontánea — academias de español, Salamanca"
-Cohesion: 0.40
-Nodes (4): Asunto, Carta de candidatura espontánea — academias de español, Salamanca, Cuerpo, Notas
-
 ## Knowledge Gaps
-- **712 isolated node(s):** `require`, `{ chromium }`, `[file, code]`, `Ej. 1 — Relaciona`, `Ej. 2 — Escribe las preguntas` (+707 more)
+- **712 isolated node(s):** `Asunto`, `Cuerpo`, `Notas`, `Corrección (2026-09-04): sí hay un requisito de titulación duro`, `2. Másteres/títulos ELE de la propia USAL — comparativa` (+707 more)
   These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 891 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **22 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `createManualEditRoutes()` connect `manual-edit-routes.mjs` to `detect-html.mjs`, `manual-apply.mjs`, `live-commit-manual-edits.mjs`, `live-server.mjs`, `insert-ui.mjs`?**
+- **Why does `createManualEditRoutes()` connect `manual-edit-routes.mjs` to `manual-apply.mjs`, `live-commit-manual-edits.mjs`, `live-server.mjs`, `css-cascade.mjs`, `insert-ui.mjs`?**
+  _High betweenness centrality (0.050) - this node is a cross-community bridge._
+- **Why does `StaticDocument` connect `css-cascade.mjs` to `detect-antipatterns.mjs`?**
   _High betweenness centrality (0.049) - this node is a cross-community bridge._
-- **Why does `StaticDocument` connect `detect-html.mjs` to `css-cascade.mjs`?**
-  _High betweenness centrality (0.049) - this node is a cross-community bridge._
-- **Why does `detectHtml()` connect `detect-html.mjs` to `checks.mjs`, `detect-antipatterns.mjs`, `design-system.mjs`, `detect-url.mjs`, `StaticElement`, `css-cascade.mjs`, `inline-ignores.mjs`?**
-  _High betweenness centrality (0.007) - this node is a cross-community bridge._
+- **Why does `detectHtml()` connect `detect-antipatterns.mjs` to `checks.mjs`, `design-system.mjs`, `detect-url.mjs`, `css-cascade.mjs`, `inline-ignores.mjs`?**
+  _High betweenness centrality (0.008) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `initGlobalBar()` (e.g. with `hideAgentPollTooltip()` and `onDetectMessage()`) actually correct?**
   _`initGlobalBar()` has 7 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `require`, `{ chromium }`, `[file, code]` to the rest of the system?**
+- **What connects `Asunto`, `Cuerpo`, `Notas` to the rest of the system?**
   _712 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `live-browser.js` be split into smaller, more focused modules?**
   _Cohesion score 0.02863984674329502 - nodes in this community are weakly interconnected._
 - **Should `checks.mjs` be split into smaller, more focused modules?**
-  _Cohesion score 0.04481792717086835 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.04467084639498432 - nodes in this community are weakly interconnected._
