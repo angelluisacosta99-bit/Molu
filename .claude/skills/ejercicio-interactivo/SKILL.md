@@ -269,6 +269,25 @@ El fallo no fue no saber los pasos, fue no volver a mirarlos al final.
       Manderson, que salía más alto que toda la tarjeta antes de acotarlo). Si el bloque
       ya tiene otro `refHTML` (un banco de palabras, por ejemplo), añade las fotos AL
       PRINCIPIO de esa misma cadena — el campo es uno solo, no se puede repetir la clave.
+      **Antes de dar una foto por buena, comprueba si el propio libro la imprime inclinada**
+      (frecuente en fotos tipo "collage" o revista — boda, ciudades tipo postal, foto de
+      escritorio/control): si una referencia real de la foto (un horizonte, un edificio, una
+      persona de pie, el borde recto de la propia foto impresa) no queda vertical/horizontal,
+      no te limites a recortar el rectángulo tal cual sale — está reflejando la inclinación de
+      impresión, no un defecto de tu recorte, así que hay que enderezarla antes de incrustarla.
+      Antes: `pip3 install opencv-python-headless numpy` (para detectar el ángulo con
+      `cv2.HoughLinesP` sobre bordes rectos si los hay — funciona bien en carteles/tablas, mal
+      en fotografías con fondo irregular como árboles). Cuando el borde no da una lectura
+      limpia, más fiable y más rápido es probar `PIL.Image.rotate(ángulo, expand=True,
+      fillcolor=...)` con 2-3 ángulos de prueba (`fillcolor` debe ser un int si la imagen está
+      en modo "L", o una tupla RGB si no) y comparar a ojo cuál deja mejor la referencia recta
+      — ejemplo real: la foto de la boda de Unidad 3A necesitó +4°, Sevilla -3°, Córdoba +3°,
+      cada una en un sentido distinto porque el libro las imprime como recortes de collage
+      sueltos, no como una página fotografiada entera. Después de rotar, recorta de nuevo con
+      margen ajustado (la rotación añade franjas en blanco en las esquinas). Este es un error
+      real de este mismo repo: tres unidades de A2 se publicaron con fotos correctamente
+      identificadas e incrustadas pero sin comprobar que además estuvieran rectas — el
+      profesor tuvo que pedirlo explícitamente una segunda vez.
 - [ ] Si el material no viene claramente de un manual concreto, **pregúntale al profesor**
       en vez de archivarlo por deducción. `RepasoB1.pdf` era un PDF suelto y se colocó bajo
       "Nuevo Español en Marcha 3" por parecido de formato; el profesor confirmó después que
