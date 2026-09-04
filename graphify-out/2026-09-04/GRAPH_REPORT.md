@@ -1,7 +1,7 @@
 # Graph Report - Molu  (2026-09-04)
 
 ## Corpus Check
-- 227 files · ~838,865 words
+- 227 files · ~838,912 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `28329b1b`
+- Built from commit: `4f84d74b`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -859,12 +859,12 @@ Nodes (6): Grabaciones de clases overview, Docencia de español overview, materi
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `createManualEditRoutes()` connect `manual-apply.mjs` to `manual-edit-routes.mjs`, `live-commit-manual-edits.mjs`, `live-server.mjs`, `css-cascade.mjs`, `insert-ui.mjs`?**
-  _High betweenness centrality (0.061) - this node is a cross-community bridge._
 - **Why does `StaticDocument` connect `css-cascade.mjs` to `detect-html.mjs`?**
-  _High betweenness centrality (0.059) - this node is a cross-community bridge._
+  _High betweenness centrality (0.055) - this node is a cross-community bridge._
+- **Why does `createManualEditRoutes()` connect `manual-apply.mjs` to `manual-edit-routes.mjs`, `live-commit-manual-edits.mjs`, `live-server.mjs`, `css-cascade.mjs`, `insert-ui.mjs`?**
+  _High betweenness centrality (0.055) - this node is a cross-community bridge._
 - **Why does `detectHtml()` connect `detect-html.mjs` to `checks.mjs`, `inline-ignores.mjs`, `design-system.mjs`, `css-cascade.mjs`, `detect-antipatterns.mjs`?**
-  _High betweenness centrality (0.010) - this node is a cross-community bridge._
+  _High betweenness centrality (0.012) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `initGlobalBar()` (e.g. with `hideAgentPollTooltip()` and `onDetectMessage()`) actually correct?**
   _`initGlobalBar()` has 7 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `Asunto`, `Cuerpo`, `Notas` to the rest of the system?**
