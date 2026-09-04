@@ -619,6 +619,13 @@
   .item-row.tail-blank input.blank {
     flex: 1 1 8em; width: auto; max-width: none; min-width: 6em; text-align: left;
   }
+  /* Un hueco de frase entera (wide:"full") que además cae al final de su línea — «A ¿{0}?»
+     con el interrogante de cierre fuera del hueco — se trata como cualquier otro
+     tail-blank: crece dentro de la fila flex en vez de forzar display:block + width:100%,
+     que empujaba el "?" a su propia línea debajo de la casilla. */
+  .item-row.tail-blank input.blank.full {
+    display: block; width: auto; max-width: none; flex: 1 1 12em; margin: 0;
+  }
   .item-row.tail-blank .tail-text { flex: 0 1 auto; min-width: 0; }
   /* Fila que acaba en los botones V/F: el texto se estira y empuja los botones al borde
      derecho, así todos los pares quedan en la misma columna. */
@@ -846,14 +853,14 @@
           type: "items", numbered: true,
           items: [
             { t: "A ¿De dónde eres?\nB Soy peruana.", solved: true },
-            { t: "A {0}\nB No, soy mexicano.", a: [["¿Eres español?"]], wide: "full" },
-            { t: "A {0}\nB Yo en Valencia.\nC Y yo en Sevilla.", a: [["¿Dónde vives?"]], wide: "full" },
-            { t: "A {0}\nB Soy administrativo.", a: [["¿A qué te dedicas?"]], wide: "full" },
-            { t: "A {0}\nB En una empresa de informática.", a: [["¿Dónde trabajas?"]], wide: "full" },
-            { t: "A {0}\nB Roberto Martínez.", a: [["¿Cómo te llamas?"]], wide: "full" },
-            { t: "A {0}\nB No, somos andaluzas.", a: [["¿Sois madrileñas?"]], wide: "full" },
-            { t: "A {0}\nB No, estoy soltera.", a: [["¿Estás casada?"]], wide: "full" },
-            { t: "A {0}\nB Sí, un niño y una niña.", a: [["¿Tienes hijos?"]], wide: "full" }
+            { t: "A ¿{0}?\nB No, soy mexicano.", a: [["Eres español"]], wide: "full" },
+            { t: "A ¿{0}?\nB Yo en Valencia.\nC Y yo en Sevilla.", a: [["Dónde vives"]], wide: "full" },
+            { t: "A ¿{0}?\nB Soy administrativo.", a: [["A qué te dedicas"]], wide: "full" },
+            { t: "A ¿{0}?\nB En una empresa de informática.", a: [["Dónde trabajas"]], wide: "full" },
+            { t: "A ¿{0}?\nB Roberto Martínez.", a: [["Cómo te llamas"]], wide: "full" },
+            { t: "A ¿{0} madrileñas?\nB No, somos andaluzas.", a: [["Sois"]] },
+            { t: "A ¿{0}?\nB No, estoy soltera.", a: [["Estás casada"]], wide: "full" },
+            { t: "A ¿{0}?\nB Sí, un niño y una niña.", a: [["Tienes hijos"]], wide: "full" }
           ]
         },
         {
@@ -1169,8 +1176,9 @@
           if (!item.pre && !row.querySelector(".foto-act")) {
             const vfw = row.querySelector(".vf-wrap");
             if (vfw && row.querySelectorAll("input.blank").length === 1) {
+              // Se corta en el primer <br>: la cola de ESTA línea, no el resto del diálogo.
               let cola = "", n = vfw.nextSibling;
-              while (n) { cola += n.textContent || ""; n = n.nextSibling; }
+              while (n && n.nodeName !== "BR") { cola += n.textContent || ""; n = n.nextSibling; }
               if (/^[\s.,;:!?¿¡…"»)]*$/.test(cola)) {
                 row.classList.add("vf-tail");
                 const head = document.createElement("span");
@@ -1186,8 +1194,9 @@
               // Después del hueco solo puede quedar puntuación de cierre. Si hay palabras,
               // el hueco está DENTRO de la frase (un rellenar-el-espacio) y no se toca:
               // estirarlo hasta el borde derecho partiría la oración por la mitad.
+              // Se corta en el primer <br>: la cola de ESTA línea, no el resto del diálogo.
               let cola = "", n = huecos[0].nextSibling;
-              while (n) { cola += n.textContent || ""; n = n.nextSibling; }
+              while (n && n.nodeName !== "BR") { cola += n.textContent || ""; n = n.nextSibling; }
               // Si el autor puso un salto de línea justo antes del hueco, es que quiere la
               // casilla en su propia línea a ancho completo (respuestas de frase entera):
               // estirarla en la misma línea la dejaría flotando a media altura del texto.
@@ -1370,8 +1379,9 @@
           if (!item.pre && !row.querySelector(".foto-act")) {
             const vfw = row.querySelector(".vf-wrap");
             if (vfw && row.querySelectorAll("input.blank").length === 1) {
+              // Se corta en el primer <br>: la cola de ESTA línea, no el resto del diálogo.
               let cola = "", n = vfw.nextSibling;
-              while (n) { cola += n.textContent || ""; n = n.nextSibling; }
+              while (n && n.nodeName !== "BR") { cola += n.textContent || ""; n = n.nextSibling; }
               if (/^[\s.,;:!?¿¡…"»)]*$/.test(cola)) {
                 row.classList.add("vf-tail");
                 const head = document.createElement("span");
@@ -1387,8 +1397,9 @@
               // Después del hueco solo puede quedar puntuación de cierre. Si hay palabras,
               // el hueco está DENTRO de la frase (un rellenar-el-espacio) y no se toca:
               // estirarlo hasta el borde derecho partiría la oración por la mitad.
+              // Se corta en el primer <br>: la cola de ESTA línea, no el resto del diálogo.
               let cola = "", n = huecos[0].nextSibling;
-              while (n) { cola += n.textContent || ""; n = n.nextSibling; }
+              while (n && n.nodeName !== "BR") { cola += n.textContent || ""; n = n.nextSibling; }
               // Si el autor puso un salto de línea justo antes del hueco, es que quiere la
               // casilla en su propia línea a ancho completo (respuestas de frase entera):
               // estirarla en la misma línea la dejaría flotando a media altura del texto.

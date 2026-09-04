@@ -113,15 +113,39 @@ PR #22 invertía el orden que PR #20 daba por bueno.
    (`\n`) — una palabra, «?», lo que sea — el hueco NO es de frase entera; quítale
    `wide: "full"` (usa `wide: true` para una respuesta de una o dos palabras algo larga,
    o ningún `wide` para una palabra corta — el ancho por defecto ya es generoso).
-   **Caso particular — preguntas completas con el interrogante fuera del hueco:** en un
-   ejercicio de "escribe la pregunta", NUNCA dejes el «¿» antes del `{0}` y el «?» suelto
-   después (`"A ¿{0}?\nB ..."`) — el «?» se queda huérfano en su propia línea por la razón
-   de arriba, encontrado real en el ejercicio 5 del mismo archivo. La pregunta completa,
-   con sus dos signos de interrogación, va DENTRO de la respuesta —
-   `t: "A {0}\nB ..."`, `a: [["¿Eres español?"]]` — sin dejar nada más que el hueco en esa
-   línea de plantilla. Así es como ya lo hacen otros capítulos de este mismo corpus (ver
-   "Formula la pregunta" en `a2/..._unidad0_antes-de-empezar_interactivo.html`, ejercicio
-   2) — sigue siempre ese patrón, no el que rompió aquí.
+   **Caso particular — preguntas completas con el interrogante fuera del hueco (`"A
+   ¿{0}?\nB ..."`): el profesor SÍ quiere el «¿» y el «?» visibles como texto fijo de la
+   plantilla, a ambos lados del hueco — NO escondidos dentro de la respuesta.** Un primer
+   intento de arreglar este mismo bug (ejercicio 5 de `practica-mas-1`) metió la pregunta
+   entera dentro de `a: [["¿Eres español?"]]` para que no quedara ningún «?» suelto en la
+   plantilla — el profesor lo rechazó explícitamente: quiere el signo visible antes de
+   empezar el hueco y el signo visible al terminar, en la misma línea. La solución correcta
+   no toca el contenido, corrige el motor: el bug real estaba en cómo `template.html`
+   decide si un hueco puede estirarse a la derecha sin romper el «?» que le sigue
+   (`row.classList.add("tail-blank")`) — calculaba la "cola" (lo que viene después del
+   hueco) recorriendo TODOS los hermanos siguientes sin parar en el primer `<br>`, así que
+   en un diálogo A/B la cola incluía también la réplica de B («?B No, soy mexicano.») y
+   nunca pasaba el test de "solo puntuación de cierre" — el hueco se quedaba sin la clase
+   `tail-blank` y `wide:"full"` (`display:block; width:100%`) empujaba el «?» a su propia
+   línea. Corregido en dos sitios de `reference/template.html` (los dos bucles `let cola =
+   ..., n = ...nextSibling; while (n) {...}`, tanto el de huecos de texto como el de
+   V/F): ahora cortan en el primer `<br>` (`while (n && n.nodeName !== "BR")`), así que
+   la cola solo mira lo que queda en la MISMA línea del hueco. Hacía falta además un
+   segundo arreglo de CSS: `wide:"full"` y `tail-blank` chocaban con la misma
+   especificidad (cuatro clases + un tipo cada uno) y ganaba `.full` por ir primero en el
+   archivo — se añadió `.item-row.tail-blank input.blank.full { flex: 1 1 12em; width:
+   auto; ... }` justo después de la regla de `.item-row.tail-blank input.blank`, para que
+   un hueco "full" que además cae al final de su línea crezca dentro de la fila flex en
+   vez de forzar el bloque a ancho completo. **Si tocas ese CSS o ese bucle, no le quites
+   ninguna de las dos piezas** — hace falta el corte en `<br>` Y la regla `.full` dentro
+   de `tail-blank`, una sin la otra no basta. Con esto arreglado, la plantilla del
+   ejercicio se queda tal cual el libro (`t: "A ¿{0}?\nB ..."`, `a: [["Eres español"]]`,
+   con `wide: "full"`) — ese es el patrón correcto para "escribe la pregunta completa",
+   no el que probé primero. Aparte: si después del hueco viene una PALABRA además del
+   signo de cierre (`"A ¿{0} madrileñas?\nB ..."`, respuesta de una sola palabra «Sois»),
+   eso no es un hueco de frase entera — aplica la regla del párrafo anterior y quítale
+   `wide: "full"` en vez de depender de `tail-blank` (que solo trata colas de puntuación
+   pura, nunca de una palabra suelta).
 
    **Y mires lo que mires, mira la página.** Antes de dar por buena una transcripción,
    renderiza la página y ábrela con `Read`, aunque el texto se haya extraído perfectamente.

@@ -760,6 +760,16 @@
   .item-row.tail-blank input.blank {
     flex: 1 1 8em; width: auto; max-width: none; min-width: 6em; text-align: left;
   }
+  /* Un hueco de frase entera (wide:"full") que además cae al final de su línea — una
+     pregunta completa con el interrogante de cierre fuera del hueco, «A ¿{0}?» — se trata
+     como cualquier otro tail-blank: crece dentro de la fila flex en vez de forzar
+     display:block + width:100%. Sin esto el "?" que sigue al hueco se caía a su propia
+     línea, debajo de la casilla, en vez de quedarse pegado al final de la misma línea.
+     Misma especificidad que la regla de .full de más arriba (cuatro clases + un tipo);
+     gana por venir después en el CSS — no la reordenes por delante de esa regla. */
+  .item-row.tail-blank input.blank.full {
+    display: block; width: auto; max-width: none; flex: 1 1 12em; margin: 0;
+  }
   .item-row.tail-blank .tail-text { flex: 0 1 auto; min-width: 0; }
   /* Fila que acaba en los botones V/F: el texto se estira y empuja los botones al borde
      derecho, así todos los pares quedan en la misma columna. */
@@ -1398,8 +1408,15 @@
           if (!ex.grid && !item.pre && !row.querySelector(".foto-act")) {
             const vfw = row.querySelector(".vf-wrap");
             if (vfw && row.querySelectorAll("input.blank").length === 1) {
+              // Se corta en el primer <br>: lo que venga en la réplica siguiente de un
+              // diálogo (después del salto de línea) no cuenta como "cola" de esta línea —
+              // antes se acumulaba TODO el resto de la fila (líneas B/C incluidas), así que
+              // un signo de cierre pegado al hueco pero seguido de más diálogo (p. ej.
+              // "A ¿{0}?\nB ...") nunca se detectaba como cola de solo puntuación y el "?"
+              // se quedaba huérfano, empujado a su propia línea por el input a ancho
+              // completo. Bug real, encontrado en un ejercicio "Escribe las preguntas" de A1.
               let cola = "", n = vfw.nextSibling;
-              while (n) { cola += n.textContent || ""; n = n.nextSibling; }
+              while (n && n.nodeName !== "BR") { cola += n.textContent || ""; n = n.nextSibling; }
               // Mismo aviso que con .tail-blank más abajo: un salto de línea en cualquier
               // punto ANTES de los botones V/F (un diálogo A/B con el hueco V/F en la
               // réplica de B) rompe igual el alineado "baseline" del flex si se envuelve
@@ -1424,8 +1441,10 @@
               // Después del hueco solo puede quedar puntuación de cierre. Si hay palabras,
               // el hueco está DENTRO de la frase (un rellenar-el-espacio) y no se toca:
               // estirarlo hasta el borde derecho partiría la oración por la mitad.
+              // Se corta en el primer <br> — mismo motivo que en el bloque de vfw.cola
+              // más arriba: la cola de ESTA línea, no el resto del diálogo.
               let cola = "", n = huecos[0].nextSibling;
-              while (n) { cola += n.textContent || ""; n = n.nextSibling; }
+              while (n && n.nodeName !== "BR") { cola += n.textContent || ""; n = n.nextSibling; }
               // Si hay un salto de línea en cualquier punto ANTES del hueco (no solo justo
               // delante), no se envuelve: un diálogo A/B con el hueco en la segunda línea
               // (item.t con "\n" y el hueco en la réplica de B) también entra aquí, y
@@ -1752,8 +1771,15 @@
           if (!ex.grid && !item.pre && !row.querySelector(".foto-act")) {
             const vfw = row.querySelector(".vf-wrap");
             if (vfw && row.querySelectorAll("input.blank").length === 1) {
+              // Se corta en el primer <br>: lo que venga en la réplica siguiente de un
+              // diálogo (después del salto de línea) no cuenta como "cola" de esta línea —
+              // antes se acumulaba TODO el resto de la fila (líneas B/C incluidas), así que
+              // un signo de cierre pegado al hueco pero seguido de más diálogo (p. ej.
+              // "A ¿{0}?\nB ...") nunca se detectaba como cola de solo puntuación y el "?"
+              // se quedaba huérfano, empujado a su propia línea por el input a ancho
+              // completo. Bug real, encontrado en un ejercicio "Escribe las preguntas" de A1.
               let cola = "", n = vfw.nextSibling;
-              while (n) { cola += n.textContent || ""; n = n.nextSibling; }
+              while (n && n.nodeName !== "BR") { cola += n.textContent || ""; n = n.nextSibling; }
               // Mismo aviso que con .tail-blank más abajo: un salto de línea en cualquier
               // punto ANTES de los botones V/F (un diálogo A/B con el hueco V/F en la
               // réplica de B) rompe igual el alineado "baseline" del flex si se envuelve
@@ -1778,8 +1804,10 @@
               // Después del hueco solo puede quedar puntuación de cierre. Si hay palabras,
               // el hueco está DENTRO de la frase (un rellenar-el-espacio) y no se toca:
               // estirarlo hasta el borde derecho partiría la oración por la mitad.
+              // Se corta en el primer <br> — mismo motivo que en el bloque de vfw.cola
+              // más arriba: la cola de ESTA línea, no el resto del diálogo.
               let cola = "", n = huecos[0].nextSibling;
-              while (n) { cola += n.textContent || ""; n = n.nextSibling; }
+              while (n && n.nodeName !== "BR") { cola += n.textContent || ""; n = n.nextSibling; }
               // Si hay un salto de línea en cualquier punto ANTES del hueco (no solo justo
               // delante), no se envuelve: un diálogo A/B con el hueco en la segunda línea
               // (item.t con "\n" y el hueco en la réplica de B) también entra aquí, y
