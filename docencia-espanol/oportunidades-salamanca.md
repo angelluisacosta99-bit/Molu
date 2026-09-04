@@ -97,6 +97,42 @@ vez de presentarse a estas dos con la titulación actual.
   convocatoria de la bolsa primero (gratis) y decidir sobre un
   máster ELE nuevo según el resultado real, no de forma preventiva.
 
+## Alternativa a MUSALE: máster oficial online (UNED + Instituto Cervantes)
+
+Investigado el 2026-09-04, a raíz de que Angel preguntó si existe una
+vía online rápida hacia un título de profesor ELE. Conclusión: no
+existe atajo rápido — un **"máster universitario"** es, por
+regulación española, un título oficial verificado por el Estado, con
+un mínimo de créditos (aquí 65 ECTS) que no se puede comprimir en
+semanas por mucho que un curso privado se llame "título de profesor
+ELE". Pero sí existe una alternativa oficial **y online** a MUSALE:
+
+**Máster Universitario en Formación de Profesores de Español como
+Segunda Lengua** — UNED, en colaboración con el Instituto Cervantes.
+
+- **Sí es oficial** ("máster universitario", cumple literalmente el
+  requisito de la convocatoria PROFTITULAR).
+- **100% online** (algún examen puede ser presencial en un Centro
+  Asociado de la UNED).
+- 65 ECTS.
+- **Requisito de admisión — mejor que el de MUSALE para su perfil:**
+  admite explícitamente título de Grado, Licenciado, **Ingeniero** o
+  Arquitecto — sin el filtro de "relevancia del título" del 40% que
+  tiene MUSALE. Solo si las solicitudes superan 30 alumnos aplican
+  criterios de selección adicionales (sin detallar cuáles).
+- No es nativo o no es titulado en Filología → debe acreditar DELE
+  Superior C1 o SIELE C1. **No aplica a Angel** (español nativo).
+- **Precio: no confirmado con exactitud.** La UNED fija sus precios
+  oficiales por rama de conocimiento; para másteres "no habilitantes"
+  (esta categoría) el rango 2026-27 va de 28,58 €/crédito a
+  89,60 €/crédito según rama — con 65 créditos eso da entre
+  **~1.858 € y ~5.824 €**, un rango demasiado amplio para ser útil.
+  `uned.es` bloqueado para consulta directa en esta sesión — Angel
+  debe confirmar el precio exacto él mismo en
+  <https://www.uned.es/universidad/inicio/en/estudios/masteres/master-universitario-en-formacion-de-profesores-de-espanol-como-segunda-lengua.html>
+  antes de decidir.
+- Fuente: [uned.es](https://www.uned.es/universidad/inicio/en/estudios/masteres/master-universitario-en-formacion-de-profesores-de-espanol-como-segunda-lengua.html?idContenido=1), [Instituto Cervantes](https://cfp.cervantes.es/actividades_formativas/master_uned/default.htm).
+
 ## Recomendación (actualizada 2026-09-04)
 
 No presentarse a Profesor Titular ni Profesor de Taller con la
@@ -106,10 +142,13 @@ realistas, no excluyentes:
 1. Escribir a Cursos Internacionales preguntando si alguna otra
    categoría (coordinador, guía cultural) encaja con su perfil, antes
    de descartar la bolsa por completo.
-2. Apuntar al MUSALE para la convocatoria 2027-28 como camino serio
-   hacia Profesor Titular — es el único de los tres másteres ELE de
-   la USAL que de verdad abre esa puerta (MINELE y "Salamanca" no
-   figuran como "máster universitario de ELE" en el requisito).
+2. Apuntar a un máster universitario oficial de ELE como camino serio
+   hacia Profesor Titular — MUSALE (presencial, Salamanca, cerrado
+   hasta 2027-28) o el de la UNED (online, con el Instituto
+   Cervantes, admite explícitamente el título de Ingeniero sin el
+   filtro de relevancia de MUSALE) son las dos vías reales; MINELE y
+   "Salamanca" semipresencial NO sirven para este requisito concreto
+   por no ser "máster universitario" oficial.
 
 Mientras tanto, seguir con Avito y las plataformas remotas de IA —
 ahí sí cuentan sus diplomas y experiencia actuales sin filtro de rama
