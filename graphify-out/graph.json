@@ -31603,14 +31603,14 @@
       "source_location": "L148"
     },
     {
-      "id": "personal_academico_formacion_academica_segundo_programa_diploma_de_reciclaje_profesional_simult\u00e1neo",
-      "label": "Segundo programa / diploma de reciclaje profesional (simult\u00e1neo)",
+      "id": "personal_academico_formacion_academica_segundo_programa_diploma_de_recualificaci\u00f3n_profesional_simult\u00e1neo",
+      "label": "Segundo programa / diploma de recualificaci\u00f3n profesional (simult\u00e1neo)",
       "_origin": "ast",
       "community": 25,
       "community_name": "Formaci\u00f3n acad\u00e9mica de Angel Luis Acosta Gonz\u00e1lez",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "segundo programa / diploma de reciclaje profesional (simultaneo)",
+      "norm_label": "segundo programa / diploma de recualificacion profesional (simultaneo)",
       "source_file": "personal/academico/formacion-academica.md",
       "source_location": "L66"
     },
@@ -106695,7 +106695,7 @@
     },
     {
       "source": "personal_academico_formacion_academica_estudios_superiores_rusia",
-      "target": "personal_academico_formacion_academica_segundo_programa_diploma_de_reciclaje_profesional_simult\u00e1neo",
+      "target": "personal_academico_formacion_academica_segundo_programa_diploma_de_recualificaci\u00f3n_profesional_simult\u00e1neo",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -111629,5 +111629,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "09ea5231c76e3c68ca5c11a12cddbab2afaebe61"
+  "built_at_commit": "bb8e3cd313a1eb97e7aee36c1a99713d3259570a"
 }

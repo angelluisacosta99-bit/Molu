@@ -106628,52 +106628,8 @@
       "weight": 1.0
     },
     {
-      "source": "personal_academico_formacion_academica_actividad_profesional_paralela_docencia_de_espa\u00f1ol_y_traducci\u00f3n",
-      "target": "personal_academico_formacion_academica_formaci\u00f3n_acad\u00e9mica_de_angel_luis_acosta_gonz\u00e1lez",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "personal/academico/formacion-academica.md",
-      "source_location": "L87",
-      "weight": 1.0
-    },
-    {
-      "source": "personal_academico_formacion_academica_cartas_de_motivaci\u00f3n",
-      "target": "personal_academico_formacion_academica_formaci\u00f3n_acad\u00e9mica_de_angel_luis_acosta_gonz\u00e1lez",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "personal/academico/formacion-academica.md",
-      "source_location": "L291",
-      "weight": 1.0
-    },
-    {
-      "source": "personal_academico_formacion_academica_cartas_de_recomendaci\u00f3n",
-      "target": "personal_academico_formacion_academica_formaci\u00f3n_acad\u00e9mica_de_angel_luis_acosta_gonz\u00e1lez",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "personal/academico/formacion-academica.md",
-      "source_location": "L247",
-      "weight": 1.0
-    },
-    {
-      "source": "personal_academico_formacion_academica_competencias_personales_soft_skills",
-      "target": "personal_academico_formacion_academica_curr\u00edculum_cv_perfil_profesional",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "personal/academico/formacion-academica.md",
-      "source_location": "L172",
-      "weight": 1.0
-    },
-    {
-      "source": "personal_academico_formacion_academica_competencias_t\u00e9cnicas_hard_skills",
-      "target": "personal_academico_formacion_academica_curr\u00edculum_cv_perfil_profesional",
+      "source": "personal_academico_formacion_academica_curr\u00edculum_cv_perfil_profesional",
+      "target": "personal_academico_formacion_academica_competencias_t\u00e9cnicas_hard_skills",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -106684,13 +106640,13 @@
     },
     {
       "source": "personal_academico_formacion_academica_curr\u00edculum_cv_perfil_profesional",
-      "target": "personal_academico_formacion_academica_formaci\u00f3n_acad\u00e9mica_de_angel_luis_acosta_gonz\u00e1lez",
+      "target": "personal_academico_formacion_academica_competencias_personales_soft_skills",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "personal/academico/formacion-academica.md",
-      "source_location": "L156",
+      "source_location": "L172",
       "weight": 1.0
     },
     {
@@ -106738,8 +106694,19 @@
       "weight": 1.0
     },
     {
-      "source": "personal_academico_formacion_academica_educaci\u00f3n_previa_cuba",
-      "target": "personal_academico_formacion_academica_formaci\u00f3n_acad\u00e9mica_de_angel_luis_acosta_gonz\u00e1lez",
+      "source": "personal_academico_formacion_academica_estudios_superiores_rusia",
+      "target": "personal_academico_formacion_academica_segundo_programa_diploma_de_reciclaje_profesional_simult\u00e1neo",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "personal/academico/formacion-academica.md",
+      "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "personal_academico_formacion_academica_formaci\u00f3n_acad\u00e9mica_de_angel_luis_acosta_gonz\u00e1lez",
+      "target": "personal_academico_formacion_academica_educaci\u00f3n_previa_cuba",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -106749,36 +106716,14 @@
       "weight": 1.0
     },
     {
-      "source": "personal_academico_formacion_academica_equivalencia_acad\u00e9mica_en_espa\u00f1a",
-      "target": "personal_academico_formacion_academica_formaci\u00f3n_acad\u00e9mica_de_angel_luis_acosta_gonz\u00e1lez",
+      "source": "personal_academico_formacion_academica_formaci\u00f3n_acad\u00e9mica_de_angel_luis_acosta_gonz\u00e1lez",
+      "target": "personal_academico_formacion_academica_equivalencia_acad\u00e9mica_en_espa\u00f1a",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "personal/academico/formacion-academica.md",
       "source_location": "L135",
-      "weight": 1.0
-    },
-    {
-      "source": "personal_academico_formacion_academica_estudios_superiores_rusia",
-      "target": "personal_academico_formacion_academica_formaci\u00f3n_acad\u00e9mica_de_angel_luis_acosta_gonz\u00e1lez",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "personal/academico/formacion-academica.md",
-      "source_location": "L27",
-      "weight": 1.0
-    },
-    {
-      "source": "personal_academico_formacion_academica_estudios_superiores_rusia",
-      "target": "personal_academico_formacion_academica_segundo_programa_diploma_de_reciclaje_profesional_simult\u00e1neo",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "personal/academico/formacion-academica.md",
-      "source_location": "L66",
       "weight": 1.0
     },
     {
@@ -106794,6 +106739,17 @@
     },
     {
       "source": "personal_academico_formacion_academica_formaci\u00f3n_acad\u00e9mica_de_angel_luis_acosta_gonz\u00e1lez",
+      "target": "personal_academico_formacion_academica_curr\u00edculum_cv_perfil_profesional",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "personal/academico/formacion-academica.md",
+      "source_location": "L156",
+      "weight": 1.0
+    },
+    {
+      "source": "personal_academico_formacion_academica_formaci\u00f3n_acad\u00e9mica_de_angel_luis_acosta_gonz\u00e1lez",
       "target": "personal_academico_formacion_academica_formaci\u00f3n_complementaria_cursos_en_l\u00ednea",
       "relation": "contains",
       "_origin": "ast",
@@ -106801,6 +106757,39 @@
       "confidence_score": 1.0,
       "source_file": "personal/academico/formacion-academica.md",
       "source_location": "L232",
+      "weight": 1.0
+    },
+    {
+      "source": "personal_academico_formacion_academica_formaci\u00f3n_acad\u00e9mica_de_angel_luis_acosta_gonz\u00e1lez",
+      "target": "personal_academico_formacion_academica_cartas_de_recomendaci\u00f3n",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "personal/academico/formacion-academica.md",
+      "source_location": "L247",
+      "weight": 1.0
+    },
+    {
+      "source": "personal_academico_formacion_academica_formaci\u00f3n_acad\u00e9mica_de_angel_luis_acosta_gonz\u00e1lez",
+      "target": "personal_academico_formacion_academica_estudios_superiores_rusia",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "personal/academico/formacion-academica.md",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "personal_academico_formacion_academica_formaci\u00f3n_acad\u00e9mica_de_angel_luis_acosta_gonz\u00e1lez",
+      "target": "personal_academico_formacion_academica_cartas_de_motivaci\u00f3n",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "personal/academico/formacion-academica.md",
+      "source_location": "L291",
       "weight": 1.0
     },
     {
@@ -106823,6 +106812,17 @@
       "confidence_score": 1.0,
       "source_file": "personal/academico/formacion-academica.md",
       "source_location": "L338",
+      "weight": 1.0
+    },
+    {
+      "source": "personal_academico_formacion_academica_formaci\u00f3n_acad\u00e9mica_de_angel_luis_acosta_gonz\u00e1lez",
+      "target": "personal_academico_formacion_academica_actividad_profesional_paralela_docencia_de_espa\u00f1ol_y_traducci\u00f3n",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "personal/academico/formacion-academica.md",
+      "source_location": "L87",
       "weight": 1.0
     },
     {
@@ -111629,5 +111629,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "f55f493ea68737bcae72f006a826958b85d32f5d"
+  "built_at_commit": "09ea5231c76e3c68ca5c11a12cddbab2afaebe61"
 }

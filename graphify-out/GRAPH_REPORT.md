@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `09ea5231`
+- Built from commit: `bb8e3cd3`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -993,7 +993,7 @@ Cohesion: 0.33
 Nodes (6): findMonorepoRoot(), hasFallbackWorkspaceChildren(), hasGitBoundary(), isMonorepoRoot(), resolveProject(), resolveTargetDir()
 
 ## Knowledge Gaps
-- **712 isolated node(s):** `Educación previa (Cuba)`, `Segundo programa / diploma de reciclaje profesional (simultáneo)`, `Actividad profesional paralela: docencia de español y traducción`, `Equivalencia académica en España`, `Idiomas` (+707 more)
+- **712 isolated node(s):** `Educación previa (Cuba)`, `Segundo programa / diploma de recualificación profesional (simultáneo)`, `Actividad profesional paralela: docencia de español y traducción`, `Equivalencia académica en España`, `Idiomas` (+707 more)
   These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 891 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **22 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -1008,7 +1008,7 @@ _Questions this graph is uniquely positioned to answer:_
   _High betweenness centrality (0.010) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `initGlobalBar()` (e.g. with `hideAgentPollTooltip()` and `onDetectMessage()`) actually correct?**
   _`initGlobalBar()` has 7 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `Educación previa (Cuba)`, `Segundo programa / diploma de reciclaje profesional (simultáneo)`, `Actividad profesional paralela: docencia de español y traducción` to the rest of the system?**
+- **What connects `Educación previa (Cuba)`, `Segundo programa / diploma de recualificación profesional (simultáneo)`, `Actividad profesional paralela: docencia de español y traducción` to the rest of the system?**
   _712 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `live-browser.js` be split into smaller, more focused modules?**
   _Cohesion score 0.02863984674329502 - nodes in this community are weakly interconnected._
