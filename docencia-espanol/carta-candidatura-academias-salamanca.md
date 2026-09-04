@@ -21,12 +21,15 @@ como profesor de español para extranjeros, por si tuvieran o
 previeran tener una vacante que encaje con mi perfil.
 
 Mi formación específica en enseñanza de español incluye el Diploma de
-Reciclaje Profesional «Учитель испанского языка» (Profesor de
-español, 300 horas académicas, ООО «Luch Znaniy», Rusia), además de
-dos certificados de formación continua en metodología de enseñanza de
-idiomas (2023 y 2025). Llevo más de 4 años dando clases de español a
-alumnos rusohablantes de todos los niveles (marco CEFR A1–C2), con una
-valoración de 5,0 sobre 5 en 38 reseñas de alumnos, sin una sola
+Recualificación Profesional «Учитель испанского языка» (Profesor de
+español, ООО «Luch Znaniy», Rusia), además de los certificados de
+formación continua «Especificidad de la enseñanza del español
+conforme a los requisitos del FGOS» (estándar educativo federal ruso,
+2023) y «Metodologías eficaces para el aprendizaje de idiomas
+extranjeros» (2025), de la misma institución. Llevo más de 4 años
+dando clases de español a alumnos rusohablantes de todos los niveles
+(marco CEFR A1–C2), con una valoración de 5,0 sobre 5 en Avito —la
+plataforma que utilizo para promocionar mis clases—, sin una sola
 valoración por debajo de 5 estrellas.
 
 Ejerzo esta actividad como autónomo — Индивидуальный предприниматель
@@ -36,12 +39,15 @@ dos epígrafes de actividad: **traducción escrita y oral** (OKVED
 85.41). No es una actividad informal: es un negocio propio
 formalmente registrado, con tributación regular.
 
-Además de profesor, soy ingeniero (diploma con honores, Universidad
-Rusa de Transporte) y trilingüe real: español nativo, ruso C1
-(formación universitaria completa en ruso) e inglés C2 (certificado
-EF SET). Habiendo sido yo mismo estudiante extranjero —de Cuba a
-Rusia, y ahora a España—, entiendo de primera mano las dificultades
-del alumnado internacional al que atienden.
+Además de profesor, soy ingeniero especialista en Sistemas de
+Aseguramiento de la Circulación Ferroviaria, con especialización en
+Sistemas y Redes de Telecomunicaciones del Transporte Ferroviario
+(diploma con honores, Universidad Rusa de Transporte — RUT MIIT), y
+trilingüe real: español nativo, ruso C1 (formación universitaria
+completa en ruso) e inglés C2 (certificado EF SET). Habiendo sido yo
+mismo estudiante extranjero —de Cuba a Rusia, y ahora a España—,
+entiendo de primera mano las dificultades del alumnado internacional
+al que atienden.
 
 Adjunto mi currículum con el detalle completo de mi formación y
 experiencia. Quedo a su disposición para una entrevista cuando les
