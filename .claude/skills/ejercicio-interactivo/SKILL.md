@@ -100,6 +100,29 @@ PR #22 invertía el orden que PR #20 daba por bueno.
    (`.exercise-audio { margin: 0 auto ... }`, con `.audio-label` también centrada) — si
    alguna vez tocas ese CSS, no le quites el centrado sin querer.
 
+   **`item.wide: "full"` es SOLO para huecos que sustituyen una frase entera propia,
+   nunca para una palabra suelta dentro de una frase que sigue visible alrededor.**
+   `"full"` pone el input en `display: block; width: 100%` — cualquier texto que venga
+   detrás del hueco en esa misma línea de plantilla (una palabra, un signo de cierre) se
+   ve empujado a SU PROPIA línea, debajo de la caja, en vez de seguir pegado. Encontrado
+   real en `a1/..._cuaderno-practica-mas-1_interactivo.html`: un ejercicio de posesivos
+   («¿Dónde están {0} gafas? (yo)», respuesta de una palabra «mis») y uno de números
+   («diez, {0}, doce, ...») llevaban `wide: "full"` sin necesidad — la caja ocupaba toda
+   la tarjeta y « gafas? (yo)»/«, doce,» quedaban huérfanos en la línea de abajo. Regla:
+   si después del `{0}` en la plantilla queda CUALQUIER cosa más que un salto de línea
+   (`\n`) — una palabra, «?», lo que sea — el hueco NO es de frase entera; quítale
+   `wide: "full"` (usa `wide: true` para una respuesta de una o dos palabras algo larga,
+   o ningún `wide` para una palabra corta — el ancho por defecto ya es generoso).
+   **Caso particular — preguntas completas con el interrogante fuera del hueco:** en un
+   ejercicio de "escribe la pregunta", NUNCA dejes el «¿» antes del `{0}` y el «?» suelto
+   después (`"A ¿{0}?\nB ..."`) — el «?» se queda huérfano en su propia línea por la razón
+   de arriba, encontrado real en el ejercicio 5 del mismo archivo. La pregunta completa,
+   con sus dos signos de interrogación, va DENTRO de la respuesta —
+   `t: "A {0}\nB ..."`, `a: [["¿Eres español?"]]` — sin dejar nada más que el hueco en esa
+   línea de plantilla. Así es como ya lo hacen otros capítulos de este mismo corpus (ver
+   "Formula la pregunta" en `a2/..._unidad0_antes-de-empezar_interactivo.html`, ejercicio
+   2) — sigue siempre ese patrón, no el que rompió aquí.
+
    **Y mires lo que mires, mira la página.** Antes de dar por buena una transcripción,
    renderiza la página y ábrela con `Read`, aunque el texto se haya extraído perfectamente.
    Hay contenido que el texto **no puede** representar y que cambia las respuestas: las
