@@ -133,6 +133,45 @@ Segunda Lengua** — UNED, en colaboración con el Instituto Cervantes.
   antes de decidir.
 - Fuente: [uned.es](https://www.uned.es/universidad/inicio/en/estudios/masteres/master-universitario-en-formacion-de-profesores-de-espanol-como-segunda-lengua.html?idContenido=1), [Instituto Cervantes](https://cfp.cervantes.es/actividades_formativas/master_uned/default.htm).
 
+## Otras instituciones en Salamanca (donde sí podría optar)
+
+Investigado el 2026-09-04. A diferencia de la bolsa de Cursos
+Internacionales de la USAL, las academias privadas de español para
+extranjeros normalmente **no publican un requisito duro de "rama de
+titulación"** — valoran sobre todo ser nativo, tener experiencia real
+demostrable y, a veces, alguna certificación o acreditación DELE. No
+he podido confirmar sus requisitos exactos (no encontré ofertas de
+empleo publicadas ahora mismo, ni en la mayoría un "trabaja con
+nosotros" claro) — el enfoque realista aquí es la **candidatura
+espontánea** (enviar CV + carta directamente), práctica habitual en
+este sector con negocios pequeños/medianos.
+
+Salamanca es, junto con Madrid y Barcelona, uno de los polos
+principales de enseñanza de ELE en España — hay bastante más oferta
+que solo la USAL:
+
+| Academia | Contacto | Notas |
+|---|---|---|
+| **Colegio Delibes** | Tel. 923 120 460, `delibes@colegiodelibes.com` | Fundada 1986/1997 (fuentes distintas), acreditada por el Instituto Cervantes, centro examinador SIELE, miembro FEDELE. ~3.500 alumnos/año. |
+| **Academia Berceo** | Tel. 923 213 564, `berceo@berceo.com` | Desde 1994, en el centro de Salamanca. |
+| **Tía Tula — Colegio de Español** | Tel. 923 210 283, `info@tiatula.com` | También ofrece sus propios cursos de formación de profesores ELE — posible vía adicional de formación. |
+| **Don Quijote Salamanca** | [donquijote.org](https://www.donquijote.org/learn-spanish-spain/salamanca/) | Cadena grande (201-500 empleados, sedes en varias ciudades) — mejor vía: LinkedIn de la empresa, no correo directo. |
+| **Universidad Pontificia de Salamanca (UPSA) — Centro de Lenguas** | [upsa.es/internacional/centro-de-lenguas](https://www.upsa.es/internacional/centro-de-lenguas) | Universidad privada, con su propio programa de español para extranjeros — y su propio máster para profesores (Máster Internacional para Profesores de Lengua y Cultura Españolas), sin verificar si es oficial o título propio. |
+
+**Otra vía distinta, no una academia:** YMCA en Santa Marta de Tormes
+(área metropolitana de Salamanca) tenía una oferta de profesor de
+español para un **programa de protección internacional** (refugiados
+y solicitantes de asilo) — perfil social/ONG, no academia, pero
+misma habilidad docente. Buscar vacantes activas en su web o Indeed.
+
+### Recomendación práctica
+
+Candidatura espontánea a Delibes, Berceo y Tía Tula (las tres más
+pequeñas/accesibles, sin filtro de titulación conocido) usando
+`cv-docencia-usal.docx` — sirve tal cual para esto, ya que el
+problema de titulación era específico de la convocatoria de la USAL,
+no de estas academias.
+
 ## Recomendación (actualizada 2026-09-04)
 
 No presentarse a Profesor Titular ni Profesor de Taller con la
