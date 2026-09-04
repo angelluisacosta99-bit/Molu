@@ -197,9 +197,12 @@
   .exercise-instr { color: var(--pencil); font-size: 0.85rem; font-style: italic; margin-bottom: 0.85rem; }
   .audio-label {
     font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--ink-soft); margin-bottom: 0.3rem;
+    color: var(--ink-soft); margin-bottom: 0.3rem; text-align: center;
   }
-  .exercise-audio { width: 100%; max-width: 420px; display: block; margin-bottom: 0.9rem; }
+  /* Centrado, no pegado al margen izquierdo — instrucción explícita del profesor (ver
+     SKILL.md, "Audio: reproductor SIEMPRE centrado"). width:100% con max-width y
+     margin:auto: se centra pero no se estira más de lo necesario en tarjetas anchas. */
+  .exercise-audio { width: 100%; max-width: 420px; display: block; margin: 0 auto 0.9rem; }
   .exercise-model { color: var(--pencil); font-size: 0.85rem; font-style: italic; margin-bottom: 0.7rem; }
 
   /* Recuadro de referencia dentro de un ejercicio (banco de opciones, lista de verbos...).

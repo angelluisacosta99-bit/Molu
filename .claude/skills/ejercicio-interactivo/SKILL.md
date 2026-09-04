@@ -95,6 +95,11 @@ PR #22 invertía el orden que PR #20 daba por bueno.
    solo aquí: comprobar la existencia del audio real en Drive es obligatorio para CUALQUIER
    ejercicio de audio, siempre, no una vez que "se acuerde".
 
+   **El reproductor de audio va SIEMPRE centrado, nunca pegado al margen izquierdo.**
+   Instrucción explícita del profesor. Ya corregido en `reference/template.html`
+   (`.exercise-audio { margin: 0 auto ... }`, con `.audio-label` también centrada) — si
+   alguna vez tocas ese CSS, no le quites el centrado sin querer.
+
    **Y mires lo que mires, mira la página.** Antes de dar por buena una transcripción,
    renderiza la página y ábrela con `Read`, aunque el texto se haya extraído perfectamente.
    Hay contenido que el texto **no puede** representar y que cambia las respuestas: las
@@ -250,15 +255,23 @@ El fallo no fue no saber los pasos, fue no volver a mirarlos al final.
       porque ya se saltó dos veces (A1, y de nuevo en A2 Unidad 1) dando la transcripción
       por suficiente sin buscar en Drive primero. Ver la lección "Audio: busca siempre en
       Drive" más abajo para cómo buscarlo y embebido.
-- [ ] **Toda foto/ilustración real que el libro imprime junto a un ejercicio (retrato,
-      foto de ciudad, foto de premio, dibujo con nombre propio) se recorta de la página
-      renderizada y se incrusta como `ex.refHTML`/`item.img` — no basta con transcribir
-      solo el texto.** Encontrado en A2 Unidades 1 y 2: se publicaron sin ninguna de las
-      fotos reales del libro (Nicole Manderson, Sevilla/Córdoba, Cervantes, Gabriela
-      Mistral/Almodóvar/Induráin, Camilo José Cela) pese a que el propio flujo (paso 1,
-      "Y mires lo que mires, mira la página") ya exige mirar la página entera — mirarla
-      para no perderse contenido de texto no es lo mismo que decidir incrustar sus fotos.
-      El profesor tuvo que pedirlo explícitamente. Recórtalas con PIL sobre el render a
+- [ ] **TODO lo visual que el libro imprime junto a un ejercicio — foto, retrato, cartel,
+      cómic, tabla con dibujos, plano, cuadro, ilustración de cualquier tipo — se recorta de
+      la página renderizada y se incrusta como `ex.refHTML`/`item.img`. Nunca solo texto
+      cuando el libro trae una imagen real. Esto es un requisito permanente, no algo que
+      haya que pedir cada vez.** El profesor lo ha tenido que repetir en más de una unidad
+      (A2 U1/U2 al publicarlas sin ninguna foto real; luego otra vez con Ángel Hervás en la
+      1B, la postal de Barcelona en la 1C, el cartel de la piscina y el cómic de Leo Verdura
+      en la Unidad 3 — encontrados en una revisión posterior, no en la primera pasada) — la
+      regla de este repo es que si el cuaderno imprime algo visual, se usa, sin que el
+      profesor tenga que señalar cada foto que falta una por una. Por defecto, asume que SÍ
+      hay que incrustarlo e incrústalo; la excepción (texto puro, sin nada gráfico en esa
+      página) es la que hay que justificar, no al revés. Encontrado en A2 Unidades 1 y 2: se
+      publicaron sin ninguna de las fotos reales del libro (Nicole Manderson, Sevilla/Córdoba,
+      Cervantes, Gabriela Mistral/Almodóvar/Induráin, Camilo José Cela) pese a que el propio
+      flujo (paso 1, "Y mires lo que mires, mira la página") ya exige mirar la página
+      entera — mirarla para no perderse contenido de texto no es lo mismo que decidir
+      incrustar sus fotos. Recórtalas con PIL sobre el render a
       300 dpi (ver "Auto-instalación" más abajo para pymupdf si falta poppler), en blanco
       y negro y compresión JPEG moderada (`quality=75-80`) para no disparar el tamaño del
       artefacto, e incrústalas como `data:` URI — igual que el audio, un artefacto no
