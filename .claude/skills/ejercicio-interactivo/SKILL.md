@@ -1,7 +1,7 @@
 ---
 name: ejercicio-interactivo
 description: "Use when Angel asks to build a new interactive Spanish grammar/vocabulary exercise page with instant grading — a self-contained HTML artifact where a student fills in blanks, gets corrected instantly, and can send their results to the teacher via WhatsApp/Telegram/Teams/Correo. Also use when asked to add a new chapter/unit to this format, or to fix/extend an existing one (e.g. the A1 \"Presente, gerundio, indefinido\" or B2 12C \"¿Sigues pintando?\" exercises already in docencia-espanol/materiales/). Triggers: \"ejercicio interactivo\", \"como el de A1/12C\", \"corrección instantánea\", \"página interactiva para practicar\", \"haz lo mismo con otro capítulo\"."
-version: 1.9.0
+version: 1.11.0
 user-invocable: true
 license: Apache 2.0
 ---
@@ -86,9 +86,14 @@ PR #22 invertía el orden que PR #20 daba por bueno.
    límite de tamaño que los PDF, ver más arriba) y decodifícalos de base64. Incrusta el
    resultado como `<audio controls>` con el mp3 en un `data:` URI base64 (los archivos
    rondan 1-2 MB, muy por debajo del límite de artefacto) en vez de dejar solo la
-   transcripción en un `<details>`. Este es un error real ya cometido en este repo: se
-   afirmó que "solo había transcripción del PDF" sin haber buscado en Drive, y el profesor
-   tuvo que corregirlo — la carpeta sí existe y sí las tiene.
+   transcripción en un `<details>`. Este es un error real ya cometido en este repo **dos
+   veces**: la primera en A1, donde se afirmó que "solo había transcripción del PDF" sin
+   haber buscado en Drive; la segunda en A2 Unidad 1 (ejercicio de audio "Pista 1" sobre la
+   rutina de Lucía), publicado solo con transcripción sin ni siquiera intentar la búsqueda
+   en Drive primero. El profesor tuvo que corregirlo las dos veces — la carpeta sí existe y
+   sí las tiene. Por eso este paso está también en la checklist de cierre del capítulo, no
+   solo aquí: comprobar la existencia del audio real en Drive es obligatorio para CUALQUIER
+   ejercicio de audio, siempre, no una vez que "se acuerde".
 
    **Y mires lo que mires, mira la página.** Antes de dar por buena una transcripción,
    renderiza la página y ábrela con `Read`, aunque el texto se haya extraído perfectamente.
@@ -239,6 +244,82 @@ El fallo no fue no saber los pasos, fue no volver a mirarlos al final.
       en el README de esa carpeta indicando el origen de las respuestas (paso 8).
 - [ ] No queda ningún marcador `{{...}}` ni la cabecera de la plantilla sin adaptar (esa
       cabecera se publica en el código fuente que ve el alumno).
+- [ ] **Si algún ejercicio del capítulo es de audio ("Pista N", "Escucha y..."), se buscó
+      el mp3 real en Drive ANTES de conformarse con solo la transcripción.** No es
+      opcional ni "si hay tiempo": es un paso obligatorio del checklist, exactamente
+      porque ya se saltó dos veces (A1, y de nuevo en A2 Unidad 1) dando la transcripción
+      por suficiente sin buscar en Drive primero. Ver la lección "Audio: busca siempre en
+      Drive" más abajo para cómo buscarlo y embebido.
+- [ ] **Toda foto/ilustración real que el libro imprime junto a un ejercicio (retrato,
+      foto de ciudad, foto de premio, dibujo con nombre propio) se recorta de la página
+      renderizada y se incrusta como `ex.refHTML`/`item.img` — no basta con transcribir
+      solo el texto.** Encontrado en A2 Unidades 1 y 2: se publicaron sin ninguna de las
+      fotos reales del libro (Nicole Manderson, Sevilla/Córdoba, Cervantes, Gabriela
+      Mistral/Almodóvar/Induráin, Camilo José Cela) pese a que el propio flujo (paso 1,
+      "Y mires lo que mires, mira la página") ya exige mirar la página entera — mirarla
+      para no perderse contenido de texto no es lo mismo que decidir incrustar sus fotos.
+      El profesor tuvo que pedirlo explícitamente. Recórtalas con PIL sobre el render a
+      300 dpi (ver "Auto-instalación" más abajo para pymupdf si falta poppler), en blanco
+      y negro y compresión JPEG moderada (`quality=75-80`) para no disparar el tamaño del
+      artefacto, e incrústalas como `data:` URI — igual que el audio, un artefacto no
+      puede enlazar un archivo externo. `ex.refHTML` ya soporta HTML arbitrario (`<img>`,
+      `<figure>`), así que no hace falta un campo nuevo en el motor; dale siempre un
+      `style="max-width:XXXpx"` explícito a la imagen — sin él hereda el ancho completo
+      de `.exercise-ref` y sale desproporcionada (visto en vivo con el retrato de Nicole
+      Manderson, que salía más alto que toda la tarjeta antes de acotarlo). Si el bloque
+      ya tiene otro `refHTML` (un banco de palabras, por ejemplo), añade las fotos AL
+      PRINCIPIO de esa misma cadena — el campo es uno solo, no se puede repetir la clave.
+      **Antes de dar una foto por buena, comprueba si el propio libro la imprime inclinada**
+      (frecuente en fotos tipo "collage" o revista — boda, ciudades tipo postal, foto de
+      escritorio/control): si una referencia real de la foto (un horizonte, un edificio, una
+      persona de pie, el borde recto de la propia foto impresa) no queda vertical/horizontal,
+      no te limites a recortar el rectángulo tal cual sale — está reflejando la inclinación de
+      impresión, no un defecto de tu recorte, así que hay que enderezarla antes de incrustarla.
+      `pip3 install opencv-python-headless numpy` (auto-instálalo si falta, igual que el resto
+      de herramientas de esta skill).
+      **No confíes en el ojo, ni en Hough directamente sobre el contenido de la foto — mide el
+      ángulo del RECTÁNGULO DE LA FOTO contra el fondo de la página, con su propio silueteado:**
+      1. Umbraliza una región amplia de la página (`cv2.threshold(gray, 200, 255,
+         THRESH_BINARY_INV)`, ajusta el 200 si el fondo no es blanco puro) y cierra huecos
+         (`cv2.morphologyEx(..., MORPH_CLOSE, np.ones((9,9)))`) para obtener la silueta de la
+         foto como un blob sólido contra el fondo claro de la página.
+      2. Recorta con MUCHO margen alrededor de la foto — si el contorno toca el borde de tu
+         recorte, `cv2.boundingRect`/`minAreaRect` da lecturas degeneradas (ángulos como
+         exactamente 0° o -90°, o un rectángulo que ocupa todo el ancho del recorte). Si dos
+         fotos están pegadas (como Sevilla/Córdoba en collage), aísla la región de UNA sola,
+         no las dos juntas, o sus siluetas se fusionan en un solo blob mal formado.
+      3. Con el contorno más grande ya aislado (`max(contours, key=cv2.contourArea)`), en vez
+         de fiarte del ángulo que da `cv2.minAreaRect` (su convención de signo y qué lado es
+         "ancho" es ambigua y da resultados contraintuitivos), mide tú mismo la pendiente:
+         recorre columnas (`for x in range(...)`) y anota la primera fila `True` de la
+         máscara en cada una (el borde superior de la foto), luego `np.polyfit(xs, ys, 1)` y
+         `np.degrees(np.arctan(pendiente))` — un ajuste por mínimos cuadrados sobre decenas de
+         puntos reales es mucho más preciso que cualquier estimación a ojo. Si la fila-scan da
+         valores ruidosos/no monótonos (habitual cuando el "borde" pasa cerca de texto o de
+         otro elemento), aísla antes el contorno con `cv2.drawContours(mask, [c], -1, 255, -1)`
+         y repite el escaneo sobre esa máscara limpia en vez de sobre el umbral bruto.
+      4. Rota con el ángulo medido (`PIL.Image.rotate(-ángulo, expand=True, fillcolor=...)` —
+         prueba el signo con una comprobación visual rápida la primera vez en cada sesión,
+         pero una vez fijado el criterio de signo es el mismo para todas las fotos de esa
+         tanda) y vuelve a recortar ajustado (`cv2.boundingRect` sobre la imagen ya rotada,
+         que ahora sí debería dar un rectángulo limpio sin ambigüedad de ángulo).
+      Ejemplo real de esta sesión: Sevilla medía +1,4°, Córdoba -4,3°, la postal de Barcelona
+      +1,9° — todas inclinadas en sentidos distintos porque el libro las imprime como recortes
+      de collage sueltos. **La tira cómica "Leo Verdura" es la lección inversa**: a ojo (y con
+      Hough sobre un recorte estrecho) parecía tener ~1-2° de inclinación, así que se rotó esa
+      cantidad — pero al medir con este método sobre el marco superior del propio cómic
+      (un borde limpio y largo, ideal para el ajuste por mínimos cuadrados) el ángulo real era
+      -0,5°, prácticamente cero: la rotación aplicada la había torcido más, no menos. Ninguna
+      foto ni el ojo son fiables por sí solos — mide siempre contra un borde recto real antes
+      de dar la corrección por buena. La foto de la boda de Unidad 3A (fondo de personas y
+      árboles, sin silueta limpia contra la página) fue la excepción real: ahí ni el
+      silueteado ni Hough dieron una lectura fiable, y se resolvió a ojo comparando contra la
+      verticalidad del propio novio en la foto — documenta explícitamente cuando tengas que
+      recurrir a esto, es el último recurso, no el primero. Este es un error real de este mismo
+      repo: tres unidades de A2 se publicaron con fotos correctamente identificadas e
+      incrustadas pero sin comprobar que además estuvieran rectas — el profesor tuvo que
+      pedirlo explícitamente una segunda vez, y ni la primera corrección (a ojo) fue
+      suficientemente precisa, hizo falta una tercera pasada con medición real.
 - [ ] Si el material no viene claramente de un manual concreto, **pregúntale al profesor**
       en vez de archivarlo por deducción. `RepasoB1.pdf` era un PDF suelto y se colocó bajo
       "Nuevo Español en Marcha 3" por parecido de formato; el profesor confirmó después que
@@ -262,6 +343,31 @@ Cada una de estas causó un PR de corrección real. Están en `reference/templat
 resueltas — esta lista es para que entiendas *por qué* el código está como está, y para que
 no las deshagas sin querer al modificar la plantilla.
 
+- **Cuando el libro organiza un capítulo en secciones con letra (A, B, C...), cada sección
+  es un ARTEFACTO/ARCHIVO SEPARADO — nunca varias secciones metidas en un único artefacto,
+  ni con `blocks` múltiples ni de ninguna otra forma.** Esta es la convención real y ya
+  establecida en TODO el repo desde el principio: A1 y B1 llevan un `.html` (y un artefacto
+  publicado, con su propio código de acceso) por cada sección — `cuaderno-unidad1a_
+  encantado_interactivo.html`, `cuaderno-unidad1b_a-que-te-dedicas_interactivo.html`,
+  `cuaderno-unidad1c_...html`, etc. — nunca un "Unidad 1" combinado. Cada uno de esos
+  archivos usa la plantilla tal cual viene: un único `block` con `num: 1` (no una letra), sin
+  píldoras de navegación entre secciones porque no hacen falta — cada sección ES el
+  documento entero. El campo `blocks` (plural, varios bloques en un mismo archivo) SOLO es
+  para el otro caso genuino: una guía de repaso que de verdad es un único documento con
+  varias secciones temáticas (ver la guía de repaso B1 de 12 secciones) — nunca para dividir
+  un capítulo normal del cuaderno.
+  **Error real de dos rondas en este mismo repo, con la lección a extraer:** en Unidad 1 y 2
+  de A2 se cometió primero el error de arriba (todo en un `block` numerado 1..14 seguido); al
+  señalarlo el profesor ("por qué no dividiste las unidades por A, B y C"), la corrección fue
+  meter TRES `blocks` (uno por letra) DENTRO del mismo artefacto — mejor que numerar seguido,
+  pero seguía sin ser la convención real del repo, y esa "corrección" se dejó documentada aquí
+  como si fuera la regla correcta, arrastrando el error a Unidad 3. El profesor tuvo que
+  señalarlo una segunda vez ("si siempre hemos hecho artefactos separados para cada A, B y
+  C..."). La lección: ante una corrección de estructura, comprobar primero cómo lo resuelven
+  capítulos ya existentes de OTRO nivel (`ls docencia-espanol/materiales/a1/`,
+  `ls docencia-espanol/materiales/b1/`) antes de inventar un mecanismo nuevo — la respuesta
+  ya estaba en el propio repo, con 30+ archivos de precedente, y no hacía falta adivinarla.
+  Las tres unidades de A2 se rehicieron como 9 archivos separados tras este segundo aviso.
 - **Una sopa de letras SIEMPRE va como `type: "wordsearch"` interactiva (rejilla real +
   tocar dos letras para marcar la palabra), nunca como una lista de pistas de texto
   inventadas.** Error real en este repo: la 1B sustituyó la sopa de letras del libro (ocho
@@ -382,6 +488,44 @@ no las deshagas sin querer al modificar la plantilla.
   frase archivada (`→ **?**VF`) en vez de la respuesta real. Si añades otro hueco "no-texto"
   (chips, un slider, lo que sea) que también oculte el input real, revisa si necesita el
   mismo tipo de ajuste en `extraer.mjs` antes de darlo por archivable.
+- **En un diálogo A/B (o CELIA:/ANA:...), las réplicas van SIEMPRE una debajo de otra, nunca
+  corridas en la misma línea** — pedido explícitamente por el profesor tras verlo mal en A2
+  Unidad 1. Basta con `\n` entre las réplicas dentro de `item.t` (o de `ex.text` en tipo
+  `"text"`): el motor inserta un `<br>` real por cada `\n`, así que las réplicas SIEMPRE
+  quedan apiladas aunque el ejercicio no use `ex.dialog: true` — ese flag solo añade el
+  chip en negrita/dorado sobre la letra del interlocutor, no afecta a si las líneas se
+  apilan o no. Nunca escribas "A ... B ..." seguido seguido en la misma cadena sin `\n` — ni
+  siquiera como atajo temporal para evitar el bug de abajo.
+  - **Bug de motor real, ya arreglado en `reference/template.html`**: un ítem con un solo
+    hueco `{0}` cuyo texto tiene un `\n` ANTES de ese hueco (p. ej. `"A ¿Qué tal?\nB Muy
+    bien, fui. → {0}"`) hacía que la casilla se pintara flotando a media altura de la
+    PRIMERA línea en vez de pegada al final de la segunda — donde va de verdad. Causa: el
+    ajuste "estira el hueco final hasta el borde derecho" (clase `.tail-blank`, ver más
+    abajo) envuelve TODO lo anterior al hueco en un único `<span>` flex con
+    `align-items: baseline`; si ese span contiene un `<br>` interno (diálogo de 2+ líneas),
+    el alineado "baseline" del flex usa la línea de base de la PRIMERA línea del span, no la
+    de la última — de ahí que el hueco apareciera "descolgado" junto a la primera réplica.
+    El arreglo: antes de envolver, comprobar si hay algún `<br>` en CUALQUIER punto anterior
+    al hueco (no solo el nodo inmediatamente anterior, que es lo que ya comprobaba el caso
+    de "casilla en su propia línea a ancho completo") y, si lo hay, no envolver — el hueco
+    se queda en flujo normal, pegado a la última línea, sin el estirado a la derecha (que de
+    todas formas no tenía sentido con contenido multilínea). Si ves este síntoma (casilla
+    "flotando" en un ítem con `\n`), ya está resuelto en la plantilla; solo falta portarlo al
+    capítulo si se copió de una base más antigua (mismo aviso que con el motor de `match`).
+  - **`ex.dialog: true` detecta como interlocutor CUALQUIER línea que empiece por "A " o
+    "B " seguido de espacio, no solo cuando de verdad hay un personaje A/B.** Encontrado en
+    A2 Unidad 1: un ejercicio mezclaba turnos de diálogo reales ("A ¿Vienes al cine? / B
+    Vale...") con frases sueltas que, por gramática normal del español, también empiezan por
+    la preposición "A" ("A los jóvenes españoles les encanta...") — con `ex.dialog: true`
+    puesto a nivel de ejercicio, esa frase se leía como si "A" fuera el interlocutor,
+    dejando "los jóvenes españoles..." como si fuera lo que dice. No hay forma sintáctica
+    fiable de distinguir el "A" preposición del "A" interlocutor con una regex, así que la
+    solución es de contenido, no de motor: si un ejercicio mezcla diálogos reales con frases
+    sueltas que puedan empezar por "A "/"B ", dilo con "A ..."/"B ..." en el texto (sigue
+    apilándose por el `\n`, ver arriba) pero **no actives `ex.dialog: true`** para todo el
+    ejercicio — así pierdes el chip de color en las réplicas reales, pero evitas falsos
+    interlocutores en las frases sueltas. Actívalo solo cuando TODOS los ítems del ejercicio
+    son diálogo de verdad.
 
 - **REGLA DEL PROFESOR, sin excepciones: todo ejercicio con audio lleva su transcripción en
   un plegable.** No es opcional ni depende de si tenemos la grabación — de hecho es cuando
