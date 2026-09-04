@@ -432,9 +432,9 @@
     "semantic_hash": "9b31786b637be3c13978bec4c2330752"
   },
   ".claude/skills/ejercicio-interactivo/SKILL.md": {
-    "mtime": 1788473464.8040013,
-    "seen": 1788473501.1003716,
-    "ast_hash": "c10948301705fc6cfbb8ec8e0d45096c",
+    "mtime": 1788504466.2706828,
+    "seen": 1788505558.801538,
+    "ast_hash": "5504699952b6b379012bc969ca924018",
     "semantic_hash": ""
   },
   ".claude/skills/ejercicio-interactivo/reference/template.html": {
@@ -702,9 +702,9 @@
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/README.md": {
-    "mtime": 1788474685.204074,
-    "seen": 1788474703.7180104,
-    "ast_hash": "b8943baff6b7a1c1faa82e16a3af07dd",
+    "mtime": 1788505518.2187455,
+    "seen": 1788505558.8015893,
+    "ast_hash": "bc8fb4917462a019ab1a49fdc34faa82",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad6a_como-se-va-a-goya.md": {
@@ -846,15 +846,15 @@
     "semantic_hash": "64aea90e57ba88187f9bd9f56c6fab03"
   },
   "docencia-espanol/materiales/codigos-acceso.html": {
-    "mtime": 1788474614.3960698,
-    "seen": 1788474703.718125,
-    "ast_hash": "4ce812d73a13e5ead7f80e916f8dadfd",
+    "mtime": 1788504967.5707126,
+    "seen": 1788505558.8016944,
+    "ast_hash": "17201ac6a70ba9a17729804a5dd8e046",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/indice-clases-de-espanol.html": {
-    "mtime": 1788474605.5560691,
-    "seen": 1788474703.7181263,
-    "ast_hash": "6b18d9bbfcdeab343dd467e004c80a6b",
+    "mtime": 1788504947.3827114,
+    "seen": 1788505558.8016949,
+    "ast_hash": "8e324c4ba8894de89438490575fbdfda",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/quizlet/nuevo-espanol-en-marcha-1_unidad1.md": {
@@ -2171,40 +2171,112 @@
     "ast_hash": "2a40e9d0fd31c369167c435ee66097e6",
     "semantic_hash": ""
   },
-  "docencia-espanol/materiales/a2/nuevo-espanol-en-marcha-2_cuaderno-unidad1_presentar-y-saludar_interactivo.html": {
-    "mtime": 1788474153.6400423,
-    "seen": 1788474703.7181108,
-    "ast_hash": "bcb4a8a19673c2a1663a0e11cd9e0de7",
+  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a2/cuaderno-unidad1a_encantado.md": {
+    "mtime": 1788504871.2907069,
+    "seen": 1788505558.8016284,
+    "ast_hash": "8dd0756cb6cd9fabddfa16e34891f025",
     "semantic_hash": ""
   },
-  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a2/cuaderno-unidad1_presentar-y-saludar.md": {
-    "mtime": 1788473378.9045246,
-    "seen": 1788473501.1005077,
-    "ast_hash": "196cfe8c694f51be087c4517e3a4176d",
+  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a2/cuaderno-unidad1b_duermo-poco.md": {
+    "mtime": 1788505428.29074,
+    "seen": 1788505558.8016295,
+    "ast_hash": "7beb71c80ff80046d935290681319a9b",
     "semantic_hash": ""
   },
-  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a2/cuaderno-unidad2_biografias.md": {
-    "mtime": 1788473388.7191353,
-    "seen": 1788473501.100509,
-    "ast_hash": "08cdcc9c305e057411d9dd35375a47af",
+  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a2/cuaderno-unidad1c_unas-vacaciones-inolvidables.md": {
+    "mtime": 1788505430.9227402,
+    "seen": 1788505558.8016303,
+    "ast_hash": "2492fd3b7e3b53e0205b0caf2f1331d7",
     "semantic_hash": ""
   },
-  "docencia-espanol/materiales/a2/nuevo-espanol-en-marcha-2_cuaderno-unidad2_biografias_interactivo.html": {
-    "mtime": 1788474156.0800426,
-    "seen": 1788474703.7181118,
-    "ast_hash": "da33e4a2b1392edbcce3b61ccae387f7",
+  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a2/cuaderno-unidad2a_quieres-ser-millonario.md": {
+    "mtime": 1788504855.658706,
+    "seen": 1788505558.8016307,
+    "ast_hash": "e4593152f05c9caf65da932e1a5e0311",
     "semantic_hash": ""
   },
-  "docencia-espanol/materiales/a2/nuevo-espanol-en-marcha-2_cuaderno-unidad3_costumbres_interactivo.html": {
-    "mtime": 1788474503.0200632,
-    "seen": 1788474703.7181125,
-    "ast_hash": "9190f23c5a7729661e91125921c793ce",
+  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a2/cuaderno-unidad2b_biografias.md": {
+    "mtime": 1788504868.7307067,
+    "seen": 1788505558.8016315,
+    "ast_hash": "807352cc25236ec9fa2438f6c06fee6a",
     "semantic_hash": ""
   },
-  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a2/cuaderno-unidad3_costumbres.md": {
-    "mtime": 1788474578.9240677,
-    "seen": 1788474703.7180603,
-    "ast_hash": "c3f574bf45bfa1416be84c725ad51104",
+  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a2/cuaderno-unidad2c_ganadores.md": {
+    "mtime": 1788504850.4947057,
+    "seen": 1788505558.8016322,
+    "ast_hash": "9adb981a9f60dccb13eed43df05605b2",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a2/cuaderno-unidad3a_la-boda-de-pili.md": {
+    "mtime": 1788504860.8587062,
+    "seen": 1788505558.8016331,
+    "ast_hash": "d89c805373925507fffcf06840cbe6fa",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a2/cuaderno-unidad3b_como-te-ha-ido-hoy.md": {
+    "mtime": 1788504858.2147062,
+    "seen": 1788505558.8016336,
+    "ast_hash": "7063e27441d9b791d0578887750888c5",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a2/cuaderno-unidad3c_costumbres.md": {
+    "mtime": 1788504863.3787065,
+    "seen": 1788505558.8016346,
+    "ast_hash": "89857b117bb39e1cdc1b641d9b05a5e2",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/materiales/a2/nuevo-espanol-en-marcha-2_cuaderno-unidad1a_encantado_interactivo.html": {
+    "mtime": 1788504605.0840383,
+    "seen": 1788505558.8016784,
+    "ast_hash": "07b6629b0068eb3d7a3c7930811f62e3",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/materiales/a2/nuevo-espanol-en-marcha-2_cuaderno-unidad1b_duermo-poco_interactivo.html": {
+    "mtime": 1788505253.0467296,
+    "seen": 1788505558.8016791,
+    "ast_hash": "893ac2c0303309202011fb58ae085fe0",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/materiales/a2/nuevo-espanol-en-marcha-2_cuaderno-unidad1c_unas-vacaciones-inolvidables_interactivo.html": {
+    "mtime": 1788505351.590806,
+    "seen": 1788505558.8016798,
+    "ast_hash": "75bb7d3cd862f76a07fc79c92c6276e6",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/materiales/a2/nuevo-espanol-en-marcha-2_cuaderno-unidad2a_quieres-ser-millonario_interactivo.html": {
+    "mtime": 1788504605.1589258,
+    "seen": 1788505558.8016803,
+    "ast_hash": "26e28eaf06ba8d26f133b7e437e79f24",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/materiales/a2/nuevo-espanol-en-marcha-2_cuaderno-unidad2b_biografias_interactivo.html": {
+    "mtime": 1788504605.1614878,
+    "seen": 1788505558.8016815,
+    "ast_hash": "37b27f93da1643c8211a9e15dd68035f",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/materiales/a2/nuevo-espanol-en-marcha-2_cuaderno-unidad2c_ganadores_interactivo.html": {
+    "mtime": 1788504605.2546911,
+    "seen": 1788505558.8016822,
+    "ast_hash": "7f49b3cb21cade5236fe4ac2ee95248a",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/materiales/a2/nuevo-espanol-en-marcha-2_cuaderno-unidad3a_la-boda-de-pili_interactivo.html": {
+    "mtime": 1788504605.310061,
+    "seen": 1788505558.8016827,
+    "ast_hash": "eb45aaf95faa750384c1d58852294bde",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/materiales/a2/nuevo-espanol-en-marcha-2_cuaderno-unidad3b_como-te-ha-ido-hoy_interactivo.html": {
+    "mtime": 1788504605.3254278,
+    "seen": 1788505558.8016832,
+    "ast_hash": "e7c921278b4c060f5b3c208f8b1e9f0f",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/materiales/a2/nuevo-espanol-en-marcha-2_cuaderno-unidad3c_costumbres_interactivo.html": {
+    "mtime": 1788504605.3310592,
+    "seen": 1788505558.801684,
+    "ast_hash": "db65109fe747c9e05de8bc8135c73163",
     "semantic_hash": ""
   }
 }
