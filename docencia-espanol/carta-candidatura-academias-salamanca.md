@@ -39,10 +39,9 @@ dos epígrafes de actividad: **traducción escrita y oral** (OKVED
 85.41). No es una actividad informal: es un negocio propio
 formalmente registrado, con tributación regular.
 
-Además de profesor, soy ingeniero especialista en Sistemas de
-Aseguramiento de la Circulación Ferroviaria, con especialización en
-Sistemas y Redes de Telecomunicaciones del Transporte Ferroviario
-(diploma con honores, Universidad Rusa de Transporte — RUT MIIT).
+Además de profesor, soy ingeniero especialista en Sistemas y Redes de
+Telecomunicaciones del Transporte Ferroviario (diploma con honores,
+Universidad Rusa de Transporte — RUT MIIT).
 Cuento también con un Diploma de Recualificación Profesional en
 Análisis Predictivo Aplicado a Problemas del Transporte (Python,
 aprendizaje automático), que aplico hoy a la elaboración de mis
