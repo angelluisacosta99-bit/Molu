@@ -197,9 +197,12 @@
   .exercise-instr { color: var(--pencil); font-size: 0.85rem; font-style: italic; margin-bottom: 0.85rem; }
   .audio-label {
     font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--ink-soft); margin-bottom: 0.3rem;
+    color: var(--ink-soft); margin-bottom: 0.3rem; text-align: center;
   }
-  .exercise-audio { width: 100%; max-width: 420px; display: block; margin-bottom: 0.9rem; }
+  /* Centrado, no pegado al margen izquierdo — instrucción explícita del profesor (ver
+     SKILL.md, "Audio: reproductor SIEMPRE centrado"). width:100% con max-width y
+     margin:auto: se centra pero no se estira más de lo necesario en tarjetas anchas. */
+  .exercise-audio { width: 100%; max-width: 420px; display: block; margin: 0 auto 0.9rem; }
   .exercise-model { color: var(--pencil); font-size: 0.85rem; font-style: italic; margin-bottom: 0.7rem; }
 
   /* Recuadro de referencia dentro de un ejercicio (banco de opciones, lista de verbos...).
@@ -333,6 +336,18 @@
     border-bottom: 2px solid var(--gold-soft);
     margin-right: 0.45rem;
   }
+  /* B, C... (los turnos después del primero) van EXACTAMENTE debajo de A — instrucción
+     explícita del profesor. El primer turno arranca después del número de ítem ("2. A
+     ..."), pero los siguientes (tras el <br>) no llevan ese número delante y arrancaban
+     pegados al margen izquierdo de la tarjeta: un escalón entre A y el resto. Sangría
+     francesa: el número se saca de la caja con margen negativo y las demás líneas, que
+     solo tienen el padding-left de la fila, arrancan justo donde termina esa columna —
+     así todas las letras de los personajes quedan alineadas, una debajo de otra. El ancho
+     (1.9em) da para dos dígitos ("12.") sin recortar. */
+  .dialog-row { padding-left: 1.9em; }
+  .dialog-row .item-letter {
+    display: inline-block; width: 1.9em; margin-left: -1.9em; margin-right: 0;
+  }
 
   input.blank {
     background: var(--input-bg);
@@ -446,6 +461,80 @@
   @media (max-width: 560px) {
     .match-col { min-width: 8.5em; font-size: 0.92em; }
     .match-wrap { gap: 0.9rem; }
+  }
+
+  /* Sopa de letras interactiva (type: "wordsearch") — se toca una letra para armarla (igual
+     que la columna ancla de "match") y luego otra en línea recta (horizontal, vertical o
+     diagonal, en cualquiera de los dos sentidos) para completar la selección. Si las dos
+     letras no forman una línea recta, no pasa nada y se puede reintentar. Nace de un error
+     real: una versión anterior sustituía la sopa de letras por una lista de pistas
+     inventadas (dos letras + una descripción) en vez de digitalizar la rejilla real del
+     libro — nunca inventar el contenido, ni siquiera cuando falta una imagen.
+     Segunda corrección real, en la misma sopa de letras: cuando el libro da la pista con un
+     DIBUJO (profesiones, objetos, lugares...), la palabra NO puede aparecer como texto en la
+     lista antes de resolverla — eso le da la respuesta al alumno en vez de dejarle recordarla
+     mirando la imagen, que es justo lo que el ejercicio pide. Por eso ex.words[i] admite un
+     campo `img` (recortado de la página real con PIL/pdfimages, nunca inventado ni genérico
+     — ver el paso 1 de "Fundamenta el contenido en material real") en vez de un `label`
+     visible desde el principio: si `img` está presente, la imagen es la pista y el nombre
+     solo aparece DESPUÉS de encontrar la palabra, como confirmación — igual que un .reveal en
+     cualquier otro tipo de ejercicio. Si la pista del libro es solo texto (sin dibujo), omite
+     `img` y el nombre se ve desde el principio como en cualquier otra lista. REGLA GENERAL,
+     no solo para esta sopa de letras: en CUALQUIER ejercicio donde el libro dé la pista con
+     una imagen (`item.img` en "items" incluido), el texto de la respuesta nunca va visible
+     antes de que el alumno la resuelva — la imagen es la pista, no un adorno junto al texto
+     que ya la da. */
+  .ws-outer { display: flex; flex-wrap: wrap; gap: 1.6rem; margin-top: 0.6rem; align-items: flex-start; }
+  .ws-grid {
+    display: grid; gap: 2px; background: var(--border); padding: 3px; border-radius: 8px;
+    width: max-content; flex-shrink: 0;
+  }
+  .ws-cell {
+    width: 2rem; height: 2rem; display: flex; align-items: center; justify-content: center;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.88rem; font-weight: 700; line-height: 1;
+    background: var(--paper-raised); color: var(--ink); border: none; border-radius: 4px;
+    cursor: pointer; padding: 0; transition: background 0.1s ease, color 0.1s ease;
+  }
+  .ws-cell:hover { background: var(--gold-soft); }
+  .ws-cell.ws-armed { background: var(--gold); color: var(--paper-raised); }
+  .ws-cell.ws-found { background: var(--good-bg); color: var(--good); }
+  .ws-cell.ws-wrong { background: var(--bad-bg); color: var(--bad); }
+  /* Lista de palabras SIN imagen (item.img ausente): el nombre se ve desde el principio. */
+  .ws-words { list-style: none; margin: 0; padding: 0; min-width: 10em; }
+  .ws-words li {
+    padding: 0.4rem 0; font-size: 0.92rem; border-bottom: 1px dashed var(--border); color: var(--ink);
+  }
+  .ws-words li:last-child { border-bottom: none; }
+  .ws-words li.ws-solved { color: var(--ink-soft); font-style: italic; }
+  .ws-words li.ws-solved::before { content: "✓ "; }
+  .ws-words li.ws-found-item { color: var(--good); font-weight: 600; }
+  .ws-words li.ws-found-item::before { content: "✓ "; }
+  .ws-words li.ws-incorrect { color: var(--bad); }
+  /* Lista de palabras CON imagen (item.img presente): grid de tarjetas foto+nombre-oculto. */
+  .ws-words:has(img) { display: flex; flex-wrap: wrap; gap: 0.9rem; max-width: 22em; padding: 0; }
+  .ws-words:has(img) li {
+    width: 6.4em; text-align: center; font-size: 0.82rem; color: var(--ink);
+    padding: 0; border-bottom: none;
+  }
+  .ws-words li img {
+    width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 8px;
+    border: 1.5px solid var(--border); display: block; margin-bottom: 0.3rem;
+    filter: grayscale(1) contrast(1.05);
+  }
+  .ws-words li .ws-prof-name { display: none; }
+  .ws-words li.ws-solved img,
+  .ws-words li.ws-found-item img { border-color: var(--good); filter: none; }
+  .ws-words li.ws-solved .ws-prof-name,
+  .ws-words li.ws-found-item .ws-prof-name { display: block; color: var(--good); font-weight: 600; }
+  .ws-words li.ws-solved .ws-prof-name::before,
+  .ws-words li.ws-found-item .ws-prof-name::before { content: "✓ "; }
+  .ws-words li.ws-incorrect img { border-color: var(--bad); }
+  .ws-words li.ws-incorrect .ws-prof-name { display: block; color: var(--bad); }
+  @media (max-width: 560px) {
+    .ws-cell { width: 1.7rem; height: 1.7rem; font-size: 0.78rem; }
+    .ws-words:has(img) { max-width: 100%; }
+    .ws-words:has(img) li { width: 5.4em; }
   }
 
   /* Hueco de verdadero/falso con botones — ver item.vf en "items" más abajo. */
@@ -675,24 +764,43 @@
   /* Fila que acaba en el hueco: la casilla se estira hasta el borde derecho. El hueco es la
      continuación natural de la frase, así que empieza justo donde acaba el texto —no baja a
      una línea aparte— pero todas las de un ejercicio TERMINAN en el mismo sitio, que es lo
-     que hace que se vean parejas. La fila es flex: los nodos de texto se convierten en
-     items anónimos y la casilla, con flex:1, se queda con lo que sobra. */
-  .item-row.tail-blank {
-    display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 0.3rem;
+     que hace que se vean parejas.
+     El flex va en un SPAN aparte (.tail-blank), envolviendo solo esta línea (hasta el
+     primer <br>) — NO en la fila entera como antes. Un diálogo con más réplicas después
+     (item.dialog, "A ¿{0}?\nB ...") sigue teniendo esas réplicas en flujo de bloque normal
+     tras el span, heredando la sangría francesa de .dialog-row sin sorpresas: un <br>
+     dentro de una fila ya convertida en flex container no garantiza que la réplica
+     siguiente arranque en el borde izquierdo del padding — se vio saltar a mitad de la
+     tarjeta en un ejercicio de 3 turnos (A/B/C). Los nodos de texto dentro del span se
+     convierten en items anónimos y la casilla, con flex:1, se queda con lo que sobra. */
+  .item-row .tail-blank {
+    display: flex; width: 100%; flex-wrap: wrap; align-items: baseline; gap: 0 0.3rem;
   }
-  .item-row.tail-blank input.blank {
+  .item-row .tail-blank input.blank {
     flex: 1 1 8em; width: auto; max-width: none; min-width: 6em; text-align: left;
   }
-  .item-row.tail-blank .tail-text { flex: 0 1 auto; min-width: 0; }
-  /* Fila que acaba en los botones V/F: el texto se estira y empuja los botones al borde
-     derecho, así todos los pares quedan en la misma columna. */
-  .item-row.vf-tail {
-    display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 0.3rem;
+  /* Un hueco de frase entera (wide:"full") que además cae al final de su línea — una
+     pregunta completa con el interrogante de cierre fuera del hueco, «A ¿{0}?» — se trata
+     como cualquier otro tail-blank: crece dentro del span flex en vez de forzar
+     display:block + width:100%. Sin esto el "?" que sigue al hueco se caía a su propia
+     línea, debajo de la casilla, en vez de quedarse pegado al final de la misma línea.
+     Misma especificidad que la regla de .full de más arriba (cuatro clases + un tipo, con
+     el .item-row de delante contando también aquí); gana por venir después en el CSS — no
+     la reordenes por delante de esa regla. */
+  .item-row .tail-blank input.blank.full {
+    display: block; width: auto; max-width: none; flex: 1 1 12em; margin: 0;
   }
-  .item-row.vf-tail .tail-text { flex: 1 1 auto; min-width: 0; }
-  .item-row.vf-tail .vf-wrap { flex: 0 0 auto; }
-  .item-row.vf-tail .reveal.show { flex-basis: 100%; margin-left: 0; }
-  .item-row.tail-blank .reveal.show { flex-basis: 100%; margin-left: 0; }
+  .item-row .tail-blank .tail-text { flex: 0 1 auto; min-width: 0; }
+  /* Fila que acaba en los botones V/F: el texto se estira y empuja los botones al borde
+     derecho, así todos los pares quedan en la misma columna. Mismo span aparte que
+     .tail-blank, por el mismo motivo (diálogos con más réplicas después). */
+  .item-row .vf-tail {
+    display: flex; width: 100%; flex-wrap: wrap; align-items: baseline; gap: 0 0.3rem;
+  }
+  .item-row .vf-tail .tail-text { flex: 1 1 auto; min-width: 0; }
+  .item-row .vf-tail .vf-wrap { flex: 0 0 auto; }
+  .item-row .vf-tail .reveal.show { flex-basis: 100%; margin-left: 0; }
+  .item-row .tail-blank .reveal.show { flex-basis: 100%; margin-left: 0; }
 </style>
 
 <script>
@@ -1015,6 +1123,28 @@
             { a: [["el vidrio y el papel"]] },
             { a: [["el aire con humo"]] }
           ]
+        },
+        {
+          // Sopa de letras real (type: "wordsearch") — la rejilla es EXACTAMENTE la del
+          // libro, verificada con un script de búsqueda direccional (no a mano), nunca una
+          // rejilla inventada. `img` es opcional: solo si la pista del libro es un dibujo
+          // (ver el comentario largo junto a .ws-outer en el CSS de arriba) — si la pista es
+          // texto, omite `img` y usa solo `label`.
+          num: 8, title: "{{EXERCISE_TITLE}}",
+          instr: "{{EXERCISE_INSTRUCTIONS}}",
+          type: "wordsearch",
+          grid: [
+            "RECICLAR",
+            "OXFPZQWM",
+            "PLASTICO",
+            "AVXTBHNF",
+            "PAPELIJK"
+          ],
+          words: [
+            { label: "Reciclar", cells: [[0,0],[0,1],[0,2],[0,3],[0,4],[0,5],[0,6],[0,7]], solved: true },
+            { label: "Plastico", cells: [[2,0],[2,1],[2,2],[2,3],[2,4],[2,5],[2,6],[2,7]] },
+            { label: "Papel", cells: [[4,0],[4,1],[4,2],[4,3],[4,4]] }
+          ]
         }
       ]
     }
@@ -1139,7 +1269,7 @@
           // puntos (ROSA:, ANDRÉS:), que es como el propio cuaderno marca los diálogos con
           // personajes. Solo se aplica dentro de ejercicios con dialog: true.
           const m = dialog && (li > 0 || i === 0)
-            ? linea.match(/^([A-ZÁÉÍÓÚÑÜ]{2,12}:|[AB])\s+/) : null;
+            ? linea.match(/^([A-ZÁÉÍÓÚÑÜ]{2,12}:|[A-Z])\s+/) : null;
           if (m) {
             const who = document.createElement("span");
             who.className = "speaker";
@@ -1299,14 +1429,35 @@
           if (!ex.grid && !item.pre && !row.querySelector(".foto-act")) {
             const vfw = row.querySelector(".vf-wrap");
             if (vfw && row.querySelectorAll("input.blank").length === 1) {
+              // Se corta en el primer <br>: lo que venga en la réplica siguiente de un
+              // diálogo (después del salto de línea) no cuenta como "cola" de esta línea —
+              // antes se acumulaba TODO el resto de la fila (líneas B/C incluidas), así que
+              // un signo de cierre pegado al hueco pero seguido de más diálogo (p. ej.
+              // "A ¿{0}?\nB ...") nunca se detectaba como cola de solo puntuación y el "?"
+              // se quedaba huérfano, empujado a su propia línea por el input a ancho
+              // completo. Bug real, encontrado en un ejercicio "Escribe las preguntas" de A1.
               let cola = "", n = vfw.nextSibling;
-              while (n) { cola += n.textContent || ""; n = n.nextSibling; }
-              if (/^[\s.,;:!?¿¡…"»)]*$/.test(cola)) {
-                row.classList.add("vf-tail");
+              while (n && n.nodeName !== "BR") { cola += n.textContent || ""; n = n.nextSibling; }
+              // Mismo aviso que con .tail-blank más abajo: un salto de línea en cualquier
+              // punto ANTES de los botones V/F (un diálogo A/B con el hueco V/F en la
+              // réplica de B) rompe igual el alineado "baseline" del flex si se envuelve
+              // todo el head en un único span — el mismo bug de .tail-blank, aquí para la
+              // fila que acaba en botones en vez de en un input de texto.
+              let saltoEnHead = false;
+              for (let n2 = row.firstChild; n2 && n2 !== vfw; n2 = n2.nextSibling) {
+                if (n2.nodeName === "BR") { saltoEnHead = true; break; }
+              }
+              if (!saltoEnHead && /^[\s.,;:!?¿¡…"»)]*$/.test(cola)) {
                 const head = document.createElement("span");
                 head.className = "tail-text";
                 while (row.firstChild && row.firstChild !== vfw) head.appendChild(row.firstChild);
                 row.insertBefore(head, vfw);
+                // Envuelve SOLO esta línea (hasta el primer <br>) en el span flex — ver el
+                // aviso junto a la CSS de .tail-blank/.vf-tail más arriba.
+                const tailLine = document.createElement("span");
+                tailLine.className = "vf-tail";
+                while (row.firstChild && row.firstChild.nodeName !== "BR") tailLine.appendChild(row.firstChild);
+                row.insertBefore(tailLine, row.firstChild);
               }
             }
           }
@@ -1316,16 +1467,26 @@
               // Después del hueco solo puede quedar puntuación de cierre. Si hay palabras,
               // el hueco está DENTRO de la frase (un rellenar-el-espacio) y no se toca:
               // estirarlo hasta el borde derecho partiría la oración por la mitad.
+              // Se corta en el primer <br> — mismo motivo que en el bloque de vfw.cola
+              // más arriba: la cola de ESTA línea, no el resto del diálogo.
               let cola = "", n = huecos[0].nextSibling;
-              while (n) { cola += n.textContent || ""; n = n.nextSibling; }
-              // Si el autor puso un salto de línea justo antes del hueco, es que quiere la
-              // casilla en su propia línea a ancho completo (respuestas de frase entera):
-              // estirarla en la misma línea la dejaría flotando a media altura del texto.
-              let antes = huecos[0].previousSibling;
-              while (antes && antes.nodeType === 3 && !antes.textContent.trim()) antes = antes.previousSibling;
-              const saltoAntes = !!antes && antes.nodeName === "BR";
-              if (!saltoAntes && /^[\s.,;:!?¿¡…"»)]*$/.test(cola)) {
-                row.classList.add("tail-blank");
+              while (n && n.nodeName !== "BR") { cola += n.textContent || ""; n = n.nextSibling; }
+              // Si hay un salto de línea en cualquier punto ANTES del hueco (no solo justo
+              // delante), no se envuelve: un diálogo A/B con el hueco en la segunda línea
+              // (item.t con "\n" y el hueco en la réplica de B) también entra aquí, y
+              // envolver TODO el head en un único span flex de una línea (con salto interno)
+              // rompe el alineado "baseline" del flex — el hueco se pinta a media altura de
+              // la PRIMERA línea, no pegado a la segunda, donde va el texto real. Bug real,
+              // encontrado con un diálogo A/B de dos líneas y un solo hueco al final de la
+              // réplica de B (unidad 1 de A2, ejercicio "busca el error"). Cuando el salto
+              // está PEGADO al hueco (caso ya cubierto antes), el resultado es el mismo que
+              // se buscaba con "saltoAntes": la casilla cae sola en su propia línea, a ancho
+              // completo, sin necesitar el estirado flex.
+              let saltoEnHead = false;
+              for (let n2 = row.firstChild; n2 && n2 !== huecos[0]; n2 = n2.nextSibling) {
+                if (n2.nodeName === "BR") { saltoEnHead = true; break; }
+              }
+              if (!saltoEnHead && /^[\s.,;:!?¿¡…"»)]*$/.test(cola)) {
                 // Todo lo anterior al hueco (número + frase) va en UN solo envoltorio.
                 // Si se dejan sueltos, cada nodo de texto es un elemento flex distinto y
                 // una frase larga salta de línea entera, dejando el "e." solo en la
@@ -1335,6 +1496,12 @@
                 head.className = "tail-text";
                 while (row.firstChild && row.firstChild !== huecos[0]) head.appendChild(row.firstChild);
                 row.insertBefore(head, huecos[0]);
+                // Envuelve SOLO esta línea (hasta el primer <br>) en el span flex — ver el
+                // aviso junto a la CSS de .tail-blank/.vf-tail más arriba.
+                const tailLine = document.createElement("span");
+                tailLine.className = "tail-blank";
+                while (row.firstChild && row.firstChild.nodeName !== "BR") tailLine.appendChild(row.firstChild);
+                row.insertBefore(tailLine, row.firstChild);
               }
             }
           }
@@ -1344,7 +1511,7 @@
         // filas que acaben así: es lo que las hace terminar todas en el mismo sitio.
         // Una sola, rodeada de frases con el hueco dentro, se ve como una raya larga
         // y suelta; en ese caso se deja con el ancho normal.
-        const colas = wrap.querySelectorAll(".item-row.tail-blank");
+        const colas = wrap.querySelectorAll(".tail-blank");
         if (colas.length === 1) colas[0].classList.remove("tail-blank");
         card.appendChild(wrap);
       } else if (ex.type === "text") {
@@ -1635,14 +1802,35 @@
           if (!ex.grid && !item.pre && !row.querySelector(".foto-act")) {
             const vfw = row.querySelector(".vf-wrap");
             if (vfw && row.querySelectorAll("input.blank").length === 1) {
+              // Se corta en el primer <br>: lo que venga en la réplica siguiente de un
+              // diálogo (después del salto de línea) no cuenta como "cola" de esta línea —
+              // antes se acumulaba TODO el resto de la fila (líneas B/C incluidas), así que
+              // un signo de cierre pegado al hueco pero seguido de más diálogo (p. ej.
+              // "A ¿{0}?\nB ...") nunca se detectaba como cola de solo puntuación y el "?"
+              // se quedaba huérfano, empujado a su propia línea por el input a ancho
+              // completo. Bug real, encontrado en un ejercicio "Escribe las preguntas" de A1.
               let cola = "", n = vfw.nextSibling;
-              while (n) { cola += n.textContent || ""; n = n.nextSibling; }
-              if (/^[\s.,;:!?¿¡…"»)]*$/.test(cola)) {
-                row.classList.add("vf-tail");
+              while (n && n.nodeName !== "BR") { cola += n.textContent || ""; n = n.nextSibling; }
+              // Mismo aviso que con .tail-blank más abajo: un salto de línea en cualquier
+              // punto ANTES de los botones V/F (un diálogo A/B con el hueco V/F en la
+              // réplica de B) rompe igual el alineado "baseline" del flex si se envuelve
+              // todo el head en un único span — el mismo bug de .tail-blank, aquí para la
+              // fila que acaba en botones en vez de en un input de texto.
+              let saltoEnHead = false;
+              for (let n2 = row.firstChild; n2 && n2 !== vfw; n2 = n2.nextSibling) {
+                if (n2.nodeName === "BR") { saltoEnHead = true; break; }
+              }
+              if (!saltoEnHead && /^[\s.,;:!?¿¡…"»)]*$/.test(cola)) {
                 const head = document.createElement("span");
                 head.className = "tail-text";
                 while (row.firstChild && row.firstChild !== vfw) head.appendChild(row.firstChild);
                 row.insertBefore(head, vfw);
+                // Envuelve SOLO esta línea (hasta el primer <br>) en el span flex — ver el
+                // aviso junto a la CSS de .tail-blank/.vf-tail más arriba.
+                const tailLine = document.createElement("span");
+                tailLine.className = "vf-tail";
+                while (row.firstChild && row.firstChild.nodeName !== "BR") tailLine.appendChild(row.firstChild);
+                row.insertBefore(tailLine, row.firstChild);
               }
             }
           }
@@ -1652,16 +1840,26 @@
               // Después del hueco solo puede quedar puntuación de cierre. Si hay palabras,
               // el hueco está DENTRO de la frase (un rellenar-el-espacio) y no se toca:
               // estirarlo hasta el borde derecho partiría la oración por la mitad.
+              // Se corta en el primer <br> — mismo motivo que en el bloque de vfw.cola
+              // más arriba: la cola de ESTA línea, no el resto del diálogo.
               let cola = "", n = huecos[0].nextSibling;
-              while (n) { cola += n.textContent || ""; n = n.nextSibling; }
-              // Si el autor puso un salto de línea justo antes del hueco, es que quiere la
-              // casilla en su propia línea a ancho completo (respuestas de frase entera):
-              // estirarla en la misma línea la dejaría flotando a media altura del texto.
-              let antes = huecos[0].previousSibling;
-              while (antes && antes.nodeType === 3 && !antes.textContent.trim()) antes = antes.previousSibling;
-              const saltoAntes = !!antes && antes.nodeName === "BR";
-              if (!saltoAntes && /^[\s.,;:!?¿¡…"»)]*$/.test(cola)) {
-                row.classList.add("tail-blank");
+              while (n && n.nodeName !== "BR") { cola += n.textContent || ""; n = n.nextSibling; }
+              // Si hay un salto de línea en cualquier punto ANTES del hueco (no solo justo
+              // delante), no se envuelve: un diálogo A/B con el hueco en la segunda línea
+              // (item.t con "\n" y el hueco en la réplica de B) también entra aquí, y
+              // envolver TODO el head en un único span flex de una línea (con salto interno)
+              // rompe el alineado "baseline" del flex — el hueco se pinta a media altura de
+              // la PRIMERA línea, no pegado a la segunda, donde va el texto real. Bug real,
+              // encontrado con un diálogo A/B de dos líneas y un solo hueco al final de la
+              // réplica de B (unidad 1 de A2, ejercicio "busca el error"). Cuando el salto
+              // está PEGADO al hueco (caso ya cubierto antes), el resultado es el mismo que
+              // se buscaba con "saltoAntes": la casilla cae sola en su propia línea, a ancho
+              // completo, sin necesitar el estirado flex.
+              let saltoEnHead = false;
+              for (let n2 = row.firstChild; n2 && n2 !== huecos[0]; n2 = n2.nextSibling) {
+                if (n2.nodeName === "BR") { saltoEnHead = true; break; }
+              }
+              if (!saltoEnHead && /^[\s.,;:!?¿¡…"»)]*$/.test(cola)) {
                 // Todo lo anterior al hueco (número + frase) va en UN solo envoltorio.
                 // Si se dejan sueltos, cada nodo de texto es un elemento flex distinto y
                 // una frase larga salta de línea entera, dejando el "e." solo en la
@@ -1671,6 +1869,12 @@
                 head.className = "tail-text";
                 while (row.firstChild && row.firstChild !== huecos[0]) head.appendChild(row.firstChild);
                 row.insertBefore(head, huecos[0]);
+                // Envuelve SOLO esta línea (hasta el primer <br>) en el span flex — ver el
+                // aviso junto a la CSS de .tail-blank/.vf-tail más arriba.
+                const tailLine = document.createElement("span");
+                tailLine.className = "tail-blank";
+                while (row.firstChild && row.firstChild.nodeName !== "BR") tailLine.appendChild(row.firstChild);
+                row.insertBefore(tailLine, row.firstChild);
               }
             }
           }
@@ -1680,7 +1884,7 @@
         // filas que acaben así: es lo que las hace terminar todas en el mismo sitio.
         // Una sola, rodeada de frases con el hueco dentro, se ve como una raya larga
         // y suelta; en ese caso se deja con el ancho normal.
-        const colas = wrap.querySelectorAll(".item-row.tail-blank");
+        const colas = wrap.querySelectorAll(".tail-blank");
         if (colas.length === 1) colas[0].classList.remove("tail-blank");
         card.appendChild(wrap);
       } else if (ex.type === "match") {
@@ -1967,6 +2171,135 @@
         mwrap.addEventListener("scroll", refreshFades);
         pendingMatchDraws.push(function () { drawLines(); refreshFades(); });
         card.appendChild(mouter);
+      } else if (ex.type === "wordsearch") {
+        // Sopa de letras interactiva. ex.grid = array de strings (una por fila); ex.words =
+        // [{ label, cells:[[r,c],...], solved?, img? }]. `cells` es la secuencia exacta de
+        // casillas que forma la palabra en la rejilla real del libro (en cualquiera de las
+        // 8 direcciones), calculada una vez con un script de búsqueda, no a mano — así no
+        // hay duda de que coincide con lo impreso. Una palabra "solved" (el ejemplo que el
+        // libro ya trae resuelto) se pinta encontrada desde el principio, sin hueco de
+        // corrección; el resto se juega tocando la letra de inicio y luego la de fin.
+        // `img` (opcional): si la pista del libro es un DIBUJO, no un texto, pásala aquí en
+        // vez de dejar `label` visible desde el principio — ver el comentario largo junto a
+        // .ws-outer en el CSS de arriba (regla general: una pista con imagen no lleva el
+        // texto de la respuesta al lado, o deja de ser una pista).
+        const gridRows = ex.grid.length, gridCols = ex.grid[0].length;
+        const outer = document.createElement("div");
+        outer.className = "ws-outer";
+        const gridEl = document.createElement("div");
+        gridEl.className = "ws-grid";
+        gridEl.style.gridTemplateColumns = "repeat(" + gridCols + ", 1fr)";
+        const cellEls = [];
+        for (let r = 0; r < gridRows; r++) {
+          cellEls[r] = [];
+          for (let c = 0; c < gridCols; c++) {
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "ws-cell";
+            btn.textContent = ex.grid[r][c];
+            btn.dataset.r = String(r);
+            btn.dataset.c = String(c);
+            btn.setAttribute("translate", "no");
+            cellEls[r][c] = btn;
+            gridEl.appendChild(btn);
+          }
+        }
+        outer.appendChild(gridEl);
+
+        const wordsEl = document.createElement("ul");
+        wordsEl.className = "ws-words";
+        const wordRecs = []; // { word, li, input }
+        ex.words.forEach(function (w) {
+          const li = document.createElement("li");
+          li.setAttribute("translate", "no");
+          if (w.img) {
+            // La pista es el dibujo, no el texto: el nombre se guarda en un span oculto por
+            // CSS hasta que la palabra se encuentra (ver .ws-prof-name arriba).
+            const img = document.createElement("img");
+            img.src = w.img;
+            img.alt = w.label;
+            li.appendChild(img);
+            const nameSpan = document.createElement("span");
+            nameSpan.className = "ws-prof-name";
+            nameSpan.textContent = w.label;
+            li.appendChild(nameSpan);
+          } else {
+            li.textContent = w.label;
+          }
+          if (w.solved) {
+            li.classList.add("ws-solved");
+            w.cells.forEach(function (rc) { cellEls[rc[0]][rc[1]].classList.add("ws-found"); });
+          } else {
+            const inp = document.createElement("input");
+            inp.type = "hidden";
+            inp.className = "blank";
+            const rec = { el: inp, spec: [w.label], label: "Ej. " + ex.num + " sopa de letras (" + w.label + ")" };
+            rec.onGrade = function (ok) {
+              li.classList.toggle("ws-found-item", ok);
+              li.classList.toggle("ws-incorrect", !ok);
+            };
+            allInputs.push(rec);
+            li.appendChild(inp);
+            wordRecs.push({ word: w, li: li, input: inp });
+          }
+          wordsEl.appendChild(li);
+        });
+        outer.appendChild(wordsEl);
+
+        // Dos casillas forman una selección válida solo si están en la misma fila, misma
+        // columna, o a igual distancia en ambos ejes (diagonal exacta) — cualquier otra
+        // combinación no es una línea recta y se ignora.
+        function pathBetween(r1, c1, r2, c2) {
+          const dr = Math.sign(r2 - r1), dc = Math.sign(c2 - c1);
+          if (r1 !== r2 && c1 !== c2 && Math.abs(r2 - r1) !== Math.abs(c2 - c1)) return null;
+          const dist = Math.max(Math.abs(r2 - r1), Math.abs(c2 - c1));
+          const path = [];
+          for (let i = 0; i <= dist; i++) path.push([r1 + dr * i, c1 + dc * i]);
+          return path;
+        }
+        function sameCells(a, b) {
+          if (a.length !== b.length) return false;
+          for (let i = 0; i < a.length; i++) if (a[i][0] !== b[i][0] || a[i][1] !== b[i][1]) return false;
+          return true;
+        }
+
+        let armed = null;
+        gridEl.addEventListener("click", function (e) {
+          // Las casillas NO se desactivan al encontrarse: dos palabras pueden compartir una
+          // letra, así que una casilla ya resuelta por una palabra tiene que seguir
+          // pudiendo tocarse como extremo de otra.
+          const btn = e.target.closest(".ws-cell");
+          if (!btn) return;
+          const r = parseInt(btn.dataset.r, 10), c = parseInt(btn.dataset.c, 10);
+          if (armed === null) {
+            armed = [r, c];
+            btn.classList.add("ws-armed");
+            return;
+          }
+          const ar = armed[0], ac = armed[1];
+          cellEls[ar][ac].classList.remove("ws-armed");
+          armed = null;
+          if (ar === r && ac === c) return; // tocar la misma casilla desarma sin seleccionar
+          const path = pathBetween(ar, ac, r, c);
+          if (!path) return; // no es línea recta: se ignora, se puede reintentar
+          const rev = path.slice().reverse();
+          const rec = wordRecs.find(function (wr) {
+            return wr.input.value !== wr.word.label &&
+              (sameCells(path, wr.word.cells) || sameCells(rev, wr.word.cells));
+          });
+          if (rec) {
+            rec.input.value = rec.word.label;
+            rec.li.classList.add("ws-found-item");
+            rec.word.cells.forEach(function (rc) { cellEls[rc[0]][rc[1]].classList.add("ws-found"); });
+          } else {
+            path.forEach(function (rc) { cellEls[rc[0]][rc[1]].classList.add("ws-wrong"); });
+            setTimeout(function () {
+              path.forEach(function (rc) { cellEls[rc[0]][rc[1]].classList.remove("ws-wrong"); });
+            }, 450);
+          }
+        });
+
+        card.appendChild(outer);
       }
 
       // Transcripción de audio, si el ejercicio la trae. Va al final de la tarjeta, después
