@@ -275,19 +275,51 @@ El fallo no fue no saber los pasos, fue no volver a mirarlos al final.
       persona de pie, el borde recto de la propia foto impresa) no queda vertical/horizontal,
       no te limites a recortar el rectángulo tal cual sale — está reflejando la inclinación de
       impresión, no un defecto de tu recorte, así que hay que enderezarla antes de incrustarla.
-      Antes: `pip3 install opencv-python-headless numpy` (para detectar el ángulo con
-      `cv2.HoughLinesP` sobre bordes rectos si los hay — funciona bien en carteles/tablas, mal
-      en fotografías con fondo irregular como árboles). Cuando el borde no da una lectura
-      limpia, más fiable y más rápido es probar `PIL.Image.rotate(ángulo, expand=True,
-      fillcolor=...)` con 2-3 ángulos de prueba (`fillcolor` debe ser un int si la imagen está
-      en modo "L", o una tupla RGB si no) y comparar a ojo cuál deja mejor la referencia recta
-      — ejemplo real: la foto de la boda de Unidad 3A necesitó +4°, Sevilla -3°, Córdoba +3°,
-      cada una en un sentido distinto porque el libro las imprime como recortes de collage
-      sueltos, no como una página fotografiada entera. Después de rotar, recorta de nuevo con
-      margen ajustado (la rotación añade franjas en blanco en las esquinas). Este es un error
-      real de este mismo repo: tres unidades de A2 se publicaron con fotos correctamente
-      identificadas e incrustadas pero sin comprobar que además estuvieran rectas — el
-      profesor tuvo que pedirlo explícitamente una segunda vez.
+      `pip3 install opencv-python-headless numpy` (auto-instálalo si falta, igual que el resto
+      de herramientas de esta skill).
+      **No confíes en el ojo, ni en Hough directamente sobre el contenido de la foto — mide el
+      ángulo del RECTÁNGULO DE LA FOTO contra el fondo de la página, con su propio silueteado:**
+      1. Umbraliza una región amplia de la página (`cv2.threshold(gray, 200, 255,
+         THRESH_BINARY_INV)`, ajusta el 200 si el fondo no es blanco puro) y cierra huecos
+         (`cv2.morphologyEx(..., MORPH_CLOSE, np.ones((9,9)))`) para obtener la silueta de la
+         foto como un blob sólido contra el fondo claro de la página.
+      2. Recorta con MUCHO margen alrededor de la foto — si el contorno toca el borde de tu
+         recorte, `cv2.boundingRect`/`minAreaRect` da lecturas degeneradas (ángulos como
+         exactamente 0° o -90°, o un rectángulo que ocupa todo el ancho del recorte). Si dos
+         fotos están pegadas (como Sevilla/Córdoba en collage), aísla la región de UNA sola,
+         no las dos juntas, o sus siluetas se fusionan en un solo blob mal formado.
+      3. Con el contorno más grande ya aislado (`max(contours, key=cv2.contourArea)`), en vez
+         de fiarte del ángulo que da `cv2.minAreaRect` (su convención de signo y qué lado es
+         "ancho" es ambigua y da resultados contraintuitivos), mide tú mismo la pendiente:
+         recorre columnas (`for x in range(...)`) y anota la primera fila `True` de la
+         máscara en cada una (el borde superior de la foto), luego `np.polyfit(xs, ys, 1)` y
+         `np.degrees(np.arctan(pendiente))` — un ajuste por mínimos cuadrados sobre decenas de
+         puntos reales es mucho más preciso que cualquier estimación a ojo. Si la fila-scan da
+         valores ruidosos/no monótonos (habitual cuando el "borde" pasa cerca de texto o de
+         otro elemento), aísla antes el contorno con `cv2.drawContours(mask, [c], -1, 255, -1)`
+         y repite el escaneo sobre esa máscara limpia en vez de sobre el umbral bruto.
+      4. Rota con el ángulo medido (`PIL.Image.rotate(-ángulo, expand=True, fillcolor=...)` —
+         prueba el signo con una comprobación visual rápida la primera vez en cada sesión,
+         pero una vez fijado el criterio de signo es el mismo para todas las fotos de esa
+         tanda) y vuelve a recortar ajustado (`cv2.boundingRect` sobre la imagen ya rotada,
+         que ahora sí debería dar un rectángulo limpio sin ambigüedad de ángulo).
+      Ejemplo real de esta sesión: Sevilla medía +1,4°, Córdoba -4,3°, la postal de Barcelona
+      +1,9° — todas inclinadas en sentidos distintos porque el libro las imprime como recortes
+      de collage sueltos. **La tira cómica "Leo Verdura" es la lección inversa**: a ojo (y con
+      Hough sobre un recorte estrecho) parecía tener ~1-2° de inclinación, así que se rotó esa
+      cantidad — pero al medir con este método sobre el marco superior del propio cómic
+      (un borde limpio y largo, ideal para el ajuste por mínimos cuadrados) el ángulo real era
+      -0,5°, prácticamente cero: la rotación aplicada la había torcido más, no menos. Ninguna
+      foto ni el ojo son fiables por sí solos — mide siempre contra un borde recto real antes
+      de dar la corrección por buena. La foto de la boda de Unidad 3A (fondo de personas y
+      árboles, sin silueta limpia contra la página) fue la excepción real: ahí ni el
+      silueteado ni Hough dieron una lectura fiable, y se resolvió a ojo comparando contra la
+      verticalidad del propio novio en la foto — documenta explícitamente cuando tengas que
+      recurrir a esto, es el último recurso, no el primero. Este es un error real de este mismo
+      repo: tres unidades de A2 se publicaron con fotos correctamente identificadas e
+      incrustadas pero sin comprobar que además estuvieran rectas — el profesor tuvo que
+      pedirlo explícitamente una segunda vez, y ni la primera corrección (a ojo) fue
+      suficientemente precisa, hizo falta una tercera pasada con medición real.
 - [ ] Si el material no viene claramente de un manual concreto, **pregúntale al profesor**
       en vez de archivarlo por deducción. `RepasoB1.pdf` era un PDF suelto y se colocó bajo
       "Nuevo Español en Marcha 3" por parecido de formato; el profesor confirmó después que
