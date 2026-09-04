@@ -42,12 +42,18 @@ formalmente registrado, con tributación regular.
 Además de profesor, soy ingeniero especialista en Sistemas de
 Aseguramiento de la Circulación Ferroviaria, con especialización en
 Sistemas y Redes de Telecomunicaciones del Transporte Ferroviario
-(diploma con honores, Universidad Rusa de Transporte — RUT MIIT), y
-trilingüe real: español nativo, ruso C1 (formación universitaria
-completa en ruso) e inglés C2 (certificado EF SET). Habiendo sido yo
-mismo estudiante extranjero —de Cuba a Rusia, y ahora a España—,
-entiendo de primera mano las dificultades del alumnado internacional
-al que atienden.
+(diploma con honores, Universidad Rusa de Transporte — RUT MIIT).
+Cuento también con un Diploma de Recualificación Profesional en
+Análisis Predictivo Aplicado a Problemas del Transporte (Python,
+aprendizaje automático), que aplico hoy a la elaboración de mis
+propios materiales didácticos y al seguimiento del progreso de mis
+alumnos — una combinación que me permite incorporar herramientas
+digitales a la enseñanza, además del método comunicativo tradicional.
+Soy, por último, trilingüe real: español nativo, ruso C1 (formación
+universitaria completa en ruso) e inglés C2 (certificado EF SET).
+Habiendo sido yo mismo estudiante extranjero —de Cuba a Rusia, y
+ahora a España—, entiendo de primera mano las dificultades del
+alumnado internacional al que atienden.
 
 Adjunto mi currículum con el detalle completo de mi formación y
 experiencia. Quedo a su disposición para una entrevista cuando les
