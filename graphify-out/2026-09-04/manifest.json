@@ -1,7 +1,7 @@
 {
   ".claude/settings.json": {
-    "mtime": 1788379288.6108963,
-    "seen": 1788379310.972106,
+    "mtime": 1788422055.8454053,
+    "seen": 1788524666.7421575,
     "ast_hash": "174343810b52012027f6057cb3c75416",
     "semantic_hash": ""
   },
@@ -1860,9 +1860,9 @@
     "semantic_hash": ""
   },
   "personal/README.md": {
-    "mtime": 1788381104.2856767,
-    "seen": 1788381114.8467171,
-    "ast_hash": "5c53e54f18f4d4bbab25ef28602a83ce",
+    "mtime": 1788524943.6475,
+    "seen": 1788524953.1585984,
+    "ast_hash": "2162ce6c50c10e732a65d54e2c3961f6",
     "semantic_hash": ""
   },
   "personal/academico/formacion-academica.md": {
@@ -1959,6 +1959,12 @@
     "mtime": 1788379289.117569,
     "seen": 1788379310.9723272,
     "ast_hash": "9028e6ef6f1f11acc44da511e97d43b3",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/oportunidades-salamanca.md": {
+    "mtime": 1788524637.679507,
+    "seen": 1788524666.74243,
+    "ast_hash": "a5b7bdd012ffdab54f451c644ec6fc08",
     "semantic_hash": ""
   }
 }
