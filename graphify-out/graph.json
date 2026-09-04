@@ -26898,7 +26898,7 @@
       "node_kind": "heading",
       "norm_label": "notas",
       "source_file": "docencia-espanol/carta-candidatura-academias-salamanca.md",
-      "source_location": "L69"
+      "source_location": "L68"
     },
     {
       "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_guia_repaso_unidades_1_10",
@@ -98435,7 +98435,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docencia-espanol/carta-candidatura-academias-salamanca.md",
-      "source_location": "L69",
+      "source_location": "L68",
       "weight": 1.0
     },
     {
@@ -106927,5 +106927,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "4b1e8b976c67c5fe0609b2bef91aa739e6cf9eb6"
+  "built_at_commit": "5c751a5ab31922d09a6c3d7b92998e8d5b0924f3"
 }
