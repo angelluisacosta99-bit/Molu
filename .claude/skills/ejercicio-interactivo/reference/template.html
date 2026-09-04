@@ -197,9 +197,12 @@
   .exercise-instr { color: var(--pencil); font-size: 0.85rem; font-style: italic; margin-bottom: 0.85rem; }
   .audio-label {
     font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--ink-soft); margin-bottom: 0.3rem;
+    color: var(--ink-soft); margin-bottom: 0.3rem; text-align: center;
   }
-  .exercise-audio { width: 100%; max-width: 420px; display: block; margin-bottom: 0.9rem; }
+  /* Centrado, no pegado al margen izquierdo — instrucción explícita del profesor (ver
+     SKILL.md, "Audio: reproductor SIEMPRE centrado"). width:100% con max-width y
+     margin:auto: se centra pero no se estira más de lo necesario en tarjetas anchas. */
+  .exercise-audio { width: 100%; max-width: 420px; display: block; margin: 0 auto 0.9rem; }
   .exercise-model { color: var(--pencil); font-size: 0.85rem; font-style: italic; margin-bottom: 0.7rem; }
 
   /* Recuadro de referencia dentro de un ejercicio (banco de opciones, lista de verbos...).
@@ -332,6 +335,18 @@
     color: var(--gold); font-weight: 700;
     border-bottom: 2px solid var(--gold-soft);
     margin-right: 0.45rem;
+  }
+  /* B, C... (los turnos después del primero) van EXACTAMENTE debajo de A — instrucción
+     explícita del profesor. El primer turno arranca después del número de ítem ("2. A
+     ..."), pero los siguientes (tras el <br>) no llevan ese número delante y arrancaban
+     pegados al margen izquierdo de la tarjeta: un escalón entre A y el resto. Sangría
+     francesa: el número se saca de la caja con margen negativo y las demás líneas, que
+     solo tienen el padding-left de la fila, arrancan justo donde termina esa columna —
+     así todas las letras de los personajes quedan alineadas, una debajo de otra. El ancho
+     (1.9em) da para dos dígitos ("12.") sin recortar. */
+  .dialog-row { padding-left: 1.9em; }
+  .dialog-row .item-letter {
+    display: inline-block; width: 1.9em; margin-left: -1.9em; margin-right: 0;
   }
 
   input.blank {
@@ -749,24 +764,43 @@
   /* Fila que acaba en el hueco: la casilla se estira hasta el borde derecho. El hueco es la
      continuación natural de la frase, así que empieza justo donde acaba el texto —no baja a
      una línea aparte— pero todas las de un ejercicio TERMINAN en el mismo sitio, que es lo
-     que hace que se vean parejas. La fila es flex: los nodos de texto se convierten en
-     items anónimos y la casilla, con flex:1, se queda con lo que sobra. */
-  .item-row.tail-blank {
-    display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 0.3rem;
+     que hace que se vean parejas.
+     El flex va en un SPAN aparte (.tail-blank), envolviendo solo esta línea (hasta el
+     primer <br>) — NO en la fila entera como antes. Un diálogo con más réplicas después
+     (item.dialog, "A ¿{0}?\nB ...") sigue teniendo esas réplicas en flujo de bloque normal
+     tras el span, heredando la sangría francesa de .dialog-row sin sorpresas: un <br>
+     dentro de una fila ya convertida en flex container no garantiza que la réplica
+     siguiente arranque en el borde izquierdo del padding — se vio saltar a mitad de la
+     tarjeta en un ejercicio de 3 turnos (A/B/C). Los nodos de texto dentro del span se
+     convierten en items anónimos y la casilla, con flex:1, se queda con lo que sobra. */
+  .item-row .tail-blank {
+    display: flex; width: 100%; flex-wrap: wrap; align-items: baseline; gap: 0 0.3rem;
   }
-  .item-row.tail-blank input.blank {
+  .item-row .tail-blank input.blank {
     flex: 1 1 8em; width: auto; max-width: none; min-width: 6em; text-align: left;
   }
-  .item-row.tail-blank .tail-text { flex: 0 1 auto; min-width: 0; }
-  /* Fila que acaba en los botones V/F: el texto se estira y empuja los botones al borde
-     derecho, así todos los pares quedan en la misma columna. */
-  .item-row.vf-tail {
-    display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 0.3rem;
+  /* Un hueco de frase entera (wide:"full") que además cae al final de su línea — una
+     pregunta completa con el interrogante de cierre fuera del hueco, «A ¿{0}?» — se trata
+     como cualquier otro tail-blank: crece dentro del span flex en vez de forzar
+     display:block + width:100%. Sin esto el "?" que sigue al hueco se caía a su propia
+     línea, debajo de la casilla, en vez de quedarse pegado al final de la misma línea.
+     Misma especificidad que la regla de .full de más arriba (cuatro clases + un tipo, con
+     el .item-row de delante contando también aquí); gana por venir después en el CSS — no
+     la reordenes por delante de esa regla. */
+  .item-row .tail-blank input.blank.full {
+    display: block; width: auto; max-width: none; flex: 1 1 12em; margin: 0;
   }
-  .item-row.vf-tail .tail-text { flex: 1 1 auto; min-width: 0; }
-  .item-row.vf-tail .vf-wrap { flex: 0 0 auto; }
-  .item-row.vf-tail .reveal.show { flex-basis: 100%; margin-left: 0; }
-  .item-row.tail-blank .reveal.show { flex-basis: 100%; margin-left: 0; }
+  .item-row .tail-blank .tail-text { flex: 0 1 auto; min-width: 0; }
+  /* Fila que acaba en los botones V/F: el texto se estira y empuja los botones al borde
+     derecho, así todos los pares quedan en la misma columna. Mismo span aparte que
+     .tail-blank, por el mismo motivo (diálogos con más réplicas después). */
+  .item-row .vf-tail {
+    display: flex; width: 100%; flex-wrap: wrap; align-items: baseline; gap: 0 0.3rem;
+  }
+  .item-row .vf-tail .tail-text { flex: 1 1 auto; min-width: 0; }
+  .item-row .vf-tail .vf-wrap { flex: 0 0 auto; }
+  .item-row .vf-tail .reveal.show { flex-basis: 100%; margin-left: 0; }
+  .item-row .tail-blank .reveal.show { flex-basis: 100%; margin-left: 0; }
 </style>
 
 <script>
@@ -1235,7 +1269,7 @@
           // puntos (ROSA:, ANDRÉS:), que es como el propio cuaderno marca los diálogos con
           // personajes. Solo se aplica dentro de ejercicios con dialog: true.
           const m = dialog && (li > 0 || i === 0)
-            ? linea.match(/^([A-ZÁÉÍÓÚÑÜ]{2,12}:|[AB])\s+/) : null;
+            ? linea.match(/^([A-ZÁÉÍÓÚÑÜ]{2,12}:|[A-Z])\s+/) : null;
           if (m) {
             const who = document.createElement("span");
             who.className = "speaker";
@@ -1395,8 +1429,15 @@
           if (!ex.grid && !item.pre && !row.querySelector(".foto-act")) {
             const vfw = row.querySelector(".vf-wrap");
             if (vfw && row.querySelectorAll("input.blank").length === 1) {
+              // Se corta en el primer <br>: lo que venga en la réplica siguiente de un
+              // diálogo (después del salto de línea) no cuenta como "cola" de esta línea —
+              // antes se acumulaba TODO el resto de la fila (líneas B/C incluidas), así que
+              // un signo de cierre pegado al hueco pero seguido de más diálogo (p. ej.
+              // "A ¿{0}?\nB ...") nunca se detectaba como cola de solo puntuación y el "?"
+              // se quedaba huérfano, empujado a su propia línea por el input a ancho
+              // completo. Bug real, encontrado en un ejercicio "Escribe las preguntas" de A1.
               let cola = "", n = vfw.nextSibling;
-              while (n) { cola += n.textContent || ""; n = n.nextSibling; }
+              while (n && n.nodeName !== "BR") { cola += n.textContent || ""; n = n.nextSibling; }
               // Mismo aviso que con .tail-blank más abajo: un salto de línea en cualquier
               // punto ANTES de los botones V/F (un diálogo A/B con el hueco V/F en la
               // réplica de B) rompe igual el alineado "baseline" del flex si se envuelve
@@ -1407,11 +1448,16 @@
                 if (n2.nodeName === "BR") { saltoEnHead = true; break; }
               }
               if (!saltoEnHead && /^[\s.,;:!?¿¡…"»)]*$/.test(cola)) {
-                row.classList.add("vf-tail");
                 const head = document.createElement("span");
                 head.className = "tail-text";
                 while (row.firstChild && row.firstChild !== vfw) head.appendChild(row.firstChild);
                 row.insertBefore(head, vfw);
+                // Envuelve SOLO esta línea (hasta el primer <br>) en el span flex — ver el
+                // aviso junto a la CSS de .tail-blank/.vf-tail más arriba.
+                const tailLine = document.createElement("span");
+                tailLine.className = "vf-tail";
+                while (row.firstChild && row.firstChild.nodeName !== "BR") tailLine.appendChild(row.firstChild);
+                row.insertBefore(tailLine, row.firstChild);
               }
             }
           }
@@ -1421,8 +1467,10 @@
               // Después del hueco solo puede quedar puntuación de cierre. Si hay palabras,
               // el hueco está DENTRO de la frase (un rellenar-el-espacio) y no se toca:
               // estirarlo hasta el borde derecho partiría la oración por la mitad.
+              // Se corta en el primer <br> — mismo motivo que en el bloque de vfw.cola
+              // más arriba: la cola de ESTA línea, no el resto del diálogo.
               let cola = "", n = huecos[0].nextSibling;
-              while (n) { cola += n.textContent || ""; n = n.nextSibling; }
+              while (n && n.nodeName !== "BR") { cola += n.textContent || ""; n = n.nextSibling; }
               // Si hay un salto de línea en cualquier punto ANTES del hueco (no solo justo
               // delante), no se envuelve: un diálogo A/B con el hueco en la segunda línea
               // (item.t con "\n" y el hueco en la réplica de B) también entra aquí, y
@@ -1439,7 +1487,6 @@
                 if (n2.nodeName === "BR") { saltoEnHead = true; break; }
               }
               if (!saltoEnHead && /^[\s.,;:!?¿¡…"»)]*$/.test(cola)) {
-                row.classList.add("tail-blank");
                 // Todo lo anterior al hueco (número + frase) va en UN solo envoltorio.
                 // Si se dejan sueltos, cada nodo de texto es un elemento flex distinto y
                 // una frase larga salta de línea entera, dejando el "e." solo en la
@@ -1449,6 +1496,12 @@
                 head.className = "tail-text";
                 while (row.firstChild && row.firstChild !== huecos[0]) head.appendChild(row.firstChild);
                 row.insertBefore(head, huecos[0]);
+                // Envuelve SOLO esta línea (hasta el primer <br>) en el span flex — ver el
+                // aviso junto a la CSS de .tail-blank/.vf-tail más arriba.
+                const tailLine = document.createElement("span");
+                tailLine.className = "tail-blank";
+                while (row.firstChild && row.firstChild.nodeName !== "BR") tailLine.appendChild(row.firstChild);
+                row.insertBefore(tailLine, row.firstChild);
               }
             }
           }
@@ -1458,7 +1511,7 @@
         // filas que acaben así: es lo que las hace terminar todas en el mismo sitio.
         // Una sola, rodeada de frases con el hueco dentro, se ve como una raya larga
         // y suelta; en ese caso se deja con el ancho normal.
-        const colas = wrap.querySelectorAll(".item-row.tail-blank");
+        const colas = wrap.querySelectorAll(".tail-blank");
         if (colas.length === 1) colas[0].classList.remove("tail-blank");
         card.appendChild(wrap);
       } else if (ex.type === "text") {
@@ -1749,8 +1802,15 @@
           if (!ex.grid && !item.pre && !row.querySelector(".foto-act")) {
             const vfw = row.querySelector(".vf-wrap");
             if (vfw && row.querySelectorAll("input.blank").length === 1) {
+              // Se corta en el primer <br>: lo que venga en la réplica siguiente de un
+              // diálogo (después del salto de línea) no cuenta como "cola" de esta línea —
+              // antes se acumulaba TODO el resto de la fila (líneas B/C incluidas), así que
+              // un signo de cierre pegado al hueco pero seguido de más diálogo (p. ej.
+              // "A ¿{0}?\nB ...") nunca se detectaba como cola de solo puntuación y el "?"
+              // se quedaba huérfano, empujado a su propia línea por el input a ancho
+              // completo. Bug real, encontrado en un ejercicio "Escribe las preguntas" de A1.
               let cola = "", n = vfw.nextSibling;
-              while (n) { cola += n.textContent || ""; n = n.nextSibling; }
+              while (n && n.nodeName !== "BR") { cola += n.textContent || ""; n = n.nextSibling; }
               // Mismo aviso que con .tail-blank más abajo: un salto de línea en cualquier
               // punto ANTES de los botones V/F (un diálogo A/B con el hueco V/F en la
               // réplica de B) rompe igual el alineado "baseline" del flex si se envuelve
@@ -1761,11 +1821,16 @@
                 if (n2.nodeName === "BR") { saltoEnHead = true; break; }
               }
               if (!saltoEnHead && /^[\s.,;:!?¿¡…"»)]*$/.test(cola)) {
-                row.classList.add("vf-tail");
                 const head = document.createElement("span");
                 head.className = "tail-text";
                 while (row.firstChild && row.firstChild !== vfw) head.appendChild(row.firstChild);
                 row.insertBefore(head, vfw);
+                // Envuelve SOLO esta línea (hasta el primer <br>) en el span flex — ver el
+                // aviso junto a la CSS de .tail-blank/.vf-tail más arriba.
+                const tailLine = document.createElement("span");
+                tailLine.className = "vf-tail";
+                while (row.firstChild && row.firstChild.nodeName !== "BR") tailLine.appendChild(row.firstChild);
+                row.insertBefore(tailLine, row.firstChild);
               }
             }
           }
@@ -1775,8 +1840,10 @@
               // Después del hueco solo puede quedar puntuación de cierre. Si hay palabras,
               // el hueco está DENTRO de la frase (un rellenar-el-espacio) y no se toca:
               // estirarlo hasta el borde derecho partiría la oración por la mitad.
+              // Se corta en el primer <br> — mismo motivo que en el bloque de vfw.cola
+              // más arriba: la cola de ESTA línea, no el resto del diálogo.
               let cola = "", n = huecos[0].nextSibling;
-              while (n) { cola += n.textContent || ""; n = n.nextSibling; }
+              while (n && n.nodeName !== "BR") { cola += n.textContent || ""; n = n.nextSibling; }
               // Si hay un salto de línea en cualquier punto ANTES del hueco (no solo justo
               // delante), no se envuelve: un diálogo A/B con el hueco en la segunda línea
               // (item.t con "\n" y el hueco en la réplica de B) también entra aquí, y
@@ -1793,7 +1860,6 @@
                 if (n2.nodeName === "BR") { saltoEnHead = true; break; }
               }
               if (!saltoEnHead && /^[\s.,;:!?¿¡…"»)]*$/.test(cola)) {
-                row.classList.add("tail-blank");
                 // Todo lo anterior al hueco (número + frase) va en UN solo envoltorio.
                 // Si se dejan sueltos, cada nodo de texto es un elemento flex distinto y
                 // una frase larga salta de línea entera, dejando el "e." solo en la
@@ -1803,6 +1869,12 @@
                 head.className = "tail-text";
                 while (row.firstChild && row.firstChild !== huecos[0]) head.appendChild(row.firstChild);
                 row.insertBefore(head, huecos[0]);
+                // Envuelve SOLO esta línea (hasta el primer <br>) en el span flex — ver el
+                // aviso junto a la CSS de .tail-blank/.vf-tail más arriba.
+                const tailLine = document.createElement("span");
+                tailLine.className = "tail-blank";
+                while (row.firstChild && row.firstChild.nodeName !== "BR") tailLine.appendChild(row.firstChild);
+                row.insertBefore(tailLine, row.firstChild);
               }
             }
           }
@@ -1812,7 +1884,7 @@
         // filas que acaben así: es lo que las hace terminar todas en el mismo sitio.
         // Una sola, rodeada de frases con el hueco dentro, se ve como una raya larga
         // y suelta; en ese caso se deja con el ancho normal.
-        const colas = wrap.querySelectorAll(".item-row.tail-blank");
+        const colas = wrap.querySelectorAll(".tail-blank");
         if (colas.length === 1) colas[0].classList.remove("tail-blank");
         card.appendChild(wrap);
       } else if (ex.type === "match") {

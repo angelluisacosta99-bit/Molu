@@ -95,6 +95,92 @@ PR #22 invertía el orden que PR #20 daba por bueno.
    solo aquí: comprobar la existencia del audio real en Drive es obligatorio para CUALQUIER
    ejercicio de audio, siempre, no una vez que "se acuerde".
 
+   **El reproductor de audio va SIEMPRE centrado, nunca pegado al margen izquierdo.**
+   Instrucción explícita del profesor. Ya corregido en `reference/template.html`
+   (`.exercise-audio { margin: 0 auto ... }`, con `.audio-label` también centrada) — si
+   alguna vez tocas ese CSS, no le quites el centrado sin querer.
+
+   **`item.wide: "full"` es SOLO para huecos que sustituyen una frase entera propia,
+   nunca para una palabra suelta dentro de una frase que sigue visible alrededor.**
+   `"full"` pone el input en `display: block; width: 100%` — cualquier texto que venga
+   detrás del hueco en esa misma línea de plantilla (una palabra, un signo de cierre) se
+   ve empujado a SU PROPIA línea, debajo de la caja, en vez de seguir pegado. Encontrado
+   real en `a1/..._cuaderno-practica-mas-1_interactivo.html`: un ejercicio de posesivos
+   («¿Dónde están {0} gafas? (yo)», respuesta de una palabra «mis») y uno de números
+   («diez, {0}, doce, ...») llevaban `wide: "full"` sin necesidad — la caja ocupaba toda
+   la tarjeta y « gafas? (yo)»/«, doce,» quedaban huérfanos en la línea de abajo. Regla:
+   si después del `{0}` en la plantilla queda CUALQUIER cosa más que un salto de línea
+   (`\n`) — una palabra, «?», lo que sea — el hueco NO es de frase entera; quítale
+   `wide: "full"` (usa `wide: true` para una respuesta de una o dos palabras algo larga,
+   o ningún `wide` para una palabra corta — el ancho por defecto ya es generoso).
+   **Caso particular — preguntas completas con el interrogante fuera del hueco (`"A
+   ¿{0}?\nB ..."`): el profesor SÍ quiere el «¿» y el «?» visibles como texto fijo de la
+   plantilla, a ambos lados del hueco — NO escondidos dentro de la respuesta.** Un primer
+   intento de arreglar este mismo bug (ejercicio 5 de `practica-mas-1`) metió la pregunta
+   entera dentro de `a: [["¿Eres español?"]]` para que no quedara ningún «?» suelto en la
+   plantilla — el profesor lo rechazó explícitamente: quiere el signo visible antes de
+   empezar el hueco y el signo visible al terminar, en la misma línea. La solución correcta
+   no toca el contenido, corrige el motor: el bug real estaba en cómo `template.html`
+   decide si un hueco puede estirarse a la derecha sin romper el «?» que le sigue
+   (`row.classList.add("tail-blank")`) — calculaba la "cola" (lo que viene después del
+   hueco) recorriendo TODOS los hermanos siguientes sin parar en el primer `<br>`, así que
+   en un diálogo A/B la cola incluía también la réplica de B («?B No, soy mexicano.») y
+   nunca pasaba el test de "solo puntuación de cierre" — el hueco se quedaba sin la clase
+   `tail-blank` y `wide:"full"` (`display:block; width:100%`) empujaba el «?» a su propia
+   línea. Corregido en `reference/template.html`: los dos bucles `let cola = ...,
+   n = ...nextSibling; while (n) {...}` (huecos de texto y V/F) ahora cortan en el primer
+   `<br>` (`while (n && n.nodeName !== "BR")`), así que la cola solo mira lo que queda en
+   la MISMA línea del hueco. Aparte: si después del hueco viene una PALABRA además del
+   signo de cierre (`"A ¿{0} madrileñas?\nB ..."`, respuesta de una sola palabra «Sois»),
+   eso no es un hueco de frase entera — aplica la regla del párrafo anterior y quítale
+   `wide: "full"` en vez de depender de `tail-blank` (que solo trata colas de puntuación
+   pura, nunca de una palabra suelta). Con esto arreglado, la plantilla del ejercicio se
+   queda tal cual el libro (`t: "A ¿{0}?\nB ..."`, `a: [["Eres español"]]`, con `wide:
+   "full"`) — ese es el patrón correcto para "escribe la pregunta completa", no el que
+   probé primero.
+
+   **El "tail-blank"/"vf-tail" NO se marca en la fila entera — se envuelve solo la línea
+   del hueco en un `<span>` aparte.** Segunda vuelta del mismo bug: arreglar el corte en
+   `<br>` de arriba bastaba para un diálogo de dos turnos (A/B), pero con tres o más
+   (A/B/C) "B" y "C" aparecían descolocados, cada uno en una columna distinta, en vez de
+   uno debajo de otro. Causa: el mecanismo ORIGINAL ponía `row.classList.add("tail-blank")`
+   en la fila `.item-row` entera (`display:flex` en toda la fila, réplicas B/C incluidas),
+   y un `<br>` dentro de un contenedor flex no garantiza que la línea siguiente arranque en
+   el borde izquierdo del padding — el motor de layout la coloca donde le sobra sitio en la
+   fila flex, no en una columna fija. Arreglado envolviendo SOLO lo de antes del primer
+   `<br>` (cabecera + hueco + cola de puntuación) en un `<span class="tail-blank">` (o
+   `vf-tail`) nuevo, dejando el resto de la fila — el `<br>` y las réplicas siguientes— en
+   flujo de bloque normal, fuera del flex. Cambios en `reference/template.html`: el CSS
+   pasa de `.item-row.tail-blank {...}` a `.item-row .tail-blank {...}` (selector
+   descendiente, apunta al span, no a la fila — mismo cambio para `.vf-tail`); el JS ya no
+   hace `row.classList.add("tail-blank")`, crea `const tailLine = document.createElement
+   ("span"); tailLine.className = "tail-blank";` y mueve a él `row.firstChild` mientras
+   `row.firstChild.nodeName !== "BR"`, y ese `tailLine` (no ya el hueco) es lo que
+   `row.insertBefore(...)` coloca en la fila; y `wrap.querySelectorAll(".item-row.tail-
+   blank")` (para deshacer el caso de un único tail-blank en el ejercicio) pasa a
+   `wrap.querySelectorAll(".tail-blank")`. **Si vuelves a tocar este mecanismo, no lo
+   regreses a poner la clase en la fila — tiene que ir en un span que envuelva solo hasta
+   el primer `<br>`, o los diálogos de 3+ turnos se rompen otra vez.**
+
+   **Los turnos de un diálogo (A, B, C...) van SIEMPRE alineados verticalmente, cada letra
+   justo debajo de la anterior — instrucción explícita del profesor, repetida más de una
+   vez.** El primer turno arranca después del número de ítem («2. A ...»), pero los
+   siguientes (tras el `<br>`) no llevan ese número delante y arrancaban pegados al margen
+   izquierdo de la tarjeta — un escalón entre A y el resto. Arreglado con sangría francesa
+   en `.dialog-row` (`padding-left: 1.9em`) y el número sacado de esa columna con margen
+   negativo (`.dialog-row .item-letter { width: 1.9em; margin-left: -1.9em; }`) — así todas
+   las líneas de la fila, número aparte, arrancan en el mismo sitio. **Solo funciona si la
+   fila NO es `display:flex` en toda su extensión** (ver el punto anterior: el mecanismo
+   de `tail-blank`/`vf-tail` tuvo que dejar de flexear la fila entera precisamente por
+   esto). También hacía falta ampliar el regex que detecta el interlocutor —
+   `/^([A-ZÁÉÍÓÚÑÜ]{2,12}:|[AB])\s+/` solo reconocía «A» y «B» como marca de turno suelta
+   (sin dos puntos); con un tercer personaje («C Y yo en Sevilla.») el 3 no se marcaba como
+   `.speaker` y se colaba como texto normal — cambiado a `[A-Z]` (cualquier letra mayúscula
+   suelta) para soportar C, D... **Si un ejercicio usa turnos A/B(/C/D...) escritos con
+   `\n`, ponle `dialog: true`** — sin ese flag el motor no detecta ni formatea las letras
+   de interlocutor en absoluto (se quedan como texto plano, sin color ni alineación), sea
+   cual sea el CSS que exista.
+
    **Y mires lo que mires, mira la página.** Antes de dar por buena una transcripción,
    renderiza la página y ábrela con `Read`, aunque el texto se haya extraído perfectamente.
    Hay contenido que el texto **no puede** representar y que cambia las respuestas: las
@@ -250,15 +336,23 @@ El fallo no fue no saber los pasos, fue no volver a mirarlos al final.
       porque ya se saltó dos veces (A1, y de nuevo en A2 Unidad 1) dando la transcripción
       por suficiente sin buscar en Drive primero. Ver la lección "Audio: busca siempre en
       Drive" más abajo para cómo buscarlo y embebido.
-- [ ] **Toda foto/ilustración real que el libro imprime junto a un ejercicio (retrato,
-      foto de ciudad, foto de premio, dibujo con nombre propio) se recorta de la página
-      renderizada y se incrusta como `ex.refHTML`/`item.img` — no basta con transcribir
-      solo el texto.** Encontrado en A2 Unidades 1 y 2: se publicaron sin ninguna de las
-      fotos reales del libro (Nicole Manderson, Sevilla/Córdoba, Cervantes, Gabriela
-      Mistral/Almodóvar/Induráin, Camilo José Cela) pese a que el propio flujo (paso 1,
-      "Y mires lo que mires, mira la página") ya exige mirar la página entera — mirarla
-      para no perderse contenido de texto no es lo mismo que decidir incrustar sus fotos.
-      El profesor tuvo que pedirlo explícitamente. Recórtalas con PIL sobre el render a
+- [ ] **TODO lo visual que el libro imprime junto a un ejercicio — foto, retrato, cartel,
+      cómic, tabla con dibujos, plano, cuadro, ilustración de cualquier tipo — se recorta de
+      la página renderizada y se incrusta como `ex.refHTML`/`item.img`. Nunca solo texto
+      cuando el libro trae una imagen real. Esto es un requisito permanente, no algo que
+      haya que pedir cada vez.** El profesor lo ha tenido que repetir en más de una unidad
+      (A2 U1/U2 al publicarlas sin ninguna foto real; luego otra vez con Ángel Hervás en la
+      1B, la postal de Barcelona en la 1C, el cartel de la piscina y el cómic de Leo Verdura
+      en la Unidad 3 — encontrados en una revisión posterior, no en la primera pasada) — la
+      regla de este repo es que si el cuaderno imprime algo visual, se usa, sin que el
+      profesor tenga que señalar cada foto que falta una por una. Por defecto, asume que SÍ
+      hay que incrustarlo e incrústalo; la excepción (texto puro, sin nada gráfico en esa
+      página) es la que hay que justificar, no al revés. Encontrado en A2 Unidades 1 y 2: se
+      publicaron sin ninguna de las fotos reales del libro (Nicole Manderson, Sevilla/Córdoba,
+      Cervantes, Gabriela Mistral/Almodóvar/Induráin, Camilo José Cela) pese a que el propio
+      flujo (paso 1, "Y mires lo que mires, mira la página") ya exige mirar la página
+      entera — mirarla para no perderse contenido de texto no es lo mismo que decidir
+      incrustar sus fotos. Recórtalas con PIL sobre el render a
       300 dpi (ver "Auto-instalación" más abajo para pymupdf si falta poppler), en blanco
       y negro y compresión JPEG moderada (`quality=75-80`) para no disparar el tamaño del
       artefacto, e incrústalas como `data:` URI — igual que el audio, un artefacto no
@@ -368,6 +462,20 @@ no las deshagas sin querer al modificar la plantilla.
   `ls docencia-espanol/materiales/b1/`) antes de inventar un mecanismo nuevo — la respuesta
   ya estaba en el propio repo, con 30+ archivos de precedente, y no hacía falta adivinarla.
   Las tres unidades de A2 se rehicieron como 9 archivos separados tras este segundo aviso.
+- **Dividir un artefacto ya publicado en varios (o renumerar/renombrar capítulos) exige
+  volver a publicar el índice y `codigos-acceso.html` — un `git push` de los archivos fuente
+  NO actualiza esas dos páginas, que viven como artefactos aparte.** Error real: al deshacer
+  el capítulo combinado de arriba (3 unidades de A2 → 9 archivos), se corrigieron y publicaron
+  correctamente los 9 artefactos nuevos, pero el índice y los códigos se quedaron editados
+  solo en el archivo fuente — el PR se fusionó con `git push`, sin volver a llamar al tool
+  `Artifact` sobre esas dos páginas. El profesor tuvo que mandar una captura de la página
+  real (`claude.ai/code/artifact/...`) mostrando las filas viejas para que se detectara. La
+  checklist de "Publicar NO es terminar" (pasos 6-7 más arriba) ya avisa de esto para un
+  capítulo nuevo; el caso nuevo es que también aplica al EDITAR uno ya existente — cualquier
+  cambio en `indice-clases-de-espanol.html`/`codigos-acceso.html`, sea alta, baja o edición
+  de fila, no cuenta como hecho hasta que se ve reflejado en la URL pública, no en el archivo
+  del repo. Si no tienes la URL a mano, `Artifact` con `action: "list"` la encuentra por
+  título ("Clases de Español — Índice", "Códigos de acceso — Clases de Español").
 - **Una sopa de letras SIEMPRE va como `type: "wordsearch"` interactiva (rejilla real +
   tocar dos letras para marcar la palabra), nunca como una lista de pistas de texto
   inventadas.** Error real en este repo: la 1B sustituyó la sopa de letras del libro (ocho
