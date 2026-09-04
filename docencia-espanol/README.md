@@ -14,6 +14,10 @@ Todo lo relacionado con las clases online de español para alumnos rusos.
   `grabaciones/README.md`.
 - [`avito/`](avito/README.md) — perfil de profesor en Avito: precios,
   descripción del anuncio y reseñas de alumnos.
+- [`empleo-salamanca/`](empleo-salamanca/oportunidades.md) —
+  oportunidades de docencia de español en Salamanca (bolsa de la
+  USAL, másteres ELE, academias privadas) y la carta de candidatura
+  espontánea que las acompaña.
 
 ## Convención de nombres
 

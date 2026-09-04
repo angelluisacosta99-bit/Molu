@@ -1,7 +1,7 @@
 # Carta de candidatura espontánea — academias de español, Salamanca
 
 Plantilla para enviar por correo a Colegio Delibes, Academia Berceo y
-Tía Tula (ver contactos en `oportunidades-salamanca.md`). Cambiar
+Tía Tula (ver contactos en `oportunidades.md`). Cambiar
 `[ACADEMIA]` por el nombre de cada una antes de enviar — el resto del
 texto sirve igual para las tres. Adjuntar `personal/cv/cv-docencia-usal.docx`.
 
