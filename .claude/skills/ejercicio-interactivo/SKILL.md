@@ -292,29 +292,31 @@ Cada una de estas causó un PR de corrección real. Están en `reference/templat
 resueltas — esta lista es para que entiendas *por qué* el código está como está, y para que
 no las deshagas sin querer al modificar la plantilla.
 
-- **Cuando el libro organiza el capítulo en secciones con letra (A, B, C...), usa un
-  `block` de la plantilla POR SECCIÓN — nunca un único bloque con todos los ejercicios del
-  capítulo numerados seguidos del 1 al 14.** Error real, repetido en las dos primeras
-  unidades de A2 (Unidad 1 y Unidad 2) antes de corregirse: cada capítulo se construyó como
-  un solo `block` con `sub` = el tema del capítulo y los ejercicios de las secciones A/B/C
-  del libro todos numerados 1..N seguidos, perdiendo la estructura visual real del libro
-  (una franja de color con la letra A/B/C y su propio título, antes de cada grupo de
-  ejercicios). El profesor lo señaló directamente ("por qué no dividiste las unidades por
-  A, B y C") tras publicar ambos capítulos. `block.num` no tiene que ser numérico — es solo
-  texto interpolado en el badge de cabecera y en el texto "Bloque X" de la píldora de
-  navegación (`'<div class="block-num">' + block.num + '</div>'` y
-  `navA.textContent = "Bloque " + block.num;` en el renderizador) — pásale la letra
-  directamente (`num: "A"`) en vez de un número de bloque genérico, y dale a `block.title`
-  el título real de esa sección tal como lo imprime el libro (p. ej. "¡Encantado!", no "A —
-  ¡Encantado!": la letra ya va en el badge, repetirla en el título es redundante). Usa
-  `block.sub` para la ubicación dentro del capítulo (p. ej. "Unidad 1 · Presentar y
-  saludar"). Dentro de cada bloque, la numeración de `ex.num` se REINICIA en 1 (no es un
-  índice global — solo se usa como etiqueta "Ej. N" y en las etiquetas de accesibilidad de
-  cada hueco, nunca como clave de búsqueda), igual que el propio libro numera sus
-  ejercicios empezando en 1 dentro de cada sección A/B/C. Corregido ya en las unidades 1 y 2
-  de A2 (republicadas); al construir un capítulo nuevo, plantea los `blocks` por sección
-  desde el principio — reestructurar después de publicar obliga a volver a archivar con
-  `extraer.mjs` y volver a publicar el artefacto.
+- **Cuando el libro organiza un capítulo en secciones con letra (A, B, C...), cada sección
+  es un ARTEFACTO/ARCHIVO SEPARADO — nunca varias secciones metidas en un único artefacto,
+  ni con `blocks` múltiples ni de ninguna otra forma.** Esta es la convención real y ya
+  establecida en TODO el repo desde el principio: A1 y B1 llevan un `.html` (y un artefacto
+  publicado, con su propio código de acceso) por cada sección — `cuaderno-unidad1a_
+  encantado_interactivo.html`, `cuaderno-unidad1b_a-que-te-dedicas_interactivo.html`,
+  `cuaderno-unidad1c_...html`, etc. — nunca un "Unidad 1" combinado. Cada uno de esos
+  archivos usa la plantilla tal cual viene: un único `block` con `num: 1` (no una letra), sin
+  píldoras de navegación entre secciones porque no hacen falta — cada sección ES el
+  documento entero. El campo `blocks` (plural, varios bloques en un mismo archivo) SOLO es
+  para el otro caso genuino: una guía de repaso que de verdad es un único documento con
+  varias secciones temáticas (ver la guía de repaso B1 de 12 secciones) — nunca para dividir
+  un capítulo normal del cuaderno.
+  **Error real de dos rondas en este mismo repo, con la lección a extraer:** en Unidad 1 y 2
+  de A2 se cometió primero el error de arriba (todo en un `block` numerado 1..14 seguido); al
+  señalarlo el profesor ("por qué no dividiste las unidades por A, B y C"), la corrección fue
+  meter TRES `blocks` (uno por letra) DENTRO del mismo artefacto — mejor que numerar seguido,
+  pero seguía sin ser la convención real del repo, y esa "corrección" se dejó documentada aquí
+  como si fuera la regla correcta, arrastrando el error a Unidad 3. El profesor tuvo que
+  señalarlo una segunda vez ("si siempre hemos hecho artefactos separados para cada A, B y
+  C..."). La lección: ante una corrección de estructura, comprobar primero cómo lo resuelven
+  capítulos ya existentes de OTRO nivel (`ls docencia-espanol/materiales/a1/`,
+  `ls docencia-espanol/materiales/b1/`) antes de inventar un mecanismo nuevo — la respuesta
+  ya estaba en el propio repo, con 30+ archivos de precedente, y no hacía falta adivinarla.
+  Las tres unidades de A2 se rehicieron como 9 archivos separados tras este segundo aviso.
 - **Una sopa de letras SIEMPRE va como `type: "wordsearch"` interactiva (rejilla real +
   tocar dos letras para marcar la palabra), nunca como una lista de pistas de texto
   inventadas.** Error real en este repo: la 1B sustituyó la sopa de letras del libro (ocho
