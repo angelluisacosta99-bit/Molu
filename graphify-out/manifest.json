@@ -696,9 +696,9 @@
     "semantic_hash": ""
   },
   "docencia-espanol/README.md": {
-    "mtime": 1788379288.6138904,
-    "seen": 1788543455.3331573,
-    "ast_hash": "72c14d5b826ac096761c1cd16119dccf",
+    "mtime": 1788543871.8332314,
+    "seen": 1788543887.9846277,
+    "ast_hash": "5eeaaf5243470367e4163f7366431439",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/README.md": {
@@ -1860,9 +1860,9 @@
     "semantic_hash": ""
   },
   "personal/README.md": {
-    "mtime": 1788525337.087491,
-    "seen": 1788543455.3334568,
-    "ast_hash": "39d1485f26771aee06d503c3f0a10b4a",
+    "mtime": 1788543862.329231,
+    "seen": 1788543887.9849362,
+    "ast_hash": "78065f729244344ef5c1cac0151ca505",
     "semantic_hash": ""
   },
   "personal/academico/formacion-academica.md": {
@@ -2279,15 +2279,15 @@
     "ast_hash": "203012fea13c2c2a9f3bf13e79deeb9e",
     "semantic_hash": ""
   },
-  "docencia-espanol/carta-candidatura-academias-salamanca.md": {
-    "mtime": 1788543317.405209,
-    "seen": 1788543455.3331633,
-    "ast_hash": "86263b84127726a301c7de87f8ec46a2",
+  "docencia-espanol/empleo-salamanca/carta-candidatura-academias.md": {
+    "mtime": 1788543855.4572308,
+    "seen": 1788543887.9846363,
+    "ast_hash": "3ad107dece2949b03dc69b41f08d550a",
     "semantic_hash": ""
   },
-  "docencia-espanol/oportunidades-salamanca.md": {
+  "docencia-espanol/empleo-salamanca/oportunidades.md": {
     "mtime": 1788525702.6154826,
-    "seen": 1788543455.333408,
+    "seen": 1788543887.9846385,
     "ast_hash": "a5f3ba25ed46bfdcdc96b0f4e076d6b2",
     "semantic_hash": ""
   }
