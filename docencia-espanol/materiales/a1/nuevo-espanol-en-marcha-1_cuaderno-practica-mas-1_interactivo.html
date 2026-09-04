@@ -360,6 +360,13 @@
     border-bottom: 2px solid var(--gold-soft);
     margin-right: 0.45rem;
   }
+  /* B, C... van EXACTAMENTE debajo de A. Sangría francesa: el número se saca de la caja
+     con margen negativo y las demás líneas, que solo tienen el padding-left de la fila,
+     arrancan justo donde termina esa columna. */
+  .dialog-row { padding-left: 1.9em; }
+  .dialog-row .item-letter {
+    display: inline-block; width: 1.9em; margin-left: -1.9em; margin-right: 0;
+  }
 
   input.blank {
     background: var(--input-bg);
@@ -613,29 +620,35 @@
      una línea aparte— pero todas las de un ejercicio TERMINAN en el mismo sitio, que es lo
      que hace que se vean parejas. La fila es flex: los nodos de texto se convierten en
      items anónimos y la casilla, con flex:1, se queda con lo que sobra. */
-  .item-row.tail-blank {
-    display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 0.3rem;
+  .item-row .tail-blank {
+    display: flex; width: 100%; flex-wrap: wrap; align-items: baseline; gap: 0 0.3rem;
   }
-  .item-row.tail-blank input.blank {
+  .item-row .tail-blank input.blank {
     flex: 1 1 8em; width: auto; max-width: none; min-width: 6em; text-align: left;
   }
   /* Un hueco de frase entera (wide:"full") que además cae al final de su línea — «A ¿{0}?»
      con el interrogante de cierre fuera del hueco — se trata como cualquier otro
-     tail-blank: crece dentro de la fila flex en vez de forzar display:block + width:100%,
-     que empujaba el "?" a su propia línea debajo de la casilla. */
-  .item-row.tail-blank input.blank.full {
+     tail-blank: crece dentro del span flex en vez de forzar display:block + width:100%,
+     que empujaba el "?" a su propia línea debajo de la casilla. El flex va en un SPAN
+     aparte que envuelve solo esta línea (hasta el primer <br>), no en la fila entera: si
+     hay más diálogo después (item.dialog), esas réplicas siguen en flujo de bloque normal
+     y heredan la sangría francesa de .dialog-row — un <br> dentro de una fila ya
+     convertida en flex container no garantiza que la réplica siguiente arranque en el
+     borde izquierdo del padding. */
+  .item-row .tail-blank input.blank.full {
     display: block; width: auto; max-width: none; flex: 1 1 12em; margin: 0;
   }
-  .item-row.tail-blank .tail-text { flex: 0 1 auto; min-width: 0; }
+  .item-row .tail-blank .tail-text { flex: 0 1 auto; min-width: 0; }
   /* Fila que acaba en los botones V/F: el texto se estira y empuja los botones al borde
-     derecho, así todos los pares quedan en la misma columna. */
-  .item-row.vf-tail {
-    display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 0.3rem;
+     derecho, así todos los pares quedan en la misma columna. Mismo span aparte que
+     .tail-blank, por el mismo motivo. */
+  .item-row .vf-tail {
+    display: flex; width: 100%; flex-wrap: wrap; align-items: baseline; gap: 0 0.3rem;
   }
-  .item-row.vf-tail .tail-text { flex: 1 1 auto; min-width: 0; }
-  .item-row.vf-tail .vf-wrap { flex: 0 0 auto; }
-  .item-row.vf-tail .reveal.show { flex-basis: 100%; margin-left: 0; }
-  .item-row.tail-blank .reveal.show { flex-basis: 100%; margin-left: 0; }
+  .item-row .vf-tail .tail-text { flex: 1 1 auto; min-width: 0; }
+  .item-row .vf-tail .vf-wrap { flex: 0 0 auto; }
+  .item-row .vf-tail .reveal.show { flex-basis: 100%; margin-left: 0; }
+  .item-row .tail-blank .reveal.show { flex-basis: 100%; margin-left: 0; }
 </style>
 
 <script>
@@ -812,7 +825,7 @@
         {
           num: 3, title: "Completa las frases con uno de los verbos del ejercicio anterior",
           instr: "La 1 ya la trae resuelta el libro.",
-          type: "items", numbered: true,
+          type: "items", numbered: true, dialog: true,
           items: [
             { t: "Ángel y Susi tienen dos hijos.", solved: true },
             { t: "Ida {0} peruana, {1} peluquera y {2} en una peluquería.", a: [["es"], ["es"], ["trabaja"]] },
@@ -850,7 +863,7 @@
         {
           num: 5, title: "Escribe las preguntas",
           instr: "La 1 ya la trae resuelta el libro.",
-          type: "items", numbered: true,
+          type: "items", numbered: true, dialog: true,
           items: [
             { t: "A ¿De dónde eres?\nB Soy peruana.", solved: true },
             { t: "A ¿{0}?\nB No, soy mexicano.", a: [["Eres español"]], wide: "full" },
@@ -1044,7 +1057,7 @@
           // puntos (ROSA:, ANDRÉS:), que es como el propio cuaderno marca los diálogos con
           // personajes. Solo se aplica dentro de ejercicios con dialog: true.
           const m = dialog && (li > 0 || i === 0)
-            ? linea.match(/^([A-ZÁÉÍÓÚÑÜ]{2,12}:|[AB])\s+/) : null;
+            ? linea.match(/^([A-ZÁÉÍÓÚÑÜ]{2,12}:|[A-Z])\s+/) : null;
           if (m) {
             const who = document.createElement("span");
             who.className = "speaker";
@@ -1180,11 +1193,14 @@
               let cola = "", n = vfw.nextSibling;
               while (n && n.nodeName !== "BR") { cola += n.textContent || ""; n = n.nextSibling; }
               if (/^[\s.,;:!?¿¡…"»)]*$/.test(cola)) {
-                row.classList.add("vf-tail");
                 const head = document.createElement("span");
                 head.className = "tail-text";
                 while (row.firstChild && row.firstChild !== vfw) head.appendChild(row.firstChild);
                 row.insertBefore(head, vfw);
+                const tailLine = document.createElement("span");
+                tailLine.className = "vf-tail";
+                while (row.firstChild && row.firstChild.nodeName !== "BR") tailLine.appendChild(row.firstChild);
+                row.insertBefore(tailLine, row.firstChild);
               }
             }
           }
@@ -1204,7 +1220,6 @@
               while (antes && antes.nodeType === 3 && !antes.textContent.trim()) antes = antes.previousSibling;
               const saltoAntes = !!antes && antes.nodeName === "BR";
               if (!saltoAntes && /^[\s.,;:!?¿¡…"»)]*$/.test(cola)) {
-                row.classList.add("tail-blank");
                 // Todo lo anterior al hueco (número + frase) va en UN solo envoltorio.
                 // Si se dejan sueltos, cada nodo de texto es un elemento flex distinto y
                 // una frase larga salta de línea entera, dejando el "e." solo en la
@@ -1214,6 +1229,10 @@
                 head.className = "tail-text";
                 while (row.firstChild && row.firstChild !== huecos[0]) head.appendChild(row.firstChild);
                 row.insertBefore(head, huecos[0]);
+                const tailLine = document.createElement("span");
+                tailLine.className = "tail-blank";
+                while (row.firstChild && row.firstChild.nodeName !== "BR") tailLine.appendChild(row.firstChild);
+                row.insertBefore(tailLine, row.firstChild);
               }
             }
           }
@@ -1223,7 +1242,7 @@
         // filas que acaben así: es lo que las hace terminar todas en el mismo sitio.
         // Una sola, rodeada de frases con el hueco dentro, se ve como una raya larga
         // y suelta; en ese caso se deja con el ancho normal.
-        const colas = wrap.querySelectorAll(".item-row.tail-blank");
+        const colas = wrap.querySelectorAll(".tail-blank");
         if (colas.length === 1) colas[0].classList.remove("tail-blank");
         card.appendChild(wrap);
       } else if (ex.type === "text") {
@@ -1383,11 +1402,14 @@
               let cola = "", n = vfw.nextSibling;
               while (n && n.nodeName !== "BR") { cola += n.textContent || ""; n = n.nextSibling; }
               if (/^[\s.,;:!?¿¡…"»)]*$/.test(cola)) {
-                row.classList.add("vf-tail");
                 const head = document.createElement("span");
                 head.className = "tail-text";
                 while (row.firstChild && row.firstChild !== vfw) head.appendChild(row.firstChild);
                 row.insertBefore(head, vfw);
+                const tailLine = document.createElement("span");
+                tailLine.className = "vf-tail";
+                while (row.firstChild && row.firstChild.nodeName !== "BR") tailLine.appendChild(row.firstChild);
+                row.insertBefore(tailLine, row.firstChild);
               }
             }
           }
@@ -1407,7 +1429,6 @@
               while (antes && antes.nodeType === 3 && !antes.textContent.trim()) antes = antes.previousSibling;
               const saltoAntes = !!antes && antes.nodeName === "BR";
               if (!saltoAntes && /^[\s.,;:!?¿¡…"»)]*$/.test(cola)) {
-                row.classList.add("tail-blank");
                 // Todo lo anterior al hueco (número + frase) va en UN solo envoltorio.
                 // Si se dejan sueltos, cada nodo de texto es un elemento flex distinto y
                 // una frase larga salta de línea entera, dejando el "e." solo en la
@@ -1417,6 +1438,10 @@
                 head.className = "tail-text";
                 while (row.firstChild && row.firstChild !== huecos[0]) head.appendChild(row.firstChild);
                 row.insertBefore(head, huecos[0]);
+                const tailLine = document.createElement("span");
+                tailLine.className = "tail-blank";
+                while (row.firstChild && row.firstChild.nodeName !== "BR") tailLine.appendChild(row.firstChild);
+                row.insertBefore(tailLine, row.firstChild);
               }
             }
           }
@@ -1426,7 +1451,7 @@
         // filas que acaben así: es lo que las hace terminar todas en el mismo sitio.
         // Una sola, rodeada de frases con el hueco dentro, se ve como una raya larga
         // y suelta; en ese caso se deja con el ancho normal.
-        const colas = wrap.querySelectorAll(".item-row.tail-blank");
+        const colas = wrap.querySelectorAll(".tail-blank");
         if (colas.length === 1) colas[0].classList.remove("tail-blank");
         card.appendChild(wrap);
       } else if (ex.type === "match") {

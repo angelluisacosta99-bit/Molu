@@ -127,25 +127,59 @@ PR #22 invertía el orden que PR #20 daba por bueno.
    en un diálogo A/B la cola incluía también la réplica de B («?B No, soy mexicano.») y
    nunca pasaba el test de "solo puntuación de cierre" — el hueco se quedaba sin la clase
    `tail-blank` y `wide:"full"` (`display:block; width:100%`) empujaba el «?» a su propia
-   línea. Corregido en dos sitios de `reference/template.html` (los dos bucles `let cola =
-   ..., n = ...nextSibling; while (n) {...}`, tanto el de huecos de texto como el de
-   V/F): ahora cortan en el primer `<br>` (`while (n && n.nodeName !== "BR")`), así que
-   la cola solo mira lo que queda en la MISMA línea del hueco. Hacía falta además un
-   segundo arreglo de CSS: `wide:"full"` y `tail-blank` chocaban con la misma
-   especificidad (cuatro clases + un tipo cada uno) y ganaba `.full` por ir primero en el
-   archivo — se añadió `.item-row.tail-blank input.blank.full { flex: 1 1 12em; width:
-   auto; ... }` justo después de la regla de `.item-row.tail-blank input.blank`, para que
-   un hueco "full" que además cae al final de su línea crezca dentro de la fila flex en
-   vez de forzar el bloque a ancho completo. **Si tocas ese CSS o ese bucle, no le quites
-   ninguna de las dos piezas** — hace falta el corte en `<br>` Y la regla `.full` dentro
-   de `tail-blank`, una sin la otra no basta. Con esto arreglado, la plantilla del
-   ejercicio se queda tal cual el libro (`t: "A ¿{0}?\nB ..."`, `a: [["Eres español"]]`,
-   con `wide: "full"`) — ese es el patrón correcto para "escribe la pregunta completa",
-   no el que probé primero. Aparte: si después del hueco viene una PALABRA además del
+   línea. Corregido en `reference/template.html`: los dos bucles `let cola = ...,
+   n = ...nextSibling; while (n) {...}` (huecos de texto y V/F) ahora cortan en el primer
+   `<br>` (`while (n && n.nodeName !== "BR")`), así que la cola solo mira lo que queda en
+   la MISMA línea del hueco. Aparte: si después del hueco viene una PALABRA además del
    signo de cierre (`"A ¿{0} madrileñas?\nB ..."`, respuesta de una sola palabra «Sois»),
    eso no es un hueco de frase entera — aplica la regla del párrafo anterior y quítale
    `wide: "full"` en vez de depender de `tail-blank` (que solo trata colas de puntuación
-   pura, nunca de una palabra suelta).
+   pura, nunca de una palabra suelta). Con esto arreglado, la plantilla del ejercicio se
+   queda tal cual el libro (`t: "A ¿{0}?\nB ..."`, `a: [["Eres español"]]`, con `wide:
+   "full"`) — ese es el patrón correcto para "escribe la pregunta completa", no el que
+   probé primero.
+
+   **El "tail-blank"/"vf-tail" NO se marca en la fila entera — se envuelve solo la línea
+   del hueco en un `<span>` aparte.** Segunda vuelta del mismo bug: arreglar el corte en
+   `<br>` de arriba bastaba para un diálogo de dos turnos (A/B), pero con tres o más
+   (A/B/C) "B" y "C" aparecían descolocados, cada uno en una columna distinta, en vez de
+   uno debajo de otro. Causa: el mecanismo ORIGINAL ponía `row.classList.add("tail-blank")`
+   en la fila `.item-row` entera (`display:flex` en toda la fila, réplicas B/C incluidas),
+   y un `<br>` dentro de un contenedor flex no garantiza que la línea siguiente arranque en
+   el borde izquierdo del padding — el motor de layout la coloca donde le sobra sitio en la
+   fila flex, no en una columna fija. Arreglado envolviendo SOLO lo de antes del primer
+   `<br>` (cabecera + hueco + cola de puntuación) en un `<span class="tail-blank">` (o
+   `vf-tail`) nuevo, dejando el resto de la fila — el `<br>` y las réplicas siguientes— en
+   flujo de bloque normal, fuera del flex. Cambios en `reference/template.html`: el CSS
+   pasa de `.item-row.tail-blank {...}` a `.item-row .tail-blank {...}` (selector
+   descendiente, apunta al span, no a la fila — mismo cambio para `.vf-tail`); el JS ya no
+   hace `row.classList.add("tail-blank")`, crea `const tailLine = document.createElement
+   ("span"); tailLine.className = "tail-blank";` y mueve a él `row.firstChild` mientras
+   `row.firstChild.nodeName !== "BR"`, y ese `tailLine` (no ya el hueco) es lo que
+   `row.insertBefore(...)` coloca en la fila; y `wrap.querySelectorAll(".item-row.tail-
+   blank")` (para deshacer el caso de un único tail-blank en el ejercicio) pasa a
+   `wrap.querySelectorAll(".tail-blank")`. **Si vuelves a tocar este mecanismo, no lo
+   regreses a poner la clase en la fila — tiene que ir en un span que envuelva solo hasta
+   el primer `<br>`, o los diálogos de 3+ turnos se rompen otra vez.**
+
+   **Los turnos de un diálogo (A, B, C...) van SIEMPRE alineados verticalmente, cada letra
+   justo debajo de la anterior — instrucción explícita del profesor, repetida más de una
+   vez.** El primer turno arranca después del número de ítem («2. A ...»), pero los
+   siguientes (tras el `<br>`) no llevan ese número delante y arrancaban pegados al margen
+   izquierdo de la tarjeta — un escalón entre A y el resto. Arreglado con sangría francesa
+   en `.dialog-row` (`padding-left: 1.9em`) y el número sacado de esa columna con margen
+   negativo (`.dialog-row .item-letter { width: 1.9em; margin-left: -1.9em; }`) — así todas
+   las líneas de la fila, número aparte, arrancan en el mismo sitio. **Solo funciona si la
+   fila NO es `display:flex` en toda su extensión** (ver el punto anterior: el mecanismo
+   de `tail-blank`/`vf-tail` tuvo que dejar de flexear la fila entera precisamente por
+   esto). También hacía falta ampliar el regex que detecta el interlocutor —
+   `/^([A-ZÁÉÍÓÚÑÜ]{2,12}:|[AB])\s+/` solo reconocía «A» y «B» como marca de turno suelta
+   (sin dos puntos); con un tercer personaje («C Y yo en Sevilla.») el 3 no se marcaba como
+   `.speaker` y se colaba como texto normal — cambiado a `[A-Z]` (cualquier letra mayúscula
+   suelta) para soportar C, D... **Si un ejercicio usa turnos A/B(/C/D...) escritos con
+   `\n`, ponle `dialog: true`** — sin ese flag el motor no detecta ni formatea las letras
+   de interlocutor en absoluto (se quedan como texto plano, sin color ni alineación), sea
+   cual sea el CSS que exista.
 
    **Y mires lo que mires, mira la página.** Antes de dar por buena una transcripción,
    renderiza la página y ábrela con `Read`, aunque el texto se haya extraído perfectamente.
