@@ -1397,7 +1397,16 @@
             if (vfw && row.querySelectorAll("input.blank").length === 1) {
               let cola = "", n = vfw.nextSibling;
               while (n) { cola += n.textContent || ""; n = n.nextSibling; }
-              if (/^[\s.,;:!?¿¡…"»)]*$/.test(cola)) {
+              // Mismo aviso que con .tail-blank más abajo: un salto de línea en cualquier
+              // punto ANTES de los botones V/F (un diálogo A/B con el hueco V/F en la
+              // réplica de B) rompe igual el alineado "baseline" del flex si se envuelve
+              // todo el head en un único span — el mismo bug de .tail-blank, aquí para la
+              // fila que acaba en botones en vez de en un input de texto.
+              let saltoEnHead = false;
+              for (let n2 = row.firstChild; n2 && n2 !== vfw; n2 = n2.nextSibling) {
+                if (n2.nodeName === "BR") { saltoEnHead = true; break; }
+              }
+              if (!saltoEnHead && /^[\s.,;:!?¿¡…"»)]*$/.test(cola)) {
                 row.classList.add("vf-tail");
                 const head = document.createElement("span");
                 head.className = "tail-text";
@@ -1742,7 +1751,16 @@
             if (vfw && row.querySelectorAll("input.blank").length === 1) {
               let cola = "", n = vfw.nextSibling;
               while (n) { cola += n.textContent || ""; n = n.nextSibling; }
-              if (/^[\s.,;:!?¿¡…"»)]*$/.test(cola)) {
+              // Mismo aviso que con .tail-blank más abajo: un salto de línea en cualquier
+              // punto ANTES de los botones V/F (un diálogo A/B con el hueco V/F en la
+              // réplica de B) rompe igual el alineado "baseline" del flex si se envuelve
+              // todo el head en un único span — el mismo bug de .tail-blank, aquí para la
+              // fila que acaba en botones en vez de en un input de texto.
+              let saltoEnHead = false;
+              for (let n2 = row.firstChild; n2 && n2 !== vfw; n2 = n2.nextSibling) {
+                if (n2.nodeName === "BR") { saltoEnHead = true; break; }
+              }
+              if (!saltoEnHead && /^[\s.,;:!?¿¡…"»)]*$/.test(cola)) {
                 row.classList.add("vf-tail");
                 const head = document.createElement("span");
                 head.className = "tail-text";
