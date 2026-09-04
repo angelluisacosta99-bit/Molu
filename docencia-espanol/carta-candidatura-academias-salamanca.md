@@ -43,8 +43,7 @@ Además de profesor, soy ingeniero especialista en Sistemas y Redes de
 Telecomunicaciones del Transporte Ferroviario (diploma con honores,
 Universidad Rusa de Transporte — RUT MIIT).
 Cuento también con un Diploma de Recualificación Profesional en
-Análisis Predictivo Aplicado a Problemas del Transporte (Python,
-aprendizaje automático), que aplico hoy a la elaboración de mis
+Análisis Predictivo (Python, aprendizaje automático), que aplico hoy a la elaboración de mis
 propios materiales didácticos y al seguimiento del progreso de mis
 alumnos — una combinación que me permite incorporar herramientas
 digitales a la enseñanza, además del método comunicativo tradicional.
