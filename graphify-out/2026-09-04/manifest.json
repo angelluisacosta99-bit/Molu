@@ -1,7 +1,7 @@
 {
   ".claude/settings.json": {
-    "mtime": 1788422055.8454053,
-    "seen": 1788524666.7421575,
+    "mtime": 1788379288.6108963,
+    "seen": 1788379310.972106,
     "ast_hash": "174343810b52012027f6057cb3c75416",
     "semantic_hash": ""
   },
@@ -1959,12 +1959,6 @@
     "mtime": 1788379289.117569,
     "seen": 1788379310.9723272,
     "ast_hash": "9028e6ef6f1f11acc44da511e97d43b3",
-    "semantic_hash": ""
-  },
-  "docencia-espanol/oportunidades-salamanca.md": {
-    "mtime": 1788524637.679507,
-    "seen": 1788524666.74243,
-    "ast_hash": "a5b7bdd012ffdab54f451c644ec6fc08",
     "semantic_hash": ""
   }
 }
