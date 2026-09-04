@@ -176,16 +176,16 @@
       "source_location": "L11073"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_browser_buildlocatorforleaf",
-      "label": "buildLocatorForLeaf()",
+      "id": "claude_skills_impeccable_scripts_live_browser_buildplaceholderresizehandles",
+      "label": "buildPlaceholderResizeHandles()",
       "_callable": true,
       "_origin": "ast",
       "community": 0,
       "community_name": "live-browser.js",
       "file_type": "code",
-      "norm_label": "buildlocatorforleaf()",
+      "norm_label": "buildplaceholderresizehandles()",
       "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L3425"
+      "source_location": "L2098"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_browser_buildradiimodels",
@@ -392,16 +392,28 @@
       "source_location": "L10971"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_browser_cursorforinsertaxis",
-      "label": "cursorForInsertAxis()",
+      "id": "claude_skills_impeccable_scripts_live_browser_cursorforplaceholderedge",
+      "label": "cursorForPlaceholderEdge()",
       "_callable": true,
       "_origin": "ast",
       "community": 0,
       "community_name": "live-browser.js",
       "file_type": "code",
-      "norm_label": "cursorforinsertaxis()",
+      "norm_label": "cursorforplaceholderedge()",
       "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L1751"
+      "source_location": "L1829"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_designpanelcss",
+      "label": "designPanelCss()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "live-browser.js",
+      "file_type": "code",
+      "norm_label": "designpanelcss()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L10090"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_browser_detectinsertaxis",
@@ -560,18 +572,6 @@
       "source_location": "L5083"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_browser_fetchagentpollingstatus",
-      "label": "fetchAgentPollingStatus()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "live-browser.js",
-      "file_type": "code",
-      "norm_label": "fetchagentpollingstatus()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L9309"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_browser_fetchdesignsystem",
       "label": "fetchDesignSystem()",
       "_callable": true,
@@ -656,18 +656,6 @@
       "source_location": "L10729"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_browser_forbiddenmanualtextchars",
-      "label": "forbiddenManualTextChars()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "live-browser.js",
-      "file_type": "code",
-      "norm_label": "forbiddenmanualtextchars()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L3576"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_browser_globalbarmodetoggles",
       "label": "globalBarModeToggles()",
       "_callable": true,
@@ -702,6 +690,30 @@
       "norm_label": "groupsiblingrows()",
       "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
       "source_location": "L1652"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_handlemousemove",
+      "label": "handleMouseMove()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "live-browser.js",
+      "file_type": "code",
+      "norm_label": "handlemousemove()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L6296"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_hidehighlighttagtooltip",
+      "label": "hideHighlightTagTooltip()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "live-browser.js",
+      "file_type": "code",
+      "norm_label": "hidehighlighttagtooltip()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L295"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_browser_highlightbold",
@@ -764,16 +776,16 @@
       "source_location": "L3516"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_browser_inithighlight",
-      "label": "initHighlight()",
+      "id": "claude_skills_impeccable_scripts_live_browser_initdesignpanel",
+      "label": "initDesignPanel()",
       "_callable": true,
       "_origin": "ast",
       "community": 0,
       "community_name": "live-browser.js",
       "file_type": "code",
-      "norm_label": "inithighlight()",
+      "norm_label": "initdesignpanel()",
       "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L263"
+      "source_location": "L10040"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_browser_inlinefonturls",
@@ -812,6 +824,18 @@
       "source_location": "L1733"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_browser_isinlineeditactive",
+      "label": "isInlineEditActive()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "live-browser.js",
+      "file_type": "code",
+      "norm_label": "isinlineeditactive()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L8382"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_browser_ismeaningfulmanualcontextpiece",
       "label": "isMeaningfulManualContextPiece()",
       "_callable": true,
@@ -822,6 +846,30 @@
       "norm_label": "ismeaningfulmanualcontextpiece()",
       "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
       "source_location": "L997"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_ispageeditableactive",
+      "label": "isPageEditableActive()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "live-browser.js",
+      "file_type": "code",
+      "norm_label": "ispageeditableactive()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L8386"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_ispageeditableelement",
+      "label": "isPageEditableElement()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "live-browser.js",
+      "file_type": "code",
+      "norm_label": "ispageeditableelement()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L8376"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_browser_isterminalsessionsummary",
@@ -882,6 +930,30 @@
       "norm_label": "jsxstyleproptocss()",
       "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
       "source_location": "L5639"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_layoutflowchildren",
+      "label": "layoutFlowChildren()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "live-browser.js",
+      "file_type": "code",
+      "norm_label": "layoutflowchildren()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L1634"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_loaddesignprefs",
+      "label": "loadDesignPrefs()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "live-browser.js",
+      "file_type": "code",
+      "norm_label": "loaddesignprefs()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L10017"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_browser_loadinteractionprefs",
@@ -1424,30 +1496,6 @@
       "source_location": "L10031"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_browser_saveinteractionprefs",
-      "label": "saveInteractionPrefs()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "live-browser.js",
-      "file_type": "code",
-      "norm_label": "saveinteractionprefs()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L8145"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_browser_savepickpref",
-      "label": "savePickPref()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "live-browser.js",
-      "file_type": "code",
-      "norm_label": "savepickpref()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L8155"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_browser_scheduleacceptcleanup",
       "label": "scheduleAcceptCleanup()",
       "_callable": true,
@@ -1496,30 +1544,6 @@
       "source_location": "L7556"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_browser_setpageinteractioncursor",
-      "label": "setPageInteractionCursor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "live-browser.js",
-      "file_type": "code",
-      "norm_label": "setpageinteractioncursor()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L1930"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_browser_shouldpassthroughelementnav",
-      "label": "shouldPassthroughElementNav()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "live-browser.js",
-      "file_type": "code",
-      "norm_label": "shouldpassthroughelementnav()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L6482"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_browser_shouldscopenestedcssatrule",
       "label": "shouldScopeNestedCssAtRule()",
       "_callable": true,
@@ -1530,6 +1554,30 @@
       "norm_label": "shouldscopenestedcssatrule()",
       "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
       "source_location": "L5150"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_shouldshowhighlighttagtooltip",
+      "label": "shouldShowHighlightTagTooltip()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "live-browser.js",
+      "file_type": "code",
+      "norm_label": "shouldshowhighlighttagtooltip()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L290"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_showhighlight",
+      "label": "showHighlight()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "live-browser.js",
+      "file_type": "code",
+      "norm_label": "showhighlight()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L301"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_browser_showinsertline",
@@ -1592,18 +1640,6 @@
       "source_location": "L10599"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_browser_startagentstatuspoll",
-      "label": "startAgentStatusPoll()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "live-browser.js",
-      "file_type": "code",
-      "norm_label": "startagentstatuspoll()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L9318"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_browser_startplaceholderedgeresize",
       "label": "startPlaceholderEdgeResize()",
       "_callable": true,
@@ -1614,18 +1650,6 @@
       "norm_label": "startplaceholderedgeresize()",
       "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
       "source_location": "L2139"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_browser_stopagentstatuspoll",
-      "label": "stopAgentStatusPoll()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "live-browser.js",
-      "file_type": "code",
-      "norm_label": "stopagentstatuspoll()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L9302"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_browser_stripmanualeditruntimestate",
@@ -3200,18 +3224,6 @@
       "source_location": "L10"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_server_acknowledgependingevent",
-      "label": "acknowledgePendingEvent()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "live-server.mjs",
-      "file_type": "code",
-      "norm_label": "acknowledgependingevent()",
-      "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
-      "source_location": "L178"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_server_activesessionsummaries",
       "label": "activeSessionSummaries()",
       "_callable": true,
@@ -3234,42 +3246,6 @@
       "norm_label": "agentpollingconnected()",
       "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
       "source_location": "L285"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_server_broadcast",
-      "label": "broadcast()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "live-server.mjs",
-      "file_type": "code",
-      "norm_label": "broadcast()",
-      "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
-      "source_location": "L299"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_server_broadcastagentpollingifchanged",
-      "label": "broadcastAgentPollingIfChanged()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "live-server.mjs",
-      "file_type": "code",
-      "norm_label": "broadcastagentpollingifchanged()",
-      "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
-      "source_location": "L291"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_server_cancelqueuedanonymousexitevents",
-      "label": "cancelQueuedAnonymousExitEvents()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "live-server.mjs",
-      "file_type": "code",
-      "norm_label": "cancelqueuedanonymousexitevents()",
-      "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
-      "source_location": "L235"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_server_chatagentlikelyactive",
@@ -3320,54 +3296,6 @@
       "source_location": "L145"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_server_findavailablependingevent",
-      "label": "findAvailablePendingEvent()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "live-server.mjs",
-      "file_type": "code",
-      "norm_label": "findavailablependingevent()",
-      "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
-      "source_location": "L158"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_server_findopenport",
-      "label": "findOpenPort()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "live-server.mjs",
-      "file_type": "code",
-      "norm_label": "findopenport()",
-      "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
-      "source_location": "L70"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_server_findpendingeventbyid",
-      "label": "findPendingEventById()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "live-server.mjs",
-      "file_type": "code",
-      "norm_label": "findpendingeventbyid()",
-      "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
-      "source_location": "L189"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_server_flushpendingpolls",
-      "label": "flushPendingPolls()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "live-server.mjs",
-      "file_type": "code",
-      "norm_label": "flushpendingpolls()",
-      "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
-      "source_location": "L268"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_server_getmanualeditstatus",
       "label": "getManualEditStatus()",
       "_callable": true,
@@ -3378,42 +3306,6 @@
       "norm_label": "getmanualeditstatus()",
       "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
       "source_location": "L327"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_server_handlepollget",
-      "label": "handlePollGet()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "live-server.mjs",
-      "file_type": "code",
-      "norm_label": "handlepollget()",
-      "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
-      "source_location": "L739"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_server_handlepollget_resolve",
-      "label": "resolve()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "live-server.mjs",
-      "file_type": "code",
-      "norm_label": "resolve()",
-      "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
-      "source_location": "L763"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_server_handlepollpost",
-      "label": "handlePollPost()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "live-server.mjs",
-      "file_type": "code",
-      "norm_label": "handlepollpost()",
-      "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
-      "source_location": "L810"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_server_hasprojectcontext",
@@ -3428,18 +3320,6 @@
       "source_location": "L374"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_server_leaseevent",
-      "label": "leaseEvent()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "live-server.mjs",
-      "file_type": "code",
-      "norm_label": "leaseevent()",
-      "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
-      "source_location": "L166"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_server_loadbrowserscripts",
       "label": "loadBrowserScripts()",
       "_callable": true,
@@ -3452,18 +3332,6 @@
       "source_location": "L345"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_server_recordmanualeditactivity",
-      "label": "recordManualEditActivity()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "live-server.mjs",
-      "file_type": "code",
-      "norm_label": "recordmanualeditactivity()",
-      "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
-      "source_location": "L306"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_server_restorependingeventsfromstore",
       "label": "restorePendingEventsFromStore()",
       "_callable": true,
@@ -3474,30 +3342,6 @@
       "norm_label": "restorependingeventsfromstore()",
       "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
       "source_location": "L151"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_server_scheduleleaseflush",
-      "label": "scheduleLeaseFlush()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "live-server.mjs",
-      "file_type": "code",
-      "norm_label": "scheduleleaseflush()",
-      "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
-      "source_location": "L250"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_server_sessionfilemetadatafrompollreply",
-      "label": "sessionFileMetadataFromPollReply()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "live-server.mjs",
-      "file_type": "code",
-      "norm_label": "sessionfilemetadatafrompollreply()",
-      "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
-      "source_location": "L780"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_server_shutdown",
@@ -4088,100 +3932,184 @@
       "source_location": "L758"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_event_validation_isvalidid",
-      "label": "isValidId()",
+      "id": "claude_skills_impeccable_scripts_live_server_acknowledgependingevent",
+      "label": "acknowledgePendingEvent()",
       "_callable": true,
       "_origin": "ast",
       "community": 129,
-      "community_name": "event-validation.mjs",
+      "community_name": "broadcastAgentPollingIfChanged",
       "file_type": "code",
-      "norm_label": "isvalidid()",
-      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
-      "source_location": "L19"
+      "norm_label": "acknowledgependingevent()",
+      "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
+      "source_location": "L178"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_event_validation_isvalidvariantid",
-      "label": "isValidVariantId()",
+      "id": "claude_skills_impeccable_scripts_live_server_broadcast",
+      "label": "broadcast()",
       "_callable": true,
       "_origin": "ast",
       "community": 129,
-      "community_name": "event-validation.mjs",
+      "community_name": "broadcastAgentPollingIfChanged",
       "file_type": "code",
-      "norm_label": "isvalidvariantid()",
-      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
-      "source_location": "L20"
+      "norm_label": "broadcast()",
+      "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
+      "source_location": "L299"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_event_validation_validateannotationfields",
-      "label": "validateAnnotationFields()",
+      "id": "claude_skills_impeccable_scripts_live_server_broadcastagentpollingifchanged",
+      "label": "broadcastAgentPollingIfChanged()",
       "_callable": true,
       "_origin": "ast",
       "community": 129,
-      "community_name": "event-validation.mjs",
+      "community_name": "broadcastAgentPollingIfChanged",
       "file_type": "code",
-      "norm_label": "validateannotationfields()",
-      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
-      "source_location": "L28"
+      "norm_label": "broadcastagentpollingifchanged()",
+      "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
+      "source_location": "L291"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_event_validation_validateevent",
-      "label": "validateEvent()",
+      "id": "claude_skills_impeccable_scripts_live_server_cancelqueuedanonymousexitevents",
+      "label": "cancelQueuedAnonymousExitEvents()",
       "_callable": true,
       "_origin": "ast",
       "community": 129,
-      "community_name": "event-validation.mjs",
+      "community_name": "broadcastAgentPollingIfChanged",
       "file_type": "code",
-      "norm_label": "validateevent()",
-      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
-      "source_location": "L95"
+      "norm_label": "cancelqueuedanonymousexitevents()",
+      "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
+      "source_location": "L235"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_event_validation_validateinsertgenerate",
-      "label": "validateInsertGenerate()",
+      "id": "claude_skills_impeccable_scripts_live_server_findavailablependingevent",
+      "label": "findAvailablePendingEvent()",
       "_callable": true,
       "_origin": "ast",
       "community": 129,
-      "community_name": "event-validation.mjs",
+      "community_name": "broadcastAgentPollingIfChanged",
       "file_type": "code",
-      "norm_label": "validateinsertgenerate()",
-      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
-      "source_location": "L41"
+      "norm_label": "findavailablependingevent()",
+      "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
+      "source_location": "L158"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_event_validation_validatemanualeditevent",
-      "label": "validateManualEditEvent()",
+      "id": "claude_skills_impeccable_scripts_live_server_findopenport",
+      "label": "findOpenPort()",
       "_callable": true,
       "_origin": "ast",
       "community": 129,
-      "community_name": "event-validation.mjs",
+      "community_name": "broadcastAgentPollingIfChanged",
       "file_type": "code",
-      "norm_label": "validatemanualeditevent()",
-      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
-      "source_location": "L69"
+      "norm_label": "findopenport()",
+      "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
+      "source_location": "L70"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_event_validation_validatemanualedittext",
-      "label": "validateManualEditText()",
+      "id": "claude_skills_impeccable_scripts_live_server_findpendingeventbyid",
+      "label": "findPendingEventById()",
       "_callable": true,
       "_origin": "ast",
       "community": 129,
-      "community_name": "event-validation.mjs",
+      "community_name": "broadcastAgentPollingIfChanged",
       "file_type": "code",
-      "norm_label": "validatemanualedittext()",
-      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
-      "source_location": "L22"
+      "norm_label": "findpendingeventbyid()",
+      "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
+      "source_location": "L189"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_event_validation_validatereplacegenerate",
-      "label": "validateReplaceGenerate()",
+      "id": "claude_skills_impeccable_scripts_live_server_flushpendingpolls",
+      "label": "flushPendingPolls()",
       "_callable": true,
       "_origin": "ast",
       "community": 129,
-      "community_name": "event-validation.mjs",
+      "community_name": "broadcastAgentPollingIfChanged",
       "file_type": "code",
-      "norm_label": "validatereplacegenerate()",
-      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
-      "source_location": "L63"
+      "norm_label": "flushpendingpolls()",
+      "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
+      "source_location": "L268"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_server_handlepollget",
+      "label": "handlePollGet()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 129,
+      "community_name": "broadcastAgentPollingIfChanged",
+      "file_type": "code",
+      "norm_label": "handlepollget()",
+      "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
+      "source_location": "L739"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_server_handlepollget_resolve",
+      "label": "resolve()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 129,
+      "community_name": "broadcastAgentPollingIfChanged",
+      "file_type": "code",
+      "norm_label": "resolve()",
+      "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
+      "source_location": "L763"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_server_handlepollpost",
+      "label": "handlePollPost()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 129,
+      "community_name": "broadcastAgentPollingIfChanged",
+      "file_type": "code",
+      "norm_label": "handlepollpost()",
+      "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
+      "source_location": "L810"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_server_leaseevent",
+      "label": "leaseEvent()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 129,
+      "community_name": "broadcastAgentPollingIfChanged",
+      "file_type": "code",
+      "norm_label": "leaseevent()",
+      "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
+      "source_location": "L166"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_server_recordmanualeditactivity",
+      "label": "recordManualEditActivity()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 129,
+      "community_name": "broadcastAgentPollingIfChanged",
+      "file_type": "code",
+      "norm_label": "recordmanualeditactivity()",
+      "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
+      "source_location": "L306"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_server_scheduleleaseflush",
+      "label": "scheduleLeaseFlush()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 129,
+      "community_name": "broadcastAgentPollingIfChanged",
+      "file_type": "code",
+      "norm_label": "scheduleleaseflush()",
+      "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
+      "source_location": "L250"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_server_sessionfilemetadatafrompollreply",
+      "label": "sessionFileMetadataFromPollReply()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 129,
+      "community_name": "broadcastAgentPollingIfChanged",
+      "file_type": "code",
+      "norm_label": "sessionfilemetadatafrompollreply()",
+      "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
+      "source_location": "L780"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_design_system_mergedesignsystemfindings",
@@ -5060,162 +4988,6 @@
       "source_location": "L289"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_browser_buildinsertplaceholdersnapshotfromdom",
-      "label": "buildInsertPlaceholderSnapshotFromDom()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 149,
-      "community_name": "handleGo",
-      "file_type": "code",
-      "norm_label": "buildinsertplaceholdersnapshotfromdom()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L2015"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_browser_buildpickedanchorsnapshot",
-      "label": "buildPickedAnchorSnapshot()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 149,
-      "community_name": "handleGo",
-      "file_type": "code",
-      "norm_label": "buildpickedanchorsnapshot()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L4860"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_browser_captureandemit",
-      "label": "captureAndEmit()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 149,
-      "community_name": "handleGo",
-      "file_type": "code",
-      "norm_label": "captureandemit()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L7048"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_browser_checkpointpayload",
-      "label": "checkpointPayload()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 149,
-      "community_name": "handleGo",
-      "file_type": "code",
-      "norm_label": "checkpointpayload()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L6245"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_browser_extractcontext",
-      "label": "extractContext()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 149,
-      "community_name": "handleGo",
-      "file_type": "code",
-      "norm_label": "extractcontext()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L898"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_browser_handlego",
-      "label": "handleGo()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 149,
-      "community_name": "handleGo",
-      "file_type": "code",
-      "norm_label": "handlego()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L6610"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_browser_handleinsertcreate",
-      "label": "handleInsertCreate()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 149,
-      "community_name": "handleGo",
-      "file_type": "code",
-      "norm_label": "handleinsertcreate()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L6686"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_browser_maybeprefetchpage",
-      "label": "maybePrefetchPage()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 149,
-      "community_name": "handleGo",
-      "file_type": "code",
-      "norm_label": "maybeprefetchpage()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L6474"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_browser_sendcheckpoint",
-      "label": "sendCheckpoint()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 149,
-      "community_name": "handleGo",
-      "file_type": "code",
-      "norm_label": "sendcheckpoint()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L6264"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_browser_sendevent",
-      "label": "sendEvent()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 149,
-      "community_name": "handleGo",
-      "file_type": "code",
-      "norm_label": "sendevent()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L6224"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_browser_sendevent_handlefailure",
-      "label": "handleFailure()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 149,
-      "community_name": "handleGo",
-      "file_type": "code",
-      "norm_label": "handlefailure()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L6226"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_browser_startscrolllock",
-      "label": "startScrollLock()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 149,
-      "community_name": "handleGo",
-      "file_type": "code",
-      "norm_label": "startscrolllock()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L5811"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_browser_writescrolly",
-      "label": "writeScrollY()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 149,
-      "community_name": "handleGo",
-      "file_type": "code",
-      "norm_label": "writescrolly()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L162"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_browser_armpagechatfortyping",
       "label": "armPageChatForTyping()",
       "_callable": true,
@@ -5228,30 +5000,6 @@
       "source_location": "L8657"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_browser_attachsteerfocusdebug",
-      "label": "attachSteerFocusDebug()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "initPageChat",
-      "file_type": "code",
-      "norm_label": "attachsteerfocusdebug()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L8507"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_browser_attachsteerfocusguard",
-      "label": "attachSteerFocusGuard()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "initPageChat",
-      "file_type": "code",
-      "norm_label": "attachsteerfocusguard()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L8446"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_browser_clearsteerawaittimer",
       "label": "clearSteerAwaitTimer()",
       "_callable": true,
@@ -5262,18 +5010,6 @@
       "norm_label": "clearsteerawaittimer()",
       "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
       "source_location": "L8680"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_browser_clearsteerfocusrecovertimer",
-      "label": "clearSteerFocusRecoverTimer()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "initPageChat",
-      "file_type": "code",
-      "norm_label": "clearsteerfocusrecovertimer()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L8408"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_browser_collapsepagechat",
@@ -5312,18 +5048,6 @@
       "source_location": "L8864"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_browser_focusconfigureinput",
-      "label": "focusConfigureInput()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "initPageChat",
-      "file_type": "code",
-      "norm_label": "focusconfigureinput()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L8517"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_browser_focuspagechatinput",
       "label": "focusPageChatInput()",
       "_callable": true,
@@ -5334,18 +5058,6 @@
       "norm_label": "focuspagechatinput()",
       "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
       "source_location": "L8671"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_browser_focussteerchat",
-      "label": "focusSteerChat()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "initPageChat",
-      "file_type": "code",
-      "norm_label": "focussteerchat()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L8580"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_browser_initpagechat",
@@ -5372,42 +5084,6 @@
       "source_location": "L8782"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_browser_isinlineeditactive",
-      "label": "isInlineEditActive()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "initPageChat",
-      "file_type": "code",
-      "norm_label": "isinlineeditactive()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L8382"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_browser_ispageeditableactive",
-      "label": "isPageEditableActive()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "initPageChat",
-      "file_type": "code",
-      "norm_label": "ispageeditableactive()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L8386"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_browser_ispageeditableelement",
-      "label": "isPageEditableElement()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "initPageChat",
-      "file_type": "code",
-      "norm_label": "ispageeditableelement()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L8376"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_browser_keepsteerpointerinside",
       "label": "keepSteerPointerInside()",
       "_callable": true,
@@ -5432,16 +5108,16 @@
       "source_location": "L8698"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_browser_notepagepointerdown",
-      "label": "notePagePointerDown()",
+      "id": "claude_skills_impeccable_scripts_live_browser_maybecompletesteer",
+      "label": "maybeCompleteSteer()",
       "_callable": true,
       "_origin": "ast",
       "community": 15,
       "community_name": "initPageChat",
       "file_type": "code",
-      "norm_label": "notepagepointerdown()",
+      "norm_label": "maybecompletesteer()",
       "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L8436"
+      "source_location": "L9017"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_browser_pagechatcollapsedwidthpx",
@@ -5466,18 +5142,6 @@
       "norm_label": "pagechatexpandedwidth()",
       "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
       "source_location": "L8326"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_browser_pagehashosttextselection",
-      "label": "pageHasHostTextSelection()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "initPageChat",
-      "file_type": "code",
-      "norm_label": "pagehashosttextselection()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L8391"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_browser_preparepagechatinputfortyping",
@@ -5516,18 +5180,6 @@
       "source_location": "L8687"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_browser_schedulesteerfocusrecover",
-      "label": "scheduleSteerFocusRecover()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "initPageChat",
-      "file_type": "code",
-      "norm_label": "schedulesteerfocusrecover()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L8415"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_browser_sendsteercheckpoint",
       "label": "sendSteerCheckpoint()",
       "_callable": true,
@@ -5540,30 +5192,6 @@
       "source_location": "L6269"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_browser_shouldfocussteerchat",
-      "label": "shouldFocusSteerChat()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "initPageChat",
-      "file_type": "code",
-      "norm_label": "shouldfocussteerchat()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L8370"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_browser_shouldsteerautofocus",
-      "label": "shouldSteerAutoFocus()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "initPageChat",
-      "file_type": "code",
-      "norm_label": "shouldsteerautofocus()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L8401"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_browser_startvoice",
       "label": "startVoice()",
       "_callable": true,
@@ -5574,42 +5202,6 @@
       "norm_label": "startvoice()",
       "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
       "source_location": "L8878"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_browser_steerfocusdebugenabled",
-      "label": "steerFocusDebugEnabled()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "initPageChat",
-      "file_type": "code",
-      "norm_label": "steerfocusdebugenabled()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L8490"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_browser_steerfocuslog",
-      "label": "steerFocusLog()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "initPageChat",
-      "file_type": "code",
-      "norm_label": "steerfocuslog()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L8494"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_browser_steerfocustargetlabel",
-      "label": "steerFocusTargetLabel()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "initPageChat",
-      "file_type": "code",
-      "norm_label": "steerfocustargetlabel()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L8483"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_browser_steerspeechrecognitionctor",
@@ -7362,6 +6954,102 @@
       "norm_label": "resolvevarrefs()",
       "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
       "source_location": "L909"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_event_validation_isvalidid",
+      "label": "isValidId()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "insert-ui.mjs",
+      "file_type": "code",
+      "norm_label": "isvalidid()",
+      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
+      "source_location": "L19"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_event_validation_isvalidvariantid",
+      "label": "isValidVariantId()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "insert-ui.mjs",
+      "file_type": "code",
+      "norm_label": "isvalidvariantid()",
+      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
+      "source_location": "L20"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_event_validation_validateannotationfields",
+      "label": "validateAnnotationFields()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "insert-ui.mjs",
+      "file_type": "code",
+      "norm_label": "validateannotationfields()",
+      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
+      "source_location": "L28"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_event_validation_validateevent",
+      "label": "validateEvent()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "insert-ui.mjs",
+      "file_type": "code",
+      "norm_label": "validateevent()",
+      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
+      "source_location": "L95"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_event_validation_validateinsertgenerate",
+      "label": "validateInsertGenerate()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "insert-ui.mjs",
+      "file_type": "code",
+      "norm_label": "validateinsertgenerate()",
+      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
+      "source_location": "L41"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_event_validation_validatemanualeditevent",
+      "label": "validateManualEditEvent()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "insert-ui.mjs",
+      "file_type": "code",
+      "norm_label": "validatemanualeditevent()",
+      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
+      "source_location": "L69"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_event_validation_validatemanualedittext",
+      "label": "validateManualEditText()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "insert-ui.mjs",
+      "file_type": "code",
+      "norm_label": "validatemanualedittext()",
+      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
+      "source_location": "L22"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_event_validation_validatereplacegenerate",
+      "label": "validateReplaceGenerate()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "insert-ui.mjs",
+      "file_type": "code",
+      "norm_label": "validatereplacegenerate()",
+      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
+      "source_location": "L63"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_insert_ui_applyinserttoggle",
@@ -11156,18 +10844,6 @@
       "source_location": "L3065"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_browser_buildplaceholderresizehandles",
-      "label": "buildPlaceholderResizeHandles()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "resumeSession",
-      "file_type": "code",
-      "norm_label": "buildplaceholderresizehandles()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L2098"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_browser_clampvariantindex",
       "label": "clampVariantIndex()",
       "_callable": true,
@@ -11178,18 +10854,6 @@
       "norm_label": "clampvariantindex()",
       "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
       "source_location": "L7760"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_browser_clearhandled",
-      "label": "clearHandled()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "resumeSession",
-      "file_type": "code",
-      "norm_label": "clearhandled()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L7862"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_browser_closedclippath",
@@ -11204,6 +10868,18 @@
       "source_location": "L4638"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_browser_closetunepopover",
+      "label": "closeTunePopover()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "resumeSession",
+      "file_type": "code",
+      "norm_label": "closetunepopover()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L4759"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_browser_commitacceptedsveltecomponenttodom",
       "label": "commitAcceptedSvelteComponentToDom()",
       "_callable": true,
@@ -11214,30 +10890,6 @@
       "norm_label": "commitacceptedsveltecomponenttodom()",
       "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
       "source_location": "L5318"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_browser_cursorforplaceholderedge",
-      "label": "cursorForPlaceholderEdge()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "resumeSession",
-      "file_type": "code",
-      "norm_label": "cursorforplaceholderedge()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L1829"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_browser_dismisstoast",
-      "label": "dismissToast()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "resumeSession",
-      "file_type": "code",
-      "norm_label": "dismisstoast()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L7915"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_browser_ensureinsertplaceholder",
@@ -11672,18 +11324,6 @@
       "source_location": "L2995"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_browser_restorefromactivesessions",
-      "label": "restoreFromActiveSessions()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "resumeSession",
-      "file_type": "code",
-      "norm_label": "restorefromactivesessions()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L7813"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_browser_restoresessionwithoutwrapper",
       "label": "restoreSessionWithoutWrapper()",
       "_callable": true,
@@ -11874,6 +11514,18 @@
       "norm_label": "syncplaceholderresizehandles()",
       "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
       "source_location": "L2128"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_toggletunepopover",
+      "label": "toggleTunePopover()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "resumeSession",
+      "file_type": "code",
+      "norm_label": "toggletunepopover()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L4733"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_browser_updateselectedelement",
@@ -12536,6 +12188,30 @@
       "source_location": "L7439"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_browser_attachsteerfocusdebug",
+      "label": "attachSteerFocusDebug()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "initGlobalBar",
+      "file_type": "code",
+      "norm_label": "attachsteerfocusdebug()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L8507"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_attachsteerfocusguard",
+      "label": "attachSteerFocusGuard()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "initGlobalBar",
+      "file_type": "code",
+      "norm_label": "attachsteerfocusguard()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L8446"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_browser_barpalettefortheme",
       "label": "barPaletteForTheme()",
       "_callable": true,
@@ -12572,16 +12248,16 @@
       "source_location": "L8612"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_browser_designpanelcss",
-      "label": "designPanelCss()",
+      "id": "claude_skills_impeccable_scripts_live_browser_clearsteerfocusrecovertimer",
+      "label": "clearSteerFocusRecoverTimer()",
       "_callable": true,
       "_origin": "ast",
       "community": 32,
       "community_name": "initGlobalBar",
       "file_type": "code",
-      "norm_label": "designpanelcss()",
+      "norm_label": "clearsteerfocusrecovertimer()",
       "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L10090"
+      "source_location": "L8408"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_browser_detectpagetheme",
@@ -12620,6 +12296,42 @@
       "source_location": "L9252"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_browser_fetchagentpollingstatus",
+      "label": "fetchAgentPollingStatus()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "initGlobalBar",
+      "file_type": "code",
+      "norm_label": "fetchagentpollingstatus()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L9309"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_focusconfigureinput",
+      "label": "focusConfigureInput()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "initGlobalBar",
+      "file_type": "code",
+      "norm_label": "focusconfigureinput()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L8517"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_focussteerchat",
+      "label": "focusSteerChat()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "initGlobalBar",
+      "file_type": "code",
+      "norm_label": "focussteerchat()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L8580"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_browser_hideagentpolltooltip",
       "label": "hideAgentPollTooltip()",
       "_callable": true,
@@ -12630,6 +12342,18 @@
       "norm_label": "hideagentpolltooltip()",
       "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
       "source_location": "L9296"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_init",
+      "label": "init()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "initGlobalBar",
+      "file_type": "code",
+      "norm_label": "init()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L11126"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_browser_initactionpicker",
@@ -12656,18 +12380,6 @@
       "source_location": "L1024"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_browser_initdesignpanel",
-      "label": "initDesignPanel()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 32,
-      "community_name": "initGlobalBar",
-      "file_type": "code",
-      "norm_label": "initdesignpanel()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L10040"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_browser_initglobalbar",
       "label": "initGlobalBar()",
       "_callable": true,
@@ -12692,6 +12404,18 @@
       "source_location": "L9416"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_browser_inithighlight",
+      "label": "initHighlight()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "initGlobalBar",
+      "file_type": "code",
+      "norm_label": "inithighlight()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L263"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_browser_initparamspanel",
       "label": "initParamsPanel()",
       "_callable": true,
@@ -12704,16 +12428,40 @@
       "source_location": "L2940"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_browser_loaddesignprefs",
-      "label": "loadDesignPrefs()",
+      "id": "claude_skills_impeccable_scripts_live_browser_loaddetectscript",
+      "label": "loadDetectScript()",
       "_callable": true,
       "_origin": "ast",
       "community": 32,
       "community_name": "initGlobalBar",
       "file_type": "code",
-      "norm_label": "loaddesignprefs()",
+      "norm_label": "loaddetectscript()",
       "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L10017"
+      "source_location": "L9897"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_notepagepointerdown",
+      "label": "notePagePointerDown()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "initGlobalBar",
+      "file_type": "code",
+      "norm_label": "notepagepointerdown()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L8436"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_ondetectmessage",
+      "label": "onDetectMessage()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "initGlobalBar",
+      "file_type": "code",
+      "norm_label": "ondetectmessage()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L9906"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_browser_pagechatpalette",
@@ -12728,6 +12476,18 @@
       "source_location": "L8291"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_browser_pagehashosttextselection",
+      "label": "pageHasHostTextSelection()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "initGlobalBar",
+      "file_type": "code",
+      "norm_label": "pagehashosttextselection()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L8391"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_browser_positionpendingdock",
       "label": "positionPendingDock()",
       "_callable": true,
@@ -12738,6 +12498,54 @@
       "norm_label": "positionpendingdock()",
       "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
       "source_location": "L3663"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_requestdetectscan",
+      "label": "requestDetectScan()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "initGlobalBar",
+      "file_type": "code",
+      "norm_label": "requestdetectscan()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L9814"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_schedulesteerfocusrecover",
+      "label": "scheduleSteerFocusRecover()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "initGlobalBar",
+      "file_type": "code",
+      "norm_label": "schedulesteerfocusrecover()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L8415"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_shouldfocussteerchat",
+      "label": "shouldFocusSteerChat()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "initGlobalBar",
+      "file_type": "code",
+      "norm_label": "shouldfocussteerchat()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L8370"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_shouldsteerautofocus",
+      "label": "shouldSteerAutoFocus()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "initGlobalBar",
+      "file_type": "code",
+      "norm_label": "shouldsteerautofocus()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L8401"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_browser_showagentpolltooltip",
@@ -12752,6 +12560,66 @@
       "source_location": "L9281"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_browser_startagentstatuspoll",
+      "label": "startAgentStatusPoll()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "initGlobalBar",
+      "file_type": "code",
+      "norm_label": "startagentstatuspoll()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L9318"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_steerfocusdebugenabled",
+      "label": "steerFocusDebugEnabled()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "initGlobalBar",
+      "file_type": "code",
+      "norm_label": "steerfocusdebugenabled()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L8490"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_steerfocuslog",
+      "label": "steerFocusLog()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "initGlobalBar",
+      "file_type": "code",
+      "norm_label": "steerfocuslog()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L8494"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_steerfocustargetlabel",
+      "label": "steerFocusTargetLabel()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "initGlobalBar",
+      "file_type": "code",
+      "norm_label": "steerfocustargetlabel()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L8483"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_stopagentstatuspoll",
+      "label": "stopAgentStatusPoll()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "initGlobalBar",
+      "file_type": "code",
+      "norm_label": "stopagentstatuspoll()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L9302"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_browser_syncagentpollingui",
       "label": "syncAgentPollingUi()",
       "_callable": true,
@@ -12764,6 +12632,30 @@
       "source_location": "L9232"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_browser_syncpagechatfocus",
+      "label": "syncPageChatFocus()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "initGlobalBar",
+      "file_type": "code",
+      "norm_label": "syncpagechatfocus()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L8606"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_teardown",
+      "label": "teardown()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "initGlobalBar",
+      "file_type": "code",
+      "norm_label": "teardown()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L9930"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_browser_toggleactionpicker",
       "label": "toggleActionPicker()",
       "_callable": true,
@@ -12774,6 +12666,42 @@
       "norm_label": "toggleactionpicker()",
       "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
       "source_location": "L2844"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_toggledetect",
+      "label": "toggleDetect()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "initGlobalBar",
+      "file_type": "code",
+      "norm_label": "toggledetect()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L9825"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_updateglobalbarstate",
+      "label": "updateGlobalBarState()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "initGlobalBar",
+      "file_type": "code",
+      "norm_label": "updateglobalbarstate()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L9763"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_updateglobalbarstate_sync",
+      "label": "sync()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "initGlobalBar",
+      "file_type": "code",
+      "norm_label": "sync()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L9773"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_completion_completionackforacceptresult",
@@ -14334,6 +14262,18 @@
       "norm_label": "readstoredmanualapplystate()",
       "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
       "source_location": "L3720"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_refreshlivecontrolsformanualapply",
+      "label": "refreshLiveControlsForManualApply()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 38,
+      "community_name": "handleManualEditActivity",
+      "file_type": "code",
+      "norm_label": "refreshlivecontrolsformanualapply()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L3832"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_browser_remainingmanualeditcount",
@@ -16854,18 +16794,6 @@
       "norm_label": "uigetbyid()",
       "source_file": ".claude/skills/impeccable/scripts/live-browser-dom.js",
       "source_location": "L95"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_browser_layoutflowchildren",
-      "label": "layoutFlowChildren()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 48,
-      "community_name": "createLiveBrowserDomHelpers",
-      "file_type": "code",
-      "norm_label": "layoutflowchildren()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L1634"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_detect_antipatterns_browser_blendrgba",
@@ -20048,6 +19976,42 @@
       "source_location": "L3584"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_browser_buildinsertplaceholdersnapshotfromdom",
+      "label": "buildInsertPlaceholderSnapshotFromDom()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "setLiveState",
+      "file_type": "code",
+      "norm_label": "buildinsertplaceholdersnapshotfromdom()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L2015"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_buildlocatorforleaf",
+      "label": "buildLocatorForLeaf()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "setLiveState",
+      "file_type": "code",
+      "norm_label": "buildlocatorforleaf()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L3425"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_buildpickedanchorsnapshot",
+      "label": "buildPickedAnchorSnapshot()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "setLiveState",
+      "file_type": "code",
+      "norm_label": "buildpickedanchorsnapshot()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L4860"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_browser_cancelediting",
       "label": "cancelEditing()",
       "_callable": true,
@@ -20082,6 +20046,30 @@
       "norm_label": "cancelinsertconfigure()",
       "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
       "source_location": "L6673"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_captureandemit",
+      "label": "captureAndEmit()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "setLiveState",
+      "file_type": "code",
+      "norm_label": "captureandemit()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L7048"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_checkpointpayload",
+      "label": "checkpointPayload()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "setLiveState",
+      "file_type": "code",
+      "norm_label": "checkpointpayload()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L6245"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_browser_cleanup",
@@ -20120,6 +20108,18 @@
       "source_location": "L476"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_browser_clearhandled",
+      "label": "clearHandled()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "setLiveState",
+      "file_type": "code",
+      "norm_label": "clearhandled()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L7862"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_browser_clearinsertpicking",
       "label": "clearInsertPicking()",
       "_callable": true,
@@ -20156,18 +20156,6 @@
       "source_location": "L7846"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_browser_closetunepopover",
-      "label": "closeTunePopover()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "setLiveState",
-      "file_type": "code",
-      "norm_label": "closetunepopover()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L4759"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_browser_connectsse",
       "label": "connectSSE()",
       "_callable": true,
@@ -20180,6 +20168,18 @@
       "source_location": "L6077"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_browser_cursorforinsertaxis",
+      "label": "cursorForInsertAxis()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "setLiveState",
+      "file_type": "code",
+      "norm_label": "cursorforinsertaxis()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L1751"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_browser_disableinlineedit",
       "label": "disableInlineEdit()",
       "_callable": true,
@@ -20190,6 +20190,18 @@
       "norm_label": "disableinlineedit()",
       "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
       "source_location": "L3300"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_dismisstoast",
+      "label": "dismissToast()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "setLiveState",
+      "file_type": "code",
+      "norm_label": "dismisstoast()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L7915"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_browser_entereditingmode",
@@ -20214,6 +20226,30 @@
       "norm_label": "exitconfiguretopicking()",
       "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
       "source_location": "L3412"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_extractcontext",
+      "label": "extractContext()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "setLiveState",
+      "file_type": "code",
+      "norm_label": "extractcontext()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L898"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_forbiddenmanualtextchars",
+      "label": "forbiddenManualTextChars()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "setLiveState",
+      "file_type": "code",
+      "norm_label": "forbiddenmanualtextchars()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L3576"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_browser_handleaccept",
@@ -20252,6 +20288,30 @@
       "source_location": "L7672"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_browser_handlego",
+      "label": "handleGo()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "setLiveState",
+      "file_type": "code",
+      "norm_label": "handlego()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L6610"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_handleinsertcreate",
+      "label": "handleInsertCreate()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "setLiveState",
+      "file_type": "code",
+      "norm_label": "handleinsertcreate()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L6686"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_browser_handlekeydown",
       "label": "handleKeyDown()",
       "_callable": true,
@@ -20262,18 +20322,6 @@
       "norm_label": "handlekeydown()",
       "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
       "source_location": "L6492"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_browser_handlemousemove",
-      "label": "handleMouseMove()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "setLiveState",
-      "file_type": "code",
-      "norm_label": "handlemousemove()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L6296"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_browser_handleserverlost",
@@ -20372,18 +20420,6 @@
       "source_location": "L341"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_browser_hidehighlighttagtooltip",
-      "label": "hideHighlightTagTooltip()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "setLiveState",
-      "file_type": "code",
-      "norm_label": "hidehighlighttagtooltip()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L295"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_browser_hideinsertline",
       "label": "hideInsertLine()",
       "_callable": true,
@@ -20394,30 +20430,6 @@
       "norm_label": "hideinsertline()",
       "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
       "source_location": "L1910"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_browser_init",
-      "label": "init()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "setLiveState",
-      "file_type": "code",
-      "norm_label": "init()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L11126"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_browser_loaddetectscript",
-      "label": "loadDetectScript()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "setLiveState",
-      "file_type": "code",
-      "norm_label": "loaddetectscript()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L9897"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_browser_marksessionhandled",
@@ -20444,16 +20456,16 @@
       "source_location": "L7510"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_browser_maybecompletesteer",
-      "label": "maybeCompleteSteer()",
+      "id": "claude_skills_impeccable_scripts_live_browser_maybeprefetchpage",
+      "label": "maybePrefetchPage()",
       "_callable": true,
       "_origin": "ast",
       "community": 7,
       "community_name": "setLiveState",
       "file_type": "code",
-      "norm_label": "maybecompletesteer()",
+      "norm_label": "maybeprefetchpage()",
       "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L9017"
+      "source_location": "L6474"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_browser_maybeshowfirstsavetoast",
@@ -20480,18 +20492,6 @@
       "source_location": "L6420"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_browser_ondetectmessage",
-      "label": "onDetectMessage()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "setLiveState",
-      "file_type": "code",
-      "norm_label": "ondetectmessage()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L9906"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_browser_recoveremptycycling",
       "label": "recoverEmptyCycling()",
       "_callable": true,
@@ -20502,18 +20502,6 @@
       "norm_label": "recoveremptycycling()",
       "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
       "source_location": "L2889"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_browser_refreshlivecontrolsformanualapply",
-      "label": "refreshLiveControlsForManualApply()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "setLiveState",
-      "file_type": "code",
-      "norm_label": "refreshlivecontrolsformanualapply()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L3832"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_browser_removeconfigureselection",
@@ -20540,18 +20528,6 @@
       "source_location": "L4526"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_browser_requestdetectscan",
-      "label": "requestDetectScan()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "setLiveState",
-      "file_type": "code",
-      "norm_label": "requestdetectscan()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L9814"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_browser_resetsessionfilemeta",
       "label": "resetSessionFileMeta()",
       "_callable": true,
@@ -20562,6 +20538,18 @@
       "norm_label": "resetsessionfilemeta()",
       "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
       "source_location": "L7694"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_restorefromactivesessions",
+      "label": "restoreFromActiveSessions()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "setLiveState",
+      "file_type": "code",
+      "norm_label": "restorefromactivesessions()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L7813"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_browser_restoreinlineeditdrafts",
@@ -20576,6 +20564,66 @@
       "source_location": "L3370"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_browser_saveinteractionprefs",
+      "label": "saveInteractionPrefs()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "setLiveState",
+      "file_type": "code",
+      "norm_label": "saveinteractionprefs()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L8145"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_savepickpref",
+      "label": "savePickPref()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "setLiveState",
+      "file_type": "code",
+      "norm_label": "savepickpref()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L8155"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_sendcheckpoint",
+      "label": "sendCheckpoint()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "setLiveState",
+      "file_type": "code",
+      "norm_label": "sendcheckpoint()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L6264"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_sendevent",
+      "label": "sendEvent()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "setLiveState",
+      "file_type": "code",
+      "norm_label": "sendevent()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L6224"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_sendevent_handlefailure",
+      "label": "handleFailure()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "setLiveState",
+      "file_type": "code",
+      "norm_label": "handlefailure()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L6226"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_browser_setlivestate",
       "label": "setLiveState()",
       "_callable": true,
@@ -20588,16 +20636,28 @@
       "source_location": "L1965"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_browser_shouldshowhighlighttagtooltip",
-      "label": "shouldShowHighlightTagTooltip()",
+      "id": "claude_skills_impeccable_scripts_live_browser_setpageinteractioncursor",
+      "label": "setPageInteractionCursor()",
       "_callable": true,
       "_origin": "ast",
       "community": 7,
       "community_name": "setLiveState",
       "file_type": "code",
-      "norm_label": "shouldshowhighlighttagtooltip()",
+      "norm_label": "setpageinteractioncursor()",
       "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L290"
+      "source_location": "L1930"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_shouldpassthroughelementnav",
+      "label": "shouldPassthroughElementNav()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "setLiveState",
+      "file_type": "code",
+      "norm_label": "shouldpassthroughelementnav()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L6482"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_browser_showannotoverlay",
@@ -20610,18 +20670,6 @@
       "norm_label": "showannotoverlay()",
       "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
       "source_location": "L447"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_browser_showhighlight",
-      "label": "showHighlight()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "setLiveState",
-      "file_type": "code",
-      "norm_label": "showhighlight()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L301"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_browser_showmanualapplybusytoast",
@@ -20648,6 +20696,18 @@
       "source_location": "L7921"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_browser_startscrolllock",
+      "label": "startScrollLock()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "setLiveState",
+      "file_type": "code",
+      "norm_label": "startscrolllock()",
+      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
+      "source_location": "L5811"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_browser_stopscrolllock",
       "label": "stopScrollLock()",
       "_callable": true,
@@ -20672,18 +20732,6 @@
       "source_location": "L6064"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_browser_syncpagechatfocus",
-      "label": "syncPageChatFocus()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "setLiveState",
-      "file_type": "code",
-      "norm_label": "syncpagechatfocus()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L8606"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_browser_syncpageinteractioncursor",
       "label": "syncPageInteractionCursor()",
       "_callable": true,
@@ -20694,18 +20742,6 @@
       "norm_label": "syncpageinteractioncursor()",
       "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
       "source_location": "L1950"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_browser_teardown",
-      "label": "teardown()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "setLiveState",
-      "file_type": "code",
-      "norm_label": "teardown()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L9930"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_browser_teardownconfigurechrome",
@@ -20732,18 +20768,6 @@
       "source_location": "L5287"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_browser_toggledetect",
-      "label": "toggleDetect()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "setLiveState",
-      "file_type": "code",
-      "norm_label": "toggledetect()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L9825"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_browser_toggleinsert",
       "label": "toggleInsert()",
       "_callable": true,
@@ -20768,40 +20792,16 @@
       "source_location": "L9848"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_browser_toggletunepopover",
-      "label": "toggleTunePopover()",
+      "id": "claude_skills_impeccable_scripts_live_browser_writescrolly",
+      "label": "writeScrollY()",
       "_callable": true,
       "_origin": "ast",
       "community": 7,
       "community_name": "setLiveState",
       "file_type": "code",
-      "norm_label": "toggletunepopover()",
+      "norm_label": "writescrolly()",
       "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L4733"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_browser_updateglobalbarstate",
-      "label": "updateGlobalBarState()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "setLiveState",
-      "file_type": "code",
-      "norm_label": "updateglobalbarstate()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L9763"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_browser_updateglobalbarstate_sync",
-      "label": "sync()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "setLiveState",
-      "file_type": "code",
-      "norm_label": "sync()",
-      "source_file": ".claude/skills/impeccable/scripts/live-browser.js",
-      "source_location": "L9773"
+      "source_location": "L162"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_ui_core_activeelementdeep",
@@ -25333,72 +25333,6 @@
       "source_location": "L5"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_event_validation",
-      "label": "event-validation.mjs",
-      "_origin": "ast",
-      "community": 129,
-      "community_name": "event-validation.mjs",
-      "file_type": "code",
-      "norm_label": "event-validation.mjs",
-      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
-      "source_location": "L1"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_event_validation_forbidden_manual_edit_text_chars",
-      "label": "FORBIDDEN_MANUAL_EDIT_TEXT_CHARS",
-      "_origin": "ast",
-      "community": 129,
-      "community_name": "event-validation.mjs",
-      "file_type": "code",
-      "norm_label": "forbidden_manual_edit_text_chars",
-      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
-      "source_location": "L17"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_event_validation_insert_positions",
-      "label": "INSERT_POSITIONS",
-      "_origin": "ast",
-      "community": 129,
-      "community_name": "event-validation.mjs",
-      "file_type": "code",
-      "norm_label": "insert_positions",
-      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
-      "source_location": "L16"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_vocabulary",
-      "label": "vocabulary.mjs",
-      "_origin": "ast",
-      "community": 129,
-      "community_name": "event-validation.mjs",
-      "file_type": "code",
-      "norm_label": "vocabulary.mjs",
-      "source_file": ".claude/skills/impeccable/scripts/live/vocabulary.mjs",
-      "source_location": "L1"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_vocabulary_live_commands",
-      "label": "LIVE_COMMANDS",
-      "_origin": "ast",
-      "community": 129,
-      "community_name": "event-validation.mjs",
-      "file_type": "code",
-      "norm_label": "live_commands",
-      "source_file": ".claude/skills/impeccable/scripts/live/vocabulary.mjs",
-      "source_location": "L20"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_vocabulary_visual_actions",
-      "label": "VISUAL_ACTIONS",
-      "_origin": "ast",
-      "community": 129,
-      "community_name": "event-validation.mjs",
-      "file_type": "code",
-      "norm_label": "visual_actions",
-      "source_file": ".claude/skills/impeccable/scripts/live/vocabulary.mjs",
-      "source_location": "L36"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_detector_engines_browser_detect_url",
       "label": "detect-url.mjs",
       "_origin": "ast",
@@ -27857,6 +27791,18 @@
       "source_location": "L62"
     },
     {
+      "id": "docencia_espanol_oportunidades_salamanca_alternativa_a_musale_m\u00e1ster_oficial_online_uned_instituto_cervantes",
+      "label": "Alternativa a MUSALE: m\u00e1ster oficial online (UNED + Instituto Cervantes)",
+      "_origin": "ast",
+      "community": 161,
+      "community_name": "Oportunidades de docencia de espa\u00f1ol en Salamanca (USAL)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "alternativa a musale: master oficial online (uned + instituto cervantes)",
+      "source_file": "docencia-espanol/oportunidades-salamanca.md",
+      "source_location": "L100"
+    },
+    {
       "id": "docencia_espanol_oportunidades_salamanca_correcci\u00f3n_2026_09_04_s\u00ed_hay_un_requisito_de_titulaci\u00f3n_duro",
       "label": "Correcci\u00f3n (2026-09-04): s\u00ed hay un requisito de titulaci\u00f3n duro",
       "_origin": "ast",
@@ -27902,7 +27848,7 @@
       "node_kind": "heading",
       "norm_label": "recomendacion (actualizada 2026-09-04)",
       "source_file": "docencia-espanol/oportunidades-salamanca.md",
-      "source_location": "L100"
+      "source_location": "L136"
     },
     {
       "id": "claude_hooks_mark_pr_reviewed",
@@ -28859,6 +28805,39 @@
       "source_location": "L287"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_event_validation",
+      "label": "event-validation.mjs",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "insert-ui.mjs",
+      "file_type": "code",
+      "norm_label": "event-validation.mjs",
+      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_event_validation_forbidden_manual_edit_text_chars",
+      "label": "FORBIDDEN_MANUAL_EDIT_TEXT_CHARS",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "insert-ui.mjs",
+      "file_type": "code",
+      "norm_label": "forbidden_manual_edit_text_chars",
+      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
+      "source_location": "L17"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_event_validation_insert_positions",
+      "label": "INSERT_POSITIONS",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "insert-ui.mjs",
+      "file_type": "code",
+      "norm_label": "insert_positions",
+      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
+      "source_location": "L16"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_insert_ui",
       "label": "insert-ui.mjs",
       "_origin": "ast",
@@ -28901,6 +28880,39 @@
       "norm_label": "placeholder_min_width",
       "source_file": ".claude/skills/impeccable/scripts/live/insert-ui.mjs",
       "source_location": "L8"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_vocabulary",
+      "label": "vocabulary.mjs",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "insert-ui.mjs",
+      "file_type": "code",
+      "norm_label": "vocabulary.mjs",
+      "source_file": ".claude/skills/impeccable/scripts/live/vocabulary.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_vocabulary_live_commands",
+      "label": "LIVE_COMMANDS",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "insert-ui.mjs",
+      "file_type": "code",
+      "norm_label": "live_commands",
+      "source_file": ".claude/skills/impeccable/scripts/live/vocabulary.mjs",
+      "source_location": "L20"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_vocabulary_visual_actions",
+      "label": "VISUAL_ACTIONS",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "insert-ui.mjs",
+      "file_type": "code",
+      "norm_label": "visual_actions",
+      "source_file": ".claude/skills/impeccable/scripts/live/vocabulary.mjs",
+      "source_location": "L36"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_browser_injected_index",
@@ -100819,13 +100831,24 @@
     },
     {
       "source": "docencia_espanol_oportunidades_salamanca_oportunidades_de_docencia_de_espa\u00f1ol_en_salamanca_usal",
-      "target": "docencia_espanol_oportunidades_salamanca_recomendaci\u00f3n_actualizada_2026_09_04",
+      "target": "docencia_espanol_oportunidades_salamanca_alternativa_a_musale_m\u00e1ster_oficial_online_uned_instituto_cervantes",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docencia-espanol/oportunidades-salamanca.md",
       "source_location": "L100",
+      "weight": 1.0
+    },
+    {
+      "source": "docencia_espanol_oportunidades_salamanca_oportunidades_de_docencia_de_espa\u00f1ol_en_salamanca_usal",
+      "target": "docencia_espanol_oportunidades_salamanca_recomendaci\u00f3n_actualizada_2026_09_04",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docencia-espanol/oportunidades-salamanca.md",
+      "source_location": "L136",
       "weight": 1.0
     },
     {
@@ -106754,5 +106777,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "ae6eb6c835c24599a5b33377409d16fd2b5d50d0"
+  "built_at_commit": "93e85d626fb25fd2d2601417581fbff441b62510"
 }

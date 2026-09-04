@@ -1,16 +1,16 @@
 # Graph Report - Molu  (2026-09-04)
 
 ## Corpus Check
-- 226 files · ~837,701 words
+- 226 files · ~838,017 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2858 nodes · 6218 edges · 177 communities (156 shown, 21 thin omitted)
+- 2859 nodes · 6219 edges · 176 communities (155 shown, 21 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 135 edges (avg confidence: 0.81)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `ae6eb6c8`
+- Built from commit: `93e85d62`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -144,7 +144,7 @@
 - cavecrew-builder.md
 - cavecrew-reviewer.md
 - Ejercicios
-- event-validation.mjs
+- broadcastAgentPollingIfChanged
 - restrict-cavecrew-bash.sh
 - investigate-first/SKILL.md
 - lean-build/SKILL.md
@@ -164,7 +164,6 @@
 - Ejercicios
 - Ejercicios
 - Ejercicios
-- handleGo
 - guia-repaso-unidades-1-10.md
 - Ejercicios
 - Ejercicios
@@ -220,11 +219,11 @@
 ## Import Cycles
 - None detected.
 
-## Communities (177 total, 21 thin omitted)
+## Communities (176 total, 21 thin omitted)
 
 ### Community 0 - "live-browser.js"
 Cohesion: 0.03
-Nodes (141): acceptedDomAlreadyClean(), addManualContextText(), applyGlobalBarLabelState(), applyPlaceholderSizingStyles(), applySvelteComponentVariantStyle(), bufferToBase64(), buildCollapsible(), buildColorModels() (+133 more)
+Nodes (143): acceptedDomAlreadyClean(), addManualContextText(), applyGlobalBarLabelState(), applyPlaceholderSizingStyles(), applySvelteComponentVariantStyle(), bufferToBase64(), buildCollapsible(), buildColorModels() (+135 more)
 
 ### Community 1 - "checks.mjs"
 Cohesion: 0.05
@@ -236,7 +235,7 @@ Nodes (68): addBrowserFindings(), addVisualContrastFindings(), addVisualContrast
 
 ### Community 3 - "resumeSession"
 Cohesion: 0.07
-Nodes (69): applyOriginalAttrsToSvelteAnchor(), applyParamDefaults(), applyParamValue(), applyPlaceholderDimensions(), applySavedSessionMeta(), buildParamsPanel(), buildPlaceholderResizeHandles(), clampVariantIndex() (+61 more)
+Nodes (66): applyOriginalAttrsToSvelteAnchor(), applyParamDefaults(), applyParamValue(), applyPlaceholderDimensions(), applySavedSessionMeta(), buildParamsPanel(), clampVariantIndex(), closedClipPath() (+58 more)
 
 ### Community 4 - "modern-screenshot.umd.js"
 Cohesion: 0.10
@@ -251,8 +250,8 @@ Cohesion: 0.09
 Nodes (49): addOpToManualApplyChunk(), APPLY_EVENT_HARD_TIMEOUT_MS, APPLY_EVENT_SOFT_DEADLINE_MS, buildManualApplyAgentAction(), clearManualApplyTransaction(), collectManualApplyFiles(), compactManualApplyBatch(), compactManualApplyCandidates() (+41 more)
 
 ### Community 7 - "setLiveState"
-Cohesion: 0.10
-Nodes (63): abortSvelteComponentInjection(), applyEditing(), cancelEditing(), cancelEditingToPicking(), cancelInsertConfigure(), cleanup(), cleanupAcceptedSession(), clearAnnotations() (+55 more)
+Cohesion: 0.08
+Nodes (69): abortSvelteComponentInjection(), applyEditing(), buildInsertPlaceholderSnapshotFromDom(), buildLocatorForLeaf(), buildPickedAnchorSnapshot(), cancelEditing(), cancelEditingToPicking(), cancelInsertConfigure() (+61 more)
 
 ### Community 8 - "live-commit-manual-edits.mjs"
 Cohesion: 0.10
@@ -267,8 +266,8 @@ Cohesion: 0.10
 Nodes (47): applyDetectionConfigSource(), clampByte(), cleanIgnoreValueDisplay(), cloneDetectionConfig(), cloneRawDetectionConfig(), colorIgnoreKey(), DEFAULT_DETECTION_CONFIG, DETECTOR_CONFIG_KEYS (+39 more)
 
 ### Community 11 - "live-server.mjs"
-Cohesion: 0.09
-Nodes (45): assembleLiveBrowserScript(), assertLiveBrowserScriptParts(), LIVE_BROWSER_SCRIPT_PARTS, readLiveBrowserScriptParts(), resolveLiveBrowserScriptParts(), acknowledgePendingEvent(), activeSessionSummaries(), agentPollingConnected() (+37 more)
+Cohesion: 0.10
+Nodes (30): assembleLiveBrowserScript(), assertLiveBrowserScriptParts(), LIVE_BROWSER_SCRIPT_PARTS, readLiveBrowserScriptParts(), resolveLiveBrowserScriptParts(), activeSessionSummaries(), agentPollingConnected(), annotRoot (+22 more)
 
 ### Community 12 - "svelte-component.mjs"
 Cohesion: 0.09
@@ -283,8 +282,8 @@ Cohesion: 0.07
 Nodes (45): ACK_EXTS, ALLOWED_EXTS, applyPatchText(), clampByte(), CO_SCAN_STYLE_NAMES, coLocatedStylesheets(), colorIgnoreKey(), DEFAULT_CONFIG (+37 more)
 
 ### Community 15 - "initPageChat"
-Cohesion: 0.09
-Nodes (48): armPageChatForTyping(), attachSteerFocusDebug(), attachSteerFocusGuard(), clearSteerAwaitTimer(), clearSteerFocusRecoverTimer(), collapsePageChat(), expandPageChat(), finishVoiceSession() (+40 more)
+Cohesion: 0.13
+Nodes (33): armPageChatForTyping(), clearSteerAwaitTimer(), collapsePageChat(), expandPageChat(), finishVoiceSession(), focusPageChatInput(), initPageChat(), isEmbeddedPreviewBrowser() (+25 more)
 
 ### Community 16 - "live-inject.mjs"
 Cohesion: 0.09
@@ -299,8 +298,8 @@ Cohesion: 0.06
 Nodes (33): applyStaticDeclaration(), buildBorderOverrideMap(), parseShorthand(), resolveVar(), buildStaticStyleMap(), collectStaticCssRules(), compareStaticPriority(), cssPropToCamel() (+25 more)
 
 ### Community 19 - "insert-ui.mjs"
-Cohesion: 0.09
-Nodes (13): canCreateInsert(), clampPlaceholderSize(), computeInsertPosition(), groupSiblingRows(), hitSiblingInsertGap(), horizontalOverlap(), insertCreateDisabledReason(), insertLineCoords() (+5 more)
+Cohesion: 0.07
+Nodes (25): FORBIDDEN_MANUAL_EDIT_TEXT_CHARS, INSERT_POSITIONS, isValidId(), isValidVariantId(), validateAnnotationFields(), validateEvent(), validateInsertGenerate(), validateManualEditEvent() (+17 more)
 
 ### Community 20 - "Fuentes transcritas overview"
 Cohesion: 0.15
@@ -351,8 +350,8 @@ Cohesion: 0.12
 Nodes (20): averageRgb01(), captureChromeNodes(), captureElementFromRenderedAncestor(), captureElementToBlob(), compileShader(), cssColorToRgb01(), dominantRgb01(), findBackdropAncestor() (+12 more)
 
 ### Community 32 - "initGlobalBar"
-Cohesion: 0.16
-Nodes (19): barPaletteForTheme(), brandMarkSvg(), buildSteerProcessingDots(), designPanelCss(), detectPageTheme(), ensureAgentPollTooltip(), hideAgentPollTooltip(), initActionPicker() (+11 more)
+Cohesion: 0.09
+Nodes (41): attachSteerFocusDebug(), attachSteerFocusGuard(), barPaletteForTheme(), brandMarkSvg(), buildSteerProcessingDots(), clearSteerFocusRecoverTimer(), detectPageTheme(), ensureAgentPollTooltip() (+33 more)
 
 ### Community 33 - "live-poll.mjs"
 Cohesion: 0.15
@@ -376,7 +375,7 @@ Nodes (35): buildMissingTargetDirective(), buildResolvedContextDirective(), buil
 
 ### Community 38 - "handleManualEditActivity"
 Cohesion: 0.18
-Nodes (25): clearStoredManualApplyState(), fetchPendingCount(), handleManualEditActivity(), hidePendingApplyDock(), manualApplyLoadingText(), manualApplyStateKey(), manualEditEventForCurrentPage(), numberOrNull() (+17 more)
+Nodes (26): clearStoredManualApplyState(), fetchPendingCount(), handleManualEditActivity(), hidePendingApplyDock(), manualApplyLoadingText(), manualApplyStateKey(), manualEditEventForCurrentPage(), numberOrNull() (+18 more)
 
 ### Community 39 - "isGeneratedFile"
 Cohesion: 0.60
@@ -415,8 +414,8 @@ Cohesion: 0.18
 Nodes (17): directChildDirs(), discoverRootsForPattern(), discoverTargetCandidates(), escapeRegExp(), expandSimplePattern(), findTargetExample(), isExcludedByWorkspacePattern(), isIgnoredWorkspaceDiscoveryDir() (+9 more)
 
 ### Community 48 - "createLiveBrowserDomHelpers"
-Cohesion: 0.17
-Nodes (11): createLiveBrowserDomHelpers(), cssId(), liveUiRoot(), makeFrozenAnchor(), own(), pickable(), rectIsUsableAnchor(), uiAppend() (+3 more)
+Cohesion: 0.19
+Nodes (10): createLiveBrowserDomHelpers(), cssId(), liveUiRoot(), makeFrozenAnchor(), own(), pickable(), rectIsUsableAnchor(), uiAppend() (+2 more)
 
 ### Community 49 - "sampleCssBackground"
 Cohesion: 0.20
@@ -706,9 +705,9 @@ Nodes (5): Auto-clarity, Boundaries, Output, Severity, Tools
 Cohesion: 0.33
 Nodes (6): 1. Saludos, Ej. 1 — Completa la tabla de nacionalidades, Ej. 2 — Relaciona la pregunta con la respuesta, Ej. 3 — Completa el diálogo con ser o llamarse, Ej. 4 — Lee el texto y responde, Ejercicios
 
-### Community 129 - "event-validation.mjs"
-Cohesion: 0.25
-Nodes (12): FORBIDDEN_MANUAL_EDIT_TEXT_CHARS, INSERT_POSITIONS, isValidId(), isValidVariantId(), validateAnnotationFields(), validateEvent(), validateInsertGenerate(), validateManualEditEvent() (+4 more)
+### Community 129 - "broadcastAgentPollingIfChanged"
+Cohesion: 0.26
+Nodes (15): acknowledgePendingEvent(), broadcast(), broadcastAgentPollingIfChanged(), cancelQueuedAnonymousExitEvents(), findAvailablePendingEvent(), findOpenPort(), findPendingEventById(), flushPendingPolls() (+7 more)
 
 ### Community 130 - "restrict-cavecrew-bash.sh"
 Cohesion: 0.83
@@ -762,10 +761,6 @@ Nodes (6): 8. De vacaciones, Ej. 29 — Conjuga el pretérito indefinido, Ej. 30
 Cohesion: 0.33
 Nodes (6): 9. Compras, Ej. 33 — Completa con el pronombre de objeto directo, Ej. 34 — Completa con el comparativo, Ej. 35 — ¿Qué prenda es?, Ej. 36 — Escribe el adjetivo contrario, Ejercicios
 
-### Community 149 - "handleGo"
-Cohesion: 0.23
-Nodes (12): buildInsertPlaceholderSnapshotFromDom(), buildPickedAnchorSnapshot(), captureAndEmit(), checkpointPayload(), extractContext(), handleGo(), handleInsertCreate(), maybePrefetchPage() (+4 more)
-
 ### Community 150 - "guia-repaso-unidades-1-10.md"
 Cohesion: 0.29
 Nodes (6): 10. Salud y enfermedad, Ej. 37 — Adivina la parte del cuerpo, Ej. 38 — Completa con doler, Ej. 39 — Completa con el pretérito imperfecto, Ej. 40 — ¿Qué palabra no pertenece al grupo?, Ejercicios
@@ -803,8 +798,8 @@ Cohesion: 0.29
 Nodes (7): Competencias personales (soft skills), Competencias técnicas (hard skills), Currículum (CV) — perfil profesional, Experiencia profesional (prácticas), Intereses personales (según el CV), Premios y reconocimientos, Voluntariado
 
 ### Community 161 - "Oportunidades de docencia de español en Salamanca (USAL)"
-Cohesion: 0.29
-Nodes (6): 1. Bolsa de trabajo — Cursos Internacionales de la USAL, 2. Másteres/títulos ELE de la propia USAL — comparativa, Corrección (2026-09-04): sí hay un requisito de titulación duro, Oportunidades de docencia de español en Salamanca (USAL), Puntos débiles y riesgos a tener en cuenta, Recomendación (actualizada 2026-09-04)
+Cohesion: 0.25
+Nodes (7): 1. Bolsa de trabajo — Cursos Internacionales de la USAL, 2. Másteres/títulos ELE de la propia USAL — comparativa, Alternativa a MUSALE: máster oficial online (UNED + Instituto Cervantes), Corrección (2026-09-04): sí hay un requisito de titulación duro, Oportunidades de docencia de español en Salamanca (USAL), Puntos débiles y riesgos a tener en cuenta, Recomendación (actualizada 2026-09-04)
 
 ### Community 166 - "funciones.py"
 Cohesion: 0.43
@@ -847,24 +842,24 @@ Cohesion: 0.33
 Nodes (6): Grabaciones de clases overview, Docencia de español overview, materiales/ subfolder, Python ejercicios overview, Python proyectos overview, Python overview
 
 ## Knowledge Gaps
-- **570 isolated node(s):** `Corrección (2026-09-04): sí hay un requisito de titulación duro`, `2. Másteres/títulos ELE de la propia USAL — comparativa`, `Puntos débiles y riesgos a tener en cuenta`, `Recomendación (actualizada 2026-09-04)`, `Subcarpetas` (+565 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 721 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **571 isolated node(s):** `Corrección (2026-09-04): sí hay un requisito de titulación duro`, `2. Másteres/títulos ELE de la propia USAL — comparativa`, `Puntos débiles y riesgos a tener en cuenta`, `Alternativa a MUSALE: máster oficial online (UNED + Instituto Cervantes)`, `Recomendación (actualizada 2026-09-04)` (+566 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 722 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **21 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `createManualEditRoutes()` connect `manual-edit-routes.mjs` to `live-commit-manual-edits.mjs`, `event-validation.mjs`, `css-cascade.mjs`, `live-server.mjs`?**
-  _High betweenness centrality (0.063) - this node is a cross-community bridge._
+- **Why does `createManualEditRoutes()` connect `manual-edit-routes.mjs` to `live-commit-manual-edits.mjs`, `live-server.mjs`, `css-cascade.mjs`, `insert-ui.mjs`?**
+  _High betweenness centrality (0.066) - this node is a cross-community bridge._
 - **Why does `StaticDocument` connect `css-cascade.mjs` to `detect-html.mjs`?**
-  _High betweenness centrality (0.062) - this node is a cross-community bridge._
+  _High betweenness centrality (0.064) - this node is a cross-community bridge._
 - **Why does `detectHtml()` connect `detect-html.mjs` to `checks.mjs`, `inline-ignores.mjs`, `design-system.mjs`, `css-cascade.mjs`, `detect-antipatterns.mjs`?**
-  _High betweenness centrality (0.014) - this node is a cross-community bridge._
+  _High betweenness centrality (0.019) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `initGlobalBar()` (e.g. with `hideAgentPollTooltip()` and `onDetectMessage()`) actually correct?**
   _`initGlobalBar()` has 7 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `Corrección (2026-09-04): sí hay un requisito de titulación duro`, `2. Másteres/títulos ELE de la propia USAL — comparativa`, `Puntos débiles y riesgos a tener en cuenta` to the rest of the system?**
-  _570 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _571 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `live-browser.js` be split into smaller, more focused modules?**
-  _Cohesion score 0.028169014084507043 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.02863984674329502 - nodes in this community are weakly interconnected._
 - **Should `checks.mjs` be split into smaller, more focused modules?**
   _Cohesion score 0.04649859943977591 - nodes in this community are weakly interconnected._
