@@ -368,6 +368,20 @@ no las deshagas sin querer al modificar la plantilla.
   `ls docencia-espanol/materiales/b1/`) antes de inventar un mecanismo nuevo — la respuesta
   ya estaba en el propio repo, con 30+ archivos de precedente, y no hacía falta adivinarla.
   Las tres unidades de A2 se rehicieron como 9 archivos separados tras este segundo aviso.
+- **Dividir un artefacto ya publicado en varios (o renumerar/renombrar capítulos) exige
+  volver a publicar el índice y `codigos-acceso.html` — un `git push` de los archivos fuente
+  NO actualiza esas dos páginas, que viven como artefactos aparte.** Error real: al deshacer
+  el capítulo combinado de arriba (3 unidades de A2 → 9 archivos), se corrigieron y publicaron
+  correctamente los 9 artefactos nuevos, pero el índice y los códigos se quedaron editados
+  solo en el archivo fuente — el PR se fusionó con `git push`, sin volver a llamar al tool
+  `Artifact` sobre esas dos páginas. El profesor tuvo que mandar una captura de la página
+  real (`claude.ai/code/artifact/...`) mostrando las filas viejas para que se detectara. La
+  checklist de "Publicar NO es terminar" (pasos 6-7 más arriba) ya avisa de esto para un
+  capítulo nuevo; el caso nuevo es que también aplica al EDITAR uno ya existente — cualquier
+  cambio en `indice-clases-de-espanol.html`/`codigos-acceso.html`, sea alta, baja o edición
+  de fila, no cuenta como hecho hasta que se ve reflejado en la URL pública, no en el archivo
+  del repo. Si no tienes la URL a mano, `Artifact` con `action: "list"` la encuentra por
+  título ("Clases de Español — Índice", "Códigos de acceso — Clases de Español").
 - **Una sopa de letras SIEMPRE va como `type: "wordsearch"` interactiva (rejilla real +
   tocar dos letras para marcar la palabra), nunca como una lista de pistas de texto
   inventadas.** Error real en este repo: la 1B sustituyó la sopa de letras del libro (ocho
