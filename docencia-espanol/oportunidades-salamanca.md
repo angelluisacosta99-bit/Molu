@@ -20,11 +20,44 @@ entrevista).
 - **Estado a fecha de hoy:** la última convocatoria (julio 2026) ya
   está cerrada. Es un proceso recurrente — hay que vigilar cuándo
   abre la próxima.
-- No exige un máster ELE nuevo para presentarse — los diplomas
-  rusos de Luch Znaniy y los 4+ años de experiencia (Avito) ya
-  puntúan como formación/experiencia docente, aunque un título ELE
-  reconocido en España puntuaría más alto.
-- Contacto: `internat@usal.es`, ext. 4418.
+- Contacto: `internat@usal.es`, ext. 4418. Envío de solicitudes (según
+  la convocatoria 2024): `selecc.personal.cursos@usal.es`.
+
+### Corrección (2026-09-04): sí hay un requisito de titulación duro
+
+Leídos los "Anuncio de contratación" reales de la convocatoria 2024
+(PROFTITULAR y PROFTALLER, aportados por Angel) — **la afirmación de
+arriba era incorrecta.** Ambas categorías exigen, como **requisito**
+(no como mérito, es decir: filtra antes de puntuar), una rama de
+titulación concreta:
+
+- **Profesor Titular:** grado/licenciatura en **Hispánicas** + máster
+  universitario de **español como lengua extranjera** (lengua materna
+  española o C2 acreditado). Salario 2024: 29.940,42 €/año brutos.
+- **Profesor de Taller:** titulación universitaria en rama de **artes
+  y humanidades**. Salario 2024: 20.000 €/año brutos.
+
+**Angel no cumple el requisito de titulación en ninguna de las dos**
+— su título (Ingeniería en Telecomunicaciones) está clasificado
+oficialmente por la propia USAL en la rama "Ingeniería y
+Arquitectura", no Hispánicas ni Humanidades. Sus 3 diplomas de
+profesor y su experiencia en Avito solo puntuarían como *méritos*
+tras pasar ese filtro — y no lo pasaría con su titulación actual.
+
+Baremo completo de méritos (por si en el futuro sí aplica, p. ej. tras
+el MUSALE), Profesor Titular: doctorado 10 pts; horas ELE últimos 5
+años (200-500h: 15, 500-1000h: 25, +1000h: 35); idioma extra C1: 5
+pts/C2: 10 pts (máx. 20); haber cursado el máster ELE de la USAL: 10
+pts extra; entrevista (solo a los 4 mejores): 25 pts. Profesor de
+Taller: posgrado ELE 15 pts; horas ELE (400-1000h: 20, 1000-2000h: 30,
++2000h: 40); idioma extra C1: 5/C2: 10 (máx. 15); examinador oral DELE
+1-3 pts; entrevista: 20 pts.
+
+**Siguiente paso realista:** escribir directamente preguntando si
+existe alguna otra categoría (coordinador de actividades, guía
+cultural — mencionadas en la bolsa pero sin requisitos vistos) que sí
+encaje con un perfil de ingeniero + profesor certificado + nativo, en
+vez de presentarse a estas dos con la titulación actual.
 
 ## 2. Másteres/títulos ELE de la propia USAL — comparativa
 
@@ -64,9 +97,20 @@ entrevista).
   convocatoria de la bolsa primero (gratis) y decidir sobre un
   máster ELE nuevo según el resultado real, no de forma preventiva.
 
-## Recomendación
+## Recomendación (actualizada 2026-09-04)
 
-Por ahora: vigilar cuándo abre la próxima convocatoria de la bolsa de
-Cursos Internacionales y presentarse con lo que ya tiene. Dejar
-MINELE/MUSALE en espera hasta tener ingresos más estables en España —
-MUSALE en particular, para la convocatoria 2027-28.
+No presentarse a Profesor Titular ni Profesor de Taller con la
+titulación actual — no pasaría el filtro de requisitos. Dos vías
+realistas, no excluyentes:
+
+1. Escribir a Cursos Internacionales preguntando si alguna otra
+   categoría (coordinador, guía cultural) encaja con su perfil, antes
+   de descartar la bolsa por completo.
+2. Apuntar al MUSALE para la convocatoria 2027-28 como camino serio
+   hacia Profesor Titular — es el único de los tres másteres ELE de
+   la USAL que de verdad abre esa puerta (MINELE y "Salamanca" no
+   figuran como "máster universitario de ELE" en el requisito).
+
+Mientras tanto, seguir con Avito y las plataformas remotas de IA —
+ahí sí cuentan sus diplomas y experiencia actuales sin filtro de rama
+de titulación.
