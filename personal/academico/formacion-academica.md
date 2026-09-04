@@ -63,7 +63,7 @@ Moscú.
   IP/MPLS-TP, con análisis del presupuesto óptico y de la calidad de
   transmisión (QoS/QoT)
 
-### Segundo programa / diploma de reciclaje profesional (simultáneo)
+### Segundo programa / diploma de recualificación profesional (simultáneo)
 
 - **Especialidad 27.03.04 «Gestión en sistemas técnicos»**, perfil
   «Sistemas de control inteligente para el transporte» — especialización
