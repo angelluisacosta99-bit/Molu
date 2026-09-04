@@ -69,7 +69,7 @@ Moscú.
   «Sistemas de control inteligente para el transporte» — especialización
   **«Análisis predictivo aplicado a problemas del transporte»**
   (programa de formación profesional adicional/continua)
-- Diploma emitido: **Diploma de Reciclaje Profesional**
+- Diploma emitido: **Diploma de Recualificación Profesional**
   (`ДИПЛОМ О ПРОФЕССИОНАЛЬНОЙ ПЕРЕПОДГОТОВКЕ`), RUT MIIT,
   serie ППК № 003589
 - Periodo: septiembre 2023 – junio 2024 (254 horas académicas)
@@ -100,7 +100,7 @@ No es una afición: es un negocio propio sostenido con formación
 pedagógica formal detrás, cursada en la ООО "Centro de Formación
 Continua y Reciclaje Profesional «Luch Znaniy»" (Луч знаний):
 
-- **Diploma de Reciclaje Profesional** — programa *"Español: teoría
+- **Diploma de Recualificación Profesional** — programa *"Español: teoría
   y metodología de la enseñanza de lenguas extranjeras en una
   organización educativa"*, **300 horas académicas**, 1–28 septiembre
   2022, Krasnoyarsk (reg. 180000665699, diploma № 41665) — otorga la
