@@ -1784,6 +1784,18 @@
       "source_location": "L874"
     },
     {
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkborders",
+      "label": "checkBorders()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "checks.mjs",
+      "file_type": "code",
+      "norm_label": "checkborders()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
+      "source_location": "L26"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkclippedoverflow",
       "label": "checkClippedOverflow()",
       "_callable": true,
@@ -1794,18 +1806,6 @@
       "norm_label": "checkclippedoverflow()",
       "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
       "source_location": "L2462"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkcolors",
-      "label": "checkColors()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "checks.mjs",
-      "file_type": "code",
-      "norm_label": "checkcolors()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L65"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkcreampalette",
@@ -1820,16 +1820,28 @@
       "source_location": "L2196"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementaipalettedom",
-      "label": "checkElementAIPaletteDOM()",
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementborders",
+      "label": "checkElementBorders()",
       "_callable": true,
       "_origin": "ast",
       "community": 1,
       "community_name": "checks.mjs",
       "file_type": "code",
-      "norm_label": "checkelementaipalettedom()",
+      "norm_label": "checkelementborders()",
       "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L1164"
+      "source_location": "L1718"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementbordersdom",
+      "label": "checkElementBordersDOM()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "checks.mjs",
+      "file_type": "code",
+      "norm_label": "checkelementbordersdom()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
+      "source_location": "L755"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementclippedoverflow",
@@ -1854,42 +1866,6 @@
       "norm_label": "checkelementclippedoverflowdom()",
       "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
       "source_location": "L2491"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementcolors",
-      "label": "checkElementColors()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "checks.mjs",
-      "file_type": "code",
-      "norm_label": "checkelementcolors()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L1748"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementcolorsdom",
-      "label": "checkElementColorsDOM()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "checks.mjs",
-      "file_type": "code",
-      "norm_label": "checkelementcolorsdom()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L770"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementglowdom",
-      "label": "checkElementGlowDOM()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "checks.mjs",
-      "file_type": "code",
-      "norm_label": "checkelementglowdom()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L1135"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementgptbordershadow",
@@ -1938,30 +1914,6 @@
       "norm_label": "checkelementheroeyebrowdom()",
       "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
       "source_location": "L845"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementicontile",
-      "label": "checkElementIconTile()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "checks.mjs",
-      "file_type": "code",
-      "norm_label": "checkelementicontile()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L1802"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementicontiledom",
-      "label": "checkElementIconTileDOM()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "checks.mjs",
-      "file_type": "code",
-      "norm_label": "checkelementicontiledom()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L797"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementitalicserif",
@@ -2072,18 +2024,6 @@
       "source_location": "L2571"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkglow",
-      "label": "checkGlow()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "checks.mjs",
-      "file_type": "code",
-      "norm_label": "checkglow()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L410"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkgptthinborderwideshadow",
       "label": "checkGptThinBorderWideShadow()",
       "_callable": true,
@@ -2106,18 +2046,6 @@
       "norm_label": "checkheroeyebrow()",
       "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
       "source_location": "L308"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkicontile",
-      "label": "checkIconTile()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "checks.mjs",
-      "file_type": "code",
-      "norm_label": "checkicontile()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L179"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkitalicserif",
@@ -2168,16 +2096,40 @@
       "source_location": "L2235"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkpagetypography",
-      "label": "checkPageTypography()",
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkpagelayout",
+      "label": "checkPageLayout()",
       "_callable": true,
       "_origin": "ast",
       "community": 1,
       "community_name": "checks.mjs",
       "file_type": "code",
-      "norm_label": "checkpagetypography()",
+      "norm_label": "checkpagelayout()",
       "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L2014"
+      "source_location": "L2112"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkpagequalitydom",
+      "label": "checkPageQualityDOM()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "checks.mjs",
+      "file_type": "code",
+      "norm_label": "checkpagequalitydom()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
+      "source_location": "L1699"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkpagequalityfromdoc",
+      "label": "checkPageQualityFromDoc()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "checks.mjs",
+      "file_type": "code",
+      "norm_label": "checkpagequalityfromdoc()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
+      "source_location": "L1678"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkquality",
@@ -2492,18 +2444,6 @@
       "source_location": "L2162"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_isemojionlytext",
-      "label": "isEmojiOnlyText()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "checks.mjs",
-      "file_type": "code",
-      "norm_label": "isemojionlytext()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L59"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_detector_rules_checks_isrenderedforbrowserrule",
       "label": "isRenderedForBrowserRule()",
       "_callable": true,
@@ -2588,18 +2528,6 @@
       "source_location": "L951"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_parsecolorresolved",
-      "label": "parseColorResolved()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "checks.mjs",
-      "file_type": "code",
-      "norm_label": "parsecolorresolved()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L998"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_detector_rules_checks_parseradiustopx",
       "label": "parseRadiusToPx()",
       "_callable": true,
@@ -2660,30 +2588,6 @@
       "source_location": "L2430"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_readownbackgroundcolor",
-      "label": "readOwnBackgroundColor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "checks.mjs",
-      "file_type": "code",
-      "norm_label": "readownbackgroundcolor()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L616"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_resolvebackground",
-      "label": "resolveBackground()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "checks.mjs",
-      "file_type": "code",
-      "norm_label": "resolvebackground()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L637"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_detector_rules_checks_resolveborderradiuspx",
       "label": "resolveBorderRadiusPx()",
       "_callable": true,
@@ -2706,18 +2610,6 @@
       "norm_label": "resolvefontsizepx()",
       "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
       "source_location": "L1226"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_resolvegradientstops",
-      "label": "resolveGradientStops()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "checks.mjs",
-      "file_type": "code",
-      "norm_label": "resolvegradientstops()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L699"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_rules_checks_resolvelengthpx",
@@ -2778,90 +2670,6 @@
       "norm_label": "textdescendantsflushsides()",
       "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
       "source_location": "L1323"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_shared_color_colortohex",
-      "label": "colorToHex()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "checks.mjs",
-      "file_type": "code",
-      "norm_label": "colortohex()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/shared/color.mjs",
-      "source_location": "L110"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_shared_color_contrastratio",
-      "label": "contrastRatio()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "checks.mjs",
-      "file_type": "code",
-      "norm_label": "contrastratio()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/shared/color.mjs",
-      "source_location": "L68"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_shared_color_gethue",
-      "label": "getHue()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "checks.mjs",
-      "file_type": "code",
-      "norm_label": "gethue()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/shared/color.mjs",
-      "source_location": "L97"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_shared_color_haschroma",
-      "label": "hasChroma()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "checks.mjs",
-      "file_type": "code",
-      "norm_label": "haschroma()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/shared/color.mjs",
-      "source_location": "L92"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_shared_color_parsegradientcolors",
-      "label": "parseGradientColors()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "checks.mjs",
-      "file_type": "code",
-      "norm_label": "parsegradientcolors()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/shared/color.mjs",
-      "source_location": "L74"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_shared_color_parsergb",
-      "label": "parseRgb()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "checks.mjs",
-      "file_type": "code",
-      "norm_label": "parsergb()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/shared/color.mjs",
-      "source_location": "L54"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_shared_color_relativeluminance",
-      "label": "relativeLuminance()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "checks.mjs",
-      "file_type": "code",
-      "norm_label": "relativeluminance()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/shared/color.mjs",
-      "source_location": "L61"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_shared_constants_isbrandfontonowndomain",
@@ -4460,18 +4268,6 @@
       "source_location": "L3"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_profile_profiler_createdetectorprofile",
-      "label": "createDetectorProfile()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "detect-url.mjs",
-      "file_type": "code",
-      "norm_label": "createdetectorprofile()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/profile/profiler.mjs",
-      "source_location": "L7"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_detector_profile_profiler_extractfindingids",
       "label": "extractFindingIds()",
       "_callable": true,
@@ -4602,30 +4398,6 @@
       "norm_label": "getantipattern()",
       "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
       "source_location": "L410"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_registry_antipatterns_getruleenginesupport",
-      "label": "getRuleEngineSupport()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "detect-url.mjs",
-      "file_type": "code",
-      "norm_label": "getruleenginesupport()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
-      "source_location": "L418"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_registry_antipatterns_getrulesforcategory",
-      "label": "getRulesForCategory()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "detect-url.mjs",
-      "file_type": "code",
-      "norm_label": "getrulesforcategory()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
-      "source_location": "L414"
     },
     {
       "id": "claude_skills_impeccable_scripts_hook_lib_applypatchtext",
@@ -7578,6 +7350,270 @@
       "norm_label": "statuscli()",
       "source_file": ".claude/skills/impeccable/scripts/live-status.mjs",
       "source_location": "L25"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkcolors",
+      "label": "checkColors()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 198,
+      "community_name": "parseRgb",
+      "file_type": "code",
+      "norm_label": "checkcolors()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
+      "source_location": "L65"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementaipalettedom",
+      "label": "checkElementAIPaletteDOM()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 198,
+      "community_name": "parseRgb",
+      "file_type": "code",
+      "norm_label": "checkelementaipalettedom()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
+      "source_location": "L1164"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementcolors",
+      "label": "checkElementColors()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 198,
+      "community_name": "parseRgb",
+      "file_type": "code",
+      "norm_label": "checkelementcolors()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
+      "source_location": "L1748"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementcolorsdom",
+      "label": "checkElementColorsDOM()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 198,
+      "community_name": "parseRgb",
+      "file_type": "code",
+      "norm_label": "checkelementcolorsdom()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
+      "source_location": "L770"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementglow",
+      "label": "checkElementGlow()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 198,
+      "community_name": "parseRgb",
+      "file_type": "code",
+      "norm_label": "checkelementglow()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
+      "source_location": "L1900"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementglowdom",
+      "label": "checkElementGlowDOM()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 198,
+      "community_name": "parseRgb",
+      "file_type": "code",
+      "norm_label": "checkelementglowdom()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
+      "source_location": "L1135"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementicontile",
+      "label": "checkElementIconTile()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 198,
+      "community_name": "parseRgb",
+      "file_type": "code",
+      "norm_label": "checkelementicontile()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
+      "source_location": "L1802"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementicontiledom",
+      "label": "checkElementIconTileDOM()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 198,
+      "community_name": "parseRgb",
+      "file_type": "code",
+      "norm_label": "checkelementicontiledom()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
+      "source_location": "L797"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkglow",
+      "label": "checkGlow()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 198,
+      "community_name": "parseRgb",
+      "file_type": "code",
+      "norm_label": "checkglow()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
+      "source_location": "L410"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkicontile",
+      "label": "checkIconTile()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 198,
+      "community_name": "parseRgb",
+      "file_type": "code",
+      "norm_label": "checkicontile()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
+      "source_location": "L179"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_isemojionlytext",
+      "label": "isEmojiOnlyText()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 198,
+      "community_name": "parseRgb",
+      "file_type": "code",
+      "norm_label": "isemojionlytext()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
+      "source_location": "L59"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_parsecolorresolved",
+      "label": "parseColorResolved()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 198,
+      "community_name": "parseRgb",
+      "file_type": "code",
+      "norm_label": "parsecolorresolved()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
+      "source_location": "L998"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_readownbackgroundcolor",
+      "label": "readOwnBackgroundColor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 198,
+      "community_name": "parseRgb",
+      "file_type": "code",
+      "norm_label": "readownbackgroundcolor()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
+      "source_location": "L616"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_resolvebackground",
+      "label": "resolveBackground()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 198,
+      "community_name": "parseRgb",
+      "file_type": "code",
+      "norm_label": "resolvebackground()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
+      "source_location": "L637"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_resolvegradientstops",
+      "label": "resolveGradientStops()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 198,
+      "community_name": "parseRgb",
+      "file_type": "code",
+      "norm_label": "resolvegradientstops()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
+      "source_location": "L699"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_shared_color_colortohex",
+      "label": "colorToHex()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 198,
+      "community_name": "parseRgb",
+      "file_type": "code",
+      "norm_label": "colortohex()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/shared/color.mjs",
+      "source_location": "L110"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_shared_color_contrastratio",
+      "label": "contrastRatio()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 198,
+      "community_name": "parseRgb",
+      "file_type": "code",
+      "norm_label": "contrastratio()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/shared/color.mjs",
+      "source_location": "L68"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_shared_color_gethue",
+      "label": "getHue()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 198,
+      "community_name": "parseRgb",
+      "file_type": "code",
+      "norm_label": "gethue()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/shared/color.mjs",
+      "source_location": "L97"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_shared_color_haschroma",
+      "label": "hasChroma()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 198,
+      "community_name": "parseRgb",
+      "file_type": "code",
+      "norm_label": "haschroma()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/shared/color.mjs",
+      "source_location": "L92"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_shared_color_parsegradientcolors",
+      "label": "parseGradientColors()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 198,
+      "community_name": "parseRgb",
+      "file_type": "code",
+      "norm_label": "parsegradientcolors()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/shared/color.mjs",
+      "source_location": "L74"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_shared_color_parsergb",
+      "label": "parseRgb()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 198,
+      "community_name": "parseRgb",
+      "file_type": "code",
+      "norm_label": "parsergb()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/shared/color.mjs",
+      "source_location": "L54"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_shared_color_relativeluminance",
+      "label": "relativeLuminance()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 198,
+      "community_name": "parseRgb",
+      "file_type": "code",
+      "norm_label": "relativeluminance()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/shared/color.mjs",
+      "source_location": "L61"
     },
     {
       "id": "claude_skills_impeccable_scripts_context_buildmissingtargetdirective",
@@ -10568,6 +10604,30 @@
       "source_location": "L325"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_accept_scrubmanualeditsagainstfile",
+      "label": "scrubManualEditsAgainstFile()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "live-accept.mjs",
+      "file_type": "code",
+      "norm_label": "scrubmanualeditsagainstfile()",
+      "source_file": ".claude/skills/impeccable/scripts/live-accept.mjs",
+      "source_location": "L230"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_accept_scrubmanualeditsagainstoriginalblock",
+      "label": "scrubManualEditsAgainstOriginalBlock()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "live-accept.mjs",
+      "file_type": "code",
+      "norm_label": "scrubmanualeditsagainstoriginalblock()",
+      "source_file": ".claude/skills/impeccable/scripts/live-accept.mjs",
+      "source_location": "L183"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_accept_searchdir",
       "label": "searchDir()",
       "_callable": true,
@@ -13460,30 +13520,6 @@
       "source_location": "L18"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_accept_scrubmanualeditsagainstfile",
-      "label": "scrubManualEditsAgainstFile()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "scrubmanualeditsagainstfile()",
-      "source_file": ".claude/skills/impeccable/scripts/live-accept.mjs",
-      "source_location": "L230"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_accept_scrubmanualeditsagainstoriginalblock",
-      "label": "scrubManualEditsAgainstOriginalBlock()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "scrubmanualeditsagainstoriginalblock()",
-      "source_file": ".claude/skills/impeccable/scripts/live-accept.mjs",
-      "source_location": "L183"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_commit_manual_edits_clearappliedentries",
       "label": "clearAppliedEntries()",
       "_callable": true,
@@ -13508,52 +13544,16 @@
       "source_location": "L21"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_compactmanuallogtext",
-      "label": "compactManualLogText()",
+      "id": "claude_skills_impeccable_scripts_live_manual_edit_evidence_buildmanualeditevidence",
+      "label": "buildManualEditEvidence()",
       "_callable": true,
       "_origin": "ast",
       "community": 35,
       "community_name": "manual-edit-routes.mjs",
       "file_type": "code",
-      "norm_label": "compactmanuallogtext()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L934"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualapplyfailures",
-      "label": "summarizeManualApplyFailures()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "summarizemanualapplyfailures()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L900"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualdiagnostics",
-      "label": "summarizeManualDiagnostics()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "summarizemanualdiagnostics()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L913"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanuallogfile",
-      "label": "summarizeManualLogFile()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "summarizemanuallogfile()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L927"
+      "norm_label": "buildmanualeditevidence()",
+      "source_file": ".claude/skills/impeccable/scripts/live-manual-edit-evidence.mjs",
+      "source_location": "L39"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_manual_edit_routes_createmanualeditroutes",
@@ -13734,18 +13734,6 @@
       "norm_label": "buildcontexthintsbyref()",
       "source_file": ".claude/skills/impeccable/scripts/live-manual-edit-evidence.mjs",
       "source_location": "L108"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_edit_evidence_buildmanualeditevidence",
-      "label": "buildManualEditEvidence()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 36,
-      "community_name": "live-manual-edit-evidence.mjs",
-      "file_type": "code",
-      "norm_label": "buildmanualeditevidence()",
-      "source_file": ".claude/skills/impeccable/scripts/live-manual-edit-evidence.mjs",
-      "source_location": "L39"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_manual_edit_evidence_collectsearchfiles",
@@ -18512,6 +18500,18 @@
       "source_location": "L393"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_compactmanuallogtext",
+      "label": "compactManualLogText()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "compactmanuallogtext()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L934"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_manual_apply_compactnearbymanualedittexts",
       "label": "compactNearbyManualEditTexts()",
       "_callable": true,
@@ -18918,6 +18918,42 @@
       "norm_label": "summarizemanualapplyevent()",
       "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
       "source_location": "L888"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualapplyfailures",
+      "label": "summarizeManualApplyFailures()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "summarizemanualapplyfailures()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L900"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualdiagnostics",
+      "label": "summarizeManualDiagnostics()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "summarizemanualdiagnostics()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L913"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanuallogfile",
+      "label": "summarizeManualLogFile()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "summarizemanuallogfile()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L927"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_manual_apply_truncatemanualapplytext",
@@ -19652,52 +19688,40 @@
       "source_location": "L21"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkborders",
-      "label": "checkBorders()",
+      "id": "claude_skills_impeccable_scripts_detector_profile_profiler_createdetectorprofile",
+      "label": "createDetectorProfile()",
       "_callable": true,
       "_origin": "ast",
       "community": 66,
       "community_name": "detect-antipatterns.mjs",
       "file_type": "code",
-      "norm_label": "checkborders()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L26"
+      "norm_label": "createdetectorprofile()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/profile/profiler.mjs",
+      "source_location": "L7"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementborders",
-      "label": "checkElementBorders()",
+      "id": "claude_skills_impeccable_scripts_detector_registry_antipatterns_getruleenginesupport",
+      "label": "getRuleEngineSupport()",
       "_callable": true,
       "_origin": "ast",
       "community": 66,
       "community_name": "detect-antipatterns.mjs",
       "file_type": "code",
-      "norm_label": "checkelementborders()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L1718"
+      "norm_label": "getruleenginesupport()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
+      "source_location": "L418"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementbordersdom",
-      "label": "checkElementBordersDOM()",
+      "id": "claude_skills_impeccable_scripts_detector_registry_antipatterns_getrulesforcategory",
+      "label": "getRulesForCategory()",
       "_callable": true,
       "_origin": "ast",
       "community": 66,
       "community_name": "detect-antipatterns.mjs",
       "file_type": "code",
-      "norm_label": "checkelementbordersdom()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L755"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementglow",
-      "label": "checkElementGlow()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "detect-antipatterns.mjs",
-      "file_type": "code",
-      "norm_label": "checkelementglow()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L1900"
+      "norm_label": "getrulesforcategory()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
+      "source_location": "L414"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkhtmlpatterns",
@@ -19712,40 +19736,16 @@
       "source_location": "L446"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkpagelayout",
-      "label": "checkPageLayout()",
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkpagetypography",
+      "label": "checkPageTypography()",
       "_callable": true,
       "_origin": "ast",
       "community": 66,
       "community_name": "detect-antipatterns.mjs",
       "file_type": "code",
-      "norm_label": "checkpagelayout()",
+      "norm_label": "checkpagetypography()",
       "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L2112"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkpagequalitydom",
-      "label": "checkPageQualityDOM()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "detect-antipatterns.mjs",
-      "file_type": "code",
-      "norm_label": "checkpagequalitydom()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L1699"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkpagequalityfromdoc",
-      "label": "checkPageQualityFromDoc()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "detect-antipatterns.mjs",
-      "file_type": "code",
-      "norm_label": "checkpagequalityfromdoc()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L1678"
+      "source_location": "L2014"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_shared_color_isneutralcolor",
@@ -23010,17 +23010,6 @@
       "source_location": "L2497"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_shared_color",
-      "label": "color.mjs",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "checks.mjs",
-      "file_type": "code",
-      "norm_label": "color.mjs",
-      "source_file": ".claude/skills/impeccable/scripts/detector/shared/color.mjs",
-      "source_location": "L1"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_lib_impeccable_config",
       "label": "impeccable-config.mjs",
       "_origin": "ast",
@@ -25482,50 +25471,6 @@
       "norm_label": "profiler.mjs",
       "source_file": ".claude/skills/impeccable/scripts/detector/profile/profiler.mjs",
       "source_location": "L1"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_registry_antipatterns",
-      "label": "antipatterns.mjs",
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "detect-url.mjs",
-      "file_type": "code",
-      "norm_label": "antipatterns.mjs",
-      "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
-      "source_location": "L1"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_registry_antipatterns_antipatterns",
-      "label": "ANTIPATTERNS",
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "detect-url.mjs",
-      "file_type": "code",
-      "norm_label": "antipatterns",
-      "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
-      "source_location": "L1"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_registry_antipatterns_gated_providers",
-      "label": "GATED_PROVIDERS",
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "detect-url.mjs",
-      "file_type": "code",
-      "norm_label": "gated_providers",
-      "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
-      "source_location": "L423"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_registry_antipatterns_rule_engine_support",
-      "label": "RULE_ENGINE_SUPPORT",
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "detect-url.mjs",
-      "file_type": "code",
-      "norm_label": "rule_engine_support",
-      "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
-      "source_location": "L403"
     },
     {
       "id": "claude_hooks_restrict_cavecrew_bash",
@@ -30926,88 +30871,15 @@
       "source_location": "L68"
     },
     {
-      "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b1_cuaderno_unidad8a_deportes",
-      "label": "cuaderno-unidad8a_deportes.md",
+      "id": "claude_skills_impeccable_scripts_detector_shared_color",
+      "label": "color.mjs",
       "_origin": "ast",
       "community": 198,
-      "community_name": "Ejercicios",
-      "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "cuaderno-unidad8a_deportes.md",
-      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad8a_deportes.md",
+      "community_name": "parseRgb",
+      "file_type": "code",
+      "norm_label": "color.mjs",
+      "source_file": ".claude/skills/impeccable/scripts/detector/shared/color.mjs",
       "source_location": "L1"
-    },
-    {
-      "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b1_cuaderno_unidad8a_deportes_1_deportes",
-      "label": "1. Deportes",
-      "_origin": "ast",
-      "community": 198,
-      "community_name": "Ejercicios",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "1. deportes",
-      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad8a_deportes.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b1_cuaderno_unidad8a_deportes_ej_1_objetos_deportivos_sopa_de_letras",
-      "label": "Ej. 1 \u2014 Objetos deportivos: sopa de letras",
-      "_origin": "ast",
-      "community": 198,
-      "community_name": "Ejercicios",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "ej. 1 \u2014 objetos deportivos: sopa de letras",
-      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad8a_deportes.md",
-      "source_location": "L7"
-    },
-    {
-      "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b1_cuaderno_unidad8a_deportes_ej_2_con_qu\u00e9_deporte_est\u00e1_relacionado_cada_uno",
-      "label": "Ej. 2 \u2014 \u00bfCon qu\u00e9 deporte est\u00e1 relacionado cada uno?",
-      "_origin": "ast",
-      "community": 198,
-      "community_name": "Ejercicios",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "ej. 2 \u2014 \u00bfcon que deporte esta relacionado cada uno?",
-      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad8a_deportes.md",
-      "source_location": "L39"
-    },
-    {
-      "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b1_cuaderno_unidad8a_deportes_ej_3_completa_con_la_palabra_adecuada",
-      "label": "Ej. 3 \u2014 Completa con la palabra adecuada",
-      "_origin": "ast",
-      "community": 198,
-      "community_name": "Ejercicios",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "ej. 3 \u2014 completa con la palabra adecuada",
-      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad8a_deportes.md",
-      "source_location": "L54"
-    },
-    {
-      "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b1_cuaderno_unidad8a_deportes_ej_4_entrevista_al_ciclista_emilio_pedal",
-      "label": "Ej. 4 \u2014 Entrevista al ciclista Emilio Pedal",
-      "_origin": "ast",
-      "community": 198,
-      "community_name": "Ejercicios",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "ej. 4 \u2014 entrevista al ciclista emilio pedal",
-      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad8a_deportes.md",
-      "source_location": "L70"
-    },
-    {
-      "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b1_cuaderno_unidad8a_deportes_ejercicios",
-      "label": "Ejercicios",
-      "_origin": "ast",
-      "community": 198,
-      "community_name": "Ejercicios",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "ejercicios",
-      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad8a_deportes.md",
-      "source_location": "L5"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_browser_injected_index",
@@ -31498,78 +31370,6 @@
       "node_kind": "heading",
       "norm_label": "ejercicios",
       "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a2/cuaderno-unidad3c_costumbres.md",
-      "source_location": "L5"
-    },
-    {
-      "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b1_cuaderno_unidad7a_un_buen_trabajo",
-      "label": "cuaderno-unidad7a_un-buen-trabajo.md",
-      "_origin": "ast",
-      "community": 207,
-      "community_name": "Ejercicios",
-      "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "cuaderno-unidad7a_un-buen-trabajo.md",
-      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad7a_un-buen-trabajo.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b1_cuaderno_unidad7a_un_buen_trabajo_1_un_buen_trabajo",
-      "label": "1. Un buen trabajo",
-      "_origin": "ast",
-      "community": 207,
-      "community_name": "Ejercicios",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "1. un buen trabajo",
-      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad7a_un-buen-trabajo.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b1_cuaderno_unidad7a_un_buen_trabajo_ej_1_relaciona",
-      "label": "Ej. 1 \u2014 Relaciona",
-      "_origin": "ast",
-      "community": 207,
-      "community_name": "Ejercicios",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "ej. 1 \u2014 relaciona",
-      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad7a_un-buen-trabajo.md",
-      "source_location": "L7"
-    },
-    {
-      "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b1_cuaderno_unidad7a_un_buen_trabajo_ej_2_de_profesi\u00f3n_adivinar_el_futuro",
-      "label": "Ej. 2 \u2014 De profesi\u00f3n: adivinar el futuro",
-      "_origin": "ast",
-      "community": 207,
-      "community_name": "Ejercicios",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "ej. 2 \u2014 de profesion: adivinar el futuro",
-      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad7a_un-buen-trabajo.md",
-      "source_location": "L29"
-    },
-    {
-      "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b1_cuaderno_unidad7a_un_buen_trabajo_ej_3_sopa_de_letras_profesiones",
-      "label": "Ej. 3 \u2014 Sopa de letras: profesiones",
-      "_origin": "ast",
-      "community": 207,
-      "community_name": "Ejercicios",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "ej. 3 \u2014 sopa de letras: profesiones",
-      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad7a_un-buen-trabajo.md",
-      "source_location": "L39"
-    },
-    {
-      "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b1_cuaderno_unidad7a_un_buen_trabajo_ejercicios",
-      "label": "Ejercicios",
-      "_origin": "ast",
-      "community": 207,
-      "community_name": "Ejercicios",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "ejercicios",
-      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad7a_un-buen-trabajo.md",
       "source_location": "L5"
     },
     {
@@ -33320,6 +33120,50 @@
       "norm_label": "skip_dirs",
       "source_file": ".claude/skills/impeccable/scripts/detector/node/file-system.mjs",
       "source_location": "L8"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_registry_antipatterns",
+      "label": "antipatterns.mjs",
+      "_origin": "ast",
+      "community": 66,
+      "community_name": "detect-antipatterns.mjs",
+      "file_type": "code",
+      "norm_label": "antipatterns.mjs",
+      "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_registry_antipatterns_antipatterns",
+      "label": "ANTIPATTERNS",
+      "_origin": "ast",
+      "community": 66,
+      "community_name": "detect-antipatterns.mjs",
+      "file_type": "code",
+      "norm_label": "antipatterns",
+      "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_registry_antipatterns_gated_providers",
+      "label": "GATED_PROVIDERS",
+      "_origin": "ast",
+      "community": 66,
+      "community_name": "detect-antipatterns.mjs",
+      "file_type": "code",
+      "norm_label": "gated_providers",
+      "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
+      "source_location": "L423"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_registry_antipatterns_rule_engine_support",
+      "label": "RULE_ENGINE_SUPPORT",
+      "_origin": "ast",
+      "community": 66,
+      "community_name": "detect-antipatterns.mjs",
+      "file_type": "code",
+      "norm_label": "rule_engine_support",
+      "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
+      "source_location": "L403"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_shared_constants",
@@ -105827,127 +105671,6 @@
       "weight": 1.0
     },
     {
-      "source": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b1_cuaderno_unidad7a_un_buen_trabajo",
-      "target": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b1_cuaderno_unidad7a_un_buen_trabajo_1_un_buen_trabajo",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad7a_un-buen-trabajo.md",
-      "source_location": "L1",
-      "weight": 1.0
-    },
-    {
-      "source": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b1_cuaderno_unidad7a_un_buen_trabajo_1_un_buen_trabajo",
-      "target": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b1_cuaderno_unidad7a_un_buen_trabajo_ejercicios",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad7a_un-buen-trabajo.md",
-      "source_location": "L5",
-      "weight": 1.0
-    },
-    {
-      "source": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b1_cuaderno_unidad7a_un_buen_trabajo_ejercicios",
-      "target": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b1_cuaderno_unidad7a_un_buen_trabajo_ej_2_de_profesi\u00f3n_adivinar_el_futuro",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad7a_un-buen-trabajo.md",
-      "source_location": "L29",
-      "weight": 1.0
-    },
-    {
-      "source": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b1_cuaderno_unidad7a_un_buen_trabajo_ejercicios",
-      "target": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b1_cuaderno_unidad7a_un_buen_trabajo_ej_3_sopa_de_letras_profesiones",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad7a_un-buen-trabajo.md",
-      "source_location": "L39",
-      "weight": 1.0
-    },
-    {
-      "source": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b1_cuaderno_unidad7a_un_buen_trabajo_ejercicios",
-      "target": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b1_cuaderno_unidad7a_un_buen_trabajo_ej_1_relaciona",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad7a_un-buen-trabajo.md",
-      "source_location": "L7",
-      "weight": 1.0
-    },
-    {
-      "source": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b1_cuaderno_unidad8a_deportes",
-      "target": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b1_cuaderno_unidad8a_deportes_1_deportes",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad8a_deportes.md",
-      "source_location": "L1",
-      "weight": 1.0
-    },
-    {
-      "source": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b1_cuaderno_unidad8a_deportes_1_deportes",
-      "target": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b1_cuaderno_unidad8a_deportes_ejercicios",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad8a_deportes.md",
-      "source_location": "L5",
-      "weight": 1.0
-    },
-    {
-      "source": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b1_cuaderno_unidad8a_deportes_ejercicios",
-      "target": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b1_cuaderno_unidad8a_deportes_ej_2_con_qu\u00e9_deporte_est\u00e1_relacionado_cada_uno",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad8a_deportes.md",
-      "source_location": "L39",
-      "weight": 1.0
-    },
-    {
-      "source": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b1_cuaderno_unidad8a_deportes_ejercicios",
-      "target": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b1_cuaderno_unidad8a_deportes_ej_3_completa_con_la_palabra_adecuada",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad8a_deportes.md",
-      "source_location": "L54",
-      "weight": 1.0
-    },
-    {
-      "source": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b1_cuaderno_unidad8a_deportes_ejercicios",
-      "target": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b1_cuaderno_unidad8a_deportes_ej_1_objetos_deportivos_sopa_de_letras",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad8a_deportes.md",
-      "source_location": "L7",
-      "weight": 1.0
-    },
-    {
-      "source": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b1_cuaderno_unidad8a_deportes_ejercicios",
-      "target": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b1_cuaderno_unidad8a_deportes_ej_4_entrevista_al_ciclista_emilio_pedal",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad8a_deportes.md",
-      "source_location": "L70",
-      "weight": 1.0
-    },
-    {
       "source": "docencia_espanol_fuentes_paginas",
       "target": "docencia_espanol_fuentes_paginas_sh__entry",
       "relation": "contains",
@@ -111906,5 +111629,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "158c8642d9606ed274bd0f40087c4d4394c51da2"
+  "built_at_commit": "bb8e3cd313a1eb97e7aee36c1a99713d3259570a"
 }
