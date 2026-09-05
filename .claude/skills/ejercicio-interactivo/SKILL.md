@@ -1,7 +1,7 @@
 ---
 name: ejercicio-interactivo
 description: "Use when Angel asks to build a new interactive Spanish grammar/vocabulary exercise page with instant grading — a self-contained HTML artifact where a student fills in blanks, gets corrected instantly, and can send their results to the teacher via WhatsApp/Telegram/Teams/Correo. Also use when asked to add a new chapter/unit to this format, or to fix/extend an existing one (e.g. the A1 \"Presente, gerundio, indefinido\" or B2 12C \"¿Sigues pintando?\" exercises already in docencia-espanol/materiales/). Triggers: \"ejercicio interactivo\", \"como el de A1/12C\", \"corrección instantánea\", \"página interactiva para practicar\", \"haz lo mismo con otro capítulo\"."
-version: 1.12.0
+version: 1.13.0
 user-invocable: true
 license: Apache 2.0
 ---
@@ -44,16 +44,33 @@ lección más antigua de "Lecciones aprendidas", esta sección gana.**
   incluida la excepción real (texto puro sin nada gráfico en la página), en el punto
   del checklist "TODO lo visual que el libro imprime..." más abajo.
 - **Antes de dar un recorte por bueno: enderezarlo si el libro lo imprime inclinado,
-  y anclarlo a un borde real, no a un margen a ojo.** Dos herramientas ya resueltas,
+  y anclarlo a un borde real, no a un margen a ojo.** Tres herramientas ya resueltas,
   no las reinventes: (1) medir la inclinación contra el silueteado de la propia
   foto con `opencv-python` (`pip3 install opencv-python-headless numpy`) — nunca a
   ojo ni con Hough directo sobre el contenido, ver el procedimiento de 4 pasos en la
   lección de fotos inclinadas; (2) para contenido con borde de caja limpio (sopa de
   letras, tabla), usar `cv2.adaptiveThreshold` + `MORPH_CLOSE` + `findContours`
   para encontrar el rectángulo de tinta exacto, en vez de leer la rejilla a ojo —
-  ver la lección "Un recorte que parece limpio a menudo no lo está". Tras recortar,
-  reléelo con el propósito explícito de buscarle un defecto, no de confirmar que
-  "parece que está bien".
+  ver la lección "Un recorte que parece limpio a menudo no lo está"; (3) para una
+  forma circular, curva o irregular (un retrato ovalado, una viñeta de cómic, un
+  globo de diálogo) donde no hay un rectángulo que valga, usar `cv2.floodFill` con
+  tolerancia de tono (`loDiff`/`upDiff`) en vez de estimar el contorno a ojo — ver
+  "Recortar formas circulares/curvas: floodFill con tolerancia de tono" más abajo.
+  Tras recortar, reléelo con el propósito explícito de buscarle un defecto, no de
+  confirmar que "parece que está bien".
+- **Sé muy minucioso con las fotos — más de lo que parece necesario.** No basta con
+  que el recorte "se vea bien" en una miniatura: revisa el borde entero a resolución
+  real antes de incrustar, no solo el centro de la imagen. Incidente real (unidad 7C
+  de B1, "Cosas de niños"): un recorte ya publicado e incluso re-verificado con
+  Playwright (imagen cargaba, dimensiones correctas, cero errores) seguía arrastrando
+  restos de texto del ejercicio vecino por el borde izquierdo y dejaba visible la
+  franja negra de diseño del margen de página por el derecho — ninguno de los dos
+  defectos afecta a que la imagen "cargue bien", así que la verificación automática no
+  los detectó; solo se vieron cuando el profesor miró la imagen ya publicada. La
+  verificación con Playwright (naturalWidth/Height, cero errores) confirma que el
+  `<img>` funciona, no que el CONTENIDO del recorte esté limpio — son dos comprobaciones
+  distintas y hace falta la segunda, a ojo, sobre el recorte final antes de
+  publicarlo, no solo sobre el `<img>` ya montado en la página.
 - **Sopa de letras siempre `type: "wordsearch"` interactiva** (rejilla real, tocar
   dos letras para marcar la palabra) — nunca una lista de pistas de texto inventadas
   ni la foto de la rejilla como único soporte. Ver la lección homónima más abajo
@@ -63,6 +80,20 @@ lección más antigua de "Lecciones aprendidas", esta sección gana.**
   No es "si hay tiempo" ni algo que esperar a que "ya esté" — se busca primero, se
   usa la transcripción como apoyo o último recurso. Ver el paso del checklist
   correspondiente y la lección "Audio: busca siempre en Drive".
+- **Nunca inventes una formulación distinta del ejercicio. El ejercicio va tal cual
+  está en el libro — mismo enunciado, misma tarea, mismas partes.** Si el motor
+  actual no puede reproducir el ejercicio exactamente como lo imprime el cuaderno
+  (una interacción que no existe todavía, un formato que no encaja en ningún
+  `type` actual), **no lo rediseñes ni lo aproximes por tu cuenta: pregúntale al
+  profesor primero** — puede que la respuesta sea añadir un tipo nuevo al motor (así
+  nació `wordsearch`, así nació `crossword`), o construir el ejercicio de otra
+  forma con su visto bueno, pero la decisión no es tuya a falta de instrucción.
+  Error real de este repo: la 8A de B1 imprime un solo ejercicio ("busca en la sopa
+  de letras... ¿con qué deporte está relacionado cada uno?"), y en vez de preguntar
+  cómo tratar la segunda parte con el motor de `wordsearch` (que solo puntúa
+  encontrar la palabra en la rejilla), se decidió sin consultar partirlo en dos
+  ejercicios separados — un cambio razonable con buena intención, pero no es lo que
+  dice el libro, y no se pidió permiso antes de hacerlo.
 
 ## Flujo de trabajo
 
@@ -940,6 +971,45 @@ no las deshagas sin querer al modificar la plantilla.
   la rejilla a ojo: úsalo como primer intento y usa la rejilla solo si no hay contorno
   rectangular claro (dibujos sueltos sin caja, como el árbol genealógico o la habitación
   desordenada, donde este método no aplica).
+- **Recortar formas circulares/curvas: floodFill con tolerancia de tono.** Cuando el
+  contorno de contorno-por-área-de-cv2.findContours no basta (una forma redonda,
+  ovalada o de silueta irregular — un retrato circular, una viñeta, un globo de
+  cómic — donde no hay un rectángulo de tinta que buscar), el equivalente en código
+  de la "varita mágica"/"selección por color" de un editor de imágenes (GIMP,
+  Photoshop) es `cv2.floodFill`: parte de un punto semilla en el FONDO (una esquina
+  vacía cerca de la forma) y rellena hacia fuera todo lo que esté dentro de una
+  tolerancia de tono (`loDiff`/`upDiff`) respecto a ese punto — se detiene solo
+  donde el tono cambia más de lo permitido, así que sigue la silueta real por
+  curvas e irregularidades en vez de asumir un rectángulo. Patrón:
+  ```python
+  import cv2, numpy as np
+  img = cv2.imread("pagina.jpg")
+  h, w = img.shape[:2]
+  mask = np.zeros((h + 2, w + 2), np.uint8)  # floodFill exige 2px de margen
+  seed = (x_fondo, y_fondo)  # un punto DENTRO del fondo, pegado a la forma
+  # loDiff/upDiff: cuánto puede oscurecerse/aclararse un píxel del fondo y seguir
+  # contando como fondo. Empieza con (10,10,10) y sube si deja huecos sin
+  # rellenar (fondo con textura/ruido de escaneo); baja si se "escapa" hacia
+  # dentro de la forma (el tono del fondo se parece demasiado al de la forma —
+  # el caso típico es un fondo GRIS claro que se confunde con líneas grises de
+  # la ilustración: baja la tolerancia o cambia el punto semilla).
+  cv2.floodFill(img, mask, seed, (255,255,255), (10,10,10), (10,10,10),
+                cv2.FLOODFILL_FIXED_RANGE)
+  content_mask = 1 - mask[1:-1, 1:-1]  # invierte: 1 = forma, 0 = fondo rellenado
+  ys, xs = np.where(content_mask)
+  x0, x1, y0, y1 = xs.min(), xs.max(), ys.min(), ys.max()  # bounding box real de la forma
+  ```
+  El resultado (`x0,y0,x1,y1`) es el rectángulo mínimo que SÍ contiene la forma
+  irregular completa — sigue recortando en rectángulo (un `<img>` no puede tener
+  máscara de forma libre sin CSS `clip-path`, que complica más de lo que aporta
+  aquí), pero ese rectángulo está anclado a los píxeles reales de la silueta, no a
+  una estimación visual. Si el fondo no es uniforme (varias zonas de blanco/gris
+  separadas por líneas), puede hacer falta más de un punto semilla — combina las
+  máscaras de cada uno con `|=` antes de invertir. Depurar visualmente: guarda
+  `content_mask * 255` como PNG y mírala con `Read` — un hueco negro dentro de la
+  forma (donde debería ser blanco) es una zona con tolerancia insuficiente; una
+  mancha blanca fuera de la forma (donde debería ser negro) es tolerancia excesiva
+  o un segundo punto de fondo con tono distinto sin su propio floodFill.
 - **Un salto de línea justo antes del hueco significa «esta respuesta va en su propia
   línea».** La detección de hueco-de-cola lo respeta y no estira la casilla: si lo hace,
   queda flotando a media altura, ni en línea ni debajo. Es el caso de los ejercicios de

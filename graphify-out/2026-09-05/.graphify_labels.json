@@ -12,7 +12,7 @@
   "10": "impeccable-config.mjs",
   "11": "live-server.mjs",
   "12": "svelte-component.mjs",
-  "13": "detect-html.mjs",
+  "13": "detect-url.mjs",
   "14": "hook-lib.mjs",
   "15": "initPageChat",
   "16": "live-inject.mjs",
@@ -84,7 +84,7 @@
   "82": "Animate Reference (Motion Design)",
   "83": "syncEditBadgeHitProxies",
   "84": "graphify: Query, Path, Explain",
-  "85": "detect-text.mjs",
+  "85": "inline-ignores.mjs",
   "86": "cavecrew/SKILL.md",
   "87": "Molu — README del repositorio",
   "88": "Colorize Reference (Color Strategy)",
@@ -197,7 +197,7 @@
   "195": "personal/README.md",
   "196": "readLiveServerInfo",
   "197": "Carta de candidatura espontánea — academias de español, Salamanca",
-  "198": "parseRgb",
+  "198": "Ejercicios",
   "199": "cli",
   "200": "Ejercicios",
   "201": "Ejercicios",
@@ -205,5 +205,6 @@
   "203": "Ejercicios",
   "204": "Ejercicios",
   "205": "Ejercicios",
-  "206": "resolveCandidateContextSummary"
+  "206": "resolveProject",
+  "207": "Ejercicios"
 }
