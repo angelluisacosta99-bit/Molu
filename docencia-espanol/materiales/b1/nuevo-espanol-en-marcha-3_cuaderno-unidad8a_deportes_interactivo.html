@@ -4,11 +4,13 @@
   profesor. Las respuestas salen del solucionario oficial del propio cuaderno
   (página 72). Construido sobre
   .claude/skills/ejercicio-interactivo/reference/template.html.
-  El ejercicio 1 (sopa de letras de objetos deportivos) usa una rejilla PROPIA (no un
-  calco en píxeles del libro), verificada por script en las 8 direcciones antes de
-  publicar. El objeto se da como pista (item.pre) y el hueco pide el deporte asociado,
-  que es lo que de verdad evalúa el solucionario.
-  El ejercicio 3 es de audio (pista 11, entrevista al ciclista Emilio Pedal): lleva la
+  El ejercicio 1 es la sopa de letras real e interactiva (type: "wordsearch") de los
+  diez objetos deportivos, con rejilla PROPIA (no un calco en píxeles del libro) pero
+  verificada por script en las 8 direcciones antes de publicar, más la ilustración real
+  de los diez objetos que trae el cuaderno. El libro combina "busca en la sopa" y "¿con
+  qué deporte se relaciona?" en un solo enunciado; como el motor de sopa de letras solo
+  puntúa la búsqueda en la rejilla, esa segunda pregunta se separa en el ejercicio 2.
+  El ejercicio 4 es de audio (pista 11, entrevista al ciclista Emilio Pedal): lleva la
   grabación real (carpeta de Drive "Cuaderno.Audio", convertida de .wma a .mp3 con
   ffmpeg e incrustada en base64) más su transcripción completa (página 65-66 del PDF).
 -->
@@ -840,7 +842,7 @@
   <div class="hero-meta">
     <span><strong id="totalBlanksLabel" translate="no">—</strong> huecos en total</span>
     <span><strong>1</strong> bloque</span>
-    <span><strong>3</strong> ejercicios</span>
+    <span><strong>4</strong> ejercicios</span>
   </div>
 </div>
 
