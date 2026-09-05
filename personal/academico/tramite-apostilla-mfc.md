@@ -81,9 +81,11 @@ conversación de Claude Code.
     respuesta se perdió en tránsito hacia el MFC de Moscú y hace falta
     reenviarla/certificarla — o si en realidad corresponde al otro
     expediente ya aprobado (№ 7638524892), y RUT MIIT nunca llegó a
-    responder sobre el ППК. Correo de aclaración redactado para
-    `spravka@rut-miit.ru`, citando ambos documentos oficiales de Moscú
-    — pendiente de confirmación de Angel para enviarlo.
+    responder sobre el ППК. **Correo de aclaración enviado el
+    2026-09-05** a `spravka@rut-miit.ru`, citando ambos documentos
+    oficiales de Moscú (rechazo original № 7638974873/У-03 y respuesta
+    a la obращение № 02-12-5443/26, esta última reenviada con su PDF
+    adjunto) — **a la espera de respuesta.**
 - **2026-09-03** — Alexander Evgenievich (RUT MIIT) confirmó que la
   petición del MFC probablemente **se perdió dentro de la burocracia
   interna de RUT MIIT** (no fue el MFC quien falló). Pasó el contacto de
