@@ -1,7 +1,7 @@
 ---
 name: ejercicio-interactivo
 description: "Use when Angel asks to build a new interactive Spanish grammar/vocabulary exercise page with instant grading — a self-contained HTML artifact where a student fills in blanks, gets corrected instantly, and can send their results to the teacher via WhatsApp/Telegram/Teams/Correo. Also use when asked to add a new chapter/unit to this format, or to fix/extend an existing one (e.g. the A1 \"Presente, gerundio, indefinido\" or B2 12C \"¿Sigues pintando?\" exercises already in docencia-espanol/materiales/). Triggers: \"ejercicio interactivo\", \"como el de A1/12C\", \"corrección instantánea\", \"página interactiva para practicar\", \"haz lo mismo con otro capítulo\"."
-version: 1.11.0
+version: 1.12.0
 user-invocable: true
 license: Apache 2.0
 ---
@@ -25,6 +25,44 @@ menos una vez. Antes de proponer un cambio nuevo en esta zona, confirma qué PRs
 tocaron esas líneas (`git log -p --follow <archivo>` o revisa los PRs #19-#31 con
 `pull_request_read`) en vez de fiarte de la memoria — así se detectó, por ejemplo, que
 PR #22 invertía el orden que PR #20 daba por bueno.
+
+## Reglas vigentes (resumen de una pantalla)
+
+Este documento es largo y crece con cada sesión — en una lectura rápida, o si el
+archivo se trunca, es fácil quedarse solo con el principio y perderse una decisión
+tomada más abajo. Estas cuatro reglas son las que más veces se han tenido que repetir
+porque una sesión anterior las siguió y otra no. **Si algo de aquí choca con una
+lección más antigua de "Lecciones aprendidas", esta sección gana.**
+
+- **Cualquier elemento visual del cuaderno — no solo sopas de letras — se incrusta
+  como foto real, siempre.** Foto, dibujo, cómic, cartel, tabla con ilustraciones,
+  plano: si el libro lo imprime junto a un ejercicio, se recorta de la página
+  renderizada (300 dpi) y se incrusta en `ex.refHTML`/`item.img`. Nunca se sustituye
+  por una pista de texto inventada ("dos primeras letras", descripción del dibujo),
+  y si la imagen ES la pista (el alumno debe reconocer/recordar mirándola), el
+  nombre/respuesta no aparece visible hasta que se acierta. Detalle completo,
+  incluida la excepción real (texto puro sin nada gráfico en la página), en el punto
+  del checklist "TODO lo visual que el libro imprime..." más abajo.
+- **Antes de dar un recorte por bueno: enderezarlo si el libro lo imprime inclinado,
+  y anclarlo a un borde real, no a un margen a ojo.** Dos herramientas ya resueltas,
+  no las reinventes: (1) medir la inclinación contra el silueteado de la propia
+  foto con `opencv-python` (`pip3 install opencv-python-headless numpy`) — nunca a
+  ojo ni con Hough directo sobre el contenido, ver el procedimiento de 4 pasos en la
+  lección de fotos inclinadas; (2) para contenido con borde de caja limpio (sopa de
+  letras, tabla), usar `cv2.adaptiveThreshold` + `MORPH_CLOSE` + `findContours`
+  para encontrar el rectángulo de tinta exacto, en vez de leer la rejilla a ojo —
+  ver la lección "Un recorte que parece limpio a menudo no lo está". Tras recortar,
+  reléelo con el propósito explícito de buscarle un defecto, no de confirmar que
+  "parece que está bien".
+- **Sopa de letras siempre `type: "wordsearch"` interactiva** (rejilla real, tocar
+  dos letras para marcar la palabra) — nunca una lista de pistas de texto inventadas
+  ni la foto de la rejilla como único soporte. Ver la lección homónima más abajo
+  para el formato de datos (`ex.words[i] = {label, cells, img?}`) y el motor ya
+  resuelto en `reference/template.html`.
+- **Audio: buscarlo activamente en Drive antes de conformarte con la transcripción.**
+  No es "si hay tiempo" ni algo que esperar a que "ya esté" — se busca primero, se
+  usa la transcripción como apoyo o último recurso. Ver el paso del checklist
+  correspondiente y la lección "Audio: busca siempre en Drive".
 
 ## Flujo de trabajo
 
