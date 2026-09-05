@@ -26,6 +26,44 @@ tocaron esas líneas (`git log -p --follow <archivo>` o revisa los PRs #19-#31 c
 `pull_request_read`) en vez de fiarte de la memoria — así se detectó, por ejemplo, que
 PR #22 invertía el orden que PR #20 daba por bueno.
 
+## Reglas vigentes (resumen de una pantalla)
+
+Esto no es un archivo de lecciones más — es el **qué**, en una pantalla, para no tener que
+leer todo "Lecciones aprendidas" solo para saber si una decisión ya está tomada. El
+**porqué** de cada una (el incidente real, la alternativa que se descartó) vive en la
+lección correspondiente más abajo; si vas a tocar una de estas cosas, lee también esa
+lección antes de asumir que la sabes. Si una lección de más abajo contradice algo de aquí,
+gana esta sección — está para eso, para no tener que releer el historial completo.
+
+- **Sopa de letras: siempre `type: "wordsearch"` interactiva.** El alumno toca la primera
+  y la última letra de cada palabra directamente sobre la rejilla (línea recta, 8
+  direcciones) — nunca el diseño antiguo (rejilla de texto estática en `refHTML` +
+  `type: "items"` con hueco y pista de dos letras). Ese diseño antiguo quedó obsoleto,
+  aunque siga citado como ejemplo en alguna lección vieja de más abajo. Ver la lección
+  "Una sopa de letras es un tipo de ejercicio..." para el porqué y los bugs ya resueltos.
+- **Ilustraciones del cuaderno: si el libro trae un dibujo o foto para un ejercicio,
+  úsalo siempre — nunca lo sustituyas por el nombre en texto ni por ninguna otra pista.**
+  No esperes a que "el ejercicio lo necesite" para planteártelo: revisa la página
+  renderizada del PDF en el paso 1 del flujo de trabajo, y si hay una ilustración ligada
+  al ejercicio, recórtala de ahí (PIL, a partir de un render a 300dpi suele bastar) e
+  incrústala en `ex.refHTML` como `data:` URI en base64. Dar el nombre del objeto como
+  `item.pre` (o cualquier otro texto que se lo diga directamente) es una pista disfrazada
+  que le ahorra al alumno la parte de identificarlo — el profesor lo rechazó
+  explícitamente al construir la 8A. Esto es distinto del caso de "Fotos reales
+  incrustadas" de más abajo (una foto que el libro no trae y hay que pedirle al
+  profesor) — aquí la fuente es siempre el propio PDF, nunca hay que pedir nada.
+- **Audio: búscalo activamente en Drive antes de asumir que no existe.** No es "incrústalo
+  si lo tienes" — es "ve a comprobar si existe" para todo ejercicio que el libro marque
+  como de audio, en cuanto detectes ese ejercicio en el paso 1 del flujo de trabajo: busca
+  la carpeta de audio hermana del PDF de origen (mismo `parentId`, o un nombre obvio tipo
+  "Cuaderno.Audio") y verifica que el número máximo de pista de esa carpeta cuadra con el
+  máximo que cita la sección "Transcripciones" del propio cuaderno, antes de dar la
+  carpeta por buena (ver la lección de audio de 5B/5C más abajo — una carpeta candidata
+  resultó ser de otro libro). Si la grabación aparece, incrústala siempre
+  (`ex.audioSrc`, convertida a mp3 si hace falta). La transcripción en un plegable sigue
+  siendo obligatoria en cualquier caso, con o sin grabación encontrada — esa parte nunca
+  ha sido opcional (regla del profesor, sin excepciones).
+
 ## Flujo de trabajo
 
 1. **Fundamenta el contenido en material real.** Por este orden:
@@ -388,9 +426,11 @@ no las deshagas sin querer al modificar la plantilla.
   y si de verdad no aparece, dilo en el enunciado y pídesela al profesor, pero **nunca la
   inventes**: una transcripción escrita por Claude puesta como si fuera la del libro es
   material falso, y encima el alumno la usaría para autocorregirse.
-- **Cuando sí hay grabación real, incrústala (`ex.audioSrc`) — no basta con la
-  transcripción.** Nació al añadir las pistas 6, 7 y 8 de B1 (5B y 5C). Dos lecciones
-  reales de ese proceso:
+- **Búscala activamente, no esperes a "tenerla" — y cuando aparece, incrústala
+  (`ex.audioSrc`), no basta con la transcripción.** Ver "Reglas vigentes" al principio de
+  este documento: para todo ejercicio de audio hay que ir a comprobar si existe la
+  grabación, no solo incrustarla si por casualidad ya se tiene. Nació al añadir las pistas
+  6, 7 y 8 de B1 (5B y 5C). Dos lecciones reales de ese proceso:
   - **No te fíes de una carpeta de Drive por el nombre solo.** La primera carpeta que
     parecía obvia («АУДИО B1 Nuevo español en marcha», con archivos «PISTA NN.mp3»)
     resultó ser del **libro del alumno**, no del cuaderno de ejercicios — mismo manual,
@@ -818,9 +858,10 @@ parezca más "controlable" desde JS — ya se demostró que rompe el caso más b
   artefactos de Código — son sistemas separados. Si el profesor pregunta por qué no ve sus
   artefactos en el móvil, primero confirma en qué pantalla/app está mirando antes de asumir
   que es un bug.
-- **Fotos reales incrustadas**: si el ejercicio necesita una imagen real (p. ej. la foto de
-  un autor), pide al profesor que la **adjunte como archivo** (no que la pegue en el cuerpo
-  del mensaje — las imágenes pegadas directamente no siempre se guardan como archivo
+- **Fotos reales incrustadas, cuando NO están en el PDF**: si el ejercicio necesita una
+  imagen real que el cuaderno no trae (p. ej. la foto de un autor), pide al profesor que la
+  **adjunte como archivo** (no que la pegue en el cuerpo del mensaje — las imágenes pegadas
+  directamente no siempre se guardan como archivo
   accesible). Incrústala como `data:` URI en base64 dentro del HTML.
 
 ## Archivos de referencia
