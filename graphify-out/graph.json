@@ -28652,7 +28652,7 @@
       "node_kind": "heading",
       "norm_label": "documentos ya traducidos al espanol (formato word, para traductor jurado)",
       "source_file": "personal/academico/tramite-apostilla-mfc.md",
-      "source_location": "L113"
+      "source_location": "L116"
     },
     {
       "id": "personal_academico_tramite_apostilla_mfc_gestiones_pendientes",
@@ -28676,7 +28676,7 @@
       "node_kind": "heading",
       "norm_label": "relacion con la matricula del master (musi, usal)",
       "source_file": "personal/academico/tramite-apostilla-mfc.md",
-      "source_location": "L130"
+      "source_location": "L133"
     },
     {
       "id": "personal_academico_tramite_apostilla_mfc_solicitudes_de_apostilla_ante_el_mfc_presentadas_03_07_2026",
@@ -101903,7 +101903,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "personal/academico/tramite-apostilla-mfc.md",
-      "source_location": "L113",
+      "source_location": "L116",
       "weight": 1.0
     },
     {
@@ -101914,7 +101914,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "personal/academico/tramite-apostilla-mfc.md",
-      "source_location": "L130",
+      "source_location": "L133",
       "weight": 1.0
     },
     {
@@ -103025,7 +103025,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "personal/academico/tramite-apostilla-mfc.md",
-      "source_location": "L134",
+      "source_location": "L137",
       "weight": 1.0
     },
     {
@@ -106619,5 +106619,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "dea627d2965b2b096dfcc752b846a282d9b8fee9"
+  "built_at_commit": "dc324594a6b117fa5e7a50a7b16b2fb8eed2b0ee"
 }
