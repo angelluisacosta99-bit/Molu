@@ -1,7 +1,7 @@
 {
   ".claude/settings.json": {
-    "mtime": 1787477223.9364336,
-    "seen": 1787477234.1996324,
+    "mtime": 1787560308.3434248,
+    "seen": 1788624263.4233065,
     "ast_hash": "64306960caece68b34304e751972a108",
     "semantic_hash": ""
   },
@@ -432,15 +432,15 @@
     "semantic_hash": "9b31786b637be3c13978bec4c2330752"
   },
   ".claude/skills/ejercicio-interactivo/SKILL.md": {
-    "mtime": 1787412734.1386404,
-    "seen": 1787412760.3269541,
-    "ast_hash": "baabd046adaed494ff7c1c2624e054a9",
+    "mtime": 1787477324.9884472,
+    "seen": 1788624263.4234126,
+    "ast_hash": "955862611299e2091112cddc0165debe",
     "semantic_hash": ""
   },
   ".claude/skills/ejercicio-interactivo/reference/template.html": {
-    "mtime": 1787414344.3067362,
-    "seen": 1787477234.199779,
-    "ast_hash": "00651ce7845c55e52cbd98886977e80a",
+    "mtime": 1787477302.3444476,
+    "seen": 1788624263.4234135,
+    "ast_hash": "29d4deb60ea1d7b3cff98c092fedbad7",
     "semantic_hash": ""
   },
   ".claude/skills/graphify/SKILL.md": {
@@ -702,9 +702,9 @@
     "semantic_hash": "033e2f08cbb62857a73f98c5cdb076df"
   },
   "docencia-espanol/fuentes/README.md": {
-    "mtime": 1787393275.1691353,
-    "seen": 1787393448.6421013,
-    "ast_hash": "ab0a89b70768c999b03ac4dbae5738fb",
+    "mtime": 1788624221.0606053,
+    "seen": 1788624263.4234598,
+    "ast_hash": "c68d28f719824f769ad2c09073a84f21",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad6a_como-se-va-a-goya.md": {
@@ -846,15 +846,15 @@
     "semantic_hash": "64aea90e57ba88187f9bd9f56c6fab03"
   },
   "docencia-espanol/materiales/codigos-acceso.html": {
-    "mtime": 1787341369.2147496,
-    "seen": 1787341459.6017296,
-    "ast_hash": "591184b85df17611d835785d8e445d3b",
+    "mtime": 1788624119.4126077,
+    "seen": 1788624263.4235158,
+    "ast_hash": "4ee08743cf9ec0e6145706afe03abd94",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/indice-clases-de-espanol.html": {
-    "mtime": 1787341360.2867496,
-    "seen": 1787341459.6017308,
-    "ast_hash": "3669f87b3a9274e2e1a79dafb4b0b546",
+    "mtime": 1788623997.1486104,
+    "seen": 1788624263.423517,
+    "ast_hash": "23df3c7ae705810bc1570014b5a9c41d",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/quizlet/nuevo-espanol-en-marcha-1_unidad1.md": {
@@ -1149,6 +1149,78 @@
     "mtime": 1787477223.9364336,
     "seen": 1787477234.1997972,
     "ast_hash": "b50ecf029d6531e4ca542dff223ee2ef",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad7a_un-buen-trabajo.md": {
+    "mtime": 1788624148.9184337,
+    "seen": 1788624263.4234776,
+    "ast_hash": "0f9a264cedab8eb815cd31f70d5b1324",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad7b_cuando-pueda-cambiare-de-trabajo.md": {
+    "mtime": 1788624151.528607,
+    "seen": 1788624263.4234788,
+    "ast_hash": "417b34e2a75ad3f04b1908c5f3386055",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad7c_si-tuviera-dinero.md": {
+    "mtime": 1788624154.3806067,
+    "seen": 1788624263.4234798,
+    "ast_hash": "6f22f4b6c5c8eb959a6d44aff41d268e",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad8a_deportes.md": {
+    "mtime": 1788624166.4806066,
+    "seen": 1788624263.4234805,
+    "ast_hash": "fcfeff1eb1b5ab7f518784f804a18560",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad8b_salimos.md": {
+    "mtime": 1788624169.3166065,
+    "seen": 1788624263.4234817,
+    "ast_hash": "daf727fdc0c66adc4d221e87da92295e",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad8c_musica-arte-y-literatura.md": {
+    "mtime": 1788624171.8806064,
+    "seen": 1788624263.423483,
+    "ast_hash": "481e7f62bb7ff4812b668299f9b51a97",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad7a_un-buen-trabajo_interactivo.html": {
+    "mtime": 1788623004.6909215,
+    "seen": 1788624263.4235072,
+    "ast_hash": "b53f8a68f18500057513f5b4e60da5b7",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad7b_cuando-pueda-cambiare-de-trabajo_interactivo.html": {
+    "mtime": 1788623127.011415,
+    "seen": 1788624263.4235082,
+    "ast_hash": "051538dbabd7b25979dc438e635c8b00",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad7c_si-tuviera-dinero_interactivo.html": {
+    "mtime": 1788623297.0406263,
+    "seen": 1788624263.4235094,
+    "ast_hash": "64f955996faeaa9cb847587e24cf77bf",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad8a_deportes_interactivo.html": {
+    "mtime": 1788623471.1046224,
+    "seen": 1788624263.42351,
+    "ast_hash": "d84f3658e3b087ac71a6979b25b33db6",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad8b_salimos_interactivo.html": {
+    "mtime": 1788623633.101136,
+    "seen": 1788624263.423511,
+    "ast_hash": "d2c2a848c44971b15eec181e78fe4fee",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad8c_musica-arte-y-literatura_interactivo.html": {
+    "mtime": 1788623742.0212355,
+    "seen": 1788624263.4235117,
+    "ast_hash": "0d5822d6de54993846b230aa65330d62",
     "semantic_hash": ""
   }
 }

@@ -24486,7 +24486,7 @@
       "node_kind": "heading",
       "norm_label": "ej. 2 \u2014 completa con la palabra adecuada",
       "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad8a_deportes.md",
-      "source_location": "L39"
+      "source_location": "L29"
     },
     {
       "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b1_cuaderno_unidad8a_deportes_ej_3_entrevista_al_ciclista_emilio_pedal",
@@ -24498,7 +24498,7 @@
       "node_kind": "heading",
       "norm_label": "ej. 3 \u2014 entrevista al ciclista emilio pedal",
       "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad8a_deportes.md",
-      "source_location": "L55"
+      "source_location": "L45"
     },
     {
       "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b1_cuaderno_unidad8a_deportes_ejercicios",
@@ -94368,7 +94368,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad8a_deportes.md",
-      "source_location": "L39",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -94379,7 +94379,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad8a_deportes.md",
-      "source_location": "L55",
+      "source_location": "L45",
       "weight": 1.0
     },
     {
@@ -98876,5 +98876,5 @@
       "source_file": "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad6a_como-se-va-a-goya_interactivo.html"
     }
   ],
-  "built_at_commit": "0e7525f57cd5d8a9de86d4b17d13d60ef1f5d172"
+  "built_at_commit": "0a690b2590a8b3b6adae5d6a18cd187c7a9e8bef"
 }

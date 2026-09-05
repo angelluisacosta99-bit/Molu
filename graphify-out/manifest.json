@@ -414,9 +414,9 @@
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/extraer.mjs": {
-    "mtime": 1787338630.2347236,
-    "seen": 1787339574.4491715,
-    "ast_hash": "e48d32faa192e90ab794ec243260a159",
+    "mtime": 1788624905.2725897,
+    "seen": 1788626498.9048553,
+    "ast_hash": "9585b5b011fda8d6748f7664716a157c",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/paginas.sh": {
@@ -432,15 +432,15 @@
     "semantic_hash": "9b31786b637be3c13978bec4c2330752"
   },
   ".claude/skills/ejercicio-interactivo/SKILL.md": {
-    "mtime": 1787477324.9884472,
-    "seen": 1788624263.4234126,
-    "ast_hash": "955862611299e2091112cddc0165debe",
+    "mtime": 1788626393.8885555,
+    "seen": 1788626498.9048696,
+    "ast_hash": "c0185347b85350521de82c271b73bd1f",
     "semantic_hash": ""
   },
   ".claude/skills/ejercicio-interactivo/reference/template.html": {
-    "mtime": 1787477302.3444476,
-    "seen": 1788624263.4234135,
-    "ast_hash": "29d4deb60ea1d7b3cff98c092fedbad7",
+    "mtime": 1788625618.8205733,
+    "seen": 1788626498.904871,
+    "ast_hash": "73364a572054566ce0335005e39e74c3",
     "semantic_hash": ""
   },
   ".claude/skills/graphify/SKILL.md": {
@@ -702,9 +702,9 @@
     "semantic_hash": "033e2f08cbb62857a73f98c5cdb076df"
   },
   "docencia-espanol/fuentes/README.md": {
-    "mtime": 1788624221.0606053,
-    "seen": 1788624263.4234598,
-    "ast_hash": "c68d28f719824f769ad2c09073a84f21",
+    "mtime": 1788626452.4765542,
+    "seen": 1788626498.9049277,
+    "ast_hash": "371df13bb36f20329d127e1441ab7de2",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad6a_como-se-va-a-goya.md": {
@@ -1074,21 +1074,21 @@
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad1a_vida-cotidiana_interactivo.html": {
-    "mtime": 1787414377.7067382,
-    "seen": 1787477234.1998863,
-    "ast_hash": "4e5365d62d7c3e023d00d626c8ef3a91",
+    "mtime": 1788626098.2709215,
+    "seen": 1788626498.904966,
+    "ast_hash": "61d2ee2c4bd9a2dca20a0a0e4ec76e6b",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad1b_que-hiciste-que-has-hecho_interactivo.html": {
-    "mtime": 1787414383.2027385,
-    "seen": 1787477234.199887,
-    "ast_hash": "bfa23bb74141593d44c75d6d0207bc88",
+    "mtime": 1788626098.272215,
+    "seen": 1788626498.9049673,
+    "ast_hash": "ad072f43fb9e54e49106ce48792c8a00",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad1c_el-futuro-que-nos-espera_interactivo.html": {
-    "mtime": 1787414388.6947389,
-    "seen": 1787477234.1998882,
-    "ast_hash": "788db02a72d36612c984f8711c2e957e",
+    "mtime": 1788626098.2845623,
+    "seen": 1788626498.9049683,
+    "ast_hash": "ce9d05928e8a8da144ea4cf200ae6661",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad2a_en-la-estacion.md": {
@@ -1110,21 +1110,21 @@
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad2a_en-la-estacion_interactivo.html": {
-    "mtime": 1787414393.9467392,
-    "seen": 1787477234.1998897,
-    "ast_hash": "ea6f8d7475aeb8fa0f4a476a517537e7",
+    "mtime": 1788626098.287728,
+    "seen": 1788626498.9049692,
+    "ast_hash": "815276ebd2d9c0893956e329c987f615",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad2b_como-vas-al-trabajo_interactivo.html": {
-    "mtime": 1787414399.6627395,
-    "seen": 1787477234.1998906,
-    "ast_hash": "bca8af9a52f0c5c110572f2f583763c6",
+    "mtime": 1788626098.2951589,
+    "seen": 1788626498.9049702,
+    "ast_hash": "7f88703858b54f421f9124d3efde2609",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad2c_intercambio-de-casa_interactivo.html": {
-    "mtime": 1787414405.91074,
-    "seen": 1787477234.1998918,
-    "ast_hash": "39ba1dec950a141b81449db6705d4f39",
+    "mtime": 1788626098.304019,
+    "seen": 1788626498.9049714,
+    "ast_hash": "9d2f11f59f1cfc46cbcfb7c9a7d733ae",
     "semantic_hash": ""
   },
   ".agents/skills/caveman/README.md": {
@@ -1152,9 +1152,9 @@
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad7a_un-buen-trabajo.md": {
-    "mtime": 1788624148.9184337,
-    "seen": 1788624263.4234776,
-    "ast_hash": "0f9a264cedab8eb815cd31f70d5b1324",
+    "mtime": 1788626426.4213452,
+    "seen": 1788626498.9049463,
+    "ast_hash": "19804b0cc659df896c4b64751a120415",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad7b_cuando-pueda-cambiare-de-trabajo.md": {
@@ -1170,9 +1170,9 @@
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad8a_deportes.md": {
-    "mtime": 1788624166.4806066,
-    "seen": 1788624263.4234805,
-    "ast_hash": "fcfeff1eb1b5ab7f518784f804a18560",
+    "mtime": 1788626426.4235497,
+    "seen": 1788626498.9049494,
+    "ast_hash": "b9f197e5fe8ac4fe812169916195099f",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad8b_salimos.md": {
@@ -1188,39 +1188,39 @@
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad7a_un-buen-trabajo_interactivo.html": {
-    "mtime": 1788623004.6909215,
-    "seen": 1788624263.4235072,
-    "ast_hash": "b53f8a68f18500057513f5b4e60da5b7",
+    "mtime": 1788626203.4965599,
+    "seen": 1788626498.9049761,
+    "ast_hash": "a7006e95c54f8b6c4338d7736a511c2f",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad7b_cuando-pueda-cambiare-de-trabajo_interactivo.html": {
-    "mtime": 1788623127.011415,
-    "seen": 1788624263.4235082,
-    "ast_hash": "051538dbabd7b25979dc438e635c8b00",
+    "mtime": 1788626098.305734,
+    "seen": 1788626498.9050007,
+    "ast_hash": "f59f800055a3995777785f1585fa92fa",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad7c_si-tuviera-dinero_interactivo.html": {
-    "mtime": 1788623297.0406263,
-    "seen": 1788624263.4235094,
-    "ast_hash": "64f955996faeaa9cb847587e24cf77bf",
+    "mtime": 1788626098.3365624,
+    "seen": 1788626498.905004,
+    "ast_hash": "a309e2bdd39d3c10cf53da5b538eeaf6",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad8a_deportes_interactivo.html": {
-    "mtime": 1788623471.1046224,
-    "seen": 1788624263.42351,
-    "ast_hash": "d84f3658e3b087ac71a6979b25b33db6",
+    "mtime": 1788626098.3605623,
+    "seen": 1788626498.905006,
+    "ast_hash": "062a063a1cde82295c206f4062683bdf",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad8b_salimos_interactivo.html": {
-    "mtime": 1788623633.101136,
-    "seen": 1788624263.423511,
-    "ast_hash": "d2c2a848c44971b15eec181e78fe4fee",
+    "mtime": 1788626098.371112,
+    "seen": 1788626498.9050074,
+    "ast_hash": "d299ae942eec7df9001bd2dea29cb2fb",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad8c_musica-arte-y-literatura_interactivo.html": {
-    "mtime": 1788623742.0212355,
-    "seen": 1788624263.4235117,
-    "ast_hash": "0d5822d6de54993846b230aa65330d62",
+    "mtime": 1788626098.373752,
+    "seen": 1788626498.9050086,
+    "ast_hash": "ac068f9329090181a3d944b6e10d7004",
     "semantic_hash": ""
   }
 }

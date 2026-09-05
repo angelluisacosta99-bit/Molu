@@ -1,7 +1,7 @@
 # Graph Report - Molu  (2026-09-05)
 
 ## Corpus Check
-- 177 files · ~648,245 words
+- 177 files · ~663,189 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `0e7525f5`
+- Built from commit: `0a690b25`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -151,8 +151,8 @@
 1. `initGlobalBar()` - 29 edges
 2. `runHook()` - 29 edges
 3. `setLiveState()` - 29 edges
-4. `el()` - 27 edges
-5. `detectHtml()` - 27 edges
+4. `detectHtml()` - 27 edges
+5. `el()` - 27 edges
 6. `buildInsertConfigureRow()` - 26 edges
 7. `collectBrowserFindings()` - 26 edges
 8. `handleKeyDown()` - 26 edges
@@ -661,20 +661,20 @@ Cohesion: 0.40
 Nodes (4): 1. Música, arte y literatura, Ej. 1 — Completa las frases con estas palabras, Ej. 2 — Entrevista al fotógrafo Chema Madoz, Ejercicios
 
 ## Knowledge Gaps
-- **352 isolated node(s):** `Ej. 1 — Relaciona`, `Ej. 2 — De profesión: adivinar el futuro`, `Ej. 3 — Sopa de letras: profesiones`, `Ej. 1 — Relaciona`, `Ej. 2 — Completa las frases` (+347 more)
+- **352 isolated node(s):** `require`, `{ chromium }`, `[file, code]`, `Ej. 1 — Relaciona`, `Ej. 2 — De profesión: adivinar el futuro` (+347 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **13 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `createManualApplyController()` connect `manual-apply.mjs` to `live-server.mjs`?**
-  _High betweenness centrality (0.004) - this node is a cross-community bridge._
 - **Why does `readLiveServerInfo()` connect `live.mjs` to `live-poll.mjs`, `impeccable-paths.mjs`, `createLiveSessionStore`, `live-server.mjs`, `live-complete.mjs`?**
+  _High betweenness centrality (0.003) - this node is a cross-community bridge._
+- **Why does `readBuffer()` connect `manual-edits-buffer.mjs` to `live-manual-edit-evidence.mjs`, `manual-apply.mjs`, `live-commit-manual-edits.mjs`, `live-wrap.mjs`, `live-accept.mjs`?**
   _High betweenness centrality (0.003) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `initGlobalBar()` (e.g. with `hideAgentPollTooltip()` and `onDetectMessage()`) actually correct?**
   _`initGlobalBar()` has 7 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `Ej. 1 — Relaciona`, `Ej. 2 — De profesión: adivinar el futuro`, `Ej. 3 — Sopa de letras: profesiones` to the rest of the system?**
+- **What connects `require`, `{ chromium }`, `[file, code]` to the rest of the system?**
   _352 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `live-browser.js` be split into smaller, more focused modules?**
   _Cohesion score 0.028169014084507043 - nodes in this community are weakly interconnected._
