@@ -1,7 +1,7 @@
 ---
 name: ejercicio-interactivo
 description: "Use when Angel asks to build a new interactive Spanish grammar/vocabulary exercise page with instant grading — a self-contained HTML artifact where a student fills in blanks, gets corrected instantly, and can send their results to the teacher via WhatsApp/Telegram/Teams/Correo. Also use when asked to add a new chapter/unit to this format, or to fix/extend an existing one (e.g. the A1 \"Presente, gerundio, indefinido\" or B2 12C \"¿Sigues pintando?\" exercises already in docencia-espanol/materiales/). Triggers: \"ejercicio interactivo\", \"como el de A1/12C\", \"corrección instantánea\", \"página interactiva para practicar\", \"haz lo mismo con otro capítulo\"."
-version: 1.12.0
+version: 1.13.0
 user-invocable: true
 license: Apache 2.0
 ---
@@ -63,6 +63,20 @@ lección más antigua de "Lecciones aprendidas", esta sección gana.**
   No es "si hay tiempo" ni algo que esperar a que "ya esté" — se busca primero, se
   usa la transcripción como apoyo o último recurso. Ver el paso del checklist
   correspondiente y la lección "Audio: busca siempre en Drive".
+- **Nunca inventes una formulación distinta del ejercicio. El ejercicio va tal cual
+  está en el libro — mismo enunciado, misma tarea, mismas partes.** Si el motor
+  actual no puede reproducir el ejercicio exactamente como lo imprime el cuaderno
+  (una interacción que no existe todavía, un formato que no encaja en ningún
+  `type` actual), **no lo rediseñes ni lo aproximes por tu cuenta: pregúntale al
+  profesor primero** — puede que la respuesta sea añadir un tipo nuevo al motor (así
+  nació `wordsearch`, así nació `crossword`), o construir el ejercicio de otra
+  forma con su visto bueno, pero la decisión no es tuya a falta de instrucción.
+  Error real de este repo: la 8A de B1 imprime un solo ejercicio ("busca en la sopa
+  de letras... ¿con qué deporte está relacionado cada uno?"), y en vez de preguntar
+  cómo tratar la segunda parte con el motor de `wordsearch` (que solo puntúa
+  encontrar la palabra en la rejilla), se decidió sin consultar partirlo en dos
+  ejercicios separados — un cambio razonable con buena intención, pero no es lo que
+  dice el libro, y no se pidió permiso antes de hacerlo.
 
 ## Flujo de trabajo
 
