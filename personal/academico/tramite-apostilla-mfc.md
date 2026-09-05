@@ -32,7 +32,7 @@ conversación de Claude Code.
 | N.º de expediente | Documento | Estado |
 |---|---|---|
 | № 7638524892 | Diploma de especialista | ✅ Apostilla concedida — n.º **857967**, fecha 06.08.2026 |
-| № 7638974873 | Diploma de reconversión profesional (ППК № 003589) | ❌ **Rechazada** (07.08.2026) — RUT MIIT no respondió a tiempo al requerimiento del MFC. Se puede volver a solicitar sin pagar tasa, una vez el MFC reciba la respuesta pendiente de la universidad |
+| № 7638974873 | Diploma de reconversión profesional (ППК № 003589) | ❌ **Rechazada** (07.08.2026) — motivo alegado: RUT MIIT no respondió a tiempo al requerimiento del MFC. **Contradicho por RUT MIIT** (ver más abajo): la universidad sostiene que sí respondió en plazo, con referencia № 017/9760 del 15.07.2026. Se puede volver a solicitar sin pagar tasa, una vez el MFC de Moscú reciba/reconozca esa respuesta |
 
 ## Contactos relevantes
 
@@ -49,6 +49,20 @@ conversación de Claude Code.
 
 ## Gestiones pendientes
 
+- **2026-09-04 — Hallazgo clave, contradicción entre RUT MIIT y el MFC
+  de Moscú.** Angel escribió directamente al MFC de RUT MIIT
+  (`spravka@rut-miit.ru`, el departamento indicado por Alexander el día
+  anterior) explicando el rechazo. Respuesta del MFC de RUT MIIT: **la
+  universidad sí respondió al requerimiento del MFC de Moscú, dentro de
+  plazo — referencia de la respuesta № 017/9760, del 15.07.2026.** Esto
+  contradice directamente el motivo con el que el MFC de Moscú rechazó
+  la solicitud № 7638974873 (que decía que la universidad no había
+  respondido a tiempo). Conclusión: la respuesta de la universidad
+  existe y se envió en plazo, pero se perdió en algún punto entre RUT
+  MIIT y el MFC de Moscú — no es que nunca se enviara. **Próximo paso:
+  presentar esta referencia (№ 017/9760, 15.07.2026) al MFC de Moscú
+  como prueba, al pedir la nueva solicitud de apostilla sin pagar
+  tasa.**
 - **2026-09-03** — Alexander Evgenievich (RUT MIIT) confirmó que la
   petición del MFC probablemente **se perdió dentro de la burocracia
   interna de RUT MIIT** (no fue el MFC quien falló). Pasó el contacto de
