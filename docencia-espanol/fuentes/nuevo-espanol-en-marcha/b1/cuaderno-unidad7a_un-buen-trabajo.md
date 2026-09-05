@@ -38,31 +38,29 @@ Por la tarde tiene otra cliente ecuatoriana a la que atenderá en persona. Él s
 
 #### Ej. 3 — Sopa de letras: profesiones
 
-*Busca en la sopa de letras el nombre de estas profesiones. Como los huecos hay que corregirlos en un orden fijo, cada uno lleva de pista sus dos primeras letras.*
-
-> **Sopa de letras:** 
+*Busca en la sopa de letras el nombre de estas nueve profesiones.*
 
 ```
-N P E R I O D I S T A K
-G A N D C A N T A N T E
-K F D E U H Y K M A V K
-K F G P Z O S H M B D A
-M Z S E R R U T H O Y I
-Z J A N F E S J L G K C
-J A R D I N E R O A Q I
-K S O I N I Y O F D L L
-C H T E L C V L G O B O
-K Q N N X O U D L I S P
-U A I T C C I E O I J C
-R C P A N I R A L I A B
+NPERIODISTAK
+GANDCANTANTE
+KFDEUHYKMAVK
+KFGPZOSHMBDA
+MZSERRUTHOYI
+ZJANFESJLGKC
+JARDINEROAQI
+KSOINIYOFDLL
+CHTELCVLGOBO
+KQNNXOUDLISP
+UAITCCIEOIJC
+RCPANIRALIAB
 ```
 
-1. pi… → **pintor**
-2. de… → **dependienta**
-3. pe… → **periodista**
-4. co… → **cocinero**
-5. ab… → **abogado**
-6. ja… → **jardinero**
-7. ba… → **bailarina**
-8. ca… → **cantante**
-9. po… → **policía**
+- Pintor
+- Dependienta
+- Periodista
+- Cocinero
+- Abogado
+- Jardinero
+- Bailarina
+- Cantante
+- Policía

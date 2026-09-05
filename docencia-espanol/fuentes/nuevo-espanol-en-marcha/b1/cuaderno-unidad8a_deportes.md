@@ -4,26 +4,41 @@
 
 ### Ejercicios
 
-#### Ej. 1 — Objetos deportivos
+#### Ej. 1 — Objetos deportivos: sopa de letras
 
-*Busca en la sopa de letras los nombres de estos objetos. ¿Con qué deporte está relacionado cada uno?*
+*Busca en la sopa de letras el nombre de estos diez objetos.*
 
-> **Sopa de letras:** 
+> **Los objetos del cuaderno:** 
 
 ```
-S J X F C A S C O U E M
-E E H B X B L D M E A G
-I F P I L S A L T D T A
-U Z X C M A N L A I O I
-Q K Z I X S R Q O D L R
-S S R C G E O C G N E L
-E A Y L U N D V C L P M
-B T H E A I A Q U V M Z
-C O T T N T N U C Q C T
-J B B A T A A M A S Q M
-N D L G E P B V Z P Z F
-B C G R S E R I S O H F
+SJXFCASCOUEM
+EEHBXBLDMEAG
+IFPILSALTDTA
+UZXCMANLAIOI
+QKZIXSRQODLR
+SSRCGEOCGNEL
+EAYLUNDVCLPM
+BTHEAIAQUVMZ
+COTTNTNUCQCT
+JBBATAAMASQM
+NDLGEPBVZPZF
+BCGRSERISOHF
 ```
+
+- Guantes
+- Casco
+- Botas
+- Balón
+- Esquíes
+- Medalla
+- Patines
+- Bañador
+- Pelota
+- Bicicleta
+
+#### Ej. 2 — ¿Con qué deporte está relacionado cada uno?
+
+*Ahora que has encontrado los diez objetos, di con qué deporte está relacionado cada uno.*
 
 1. guantes → **boxeo**
 2. casco → **motociclismo**
@@ -36,7 +51,7 @@ B C G R S E R I S O H F
 9. pelota → **golf y tenis**
 10. bicicleta → **ciclismo**
 
-#### Ej. 2 — Completa con la palabra adecuada
+#### Ej. 3 — Completa con la palabra adecuada
 
 *Completa con la palabra adecuada. El primero ya viene resuelto en el libro.*
 
@@ -52,7 +67,7 @@ B C G R S E R I S O H F
 10. Se dedica al voleibol. Es **jugador de voleibol**
 11. Se dedica a esquiar. Es **esquiador**
 
-#### Ej. 3 — Entrevista al ciclista Emilio Pedal
+#### Ej. 4 — Entrevista al ciclista Emilio Pedal
 
 *Escucha esta entrevista al ciclista Emilio Pedal y completa el cuestionario.*
 

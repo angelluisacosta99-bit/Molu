@@ -461,6 +461,62 @@
     .match-wrap { gap: 0.9rem; }
   }
 
+  /* Sopa de letras interactiva (type: "wordsearch") — se toca una letra para armarla y
+     luego otra en línea recta (horizontal, vertical o diagonal) para completar la selección. */
+  .ws-outer {
+    display: flex; flex-wrap: wrap; gap: 1.6rem; margin-top: 0.6rem; align-items: flex-start;
+    max-width: 100%; overflow-x: auto; padding-bottom: 0.2rem;
+  }
+  .ws-grid {
+    display: grid; gap: 2px; background: var(--border); padding: 3px; border-radius: 8px;
+    width: max-content; flex-shrink: 0;
+  }
+  .ws-cell {
+    width: 2rem; height: 2rem; display: flex; align-items: center; justify-content: center;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.88rem; font-weight: 700; line-height: 1;
+    background: var(--paper-raised); color: var(--ink); border: none; border-radius: 4px;
+    cursor: pointer; padding: 0; transition: background 0.1s ease, color 0.1s ease;
+  }
+  .ws-cell:hover { background: var(--gold-soft); }
+  .ws-cell.ws-armed { background: var(--gold); color: var(--paper-raised); }
+  .ws-cell.ws-found { background: var(--good-bg); color: var(--good); }
+  .ws-cell.ws-wrong { background: var(--bad-bg); color: var(--bad); }
+  .ws-words { list-style: none; margin: 0; padding: 0; min-width: 10em; }
+  .ws-words li {
+    padding: 0.4rem 0; font-size: 0.92rem; border-bottom: 1px dashed var(--border); color: var(--ink);
+  }
+  .ws-words li:last-child { border-bottom: none; }
+  .ws-words li.ws-solved { color: var(--ink-soft); font-style: italic; }
+  .ws-words li.ws-solved::before { content: "✓ "; }
+  .ws-words li.ws-found-item { color: var(--good); font-weight: 600; }
+  .ws-words li.ws-found-item::before { content: "✓ "; }
+  .ws-words li.ws-incorrect { color: var(--bad); }
+  .ws-words:has(img) { display: flex; flex-wrap: wrap; gap: 0.9rem; max-width: 22em; padding: 0; }
+  .ws-words:has(img) li {
+    width: 6.4em; text-align: center; font-size: 0.82rem; color: var(--ink);
+    padding: 0; border-bottom: none;
+  }
+  .ws-words li img {
+    width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 8px;
+    border: 1.5px solid var(--border); display: block; margin-bottom: 0.3rem;
+    filter: grayscale(1) contrast(1.05);
+  }
+  .ws-words li .ws-prof-name { display: none; }
+  .ws-words li.ws-solved img,
+  .ws-words li.ws-found-item img { border-color: var(--good); filter: none; }
+  .ws-words li.ws-solved .ws-prof-name,
+  .ws-words li.ws-found-item .ws-prof-name { display: block; color: var(--good); font-weight: 600; }
+  .ws-words li.ws-solved .ws-prof-name::before,
+  .ws-words li.ws-found-item .ws-prof-name::before { content: "✓ "; }
+  .ws-words li.ws-incorrect img { border-color: var(--bad); }
+  .ws-words li.ws-incorrect .ws-prof-name { display: block; color: var(--bad); }
+  @media (max-width: 560px) {
+    .ws-cell { width: 1.7rem; height: 1.7rem; font-size: 0.78rem; }
+    .ws-words:has(img) { max-width: 100%; }
+    .ws-words:has(img) li { width: 5.4em; }
+  }
+
   /* Hueco de verdadero/falso con botones — ver item.vf en "items" más abajo. */
   .vf-toggle { display: inline-flex; gap: 0.35rem; margin: 0 0.15rem; vertical-align: middle; }
   .vf-btn {
@@ -871,8 +927,6 @@
 
   // ---------- exercise data ----------
   // template blanks use {0},{1}... matched to item.answers[i]
-  const SOPA_7A =
-    "N P E R I O D I S T A K\nG A N D C A N T A N T E\nK F D E U H Y K M A V K\nK F G P Z O S H M B D A\nM Z S E R R U T H O Y I\nZ J A N F E S J L G K C\nJ A R D I N E R O A Q I\nK S O I N I Y O F D L L\nC H T E L C V L G O B O\nK Q N N X O U D L I S P\nU A I T C C I E O I J C\nR C P A N I R A L I A B";
 
   const blocks = [
     {
@@ -927,21 +981,32 @@
         },
         {
           num: 3, title: "Sopa de letras: profesiones",
-          instr: "Busca en la sopa de letras el nombre de estas profesiones. Como los huecos hay que corregirlos en un orden fijo, cada uno lleva de pista sus dos primeras letras.",
-          refHTML: '<span class="ref-label">Sopa de letras</span><div class="wordsearch">' + SOPA_7A + "</div>",
-          type: "items",
-          preWidth: "5em",
-          numbered: true,
-          items: [
-            { pre: "pi… →", t: "{0}", a: [["pintor"]] },
-            { pre: "de… →", t: "{0}", a: [["dependienta"]] },
-            { pre: "pe… →", t: "{0}", a: [["periodista"]] },
-            { pre: "co… →", t: "{0}", a: [["cocinero"]] },
-            { pre: "ab… →", t: "{0}", a: [["abogado"]] },
-            { pre: "ja… →", t: "{0}", a: [["jardinero"]] },
-            { pre: "ba… →", t: "{0}", a: [["bailarina"]] },
-            { pre: "ca… →", t: "{0}", a: [["cantante"]] },
-            { pre: "po… →", t: "{0}", a: [["policía", "policia"]] }
+          instr: "Busca en la sopa de letras el nombre de estas nueve profesiones.",
+          type: "wordsearch",
+          grid: [
+            "NPERIODISTAK",
+            "GANDCANTANTE",
+            "KFDEUHYKMAVK",
+            "KFGPZOSHMBDA",
+            "MZSERRUTHOYI",
+            "ZJANFESJLGKC",
+            "JARDINEROAQI",
+            "KSOINIYOFDLL",
+            "CHTELCVLGOBO",
+            "KQNNXOUDLISP",
+            "UAITCCIEOIJC",
+            "RCPANIRALIAB"
+          ],
+          words: [
+            { label: "Pintor", cells: [[11,2],[10,2],[9,2],[8,2],[7,2],[6,2]] },
+            { label: "Dependienta", cells: [[1,3],[2,3],[3,3],[4,3],[5,3],[6,3],[7,3],[8,3],[9,3],[10,3],[11,3]] },
+            { label: "Periodista", cells: [[0,1],[0,2],[0,3],[0,4],[0,5],[0,6],[0,7],[0,8],[0,9],[0,10]] },
+            { label: "Cocinero", cells: [[10,5],[9,5],[8,5],[7,5],[6,5],[5,5],[4,5],[3,5]] },
+            { label: "Abogado", cells: [[2,9],[3,9],[4,9],[5,9],[6,9],[7,9],[8,9]] },
+            { label: "Jardinero", cells: [[6,0],[6,1],[6,2],[6,3],[6,4],[6,5],[6,6],[6,7],[6,8]] },
+            { label: "Bailarina", cells: [[11,11],[11,10],[11,9],[11,8],[11,7],[11,6],[11,5],[11,4],[11,3]] },
+            { label: "Cantante", cells: [[1,4],[1,5],[1,6],[1,7],[1,8],[1,9],[1,10],[1,11]] },
+            { label: "Policía", cells: [[9,11],[8,11],[7,11],[6,11],[5,11],[4,11],[3,11]] }
           ]
         }
       ]
@@ -1871,6 +1936,120 @@
         mwrap.addEventListener("scroll", refreshFades);
         pendingMatchDraws.push(function () { drawLines(); refreshFades(); });
         card.appendChild(mouter);
+      } else if (ex.type === "wordsearch") {
+        // Sopa de letras interactiva. ex.grid = array de strings (una por fila); ex.words =
+        // [{ label, cells:[[r,c],...], solved?, img? }]. `cells` es la secuencia exacta de
+        // casillas que forma la palabra en la rejilla real del libro, calculada con un
+        // script de búsqueda direccional, no a mano.
+        const gridRows = ex.grid.length, gridCols = ex.grid[0].length;
+        const outer = document.createElement("div");
+        outer.className = "ws-outer";
+        const gridEl = document.createElement("div");
+        gridEl.className = "ws-grid";
+        gridEl.style.gridTemplateColumns = "repeat(" + gridCols + ", 1fr)";
+        const cellEls = [];
+        for (let r = 0; r < gridRows; r++) {
+          cellEls[r] = [];
+          for (let c = 0; c < gridCols; c++) {
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "ws-cell";
+            btn.textContent = ex.grid[r][c];
+            btn.dataset.r = String(r);
+            btn.dataset.c = String(c);
+            btn.setAttribute("translate", "no");
+            cellEls[r][c] = btn;
+            gridEl.appendChild(btn);
+          }
+        }
+        outer.appendChild(gridEl);
+
+        const wordsEl = document.createElement("ul");
+        wordsEl.className = "ws-words";
+        const wordRecs = []; // { word, li, input }
+        ex.words.forEach(function (w) {
+          const li = document.createElement("li");
+          li.setAttribute("translate", "no");
+          if (w.img) {
+            const img = document.createElement("img");
+            img.src = w.img;
+            img.alt = w.label;
+            li.appendChild(img);
+            const nameSpan = document.createElement("span");
+            nameSpan.className = "ws-prof-name";
+            nameSpan.textContent = w.label;
+            li.appendChild(nameSpan);
+          } else {
+            li.textContent = w.label;
+          }
+          if (w.solved) {
+            li.classList.add("ws-solved");
+            w.cells.forEach(function (rc) { cellEls[rc[0]][rc[1]].classList.add("ws-found"); });
+          } else {
+            const inp = document.createElement("input");
+            inp.type = "hidden";
+            inp.className = "blank";
+            const rec = { el: inp, spec: [w.label], label: "Ej. " + ex.num + " sopa de letras (" + w.label + ")" };
+            rec.onGrade = function (ok) {
+              li.classList.toggle("ws-found-item", ok);
+              li.classList.toggle("ws-incorrect", !ok);
+            };
+            allInputs.push(rec);
+            li.appendChild(inp);
+            wordRecs.push({ word: w, li: li, input: inp });
+          }
+          wordsEl.appendChild(li);
+        });
+        outer.appendChild(wordsEl);
+
+        function pathBetween(r1, c1, r2, c2) {
+          const dr = Math.sign(r2 - r1), dc = Math.sign(c2 - c1);
+          if (r1 !== r2 && c1 !== c2 && Math.abs(r2 - r1) !== Math.abs(c2 - c1)) return null;
+          const dist = Math.max(Math.abs(r2 - r1), Math.abs(c2 - c1));
+          const path = [];
+          for (let i = 0; i <= dist; i++) path.push([r1 + dr * i, c1 + dc * i]);
+          return path;
+        }
+        function sameCells(a, b) {
+          if (a.length !== b.length) return false;
+          for (let i = 0; i < a.length; i++) if (a[i][0] !== b[i][0] || a[i][1] !== b[i][1]) return false;
+          return true;
+        }
+
+        let armed = null;
+        gridEl.addEventListener("click", function (e) {
+          const btn = e.target.closest(".ws-cell");
+          if (!btn) return;
+          const r = parseInt(btn.dataset.r, 10), c = parseInt(btn.dataset.c, 10);
+          if (armed === null) {
+            armed = [r, c];
+            btn.classList.add("ws-armed");
+            return;
+          }
+          const ar = armed[0], ac = armed[1];
+          cellEls[ar][ac].classList.remove("ws-armed");
+          armed = null;
+          if (ar === r && ac === c) return;
+          const path = pathBetween(ar, ac, r, c);
+          if (!path) return;
+          const rev = path.slice().reverse();
+          const rec = wordRecs.find(function (wr) {
+            return wr.input.value !== wr.word.label &&
+              (sameCells(path, wr.word.cells) || sameCells(rev, wr.word.cells));
+          });
+          if (rec) {
+            rec.input.value = rec.word.label;
+            rec.li.classList.add("ws-found-item");
+            rec.word.cells.forEach(function (rc) { cellEls[rc[0]][rc[1]].classList.add("ws-found"); });
+          } else {
+            path.forEach(function (rc) { cellEls[rc[0]][rc[1]].classList.add("ws-wrong"); });
+            setTimeout(function () {
+              path.forEach(function (rc) { cellEls[rc[0]][rc[1]].classList.remove("ws-wrong"); });
+            }, 450);
+          }
+        });
+
+        card.appendChild(outer);
       }
 
       // Transcripción de audio, si el ejercicio la trae. Va al final de la tarjeta, después

@@ -484,7 +484,10 @@
      una imagen (`item.img` en "items" incluido), el texto de la respuesta nunca va visible
      antes de que el alumno la resuelva — la imagen es la pista, no un adorno junto al texto
      que ya la da. */
-  .ws-outer { display: flex; flex-wrap: wrap; gap: 1.6rem; margin-top: 0.6rem; align-items: flex-start; }
+  .ws-outer {
+    display: flex; flex-wrap: wrap; gap: 1.6rem; margin-top: 0.6rem; align-items: flex-start;
+    max-width: 100%; overflow-x: auto; padding-bottom: 0.2rem;
+  }
   .ws-grid {
     display: grid; gap: 2px; background: var(--border); padding: 3px; border-radius: 8px;
     width: max-content; flex-shrink: 0;

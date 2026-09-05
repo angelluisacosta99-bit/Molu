@@ -398,7 +398,15 @@ El fallo no fue no saber los pasos, fue no volver a mirarlos al final.
       `<figure>`), así que no hace falta un campo nuevo en el motor; dale siempre un
       `style="max-width:XXXpx"` explícito a la imagen — sin él hereda el ancho completo
       de `.exercise-ref` y sale desproporcionada (visto en vivo con el retrato de Nicole
-      Manderson, que salía más alto que toda la tarjeta antes de acotarlo). Si el bloque
+      Manderson, que salía más alto que toda la tarjeta antes de acotarlo).
+      **Ojo: `max-width:XXXpx` a secas, sin más, desborda la página en móvil si XXX es
+      mayor que el ancho de un móvil pequeño (390 px menos el padding de la tarjeta).**
+      El estilo inline con un `px` fijo GANA a la regla global `.exercise-ref img {
+      max-width: 100% }` (misma especificidad, inline pesa más), así que esa regla
+      responsiva deja de aplicar y la imagen fuerza su ancho fijo aunque no quepa. Usa
+      `style="max-width:min(XXXpx, 100%)"` siempre, no un píxel suelto — encontrado en
+      la unidad 8A de B1 con una ilustración de 420 px que desbordaba 89 px a 390 px de
+      viewport hasta cambiar a `min()`. Si el bloque
       ya tiene otro `refHTML` (un banco de palabras, por ejemplo), añade las fotos AL
       PRINCIPIO de esa misma cadena — el campo es uno solo, no se puede repetir la clave.
       **Antes de dar una foto por buena, comprueba si el propio libro la imprime inclinada**
