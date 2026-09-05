@@ -56,13 +56,34 @@ conversación de Claude Code.
   universidad sí respondió al requerimiento del MFC de Moscú, dentro de
   plazo — referencia de la respuesta № 017/9760, del 15.07.2026.** Esto
   contradice directamente el motivo con el que el MFC de Moscú rechazó
-  la solicitud № 7638974873 (que decía que la universidad no había
-  respondido a tiempo). Conclusión: la respuesta de la universidad
-  existe y se envió en plazo, pero se perdió en algún punto entre RUT
-  MIIT y el MFC de Moscú — no es que nunca se enviara. **Próximo paso:
-  presentar esta referencia (№ 017/9760, 15.07.2026) al MFC de Moscú
-  como prueba, al pedir la nueva solicitud de apostilla sin pagar
-  tasa.**
+  la solicitud № 7638974873.
+  - **Confirmado por dos documentos oficiales de Moscú, sin ambigüedad
+    de expediente**: (1) el uveдомление de rechazo original **№
+    7638974873/У-03 del 07.08.2026** (firmado por Лебедева Наталья
+    Борисовна), que cita como base legal el **п. 21, пп. "ж" del
+    Postановление Правительства РФ del 10.11.2023 № 1890**, y afirma
+    textualmente que RUT MIIT "no envió la respuesta al MFC dentro del
+    plazo establecido"; y (2) la respuesta a la obращение ciudadana
+    **№ 02-12-5443/26 del 03.09.2026** (obращение № 57909473 / № 01-11-
+    23421/26 del 07.08.2026, firmada por В.Н. Назарова), que **reafirma
+    lo mismo, expediente por expediente**: № 7638974873 (ППК) rechazado
+    por falta de respuesta a tiempo, № 7638524892 (especialista)
+    aprobado. Es decir, **Moscú es inequívoco sobre a qué expediente se
+    refiere** — no hay margen para que estén confundiendo los dos
+    diplomas por su parte.
+  - El uveдомление original también confirma el mecanismo de
+    re-solicitud: si la universidad manda una respuesta informativa
+    después del plazo, notifican la posibilidad de una nueva solicitud
+    **sin pago de tasa estatal**.
+  - **Pregunta abierta, pendiente de que RUT MIIT confirme**: si su
+    referencia № 017/9760 (15.07.2026) corresponde de verdad al
+    expediente № 7638974873 (ППК, rechazado) — en cuyo caso la
+    respuesta se perdió en tránsito hacia el MFC de Moscú y hace falta
+    reenviarla/certificarla — o si en realidad corresponde al otro
+    expediente ya aprobado (№ 7638524892), y RUT MIIT nunca llegó a
+    responder sobre el ППК. Correo de aclaración redactado para
+    `spravka@rut-miit.ru`, citando ambos documentos oficiales de Moscú
+    — pendiente de confirmación de Angel para enviarlo.
 - **2026-09-03** — Alexander Evgenievich (RUT MIIT) confirmó que la
   petición del MFC probablemente **se perdió dentro de la burocracia
   interna de RUT MIIT** (no fue el MFC quien falló). Pasó el contacto de
