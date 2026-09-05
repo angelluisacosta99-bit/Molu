@@ -28652,7 +28652,7 @@
       "node_kind": "heading",
       "norm_label": "documentos ya traducidos al espanol (formato word, para traductor jurado)",
       "source_file": "personal/academico/tramite-apostilla-mfc.md",
-      "source_location": "L90"
+      "source_location": "L76"
     },
     {
       "id": "personal_academico_tramite_apostilla_mfc_gestiones_pendientes",
@@ -28676,7 +28676,7 @@
       "node_kind": "heading",
       "norm_label": "relacion con la matricula del master (musi, usal)",
       "source_file": "personal/academico/tramite-apostilla-mfc.md",
-      "source_location": "L107"
+      "source_location": "L93"
     },
     {
       "id": "personal_academico_tramite_apostilla_mfc_solicitudes_de_apostilla_ante_el_mfc_presentadas_03_07_2026",
@@ -101886,17 +101886,6 @@
     },
     {
       "source": "personal_academico_tramite_apostilla_mfc_tr\u00e1mite_de_apostilla_de_t\u00edtulos_acad\u00e9micos_rusos_mfc",
-      "target": "personal_academico_tramite_apostilla_mfc_relaci\u00f3n_con_la_matr\u00edcula_del_m\u00e1ster_musi_usal",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "personal/academico/tramite-apostilla-mfc.md",
-      "source_location": "L107",
-      "weight": 1.0
-    },
-    {
-      "source": "personal_academico_tramite_apostilla_mfc_tr\u00e1mite_de_apostilla_de_t\u00edtulos_acad\u00e9micos_rusos_mfc",
       "target": "personal_academico_tramite_apostilla_mfc_datos_personales",
       "relation": "contains",
       "_origin": "ast",
@@ -101958,7 +101947,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "personal/academico/tramite-apostilla-mfc.md",
-      "source_location": "L90",
+      "source_location": "L76",
+      "weight": 1.0
+    },
+    {
+      "source": "personal_academico_tramite_apostilla_mfc_tr\u00e1mite_de_apostilla_de_t\u00edtulos_acad\u00e9micos_rusos_mfc",
+      "target": "personal_academico_tramite_apostilla_mfc_relaci\u00f3n_con_la_matr\u00edcula_del_m\u00e1ster_musi_usal",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "personal/academico/tramite-apostilla-mfc.md",
+      "source_location": "L93",
       "weight": 1.0
     },
     {
@@ -103025,7 +103025,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "personal/academico/tramite-apostilla-mfc.md",
-      "source_location": "L111",
+      "source_location": "L97",
       "weight": 1.0
     },
     {
@@ -106619,5 +106619,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "193f9fcd975c78502ae8871b13e81749b0c81696"
+  "built_at_commit": "0da47d8ea62b3f6aa50b8c9c9671e4d6f9fb4121"
 }
