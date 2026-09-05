@@ -6,9 +6,9 @@
 
 #### Ej. 1 — Objetos deportivos
 
-*Busca en la sopa de letras los nombres de estos objetos. ¿Con qué deporte está relacionado cada uno?*
+*Mira la ilustración (son los objetos reales del cuaderno) y busca en la sopa de letras el nombre de cada uno. ¿Con qué deporte está relacionado cada objeto?*
 
-> **Sopa de letras:** 
+> **Objetos:** 
 
 ```
 S J X F C A S C O U E M
@@ -24,17 +24,7 @@ J B B A T A A M A S Q M
 N D L G E P B V Z P Z F
 B C G R S E R I S O H F
 ```
-
-1. guantes → **boxeo**
-2. casco → **motociclismo**
-3. botas → **fútbol**
-4. balón → **fútbol**
-5. esquíes → **esquí**
-6. medalla → **atletismo**
-7. patines → **patinaje**
-8. bañador → **natación**
-9. pelota → **golf y tenis**
-10. bicicleta → **ciclismo**
+**Palabras a encontrar:** guantes, casco, botas, balón, esquíes, medalla, patines, bañador, pelota, bicicleta
 
 #### Ej. 2 — Completa con la palabra adecuada
 

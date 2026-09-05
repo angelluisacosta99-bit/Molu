@@ -323,7 +323,10 @@
     border-radius: 8px; border: 1px solid var(--border);
   }
 
-  /* Sopa de letras: rejilla monoespaciada, para que las columnas cuadren. */
+  /* Sopa de letras ESTÁTICA (solo de referencia, no interactiva): rejilla monoespaciada
+     para que las columnas cuadren. Úsala solo dentro de ex.refHTML como apoyo visual de
+     otro tipo de ejercicio (p. ej. "items" con pista de dos letras) — para el ejercicio
+     de verdad, usa type: "wordsearch" (ver más abajo, ".ws-grid"), que es interactivo. */
   .wordsearch {
     font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
     font-size: 0.9rem; line-height: 1.6; letter-spacing: 0.18em;
@@ -331,6 +334,34 @@
     background: var(--paper-raised); border: 1px solid var(--border);
     border-radius: 8px; padding: 0.8rem 0.9rem; margin-top: 0.5rem;
   }
+
+  /* Sopa de letras INTERACTIVA (type: "wordsearch"): el alumno toca la primera letra de
+     una palabra y luego la última, en línea recta (8 direcciones) — no escribe nada. Cada
+     celda es un <button> normal, así que funciona igual con ratón que con el dedo, sin
+     lógica de arrastre. .ws-wrap con scroll horizontal propio, igual que .table-wrap y
+     .crossword-wrap: una rejilla de 12+ columnas no cabe en 390px de ancho. */
+  .ws-wrap { overflow-x: auto; margin: 0.9rem 0 0.5rem; }
+  .ws-grid { display: inline-grid; gap: 2px; margin: 0 auto; }
+  .ws-cell {
+    width: 1.9em; height: 1.9em; padding: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-weight: 700; font-size: 0.92rem;
+    border: 1px solid var(--border); border-radius: 4px;
+    background: var(--paper-raised); color: var(--ink);
+    cursor: pointer; user-select: none; -webkit-user-select: none;
+  }
+  /* Ficha elegida como inicio de la línea, esperando la segunda ficha. */
+  .ws-cell.ws-selected { background: var(--gold-soft); border-color: var(--gold); }
+  /* Palabra encontrada: ya no hace falta deshabilitar el <button> (bloquearía usar esa
+     misma celda como extremo de OTRA palabra que se cruce por ahí), basta con el estilo. */
+  .ws-cell.ws-cell-found { background: var(--good-bg); border-color: var(--good); color: var(--good); }
+  /* Parpadeo breve al elegir una línea que no forma ninguna palabra pendiente — no
+     penaliza (no hay hueco que marcar mal), solo avisa de que esa línea no vale. */
+  .ws-cell.ws-wrong { background: var(--bad-bg); border-color: var(--bad); }
+  .ws-words { display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; margin-top: 1rem; font-size: 0.92rem; }
+  .ws-word.ws-found { text-decoration: line-through; color: var(--ink-soft); }
+  .ws-word.ws-missing { color: var(--bad); font-weight: 600; }
 
   /* Texto de partida que hay que leer o reescribir (una postal, un párrafo). */
   .postcard {
@@ -1550,6 +1581,124 @@
             }
           });
         };
+      } else if (ex.type === "wordsearch") {
+        // Sopa de letras interactiva: el alumno toca la primera letra de una palabra y
+        // luego la última (en línea recta, 8 direcciones) para marcarla — no escribe nada.
+        // ex.grid: array de strings, una fila cada uno, todas la misma longitud, con las
+        // letras en mayúsculas (o minúsculas, da igual: se normaliza aquí). ex.words:
+        // array de las palabras a encontrar, en el orden en que se listan al alumno.
+        const rows = ex.grid.map(function (row) { return row.toUpperCase().split(""); });
+        const nRows = rows.length, nCols = rows[0].length;
+        const wrap = document.createElement("div");
+        wrap.className = "ws-wrap";
+        const wsGrid = document.createElement("div");
+        wsGrid.className = "ws-grid";
+        wsGrid.style.gridTemplateColumns = "repeat(" + nCols + ", 1.9em)";
+        wsGrid.style.gridTemplateRows = "repeat(" + nRows + ", 1.9em)";
+        const cellEls = [];
+        for (let r = 0; r < nRows; r++) {
+          cellEls[r] = [];
+          for (let c = 0; c < nCols; c++) {
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "ws-cell";
+            btn.textContent = rows[r][c];
+            btn.setAttribute("translate", "no");
+            btn.dataset.r = String(r);
+            btn.dataset.c = String(c);
+            cellEls[r][c] = btn;
+            wsGrid.appendChild(btn);
+          }
+        }
+        wrap.appendChild(wsGrid);
+        card.appendChild(wrap);
+
+        // Una palabra por hueco oculto, igual que el V/F de "items" — así gradeRange(),
+        // el marcador de puntuación y el resumen al profesor la tratan como cualquier
+        // otro hueco, aunque el alumno nunca escriba nada a mano. onGrade() solo se usa
+        // para pintar en rojo, al pulsar "Corregir todos", las palabras que se quedaron
+        // sin encontrar — las encontradas ya se marcan solas, en el momento de tocarlas.
+        const wlist = document.createElement("div");
+        wlist.className = "ws-words";
+        const wordEls = {}; // PALABRA en mayúsculas (tal cual está en la rejilla) -> <span>
+        const hiddenByWord = {}; // misma clave -> input oculto
+        const labelByWord = {}; // misma clave -> texto con tildes/ñ para guardar en el hueco
+        ex.words.forEach(function (wordDef) {
+          // Cada palabra puede ser un string suelto, o { word, label } cuando la rejilla
+          // no lleva tildes/ñ (para no complicar el generador de la rejilla) pero la
+          // palabra que se le muestra al alumno sí debe llevarlas — igual que "POLICIA"
+          // en la rejilla de la 7A frente a "policía" como respuesta correcta.
+          const w = typeof wordDef === "string" ? wordDef : wordDef.word;
+          const label = typeof wordDef === "string" ? wordDef : (wordDef.label || wordDef.word);
+          const upper = w.toUpperCase();
+          const span = document.createElement("span");
+          span.className = "ws-word";
+          span.textContent = label;
+          wlist.appendChild(span);
+          wordEls[upper] = span;
+          const inp = document.createElement("input");
+          inp.type = "hidden";
+          inp.className = "blank";
+          const rec = { el: inp, spec: [label], label: "Sopa de letras: " + label };
+          rec.onGrade = function (ok) {
+            span.classList.remove("ws-found", "ws-missing");
+            span.classList.add(ok ? "ws-found" : "ws-missing");
+          };
+          allInputs.push(rec);
+          hiddenByWord[upper] = inp;
+          labelByWord[upper] = label;
+          wrap.appendChild(inp);
+        });
+        card.appendChild(wlist);
+
+        // Tocar-tocar en vez de arrastrar: funciona igual con ratón (click, click) que con
+        // el dedo (tap, tap), sin manejar mousedown/touchmove/mouseup por separado.
+        let startCell = null;
+        wsGrid.addEventListener("click", function (e) {
+          const btn = e.target.closest(".ws-cell");
+          if (!btn) return;
+          const r = parseInt(btn.dataset.r, 10), c = parseInt(btn.dataset.c, 10);
+          if (!startCell) {
+            startCell = { r: r, c: c };
+            btn.classList.add("ws-selected");
+            return;
+          }
+          const startBtn = cellEls[startCell.r][startCell.c];
+          startBtn.classList.remove("ws-selected");
+          if (startCell.r === r && startCell.c === c) { startCell = null; return; }
+          const dr = Math.sign(r - startCell.r), dc = Math.sign(c - startCell.c);
+          // Línea recta = misma fila, misma columna, o diagonal exacta (|Δfila| = |Δcol|).
+          const validLine = dr === 0 || dc === 0 || Math.abs(r - startCell.r) === Math.abs(c - startCell.c);
+          let matched = null, path = null;
+          if (validLine) {
+            const steps = Math.max(Math.abs(r - startCell.r), Math.abs(c - startCell.c));
+            path = [];
+            for (let i = 0; i <= steps; i++) path.push({ r: startCell.r + dr * i, c: startCell.c + dc * i });
+            const forward = path.map(function (p) { return rows[p.r][p.c]; }).join("");
+            const backward = forward.split("").reverse().join("");
+            if (hiddenByWord[forward]) matched = forward;
+            else if (hiddenByWord[backward]) matched = backward;
+          }
+          if (matched && !hiddenByWord[matched].value) {
+            path.forEach(function (p) { cellEls[p.r][p.c].classList.add("ws-cell-found"); });
+            // El valor guardado es la ETIQUETA (con tildes/ñ si las lleva), no la cadena
+            // cruda de la rejilla — el spec de isCorrect() también es la etiqueta (ver
+            // arriba), y norm() no quita acentos, así que tienen que coincidir los dos.
+            hiddenByWord[matched].value = labelByWord[matched];
+            wordEls[matched].classList.remove("ws-missing");
+            wordEls[matched].classList.add("ws-found");
+          } else if (!matched) {
+            // Ninguna palabra pendiente vive en esa línea: parpadeo breve de aviso, sin
+            // penalizar (no hay ningún hueco de verdad que marcar mal).
+            const flash = [btn, startBtn];
+            flash.forEach(function (el) { el.classList.add("ws-wrong"); });
+            setTimeout(function () { flash.forEach(function (el) { el.classList.remove("ws-wrong"); }); }, 350);
+          }
+          // Si `matched` ya estaba encontrada de antes, no pasa nada: se limpia la
+          // selección sin más, sin parpadeo de error (no es un fallo, es repetir un
+          // acierto ya hecho).
+          startCell = null;
+        });
       } else if (ex.type === "agenda") {
         const twrap = document.createElement("div");
         twrap.className = "table-wrap";

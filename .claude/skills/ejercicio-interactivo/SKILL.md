@@ -86,10 +86,11 @@ PR #22 invertía el orden que PR #20 daba por bueno.
 
 2. **Copia la plantilla, no la reescribas.** `cp .claude/skills/ejercicio-interactivo/reference/template.html <destino>`.
    Sustituye **todos** los marcadores `{{...}}` (grep por `{{` para confirmar que no quede
-   ninguno) y rellena `blocks` con los ejercicios reales, siguiendo los cinco tipos ya
+   ninguno) y rellena `blocks` con los ejercicios reales, siguiendo los nueve tipos ya
    soportados por el motor de renderizado (`items`, `text`, `table2`, `conjTable`,
-   `agenda` — documentados con ejemplos dentro de la propia plantilla). Si necesitas un tipo
-   nuevo, tendrás que extender también el renderizador (busca `ex.type ===` en el archivo).
+   `agenda`, `crossword`, `wordsearch`, `match`, `open` — documentados con ejemplos dentro
+   de la propia plantilla). Si necesitas un tipo nuevo, tendrás que extender también el
+   renderizador (busca `ex.type ===` en el archivo).
    Dentro de `items`, para un hueco de verdadero/falso pon `vf: true` en el item en vez de
    escribir un tipo de ejercicio nuevo — cambia el input de texto por dos botones "V"/"F"
    sin tocar el motor de corrección (la respuesta sigue siendo `["V"]`/`["F"]`); ver el
@@ -225,6 +226,57 @@ El fallo no fue no saber los pasos, fue no volver a mirarlos al final.
 Cada una de estas causó un PR de corrección real. Están en `reference/template.html` ya
 resueltas — esta lista es para que entiendas *por qué* el código está como está, y para que
 no las deshagas sin querer al modificar la plantilla.
+
+- **Una sopa de letras es un tipo de ejercicio (`type: "wordsearch"`), no una lista con
+  pistas.** Hasta esta lección, "sopa de letras" se resolvía como `type: "items"` con
+  `refHTML` mostrando una rejilla de texto estática (`.wordsearch`, no interactiva) y un
+  hueco por palabra con pista de sus dos primeras letras — el alumno nunca tocaba la
+  rejilla, solo la miraba y escribía. El profesor lo rechazó explícitamente: quería la
+  rejilla de verdad, tocable, y sin pistas que le regalen la respuesta. `type:
+  "wordsearch"` la sustituye: `ex.grid` (array de strings, una fila cada una) + `ex.words`
+  (las palabras a encontrar). El alumno toca la primera letra y luego la última de una
+  palabra, en línea recta y en cualquiera de las 8 direcciones — cada celda es un
+  `<button>` normal, así que funciona igual con ratón que con el dedo sin manejar
+  mousedown/touchmove/mouseup. Un acierto colorea las celdas en el momento (no hace falta
+  esperar a "Corregir") y tacha la palabra en la lista; una línea que no forma ninguna
+  palabra pendiente da un parpadeo rojo breve sin penalizar (no hay ningún hueco de verdad
+  que marcar mal). Cada palabra sigue llevando su `input type="hidden"` por debajo — igual
+  que el V/F de `items` — para que el marcador, `gradeRange()`, el resumen al profesor y
+  `extraer.mjs` la traten exactamente como cualquier otro hueco.
+  Dos bugs reales cometidos al construirlo, ambos ya en el código:
+  - **El spec de `isCorrect()` llevaba un nivel de array de más** (`spec: [[w]]` en vez de
+    `spec: [w]`) — el mismo bug de fondo que el de `{flex:...}` mezclado documentado más
+    abajo: `spec.some(a => norm(a) === n)` itera sobre `[[w]]` dándole a `norm()` un array
+    en vez de una cadena, revienta, y la excepción sin capturar aborta silenciosamente
+    `gradeRange()` para el resto de huecos de la página. Se detectó con un test dedicado de
+    Playwright (`blank.correct` daba 0 tras "Corregir" aunque las palabras sí se hubieran
+    encontrado en la rejilla) — la lección de siempre: un regression test que solo prueba
+    el camino feliz no basta, hace falta comprobar que la puntuación de verdad sube.
+  - **La rejilla no lleva tildes ni ñ** (más fácil de generar así), pero la respuesta
+    correcta de una palabra como "policía" o "bañador" sí las necesita. La solución:
+    `ex.words` acepta tanto una cadena suelta (rejilla y etiqueta son la misma palabra) como
+    `{ word, label }` — `word` es lo que hay que encontrar en la rejilla (sin tildes),
+    `label` es lo que se le muestra al alumno y lo que de verdad se guarda en el hueco al
+    encontrarla. Sin esto, un acierto real en la rejilla se archivaba como "policia" sin
+    tilde, y el spec de corrección (con tilde) nunca lo habría dado por bueno.
+  - **Al añadir el tipo, se propagó SOLO a `reference/template.html`, no a los capítulos ya
+    horneados que iban a usarlo (7A, 8A)** — el mismo error que la lección de propagación
+    de abajo describe, cometido de nuevo al construir la propia lección. Se detectó porque
+    la sopa de 8A no renderizaba nada tras la imagen (0 `.ws-cell` en el DOM, sin ningún
+    error de consola: el motor viejo de ese archivo simplemente no tenía ninguna rama
+    `ex.type === "wordsearch"`, así que no coincidía con nada y no hacía nada). Se propagó
+    después a los 12 capítulos ya construidos de esta rama, los usen o no, siguiendo la
+    misma regla de la lección de abajo.
+  - **Regla del profesor: si el libro trae una ilustración real para el ejercicio,
+    incrústala — no la sustituyas por una lista de nombres en texto.** La 8A original daba
+    el nombre del objeto como texto (`item.pre: "guantes →"`) para que el alumno solo
+    tuviera que escribir el deporte; el profesor lo corrigió: eso es una pista disfrazada
+    que le ahorra al alumno la parte de identificar el objeto, y el libro ya trae el dibujo
+    real para eso. La solución: recortar la ilustración de la página escaneada (aquí, la
+    página entera de objetos deportivos en un solo recorte, con PIL a partir del render a
+    300dpi — más simple y fiable que recortar cada objeto suelto, que salió frágil a la
+    primera pasada) e incrustarla como imagen en `ex.refHTML`, y dejar que la sopa de letras
+    por sí sola sea la única fuente de las palabras — sin pista de texto de ningún tipo.
 
 - **Un bug de motor encontrado por revisión hay que arreglarlo en `reference/template.html`
   Y en la copia horneada de CADA capítulo ya construido en esa misma rama** — cada

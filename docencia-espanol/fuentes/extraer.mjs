@@ -327,6 +327,33 @@ const md = await page.evaluate(() => {
         push();
       }
 
+      // Sopa de letras interactiva (type: "wordsearch"): no hay .item-row que recorrer, y
+      // el archivador no toca la rejilla (se marca tocando celdas, no escribiendo texto),
+      // así que aquí no hay nada que "corregir" — se archiva la rejilla completa (a partir
+      // de data-r/data-c de cada .ws-cell, igual que el crucigrama reconstruye desde
+      // data-w<num>) y la lista de palabras a buscar, que es toda la información que hace
+      // falta para poder reconstruir el ejercicio sin volver al PDF.
+      const wsWrap = ex.querySelector(".ws-wrap");
+      if (wsWrap) {
+        const wsGrid = wsWrap.querySelector(".ws-grid");
+        if (wsGrid) {
+          const cells = [...wsGrid.querySelectorAll(".ws-cell")];
+          let maxR = 0, maxC = 0;
+          cells.forEach((c) => {
+            maxR = Math.max(maxR, Number(c.dataset.r));
+            maxC = Math.max(maxC, Number(c.dataset.c));
+          });
+          const grid = Array.from({ length: maxR + 1 }, () => new Array(maxC + 1).fill(" "));
+          cells.forEach((c) => { grid[Number(c.dataset.r)][Number(c.dataset.c)] = clean(c.textContent); });
+          push("```");
+          grid.forEach((row) => push(row.join(" ")));
+          push("```");
+        }
+        const words = [...ex.querySelectorAll(".ws-word")].map((w) => clean(w.textContent));
+        if (words.length) push("**Palabras a encontrar:** " + words.join(", "));
+        push();
+      }
+
       // Transcripción del audio (plegada en el artefacto). Es contenido del libro, así que
       // tiene que quedar archivado igual que lo demás — si no, este archivo dejaría de ser
       // suficiente para reconstruir el capítulo sin volver al PDF.
