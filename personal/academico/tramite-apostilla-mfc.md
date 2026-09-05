@@ -85,7 +85,10 @@ conversación de Claude Code.
     2026-09-05** a `spravka@rut-miit.ru`, citando ambos documentos
     oficiales de Moscú (rechazo original № 7638974873/У-03 y respuesta
     a la obращение № 02-12-5443/26, esta última reenviada con su PDF
-    adjunto) — **a la espera de respuesta.**
+    adjunto). **Respuesta recibida el mismo día (09:40, Татьяна
+    Соломатина): solo un acuse de recibo** ("передали на регистрацию" —
+    lo pasaron para registrar) — **todavía sin responder la pregunta de
+    fondo. Sigue a la espera de la respuesta sustantiva.**
 - **2026-09-03** — Alexander Evgenievich (RUT MIIT) confirmó que la
   petición del MFC probablemente **se perdió dentro de la burocracia
   interna de RUT MIIT** (no fue el MFC quien falló). Pasó el contacto de
