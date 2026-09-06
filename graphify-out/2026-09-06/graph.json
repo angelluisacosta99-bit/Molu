@@ -17,6 +17,19 @@
       "source_location": "L1"
     },
     {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticdocument",
+      "label": "StaticDocument",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "css-cascade.mjs",
+      "file_type": "code",
+      "norm_label": "staticdocument",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L799"
+    },
+    {
       "id": "master_sistemas_inteligentes_robots_autonomos_roomba_codigo_roomba_roomba_roombacontroller",
       "label": "RoombaController",
       "_callable": true,
@@ -30,26 +43,13 @@
       "source_location": "L20"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticdocument",
-      "label": "StaticDocument",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 80,
-      "community_name": "detectHtml",
-      "file_type": "code",
-      "norm_label": "staticdocument",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L799"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement",
       "label": "StaticElement",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 80,
-      "community_name": "detectHtml",
+      "community_name": "StaticElement",
       "file_type": "code",
       "norm_label": "staticelement",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
@@ -1784,6 +1784,18 @@
       "source_location": "L874"
     },
     {
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkborders",
+      "label": "checkBorders()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "checks.mjs",
+      "file_type": "code",
+      "norm_label": "checkborders()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
+      "source_location": "L26"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkclippedoverflow",
       "label": "checkClippedOverflow()",
       "_callable": true,
@@ -1806,6 +1818,30 @@
       "norm_label": "checkcreampalette()",
       "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
       "source_location": "L2196"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementborders",
+      "label": "checkElementBorders()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "checks.mjs",
+      "file_type": "code",
+      "norm_label": "checkelementborders()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
+      "source_location": "L1718"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementbordersdom",
+      "label": "checkElementBordersDOM()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "checks.mjs",
+      "file_type": "code",
+      "norm_label": "checkelementbordersdom()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
+      "source_location": "L755"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementclippedoverflow",
@@ -2070,30 +2106,6 @@
       "norm_label": "checkpagelayout()",
       "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
       "source_location": "L2112"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkpagequalitydom",
-      "label": "checkPageQualityDOM()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "checks.mjs",
-      "file_type": "code",
-      "norm_label": "checkpagequalitydom()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L1699"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkpagequalityfromdoc",
-      "label": "checkPageQualityFromDoc()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "checks.mjs",
-      "file_type": "code",
-      "norm_label": "checkpagequalityfromdoc()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L1678"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkpagetypography",
@@ -4160,18 +4172,6 @@
       "source_location": "L10"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_engines_regex_detect_text_runregexmatchers",
-      "label": "runRegexMatchers()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "detect-url.mjs",
-      "file_type": "code",
-      "norm_label": "runregexmatchers()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/regex/detect-text.mjs",
-      "source_location": "L380"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_detector_engines_visual_screenshot_contrast_capturevisualcontrastcandidate",
       "label": "captureVisualContrastCandidate()",
       "_callable": true,
@@ -4206,30 +4206,6 @@
       "norm_label": "sanitizescreenshotclip()",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/visual/screenshot-contrast.mjs",
       "source_location": "L1"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_findings_finding",
-      "label": "finding()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "detect-url.mjs",
-      "file_type": "code",
-      "norm_label": "finding()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/findings.mjs",
-      "source_location": "L7"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_findings_getap",
-      "label": "getAP()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "detect-url.mjs",
-      "file_type": "code",
-      "norm_label": "getap()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/findings.mjs",
-      "source_location": "L3"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_profile_profiler_createdetectorprofile",
@@ -4350,30 +4326,6 @@
       "norm_label": "summarizedetectorprofile()",
       "source_file": ".claude/skills/impeccable/scripts/detector/profile/profiler.mjs",
       "source_location": "L104"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_registry_antipatterns_filterbyproviders",
-      "label": "filterByProviders()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "detect-url.mjs",
-      "file_type": "code",
-      "norm_label": "filterbyproviders()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
-      "source_location": "L430"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_registry_antipatterns_getantipattern",
-      "label": "getAntipattern()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "detect-url.mjs",
-      "file_type": "code",
-      "norm_label": "getantipattern()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
-      "source_location": "L410"
     },
     {
       "id": "claude_skills_impeccable_scripts_hook_lib_applypatchtext",
@@ -6356,6 +6308,18 @@
       "source_location": "L887"
     },
     {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_buildstaticwindow",
+      "label": "buildStaticWindow()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "css-cascade.mjs",
+      "file_type": "code",
+      "norm_label": "buildstaticwindow()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L855"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_collectstaticcssrules",
       "label": "collectStaticCssRules()",
       "_callable": true,
@@ -6572,6 +6536,102 @@
       "source_location": "L406"
     },
     {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticdocument_body",
+      "label": ".body()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "css-cascade.mjs",
+      "file_type": "code",
+      "norm_label": ".body()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L835"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticdocument_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "css-cascade.mjs",
+      "file_type": "code",
+      "norm_label": ".constructor()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L800"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticdocument_documentelement",
+      "label": ".documentElement()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "css-cascade.mjs",
+      "file_type": "code",
+      "norm_label": ".documentelement()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L832"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticdocument_getstyle",
+      "label": ".getStyle()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "css-cascade.mjs",
+      "file_type": "code",
+      "norm_label": ".getstyle()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L841"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticdocument_queryselector",
+      "label": ".querySelector()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "css-cascade.mjs",
+      "file_type": "code",
+      "norm_label": ".queryselector()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L824"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticdocument_queryselectorall",
+      "label": ".querySelectorAll()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "css-cascade.mjs",
+      "file_type": "code",
+      "norm_label": ".queryselectorall()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L817"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticdocument_setstyle",
+      "label": ".setStyle()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "css-cascade.mjs",
+      "file_type": "code",
+      "norm_label": ".setstyle()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L838"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticdocument_wrap",
+      "label": ".wrap()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "css-cascade.mjs",
+      "file_type": "code",
+      "norm_label": ".wrap()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L809"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticspecificity",
       "label": "staticSpecificity()",
       "_callable": true,
@@ -6594,6 +6654,18 @@
       "norm_label": "unwrapcssatlayer()",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
       "source_location": "L187"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_detect_html_checkstaticpagetypography",
+      "label": "checkStaticPageTypography()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "css-cascade.mjs",
+      "file_type": "code",
+      "norm_label": "checkstaticpagetypography()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/detect-html.mjs",
+      "source_location": "L43"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_rules_checks_resolvevarrefs",
@@ -7026,18 +7098,6 @@
       "norm_label": "checkelementcolorsdom()",
       "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
       "source_location": "L770"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementglow",
-      "label": "checkElementGlow()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 195,
-      "community_name": "parseRgb",
-      "file_type": "code",
-      "norm_label": "checkelementglow()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L1900"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementglowdom",
@@ -13400,16 +13460,76 @@
       "source_location": "L21"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_manual_edit_evidence_buildmanualeditevidence",
-      "label": "buildManualEditEvidence()",
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_compactmanuallogtext",
+      "label": "compactManualLogText()",
       "_callable": true,
       "_origin": "ast",
       "community": 35,
       "community_name": "manual-edit-routes.mjs",
       "file_type": "code",
-      "norm_label": "buildmanualeditevidence()",
-      "source_file": ".claude/skills/impeccable/scripts/live-manual-edit-evidence.mjs",
-      "source_location": "L39"
+      "norm_label": "compactmanuallogtext()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L934"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualapplyfailures",
+      "label": "summarizeManualApplyFailures()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "manual-edit-routes.mjs",
+      "file_type": "code",
+      "norm_label": "summarizemanualapplyfailures()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L900"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualdiagnostics",
+      "label": "summarizeManualDiagnostics()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "manual-edit-routes.mjs",
+      "file_type": "code",
+      "norm_label": "summarizemanualdiagnostics()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L913"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanuallogfile",
+      "label": "summarizeManualLogFile()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "manual-edit-routes.mjs",
+      "file_type": "code",
+      "norm_label": "summarizemanuallogfile()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L927"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_edit_routes_createmanualeditroutes",
+      "label": "createManualEditRoutes()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "manual-edit-routes.mjs",
+      "file_type": "code",
+      "norm_label": "createmanualeditroutes()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-edit-routes.mjs",
+      "source_location": "L17"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_edit_routes_sendjson",
+      "label": "sendJson()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "manual-edit-routes.mjs",
+      "file_type": "code",
+      "norm_label": "sendjson()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-edit-routes.mjs",
+      "source_location": "L340"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_manual_edit_routes_summarizependingmanualeditbatch",
@@ -13566,6 +13686,18 @@
       "norm_label": "buildcontexthintsbyref()",
       "source_file": ".claude/skills/impeccable/scripts/live-manual-edit-evidence.mjs",
       "source_location": "L108"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_edit_evidence_buildmanualeditevidence",
+      "label": "buildManualEditEvidence()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "live-manual-edit-evidence.mjs",
+      "file_type": "code",
+      "norm_label": "buildmanualeditevidence()",
+      "source_file": ".claude/skills/impeccable/scripts/live-manual-edit-evidence.mjs",
+      "source_location": "L39"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_manual_edit_evidence_collectsearchfiles",
@@ -18332,18 +18464,6 @@
       "source_location": "L393"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_compactmanuallogtext",
-      "label": "compactManualLogText()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "compactmanuallogtext()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L934"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_manual_apply_compactnearbymanualedittexts",
       "label": "compactNearbyManualEditTexts()",
       "_callable": true,
@@ -18752,42 +18872,6 @@
       "source_location": "L888"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualapplyfailures",
-      "label": "summarizeManualApplyFailures()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "summarizemanualapplyfailures()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L900"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualdiagnostics",
-      "label": "summarizeManualDiagnostics()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "summarizemanualdiagnostics()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L913"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanuallogfile",
-      "label": "summarizeManualLogFile()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "summarizemanuallogfile()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L927"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_manual_apply_truncatemanualapplytext",
       "label": "truncateManualApplyText()",
       "_callable": true,
@@ -18834,30 +18918,6 @@
       "norm_label": "writemanualapplytransaction()",
       "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
       "source_location": "L726"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_edit_routes_createmanualeditroutes",
-      "label": "createManualEditRoutes()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "createmanualeditroutes()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-edit-routes.mjs",
-      "source_location": "L17"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_edit_routes_sendjson",
-      "label": "sendJson()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "sendjson()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-edit-routes.mjs",
-      "source_location": "L340"
     },
     {
       "id": "master_sistemas_inteligentes_robots_autonomos_roomba_codigo_roomba_roomba_roombacontroller_avoid_obstacle",
@@ -19232,6 +19292,30 @@
       "source_location": "L155"
     },
     {
+      "id": "claude_skills_impeccable_scripts_detector_cli_main_handlestdin",
+      "label": "handleStdin()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 66,
+      "community_name": "detect-html.mjs",
+      "file_type": "code",
+      "norm_label": "handlestdin()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/cli/main.mjs",
+      "source_location": "L54"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_regex_detect_text_detecttext",
+      "label": "detectText()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 66,
+      "community_name": "detect-html.mjs",
+      "file_type": "code",
+      "norm_label": "detecttext()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/regex/detect-text.mjs",
+      "source_location": "L462"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_detector_engines_regex_detect_text_extfromfilepath",
       "label": "extFromFilePath()",
       "_callable": true,
@@ -19242,6 +19326,30 @@
       "norm_label": "extfromfilepath()",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/regex/detect-text.mjs",
       "source_location": "L31"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_regex_detect_text_extractcssinjs",
+      "label": "extractCSSinJS()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 66,
+      "community_name": "detect-html.mjs",
+      "file_type": "code",
+      "norm_label": "extractcssinjs()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/regex/detect-text.mjs",
+      "source_location": "L366"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_regex_detect_text_extractstyleblocks",
+      "label": "extractStyleBlocks()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 66,
+      "community_name": "detect-html.mjs",
+      "file_type": "code",
+      "norm_label": "extractstyleblocks()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/regex/detect-text.mjs",
+      "source_location": "L346"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_engines_regex_detect_text_hasborderradius",
@@ -19292,6 +19400,18 @@
       "source_location": "L16"
     },
     {
+      "id": "claude_skills_impeccable_scripts_detector_engines_regex_detect_text_runregexmatchers",
+      "label": "runRegexMatchers()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 66,
+      "community_name": "detect-html.mjs",
+      "file_type": "code",
+      "norm_label": "runregexmatchers()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/regex/detect-text.mjs",
+      "source_location": "L380"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_detector_engines_regex_detect_text_runtextcontentanalyzers",
       "label": "runTextContentAnalyzers()",
       "_callable": true,
@@ -19328,6 +19448,30 @@
       "source_location": "L20"
     },
     {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_collectstaticcsstext",
+      "label": "collectStaticCssText()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 66,
+      "community_name": "detect-html.mjs",
+      "file_type": "code",
+      "norm_label": "collectstaticcsstext()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L862"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_textcontent",
+      "label": ".textContent()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 66,
+      "community_name": "detect-html.mjs",
+      "file_type": "code",
+      "norm_label": ".textcontent()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L749"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_detector_engines_static_html_detect_html_checkelementbrokenimage",
       "label": "checkElementBrokenImage()",
       "_callable": true,
@@ -19340,40 +19484,112 @@
       "source_location": "L78"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkborders",
-      "label": "checkBorders()",
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_detect_html_detecthtml",
+      "label": "detectHtml()",
       "_callable": true,
       "_origin": "ast",
       "community": 66,
       "community_name": "detect-html.mjs",
       "file_type": "code",
-      "norm_label": "checkborders()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L26"
+      "norm_label": "detecthtml()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/detect-html.mjs",
+      "source_location": "L107"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementborders",
-      "label": "checkElementBorders()",
+      "id": "claude_skills_impeccable_scripts_detector_findings_finding",
+      "label": "finding()",
       "_callable": true,
       "_origin": "ast",
       "community": 66,
       "community_name": "detect-html.mjs",
       "file_type": "code",
-      "norm_label": "checkelementborders()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L1718"
+      "norm_label": "finding()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/findings.mjs",
+      "source_location": "L7"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementbordersdom",
-      "label": "checkElementBordersDOM()",
+      "id": "claude_skills_impeccable_scripts_detector_findings_getap",
+      "label": "getAP()",
       "_callable": true,
       "_origin": "ast",
       "community": 66,
       "community_name": "detect-html.mjs",
       "file_type": "code",
-      "norm_label": "checkelementbordersdom()",
+      "norm_label": "getap()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/findings.mjs",
+      "source_location": "L3"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_registry_antipatterns_filterbyproviders",
+      "label": "filterByProviders()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 66,
+      "community_name": "detect-html.mjs",
+      "file_type": "code",
+      "norm_label": "filterbyproviders()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
+      "source_location": "L430"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_registry_antipatterns_getantipattern",
+      "label": "getAntipattern()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 66,
+      "community_name": "detect-html.mjs",
+      "file_type": "code",
+      "norm_label": "getantipattern()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
+      "source_location": "L410"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementglow",
+      "label": "checkElementGlow()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 66,
+      "community_name": "detect-html.mjs",
+      "file_type": "code",
+      "norm_label": "checkelementglow()",
       "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L755"
+      "source_location": "L1900"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkhtmlpatterns",
+      "label": "checkHtmlPatterns()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 66,
+      "community_name": "detect-html.mjs",
+      "file_type": "code",
+      "norm_label": "checkhtmlpatterns()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
+      "source_location": "L446"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkpagequalitydom",
+      "label": "checkPageQualityDOM()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 66,
+      "community_name": "detect-html.mjs",
+      "file_type": "code",
+      "norm_label": "checkpagequalitydom()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
+      "source_location": "L1699"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkpagequalityfromdoc",
+      "label": "checkPageQualityFromDoc()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 66,
+      "community_name": "detect-html.mjs",
+      "file_type": "code",
+      "norm_label": "checkpagequalityfromdoc()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
+      "source_location": "L1678"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_shared_color_isneutralcolor",
@@ -21596,132 +21812,12 @@
       "source_location": "L405"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_buildstaticwindow",
-      "label": "buildStaticWindow()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 80,
-      "community_name": "detectHtml",
-      "file_type": "code",
-      "norm_label": "buildstaticwindow()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L855"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_collectstaticcsstext",
-      "label": "collectStaticCssText()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 80,
-      "community_name": "detectHtml",
-      "file_type": "code",
-      "norm_label": "collectstaticcsstext()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L862"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticdocument_body",
-      "label": ".body()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 80,
-      "community_name": "detectHtml",
-      "file_type": "code",
-      "norm_label": ".body()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L835"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticdocument_constructor",
-      "label": ".constructor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 80,
-      "community_name": "detectHtml",
-      "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L800"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticdocument_documentelement",
-      "label": ".documentElement()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 80,
-      "community_name": "detectHtml",
-      "file_type": "code",
-      "norm_label": ".documentelement()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L832"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticdocument_getstyle",
-      "label": ".getStyle()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 80,
-      "community_name": "detectHtml",
-      "file_type": "code",
-      "norm_label": ".getstyle()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L841"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticdocument_queryselector",
-      "label": ".querySelector()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 80,
-      "community_name": "detectHtml",
-      "file_type": "code",
-      "norm_label": ".queryselector()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L824"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticdocument_queryselectorall",
-      "label": ".querySelectorAll()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 80,
-      "community_name": "detectHtml",
-      "file_type": "code",
-      "norm_label": ".queryselectorall()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L817"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticdocument_setstyle",
-      "label": ".setStyle()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 80,
-      "community_name": "detectHtml",
-      "file_type": "code",
-      "norm_label": ".setstyle()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L838"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticdocument_wrap",
-      "label": ".wrap()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 80,
-      "community_name": "detectHtml",
-      "file_type": "code",
-      "norm_label": ".wrap()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L809"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_childnodes",
       "label": ".childNodes()",
       "_callable": true,
       "_origin": "ast",
       "community": 80,
-      "community_name": "detectHtml",
+      "community_name": "StaticElement",
       "file_type": "code",
       "norm_label": ".childnodes()",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
@@ -21733,7 +21829,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 80,
-      "community_name": "detectHtml",
+      "community_name": "StaticElement",
       "file_type": "code",
       "norm_label": ".children()",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
@@ -21745,7 +21841,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 80,
-      "community_name": "detectHtml",
+      "community_name": "StaticElement",
       "file_type": "code",
       "norm_label": ".classname()",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
@@ -21757,7 +21853,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 80,
-      "community_name": "detectHtml",
+      "community_name": "StaticElement",
       "file_type": "code",
       "norm_label": ".closest()",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
@@ -21769,7 +21865,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 80,
-      "community_name": "detectHtml",
+      "community_name": "StaticElement",
       "file_type": "code",
       "norm_label": ".constructor()",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
@@ -21781,7 +21877,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 80,
-      "community_name": "detectHtml",
+      "community_name": "StaticElement",
       "file_type": "code",
       "norm_label": ".contains()",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
@@ -21793,7 +21889,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 80,
-      "community_name": "detectHtml",
+      "community_name": "StaticElement",
       "file_type": "code",
       "norm_label": ".getattribute()",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
@@ -21805,7 +21901,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 80,
-      "community_name": "detectHtml",
+      "community_name": "StaticElement",
       "file_type": "code",
       "norm_label": ".id()",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
@@ -21817,7 +21913,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 80,
-      "community_name": "detectHtml",
+      "community_name": "StaticElement",
       "file_type": "code",
       "norm_label": ".parentelement()",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
@@ -21829,7 +21925,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 80,
-      "community_name": "detectHtml",
+      "community_name": "StaticElement",
       "file_type": "code",
       "norm_label": ".previouselementsibling()",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
@@ -21841,7 +21937,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 80,
-      "community_name": "detectHtml",
+      "community_name": "StaticElement",
       "file_type": "code",
       "norm_label": ".queryselector()",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
@@ -21853,59 +21949,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 80,
-      "community_name": "detectHtml",
+      "community_name": "StaticElement",
       "file_type": "code",
       "norm_label": ".queryselectorall()",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
       "source_location": "L769"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_textcontent",
-      "label": ".textContent()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 80,
-      "community_name": "detectHtml",
-      "file_type": "code",
-      "norm_label": ".textcontent()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L749"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_detect_html_checkstaticpagetypography",
-      "label": "checkStaticPageTypography()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 80,
-      "community_name": "detectHtml",
-      "file_type": "code",
-      "norm_label": "checkstaticpagetypography()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/detect-html.mjs",
-      "source_location": "L43"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_detect_html_detecthtml",
-      "label": "detectHtml()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 80,
-      "community_name": "detectHtml",
-      "file_type": "code",
-      "norm_label": "detecthtml()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/detect-html.mjs",
-      "source_location": "L107"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkhtmlpatterns",
-      "label": "checkHtmlPatterns()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 80,
-      "community_name": "detectHtml",
-      "file_type": "code",
-      "norm_label": "checkhtmlpatterns()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L446"
     },
     {
       "id": "docencia_espanol_fuentes_extraer_emittable",
@@ -22112,18 +22160,6 @@
       "source_location": "L25"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_cli_main_handlestdin",
-      "label": "handleStdin()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 85,
-      "community_name": "detect-antipatterns.mjs",
-      "file_type": "code",
-      "norm_label": "handlestdin()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/cli/main.mjs",
-      "source_location": "L54"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_detector_cli_main_printusage",
       "label": "printUsage()",
       "_callable": true,
@@ -22160,6 +22196,30 @@
       "source_location": "L53"
     },
     {
+      "id": "claude_skills_impeccable_scripts_detector_design_system_resolvedesignsidecarpath",
+      "label": "resolveDesignSidecarPath()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 85,
+      "community_name": "detect-antipatterns.mjs",
+      "file_type": "code",
+      "norm_label": "resolvedesignsidecarpath()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/design-system.mjs",
+      "source_location": "L42"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_design_system_safereadjson",
+      "label": "safeReadJson()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 85,
+      "community_name": "detect-antipatterns.mjs",
+      "file_type": "code",
+      "norm_label": "safereadjson()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/design-system.mjs",
+      "source_location": "L147"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_detector_engines_browser_detect_url_createbrowserdetector",
       "label": "createBrowserDetector()",
       "_callable": true,
@@ -22170,42 +22230,6 @@
       "norm_label": "createbrowserdetector()",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/browser/detect-url.mjs",
       "source_location": "L244"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_regex_detect_text_detecttext",
-      "label": "detectText()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 85,
-      "community_name": "detect-antipatterns.mjs",
-      "file_type": "code",
-      "norm_label": "detecttext()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/regex/detect-text.mjs",
-      "source_location": "L462"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_regex_detect_text_extractcssinjs",
-      "label": "extractCSSinJS()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 85,
-      "community_name": "detect-antipatterns.mjs",
-      "file_type": "code",
-      "norm_label": "extractcssinjs()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/regex/detect-text.mjs",
-      "source_location": "L366"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_regex_detect_text_extractstyleblocks",
-      "label": "extractStyleBlocks()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 85,
-      "community_name": "detect-antipatterns.mjs",
-      "file_type": "code",
-      "norm_label": "extractstyleblocks()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/regex/detect-text.mjs",
-      "source_location": "L346"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_node_file_system_buildimportgraph",
@@ -22770,30 +22794,6 @@
       "norm_label": "resolvedesignmdpath()",
       "source_file": ".claude/skills/impeccable/scripts/detector/design-system.mjs",
       "source_location": "L29"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_design_system_resolvedesignsidecarpath",
-      "label": "resolveDesignSidecarPath()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "design-system.mjs",
-      "file_type": "code",
-      "norm_label": "resolvedesignsidecarpath()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/design-system.mjs",
-      "source_location": "L42"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_design_system_safereadjson",
-      "label": "safeReadJson()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "design-system.mjs",
-      "file_type": "code",
-      "norm_label": "safereadjson()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/design-system.mjs",
-      "source_location": "L147"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_design_system_sampletext",
@@ -25459,17 +25459,6 @@
       "file_type": "code",
       "norm_label": "screenshot-contrast.mjs",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/visual/screenshot-contrast.mjs",
-      "source_location": "L1"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_findings",
-      "label": "findings.mjs",
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "detect-url.mjs",
-      "file_type": "code",
-      "norm_label": "findings.mjs",
-      "source_file": ".claude/skills/impeccable/scripts/detector/findings.mjs",
       "source_location": "L1"
     },
     {
@@ -33628,114 +33617,15 @@
       "source_location": "L92"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_shared_constants",
-      "label": "constants.mjs",
+      "id": "claude_skills_impeccable_scripts_detector_findings",
+      "label": "findings.mjs",
       "_origin": "ast",
       "community": 66,
       "community_name": "detect-html.mjs",
       "file_type": "code",
-      "norm_label": "constants.mjs",
-      "source_file": ".claude/skills/impeccable/scripts/detector/shared/constants.mjs",
+      "norm_label": "findings.mjs",
+      "source_file": ".claude/skills/impeccable/scripts/detector/findings.mjs",
       "source_location": "L1"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_shared_constants_border_safe_tags",
-      "label": "BORDER_SAFE_TAGS",
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "detect-html.mjs",
-      "file_type": "code",
-      "norm_label": "border_safe_tags",
-      "source_file": ".claude/skills/impeccable/scripts/detector/shared/constants.mjs",
-      "source_location": "L19"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_shared_constants_brand_font_domains",
-      "label": "BRAND_FONT_DOMAINS",
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "detect-html.mjs",
-      "file_type": "code",
-      "norm_label": "brand_font_domains",
-      "source_file": ".claude/skills/impeccable/scripts/detector/shared/constants.mjs",
-      "source_location": "L41"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_shared_constants_generic_fonts",
-      "label": "GENERIC_FONTS",
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "detect-html.mjs",
-      "file_type": "code",
-      "norm_label": "generic_fonts",
-      "source_file": ".claude/skills/impeccable/scripts/detector/shared/constants.mjs",
-      "source_location": "L59"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_shared_constants_github_domains",
-      "label": "GITHUB_DOMAINS",
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "detect-html.mjs",
-      "file_type": "code",
-      "norm_label": "github_domains",
-      "source_file": ".claude/skills/impeccable/scripts/detector/shared/constants.mjs",
-      "source_location": "L40"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_shared_constants_google_domains",
-      "label": "GOOGLE_DOMAINS",
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "detect-html.mjs",
-      "file_type": "code",
-      "norm_label": "google_domains",
-      "source_file": ".claude/skills/impeccable/scripts/detector/shared/constants.mjs",
-      "source_location": "L35"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_shared_constants_known_serif_fonts",
-      "label": "KNOWN_SERIF_FONTS",
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "detect-html.mjs",
-      "file_type": "code",
-      "norm_label": "known_serif_fonts",
-      "source_file": ".claude/skills/impeccable/scripts/detector/shared/constants.mjs",
-      "source_location": "L74"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_shared_constants_overused_fonts",
-      "label": "OVERUSED_FONTS",
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "detect-html.mjs",
-      "file_type": "code",
-      "norm_label": "overused_fonts",
-      "source_file": ".claude/skills/impeccable/scripts/detector/shared/constants.mjs",
-      "source_location": "L23"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_shared_constants_safe_tags",
-      "label": "SAFE_TAGS",
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "detect-html.mjs",
-      "file_type": "code",
-      "norm_label": "safe_tags",
-      "source_file": ".claude/skills/impeccable/scripts/detector/shared/constants.mjs",
-      "source_location": "L3"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_shared_constants_vercel_domains",
-      "label": "VERCEL_DOMAINS",
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "detect-html.mjs",
-      "file_type": "code",
-      "norm_label": "vercel_domains",
-      "source_file": ".claude/skills/impeccable/scripts/detector/shared/constants.mjs",
-      "source_location": "L39"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_shared_inline_ignores",
@@ -34034,6 +33924,18 @@
       "norm_label": "2026-08-23 \u2014 statusline de ponytail: configurado",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
       "source_location": "L212"
+    },
+    {
+      "id": "recursos_generales_herramientas_ia_novedades_2026_09_06_lecci\u00f3n_ampliar_una_regla_de_golden_rules_exige_revisar_todas_las_que_dependen_de_su_alcance",
+      "label": "2026-09-06 \u2014 Lecci\u00f3n: ampliar una regla de golden rules exige revisar TODAS las que dependen de su alcance",
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "Novedades de herramientas de IA",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "2026-09-06 \u2014 leccion: ampliar una regla de golden rules exige revisar todas las que dependen de su alcance",
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L978"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_anotado_no_aplicado_patrones_de_awattar_claude_code_best_practices",
@@ -34418,6 +34320,116 @@
       "norm_label": "rule_engine_support",
       "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
       "source_location": "L403"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_shared_constants",
+      "label": "constants.mjs",
+      "_origin": "ast",
+      "community": 85,
+      "community_name": "detect-antipatterns.mjs",
+      "file_type": "code",
+      "norm_label": "constants.mjs",
+      "source_file": ".claude/skills/impeccable/scripts/detector/shared/constants.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_shared_constants_border_safe_tags",
+      "label": "BORDER_SAFE_TAGS",
+      "_origin": "ast",
+      "community": 85,
+      "community_name": "detect-antipatterns.mjs",
+      "file_type": "code",
+      "norm_label": "border_safe_tags",
+      "source_file": ".claude/skills/impeccable/scripts/detector/shared/constants.mjs",
+      "source_location": "L19"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_shared_constants_brand_font_domains",
+      "label": "BRAND_FONT_DOMAINS",
+      "_origin": "ast",
+      "community": 85,
+      "community_name": "detect-antipatterns.mjs",
+      "file_type": "code",
+      "norm_label": "brand_font_domains",
+      "source_file": ".claude/skills/impeccable/scripts/detector/shared/constants.mjs",
+      "source_location": "L41"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_shared_constants_generic_fonts",
+      "label": "GENERIC_FONTS",
+      "_origin": "ast",
+      "community": 85,
+      "community_name": "detect-antipatterns.mjs",
+      "file_type": "code",
+      "norm_label": "generic_fonts",
+      "source_file": ".claude/skills/impeccable/scripts/detector/shared/constants.mjs",
+      "source_location": "L59"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_shared_constants_github_domains",
+      "label": "GITHUB_DOMAINS",
+      "_origin": "ast",
+      "community": 85,
+      "community_name": "detect-antipatterns.mjs",
+      "file_type": "code",
+      "norm_label": "github_domains",
+      "source_file": ".claude/skills/impeccable/scripts/detector/shared/constants.mjs",
+      "source_location": "L40"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_shared_constants_google_domains",
+      "label": "GOOGLE_DOMAINS",
+      "_origin": "ast",
+      "community": 85,
+      "community_name": "detect-antipatterns.mjs",
+      "file_type": "code",
+      "norm_label": "google_domains",
+      "source_file": ".claude/skills/impeccable/scripts/detector/shared/constants.mjs",
+      "source_location": "L35"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_shared_constants_known_serif_fonts",
+      "label": "KNOWN_SERIF_FONTS",
+      "_origin": "ast",
+      "community": 85,
+      "community_name": "detect-antipatterns.mjs",
+      "file_type": "code",
+      "norm_label": "known_serif_fonts",
+      "source_file": ".claude/skills/impeccable/scripts/detector/shared/constants.mjs",
+      "source_location": "L74"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_shared_constants_overused_fonts",
+      "label": "OVERUSED_FONTS",
+      "_origin": "ast",
+      "community": 85,
+      "community_name": "detect-antipatterns.mjs",
+      "file_type": "code",
+      "norm_label": "overused_fonts",
+      "source_file": ".claude/skills/impeccable/scripts/detector/shared/constants.mjs",
+      "source_location": "L23"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_shared_constants_safe_tags",
+      "label": "SAFE_TAGS",
+      "_origin": "ast",
+      "community": 85,
+      "community_name": "detect-antipatterns.mjs",
+      "file_type": "code",
+      "norm_label": "safe_tags",
+      "source_file": ".claude/skills/impeccable/scripts/detector/shared/constants.mjs",
+      "source_location": "L3"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_shared_constants_vercel_domains",
+      "label": "VERCEL_DOMAINS",
+      "_origin": "ast",
+      "community": 85,
+      "community_name": "detect-antipatterns.mjs",
+      "file_type": "code",
+      "norm_label": "vercel_domains",
+      "source_file": ".claude/skills/impeccable/scripts/detector/shared/constants.mjs",
+      "source_location": "L39"
     },
     {
       "id": "agents_skills_cavecrew_skill",
@@ -108101,6 +108113,17 @@
       "weight": 1.0
     },
     {
+      "source": "recursos_generales_herramientas_ia_novedades_novedades_de_herramientas_de_ia",
+      "target": "recursos_generales_herramientas_ia_novedades_2026_09_06_lecci\u00f3n_ampliar_una_regla_de_golden_rules_exige_revisar_todas_las_que_dependen_de_su_alcance",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L978",
+      "weight": 1.0
+    },
+    {
       "source": "recursos_generales_herramientas_ia_vercel_web_interface_guidelines",
       "target": "recursos_generales_herramientas_ia_vercel_web_interface_guidelines_web_interface_guidelines_vercel",
       "relation": "contains",
@@ -112546,5 +112569,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "84d0a10e371bf4dbe4a8783e858207d1cacefa2a"
+  "built_at_commit": "0bfec8a74c86570ac926fac67074e8758b73b74f"
 }
