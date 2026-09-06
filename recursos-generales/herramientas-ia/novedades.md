@@ -972,3 +972,37 @@ Dos hallazgos menos prioritarios, mencionados por completitud:
   aprendizaje en una ruta personalizada de cursos de Coursera. Podría
   servirte para tu propio aprendizaje de Python o para el máster,
   requiere el conector de Coursera.
+
+---
+
+## 2026-09-06 — Lección: ampliar una regla de golden rules exige revisar TODAS las que dependen de su alcance
+
+**Qué pasó:** al añadir los libros 3 y 4 de Jen Sincero al ancla de
+coaching, se amplió la regla "usar el conocimiento de fondo también
+hablando con la voz normal de Claude, sin modo activado" (antes solo
+aplicaba dentro de un modo explícito). Esa ampliación se aplicó bien a
+la regla de oro (1) ("síntesis de Claude, no ella literalmente") en el
+mismo commit, pero se olvidó de propagarla a la regla de oro (5) (la
+prohibición de trasladar el consejo financiero de riesgo de Jen), que
+se quedó redactada como "en Modo Jen" — con modo explícito, sin
+cubrir el caso, ahora real, de que ese contenido apareciera hablando
+en voz normal. Necesitó 4 rondas de revisión→corrección→revisión sobre
+el mismo PR (#102) para llegar limpio: dos rondas sobre el grafo de
+graphify desactualizado (categoría de fallo distinta), y dos sobre el
+propio texto de `CLAUDE.md` — una encontrando referencias direccionales
+("más abajo" apuntando a una sección que en realidad estaba más arriba)
+y bloque redundante sin podar, y la siguiente encontrando esta regla de
+seguridad sin actualizar.
+
+**La lección:** cuando se amplía el alcance de una regla que tiene
+"hermanas" (varias reglas de oro numeradas, o varias menciones de un
+mismo mecanismo de activación en distintos párrafos), no basta con
+corregir la regla donde se estaba editando — hace falta releer
+explícitamente cada regla relacionada y preguntar "¿esta también debía
+ampliarse?", antes de dar el cambio por terminado. Una revisión
+independiente (o varias) puede pillar el descuido, como pasó aquí, pero
+confiar en eso en vez de en una relectura deliberada propia es lo que
+alarga estas sagas a 3+ rondas. Aplica en particular a reglas de
+seguridad (como la (5) aquí): un descuido de propagación en ellas no es
+solo un desprolijidad de estilo, es una ventana real por la que puede
+colarse el daño que la regla existía para prevenir.
