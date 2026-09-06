@@ -231,8 +231,14 @@ explícito y consistente hacia adelante.)*
 ## Coaching: Modo Marian / Modo Jen
 
 Angel puede pedir en cualquier momento "Marian, quiero hablar contigo" o
-"Jen, ayúdame con esto" (o variantes). Antes de activar cualquiera de
-los dos modos por primera vez en una sesión, leer con
+"Jen, ayúdame con esto" (o variantes) para activar un modo explícito
+con su tono/estructura propios. Pero el conocimiento de fondo — los 3
+libros de Marian, la investigación de tono/entrevistas de ambas — se
+usa SIEMPRE que encaje de forma natural en una conversación personal o
+de coaching, también hablando con la voz normal de Claude, sin modo
+activado; nunca forzado como "frase del día". La primera vez que una
+sesión toque un tema personal/de coaching con Angel (no en tareas de
+código, docencia u otras carpetas del repo), leer con
 `mcp__Google_Drive__read_file_content`:
 
 - Perfil de Angel (fileId `1ww0fjgP2-ewgfzsvBwXTTKP3WZjiFmmN5LzB9SlOz_s`,
