@@ -1,123 +1,234 @@
-# Graph Report - Molu  (2026-08-15)
+# Graph Report - Molu  (2026-09-05)
 
 ## Corpus Check
-- 168 files · ~451,065 words
+- 260 files · ~1,308,463 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2340 nodes · 5737 edges · 108 communities (99 shown, 9 thin omitted)
-- Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 147 edges (avg confidence: 0.61)
-- Token cost: 844,880 input · 0 output
+- 3134 nodes · 6442 edges · 214 communities (192 shown, 22 thin omitted)
+- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 121 edges (avg confidence: 0.84)
+- Token cost: 0 input · 0 output
+
+## Graph Freshness
+- Built from commit: `f3b9f653`
+- Run `git rev-parse HEAD` and compare to check if the graph is stale.
+- Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
-- Impeccable Live Browser Engine
-- Impeccable Design Antipattern Checks
-- Impeccable Browser-Injected Detector
-- Impeccable Live Browser Engine
-- Impeccable Screenshot Vendor Lib
-- Impeccable Live Browser Engine
-- Impeccable Manual Edit Apply
-- Impeccable Live Browser Engine
-- Impeccable Manual Edit Commit
-- Impeccable Design System Detector
-- Impeccable Config Management
-- Impeccable Live Mode Server
-- Impeccable Svelte Component Support
-- Impeccable Text Antipattern Detector
-- Impeccable Hook Library
-- Impeccable Live Browser Engine
-- Impeccable Live Script Injection
-- Impeccable Browser Antipattern Bundle
-- Impeccable CSS Cascade Resolver
-- Impeccable Live Insert UI
-- Repo Navigation Docs
-- Impeccable Hook Admin CLI
-- Impeccable Pre-Edit Hook
-- Impeccable Live Wrap Mode
-- Skill Entry Points
-- Impeccable Live Browser Engine
-- Impeccable Design Token Parser
-- Impeccable File System Scanner
-- Impeccable Live Accept Flow
-- Impeccable Copy Edit Agent
-- Impeccable Browser Antipattern Bundle
-- Impeccable Live Browser Engine
-- Impeccable Live Browser Engine
-- Impeccable Live Session Polling
-- Impeccable Hook Library
-- Impeccable Manual Edits Buffer
-- Impeccable Manual Edit Evidence
-- Impeccable Project Context Resolver
-- Impeccable Live Browser Engine
-- Impeccable Design Antipattern Checks
-- Impeccable Path Resolution
-- Impeccable Live Session Resume
-- Impeccable Browser Antipattern Bundle
-- Impeccable Shared Constants
-- Impeccable Browser Antipattern Bundle
-- Impeccable Live Browser Engine
-- Impeccable Browser Session State
-- Impeccable Project Context Resolver
-- Impeccable Browser DOM Helpers
-- Impeccable Browser Antipattern Bundle
-- Impeccable Critique Command Doc
-- Impeccable Context Signal Detection
-- Impeccable CSS Cascade Resolver
-- Impeccable Brand Command Doc
-- Impeccable Critique Storage
-- Impeccable Browser Antipattern Bundle
-- Impeccable Browser Antipattern Bundle
-- Impeccable Project Context Resolver
-- Impeccable Live Command Entry
-- Impeccable Hook Library
-- Impeccable Live Session Store
-- Impeccable CSP Detector
-- Impeccable Color Palette Engine
-- Impeccable Pin Command
-- A1 Presente/Gerundio/Indefinido Source
-- Impeccable Clarify Command Doc
-- Impeccable Inline Ignore Comments
-- Impeccable Hook Library
-- Impeccable Live Browser Engine
-- Impeccable Live Browser Engine
-- Impeccable Live UI Core
-- Skill Entry Points
-- Impeccable Adapt Command Doc
-- Impeccable Document Command Doc
-- Impeccable Browser Antipattern Bundle
-- Impeccable Project Context Resolver
-- Impeccable Browser Antipattern Bundle
-- Graphify Update Command Doc
-- Impeccable Polish Command Doc
-- Impeccable Target Args Parsing
-- Impeccable Live Browser Engine
-- Docencia Chapter Extraction Script
-- Impeccable Animate Command Doc
-- Impeccable Project Context Resolver
-- Graphify Query Command Doc
-- Impeccable Browser Antipattern Bundle
-- Impeccable Generated-File Detector
-- Repo Navigation Docs
-- Impeccable Colorize Command Doc
-- Graphify Export Formats Doc
-- Impeccable Detect Entry Point
-- Body Parts Worksheet Image
-- B1-5B Scanned Textbook Page
-- Graphify Hooks Reference
-- Impeccable Layout Command Doc
-- Repo Governance Rules
-- Graphify Add/Watch Reference
-- Graphify Extraction Prompt Spec
-- Impeccable Shape Command Doc
-- A1 Unidad 6A Source Transcript
-- Impeccable Onboard Command Doc
-- Impeccable Product Command Doc
-- Docencia Page-Splitting Script
-- Repo Navigation Docs
-- Repo Governance Rules
-- Repo Governance Rules
-- Repo Navigation Docs
-- Recursos Generales Notes
+- live-browser.js
+- checks.mjs
+- index.mjs
+- resumeSession
+- modern-screenshot.umd.js
+- el
+- manual-apply.mjs
+- setLiveState
+- live-commit-manual-edits.mjs
+- design-system.mjs
+- impeccable-config.mjs
+- live-server.mjs
+- svelte-component.mjs
+- detect-url.mjs
+- hook-lib.mjs
+- initPageChat
+- live-inject.mjs
+- detect-antipatterns-browser.js
+- css-cascade.mjs
+- insert-ui.mjs
+- Fuentes transcritas overview
+- hook-admin.mjs
+- hook-before-edit.mjs
+- live-wrap.mjs
+- Skill: ejercicio-interactivo
+- Formación académica de Angel Luis Acosta González
+- design-parser.mjs
+- Ejercicios
+- live-accept.mjs
+- live-copy-edit-agent.mjs
+- parseRgb
+- captureElementToBlob
+- initGlobalBar
+- live-poll.mjs
+- runHook
+- manual-edit-routes.mjs
+- live-manual-edit-evidence.mjs
+- context.mjs
+- handleManualEditActivity
+- isGeneratedFile
+- impeccable-paths.mjs
+- session-store.mjs
+- parseAnyColor
+- Ejercicios
+- resolveLengthPx
+- onAnnotDown
+- createLiveBrowserSessionState
+- discoverTargetCandidates
+- createLiveBrowserDomHelpers
+- sampleCssBackground
+- Critique Reference (Design Review)
+- context-signals.mjs
+- Perfil de Avito: valoración, precios y descripción
+- Live Reference (Interactive Variant Mode)
+- critique-storage.mjs
+- scheduleLazyVisualContrast
+- collectBrowserFindings
+- Ejercicios
+- live.mjs
+- readConfig
+- RoombaController
+- detect-csp.mjs
+- palette.mjs
+- pin.mjs
+- Ser / Estar (contraste)
+- Clarify Reference (UX Copy)
+- detect-antipatterns.mjs
+- normalizeIgnoreValueEntries
+- Web Interface Guidelines (Vercel)
+- Novedades de herramientas de IA
+- ui-core.mjs
+- impeccable skill
+- Craft Flow Reference
+- Init Reference (Project Setup)
+- postSerializedFindings
+- resolveContext
+- isScreenReaderOnlyTextStyle
+- graphify: Incremental Update & Cluster-only
+- Impeccable: Typeset
+- resolveLiveInjectionAnchor
+- StaticElement
+- extraer.mjs
+- Animate Reference (Motion Design)
+- syncEditBadgeHitProxies
+- graphify: Query, Path, Explain
+- detect-text.mjs
+- cavecrew/SKILL.md
+- Molu — README del repositorio
+- Colorize Reference (Color Strategy)
+- graphify: Extra Exports & Benchmark
+- detect.mjs
+- Fuente del material
+- Ejercicios
+- Hooks Reference (Design Detector Hook)
+- Planificación overview
+- Skill: graphify
+- graphify: Add URL & Watch Folder
+- graphify: Extraction Subagent Prompt Spec
+- Impeccable: Shape (Design Brief)
+- NEM1 Cuaderno Unidad 6A — ¿Cómo se va a Goya?
+- Onboard Reference (User Onboarding)
+- Impeccable: Product Register
+- paginas.sh
+- Convención de subcarpetas AAAA-MM_cliente_tema
+- Regla: presentaciones .pptx sin firma final
+- Regla: nombre del profesor sin tilde (Angel)
+- Becas y trámites de admisión — MUSI 2026/2027
+- Notas sueltas
+- agent-browser
+- mineria-de-datos/FUENTE.md
+- robots-autonomos/FUENTE.md
+- control-inteligente/FUENTE.md
+- herramientas-interactivas-de-simulacion-y-control/FUENTE.md
+- inteligencia-ambiental-y-sistemas-multiagente/FUENTE.md
+- metodologia-de-la-investigacion/FUENTE.md
+- Ejercicios
+- Ejercicios
+- Ejercicios
+- Ejercicios
+- Find Skills
+- Ejercicios
+- caveman/SKILL.md
+- hook-hardening
+- Ejercicios
+- cavecrew-investigator.md
+- Ejercicios
+- cavecrew-builder.md
+- cavecrew-reviewer.md
+- Ejercicios
+- Ejercicios
+- restrict-cavecrew-bash.sh
+- investigate-first/SKILL.md
+- lean-build/SKILL.md
+- migration/SKILL.md
+- safe-refactor/SKILL.md
+- surgical-patch/SKILL.md
+- verify-and-stop/SKILL.md
+- Ejercicios
+- Ejercicios
+- Ejercicios
+- Ejercicios
+- Ejercicios
+- Ejercicios
+- Ejercicios
+- Ejercicios
+- Ejercicios
+- Ejercicios
+- Ejercicios
+- Ejercicios
+- checkElementHeroEyebrow
+- guia-repaso-unidades-1-10.md
+- Ejercicios
+- Ejercicios
+- analitica-visual-y-visualizacion-de-la-informacion/FUENTE.md
+- Fuente del material
+- Gemini [![Build Status](https://github.com/anishathalye/gemini/workflows/CI/badge.svg)](https://github.com/anishathalye/gemini/actions?query=workflow%3ACI)
+- check-pr-review.sh
+- procesos-y-metodos-de-modelado-para-la-ingenieria-web-y-web-semantica/FUENTE.md
+- logica-para-web-semantica/FUENTE.md
+- mineria-de-datos-aplicada-a-la-bioinformatica/FUENTE.md
+- Currículum (CV) — perfil profesional
+- Oportunidades de docencia de español en Salamanca (USAL)
+- mark-pr-reviewed.sh
+- session-end-status.sh
+- session-start.sh
+- overleaf-trabajo-mi/README.md
+- funciones.py
+- Ejercicios
+- live-target.mjs
+- irobot_2.py
+- Ejercicios
+- Ejercicios
+- Ejercicios
+- Ejercicios
+- Ejercicios
+- Ejercicios
+- Ejercicios
+- Ejercicios
+- Ejercicios
+- Ejercicios
+- Ejercicios
+- Ejercicios
+- Ejercicios
+- Ejercicios
+- Ejercicios
+- Ejercicios
+- Ejercicios
+- Docencia de español overview
+- Ejercicios
+- Ejercicios
+- Ejercicios
+- Ejercicios
+- Ejercicios
+- Ejercicios
+- Q: PR 90 re-review: verify 5 prior derangement/conjTable fixes on current HEAD
+- personal/README.md
+- readLiveServerInfo
+- Carta de candidatura espontánea — academias de español, Salamanca
+- Ejercicios
+- cli
+- Ejercicios
+- Ejercicios
+- Ejercicios
+- Ejercicios
+- Ejercicios
+- Ejercicios
+- detect-html.mjs
+- Ejercicios
+- parseRgb
+- Ejercicios
+- Ejercicios
+- resolveCandidateContextSummary
+- Ejercicios
+- Ejercicios
 
 ## God Nodes (most connected - your core abstractions)
 1. `runHook()` - 29 edges
@@ -132,451 +243,809 @@
 10. `resumeSession()` - 25 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `Python overview` --semantically_similar_to--> `Docencia de español overview`  [INFERRED] [semantically similar]
-  python/README.md → docencia-espanol/README.md
+- `Docencia de español overview` --semantically_similar_to--> `Python overview`  [INFERRED] [semantically similar]
+  docencia-espanol/README.md → python/README.md
 - `Máster en Sistemas Inteligentes overview` --semantically_similar_to--> `Telecomunicaciones overview`  [INFERRED] [semantically similar]
   master-sistemas-inteligentes/README.md → telecomunicaciones/README.md
-- `A1 — Presente, gerundio, indefinido (ejercicio interactivo)` --implements--> `Regla: enlaces <a> reales, nunca window.open(), para botones de envío`  [INFERRED]
-  docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_ejercicios-presente-gerundio-indefinido_interactivo.html → .claude/skills/ejercicio-interactivo/SKILL.md
-- `Regla: usar siempre la skill impeccable para diseño frontend` --conceptually_related_to--> `Design System: Clases de Español (El Cuaderno del Profesor)`  [INFERRED]
-  CLAUDE.md → DESIGN.md
 - `extraer.mjs — archivador de transcripciones` --implements--> `Fuente transcrita: Cuaderno B1 5A — ¿Por qué soy vegetariano?`  [INFERRED]
   .claude/skills/ejercicio-interactivo/SKILL.md → docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad5a_por-que-soy-vegetariano.md
+- `A1 — Presente, gerundio, indefinido (ejercicio interactivo)` --implements--> `Regla: enlaces <a> reales, nunca window.open(), para botones de envío`  [INFERRED]
+  docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_ejercicios-presente-gerundio-indefinido_interactivo.html → .claude/skills/ejercicio-interactivo/SKILL.md
+- `Design System: Clases de Español (El Cuaderno del Profesor)` --conceptually_related_to--> `Regla: usar siempre la skill impeccable para diseño frontend`  [INFERRED]
+  DESIGN.md → CLAUDE.md
 
 ## Import Cycles
 - None detected.
 
-## Hyperedges (group relationships)
-- **Brand Typography Reflex-Reject Decision Process** — _claude_skills_impeccable_reference_brand_font_selection_procedure, _claude_skills_impeccable_reference_brand_reflex_reject_font_list, _claude_skills_impeccable_reference_brand_reflex_reject_aesthetic_lanes [EXTRACTED 1.00]
-- **Critique Assessment A Evaluation Frameworks** — _claude_skills_impeccable_reference_critique_nielsen_heuristics, _claude_skills_impeccable_reference_critique_cognitive_load_assessment, _claude_skills_impeccable_reference_critique_persona_based_testing [EXTRACTED 1.00]
-- **Impeccable Command Suite Cross-Recommendation Network** — _claude_skills_impeccable_reference_audit, _claude_skills_impeccable_reference_critique, _claude_skills_impeccable_reference_live [INFERRED 0.85]
-- **Unidad 6: El barrio (shared theme)** — docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad6a_como_se_va_a_goya_unidad6a, docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad6b_cierra_la_ventana_unidad6b, docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad6c_mi_barrio_es_tranquilo_unidad6c [EXTRACTED 1.00]
-- **A1 Interactive Exercise Apps — Shared Paper/Ink Design Template** — docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_cuaderno_unidad6a_como_se_va_a_goya_interactivo_unidad6a_interactivo, docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_cuaderno_unidad6b_cierra_la_ventana_interactivo_unidad6b_interactivo, docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_cuaderno_unidad6c_mi_barrio_es_tranquilo_interactivo_unidad6c_interactivo, docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_cuaderno_practica_mas_3_interactivo_practica_mas_3_interactivo [INFERRED 0.90]
-- **Impeccable Product-Register Reference Set** — claude_skills_impeccable_reference_product_product, claude_skills_impeccable_reference_quieter_quieter, claude_skills_impeccable_reference_typeset_typeset [INFERRED 0.85]
-- **Patrón de botones de envío al profesor (WhatsApp/Telegram/Correo/Teams)** — claude_skills_ejercicio_interactivo_reference_template_page, claude_skills_ejercicio_interactivo_skill_channel_button_rule, docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_ejercicios_presente_gerundio_indefinido_interactivo_page [INFERRED 0.85]
-- **Sistema de diseño compartido: El Cuaderno del Profesor** — design_system_doc, product_doc, claude_skills_ejercicio_interactivo_reference_template_page [INFERRED 0.80]
-- **Flujo de publicación de un capítulo (índice + códigos de acceso)** — claude_skills_ejercicio_interactivo_skill, docencia_espanol_materiales_indice_clases_de_espanol_page, docencia_espanol_materiales_codigos_acceso_page [EXTRACTED 0.90]
-- **Chapter transcription → archival → publishing pipeline** — docencia_espanol_fuentes_pendientes_b1_5b_capitulo_unidad5b, docencia_espanol_fuentes_pendientes_readme_index, docencia_espanol_fuentes_readme_extraermjs, docencia_espanol_fuentes_readme_index [INFERRED 0.85]
-- **Impeccable skill setup flow (context, PRODUCT.md, DESIGN.md)** — claude_skills_impeccable_skill_impeccable, claude_skills_impeccable_skill_contextmjs, claude_skills_impeccable_skill_productmd, claude_skills_impeccable_skill_designmd [EXTRACTED 0.90]
-- **Unidad 5B worksheet — four exercises forming one chapter** — docencia_espanol_fuentes_pendientes_b1_5b_capitulo_unidad5b, docencia_espanol_fuentes_pendientes_b1_5b_capitulo_ejercicio1, docencia_espanol_fuentes_pendientes_b1_5b_capitulo_ejercicio3, docencia_espanol_fuentes_pendientes_b1_5b_capitulo_ejercicio4 [EXTRACTED 0.90]
+## Communities (214 total, 22 thin omitted)
 
-## Communities (108 total, 9 thin omitted)
-
-### Community 0 - "Impeccable Live Browser Engine"
+### Community 0 - "live-browser.js"
 Cohesion: 0.03
-Nodes (115): acceptedDomAlreadyClean(), applyGlobalBarLabelState(), applyPlaceholderSizingStyles(), applySvelteComponentVariantStyle(), bufferToBase64(), buildCollapsible(), buildColorModels(), buildDesignHeader() (+107 more)
+Nodes (143): acceptedDomAlreadyClean(), addManualContextText(), applyGlobalBarLabelState(), applyPlaceholderSizingStyles(), applySvelteComponentVariantStyle(), bufferToBase64(), buildCollapsible(), buildColorModels() (+135 more)
 
-### Community 1 - "Impeccable Design Antipattern Checks"
+### Community 1 - "checks.mjs"
 Cohesion: 0.04
-Nodes (83): borderColorsFromStyle(), borderWidthsFromStyle(), checkBorders(), checkClippedOverflow(), checkCreamPalette(), checkElementBorders(), checkElementBordersDOM(), checkElementClippedOverflow() (+75 more)
+Nodes (84): borderColorsFromStyle(), borderWidthsFromStyle(), checkBorders(), checkClippedOverflow(), checkCreamPalette(), checkElementBorders(), checkElementBordersDOM(), checkElementClippedOverflow() (+76 more)
 
-### Community 2 - "Impeccable Browser-Injected Detector"
+### Community 2 - "index.mjs"
 Cohesion: 0.06
 Nodes (68): addBrowserFindings(), addVisualContrastFindings(), addVisualContrastResult(), analyzeVisualContrast(), analyzeVisualContrastCandidate(), blendRgba(), browserColorsClose(), browserDesignSystemConfig() (+60 more)
 
-### Community 3 - "Impeccable Live Browser Engine"
+### Community 3 - "resumeSession"
 Cohesion: 0.07
-Nodes (65): applyOriginalAttrsToSvelteAnchor(), applyParamDefaults(), applyParamValue(), applyPlaceholderDimensions(), applySavedSessionMeta(), buildParamsPanel(), clampVariantIndex(), closedClipPath() (+57 more)
+Nodes (66): applyOriginalAttrsToSvelteAnchor(), applyParamDefaults(), applyParamValue(), applyPlaceholderDimensions(), applySavedSessionMeta(), buildParamsPanel(), clampVariantIndex(), closedClipPath() (+58 more)
 
-### Community 4 - "Impeccable Screenshot Vendor Lib"
-Cohesion: 0.10
+### Community 4 - "modern-screenshot.umd.js"
+Cohesion: 0.09
 Nodes (55): ae(), be(), bt(), Ce(), s(), Ct(), de(), dt() (+47 more)
 
-### Community 5 - "Impeccable Live Browser Engine"
+### Community 5 - "el"
 Cohesion: 0.08
-Nodes (54): actionLabel(), applyConfigureBarChrome(), bindConfigureCountPillTooltip(), bindConfigureInlineControlHover(), bindConfigureModifierPillHover(), buildConfigureActionControl(), buildConfigureCountControl(), buildConfigureRow() (+46 more)
+Nodes (49): actionLabel(), applyConfigureBarChrome(), bindConfigureCountPillTooltip(), bindConfigureInlineControlHover(), bindConfigureModifierPillHover(), buildConfigureActionControl(), buildConfigureCountControl(), buildConfigureRow() (+41 more)
 
-### Community 6 - "Impeccable Manual Edit Apply"
+### Community 6 - "manual-apply.mjs"
 Cohesion: 0.09
 Nodes (49): addOpToManualApplyChunk(), APPLY_EVENT_HARD_TIMEOUT_MS, APPLY_EVENT_SOFT_DEADLINE_MS, buildManualApplyAgentAction(), clearManualApplyTransaction(), collectManualApplyFiles(), compactManualApplyBatch(), compactManualApplyCandidates() (+41 more)
 
-### Community 7 - "Impeccable Live Browser Engine"
-Cohesion: 0.12
-Nodes (48): abortSvelteComponentInjection(), cancelEditing(), cancelEditingToPicking(), cancelInsertConfigure(), cleanup(), cleanupAcceptedSession(), clearAnnotations(), clearHandled() (+40 more)
+### Community 7 - "setLiveState"
+Cohesion: 0.08
+Nodes (69): abortSvelteComponentInjection(), applyEditing(), buildInsertPlaceholderSnapshotFromDom(), buildLocatorForLeaf(), buildPickedAnchorSnapshot(), cancelEditing(), cancelEditingToPicking(), cancelInsertConfigure() (+61 more)
 
-### Community 8 - "Impeccable Manual Edit Commit"
-Cohesion: 0.10
-Nodes (49): allEntryIds(), argVal(), buildRepairBatch(), candidatesForEntry(), changedFilesSinceSnapshot(), clearAppliedEntries(), collectApplyOwnedFiles(), collectRollbackFiles() (+41 more)
+### Community 8 - "live-commit-manual-edits.mjs"
+Cohesion: 0.11
+Nodes (48): allEntryIds(), argVal(), buildRepairBatch(), candidatesForEntry(), changedFilesSinceSnapshot(), collectApplyOwnedFiles(), collectRollbackFiles(), commitManualEdits() (+40 more)
 
-### Community 9 - "Impeccable Design System Detector"
+### Community 9 - "design-system.mjs"
 Cohesion: 0.10
 Nodes (48): addColorObject(), addDesignColor(), addRoundedScale(), addRoundedToken(), addSidecarColors(), addSidecarRadii(), addTypographyFonts(), canonicalDesignFindingKey() (+40 more)
 
-### Community 10 - "Impeccable Config Management"
+### Community 10 - "impeccable-config.mjs"
 Cohesion: 0.10
 Nodes (47): applyDetectionConfigSource(), clampByte(), cleanIgnoreValueDisplay(), cloneDetectionConfig(), cloneRawDetectionConfig(), colorIgnoreKey(), DEFAULT_DETECTION_CONFIG, DETECTOR_CONFIG_KEYS (+39 more)
 
-### Community 11 - "Impeccable Live Mode Server"
+### Community 11 - "live-server.mjs"
 Cohesion: 0.09
 Nodes (45): assembleLiveBrowserScript(), assertLiveBrowserScriptParts(), LIVE_BROWSER_SCRIPT_PARTS, readLiveBrowserScriptParts(), resolveLiveBrowserScriptParts(), acknowledgePendingEvent(), activeSessionSummaries(), agentPollingConnected() (+37 more)
 
-### Community 12 - "Impeccable Svelte Component Support"
+### Community 12 - "svelte-component.mjs"
 Cohesion: 0.09
 Nodes (47): applyLegacyDeferredAcceptsOnStartup(), appendCssToSvelteStyle(), appendSanitizedCssRule(), applyDeferredSvelteComponentAccepts(), bakeParamValuesInCss(), buildInsertVariantStub(), buildPropContract(), buildPropsScript() (+39 more)
 
-### Community 13 - "Impeccable Text Antipattern Detector"
-Cohesion: 0.09
-Nodes (36): detectUrl(), runVisualContrastFallback(), serializeDesignSystemForBrowser(), CSS_IN_JS_EXTENSIONS, extFromFilePath(), isNeutralBorderColor(), PAGE_ANALYZER_EXTS, REGEX_ANALYZERS (+28 more)
+### Community 13 - "detect-url.mjs"
+Cohesion: 0.13
+Nodes (26): detectUrl(), runVisualContrastFallback(), serializeDesignSystemForBrowser(), runRegexMatchers(), captureVisualContrastCandidate(), compareScreenshotContrast(), sanitizeScreenshotClip(), finding() (+18 more)
 
-### Community 14 - "Impeccable Hook Library"
+### Community 14 - "hook-lib.mjs"
 Cohesion: 0.07
 Nodes (45): ACK_EXTS, ALLOWED_EXTS, applyPatchText(), clampByte(), CO_SCAN_STYLE_NAMES, coLocatedStylesheets(), colorIgnoreKey(), DEFAULT_CONFIG (+37 more)
 
-### Community 15 - "Impeccable Live Browser Engine"
-Cohesion: 0.09
-Nodes (44): armPageChatForTyping(), attachSteerFocusDebug(), clearSteerAwaitTimer(), collapsePageChat(), dismissToast(), expandPageChat(), finishVoiceSession(), focusConfigureInput() (+36 more)
+### Community 15 - "initPageChat"
+Cohesion: 0.13
+Nodes (33): armPageChatForTyping(), clearSteerAwaitTimer(), collapsePageChat(), expandPageChat(), finishVoiceSession(), focusPageChatInput(), initPageChat(), isEmbeddedPreviewBrowser() (+25 more)
 
-### Community 16 - "Impeccable Live Script Injection"
+### Community 16 - "live-inject.mjs"
 Cohesion: 0.09
 Nodes (43): appendOriginToDirective(), buildTagBlock(), commentClose(), commentOpen(), CONFIG_PATH, detectLineEnding(), __dirname, ensureLiveGitIgnores() (+35 more)
 
-### Community 17 - "Impeccable Browser Antipattern Bundle"
+### Community 17 - "detect-antipatterns-browser.js"
 Cohesion: 0.08
 Nodes (37): checkBorders(), checkClippedOverflow(), checkElementBorders(), checkElementBordersDOM(), checkElementClippedOverflow(), checkElementClippedOverflowDOM(), checkElementItalicSerif(), checkElementItalicSerifDOM() (+29 more)
 
-### Community 18 - "Impeccable CSS Cascade Resolver"
-Cohesion: 0.09
-Nodes (32): applyStaticDeclaration(), buildBorderOverrideMap(), parseShorthand(), buildStaticStyleMap(), buildStaticWindow(), collectStaticCssRules(), compareStaticPriority(), cssPropToCamel() (+24 more)
+### Community 18 - "css-cascade.mjs"
+Cohesion: 0.11
+Nodes (31): applyStaticDeclaration(), buildBorderOverrideMap(), parseShorthand(), resolveVar(), buildStaticStyleMap(), collectStaticCssRules(), compareStaticPriority(), cssPropToCamel() (+23 more)
 
-### Community 19 - "Impeccable Live Insert UI"
+### Community 19 - "insert-ui.mjs"
 Cohesion: 0.07
 Nodes (25): FORBIDDEN_MANUAL_EDIT_TEXT_CHARS, INSERT_POSITIONS, isValidId(), isValidVariantId(), validateAnnotationFields(), validateEvent(), validateInsertGenerate(), validateManualEditEvent() (+17 more)
 
-### Community 20 - "Repo Navigation Docs"
-Cohesion: 0.05
-Nodes (41): dibujo-crucigrama.png, dibujo-cuerpos.png, Ejercicio 1 — Partes del cuerpo (audio pista 6), Ejercicio 2 — Otras partes del cuerpo (actividad libre), Ejercicio 3 — Crucigrama, Ejercicio 4 — Remedios naturales, pagina-21.jpg, Unidad 5B — Las otras medicinas (capítulo pendiente) (+33 more)
+### Community 20 - "Fuentes transcritas overview"
+Cohesion: 0.15
+Nodes (13): Pendientes overview, A1 Cuaderno Unidad 6A — ¿Cómo se va a Goya?, A1 Cuaderno Unidad 6B — Cierra la ventana, A1 Cuaderno Unidad 6C — Mi barrio es tranquilo, A1 Cuaderno Unidad 7A — Dónde quedamos, A1 Practica más 3 (unidades 5-6), B1 Cuaderno Unidad 5A — ¿Por qué soy vegetariano?, B2 Unidad 12B — Turismo cultural (+5 more)
 
-### Community 21 - "Impeccable Hook Admin CLI"
+### Community 21 - "hook-admin.mjs"
 Cohesion: 0.14
 Nodes (39): ACTIONS, addIgnoreFile(), addIgnoreRule(), addIgnoreValue(), DETECTOR_CONFIG_KEYS, detectorSection(), fileHasImpeccableHookMarker(), HOOK_MANIFEST_TARGETS (+31 more)
 
-### Community 22 - "Impeccable Pre-Edit Hook"
+### Community 22 - "hook-before-edit.mjs"
 Cohesion: 0.12
 Nodes (37): allow(), bumpCursorDenial(), cursorBlockMessage(), deny(), done(), escapeRegExp(), findingSignature(), firstMatch() (+29 more)
 
-### Community 23 - "Impeccable Live Wrap Mode"
+### Community 23 - "live-wrap.mjs"
 Cohesion: 0.13
 Nodes (35): argVal(), buildInsertWrapperLines(), computeInsertLine(), INSERT_POSITIONS, insertCli(), isInsertPosition(), resolveElementMatch(), buildSvelteComponentCssAuthoring() (+27 more)
 
-### Community 24 - "Skill Entry Points"
+### Community 24 - "Skill: ejercicio-interactivo"
 Cohesion: 0.08
 Nodes (37): Regla: usar siempre la skill impeccable para diseño frontend, Flujo de trabajo obligatorio para Pull Requests, Plantilla base: template.html, Skill: ejercicio-interactivo, Regla: enlaces <a> reales, nunca window.open(), para botones de envío, extraer.mjs — archivador de transcripciones, Checklist de publicación de un capítulo, Regla: hueco al final de la frase se estira (.tail-blank) (+29 more)
 
-### Community 25 - "Impeccable Live Browser Engine"
-Cohesion: 0.08
-Nodes (36): addManualContextText(), applyEditing(), buildLocatorForLeaf(), canRestoreManualEditElement(), collectManualContextPieces(), walk(), contextElementForManualEdit(), copyEditContainerContext() (+28 more)
+### Community 25 - "Formación académica de Angel Luis Acosta González"
+Cohesion: 0.17
+Nodes (12): Actividad profesional paralela: docencia de español y traducción, Cartas de motivación, Cartas de recomendación, Educación previa (Cuba), Equivalencia académica en España, Estudios superiores — Rusia, Formación académica de Angel Luis Acosta González, Formación complementaria (cursos en línea) (+4 more)
 
-### Community 26 - "Impeccable Design Token Parser"
+### Community 26 - "design-parser.mjs"
 Cohesion: 0.15
 Nodes (33): buildColor(), CANONICAL_SECTIONS, collectBullets(), collectColorValues(), collectParagraphs(), detectFormat(), extractColors(), extractComponents() (+25 more)
 
-### Community 27 - "Impeccable File System Scanner"
-Cohesion: 0.14
-Nodes (28): confirm(), detectCli(), formatFindings(), formatFindingSummary(), handleStdin(), printUsage(), loadDesignSystemForCwd(), parseFrontmatter() (+20 more)
+### Community 27 - "Ejercicios"
+Cohesion: 0.22
+Nodes (8): 1. Unas vacaciones inolvidables, Ej. 1 — Regular o irregular, Ej. 2 — Un domingo con Chema, Ej. 3 — El sábado pasado, Ej. 4 — Completa el texto, Ej. 5 — La postal de Maribel, Ej. 6 — Busca el error, Ejercicios
 
-### Community 28 - "Impeccable Live Accept Flow"
-Cohesion: 0.14
-Nodes (32): acceptCli(), argVal(), buildCarbonizeReplacement(), decodeHtmlAttr(), deindentContent(), detectCommentSyntax(), escapeRegExp(), expandReplaceRange() (+24 more)
+### Community 28 - "live-accept.mjs"
+Cohesion: 0.15
+Nodes (30): acceptCli(), argVal(), buildCarbonizeReplacement(), decodeHtmlAttr(), deindentContent(), detectCommentSyntax(), escapeRegExp(), expandReplaceRange() (+22 more)
 
-### Community 29 - "Impeccable Copy Edit Agent"
+### Community 29 - "live-copy-edit-agent.mjs"
 Cohesion: 0.14
 Nodes (31): applyMockWrites(), buildCopyEditBatchPrompt(), checkFrameworkSourceSyntax(), chooseCopyEditAgent(), COMMAND_AUTH_CACHE, commandAuthed(), commandExists(), compactBatchForPrompt() (+23 more)
 
-### Community 30 - "Impeccable Browser Antipattern Bundle"
+### Community 30 - "parseRgb"
 Cohesion: 0.13
 Nodes (31): analyzeVisualContrast(), analyzeVisualContrastCandidate(), checkColors(), checkElementAIPaletteDOM(), checkElementColors(), checkElementColorsDOM(), checkElementGlow(), checkElementGlowDOM() (+23 more)
 
-### Community 31 - "Impeccable Live Browser Engine"
-Cohesion: 0.10
-Nodes (28): averageRgb01(), buildInsertPlaceholderSnapshotFromDom(), buildPickedAnchorSnapshot(), captureAndEmit(), captureElementFromRenderedAncestor(), captureElementToBlob(), checkpointPayload(), compileShader() (+20 more)
-
-### Community 32 - "Impeccable Live Browser Engine"
+### Community 31 - "captureElementToBlob"
 Cohesion: 0.12
-Nodes (27): barPaletteForTheme(), brandMarkSvg(), buildSteerProcessingDots(), designPanelCss(), detectPageTheme(), ensureAgentPollTooltip(), fetchAgentPollingStatus(), hideAgentPollTooltip() (+19 more)
+Nodes (20): averageRgb01(), captureChromeNodes(), captureElementFromRenderedAncestor(), captureElementToBlob(), compileShader(), cssColorToRgb01(), dominantRgb01(), findBackdropAncestor() (+12 more)
 
-### Community 33 - "Impeccable Live Session Polling"
+### Community 32 - "initGlobalBar"
+Cohesion: 0.09
+Nodes (41): attachSteerFocusDebug(), attachSteerFocusGuard(), barPaletteForTheme(), brandMarkSvg(), buildSteerProcessingDots(), clearSteerFocusRecoverTimer(), detectPageTheme(), ensureAgentPollTooltip() (+33 more)
+
+### Community 33 - "live-poll.mjs"
 Cohesion: 0.15
 Nodes (26): completionAckForAcceptResult(), completionTypeForAcceptResult(), augmentEventWithAcceptHandling(), buildAcceptScriptArgs(), buildPollReplyPayload(), DEFAULT_EVENT_LEASE_MS, EVENT_TYPES_NEEDING_AGENT_REPLY, fetchNextEvent() (+18 more)
 
-### Community 34 - "Impeccable Hook Library"
+### Community 34 - "runHook"
 Cohesion: 0.12
 Nodes (25): bumpEditCount(), clampGroupedToBudget(), clampToBudget(), dedupeAgainstCache(), depthIsSet(), directiveFooter(), ensureFile(), ensureSession() (+17 more)
 
-### Community 35 - "Impeccable Manual Edits Buffer"
-Cohesion: 0.18
-Nodes (22): args, buffer, cwd, pageUrlFilter, remaining, compactManualLogText(), summarizeManualApplyFailures(), summarizeManualDiagnostics() (+14 more)
-
-### Community 36 - "Impeccable Manual Edit Evidence"
+### Community 35 - "manual-edit-routes.mjs"
 Cohesion: 0.15
-Nodes (25): analyzeSourceHint(), buildCandidatesForOp(), buildContextHintsByRef(), collectSearchFiles(), countOps(), decodeBasicHtml(), escapeRegExp(), findContextMatches() (+17 more)
+Nodes (24): scrubManualEditsAgainstFile(), scrubManualEditsAgainstOriginalBlock(), clearAppliedEntries(), args, buffer, cwd, pageUrlFilter, remaining (+16 more)
 
-### Community 37 - "Impeccable Project Context Resolver"
+### Community 36 - "live-manual-edit-evidence.mjs"
+Cohesion: 0.15
+Nodes (26): analyzeSourceHint(), buildCandidatesForOp(), buildContextHintsByRef(), buildManualEditEvidence(), collectSearchFiles(), countOps(), decodeBasicHtml(), escapeRegExp() (+18 more)
+
+### Community 37 - "context.mjs"
 Cohesion: 0.13
 Nodes (23): buildUpdateDirective(), compareSemver(), computeUpdateDirective(), DESIGN_NAMES, FALLBACK_DIRS, fetchLatestSkillVersion(), MONOREPO_FALLBACK_PROJECT_DIRS, MONOREPO_MARKER_FILES (+15 more)
 
-### Community 38 - "Impeccable Live Browser Engine"
+### Community 38 - "handleManualEditActivity"
 Cohesion: 0.18
-Nodes (25): clearStoredManualApplyState(), fetchPendingCount(), handleManualEditActivity(), hidePendingApplyDock(), manualApplyLoadingText(), manualApplyStateKey(), manualEditEventForCurrentPage(), numberOrNull() (+17 more)
+Nodes (26): clearStoredManualApplyState(), fetchPendingCount(), handleManualEditActivity(), hidePendingApplyDock(), manualApplyLoadingText(), manualApplyStateKey(), manualEditEventForCurrentPage(), numberOrNull() (+18 more)
 
-### Community 39 - "Impeccable Design Antipattern Checks"
-Cohesion: 0.20
-Nodes (22): checkColors(), checkElementAIPaletteDOM(), checkElementColors(), checkElementColorsDOM(), checkElementGlow(), checkElementGlowDOM(), checkElementIconTile(), checkElementIconTileDOM() (+14 more)
-
-### Community 40 - "Impeccable Path Resolution"
-Cohesion: 0.17
-Nodes (21): resolveProjectRoot(), CRITIQUE_DIR, firstExisting(), getDesignSidecarCandidates(), getDesignSidecarPath(), getImpeccableDir(), getLegacyLiveAnnotationsDir(), getLegacyLiveConfigPath() (+13 more)
-
-### Community 41 - "Impeccable Live Session Resume"
-Cohesion: 0.18
-Nodes (19): isLiveServerPidReachable(), readLiveServerInfo(), completeCli(), completeThroughServer(), parseArgs(), readServerInfo(), collectManualApplyFiles(), manualApplyReplyCommand() (+11 more)
-
-### Community 42 - "Impeccable Browser Antipattern Bundle"
-Cohesion: 0.12
-Nodes (21): borderColorsFromStyle(), borderWidthsFromStyle(), browserColorsClose(), browserHasDirectText(), browserRadiusTokens(), browserSampleText(), checkCreamPalette(), checkElementDesignSystemDOM() (+13 more)
-
-### Community 43 - "Impeccable Shared Constants"
-Cohesion: 0.11
-Nodes (13): collectStaticCssText(), STATIC_ELEMENT_RULES, checkPageQualityDOM(), checkPageQualityFromDoc(), BORDER_SAFE_TAGS, BRAND_FONT_DOMAINS, GENERIC_FONTS, GITHUB_DOMAINS (+5 more)
-
-### Community 44 - "Impeccable Browser Antipattern Bundle"
-Cohesion: 0.15
-Nodes (18): checkElementQuality(), checkElementQualityDOM(), checkQuality(), checkRepeatedSectionKickers(), checkRepeatedSectionKickersDOM(), checkRepeatedSectionKickersFromDoc(), cleanInlineText(), collectRepeatedSectionKickerCandidates() (+10 more)
-
-### Community 45 - "Impeccable Live Browser Engine"
-Cohesion: 0.20
-Nodes (17): beginEditPin(), buildAnnotationsForCapture(), buildPinElement(), cancelEditingPin(), clampPlaceholderSize(), finalizeEditingPin(), initAnnotOverlay(), localCoords() (+9 more)
-
-### Community 46 - "Impeccable Browser Session State"
-Cohesion: 0.20
-Nodes (14): createLiveBrowserSessionState(), clearHandled(), clearScrollY(), clearSession(), isHandled(), loadSession(), markHandled(), nextCheckpointRevision() (+6 more)
-
-### Community 47 - "Impeccable Project Context Resolver"
-Cohesion: 0.20
-Nodes (16): directChildDirs(), discoverRootsForPattern(), discoverTargetCandidates(), escapeRegExp(), expandSimplePattern(), findTargetExample(), hasFallbackWorkspaceChildren(), isExcludedByWorkspacePattern() (+8 more)
-
-### Community 48 - "Impeccable Browser DOM Helpers"
-Cohesion: 0.17
-Nodes (11): createLiveBrowserDomHelpers(), cssId(), liveUiRoot(), makeFrozenAnchor(), own(), pickable(), rectIsUsableAnchor(), uiAppend() (+3 more)
-
-### Community 49 - "Impeccable Browser Antipattern Bundle"
-Cohesion: 0.20
-Nodes (15): blendRgba(), clampByte(), firstCssUrl(), getLayerValue(), loadVisualContrastImage(), parseObjectPosition(), parsePositionPair(), parsePositionToken() (+7 more)
-
-### Community 50 - "Impeccable Critique Command Doc"
-Cohesion: 0.15
-Nodes (14): Audit Reference (Technical Quality Diagnostic), Five Diagnostic Dimensions (A11y, Performance, Theming, Responsive, Anti-Patterns), Audit P0-P3 Severity Tags, Parent SKILL.md DON'T / Anti-Pattern Guidelines, Bolder Reference (Visual Amplification), Bolder AI Slop Trap Warning, Critique Reference (Design Review), Cognitive Load Assessment (+6 more)
-
-### Community 51 - "Impeccable Context Signal Detection"
-Cohesion: 0.24
-Nodes (12): extractRegister(), cli(), COMMON_DEV_PORTS, devServerSignals(), gatherSignals(), gitSignals(), hasCode(), latestCritique() (+4 more)
-
-### Community 53 - "Impeccable Brand Command Doc"
-Cohesion: 0.17
-Nodes (13): Brand Register Reference, Brand Font Selection Procedure, Reflex-Reject Aesthetic Lanes, Reflex-Reject Font List, Delight Reference (Micro-interactions & Personality), Delight Amplifies, Never Blocks Principle, Distill Reference (Simplification), Ruthless Simplification Principles (+5 more)
-
-### Community 54 - "Impeccable Critique Storage"
-Cohesion: 0.32
-Nodes (11): kebab(), listSnapshotsForSlug(), main(), nowFilenameStamp(), parseFrontmatter(), readLatestSnapshot(), readTrend(), serializeFrontmatter() (+3 more)
-
-### Community 55 - "Impeccable Browser Antipattern Bundle"
-Cohesion: 0.18
-Nodes (13): addBrowserFindings(), addVisualContrastFindings(), addVisualContrastResult(), clearOverlays(), detachOverlay(), disconnectLazyVisualContrastObserver(), postExtensionError(), rememberVisualContrastAnalysis() (+5 more)
-
-### Community 56 - "Impeccable Browser Antipattern Bundle"
-Cohesion: 0.18
-Nodes (13): browserDesignSystemConfig(), browserFindingsFromMap(), browserPrimaryFont(), checkBrowserDesignSystemSources(), checkHtmlPatterns(), checkPageQualityDOM(), checkPageQualityFromDoc(), checkTypography() (+5 more)
-
-### Community 57 - "Impeccable Project Context Resolver"
-Cohesion: 0.20
-Nodes (12): findMonorepoRoot(), firstExisting(), hasGitBoundary(), isCandidateProjectRoot(), nearestProjectLikeRoot(), resolveContext(), resolveContextDir(), resolveEnvContextDir() (+4 more)
-
-### Community 58 - "Impeccable Live Command Entry"
-Cohesion: 0.32
-Nodes (11): loadContext(), resolveTargetSelection(), safeRead(), __dirname, ensureServerRunning(), globToRegex(), liveCli(), missingLiveContext() (+3 more)
-
-### Community 59 - "Impeccable Hook Library"
-Cohesion: 0.18
-Nodes (12): applyConfigSource(), applyDetectorConfigSource(), cloneDefaultConfig(), detectorSection(), hookSection(), ignoreValueFilesKey(), mergeIgnoreValues(), numberOr() (+4 more)
-
-### Community 60 - "Impeccable Live Session Store"
-Cohesion: 0.26
-Nodes (9): applyEvent(), baseSnapshot(), COMPLETED_PHASES, getJournalPath(), getSnapshotPath(), rebuildSnapshotFromJournal(), safeSessionId(), toPendingEvent() (+1 more)
-
-### Community 61 - "Impeccable CSP Detector"
-Cohesion: 0.20
-Nodes (10): detectCsp(), INLINE_HEADER_SIGNALS, LAYOUT_EXTS, MONOREPO_HELPER_SIGNALS, NUXT_ROUTE_RULES_SIGNALS, NUXT_SECURITY_SIGNALS, SCAN_EXTS, SKIP_DIRS (+2 more)
-
-### Community 62 - "Impeccable Color Palette Engine"
-Cohesion: 0.24
-Nodes (7): args, buildWeights(), hashUnit(), pickSeed(), seed, SEEDS, weightedPick()
-
-### Community 63 - "Impeccable Pin Command"
-Cohesion: 0.25
-Nodes (9): __dirname, findHarnessDirs(), generatePinnedSkill(), HARNESS_DIRS, loadCommandMetadata(), pin(), root, unpin() (+1 more)
-
-### Community 64 - "A1 Presente/Gerundio/Indefinido Source"
-Cohesion: 0.18
-Nodes (11): Imperativo afirmativo (tú/usted, enclítico), NEM1 Cuaderno Unidad 6B — Cierra la ventana, por favor, Ser / Estar (contraste), NEM1 Cuaderno Unidad 6C — Mi barrio es tranquilo, NEM1 Cuaderno — Practica más 3 (unidades 5-6), Estar + gerundio (presente continuo), Pretérito indefinido, NEM1 Repaso Unidades 1-8 — Presente, Gerundio, Indefinido (+3 more)
-
-### Community 65 - "Impeccable Clarify Command Doc"
-Cohesion: 0.20
-Nodes (10): Clarify Reference (UX Copy), Button Label Problem, Confirmation Dialogs Used Sparingly, Error Message Formula (What/Why/How to Fix), Writing for Translation (i18n Copy Expansion), Harden Reference (Edge Case Resilience), Internationalization Hardening, Interaction Design Reference (+2 more)
-
-### Community 66 - "Impeccable Inline Ignore Comments"
-Cohesion: 0.40
-Nodes (9): addRules(), applyInlineIgnores(), getSet(), hasDirectives(), isInlineIgnored(), normalizeRule(), parseInlineIgnores(), parseRuleList() (+1 more)
-
-### Community 67 - "Impeccable Hook Library"
-Cohesion: 0.36
-Nodes (10): cleanIgnoreValueDisplay(), extractFindingIgnoreValue(), extractFindingIgnoreValueRaw(), extractMotionIgnoreValue(), filterFindings(), formatFindingIgnoreCommand(), isIgnoredFindingValue(), normalizeIgnoreRule() (+2 more)
-
-### Community 68 - "Impeccable Live Browser Engine"
-Cohesion: 0.27
-Nodes (10): attachSteerFocusGuard(), clearSteerFocusRecoverTimer(), isInlineEditActive(), isPageEditableActive(), isPageEditableElement(), notePagePointerDown(), pageHasHostTextSelection(), scheduleSteerFocusRecover() (+2 more)
-
-### Community 69 - "Impeccable Live Browser Engine"
-Cohesion: 0.27
-Nodes (10): bindEditBadgeProxy(), editBadgeProxyTargets(), initEditBadge(), initEditBadgeHitProxies(), positionEditBadge(), proxyMouseEvent(), setImportantStyle(), styleEditBadgeProxy() (+2 more)
-
-### Community 70 - "Impeccable Live UI Core"
-Cohesion: 0.29
-Nodes (8): appendStyleToLiveUiRoot(), appendToLiveUiRoot(), escapeCssIdent(), getLiveUiElementById(), LIVE_CHROME_MOUNT_CONTRACT, LIVE_UI_COMPONENT_IDS, LIVE_UI_SURFACES, resolveLiveUiRoot()
-
-### Community 71 - "Skill Entry Points"
-Cohesion: 0.20
-Nodes (10): Absolute bans (design anti-patterns), AI slop test, Color strategy commitment axis, context.mjs script, DESIGN.md, detect.mjs script, impeccable skill, palette.mjs script (+2 more)
-
-### Community 72 - "Impeccable Adapt Command Doc"
-Cohesion: 0.28
-Nodes (9): Adapt Reference (Responsive Adaptation), Mobile-First CSS Strategy, Content-Driven Responsive Breakpoints, Codex Reference (Visual Direction & Asset Production), impeccable_asset_producer Subagent, Codex Four Stop Points (Steps A-D), Craft Flow Reference, Craft Flow Gates (Do Not Compress) (+1 more)
-
-### Community 73 - "Impeccable Document Command Doc"
-Cohesion: 0.25
-Nodes (9): Document Reference (DESIGN.md Generation), .impeccable/design.json Sidecar Schema, Google Stitch DESIGN.md Format, Extract Reference (Design System Extraction), Design System Extraction Workflow, Init Reference (Project Setup), DESIGN.md Visual Document, PRODUCT.md Strategic Document (+1 more)
-
-### Community 74 - "Impeccable Browser Antipattern Bundle"
-Cohesion: 0.25
-Nodes (9): buildSelectorSegment(), generateSelector(), isElementHidden(), isLikelyHashedClass(), postSerializedFindings(), renderBrowserFindings(), scanResultMeta(), serializeFindings() (+1 more)
-
-### Community 75 - "Impeccable Project Context Resolver"
-Cohesion: 0.29
-Nodes (8): buildMissingTargetDirective(), buildResolvedContextDirective(), buildTargetSelectionDirective(), cli(), hasTargetOption(), parseCliOptions(), pathExistsForTarget(), shouldWarnMissingTarget()
-
-### Community 76 - "Impeccable Browser Antipattern Bundle"
-Cohesion: 0.32
-Nodes (8): checkElementTextOverflowDOM(), classSelector(), clippedByInset(), clippedByRect(), expandBoxShorthand(), firstMetricLengthPx(), isScreenReaderOnlyTextStyle(), metricLengthPx()
-
-### Community 77 - "Graphify Update Command Doc"
-Cohesion: 0.29
-Nodes (7): graphify: Commit Hook & CLAUDE.md Integration, graphify hook install (post-commit), graphify: Transcribe Video/Audio, Whisper initial_prompt Domain Hint, build_merge() Incremental Graph Merge, graphify cluster-only Command, graphify: Incremental Update & Cluster-only
-
-### Community 78 - "Impeccable Polish Command Doc"
-Cohesion: 0.29
-Nodes (7): Design System Discovery, Impeccable: Polish, Polish Checklist, Impeccable: Quieter, Brand vs Product 'Quieter' Distinction, Modular Type Scale (5-size system), Impeccable: Typeset
-
-### Community 79 - "Impeccable Target Args Parsing"
-Cohesion: 0.43
-Nodes (4): parseTargetOptions(), parseTargetPath(), TargetArgError, resolveLiveTarget()
-
-### Community 80 - "Impeccable Live Browser Engine"
-Cohesion: 0.62
-Nodes (7): elementMatchesOriginalMarkup(), findLiveElementForOriginalMarkup(), findLiveElementFromAnchorSnapshot(), isUsableInjectionAnchor(), normalizeElementClassName(), parseOriginalMarkupElement(), resolveLiveInjectionAnchor()
-
-### Community 81 - "Docencia Chapter Extraction Script"
-Cohesion: 0.38
-Nodes (6): { chromium }, emitTable(), emitTheory(), [file, code], require, textWithBlanks()
-
-### Community 82 - "Impeccable Animate Command Doc"
-Cohesion: 0.33
-Nodes (6): Animate Reference (Motion Design), 100/300/500 Animation Duration Rule, Perceived Performance / 80ms Threshold, prefers-reduced-motion Accessibility Requirement, Optimize Reference (Performance), Core Web Vitals Optimization
-
-### Community 83 - "Impeccable Project Context Resolver"
-Cohesion: 0.33
-Nodes (6): contextSourcePath(), contextSourceStatus(), isPathInside(), isPathInsideOrEqual(), nearestPackageRootBetween(), resolveCandidateContextSummary()
-
-### Community 84 - "Graphify Query Command Doc"
-Cohesion: 0.40
-Nodes (5): graphify: GitHub Clone & Cross-repo Merge, graphify merge-graphs Command, graphify: Query, Path, Explain, save-result Work-Memory Loop (--outcome), Constrained Query Vocab Expansion
-
-### Community 85 - "Impeccable Browser Antipattern Bundle"
-Cohesion: 0.40
-Nodes (5): checkElementHeroEyebrow(), checkElementHeroEyebrowDOM(), checkHeroEyebrow(), isAccentColor(), resolveVarRefs()
-
-### Community 86 - "Impeccable Generated-File Detector"
+### Community 39 - "isGeneratedFile"
 Cohesion: 0.60
 Nodes (4): hasGeneratedHeader(), HEADER_MARKERS, isGeneratedFile(), isGitIgnored()
 
-### Community 87 - "Repo Navigation Docs"
-Cohesion: 0.40
-Nodes (5): aprendizaje-automatico/ subfolder (ejemplo), Máster en Sistemas Inteligentes overview, procesamiento-lenguaje-natural/ subfolder (ejemplo), Ferroviario overview, Telecomunicaciones overview
+### Community 40 - "impeccable-paths.mjs"
+Cohesion: 0.17
+Nodes (21): resolveProjectRoot(), CRITIQUE_DIR, firstExisting(), getDesignSidecarCandidates(), getDesignSidecarPath(), getImpeccableDir(), getLegacyLiveAnnotationsDir(), getLegacyLiveConfigPath() (+13 more)
 
-### Community 88 - "Impeccable Colorize Command Doc"
+### Community 41 - "session-store.mjs"
+Cohesion: 0.26
+Nodes (9): applyEvent(), baseSnapshot(), COMPLETED_PHASES, getJournalPath(), getSnapshotPath(), rebuildSnapshotFromJournal(), safeSessionId(), toPendingEvent() (+1 more)
+
+### Community 42 - "parseAnyColor"
+Cohesion: 0.12
+Nodes (21): borderColorsFromStyle(), borderWidthsFromStyle(), browserColorsClose(), browserHasDirectText(), browserRadiusTokens(), browserSampleText(), checkCreamPalette(), checkElementDesignSystemDOM() (+13 more)
+
+### Community 43 - "Ejercicios"
+Cohesion: 0.17
+Nodes (11): 1. El sueño, Ej. 1 — Lee el texto y completa los huecos, Ej. 2 — Completa el cuadro del imperativo, Ej. 3 — Escribe en forma negativa, Ej. 4 — Repite el ejercicio anterior, con la forma usted, Ej. 5 — El prospecto de un analgésico, Ej. 6 — Completa los consejos, Ej. 7 — Escribe diálogos como el del ejemplo (+3 more)
+
+### Community 44 - "resolveLengthPx"
+Cohesion: 0.15
+Nodes (18): checkElementQuality(), checkElementQualityDOM(), checkQuality(), checkRepeatedSectionKickers(), checkRepeatedSectionKickersDOM(), checkRepeatedSectionKickersFromDoc(), cleanInlineText(), collectRepeatedSectionKickerCandidates() (+10 more)
+
+### Community 45 - "onAnnotDown"
+Cohesion: 0.20
+Nodes (17): beginEditPin(), buildAnnotationsForCapture(), buildPinElement(), cancelEditingPin(), clampPlaceholderSize(), finalizeEditingPin(), initAnnotOverlay(), localCoords() (+9 more)
+
+### Community 46 - "createLiveBrowserSessionState"
+Cohesion: 0.20
+Nodes (14): createLiveBrowserSessionState(), clearHandled(), clearScrollY(), clearSession(), isHandled(), loadSession(), markHandled(), nextCheckpointRevision() (+6 more)
+
+### Community 47 - "discoverTargetCandidates"
+Cohesion: 0.20
+Nodes (16): directChildDirs(), discoverRootsForPattern(), discoverTargetCandidates(), escapeRegExp(), expandSimplePattern(), findTargetExample(), hasFallbackWorkspaceChildren(), isExcludedByWorkspacePattern() (+8 more)
+
+### Community 48 - "createLiveBrowserDomHelpers"
+Cohesion: 0.19
+Nodes (10): createLiveBrowserDomHelpers(), cssId(), liveUiRoot(), makeFrozenAnchor(), own(), pickable(), rectIsUsableAnchor(), uiAppend() (+2 more)
+
+### Community 49 - "sampleCssBackground"
+Cohesion: 0.20
+Nodes (15): blendRgba(), clampByte(), firstCssUrl(), getLayerValue(), loadVisualContrastImage(), parseObjectPosition(), parsePositionPair(), parsePositionToken() (+7 more)
+
+### Community 50 - "Critique Reference (Design Review)"
+Cohesion: 0.18
+Nodes (12): Audit Reference (Technical Quality Diagnostic), Five Diagnostic Dimensions (A11y, Performance, Theming, Responsive, Anti-Patterns), Audit P0-P3 Severity Tags, Parent SKILL.md DON'T / Anti-Pattern Guidelines, Critique Reference (Design Review), Cognitive Load Assessment, detect.mjs Detector Script, live-server.mjs Script (+4 more)
+
+### Community 51 - "context-signals.mjs"
+Cohesion: 0.24
+Nodes (12): extractRegister(), cli(), COMMON_DEV_PORTS, devServerSignals(), gatherSignals(), gitSignals(), hasCode(), latestCritique() (+4 more)
+
+### Community 52 - "Perfil de Avito: valoración, precios y descripción"
+Cohesion: 0.17
+Nodes (10): Descripción — propuesta, Perfil de Avito: valoración, precios y descripción, Valoración, Прайс-лист — estado actual (tal como está publicado), Прайс-лист — propuesta, Archivos, Avito — perfil de profesor de español, Reseñas completas (+2 more)
+
+### Community 53 - "Live Reference (Interactive Variant Mode)"
+Cohesion: 0.17
+Nodes (13): Brand Register Reference, Brand Font Selection Procedure, Reflex-Reject Aesthetic Lanes, Reflex-Reject Font List, Delight Reference (Micro-interactions & Personality), Delight Amplifies, Never Blocks Principle, Distill Reference (Simplification), Ruthless Simplification Principles (+5 more)
+
+### Community 54 - "critique-storage.mjs"
+Cohesion: 0.32
+Nodes (11): kebab(), listSnapshotsForSlug(), main(), nowFilenameStamp(), parseFrontmatter(), readLatestSnapshot(), readTrend(), serializeFrontmatter() (+3 more)
+
+### Community 55 - "scheduleLazyVisualContrast"
+Cohesion: 0.18
+Nodes (13): addBrowserFindings(), addVisualContrastFindings(), addVisualContrastResult(), clearOverlays(), detachOverlay(), disconnectLazyVisualContrastObserver(), postExtensionError(), rememberVisualContrastAnalysis() (+5 more)
+
+### Community 56 - "collectBrowserFindings"
+Cohesion: 0.18
+Nodes (13): browserDesignSystemConfig(), browserFindingsFromMap(), browserPrimaryFont(), checkBrowserDesignSystemSources(), checkHtmlPatterns(), checkPageQualityDOM(), checkPageQualityFromDoc(), checkTypography() (+5 more)
+
+### Community 57 - "Ejercicios"
+Cohesion: 0.22
+Nodes (8): 1. ¿Cómo te ha ido hoy?, Ej. 1 — Pretérito perfecto, Ej. 2 — Frases en pretérito perfecto, Ej. 3 — Forma frases, Ej. 4 — Presente o pretérito perfecto, Ej. 5 — Cambios culturales, Ej. 6 — Leo Verdura, Ejercicios
+
+### Community 58 - "live.mjs"
+Cohesion: 0.32
+Nodes (11): loadContext(), resolveTargetSelection(), safeRead(), __dirname, ensureServerRunning(), globToRegex(), liveCli(), missingLiveContext() (+3 more)
+
+### Community 59 - "readConfig"
+Cohesion: 0.18
+Nodes (12): applyConfigSource(), applyDetectorConfigSource(), cloneDefaultConfig(), detectorSection(), hookSection(), ignoreValueFilesKey(), mergeIgnoreValues(), numberOr() (+4 more)
+
+### Community 61 - "detect-csp.mjs"
+Cohesion: 0.20
+Nodes (10): detectCsp(), INLINE_HEADER_SIGNALS, LAYOUT_EXTS, MONOREPO_HELPER_SIGNALS, NUXT_ROUTE_RULES_SIGNALS, NUXT_SECURITY_SIGNALS, SCAN_EXTS, SKIP_DIRS (+2 more)
+
+### Community 62 - "palette.mjs"
+Cohesion: 0.24
+Nodes (7): args, buildWeights(), hashUnit(), pickSeed(), seed, SEEDS, weightedPick()
+
+### Community 63 - "pin.mjs"
+Cohesion: 0.25
+Nodes (9): __dirname, findHarnessDirs(), generatePinnedSkill(), HARNESS_DIRS, loadCommandMetadata(), pin(), root, unpin() (+1 more)
+
+### Community 64 - "Ser / Estar (contraste)"
+Cohesion: 0.18
+Nodes (11): Imperativo afirmativo (tú/usted, enclítico), NEM1 Cuaderno Unidad 6B — Cierra la ventana, por favor, Ser / Estar (contraste), NEM1 Cuaderno Unidad 6C — Mi barrio es tranquilo, NEM1 Cuaderno — Practica más 3 (unidades 5-6), Estar + gerundio (presente continuo), Pretérito indefinido, NEM1 Repaso Unidades 1-8 — Presente, Gerundio, Indefinido (+3 more)
+
+### Community 65 - "Clarify Reference (UX Copy)"
+Cohesion: 0.20
+Nodes (10): Clarify Reference (UX Copy), Button Label Problem, Confirmation Dialogs Used Sparingly, Error Message Formula (What/Why/How to Fix), Writing for Translation (i18n Copy Expansion), Harden Reference (Edge Case Resilience), Internationalization Hardening, Interaction Design Reference (+2 more)
+
+### Community 66 - "detect-antipatterns.mjs"
+Cohesion: 0.11
+Nodes (33): confirm(), detectCli(), formatFindings(), formatFindingSummary(), handleStdin(), printUsage(), loadDesignSystemForCwd(), parseFrontmatter() (+25 more)
+
+### Community 67 - "normalizeIgnoreValueEntries"
+Cohesion: 0.36
+Nodes (10): cleanIgnoreValueDisplay(), extractFindingIgnoreValue(), extractFindingIgnoreValueRaw(), extractMotionIgnoreValue(), filterFindings(), formatFindingIgnoreCommand(), isIgnoredFindingValue(), normalizeIgnoreRule() (+2 more)
+
+### Community 68 - "Web Interface Guidelines (Vercel)"
+Cohesion: 0.20
+Nodes (9): Animations, Content, Design, Forms, Interactions, Layout, Performance, Vercel-specific (no aplican tal cual a este repo) (+1 more)
+
+### Community 69 - "Novedades de herramientas de IA"
+Cohesion: 0.09
+Nodes (22): 2026-08-16 — Guía oficial de buenas prácticas de Claude Code, 2026-08-16 — Primera pasada del radar, 2026-08-16 — Segunda pasada: hooks vs. CLAUDE.md, y prácticas de la comunidad, 2026-08-18 — MarkItDown (Microsoft): herramienta puntual, no instalada, 2026-08-18 — Práctica: desplazar la ventana de 5h de límite de uso, 2026-08-20 — agent-browser (Vercel Labs): activado, 2026-08-21 — find-skills (Vercel Labs): activado, 2026-08-21 — mcp-server-dev (Anthropic): activado, deshabilitado por defecto (+14 more)
+
+### Community 70 - "ui-core.mjs"
+Cohesion: 0.29
+Nodes (8): appendStyleToLiveUiRoot(), appendToLiveUiRoot(), escapeCssIdent(), getLiveUiElementById(), LIVE_CHROME_MOUNT_CONTRACT, LIVE_UI_COMPONENT_IDS, LIVE_UI_SURFACES, resolveLiveUiRoot()
+
+### Community 71 - "impeccable skill"
+Cohesion: 0.20
+Nodes (10): Absolute bans (design anti-patterns), AI slop test, Color strategy commitment axis, context.mjs script, DESIGN.md, detect.mjs script, impeccable skill, palette.mjs script (+2 more)
+
+### Community 72 - "Craft Flow Reference"
+Cohesion: 0.20
+Nodes (12): Adapt Reference (Responsive Adaptation), Mobile-First CSS Strategy, Content-Driven Responsive Breakpoints, Codex Reference (Visual Direction & Asset Production), impeccable_asset_producer Subagent, Codex Four Stop Points (Steps A-D), Craft Flow Reference, Craft Flow Gates (Do Not Compress) (+4 more)
+
+### Community 73 - "Init Reference (Project Setup)"
+Cohesion: 0.25
+Nodes (9): Document Reference (DESIGN.md Generation), .impeccable/design.json Sidecar Schema, Google Stitch DESIGN.md Format, Extract Reference (Design System Extraction), Design System Extraction Workflow, Init Reference (Project Setup), DESIGN.md Visual Document, PRODUCT.md Strategic Document (+1 more)
+
+### Community 74 - "postSerializedFindings"
+Cohesion: 0.25
+Nodes (9): buildSelectorSegment(), generateSelector(), isElementHidden(), isLikelyHashedClass(), postSerializedFindings(), renderBrowserFindings(), scanResultMeta(), serializeFindings() (+1 more)
+
+### Community 75 - "resolveContext"
+Cohesion: 0.20
+Nodes (12): findMonorepoRoot(), firstExisting(), hasGitBoundary(), isCandidateProjectRoot(), nearestProjectLikeRoot(), resolveContext(), resolveContextDir(), resolveEnvContextDir() (+4 more)
+
+### Community 76 - "isScreenReaderOnlyTextStyle"
+Cohesion: 0.32
+Nodes (8): checkElementTextOverflowDOM(), classSelector(), clippedByInset(), clippedByRect(), expandBoxShorthand(), firstMetricLengthPx(), isScreenReaderOnlyTextStyle(), metricLengthPx()
+
+### Community 77 - "graphify: Incremental Update & Cluster-only"
+Cohesion: 0.29
+Nodes (7): graphify: Commit Hook & CLAUDE.md Integration, graphify hook install (post-commit), graphify: Transcribe Video/Audio, Whisper initial_prompt Domain Hint, build_merge() Incremental Graph Merge, graphify cluster-only Command, graphify: Incremental Update & Cluster-only
+
+### Community 78 - "Impeccable: Typeset"
+Cohesion: 0.22
+Nodes (9): Bolder Reference (Visual Amplification), Bolder AI Slop Trap Warning, Design System Discovery, Impeccable: Polish, Polish Checklist, Impeccable: Quieter, Brand vs Product 'Quieter' Distinction, Modular Type Scale (5-size system) (+1 more)
+
+### Community 79 - "resolveLiveInjectionAnchor"
+Cohesion: 0.24
+Nodes (13): buildSvelteExpressionTextMap(), buildSveltePropValuesFromLiveElement(), collectTextNodes(), elementMatchesOriginalMarkup(), escapeRegExp(), expressionTextMatcher(), findLiveElementForOriginalMarkup(), findLiveElementFromAnchorSnapshot() (+5 more)
+
+### Community 81 - "extraer.mjs"
+Cohesion: 0.38
+Nodes (6): { chromium }, emitTable(), emitTheory(), [file, code], require, textWithBlanks()
+
+### Community 82 - "Animate Reference (Motion Design)"
+Cohesion: 0.33
+Nodes (6): Animate Reference (Motion Design), 100/300/500 Animation Duration Rule, Perceived Performance / 80ms Threshold, prefers-reduced-motion Accessibility Requirement, Optimize Reference (Performance), Core Web Vitals Optimization
+
+### Community 83 - "syncEditBadgeHitProxies"
+Cohesion: 0.27
+Nodes (10): bindEditBadgeProxy(), editBadgeProxyTargets(), initEditBadge(), initEditBadgeHitProxies(), positionEditBadge(), proxyMouseEvent(), setImportantStyle(), styleEditBadgeProxy() (+2 more)
+
+### Community 84 - "graphify: Query, Path, Explain"
+Cohesion: 0.40
+Nodes (5): graphify: GitHub Clone & Cross-repo Merge, graphify merge-graphs Command, graphify: Query, Path, Explain, save-result Work-Memory Loop (--outcome), Constrained Query Vocab Expansion
+
+### Community 85 - "detect-text.mjs"
+Cohesion: 0.12
+Nodes (20): CSS_IN_JS_EXTENSIONS, extFromFilePath(), isNeutralBorderColor(), PAGE_ANALYZER_EXTS, REGEX_ANALYZERS, REGEX_MATCHERS, runTextContentAnalyzers(), shouldRunPageAnalyzers() (+12 more)
+
+### Community 86 - "cavecrew/SKILL.md"
+Cohesion: 0.14
+Nodes (12): cavecrew, Example chaining, How to invoke, Model overrides, See also, What it does, Auto-clarity (inherited), Chaining patterns (+4 more)
+
+### Community 87 - "Molu — README del repositorio"
+Cohesion: 0.17
+Nodes (10): aprendizaje-automatico/ subfolder (ejemplo), Máster en Sistemas Inteligentes overview, procesamiento-lenguaje-natural/ subfolder (ejemplo), Molu — README del repositorio, Recursos generales, Subcarpetas, Ferroviario overview, Telecomunicaciones overview (+2 more)
+
+### Community 88 - "Colorize Reference (Color Strategy)"
 Cohesion: 0.50
 Nodes (4): Colorize Reference (Color Strategy), 60-30-10 Color Rule, OKLCH Color Space, Tinted Neutrals Technique
 
-### Community 89 - "Graphify Export Formats Doc"
+### Community 89 - "graphify: Extra Exports & Benchmark"
 Cohesion: 0.50
 Nodes (4): graphify: Extra Exports & Benchmark, FalkorDB Export / Push, graphify.serve MCP Server, Neo4j Export / Push
 
-### Community 90 - "Impeccable Detect Entry Point"
+### Community 90 - "detect.mjs"
 Cohesion: 0.50
 Nodes (3): candidates, detectorPath, __dirname
 
-### Community 91 - "Body Parts Worksheet Image"
-Cohesion: 0.50
-Nodes (4): Capitulo b1-5b (pendiente de transcripcion), Dibujo de cuerpos para etiquetar partes del cuerpo, Ejercicio de etiquetado de diagrama (labeling exercise), Vocabulario: partes del cuerpo
+### Community 91 - "Fuente del material"
+Cohesion: 0.22
+Nodes (8): Copiado (`entrega-1/`), Copiado (`entrega-2/`), Copiado (raíz), Excluido (`entrega-2/`), Excluido (raíz), Excluido tras la revisión independiente (contenido problemático), Fuente del material, Trabajo final (papers) — NO copiado, deliberadamente
 
-### Community 92 - "B1-5B Scanned Textbook Page"
-Cohesion: 0.67
-Nodes (4): Crucigrama sobre salud y medicina, Página 21 - Las otras medicinas (B1, Unidad 5B), Partes del cuerpo (vocabulario), Remedios naturales y medicina alternativa (vocabulario)
+### Community 92 - "Ejercicios"
+Cohesion: 0.29
+Nodes (6): 1. Las otras medicinas, Ej. 1 — Escribe las partes del cuerpo que se mencionan, Ej. 2 — ¿Conoces otras partes del cuerpo?, Ej. 3 — Crucigrama, Ej. 4 — Remedios naturales, Ejercicios
 
-### Community 93 - "Graphify Hooks Reference"
+### Community 93 - "Hooks Reference (Design Detector Hook)"
 Cohesion: 0.67
 Nodes (3): Hooks Reference (Design Detector Hook), Design Detector Hook, hook-admin.mjs Script
 
-### Community 94 - "Impeccable Layout Command Doc"
-Cohesion: 0.67
-Nodes (3): Layout Reference (Space & Hierarchy), Consistent Spacing Scale System, Squint Test for Visual Hierarchy
+### Community 94 - "Planificación overview"
+Cohesion: 0.20
+Nodes (11): Nuevo Español en Marcha (libro de texto), Dimitri, Ira, Planificación overview, Román, Alexander, Sasha, Sofía (+3 more)
 
-### Community 95 - "Repo Governance Rules"
+### Community 95 - "Skill: graphify"
 Cohesion: 0.67
 Nodes (3): Regla: trigger /graphify en .claude/CLAUDE.md, Reglas de uso de graphify en este proyecto, Skill: graphify
 
-### Community 96 - "Graphify Add/Watch Reference"
+### Community 96 - "graphify: Add URL & Watch Folder"
 Cohesion: 0.67
 Nodes (3): graphify: Add URL & Watch Folder, graphify.ingest.ingest() URL Ingestion, graphify.watch Background Watcher
 
-### Community 97 - "Graphify Extraction Prompt Spec"
+### Community 97 - "graphify: Extraction Subagent Prompt Spec"
 Cohesion: 0.67
 Nodes (3): Discrete Confidence Score Rubric, graphify: Extraction Subagent Prompt Spec, Deterministic Node ID Format Rule
 
-### Community 98 - "Impeccable Shape Command Doc"
+### Community 98 - "Impeccable: Shape (Design Brief)"
 Cohesion: 0.67
 Nodes (3): Design Brief (structured output), Impeccable: Shape (Design Brief), Visual Direction Probe
 
-### Community 99 - "A1 Unidad 6A Source Transcript"
+### Community 99 - "NEM1 Cuaderno Unidad 6A — ¿Cómo se va a Goya?"
 Cohesion: 0.67
 Nodes (3): NEM1 Cuaderno Unidad 6A — ¿Cómo se va a Goya?, NEM1 Cuaderno Unidad 7A — ¿Dónde quedamos?, NEM1 A1 Interactivo — Unidad 6A ¿Cómo se va a Goya?
 
+### Community 106 - "Becas y trámites de admisión — MUSI 2026/2027"
+Cohesion: 0.15
+Nodes (13): Acceso de red a dominios USAL/BOE/AUIP (importante para la sesión que retome esto), Becas y trámites de admisión — MUSI 2026/2027, Contexto del alumno, Correspondencia oficial, Enviados, Estado de las becas evaluadas, Hallazgo crítico: cláusula de nacionalidad/estancia, Investigado pese al bloqueo de red — indirectamente, sin acceso directo a la fuente (punto 5) (+5 more)
+
+### Community 108 - "agent-browser"
+Cohesion: 0.33
+Nodes (5): agent-browser, Observability Dashboard, Specialized skills, Start here, Why agent-browser
+
+### Community 109 - "mineria-de-datos/FUENTE.md"
+Cohesion: 0.33
+Nodes (5): Copiado, Excluido por el límite de 8 MB, Excluido por las reglas del profesor / fuera de alcance, Excluido por un problema técnico de transferencia en esta pasada, Excluido tras la revisión independiente (contenido problemático)
+
+### Community 110 - "robots-autonomos/FUENTE.md"
+Cohesion: 0.33
+Nodes (5): Copiado, Excluido por las reglas del profesor (nunca copiar), Excluido por un problema técnico de transferencia en esta pasada, Excluido tras la revisión independiente (contenido problemático), No copiado (fuera de alcance / duplicado / dependencias de terceros)
+
+### Community 111 - "control-inteligente/FUENTE.md"
+Cohesion: 0.50
+Nodes (3): Copiado, Excluido por las reglas del profesor (nunca copiar), No copiado en esta pasada (limitación técnica / de alcance)
+
+### Community 112 - "herramientas-interactivas-de-simulacion-y-control/FUENTE.md"
+Cohesion: 0.50
+Nodes (3): Copiado, Excluido por las reglas del profesor (nunca copiar), No copiado (duplicado o fuera de alcance)
+
+### Community 113 - "inteligencia-ambiental-y-sistemas-multiagente/FUENTE.md"
+Cohesion: 0.50
+Nodes (3): Copiado, Excluido por un problema técnico de transferencia en esta pasada, No copiado (fuera del alcance pedido para esta pasada)
+
+### Community 114 - "metodologia-de-la-investigacion/FUENTE.md"
+Cohesion: 0.50
+Nodes (3): Copiado, Excluido por las reglas del profesor (nunca copiar), No copiado (fuera de alcance)
+
+### Community 115 - "Ejercicios"
+Cohesion: 0.33
+Nodes (5): 1. Vida cotidiana, Ej. 1 — Lee el artículo y elige la opción adecuada, Ej. 2 — Completa las preguntas con hace que, desde, cuándo, cuánto, Ej. 3 — Inventa una respuesta para cada una de las preguntas anteriores, Ejercicios
+
+### Community 116 - "Ejercicios"
+Cohesion: 0.13
+Nodes (14): 1. Unidad 0, Ej. 10 — Indefinido o imperfecto, Ej. 11 — Test cultural, Ej. 12 — Relaciona (II), Ej. 1 — El presente de indicativo, Ej. 2 — Formula la pregunta, Ej. 3 — Pedir permiso e imperativo, Ej. 4 — Pronombres personales (+6 more)
+
+### Community 117 - "Ejercicios"
+Cohesion: 0.20
+Nodes (9): 1. En la estación, Ej. 1 — Lee el texto y contesta a las preguntas, Ej. 2 — ¿Cómo se dicen estas palabras en tu lengua?, Ej. 3 — ¿Conoces más palabras relacionadas con los medios de transporte?, Ej. 4 — Completa los diálogos con las siguientes palabras, Ej. 5 — Construye frases, Ej. 6 — Gema y Víctor están viendo un reportaje sobre una actriz, Ej. 7 — Subraya la forma correcta (+1 more)
+
+### Community 118 - "Ejercicios"
+Cohesion: 0.25
+Nodes (7): 1. Intercambio de casa, Ej. 1 — Fernando nos cuenta su experiencia de intercambio de casa, Ej. 2 — Completa con las preposiciones del recuadro, Ej. 3 — Completa con la preposición correcta, Ej. 4 — Carlos e Inés son un matrimonio que quiere intercambiar su casa, Ej. 5 — Aquí tienes algunos elementos que puedes encontrar en una casa, Ejercicios
+
+### Community 119 - "Find Skills"
+Cohesion: 0.14
+Nodes (13): Common Skill Categories, Find Skills, How to Help Users Find Skills, Step 1: Understand What They Need, Step 2: Check the Leaderboard First, Step 3: Search for Skills, Step 4: Verify Quality Before Recommending, Step 5: Present Options to the User (+5 more)
+
+### Community 120 - "Ejercicios"
+Cohesion: 0.40
+Nodes (4): 1. ¿Cómo vas al trabajo?, Ej. 1 — En este crucigrama encontrarás palabras relacionadas con los medios de transporte, Ej. 2 — Vas a escuchar una historia curiosa, pero antes mira las viñetas y escribe lo que crees que pasó, Ejercicios
+
+### Community 121 - "caveman/SKILL.md"
+Cohesion: 0.17
+Nodes (10): caveman, Example output, How to invoke, See also, What it does, Auto-Clarity, Boundaries, Intensity (+2 more)
+
+### Community 122 - "hook-hardening"
+Cohesion: 0.18
+Nodes (10): 1. Todo código de salida se comprueba antes de declarar éxito, 2. Cada comando externo nuevo tiene `timeout`, sin excepción, 3. Antes de inventar un mecanismo, buscar si ya existe uno oficial, 4. "Probado de punta a punta" solo cuenta si reproduce la invocación real, 5. Tras cualquier intento de arreglo, re-verificar, no asumir, 6. Decir exactamente lo que un chequeo garantiza, ni más ni menos, 7. Probar en vivo contra estado compartido puede ensuciar lo que vas a comitear, 8. Un filtro de texto sobre un comando de shell debe operar sobre lo (+2 more)
+
+### Community 123 - "Ejercicios"
+Cohesion: 0.25
+Nodes (7): 1. ¿Qué estás haciendo?, Ej. 1 — Mira el cuadro de Las meninas, Ej. 2 — Subraya la forma apropiada del verbo, Ej. 3 — Completa el texto sobre Pepa, Ej. 4 — Pon las palabras en el orden correcto, Ej. 5 — ¿Qué están haciendo?, Ejercicios
+
+### Community 124 - "cavecrew-investigator.md"
+Cohesion: 0.29
+Nodes (6): Auto-clarity, Example, Job, Output, Refusals, Tools
+
+### Community 125 - "Ejercicios"
+Cohesion: 0.29
+Nodes (6): 1. ¿Cómo es?, Ej. 1 — ¿Son verdaderas o falsas?, Ej. 2 — Describe a los personajes del cuadro, Ej. 3 — Escribe los contrarios, Ej. 4 — ¿Cómo crees que son estas personas?, Ejercicios
+
+### Community 126 - "cavecrew-builder.md"
+Cohesion: 0.33
+Nodes (5): Auto-clarity, Output (receipt), Refusals (terminal lines), Scope, Workflow
+
+### Community 127 - "cavecrew-reviewer.md"
+Cohesion: 0.33
+Nodes (5): Auto-clarity, Boundaries, Output, Severity, Tools
+
+### Community 128 - "Ejercicios"
+Cohesion: 0.33
+Nodes (6): 1. Saludos, Ej. 1 — Completa la tabla de nacionalidades, Ej. 2 — Relaciona la pregunta con la respuesta, Ej. 3 — Completa el diálogo con ser o llamarse, Ej. 4 — Lee el texto y responde, Ejercicios
+
+### Community 129 - "Ejercicios"
+Cohesion: 0.25
+Nodes (7): 1. Ganadores, Ej. 1 — Ganadores, Ej. 2 — Preguntas sobre los ganadores, Ej. 3 — Preposiciones, Ej. 4 — Lo que hiciste ayer, Ej. 5 — Los números completos, Ejercicios
+
+### Community 130 - "restrict-cavecrew-bash.sh"
+Cohesion: 0.83
+Nodes (3): allow(), deny(), restrict-cavecrew-bash.sh script
+
+### Community 137 - "Ejercicios"
+Cohesion: 0.18
+Nodes (10): 1. Practica más 4, Ej. 1 — Responde con estar + gerundio, Ej. 2 — Completa el texto con el tiempo correcto de los verbos del recuadro (presente o estar + gerundio), Ej. 3 — Completa las frases con el pretérito indefinido de los verbos del recuadro, Ej. 4 — Completa la entrevista con el pretérito indefinido de los verbos entre paréntesis, Ej. 5 — Elige el adjetivo correcto de cada pareja, Ej. 6 — Escribe los contrarios, Ej. 7 — Mira el mapa del tiempo de América del Sur y di qué tiempo hace en cada una de las capitales numeradas (+2 more)
+
+### Community 138 - "Ejercicios"
+Cohesion: 0.25
+Nodes (7): 1. Por favor, ¿para ir a la catedral?, Ej. 1 — Relaciona las preguntas con las respuestas, Ej. 2 — Mira el plano de calles y completa las conversaciones, Ej. 3 — Escribe tres conversaciones más como las del ejercicio 2, Ej. 4 — Completa las frases con las preposiciones del recuadro, Ej. 5 — Lee esta poesía y relaciona los dibujos con los nombres, Ejercicios
+
+### Community 139 - "Ejercicios"
+Cohesion: 0.29
+Nodes (6): 1. ¿Qué hizo Rosa ayer?, Ej. 1 — Completa la tabla, Ej. 2 — Relaciona las frases, Ej. 3 — Completa la conversación con el pretérito indefinido de los verbos del recuadro, Ej. 4 — Mira la agenda de Guillermo. Ordena las preguntas y contéstalas, Ejercicios
+
+### Community 140 - "Ejercicios"
+Cohesion: 0.29
+Nodes (6): 1. ¿Qué tiempo hace hoy?, Ej. 1 — Completa con las palabras del recuadro, Ej. 2 — Corrige las frases a partir de la información del texto anterior, Ej. 3 — ¿Qué tiempo hizo ayer en Sudamérica? ¿Y hoy, qué tiempo hace?, Ej. 4 — Lee el siguiente anuncio de una revista de viajes y contesta a las preguntas, Ejercicios
+
+### Community 141 - "Ejercicios"
+Cohesion: 0.33
+Nodes (6): 2. Familias, Ej. 5 — Mira el árbol genealógico y completa, Ej. 6 — Completa con el posesivo correcto, Ej. 7 — Escribe el plural, Ej. 8 — Relaciona la pregunta con la respuesta, Ejercicios
+
+### Community 142 - "Ejercicios"
+Cohesion: 0.33
+Nodes (6): 3. El trabajo, Ej. 10 — Completa con la preposición correcta, Ej. 11 — Relaciona la profesión con el lugar de trabajo, Ej. 12 — Completa el texto sobre la rutina de Marta, Ej. 9 — Conjuga los verbos reflexivos, Ejercicios
+
+### Community 143 - "Ejercicios"
+Cohesion: 0.33
+Nodes (6): 4. La casa, Ej. 13 — Clasifica los muebles de la imagen, Ej. 14 — Completa con hay o está / están, Ej. 15 — Completa con el artículo correcto, Ej. 16 — Lee el anuncio y responde, Ejercicios
+
+### Community 144 - "Ejercicios"
+Cohesion: 0.33
+Nodes (6): 5. Comer, Ej. 17 — Clasifica los alimentos de la imagen, Ej. 18 — Localiza la palabra que no pertenece al grupo, Ej. 19 — Completa con gustar, Ej. 20 — Ordena el diálogo del restaurante, Ejercicios
+
+### Community 145 - "Ejercicios"
+Cohesion: 0.33
+Nodes (6): 6. El barrio, Ej. 21 — Forma el imperativo (tú), Ej. 22 — Relaciona la orden con su continuación, Ej. 23 — Escribe el adjetivo contrario, Ej. 24 — Lee el texto y contesta verdadero o falso, Ejercicios
+
+### Community 146 - "Ejercicios"
+Cohesion: 0.33
+Nodes (6): 7. Salir con los amigos, Ej. 25 — Forma el gerundio, Ej. 26 — Completa con estar + gerundio, Ej. 27 — Verdadero o falso sobre el cuadro Las meninas, Ej. 28 — Completa el diálogo por teléfono, Ejercicios
+
+### Community 147 - "Ejercicios"
+Cohesion: 0.33
+Nodes (6): 8. De vacaciones, Ej. 29 — Conjuga el pretérito indefinido, Ej. 30 — Completa con el pretérito indefinido, Ej. 31 — El tiempo: hoy y ayer, Ej. 32 — Verdadero o falso sobre la imagen, Ejercicios
+
+### Community 148 - "Ejercicios"
+Cohesion: 0.33
+Nodes (6): 9. Compras, Ej. 33 — Completa con el pronombre de objeto directo, Ej. 34 — Completa con el comparativo, Ej. 35 — ¿Qué prenda es?, Ej. 36 — Escribe el adjetivo contrario, Ejercicios
+
+### Community 149 - "checkElementHeroEyebrow"
+Cohesion: 0.40
+Nodes (5): checkElementHeroEyebrow(), checkElementHeroEyebrowDOM(), checkHeroEyebrow(), isAccentColor(), resolveVarRefs()
+
+### Community 150 - "guia-repaso-unidades-1-10.md"
+Cohesion: 0.29
+Nodes (6): 10. Salud y enfermedad, Ej. 37 — Adivina la parte del cuerpo, Ej. 38 — Completa con doler, Ej. 39 — Completa con el pretérito imperfecto, Ej. 40 — ¿Qué palabra no pertenece al grupo?, Ejercicios
+
+### Community 151 - "Ejercicios"
+Cohesion: 0.29
+Nodes (6): 1. ¿Qué hiciste? ¿Qué has hecho?, Ej. 1 — Relaciona, Ej. 2 — Completa las frases con el marcador temporal adecuado, Ej. 3 — Frida Kahlo — pretérito indefinido o imperfecto, Ej. 4 — Lee las siguientes biografías. ¿Sabes a qué personaje famoso corresponden?, Ejercicios
+
+### Community 152 - "Ejercicios"
+Cohesion: 0.29
+Nodes (6): 1. El futuro que nos espera, Ej. 1 — Completa con uno de los verbos del recuadro en futuro, Ej. 2 — Completa los huecos con la forma adecuada del futuro imperfecto, Ej. 3 — Forma frases con estos términos que se utilizan en la predicción del tiempo, Ej. 4 — Escribe las tildes que faltan en las frases siguientes, Ejercicios
+
+### Community 153 - "analitica-visual-y-visualizacion-de-la-informacion/FUENTE.md"
+Cohesion: 0.33
+Nodes (5): Copiado, Excluido por las reglas del profesor (nunca copiar), Excluido por tamaño (regla de 8 MB), Excluido por un problema técnico de transferencia en esta pasada, No copiado (fuera del alcance pedido para esta asignatura)
+
+### Community 154 - "Fuente del material"
+Cohesion: 0.33
+Nodes (5): Copiado (`figures/`), Copiado (raíz), Excluido — problema técnico de transferencia, Fuente del material, No copiado, deliberadamente
+
+### Community 155 - "Gemini [![Build Status](https://github.com/anishathalye/gemini/workflows/CI/badge.svg)](https://github.com/anishathalye/gemini/actions?query=workflow%3ACI)"
+Cohesion: 0.17
+Nodes (10): Contributing, Dependencies, Design goals, FAQ, Gemini [![Build Status](https://github.com/anishathalye/gemini/workflows/CI/badge.svg)](https://github.com/anishathalye/gemini/actions?query=workflow%3ACI), LabSix theme, License, MIT theme (+2 more)
+
+### Community 156 - "check-pr-review.sh"
+Cohesion: 0.83
+Nodes (3): allow(), deny(), check-pr-review.sh script
+
+### Community 157 - "procesos-y-metodos-de-modelado-para-la-ingenieria-web-y-web-semantica/FUENTE.md"
+Cohesion: 0.50
+Nodes (3): Copiado, Excluido por el límite de 8 MB, No copiado (fuera de alcance)
+
+### Community 160 - "Currículum (CV) — perfil profesional"
+Cohesion: 0.29
+Nodes (7): Competencias personales (soft skills), Competencias técnicas (hard skills), Currículum (CV) — perfil profesional, Experiencia profesional (prácticas), Intereses personales (según el CV), Premios y reconocimientos, Voluntariado
+
+### Community 161 - "Oportunidades de docencia de español en Salamanca (USAL)"
+Cohesion: 0.20
+Nodes (9): 1. Bolsa de trabajo — Cursos Internacionales de la USAL, 2. Másteres/títulos ELE de la propia USAL — comparativa, Alternativa a MUSALE: máster oficial online (UNED + Instituto Cervantes), Corrección (2026-09-04): sí hay un requisito de titulación duro, Oportunidades de docencia de español en Salamanca (USAL), Otras instituciones en Salamanca (donde sí podría optar), Puntos débiles y riesgos a tener en cuenta, Recomendación (actualizada 2026-09-04) (+1 more)
+
+### Community 166 - "funciones.py"
+Cohesion: 0.43
+Nodes (6): ang_degree(), automatico(), cuadrado(), dist(), get_entero(), graph()
+
+### Community 167 - "Ejercicios"
+Cohesion: 0.20
+Nodes (9): 1. Practica más 5, Ej. 1 — Sustituye el nombre por el pronombre objeto, Ej. 2 — Elige el adjetivo correcto de cada pareja, Ej. 3 — Elige la opción correcta, Ej. 4 — Completa la tabla con el pretérito imperfecto de los verbos (I), Ej. 5 — Completa la tabla con el pretérito imperfecto de los verbos (II), Ej. 6 — Completa las siguientes frases con el pretérito imperfecto de los verbos del recuadro, Ej. 7 — Ordena las preguntas y contéstalas mirando los planes de Juanjo para el próximo curso (+1 more)
+
+### Community 168 - "live-target.mjs"
+Cohesion: 0.43
+Nodes (4): parseTargetOptions(), parseTargetPath(), TargetArgError, resolveLiveTarget()
+
+### Community 169 - "irobot_2.py"
+Cohesion: 0.83
+Nodes (3): ang_degree(), dist(), odometry()
+
+### Community 170 - "Ejercicios"
+Cohesion: 0.22
+Nodes (8): 1. Voy a trabajar en un hotel, Ej. 1 — Relaciona las siguientes preguntas con sus respuestas, Ej. 2 — ¿Qué planes tienen los siguientes personajes para el fin de semana?, Ej. 3 — Completa la conversación, Ej. 4 — Relaciona cada país o ciudad con una actividad, Ej. 5 — Di qué van a hacer las siguientes personas en sus vacaciones, Ej. 6 — Lee el texto y di si las frases siguientes son verdaderas o falsas, Ejercicios
+
+### Community 171 - "Ejercicios"
+Cohesion: 0.25
+Nodes (7): 1. La salud, Ej. 1 — Mira el dibujo y escribe el nombre de las distintas partes del cuerpo, Ej. 2 — ¿Qué palabra no pertenece a su grupo?, Ej. 3 — Crucigrama: escribe las respuestas, Ej. 4 — Ordena la siguiente conversación entre Sonia y Alfonso, Ej. 5 — Completa las siguientes frases con el verbo doler, Ejercicios
+
+### Community 172 - "Ejercicios"
+Cohesion: 0.25
+Nodes (7): 1. Buenos Aires es más grande que Toledo, Ej. 1 — Escribe una frase con el mismo significado, Ej. 2 — Completa las frases, Ej. 3 — Completa este texto utilizando los comparativos del recuadro, Ej. 4 — ¿Dónde prefieres ir tú de vacaciones?, Ej. 5 — Lee el texto y completa los huecos con las palabras del recuadro, Ejercicios
+
+### Community 173 - "Ejercicios"
+Cohesion: 0.29
+Nodes (6): 1. Antes salíamos con los amigos, Ej. 1 — Relaciona las frases y completa con el pretérito imperfecto, Ej. 2 — Completa las frases con el pretérito imperfecto de los verbos del recuadro, Ej. 3 — Completa la siguiente entrevista con el pretérito imperfecto de los verbos entre paréntesis, Ej. 4 — Vuelve a leer la entrevista con Marcos y contesta a las preguntas, Ejercicios
+
+### Community 174 - "Ejercicios"
+Cohesion: 0.29
+Nodes (6): 1. Mi novio lleva corbata, Ej. 1 — Busca el nombre de esta ropa en la sopa de letras, Ej. 2 — Completa, Ej. 3 — Escribe los adjetivos contrarios, Ej. 4 — Completa con las palabras del recuadro, Ejercicios
+
+### Community 175 - "Ejercicios"
+Cohesion: 0.33
+Nodes (5): 1. ¿Cuánto cuestan estos zapatos?, Ej. 1 — Completa estas conversaciones con las palabras que faltan, Ej. 2 — Completa con el pronombre de objeto directo, Ej. 3 — Completa las frases con los pronombres del recuadro, Ejercicios
+
+### Community 176 - "Ejercicios"
+Cohesion: 0.17
+Nodes (11): 1. ¿Qué hora es?, Ej. 1 — Escribe la hora correcta debajo de cada reloj, Ej. 2 — Completa, Ej. 3 — Escucha a esta persona hablar de los horarios de su país y escribe la hora, Ej. 4 — Escribe sobre los horarios en tu país, Ej. 5 — Lee el texto y señala verdadero o falso, Ej. 6 — Ordena las frases, Ej. 7 — Escucha y completa los datos (+3 more)
+
+### Community 177 - "Ejercicios"
+Cohesion: 0.17
+Nodes (11): 1. Practica más 1, Ej. 1 — Completa las tablas: trabajar, comer, vivir, Ej. 2 — Completa las tablas: tener, ser, Ej. 3 — Completa las frases con uno de los verbos del ejercicio anterior, Ej. 4 — Escribe en la columna correspondiente, Ej. 5 — Escribe las preguntas, Ej. 6 — Escribe el plural de estos nombres, Ej. 7 — Completa con el posesivo adecuado (+3 more)
+
+### Community 178 - "Ejercicios"
+Cohesion: 0.17
+Nodes (11): 1. Practica más 2, Ej. 1 — Relaciona, Ej. 2 — Escribe la forma correspondiente, Ej. 3 — Completa con el verbo entre paréntesis en la forma adecuada, Ej. 4 — Completa con las preposiciones, Ej. 5 — Completa las frases con información verdadera sobre ti, Ej. 6 — Relaciona, Ej. 7 — Completa la tabla (+3 more)
+
+### Community 179 - "Ejercicios"
+Cohesion: 0.18
+Nodes (10): 1. Interiores, Ej. 1 — ¿En qué parte de la casa pueden estar las siguientes cosas?, Ej. 2 — Completa los huecos con el artículo determinado (el / la / los / las), Ej. 3 — Completa los huecos con el artículo indeterminado (un / una / unos / unas), Ej. 4 — Completa los huecos con el artículo determinado o indeterminado correspondiente, Ej. 5 — Ordena las siguientes frases, Ej. 6 — Completa las frases con: hay · está · están · tiene · tienen, Ej. 7 — Escucha a Carmen hablar de su casa y di si las frases son verdaderas o falsas. Corrige las falsas (+2 more)
+
+### Community 180 - "Ejercicios"
+Cohesion: 0.20
+Nodes (9): 1. ¿Cuál es tu número de móvil?, Ej. 1 — Relaciona los números con su transcripción en letras, Ej. 2 — Escribe los números de teléfono, Ej. 3 — Completa, Ej. 4 — Escucha y completa las fichas, Ej. 5 — Completa la tarjeta con tus datos, Ej. 6 — Completa con la información correspondiente a las fichas, Ej. 7 — Completa con los verbos del recuadro (+1 more)
+
+### Community 181 - "Ejercicios"
+Cohesion: 0.22
+Nodes (8): 1. ¡Encantado!, Ej. 1 — Relaciona, Ej. 2 — Escribe las preguntas, Ej. 3 — Completa la tabla, Ej. 4 — Completa los diálogos con los elementos del recuadro, Ej. 5 — Completa la tabla, Ej. 6 — Escribe los nombres que se deletrean, Ejercicios
+
+### Community 182 - "Ejercicios"
+Cohesion: 0.22
+Nodes (8): 1. Rosa se levanta a las siete, Ej. 1 — Forma frases, Ej. 2 — Completa con la preposición adecuada, Ej. 3 — Relaciona, Ej. 4 — Completa la tabla, Ej. 5 — Busca en la sopa de letras estas formas verbales, Ej. 6 — Completa con el verbo en presente, Ejercicios
+
+### Community 183 - "Ejercicios"
+Cohesion: 0.22
+Nodes (8): 1. ¿Estudias o trabajas?, Ej. 1 — Une las fichas y encontrarás los días de la semana, Ej. 2 — Relaciona las imágenes con las profesiones, Ej. 3 — Relaciona, Ej. 4 — Escribe algunas frases sobre estas personas, Ej. 5 — Nuria vive en Granada con su hija. Mira los dibujos y escribe frases sobre su vida, Ej. 6 — Completa el texto con las palabras del recuadro, Ejercicios
+
+### Community 184 - "Ejercicios"
+Cohesion: 0.25
+Nodes (7): 1. ¿A qué te dedicas?, Ej. 1 — Busca en esta sopa de letras los nombres de ocho profesionales, Ej. 2 — Forma frases, como en el modelo, Ej. 3 — Completa la tabla, Ej. 4 — Completa las frases con tener o ser, Ej. 5 — Forma frases tomando un elemento de cada columna, Ejercicios
+
+### Community 185 - "Ejercicios"
+Cohesion: 0.25
+Nodes (7): 1. ¿Te gusta el cine?, Ej. 1 — Observa las habitaciones de Carmen y de Pablo. ¿Qué actividades les gusta realizar en su tiempo libre?, Ej. 2 — ¿Qué aficiones compartes y no compartes con Pablo y Carmen?, Ej. 3 — Ordena las siguientes preguntas. Después, contéstalas, Ej. 4 — Escribe frases con el verbo "gustar" y expresa tus gustos como en el ejemplo, Ej. 5 — Reacciona según tus gustos, Ejercicios
+
+### Community 186 - "Ejercicios"
+Cohesion: 0.25
+Nodes (7): 1. Receta del Caribe, Ej. 1 — Completa la tabla con el imperativo de los verbos, Ej. 2 — Completa la receta con el imperativo de los verbos del recuadro, Ej. 3 — Completa las frases con el imperativo de los verbos entre paréntesis, Ej. 4 — Clasifica estos platos en la carta del Menú, Ej. 5 — Lee y escucha el siguiente texto y contesta a las preguntas, Ejercicios
+
+### Community 187 - "Docencia de español overview"
+Cohesion: 0.33
+Nodes (6): Grabaciones de clases overview, Docencia de español overview, materiales/ subfolder, Python ejercicios overview, Python proyectos overview, Python overview
+
+### Community 188 - "Ejercicios"
+Cohesion: 0.29
+Nodes (6): 1. ¿Estás casado?, Ej. 1 — Relaciona, Ej. 2 — Completa la descripción de las familias con el verbo ser, tener o llamarse, Ej. 3 — Mira el árbol genealógico y completa las frases, Ej. 4 — Escribe el plural, Ejercicios
+
+### Community 189 - "Ejercicios"
+Cohesion: 0.29
+Nodes (6): 1. ¿Qué desayunas?, Ej. 1 — Cuatro personas están en una cafetería. Escucha y completa qué desayuna cada uno, Ej. 2 — Relaciona las palabras de la columna de la izquierda con las de la derecha, Ej. 3 — Responde a las siguientes preguntas, Ej. 4 — Completa con g o gu, Ejercicios
+
+### Community 190 - "Ejercicios"
+Cohesion: 0.33
+Nodes (5): 1. ¿Dónde están mis gafas?, Ej. 1 — Encuentra el nombre de los objetos en la sopa de letras, Ej. 2 — Esta es la clase de idiomas, pero el profesor no está, Ej. 3 — Sigue el modelo, Ejercicios
+
+### Community 191 - "Ejercicios"
+Cohesion: 0.33
+Nodes (5): 1. ¿Dónde vives?, Ej. 1 — Mira las fotos y escribe debajo en qué lugar de la casa están, Ej. 2 — ¿En qué piso vive cada personaje?, Ej. 3 — Lee el anuncio de venta de pisos y completa las frases, Ejercicios
+
+### Community 192 - "Ejercicios"
+Cohesion: 0.33
+Nodes (5): 1. Visita a Córdoba, Ej. 1 — Pon las siguientes frases en un orden lógico, Ej. 2 — ¿Qué se dice en estas situaciones?, Ej. 3 — Lee el correo de María y contesta a las preguntas, Ejercicios
+
+### Community 193 - "Ejercicios"
+Cohesion: 0.33
+Nodes (5): 1. Comer fuera de casa, Ej. 1 — Mira los dibujos y escribe las comidas favoritas de Amalia y Juan, Ej. 2 — Localiza la palabra que no pertenece a su grupo, Ej. 3 — Ordena las frases y completa la conversación en el restaurante, Ejercicios
+
+### Community 194 - "Q: PR 90 re-review: verify 5 prior derangement/conjTable fixes on current HEAD"
+Cohesion: 0.40
+Nodes (4): Answer, Outcome, Q: PR 90 re-review: verify 5 prior derangement/conjTable fixes on current HEAD, Source Nodes
+
+### Community 196 - "readLiveServerInfo"
+Cohesion: 0.18
+Nodes (19): isLiveServerPidReachable(), readLiveServerInfo(), completeCli(), completeThroughServer(), parseArgs(), readServerInfo(), collectManualApplyFiles(), manualApplyReplyCommand() (+11 more)
+
+### Community 197 - "Carta de candidatura espontánea — academias de español, Salamanca"
+Cohesion: 0.40
+Nodes (4): Asunto, Carta de candidatura espontánea — academias de español, Salamanca, Cuerpo, Notas
+
+### Community 198 - "Ejercicios"
+Cohesion: 0.29
+Nodes (6): 1. Deportes, Ej. 1 — Objetos deportivos: sopa de letras, Ej. 2 — ¿Con qué deporte está relacionado cada uno?, Ej. 3 — Completa con la palabra adecuada, Ej. 4 — Entrevista al ciclista Emilio Pedal, Ejercicios
+
+### Community 199 - "cli"
+Cohesion: 0.29
+Nodes (8): buildMissingTargetDirective(), buildResolvedContextDirective(), buildTargetSelectionDirective(), cli(), hasTargetOption(), parseCliOptions(), pathExistsForTarget(), shouldWarnMissingTarget()
+
+### Community 200 - "Ejercicios"
+Cohesion: 0.29
+Nodes (6): 1. ¡Encantado!, Ej. 1 — Relaciona, Ej. 2 — Los gustos de Rafa y Alicia, Ej. 3 — Escribe las preguntas, Ej. 4 — Relaciona, Ejercicios
+
+### Community 201 - "Ejercicios"
+Cohesion: 0.29
+Nodes (6): 1. Duermo poco, Ej. 1 — Un día en pareja, Ej. 2 — Preposiciones, Ej. 3 — Completa con el pronombre, Ej. 4 — La rutina de Lucía, Ejercicios
+
+### Community 202 - "Ejercicios"
+Cohesion: 0.29
+Nodes (6): 1. ¿Quieres ser millonario?, Ej. 1 — Haz las preguntas, Ej. 2 — Cuántos, cuántas, cuánto, cuánta, Ej. 3 — ¿Qué o cuál?, Ej. 4 — Elige la palabra correcta, Ejercicios
+
+### Community 203 - "Ejercicios"
+Cohesion: 0.29
+Nodes (6): 1. Biografías, Ej. 1 — Frases en pretérito indefinido, Ej. 2 — Titulares, Ej. 3 — Miguel de Cervantes, Ej. 4 — Juan López, Ejercicios
+
+### Community 204 - "Ejercicios"
+Cohesion: 0.29
+Nodes (6): 1. La boda de Pili, Ej. 1 — Nacido para reinar, Ej. 2 — Verdadero o falso, Ej. 3 — Relaciones familiares, Ej. 4 — La boda de Pili y Carlos, Ejercicios
+
+### Community 205 - "Ejercicios"
+Cohesion: 0.40
+Nodes (4): 1. Costumbres, Ej. 1 — Piscina Sol y Agua, Ej. 2 — Antes de un examen, Ejercicios
+
+### Community 206 - "detect-html.mjs"
+Cohesion: 0.13
+Nodes (9): buildStaticWindow(), collectStaticCssText(), StaticDocument, checkStaticPageTypography(), detectHtml(), STATIC_ELEMENT_RULES, checkHtmlPatterns(), checkPageQualityDOM() (+1 more)
+
+### Community 207 - "Ejercicios"
+Cohesion: 0.33
+Nodes (5): 1. Un buen trabajo, Ej. 1 — Relaciona, Ej. 2 — De profesión: adivinar el futuro, Ej. 3 — Sopa de letras: profesiones, Ejercicios
+
+### Community 208 - "parseRgb"
+Cohesion: 0.20
+Nodes (22): checkColors(), checkElementAIPaletteDOM(), checkElementColors(), checkElementColorsDOM(), checkElementGlow(), checkElementGlowDOM(), checkElementIconTile(), checkElementIconTileDOM() (+14 more)
+
+### Community 209 - "Ejercicios"
+Cohesion: 0.18
+Nodes (10): 1. ¿Salimos?, Ej. 1 — Isabel y Jesús, Ej. 2 — Completa el diálogo, Ej. 3 — Escribe un diálogo, Ej. 4 — Transforma de estilo directo a estilo indirecto, Ej. 5 — Transforma las preguntas (sí/no), Ej. 6 — Reconstruye la pregunta, Ej. 7 — Cuéntale a Gonzalo lo que te dijeron (+2 more)
+
+### Community 210 - "Ejercicios"
+Cohesion: 0.22
+Nodes (8): 1. Si tuviera dinero..., Ej. 1 — Sería feliz si..., Ej. 2 — Cosas de niños, Ej. 3 — Completa el diálogo, Ej. 4 — Lee el texto y relaciona, Ej. 5 — Contesta a las siguientes preguntas, Ej. 6 — Enrique y Adela, Ejercicios
+
+### Community 211 - "resolveCandidateContextSummary"
+Cohesion: 0.33
+Nodes (6): contextSourcePath(), contextSourceStatus(), isPathInside(), isPathInsideOrEqual(), nearestPackageRootBetween(), resolveCandidateContextSummary()
+
+### Community 212 - "Ejercicios"
+Cohesion: 0.33
+Nodes (5): 1. Cuando pueda, cambiaré de trabajo, Ej. 1 — Relaciona, Ej. 2 — Completa las frases, Ej. 3 — Completa las preguntas utilizando cuando + subjuntivo, Ejercicios
+
+### Community 213 - "Ejercicios"
+Cohesion: 0.40
+Nodes (4): 1. Música, arte y literatura, Ej. 1 — Completa las frases con estas palabras, Ej. 2 — Entrevista al fotógrafo Chema Madoz, Ejercicios
+
 ## Knowledge Gaps
-- **234 isolated node(s):** `COMMON_DEV_PORTS`, `SCANNABLE_EXT`, `SOURCE_DIRS`, `PRODUCT_NAMES`, `DESIGN_NAMES` (+229 more)
+- **738 isolated node(s):** `mark-pr-reviewed.sh script`, `session-end-status.sh script`, `session-start.sh script`, `COMMON_DEV_PORTS`, `SCANNABLE_EXT` (+733 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **22 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `createManualEditRoutes()` connect `Impeccable Manual Edits Buffer` to `Impeccable Manual Edit Commit`, `Impeccable Live Mode Server`, `Impeccable CSS Cascade Resolver`, `Impeccable Live Insert UI`?**
-  _High betweenness centrality (0.091) - this node is a cross-community bridge._
-- **Why does `StaticDocument` connect `Impeccable CSS Cascade Resolver` to `Impeccable Shared Constants`?**
-  _High betweenness centrality (0.090) - this node is a cross-community bridge._
-- **Why does `commitManualEdits()` connect `Impeccable Manual Edit Commit` to `Impeccable Manual Edits Buffer`, `Impeccable Copy Edit Agent`?**
-  _High betweenness centrality (0.010) - this node is a cross-community bridge._
+- **Why does `createManualApplyController()` connect `manual-apply.mjs` to `live-server.mjs`?**
+  _High betweenness centrality (0.002) - this node is a cross-community bridge._
+- **Why does `readBuffer()` connect `manual-edit-routes.mjs` to `live-manual-edit-evidence.mjs`, `manual-apply.mjs`, `live-commit-manual-edits.mjs`, `live-wrap.mjs`, `live-accept.mjs`?**
+  _High betweenness centrality (0.001) - this node is a cross-community bridge._
+- **Why does `readLiveServerInfo()` connect `readLiveServerInfo` to `impeccable-paths.mjs`, `live-poll.mjs`, `live.mjs`, `live-server.mjs`?**
+  _High betweenness centrality (0.001) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `initGlobalBar()` (e.g. with `hideAgentPollTooltip()` and `onDetectMessage()`) actually correct?**
   _`initGlobalBar()` has 7 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `COMMON_DEV_PORTS`, `SCANNABLE_EXT`, `SOURCE_DIRS` to the rest of the system?**
-  _234 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `Impeccable Live Browser Engine` be split into smaller, more focused modules?**
-  _Cohesion score 0.034482758620689655 - nodes in this community are weakly interconnected._
-- **Should `Impeccable Design Antipattern Checks` be split into smaller, more focused modules?**
-  _Cohesion score 0.04453781512605042 - nodes in this community are weakly interconnected._
+- **What connects `mark-pr-reviewed.sh script`, `session-end-status.sh script`, `session-start.sh script` to the rest of the system?**
+  _738 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `live-browser.js` be split into smaller, more focused modules?**
+  _Cohesion score 0.02863984674329502 - nodes in this community are weakly interconnected._
+- **Should `checks.mjs` be split into smaller, more focused modules?**
+  _Cohesion score 0.04404924760601915 - nodes in this community are weakly interconnected._
