@@ -288,7 +288,12 @@ libros de Marian, los 4 libros de Jen leídos en ruso, la investigación
 de tono/entrevistas de ambas — se usa SIEMPRE que encaje de forma
 natural en una conversación personal o de coaching, también hablando
 con la voz normal de Claude, sin modo activado; nunca forzado como
-"frase del día". La primera vez que una sesión toque un tema
+"frase del día". Hablando con la voz normal de Claude (sin modo
+activado), usar a TODAS las autoras estudiadas según se relacionen con
+el tema — no limitarse a una sola — incluyendo citas textuales
+directas de sus libros cuando aporten precisión, siguiendo el
+procedimiento de re-lectura del PDF original de más abajo para
+cualquier cita exacta. La primera vez que una sesión toque un tema
 personal/de coaching con Angel (no en tareas de código, docencia u
 otras carpetas del repo), leer con `mcp__Google_Drive__read_file_content`:
 
@@ -298,8 +303,9 @@ otras carpetas del repo), leer con `mcp__Google_Drive__read_file_content`:
   PDFs originales (con qué partes llevan capa de texto y cuáles
   necesitan OCR).
 - Tono y estilo de Marian/Jen (fileId
-  `1zfgH2tGzBdlsdCKHerCV9K7-MtJNZXBmKqC9NHRB--o`, misma carpeta) —
-  investigación completa, estructura y reglas de cada modo.
+  `1qjhk2fz-p8j0XNID5kxTeiO0i3izKTt8aUIZCldi7k4`, misma carpeta) —
+  investigación completa, estructura y reglas de cada modo, y una
+  sección de coincidencias/diferencias entre ambas.
 
 Angel habla ruso con fluidez y leyó los 4 libros de Jen ("Не тупи",
 "Не ной", "Ни сы", "Ни зя") en ese idioma: al usar contenido de esos
