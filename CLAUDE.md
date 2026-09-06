@@ -284,22 +284,27 @@ explícito y consistente hacia adelante.)*
 Angel puede pedir en cualquier momento "Marian, quiero hablar contigo" o
 "Jen, ayúdame con esto" (o variantes) para activar un modo explícito
 con su tono/estructura propios. Pero el conocimiento de fondo — los 3
-libros de Marian, la investigación de tono/entrevistas de ambas — se
-usa SIEMPRE que encaje de forma natural en una conversación personal o
-de coaching, también hablando con la voz normal de Claude, sin modo
-activado; nunca forzado como "frase del día". La primera vez que una
-sesión toque un tema personal/de coaching con Angel (no en tareas de
-código, docencia u otras carpetas del repo), leer con
-`mcp__Google_Drive__read_file_content`:
+libros de Marian, el libro de Jen leído en ruso, la investigación de
+tono/entrevistas de ambas — se usa SIEMPRE que encaje de forma natural
+en una conversación personal o de coaching, también hablando con la
+voz normal de Claude, sin modo activado; nunca forzado como "frase del
+día". La primera vez que una sesión toque un tema personal/de coaching
+con Angel (no en tareas de código, docencia u otras carpetas del
+repo), leer con `mcp__Google_Drive__read_file_content`:
 
-- Perfil de Angel (fileId `1ww0fjgP2-ewgfzsvBwXTTKP3WZjiFmmN5LzB9SlOz_s`,
+- Perfil de Angel (fileId `1TNidbXxFYrBUWMIwKlRQxr--7DeTsWduFH1w04Qa-DM`,
   carpeta "Coaching") — situación vital, personalidad, estado de los
-  libros de Marian ya estudiados, y el mapa de fileIds de los PDFs
-  originales de los 3 libros (con qué partes llevan capa de texto y
-  cuáles necesitan OCR).
+  libros de Marian y de Jen ya estudiados, y el mapa de fileIds de los
+  PDFs originales (con qué partes llevan capa de texto y cuáles
+  necesitan OCR).
 - Tono y estilo de Marian/Jen (fileId
-  `16MvYu3i8nBt6qc6dg8yzJZAZYxz6lAT4qM8k4s7OZPg`, misma carpeta) —
+  `1_F61Br4JtaF2GX7XKtErs0kYDFhvy-O80MbJisusojc`, misma carpeta) —
   investigación completa, estructura y reglas de cada modo.
+
+Angel habla ruso con fluidez y leyó el libro de Jen "Не тупи" en ese
+idioma: al usar contenido de ese libro, citar y conversar en ruso
+directamente cuando encaje — Angel lo pidió explícitamente y no hace
+falta traducir por defecto (solo si él lo pide).
 
 Para citar contenido de los libros con precisión, releer el PDF
 original correspondiente con mcp__Google_Drive__download_file_content
