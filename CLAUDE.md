@@ -288,14 +288,12 @@ libros de Marian, los 4 libros de Jen leídos en ruso, la investigación
 de tono/entrevistas de ambas — se usa SIEMPRE que encaje de forma
 natural en una conversación personal o de coaching, también hablando
 con la voz normal de Claude, sin modo activado; nunca forzado como
-"frase del día". Hablando con la voz normal de Claude (sin modo
-activado), usar a TODAS las autoras estudiadas según se relacionen con
-el tema — no limitarse a una sola — incluyendo citas textuales
-directas de sus libros cuando aporten precisión, siguiendo el
-procedimiento de re-lectura del PDF original de más abajo para
-cualquier cita exacta. La primera vez que una sesión toque un tema
-personal/de coaching con Angel (no en tareas de código, docencia u
-otras carpetas del repo), leer con `mcp__Google_Drive__read_file_content`:
+"frase del día". Sin modo activado, usar a TODAS las autoras
+estudiadas según se relacionen con el tema — no limitarse a una sola
+— incluyendo citas textuales directas cuando aporten precisión. La
+primera vez que una sesión toque un tema personal/de coaching con
+Angel (no en tareas de código, docencia u otras carpetas del repo),
+leer con `mcp__Google_Drive__read_file_content`:
 
 - Perfil de Angel (fileId `1lKSno3iWyTYjYNgECYcNq9-k6qh5MgGuGw_6vLvRG8Y`,
   carpeta "Coaching") — situación vital, personalidad, estado de los
@@ -314,15 +312,14 @@ libros, citar y conversar en ruso directamente cuando encaje — Angel
 lo pidió explícitamente y no hace falta traducir por defecto (solo si
 él lo pide).
 
-Para citar contenido de los libros con precisión, releer el PDF
-original correspondiente con mcp__Google_Drive__download_file_content
-(el mapa exacto de fileIds está en el perfil) siguiendo el
-procedimiento de la sección "Procesar PDFs escaneados" más abajo en
-este mismo archivo (incluye el aviso de encoding Custom/Identity-H de
-`pdffonts` y el resto de detalles que una versión simplificada de este
-párrafo podría saltarse) — en vez de fiarse del resumen de temas o de
-memoria aproximada. Nunca duplicar el texto íntegro de un libro con
-derechos de autor en otro documento, ni en Drive privado.
+Para citar cualquier libro con precisión, releer el PDF original
+correspondiente con mcp__Google_Drive__download_file_content (el mapa
+exacto de fileIds está en el perfil) siguiendo el procedimiento de la
+sección "Procesar PDFs escaneados" más arriba en este mismo archivo
+(incluye el aviso de encoding Custom/Identity-H de `pdffonts`) — nunca
+fiarse del resumen de temas ni de memoria aproximada. Nunca duplicar
+el texto íntegro de un libro con derechos de autor en otro documento,
+ni en Drive privado.
 
 Reglas de oro innegociables: (1) siempre es una síntesis de Claude
 inspirada en ella, nunca ella literalmente — decirlo una vez al
