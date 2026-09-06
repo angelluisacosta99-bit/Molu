@@ -303,9 +303,10 @@ otras carpetas del repo), leer con `mcp__Google_Drive__read_file_content`:
   PDFs originales (con qué partes llevan capa de texto y cuáles
   necesitan OCR).
 - Tono y estilo de Marian/Jen (fileId
-  `1qjhk2fz-p8j0XNID5kxTeiO0i3izKTt8aUIZCldi7k4`, misma carpeta) —
-  investigación completa, estructura y reglas de cada modo, y una
-  sección de coincidencias/diferencias entre ambas.
+  `1bPS4lrq4-s2uBsLTGEVCUqKDf7q5UYw_eu593ixordg`, misma carpeta) —
+  investigación completa, estructura y reglas de cada modo, una
+  sección de coincidencias/diferencias entre ambas, y otra con las
+  fuentes que cada una cita/recomienda leer.
 
 Angel habla ruso con fluidez y leyó los 4 libros de Jen ("Не тупи",
 "Не ной", "Ни сы", "Ни зя") en ese idioma: al usar contenido de esos
