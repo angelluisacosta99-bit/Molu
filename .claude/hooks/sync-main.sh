@@ -33,8 +33,8 @@ BEHIND="$(git rev-list --count HEAD..origin/main 2>/dev/null)"
 [ -n "$BEHIND" ] || exit 0
 [ "$BEHIND" -gt 0 ] || exit 0
 
-if [ -n "$(git status --porcelain 2>/dev/null)" ]; then
-  echo "[session-start] rama $BEHIND commits por detrás de origin/main, pero hay cambios sin comitear -- no se actualiza sola para no tocar ese trabajo; si hace falta, comitear/guardar y luego 'git merge origin/main' a mano"
+if [ -n "$(git status --porcelain --ignored 2>/dev/null)" ]; then
+  echo "[session-start] rama $BEHIND commits por detrás de origin/main, pero hay cambios sin comitear o archivos locales ignorados por .gitignore -- no se actualiza sola (un archivo ignorado sin trackear en una ruta que origin/main sí trackea podría perderse en el fast-forward sin aviso, verificado en vivo); si hace falta, comitear/guardar y luego 'git merge origin/main' a mano"
   exit 0
 fi
 

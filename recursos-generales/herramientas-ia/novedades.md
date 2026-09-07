@@ -47,12 +47,13 @@ por sorpresa como pasó aquí.
 `"matcher": "startup"` (solo arranque real, nunca resume/clear/compact --
 ver por qué abajo). En cada arranque: hace `fetch` de `origin/main` y,
 si la rama actual está detrás:
-- **Árbol de trabajo limpio y sin commits propios que diverjan** (el
-  caso exacto de "Nivel B2": una sesión recién creada, todavía sin su
-  propio trabajo) → fast-forward automático (`git merge --ff-only`),
-  sin ningún riesgo de conflicto porque `--ff-only` solo funciona
-  cuando no hay nada propio que perder.
-- **Árbol sucio, o rama ya con commits propios que divergen de `main`**
+- **Árbol de trabajo limpio (incluyendo archivos ignorados sin
+  trackear, ver corrección de revisión más abajo) y sin commits propios
+  que diverjan** (el caso exacto de "Nivel B2": una sesión recién
+  creada, todavía sin su propio trabajo) → fast-forward automático
+  (`git merge --ff-only`).
+- **Árbol sucio (cambios sin comitear O archivos locales ignorados por
+  `.gitignore`), o rama ya con commits propios que divergen de `main`**
   (el caso normal de cualquier sesión ya trabajando en su propia tarea)
   → no toca nada, solo avisa con un mensaje corto sugiriendo
   `git merge origin/main` a mano.
@@ -64,13 +65,32 @@ el árbol de trabajo bajo los pies de la sesión -- exactamente el efecto
 secundario que `hook-hardening` (punto 7) pide evitar. En un arranque
 real todavía no hay nada propio que una sesión pueda perder.
 
-**Verificado en vivo, los 5 casos, contra un remoto git real (no
-simulado con texto):** rama detrás sin commits propios → fast-forward
-correcto (verificado que `HEAD` avanza); rama detrás con un commit
-propio → NO fusiona, `HEAD` idéntico antes/después, solo avisa; árbol
-sucio → NO fusiona, cambio sin comitear se conserva intacto; rama ya al
-día → sin ningún output; remoto roto → avisa, `exit 0` (no bloquea).
-`shellcheck` limpio.
+**Revisión antes de fusionar encontró un hallazgo real, corregido:** la
+primera versión comprobaba `git status --porcelain` sin `--ignored` --
+un archivo local sin trackear que coincide con un patrón de
+`.gitignore` (ej. un `secret.env` propio) es invisible a esa comprobación,
+así que el chequeo de "árbol limpio" lo daba por bueno. Si `origin/main`
+empieza a trackear un archivo en esa misma ruta, `git merge --ff-only`
+lo sobrescribe en silencio, sin conflicto, sin aviso, `exit 0` -- **la
+propia revisión lo reprodujo en vivo** (un `secret.env` local real
+sustituido por el contenido subido, sin ningún mensaje de git avisando).
+Corregido añadiendo `--ignored` a la comprobación (`git status
+--porcelain --ignored`), de modo que cualquier archivo ignorado sin
+trackear cuenta como "árbol no limpio" y bloquea el fast-forward
+automático -- más conservador de lo estrictamente necesario (bloquea
+aunque el archivo ignorado no colisione con nada), pero preferible a
+arriesgar destruir algo local sin que el hook pueda ni enterarse.
+
+**Verificado en vivo, los 6 casos (5 originales + el de la revisión),
+contra un remoto git real (no simulado con texto):** rama detrás sin
+commits propios → fast-forward correcto (verificado que `HEAD`
+avanza); rama detrás con un commit propio → NO fusiona, `HEAD`
+idéntico antes/después, solo avisa; árbol sucio → NO fusiona, cambio
+sin comitear se conserva intacto; rama ya al día → sin ningún output;
+remoto roto → avisa, `exit 0` (no bloquea); archivo ignorado sin
+trackear que colisiona con una ruta que `origin/main` empieza a
+trackear → NO fusiona tras la corrección, contenido local preservado
+(antes de corregir, se reprodujo la pérdida). `shellcheck` limpio.
 
 **Límite honesto:** esto NO resuelve el caso de "Nivel B2" en sí (esa
 sesión sigue en su rama vieja, sin este hook ahí tampoco, porque su
