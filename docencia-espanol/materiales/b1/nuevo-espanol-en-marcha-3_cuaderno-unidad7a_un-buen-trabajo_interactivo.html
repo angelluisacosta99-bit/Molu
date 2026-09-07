@@ -1,0 +1,2374 @@
+<!--
+  Unidad 7A del cuaderno de ejercicios de Nuevo Español en Marcha 3 (B1), página 28:
+  "Un buen trabajo". Transcrito mirando las páginas renderizadas del PDF que adjuntó el
+  profesor. Las respuestas salen del solucionario oficial del propio cuaderno (página 72).
+  Construido sobre .claude/skills/ejercicio-interactivo/reference/template.html.
+  El ejercicio 1 (relaciona profesión-definición) usa type "match". El ejercicio 3 (sopa
+  de letras de profesiones) usa una rejilla PROPIA, no un calco en píxeles del libro: el
+  libro dice "diez profesiones" pero la clave de soluciones (verificada letra a letra
+  contra la rejilla resaltada de la página 72) solo marca nueve; la rejilla propia
+  contiene exactamente esas nueve, verificada por script en las 8 direcciones antes de
+  publicar (mismo criterio que la 5B/2B para crucigramas/sopas no reproducibles al pixel).
+-->
+<title>Cuaderno B1 · 7A — Un buen trabajo</title>
+<style>
+  :root {
+    --paper: #F3F5F0;
+    --paper-raised: #FFFFFF;
+    --ink: #17223B;
+    --ink-soft: #4B5468;
+    --pencil: #6E7280;
+    --gold: #A8790C;
+    --gold-soft: #F1E4C2;
+    --good: #1F7A4C;
+    --good-bg: #E7F3EC;
+    --bad: #B23A2E;
+    --bad-bg: #FBECE9;
+    --border: #DCDFD3;
+    --input-bg: #FCFDFB;
+    --focus: #A8790C;
+    --shadow: 0 1px 2px rgba(23,34,59,0.06), 0 4px 14px rgba(23,34,59,0.06);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #101626;
+      --paper-raised: #182036;
+      --ink: #ECEEF3;
+      --ink-soft: #AEB6C9;
+      --pencil: #8B93A6;
+      --gold: #E0B44A;
+      --gold-soft: #3A3220;
+      --good: #4CB47F;
+      --good-bg: #163326;
+      --bad: #E17868;
+      --bad-bg: #3A1E1B;
+      --border: #2A3348;
+      --input-bg: #131A2C;
+      --focus: #E0B44A;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 20px rgba(0,0,0,0.35);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #101626;
+    --paper-raised: #182036;
+    --ink: #ECEEF3;
+    --ink-soft: #AEB6C9;
+    --pencil: #8B93A6;
+    --gold: #E0B44A;
+    --gold-soft: #3A3220;
+    --good: #4CB47F;
+    --good-bg: #163326;
+    --bad: #E17868;
+    --bad-bg: #3A1E1B;
+    --border: #2A3348;
+    --input-bg: #131A2C;
+    --focus: #E0B44A;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 20px rgba(0,0,0,0.35);
+  }
+
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--paper);
+    color: var(--ink);
+  }
+  body {
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 4rem;
+  }
+  h1, h2, h3 {
+    font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+    text-wrap: balance;
+    margin: 0;
+  }
+  .mono, input, .score, .exnum, .navdot-label {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  }
+  a { color: inherit; }
+
+  /* ---------- top bar ---------- */
+  .topbar {
+    position: sticky; top: 0; z-index: 20;
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+  .topbar-inner {
+    max-width: 760px; margin: 0 auto;
+    padding: 0.7rem 1.25rem;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 1rem; flex-wrap: wrap;
+  }
+  .brand { display: flex; align-items: baseline; gap: 0.6rem; }
+  .brand-title { font-size: 0.95rem; font-weight: 700; letter-spacing: 0.01em; }
+  .brand-sub { font-size: 0.78rem; color: var(--pencil); }
+  /* overflow-x en vez de envolver: con muchas secciones la fila de píldoras no cabe entera
+     en ninguna pantalla razonable. Se desliza en horizontal en su lugar — mismo patrón que
+     .table-wrap para las tablas anchas. */
+  .nav-dots {
+    display: flex; gap: 0.4rem;
+    overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: thin;
+  }
+  .nav-dots a {
+    text-decoration: none;
+    font-size: 0.7rem;
+    padding: 0.28rem 0.6rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    color: var(--ink-soft);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .nav-dots a:hover { border-color: var(--gold); color: var(--gold); }
+  .score-wrap { display: flex; align-items: center; gap: 0.6rem; }
+  .score { font-size: 0.82rem; font-weight: 600; }
+  .score .num { color: var(--gold); }
+  .bar {
+    width: 84px; height: 6px; border-radius: 999px;
+    background: var(--border); overflow: hidden;
+  }
+  .bar-fill { height: 100%; background: var(--gold); width: 0%; transition: width 0.35s ease; }
+
+  /* ---------- hero ---------- */
+  .hero {
+    max-width: 760px; margin: 0 auto;
+    padding: 2.6rem 1.25rem 1.6rem;
+  }
+  .eyebrow {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 0.7rem;
+  }
+  .hero h1 { font-size: clamp(1.7rem, 4vw, 2.3rem); font-weight: 700; margin-bottom: 0.6rem; }
+  .hero p { color: var(--ink-soft); max-width: 62ch; font-size: 0.98rem; }
+  .hero-meta {
+    margin-top: 1.1rem; display: flex; gap: 1.2rem; flex-wrap: wrap;
+    font-size: 0.82rem; color: var(--pencil);
+  }
+  .hero-meta strong { color: var(--ink); }
+  .correct-all-wrap {
+    max-width: 760px; margin: 2.4rem auto 0; padding: 0 1.25rem 2.4rem;
+    text-align: center;
+  }
+  .correct-all-btn {
+    margin-top: 1.3rem;
+    background: var(--ink); color: var(--paper-raised);
+    border: none; border-radius: 8px;
+    padding: 0.65rem 1.2rem; font-size: 0.88rem; font-weight: 600;
+    cursor: pointer;
+  }
+  .correct-all-btn:hover { background: var(--gold); color: var(--ink); }
+  :root[data-theme="dark"] .correct-all-btn:hover,
+  :root:not([data-theme="light"]) .correct-all-btn:hover { color: #10142699; }
+  .progress-hint { margin-top: 0.7rem; font-size: 0.82rem; color: var(--pencil); text-align: center; }
+  .progress-hint.complete { color: var(--good); font-weight: 600; }
+
+  /* ---------- blocks ---------- */
+  main { max-width: 760px; margin: 0 auto; padding: 0 1.25rem; }
+  .block { margin-top: 2.4rem; scroll-margin-top: 6rem; }
+  .block-head {
+    display: flex; align-items: baseline; gap: 0.75rem;
+    padding-bottom: 0.6rem; margin-bottom: 1.3rem;
+    border-bottom: 2px solid var(--ink);
+  }
+  .block-num {
+    font-family: Georgia, serif; font-weight: 700; font-size: 1.05rem;
+    color: var(--paper-raised); background: var(--ink);
+    width: 2rem; height: 2rem; border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .block-titles h2 { font-size: 1.25rem; }
+  .block-titles .sub { font-size: 0.8rem; color: var(--pencil); margin-top: 0.15rem; }
+
+  /* ---------- exercise card ---------- */
+  .exercise {
+    background: var(--paper-raised);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    padding: 1.15rem 1.3rem 1.3rem;
+    margin-bottom: 1.1rem;
+  }
+  .exercise-head {
+    display: flex; align-items: flex-start; justify-content: space-between;
+    gap: 1rem; margin-bottom: 0.3rem;
+  }
+  .exercise-title { display: flex; gap: 0.6rem; align-items: baseline; }
+  .exnum { color: var(--gold); font-weight: 700; font-size: 0.85rem; }
+  .exercise-title h3 { font-size: 1.02rem; font-weight: 700; }
+  .exercise-instr { color: var(--pencil); font-size: 0.85rem; font-style: italic; margin-bottom: 0.85rem; }
+  .audio-label {
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--ink-soft); margin-bottom: 0.3rem;
+  }
+  .exercise-audio { width: 100%; max-width: 420px; display: block; margin-bottom: 0.9rem; }
+  .exercise-model { color: var(--pencil); font-size: 0.85rem; font-style: italic; margin-bottom: 0.7rem; }
+
+  /* Recuadro de referencia dentro de un ejercicio (banco de opciones, lista de verbos...).
+     Si el libro le enseña unas opciones al alumno, el artefacto TIENE que enseñárselas:
+     un "relaciona" sin las opciones a la vista es sencillamente irresoluble. */
+  .exercise-ref {
+    background: var(--gold-soft); border-radius: 10px; padding: 0.9rem 1.1rem;
+    margin-bottom: 1rem; font-size: 0.86rem; color: var(--ink);
+  }
+  .exercise-ref .ref-label {
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--ink-soft); font-family: -apple-system, sans-serif; display: block; margin-bottom: 0.3rem;
+  }
+  .exercise-ref .ref-options { display: flex; flex-wrap: wrap; gap: 0.4rem 0.9rem; }
+  /* ex.grid: para ejercicios de muchos dibujos pequeños (nombrar 18 alimentos). En una
+     sola columna serían una tira interminable. NO se activa con :has(.foto-act): las
+     fotografías grandes de una actividad deben seguir yendo una por fila. */
+  .items.items-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1.1rem 0.9rem;
+  }
+  .items.items-grid .item-row {
+    margin: 0; display: flex; flex-direction: column; align-items: center; text-align: center;
+  }
+  /* Caja de tamaño único: los dibujos son de proporciones muy distintas y, a su ancho
+     natural, unos se salen de su celda y los números quedan a distinta altura. */
+  .items.items-grid .foto-act {
+    width: 100%; height: 100px; object-fit: contain; margin: 0.15rem 0 0.35rem;
+  }
+  .items.items-grid input.blank { width: 100%; max-width: 9.5em; }
+  /* Turnos de un diálogo dentro de un mismo ítem: cada persona en su línea, y el primero
+     pegado al número para que no se quede huérfano arriba. */
+  .turno { display: block; }
+  .item-letter + .turno { display: inline; }
+  .turno b { color: var(--gold); margin-right: 0.35rem; }
+  /* Opciones que son frases enteras, no palabras sueltas: una por línea. En fila y con
+     nowrap, una sola opción larga se sale de la pantalla en el móvil y arrastra scroll
+     horizontal a TODA la página. */
+  .exercise-ref .ref-options.ref-list { display: block; }
+  /* Convención del profesor para prosa corrida (textos de lectura): justificado, con
+     sangría de 1.25cm solo en la primera línea de cada párrafo — como en un documento
+     impreso. Solo aplica aquí (.ref-list, prosa de varias frases), no a .ref-opt suelto
+     fuera de .ref-list, que son opciones/palabras cortas, no párrafos. */
+  .exercise-ref .ref-options.ref-list .ref-opt {
+    display: block; white-space: normal; text-align: justify; text-indent: 1.25cm;
+  }
+  .exercise-ref .ref-options.ref-list .ref-opt + .ref-opt { margin-top: 0.3rem; }
+  .exercise-ref .ref-opt { white-space: nowrap; }
+  @media (max-width: 560px) {
+    /* Red de seguridad: en pantalla estrecha ninguna opción se queda en nowrap. Va
+       DESPUÉS de la regla de arriba a propósito: misma especificidad, así que si se
+       escribe antes gana el nowrap y esto no hace nada (pasó, y no se vio porque el
+       ejercicio que lo destapó usaba además .ref-list, que sí tiene más peso). */
+    .exercise-ref .ref-opt { white-space: normal; }
+  }
+
+  /* Ejercicio sin respuesta única (una encuesta, marcar algo en un plano, una redacción):
+     se muestra porque está en el libro y el alumno tiene que poder verlo, pero no puntúa
+     ni lleva botón "Corregir" — uno que al pulsarlo no hace nada es peor que no tenerlo. */
+  .open-block {
+    background: var(--gold-soft); border-radius: 10px; padding: 0.9rem 1.1rem;
+    font-size: 0.9rem; line-height: 1.7; color: var(--ink-soft);
+    max-width: 64ch; margin-left: auto; margin-right: auto;
+  }
+  .open-block b { color: var(--ink); }
+  /* Nota + caja de texto de un ejercicio "open": el alumno escribe su respuesta aquí, no
+     se corrige en la página (no hay una única respuesta correcta que comparar), pero se
+     incluye tal cual en el resumen que se envía al profesor por WhatsApp/Telegram/correo/
+     Teams, para que la revise personalmente — ver openAnswers y buildSummary(). */
+  .open-note {
+    font-size: 0.82rem; color: var(--ink-soft); max-width: 64ch;
+    margin: 0.7rem auto 0.5rem; text-align: center;
+  }
+  .open-answer {
+    display: block; width: 100%; max-width: 64ch; margin: 0 auto;
+    font-family: inherit; font-size: 0.92rem; line-height: 1.6;
+    background: var(--paper-raised); border: 1px solid var(--border); border-radius: 8px;
+    padding: 0.65rem 0.85rem; color: var(--ink); resize: vertical;
+  }
+  .open-answer::placeholder { color: var(--pencil); }
+  .open-answer:focus { outline: none; border-color: var(--focus); }
+  /* Enunciados y nota de un ejercicio de respuesta libre (type: "open"). Nacieron en la 5A
+     de B1 y vivieron un tiempo solo en ese archivo; están aquí para que el siguiente
+     capítulo que use "open" no se quede sin ellos. */
+  .frases-abiertas { margin: 0 0 0.9rem; padding-left: 1.4rem; line-height: 1.9; }
+  .frases-abiertas li { margin-bottom: 0.15rem; }
+  .pista-gramatical { font-size: 0.87rem; color: var(--ink-soft); margin: 0; }
+  .open-block img { max-width: 100%; border-radius: 8px; display: block; margin: 0.6rem auto 0; }
+  .exercise-ref img { max-width: 100%; border-radius: 8px; display: block; margin: 0.5rem auto 0; }
+
+  .check-btn {
+    background: transparent; color: var(--ink);
+    border: 1px solid var(--ink); border-radius: 7px;
+    padding: 0.32rem 0.75rem; font-size: 0.78rem; font-weight: 600;
+    cursor: pointer; white-space: nowrap; flex-shrink: 0;
+  }
+  .check-btn:hover { background: var(--ink); color: var(--paper-raised); }
+
+  .items { display: flex; flex-direction: column; gap: 0.55rem; }
+  .item-row { font-size: 0.95rem; line-height: 1.7; }
+  .item-letter { color: var(--gold); font-weight: 700; margin-right: 0.3rem; }
+  /* Fila ya resuelta en el libro: se ve, sirve de modelo, pero no se pide rellenarla. */
+  .solved-row { color: var(--ink-soft); font-style: italic; }
+  .solved-row .item-letter { color: var(--pencil); }
+
+  /* Foto delante del hueco (ej. "escribe el nombre de la actividad"): item.img. */
+  .foto-act {
+    display: block; margin: 0.35rem 0 0.5rem;
+    max-width: 260px; width: 100%;
+    border-radius: 8px; border: 1px solid var(--border);
+  }
+
+  /* Sopa de letras: rejilla monoespaciada, para que las columnas cuadren. */
+  .wordsearch {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.9rem; line-height: 1.6; letter-spacing: 0.18em;
+    white-space: pre; overflow-x: auto;
+    background: var(--paper-raised); border: 1px solid var(--border);
+    border-radius: 8px; padding: 0.8rem 0.9rem; margin-top: 0.5rem;
+  }
+
+  /* Texto de partida que hay que leer o reescribir (una postal, un párrafo). */
+  .postcard {
+    background: var(--input-bg); border: 1px solid var(--border); border-radius: 10px;
+    padding: 0.9rem 1.1rem; font-size: 0.9rem; line-height: 1.75;
+    max-width: 60ch; margin: 0.5rem auto 0;
+  }
+
+  /* Diálogos: cada réplica en su línea y con el interlocutor destacado. Sin esto, A y B
+     —que son dos personas distintas— se leen como una sola frase corrida. */
+  .dialog-row { padding: 0.15rem 0 0.35rem; }
+  .dialog-row + .dialog-row { border-top: 1px dashed var(--border); padding-top: 0.75rem; }
+  .dialog-row br { line-height: 2.4; }
+  .speaker {
+    display: inline-block; min-width: 1.4em;
+    color: var(--gold); font-weight: 700;
+    border-bottom: 2px solid var(--gold-soft);
+    margin-right: 0.45rem;
+  }
+
+  input.blank {
+    background: var(--input-bg);
+    border: none; border-bottom: 2px solid var(--pencil);
+    color: var(--ink);
+    font-size: 0.95rem;
+    padding: 0.1rem 0.3rem;
+    width: 8.5em;
+    text-align: center;
+    border-radius: 3px 3px 0 0;
+  }
+  input.blank.wide { width: 15em; }
+  input.blank.full { width: 100%; max-width: 26em; text-align: left; }
+  input.blank:focus { outline: none; border-bottom-color: var(--focus); box-shadow: 0 1px 0 0 var(--focus); }
+  input.blank.correct { background: var(--good-bg); border-bottom-color: var(--good); color: var(--good); font-weight: 600; }
+  input.blank.incorrect { background: var(--bad-bg); border-bottom-color: var(--bad); color: var(--bad); }
+
+  .reveal {
+    font-size: 0.82rem; color: var(--good); font-style: italic;
+    margin-left: 0.3rem; display: none;
+  }
+  .reveal.show { display: inline; }
+  .reveal.bad-reveal { color: var(--bad); }
+
+  /* Crucigrama real (type: "crossword") — celdas que se cruzan, no una lista de
+     definiciones con la foto de la rejilla al lado. Nació en la 5B de B1: hasta entonces
+     un crucigrama del libro se resolvía como lista (ver ex.refHTML con la imagen de la
+     rejilla), porque una rejilla interactiva parecía mucho trabajo para poco. Si vuelve a
+     hacer falta, esto es el punto de partida — no reinventarlo.
+     .cw-cell vacía (sin letra) no lleva borde: es hueco de la rejilla, no una casilla. */
+  .crossword-wrap { overflow-x: auto; margin-bottom: 1rem; }
+  .crossword-grid {
+    display: inline-grid; gap: 2px; margin: 0 auto; padding: 0.4rem;
+  }
+  .cw-cell {
+    position: relative; width: 2.1em; height: 2.1em;
+  }
+  .cw-cell.cw-empty { visibility: hidden; }
+  .cw-num {
+    position: absolute; top: 0; left: 0.15em; font-size: 0.52em; line-height: 1;
+    color: var(--ink-soft); font-weight: 700; pointer-events: none;
+  }
+  .cw-cell input.blank {
+    width: 100%; height: 100%; padding: 0; margin: 0;
+    text-align: center; text-transform: uppercase;
+    font-size: 1rem; border: 1px solid var(--border); border-radius: 4px;
+  }
+  .cw-cell input.blank:focus { border-color: var(--focus); }
+  .cw-cell .cw-solved {
+    display: flex; align-items: center; justify-content: center;
+    width: 100%; height: 100%; border: 1px solid var(--border); border-radius: 4px;
+    background: var(--paper); color: var(--ink-soft); font-style: italic;
+    text-transform: uppercase; font-size: 1rem;
+  }
+  .crossword-clues {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.3rem 1.2rem; font-size: 0.88rem; margin-top: 0.6rem;
+  }
+  .crossword-clues .cw-clue-group h4 {
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--ink-soft); margin: 0.6rem 0 0.3rem;
+  }
+  .crossword-clues .cw-clue { margin: 0.15rem 0; }
+  .crossword-clues .cw-clue b { color: var(--gold); margin-right: 0.3rem; }
+
+  /* Relaciona con columnas (type: "match") — se toca un elemento de la columna ancla
+     (la primera, fija) y luego su pareja en la(s) columna(s) siguiente(s); se dibuja una
+     línea de color entre ambos. Nació porque el truco anterior para "relaciona" (escribir
+     la letra en un hueco de texto) obligaba a aceptar mil variantes de tecleo ("d, 2",
+     "d,2", "d 2"...) y no se parecía en nada al ejercicio de tocar/unir del libro.
+     .match-wrap tiene overflow-x propio: con 3+ columnas puede no caber en 390px, y debe
+     desplazarse ella sola, nunca la página entera (ver la regla general de tablas anchas). */
+  .match-wrap { position: relative; display: flex; gap: 1.6rem; margin-top: 0.6rem; overflow-x: auto; padding-bottom: 0.3rem; }
+  .match-col { display: flex; flex-direction: column; gap: 0.5rem; min-width: 11em; flex: 1 0 auto; }
+  .match-col-label {
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--pencil); margin-bottom: 0.1rem;
+  }
+  .match-item {
+    text-align: left; font: inherit; font-size: 0.88rem; line-height: 1.4;
+    background: var(--paper-raised); border: 1.5px solid var(--border); border-radius: 8px;
+    padding: 0.5rem 0.7rem; color: var(--ink); cursor: pointer;
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+  .match-item.match-armed { border-color: var(--gold); background: var(--gold-soft); box-shadow: 0 0 0 2px var(--gold-soft); }
+  .match-item.match-solved { border-style: dashed; color: var(--ink-soft); font-style: italic; cursor: default; }
+  .match-item.match-correct { border-color: var(--good); background: var(--good-bg); }
+  .match-item.match-incorrect { border-color: var(--bad); background: var(--bad-bg); }
+  .match-row-reveal {
+    font-size: 0.76rem; color: var(--bad); margin: -0.25rem 0 0; display: none;
+  }
+  .match-row-reveal.show { display: block; }
+  .match-svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
+  .match-svg line { stroke-width: 2.5; }
+  /* Con 3+ columnas, .match-wrap suele necesitar scroll horizontal propio en móvil — y sin
+     ningún aviso visual, la columna final queda fuera de pantalla sin que nada indique que
+     sigue ahí (se descubrió mirando la propia captura de móvil: la columna "Final" del
+     ejemplo de 3 columnas desaparecía entera, sin rastro). .match-outer no se desplaza —
+     solo lo hace .match-wrap, que va dentro — así que estos degradados se quedan fijos en
+     los bordes mientras el contenido se mueve debajo, y JS los muestra/oculta según haga
+     falta (ver refreshFades() en el renderizador). El color va a juego con el fondo de la
+     tarjeta (--paper-raised) para que el degradado se funda con ella. */
+  .match-outer { position: relative; }
+  .match-fade {
+    position: absolute; top: 0; bottom: 0; width: 1.6rem;
+    pointer-events: none; opacity: 0; transition: opacity 0.15s ease; z-index: 2;
+  }
+  .match-fade.show { opacity: 1; }
+  .match-fade-left { left: 0; background: linear-gradient(to right, var(--paper-raised), transparent); }
+  .match-fade-right { right: 0; background: linear-gradient(to left, var(--paper-raised), transparent); }
+  @media (max-width: 560px) {
+    .match-col { min-width: 8.5em; font-size: 0.92em; }
+    .match-wrap { gap: 0.9rem; }
+  }
+
+  /* Sopa de letras interactiva (type: "wordsearch") — se toca una letra para armarla y
+     luego otra en línea recta (horizontal, vertical o diagonal) para completar la selección. */
+  .ws-outer {
+    display: flex; flex-wrap: wrap; gap: 1.6rem; margin-top: 0.6rem; align-items: flex-start;
+    max-width: 100%; overflow-x: auto; padding-bottom: 0.2rem;
+  }
+  .ws-grid {
+    display: grid; gap: 2px; background: var(--border); padding: 3px; border-radius: 8px;
+    width: max-content; flex-shrink: 0;
+  }
+  .ws-cell {
+    width: 2rem; height: 2rem; display: flex; align-items: center; justify-content: center;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.88rem; font-weight: 700; line-height: 1;
+    background: var(--paper-raised); color: var(--ink); border: none; border-radius: 4px;
+    cursor: pointer; padding: 0; transition: background 0.1s ease, color 0.1s ease;
+  }
+  .ws-cell:hover { background: var(--gold-soft); }
+  .ws-cell.ws-armed { background: var(--gold); color: var(--paper-raised); }
+  .ws-cell.ws-found { background: var(--good-bg); color: var(--good); }
+  .ws-cell.ws-wrong { background: var(--bad-bg); color: var(--bad); }
+  .ws-words { list-style: none; margin: 0; padding: 0; min-width: 10em; }
+  .ws-words li {
+    padding: 0.4rem 0; font-size: 0.92rem; border-bottom: 1px dashed var(--border); color: var(--ink);
+  }
+  .ws-words li:last-child { border-bottom: none; }
+  .ws-words li.ws-solved { color: var(--ink-soft); font-style: italic; }
+  .ws-words li.ws-solved::before { content: "✓ "; }
+  .ws-words li.ws-found-item { color: var(--good); font-weight: 600; }
+  .ws-words li.ws-found-item::before { content: "✓ "; }
+  .ws-words li.ws-incorrect { color: var(--bad); }
+  .ws-words:has(img) { display: flex; flex-wrap: wrap; gap: 0.9rem; max-width: 22em; padding: 0; }
+  .ws-words:has(img) li {
+    width: 6.4em; text-align: center; font-size: 0.82rem; color: var(--ink);
+    padding: 0; border-bottom: none;
+  }
+  .ws-words li img {
+    width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 8px;
+    border: 1.5px solid var(--border); display: block; margin-bottom: 0.3rem;
+    filter: grayscale(1) contrast(1.05);
+  }
+  .ws-words li .ws-prof-name { display: none; }
+  .ws-words li.ws-solved img,
+  .ws-words li.ws-found-item img { border-color: var(--good); filter: none; }
+  .ws-words li.ws-solved .ws-prof-name,
+  .ws-words li.ws-found-item .ws-prof-name { display: block; color: var(--good); font-weight: 600; }
+  .ws-words li.ws-solved .ws-prof-name::before,
+  .ws-words li.ws-found-item .ws-prof-name::before { content: "✓ "; }
+  .ws-words li.ws-incorrect img { border-color: var(--bad); }
+  .ws-words li.ws-incorrect .ws-prof-name { display: block; color: var(--bad); }
+  @media (max-width: 560px) {
+    .ws-cell { width: 1.7rem; height: 1.7rem; font-size: 0.78rem; }
+    .ws-words:has(img) { max-width: 100%; }
+    .ws-words:has(img) li { width: 5.4em; }
+  }
+
+  /* Hueco de verdadero/falso con botones — ver item.vf en "items" más abajo. */
+  .vf-toggle { display: inline-flex; gap: 0.35rem; margin: 0 0.15rem; vertical-align: middle; }
+  .vf-btn {
+    background: var(--input-bg); color: var(--ink);
+    border: 2px solid var(--pencil); border-radius: 6px;
+    min-width: 2.1em; height: 2.1em; padding: 0 0.55rem;
+    font-size: 0.88rem; font-weight: 700; line-height: 1;
+    cursor: pointer;
+  }
+  .vf-btn:hover { border-color: var(--focus); }
+  .vf-btn:focus-visible { outline: none; border-color: var(--focus); box-shadow: 0 0 0 2px var(--focus); }
+  .vf-btn.selected { background: var(--gold-soft); border-color: var(--gold); color: var(--ink); }
+  .vf-btn.correct { background: var(--good-bg); border-color: var(--good); color: var(--good); }
+  .vf-btn.incorrect { background: var(--bad-bg); border-color: var(--bad); color: var(--bad); }
+  /* Sin responder y ya corregido: un hueco de texto vacío se pinta en rojo, así que un
+     V/F sin pulsar tiene que verse igual de mal — si no, el alumno lo lee como "bien". */
+  .vf-toggle.unanswered .vf-btn { border-color: var(--bad); background: var(--bad-bg); }
+
+  /* Transcripción de un audio, plegada por defecto: en un ejercicio de comprensión oral la
+     transcripción ES la solución, así que debe estar disponible sin quedar a la vista
+     mientras el alumno responde. <details> nativo — sin JS y accesible por teclado. */
+  .transcript { margin-top: 1rem; border-top: 1px dashed var(--border); padding-top: 0.85rem; }
+  .transcript summary {
+    cursor: pointer; font-size: 0.82rem; font-weight: 600; color: var(--gold);
+    list-style: none; display: flex; align-items: baseline; gap: 0.4rem;
+  }
+  .transcript summary::-webkit-details-marker { display: none; }
+  .transcript summary::before {
+    content: "\25B6"; font-size: 0.62em; transition: transform 0.15s ease;
+  }
+  .transcript[open] summary::before { transform: rotate(90deg); }
+  .transcript summary:hover { color: var(--ink); }
+  .transcript summary:focus-visible {
+    outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 4px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .transcript summary::before { transition: none; }
+  }
+  .transcript-body {
+    margin-top: 0.75rem; background: var(--gold-soft); border-radius: 10px;
+    padding: 0.95rem 1.1rem; font-size: 0.88rem; line-height: 1.8; color: var(--ink);
+  }
+  .transcript-body .line { display: block; }
+  .transcript-body .line + .line { margin-top: 0.25rem; }
+  .transcript-body .who { color: var(--gold); font-weight: 700; margin-right: 0.35rem; }
+  .transcript-note {
+    margin-top: 0.7rem; font-size: 0.78rem; color: var(--pencil); font-style: italic;
+  }
+
+  .paragraph { font-size: 0.97rem; line-height: 2; }
+
+  table.exercise-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+  table.exercise-table th, table.exercise-table td {
+    text-align: left; padding: 0.45rem 0.6rem; border-bottom: 1px solid var(--border);
+  }
+  table.exercise-table th { color: var(--pencil); font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.03em; }
+  /* Celda que el libro ya trae resuelta: se distingue del hueco sin parecer un acierto
+     (no usa el verde de "correcto", que significa otra cosa en esta página). */
+  table.exercise-table td.fixed-cell { color: var(--ink-soft); font-style: italic; }
+  .table-wrap { overflow-x: auto; }
+  /* Varios cuadros seguidos dentro del MISMO ejercicio: sin aire entre ellos se leen
+     como una sola tabla larga con cabeceras intercaladas. */
+  .table-wrap + .table-wrap { margin-top: 1.1rem; }
+  .ref-table { margin-bottom: 0.9rem; }
+  .ref-table td:first-child { color: var(--gold); font-weight: 600; text-transform: capitalize; }
+
+  /* ---------- footer ---------- */
+  footer {
+    max-width: 760px; margin: 3rem auto 0; padding: 1.5rem 1.25rem 0;
+    border-top: 1px solid var(--border);
+    color: var(--pencil); font-size: 0.8rem;
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;
+  }
+
+  @media (max-width: 560px) {
+    /* Fila propia debajo de marca+puntuación, en vez de compartir línea con ellas — así no
+       les roba ancho y se desliza con toda la anchura de la pantalla disponible. */
+    .nav-dots { flex-basis: 100%; order: 3; }
+    input.blank.wide { width: 11em; }
+    input.blank.full { max-width: 100%; }
+  }
+
+  /* ---------- access gate ---------- */
+  html[data-locked="true"] .gated-content { display: none; }
+  html[data-locked="false"] .gate-overlay { display: none; }
+  .gate-overlay {
+    position: fixed; inset: 0; z-index: 100; background: var(--paper);
+    display: flex; align-items: center; justify-content: center; padding: 1.5rem;
+  }
+  .gate-card {
+    max-width: 360px; width: 100%; background: var(--paper-raised);
+    border: 1px solid var(--border); border-radius: 12px; box-shadow: var(--shadow);
+    padding: 2.2rem 1.9rem; text-align: center;
+  }
+  .gate-card .eyebrow { justify-content: center; display: flex; }
+  .gate-card h2 { font-size: 1.15rem; margin: 0.4rem 0 0.5rem; }
+  .gate-card p { color: var(--ink-soft); font-size: 0.86rem; margin: 0 0 1.2rem; }
+  .gate-card input {
+    width: 100%; text-align: center; font-size: 1rem; letter-spacing: 0.08em;
+    background: var(--input-bg); border: 1.5px solid var(--border); border-radius: 8px;
+    padding: 0.6rem 0.8rem; color: var(--ink); margin-bottom: 0.8rem; text-transform: uppercase;
+  }
+  .gate-card input:focus { outline: none; border-color: var(--focus); }
+  .gate-card button {
+    width: 100%; background: var(--ink); color: var(--paper-raised); border: none;
+    border-radius: 8px; padding: 0.65rem 1rem; font-size: 0.9rem; font-weight: 600; cursor: pointer;
+  }
+  .gate-card button:hover { background: var(--gold); color: var(--ink); }
+  .gate-error { color: var(--bad); font-size: 0.82rem; margin-top: 0.7rem; min-height: 1.1em; }
+
+  /* ---------- results panel ---------- */
+  /* Deliberately single-theme (always dark), independent of the page's light/dark mode —
+     uses fixed local custom properties instead of the swappable --ink/--paper-raised/--gold
+     tokens, which invert meaning in dark mode and would otherwise make this unreadable. */
+  .results-panel {
+    --rp-bg: #17223B;
+    --rp-card: rgba(255,255,255,0.06);
+    --rp-text: #ECEEF3;
+    --rp-text-soft: #C7CEDD;
+    --rp-placeholder: #8E97AC;
+    --rp-accent: #D9A441;
+    --rp-bad: #E17868;
+    --rp-input-bg: rgba(255,255,255,0.08);
+    --rp-input-border: rgba(255,255,255,0.22);
+    background: var(--rp-bg); color: var(--rp-text); border-radius: 14px;
+    padding: 1.8rem 1.7rem; margin: 2.2rem 0 2rem; scroll-margin-top: 6rem;
+  }
+  .results-panel[hidden] { display: none; }
+  .results-headline { font-family: Georgia, serif; font-size: 1.5rem; font-weight: 700; margin-bottom: 0.35rem; color: var(--rp-text); }
+  .results-sub { font-size: 0.92rem; color: var(--rp-text-soft); margin-bottom: 1.3rem; max-width: 56ch; }
+  .results-score-row { display: flex; align-items: baseline; gap: 0.6rem; margin-bottom: 1.3rem; }
+  .results-score-num { font-family: Georgia, serif; font-size: 2.4rem; font-weight: 700; color: var(--rp-accent); }
+  .results-score-den { font-size: 1rem; color: var(--rp-text-soft); }
+  .results-name {
+    display: block; width: 100%; max-width: 320px; font-size: 0.9rem;
+    background: var(--rp-input-bg); border: 1px solid var(--rp-input-border); border-radius: 8px;
+    padding: 0.55rem 0.75rem; color: var(--rp-text); margin-bottom: 1.1rem; font-family: inherit;
+  }
+  .results-name::placeholder { color: var(--rp-placeholder); }
+  .results-name:focus { outline: none; border-color: var(--rp-accent); }
+  .results-errors {
+    background: var(--rp-card); border-radius: 10px; padding: 0.9rem 1.1rem;
+    margin-bottom: 1.3rem; max-height: 220px; overflow-y: auto;
+  }
+  .results-errors-title { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--rp-text-soft); margin-bottom: 0.5rem; }
+  .results-error-item { font-size: 0.85rem; line-height: 1.6; color: var(--rp-text); }
+  .results-error-item b { color: var(--rp-accent); font-weight: 600; }
+  .results-error-item s { color: var(--rp-bad); text-decoration: line-through; opacity: 0.85; }
+  .channel-label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--rp-text-soft); margin-bottom: 0.6rem; }
+  .channel-row { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+  .channel-btn {
+    display: inline-flex; align-items: center; gap: 0.45rem;
+    background: var(--rp-text); color: var(--rp-bg); text-decoration: none;
+    border-radius: 8px; padding: 0.55rem 0.95rem; font-size: 0.85rem; font-weight: 600;
+    border: none; cursor: pointer; font-family: inherit;
+  }
+  .channel-btn:hover { background: var(--rp-accent); }
+  .channel-copied { font-size: 0.8rem; color: var(--rp-accent); margin-top: 0.6rem; display: none; width: 100%; }
+
+  /* ---------- REGLA DE CENTRADO ---------- */
+  /* Hueco de frase entera en una fila SIN columna de etiqueta: baja a su propia línea y
+     ocupa todo el ancho. Con enunciados de largo muy distinto —hay alguno de 114
+     caracteres— no existe ninguna columna que valga, y dejando la casilla en línea cada
+     una acaba de un tamaño. Así todas miden lo mismo, empiecen donde empiecen. */
+  .item-row:not(:has(.item-pre)) input.blank.full {
+    display: block; width: 100%; max-width: none; margin: 0.25rem 0 0;
+  }
+
+  /* Fotos, tablas y sopas de letras van SIEMPRE centradas en su tarjeta. Por defecto un
+     bloque se queda pegado a la izquierda y, con el texto del ejercicio alrededor, se lee
+     como si estuviera descolocado. */
+  .foto-act, .wordsearch, table.gustos, .exercise-ref img, .open-block img, .postcard {
+    margin-left: auto; margin-right: auto;
+  }
+  .wordsearch, table.gustos { display: block; width: fit-content; max-width: 100%; }
+  table.gustos { display: table; }
+  /* Una fila de opciones que son dibujos se centra; si son palabras, se deja a la
+     izquierda, que es como se lee una lista. */
+  .exercise-ref .ref-options:has(img) { justify-content: center; }
+  /* El recuadro se ajusta a su contenido en vez de ocupar todo el ancho: con una sopa de
+     letras o una foto estrecha dentro, un fondo de borde a borde deja una franja de color
+     enorme y vacía. fit-content lo encoge hasta lo que mide su contenido y, si ese contenido
+     ya es ancho (una lista larga de opciones), se queda a lo ancho igual que antes. */
+  .exercise-ref { width: fit-content; max-width: 100%; margin-left: auto; margin-right: auto; }
+  /* El título del recuadro, centrado sobre su contenido: ahora que la caja se ajusta a lo
+     que hay dentro, una etiqueta pegada a la esquina izquierda queda descolgada. */
+  .exercise-ref .ref-label { text-align: center; }
+  /* Filas en columnas (item.pre): etiqueta, casilla y botones alineados entre sí. Sin esto
+     cada fila empieza el hueco donde acaba su palabra, y las casillas y los botones quedan
+     a distinta altura — se ve descuadrado aunque cada fila por separado esté bien. */
+  .item-row:has(.item-pre) {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 0.55rem;
+  }
+  /* Ancho fijo, no mínimo: con min-width, una etiqueta más larga que el resto (aquí
+     «sentarse») empuja su fila unos píxeles y rompe la columna. */
+  .item-pre { flex: 0 0 var(--pre-w, 8.8em); }
+  .item-row:has(.item-pre) input.blank { flex: 0 0 auto; }
+  /* Un hueco de frase entera ocupa lo que sobra: como la columna de la etiqueta es fija,
+     «lo que sobra» es lo mismo en todas las filas y las casillas salen iguales. */
+  .item-row:has(.item-pre) input.blank.full { flex: 1 1 auto; width: auto; min-width: 0; }
+  /* La letra del ítem también entra en la columna: «i.» y «m.» no miden lo mismo, y
+     sin fijarla arrastra unos píxeles de diferencia a todo lo que va detrás. */
+  .item-row:has(.item-pre) .item-letter { flex: 0 0 1.7em; margin-right: 0; }
+  /* Un aviso de corrección ocupa su propia línea y no descoloca las columnas. */
+  .item-row:has(.item-pre) .reveal.show { flex-basis: 100%; margin-left: 0; }
+  .vf-toggle.vf-words .vf-btn { width: 6.4em; padding: 0; }
+  @media (max-width: 560px) {
+    /* En pantalla estrecha la etiqueta y el hueco se reparten el ancho, y el hueco baja
+       a su propia línea: siguen alineados sin robarle ancho a la casilla. La etiqueta
+       NO se lleva la línea entera (`flex: 0 0 100%`), porque entonces el número se
+       quedaba solo en la línea de arriba y cada ítem pasaba a ocupar tres o cuatro
+       líneas — el mismo defecto del número huérfano que ya se corrigió en las filas
+       que acaban en hueco. */
+    .item-row:has(.item-pre) .item-letter { flex: 0 0 auto; }
+    .item-pre { flex: 1 1 auto; }
+    .item-row:has(.item-pre) input.blank { flex: 1 1 100%; }
+    .vf-toggle.vf-words .vf-btn { width: 5.6em; }
+  }
+  /* Una fila con foto se centra entera —número, imagen y casilla—, para que quede una
+     columna ordenada. Con la casilla pegada a la izquierda y la foto en el centro, la fila
+     se lee descolocada. */
+  .item-row:has(.foto-act) { text-align: center; }
+  .item-row:has(.foto-act) .item-letter { display: block; margin: 0 0 0.1rem; }
+
+  /* Fila que acaba en el hueco: la casilla se estira hasta el borde derecho. El hueco es la
+     continuación natural de la frase, así que empieza justo donde acaba el texto —no baja a
+     una línea aparte— pero todas las de un ejercicio TERMINAN en el mismo sitio, que es lo
+     que hace que se vean parejas. La fila es flex: los nodos de texto se convierten en
+     items anónimos y la casilla, con flex:1, se queda con lo que sobra. */
+  .item-row.tail-blank {
+    display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 0.3rem;
+  }
+  .item-row.tail-blank input.blank {
+    flex: 1 1 8em; width: auto; max-width: none; min-width: 6em; text-align: left;
+  }
+  .item-row.tail-blank .tail-text { flex: 0 1 auto; min-width: 0; }
+  /* Fila que acaba en los botones V/F: el texto se estira y empuja los botones al borde
+     derecho, así todos los pares quedan en la misma columna. */
+  .item-row.vf-tail {
+    display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 0.3rem;
+  }
+  .item-row.vf-tail .tail-text { flex: 1 1 auto; min-width: 0; }
+  .item-row.vf-tail .vf-wrap { flex: 0 0 auto; }
+  .item-row.vf-tail .reveal.show { flex-basis: 100%; margin-left: 0; }
+  .item-row.tail-blank .reveal.show { flex-basis: 100%; margin-left: 0; }
+</style>
+
+<script>
+  // unlocked-cuaderno-b1-7a here MUST be byte-identical to the one set further down in the gate
+  // script (search "STORAGE_KEY =") — same placeholder, same value, both occurrences.
+  document.documentElement.setAttribute(
+    "data-locked",
+    localStorage.getItem("unlocked-cuaderno-b1-7a") === "1" ? "false" : "true"
+  );
+</script>
+
+<div class="gate-overlay">
+  <div class="gate-card">
+    <div class="eyebrow">Acceso privado</div>
+    <h2>Unidad 7A · Un buen trabajo</h2>
+    <p>Pídele el código a tu profesor para entrar.</p>
+    <input type="text" id="gateInput" placeholder="CÓDIGO" autocomplete="off" autocapitalize="characters" />
+    <button id="gateBtn">Entrar</button>
+    <div class="gate-error" id="gateError"></div>
+  </div>
+</div>
+<script>
+  (function () {
+    // El código es solo un disuasivo, no seguridad real — cualquiera que vea el HTML
+    // fuente lo ve. Elige una palabra corta, memorable y ligada al tema, en MAYÚSCULAS.
+    const CODE = "VIDENTE";
+    // MUST be byte-identical al unlocked-cuaderno-b1-7a usado arriba (ver comentario junto al
+    // primer occurrence). Usa un valor único por ejercicio, p. ej. "unlocked-b2-13a-tema".
+    const STORAGE_KEY = "unlocked-cuaderno-b1-7a";
+    function tryUnlock() {
+      const val = document.getElementById("gateInput").value.trim().toUpperCase();
+      if (val === CODE) {
+        localStorage.setItem(STORAGE_KEY, "1");
+        document.documentElement.setAttribute("data-locked", "false");
+        // #main lleva la clase "gated-content", que la CSS de arriba pone a display:none
+        // mientras data-locked="true" — así que en la primera visita (sin el localStorage
+        // de una vez anterior) el script de más abajo que monta los bloques se ejecuta
+        // con #main todavía oculto, y cualquier medida de layout que tome en ese momento
+        // (scrollWidth, getBoundingClientRect...) sale a 0. Para ejercicios "match", eso
+        // deja mal calculado si hace falta el aviso de scroll horizontal (ver
+        // refreshFades() en el motor) — nada más lo vuelve a comprobar después, así que
+        // sin este evento se quedaría mal para siempre en la primera visita. Este evento
+        // avisa al motor, ya cargado, de que el contenido acaba de hacerse visible.
+        document.dispatchEvent(new CustomEvent("cuaderno:unlocked"));
+      } else {
+        document.getElementById("gateError").textContent = "Código incorrecto. Inténtalo de nuevo.";
+      }
+    }
+    document.getElementById("gateBtn").addEventListener("click", tryUnlock);
+    document.getElementById("gateInput").addEventListener("keydown", function (e) {
+      if (e.key === "Enter") tryUnlock();
+    });
+  })();
+</script>
+
+<div class="topbar gated-content">
+  <div class="topbar-inner">
+    <div class="brand">
+      <span class="brand-title">Cuaderno B1 · Unidad 7A</span>
+      <span class="brand-sub">Un buen trabajo</span>
+    </div>
+    <nav class="nav-dots" id="navDots"></nav>
+    <div class="score-wrap">
+      <div class="bar"><div class="bar-fill" id="barFill"></div></div>
+      <div class="score"><span class="num" id="scoreNum" translate="no">0</span><span style="color:var(--pencil)"> / </span><span id="scoreTotal" translate="no">0</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="hero gated-content">
+  <div class="eyebrow">Nuevo Español en Marcha 3 · Cuaderno de ejercicios · Unidad 7 · Trabajo y profesiones</div>
+  <h1>Un buen trabajo</h1>
+  <p>Profesiones, un artículo sobre un vidente cubano y una sopa de letras. Escribe tus respuestas, corrige al instante y envía el resultado a tu profesor.</p>
+  <div class="hero-meta">
+    <span><strong id="totalBlanksLabel" translate="no">—</strong> huecos en total</span>
+    <span><strong>1</strong> bloque</span>
+    <span><strong>3</strong> ejercicios</span>
+  </div>
+</div>
+
+<main id="main" class="gated-content"></main>
+
+<div class="correct-all-wrap gated-content">
+  <button class="correct-all-btn" id="correctAllBtn">Corregir todos los ejercicios</button>
+  <div class="progress-hint" id="progressHint"></div>
+</div>
+
+<div id="resultsPanel" class="results-panel gated-content" hidden>
+  <div class="results-headline" id="resHeadline"></div>
+  <div class="results-sub" id="resSub"></div>
+  <div class="results-score-row">
+    <span class="results-score-num" id="resScoreNum" translate="no"></span>
+    <span class="results-score-den" id="resScoreDen" translate="no"></span>
+  </div>
+  <input type="text" class="results-name" id="resName" placeholder="Tu nombre (para que tu profesor sepa quién eres)" />
+  <div class="results-errors" id="resErrors"></div>
+  <div class="channel-label">Enviar este resumen a tu profesor</div>
+  <div class="channel-row">
+    <a class="channel-btn" id="chWhatsapp" target="_blank" rel="noopener">WhatsApp</a>
+    <a class="channel-btn" id="chTelegram" target="_blank" rel="noopener">Telegram</a>
+    <a class="channel-btn" id="chEmail" target="_blank" rel="noopener">Correo</a>
+    <a class="channel-btn" id="chTeams" target="_blank" rel="noopener">Teams</a>
+    <button class="channel-btn" id="chCopy" type="button">Copiar resumen</button>
+    <span class="channel-copied" id="chCopiedMsg">¡Copiado!</span>
+  </div>
+</div>
+
+<footer class="gated-content">
+  <span>Nuevo Español en Marcha 3 (B1), cuaderno de ejercicios, unidad 7A (pág. 28)</span>
+  <span>© Angel Luis Acosta González</span>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  // ---------- grading helpers ----------
+  // ACCENTS ARE STRICT BY DEFAULT ON THE ARRAY PATH (isCorrect below): typing "esta" is
+  // wrong when the key is "está". This is a deliberate default, not an oversight — in most
+  // Spanish grammar drills the accent IS the point being tested (e.g. "trabaja" [presente]
+  // vs. "trabajó" [indefinido] differ only by the accent; "esta"/"está" are different words).
+  // Loosening this for a whole exercise set would silently mark wrong tenses/words as
+  // correct. If THIS exercise is testing something where accents are incidental (open-ended
+  // short answers, vocabulary content rather than verb-form precision), use the {flex:[...]}
+  // spec instead (see isCorrect below) for just those items — it's accent-insensitive by
+  // design. Don't blanket-change norm()/isCorrect() to strip accents; ask the teacher first
+  // if you're unsure which behavior a given exercise needs.
+  function norm(s) {
+    return (s || "")
+      .toLowerCase()
+      .replace(/[¿?¡!.]/g, "")
+      // La coma se sustituye por un espacio, no se borra sin más: borrarla trataba
+      // "a,d,h" (sin espacio) y "a, d, h" (con espacio) como cadenas distintas —
+      // "adh" vs "a d h" — así que una respuesta de varias letras separadas por
+      // comas se marcaba mal si al alumno se le olvidaba el espacio (bug real,
+      // encontrado en revisión de PR). Sustituir por espacio y luego colapsar
+      // espacios seguidos normaliza las dos formas (y cualquier mezcla de las
+      // dos) a la misma cadena. No afecta a una frase normal con coma ("Sí,
+      // gracias" ya lleva un espacio después de la coma en el texto real).
+      .replace(/,/g, " ")
+      .trim()
+      .replace(/\s+/g, " ");
+  }
+  function stripAccents(s) {
+    return s.normalize("NFD").replace(/[̀-ͯ]/g, "");
+  }
+  function escapeHtml(s) {
+    return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+  // answer spec: array of accepted exact strings, OR {flex:[...]} meaning all keywords must appear (accent-insensitive)
+  function isCorrect(input, spec) {
+    const n = norm(input);
+    if (!n) return false;
+    if (Array.isArray(spec)) {
+      return spec.some(function (a) { return norm(a) === n; });
+    }
+    if (spec && spec.flex) {
+      const hay = stripAccents(n);
+      return spec.flex.every(function (k) { return hay.indexOf(stripAccents(k)) !== -1; });
+    }
+    return false;
+  }
+
+  // ---------- exercise data ----------
+  // template blanks use {0},{1}... matched to item.answers[i]
+  const JOSE_SADA_B64_VAR = "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";
+
+  const blocks = [
+    {
+      id: "unidad7a", num: 1, title: "Un buen trabajo",
+      sub: "Unidad 7A del cuaderno",
+      exercises: [
+        {
+          num: 1, title: "Relaciona",
+          instr: "Relaciona cada profesión con lo que hace. \u201cEl mecánico\u201d ya viene resuelto en el libro.",
+          type: "match",
+          columns: [
+            { label: "Profesión", items: [
+              "El mecánico", "El fontanero", "El albañil", "El camionero", "El carpintero",
+              "El electricista", "El taxista", "El bombero", "El jardinero"
+            ] },
+            { label: "Hace...", items: [
+              "construye casas", "arregla los grifos", "arregla el coche", "hace muebles",
+              "transporta mercancías", "transporta viajeros", "apaga el fuego",
+              "hace instalaciones eléctricas", "cuida las plantas"
+            ] }
+          ],
+          rows: [
+            { solved: true },
+            { a: [["arregla los grifos"]] },
+            { a: [["construye casas"]] },
+            { a: [["transporta mercancías"]] },
+            { a: [["hace muebles"]] },
+            { a: [["hace instalaciones eléctricas"]] },
+            { a: [["transporta viajeros"]] },
+            { a: [["apaga el fuego"]] },
+            { a: [["cuida las plantas"]] }
+          ]
+        },
+        {
+          num: 2, title: "De profesión: adivinar el futuro",
+          instr: "Completa el texto con los fragmentos del recuadro. Cada fragmento se usa una sola vez.",
+          refHTML: '<img src="data:image/jpeg;base64,' + JOSE_SADA_B64_VAR + '" alt="José Sada, el vidente afrocubano del artículo, con dos bolas del mundo" style="max-width:min(260px, 100%);border-radius:50%" />' +
+            '<span class="ref-label">Elige el fragmento correcto para cada hueco</span>' +
+            '<div class="ref-options">' +
+            '<span class="ref-opt">barajas de cartas</span>' +
+            '<span class="ref-opt">clientes femeninos</span>' +
+            '<span class="ref-opt">por teléfono</span>' +
+            '<span class="ref-opt">en su consulta</span>' +
+            '<span class="ref-opt">fue su abuela</span>' +
+            '<span class="ref-opt">del dinero que gana</span>' +
+            "</div>",
+          type: "text",
+          text: "Llegó hace diez años a España procedente de Cuba con una maleta sin ropa y llena de hierbas para curar, y caracolas y {0} para adivinar el futuro. Desde entonces, José Sada se gana la vida con su consulta de videncia afrocubana, en la que atiende tanto a público español como latinoamericano.\n\u201cTengo sobre todo {1} y los temas por los que más preguntan son los del trabajo\u201d, cuenta este hombre, casado con una española. Mientras hablamos, le llama un cliente de Sevilla al que le lee el futuro {2}.\nPor la tarde tiene otra cliente ecuatoriana a la que atenderá en persona. Él se define como \u201cvidente afrocubano y espiritista\u201d. {3} hay desde vírgenes y muñecas negras hasta estampas de San Francisco de Asís o de Jesucristo. {4} la que le inició en la videncia. \u201cCon diecisiete años me dedicaba, cuando salía de trabajar, a la curación con hierbas y a leer caracolas\u201d, cuenta. Parte {5} lo envía a Cuba, a su madre y a una hija de 15 años. Aunque aquí en España tiene otros dos hijos, a José le gustaría regresar un día a su país.",
+          a: [
+            ["barajas de cartas"], ["clientes femeninos"], ["por teléfono"],
+            ["En su consulta"], ["Fue su abuela"], ["del dinero que gana"]
+          ]
+        },
+        {
+          num: 3, title: "Sopa de letras: profesiones",
+          instr: "Busca en la sopa de letras el nombre de estas nueve profesiones.",
+          type: "wordsearch",
+          grid: [
+            "NPERIODISTAK",
+            "GANDCANTANTE",
+            "KFDEUHYKMAVK",
+            "KFGPZOSHMBDA",
+            "MZSERRUTHOYI",
+            "ZJANFESJLGKC",
+            "JARDINEROAQI",
+            "KSOINIYOFDLL",
+            "CHTELCVLGOBO",
+            "KQNNXOUDLISP",
+            "UAITCCIEOIJC",
+            "RCPANIRALIAB"
+          ],
+          words: [
+            { label: "Pintor", cells: [[11,2],[10,2],[9,2],[8,2],[7,2],[6,2]] },
+            { label: "Dependienta", cells: [[1,3],[2,3],[3,3],[4,3],[5,3],[6,3],[7,3],[8,3],[9,3],[10,3],[11,3]] },
+            { label: "Periodista", cells: [[0,1],[0,2],[0,3],[0,4],[0,5],[0,6],[0,7],[0,8],[0,9],[0,10]] },
+            { label: "Cocinero", cells: [[10,5],[9,5],[8,5],[7,5],[6,5],[5,5],[4,5],[3,5]] },
+            { label: "Abogado", cells: [[2,9],[3,9],[4,9],[5,9],[6,9],[7,9],[8,9]] },
+            { label: "Jardinero", cells: [[6,0],[6,1],[6,2],[6,3],[6,4],[6,5],[6,6],[6,7],[6,8]] },
+            { label: "Bailarina", cells: [[11,11],[11,10],[11,9],[11,8],[11,7],[11,6],[11,5],[11,4],[11,3]] },
+            { label: "Cantante", cells: [[1,4],[1,5],[1,6],[1,7],[1,8],[1,9],[1,10],[1,11]] },
+            { label: "Policía", cells: [[9,11],[8,11],[7,11],[6,11],[5,11],[4,11],[3,11]] }
+          ]
+        }
+      ]
+    }
+    // Añade más bloques ({ id, num, title, sub, exercises: [...] }) según haga falta.
+  ];
+
+  // ---------- render ----------
+  const main = document.getElementById("main");
+  const navDots = document.getElementById("navDots");
+  const allInputs = []; // {el, spec}
+  const allExercises = []; // ex objects, para poder llamar a ex._onGraded desde "Corregir todos"
+  const openAnswers = []; // { num, title, el } de cada textarea de un ejercicio "open", para incluirlas en buildSummary()
+  // Funciones drawLines() de cada ejercicio "match", pendientes de la primera pasada: al
+  // construirse, .match-wrap todavía no está insertado en el documento (su <section> se
+  // añade a #main una vez terminado TODO el bloque, no ejercicio a ejercicio), así que
+  // getBoundingClientRect() daría 0 en todos los puntos. Se llaman todas juntas al final,
+  // cuando el DOM ya está montado — ver más abajo, después de blocks.forEach(...).
+  const pendingMatchDraws = [];
+
+  // wide: true  -> input intermedio (una o dos palabras)
+  // wide: "full" -> input de frase entera, para los ejercicios de transformar oraciones:
+  //                 con el ancho normal la respuesta se escribe pero no se lee.
+  function makeInput(spec, wide, label) {
+    const inp = document.createElement("input");
+    inp.type = "text";
+    inp.className = "blank" + (wide === "full" ? " full" : wide ? " wide" : "");
+    inp.autocomplete = "off";
+    inp.autocapitalize = "off";
+    inp.spellcheck = false;
+    allInputs.push({ el: inp, spec: spec, label: label || "" });
+    return inp;
+  }
+
+  // Hueco de verdadero/falso: dos botones en vez de texto libre. El input real que
+  // guarda el motor de corrección se queda oculto (type="hidden") para que gradeRange,
+  // isCorrect y el archivador extraer.mjs (que busca "input.blank") sigan funcionando
+  // exactamente igual — solo cambia cómo el alumno rellena el valor. Úsalo poniendo
+  // vf: true en el item (ver ejemplo de "items" más abajo); la respuesta (item.a) sigue
+  // siendo ["V"] o ["F"] como cualquier otro hueco de texto.
+  function makeVfButtons(spec, label, opciones) {
+    const inp = document.createElement("input");
+    inp.type = "hidden";
+    inp.className = "blank";
+    const wrap = document.createElement("span");
+    wrap.className = "vf-toggle";
+    const lista = opciones && opciones.length ? opciones : ["V", "F"];
+    // Un par de opciones que son palabras («regular»/«irregular») necesita que los dos
+    // botones midan lo mismo; si no, cada fila los coloca a una altura distinta.
+    if (lista.some(function (o) { return o.length > 1; })) wrap.classList.add("vf-words");
+    const rec = { el: inp, spec: spec, label: label || "" };
+    lista.forEach(function (letter) {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "vf-btn";
+      b.setAttribute("translate", "no");
+      b.textContent = letter;
+      b.addEventListener("click", function () {
+        inp.value = letter;
+        wrap.classList.remove("unanswered");
+        wrap.querySelectorAll(".vf-btn").forEach(function (x) {
+          x.classList.remove("selected", "correct", "incorrect");
+        });
+        b.classList.add("selected");
+      });
+      wrap.appendChild(b);
+    });
+    rec.onGrade = function (ok) {
+      const sel = wrap.querySelector(".vf-btn.selected");
+      // Sin nada pulsado no hay botón que colorear: se marca el grupo entero, o el hueco
+      // se quedaría sin ninguna señal de error (a diferencia de un input de texto vacío).
+      wrap.classList.toggle("unanswered", !sel);
+      if (sel) sel.classList.add(ok ? "correct" : "incorrect");
+    };
+    allInputs.push(rec);
+    const holder = document.createElement("span");
+    holder.className = "vf-wrap";
+    holder.appendChild(inp);
+    holder.appendChild(wrap);
+    return holder;
+  }
+
+  // Qué botones lleva el hueco número `idx` de un ítem, según su campo `vf`:
+  //   vf: true                      -> V/F en todos los huecos del ítem
+  //   vf: ["regular", "irregular"]  -> ese par en todos los huecos del ítem
+  //   vf: { 1: ["sí", "no"] }       -> solo en el hueco {1}; los demás siguen siendo texto
+  // El tercer caso es el que hace falta cuando un ítem mezcla un hueco de escribir con uno
+  // de elegir, como "hablar → [imperativo] · [regular|irregular]".
+  function opcionesDe(vf, idx) {
+    if (!vf) return null;
+    if (vf === true) return ["V", "F"];
+    if (Array.isArray(vf)) return vf;
+    return vf[idx] || null;
+  }
+
+  function renderTemplate(container, template, answers, wide, labelBase, forceIndex, vf, dialog) {
+    const parts = template.split(/\{(\d+)\}/g);
+    let blankCount = 0;
+    for (let k = 1; k < parts.length; k += 2) blankCount++;
+    parts.forEach(function (part, i) {
+      if (i % 2 === 1) {
+        const tokenIdx = parseInt(part, 10);
+        const spec = answers[tokenIdx];
+        const label = (blankCount > 1 || forceIndex) ? labelBase + " (" + (tokenIdx + 1) + ")" : labelBase;
+        const opts = opcionesDe(vf, tokenIdx);
+        container.appendChild(opts
+          ? makeVfButtons(spec, label, opts)
+          : makeInput(spec, wide, label));
+        const reveal = document.createElement("span");
+        reveal.className = "reveal";
+        container.appendChild(reveal);
+        allInputs[allInputs.length - 1].reveal = reveal;
+      } else if (part) {
+        // Un "\n" en la plantilla del ítem es un salto de línea real. Lo necesitan los
+        // diálogos: A y B son dos personas distintas y sus réplicas no pueden compartir
+        // línea. Fuera de los diálogos no hay "\n", así que esto no afecta al resto.
+        part.split("\n").forEach(function (linea, li) {
+          if (li > 0) container.appendChild(document.createElement("br"));
+          if (!linea) return;
+          // En un diálogo, la letra del interlocutor al principio de línea se marca como
+          // tal en vez de quedar suelta dentro de la frase.
+          // Interlocutor: la «A»/«B» del libro, o un nombre en mayúsculas seguido de dos
+          // puntos (ROSA:, ANDRÉS:), que es como el propio cuaderno marca los diálogos con
+          // personajes. Solo se aplica dentro de ejercicios con dialog: true.
+          const m = dialog && (li > 0 || i === 0)
+            ? linea.match(/^([A-ZÁÉÍÓÚÑÜ]{2,12}:|[AB])\s+/) : null;
+          if (m) {
+            const who = document.createElement("span");
+            who.className = "speaker";
+            who.setAttribute("translate", "no");
+            who.textContent = m[1];
+            container.appendChild(who);
+            linea = linea.slice(m[0].length);
+          }
+          container.appendChild(document.createTextNode(linea));
+        });
+      }
+    });
+  }
+
+  function exerciseHeader(ex) {
+    const head = document.createElement("div");
+    head.className = "exercise-head";
+    const titleWrap = document.createElement("div");
+    titleWrap.className = "exercise-title";
+    titleWrap.innerHTML = '<span class="exnum" translate="no">Ej. ' + ex.num + "</span>";
+    const h3 = document.createElement("h3");
+    h3.textContent = ex.title;
+    titleWrap.appendChild(h3);
+    head.appendChild(titleWrap);
+    // Los ejercicios "open" no puntúan, así que no llevan botón: ver .open-block.
+    if (ex.type === "open") return { head: head, btn: null };
+    const btn = document.createElement("button");
+    btn.className = "check-btn";
+    btn.textContent = "Corregir";
+    head.appendChild(btn);
+    return { head: head, btn: btn };
+  }
+
+  blocks.forEach(function (block) {
+    const sec = document.createElement("section");
+    sec.className = "block";
+    sec.id = block.id;
+
+    const bh = document.createElement("div");
+    bh.className = "block-head";
+    bh.innerHTML =
+      '<div class="block-num">' + block.num + '</div>' +
+      '<div class="block-titles"><h2>' + block.title + '</h2><div class="sub">' + block.sub + '</div></div>';
+    sec.appendChild(bh);
+
+    const navA = document.createElement("a");
+    navA.href = "#" + block.id;
+    navA.textContent = "Bloque " + block.num;
+    navDots.appendChild(navA);
+
+    block.exercises.forEach(function (ex) {
+      allExercises.push(ex);
+      const card = document.createElement("div");
+      card.className = "exercise";
+      // ex.preWidth: ancho de la columna de item.pre para ESTE ejercicio.
+      if (ex.preWidth) card.style.setProperty("--pre-w", ex.preWidth);
+      const startIdx = allInputs.length;
+      const hdr = exerciseHeader(ex);
+      card.appendChild(hdr.head);
+
+      if (ex.instr) {
+        const instr = document.createElement("div");
+        instr.className = "exercise-instr";
+        instr.textContent = ex.instr;
+        card.appendChild(instr);
+      }
+      // ex.audioSrc: la grabación de verdad (data: URI, incrustada en base64 — un artefacto
+      // no puede referenciar un archivo externo). Antes de tener el audio, el único recurso
+      // era la transcripción plegada (ex.transcriptHTML), y la regla del profesor sigue
+      // aplicando igual: aunque ahora SÍ haya audio, la transcripción no se quita, se queda
+      // como apoyo. preload="none" porque un documento puede llevar varios audios y no hace
+      // falta descargarlos todos solo por abrir la página.
+      if (ex.audioSrc) {
+        if (ex.audioLabel) {
+          const label = document.createElement("div");
+          label.className = "audio-label";
+          label.textContent = ex.audioLabel;
+          card.appendChild(label);
+        }
+        const audio = document.createElement("audio");
+        audio.className = "exercise-audio";
+        audio.controls = true;
+        audio.preload = "none";
+        audio.src = ex.audioSrc;
+        card.appendChild(audio);
+      }
+      if (ex.refHTML) {
+        const ref = document.createElement("div");
+        ref.className = "exercise-ref";
+        ref.innerHTML = ex.refHTML;
+        card.appendChild(ref);
+      }
+      if (ex.model) {
+        const model = document.createElement("div");
+        model.className = "exercise-model";
+        model.textContent = ex.model;
+        card.appendChild(model);
+      }
+
+      if (ex.type === "items") {
+        const wrap = document.createElement("div");
+        wrap.className = "items" + (ex.grid ? " items-grid" : "");
+        ex.items.forEach(function (item, i) {
+          const row = document.createElement("div");
+          row.className = "item-row";
+          // ex.numbered: marca 1., 2., 3. en vez de a., b., c. — obligatorio en los diálogos,
+          // donde a/b/c chocaría con las letras A/B de los propios interlocutores.
+          const marca = ex.numbered ? (i + 1) + "." : String.fromCharCode(97 + i) + ".";
+          if (ex.dialog) row.classList.add("dialog-row");
+          // item.solved = fila que el libro ya trae resuelta (el típico ítem 1 hecho como
+          // modelo). Se muestra porque está en el original, pero va sin huecos: pedirle al
+          // alumno algo que en su cuaderno ya está impreso descuadra además la puntuación.
+          if (item.solved) row.classList.add("solved-row");
+          const letter = document.createElement("span");
+          letter.className = "item-letter";
+          letter.setAttribute("translate", "no");
+          letter.textContent = marca;
+          row.appendChild(letter);
+          // item.pre: etiqueta fija al principio de la fila (el verbo, la palabra que se
+          // clasifica...). Existe para poder alinear en columnas: metida dentro de item.t
+          // sería un nodo de texto suelto y cada fila empezaría el hueco en un sitio.
+          if (item.pre) {
+            const pre = document.createElement("span");
+            pre.className = "item-pre";
+            pre.textContent = item.pre;
+            row.appendChild(pre);
+          }
+          // item.img: la foto va DESPUÉS del número y antes del hueco. Al revés, el
+          // número quedaba debajo de su propia foto y pegado a la siguiente, y no se sabía
+          // a cuál se refería. Se declara como campo propio, no como HTML dentro de item.t.
+          if (item.img) {
+            const im = document.createElement("img");
+            im.className = "foto-act";
+            im.src = item.img;
+            im.alt = item.alt || "Fotografía del ejercicio";
+            row.appendChild(im);
+          }
+          renderTemplate(row, item.t, item.a, item.wide, "Ej. " + ex.num + " " + marca.replace(".", ""), false, item.vf, ex.dialog);
+          // Si la fila termina en el hueco (enunciado + «→» + casilla), se marca para que la
+          // casilla se estire hasta el borde derecho: empieza justo donde acaba el texto,
+          // pero todas las del ejercicio terminan en el mismo sitio. No se toca cuando el
+          // hueco va DENTRO de la frase (un rellenar-el-espacio), donde alinear no tiene
+          // sentido, ni cuando la fila ya usa la columna de item.pre, ni cuando la fila
+          // lleva foto: ahí el hueco va DEBAJO de la imagen (así lo pide el enunciado del
+          // libro, «escribe debajo qué actividad es») y al volverse flex se subía a su lado.
+          // Fila que acaba en botones V/F: los botones se van al borde derecho, para que
+          // todos queden en la misma columna por larga que sea la frase. Sin esto, cada par
+          // de botones empieza donde acaba su frase y la lista se ve descuadrada.
+          //
+          // Tampoco se toca en una rejilla (ex.grid): ahí no hay «borde derecho» al que
+          // estirarse —la fila es una celda estrecha— y el `width: auto` de .tail-blank
+          // le devuelve al input su ancho intrínseco (~20 caracteres), más ancho que la
+          // celda, así que se sale y arrastra scroll horizontal a TODA la página en el
+          // móvil. Se vio en la 5B de B1, la primera rejilla sin fotos: hasta entonces
+          // todas las rejillas llevaban imagen y ya quedaban fuera por el filtro de
+          // .foto-act.
+          if (!ex.grid && !item.pre && !row.querySelector(".foto-act")) {
+            const vfw = row.querySelector(".vf-wrap");
+            if (vfw && row.querySelectorAll("input.blank").length === 1) {
+              let cola = "", n = vfw.nextSibling;
+              while (n) { cola += n.textContent || ""; n = n.nextSibling; }
+              if (/^[\s.,;:!?¿¡…"»)]*$/.test(cola)) {
+                row.classList.add("vf-tail");
+                const head = document.createElement("span");
+                head.className = "tail-text";
+                while (row.firstChild && row.firstChild !== vfw) head.appendChild(row.firstChild);
+                row.insertBefore(head, vfw);
+              }
+            }
+          }
+          if (!ex.grid && !item.pre && !row.querySelector(".foto-act")) {
+            const huecos = row.querySelectorAll("input.blank");
+            if (huecos.length === 1) {
+              // Después del hueco solo puede quedar puntuación de cierre. Si hay palabras,
+              // el hueco está DENTRO de la frase (un rellenar-el-espacio) y no se toca:
+              // estirarlo hasta el borde derecho partiría la oración por la mitad.
+              let cola = "", n = huecos[0].nextSibling;
+              while (n) { cola += n.textContent || ""; n = n.nextSibling; }
+              // Si el autor puso un salto de línea justo antes del hueco, es que quiere la
+              // casilla en su propia línea a ancho completo (respuestas de frase entera):
+              // estirarla en la misma línea la dejaría flotando a media altura del texto.
+              let antes = huecos[0].previousSibling;
+              while (antes && antes.nodeType === 3 && !antes.textContent.trim()) antes = antes.previousSibling;
+              const saltoAntes = !!antes && antes.nodeName === "BR";
+              if (!saltoAntes && /^[\s.,;:!?¿¡…"»)]*$/.test(cola)) {
+                row.classList.add("tail-blank");
+                // Todo lo anterior al hueco (número + frase) va en UN solo envoltorio.
+                // Si se dejan sueltos, cada nodo de texto es un elemento flex distinto y
+                // una frase larga salta de línea entera, dejando el "e." solo en la
+                // línea de arriba. Con el envoltorio, el número siempre va pegado a su
+                // frase y es la frase la que parte por dentro.
+                const head = document.createElement("span");
+                head.className = "tail-text";
+                while (row.firstChild && row.firstChild !== huecos[0]) head.appendChild(row.firstChild);
+                row.insertBefore(head, huecos[0]);
+              }
+            }
+          }
+          wrap.appendChild(row);
+        });
+        // Estirar el hueco hasta el borde derecho solo tiene sentido si hay VARIAS
+        // filas que acaben así: es lo que las hace terminar todas en el mismo sitio.
+        // Una sola, rodeada de frases con el hueco dentro, se ve como una raya larga
+        // y suelta; en ese caso se deja con el ancho normal.
+        const colas = wrap.querySelectorAll(".item-row.tail-blank");
+        if (colas.length === 1) colas[0].classList.remove("tail-blank");
+        card.appendChild(wrap);
+      } else if (ex.type === "text") {
+        const p = document.createElement("div");
+        p.className = "paragraph";
+        ex.text.split("\n").forEach(function (line, li) {
+          if (li > 0) p.appendChild(document.createElement("br"));
+          renderTemplate(p, line, ex.a, false, "Ej. " + ex.num, true);
+        });
+        card.appendChild(p);
+      } else if (ex.type === "table2") {
+        const twrap = document.createElement("div");
+        twrap.className = "table-wrap";
+        const table = document.createElement("table");
+        table.className = "exercise-table";
+        table.innerHTML = "<thead><tr><th>Infinitivo</th><th>Gerundio</th></tr></thead>";
+        const tbody = document.createElement("tbody");
+        ex.rows.forEach(function (r) {
+          const tr = document.createElement("tr");
+          const td1 = document.createElement("td");
+          td1.textContent = r[0];
+          const td2 = document.createElement("td");
+          td2.appendChild(makeInput(r[1][0], false, "Ej. " + ex.num + " " + r[0]));
+          const reveal = document.createElement("span");
+          reveal.className = "reveal";
+          td2.appendChild(reveal);
+          allInputs[allInputs.length - 1].reveal = reveal;
+          tr.appendChild(td1); tr.appendChild(td2);
+          tbody.appendChild(tr);
+        });
+        table.appendChild(tbody);
+        twrap.appendChild(table);
+        card.appendChild(twrap);
+      } else if (ex.type === "conjTable") {
+        const twrap = document.createElement("div");
+        twrap.className = "table-wrap";
+        const table = document.createElement("table");
+        table.className = "exercise-table";
+        let thead = "<thead><tr><th>" + (ex.subjectLabel || "Sujeto") + "</th>";
+        ex.cols.forEach(function (c) { thead += "<th>" + c.label + "</th>"; });
+        thead += "</tr></thead>";
+        table.innerHTML = thead;
+        const tbody = document.createElement("tbody");
+        ex.subjects.forEach(function (subj, si) {
+          const tr = document.createElement("tr");
+          const td0 = document.createElement("td");
+          td0.textContent = subj;
+          tr.appendChild(td0);
+          ex.cols.forEach(function (c) {
+            const td = document.createElement("td");
+            const spec = c.a[si];
+            // Una cadena en vez de un array = celda que el libro ya trae resuelta: se pinta
+            // fija y no cuenta como hueco. Si se pusiera como hueco, el alumno tendría que
+            // "adivinar" algo que en su cuaderno está impreso, y el total de huecos dejaría
+            // de coincidir con lo que realmente hay que rellenar.
+            if (typeof spec === "string") {
+              td.textContent = spec;
+              td.className = "fixed-cell";
+            } else {
+              td.appendChild(makeInput(spec, false, "Ej. " + ex.num + " " + subj + "/" + c.label));
+              const reveal = document.createElement("span");
+              reveal.className = "reveal";
+              td.appendChild(reveal);
+              allInputs[allInputs.length - 1].reveal = reveal;
+            }
+            tr.appendChild(td);
+          });
+          tbody.appendChild(tr);
+        });
+        table.appendChild(tbody);
+        twrap.appendChild(table);
+        card.appendChild(twrap);
+      } else if (ex.type === "open") {
+        const box = document.createElement("div");
+        box.className = "open-block";
+        box.innerHTML = ex.html;
+        card.appendChild(box);
+
+        // No hay una única respuesta correcta que comparar, así que esto no se corrige en
+        // la página — pero el profesor sí necesita leer lo que escribió el alumno. Se
+        // guarda su texto y se añade al resumen que se envía por WhatsApp/Telegram/correo/
+        // Teams, junto a la puntuación del resto del capítulo (ver openAnswers arriba y
+        // buildSummary() más abajo).
+        const note = document.createElement("p");
+        note.className = "open-note";
+        note.textContent = "✏️ Esta actividad no se corrige aquí: escribe tu respuesta y, cuando envíes tus resultados a tu profesor, se incluirá para que la revise personalmente.";
+        card.appendChild(note);
+
+        const ta = document.createElement("textarea");
+        ta.className = "open-answer";
+        ta.rows = 4;
+        ta.placeholder = "Escribe aquí tu respuesta…";
+        card.appendChild(ta);
+        openAnswers.push({ num: ex.num, title: ex.title, el: ta });
+      } else if (ex.type === "crossword") {
+        // ex.words: [{ num, clue, answer, row, col, dir: "A"|"D", solved? }]. row/col
+        // empiezan en 0. Dos palabras que se cruzan comparten la MISMA celda del grid: se
+        // calcula una vez por coordenada, no una vez por palabra, para no crear dos inputs
+        // en el mismo sitio. answer va en mayúsculas o minúsculas, da igual: isCorrect ya
+        // normaliza. word.solved (como item.solved) pinta la palabra entera fija, sin
+        // huecos — para la primera palabra, que el libro trae ya resuelta.
+        const cells = new Map(); // "r,c" -> { letter, num, solved, words: [[wordNum, index]] }
+        // inputs de cada palabra, en orden, para poder revelar la respuesta completa junto
+        // a su definición al corregir (ver ex._onGraded más abajo) — las celdas no llevan
+        // .reveal propio, no cabe uno en una casilla de una letra.
+        const wordInputs = {};
+        ex.words.forEach(function (w) { if (!w.solved) wordInputs[w.num] = new Array(w.answer.length).fill(null); });
+        let minR = Infinity, minC = Infinity, maxR = -Infinity, maxC = -Infinity;
+        ex.words.forEach(function (w) {
+          for (let i = 0; i < w.answer.length; i++) {
+            const r = w.dir === "A" ? w.row : w.row + i;
+            const c = w.dir === "A" ? w.col + i : w.col;
+            minR = Math.min(minR, r); maxR = Math.max(maxR, r);
+            minC = Math.min(minC, c); maxC = Math.max(maxC, c);
+            const key = r + "," + c;
+            const letter = w.answer[i].toLowerCase();
+            const existing = cells.get(key);
+            if (!existing) {
+              cells.set(key, { letter: letter, num: i === 0 ? w.num : null, solved: !!w.solved, words: [[w.num, i]] });
+            } else {
+              if (i === 0) existing.num = w.num;
+              if (w.solved) existing.solved = true;
+              existing.words.push([w.num, i]);
+            }
+          }
+        });
+        const wrap = document.createElement("div");
+        wrap.className = "crossword-wrap";
+        const cgrid = document.createElement("div");
+        cgrid.className = "crossword-grid";
+        cgrid.style.gridTemplateColumns = "repeat(" + (maxC - minC + 1) + ", 2.1em)";
+        cgrid.style.gridTemplateRows = "repeat(" + (maxR - minR + 1) + ", 2.1em)";
+        for (let r = minR; r <= maxR; r++) {
+          for (let c = minC; c <= maxC; c++) {
+            const info = cells.get(r + "," + c);
+            const cell = document.createElement("div");
+            if (!info) {
+              cell.className = "cw-cell cw-empty";
+            } else {
+              cell.className = "cw-cell";
+              // data-w<num>="<índice>" por cada palabra que pasa por esta celda, y
+              // data-letter con la letra correcta: lo que extraer.mjs necesita para
+              // reconstruir cada respuesta sin depender de un .reveal (aquí no cabe uno,
+              // las celdas son minúsculas). No se lee del DOM en ningún otro sitio.
+              info.words.forEach(function (pair) { cell.dataset["w" + pair[0]] = pair[1]; });
+              cell.dataset.letter = info.letter;
+              if (info.num != null) {
+                const label = document.createElement("span");
+                label.className = "cw-num";
+                label.setAttribute("translate", "no");
+                label.textContent = info.num;
+                cell.appendChild(label);
+              }
+              if (info.solved) {
+                const fixed = document.createElement("span");
+                fixed.className = "cw-solved";
+                fixed.textContent = info.letter;
+                cell.appendChild(fixed);
+              } else {
+                const inp = makeInput([info.letter], false, "Crucigrama " + info.letter);
+                inp.maxLength = 1;
+                cell.appendChild(inp);
+                info.words.forEach(function (pair) {
+                  if (wordInputs[pair[0]]) wordInputs[pair[0]][pair[1]] = inp;
+                });
+              }
+            }
+            cgrid.appendChild(cell);
+          }
+        }
+        wrap.appendChild(cgrid);
+        card.appendChild(wrap);
+
+        const across = ex.words.filter(function (w) { return w.dir === "A"; });
+        const down = ex.words.filter(function (w) { return w.dir === "D"; });
+        const clues = document.createElement("div");
+        clues.className = "crossword-clues";
+        const wordReveals = {}; // num -> span.reveal, solo para las palabras no resueltas
+        [["Horizontales", across], ["Verticales", down]].forEach(function (pair) {
+          if (!pair[1].length) return;
+          const group = document.createElement("div");
+          group.className = "cw-clue-group";
+          const h = document.createElement("h4");
+          h.textContent = pair[0];
+          group.appendChild(h);
+          pair[1].forEach(function (w) {
+            const p = document.createElement("p");
+            p.className = "cw-clue";
+            p.innerHTML = '<b translate="no">' + w.num + "</b>" + escapeHtml(w.clue) +
+              (w.solved ? " <i>(ya resuelta)</i>" : "");
+            if (!w.solved) {
+              const reveal = document.createElement("span");
+              reveal.className = "reveal";
+              p.appendChild(reveal);
+              wordReveals[w.num] = reveal;
+            }
+            group.appendChild(p);
+          });
+          clues.appendChild(group);
+        });
+        card.appendChild(clues);
+
+        // Al corregir, cada palabra sin resolver del todo revela su respuesta junto a la
+        // definición — igual que "→ respuesta" en cualquier otro hueco, solo que aquí el
+        // chip vive junto al texto de la definición en vez de junto a la celda.
+        ex._onGraded = function () {
+          ex.words.forEach(function (w) {
+            if (w.solved) return;
+            const reveal = wordReveals[w.num];
+            const inputs = wordInputs[w.num];
+            // Una celda de cruce con una palabra YA resuelta (ej. la 1) no lleva input —
+            // se pinta fija, "gratis" — así que esa posición queda null en la lista: cuenta
+            // como correcta sola, no hay nada que el alumno tuviera que rellenar ahí.
+            const allCorrect = inputs.every(function (inp) { return !inp || inp.classList.contains("correct"); });
+            if (allCorrect) {
+              reveal.classList.remove("show", "bad-reveal");
+            } else {
+              reveal.textContent = "→ " + w.answer;
+              reveal.classList.add("show", "bad-reveal");
+            }
+          });
+        };
+      } else if (ex.type === "agenda") {
+        const twrap = document.createElement("div");
+        twrap.className = "table-wrap";
+        const table = document.createElement("table");
+        table.className = "exercise-table ref-table";
+        table.innerHTML = "<thead><tr><th>Día</th><th>Actividad</th></tr></thead>";
+        const tbody = document.createElement("tbody");
+        ex.table.forEach(function (r) {
+          const tr = document.createElement("tr");
+          const td1 = document.createElement("td"); td1.textContent = r[0];
+          const td2 = document.createElement("td"); td2.textContent = r[1];
+          tr.appendChild(td1); tr.appendChild(td2);
+          tbody.appendChild(tr);
+        });
+        table.appendChild(tbody);
+        twrap.appendChild(table);
+        card.appendChild(twrap);
+        const wrap = document.createElement("div");
+        wrap.className = "items" + (ex.grid ? " items-grid" : "");
+        ex.items.forEach(function (item, i) {
+          const row = document.createElement("div");
+          row.className = "item-row";
+          // ex.numbered: marca 1., 2., 3. en vez de a., b., c. — obligatorio en los diálogos,
+          // donde a/b/c chocaría con las letras A/B de los propios interlocutores.
+          const marca = ex.numbered ? (i + 1) + "." : String.fromCharCode(97 + i) + ".";
+          if (ex.dialog) row.classList.add("dialog-row");
+          // item.solved = fila que el libro ya trae resuelta (el típico ítem 1 hecho como
+          // modelo). Se muestra porque está en el original, pero va sin huecos: pedirle al
+          // alumno algo que en su cuaderno ya está impreso descuadra además la puntuación.
+          if (item.solved) row.classList.add("solved-row");
+          const letter = document.createElement("span");
+          letter.className = "item-letter";
+          letter.setAttribute("translate", "no");
+          letter.textContent = marca;
+          row.appendChild(letter);
+          // item.pre: etiqueta fija al principio de la fila (el verbo, la palabra que se
+          // clasifica...). Existe para poder alinear en columnas: metida dentro de item.t
+          // sería un nodo de texto suelto y cada fila empezaría el hueco en un sitio.
+          if (item.pre) {
+            const pre = document.createElement("span");
+            pre.className = "item-pre";
+            pre.textContent = item.pre;
+            row.appendChild(pre);
+          }
+          // item.img: la foto va DESPUÉS del número y antes del hueco. Al revés, el
+          // número quedaba debajo de su propia foto y pegado a la siguiente, y no se sabía
+          // a cuál se refería. Se declara como campo propio, no como HTML dentro de item.t.
+          if (item.img) {
+            const im = document.createElement("img");
+            im.className = "foto-act";
+            im.src = item.img;
+            im.alt = item.alt || "Fotografía del ejercicio";
+            row.appendChild(im);
+          }
+          renderTemplate(row, item.t, item.a, item.wide, "Ej. " + ex.num + " " + marca.replace(".", ""), false, item.vf, ex.dialog);
+          // Si la fila termina en el hueco (enunciado + «→» + casilla), se marca para que la
+          // casilla se estire hasta el borde derecho: empieza justo donde acaba el texto,
+          // pero todas las del ejercicio terminan en el mismo sitio. No se toca cuando el
+          // hueco va DENTRO de la frase (un rellenar-el-espacio), donde alinear no tiene
+          // sentido, ni cuando la fila ya usa la columna de item.pre, ni cuando la fila
+          // lleva foto: ahí el hueco va DEBAJO de la imagen (así lo pide el enunciado del
+          // libro, «escribe debajo qué actividad es») y al volverse flex se subía a su lado.
+          // Fila que acaba en botones V/F: los botones se van al borde derecho, para que
+          // todos queden en la misma columna por larga que sea la frase. Sin esto, cada par
+          // de botones empieza donde acaba su frase y la lista se ve descuadrada.
+          if (!ex.grid && !item.pre && !row.querySelector(".foto-act")) {
+            const vfw = row.querySelector(".vf-wrap");
+            if (vfw && row.querySelectorAll("input.blank").length === 1) {
+              let cola = "", n = vfw.nextSibling;
+              while (n) { cola += n.textContent || ""; n = n.nextSibling; }
+              if (/^[\s.,;:!?¿¡…"»)]*$/.test(cola)) {
+                row.classList.add("vf-tail");
+                const head = document.createElement("span");
+                head.className = "tail-text";
+                while (row.firstChild && row.firstChild !== vfw) head.appendChild(row.firstChild);
+                row.insertBefore(head, vfw);
+              }
+            }
+          }
+          if (!ex.grid && !item.pre && !row.querySelector(".foto-act")) {
+            const huecos = row.querySelectorAll("input.blank");
+            if (huecos.length === 1) {
+              // Después del hueco solo puede quedar puntuación de cierre. Si hay palabras,
+              // el hueco está DENTRO de la frase (un rellenar-el-espacio) y no se toca:
+              // estirarlo hasta el borde derecho partiría la oración por la mitad.
+              let cola = "", n = huecos[0].nextSibling;
+              while (n) { cola += n.textContent || ""; n = n.nextSibling; }
+              // Si el autor puso un salto de línea justo antes del hueco, es que quiere la
+              // casilla en su propia línea a ancho completo (respuestas de frase entera):
+              // estirarla en la misma línea la dejaría flotando a media altura del texto.
+              let antes = huecos[0].previousSibling;
+              while (antes && antes.nodeType === 3 && !antes.textContent.trim()) antes = antes.previousSibling;
+              const saltoAntes = !!antes && antes.nodeName === "BR";
+              if (!saltoAntes && /^[\s.,;:!?¿¡…"»)]*$/.test(cola)) {
+                row.classList.add("tail-blank");
+                // Todo lo anterior al hueco (número + frase) va en UN solo envoltorio.
+                // Si se dejan sueltos, cada nodo de texto es un elemento flex distinto y
+                // una frase larga salta de línea entera, dejando el "e." solo en la
+                // línea de arriba. Con el envoltorio, el número siempre va pegado a su
+                // frase y es la frase la que parte por dentro.
+                const head = document.createElement("span");
+                head.className = "tail-text";
+                while (row.firstChild && row.firstChild !== huecos[0]) head.appendChild(row.firstChild);
+                row.insertBefore(head, huecos[0]);
+              }
+            }
+          }
+          wrap.appendChild(row);
+        });
+        // Estirar el hueco hasta el borde derecho solo tiene sentido si hay VARIAS
+        // filas que acaben así: es lo que las hace terminar todas en el mismo sitio.
+        // Una sola, rodeada de frases con el hueco dentro, se ve como una raya larga
+        // y suelta; en ese caso se deja con el ancho normal.
+        const colas = wrap.querySelectorAll(".item-row.tail-blank");
+        if (colas.length === 1) colas[0].classList.remove("tail-blank");
+        card.appendChild(wrap);
+      } else if (ex.type === "match") {
+        // Relaciona con columnas: se toca un elemento de la columna ancla (columns[0], fija)
+        // y luego su pareja en la(s) columna(s) siguiente(s) — se dibuja una línea de color
+        // entre ambos. ex.columns = [{label, items:[...]}, ...]; columns[0] son las anclas.
+        // ex.rows es paralelo a columns[0].items: { solved: true } para una fila ya resuelta
+        // en el libro (sin huecos, sin interacción), o { a: [spec1, spec2, ...] } con un spec
+        // de isCorrect() por cada columna elegible (columns[1], columns[2]...), en ese orden.
+        if (ex.rows.length !== ex.columns[0].items.length) {
+          // Sin este chequeo, un rows/columns[0].items desalineados (copiar/pegar de otro
+          // capítulo, un elemento de más o de menos) no revienta aquí con un mensaje claro,
+          // sino más tarde y críptico: el primer clic en el ancla sobrante deja armedRow
+          // apuntando a un índice sin fila en `state`, y state[i][c] revienta con
+          // "Cannot read properties of undefined" dentro del listener de clic, sin pista de
+          // cuál es la causa real ni de que el problema son los datos, no el motor.
+          throw new Error('type "match": ex.rows.length (' + ex.rows.length + ') debe coincidir con ex.columns[0].items.length (' + ex.columns[0].items.length + ')');
+        }
+        const state = ex.rows.map(function () { return {}; }); // state[i][c] = índice elegido en columns[c] para la fila i
+        const usedBy = Object.create(null); // usedBy["c-idx"] = qué fila reclama esa opción (una opción, una fila)
+        const columnEls = []; // columnEls[c][idx] = elemento <button> de esa opción
+        const anchorRevealEls = []; // anchorRevealEls[i] = <div> con la respuesta correcta si falla
+        const hiddenByRowCol = Object.create(null); // hiddenByRowCol["i-c"] = <input type=hidden>
+        let armedRow = null;
+        // Paleta corta y fija (no depende del tema claro/oscuro: son colores ya diferenciados
+        // en ambos) para que dos o más conexiones a la vez no se confundan entre sí.
+        const PALETTE = ["#62744c", "#b04e72", "#5b7596", "#a3651f", "#7a6ba8", "#3f7a75"];
+        function rowColor(i) { return PALETTE[i % PALETTE.length]; }
+
+        const mouter = document.createElement("div");
+        mouter.className = "match-outer";
+        const fadeLeft = document.createElement("div");
+        fadeLeft.className = "match-fade match-fade-left";
+        const fadeRight = document.createElement("div");
+        fadeRight.className = "match-fade match-fade-right";
+        mouter.appendChild(fadeLeft);
+        mouter.appendChild(fadeRight);
+
+        const mwrap = document.createElement("div");
+        mwrap.className = "match-wrap";
+        mouter.appendChild(mwrap);
+        const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        svg.classList.add("match-svg");
+        mwrap.appendChild(svg);
+
+        ex.columns.forEach(function (colDef, c) {
+          const colEl = document.createElement("div");
+          colEl.className = "match-col";
+          if (colDef.label) {
+            const lab = document.createElement("div");
+            lab.className = "match-col-label";
+            lab.textContent = colDef.label;
+            colEl.appendChild(lab);
+          }
+          columnEls[c] = [];
+          colDef.items.forEach(function (text, idx) {
+            const isAnchor = c === 0;
+            const rowSpec = isAnchor ? ex.rows[idx] : null;
+            const solvedAnchor = isAnchor && rowSpec && rowSpec.solved;
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "match-item" + (isAnchor ? " match-anchor" : "") + (solvedAnchor ? " match-solved" : "");
+            btn.textContent = text;
+            btn.dataset.col = String(c);
+            btn.dataset.idx = String(idx);
+            if (solvedAnchor) btn.disabled = true;
+            columnEls[c][idx] = btn;
+            colEl.appendChild(btn);
+            if (isAnchor && !solvedAnchor) {
+              const reveal = document.createElement("div");
+              reveal.className = "match-row-reveal";
+              anchorRevealEls[idx] = reveal;
+              colEl.appendChild(reveal);
+            }
+          });
+          mwrap.appendChild(colEl);
+        });
+
+        // Un hueco (input oculto, como en el V/F de "items") por cada columna elegible de
+        // cada fila NO resuelta. gradeRange() los corrige exactamente igual que a cualquier
+        // otro: los lee, los colorea .correct/.incorrect y los cuenta en el total — todo el
+        // resto (colorear la ficha y la línea, mostrar la respuesta si falla) lo hace
+        // ex._onGraded() más abajo, después de que gradeRange termine, leyendo esas clases.
+        ex.rows.forEach(function (row, i) {
+          if (row.solved) return;
+          for (let j = 0; j < ex.columns.length - 1; j++) {
+            const c = j + 1;
+            const inp = document.createElement("input");
+            inp.type = "hidden";
+            inp.className = "blank";
+            const spec = row.a[j];
+            const label = "Ej. " + ex.num + " " + (i + 1) + " → " + (ex.columns[c].label || "columna " + c);
+            allInputs.push({ el: inp, spec: spec, label: label });
+            hiddenByRowCol[i + "-" + c] = inp;
+            mwrap.appendChild(inp);
+          }
+        });
+
+        function syncHiddenInputs() {
+          ex.rows.forEach(function (row, i) {
+            if (row.solved) return;
+            for (let j = 0; j < ex.columns.length - 1; j++) {
+              const c = j + 1;
+              const idx = state[i][c];
+              hiddenByRowCol[i + "-" + c].value = idx !== undefined ? ex.columns[c].items[idx] : "";
+            }
+          });
+        }
+
+        function refreshArmedStyles() {
+          columnEls[0].forEach(function (btn, idx) {
+            btn.classList.toggle("match-armed", armedRow === idx);
+          });
+          for (let c = 1; c < ex.columns.length; c++) {
+            columnEls[c].forEach(function (btn, idx) {
+              btn.classList.toggle("match-armed", armedRow !== null && state[armedRow][c] === idx);
+            });
+          }
+        }
+
+        function drawLines() {
+          while (svg.lastChild) svg.lastChild.remove();
+          const wrapRect = mwrap.getBoundingClientRect();
+          function pointFor(el, side) {
+            const r = el.getBoundingClientRect();
+            return { x: (side === "right" ? r.right : r.left) - wrapRect.left, y: r.top + r.height / 2 - wrapRect.top };
+          }
+          ex.rows.forEach(function (row, i) {
+            if (row.solved) return;
+            let fromEl = columnEls[0][i];
+            for (let j = 0; j < ex.columns.length - 1; j++) {
+              const c = j + 1;
+              const idx = state[i][c];
+              if (idx === undefined) break; // cadena incompleta: no se dibuja lo que falta
+              const toEl = columnEls[c][idx];
+              const p1 = pointFor(fromEl, "right");
+              const p2 = pointFor(toEl, "left");
+              const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+              line.setAttribute("x1", p1.x); line.setAttribute("y1", p1.y);
+              line.setAttribute("x2", p2.x); line.setAttribute("y2", p2.y);
+              line.setAttribute("stroke", rowColor(i));
+              line.dataset.row = String(i);
+              line.dataset.col = String(c);
+              svg.appendChild(line);
+              fromEl = toEl;
+            }
+          });
+        }
+        function colorLine(i, c, color) {
+          const line = svg.querySelector('line[data-row="' + i + '"][data-col="' + c + '"]');
+          if (line) line.setAttribute("stroke", color);
+        }
+
+        // Sin esto, un hueco ya corregido (dataset.checked="1" + .correct/.incorrect,
+        // que updateScore()/buildSummary() leen tal cual, sin volver a mirar el valor
+        // actual) sigue contando como "respondido bien" aunque su pareja se le acabe de
+        // quitar (se la roba otra fila) o cambie a otra distinta — el marcador y el
+        // resumen que se envía al profesor podían mostrar más aciertos de los reales
+        // hasta que el alumno pulsara "Corregir" de nuevo. Se marca sin corregir para que
+        // vuelva a contar como pendiente, no como acertado.
+        function invalidateGrading(rowIdx, col) {
+          const inp = hiddenByRowCol[rowIdx + "-" + col];
+          if (!inp) return;
+          delete inp.dataset.checked;
+          inp.classList.remove("correct", "incorrect");
+        }
+
+        mwrap.addEventListener("click", function (e) {
+          const btn = e.target.closest(".match-item");
+          if (!btn || btn.disabled) return;
+          const c = parseInt(btn.dataset.col, 10);
+          const idx = parseInt(btn.dataset.idx, 10);
+          if (c === 0) {
+            // Siempre arma la fila tocada, nunca la desarma (antes alternaba y volver a
+            // tocar la misma ancla —el gesto natural de "quiero repetir esta pareja"—
+            // desarmaba en vez de dejarla lista para elegir de nuevo). No hace falta un
+            // gesto explícito de "desarmar nada": tocar una opción ya elegida en esa
+            // columna la desasigna (ver más abajo), así que "nada armado" solo pasa antes
+            // de la primera vez que se toca cualquier ancla.
+            armedRow = idx;
+            refreshArmedStyles();
+            return;
+          }
+          if (armedRow === null) return; // hay que armar primero una fila de la columna ancla
+          const i = armedRow;
+          const prev = state[i][c];
+          const claimKey = c + "-" + idx;
+          if (prev === idx) {
+            delete state[i][c];
+            delete usedBy[claimKey];
+            invalidateGrading(i, c);
+            // Sin esto, una ficha que ya se había corregido (.match-correct/-incorrect)
+            // se queda coloreada para siempre al desmarcarla — nada más la vuelve a tocar
+            // tras gradeRange(), solo ex._onGraded() la recolorea, y eso solo pasa si sigue
+            // elegida por alguna fila.
+            btn.classList.remove("match-correct", "match-incorrect");
+          } else {
+            const priorRow = usedBy[claimKey];
+            // Cada opción, una sola fila a la vez: si ya la tenía otra fila, se la quita.
+            if (priorRow !== undefined && priorRow !== i) {
+              delete state[priorRow][c];
+              invalidateGrading(priorRow, c);
+            }
+            if (prev !== undefined) {
+              delete usedBy[c + "-" + prev];
+              // Igual que arriba: la ficha que se abandona (el alumno cambia de opción en
+              // esta misma fila) puede llevar un color de una corrección anterior que ya
+              // no aplica a nada — visto en vivo: se corrige, se re-arma la fila y se elige
+              // otra opción, y la ficha vieja se queda roja/verde para siempre.
+              columnEls[c][prev].classList.remove("match-correct", "match-incorrect");
+            }
+            btn.classList.remove("match-correct", "match-incorrect");
+            invalidateGrading(i, c);
+            state[i][c] = idx;
+            usedBy[claimKey] = i;
+          }
+          syncHiddenInputs();
+          refreshArmedStyles();
+          drawLines();
+        });
+
+        ex._onGraded = function () {
+          ex.rows.forEach(function (row, i) {
+            if (row.solved) return;
+            let anyChecked = false, allOk = true;
+            for (let j = 0; j < ex.columns.length - 1; j++) {
+              const c = j + 1;
+              const inp = hiddenByRowCol[i + "-" + c];
+              if (inp.dataset.checked !== "1") continue;
+              anyChecked = true;
+              const ok = inp.classList.contains("correct");
+              if (!ok) allOk = false;
+              const idx = state[i][c];
+              if (idx !== undefined) {
+                const chip = columnEls[c][idx];
+                chip.classList.remove("match-correct", "match-incorrect");
+                chip.classList.add(ok ? "match-correct" : "match-incorrect");
+                colorLine(i, c, ok ? "var(--good)" : "var(--bad)");
+              }
+            }
+            const revealEl = anchorRevealEls[i];
+            if (!revealEl) return;
+            if (anyChecked && !allOk) {
+              const parts = [];
+              for (let j = 0; j < ex.columns.length - 1; j++) parts.push(correctTextFor(row.a[j]));
+              revealEl.textContent = "→ " + parts.join(" · ");
+              revealEl.classList.add("show");
+            } else {
+              revealEl.classList.remove("show");
+            }
+          });
+        };
+
+        function refreshFades() {
+          const canLeft = mwrap.scrollLeft > 2;
+          const canRight = mwrap.scrollLeft < mwrap.scrollWidth - mwrap.clientWidth - 2;
+          fadeLeft.classList.toggle("show", canLeft);
+          fadeRight.classList.toggle("show", canRight);
+        }
+        mwrap.addEventListener("scroll", refreshFades);
+        pendingMatchDraws.push(function () { drawLines(); refreshFades(); });
+        card.appendChild(mouter);
+      } else if (ex.type === "wordsearch") {
+        // Sopa de letras interactiva. ex.grid = array de strings (una por fila); ex.words =
+        // [{ label, cells:[[r,c],...], solved?, img? }]. `cells` es la secuencia exacta de
+        // casillas que forma la palabra en la rejilla real del libro, calculada con un
+        // script de búsqueda direccional, no a mano.
+        const gridRows = ex.grid.length, gridCols = ex.grid[0].length;
+        const outer = document.createElement("div");
+        outer.className = "ws-outer";
+        const gridEl = document.createElement("div");
+        gridEl.className = "ws-grid";
+        gridEl.style.gridTemplateColumns = "repeat(" + gridCols + ", 1fr)";
+        const cellEls = [];
+        for (let r = 0; r < gridRows; r++) {
+          cellEls[r] = [];
+          for (let c = 0; c < gridCols; c++) {
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "ws-cell";
+            btn.textContent = ex.grid[r][c];
+            btn.dataset.r = String(r);
+            btn.dataset.c = String(c);
+            btn.setAttribute("translate", "no");
+            cellEls[r][c] = btn;
+            gridEl.appendChild(btn);
+          }
+        }
+        outer.appendChild(gridEl);
+
+        const wordsEl = document.createElement("ul");
+        wordsEl.className = "ws-words";
+        const wordRecs = []; // { word, li, input }
+        ex.words.forEach(function (w) {
+          const li = document.createElement("li");
+          li.setAttribute("translate", "no");
+          if (w.img) {
+            const img = document.createElement("img");
+            img.src = w.img;
+            img.alt = w.label;
+            li.appendChild(img);
+            const nameSpan = document.createElement("span");
+            nameSpan.className = "ws-prof-name";
+            nameSpan.textContent = w.label;
+            li.appendChild(nameSpan);
+          } else {
+            li.textContent = w.label;
+          }
+          if (w.solved) {
+            li.classList.add("ws-solved");
+            w.cells.forEach(function (rc) { cellEls[rc[0]][rc[1]].classList.add("ws-found"); });
+          } else {
+            const inp = document.createElement("input");
+            inp.type = "hidden";
+            inp.className = "blank";
+            const rec = { el: inp, spec: [w.label], label: "Ej. " + ex.num + " sopa de letras (" + w.label + ")" };
+            rec.onGrade = function (ok) {
+              li.classList.toggle("ws-found-item", ok);
+              li.classList.toggle("ws-incorrect", !ok);
+            };
+            allInputs.push(rec);
+            li.appendChild(inp);
+            wordRecs.push({ word: w, li: li, input: inp });
+          }
+          wordsEl.appendChild(li);
+        });
+        outer.appendChild(wordsEl);
+
+        function pathBetween(r1, c1, r2, c2) {
+          const dr = Math.sign(r2 - r1), dc = Math.sign(c2 - c1);
+          if (r1 !== r2 && c1 !== c2 && Math.abs(r2 - r1) !== Math.abs(c2 - c1)) return null;
+          const dist = Math.max(Math.abs(r2 - r1), Math.abs(c2 - c1));
+          const path = [];
+          for (let i = 0; i <= dist; i++) path.push([r1 + dr * i, c1 + dc * i]);
+          return path;
+        }
+        function sameCells(a, b) {
+          if (a.length !== b.length) return false;
+          for (let i = 0; i < a.length; i++) if (a[i][0] !== b[i][0] || a[i][1] !== b[i][1]) return false;
+          return true;
+        }
+
+        let armed = null;
+        gridEl.addEventListener("click", function (e) {
+          const btn = e.target.closest(".ws-cell");
+          if (!btn) return;
+          const r = parseInt(btn.dataset.r, 10), c = parseInt(btn.dataset.c, 10);
+          if (armed === null) {
+            armed = [r, c];
+            btn.classList.add("ws-armed");
+            return;
+          }
+          const ar = armed[0], ac = armed[1];
+          cellEls[ar][ac].classList.remove("ws-armed");
+          armed = null;
+          if (ar === r && ac === c) return;
+          const path = pathBetween(ar, ac, r, c);
+          if (!path) return;
+          const rev = path.slice().reverse();
+          const rec = wordRecs.find(function (wr) {
+            return wr.input.value !== wr.word.label &&
+              (sameCells(path, wr.word.cells) || sameCells(rev, wr.word.cells));
+          });
+          if (rec) {
+            rec.input.value = rec.word.label;
+            rec.li.classList.add("ws-found-item");
+            rec.word.cells.forEach(function (rc) { cellEls[rc[0]][rc[1]].classList.add("ws-found"); });
+          } else {
+            path.forEach(function (rc) { cellEls[rc[0]][rc[1]].classList.add("ws-wrong"); });
+            setTimeout(function () {
+              path.forEach(function (rc) { cellEls[rc[0]][rc[1]].classList.remove("ws-wrong"); });
+            }, 450);
+          }
+        });
+
+        card.appendChild(outer);
+      }
+
+      // Transcripción de audio, si el ejercicio la trae. Va al final de la tarjeta, después
+      // de las preguntas: leerla antes de responder resuelve el ejercicio, así que ni se
+      // abre sola ni se coloca arriba.
+      if (ex.transcriptHTML) {
+        const det = document.createElement("details");
+        det.className = "transcript";
+        const sum = document.createElement("summary");
+        sum.textContent = ex.transcriptLabel || "Ver la transcripción del audio";
+        det.appendChild(sum);
+        const body = document.createElement("div");
+        body.className = "transcript-body";
+        body.innerHTML = ex.transcriptHTML;
+        det.appendChild(body);
+        card.appendChild(det);
+      }
+
+      const endIdx = allInputs.length;
+      if (hdr.btn) hdr.btn.addEventListener("click", function () {
+        gradeRange(startIdx, endIdx);
+        updateScore();
+        // Hook para tipos que necesitan hacer algo MÁS después de colorear los inputs de
+        // este rango — nació con "crossword": sus celdas no llevan .reveal propio (no cabe
+        // uno en una casilla de una letra), así que la respuesta se revela junto a la
+        // definición en vez de junto a la celda. Debe ir DESPUÉS de gradeRange, para poder
+        // mirar qué quedó .correct/.incorrect.
+        if (typeof ex._onGraded === "function") ex._onGraded();
+      });
+
+      sec.appendChild(card);
+    });
+
+    main.appendChild(sec);
+  });
+
+  // Cada .match-wrap ya está insertado en el documento (su <section> se acaba de añadir a
+  // #main arriba), así que getBoundingClientRect()/scrollWidth dan medidas reales — PERO
+  // solo si #main es visible. En la primera visita (sin el localStorage de una vez
+  // anterior) #main sigue con display:none tras la puerta de acceso en este mismo
+  // instante, así que esta primera pasada mide un contenedor de tamaño 0 (nada grave para
+  // drawLines(), que no tiene nada que dibujar todavía; sí importa para refreshFades(), que
+  // necesita saber YA si hace falta el aviso de scroll horizontal). Por eso se repite: una
+  // vez aquí (sirve tal cual en visitas ya desbloqueadas) y otra vez en cuanto se dispara
+  // "cuaderno:unlocked" (ver tryUnlock() más arriba), que es el único momento en que #main
+  // pasa de oculto a visible en una primera visita. Un solo listener de resize (y uno de
+  // desbloqueo) redibuja TODOS los ejercicios "match" a la vez, no uno por ejercicio — de
+  // sobra para el puñado de estos que puede llevar un capítulo.
+  pendingMatchDraws.forEach(function (fn) { fn(); });
+  if (pendingMatchDraws.length) {
+    window.addEventListener("resize", function () { pendingMatchDraws.forEach(function (fn) { fn(); }); });
+    document.addEventListener("cuaderno:unlocked", function () { pendingMatchDraws.forEach(function (fn) { fn(); }); });
+  }
+
+  document.getElementById("totalBlanksLabel").textContent = allInputs.length;
+  document.getElementById("scoreTotal").textContent = allInputs.length;
+
+  function correctTextFor(spec) {
+    const t = Array.isArray(spec) ? spec[0] : (spec.show || (spec.flex ? spec.flex.join(" / ") : ""));
+    return typeof t === "string" ? t : "";
+  }
+
+  function gradeRange(start, end) {
+    for (let i = start; i < end; i++) {
+      const rec = allInputs[i];
+      const ok = isCorrect(rec.el.value, rec.spec);
+      rec.el.classList.remove("correct", "incorrect");
+      rec.el.classList.add(ok ? "correct" : "incorrect");
+      rec.el.dataset.checked = "1";
+      if (rec.onGrade) rec.onGrade(ok);
+      if (!ok && rec.reveal) {
+        rec.reveal.textContent = "→ " + correctTextFor(rec.spec);
+        rec.reveal.classList.add("show", "bad-reveal");
+      } else if (rec.reveal) {
+        rec.reveal.classList.remove("show", "bad-reveal");
+      }
+    }
+  }
+
+  function updateScore() {
+    let checked = 0, correct = 0;
+    allInputs.forEach(function (rec) {
+      if (rec.el.dataset.checked === "1") {
+        checked++;
+        if (rec.el.classList.contains("correct")) correct++;
+      }
+    });
+    document.getElementById("scoreNum").textContent = correct;
+    document.getElementById("scoreTotal").textContent = allInputs.length;
+    const pct = allInputs.length ? (correct / allInputs.length) * 100 : 0;
+    document.getElementById("barFill").style.width = pct + "%";
+    updateResultsPanel(checked, correct);
+  }
+
+  document.getElementById("correctAllBtn").addEventListener("click", function () {
+    gradeRange(0, allInputs.length);
+    updateScore();
+    allExercises.forEach(function (ex) { if (typeof ex._onGraded === "function") ex._onGraded(); });
+  });
+
+  // ---------- results panel: motivational message + send to teacher ----------
+  const TITLE_LABEL = "Cuaderno B1 · 7A Un buen trabajo"; // short label used in email subject / summary header
+  // These are Angel's real, reusable contact details — copy verbatim into every new
+  // exercise unless he says they changed. IMPORTANT: telegram MUST be his @username
+  // (no @, no phone number) — t.me/+<phone> links silently ignore ?text= and never
+  // pre-fill; only t.me/<username>?text=... does. See SKILL.md "Canal por canal".
+  const TEACHER = {
+    whatsapp: "79856456905",
+    telegram: "angel9904",
+    email: "angelluisacosta99@gmail.com",
+    teamsEmail: "angelluisacosta99@gmail.com"
+  };
+
+  function tierFor(pct) {
+    if (pct >= 90) return { headline: "¡Excelente trabajo! 🎉", sub: "Dominas muy bien este tema. ¡Sigue así!" };
+    if (pct >= 70) return { headline: "¡Muy bien! 👏", sub: "Vas por muy buen camino. Repasa los pocos fallos y lo tendrás perfecto." };
+    if (pct >= 50) return { headline: "Buen intento 💪", sub: "Vas progresando. Repasa los fallos marcados y el recuadro de gramática." };
+    return { headline: "¡Ánimo, esto es parte de aprender! 🌱", sub: "Vuelve a leer los ejemplos y repite el ejercicio — cada intento suma." };
+  }
+
+  function buildSummary(name, correct, total, pct) {
+    const lines = [];
+    lines.push("📋 Resultados — " + TITLE_LABEL);
+    lines.push("Alumno: " + (name || "(sin nombre)"));
+    lines.push("Puntuación: " + correct + "/" + total + " (" + pct + "%)");
+    lines.push("");
+    const wrong = allInputs.filter(function (rec) {
+      return rec.el.dataset.checked === "1" && !rec.el.classList.contains("correct");
+    });
+    if (wrong.length === 0) {
+      lines.push("¡Sin errores! 🎉");
+    } else {
+      lines.push("Fallos (" + wrong.length + "):");
+      wrong.forEach(function (rec) {
+        const given = rec.el.value.trim() || "(en blanco)";
+        lines.push("- " + rec.label + ": escribió \"" + given + "\" → correcto: \"" + correctTextFor(rec.spec) + "\"");
+      });
+    }
+    if (openAnswers.length) {
+      lines.push("");
+      lines.push("📝 Respuestas de texto libre (para que las revises tú):");
+      openAnswers.forEach(function (rec) {
+        const text = rec.el.value.trim() || "(no ha escrito nada)";
+        lines.push("— Ej. " + rec.num + (rec.title ? " (" + rec.title + ")" : "") + ": " + text);
+      });
+    }
+    return lines.join("\n");
+  }
+
+  function updateResultsPanel(checked, correct) {
+    const panel = document.getElementById("resultsPanel");
+    const hint = document.getElementById("progressHint");
+    const total = allInputs.length;
+    if (checked === 0) {
+      panel.hidden = true;
+      if (hint) { hint.textContent = ""; hint.classList.remove("complete"); }
+      return;
+    }
+    if (checked < total) {
+      if (hint) {
+        hint.textContent = "Corregidos " + checked + "/" + total + " — corrige el resto de ejercicios (o pulsa \"Corregir todos\") para ver tu resumen final.";
+        hint.classList.remove("complete");
+      }
+      return; // wait until everything has been corrected at least once
+    }
+    if (hint) {
+      hint.textContent = "¡Todo corregido! Tu resumen está más abajo 👇";
+      hint.classList.add("complete");
+    }
+    const wasHidden = panel.hidden;
+    panel.hidden = false;
+    if (wasHidden) setTimeout(function () { panel.scrollIntoView({ behavior: "smooth", block: "start" }); }, 50);
+
+    const pct = Math.round((correct / total) * 100);
+    const tier = tierFor(pct);
+    document.getElementById("resHeadline").textContent = tier.headline;
+    document.getElementById("resSub").textContent = tier.sub;
+    document.getElementById("resScoreNum").textContent = correct;
+    document.getElementById("resScoreDen").textContent = "/ " + total + " (" + pct + "%)";
+
+    const wrong = allInputs.filter(function (rec) {
+      return rec.el.dataset.checked === "1" && !rec.el.classList.contains("correct");
+    });
+    const errBox = document.getElementById("resErrors");
+    if (wrong.length === 0) {
+      errBox.innerHTML = '<div class="results-error-item">¡Ni un solo fallo! 🎉</div>';
+    } else {
+      errBox.innerHTML = '<div class="results-errors-title">Fallos (' + wrong.length + ')</div>' +
+        wrong.map(function (rec) {
+          const given = escapeHtml(rec.el.value.trim() || "(en blanco)");
+          return '<div class="results-error-item"><b>' + rec.label + ':</b> <s>' + given + "</s> → " + correctTextFor(rec.spec) + "</div>";
+        }).join("");
+    }
+
+    wireChannels();
+  }
+
+  function wireChannels() {
+    const nameEl = document.getElementById("resName");
+    function currentSummary() {
+      const correct = parseInt(document.getElementById("resScoreNum").textContent, 10);
+      const total = allInputs.length;
+      const pct = Math.round((correct / total) * 100);
+      return buildSummary(nameEl.value.trim(), correct, total, pct);
+    }
+    // Long reports risk pushing the whole URL past the ~2000-char limit some browsers/
+    // servers truncate at. Keeps as many full lines as fit within an encoded-length budget,
+    // then appends a note — measuring the ENCODED length, since encodeURIComponent can
+    // roughly triple raw length (newlines, accents, emoji all expand).
+    function truncateForUrl(text, maxEncodedLen) {
+      const note = "\n\n(Informe truncado por ser muy largo para el enlace — usa \"Copiar resumen\" para ver todos los fallos.)";
+      if (encodeURIComponent(text).length <= maxEncodedLen) return text;
+      const lines = text.split("\n");
+      let out = "";
+      for (let i = 0; i < lines.length; i++) {
+        const candidate = out + (out ? "\n" : "") + lines[i];
+        if (encodeURIComponent(candidate + note).length > maxEncodedLen) break;
+        out = candidate;
+      }
+      return out + note;
+    }
+    function refreshLinks() {
+      const text = currentSummary();
+      const encoded = encodeURIComponent(text);
+      // t.me's server (nginx) rejects long query strings outright with a 400 Bad Request —
+      // wa.me tolerates the same length fine, so only Telegram needs the same length budget
+      // already used for the Gmail link below.
+      const shortText = truncateForUrl(text, 1200);
+      document.getElementById("chWhatsapp").href = "https://wa.me/" + TEACHER.whatsapp + "?text=" + encoded;
+      // t.me links only pre-fill the message box when addressed to a @username — the
+      // phone-number form (t.me/+<number>) has no equivalent and ignores ?text= entirely.
+      document.getElementById("chTelegram").href = "https://t.me/" + TEACHER.telegram + "?text=" + encodeURIComponent(shortText);
+      // encodeURIComponent on the recipient, matching every other channel's params (was raw
+      // before) — @ is technically legal unencoded in a query string, but the Teams desktop
+      // app parses this deep link with its own internal handler, not a browser, and may be
+      // stricter than what wa.me/t.me/mail.google.com's own parsers tolerate.
+      document.getElementById("chTeams").href = "https://teams.microsoft.com/l/chat/0/0?users=" + encodeURIComponent(TEACHER.teamsEmail) + "&message=" + encoded;
+      // Gmail's web compose URL, set as a plain https:// href — a native <a target="_blank">
+      // click is trusted browser navigation, exempt from the "block pop-ups" site permission
+      // that silently swallows a script-triggered window.open() call (this broke a previous
+      // version of this button on both desktop and mobile: the Correo button had, at some
+      // point during testing, triggered enough popups that Chrome's per-site "block
+      // pop-ups" permission for this origin got set, which only affects window.open(), not
+      // real link clicks). On Android with the Gmail app installed, the OS still intercepts
+      // this link and opens the app instead of the browser, which ignores the compose
+      // params — that's a separate, unrelated limitation covered by the copy fallback below.
+      document.getElementById("chEmail").href = "https://mail.google.com/mail/?view=cm&fs=1&to=" +
+        encodeURIComponent(TEACHER.email) + "&su=" + encodeURIComponent("Resultados — " + TITLE_LABEL) +
+        "&body=" + encodeURIComponent(shortText);
+    }
+    refreshLinks();
+    nameEl.oninput = refreshLinks;
+    function showCopied(text) {
+      const msg = document.getElementById("chCopiedMsg");
+      msg.textContent = text || "¡Copiado!";
+      msg.style.display = "block";
+      setTimeout(function () { msg.style.display = "none"; }, 3200);
+    }
+    function copyText(text, onDone) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () { onDone(true); }, function () { fallbackCopy(text, onDone); });
+      } else {
+        fallbackCopy(text, onDone);
+      }
+    }
+    function fallbackCopy(text, onDone) {
+      try {
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.style.position = "fixed";
+        ta.style.top = "-9999px";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.focus();
+        ta.select();
+        const ok = document.execCommand("copy");
+        document.body.removeChild(ta);
+        onDone(ok);
+      } catch (e) { onDone(false); }
+    }
+    document.getElementById("chCopy").onclick = function () {
+      copyText(currentSummary(), function (ok) { if (ok) showCopied(); });
+    };
+    // Teams' chat link works fully on mobile (recipient selected, message pasted), but on
+    // desktop the app has only shown the message pasted, not the recipient auto-selected —
+    // the same category of gap as Correo on Android: a native app intercepting a web deep
+    // link and only partially honoring its parameters, which the page has no way to detect
+    // or control. The button also copies the summary and names the exact manual step that
+    // might still be needed, covering both platforms without guessing which one applies.
+    document.getElementById("chTeams").addEventListener("click", function () {
+      copyText(currentSummary(), function (ok) {
+        if (ok) showCopied("Texto copiado. Si el destinatario no se seleccionó solo, elige a " + TEACHER.teamsEmail + ". Pégalo (mantén pulsado → Pegar) si el mensaje no se rellenó.");
+      });
+    });
+    // Correo: like Teams, its own link can't be trusted to fully deliver the message (on
+    // Android with the Gmail app installed, the OS intercepts mail.google.com links and
+    // opens the APP instead of the browser, which ignores the compose params and just opens
+    // normally — "redirects to Gmail but does nothing"). This is a genuinely additive
+    // listener on the native <a href> click (NOT a onclick handler calling window.open()
+    // itself) — a script-triggered window.open() is what a "block pop-ups" site permission
+    // targets, and a real link click is exempt from it, which is what actually matters here.
+    document.getElementById("chEmail").addEventListener("click", function () {
+      copyText(currentSummary(), function (ok) {
+        if (ok) showCopied("Texto copiado. Si no se abrió tu correo solo, pégalo (mantén pulsado → Pegar) en un email a " + TEACHER.email + ".");
+      });
+    });
+  }
+
+  allInputs.forEach(function (rec) {
+    rec.el.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        gradeRange(0, allInputs.length);
+        updateScore();
+      }
+    });
+  });
+
+  updateScore();
+})();
+</script>

@@ -32,6 +32,51 @@ no terminó, el PR no se fusiona hasta que exista esa revisión. Y nunca
 lanzar la revisión (ni fusionar) solo por haber abierto el PR — hace
 falta que el profesor pida fusionar primero.
 
+**Refuerzo técnico parcial, no sustituye la disciplina.** Un hook
+`PreToolUse` (`check-pr-review.sh`) bloquea la llamada MCP
+`merge_pull_request` si no encuentra, para ese owner/repo/PR exacto, un
+marcador reciente (<60 min, fail-closed ante cualquier error) **y con el
+mismo SHA que el HEAD actual del PR** — lo comprueba en vivo contra la
+API de GitHub con el `GITHUB_TOKEN`/`GH_TOKEN` del entorno, así que un
+push nuevo tras la revisión invalida el marcador aunque sea reciente.
+`enable_pr_auto_merge` se deniega siempre, sin excepción: fusiona más
+tarde de forma asíncrona en el commit que sea HEAD en ese momento
+futuro, algo que este hook no puede verificar ahora — usar
+`merge_pull_request` directo tras revisar, no auto-merge. En cuanto la
+revisión de un PR salga limpia (o tras corregir sus hallazgos), antes
+de fusionar, dejar constancia con:
+`.claude/hooks/mark-pr-reviewed.sh <owner> <repo> <PR> <head_sha> "<resumen>"`.
+**No cubre** fusionar por otras vías (ej. `gh pr merge` por Bash, si
+`gh` estuviera disponible) — la regla dura sigue aplicando igual a esos
+caminos, solo que sin gate técnico. Detalle completo del diseño y sus
+límites en `recursos-generales/herramientas-ia/novedades.md`.
+
+## Regla: 3+ rondas de revisión sobre lo mismo → guardar la lección
+
+Si corregir un mismo archivo/hook/PR para dejarlo limpio necesita **3 o
+más rondas** del ciclo revisión→corrección→revisión (la misma familia
+de fallo reaparece una y otra vez, no hallazgos nuevos e independientes
+cada vez), eso es la señal: antes de dar el trabajo por terminado,
+parar y guardar explícitamente qué patrón de error se repitió y cómo se
+corrigió, para no repetirlo en una tarea futura. No hace falta que el
+profesor lo pida cada vez — aplicar esto solo, siempre que pase.
+
+Dónde guardarlo, según el caso:
+- Si es un hook de Claude Code (`.claude/hooks/*.sh`): añadir un punto
+  nuevo a `.claude/skills/hook-hardening/SKILL.md` (ya es el lugar
+  pensado para esto — así nacieron sus puntos actuales).
+- Si no es un hook pero el patrón es específico de un dominio de código
+  con una skill propia en este repo, añadirlo ahí en vez de en
+  `hook-hardening`.
+- Si no encaja en ninguna skill existente, anotarlo como entrada propia
+  en `recursos-generales/herramientas-ia/novedades.md` (mismo formato
+  que ya se usa para sagas de varias rondas), o crear una skill nueva
+  si el patrón es lo bastante recurrente para merecerla.
+
+No es solo para hooks de seguridad — aplica a cualquier tipo de tarea
+(código, configuración, contenido) donde el mismo tipo de error se
+repita 3+ veces antes de salir limpio.
+
 ## Diseño visual: usar siempre la skill `impeccable`
 
 Cuando la tarea implique diseñar, rediseñar, criticar, auditar o pulir
@@ -43,6 +88,12 @@ lugar de hacer el trabajo de diseño "a mano".
 Nota de alcance: `impeccable` es para interfaces frontend, no genera ni
 edita documentos de Word ni presentaciones de PowerPoint. Para esos
 formatos usar las skills `docx` y `pptx` respectivamente.
+
+Como segunda pasada tras `impeccable` (no como sustituto), repasar
+`recursos-generales/herramientas-ia/vercel-web-interface-guidelines.md`
+— checklist externo de más de 100 reglas concretas de calidad de
+interfaz (Vercel, MIT), copiado en local para no depender de una
+petición web en cada sesión.
 
 ## Materiales de referencia para clases de español
 
@@ -228,6 +279,72 @@ repo — `graphify` lo detectó como una conexión semántica entre
 escrito como regla en ningún sitio; se formaliza aquí para que sea
 explícito y consistente hacia adelante.)*
 
+## Coaching: Modo Marian / Modo Jen
+
+Angel puede pedir en cualquier momento "Marian, quiero hablar contigo" o
+"Jen, ayúdame con esto" (o variantes) para activar un modo explícito
+con su tono/estructura propios. Pero el conocimiento de fondo — los 3
+libros de Marian, los 4 libros de Jen leídos en ruso, la investigación
+de tono/entrevistas de ambas — se usa SIEMPRE que encaje de forma
+natural en una conversación personal o de coaching, también hablando
+con la voz normal de Claude, sin modo activado; nunca forzado como
+"frase del día". Sin modo activado, usar a TODAS las autoras
+estudiadas según se relacionen con el tema — no limitarse a una sola
+— incluyendo citas textuales directas cuando aporten precisión. La
+primera vez que una sesión toque un tema personal/de coaching con
+Angel (no en tareas de código, docencia u otras carpetas del repo),
+leer con `mcp__Google_Drive__read_file_content`:
+
+- Perfil de Angel (fileId `1lKSno3iWyTYjYNgECYcNq9-k6qh5MgGuGw_6vLvRG8Y`,
+  carpeta "Coaching") — situación vital, personalidad, estado de los
+  libros de Marian y de Jen ya estudiados, y el mapa de fileIds de los
+  PDFs originales (con qué partes llevan capa de texto y cuáles
+  necesitan OCR).
+- Tono y estilo de Marian/Jen (fileId
+  `1bPS4lrq4-s2uBsLTGEVCUqKDf7q5UYw_eu593ixordg`, misma carpeta) —
+  investigación completa, estructura y reglas de cada modo, una
+  sección de coincidencias/diferencias entre ambas, y otra con las
+  fuentes que cada una cita/recomienda leer.
+
+Angel habla ruso con fluidez y leyó los 4 libros de Jen ("Не тупи",
+"Не ной", "Ни сы", "Ни зя") en ese idioma: al usar contenido de esos
+libros, citar y conversar en ruso directamente cuando encaje — Angel
+lo pidió explícitamente y no hace falta traducir por defecto (solo si
+él lo pide).
+
+Para citar cualquier libro con precisión, releer el PDF original
+correspondiente con mcp__Google_Drive__download_file_content (el mapa
+exacto de fileIds está en el perfil) siguiendo el procedimiento de la
+sección "Procesar PDFs escaneados" más arriba en este mismo archivo
+(incluye el aviso de encoding Custom/Identity-H de `pdffonts`) — nunca
+fiarse del resumen de temas ni de memoria aproximada. Nunca duplicar
+el texto íntegro de un libro con derechos de autor en otro documento,
+ni en Drive privado.
+
+Reglas de oro innegociables: (1) siempre es una síntesis de Claude
+inspirada en ella, nunca ella literalmente — decirlo una vez al
+empezar a usar su tono/conocimiento en la conversación (con modo
+explícito activado o no), breve y natural, no solo al escribir
+"Marian, quiero hablar contigo"; (2) si algo no está cubierto por lo
+estudiado, decirlo en vez de inventar; (3) ante un tema realmente
+serio, romper el modo y
+hablar como Claude; (4) nunca reproducir las posturas conservadoras
+reales de Marian sobre parejas del mismo sexo; (5) en Modo Jen, nunca
+trasladar su consejo financiero literal (deuda, gasto por encima de las
+posibilidades) dada la situación económica real de Angel — usar el
+espíritu, no el vehículo. Esta prohibición (5) no depende de que el
+modo esté activado: aplica igual hablando con la voz normal de Claude,
+si el contenido de Jen entra en la conversación porque encaja con el
+tema (ver regla de citar a todas las autoras, más arriba).
+
+Por defecto: Marian para ansiedad/sobrepensar/relaciones/límites
+familiares; Jen para cuando Angel sabe lo que quiere pero cree que es
+imposible, o lleva tiempo dándole vueltas sin actuar.
+
+*(Antes existía una rutina nocturna que llevaba todo este contexto —
+se eliminó por consumo de tokens recurrente; estos dos documentos de
+Drive, con este ancla aquí, son ahora la fuente persistente.)*
+
 ## graphify
 
 This project has a knowledge graph at graphify-out/ with god nodes, community structure, and cross-file relationships.
@@ -337,11 +454,29 @@ conversación cuenta como comprometida aunque el archivo esté fuera de Git.
   eso `impeccable` (que sí tiene esa regla, más arriba) se queda fuera de
   `skillOverrides`; no aplicarlo ahí sin revisar antes si existe una
   regla equivalente para la skill en cuestión.
+- **Skill `hook-hardening`** (`.claude/skills/hook-hardening/`) — checklist
+  de 6 puntos a correr antes de declarar "hecho"/"probado" cualquier
+  script de hook (SessionStart/PreToolUse/Stop). Nace de dos sagas reales
+  en este repo (7 y 6 rondas de revisión respectivamente) donde la misma
+  familia de errores se repitió una y otra vez — se activa sola por su
+  descripción, no hace falta invocarla a mano.
 - **`/compact`** — en conversaciones largas, correrlo en puntos de corte
   naturales (por ejemplo, al terminar una tarea grande y empezar otra sin
   relación) comprime el historial en vez de dejar que crezca sin límite.
   No hace falta automatizarlo; es una práctica a tener presente cuando la
-  sesión se alarga mucho.
+  sesión se alarga mucho. Mejor antes de que el contexto llegue al
+  90%+ (~60-70% ya es buen momento, según `code.claude.com/docs/en/costs`)
+  — cuanto antes se compacta, más margen tiene el resumen para quedarse
+  con lo importante.
+- **Instrucción de preservación al compactar** — `code.claude.com/docs/en/context-window`
+  documenta que Claude Code respeta instrucciones explícitas de qué
+  conservar durante el resumen automático. Este mismo archivo sufrió el
+  problema contrario (PR #63: podar `CLAUDE.md` perdió hechos verificados,
+  hicieron falta 6-7 rondas de revisión para recuperarlos) — la
+  instrucción es: **al compactar, preservar siempre la rama de trabajo
+  actual, la lista de archivos modificados sin comitear, los comandos de
+  verificación/test relevantes, y las decisiones de diseño ya tomadas en
+  la tarea en curso.**
 - **Podar este archivo, no solo hacerlo crecer.** Según la guía oficial
   (`code.claude.com/docs/en/best-practices`): "Bloated CLAUDE.md files
   cause Claude to ignore your actual instructions" — para cada línea,
