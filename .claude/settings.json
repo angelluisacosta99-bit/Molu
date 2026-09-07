@@ -28,6 +28,15 @@
             "command": "\"$CLAUDE_PROJECT_DIR/.claude/hooks/caveman-mode.sh\""
           }
         ]
+      },
+      {
+        "matcher": "startup",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR/.claude/hooks/sync-main.sh\""
+          }
+        ]
       }
     ],
     "Stop": [

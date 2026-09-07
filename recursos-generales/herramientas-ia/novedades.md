@@ -23,6 +23,201 @@ copias que puedan desincronizarse.
 
 ---
 
+## 2026-09-07 — sync-main.sh: ramas base viejas ya no se quedan sin funciones fusionadas
+
+**Qué pasó:** la sesión "Nivel B2" arrancó desde un commit (rama
+`claude/molu-repo-status-l7y50m`) anterior a que `caveman-mode.sh`
+existiera siquiera en `main` -- `/caveman` no funcionaba ahí, y nada lo
+avisó hasta que Angel preguntó por qué, varias sesiones después. Pidió
+explícitamente arreglarlo para que no vuelva a pasar, de forma
+automática en cada sesión nueva.
+
+**Por qué pasa en general, no solo con caveman:** cada sesión de Claude
+Code Remote puede arrancar desde cualquier commit/rama que se le indique
+al crearla. Si ese punto de partida es anterior a un merge reciente a
+`main` (una skill, un hook, una corrección), esa sesión simplemente no
+tiene ese contenido -- no hay forma de que un archivo fusionado *después*
+de ese commit aparezca por arte de magia en un checkout de *antes*. Eso
+no tiene arreglo desde el propio repo (es cómo funciona git). Lo que sí
+se puede hacer: detectarlo y corregirlo (cuando sea seguro) o avisarlo
+(cuando no lo sea) en el arranque de cada sesión, en vez de descubrirlo
+por sorpresa como pasó aquí.
+
+**Qué es:** `.claude/hooks/sync-main.sh`, nuevo hook `SessionStart` con
+`"matcher": "startup"` (solo arranque real, nunca resume/clear/compact --
+ver por qué abajo). En cada arranque: hace `fetch` de `origin/main` y,
+si la rama actual está detrás:
+- **Árbol de trabajo limpio (incluyendo archivos ignorados sin
+  trackear, ver corrección de revisión más abajo) y sin commits propios
+  que diverjan** (el caso exacto de "Nivel B2": una sesión recién
+  creada, todavía sin su propio trabajo) → fast-forward automático
+  (`git merge --ff-only`).
+- **Árbol sucio (cambios sin comitear O archivos locales ignorados por
+  `.gitignore`), o rama ya con commits propios que divergen de `main`**
+  (el caso normal de cualquier sesión ya trabajando en su propia tarea)
+  → no toca nada, solo avisa con un mensaje corto sugiriendo
+  `git merge origin/main` a mano.
+- Sin red o sin remoto → avisa y sigue, nunca bloquea el arranque.
+
+**Por qué solo `matcher: "startup"`, nunca resume/clear/compact:** un
+merge a mitad de una tarea, con cambios sin comitear en danza, tocaría
+el árbol de trabajo bajo los pies de la sesión -- exactamente el efecto
+secundario que `hook-hardening` (punto 7) pide evitar. En un arranque
+real todavía no hay nada propio que una sesión pueda perder.
+
+**Revisión antes de fusionar, ronda 1 -- hallazgo real, reproducido en
+vivo:** la primera versión comprobaba `git status --porcelain` sin
+`--ignored` -- un archivo local sin trackear que coincide con un
+patrón de `.gitignore` (ej. un `secret.env` propio) es invisible a esa
+comprobación, así que el chequeo de "árbol limpio" lo daba por bueno.
+Si `origin/main` empieza a trackear un archivo en esa misma ruta, `git
+merge --ff-only` lo sobrescribe en silencio, sin conflicto, sin aviso,
+`exit 0` -- **la propia revisión lo reprodujo en vivo** (un `secret.env`
+local real sustituido por el contenido subido, sin ningún mensaje de
+git avisando). Primer arreglo: añadir `--ignored` a la comprobación
+(`git status --porcelain --ignored`), tratando cualquier archivo
+ignorado sin trackear como "árbol no limpio".
+
+**Ronda 2 -- ese primer arreglo, aunque cerraba el hueco, dejaba el
+hook casi permanentemente inútil en este repo en concreto:** verificado
+en vivo contra el propio checkout de este repo, `git status --porcelain
+--ignored` ya devuelve 8 entradas de siempre (`graphify-out/.graphify_*`,
+`graphify-out/cache/`, `.claude/.pr-review-state/`...) -- artefactos
+rutinarios de `graphify`/`check-pr-review.sh`, no trabajo real sin
+comitear. Con el primer arreglo, el chequeo de "árbol limpio" fallaba
+casi siempre en este repo, así que el auto-heal (el propósito entero
+del hook) casi nunca llegaba a dispararse -- ni siquiera en el caso
+exacto de "Nivel B2" que lo motivó. Rediseñado: en vez de un chequeo
+genérico de "¿hay algo raro en el árbol?", una comprobación precisa de
+colisión de rutas -- se compara la lista de archivos que `origin/main`
+cambiaría (`git diff --name-only HEAD..origin/main`) contra los
+archivos locales sin trackear o ignorados (`git status --porcelain
+--ignored=matching`, que sí lista archivo por archivo en vez de
+colapsar directorios). Solo si una ruta aparece en ambas listas se
+bloquea el auto-heal; un artefacto ignorado que no coincide con nada
+de lo que cambiaría ya no bloquea nada. Se apoya además en que `git
+merge --ff-only` ya protege por sí solo, sin ayuda de este script,
+cualquier cambio local sin comitear en un archivo *trackeado*
+(verificado en vivo: aborta limpio, "Your local changes... would be
+overwritten by merge", contenido intacto) -- por eso ya no hacía falta
+un chequeo propio para ese caso, solo para el hueco real (archivos sin
+trackear/ignorados).
+
+**Ronda 3 -- el propio chequeo de colisión de rutas capturaba de más:**
+al no filtrar por el código de estado de `git status --porcelain`
+(`??`/`!!` para sin trackear/ignorado, pero también ` M`/`M ` etc. para
+trackeados modificados), un archivo trackeado modificado sin comitear
+en una ruta que `origin/main` también cambia caía en el mensaje de
+"colisión con archivo sin trackear" -- resultado seguro (no fusionaba
+igual) pero diagnóstico engañoso, atribuyendo a un archivo sin
+trackear algo que en realidad era un cambio trackeado. Corregido
+filtrando solo `^(\?\?|!!) ` antes de comparar rutas.
+
+**Ronda 4 -- otra revisión externa rompió la propia comprobación de
+colisión de rutas de la ronda 2-3, con dos fallos reales, ambos
+reproducidos en vivo:**
+1. **Citado inconsistente.** `git diff --name-only` y `git status
+   --porcelain` no citan igual una ruta con espacio o carácter
+   no-ASCII sin el flag `-z` -- una colisión real (`mi secreto.txt`)
+   salía citada (`"mi secreto.txt"`) de un lado y sin citar del otro,
+   así que la comparación de cadena exacta nunca coincidía y el
+   archivo se sobrescribía igual, sin aviso.
+2. **Colapso de directorios.** `git status --porcelain
+   --ignored=matching` sigue colapsando un directorio entero a una
+   sola línea cuando el patrón de `.gitignore` apunta al directorio
+   (no a archivos sueltos) -- confirmado en vivo contra los propios
+   `.claude/.pr-review-state/`/`graphify-out/cache/` de este repo. Un
+   archivo *dentro* de esos directorios que colisionara con
+   `origin/main` no se habría detectado nunca.
+
+Corregido con `-z` en ambos lados de la comparación (elimina el
+citado) y sustituyendo `git status --porcelain` por `git ls-files
+--others --exclude-standard -z` (sin trackear) + `git ls-files
+--others --ignored --exclude-standard -z` (ignorados) -- `ls-files`
+nunca colapsa un directorio, a diferencia de `status`. Esta es la
+misma familia de error (citado/formato inconsistente entre dos
+comandos de git al comparar rutas) que ya se documentó como lección
+general en `hook-hardening` (punto 9) tras esta saga de 4 rondas sobre
+el mismo archivo -- regla de "3+ rondas" de `CLAUDE.md` aplicada.
+
+**Verificado en vivo, los 9 casos (7 + los 2 de la ronda 4), contra un
+remoto git real (no simulado con texto) tras cada ronda:** rama detrás
+sin commits propios → fast-forward correcto; rama detrás con commit
+propio que diverge → NO fusiona, `HEAD` idéntico, solo avisa; archivo
+*trackeado* modificado sin comitear en la misma ruta que `origin/main`
+cambia → NO fusiona (git lo protege solo), mensaje genérico correcto;
+rama ya al día → sin ningún output; remoto roto → avisa, `exit 0`;
+archivo ignorado sin trackear que SÍ colisiona → NO fusiona, contenido
+local preservado; archivo ignorado sin trackear que NO colisiona (el
+caso real de `graphify-out/`/`.pr-review-state/` de este mismo repo) →
+SÍ fusiona, confirmado también contra el checkout real de `Molu`;
+archivo *dentro* de un directorio colapsado que colisiona → NO fusiona
+tras la ronda 4 (antes de corregir, sí fusionaba y lo perdía); archivo
+ignorado con espacio en el nombre que colisiona → NO fusiona tras la
+ronda 4 (antes, el citado inconsistente lo dejaba pasar). `shellcheck`
+limpio en cada ronda.
+
+**Ronda 6 -- otra revisión externa, sin haber tocado nada más entre
+medias, encontró un tercer bypass real de la misma comprobación de
+colisión:** la comparación solo miraba igualdad exacta de cadena entre
+rutas -- no detecta que `origin/main` añada un archivo trackeado
+*dentro* de una ruta que localmente es un archivo suelto (`foo` local
+como archivo, `origin/main` empieza a trackear `foo/bar.txt`): ninguna
+ruta es igual a la otra, pero el fast-forward destruye `foo` igual para
+convertirlo en carpeta -- reproducido en vivo, misma clase de pérdida
+silenciosa que las rondas anteriores, un nivel de ruta más profundo.
+Corregido comprobando también el prefijo `ruta/` en ambos sentidos, no
+solo la igualdad -- verificado en vivo con un 10º caso (`foo` local
+preservado tras el arreglo). Ampliada la lección del punto 9 de
+`hook-hardening` con esta segunda vuelta sobre el mismo tipo de error.
+
+**Ronda 7 -- exactamente el escenario anticipado arriba, y la decisión
+tomada en consecuencia:** una séptima revisión encontró que la propia
+comparación de listas (`CHANGED_PATHS` contra `LOCAL_STRAY`, un bucle
+anidado en bash sin cota) es O(n×m) sin límite de tamaño -- con una
+rama muy detrás de `main` y muchos archivos sueltos, puede tardar
+segundos o minutos, colgando el arranque de sesión -- justo lo que este
+hook promete no hacer nunca. Medido en vivo: 2000×2000 rutas tardaron
+54,8s. **Decisión: abandonar la comparación precisa entera, no
+parchearla una vez más.** Vuelto al chequeo simple original (¿hay algo
+sin trackear o ignorado en el árbol, sin más?) -- sin comparar nada, no
+puede sufrir ninguna de las 6 clases de bug encontradas (citado,
+colapso de directorios, colisión de prefijo) ni la de rendimiento.
+Coste aceptado: el auto-heal ahora vuelve a disparar menos veces en
+este repo en concreto (cualquier artefacto ignorado presente, colisione
+o no, bloquea el auto-heal) -- el mismo trade-off que la ronda 2 había
+rechazado, pero esta vez aceptado deliberadamente tras ver hasta dónde
+llevaba la alternativa "inteligente". Verificado en vivo: los 6 casos
+esenciales (fast-forward limpio, diverge, trackeado modificado
+preservado, ya al día, remoto roto, artefacto ignorado sin colisión
+ahora también bloquea) más una prueba de rendimiento explícita (2000
+archivos sueltos, misma rama muy detrás) -- completa en 0,022s en vez
+de colgarse. `shellcheck` limpio. Documentado como punto 10 nuevo en
+`hook-hardening` ("antes de comparar/enumerar con precisión en un hook,
+preguntar si el chequeo simple ya basta").
+
+**Balance final tras 7 rondas sobre el mismo archivo, para que quede
+constancia honesta:** cada ronda encontró un bypass real y distinto
+(citado, colapso de directorios, colisión de prefijo, rendimiento) --
+no fue una sola corrección con ruido alrededor, fue una familia
+completa de sutilezas de git agotándose una a una hasta que el coste de
+seguir agotándolas superó el beneficio de la precisión. La lección
+que se lleva de aquí (punto 10 de `hook-hardening`) es más importante
+que el propio hook: cuando el chequeo conservador solo cuesta "actuar
+menos veces" y nunca "perder algo o colgarse", empezar por él y solo
+complicarlo si de verdad hace falta -- no al revés.
+
+**Límite honesto:** esto NO resuelve el caso de "Nivel B2" en sí (esa
+sesión sigue en su rama vieja, sin este hook ahí tampoco, porque su
+checkout es anterior a que este mismo hook exista -- el mismo problema
+que el hook intenta resolver para el futuro no puede resolverse
+retroactivamente para una sesión que ya arrancó). Tampoco fusiona
+cuando una sesión ya tiene trabajo propio divergente -- ahí sigue
+haciendo falta un merge a mano, a propósito, para no fusionar sin
+revisar.
+
+---
+
 ## 2026-08-30 — Carrusel "4 conectores que le dan superpoderes a Claude": revisado, nada que instalar
 
 **Contexto:** Angel compartió una captura de estilo carrusel de redes
