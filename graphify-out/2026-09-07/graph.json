@@ -22,8 +22,8 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 18,
-      "community_name": "css-cascade.mjs",
+      "community": 208,
+      "community_name": "detect-html.mjs",
       "file_type": "code",
       "norm_label": "staticdocument",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
@@ -2600,18 +2600,6 @@
       "source_location": "L1226"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_resolvelengthpx",
-      "label": "resolveLengthPx()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "checks.mjs",
-      "file_type": "code",
-      "norm_label": "resolvelengthpx()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L1252"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_detector_rules_checks_resolveserif",
       "label": "resolveSerif()",
       "_callable": true,
@@ -3200,54 +3188,6 @@
       "source_location": "L121"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_browser_script_parts_assemblelivebrowserscript",
-      "label": "assembleLiveBrowserScript()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "live-server.mjs",
-      "file_type": "code",
-      "norm_label": "assemblelivebrowserscript()",
-      "source_file": ".claude/skills/impeccable/scripts/live/browser-script-parts.mjs",
-      "source_location": "L35"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_browser_script_parts_assertlivebrowserscriptparts",
-      "label": "assertLiveBrowserScriptParts()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "live-server.mjs",
-      "file_type": "code",
-      "norm_label": "assertlivebrowserscriptparts()",
-      "source_file": ".claude/skills/impeccable/scripts/live/browser-script-parts.mjs",
-      "source_location": "L19"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_browser_script_parts_readlivebrowserscriptparts",
-      "label": "readLiveBrowserScriptParts()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "live-server.mjs",
-      "file_type": "code",
-      "norm_label": "readlivebrowserscriptparts()",
-      "source_file": ".claude/skills/impeccable/scripts/live/browser-script-parts.mjs",
-      "source_location": "L28"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_browser_script_parts_resolvelivebrowserscriptparts",
-      "label": "resolveLiveBrowserScriptParts()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "live-server.mjs",
-      "file_type": "code",
-      "norm_label": "resolvelivebrowserscriptparts()",
-      "source_file": ".claude/skills/impeccable/scripts/live/browser-script-parts.mjs",
-      "source_location": "L10"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_server_acknowledgependingevent",
       "label": "acknowledgePendingEvent()",
       "_callable": true,
@@ -3486,18 +3426,6 @@
       "norm_label": "leaseevent()",
       "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
       "source_location": "L166"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_server_loadbrowserscripts",
-      "label": "loadBrowserScripts()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "live-server.mjs",
-      "file_type": "code",
-      "norm_label": "loadbrowserscripts()",
-      "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
-      "source_location": "L345"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_server_recordmanualeditactivity",
@@ -4172,6 +4100,18 @@
       "source_location": "L10"
     },
     {
+      "id": "claude_skills_impeccable_scripts_detector_engines_regex_detect_text_runregexmatchers",
+      "label": "runRegexMatchers()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "detect-url.mjs",
+      "file_type": "code",
+      "norm_label": "runregexmatchers()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/regex/detect-text.mjs",
+      "source_location": "L380"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_detector_engines_visual_screenshot_contrast_capturevisualcontrastcandidate",
       "label": "captureVisualContrastCandidate()",
       "_callable": true,
@@ -4206,6 +4146,30 @@
       "norm_label": "sanitizescreenshotclip()",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/visual/screenshot-contrast.mjs",
       "source_location": "L1"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_findings_finding",
+      "label": "finding()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "detect-url.mjs",
+      "file_type": "code",
+      "norm_label": "finding()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/findings.mjs",
+      "source_location": "L7"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_findings_getap",
+      "label": "getAP()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "detect-url.mjs",
+      "file_type": "code",
+      "norm_label": "getap()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/findings.mjs",
+      "source_location": "L3"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_profile_profiler_createdetectorprofile",
@@ -4326,6 +4290,54 @@
       "norm_label": "summarizedetectorprofile()",
       "source_file": ".claude/skills/impeccable/scripts/detector/profile/profiler.mjs",
       "source_location": "L104"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_registry_antipatterns_filterbyproviders",
+      "label": "filterByProviders()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "detect-url.mjs",
+      "file_type": "code",
+      "norm_label": "filterbyproviders()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
+      "source_location": "L430"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_registry_antipatterns_getantipattern",
+      "label": "getAntipattern()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "detect-url.mjs",
+      "file_type": "code",
+      "norm_label": "getantipattern()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
+      "source_location": "L410"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_registry_antipatterns_getruleenginesupport",
+      "label": "getRuleEngineSupport()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "detect-url.mjs",
+      "file_type": "code",
+      "norm_label": "getruleenginesupport()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
+      "source_location": "L418"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_registry_antipatterns_getrulesforcategory",
+      "label": "getRulesForCategory()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "detect-url.mjs",
+      "file_type": "code",
+      "norm_label": "getrulesforcategory()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
+      "source_location": "L414"
     },
     {
       "id": "claude_skills_impeccable_scripts_hook_lib_applypatchtext",
@@ -6308,18 +6320,6 @@
       "source_location": "L887"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_buildstaticwindow",
-      "label": "buildStaticWindow()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "css-cascade.mjs",
-      "file_type": "code",
-      "norm_label": "buildstaticwindow()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L855"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_collectstaticcssrules",
       "label": "collectStaticCssRules()",
       "_callable": true,
@@ -6536,102 +6536,6 @@
       "source_location": "L406"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticdocument_body",
-      "label": ".body()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "css-cascade.mjs",
-      "file_type": "code",
-      "norm_label": ".body()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L835"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticdocument_constructor",
-      "label": ".constructor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "css-cascade.mjs",
-      "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L800"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticdocument_documentelement",
-      "label": ".documentElement()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "css-cascade.mjs",
-      "file_type": "code",
-      "norm_label": ".documentelement()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L832"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticdocument_getstyle",
-      "label": ".getStyle()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "css-cascade.mjs",
-      "file_type": "code",
-      "norm_label": ".getstyle()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L841"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticdocument_queryselector",
-      "label": ".querySelector()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "css-cascade.mjs",
-      "file_type": "code",
-      "norm_label": ".queryselector()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L824"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticdocument_queryselectorall",
-      "label": ".querySelectorAll()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "css-cascade.mjs",
-      "file_type": "code",
-      "norm_label": ".queryselectorall()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L817"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticdocument_setstyle",
-      "label": ".setStyle()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "css-cascade.mjs",
-      "file_type": "code",
-      "norm_label": ".setstyle()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L838"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticdocument_wrap",
-      "label": ".wrap()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "css-cascade.mjs",
-      "file_type": "code",
-      "norm_label": ".wrap()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L809"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticspecificity",
       "label": "staticSpecificity()",
       "_callable": true,
@@ -6654,18 +6558,6 @@
       "norm_label": "unwrapcssatlayer()",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
       "source_location": "L187"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_detect_html_checkstaticpagetypography",
-      "label": "checkStaticPageTypography()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "css-cascade.mjs",
-      "file_type": "code",
-      "norm_label": "checkstaticpagetypography()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/detect-html.mjs",
-      "source_location": "L43"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_rules_checks_resolvevarrefs",
@@ -7100,6 +6992,18 @@
       "source_location": "L770"
     },
     {
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementglow",
+      "label": "checkElementGlow()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 195,
+      "community_name": "parseRgb",
+      "file_type": "code",
+      "norm_label": "checkelementglow()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
+      "source_location": "L1900"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementglowdom",
       "label": "checkElementGlowDOM()",
       "_callable": true,
@@ -7328,54 +7232,6 @@
       "source_location": "L66"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_complete_completecli",
-      "label": "completeCli()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 196,
-      "community_name": "readLiveServerInfo",
-      "file_type": "code",
-      "norm_label": "completecli()",
-      "source_file": ".claude/skills/impeccable/scripts/live-complete.mjs",
-      "source_location": "L23"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_complete_completethroughserver",
-      "label": "completeThroughServer()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 196,
-      "community_name": "readLiveServerInfo",
-      "file_type": "code",
-      "norm_label": "completethroughserver()",
-      "source_file": ".claude/skills/impeccable/scripts/live-complete.mjs",
-      "source_location": "L53"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_complete_parseargs",
-      "label": "parseArgs()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 196,
-      "community_name": "readLiveServerInfo",
-      "file_type": "code",
-      "norm_label": "parseargs()",
-      "source_file": ".claude/skills/impeccable/scripts/live-complete.mjs",
-      "source_location": "L9"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_complete_readserverinfo",
-      "label": "readServerInfo()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 196,
-      "community_name": "readLiveServerInfo",
-      "file_type": "code",
-      "norm_label": "readserverinfo()",
-      "source_file": ".claude/skills/impeccable/scripts/live-complete.mjs",
-      "source_location": "L49"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_resume_collectmanualapplyfiles",
       "label": "collectManualApplyFiles()",
       "_callable": true,
@@ -7446,42 +7302,6 @@
       "norm_label": "summarizemanualapplyevent()",
       "source_file": ".claude/skills/impeccable/scripts/live-resume.mjs",
       "source_location": "L25"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_session_store_createlivesessionstore",
-      "label": "createLiveSessionStore()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 196,
-      "community_name": "readLiveServerInfo",
-      "file_type": "code",
-      "norm_label": "createlivesessionstore()",
-      "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
-      "source_location": "L7"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_session_store_createlivesessionstore_getreadablejournalpath",
-      "label": "getReadableJournalPath()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 196,
-      "community_name": "readLiveServerInfo",
-      "file_type": "code",
-      "norm_label": "getreadablejournalpath()",
-      "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
-      "source_location": "L22"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_session_store_createlivesessionstore_loadcachedorrebuild",
-      "label": "loadCachedOrRebuild()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 196,
-      "community_name": "readLiveServerInfo",
-      "file_type": "code",
-      "norm_label": "loadcachedorrebuild()",
-      "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
-      "source_location": "L13"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_status_fetchserverstatus",
@@ -8480,76 +8300,268 @@
       "source_location": "L1167"
     },
     {
-      "id": "claude_skills_impeccable_scripts_context_findmonoreporoot",
-      "label": "findMonorepoRoot()",
+      "id": "claude_skills_impeccable_scripts_context_contextsourcepath",
+      "label": "contextSourcePath()",
       "_callable": true,
       "_origin": "ast",
       "community": 206,
-      "community_name": "resolveProject",
+      "community_name": "resolveCandidateContextSummary",
       "file_type": "code",
-      "norm_label": "findmonoreporoot()",
+      "norm_label": "contextsourcepath()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L215"
+      "source_location": "L330"
     },
     {
-      "id": "claude_skills_impeccable_scripts_context_hasfallbackworkspacechildren",
-      "label": "hasFallbackWorkspaceChildren()",
+      "id": "claude_skills_impeccable_scripts_context_contextsourcestatus",
+      "label": "contextSourceStatus()",
       "_callable": true,
       "_origin": "ast",
       "community": 206,
-      "community_name": "resolveProject",
+      "community_name": "resolveCandidateContextSummary",
       "file_type": "code",
-      "norm_label": "hasfallbackworkspacechildren()",
+      "norm_label": "contextsourcestatus()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L244"
+      "source_location": "L316"
     },
     {
-      "id": "claude_skills_impeccable_scripts_context_hasgitboundary",
-      "label": "hasGitBoundary()",
+      "id": "claude_skills_impeccable_scripts_context_ispathinside",
+      "label": "isPathInside()",
       "_callable": true,
       "_origin": "ast",
       "community": 206,
-      "community_name": "resolveProject",
+      "community_name": "resolveCandidateContextSummary",
       "file_type": "code",
-      "norm_label": "hasgitboundary()",
+      "norm_label": "ispathinside()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L240"
+      "source_location": "L178"
     },
     {
-      "id": "claude_skills_impeccable_scripts_context_ismonoreporoot",
-      "label": "isMonorepoRoot()",
+      "id": "claude_skills_impeccable_scripts_context_ispathinsideorequal",
+      "label": "isPathInsideOrEqual()",
       "_callable": true,
       "_origin": "ast",
       "community": 206,
-      "community_name": "resolveProject",
+      "community_name": "resolveCandidateContextSummary",
       "file_type": "code",
-      "norm_label": "ismonoreporoot()",
+      "norm_label": "ispathinsideorequal()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L234"
+      "source_location": "L501"
     },
     {
-      "id": "claude_skills_impeccable_scripts_context_resolveproject",
-      "label": "resolveProject()",
+      "id": "claude_skills_impeccable_scripts_context_nearestpackagerootbetween",
+      "label": "nearestPackageRootBetween()",
       "_callable": true,
       "_origin": "ast",
       "community": 206,
-      "community_name": "resolveProject",
+      "community_name": "resolveCandidateContextSummary",
       "file_type": "code",
-      "norm_label": "resolveproject()",
+      "norm_label": "nearestpackagerootbetween()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L152"
+      "source_location": "L488"
     },
     {
-      "id": "claude_skills_impeccable_scripts_context_resolvetargetdir",
-      "label": "resolveTargetDir()",
+      "id": "claude_skills_impeccable_scripts_context_resolvecandidatecontextsummary",
+      "label": "resolveCandidateContextSummary()",
       "_callable": true,
       "_origin": "ast",
       "community": 206,
-      "community_name": "resolveProject",
+      "community_name": "resolveCandidateContextSummary",
       "file_type": "code",
-      "norm_label": "resolvetargetdir()",
+      "norm_label": "resolvecandidatecontextsummary()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L203"
+      "source_location": "L300"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_buildstaticwindow",
+      "label": "buildStaticWindow()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 208,
+      "community_name": "detect-html.mjs",
+      "file_type": "code",
+      "norm_label": "buildstaticwindow()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L855"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_collectstaticcsstext",
+      "label": "collectStaticCssText()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 208,
+      "community_name": "detect-html.mjs",
+      "file_type": "code",
+      "norm_label": "collectstaticcsstext()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L862"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticdocument_body",
+      "label": ".body()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 208,
+      "community_name": "detect-html.mjs",
+      "file_type": "code",
+      "norm_label": ".body()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L835"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticdocument_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 208,
+      "community_name": "detect-html.mjs",
+      "file_type": "code",
+      "norm_label": ".constructor()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L800"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticdocument_documentelement",
+      "label": ".documentElement()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 208,
+      "community_name": "detect-html.mjs",
+      "file_type": "code",
+      "norm_label": ".documentelement()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L832"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticdocument_getstyle",
+      "label": ".getStyle()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 208,
+      "community_name": "detect-html.mjs",
+      "file_type": "code",
+      "norm_label": ".getstyle()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L841"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticdocument_queryselector",
+      "label": ".querySelector()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 208,
+      "community_name": "detect-html.mjs",
+      "file_type": "code",
+      "norm_label": ".queryselector()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L824"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticdocument_queryselectorall",
+      "label": ".querySelectorAll()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 208,
+      "community_name": "detect-html.mjs",
+      "file_type": "code",
+      "norm_label": ".queryselectorall()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L817"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticdocument_setstyle",
+      "label": ".setStyle()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 208,
+      "community_name": "detect-html.mjs",
+      "file_type": "code",
+      "norm_label": ".setstyle()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L838"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticdocument_wrap",
+      "label": ".wrap()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 208,
+      "community_name": "detect-html.mjs",
+      "file_type": "code",
+      "norm_label": ".wrap()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L809"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_detect_html_checkelementbrokenimage",
+      "label": "checkElementBrokenImage()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 208,
+      "community_name": "detect-html.mjs",
+      "file_type": "code",
+      "norm_label": "checkelementbrokenimage()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/detect-html.mjs",
+      "source_location": "L78"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_detect_html_checkstaticpagetypography",
+      "label": "checkStaticPageTypography()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 208,
+      "community_name": "detect-html.mjs",
+      "file_type": "code",
+      "norm_label": "checkstaticpagetypography()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/detect-html.mjs",
+      "source_location": "L43"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_detect_html_detecthtml",
+      "label": "detectHtml()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 208,
+      "community_name": "detect-html.mjs",
+      "file_type": "code",
+      "norm_label": "detecthtml()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/detect-html.mjs",
+      "source_location": "L107"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkhtmlpatterns",
+      "label": "checkHtmlPatterns()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 208,
+      "community_name": "detect-html.mjs",
+      "file_type": "code",
+      "norm_label": "checkhtmlpatterns()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
+      "source_location": "L446"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkpagequalitydom",
+      "label": "checkPageQualityDOM()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 208,
+      "community_name": "detect-html.mjs",
+      "file_type": "code",
+      "norm_label": "checkpagequalitydom()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
+      "source_location": "L1699"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkpagequalityfromdoc",
+      "label": "checkPageQualityFromDoc()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 208,
+      "community_name": "detect-html.mjs",
+      "file_type": "code",
+      "norm_label": "checkpagequalityfromdoc()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
+      "source_location": "L1678"
     },
     {
       "id": "claude_skills_impeccable_scripts_hook_admin_addignorefile",
@@ -8970,6 +8982,138 @@
       "norm_label": "getpendingpath()",
       "source_file": ".claude/skills/impeccable/scripts/hook-lib.mjs",
       "source_location": "L126"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_script_parts_assemblelivebrowserscript",
+      "label": "assembleLiveBrowserScript()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 211,
+      "community_name": "browser-script-parts.mjs",
+      "file_type": "code",
+      "norm_label": "assemblelivebrowserscript()",
+      "source_file": ".claude/skills/impeccable/scripts/live/browser-script-parts.mjs",
+      "source_location": "L35"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_script_parts_assertlivebrowserscriptparts",
+      "label": "assertLiveBrowserScriptParts()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 211,
+      "community_name": "browser-script-parts.mjs",
+      "file_type": "code",
+      "norm_label": "assertlivebrowserscriptparts()",
+      "source_file": ".claude/skills/impeccable/scripts/live/browser-script-parts.mjs",
+      "source_location": "L19"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_script_parts_readlivebrowserscriptparts",
+      "label": "readLiveBrowserScriptParts()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 211,
+      "community_name": "browser-script-parts.mjs",
+      "file_type": "code",
+      "norm_label": "readlivebrowserscriptparts()",
+      "source_file": ".claude/skills/impeccable/scripts/live/browser-script-parts.mjs",
+      "source_location": "L28"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_script_parts_resolvelivebrowserscriptparts",
+      "label": "resolveLiveBrowserScriptParts()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 211,
+      "community_name": "browser-script-parts.mjs",
+      "file_type": "code",
+      "norm_label": "resolvelivebrowserscriptparts()",
+      "source_file": ".claude/skills/impeccable/scripts/live/browser-script-parts.mjs",
+      "source_location": "L10"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_server_loadbrowserscripts",
+      "label": "loadBrowserScripts()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 211,
+      "community_name": "browser-script-parts.mjs",
+      "file_type": "code",
+      "norm_label": "loadbrowserscripts()",
+      "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
+      "source_location": "L345"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_compactmanuallogtext",
+      "label": "compactManualLogText()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 214,
+      "community_name": "createManualEditRoutes",
+      "file_type": "code",
+      "norm_label": "compactmanuallogtext()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L934"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualapplyfailures",
+      "label": "summarizeManualApplyFailures()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 214,
+      "community_name": "createManualEditRoutes",
+      "file_type": "code",
+      "norm_label": "summarizemanualapplyfailures()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L900"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualdiagnostics",
+      "label": "summarizeManualDiagnostics()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 214,
+      "community_name": "createManualEditRoutes",
+      "file_type": "code",
+      "norm_label": "summarizemanualdiagnostics()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L913"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanuallogfile",
+      "label": "summarizeManualLogFile()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 214,
+      "community_name": "createManualEditRoutes",
+      "file_type": "code",
+      "norm_label": "summarizemanuallogfile()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L927"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_edit_routes_createmanualeditroutes",
+      "label": "createManualEditRoutes()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 214,
+      "community_name": "createManualEditRoutes",
+      "file_type": "code",
+      "norm_label": "createmanualeditroutes()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-edit-routes.mjs",
+      "source_location": "L17"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_edit_routes_sendjson",
+      "label": "sendJson()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 214,
+      "community_name": "createManualEditRoutes",
+      "file_type": "code",
+      "norm_label": "sendjson()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-edit-routes.mjs",
+      "source_location": "L340"
     },
     {
       "id": "claude_skills_impeccable_scripts_hook_before_edit_allow",
@@ -10520,6 +10664,30 @@
       "source_location": "L325"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_accept_scrubmanualeditsagainstfile",
+      "label": "scrubManualEditsAgainstFile()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "live-accept.mjs",
+      "file_type": "code",
+      "norm_label": "scrubmanualeditsagainstfile()",
+      "source_file": ".claude/skills/impeccable/scripts/live-accept.mjs",
+      "source_location": "L230"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_accept_scrubmanualeditsagainstoriginalblock",
+      "label": "scrubManualEditsAgainstOriginalBlock()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "live-accept.mjs",
+      "file_type": "code",
+      "norm_label": "scrubmanualeditsagainstoriginalblock()",
+      "source_file": ".claude/skills/impeccable/scripts/live-accept.mjs",
+      "source_location": "L183"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_accept_searchdir",
       "label": "searchDir()",
       "_callable": true,
@@ -10568,352 +10736,304 @@
       "source_location": "L524"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_applymockwrites",
-      "label": "applyMockWrites()",
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_clearmanualapplytransaction",
+      "label": "clearManualApplyTransaction()",
       "_callable": true,
       "_origin": "ast",
       "community": 29,
-      "community_name": "live-copy-edit-agent.mjs",
+      "community_name": "createManualApplyController",
       "file_type": "code",
-      "norm_label": "applymockwrites()",
-      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
-      "source_location": "L394"
+      "norm_label": "clearmanualapplytransaction()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L751"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_buildcopyeditbatchprompt",
-      "label": "buildCopyEditBatchPrompt()",
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_collectmanualapplyfiles",
+      "label": "collectManualApplyFiles()",
       "_callable": true,
       "_origin": "ast",
       "community": 29,
-      "community_name": "live-copy-edit-agent.mjs",
+      "community_name": "createManualApplyController",
       "file_type": "code",
-      "norm_label": "buildcopyeditbatchprompt()",
-      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
-      "source_location": "L19"
+      "norm_label": "collectmanualapplyfiles()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L819"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_checkframeworksourcesyntax",
-      "label": "checkFrameworkSourceSyntax()",
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller",
+      "label": "createManualApplyController()",
       "_callable": true,
       "_origin": "ast",
       "community": 29,
-      "community_name": "live-copy-edit-agent.mjs",
+      "community_name": "createManualApplyController",
       "file_type": "code",
-      "norm_label": "checkframeworksourcesyntax()",
-      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
-      "source_location": "L185"
+      "norm_label": "createmanualapplycontroller()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L15"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_choosecopyeditagent",
-      "label": "chooseCopyEditAgent()",
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_cancelpendingevents",
+      "label": "cancelPendingEvents()",
       "_callable": true,
       "_origin": "ast",
       "community": 29,
-      "community_name": "live-copy-edit-agent.mjs",
+      "community_name": "createManualApplyController",
       "file_type": "code",
-      "norm_label": "choosecopyeditagent()",
-      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
-      "source_location": "L430"
+      "norm_label": "cancelpendingevents()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L242"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_commandauthed",
-      "label": "commandAuthed()",
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_getdeferred",
+      "label": "getDeferred()",
       "_callable": true,
       "_origin": "ast",
       "community": 29,
-      "community_name": "live-copy-edit-agent.mjs",
+      "community_name": "createManualApplyController",
       "file_type": "code",
-      "norm_label": "commandauthed()",
-      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
-      "source_location": "L648"
+      "norm_label": "getdeferred()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L170"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_commandexists",
-      "label": "commandExists()",
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_hastimedoutid",
+      "label": "hasTimedOutId()",
       "_callable": true,
       "_origin": "ast",
       "community": 29,
-      "community_name": "live-copy-edit-agent.mjs",
+      "community_name": "createManualApplyController",
       "file_type": "code",
-      "norm_label": "commandexists()",
-      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
-      "source_location": "L551"
+      "norm_label": "hastimedoutid()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L174"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_compactbatchforprompt",
-      "label": "compactBatchForPrompt()",
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_prunestaleevidence",
+      "label": "pruneStaleEvidence()",
       "_callable": true,
       "_origin": "ast",
       "community": 29,
-      "community_name": "live-copy-edit-agent.mjs",
+      "community_name": "createManualApplyController",
       "file_type": "code",
-      "norm_label": "compactbatchforprompt()",
-      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
-      "source_location": "L292"
+      "norm_label": "prunestaleevidence()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L209"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_compactbatchop",
-      "label": "compactBatchOp()",
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_pushapplyeventandwait",
+      "label": "pushApplyEventAndWait()",
       "_callable": true,
       "_origin": "ast",
       "community": 29,
-      "community_name": "live-copy-edit-agent.mjs",
+      "community_name": "createManualApplyController",
       "file_type": "code",
-      "norm_label": "compactbatchop()",
-      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
-      "source_location": "L307"
+      "norm_label": "pushapplyeventandwait()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L35"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_compactcontextforbatch",
-      "label": "compactContextForBatch()",
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_referencedmanualapplyevidencepaths",
+      "label": "referencedManualApplyEvidencePaths()",
       "_callable": true,
       "_origin": "ast",
       "community": 29,
-      "community_name": "live-copy-edit-agent.mjs",
+      "community_name": "createManualApplyController",
       "file_type": "code",
-      "norm_label": "compactcontextforbatch()",
-      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
-      "source_location": "L326"
+      "norm_label": "referencedmanualapplyevidencepaths()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L198"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_computecommandauthed",
-      "label": "computeCommandAuthed()",
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_rejectdeferred",
+      "label": "rejectDeferred()",
       "_callable": true,
       "_origin": "ast",
       "community": 29,
-      "community_name": "live-copy-edit-agent.mjs",
+      "community_name": "createManualApplyController",
       "file_type": "code",
-      "norm_label": "computecommandauthed()",
-      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
-      "source_location": "L655"
+      "norm_label": "rejectdeferred()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L188"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_describenoprovidererror",
-      "label": "describeNoProviderError()",
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_resolvedeferred",
+      "label": "resolveDeferred()",
       "_callable": true,
       "_origin": "ast",
       "community": 29,
-      "community_name": "live-copy-edit-agent.mjs",
+      "community_name": "createManualApplyController",
       "file_type": "code",
-      "norm_label": "describenoprovidererror()",
-      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
-      "source_location": "L561"
+      "norm_label": "resolvedeferred()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L178"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_extractrunnererrormessage",
-      "label": "extractRunnerErrorMessage()",
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_rollbacktimedoutreply",
+      "label": "rollbackTimedOutReply()",
       "_callable": true,
       "_origin": "ast",
       "community": 29,
-      "community_name": "live-copy-edit-agent.mjs",
+      "community_name": "createManualApplyController",
       "file_type": "code",
-      "norm_label": "extractrunnererrormessage()",
-      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
-      "source_location": "L602"
+      "norm_label": "rollbacktimedoutreply()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L229"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_findleftoverimpeccablemarker",
-      "label": "findLeftoverImpeccableMarker()",
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_tombstonetimedoutapplyid",
+      "label": "tombstoneTimedOutApplyId()",
       "_callable": true,
       "_origin": "ast",
       "community": 29,
-      "community_name": "live-copy-edit-agent.mjs",
+      "community_name": "createManualApplyController",
       "file_type": "code",
-      "norm_label": "findleftoverimpeccablemarker()",
-      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
-      "source_location": "L213"
+      "norm_label": "tombstonetimedoutapplyid()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L27"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_isinsidequotedliteral",
-      "label": "isInsideQuotedLiteral()",
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_manualapplyevidencedir",
+      "label": "manualApplyEvidenceDir()",
       "_callable": true,
       "_origin": "ast",
       "community": 29,
-      "community_name": "live-copy-edit-agent.mjs",
+      "community_name": "createManualApplyController",
       "file_type": "code",
-      "norm_label": "isinsidequotedliteral()",
-      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
-      "source_location": "L228"
+      "norm_label": "manualapplyevidencedir()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L333"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_ispathinsideorequal",
-      "label": "isPathInsideOrEqual()",
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_manualapplytransactionpath",
+      "label": "manualApplyTransactionPath()",
       "_callable": true,
       "_origin": "ast",
       "community": 29,
-      "community_name": "live-copy-edit-agent.mjs",
+      "community_name": "createManualApplyController",
       "file_type": "code",
-      "norm_label": "ispathinsideorequal()",
-      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
-      "source_location": "L536"
+      "norm_label": "manualapplytransactionpath()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L712"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_mockbatchresult",
-      "label": "mockBatchResult()",
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_normalizemanualapplyevidencepath",
+      "label": "normalizeManualApplyEvidencePath()",
       "_callable": true,
       "_origin": "ast",
       "community": 29,
-      "community_name": "live-copy-edit-agent.mjs",
+      "community_name": "createManualApplyController",
       "file_type": "code",
-      "norm_label": "mockbatchresult()",
-      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
-      "source_location": "L377"
+      "norm_label": "normalizemanualapplyevidencepath()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L337"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_normalizebatchresult",
-      "label": "normalizeBatchResult()",
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_normalizeprojectfile",
+      "label": "normalizeProjectFile()",
       "_callable": true,
       "_origin": "ast",
       "community": 29,
-      "community_name": "live-copy-edit-agent.mjs",
+      "community_name": "createManualApplyController",
       "file_type": "code",
-      "norm_label": "normalizebatchresult()",
-      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
-      "source_location": "L346"
+      "norm_label": "normalizeprojectfile()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L837"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_parsecopyeditagentresult",
-      "label": "parseCopyEditAgentResult()",
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_readmanualapplytransaction",
+      "label": "readManualApplyTransaction()",
       "_callable": true,
       "_origin": "ast",
       "community": 29,
-      "community_name": "live-copy-edit-agent.mjs",
+      "community_name": "createManualApplyController",
       "file_type": "code",
-      "norm_label": "parsecopyeditagentresult()",
-      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
-      "source_location": "L410"
+      "norm_label": "readmanualapplytransaction()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L716"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_parsecopyeditbatchresult",
-      "label": "parseCopyEditBatchResult()",
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_removemanualapplyevidence",
+      "label": "removeManualApplyEvidence()",
       "_callable": true,
       "_origin": "ast",
       "community": 29,
-      "community_name": "live-copy-edit-agent.mjs",
+      "community_name": "createManualApplyController",
       "file_type": "code",
-      "norm_label": "parsecopyeditbatchresult()",
-      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
-      "source_location": "L87"
+      "norm_label": "removemanualapplyevidence()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L347"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_readmanualeditvalidationscript",
-      "label": "readManualEditValidationScript()",
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_rollbackapplysnapshot",
+      "label": "rollbackApplySnapshot()",
       "_callable": true,
       "_origin": "ast",
       "community": 29,
-      "community_name": "live-copy-edit-agent.mjs",
+      "community_name": "createManualApplyController",
       "file_type": "code",
-      "norm_label": "readmanualeditvalidationscript()",
-      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
-      "source_location": "L280"
+      "norm_label": "rollbackapplysnapshot()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L845"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_runagentprocess",
-      "label": "runAgentProcess()",
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_rollbackmanualapplytransaction",
+      "label": "rollbackManualApplyTransaction()",
       "_callable": true,
       "_origin": "ast",
       "community": 29,
-      "community_name": "live-copy-edit-agent.mjs",
+      "community_name": "createManualApplyController",
       "file_type": "code",
-      "norm_label": "runagentprocess()",
-      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
-      "source_location": "L481"
+      "norm_label": "rollbackmanualapplytransaction()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L766"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_runclaude",
-      "label": "runClaude()",
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_snapshotapplyeventfiles",
+      "label": "snapshotApplyEventFiles()",
       "_callable": true,
       "_origin": "ast",
       "community": 29,
-      "community_name": "live-copy-edit-agent.mjs",
+      "community_name": "createManualApplyController",
       "file_type": "code",
-      "norm_label": "runclaude()",
-      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
-      "source_location": "L464"
+      "norm_label": "snapshotapplyeventfiles()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L696"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_runcodex",
-      "label": "runCodex()",
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualapplyevent",
+      "label": "summarizeManualApplyEvent()",
       "_callable": true,
       "_origin": "ast",
       "community": 29,
-      "community_name": "live-copy-edit-agent.mjs",
+      "community_name": "createManualApplyController",
       "file_type": "code",
-      "norm_label": "runcodex()",
-      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
-      "source_location": "L448"
+      "norm_label": "summarizemanualapplyevent()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L888"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_runcopyeditbatchagent",
-      "label": "runCopyEditBatchAgent()",
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_writemanualapplyevidence",
+      "label": "writeManualApplyEvidence()",
       "_callable": true,
       "_origin": "ast",
       "community": 29,
-      "community_name": "live-copy-edit-agent.mjs",
+      "community_name": "createManualApplyController",
       "file_type": "code",
-      "norm_label": "runcopyeditbatchagent()",
-      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
-      "source_location": "L95"
+      "norm_label": "writemanualapplyevidence()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L325"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_runcopyeditpostapplychecks",
-      "label": "runCopyEditPostApplyChecks()",
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_writemanualapplytransaction",
+      "label": "writeManualApplyTransaction()",
       "_callable": true,
       "_origin": "ast",
       "community": 29,
-      "community_name": "live-copy-edit-agent.mjs",
+      "community_name": "createManualApplyController",
       "file_type": "code",
-      "norm_label": "runcopyeditpostapplychecks()",
-      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
-      "source_location": "L137"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_runmanualeditvalidationscript",
-      "label": "runManualEditValidationScript()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 29,
-      "community_name": "live-copy-edit-agent.mjs",
-      "file_type": "code",
-      "norm_label": "runmanualeditvalidationscript()",
-      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
-      "source_location": "L250"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_stripliveruntimehtml",
-      "label": "stripLiveRuntimeHtml()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 29,
-      "community_name": "live-copy-edit-agent.mjs",
-      "file_type": "code",
-      "norm_label": "stripliveruntimehtml()",
-      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
-      "source_location": "L338"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_truncate",
-      "label": "truncate()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 29,
-      "community_name": "live-copy-edit-agent.mjs",
-      "file_type": "code",
-      "norm_label": "truncate()",
-      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
-      "source_location": "L545"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_tryparsejson",
-      "label": "tryParseJson()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 29,
-      "community_name": "live-copy-edit-agent.mjs",
-      "file_type": "code",
-      "norm_label": "tryparsejson()",
-      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
-      "source_location": "L541"
+      "norm_label": "writemanualapplytransaction()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L726"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_browser_applyoriginalattrstosvelteanchor",
@@ -13412,40 +13532,16 @@
       "source_location": "L18"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_accept_scrubmanualeditsagainstfile",
-      "label": "scrubManualEditsAgainstFile()",
+      "id": "claude_skills_impeccable_scripts_lib_impeccable_paths_getlivedir",
+      "label": "getLiveDir()",
       "_callable": true,
       "_origin": "ast",
       "community": 35,
       "community_name": "manual-edit-routes.mjs",
       "file_type": "code",
-      "norm_label": "scrubmanualeditsagainstfile()",
-      "source_file": ".claude/skills/impeccable/scripts/live-accept.mjs",
-      "source_location": "L230"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_accept_scrubmanualeditsagainstoriginalblock",
-      "label": "scrubManualEditsAgainstOriginalBlock()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "scrubmanualeditsagainstoriginalblock()",
-      "source_file": ".claude/skills/impeccable/scripts/live-accept.mjs",
-      "source_location": "L183"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_commit_manual_edits_clearappliedentries",
-      "label": "clearAppliedEntries()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "clearappliedentries()",
-      "source_file": ".claude/skills/impeccable/scripts/live-commit-manual-edits.mjs",
-      "source_location": "L555"
+      "norm_label": "getlivedir()",
+      "source_file": ".claude/skills/impeccable/scripts/lib/impeccable-paths.mjs",
+      "source_location": "L32"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_discard_manual_edits_argval",
@@ -13460,78 +13556,6 @@
       "source_location": "L21"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_compactmanuallogtext",
-      "label": "compactManualLogText()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "compactmanuallogtext()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L934"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualapplyfailures",
-      "label": "summarizeManualApplyFailures()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "summarizemanualapplyfailures()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L900"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualdiagnostics",
-      "label": "summarizeManualDiagnostics()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "summarizemanualdiagnostics()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L913"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanuallogfile",
-      "label": "summarizeManualLogFile()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "summarizemanuallogfile()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L927"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_edit_routes_createmanualeditroutes",
-      "label": "createManualEditRoutes()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "createmanualeditroutes()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-edit-routes.mjs",
-      "source_location": "L17"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_edit_routes_sendjson",
-      "label": "sendJson()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "sendjson()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-edit-routes.mjs",
-      "source_location": "L340"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_manual_edit_routes_summarizependingmanualeditbatch",
       "label": "summarizePendingManualEditBatch()",
       "_callable": true,
@@ -13542,18 +13566,6 @@
       "norm_label": "summarizependingmanualeditbatch()",
       "source_file": ".claude/skills/impeccable/scripts/live/manual-edit-routes.mjs",
       "source_location": "L345"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_edits_buffer_countbypage",
-      "label": "countByPage()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "countbypage()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-edits-buffer.mjs",
-      "source_location": "L130"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_manual_edits_buffer_getbufferpath",
@@ -15284,18 +15296,6 @@
       "source_location": "L36"
     },
     {
-      "id": "claude_skills_impeccable_scripts_lib_impeccable_paths_getlivedir",
-      "label": "getLiveDir()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 40,
-      "community_name": "impeccable-paths.mjs",
-      "file_type": "code",
-      "norm_label": "getlivedir()",
-      "source_file": ".claude/skills/impeccable/scripts/lib/impeccable-paths.mjs",
-      "source_location": "L32"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_lib_impeccable_paths_getliveserverpath",
       "label": "getLiveServerPath()",
       "_callable": true,
@@ -15306,18 +15306,6 @@
       "norm_label": "getliveserverpath()",
       "source_file": ".claude/skills/impeccable/scripts/lib/impeccable-paths.mjs",
       "source_location": "L58"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_lib_impeccable_paths_getlivesessionsdir",
-      "label": "getLiveSessionsDir()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 40,
-      "community_name": "impeccable-paths.mjs",
-      "file_type": "code",
-      "norm_label": "getlivesessionsdir()",
-      "source_file": ".claude/skills/impeccable/scripts/lib/impeccable-paths.mjs",
-      "source_location": "L106"
     },
     {
       "id": "claude_skills_impeccable_scripts_lib_impeccable_paths_removeliveserverinfo",
@@ -15368,6 +15356,66 @@
       "source_location": "L93"
     },
     {
+      "id": "claude_skills_impeccable_scripts_lib_impeccable_paths_getlivesessionsdir",
+      "label": "getLiveSessionsDir()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "session-store.mjs",
+      "file_type": "code",
+      "norm_label": "getlivesessionsdir()",
+      "source_file": ".claude/skills/impeccable/scripts/lib/impeccable-paths.mjs",
+      "source_location": "L106"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_complete_completecli",
+      "label": "completeCli()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "session-store.mjs",
+      "file_type": "code",
+      "norm_label": "completecli()",
+      "source_file": ".claude/skills/impeccable/scripts/live-complete.mjs",
+      "source_location": "L23"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_complete_completethroughserver",
+      "label": "completeThroughServer()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "session-store.mjs",
+      "file_type": "code",
+      "norm_label": "completethroughserver()",
+      "source_file": ".claude/skills/impeccable/scripts/live-complete.mjs",
+      "source_location": "L53"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_complete_parseargs",
+      "label": "parseArgs()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "session-store.mjs",
+      "file_type": "code",
+      "norm_label": "parseargs()",
+      "source_file": ".claude/skills/impeccable/scripts/live-complete.mjs",
+      "source_location": "L9"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_complete_readserverinfo",
+      "label": "readServerInfo()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "session-store.mjs",
+      "file_type": "code",
+      "norm_label": "readserverinfo()",
+      "source_file": ".claude/skills/impeccable/scripts/live-complete.mjs",
+      "source_location": "L49"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_session_store_applyevent",
       "label": "applyEvent()",
       "_callable": true,
@@ -15390,6 +15438,42 @@
       "norm_label": "basesnapshot()",
       "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
       "source_location": "L103"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_session_store_createlivesessionstore",
+      "label": "createLiveSessionStore()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "session-store.mjs",
+      "file_type": "code",
+      "norm_label": "createlivesessionstore()",
+      "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
+      "source_location": "L7"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_session_store_createlivesessionstore_getreadablejournalpath",
+      "label": "getReadableJournalPath()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "session-store.mjs",
+      "file_type": "code",
+      "norm_label": "getreadablejournalpath()",
+      "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
+      "source_location": "L22"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_session_store_createlivesessionstore_loadcachedorrebuild",
+      "label": "loadCachedOrRebuild()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "session-store.mjs",
+      "file_type": "code",
+      "norm_label": "loadcachedorrebuild()",
+      "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
+      "source_location": "L13"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_session_store_getjournalpath",
@@ -16424,6 +16508,18 @@
       "source_location": "L420"
     },
     {
+      "id": "claude_skills_impeccable_scripts_context_hasfallbackworkspacechildren",
+      "label": "hasFallbackWorkspaceChildren()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "discoverTargetCandidates",
+      "file_type": "code",
+      "norm_label": "hasfallbackworkspacechildren()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L244"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_context_isexcludedbyworkspacepattern",
       "label": "isExcludedByWorkspacePattern()",
       "_callable": true,
@@ -16448,28 +16544,16 @@
       "source_location": "L416"
     },
     {
-      "id": "claude_skills_impeccable_scripts_context_nearestpackagerootbetween",
-      "label": "nearestPackageRootBetween()",
+      "id": "claude_skills_impeccable_scripts_context_ismonoreporoot",
+      "label": "isMonorepoRoot()",
       "_callable": true,
       "_origin": "ast",
       "community": 47,
       "community_name": "discoverTargetCandidates",
       "file_type": "code",
-      "norm_label": "nearestpackagerootbetween()",
+      "norm_label": "ismonoreporoot()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L488"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_nearestprojectlikeroot",
-      "label": "nearestProjectLikeRoot()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "discoverTargetCandidates",
-      "file_type": "code",
-      "norm_label": "nearestprojectlikeroot()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L471"
+      "source_location": "L234"
     },
     {
       "id": "claude_skills_impeccable_scripts_context_normalizeworkspacepattern",
@@ -16506,18 +16590,6 @@
       "norm_label": "projectrootfromworkspacepattern()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
       "source_location": "L628"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_resolveworkspaceprojectroot",
-      "label": "resolveWorkspaceProjectRoot()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "discoverTargetCandidates",
-      "file_type": "code",
-      "norm_label": "resolveworkspaceprojectroot()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L439"
     },
     {
       "id": "claude_skills_impeccable_scripts_context_segmentmatches",
@@ -18356,30 +18428,6 @@
       "source_location": "L879"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_clearmanualapplytransaction",
-      "label": "clearManualApplyTransaction()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "clearmanualapplytransaction()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L751"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_collectmanualapplyfiles",
-      "label": "collectManualApplyFiles()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "collectmanualapplyfiles()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L819"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_manual_apply_compactmanualapplybatch",
       "label": "compactManualApplyBatch()",
       "_callable": true,
@@ -18500,78 +18548,6 @@
       "source_location": "L659"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller",
-      "label": "createManualApplyController()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "createmanualapplycontroller()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L15"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_cancelpendingevents",
-      "label": "cancelPendingEvents()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "cancelpendingevents()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L242"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_getdeferred",
-      "label": "getDeferred()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "getdeferred()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L170"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_hastimedoutid",
-      "label": "hasTimedOutId()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "hastimedoutid()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L174"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_prunestaleevidence",
-      "label": "pruneStaleEvidence()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "prunestaleevidence()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L209"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_pushapplyeventandwait",
-      "label": "pushApplyEventAndWait()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "pushapplyeventandwait()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L35"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_pushbatchinchunksandwait",
       "label": "pushBatchInChunksAndWait()",
       "_callable": true,
@@ -18582,66 +18558,6 @@
       "norm_label": "pushbatchinchunksandwait()",
       "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
       "source_location": "L81"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_referencedmanualapplyevidencepaths",
-      "label": "referencedManualApplyEvidencePaths()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "referencedmanualapplyevidencepaths()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L198"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_rejectdeferred",
-      "label": "rejectDeferred()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "rejectdeferred()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L188"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_resolvedeferred",
-      "label": "resolveDeferred()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "resolvedeferred()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L178"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_rollbacktimedoutreply",
-      "label": "rollbackTimedOutReply()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "rollbacktimedoutreply()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L229"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_tombstonetimedoutapplyid",
-      "label": "tombstoneTimedOutApplyId()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "tombstonetimedoutapplyid()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L27"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_manual_apply_filtermanualapplychunkcandidates",
@@ -18680,18 +18596,6 @@
       "source_location": "L485"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_manualapplyevidencedir",
-      "label": "manualApplyEvidenceDir()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "manualapplyevidencedir()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L333"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_manual_apply_manualapplyreplycommand",
       "label": "manualApplyReplyCommand()",
       "_callable": true,
@@ -18714,18 +18618,6 @@
       "norm_label": "manualapplyresultshapehint()",
       "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
       "source_location": "L481"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_manualapplytransactionpath",
-      "label": "manualApplyTransactionPath()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "manualapplytransactionpath()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L712"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_manual_apply_manualeditapplychunksize",
@@ -18764,90 +18656,6 @@
       "source_location": "L469"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_normalizemanualapplyevidencepath",
-      "label": "normalizeManualApplyEvidencePath()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "normalizemanualapplyevidencepath()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L337"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_normalizeprojectfile",
-      "label": "normalizeProjectFile()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "normalizeprojectfile()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L837"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_readmanualapplytransaction",
-      "label": "readManualApplyTransaction()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "readmanualapplytransaction()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L716"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_removemanualapplyevidence",
-      "label": "removeManualApplyEvidence()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "removemanualapplyevidence()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L347"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_rollbackapplysnapshot",
-      "label": "rollbackApplySnapshot()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "rollbackapplysnapshot()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L845"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_rollbackmanualapplytransaction",
-      "label": "rollbackManualApplyTransaction()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "rollbackmanualapplytransaction()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L766"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_snapshotapplyeventfiles",
-      "label": "snapshotApplyEventFiles()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "snapshotapplyeventfiles()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L696"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_manual_apply_splitmanualapplybatch",
       "label": "splitManualApplyBatch()",
       "_callable": true,
@@ -18858,18 +18666,6 @@
       "norm_label": "splitmanualapplybatch()",
       "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
       "source_location": "L595"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualapplyevent",
-      "label": "summarizeManualApplyEvent()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "summarizemanualapplyevent()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L888"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_manual_apply_truncatemanualapplytext",
@@ -18894,30 +18690,6 @@
       "norm_label": "validatemanualapplyresultmessage()",
       "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
       "source_location": "L497"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_writemanualapplyevidence",
-      "label": "writeManualApplyEvidence()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "writemanualapplyevidence()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L325"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_writemanualapplytransaction",
-      "label": "writeManualApplyTransaction()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "writemanualapplytransaction()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L726"
     },
     {
       "id": "master_sistemas_inteligentes_robots_autonomos_roomba_codigo_roomba_roomba_roombacontroller_avoid_obstacle",
@@ -19340,6 +19112,18 @@
       "source_location": "L25"
     },
     {
+      "id": "claude_skills_impeccable_scripts_detector_cli_main_handlestdin",
+      "label": "handleStdin()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 66,
+      "community_name": "detect-antipatterns.mjs",
+      "file_type": "code",
+      "norm_label": "handlestdin()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/cli/main.mjs",
+      "source_location": "L54"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_detector_cli_main_printusage",
       "label": "printUsage()",
       "_callable": true,
@@ -19412,6 +19196,42 @@
       "source_location": "L244"
     },
     {
+      "id": "claude_skills_impeccable_scripts_detector_engines_regex_detect_text_detecttext",
+      "label": "detectText()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 66,
+      "community_name": "detect-antipatterns.mjs",
+      "file_type": "code",
+      "norm_label": "detecttext()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/regex/detect-text.mjs",
+      "source_location": "L462"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_regex_detect_text_extractcssinjs",
+      "label": "extractCSSinJS()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 66,
+      "community_name": "detect-antipatterns.mjs",
+      "file_type": "code",
+      "norm_label": "extractcssinjs()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/regex/detect-text.mjs",
+      "source_location": "L366"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_regex_detect_text_extractstyleblocks",
+      "label": "extractStyleBlocks()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 66,
+      "community_name": "detect-antipatterns.mjs",
+      "file_type": "code",
+      "norm_label": "extractstyleblocks()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/regex/detect-text.mjs",
+      "source_location": "L346"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_detector_node_file_system_buildimportgraph",
       "label": "buildImportGraph()",
       "_callable": true,
@@ -19470,30 +19290,6 @@
       "norm_label": "walkdir()",
       "source_file": ".claude/skills/impeccable/scripts/detector/node/file-system.mjs",
       "source_location": "L21"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_registry_antipatterns_getruleenginesupport",
-      "label": "getRuleEngineSupport()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "detect-antipatterns.mjs",
-      "file_type": "code",
-      "norm_label": "getruleenginesupport()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
-      "source_location": "L418"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_registry_antipatterns_getrulesforcategory",
-      "label": "getRulesForCategory()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "detect-antipatterns.mjs",
-      "file_type": "code",
-      "norm_label": "getrulesforcategory()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
-      "source_location": "L414"
     },
     {
       "id": "claude_skills_impeccable_scripts_lib_impeccable_config_shouldignoredetectionfile",
@@ -20660,28 +20456,16 @@
       "source_location": "L4561"
     },
     {
-      "id": "claude_skills_impeccable_scripts_context_contextsourcepath",
-      "label": "contextSourcePath()",
+      "id": "claude_skills_impeccable_scripts_context_findmonoreporoot",
+      "label": "findMonorepoRoot()",
       "_callable": true,
       "_origin": "ast",
       "community": 75,
       "community_name": "resolveContext",
       "file_type": "code",
-      "norm_label": "contextsourcepath()",
+      "norm_label": "findmonoreporoot()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L330"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_contextsourcestatus",
-      "label": "contextSourceStatus()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 75,
-      "community_name": "resolveContext",
-      "file_type": "code",
-      "norm_label": "contextsourcestatus()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L316"
+      "source_location": "L215"
     },
     {
       "id": "claude_skills_impeccable_scripts_context_firstexisting",
@@ -20696,6 +20480,18 @@
       "source_location": "L674"
     },
     {
+      "id": "claude_skills_impeccable_scripts_context_hasgitboundary",
+      "label": "hasGitBoundary()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 75,
+      "community_name": "resolveContext",
+      "file_type": "code",
+      "norm_label": "hasgitboundary()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L240"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_context_iscandidateprojectroot",
       "label": "isCandidateProjectRoot()",
       "_callable": true,
@@ -20708,40 +20504,16 @@
       "source_location": "L405"
     },
     {
-      "id": "claude_skills_impeccable_scripts_context_ispathinside",
-      "label": "isPathInside()",
+      "id": "claude_skills_impeccable_scripts_context_nearestprojectlikeroot",
+      "label": "nearestProjectLikeRoot()",
       "_callable": true,
       "_origin": "ast",
       "community": 75,
       "community_name": "resolveContext",
       "file_type": "code",
-      "norm_label": "ispathinside()",
+      "norm_label": "nearestprojectlikeroot()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L178"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_ispathinsideorequal",
-      "label": "isPathInsideOrEqual()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 75,
-      "community_name": "resolveContext",
-      "file_type": "code",
-      "norm_label": "ispathinsideorequal()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L501"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_resolvecandidatecontextsummary",
-      "label": "resolveCandidateContextSummary()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 75,
-      "community_name": "resolveContext",
-      "file_type": "code",
-      "norm_label": "resolvecandidatecontextsummary()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L300"
+      "source_location": "L471"
     },
     {
       "id": "claude_skills_impeccable_scripts_context_resolvecontext",
@@ -20790,6 +20562,42 @@
       "norm_label": "resolvelocalcontextdir()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
       "source_location": "L183"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_resolveproject",
+      "label": "resolveProject()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 75,
+      "community_name": "resolveContext",
+      "file_type": "code",
+      "norm_label": "resolveproject()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L152"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_resolvetargetdir",
+      "label": "resolveTargetDir()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 75,
+      "community_name": "resolveContext",
+      "file_type": "code",
+      "norm_label": "resolvetargetdir()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L203"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_resolveworkspaceprojectroot",
+      "label": "resolveWorkspaceProjectRoot()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 75,
+      "community_name": "resolveContext",
+      "file_type": "code",
+      "norm_label": "resolveworkspaceprojectroot()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L439"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_detect_antipatterns_browser_checkelementtextoverflowdom",
@@ -21102,6 +20910,18 @@
       "norm_label": "changedfilessincesnapshot()",
       "source_file": ".claude/skills/impeccable/scripts/live-commit-manual-edits.mjs",
       "source_location": "L631"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_commit_manual_edits_clearappliedentries",
+      "label": "clearAppliedEntries()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "live-commit-manual-edits.mjs",
+      "file_type": "code",
+      "norm_label": "clearappliedentries()",
+      "source_file": ".claude/skills/impeccable/scripts/live-commit-manual-edits.mjs",
+      "source_location": "L555"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_commit_manual_edits_collectapplyownedfiles",
@@ -21596,6 +21416,366 @@
       "source_location": "L405"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_applymockwrites",
+      "label": "applyMockWrites()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "live-commit-manual-edits.mjs",
+      "file_type": "code",
+      "norm_label": "applymockwrites()",
+      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
+      "source_location": "L394"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_buildcopyeditbatchprompt",
+      "label": "buildCopyEditBatchPrompt()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "live-commit-manual-edits.mjs",
+      "file_type": "code",
+      "norm_label": "buildcopyeditbatchprompt()",
+      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
+      "source_location": "L19"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_checkframeworksourcesyntax",
+      "label": "checkFrameworkSourceSyntax()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "live-commit-manual-edits.mjs",
+      "file_type": "code",
+      "norm_label": "checkframeworksourcesyntax()",
+      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
+      "source_location": "L185"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_choosecopyeditagent",
+      "label": "chooseCopyEditAgent()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "live-commit-manual-edits.mjs",
+      "file_type": "code",
+      "norm_label": "choosecopyeditagent()",
+      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
+      "source_location": "L430"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_commandauthed",
+      "label": "commandAuthed()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "live-commit-manual-edits.mjs",
+      "file_type": "code",
+      "norm_label": "commandauthed()",
+      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
+      "source_location": "L648"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_commandexists",
+      "label": "commandExists()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "live-commit-manual-edits.mjs",
+      "file_type": "code",
+      "norm_label": "commandexists()",
+      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
+      "source_location": "L551"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_compactbatchforprompt",
+      "label": "compactBatchForPrompt()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "live-commit-manual-edits.mjs",
+      "file_type": "code",
+      "norm_label": "compactbatchforprompt()",
+      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
+      "source_location": "L292"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_compactbatchop",
+      "label": "compactBatchOp()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "live-commit-manual-edits.mjs",
+      "file_type": "code",
+      "norm_label": "compactbatchop()",
+      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
+      "source_location": "L307"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_compactcontextforbatch",
+      "label": "compactContextForBatch()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "live-commit-manual-edits.mjs",
+      "file_type": "code",
+      "norm_label": "compactcontextforbatch()",
+      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
+      "source_location": "L326"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_computecommandauthed",
+      "label": "computeCommandAuthed()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "live-commit-manual-edits.mjs",
+      "file_type": "code",
+      "norm_label": "computecommandauthed()",
+      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
+      "source_location": "L655"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_describenoprovidererror",
+      "label": "describeNoProviderError()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "live-commit-manual-edits.mjs",
+      "file_type": "code",
+      "norm_label": "describenoprovidererror()",
+      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
+      "source_location": "L561"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_extractrunnererrormessage",
+      "label": "extractRunnerErrorMessage()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "live-commit-manual-edits.mjs",
+      "file_type": "code",
+      "norm_label": "extractrunnererrormessage()",
+      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
+      "source_location": "L602"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_findleftoverimpeccablemarker",
+      "label": "findLeftoverImpeccableMarker()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "live-commit-manual-edits.mjs",
+      "file_type": "code",
+      "norm_label": "findleftoverimpeccablemarker()",
+      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
+      "source_location": "L213"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_isinsidequotedliteral",
+      "label": "isInsideQuotedLiteral()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "live-commit-manual-edits.mjs",
+      "file_type": "code",
+      "norm_label": "isinsidequotedliteral()",
+      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
+      "source_location": "L228"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_ispathinsideorequal",
+      "label": "isPathInsideOrEqual()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "live-commit-manual-edits.mjs",
+      "file_type": "code",
+      "norm_label": "ispathinsideorequal()",
+      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
+      "source_location": "L536"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_mockbatchresult",
+      "label": "mockBatchResult()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "live-commit-manual-edits.mjs",
+      "file_type": "code",
+      "norm_label": "mockbatchresult()",
+      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
+      "source_location": "L377"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_normalizebatchresult",
+      "label": "normalizeBatchResult()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "live-commit-manual-edits.mjs",
+      "file_type": "code",
+      "norm_label": "normalizebatchresult()",
+      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
+      "source_location": "L346"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_parsecopyeditagentresult",
+      "label": "parseCopyEditAgentResult()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "live-commit-manual-edits.mjs",
+      "file_type": "code",
+      "norm_label": "parsecopyeditagentresult()",
+      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
+      "source_location": "L410"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_parsecopyeditbatchresult",
+      "label": "parseCopyEditBatchResult()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "live-commit-manual-edits.mjs",
+      "file_type": "code",
+      "norm_label": "parsecopyeditbatchresult()",
+      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
+      "source_location": "L87"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_readmanualeditvalidationscript",
+      "label": "readManualEditValidationScript()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "live-commit-manual-edits.mjs",
+      "file_type": "code",
+      "norm_label": "readmanualeditvalidationscript()",
+      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
+      "source_location": "L280"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_runagentprocess",
+      "label": "runAgentProcess()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "live-commit-manual-edits.mjs",
+      "file_type": "code",
+      "norm_label": "runagentprocess()",
+      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
+      "source_location": "L481"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_runclaude",
+      "label": "runClaude()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "live-commit-manual-edits.mjs",
+      "file_type": "code",
+      "norm_label": "runclaude()",
+      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
+      "source_location": "L464"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_runcodex",
+      "label": "runCodex()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "live-commit-manual-edits.mjs",
+      "file_type": "code",
+      "norm_label": "runcodex()",
+      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
+      "source_location": "L448"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_runcopyeditbatchagent",
+      "label": "runCopyEditBatchAgent()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "live-commit-manual-edits.mjs",
+      "file_type": "code",
+      "norm_label": "runcopyeditbatchagent()",
+      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
+      "source_location": "L95"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_runcopyeditpostapplychecks",
+      "label": "runCopyEditPostApplyChecks()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "live-commit-manual-edits.mjs",
+      "file_type": "code",
+      "norm_label": "runcopyeditpostapplychecks()",
+      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
+      "source_location": "L137"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_runmanualeditvalidationscript",
+      "label": "runManualEditValidationScript()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "live-commit-manual-edits.mjs",
+      "file_type": "code",
+      "norm_label": "runmanualeditvalidationscript()",
+      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
+      "source_location": "L250"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_stripliveruntimehtml",
+      "label": "stripLiveRuntimeHtml()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "live-commit-manual-edits.mjs",
+      "file_type": "code",
+      "norm_label": "stripliveruntimehtml()",
+      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
+      "source_location": "L338"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_truncate",
+      "label": "truncate()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "live-commit-manual-edits.mjs",
+      "file_type": "code",
+      "norm_label": "truncate()",
+      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
+      "source_location": "L545"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_tryparsejson",
+      "label": "tryParseJson()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "live-commit-manual-edits.mjs",
+      "file_type": "code",
+      "norm_label": "tryparsejson()",
+      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
+      "source_location": "L541"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_edits_buffer_countbypage",
+      "label": "countByPage()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "live-commit-manual-edits.mjs",
+      "file_type": "code",
+      "norm_label": "countbypage()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-edits-buffer.mjs",
+      "source_location": "L130"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_childnodes",
       "label": ".childNodes()",
       "_callable": true,
@@ -21738,6 +21918,18 @@
       "norm_label": ".queryselectorall()",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
       "source_location": "L769"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_textcontent",
+      "label": ".textContent()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 80,
+      "community_name": "StaticElement",
+      "file_type": "code",
+      "norm_label": ".textcontent()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L749"
     },
     {
       "id": "docencia_espanol_fuentes_extraer_emittable",
@@ -21896,64 +22088,16 @@
       "source_location": "L4329"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_cli_main_handlestdin",
-      "label": "handleStdin()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 85,
-      "community_name": "detect-html.mjs",
-      "file_type": "code",
-      "norm_label": "handlestdin()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/cli/main.mjs",
-      "source_location": "L54"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_regex_detect_text_detecttext",
-      "label": "detectText()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 85,
-      "community_name": "detect-html.mjs",
-      "file_type": "code",
-      "norm_label": "detecttext()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/regex/detect-text.mjs",
-      "source_location": "L462"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_detector_engines_regex_detect_text_extfromfilepath",
       "label": "extFromFilePath()",
       "_callable": true,
       "_origin": "ast",
       "community": 85,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-text.mjs",
       "file_type": "code",
       "norm_label": "extfromfilepath()",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/regex/detect-text.mjs",
       "source_location": "L31"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_regex_detect_text_extractcssinjs",
-      "label": "extractCSSinJS()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 85,
-      "community_name": "detect-html.mjs",
-      "file_type": "code",
-      "norm_label": "extractcssinjs()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/regex/detect-text.mjs",
-      "source_location": "L366"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_regex_detect_text_extractstyleblocks",
-      "label": "extractStyleBlocks()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 85,
-      "community_name": "detect-html.mjs",
-      "file_type": "code",
-      "norm_label": "extractstyleblocks()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/regex/detect-text.mjs",
-      "source_location": "L346"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_engines_regex_detect_text_hasborderradius",
@@ -21961,7 +22105,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 85,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-text.mjs",
       "file_type": "code",
       "norm_label": "hasborderradius()",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/regex/detect-text.mjs",
@@ -21973,7 +22117,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 85,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-text.mjs",
       "file_type": "code",
       "norm_label": "hasrounded()",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/regex/detect-text.mjs",
@@ -21985,7 +22129,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 85,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-text.mjs",
       "file_type": "code",
       "norm_label": "isneutralbordercolor()",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/regex/detect-text.mjs",
@@ -21997,23 +22141,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 85,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-text.mjs",
       "file_type": "code",
       "norm_label": "issafeelement()",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/regex/detect-text.mjs",
       "source_location": "L16"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_regex_detect_text_runregexmatchers",
-      "label": "runRegexMatchers()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 85,
-      "community_name": "detect-html.mjs",
-      "file_type": "code",
-      "norm_label": "runregexmatchers()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/regex/detect-text.mjs",
-      "source_location": "L380"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_engines_regex_detect_text_runtextcontentanalyzers",
@@ -22021,7 +22153,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 85,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-text.mjs",
       "file_type": "code",
       "norm_label": "runtextcontentanalyzers()",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/regex/detect-text.mjs",
@@ -22033,7 +22165,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 85,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-text.mjs",
       "file_type": "code",
       "norm_label": "shouldrunpageanalyzers()",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/regex/detect-text.mjs",
@@ -22045,155 +22177,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 85,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-text.mjs",
       "file_type": "code",
       "norm_label": "striphtmltotext()",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/regex/detect-text.mjs",
       "source_location": "L20"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_collectstaticcsstext",
-      "label": "collectStaticCssText()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 85,
-      "community_name": "detect-html.mjs",
-      "file_type": "code",
-      "norm_label": "collectstaticcsstext()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L862"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_textcontent",
-      "label": ".textContent()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 85,
-      "community_name": "detect-html.mjs",
-      "file_type": "code",
-      "norm_label": ".textcontent()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L749"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_detect_html_checkelementbrokenimage",
-      "label": "checkElementBrokenImage()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 85,
-      "community_name": "detect-html.mjs",
-      "file_type": "code",
-      "norm_label": "checkelementbrokenimage()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/detect-html.mjs",
-      "source_location": "L78"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_detect_html_detecthtml",
-      "label": "detectHtml()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 85,
-      "community_name": "detect-html.mjs",
-      "file_type": "code",
-      "norm_label": "detecthtml()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/detect-html.mjs",
-      "source_location": "L107"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_findings_finding",
-      "label": "finding()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 85,
-      "community_name": "detect-html.mjs",
-      "file_type": "code",
-      "norm_label": "finding()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/findings.mjs",
-      "source_location": "L7"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_findings_getap",
-      "label": "getAP()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 85,
-      "community_name": "detect-html.mjs",
-      "file_type": "code",
-      "norm_label": "getap()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/findings.mjs",
-      "source_location": "L3"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_registry_antipatterns_filterbyproviders",
-      "label": "filterByProviders()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 85,
-      "community_name": "detect-html.mjs",
-      "file_type": "code",
-      "norm_label": "filterbyproviders()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
-      "source_location": "L430"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_registry_antipatterns_getantipattern",
-      "label": "getAntipattern()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 85,
-      "community_name": "detect-html.mjs",
-      "file_type": "code",
-      "norm_label": "getantipattern()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
-      "source_location": "L410"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementglow",
-      "label": "checkElementGlow()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 85,
-      "community_name": "detect-html.mjs",
-      "file_type": "code",
-      "norm_label": "checkelementglow()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L1900"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkhtmlpatterns",
-      "label": "checkHtmlPatterns()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 85,
-      "community_name": "detect-html.mjs",
-      "file_type": "code",
-      "norm_label": "checkhtmlpatterns()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L446"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkpagequalitydom",
-      "label": "checkPageQualityDOM()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 85,
-      "community_name": "detect-html.mjs",
-      "file_type": "code",
-      "norm_label": "checkpagequalitydom()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L1699"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkpagequalityfromdoc",
-      "label": "checkPageQualityFromDoc()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 85,
-      "community_name": "detect-html.mjs",
-      "file_type": "code",
-      "norm_label": "checkpagequalityfromdoc()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L1678"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_shared_color_isneutralcolor",
@@ -22201,7 +22189,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 85,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-text.mjs",
       "file_type": "code",
       "norm_label": "isneutralcolor()",
       "source_file": ".claude/skills/impeccable/scripts/detector/shared/color.mjs",
@@ -22213,7 +22201,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 85,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-text.mjs",
       "file_type": "code",
       "norm_label": "addrules()",
       "source_file": ".claude/skills/impeccable/scripts/detector/shared/inline-ignores.mjs",
@@ -22225,7 +22213,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 85,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-text.mjs",
       "file_type": "code",
       "norm_label": "applyinlineignores()",
       "source_file": ".claude/skills/impeccable/scripts/detector/shared/inline-ignores.mjs",
@@ -22237,7 +22225,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 85,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-text.mjs",
       "file_type": "code",
       "norm_label": "getset()",
       "source_file": ".claude/skills/impeccable/scripts/detector/shared/inline-ignores.mjs",
@@ -22249,7 +22237,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 85,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-text.mjs",
       "file_type": "code",
       "norm_label": "hasdirectives()",
       "source_file": ".claude/skills/impeccable/scripts/detector/shared/inline-ignores.mjs",
@@ -22261,7 +22249,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 85,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-text.mjs",
       "file_type": "code",
       "norm_label": "isinlineignored()",
       "source_file": ".claude/skills/impeccable/scripts/detector/shared/inline-ignores.mjs",
@@ -22273,7 +22261,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 85,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-text.mjs",
       "file_type": "code",
       "norm_label": "normalizerule()",
       "source_file": ".claude/skills/impeccable/scripts/detector/shared/inline-ignores.mjs",
@@ -22285,7 +22273,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 85,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-text.mjs",
       "file_type": "code",
       "norm_label": "parseinlineignores()",
       "source_file": ".claude/skills/impeccable/scripts/detector/shared/inline-ignores.mjs",
@@ -22297,7 +22285,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 85,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-text.mjs",
       "file_type": "code",
       "norm_label": "parserulelist()",
       "source_file": ".claude/skills/impeccable/scripts/detector/shared/inline-ignores.mjs",
@@ -22309,7 +22297,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 85,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-text.mjs",
       "file_type": "code",
       "norm_label": "setmatches()",
       "source_file": ".claude/skills/impeccable/scripts/detector/shared/inline-ignores.mjs",
@@ -22321,7 +22309,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 85,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-text.mjs",
       "file_type": "code",
       "norm_label": "isfullpage()",
       "source_file": ".claude/skills/impeccable/scripts/detector/shared/page.mjs",
@@ -22856,6 +22844,18 @@
       "source_location": "L112"
     },
     {
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_resolvelengthpx",
+      "label": "resolveLengthPx()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "design-system.mjs",
+      "file_type": "code",
+      "norm_label": "resolvelengthpx()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
+      "source_location": "L1252"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_browser",
       "label": "live-browser.js",
       "_origin": "ast",
@@ -23388,28 +23388,6 @@
       "norm_label": "excluido tras la revision independiente (contenido problematico)",
       "source_file": "master-sistemas-inteligentes/mineria-de-datos/FUENTE.md",
       "source_location": "L28"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_browser_script_parts",
-      "label": "browser-script-parts.mjs",
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "live-server.mjs",
-      "file_type": "code",
-      "norm_label": "browser-script-parts.mjs",
-      "source_file": ".claude/skills/impeccable/scripts/live/browser-script-parts.mjs",
-      "source_location": "L1"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_browser_script_parts_live_browser_script_parts",
-      "label": "LIVE_BROWSER_SCRIPT_PARTS",
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "live-server.mjs",
-      "file_type": "code",
-      "norm_label": "live_browser_script_parts",
-      "source_file": ".claude/skills/impeccable/scripts/live/browser-script-parts.mjs",
-      "source_location": "L4"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_server",
@@ -25462,6 +25440,17 @@
       "source_location": "L1"
     },
     {
+      "id": "claude_skills_impeccable_scripts_detector_findings",
+      "label": "findings.mjs",
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "detect-url.mjs",
+      "file_type": "code",
+      "norm_label": "findings.mjs",
+      "source_file": ".claude/skills/impeccable/scripts/detector/findings.mjs",
+      "source_location": "L1"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_detector_profile_profiler",
       "label": "profiler.mjs",
       "_origin": "ast",
@@ -25471,6 +25460,50 @@
       "norm_label": "profiler.mjs",
       "source_file": ".claude/skills/impeccable/scripts/detector/profile/profiler.mjs",
       "source_location": "L1"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_registry_antipatterns",
+      "label": "antipatterns.mjs",
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "detect-url.mjs",
+      "file_type": "code",
+      "norm_label": "antipatterns.mjs",
+      "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_registry_antipatterns_antipatterns",
+      "label": "ANTIPATTERNS",
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "detect-url.mjs",
+      "file_type": "code",
+      "norm_label": "antipatterns",
+      "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_registry_antipatterns_gated_providers",
+      "label": "GATED_PROVIDERS",
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "detect-url.mjs",
+      "file_type": "code",
+      "norm_label": "gated_providers",
+      "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
+      "source_location": "L423"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_registry_antipatterns_rule_engine_support",
+      "label": "RULE_ENGINE_SUPPORT",
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "detect-url.mjs",
+      "file_type": "code",
+      "norm_label": "rule_engine_support",
+      "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
+      "source_location": "L403"
     },
     {
       "id": "claude_hooks_restrict_cavecrew_bash",
@@ -30741,17 +30774,6 @@
       "source_location": "L1"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_complete",
-      "label": "live-complete.mjs",
-      "_origin": "ast",
-      "community": 196,
-      "community_name": "readLiveServerInfo",
-      "file_type": "code",
-      "norm_label": "live-complete.mjs",
-      "source_file": ".claude/skills/impeccable/scripts/live-complete.mjs",
-      "source_location": "L1"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_resume",
       "label": "live-resume.mjs",
       "_origin": "ast",
@@ -31481,6 +31503,72 @@
       "source_location": "L5"
     },
     {
+      "id": "css_select",
+      "label": "css-select",
+      "_origin": "ast",
+      "community": 208,
+      "community_name": "detect-html.mjs",
+      "confidence": "EXTRACTED",
+      "file_type": "code",
+      "norm_label": "css-select",
+      "source_file": "css-select"
+    },
+    {
+      "id": "css_tree",
+      "label": "css-tree",
+      "_origin": "ast",
+      "community": 208,
+      "community_name": "detect-html.mjs",
+      "confidence": "EXTRACTED",
+      "file_type": "code",
+      "norm_label": "css-tree",
+      "source_file": "css-tree"
+    },
+    {
+      "id": "domutils",
+      "label": "domutils",
+      "_origin": "ast",
+      "community": 208,
+      "community_name": "detect-html.mjs",
+      "confidence": "EXTRACTED",
+      "file_type": "code",
+      "norm_label": "domutils",
+      "source_file": "domutils"
+    },
+    {
+      "id": "htmlparser2",
+      "label": "htmlparser2",
+      "_origin": "ast",
+      "community": 208,
+      "community_name": "detect-html.mjs",
+      "confidence": "EXTRACTED",
+      "file_type": "code",
+      "norm_label": "htmlparser2",
+      "source_file": "htmlparser2"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_detect_html",
+      "label": "detect-html.mjs",
+      "_origin": "ast",
+      "community": 208,
+      "community_name": "detect-html.mjs",
+      "file_type": "code",
+      "norm_label": "detect-html.mjs",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/detect-html.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_detect_html_static_element_rules",
+      "label": "STATIC_ELEMENT_RULES",
+      "_origin": "ast",
+      "community": 208,
+      "community_name": "detect-html.mjs",
+      "file_type": "code",
+      "norm_label": "static_element_rules",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/detect-html.mjs",
+      "source_location": "L92"
+    },
+    {
       "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b1_cuaderno_unidad8b_salimos",
       "label": "cuaderno-unidad8b_salimos.md",
       "_origin": "ast",
@@ -31776,6 +31864,28 @@
       "source_location": "L5"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_browser_script_parts",
+      "label": "browser-script-parts.mjs",
+      "_origin": "ast",
+      "community": 211,
+      "community_name": "browser-script-parts.mjs",
+      "file_type": "code",
+      "norm_label": "browser-script-parts.mjs",
+      "source_file": ".claude/skills/impeccable/scripts/live/browser-script-parts.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_browser_script_parts_live_browser_script_parts",
+      "label": "LIVE_BROWSER_SCRIPT_PARTS",
+      "_origin": "ast",
+      "community": 211,
+      "community_name": "browser-script-parts.mjs",
+      "file_type": "code",
+      "norm_label": "live_browser_script_parts",
+      "source_file": ".claude/skills/impeccable/scripts/live/browser-script-parts.mjs",
+      "source_location": "L4"
+    },
+    {
       "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b1_cuaderno_unidad7b_cuando_pueda_cambiare_de_trabajo",
       "label": "cuaderno-unidad7b_cuando-pueda-cambiare-de-trabajo.md",
       "_origin": "ast",
@@ -31906,6 +32016,36 @@
       "norm_label": "ejercicios",
       "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad8c_musica-arte-y-literatura.md",
       "source_location": "L5"
+    },
+    {
+      "id": "claude_hooks_caveman_mode",
+      "label": "caveman-mode.sh",
+      "_origin": "ast",
+      "community": 215,
+      "community_name": "caveman-mode.sh",
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "norm_label": "caveman-mode.sh",
+      "source_file": ".claude/hooks/caveman-mode.sh",
+      "source_location": "L1"
+    },
+    {
+      "id": "claude_hooks_caveman_mode_sh__entry",
+      "label": "caveman-mode.sh script",
+      "_origin": "ast",
+      "community": 215,
+      "community_name": "caveman-mode.sh",
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "norm_label": "caveman-mode.sh script",
+      "source_file": ".claude/hooks/caveman-mode.sh",
+      "source_location": "L1"
     },
     {
       "id": "claude_skills_impeccable_scripts_hook_before_edit",
@@ -32307,39 +32447,6 @@
       "source_location": "L27"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent",
-      "label": "live-copy-edit-agent.mjs",
-      "_origin": "ast",
-      "community": 29,
-      "community_name": "live-copy-edit-agent.mjs",
-      "file_type": "code",
-      "norm_label": "live-copy-edit-agent.mjs",
-      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
-      "source_location": "L1"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_command_auth_cache",
-      "label": "COMMAND_AUTH_CACHE",
-      "_origin": "ast",
-      "community": 29,
-      "community_name": "live-copy-edit-agent.mjs",
-      "file_type": "code",
-      "norm_label": "command_auth_cache",
-      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
-      "source_location": "L646"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_require",
-      "label": "require",
-      "_origin": "ast",
-      "community": 29,
-      "community_name": "live-copy-edit-agent.mjs",
-      "file_type": "code",
-      "norm_label": "require",
-      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
-      "source_location": "L17"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_completion",
       "label": "completion.mjs",
       "_origin": "ast",
@@ -32712,6 +32819,17 @@
       "norm_label": "live_dir",
       "source_file": ".claude/skills/impeccable/scripts/lib/impeccable-paths.mjs",
       "source_location": "L6"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_complete",
+      "label": "live-complete.mjs",
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "session-store.mjs",
+      "file_type": "code",
+      "norm_label": "live-complete.mjs",
+      "source_file": ".claude/skills/impeccable/scripts/live-complete.mjs",
+      "source_location": "L1"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_session_store",
@@ -33584,50 +33702,6 @@
       "source_location": "L8"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_registry_antipatterns",
-      "label": "antipatterns.mjs",
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "detect-antipatterns.mjs",
-      "file_type": "code",
-      "norm_label": "antipatterns.mjs",
-      "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
-      "source_location": "L1"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_registry_antipatterns_antipatterns",
-      "label": "ANTIPATTERNS",
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "detect-antipatterns.mjs",
-      "file_type": "code",
-      "norm_label": "antipatterns",
-      "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
-      "source_location": "L1"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_registry_antipatterns_gated_providers",
-      "label": "GATED_PROVIDERS",
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "detect-antipatterns.mjs",
-      "file_type": "code",
-      "norm_label": "gated_providers",
-      "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
-      "source_location": "L423"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_registry_antipatterns_rule_engine_support",
-      "label": "RULE_ENGINE_SUPPORT",
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "detect-antipatterns.mjs",
-      "file_type": "code",
-      "norm_label": "rule_engine_support",
-      "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
-      "source_location": "L403"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_detector_shared_constants",
       "label": "constants.mjs",
       "_origin": "ast",
@@ -33879,7 +33953,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-16 \u2014 guia oficial de buenas practicas de claude code",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L875"
+      "source_location": "L1191"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_16_primera_pasada_del_radar",
@@ -33891,7 +33965,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-16 \u2014 primera pasada del radar",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L910"
+      "source_location": "L1226"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_16_segunda_pasada_hooks_vs_claude_md_y_pr\u00e1cticas_de_la_comunidad",
@@ -33903,7 +33977,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-16 \u2014 segunda pasada: hooks vs. claude.md, y practicas de la comunidad",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L665"
+      "source_location": "L981"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_18_markitdown_microsoft_herramienta_puntual_no_instalada",
@@ -33915,7 +33989,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-18 \u2014 markitdown (microsoft): herramienta puntual, no instalada",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L640"
+      "source_location": "L956"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_18_pr\u00e1ctica_desplazar_la_ventana_de_5h_de_l\u00edmite_de_uso",
@@ -33927,7 +34001,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-18 \u2014 practica: desplazar la ventana de 5h de limite de uso",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L626"
+      "source_location": "L942"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_20_agent_browser_vercel_labs_activado",
@@ -33939,7 +34013,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-20 \u2014 agent-browser (vercel labs): activado",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L498"
+      "source_location": "L814"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_21_find_skills_vercel_labs_activado",
@@ -33951,7 +34025,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-21 \u2014 find-skills (vercel labs): activado",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L466"
+      "source_location": "L782"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_21_mcp_server_dev_anthropic_activado_deshabilitado_por_defecto",
@@ -33963,19 +34037,19 @@
       "node_kind": "heading",
       "norm_label": "2026-08-21 \u2014 mcp-server-dev (anthropic): activado, deshabilitado por defecto",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L378"
+      "source_location": "L694"
     },
     {
-      "id": "recursos_generales_herramientas_ia_novedades_2026_08_22_caveman_juliusbrussee_activado_para_todas_las_sesiones",
-      "label": "2026-08-22 \u2014 caveman (JuliusBrussee): activado para todas las sesiones",
+      "id": "recursos_generales_herramientas_ia_novedades_2026_08_22_caveman_juliusbrussee_instalado_correcci\u00f3n_2026_08_30_no_se_activa_solo",
+      "label": "2026-08-22 \u2014 caveman (JuliusBrussee): instalado (correcci\u00f3n 2026-08-30: no se activa solo)",
       "_origin": "ast",
       "community": 69,
       "community_name": "Novedades de herramientas de IA",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "2026-08-22 \u2014 caveman (juliusbrussee): activado para todas las sesiones",
+      "norm_label": "2026-08-22 \u2014 caveman (juliusbrussee): instalado (correccion 2026-08-30: no se activa solo)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L239"
+      "source_location": "L485"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_22_ponytail_dietrichgebert_activado_para_todas_las_sesiones",
@@ -33987,7 +34061,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-22 \u2014 ponytail (dietrichgebert): activado para todas las sesiones",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L277"
+      "source_location": "L593"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_23_7_skills_m\u00e1s_de_juliusbrussee_caveman_activadas",
@@ -33999,7 +34073,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-23 \u2014 7 skills mas de juliusbrussee/caveman: activadas",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L46"
+      "source_location": "L292"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_23_statusline_de_ponytail_configurado",
@@ -34011,7 +34085,67 @@
       "node_kind": "heading",
       "norm_label": "2026-08-23 \u2014 statusline de ponytail: configurado",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L212"
+      "source_location": "L458"
+    },
+    {
+      "id": "recursos_generales_herramientas_ia_novedades_2026_08_30_carrusel_4_conectores_que_le_dan_superpoderes_a_claude_revisado_nada_que_instalar",
+      "label": "2026-08-30 \u2014 Carrusel \"4 conectores que le dan superpoderes a Claude\": revisado, nada que instalar",
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "Novedades de herramientas de IA",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "2026-08-30 \u2014 carrusel \"4 conectores que le dan superpoderes a claude\": revisado, nada que instalar",
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L26"
+    },
+    {
+      "id": "recursos_generales_herramientas_ia_novedades_2026_08_30_compactaci\u00f3n_de_contexto_palancas_oficiales_para_ahorrar_tokens",
+      "label": "2026-08-30 \u2014 Compactaci\u00f3n de contexto: palancas oficiales para ahorrar tokens",
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "Novedades de herramientas de IA",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "2026-08-30 \u2014 compactacion de contexto: palancas oficiales para ahorrar tokens",
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L114"
+    },
+    {
+      "id": "recursos_generales_herramientas_ia_novedades_2026_08_30_gemini_notebook_antes_notebooklm_sin_opci\u00f3n_segura_no_adoptado",
+      "label": "2026-08-30 \u2014 Gemini Notebook (antes NotebookLM): sin opci\u00f3n segura, no adoptado",
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "Novedades de herramientas de IA",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "2026-08-30 \u2014 gemini notebook (antes notebooklm): sin opcion segura, no adoptado",
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L225"
+    },
+    {
+      "id": "recursos_generales_herramientas_ia_novedades_2026_08_30_memory_de_anthropic_memoria_compartida_entre_chats_nativo_oficial",
+      "label": "2026-08-30 \u2014 Memory de Anthropic: memoria compartida entre chats (nativo, oficial)",
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "Novedades de herramientas de IA",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "2026-08-30 \u2014 memory de anthropic: memoria compartida entre chats (nativo, oficial)",
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L62"
+    },
+    {
+      "id": "recursos_generales_herramientas_ia_novedades_2026_08_30_pasada_del_radar_dos_funciones_nativas_nuevas_sin_hallazgos_de_terceros",
+      "label": "2026-08-30 \u2014 Pasada del radar: dos funciones nativas nuevas, sin hallazgos de terceros",
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "Novedades de herramientas de IA",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "2026-08-30 \u2014 pasada del radar: dos funciones nativas nuevas, sin hallazgos de terceros",
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L170"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_09_06_lecci\u00f3n_ampliar_una_regla_de_golden_rules_exige_revisar_todas_las_que_dependen_de_su_alcance",
@@ -34023,7 +34157,19 @@
       "node_kind": "heading",
       "norm_label": "2026-09-06 \u2014 leccion: ampliar una regla de golden rules exige revisar todas las que dependen de su alcance",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L978"
+      "source_location": "L1309"
+    },
+    {
+      "id": "recursos_generales_herramientas_ia_novedades_anotado_no_aplicado_palancas_oficiales_sin_necesidad_clara_todav\u00eda",
+      "label": "Anotado, no aplicado (palancas oficiales sin necesidad clara todav\u00eda)",
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "Novedades de herramientas de IA",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "anotado, no aplicado (palancas oficiales sin necesidad clara todavia)",
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L138"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_anotado_no_aplicado_patrones_de_awattar_claude_code_best_practices",
@@ -34035,7 +34181,7 @@
       "node_kind": "heading",
       "norm_label": "anotado, no aplicado: patrones de `awattar/claude-code-best-practices`",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L854"
+      "source_location": "L1170"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_aplicado_hook_stop_con_estado_de_git_radical_transparency",
@@ -34047,7 +34193,19 @@
       "node_kind": "heading",
       "norm_label": "aplicado: hook `stop` con estado de git (\"radical transparency\")",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L671"
+      "source_location": "L987"
+    },
+    {
+      "id": "recursos_generales_herramientas_ia_novedades_aplicado_instrucci\u00f3n_de_preservaci\u00f3n_al_compactar_en_claude_md",
+      "label": "Aplicado: instrucci\u00f3n de preservaci\u00f3n al compactar, en `CLAUDE.md`",
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "Novedades de herramientas de IA",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "aplicado: instruccion de preservacion al compactar, en `claude.md`",
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L121"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_aplicado_tras_profundizar_hook_que_bloquea_merge_sin_revisi\u00f3n",
@@ -34059,7 +34217,19 @@
       "node_kind": "heading",
       "norm_label": "aplicado (tras profundizar): hook que bloquea merge sin revision",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L687"
+      "source_location": "L1003"
+    },
+    {
+      "id": "recursos_generales_herramientas_ia_novedades_auto_continue_al_resetear_el_l\u00edmite_de_uso_nativo_activado_por_defecto",
+      "label": "Auto-continue al resetear el l\u00edmite de uso (nativo, activado por defecto)",
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "Novedades de herramientas de IA",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "auto-continue al resetear el limite de uso (nativo, activado por defecto)",
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L185"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_brisk_teaching_conector_mcp",
@@ -34071,7 +34241,7 @@
       "node_kind": "heading",
       "norm_label": "brisk teaching (conector mcp)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L930"
+      "source_location": "L1246"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_c\u00f3mo_se_usa",
@@ -34095,7 +34265,31 @@
       "node_kind": "heading",
       "norm_label": "deepl (conector mcp)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L912"
+      "source_location": "L1228"
+    },
+    {
+      "id": "recursos_generales_herramientas_ia_novedades_estilo_de_salida_concise_nativo",
+      "label": "Estilo de salida \"Concise\" (nativo)",
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "Novedades de herramientas de IA",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "estilo de salida \"concise\" (nativo)",
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L201"
+    },
+    {
+      "id": "recursos_generales_herramientas_ia_novedades_fuera_de_alcance_de_claude_code_mencionado_para_completar_el_cuadro",
+      "label": "Fuera de alcance de Claude Code, mencionado para completar el cuadro",
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "Novedades de herramientas de IA",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "fuera de alcance de claude code, mencionado para completar el cuadro",
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L159"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_lecci\u00f3n_graphify_out_pending_changes_se_cuela_en_git_3a_vez",
@@ -34107,7 +34301,7 @@
       "node_kind": "heading",
       "norm_label": "leccion: `graphify-out/.pending_changes` se cuela en git (3a vez)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L26"
+      "source_location": "L272"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_marketplaces_de_plugins_de_claude_code_oficial_y_comunidad",
@@ -34119,7 +34313,7 @@
       "node_kind": "heading",
       "norm_label": "marketplaces de plugins de claude code (oficial y comunidad)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L948"
+      "source_location": "L1271"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_menor_learning_commons_y_learn_with_coursera",
@@ -34131,7 +34325,7 @@
       "node_kind": "heading",
       "norm_label": "(menor) learning commons y learn with coursera",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L965"
+      "source_location": "L1288"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_novedades_de_herramientas_de_ia",
@@ -34144,6 +34338,18 @@
       "norm_label": "novedades de herramientas de ia",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
       "source_location": "L1"
+    },
+    {
+      "id": "recursos_generales_herramientas_ia_novedades_sin_hallazgos_nuevos_de_terceros_en_los_dominios_de_angel",
+      "label": "Sin hallazgos nuevos de terceros en los dominios de Angel",
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "Novedades de herramientas de IA",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "sin hallazgos nuevos de terceros en los dominios de angel",
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L214"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_ui_core",
@@ -34223,6 +34429,39 @@
       "source_location": "L50"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent",
+      "label": "live-copy-edit-agent.mjs",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "live-commit-manual-edits.mjs",
+      "file_type": "code",
+      "norm_label": "live-copy-edit-agent.mjs",
+      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_command_auth_cache",
+      "label": "COMMAND_AUTH_CACHE",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "live-commit-manual-edits.mjs",
+      "file_type": "code",
+      "norm_label": "command_auth_cache",
+      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
+      "source_location": "L646"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_require",
+      "label": "require",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "live-commit-manual-edits.mjs",
+      "file_type": "code",
+      "norm_label": "require",
+      "source_file": ".claude/skills/impeccable/scripts/live-copy-edit-agent.mjs",
+      "source_location": "L17"
+    },
+    {
       "id": "docencia_espanol_fuentes_extraer",
       "label": "extraer.mjs",
       "_origin": "ast",
@@ -34267,55 +34506,11 @@
       "source_location": "L16"
     },
     {
-      "id": "css_select",
-      "label": "css-select",
-      "_origin": "ast",
-      "community": 85,
-      "community_name": "detect-html.mjs",
-      "confidence": "EXTRACTED",
-      "file_type": "code",
-      "norm_label": "css-select",
-      "source_file": "css-select"
-    },
-    {
-      "id": "css_tree",
-      "label": "css-tree",
-      "_origin": "ast",
-      "community": 85,
-      "community_name": "detect-html.mjs",
-      "confidence": "EXTRACTED",
-      "file_type": "code",
-      "norm_label": "css-tree",
-      "source_file": "css-tree"
-    },
-    {
-      "id": "domutils",
-      "label": "domutils",
-      "_origin": "ast",
-      "community": 85,
-      "community_name": "detect-html.mjs",
-      "confidence": "EXTRACTED",
-      "file_type": "code",
-      "norm_label": "domutils",
-      "source_file": "domutils"
-    },
-    {
-      "id": "htmlparser2",
-      "label": "htmlparser2",
-      "_origin": "ast",
-      "community": 85,
-      "community_name": "detect-html.mjs",
-      "confidence": "EXTRACTED",
-      "file_type": "code",
-      "norm_label": "htmlparser2",
-      "source_file": "htmlparser2"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_detector_engines_regex_detect_text",
       "label": "detect-text.mjs",
       "_origin": "ast",
       "community": 85,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-text.mjs",
       "file_type": "code",
       "norm_label": "detect-text.mjs",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/regex/detect-text.mjs",
@@ -34326,7 +34521,7 @@
       "label": "CSS_IN_JS_EXTENSIONS",
       "_origin": "ast",
       "community": 85,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-text.mjs",
       "file_type": "code",
       "norm_label": "css_in_js_extensions",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/regex/detect-text.mjs",
@@ -34337,7 +34532,7 @@
       "label": "PAGE_ANALYZER_EXTS",
       "_origin": "ast",
       "community": 85,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-text.mjs",
       "file_type": "code",
       "norm_label": "page_analyzer_exts",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/regex/detect-text.mjs",
@@ -34348,7 +34543,7 @@
       "label": "REGEX_ANALYZERS",
       "_origin": "ast",
       "community": 85,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-text.mjs",
       "file_type": "code",
       "norm_label": "regex_analyzers",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/regex/detect-text.mjs",
@@ -34359,7 +34554,7 @@
       "label": "REGEX_MATCHERS",
       "_origin": "ast",
       "community": 85,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-text.mjs",
       "file_type": "code",
       "norm_label": "regex_matchers",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/regex/detect-text.mjs",
@@ -34370,51 +34565,18 @@
       "label": "TEXT_CONTENT_ANALYZER_IDS",
       "_origin": "ast",
       "community": 85,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-text.mjs",
       "file_type": "code",
       "norm_label": "text_content_analyzer_ids",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/regex/detect-text.mjs",
       "source_location": "L437"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_detect_html",
-      "label": "detect-html.mjs",
-      "_origin": "ast",
-      "community": 85,
-      "community_name": "detect-html.mjs",
-      "file_type": "code",
-      "norm_label": "detect-html.mjs",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/detect-html.mjs",
-      "source_location": "L1"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_detect_html_static_element_rules",
-      "label": "STATIC_ELEMENT_RULES",
-      "_origin": "ast",
-      "community": 85,
-      "community_name": "detect-html.mjs",
-      "file_type": "code",
-      "norm_label": "static_element_rules",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/detect-html.mjs",
-      "source_location": "L92"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_findings",
-      "label": "findings.mjs",
-      "_origin": "ast",
-      "community": 85,
-      "community_name": "detect-html.mjs",
-      "file_type": "code",
-      "norm_label": "findings.mjs",
-      "source_file": ".claude/skills/impeccable/scripts/detector/findings.mjs",
-      "source_location": "L1"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_detector_shared_inline_ignores",
       "label": "inline-ignores.mjs",
       "_origin": "ast",
       "community": 85,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-text.mjs",
       "file_type": "code",
       "norm_label": "inline-ignores.mjs",
       "source_file": ".claude/skills/impeccable/scripts/detector/shared/inline-ignores.mjs",
@@ -34425,7 +34587,7 @@
       "label": "page.mjs",
       "_origin": "ast",
       "community": 85,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-text.mjs",
       "file_type": "code",
       "norm_label": "page.mjs",
       "source_file": ".claude/skills/impeccable/scripts/detector/shared/page.mjs",
@@ -45554,18 +45716,6 @@
       "weight": 1.0
     },
     {
-      "source": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticdocument_wrap",
-      "target": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L812",
-      "weight": 1.0
-    },
-    {
       "source": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_classname",
       "target": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticelement_getattribute",
       "relation": "calls",
@@ -45635,18 +45785,6 @@
       "context": "call",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/detect-html.mjs",
       "source_location": "L152",
-      "weight": 1.0
-    },
-    {
-      "source": "claude_skills_impeccable_scripts_detector_engines_static_html_detect_html_detecthtml",
-      "target": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticdocument",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/detect-html.mjs",
-      "source_location": "L153",
       "weight": 1.0
     },
     {
@@ -52463,18 +52601,6 @@
       "context": "call",
       "source_file": ".claude/skills/impeccable/scripts/lib/target-args.mjs",
       "source_location": "L40",
-      "weight": 1.0
-    },
-    {
-      "source": "claude_skills_impeccable_scripts_lib_target_args_parsetargetpath",
-      "target": "claude_skills_impeccable_scripts_lib_target_args_targetargerror",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": ".claude/skills/impeccable/scripts/lib/target-args.mjs",
-      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -79917,6 +80043,17 @@
       "confidence_score": 1.0,
       "source_file": ".claude/agents/cavecrew-reviewer.md",
       "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "claude_hooks_caveman_mode",
+      "target": "claude_hooks_caveman_mode_sh__entry",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/hooks/caveman-mode.sh",
+      "source_location": "L1",
       "weight": 1.0
     },
     {
@@ -107889,7 +108026,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L912",
+      "source_location": "L1228",
       "weight": 1.0
     },
     {
@@ -107900,7 +108037,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L930",
+      "source_location": "L1246",
       "weight": 1.0
     },
     {
@@ -107911,7 +108048,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L948",
+      "source_location": "L1271",
       "weight": 1.0
     },
     {
@@ -107922,18 +108059,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L965",
-      "weight": 1.0
-    },
-    {
-      "source": "recursos_generales_herramientas_ia_novedades_2026_08_16_segunda_pasada_hooks_vs_claude_md_y_pr\u00e1cticas_de_la_comunidad",
-      "target": "recursos_generales_herramientas_ia_novedades_aplicado_hook_stop_con_estado_de_git_radical_transparency",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L671",
+      "source_location": "L1288",
       "weight": 1.0
     },
     {
@@ -107944,7 +108070,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L687",
+      "source_location": "L1003",
       "weight": 1.0
     },
     {
@@ -107955,18 +108081,95 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L854",
+      "source_location": "L1170",
       "weight": 1.0
     },
     {
-      "source": "recursos_generales_herramientas_ia_novedades_c\u00f3mo_se_usa",
+      "source": "recursos_generales_herramientas_ia_novedades_2026_08_16_segunda_pasada_hooks_vs_claude_md_y_pr\u00e1cticas_de_la_comunidad",
+      "target": "recursos_generales_herramientas_ia_novedades_aplicado_hook_stop_con_estado_de_git_radical_transparency",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L987",
+      "weight": 1.0
+    },
+    {
+      "source": "recursos_generales_herramientas_ia_novedades_2026_08_30_compactaci\u00f3n_de_contexto_palancas_oficiales_para_ahorrar_tokens",
+      "target": "recursos_generales_herramientas_ia_novedades_aplicado_instrucci\u00f3n_de_preservaci\u00f3n_al_compactar_en_claude_md",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L121",
+      "weight": 1.0
+    },
+    {
+      "source": "recursos_generales_herramientas_ia_novedades_2026_08_30_compactaci\u00f3n_de_contexto_palancas_oficiales_para_ahorrar_tokens",
+      "target": "recursos_generales_herramientas_ia_novedades_anotado_no_aplicado_palancas_oficiales_sin_necesidad_clara_todav\u00eda",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L138",
+      "weight": 1.0
+    },
+    {
+      "source": "recursos_generales_herramientas_ia_novedades_2026_08_30_compactaci\u00f3n_de_contexto_palancas_oficiales_para_ahorrar_tokens",
+      "target": "recursos_generales_herramientas_ia_novedades_fuera_de_alcance_de_claude_code_mencionado_para_completar_el_cuadro",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L159",
+      "weight": 1.0
+    },
+    {
+      "source": "recursos_generales_herramientas_ia_novedades_2026_08_30_gemini_notebook_antes_notebooklm_sin_opci\u00f3n_segura_no_adoptado",
       "target": "recursos_generales_herramientas_ia_novedades_lecci\u00f3n_graphify_out_pending_changes_se_cuela_en_git_3a_vez",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L26",
+      "source_location": "L272",
+      "weight": 1.0
+    },
+    {
+      "source": "recursos_generales_herramientas_ia_novedades_2026_08_30_pasada_del_radar_dos_funciones_nativas_nuevas_sin_hallazgos_de_terceros",
+      "target": "recursos_generales_herramientas_ia_novedades_auto_continue_al_resetear_el_l\u00edmite_de_uso_nativo_activado_por_defecto",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L185",
+      "weight": 1.0
+    },
+    {
+      "source": "recursos_generales_herramientas_ia_novedades_2026_08_30_pasada_del_radar_dos_funciones_nativas_nuevas_sin_hallazgos_de_terceros",
+      "target": "recursos_generales_herramientas_ia_novedades_estilo_de_salida_concise_nativo",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L201",
+      "weight": 1.0
+    },
+    {
+      "source": "recursos_generales_herramientas_ia_novedades_2026_08_30_pasada_del_radar_dos_funciones_nativas_nuevas_sin_hallazgos_de_terceros",
+      "target": "recursos_generales_herramientas_ia_novedades_sin_hallazgos_nuevos_de_terceros_en_los_dominios_de_angel",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L214",
       "weight": 1.0
     },
     {
@@ -107982,112 +108185,13 @@
     },
     {
       "source": "recursos_generales_herramientas_ia_novedades_novedades_de_herramientas_de_ia",
-      "target": "recursos_generales_herramientas_ia_novedades_2026_08_23_statusline_de_ponytail_configurado",
+      "target": "recursos_generales_herramientas_ia_novedades_2026_08_30_compactaci\u00f3n_de_contexto_palancas_oficiales_para_ahorrar_tokens",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L212",
-      "weight": 1.0
-    },
-    {
-      "source": "recursos_generales_herramientas_ia_novedades_novedades_de_herramientas_de_ia",
-      "target": "recursos_generales_herramientas_ia_novedades_2026_08_22_caveman_juliusbrussee_activado_para_todas_las_sesiones",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L239",
-      "weight": 1.0
-    },
-    {
-      "source": "recursos_generales_herramientas_ia_novedades_novedades_de_herramientas_de_ia",
-      "target": "recursos_generales_herramientas_ia_novedades_2026_08_22_ponytail_dietrichgebert_activado_para_todas_las_sesiones",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L277",
-      "weight": 1.0
-    },
-    {
-      "source": "recursos_generales_herramientas_ia_novedades_novedades_de_herramientas_de_ia",
-      "target": "recursos_generales_herramientas_ia_novedades_2026_08_21_mcp_server_dev_anthropic_activado_deshabilitado_por_defecto",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L378",
-      "weight": 1.0
-    },
-    {
-      "source": "recursos_generales_herramientas_ia_novedades_novedades_de_herramientas_de_ia",
-      "target": "recursos_generales_herramientas_ia_novedades_2026_08_23_7_skills_m\u00e1s_de_juliusbrussee_caveman_activadas",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L46",
-      "weight": 1.0
-    },
-    {
-      "source": "recursos_generales_herramientas_ia_novedades_novedades_de_herramientas_de_ia",
-      "target": "recursos_generales_herramientas_ia_novedades_2026_08_21_find_skills_vercel_labs_activado",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L466",
-      "weight": 1.0
-    },
-    {
-      "source": "recursos_generales_herramientas_ia_novedades_novedades_de_herramientas_de_ia",
-      "target": "recursos_generales_herramientas_ia_novedades_2026_08_20_agent_browser_vercel_labs_activado",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L498",
-      "weight": 1.0
-    },
-    {
-      "source": "recursos_generales_herramientas_ia_novedades_novedades_de_herramientas_de_ia",
-      "target": "recursos_generales_herramientas_ia_novedades_2026_08_18_pr\u00e1ctica_desplazar_la_ventana_de_5h_de_l\u00edmite_de_uso",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L626",
-      "weight": 1.0
-    },
-    {
-      "source": "recursos_generales_herramientas_ia_novedades_novedades_de_herramientas_de_ia",
-      "target": "recursos_generales_herramientas_ia_novedades_2026_08_18_markitdown_microsoft_herramienta_puntual_no_instalada",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L640",
-      "weight": 1.0
-    },
-    {
-      "source": "recursos_generales_herramientas_ia_novedades_novedades_de_herramientas_de_ia",
-      "target": "recursos_generales_herramientas_ia_novedades_2026_08_16_segunda_pasada_hooks_vs_claude_md_y_pr\u00e1cticas_de_la_comunidad",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L665",
+      "source_location": "L114",
       "weight": 1.0
     },
     {
@@ -108098,7 +108202,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L875",
+      "source_location": "L1191",
       "weight": 1.0
     },
     {
@@ -108109,7 +108213,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L910",
+      "source_location": "L1226",
       "weight": 1.0
     },
     {
@@ -108120,7 +108224,161 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L978",
+      "source_location": "L1309",
+      "weight": 1.0
+    },
+    {
+      "source": "recursos_generales_herramientas_ia_novedades_novedades_de_herramientas_de_ia",
+      "target": "recursos_generales_herramientas_ia_novedades_2026_08_30_pasada_del_radar_dos_funciones_nativas_nuevas_sin_hallazgos_de_terceros",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L170",
+      "weight": 1.0
+    },
+    {
+      "source": "recursos_generales_herramientas_ia_novedades_novedades_de_herramientas_de_ia",
+      "target": "recursos_generales_herramientas_ia_novedades_2026_08_30_gemini_notebook_antes_notebooklm_sin_opci\u00f3n_segura_no_adoptado",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L225",
+      "weight": 1.0
+    },
+    {
+      "source": "recursos_generales_herramientas_ia_novedades_novedades_de_herramientas_de_ia",
+      "target": "recursos_generales_herramientas_ia_novedades_2026_08_30_carrusel_4_conectores_que_le_dan_superpoderes_a_claude_revisado_nada_que_instalar",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "recursos_generales_herramientas_ia_novedades_novedades_de_herramientas_de_ia",
+      "target": "recursos_generales_herramientas_ia_novedades_2026_08_23_7_skills_m\u00e1s_de_juliusbrussee_caveman_activadas",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L292",
+      "weight": 1.0
+    },
+    {
+      "source": "recursos_generales_herramientas_ia_novedades_novedades_de_herramientas_de_ia",
+      "target": "recursos_generales_herramientas_ia_novedades_2026_08_23_statusline_de_ponytail_configurado",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L458",
+      "weight": 1.0
+    },
+    {
+      "source": "recursos_generales_herramientas_ia_novedades_novedades_de_herramientas_de_ia",
+      "target": "recursos_generales_herramientas_ia_novedades_2026_08_22_caveman_juliusbrussee_instalado_correcci\u00f3n_2026_08_30_no_se_activa_solo",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L485",
+      "weight": 1.0
+    },
+    {
+      "source": "recursos_generales_herramientas_ia_novedades_novedades_de_herramientas_de_ia",
+      "target": "recursos_generales_herramientas_ia_novedades_2026_08_22_ponytail_dietrichgebert_activado_para_todas_las_sesiones",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L593",
+      "weight": 1.0
+    },
+    {
+      "source": "recursos_generales_herramientas_ia_novedades_novedades_de_herramientas_de_ia",
+      "target": "recursos_generales_herramientas_ia_novedades_2026_08_30_memory_de_anthropic_memoria_compartida_entre_chats_nativo_oficial",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "recursos_generales_herramientas_ia_novedades_novedades_de_herramientas_de_ia",
+      "target": "recursos_generales_herramientas_ia_novedades_2026_08_21_mcp_server_dev_anthropic_activado_deshabilitado_por_defecto",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L694",
+      "weight": 1.0
+    },
+    {
+      "source": "recursos_generales_herramientas_ia_novedades_novedades_de_herramientas_de_ia",
+      "target": "recursos_generales_herramientas_ia_novedades_2026_08_21_find_skills_vercel_labs_activado",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L782",
+      "weight": 1.0
+    },
+    {
+      "source": "recursos_generales_herramientas_ia_novedades_novedades_de_herramientas_de_ia",
+      "target": "recursos_generales_herramientas_ia_novedades_2026_08_20_agent_browser_vercel_labs_activado",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L814",
+      "weight": 1.0
+    },
+    {
+      "source": "recursos_generales_herramientas_ia_novedades_novedades_de_herramientas_de_ia",
+      "target": "recursos_generales_herramientas_ia_novedades_2026_08_18_pr\u00e1ctica_desplazar_la_ventana_de_5h_de_l\u00edmite_de_uso",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L942",
+      "weight": 1.0
+    },
+    {
+      "source": "recursos_generales_herramientas_ia_novedades_novedades_de_herramientas_de_ia",
+      "target": "recursos_generales_herramientas_ia_novedades_2026_08_18_markitdown_microsoft_herramienta_puntual_no_instalada",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L956",
+      "weight": 1.0
+    },
+    {
+      "source": "recursos_generales_herramientas_ia_novedades_novedades_de_herramientas_de_ia",
+      "target": "recursos_generales_herramientas_ia_novedades_2026_08_16_segunda_pasada_hooks_vs_claude_md_y_pr\u00e1cticas_de_la_comunidad",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L981",
       "weight": 1.0
     },
     {
@@ -112569,5 +112827,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "444a18e6706c731b9f17d64ae76feadb787efc82"
+  "built_at_commit": "9aa75a326fe2a890844c6bfdb9dc8126321718fb"
 }
