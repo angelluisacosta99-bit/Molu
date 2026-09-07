@@ -171,21 +171,41 @@ solo la igualdad -- verificado en vivo con un 10º caso (`foo` local
 preservado tras el arreglo). Ampliada la lección del punto 9 de
 `hook-hardening` con esta segunda vuelta sobre el mismo tipo de error.
 
-**Balance tras 6 rondas sobre el mismo archivo, para que quede
-constancia honesta:** cada ronda encontró un bypass real y distinto de
-la misma comprobación (citado, colapso de directorios, ahora colisión
-de prefijo) -- no es una sola corrección con ruido alrededor, es una
-familia de sutilezas de git que se fueron agotando una a una. El
-patrón hasta ahora es que cada arreglo cierra exactamente el hueco
-encontrado sin abrir uno nuevo (las rondas 2-6 no reabrieron nada de
-las rondas anteriores, verificado repitiendo los casos previos en cada
-ronda) -- pero si una futura revisión encuentra un 7º hueco distinto en
-esta misma comprobación de colisión, la alternativa más simple
-(bloquear el auto-heal ante *cualquier* archivo sin trackear/ignorado
-presente, sin intentar detectar colisión con precisión) vuelve a ser
-la opción a considerar en serio, aceptando que el auto-heal dispare
-menos veces en este repo a cambio de dejar de perseguir casos límite de
-git uno a uno.
+**Ronda 7 -- exactamente el escenario anticipado arriba, y la decisión
+tomada en consecuencia:** una séptima revisión encontró que la propia
+comparación de listas (`CHANGED_PATHS` contra `LOCAL_STRAY`, un bucle
+anidado en bash sin cota) es O(n×m) sin límite de tamaño -- con una
+rama muy detrás de `main` y muchos archivos sueltos, puede tardar
+segundos o minutos, colgando el arranque de sesión -- justo lo que este
+hook promete no hacer nunca. Medido en vivo: 2000×2000 rutas tardaron
+54,8s. **Decisión: abandonar la comparación precisa entera, no
+parchearla una vez más.** Vuelto al chequeo simple original (¿hay algo
+sin trackear o ignorado en el árbol, sin más?) -- sin comparar nada, no
+puede sufrir ninguna de las 6 clases de bug encontradas (citado,
+colapso de directorios, colisión de prefijo) ni la de rendimiento.
+Coste aceptado: el auto-heal ahora vuelve a disparar menos veces en
+este repo en concreto (cualquier artefacto ignorado presente, colisione
+o no, bloquea el auto-heal) -- el mismo trade-off que la ronda 2 había
+rechazado, pero esta vez aceptado deliberadamente tras ver hasta dónde
+llevaba la alternativa "inteligente". Verificado en vivo: los 6 casos
+esenciales (fast-forward limpio, diverge, trackeado modificado
+preservado, ya al día, remoto roto, artefacto ignorado sin colisión
+ahora también bloquea) más una prueba de rendimiento explícita (2000
+archivos sueltos, misma rama muy detrás) -- completa en 0,022s en vez
+de colgarse. `shellcheck` limpio. Documentado como punto 10 nuevo en
+`hook-hardening` ("antes de comparar/enumerar con precisión en un hook,
+preguntar si el chequeo simple ya basta").
+
+**Balance final tras 7 rondas sobre el mismo archivo, para que quede
+constancia honesta:** cada ronda encontró un bypass real y distinto
+(citado, colapso de directorios, colisión de prefijo, rendimiento) --
+no fue una sola corrección con ruido alrededor, fue una familia
+completa de sutilezas de git agotándose una a una hasta que el coste de
+seguir agotándolas superó el beneficio de la precisión. La lección
+que se lleva de aquí (punto 10 de `hook-hardening`) es más importante
+que el propio hook: cuando el chequeo conservador solo cuesta "actuar
+menos veces" y nunca "perder algo o colgarse", empezar por él y solo
+complicarlo si de verdad hace falta -- no al revés.
 
 **Límite honesto:** esto NO resuelve el caso de "Nivel B2" en sí (esa
 sesión sigue en su rama vieja, sin este hook ahí tampoco, porque su

@@ -10,10 +10,13 @@ Nace de varias sagas reales en este repo — `.claude/hooks/check-pr-review.sh`
 la instalación de `agent-browser` (6 rondas), `mcp-server-dev` (4 rondas)
 y `ponytail` (3 rondas), `.claude/hooks/restrict-cavecrew-bash.sh`
 (4 rondas solo para cerrar los bypasses de su filtro de comandos), y
-`.claude/hooks/sync-main.sh` (4 rondas: un bug real de pérdida de
+`.claude/hooks/sync-main.sh` (7 rondas: un bug real de pérdida de
 datos, una corrección que casi inutilizaba la función entera, un
-mensaje de diagnóstico engañoso, y un chequeo de colisión de rutas que
-la propia revisión rompió por citado/colapso de directorios) —
+mensaje de diagnóstico engañoso, un chequeo de colisión de rutas roto
+por citado/colapso de directorios, una colisión archivo-vs-carpeta sin
+detectar, y finalmente un bug de rendimiento sin cota que llevó a
+abandonar la comparación precisa entera por el chequeo simple
+original) —
 donde la misma familia de errores se repitió una y otra vez, cada vez
 detectada por una revisión externa en vez de por mí mismo antes de
 declarar el trabajo terminado. Esta skill es esa lista de comprobación,
@@ -268,9 +271,48 @@ nunca dejar pasar una colisión real sin detectar. Aceptado así a
 propósito, documentado para que quede claro que es una limitación
 conocida y no otro hallazgo pendiente de arreglar.
 
+**Desenlace final de esta saga (6 rondas sobre la comparación precisa,
+ver punto 10):** una 7ª ronda encontró que la propia comparación de
+listas (un bucle anidado en bash) no tenía cota de tamaño y podía
+colgar el arranque de sesión con una rama muy detrás y muchos archivos
+sueltos — en ese punto, se abandonó la comparación precisa entera y se
+volvió al chequeo más simple ("¿hay algo sin trackear o ignorado, sin
+más?"), aceptando que el auto-heal dispare menos veces a cambio de no
+tener ningún hueco de los seis encontrados, ni el de rendimiento. Este
+punto 9 sigue siendo la lección correcta para el día que haga falta de
+verdad comparar rutas con precisión en otro sitio — solo que para
+*este* hook en concreto, no hizo falta al final: ver punto 10.
+
+## 10. Antes de comparar/enumerar con precisión en un hook, preguntar
+si el chequeo simple (con un coste de falsos positivos aceptable) ya basta
+
+**El error real:** `sync-main.sh` empezó con un chequeo simple
+("¿árbol sucio, sí o no?"), lo cambió por uno preciso (comparación de
+rutas) para no penalizar el caso común de este repo, y esa precisión
+costó 6 rondas de revisión cerrando bypasses reales uno a uno (citado,
+colapso de directorios, colisión archivo-vs-carpeta) — hasta que una
+7ª ronda encontró que la propia comparación, sin cota de tamaño, podía
+colgar el arranque de sesión. El chequeo simple original nunca tuvo
+ninguno de esos problemas, porque no compara nada: solo mira si una
+salida está vacía.
+
+**Comprobación:** antes de construir una comparación/enumeración
+"inteligente" en un hook que debe ser best-effort y nunca bloquear,
+preguntar primero: ¿el chequeo simple y conservador (que solo produce
+falsos positivos — bloquea de más, nunca de menos) tiene un coste
+aceptable? Si el peor caso de "bloquear de más" es solo "el hook avisa
+en vez de actuar solo" (nunca pérdida de datos, nunca fallo de sesión),
+el chequeo simple casi siempre gana: no tiene rutas de bug propias que
+cerrar una por una, y no puede tener un coste de rendimiento que
+escale con el tamaño del repo o del cambio. Reservar la comparación
+precisa para cuando el falso positivo importa de verdad (bloquea algo
+que el usuario necesita que pase sí o sí), y en ese caso, presupuestar
+varias rondas de revisión para las sutilezas de las herramientas
+subyacentes (aquí, git) antes de darla por simple.
+
 ## Antes de pedir/lanzar la revisión externa
 
-Repasar estos 9 puntos uno por uno contra el diff, con al menos un
+Repasar estos 10 puntos uno por uno contra el diff, con al menos un
 comando ejecutado en vivo por punto que lo confirme (no solo "leído y
 parece bien") — así cada ronda de revisión encuentra menos, en vez de
 encontrar la misma clase de bug que un pase manual ya podría haber

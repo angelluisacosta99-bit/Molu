@@ -19,6 +19,38 @@
 # Best-effort, jamás bloquea el arranque: sin red, sin remoto, árbol
 # sucio, o rama con commits propios que divergen de main -> informa (o
 # ni eso) y sigue, nunca falla la sesión.
+#
+# DISEÑO (tras 6 rondas de revisión sobre una versión anterior más
+# "inteligente" -- ver hook-hardening punto 9 y la entrada de
+# 2026-09-07 en novedades.md para el historial completo): esta versión
+# usa deliberadamente el chequeo MÁS SIMPLE posible -- "¿hay algún
+# archivo sin trackear o ignorado en el árbol?" -- en vez de intentar
+# detectar con precisión si ese archivo colisiona con lo que
+# origin/main va a cambiar. La versión "precisa" (comparar listas de
+# rutas con `git diff`/`git ls-files`) tardó 6 rondas en cerrar tres
+# bypasses reales de pérdida de datos (citado inconsistente entre
+# comandos, colapso de directorios, colisión archivo-vs-carpeta), y una
+# 7ª ronda encontró que la propia comparación (un bucle anidado en
+# bash) no tenía cota de tamaño -- con una rama muy por detrás y muchos
+# archivos sueltos, podía colgar el arranque de sesión durante segundos
+# o minutos, justo lo que este hook promete no hacer nunca. La
+# alternativa simple no necesita comparar nada (solo mirar si la salida
+# de un comando está vacía), así que no puede sufrir ninguna de las seis
+# clases de bug encontradas, ni la de rendimiento -- a cambio de que el
+# auto-heal dispare menos veces en este repo en concreto (que
+# rutinariamente tiene artefactos ignorados de `graphify`/
+# `check-pr-review.sh` presentes). Ese es el trade-off aceptado: menos
+# veces se actualiza sola, pero de forma mucho más simple de razonar y
+# sin ningún hueco conocido.
+#
+# `git merge --ff-only` ya protege por sí solo, sin ayuda de este
+# script, cualquier cambio local sin comitear en un archivo TRACKEADO --
+# verificado en vivo: aborta limpio ("Your local changes... would be
+# overwritten by merge"), exit != 0, contenido local intacto. Lo único
+# que NO protege es un archivo local SIN TRACKEAR (incluido uno
+# ignorado por .gitignore) -- ahí el fast-forward puede sobrescribirlo
+# en silencio. Por eso cualquier archivo sin trackear o ignorado, sin
+# excepción, cuenta como "no seguro" aquí.
 
 cd "${CLAUDE_PROJECT_DIR:-.}" || exit 0
 
@@ -33,76 +65,9 @@ BEHIND="$(git rev-list --count HEAD..origin/main 2>/dev/null)"
 [ -n "$BEHIND" ] || exit 0
 [ "$BEHIND" -gt 0 ] || exit 0
 
-# `git merge --ff-only` ya protege por sí solo, sin ayuda de este script,
-# cualquier cambio local sin comitear en un archivo TRACKEADO -- verificado
-# en vivo: aborta limpio ("Your local changes... would be overwritten by
-# merge"), exit != 0, contenido local intacto. Lo único que NO protege es
-# un archivo local SIN TRACKEAR (incluido uno ignorado por .gitignore) que
-# coincide con una ruta que origin/main empieza a trackear -- ahí el
-# fast-forward lo sobrescribe en silencio, sin conflicto, exit 0
-# (verificado en vivo destruyendo un "secreto local" de prueba). Por eso
-# la única comprobación propia que hace falta aquí es esa colisión de
-# rutas, no un chequeo genérico de "árbol sucio" -- uno genérico
-# (`git status --porcelain --ignored` a secas) bloquea el auto-heal casi
-# siempre en este repo en concreto, porque `graphify`/`check-pr-review.sh`
-# dejan artefactos ignorados de forma rutinaria (cache, marcadores de
-# revisión) que no tienen nada que ver con lo que va a cambiar.
-# `-z` en ambos lados, siempre: `git status`/`git diff --name-only` sin
-# `-z` citan (comillas + escapes estilo C) cualquier ruta con espacio o
-# carácter no-ASCII, y los dos comandos no citan igual -- verificado en
-# vivo que sin `-z` una ruta real ("mi secreto.txt") sale citada de un
-# lado y sin citar del otro, así que la comparación de cadena exacta
-# nunca coincide y una colisión real pasa desapercibida. `-z` desactiva
-# el citado en ambos, dejando la ruta tal cual.
-#
-# `git status --porcelain`, incluso con `--ignored=matching`, colapsa un
-# directorio entero a una sola línea cuando el propio patrón de
-# `.gitignore` apunta al directorio (no a los archivos de dentro) --
-# verificado en vivo contra los propios directorios ignorados de este
-# repo (`.claude/.pr-review-state/`, `graphify-out/cache/`): sale la
-# línea del directorio, nunca los archivos de dentro, así que una
-# colisión con un archivo *dentro* de esos directorios no se detectaría.
-# `git ls-files --others --exclude-standard` (sin trackear) y `--ignored
-# --exclude-standard` (ignorados) sí expanden cada archivo
-# individualmente sin colapsar directorios -- verificado en vivo.
-# La igualdad exacta de cadena no basta: si origin/main añade un
-# archivo trackeado DENTRO de una ruta que localmente es un archivo
-# suelto sin trackear (ej. local `foo` como archivo, origin/main
-# trackea `foo/bar.txt`), ninguna ruta es igual a la otra pero el
-# fast-forward igual destruye `foo` para convertirlo en directorio --
-# verificado en vivo (git protege el caso NO ignorado, pero no el
-# ignorado, igual que el resto de esta comprobación). Por eso, además
-# de la igualdad exacta, hay que comprobar el prefijo en ambos
-# sentidos: ¿una ruta cambiada empieza por "ruta local/"? ¿una ruta
-# local empieza por "ruta cambiada/"?
-CHANGED_PATHS="$(git diff --name-only -z HEAD..origin/main 2>/dev/null | tr '\0' '\n')"
-if [ -n "$CHANGED_PATHS" ]; then
-  LOCAL_STRAY="$( { git ls-files --others --exclude-standard -z; git ls-files --others --ignored --exclude-standard -z; } 2>/dev/null | tr '\0' '\n')"
-  COLLISION=0
-  if [ -n "$LOCAL_STRAY" ]; then
-    while IFS= read -r c; do
-      [ -n "$c" ] || continue
-      while IFS= read -r l; do
-        [ -n "$l" ] || continue
-        case "$c" in
-          "$l" | "$l"/*) COLLISION=1 ;;
-        esac
-        case "$l" in
-          "$c"/*) COLLISION=1 ;;
-        esac
-        [ "$COLLISION" -eq 0 ] || break
-      done <<EOF
-$LOCAL_STRAY
-EOF
-      [ "$COLLISION" -eq 0 ] || break
-    done <<EOF
-$CHANGED_PATHS
-EOF
-  fi
-  if [ "$COLLISION" -eq 1 ]; then
-    echo "[session-start] rama $BEHIND commits por detrás de origin/main, pero hay un archivo local sin trackear (posiblemente ignorado por .gitignore) en una ruta que origin/main también toca (misma ruta, o una convirtiéndose en carpeta de la otra) -- no se actualiza sola para no sobrescribirlo en silencio; si hace falta, mover/comitear ese archivo y luego 'git merge origin/main' a mano"
-    exit 0
-  fi
+if [ -n "$(git status --porcelain --ignored 2>/dev/null)" ]; then
+  echo "[session-start] rama $BEHIND commits por detrás de origin/main, pero hay archivos sin trackear o ignorados en el árbol -- no se actualiza sola (uno de ellos podría colisionar con algo que origin/main cambia y perderse en el fast-forward sin aviso); si hace falta, comitear/mover esos archivos y luego 'git merge origin/main' a mano"
+  exit 0
 fi
 
 if git merge --ff-only origin/main >/dev/null 2>&1; then
