@@ -483,6 +483,27 @@ dispara su propio trigger** ("caveman mode", "less tokens"...),
 exactamente como cualquier otra skill. Mientras nadie pida explícitamente
 modo caveman, las respuestas siguen en prosa normal, con razón.
 
+**Arreglo técnico del 2026-08-30 (Angel eligió esta opción sobre solo
+corregir la documentación):** `.claude/hooks/caveman-mode.sh`, nuevo
+hook `SessionStart` (añadido como entrada extra en
+`.claude/settings.json`, sin tocar `session-start.sh`) que vuelca el
+contenido íntegro de `.claude/skills/caveman/SKILL.md` como
+`hookSpecificOutput.additionalContext` -- el mismo mecanismo documentado
+en el esquema de `settings.json` que usa el hook propio del plugin
+`ponytail`. Best-effort, no bloqueante: si falta `jq` o el archivo de la
+skill no está (symlink roto), sale en silencio sin romper el arranque de
+sesión -- verificado en vivo en los tres casos (normal, sin `jq`, sin
+archivo) y comprobado el JSON de salida contra el propio esquema de
+`settings.json` (`hookSpecificOutput.hookEventName`/`additionalContext`).
+
+**Límite honesto, no un "probado de punta a punta" falso:** `SessionStart`
+solo dispara en un arranque/resume/clear/compact real, ninguno de los
+cuales ocurrió *después* de registrar este hook en la sesión donde se
+escribió -- así que se verificó la forma exacta del JSON que produce,
+pero no (todavía) que Claude Code lo recoja e inyecte de verdad en el
+contexto de la siguiente sesión. Pendiente de confirmar la primera vez
+que se vea el banner "CAVEMAN MODE ACTIVE" al arrancar.
+
 **Nota sobre cómo se activó:** a petición explícita de Angel, tras
 preguntar por la herramienta al ver que el propio `ponytail` la
 recomienda en su FAQ ("Caveman shrinks what the agent says; ponytail
