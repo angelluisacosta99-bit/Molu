@@ -113,20 +113,49 @@ igual) pero diagnóstico engañoso, atribuyendo a un archivo sin
 trackear algo que en realidad era un cambio trackeado. Corregido
 filtrando solo `^(\?\?|!!) ` antes de comparar rutas.
 
-**Verificado en vivo, los 7 casos, contra un remoto git real (no
-simulado con texto) tras cada ronda:** rama detrás sin commits propios
-→ fast-forward correcto; rama detrás con commit propio que diverge →
-NO fusiona, `HEAD` idéntico, solo avisa; archivo *trackeado* modificado
-sin comitear en la misma ruta que `origin/main` cambia → NO fusiona
-(git lo protege solo), mensaje genérico correcto tras la ronda 3; rama
-ya al día → sin ningún output; remoto roto → avisa, `exit 0`; archivo
-ignorado sin trackear que SÍ colisiona con una ruta que `origin/main`
-empieza a trackear → NO fusiona, contenido local preservado; archivo
-ignorado sin trackear que NO colisiona (el caso real de
-`graphify-out/`/`.pr-review-state/` de este mismo repo) → SÍ fusiona,
-confirmado también contra el checkout real de `Molu` (mismos artefactos
-ignorados presentes, cero colisión con lo que `origin/main` cambiaría).
-`shellcheck` limpio en cada ronda.
+**Ronda 4 -- otra revisión externa rompió la propia comprobación de
+colisión de rutas de la ronda 2-3, con dos fallos reales, ambos
+reproducidos en vivo:**
+1. **Citado inconsistente.** `git diff --name-only` y `git status
+   --porcelain` no citan igual una ruta con espacio o carácter
+   no-ASCII sin el flag `-z` -- una colisión real (`mi secreto.txt`)
+   salía citada (`"mi secreto.txt"`) de un lado y sin citar del otro,
+   así que la comparación de cadena exacta nunca coincidía y el
+   archivo se sobrescribía igual, sin aviso.
+2. **Colapso de directorios.** `git status --porcelain
+   --ignored=matching` sigue colapsando un directorio entero a una
+   sola línea cuando el patrón de `.gitignore` apunta al directorio
+   (no a archivos sueltos) -- confirmado en vivo contra los propios
+   `.claude/.pr-review-state/`/`graphify-out/cache/` de este repo. Un
+   archivo *dentro* de esos directorios que colisionara con
+   `origin/main` no se habría detectado nunca.
+
+Corregido con `-z` en ambos lados de la comparación (elimina el
+citado) y sustituyendo `git status --porcelain` por `git ls-files
+--others --exclude-standard -z` (sin trackear) + `git ls-files
+--others --ignored --exclude-standard -z` (ignorados) -- `ls-files`
+nunca colapsa un directorio, a diferencia de `status`. Esta es la
+misma familia de error (citado/formato inconsistente entre dos
+comandos de git al comparar rutas) que ya se documentó como lección
+general en `hook-hardening` (punto 9) tras esta saga de 4 rondas sobre
+el mismo archivo -- regla de "3+ rondas" de `CLAUDE.md` aplicada.
+
+**Verificado en vivo, los 9 casos (7 + los 2 de la ronda 4), contra un
+remoto git real (no simulado con texto) tras cada ronda:** rama detrás
+sin commits propios → fast-forward correcto; rama detrás con commit
+propio que diverge → NO fusiona, `HEAD` idéntico, solo avisa; archivo
+*trackeado* modificado sin comitear en la misma ruta que `origin/main`
+cambia → NO fusiona (git lo protege solo), mensaje genérico correcto;
+rama ya al día → sin ningún output; remoto roto → avisa, `exit 0`;
+archivo ignorado sin trackear que SÍ colisiona → NO fusiona, contenido
+local preservado; archivo ignorado sin trackear que NO colisiona (el
+caso real de `graphify-out/`/`.pr-review-state/` de este mismo repo) →
+SÍ fusiona, confirmado también contra el checkout real de `Molu`;
+archivo *dentro* de un directorio colapsado que colisiona → NO fusiona
+tras la ronda 4 (antes de corregir, sí fusionaba y lo perdía); archivo
+ignorado con espacio en el nombre que colisiona → NO fusiona tras la
+ronda 4 (antes, el citado inconsistente lo dejaba pasar). `shellcheck`
+limpio en cada ronda.
 
 **Límite honesto:** esto NO resuelve el caso de "Nivel B2" en sí (esa
 sesión sigue en su rama vieja, sin este hook ahí tampoco, porque su

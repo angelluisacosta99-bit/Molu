@@ -47,9 +47,27 @@ BEHIND="$(git rev-list --count HEAD..origin/main 2>/dev/null)"
 # siempre en este repo en concreto, porque `graphify`/`check-pr-review.sh`
 # dejan artefactos ignorados de forma rutinaria (cache, marcadores de
 # revisión) que no tienen nada que ver con lo que va a cambiar.
-CHANGED_PATHS="$(git diff --name-only HEAD..origin/main 2>/dev/null)"
+# `-z` en ambos lados, siempre: `git status`/`git diff --name-only` sin
+# `-z` citan (comillas + escapes estilo C) cualquier ruta con espacio o
+# carácter no-ASCII, y los dos comandos no citan igual -- verificado en
+# vivo que sin `-z` una ruta real ("mi secreto.txt") sale citada de un
+# lado y sin citar del otro, así que la comparación de cadena exacta
+# nunca coincide y una colisión real pasa desapercibida. `-z` desactiva
+# el citado en ambos, dejando la ruta tal cual.
+#
+# `git status --porcelain`, incluso con `--ignored=matching`, colapsa un
+# directorio entero a una sola línea cuando el propio patrón de
+# `.gitignore` apunta al directorio (no a los archivos de dentro) --
+# verificado en vivo contra los propios directorios ignorados de este
+# repo (`.claude/.pr-review-state/`, `graphify-out/cache/`): sale la
+# línea del directorio, nunca los archivos de dentro, así que una
+# colisión con un archivo *dentro* de esos directorios no se detectaría.
+# `git ls-files --others --exclude-standard` (sin trackear) y `--ignored
+# --exclude-standard` (ignorados) sí expanden cada archivo
+# individualmente sin colapsar directorios -- verificado en vivo.
+CHANGED_PATHS="$(git diff --name-only -z HEAD..origin/main 2>/dev/null | tr '\0' '\n')"
 if [ -n "$CHANGED_PATHS" ]; then
-  LOCAL_STRAY="$(git status --porcelain --ignored=matching 2>/dev/null | grep -E '^(\?\?|!!) ' | cut -c4-)"
+  LOCAL_STRAY="$( { git ls-files --others --exclude-standard -z; git ls-files --others --ignored --exclude-standard -z; } 2>/dev/null | tr '\0' '\n')"
   if [ -n "$LOCAL_STRAY" ] && printf '%s\n' "$CHANGED_PATHS" | grep -qFxf <(printf '%s\n' "$LOCAL_STRAY"); then
     echo "[session-start] rama $BEHIND commits por detrás de origin/main, pero hay un archivo local sin trackear (posiblemente ignorado por .gitignore) en una ruta que origin/main también toca -- no se actualiza sola para no sobrescribirlo en silencio; si hace falta, mover/comitear ese archivo y luego 'git merge origin/main' a mano"
     exit 0

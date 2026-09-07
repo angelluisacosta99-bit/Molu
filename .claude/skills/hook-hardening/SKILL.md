@@ -8,8 +8,12 @@ description: "Use before declaring \"done\", \"tested\", or \"ready to commit\" 
 Nace de varias sagas reales en este repo — `.claude/hooks/check-pr-review.sh`
 (7 rondas de revisión), `.claude/hooks/session-start.sh` a lo largo de
 la instalación de `agent-browser` (6 rondas), `mcp-server-dev` (4 rondas)
-y `ponytail` (3 rondas), y `.claude/hooks/restrict-cavecrew-bash.sh`
-(4 rondas solo para cerrar los bypasses de su filtro de comandos) —
+y `ponytail` (3 rondas), `.claude/hooks/restrict-cavecrew-bash.sh`
+(4 rondas solo para cerrar los bypasses de su filtro de comandos), y
+`.claude/hooks/sync-main.sh` (4 rondas: un bug real de pérdida de
+datos, una corrección que casi inutilizaba la función entera, un
+mensaje de diagnóstico engañoso, y un chequeo de colisión de rutas que
+la propia revisión rompió por citado/colapso de directorios) —
 donde la misma familia de errores se repitió una y otra vez, cada vez
 detectada por una revisión externa en vez de por mí mismo antes de
 declarar el trabajo terminado. Esta skill es esa lista de comprobación,
@@ -192,9 +196,55 @@ hueco que se intenta cerrar) — nunca hacer `grep`/`case` sobre el texto
 crudo cuando el objetivo es razonar sobre argumentos ya separados por
 espacios/comillas.
 
+## 9. Comparar rutas de archivo entre dos comandos de git exige el mismo
+formato sin citar en ambos lados, y ningún comando que colapse directorios
+
+**El error real:** `sync-main.sh` compara la lista de rutas que
+`origin/main` cambiaría contra la lista de archivos locales sin
+trackear/ignorados, para bloquear un `git merge --ff-only` automático
+si hay colisión (evitar sobrescribir en silencio un archivo local). La
+primera versión usó `git diff --name-only HEAD..origin/main` contra
+`git status --porcelain --ignored=matching` — dos fallos reales,
+encontrados por una revisión externa y reproducidos en vivo, no
+teóricos:
+
+1. **Citado inconsistente entre comandos.** Sin `-z`, `git status`
+   cita (comillas + escapes estilo C) cualquier ruta con espacio o
+   carácter no-ASCII; `git diff --name-only` no cita igual. Una ruta
+   real colisionando sale como `"mi secreto.txt"` de un lado y `mi
+   secreto.txt` del otro — la comparación de cadena exacta nunca
+   coincide, la colisión pasa desapercibida, el archivo se sobrescribe
+   sin aviso.
+2. **Colapso de directorios.** `git status --porcelain`, incluso con
+   `--ignored=matching`, colapsa un directorio entero ignorado (o
+   enteramente sin trackear) a una sola línea (`!! carpeta/`) cuando el
+   propio patrón de `.gitignore` apunta al directorio, no a los
+   archivos de dentro — verificado en vivo contra los propios
+   directorios ignorados de este repo (`.claude/.pr-review-state/`,
+   `graphify-out/cache/`). Una colisión con un archivo *dentro* de esos
+   directorios nunca aparece en la lista, así que tampoco se detecta.
+
+**Comprobación:** para cualquier chequeo que compare rutas de archivo
+sacadas de dos comandos de git distintos (o del mismo comando en dos
+invocaciones):
+- Usar `-z` en **todos** los lados de la comparación (`git diff
+  --name-only -z`, `git status --porcelain -z`), nunca la salida
+  humana por defecto — verificar con una ruta de prueba real que
+  contenga un espacio o un carácter no-ASCII, no asumir que "debería
+  funcionar igual".
+- Si hace falta saber qué archivos concretos hay sin trackear o
+  ignorados (no solo si "hay algo"), usar `git ls-files --others
+  --exclude-standard -z` (sin trackear) y `git ls-files --others
+  --ignored --exclude-standard -z` (ignorados) en vez de `git status
+  --porcelain` — `ls-files` nunca colapsa un directorio a una línea,
+  `status` sí. Probar contra un directorio ignorado con un archivo
+  dentro, en vivo, para confirmarlo — no fiarse de la documentación del
+  flag por sí sola (`--ignored=matching` sonaba como si debiera
+  expandir, y no lo hacía).
+
 ## Antes de pedir/lanzar la revisión externa
 
-Repasar estos 8 puntos uno por uno contra el diff, con al menos un
+Repasar estos 9 puntos uno por uno contra el diff, con al menos un
 comando ejecutado en vivo por punto que lo confirme (no solo "leído y
 parece bien") — así cada ronda de revisión encuentra menos, en vez de
 encontrar la misma clase de bug que un pase manual ya podría haber
