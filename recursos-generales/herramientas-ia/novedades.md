@@ -504,6 +504,34 @@ pero no (todavía) que Claude Code lo recoja e inyecte de verdad en el
 contexto de la siguiente sesión. Pendiente de confirmar la primera vez
 que se vea el banner "CAVEMAN MODE ACTIVE" al arrancar.
 
+**Revisión antes de fusionar encontró tres hallazgos, los tres corregidos
+o documentados como límite aceptado:**
+1. `cat "$SKILL_FILE"` no tenía `timeout` -- si el symlink de la skill
+   algún día apuntara a algo que bloquea la lectura, este hook (que
+   corre en *cada* arranque/resume/clear/compact) colgaría la sesión
+   entera sin límite, justo lo que el resto del script evita a
+   propósito. Corregido con `timeout 5`, verificado en vivo simulando
+   un cuelgue real (un FIFO como archivo de la skill): el hook sale
+   limpio a los 5s en vez de bloquear indefinidamente.
+2. El comentario original decía "replicar lo que ponytail hace" sin
+   matizar -- la propia revisión detectó en vivo que `ponytail` también
+   se dispara en `SubagentStart` (un subagente heredó su ruleset a
+   mitad de esta sesión), mientras que este hook solo cubre
+   `SessionStart`. Corregido el comentario para no reclamar una
+   paridad que no existe: un subagente lanzado a mitad de sesión no
+   hereda el modo caveman con este diseño. Aceptado así por ahora
+   (cubrir `SubagentStart` también es una extensión futura, no parte
+   de lo pedido).
+3. **Coste aceptado, no corregido:** volcar el `SKILL.md` completo
+   (~6,5 KB) en cada `SessionStart`, incluidos los disparados por
+   `/compact`, añade un coste de tokens recurrente que va justo en
+   contra de la guía de compactación temprana añadida esta misma
+   sesión a `CLAUDE.md`. Es el mismo trade-off que ya acepta `ponytail`
+   (que hace exactamente lo mismo con su propio ruleset) -- no se
+   corrige con un tope de tamaño o deduplicación porque complicaría el
+   hook para un ahorro marginal frente a los ~1500-1700 tokens que ya
+   cuesta cada vez.
+
 **Nota sobre cómo se activó:** a petición explícita de Angel, tras
 preguntar por la herramienta al ver que el propio `ponytail` la
 recomienda en su FAQ ("Caveman shrinks what the agent says; ponytail
