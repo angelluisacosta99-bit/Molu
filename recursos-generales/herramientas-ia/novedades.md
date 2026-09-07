@@ -65,32 +65,68 @@ el árbol de trabajo bajo los pies de la sesión -- exactamente el efecto
 secundario que `hook-hardening` (punto 7) pide evitar. En un arranque
 real todavía no hay nada propio que una sesión pueda perder.
 
-**Revisión antes de fusionar encontró un hallazgo real, corregido:** la
-primera versión comprobaba `git status --porcelain` sin `--ignored` --
-un archivo local sin trackear que coincide con un patrón de
-`.gitignore` (ej. un `secret.env` propio) es invisible a esa comprobación,
-así que el chequeo de "árbol limpio" lo daba por bueno. Si `origin/main`
-empieza a trackear un archivo en esa misma ruta, `git merge --ff-only`
-lo sobrescribe en silencio, sin conflicto, sin aviso, `exit 0` -- **la
-propia revisión lo reprodujo en vivo** (un `secret.env` local real
-sustituido por el contenido subido, sin ningún mensaje de git avisando).
-Corregido añadiendo `--ignored` a la comprobación (`git status
---porcelain --ignored`), de modo que cualquier archivo ignorado sin
-trackear cuenta como "árbol no limpio" y bloquea el fast-forward
-automático -- más conservador de lo estrictamente necesario (bloquea
-aunque el archivo ignorado no colisione con nada), pero preferible a
-arriesgar destruir algo local sin que el hook pueda ni enterarse.
+**Revisión antes de fusionar, ronda 1 -- hallazgo real, reproducido en
+vivo:** la primera versión comprobaba `git status --porcelain` sin
+`--ignored` -- un archivo local sin trackear que coincide con un
+patrón de `.gitignore` (ej. un `secret.env` propio) es invisible a esa
+comprobación, así que el chequeo de "árbol limpio" lo daba por bueno.
+Si `origin/main` empieza a trackear un archivo en esa misma ruta, `git
+merge --ff-only` lo sobrescribe en silencio, sin conflicto, sin aviso,
+`exit 0` -- **la propia revisión lo reprodujo en vivo** (un `secret.env`
+local real sustituido por el contenido subido, sin ningún mensaje de
+git avisando). Primer arreglo: añadir `--ignored` a la comprobación
+(`git status --porcelain --ignored`), tratando cualquier archivo
+ignorado sin trackear como "árbol no limpio".
 
-**Verificado en vivo, los 6 casos (5 originales + el de la revisión),
-contra un remoto git real (no simulado con texto):** rama detrás sin
-commits propios → fast-forward correcto (verificado que `HEAD`
-avanza); rama detrás con un commit propio → NO fusiona, `HEAD`
-idéntico antes/después, solo avisa; árbol sucio → NO fusiona, cambio
-sin comitear se conserva intacto; rama ya al día → sin ningún output;
-remoto roto → avisa, `exit 0` (no bloquea); archivo ignorado sin
-trackear que colisiona con una ruta que `origin/main` empieza a
-trackear → NO fusiona tras la corrección, contenido local preservado
-(antes de corregir, se reprodujo la pérdida). `shellcheck` limpio.
+**Ronda 2 -- ese primer arreglo, aunque cerraba el hueco, dejaba el
+hook casi permanentemente inútil en este repo en concreto:** verificado
+en vivo contra el propio checkout de este repo, `git status --porcelain
+--ignored` ya devuelve 8 entradas de siempre (`graphify-out/.graphify_*`,
+`graphify-out/cache/`, `.claude/.pr-review-state/`...) -- artefactos
+rutinarios de `graphify`/`check-pr-review.sh`, no trabajo real sin
+comitear. Con el primer arreglo, el chequeo de "árbol limpio" fallaba
+casi siempre en este repo, así que el auto-heal (el propósito entero
+del hook) casi nunca llegaba a dispararse -- ni siquiera en el caso
+exacto de "Nivel B2" que lo motivó. Rediseñado: en vez de un chequeo
+genérico de "¿hay algo raro en el árbol?", una comprobación precisa de
+colisión de rutas -- se compara la lista de archivos que `origin/main`
+cambiaría (`git diff --name-only HEAD..origin/main`) contra los
+archivos locales sin trackear o ignorados (`git status --porcelain
+--ignored=matching`, que sí lista archivo por archivo en vez de
+colapsar directorios). Solo si una ruta aparece en ambas listas se
+bloquea el auto-heal; un artefacto ignorado que no coincide con nada
+de lo que cambiaría ya no bloquea nada. Se apoya además en que `git
+merge --ff-only` ya protege por sí solo, sin ayuda de este script,
+cualquier cambio local sin comitear en un archivo *trackeado*
+(verificado en vivo: aborta limpio, "Your local changes... would be
+overwritten by merge", contenido intacto) -- por eso ya no hacía falta
+un chequeo propio para ese caso, solo para el hueco real (archivos sin
+trackear/ignorados).
+
+**Ronda 3 -- el propio chequeo de colisión de rutas capturaba de más:**
+al no filtrar por el código de estado de `git status --porcelain`
+(`??`/`!!` para sin trackear/ignorado, pero también ` M`/`M ` etc. para
+trackeados modificados), un archivo trackeado modificado sin comitear
+en una ruta que `origin/main` también cambia caía en el mensaje de
+"colisión con archivo sin trackear" -- resultado seguro (no fusionaba
+igual) pero diagnóstico engañoso, atribuyendo a un archivo sin
+trackear algo que en realidad era un cambio trackeado. Corregido
+filtrando solo `^(\?\?|!!) ` antes de comparar rutas.
+
+**Verificado en vivo, los 7 casos, contra un remoto git real (no
+simulado con texto) tras cada ronda:** rama detrás sin commits propios
+→ fast-forward correcto; rama detrás con commit propio que diverge →
+NO fusiona, `HEAD` idéntico, solo avisa; archivo *trackeado* modificado
+sin comitear en la misma ruta que `origin/main` cambia → NO fusiona
+(git lo protege solo), mensaje genérico correcto tras la ronda 3; rama
+ya al día → sin ningún output; remoto roto → avisa, `exit 0`; archivo
+ignorado sin trackear que SÍ colisiona con una ruta que `origin/main`
+empieza a trackear → NO fusiona, contenido local preservado; archivo
+ignorado sin trackear que NO colisiona (el caso real de
+`graphify-out/`/`.pr-review-state/` de este mismo repo) → SÍ fusiona,
+confirmado también contra el checkout real de `Molu` (mismos artefactos
+ignorados presentes, cero colisión con lo que `origin/main` cambiaría).
+`shellcheck` limpio en cada ronda.
 
 **Límite honesto:** esto NO resuelve el caso de "Nivel B2" en sí (esa
 sesión sigue en su rama vieja, sin este hook ahí tampoco, porque su

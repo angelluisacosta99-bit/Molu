@@ -33,14 +33,31 @@ BEHIND="$(git rev-list --count HEAD..origin/main 2>/dev/null)"
 [ -n "$BEHIND" ] || exit 0
 [ "$BEHIND" -gt 0 ] || exit 0
 
-if [ -n "$(git status --porcelain --ignored 2>/dev/null)" ]; then
-  echo "[session-start] rama $BEHIND commits por detrás de origin/main, pero hay cambios sin comitear o archivos locales ignorados por .gitignore -- no se actualiza sola (un archivo ignorado sin trackear en una ruta que origin/main sí trackea podría perderse en el fast-forward sin aviso, verificado en vivo); si hace falta, comitear/guardar y luego 'git merge origin/main' a mano"
-  exit 0
+# `git merge --ff-only` ya protege por sí solo, sin ayuda de este script,
+# cualquier cambio local sin comitear en un archivo TRACKEADO -- verificado
+# en vivo: aborta limpio ("Your local changes... would be overwritten by
+# merge"), exit != 0, contenido local intacto. Lo único que NO protege es
+# un archivo local SIN TRACKEAR (incluido uno ignorado por .gitignore) que
+# coincide con una ruta que origin/main empieza a trackear -- ahí el
+# fast-forward lo sobrescribe en silencio, sin conflicto, exit 0
+# (verificado en vivo destruyendo un "secreto local" de prueba). Por eso
+# la única comprobación propia que hace falta aquí es esa colisión de
+# rutas, no un chequeo genérico de "árbol sucio" -- uno genérico
+# (`git status --porcelain --ignored` a secas) bloquea el auto-heal casi
+# siempre en este repo en concreto, porque `graphify`/`check-pr-review.sh`
+# dejan artefactos ignorados de forma rutinaria (cache, marcadores de
+# revisión) que no tienen nada que ver con lo que va a cambiar.
+CHANGED_PATHS="$(git diff --name-only HEAD..origin/main 2>/dev/null)"
+if [ -n "$CHANGED_PATHS" ]; then
+  LOCAL_STRAY="$(git status --porcelain --ignored=matching 2>/dev/null | grep -E '^(\?\?|!!) ' | cut -c4-)"
+  if [ -n "$LOCAL_STRAY" ] && printf '%s\n' "$CHANGED_PATHS" | grep -qFxf <(printf '%s\n' "$LOCAL_STRAY"); then
+    echo "[session-start] rama $BEHIND commits por detrás de origin/main, pero hay un archivo local sin trackear (posiblemente ignorado por .gitignore) en una ruta que origin/main también toca -- no se actualiza sola para no sobrescribirlo en silencio; si hace falta, mover/comitear ese archivo y luego 'git merge origin/main' a mano"
+    exit 0
+  fi
 fi
 
 if git merge --ff-only origin/main >/dev/null 2>&1; then
-  echo "[session-start] rama puesta al día con origin/main automáticamente ($BEHIND commits, fast-forward limpio -- sin commits propios que pudieran perderse)"
+  echo "[session-start] rama puesta al día con origin/main automáticamente ($BEHIND commits, fast-forward limpio)"
 else
-  AHEAD="$(git rev-list --count origin/main..HEAD 2>/dev/null)"
-  echo "[session-start] rama $BEHIND commits por detrás de origin/main y con ${AHEAD:-?} commits propios -- no se actualiza sola (evita fusionar sin revisar); si notas algo desactualizado (una skill, un hook), 'git merge origin/main' a mano"
+  echo "[session-start] rama $BEHIND commits por detrás de origin/main -- no se pudo actualizar sola (commits propios que divergen, o cambios locales sin comitear en archivos que origin/main también modifica; git lo rechazó limpio sin perder nada); si notas algo desactualizado (una skill, un hook), 'git merge origin/main' a mano"
 fi
