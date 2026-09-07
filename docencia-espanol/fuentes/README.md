@@ -50,6 +50,7 @@ el archivo correspondiente, no editarlo a mano.
 | `nuevo-espanol-en-marcha/b1/cuaderno-unidad5c_el-sueno.md` | Nuevo Español en Marcha 3 (B1), **cuaderno de ejercicios**, unidad 5C | 22-23 | **solucionario oficial** (página 71), **con una excepción**: la clave se salta la fila de «oír» del cuadro del ejercicio 2, así que sus dos huecos (*oye*, *oiga*) están **deducidos** — las otras dos formas de esa fila vienen impresas en el libro. Los ej. 8 y 9 son de audio (pistas 7 y 8) y llevan su transcripción, de la página 65; los ej. 7 y 8 son de escribir y escuchar, así que no puntúan |
 | `nuevo-espanol-en-marcha/b2/12b_turismo-cultural.md` | Nuevo Español en Marcha 4 (B2), unidad 12B | 12B | **solucionario oficial** del libro |
 | `nuevo-espanol-en-marcha/b2/12c_perifrasis-verbales.md` | Nuevo Español en Marcha 4 (B2), unidad 12C | 12C | **solucionario oficial** del libro |
+| `nuevo-espanol-en-marcha/b2/examen-unidades1-2.md` | Nuevo Español en Marcha 4 (B2), **Guía didáctica del profesor**, examen unidades 1-2 | 86-87 (examen), 98 (solucionario) | **solucionario oficial** de la guía, salvo el ej. 6 (localiza y corrige el error): el libro pide reescribir la frase entera, y aquí se adaptó a completar solo la forma verbal correcta, tomando la palabra exacta del solucionario |
 
 **La columna de respuestas importa.** Las de 12B y 12C vienen del solucionario impreso del
 libro, que el profesor envió aparte: son autoridad.
