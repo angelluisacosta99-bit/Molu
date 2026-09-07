@@ -23,6 +23,66 @@ copias que puedan desincronizarse.
 
 ---
 
+## 2026-09-07 — sync-main.sh: ramas base viejas ya no se quedan sin funciones fusionadas
+
+**Qué pasó:** la sesión "Nivel B2" arrancó desde un commit (rama
+`claude/molu-repo-status-l7y50m`) anterior a que `caveman-mode.sh`
+existiera siquiera en `main` -- `/caveman` no funcionaba ahí, y nada lo
+avisó hasta que Angel preguntó por qué, varias sesiones después. Pidió
+explícitamente arreglarlo para que no vuelva a pasar, de forma
+automática en cada sesión nueva.
+
+**Por qué pasa en general, no solo con caveman:** cada sesión de Claude
+Code Remote puede arrancar desde cualquier commit/rama que se le indique
+al crearla. Si ese punto de partida es anterior a un merge reciente a
+`main` (una skill, un hook, una corrección), esa sesión simplemente no
+tiene ese contenido -- no hay forma de que un archivo fusionado *después*
+de ese commit aparezca por arte de magia en un checkout de *antes*. Eso
+no tiene arreglo desde el propio repo (es cómo funciona git). Lo que sí
+se puede hacer: detectarlo y corregirlo (cuando sea seguro) o avisarlo
+(cuando no lo sea) en el arranque de cada sesión, en vez de descubrirlo
+por sorpresa como pasó aquí.
+
+**Qué es:** `.claude/hooks/sync-main.sh`, nuevo hook `SessionStart` con
+`"matcher": "startup"` (solo arranque real, nunca resume/clear/compact --
+ver por qué abajo). En cada arranque: hace `fetch` de `origin/main` y,
+si la rama actual está detrás:
+- **Árbol de trabajo limpio y sin commits propios que diverjan** (el
+  caso exacto de "Nivel B2": una sesión recién creada, todavía sin su
+  propio trabajo) → fast-forward automático (`git merge --ff-only`),
+  sin ningún riesgo de conflicto porque `--ff-only` solo funciona
+  cuando no hay nada propio que perder.
+- **Árbol sucio, o rama ya con commits propios que divergen de `main`**
+  (el caso normal de cualquier sesión ya trabajando en su propia tarea)
+  → no toca nada, solo avisa con un mensaje corto sugiriendo
+  `git merge origin/main` a mano.
+- Sin red o sin remoto → avisa y sigue, nunca bloquea el arranque.
+
+**Por qué solo `matcher: "startup"`, nunca resume/clear/compact:** un
+merge a mitad de una tarea, con cambios sin comitear en danza, tocaría
+el árbol de trabajo bajo los pies de la sesión -- exactamente el efecto
+secundario que `hook-hardening` (punto 7) pide evitar. En un arranque
+real todavía no hay nada propio que una sesión pueda perder.
+
+**Verificado en vivo, los 5 casos, contra un remoto git real (no
+simulado con texto):** rama detrás sin commits propios → fast-forward
+correcto (verificado que `HEAD` avanza); rama detrás con un commit
+propio → NO fusiona, `HEAD` idéntico antes/después, solo avisa; árbol
+sucio → NO fusiona, cambio sin comitear se conserva intacto; rama ya al
+día → sin ningún output; remoto roto → avisa, `exit 0` (no bloquea).
+`shellcheck` limpio.
+
+**Límite honesto:** esto NO resuelve el caso de "Nivel B2" en sí (esa
+sesión sigue en su rama vieja, sin este hook ahí tampoco, porque su
+checkout es anterior a que este mismo hook exista -- el mismo problema
+que el hook intenta resolver para el futuro no puede resolverse
+retroactivamente para una sesión que ya arrancó). Tampoco fusiona
+cuando una sesión ya tiene trabajo propio divergente -- ahí sigue
+haciendo falta un merge a mano, a propósito, para no fusionar sin
+revisar.
+
+---
+
 ## 2026-08-30 — Carrusel "4 conectores que le dan superpoderes a Claude": revisado, nada que instalar
 
 **Contexto:** Angel compartió una captura de estilo carrusel de redes
