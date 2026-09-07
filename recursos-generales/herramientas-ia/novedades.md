@@ -204,11 +204,12 @@ la ventana, Claude Code no pierde tiempo muerto en cuanto se resetea.
 desde la versión 2.1.237) que recorta la narración de relleno y
 antepone el resultado a la explicación.
 
-**Por qué probablemente no aporta aquí:** `caveman` (activo en todas las
-sesiones) ya cubre ese mismo objetivo con más matices propios
-(niveles de intensidad, reglas de cuándo NO comprimir). Mencionado por
-completitud, no se recomienda activarlo también — redundante con lo
-que ya tienes.
+**Por qué probablemente no aporta aquí:** `caveman` ya cubre ese mismo
+objetivo con más matices propios (niveles de intensidad, reglas de
+cuándo NO comprimir) cuando está activo — ver la corrección del
+2026-08-30 más abajo sobre cómo se activa de verdad. Mencionado por
+completitud, no se recomienda activar el estilo "Concise" también —
+redundante con lo que ya tienes.
 
 ### Sin hallazgos nuevos de terceros en los dominios de Angel
 
@@ -461,7 +462,26 @@ el badge esperado.
 
 ✅ Configurado el 2026-08-23.
 
-## 2026-08-22 — caveman (JuliusBrussee): activado para todas las sesiones
+## 2026-08-22 — caveman (JuliusBrussee): instalado (corrección 2026-08-30: no se activa solo)
+
+**Corrección del 2026-08-30, tras investigar por qué `/skill-doctor`
+mostraba 0 usos en más de una semana:** el título original de esta
+entrada ("activado para todas las sesiones") describía la intención,
+no lo que quedó técnicamente implementado. Comparado en vivo contra
+`ponytail`: `ponytail` es un **plugin** de verdad
+(`enabledPlugins: {"ponytail@ponytail": true}` en
+`.claude/settings.json`) con un hook propio empaquetado dentro del
+plugin que inyecta sus reglas completas en cada sesión (visible como
+`"SessionStart:compact hook success: PONYTAIL MODE ACTIVE"`) —
+`caveman`, en cambio, es una **skill suelta** instalada con `npx
+skills add` (solo `README.md` + `SKILL.md`, ver más abajo), sin ningún
+plugin ni hook asociado. Verificado con `grep caveman
+.claude/settings.json`: cero coincidencias. No existe ningún mecanismo
+técnico que la dispare sola al empezar una sesión — **solo se activa
+si se escribe `/caveman [modo]`, o si el lenguaje natural del mensaje
+dispara su propio trigger** ("caveman mode", "less tokens"...),
+exactamente como cualquier otra skill. Mientras nadie pida explícitamente
+modo caveman, las respuestas siguen en prosa normal, con razón.
 
 **Nota sobre cómo se activó:** a petición explícita de Angel, tras
 preguntar por la herramienta al ver que el propio `ponytail` la
@@ -490,14 +510,16 @@ punto 7 de `hook-hardening`) — descartado todo con `rm -rf` y
 reinstalado con `npx skills add JuliusBrussee/caveman --skill caveman`,
 que sí trae solo la skill pedida.
 
-**Cómo se activó:** igual que `find-skills` — puro Markdown
+**Cómo se instaló:** igual que `find-skills` — puro Markdown
 (`.agents/skills/caveman/SKILL.md`, symlinkeado desde
 `.claude/skills/caveman`), sin binario ni CLI propio que instalar. No
 hizo falta tocar `.claude/hooks/session-start.sh`. Verificado que
 `.claude/settings.json` no cambió ni un byte tras la instalación (se
 guardó una copia de antes para comparar).
 
-✅ Activado el 2026-08-22.
+✅ Instalado y disponible el 2026-08-22 — **pero no automático**: se
+activa con `/caveman [modo]` o cuando el mensaje dispara su trigger de
+lenguaje natural, nunca solo al empezar sesión (ver corrección arriba).
 
 ## 2026-08-22 — ponytail (DietrichGebert): activado para todas las sesiones
 
