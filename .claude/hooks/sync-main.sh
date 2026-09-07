@@ -65,11 +65,42 @@ BEHIND="$(git rev-list --count HEAD..origin/main 2>/dev/null)"
 # `git ls-files --others --exclude-standard` (sin trackear) y `--ignored
 # --exclude-standard` (ignorados) sí expanden cada archivo
 # individualmente sin colapsar directorios -- verificado en vivo.
+# La igualdad exacta de cadena no basta: si origin/main añade un
+# archivo trackeado DENTRO de una ruta que localmente es un archivo
+# suelto sin trackear (ej. local `foo` como archivo, origin/main
+# trackea `foo/bar.txt`), ninguna ruta es igual a la otra pero el
+# fast-forward igual destruye `foo` para convertirlo en directorio --
+# verificado en vivo (git protege el caso NO ignorado, pero no el
+# ignorado, igual que el resto de esta comprobación). Por eso, además
+# de la igualdad exacta, hay que comprobar el prefijo en ambos
+# sentidos: ¿una ruta cambiada empieza por "ruta local/"? ¿una ruta
+# local empieza por "ruta cambiada/"?
 CHANGED_PATHS="$(git diff --name-only -z HEAD..origin/main 2>/dev/null | tr '\0' '\n')"
 if [ -n "$CHANGED_PATHS" ]; then
   LOCAL_STRAY="$( { git ls-files --others --exclude-standard -z; git ls-files --others --ignored --exclude-standard -z; } 2>/dev/null | tr '\0' '\n')"
-  if [ -n "$LOCAL_STRAY" ] && printf '%s\n' "$CHANGED_PATHS" | grep -qFxf <(printf '%s\n' "$LOCAL_STRAY"); then
-    echo "[session-start] rama $BEHIND commits por detrás de origin/main, pero hay un archivo local sin trackear (posiblemente ignorado por .gitignore) en una ruta que origin/main también toca -- no se actualiza sola para no sobrescribirlo en silencio; si hace falta, mover/comitear ese archivo y luego 'git merge origin/main' a mano"
+  COLLISION=0
+  if [ -n "$LOCAL_STRAY" ]; then
+    while IFS= read -r c; do
+      [ -n "$c" ] || continue
+      while IFS= read -r l; do
+        [ -n "$l" ] || continue
+        case "$c" in
+          "$l" | "$l"/*) COLLISION=1 ;;
+        esac
+        case "$l" in
+          "$c"/*) COLLISION=1 ;;
+        esac
+        [ "$COLLISION" -eq 0 ] || break
+      done <<EOF
+$LOCAL_STRAY
+EOF
+      [ "$COLLISION" -eq 0 ] || break
+    done <<EOF
+$CHANGED_PATHS
+EOF
+  fi
+  if [ "$COLLISION" -eq 1 ]; then
+    echo "[session-start] rama $BEHIND commits por detrás de origin/main, pero hay un archivo local sin trackear (posiblemente ignorado por .gitignore) en una ruta que origin/main también toca (misma ruta, o una convirtiéndose en carpeta de la otra) -- no se actualiza sola para no sobrescribirlo en silencio; si hace falta, mover/comitear ese archivo y luego 'git merge origin/main' a mano"
     exit 0
   fi
 fi

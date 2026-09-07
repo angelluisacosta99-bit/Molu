@@ -157,6 +157,36 @@ ignorado con espacio en el nombre que colisiona → NO fusiona tras la
 ronda 4 (antes, el citado inconsistente lo dejaba pasar). `shellcheck`
 limpio en cada ronda.
 
+**Ronda 6 -- otra revisión externa, sin haber tocado nada más entre
+medias, encontró un tercer bypass real de la misma comprobación de
+colisión:** la comparación solo miraba igualdad exacta de cadena entre
+rutas -- no detecta que `origin/main` añada un archivo trackeado
+*dentro* de una ruta que localmente es un archivo suelto (`foo` local
+como archivo, `origin/main` empieza a trackear `foo/bar.txt`): ninguna
+ruta es igual a la otra, pero el fast-forward destruye `foo` igual para
+convertirlo en carpeta -- reproducido en vivo, misma clase de pérdida
+silenciosa que las rondas anteriores, un nivel de ruta más profundo.
+Corregido comprobando también el prefijo `ruta/` en ambos sentidos, no
+solo la igualdad -- verificado en vivo con un 10º caso (`foo` local
+preservado tras el arreglo). Ampliada la lección del punto 9 de
+`hook-hardening` con esta segunda vuelta sobre el mismo tipo de error.
+
+**Balance tras 6 rondas sobre el mismo archivo, para que quede
+constancia honesta:** cada ronda encontró un bypass real y distinto de
+la misma comprobación (citado, colapso de directorios, ahora colisión
+de prefijo) -- no es una sola corrección con ruido alrededor, es una
+familia de sutilezas de git que se fueron agotando una a una. El
+patrón hasta ahora es que cada arreglo cierra exactamente el hueco
+encontrado sin abrir uno nuevo (las rondas 2-6 no reabrieron nada de
+las rondas anteriores, verificado repitiendo los casos previos en cada
+ronda) -- pero si una futura revisión encuentra un 7º hueco distinto en
+esta misma comprobación de colisión, la alternativa más simple
+(bloquear el auto-heal ante *cualquier* archivo sin trackear/ignorado
+presente, sin intentar detectar colisión con precisión) vuelve a ser
+la opción a considerar en serio, aceptando que el auto-heal dispare
+menos veces en este repo a cambio de dejar de perseguir casos límite de
+git uno a uno.
+
 **Límite honesto:** esto NO resuelve el caso de "Nivel B2" en sí (esa
 sesión sigue en su rama vieja, sin este hook ahí tampoco, porque su
 checkout es anterior a que este mismo hook exista -- el mismo problema

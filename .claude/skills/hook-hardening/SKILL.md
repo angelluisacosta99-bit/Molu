@@ -242,6 +242,32 @@ invocaciones):
   flag por sí sola (`--ignored=matching` sonaba como si debiera
   expandir, y no lo hacía).
 
+**Segunda vuelta sobre el mismo punto (misma saga, una revisión más
+tarde):** con `-z` y `ls-files` ya arreglados, una revisión siguiente
+encontró que la comparación seguía siendo solo **igualdad exacta de
+cadena** — no detecta que `origin/main` añada un archivo trackeado
+*dentro* de una ruta que localmente es un archivo suelto (`foo` local
+como archivo; `origin/main` trackea `foo/bar.txt`): ninguna ruta es
+igual a la otra, pero el fast-forward destruye `foo` igual para
+convertirlo en directorio — verificado en vivo, la misma clase exacta
+de pérdida silenciosa que el punto 1 de más arriba, solo que un nivel
+de ruta más profundo. **Comparar rutas nunca es solo "¿son iguales?" —
+también "¿una es carpeta de la otra?"** en ambos sentidos. Corregido
+comprobando, para cada par de rutas, tanto la igualdad como el prefijo
+`ruta/` en los dos sentidos.
+
+**Advertencia aparte, no otro bug de este mismo tipo:** si se usa
+`case "$ruta_local" in "$ruta_cambiada"/*)` (patrón de `case` de bash)
+para la comprobación de prefijo en vez de un `grep` con la ruta
+escapada, cualquier carácter de glob literal en el nombre de archivo
+(`*`, `?`, `[`) en la ruta usada como *patrón* se interpreta como
+comodín, no como carácter literal — pero esto solo puede hacer que el
+patrón case cuente *de más* como colisión (nunca de menos), así que el
+único efecto es bloquear el auto-heal alguna vez sin que hiciera falta,
+nunca dejar pasar una colisión real sin detectar. Aceptado así a
+propósito, documentado para que quede claro que es una limitación
+conocida y no otro hallazgo pendiente de arreglar.
+
 ## Antes de pedir/lanzar la revisión externa
 
 Repasar estos 9 puntos uno por uno contra el diff, con al menos un
