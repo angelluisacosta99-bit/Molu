@@ -1,10 +1,19 @@
-# Mi método para enseñar español a alumnos rusohablantes
+# Clases de español para rusohablantes: mi método de enseñanza online
+
+> **Meta descripción (SEO)** — no forma parte del post, cópiala en el
+> campo de meta-descripción de la plataforma al publicar:
+> "Cómo enseño español a alumnos rusohablantes: temario adaptado,
+> seguimiento individual y ejercicios con corrección instantánea.
+> Clases particulares de español online."
 
 Cuando un alumno ruso empieza clases conmigo, lo primero que hago no es
 abrir el libro por la unidad 1. Es hacerle preguntas: por qué quiere
 aprender español, si lo necesita para vivir aquí, para el trabajo, o
 simplemente porque le gusta. Esa respuesta cambia cómo planifico todo
 lo que viene después.
+
+Si estás buscando profesor de español y te preguntas cómo son mis
+clases en la práctica, sigue leyendo — te cuento el método paso a paso.
 
 Llevo tiempo dando clases particulares de español online a alumnos
 rusohablantes, y con los años he ido afinando un método que se apoya en
@@ -60,4 +69,5 @@ tomarme en serio el seguimiento de su progreso — para que cada clase
 sirva para algo concreto, no solo para "avanzar una unidad más".
 
 Si estás buscando clases particulares de español y quieres un plan
-pensado para ti, escríbeme y hablamos de tu nivel y tus objetivos.
+pensado para ti, [escríbeme a través de mi perfil](ENLACE-A-TU-PERFIL)
+y hablamos de tu nivel y tus objetivos.
