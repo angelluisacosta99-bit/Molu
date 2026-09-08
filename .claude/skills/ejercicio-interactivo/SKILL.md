@@ -494,6 +494,13 @@ no las deshagas sin querer al modificar la plantilla.
   **cuando la pista del libro es un DIBUJO (no texto), el nombre/respuesta nunca va visible
   hasta que el alumno la resuelve** — ni en `item.img` de "items" ni en `ex.words[i].img` de
   "wordsearch". El texto solo se revela DESPUÉS de acertar, como un `.reveal` normal.
+  **Tercer fallo, misma familia**: si el libro NO imprime ninguna lista de palabras junto a
+  la rejilla — solo da la categoría ("Encuentra ocho palabras referidas a relaciones
+  familiares") — mostrar el `label` de cada palabra en la lista lateral también le da la
+  respuesta al alumno de balde, aunque no haya `img`. Poner `ex.hideLabels = true`: oculta
+  el label de cada palabra no resuelta (con un placeholder "?") hasta encontrarla, igual que
+  el caso `img`. Si el libro SÍ imprime la lista de palabras junto a la rejilla, no usar
+  `hideLabels` — eso sería quitarle al alumno una ayuda que el libro sí le da.
 - **Un bug de motor encontrado por revisión hay que arreglarlo en `reference/template.html`
   Y en la copia horneada de CADA capítulo ya construido en esa misma rama** — cada
   `..._interactivo.html` es una copia independiente del motor con los datos ya insertados,
