@@ -24159,7 +24159,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-16 \u2014 guia oficial de buenas practicas de claude code",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L182"
+      "source_location": "L196"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_16_primera_pasada_del_radar",
@@ -24171,7 +24171,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-16 \u2014 primera pasada del radar",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L217"
+      "source_location": "L231"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_16_segunda_pasada_hooks_vs_claude_md_y_pr\u00e1cticas_de_la_comunidad",
@@ -24183,7 +24183,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-16 \u2014 segunda pasada: hooks vs. claude.md, y practicas de la comunidad",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L113"
+      "source_location": "L127"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_09_07_b\u00fasqueda_a_mano_herramientas_para_posts_de_blog_en_plataformas_de_clases",
@@ -24195,7 +24195,7 @@
       "node_kind": "heading",
       "norm_label": "2026-09-07 \u2014 busqueda a mano: herramientas para posts de blog en plataformas de clases",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L54"
+      "source_location": "L68"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_09_09_skill_humanizer_terceros_adaptada_a_mano",
@@ -24219,7 +24219,7 @@
       "node_kind": "heading",
       "norm_label": "anotado, no aplicado: hooks para reglas duras, no solo claude.md",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L135"
+      "source_location": "L149"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_anotado_no_aplicado_patrones_de_awattar_claude_code_best_practices",
@@ -24231,7 +24231,7 @@
       "node_kind": "heading",
       "norm_label": "anotado, no aplicado: patrones de `awattar/claude-code-best-practices`",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L161"
+      "source_location": "L175"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_aplicado_hook_stop_con_estado_de_git_radical_transparency",
@@ -24243,7 +24243,7 @@
       "node_kind": "heading",
       "norm_label": "aplicado: hook `stop` con estado de git (\"radical transparency\")",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L119"
+      "source_location": "L133"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_brisk_teaching_conector_mcp",
@@ -24255,7 +24255,7 @@
       "node_kind": "heading",
       "norm_label": "brisk teaching (conector mcp)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L237"
+      "source_location": "L251"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_c\u00f3mo_se_usa",
@@ -24279,7 +24279,7 @@
       "node_kind": "heading",
       "norm_label": "deepl (conector mcp)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L219"
+      "source_location": "L233"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_marketplaces_de_plugins_de_claude_code_oficial_y_comunidad",
@@ -24291,7 +24291,7 @@
       "node_kind": "heading",
       "norm_label": "marketplaces de plugins de claude code (oficial y comunidad)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L255"
+      "source_location": "L269"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_mencionados_pero_no_propuestos_con_tarjeta_por_completitud_sin_encajar_tan_bien_ahora_mismo",
@@ -24303,7 +24303,7 @@
       "node_kind": "heading",
       "norm_label": "mencionados pero no propuestos con tarjeta (por completitud, sin encajar tan bien ahora mismo)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L93"
+      "source_location": "L107"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_menor_learning_commons_y_learn_with_coursera",
@@ -24315,7 +24315,7 @@
       "node_kind": "heading",
       "norm_label": "(menor) learning commons y learn with coursera",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L272"
+      "source_location": "L286"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_novedades_de_herramientas_de_ia",
@@ -24339,7 +24339,7 @@
       "node_kind": "heading",
       "norm_label": "plugin \"marketing\" (`plugin_01eeb9y5m4ifuy3yrtytyfdc`)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L61"
+      "source_location": "L75"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_plugin_searchfit_seo_plugin_016u9h5nggkux18ridtj7otg",
@@ -24351,7 +24351,7 @@
       "node_kind": "heading",
       "norm_label": "plugin \"searchfit seo\" (`plugin_016u9h5nggkux18ridtj7otg`)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L78"
+      "source_location": "L92"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_completion",
@@ -25201,14 +25201,14 @@
       "label": "SKILL.md",
       "_origin": "ast",
       "community": 69,
-      "community_name": "Humanizer: Overview",
+      "community_name": "Humanizer: reescribir para que no suene a IA",
       "file_type": "document",
       "frontmatter": {
         "name": "humanizer",
         "description": "Use when Angel asks to &quot;humanizar&quot; a text, make it sound less like AI/a chatbot wrote it, or remove AI writing tells before publishing something under his own name (blog posts, emails, messages to alumnos). Triggers: &quot;human\u00edzalo&quot;, &quot;que no suene a IA&quot;, &quot;/humanizer&quot;.",
-        "version": "1.0.0",
+        "version": "1.1.0",
         "user-invocable": "true",
-        "license": "MIT (adaptado de github.com/blader/humanizer)"
+        "license": "MIT (adaptado y ampliado de github.com/blader/humanizer)"
       },
       "node_kind": "page",
       "norm_label": "skill.md",
@@ -25216,52 +25216,52 @@
       "source_location": "L1"
     },
     {
-      "id": "claude_skills_humanizer_skill_core_principles",
-      "label": "Core Principles",
+      "id": "claude_skills_humanizer_skill_flujo_de_trabajo",
+      "label": "Flujo de trabajo",
       "_origin": "ast",
       "community": 69,
-      "community_name": "Humanizer: Overview",
+      "community_name": "Humanizer: reescribir para que no suene a IA",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "core principles",
+      "norm_label": "flujo de trabajo",
       "source_file": ".claude/skills/humanizer/SKILL.md",
-      "source_location": "L21"
+      "source_location": "L94"
     },
     {
-      "id": "claude_skills_humanizer_skill_humanizer_overview",
-      "label": "Humanizer: Overview",
+      "id": "claude_skills_humanizer_skill_humanizer_reescribir_para_que_no_suene_a_ia",
+      "label": "Humanizer: reescribir para que no suene a IA",
       "_origin": "ast",
       "community": 69,
-      "community_name": "Humanizer: Overview",
+      "community_name": "Humanizer: reescribir para que no suene a IA",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "humanizer: overview",
+      "norm_label": "humanizer: reescribir para que no suene a ia",
       "source_file": ".claude/skills/humanizer/SKILL.md",
-      "source_location": "L14"
+      "source_location": "L26"
     },
     {
-      "id": "claude_skills_humanizer_skill_key_patterns_addressed",
-      "label": "Key Patterns Addressed",
+      "id": "claude_skills_humanizer_skill_los_25_patrones_5_categor\u00edas",
+      "label": "Los 25 patrones (5 categor\u00edas)",
       "_origin": "ast",
       "community": 69,
-      "community_name": "Humanizer: Overview",
+      "community_name": "Humanizer: reescribir para que no suene a IA",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "key patterns addressed",
+      "norm_label": "los 25 patrones (5 categorias)",
       "source_file": ".claude/skills/humanizer/SKILL.md",
-      "source_location": "L28"
+      "source_location": "L35"
     },
     {
-      "id": "claude_skills_humanizer_skill_workflow",
-      "label": "Workflow",
+      "id": "claude_skills_humanizer_skill_tics_espec\u00edficos_en_espa\u00f1ol_a\u00f1adido_no_est\u00e1_en_el_original",
+      "label": "Tics espec\u00edficos en espa\u00f1ol (a\u00f1adido, no est\u00e1 en el original)",
       "_origin": "ast",
       "community": 69,
-      "community_name": "Humanizer: Overview",
+      "community_name": "Humanizer: reescribir para que no suene a IA",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "workflow",
+      "norm_label": "tics especificos en espanol (anadido, no esta en el original)",
       "source_file": ".claude/skills/humanizer/SKILL.md",
-      "source_location": "L48"
+      "source_location": "L72"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_ui_core",
@@ -69548,46 +69548,46 @@
     },
     {
       "source": "claude_skills_humanizer_skill",
-      "target": "claude_skills_humanizer_skill_humanizer_overview",
+      "target": "claude_skills_humanizer_skill_humanizer_reescribir_para_que_no_suene_a_ia",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".claude/skills/humanizer/SKILL.md",
-      "source_location": "L14",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
-      "source": "claude_skills_humanizer_skill_humanizer_overview",
-      "target": "claude_skills_humanizer_skill_core_principles",
+      "source": "claude_skills_humanizer_skill_humanizer_reescribir_para_que_no_suene_a_ia",
+      "target": "claude_skills_humanizer_skill_los_25_patrones_5_categor\u00edas",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".claude/skills/humanizer/SKILL.md",
-      "source_location": "L21",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
-      "source": "claude_skills_humanizer_skill_humanizer_overview",
-      "target": "claude_skills_humanizer_skill_key_patterns_addressed",
+      "source": "claude_skills_humanizer_skill_humanizer_reescribir_para_que_no_suene_a_ia",
+      "target": "claude_skills_humanizer_skill_tics_espec\u00edficos_en_espa\u00f1ol_a\u00f1adido_no_est\u00e1_en_el_original",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".claude/skills/humanizer/SKILL.md",
-      "source_location": "L28",
+      "source_location": "L72",
       "weight": 1.0
     },
     {
-      "source": "claude_skills_humanizer_skill_humanizer_overview",
-      "target": "claude_skills_humanizer_skill_workflow",
+      "source": "claude_skills_humanizer_skill_humanizer_reescribir_para_que_no_suene_a_ia",
+      "target": "claude_skills_humanizer_skill_flujo_de_trabajo",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".claude/skills/humanizer/SKILL.md",
-      "source_location": "L48",
+      "source_location": "L94",
       "weight": 1.0
     },
     {
@@ -91169,7 +91169,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L219",
+      "source_location": "L233",
       "weight": 1.0
     },
     {
@@ -91180,7 +91180,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L237",
+      "source_location": "L251",
       "weight": 1.0
     },
     {
@@ -91191,7 +91191,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L255",
+      "source_location": "L269",
       "weight": 1.0
     },
     {
@@ -91202,7 +91202,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L272",
+      "source_location": "L286",
       "weight": 1.0
     },
     {
@@ -91213,7 +91213,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L119",
+      "source_location": "L133",
       "weight": 1.0
     },
     {
@@ -91224,7 +91224,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L135",
+      "source_location": "L149",
       "weight": 1.0
     },
     {
@@ -91235,29 +91235,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L161",
-      "weight": 1.0
-    },
-    {
-      "source": "recursos_generales_herramientas_ia_novedades_2026_09_07_b\u00fasqueda_a_mano_herramientas_para_posts_de_blog_en_plataformas_de_clases",
-      "target": "recursos_generales_herramientas_ia_novedades_plugin_marketing_plugin_01eeb9y5m4ifuy3yrtytyfdc",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L61",
-      "weight": 1.0
-    },
-    {
-      "source": "recursos_generales_herramientas_ia_novedades_2026_09_07_b\u00fasqueda_a_mano_herramientas_para_posts_de_blog_en_plataformas_de_clases",
-      "target": "recursos_generales_herramientas_ia_novedades_plugin_searchfit_seo_plugin_016u9h5nggkux18ridtj7otg",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L78",
+      "source_location": "L175",
       "weight": 1.0
     },
     {
@@ -91268,7 +91246,29 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L93",
+      "source_location": "L107",
+      "weight": 1.0
+    },
+    {
+      "source": "recursos_generales_herramientas_ia_novedades_2026_09_07_b\u00fasqueda_a_mano_herramientas_para_posts_de_blog_en_plataformas_de_clases",
+      "target": "recursos_generales_herramientas_ia_novedades_plugin_marketing_plugin_01eeb9y5m4ifuy3yrtytyfdc",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L75",
+      "weight": 1.0
+    },
+    {
+      "source": "recursos_generales_herramientas_ia_novedades_2026_09_07_b\u00fasqueda_a_mano_herramientas_para_posts_de_blog_en_plataformas_de_clases",
+      "target": "recursos_generales_herramientas_ia_novedades_plugin_searchfit_seo_plugin_016u9h5nggkux18ridtj7otg",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L92",
       "weight": 1.0
     },
     {
@@ -91290,7 +91290,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L113",
+      "source_location": "L127",
       "weight": 1.0
     },
     {
@@ -91301,7 +91301,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L182",
+      "source_location": "L196",
       "weight": 1.0
     },
     {
@@ -91312,7 +91312,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L217",
+      "source_location": "L231",
       "weight": 1.0
     },
     {
@@ -91334,7 +91334,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L54",
+      "source_location": "L68",
       "weight": 1.0
     },
     {
@@ -95427,5 +95427,5 @@
       "source_file": "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad6a_como-se-va-a-goya_interactivo.html"
     }
   ],
-  "built_at_commit": "8272b85b7b2cf810a6d4c10f1938edfba6105c30"
+  "built_at_commit": "ccd308ff10a6a38038a19be33d9f6808cc198aa9"
 }

@@ -1,7 +1,7 @@
 # Graph Report - Molu  (2026-09-09)
 
 ## Corpus Check
-- 158 files · ~447,567 words
+- 158 files · ~448,185 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `8272b85b`
+- Built from commit: `ccd308ff`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -84,7 +84,7 @@
 - inline-ignores.mjs
 - normalizeIgnoreValueEntries
 - Clases de español para rusohablantes: mi método de enseñanza online
-- Humanizer: Overview
+- Humanizer: reescribir para que no suene a IA
 - ui-core.mjs
 - impeccable skill
 - Craft Flow Reference
@@ -435,9 +435,9 @@ Nodes (10): cleanIgnoreValueDisplay(), extractFindingIgnoreValue(), extractFindi
 Cohesion: 0.29
 Nodes (6): 1. Un temario probado, no clases improvisadas, 2. Cada alumno tiene su propio plan, 3. Practicar de verdad, con corrección instantánea, 4. Vocabulario que se queda, no que se olvida, Clases de español para rusohablantes: mi método de enseñanza online, Por qué me lo tomo así
 
-### Community 69 - "Humanizer: Overview"
+### Community 69 - "Humanizer: reescribir para que no suene a IA"
 Cohesion: 0.40
-Nodes (4): Core Principles, Humanizer: Overview, Key Patterns Addressed, Workflow
+Nodes (4): Flujo de trabajo, Humanizer: reescribir para que no suene a IA, Los 25 patrones (5 categorías), Tics específicos en español (añadido, no está en el original)
 
 ### Community 70 - "ui-core.mjs"
 Cohesion: 0.29
@@ -552,7 +552,7 @@ Cohesion: 0.67
 Nodes (3): NEM1 Cuaderno Unidad 6A — ¿Cómo se va a Goya?, NEM1 Cuaderno Unidad 7A — ¿Dónde quedamos?, NEM1 A1 Interactivo — Unidad 6A ¿Cómo se va a Goya?
 
 ## Knowledge Gaps
-- **249 isolated node(s):** `Core Principles`, `Key Patterns Addressed`, `Workflow`, `Cómo se usa`, `2026-09-09 — Skill "humanizer" (terceros, adaptada a mano)` (+244 more)
+- **249 isolated node(s):** `Los 25 patrones (5 categorías)`, `Tics específicos en español (añadido, no está en el original)`, `Flujo de trabajo`, `Cómo se usa`, `2026-09-09 — Skill "humanizer" (terceros, adaptada a mano)` (+244 more)
   These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 351 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -560,14 +560,14 @@ Nodes (3): NEM1 Cuaderno Unidad 6A — ¿Cómo se va a Goya?, NEM1 Cuaderno Unid
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `createManualEditRoutes()` connect `manual-apply.mjs` to `manual-edit-routes.mjs`, `live-commit-manual-edits.mjs`, `live-server.mjs`, `css-cascade.mjs`, `insert-ui.mjs`?**
-  _High betweenness centrality (0.101) - this node is a cross-community bridge._
+  _High betweenness centrality (0.099) - this node is a cross-community bridge._
 - **Why does `StaticDocument` connect `css-cascade.mjs` to `detect-html.mjs`?**
-  _High betweenness centrality (0.101) - this node is a cross-community bridge._
+  _High betweenness centrality (0.099) - this node is a cross-community bridge._
 - **Why does `readBuffer()` connect `manual-edit-routes.mjs` to `live-manual-edit-evidence.mjs`, `manual-apply.mjs`, `live-commit-manual-edits.mjs`, `live-wrap.mjs`, `live-accept.mjs`?**
-  _High betweenness centrality (0.010) - this node is a cross-community bridge._
+  _High betweenness centrality (0.012) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `initGlobalBar()` (e.g. with `hideAgentPollTooltip()` and `onDetectMessage()`) actually correct?**
   _`initGlobalBar()` has 7 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `Core Principles`, `Key Patterns Addressed`, `Workflow` to the rest of the system?**
+- **What connects `Los 25 patrones (5 categorías)`, `Tics específicos en español (añadido, no está en el original)`, `Flujo de trabajo` to the rest of the system?**
   _249 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `live-browser.js` be split into smaller, more focused modules?**
   _Cohesion score 0.02863984674329502 - nodes in this community are weakly interconnected._
