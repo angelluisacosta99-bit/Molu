@@ -57,6 +57,25 @@ traducción al ruso. Las listas de palabras sueltas se olvidan a la
 semana siguiente; esto se queda porque el alumno puede repasar por su
 cuenta entre clases, no solo memorizar en la sesión.
 
+## Lo que dicen los alumnos que ya han probado este método
+
+No lo digo solo yo: llevo más de 35 reseñas de 5 estrellas de alumnos
+rusohablantes en otras plataformas donde doy clases, desde 2022. Dos
+ejemplos, traducidos del ruso:
+
+> "¡Es el mejor profesor de español! Después de solo 3 clases ya podía
+> construir frases. Las clases siempre son productivas y con buen
+> ambiente."
+
+> "Explica todo de forma muy accesible. El ambiente en clase es
+> amistoso. Revisa los deberes rápido y, si hace falta, vuelve a
+> explicar el tema donde hubo dificultad."
+
+Los mismos temas se repiten en casi todas: el ambiente relajado quita
+el miedo a equivocarse, y varios alumnos empiezan a construir frases en
+las primeras clases — incluso quienes parten de cero o retoman el
+español después de años sin practicarlo.
+
 ## Por qué me lo tomo así
 
 Cada alumno necesita algo distinto, así que adapto el método a la

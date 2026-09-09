@@ -3943,12 +3943,12 @@
     {
       "type": "bridge_node",
       "question": "Why does `createManualEditRoutes()` connect `manual-edit-routes.mjs` to `live-commit-manual-edits.mjs`, `live-server.mjs`, `insert-ui.mjs`, `detect-html.mjs`?",
-      "why": "High betweenness centrality (0.040) - this node is a cross-community bridge."
+      "why": "High betweenness centrality (0.044) - this node is a cross-community bridge."
     },
     {
       "type": "bridge_node",
       "question": "Why does `StaticDocument` connect `detect-html.mjs` to `css-cascade.mjs`?",
-      "why": "High betweenness centrality (0.040) - this node is a cross-community bridge."
+      "why": "High betweenness centrality (0.043) - this node is a cross-community bridge."
     },
     {
       "type": "bridge_node",
