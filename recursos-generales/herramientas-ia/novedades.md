@@ -49,6 +49,20 @@ un contexto donde declarar que el texto es asistido por IA importa
 (una plataforma con esa política, un trabajo académico), ese es tu
 criterio a aplicar, no algo que el skill decida por ti.
 
+**Actualización 2026-09-09 — ampliada y verificada de nuevo:** a
+petición de Angel, dos mejoras sobre la versión inicial:
+- Los 25 patrones ahora aparecen nombrados uno a uno (antes solo se
+  copió el resumen por categoría del `SKILL.md` original; los nombres
+  concretos de cada patrón solo estaban en el `README.md` de la fuente).
+- Añadida una sección de tics específicos del **español** ("no
+  solo... sino también", "cabe destacar que", "en definitiva" como
+  cierre automático) — el original está pensado para inglés y varios
+  de sus patrones (dashes, "pivotal"/"landscape") no tienen equivalente
+  directo.
+- Reescaneado el archivo completo con un script de `unicodedata` en
+  busca de caracteres Unicode ocultos/de control/homóglifos antes y
+  después de la ampliación: 0 encontrados ambas veces.
+
 ---
 
 ## 2026-09-07 — Búsqueda a mano: herramientas para posts de blog en plataformas de clases
