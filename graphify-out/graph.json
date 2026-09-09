@@ -25134,7 +25134,7 @@
       "node_kind": "heading",
       "norm_label": "1. un temario probado, no clases improvisadas",
       "source_file": "docencia-espanol/materiales/blog/tusclasesparticulares_metodologia-clases-espanol-rusohablantes.md",
-      "source_location": "L23"
+      "source_location": "L22"
     },
     {
       "id": "docencia_espanol_materiales_blog_tusclasesparticulares_metodologia_clases_espanol_rusohablantes_2_cada_alumno_tiene_su_propio_plan",
@@ -25146,7 +25146,7 @@
       "node_kind": "heading",
       "norm_label": "2. cada alumno tiene su propio plan",
       "source_file": "docencia-espanol/materiales/blog/tusclasesparticulares_metodologia-clases-espanol-rusohablantes.md",
-      "source_location": "L34"
+      "source_location": "L32"
     },
     {
       "id": "docencia_espanol_materiales_blog_tusclasesparticulares_metodologia_clases_espanol_rusohablantes_3_practicar_de_verdad_con_correcci\u00f3n_instant\u00e1nea",
@@ -25158,7 +25158,7 @@
       "node_kind": "heading",
       "norm_label": "3. practicar de verdad, con correccion instantanea",
       "source_file": "docencia-espanol/materiales/blog/tusclasesparticulares_metodologia-clases-espanol-rusohablantes.md",
-      "source_location": "L45"
+      "source_location": "L43"
     },
     {
       "id": "docencia_espanol_materiales_blog_tusclasesparticulares_metodologia_clases_espanol_rusohablantes_4_vocabulario_que_se_queda_no_que_se_olvida",
@@ -25170,7 +25170,7 @@
       "node_kind": "heading",
       "norm_label": "4. vocabulario que se queda, no que se olvida",
       "source_file": "docencia-espanol/materiales/blog/tusclasesparticulares_metodologia-clases-espanol-rusohablantes.md",
-      "source_location": "L56"
+      "source_location": "L52"
     },
     {
       "id": "docencia_espanol_materiales_blog_tusclasesparticulares_metodologia_clases_espanol_rusohablantes_clases_de_espa\u00f1ol_para_rusohablantes_mi_m\u00e9todo_de_ense\u00f1anza_online",
@@ -25194,7 +25194,7 @@
       "node_kind": "heading",
       "norm_label": "por que me lo tomo asi",
       "source_file": "docencia-espanol/materiales/blog/tusclasesparticulares_metodologia-clases-espanol-rusohablantes.md",
-      "source_location": "L64"
+      "source_location": "L60"
     },
     {
       "id": "claude_skills_humanizer_skill",
@@ -91195,7 +91195,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docencia-espanol/materiales/blog/tusclasesparticulares_metodologia-clases-espanol-rusohablantes.md",
-      "source_location": "L23",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -91206,7 +91206,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docencia-espanol/materiales/blog/tusclasesparticulares_metodologia-clases-espanol-rusohablantes.md",
-      "source_location": "L34",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -91217,7 +91217,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docencia-espanol/materiales/blog/tusclasesparticulares_metodologia-clases-espanol-rusohablantes.md",
-      "source_location": "L45",
+      "source_location": "L43",
       "weight": 1.0
     },
     {
@@ -91228,7 +91228,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docencia-espanol/materiales/blog/tusclasesparticulares_metodologia-clases-espanol-rusohablantes.md",
-      "source_location": "L56",
+      "source_location": "L52",
       "weight": 1.0
     },
     {
@@ -91239,7 +91239,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docencia-espanol/materiales/blog/tusclasesparticulares_metodologia-clases-espanol-rusohablantes.md",
-      "source_location": "L64",
+      "source_location": "L60",
       "weight": 1.0
     },
     {
@@ -95519,5 +95519,5 @@
       "source_file": "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad6a_como-se-va-a-goya_interactivo.html"
     }
   ],
-  "built_at_commit": "37145cfe3aa82b4287bc3daf2c3846185fed4abe"
+  "built_at_commit": "80c0b7dc11b996dc6b3d7898403e2779ef128291"
 }

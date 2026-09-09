@@ -1,7 +1,7 @@
 # Graph Report - Molu  (2026-09-09)
 
 ## Corpus Check
-- 158 files · ~449,290 words
+- 158 files · ~449,227 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `37145cfe`
+- Built from commit: `80c0b7dc`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -552,7 +552,7 @@ Cohesion: 0.67
 Nodes (3): NEM1 Cuaderno Unidad 6A — ¿Cómo se va a Goya?, NEM1 Cuaderno Unidad 7A — ¿Dónde quedamos?, NEM1 A1 Interactivo — Unidad 6A ¿Cómo se va a Goya?
 
 ## Knowledge Gaps
-- **253 isolated node(s):** `Perfil de voz (opcional)`, `Proceso en 3 pasadas`, `Iterar hasta converger`, `Los patrones (27, en 5 categorías)`, `Vocabulario prohibido (por niveles)` (+248 more)
+- **253 isolated node(s):** `1. Un temario probado, no clases improvisadas`, `2. Cada alumno tiene su propio plan`, `3. Practicar de verdad, con corrección instantánea`, `4. Vocabulario que se queda, no que se olvida`, `Por qué me lo tomo así` (+248 more)
   These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 355 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -560,14 +560,14 @@ Nodes (3): NEM1 Cuaderno Unidad 6A — ¿Cómo se va a Goya?, NEM1 Cuaderno Unid
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `createManualEditRoutes()` connect `manual-edit-routes.mjs` to `live-commit-manual-edits.mjs`, `live-server.mjs`, `css-cascade.mjs`, `insert-ui.mjs`?**
-  _High betweenness centrality (0.102) - this node is a cross-community bridge._
+  _High betweenness centrality (0.088) - this node is a cross-community bridge._
 - **Why does `StaticDocument` connect `css-cascade.mjs` to `detect-html.mjs`?**
-  _High betweenness centrality (0.100) - this node is a cross-community bridge._
-- **Why does `readLiveServerInfo()` connect `readLiveServerInfo` to `impeccable-paths.mjs`, `live-poll.mjs`, `live.mjs`, `live-server.mjs`?**
-  _High betweenness centrality (0.010) - this node is a cross-community bridge._
+  _High betweenness centrality (0.087) - this node is a cross-community bridge._
+- **Why does `readBuffer()` connect `manual-edit-routes.mjs` to `live-manual-edit-evidence.mjs`, `manual-apply.mjs`, `live-commit-manual-edits.mjs`, `live-wrap.mjs`, `live-accept.mjs`?**
+  _High betweenness centrality (0.009) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `initGlobalBar()` (e.g. with `hideAgentPollTooltip()` and `onDetectMessage()`) actually correct?**
   _`initGlobalBar()` has 7 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `Perfil de voz (opcional)`, `Proceso en 3 pasadas`, `Iterar hasta converger` to the rest of the system?**
+- **What connects `1. Un temario probado, no clases improvisadas`, `2. Cada alumno tiene su propio plan`, `3. Practicar de verdad, con corrección instantánea` to the rest of the system?**
   _253 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `live-browser.js` be split into smaller, more focused modules?**
   _Cohesion score 0.02863984674329502 - nodes in this community are weakly interconnected._

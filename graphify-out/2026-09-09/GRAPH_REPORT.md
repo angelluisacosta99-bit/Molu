@@ -1,7 +1,7 @@
 # Graph Report - Molu  (2026-09-09)
 
 ## Corpus Check
-- 158 files · ~448,819 words
+- 158 files · ~449,290 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `0fec2700`
+- Built from commit: `37145cfe`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -437,7 +437,7 @@ Nodes (6): 1. Un temario probado, no clases improvisadas, 2. Cada alumno tiene s
 
 ### Community 69 - "Humanizer: reescribir para que no suene a IA (solo blog/redes/mensajes)"
 Cohesion: 0.22
-Nodes (8): Flujo de trabajo final, Humanizer: reescribir para que no suene a IA (solo blog/redes/mensajes), Iterar hasta converger, Los 25 patrones (5 categorías), Perfil de voz (opcional), Proceso en 3 pasadas, Tics específicos en español (no está en las fuentes originales,, Vocabulario prohibido (por niveles)
+Nodes (8): Flujo de trabajo final, Humanizer: reescribir para que no suene a IA (solo blog/redes/mensajes), Iterar hasta converger, Los patrones (27, en 5 categorías), Perfil de voz (opcional), Proceso en 3 pasadas, Tics adicionales en español (no cubiertos arriba, añadido por mí), Vocabulario prohibido (por niveles)
 
 ### Community 70 - "ui-core.mjs"
 Cohesion: 0.29
@@ -552,7 +552,7 @@ Cohesion: 0.67
 Nodes (3): NEM1 Cuaderno Unidad 6A — ¿Cómo se va a Goya?, NEM1 Cuaderno Unidad 7A — ¿Dónde quedamos?, NEM1 A1 Interactivo — Unidad 6A ¿Cómo se va a Goya?
 
 ## Knowledge Gaps
-- **253 isolated node(s):** `Perfil de voz (opcional)`, `Proceso en 3 pasadas`, `Iterar hasta converger`, `Los 25 patrones (5 categorías)`, `Vocabulario prohibido (por niveles)` (+248 more)
+- **253 isolated node(s):** `Perfil de voz (opcional)`, `Proceso en 3 pasadas`, `Iterar hasta converger`, `Los patrones (27, en 5 categorías)`, `Vocabulario prohibido (por niveles)` (+248 more)
   These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 355 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -560,11 +560,11 @@ Nodes (3): NEM1 Cuaderno Unidad 6A — ¿Cómo se va a Goya?, NEM1 Cuaderno Unid
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `createManualEditRoutes()` connect `manual-edit-routes.mjs` to `live-commit-manual-edits.mjs`, `live-server.mjs`, `css-cascade.mjs`, `insert-ui.mjs`?**
-  _High betweenness centrality (0.100) - this node is a cross-community bridge._
+  _High betweenness centrality (0.102) - this node is a cross-community bridge._
 - **Why does `StaticDocument` connect `css-cascade.mjs` to `detect-html.mjs`?**
-  _High betweenness centrality (0.099) - this node is a cross-community bridge._
-- **Why does `readBuffer()` connect `manual-edit-routes.mjs` to `live-manual-edit-evidence.mjs`, `manual-apply.mjs`, `live-commit-manual-edits.mjs`, `live-wrap.mjs`, `live-accept.mjs`?**
-  _High betweenness centrality (0.011) - this node is a cross-community bridge._
+  _High betweenness centrality (0.100) - this node is a cross-community bridge._
+- **Why does `readLiveServerInfo()` connect `readLiveServerInfo` to `impeccable-paths.mjs`, `live-poll.mjs`, `live.mjs`, `live-server.mjs`?**
+  _High betweenness centrality (0.010) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `initGlobalBar()` (e.g. with `hideAgentPollTooltip()` and `onDetectMessage()`) actually correct?**
   _`initGlobalBar()` has 7 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `Perfil de voz (opcional)`, `Proceso en 3 pasadas`, `Iterar hasta converger` to the rest of the system?**

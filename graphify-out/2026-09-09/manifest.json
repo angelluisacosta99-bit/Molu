@@ -1008,9 +1008,9 @@
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/blog/tusclasesparticulares_metodologia-clases-espanol-rusohablantes.md": {
-    "mtime": 1788851341.8453348,
-    "seen": 1788851353.401728,
-    "ast_hash": "d4b78a166e4eea5342000cbc4c15dbfe",
+    "mtime": 1788942143.93705,
+    "seen": 1788942214.057537,
+    "ast_hash": "96326fc7c52519513373aa544d433c71",
     "semantic_hash": ""
   },
   "recursos-generales/README.md": {
@@ -1020,9 +1020,9 @@
     "semantic_hash": ""
   },
   "recursos-generales/herramientas-ia/novedades.md": {
-    "mtime": 1788941826.973042,
-    "seen": 1788941836.7663264,
-    "ast_hash": "fe4dec8c43551715869e2eb97b7102d3",
+    "mtime": 1788942204.1050515,
+    "seen": 1788942214.0575612,
+    "ast_hash": "91c6fb5b875aa02da7d77f0c1d73b1b9",
     "semantic_hash": ""
   },
   "traduccion/README.md": {
@@ -1032,9 +1032,9 @@
     "semantic_hash": ""
   },
   ".claude/skills/humanizer/SKILL.md": {
-    "mtime": 1788941808.8490417,
-    "seen": 1788941836.7662063,
-    "ast_hash": "560c876799bcc651548815f1b9e99bf3",
+    "mtime": 1788942185.2866564,
+    "seen": 1788942214.057449,
+    "ast_hash": "ecd468380f51684ec1911164480767b3",
     "semantic_hash": ""
   }
 }
