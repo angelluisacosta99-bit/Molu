@@ -23,6 +23,34 @@ copias que puedan desincronizarse.
 
 ---
 
+## 2026-09-09 — Skill "humanizer" (terceros, adaptada a mano)
+
+Angel pidió instalar "Humanizer" tras ver un post de Instagram
+(@cinthyasanchezai) que lo promocionaba como habilidad de Claude. No es
+una función nativa de Anthropic — es un skill open-source de un tercero:
+[`blader/humanizer`](https://github.com/blader/humanizer) (MIT).
+
+**Qué es:** reescribe texto para quitar "tells" típicos de IA (aperturas
+escenificadas, tríadas forzadas, palabras infladas tipo "clave"/
+"panorama", negrita decorativa, coletillas de chatbot como "espero que
+esto ayude"). 25 patrones en 5 categorías.
+
+**Cómo se activó:** el repo original se instala con
+`npx skills add blader/humanizer --global`, pero eso ejecuta un paquete
+de npm de un tercero sin revisar y afecta fuera de este repo (`--global`).
+En vez de eso, revisé `SKILL.md` del repo (solo texto, sin nada
+sospechoso) y lo copié a mano a `.claude/skills/humanizer/SKILL.md`,
+con nota de atribución/licencia. Cero código de terceros ejecutado.
+
+**Aviso a Angel:** estas herramientas están pensadas para que un texto
+no sea detectable como escrito por IA. Para tu caso (post de blog para
+tu propio perfil) no hay nada deshonesto — pero si algún día lo usas en
+un contexto donde declarar que el texto es asistido por IA importa
+(una plataforma con esa política, un trabajo académico), ese es tu
+criterio a aplicar, no algo que el skill decida por ti.
+
+---
+
 ## 2026-09-07 — Búsqueda a mano: herramientas para posts de blog en plataformas de clases
 
 Angel pidió una búsqueda exhaustiva mientras preparaba un post de blog
