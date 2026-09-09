@@ -1,7 +1,7 @@
 ---
 name: humanizer
 description: Use when Angel asks to "humanizar" un texto para un blog, post en redes o mensaje bajo su propio nombre — hacer que no suene a chatbot. NO usar en trabajos de universidad/máster ni en el TFM (fuera de alcance a propósito, ver nota abajo). Triggers: "humanízalo", "que no suene a IA", "/humanizer".
-version: 1.2.0
+version: 1.3.0
 user-invocable: true
 license: MIT (adaptado y ampliado a partir de varios skills open-source, ver fuentes)
 ---
@@ -19,13 +19,20 @@ license: MIT (adaptado y ampliado a partir de varios skills open-source, ver fue
 >   red, referenciado de segunda mano vía las tres fuentes de arriba).
 >
 > Escaneado el 2026-09-09 con `unicodedata` (caracteres ocultos, de
-> control, homóglifos): 0 encontrados, en cada revisión.
->
+> control, homóglifos): 0 encontrados, en cada revisión (última: v1.3.0).
+
 > **Alcance a propósito, no me lo vuelvas a pedir para trabajos
 > académicos:** este skill es para contenido bajo el nombre de Angel
 > sin evaluación de por medio (posts de blog, redes, mensajes). Angel y
 > yo ya hablamos de esto — para trabajos de máster/TFM la respuesta
 > sigue siendo no, es fraude académico, no una cuestión de estilo.
+>
+> **Límite honesto de esta nota:** esto es documentación, no un
+> bloqueo técnico. Solo evita que se invoque *este skill con su
+> nombre* para ese fin — no impide que una sesión reescriba un párrafo
+> a mano sin pasar por `/humanizer`. El criterio real sigue siendo de
+> quien lo use en cada momento, esta nota solo dificulta que se le
+> pida "sin pensarlo" a esta skill en concreto.
 
 # Humanizer: reescribir para que no suene a IA (solo blog/redes/mensajes)
 
@@ -50,10 +57,9 @@ otro, el que indique gana sobre el default:
 ## Proceso en 3 pasadas
 
 1. **Quitar vocabulario de IA** — sustituir palabras sobreusadas (ver
-   lista de abajo) por su equivalente concreto y directo.
-2. **Romper estructuras de IA** — eliminar los 25 patrones catalogados
-   más abajo (negación en espejo, tríadas, preguntas retóricas
-   forzadas, revelaciones dramáticas de cierre).
+   "Vocabulario prohibido" abajo) por su equivalente concreto y directo.
+2. **Romper estructuras de IA** — eliminar los 27 patrones catalogados
+   más abajo.
 3. **Añadir textura humana** — variar la longitud de las frases,
    permitir contracciones/coloquialismos donde encajen, no cerrar cada
    idea con un lazo perfecto (una idea humana a veces queda abierta).
@@ -71,7 +77,11 @@ regenerar no suele encontrar nada nuevo. Si Angel pide explícitamente
 "sigue afinando", repetir el ciclo desde cero (no se acumula sobre la
 segunda pasada). Indicar siempre si convergió en 1 o 2 pasadas.
 
-## Los 25 patrones (5 categorías)
+## Los patrones (27, en 5 categorías)
+
+25 vienen de `blader/humanizer`; los dos últimos de B (7-8) se sumaron
+de las otras fuentes y se numeran aparte para no esconderlos en un
+paréntesis.
 
 **A. Puesta en escena en vez de afirmar directamente** (5)
 1. Contraste "no es X, es Y" forzado.
@@ -80,63 +90,64 @@ segunda pasada). Indicar siempre si convergió en 1 o 2 pasadas.
 4. "Run-ups" — un preámbulo largo antes de decir lo importante.
 5. Objeciones que se plantean pero nunca se resuelven.
 
-**B. Ritmo por regla, no por oído** (6)
+**B. Ritmo por regla, no por oído** (8)
 6. Tríadas forzadas ("claro, directo y efectivo").
 7. Aperturas de párrafo repetidas (mismo arranque una y otra vez).
 8. Guiones/rayas usados como conector en exceso.
 9. Calificadores apilados ("realmente muy claramente importante").
 10. Guiones innecesarios entre palabras que no los necesitan.
 11. Construcciones pasivas que esconden quién hace la acción.
-   *(añadido de otras fuentes: preguntas retóricas forzadas como
-   apertura — "¿Te has preguntado alguna vez...?" — y estructuras
-   espejo entre frases consecutivas.)*
+12. Preguntas retóricas forzadas como apertura ("¿Te has preguntado
+    alguna vez...?").
+13. Estructuras espejo entre frases consecutivas (misma forma
+    sintáctica repetida sin necesidad).
 
 **C. Inflación y autoridad prestada** (7)
-12. Vocabulario sobreusado ("clave", "fundamental", "panorama").
-13. Importancia inflada de algo que no la tiene.
-14. Asociaciones vagas ("estudios demuestran...", sin decir cuáles).
-15. Participios superficiales que suenan a informe corporativo.
-16. Lenguaje de anuncio/venta en vez de explicación directa.
-17. Experiencia/autoridad fingida ("como experto en...").
-18. Cópulas con relleno ("es importante señalar que", "cabe destacar").
+14. Vocabulario sobreusado ("fundamental", "panorama" — ver
+    "Vocabulario prohibido" para el caso de "clave", que tiene matices).
+15. Importancia inflada de algo que no la tiene.
+16. Asociaciones vagas ("estudios demuestran...", sin decir cuáles).
+17. Participios superficiales que suenan a informe corporativo.
+18. Lenguaje de anuncio/venta en vez de explicación directa.
+19. Experiencia/autoridad fingida ("como experto en...").
+20. Cópulas con relleno ("es importante señalar que", "cabe destacar").
 
 **D. Formato por regla** (3)
-19. Negrita decorativa sin necesidad real.
-20. Títulos cargados de emojis.
-21. Comillas tipográficas curvas donde no aportan nada.
+21. Negrita decorativa sin necesidad real.
+22. Títulos cargados de emojis.
+23. Comillas tipográficas curvas donde no aportan nada.
 
 **E. Restos de chat y borrador** (4)
-22. Envoltorios de chatbot ("¡Por supuesto! Aquí tienes...").
-23. Avisos de límite de conocimiento que en realidad son una excusa.
-24. Encabezados repetidos que ya dice el título.
-25. Referencias a versiones/fechas que ya no aplican.
+24. Envoltorios de chatbot ("¡Por supuesto! Aquí tienes...").
+25. Avisos de límite de conocimiento que en realidad son una excusa.
+26. Encabezados repetidos que ya dice el título.
+27. Referencias a versiones/fechas que ya no aplican.
 
 ## Vocabulario prohibido (por niveles)
 
-**Nivel 1 — cortar siempre, sin excepción:** clave, fundamental,
-panorama, sin duda, cabe destacar, es importante señalar, en
-definitiva/en resumen (como cierre automático), no solo... sino
-también (como muletilla), landscape/pivotal/leverage/delve/tapestry/
-seamless/robust si aparecen calcados del inglés.
+Incluye ya los equivalentes en español (no solo... sino también, en
+definitiva, cabe destacar) — no hace falta repetirlos en otra sección.
 
-**Nivel 2 — sospechoso, revisar caso a caso:** clave (como adjetivo
-suelto: "un factor clave" a veces sí es preciso), transformador,
-holístico, robusto, alineado, potenciar (irónico dado el nombre del
-skill — vale si describe algo real, no como relleno).
+**Nivel 1 — cortar siempre, sin excepción:** fundamental, panorama, sin
+duda, cabe destacar, es importante señalar, en definitiva/en resumen
+(como cierre automático), no solo... sino también (como muletilla),
+"¡Claro! Aquí tienes..." / "espero que esto te sea de ayuda" (residuo
+de chatbot), landscape/pivotal/leverage/delve/tapestry/seamless/robust
+si aparecen calcados del inglés.
 
-## Tics específicos en español (no está en las fuentes originales,
-añadido por mí)
+**Nivel 2 — sospechoso, revisar caso a caso:** "clave" (como adjetivo
+suelto — "un factor clave" a veces sí es preciso; como muletilla de
+cierre — "esto es clave para..." — se corta), transformador, holístico,
+robusto, alineado, potenciar (irónico dado el nombre del skill — vale
+si describe algo real, no como relleno).
 
-- **"No solo... sino también"** como muletilla de cierre de párrafo.
-- **"En definitiva" / "en resumen" / "al final del día"** como cierre
-  automático que no resume nada nuevo.
-- **"Cabe destacar que" / "es importante mencionar que" / "sin duda"**
-  como relleno antes de una frase que iría mejor directa.
+## Tics adicionales en español (no cubiertos arriba, añadido por mí)
+
+Los tics de vocabulario ya están en "Vocabulario prohibido" — esta
+lista es solo lo que no encaja como palabra suelta:
+
 - **Enumeraciones de tres adjetivos** calcadas del inglés ("claro,
   conciso y efectivo") — en español suenan a lista de la compra.
-- **"¡Claro! Aquí tienes..."** o "espero que esto te sea de ayuda" —
-  residuo de chatbot, se quita siempre en texto publicado bajo el
-  nombre de Angel.
 - **Sustantivos abstractos en cascada** ("la optimización de la
   metodología de enseñanza") en vez del verbo directo ("optimizar cómo
   enseño").

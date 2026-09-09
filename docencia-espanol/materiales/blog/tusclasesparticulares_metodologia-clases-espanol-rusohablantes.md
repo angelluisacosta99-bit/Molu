@@ -1,10 +1,10 @@
 # Clases de español para rusohablantes: mi método de enseñanza online
 
 > **Meta descripción (SEO)** — no forma parte del post, cópiala en el
-> campo de meta-descripción de la plataforma al publicar:
-> "Cómo enseño español a alumnos rusohablantes: temario adaptado,
-> seguimiento individual y ejercicios con corrección instantánea.
-> Clases particulares de español online."
+> campo de meta-descripción de la plataforma al publicar (124
+> caracteres, dentro del límite de ~155-160 que suele mostrar Google):
+> "Cómo enseño español a rusohablantes: temario adaptado, plan
+> individual y corrección instantánea. Clases particulares online."
 
 Cuando un alumno ruso empieza clases conmigo, lo primero que hago no es
 abrir el libro por la unidad 1. Es hacerle preguntas: por qué quiere
@@ -71,3 +71,11 @@ sirva para algo concreto, no solo para "avanzar una unidad más".
 Si estás buscando clases particulares de español y quieres un plan
 pensado para ti, [escríbeme a través de mi perfil](ENLACE-A-TU-PERFIL)
 y hablamos de tu nivel y tus objetivos.
+
+> **Nota al pegar en la plataforma** — el editor de TusClasesParticulares
+> es de tipo WYSIWYG (como Word), no interpreta la sintaxis Markdown de
+> arriba: si pegas el texto tal cual, saldrá literalmente
+> `[escríbeme a través de mi perfil](ENLACE-A-TU-PERFIL)` en vez de un
+> enlace. Selecciona el texto "escríbeme a través de mi perfil" en el
+> editor de la plataforma y usa su botón de insertar enlace, con la URL
+> real de tu perfil.

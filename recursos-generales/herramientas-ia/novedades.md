@@ -94,6 +94,40 @@ directo. Reescaneado el archivo tras la ampliación: 2 caracteres "→"
 mano — son texto normal que escribí yo mismo ("vocabulario → estructura
 → textura humana"), no nada oculto ni inyectado.
 
+**Actualización 2026-09-09 (3) — revisión con agente independiente,
+6 hallazgos corregidos:** a petición de Angel, se lanzó un agente sin
+contexto previo a revisar el post de blog, la skill `humanizer` y este
+mismo registro. Encontró 6 problemas reales, todos corregidos en el
+momento:
+
+1. **Contradicción en `humanizer`:** "clave" estaba en Nivel 1 ("cortar
+   siempre") y en Nivel 2 ("a veces preciso") a la vez. Corregido:
+   "clave" solo en Nivel 2 con el matiz; Nivel 1 se queda con
+   "fundamental"/"panorama".
+2. **El mismo tic repetido en 3 sitios** sin remitirse entre sí (fruto
+   de las 3 rondas de ampliación sin consolidar). Corregido: cada tic
+   vive en un solo sitio; la sección de tics de español ahora solo
+   tiene lo que no estaba ya cubierto.
+3. **"Los 25 patrones" en realidad documentaba 27** (dos colados en un
+   paréntesis del punto 11). Corregido: renumerados como 12-13
+   explícitos, cabecera actualizada a "27 patrones" con nota de qué
+   fuente aporta cuáles.
+4. **La nota de "no usar en TFM" se leía como más sólida de lo que
+   es.** Añadida una aclaración explícita: es documentación, no un
+   bloqueo técnico — no impide reescribir algo a mano sin invocar el
+   skill por su nombre.
+5. **Meta-descripción del post en 165 caracteres** (por encima del
+   límite de ~155-160 de Google). Acortada a 124.
+6. **El enlace Markdown del CTA no sobrevive a un editor WYSIWYG.**
+   Añadida una nota en el propio post explicando cómo recrearlo a mano
+   en el editor de la plataforma.
+
+El agente confirmó sin problemas: el contenido del blog no tiene datos
+inventados (contrastado contra los README reales de
+`docencia-espanol/`), las entradas de este registro coinciden con el
+estado real de los archivos, y no hay nada tipo inyección de prompt en
+`SKILL.md` (su propio escaneo con `unicodedata` también dio 0).
+
 ---
 
 ## 2026-09-07 — Búsqueda a mano: herramientas para posts de blog en plataformas de clases
