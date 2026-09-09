@@ -6,30 +6,28 @@
 
 #### Ej. 1 — Sopa de letras: alimentos
 
-*Busca en la sopa de letras diez alimentos. HUEVO ya viene marcado en el libro. Como los huecos hay que corregirlos en un orden fijo, cada uno lleva de pista sus dos primeras letras.*
-
-> **Sopa de letras:** 
+*Busca en la sopa de letras diez alimentos. HUEVO ya viene marcado en el libro.*
 
 ```
-P E H U E V O R Q
-L I M O N M Y P U
-A G U H C E L O E
-T O M A T E B L S
-A P A T A T A L O
-N A R A N J A O Z
-O P J A M O N R X
+PEHUEVORQ
+LIMONMYPU
+AGUHCELOE
+TOMATEBLS
+APATATALO
+NARANJAOZ
+OPJAMONRX
 ```
 
-1. huevo (ya marcado en el libro)
-2. ja… → **jamón**
-3. le… → **lechuga**
-4. li… → **limón**
-5. na… → **naranja**
-6. pa… → **patata**
-7. pl… → **plátano**
-8. po… → **pollo**
-9. qu… → **queso**
-10. to… → **tomate**
+- Huevo
+- Jamón
+- Lechuga
+- Limón
+- Naranja
+- Patata
+- Plátano
+- Pollo
+- Queso
+- Tomate
 
 #### Ej. 2 — Relaciona los ingredientes con su plato
 
