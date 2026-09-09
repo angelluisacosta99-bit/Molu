@@ -1,36 +1,75 @@
 ---
 name: humanizer
-description: Use when Angel asks to "humanizar" a text, make it sound less like AI/a chatbot wrote it, or remove AI writing tells before publishing something under his own name (blog posts, emails, messages to alumnos). Triggers: "humanízalo", "que no suene a IA", "/humanizer".
-version: 1.1.0
+description: Use when Angel asks to "humanizar" un texto para un blog, post en redes o mensaje bajo su propio nombre — hacer que no suene a chatbot. NO usar en trabajos de universidad/máster ni en el TFM (fuera de alcance a propósito, ver nota abajo). Triggers: "humanízalo", "que no suene a IA", "/humanizer".
+version: 1.2.0
 user-invocable: true
-license: MIT (adaptado y ampliado de github.com/blader/humanizer)
+license: MIT (adaptado y ampliado a partir de varios skills open-source, ver fuentes)
 ---
 
-> Adaptado del skill open-source `blader/humanizer` (MIT,
-> https://github.com/blader/humanizer). Copiado y reescrito a mano en
-> este repo — nunca instalado vía `npx skills add` — para no ejecutar
-> código de terceros sin revisar; este archivo es solo texto de
-> instrucciones, sin scripts ni dependencias.
+> **Fuentes** (todas MIT/open-source, leídas y adaptadas a mano — nunca
+> instaladas vía `npx`/CLI, cero código de terceros ejecutado):
+> - https://github.com/blader/humanizer — los 25 patrones base.
+> - https://github.com/conorbronsdon/avoid-ai-writing — perfil de voz
+>   y el ciclo de "iterar hasta converger".
+> - https://github.com/lguz/humanize-writing-skill — el marco de
+>   3 pasadas (vocabulario → estructura → textura humana) y la idea de
+>   niveles de palabras prohibidas.
+> - Todas citan como referencia de fondo el ensayo de Wikipedia
+>   "Signs of AI writing" (no se pudo acceder directamente por proxy de
+>   red, referenciado de segunda mano vía las tres fuentes de arriba).
 >
-> Escaneado el 2026-09-09: 0 caracteres Unicode ocultos, de control o
-> homóglifos en el archivo (comprobado con `unicodedata`, ver commit).
+> Escaneado el 2026-09-09 con `unicodedata` (caracteres ocultos, de
+> control, homóglifos): 0 encontrados, en cada revisión.
 >
-> Ampliado respecto al original en dos cosas: (1) los 25 patrones
-> nombrados uno a uno en vez de solo por categoría — el original los
-> lista así en su `README.md`, no en el `SKILL.md` que se copia al
-> instalar; (2) una sección de tics específicos del **español**, porque
-> el original está pensado sobre todo para inglés (dashes, "pivotal",
-> "landscape" no tienen equivalente literal en como escribe una IA en
-> español).
+> **Alcance a propósito, no me lo vuelvas a pedir para trabajos
+> académicos:** este skill es para contenido bajo el nombre de Angel
+> sin evaluación de por medio (posts de blog, redes, mensajes). Angel y
+> yo ya hablamos de esto — para trabajos de máster/TFM la respuesta
+> sigue siendo no, es fraude académico, no una cuestión de estilo.
 
-# Humanizer: reescribir para que no suene a IA
+# Humanizer: reescribir para que no suene a IA (solo blog/redes/mensajes)
 
 Reescribe texto generado por IA para que suene natural, sin cambiar el
 contenido factual. Identifica patrones estructurales que un modelo usa
 por defecto y los elimina. Idea central: cada frase que se conserve
 debe aportar algo nuevo al lector, y los patrones pesan más cuando
-aparecen juntos — los hábitos estructurales (puesta en escena, ritmo
-forzado, inflación) delatan más que el vocabulario suelto.
+aparecen juntos.
+
+## Perfil de voz (opcional)
+
+Si Angel no indica nada, usar por defecto un tono **cálido pero
+profesional** — encaja con su perfil de profesor de español. Si pide
+otro, el que indique gana sobre el default:
+
+- **cercano/casual** — conversacional, primera persona, contracciones.
+- **profesional** — medido, formal, propio de una plataforma seria.
+- **cálido** (default) — cercano, empático, conexión humana — el que
+  mejor encaja con captar alumnos.
+- **directo** — sin rodeos, afirmaciones seguras, cero relleno.
+
+## Proceso en 3 pasadas
+
+1. **Quitar vocabulario de IA** — sustituir palabras sobreusadas (ver
+   lista de abajo) por su equivalente concreto y directo.
+2. **Romper estructuras de IA** — eliminar los 25 patrones catalogados
+   más abajo (negación en espejo, tríadas, preguntas retóricas
+   forzadas, revelaciones dramáticas de cierre).
+3. **Añadir textura humana** — variar la longitud de las frases,
+   permitir contracciones/coloquialismos donde encajen, no cerrar cada
+   idea con un lazo perfecto (una idea humana a veces queda abierta).
+
+## Iterar hasta converger
+
+Por defecto, hacer **dos pasadas como máximo**:
+1. Primera pasada: aplicar el proceso de arriba sobre todo el texto.
+2. Segunda pasada: revisar el resultado buscando patrones que hayan
+   sobrevivido (transiciones recicladas, vaguedad residual, un cierre
+   dramático que se coló).
+
+No hacer una tercera pasada por defecto — a partir de ahí el coste de
+regenerar no suele encontrar nada nuevo. Si Angel pide explícitamente
+"sigue afinando", repetir el ciclo desde cero (no se acumula sobre la
+segunda pasada). Indicar siempre si convergió en 1 o 2 pasadas.
 
 ## Los 25 patrones (5 categorías)
 
@@ -48,6 +87,9 @@ forzado, inflación) delatan más que el vocabulario suelto.
 9. Calificadores apilados ("realmente muy claramente importante").
 10. Guiones innecesarios entre palabras que no los necesitan.
 11. Construcciones pasivas que esconden quién hace la acción.
+   *(añadido de otras fuentes: preguntas retóricas forzadas como
+   apertura — "¿Te has preguntado alguna vez...?" — y estructuras
+   espejo entre frases consecutivas.)*
 
 **C. Inflación y autoridad prestada** (7)
 12. Vocabulario sobreusado ("clave", "fundamental", "panorama").
@@ -69,35 +111,46 @@ forzado, inflación) delatan más que el vocabulario suelto.
 24. Encabezados repetidos que ya dice el título.
 25. Referencias a versiones/fechas que ya no aplican.
 
-## Tics específicos en español (añadido, no está en el original)
+## Vocabulario prohibido (por niveles)
 
-El original se escribió pensando en inglés. En español, una IA (yo
-incluido) tiende a estos vicios en concreto — revisar estos además de
-los 25 de arriba:
+**Nivel 1 — cortar siempre, sin excepción:** clave, fundamental,
+panorama, sin duda, cabe destacar, es importante señalar, en
+definitiva/en resumen (como cierre automático), no solo... sino
+también (como muletilla), landscape/pivotal/leverage/delve/tapestry/
+seamless/robust si aparecen calcados del inglés.
 
-- **"No solo... sino también"** como muletilla de todo párrafo de
-  cierre, en vez de decirlo directo.
+**Nivel 2 — sospechoso, revisar caso a caso:** clave (como adjetivo
+suelto: "un factor clave" a veces sí es preciso), transformador,
+holístico, robusto, alineado, potenciar (irónico dado el nombre del
+skill — vale si describe algo real, no como relleno).
+
+## Tics específicos en español (no está en las fuentes originales,
+añadido por mí)
+
+- **"No solo... sino también"** como muletilla de cierre de párrafo.
 - **"En definitiva" / "en resumen" / "al final del día"** como cierre
-  automático de cada sección, aunque no resuma nada nuevo.
+  automático que no resume nada nuevo.
 - **"Cabe destacar que" / "es importante mencionar que" / "sin duda"**
-  como relleno antes de una frase que estaría mejor sin el preámbulo.
+  como relleno antes de una frase que iría mejor directa.
 - **Enumeraciones de tres adjetivos** calcadas del inglés ("claro,
-  conciso y efectivo") que en español suenan más a lista de la compra
-  que a prosa.
-- **"¡Claro! Aquí tienes..."** o "Espero que esto te sea de ayuda" al
-  final — residuo de chatbot, se quita siempre en un texto que se va a
-  publicar bajo el nombre de Angel.
+  conciso y efectivo") — en español suenan a lista de la compra.
+- **"¡Claro! Aquí tienes..."** o "espero que esto te sea de ayuda" —
+  residuo de chatbot, se quita siempre en texto publicado bajo el
+  nombre de Angel.
 - **Sustantivos abstractos en cascada** ("la optimización de la
   metodología de enseñanza") en vez del verbo directo ("optimizar cómo
   enseño").
 
-## Flujo de trabajo
+## Flujo de trabajo final
 
 1. Marcar los tics por orden de fuerza (los patrones que aparecen
    juntos delatan más que uno suelto).
-2. Reescribir preservando todos los datos y afirmaciones factuales —
+2. Aplicar el proceso de 3 pasadas con el perfil de voz que corresponda.
+3. Reescribir preservando todos los datos y afirmaciones factuales —
    nunca inventar ni quitar información real al "humanizar".
-3. Revisar que no queden patrones sin tratar.
-4. Si Angel da 2-3 párrafos propios como muestra de su voz, usarlos
-   como referencia de tono antes de dar el texto final; si no, variar
-   la longitud de frase y evitar que el resultado suene a plantilla.
+4. Segunda pasada de revisión (ver "Iterar hasta converger").
+5. Si Angel da 2-3 párrafos propios como muestra de su voz, usarlos
+   como referencia de tono antes de dar el texto final.
+6. Indicar al final cuántas pasadas hicieron falta y qué patrones se
+   quitaron, para que Angel vea el criterio aplicado, no solo el
+   resultado.

@@ -63,6 +63,37 @@ petición de Angel, dos mejoras sobre la versión inicial:
   busca de caracteres Unicode ocultos/de control/homóglifos antes y
   después de la ampliación: 0 encontrados ambas veces.
 
+**Actualización 2026-09-09 (2) — Angel pidió usarlo para su TFM/máster,
+rechazado; luego ampliado más para blog con fuentes adicionales:**
+
+Angel preguntó si podía usar este skill para sus trabajos de
+universidad (máster) y su TFM. Se le explicó que eso es fraude
+académico (evadir detección de IA en una evaluación formal es distinto
+de raíz a un post de blog sin evaluación de por medio) y se rechazó
+ampliarlo con ese fin. Angel aceptó la explicación y pidió continuar
+solo con el uso de blog — el `description` del frontmatter ahora deja
+explícito ese límite de alcance ("NO usar en trabajos de
+universidad/máster ni en el TFM").
+
+Con el alcance ya acotado a blog/redes, se buscaron más fuentes
+open-source similares y se incorporaron ideas nuevas de:
+- `conorbronsdon/avoid-ai-writing` (MIT) — perfil de voz (casual/
+  profesional/cálido/directo) y el ciclo de "iterar hasta converger"
+  (máximo 2 pasadas).
+- `lguz/humanize-writing-skill` (MIT) — el marco de 3 pasadas
+  (vocabulario → estructura → textura humana) y la idea de niveles de
+  palabras prohibidas (Nivel 1 cortar siempre / Nivel 2 revisar caso a
+  caso).
+
+Ambas fuentes citan como referencia común el ensayo de Wikipedia
+"Signs of AI writing" — no se pudo acceder directamente (`en.wikipedia.org`
+bloqueado por el proxy de red de esta sesión), así que queda
+referenciado de segunda mano vía esas dos fuentes, no leído en
+directo. Reescaneado el archivo tras la ampliación: 2 caracteres "→"
+(flecha derecha) encontrados por el umbral del script, revisados a
+mano — son texto normal que escribí yo mismo ("vocabulario → estructura
+→ textura humana"), no nada oculto ni inyectado.
+
 ---
 
 ## 2026-09-07 — Búsqueda a mano: herramientas para posts de blog en plataformas de clases
