@@ -13703,18 +13703,6 @@
       "source_location": "L927"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_manual_edit_evidence_buildmanualeditevidence",
-      "label": "buildManualEditEvidence()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "buildmanualeditevidence()",
-      "source_file": ".claude/skills/impeccable/scripts/live-manual-edit-evidence.mjs",
-      "source_location": "L39"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_manual_edit_routes_createmanualeditroutes",
       "label": "createManualEditRoutes()",
       "_callable": true,
@@ -13893,6 +13881,18 @@
       "norm_label": "buildcontexthintsbyref()",
       "source_file": ".claude/skills/impeccable/scripts/live-manual-edit-evidence.mjs",
       "source_location": "L108"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_edit_evidence_buildmanualeditevidence",
+      "label": "buildManualEditEvidence()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "live-manual-edit-evidence.mjs",
+      "file_type": "code",
+      "norm_label": "buildmanualeditevidence()",
+      "source_file": ".claude/skills/impeccable/scripts/live-manual-edit-evidence.mjs",
+      "source_location": "L39"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_manual_edit_evidence_collectsearchfiles",
@@ -32439,6 +32439,18 @@
       "source_location": "L1"
     },
     {
+      "id": "docencia_espanol_materiales_blog_tusclasesparticulares_metodologia_clases_espanol_rusohablantes_lo_que_dicen_los_alumnos_que_ya_han_probado_este_m\u00e9todo",
+      "label": "Lo que dicen los alumnos que ya han probado este m\u00e9todo",
+      "_origin": "ast",
+      "community": 214,
+      "community_name": "Clases de espa\u00f1ol para rusohablantes: mi m\u00e9todo de ense\u00f1anza online",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "lo que dicen los alumnos que ya han probado este metodo",
+      "source_file": "docencia-espanol/materiales/blog/tusclasesparticulares_metodologia-clases-espanol-rusohablantes.md",
+      "source_location": "L60"
+    },
+    {
       "id": "docencia_espanol_materiales_blog_tusclasesparticulares_metodologia_clases_espanol_rusohablantes_por_qu\u00e9_me_lo_tomo_as\u00ed",
       "label": "Por qu\u00e9 me lo tomo as\u00ed",
       "_origin": "ast",
@@ -32448,7 +32460,7 @@
       "node_kind": "heading",
       "norm_label": "por que me lo tomo asi",
       "source_file": "docencia-espanol/materiales/blog/tusclasesparticulares_metodologia-clases-espanol-rusohablantes.md",
-      "source_location": "L60"
+      "source_location": "L79"
     },
     {
       "id": "claude_hooks_caveman_mode",
@@ -107726,13 +107738,24 @@
     },
     {
       "source": "docencia_espanol_materiales_blog_tusclasesparticulares_metodologia_clases_espanol_rusohablantes_clases_de_espa\u00f1ol_para_rusohablantes_mi_m\u00e9todo_de_ense\u00f1anza_online",
-      "target": "docencia_espanol_materiales_blog_tusclasesparticulares_metodologia_clases_espanol_rusohablantes_por_qu\u00e9_me_lo_tomo_as\u00ed",
+      "target": "docencia_espanol_materiales_blog_tusclasesparticulares_metodologia_clases_espanol_rusohablantes_lo_que_dicen_los_alumnos_que_ya_han_probado_este_m\u00e9todo",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docencia-espanol/materiales/blog/tusclasesparticulares_metodologia-clases-espanol-rusohablantes.md",
       "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "docencia_espanol_materiales_blog_tusclasesparticulares_metodologia_clases_espanol_rusohablantes_clases_de_espa\u00f1ol_para_rusohablantes_mi_m\u00e9todo_de_ense\u00f1anza_online",
+      "target": "docencia_espanol_materiales_blog_tusclasesparticulares_metodologia_clases_espanol_rusohablantes_por_qu\u00e9_me_lo_tomo_as\u00ed",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docencia-espanol/materiales/blog/tusclasesparticulares_metodologia-clases-espanol-rusohablantes.md",
+      "source_location": "L79",
       "weight": 1.0
     },
     {
@@ -113857,5 +113880,5 @@
       "source_file": "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad6a_como-se-va-a-goya_interactivo.html"
     }
   ],
-  "built_at_commit": "fb9b9fc6a4f52e70280744ce0f7eea37cdc01bf4"
+  "built_at_commit": "6ae3ed5e36b129f16f368df8d6cf90e7cd055073"
 }
