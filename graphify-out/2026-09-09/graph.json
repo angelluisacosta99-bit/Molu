@@ -13222,18 +13222,6 @@
       "source_location": "L18"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_commit_manual_edits_clearappliedentries",
-      "label": "clearAppliedEntries()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "clearappliedentries()",
-      "source_file": ".claude/skills/impeccable/scripts/live-commit-manual-edits.mjs",
-      "source_location": "L555"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_discard_manual_edits_argval",
       "label": "argVal()",
       "_callable": true,
@@ -13246,6 +13234,54 @@
       "source_location": "L21"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_compactmanuallogtext",
+      "label": "compactManualLogText()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "manual-edit-routes.mjs",
+      "file_type": "code",
+      "norm_label": "compactmanuallogtext()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L934"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualapplyfailures",
+      "label": "summarizeManualApplyFailures()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "manual-edit-routes.mjs",
+      "file_type": "code",
+      "norm_label": "summarizemanualapplyfailures()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L900"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualdiagnostics",
+      "label": "summarizeManualDiagnostics()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "manual-edit-routes.mjs",
+      "file_type": "code",
+      "norm_label": "summarizemanualdiagnostics()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L913"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanuallogfile",
+      "label": "summarizeManualLogFile()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "manual-edit-routes.mjs",
+      "file_type": "code",
+      "norm_label": "summarizemanuallogfile()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L927"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_manual_edit_evidence_buildmanualeditevidence",
       "label": "buildManualEditEvidence()",
       "_callable": true,
@@ -13256,6 +13292,30 @@
       "norm_label": "buildmanualeditevidence()",
       "source_file": ".claude/skills/impeccable/scripts/live-manual-edit-evidence.mjs",
       "source_location": "L39"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_edit_routes_createmanualeditroutes",
+      "label": "createManualEditRoutes()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "manual-edit-routes.mjs",
+      "file_type": "code",
+      "norm_label": "createmanualeditroutes()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-edit-routes.mjs",
+      "source_location": "L17"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_edit_routes_sendjson",
+      "label": "sendJson()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "manual-edit-routes.mjs",
+      "file_type": "code",
+      "norm_label": "sendjson()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-edit-routes.mjs",
+      "source_location": "L340"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_manual_edit_routes_summarizependingmanualeditbatch",
@@ -18922,18 +18982,6 @@
       "source_location": "L393"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_compactmanuallogtext",
-      "label": "compactManualLogText()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "compactmanuallogtext()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L934"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_manual_apply_compactnearbymanualedittexts",
       "label": "compactNearbyManualEditTexts()",
       "_callable": true,
@@ -19342,42 +19390,6 @@
       "source_location": "L888"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualapplyfailures",
-      "label": "summarizeManualApplyFailures()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "summarizemanualapplyfailures()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L900"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualdiagnostics",
-      "label": "summarizeManualDiagnostics()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "summarizemanualdiagnostics()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L913"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanuallogfile",
-      "label": "summarizeManualLogFile()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "summarizemanuallogfile()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L927"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_manual_apply_truncatemanualapplytext",
       "label": "truncateManualApplyText()",
       "_callable": true,
@@ -19424,30 +19436,6 @@
       "norm_label": "writemanualapplytransaction()",
       "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
       "source_location": "L726"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_edit_routes_createmanualeditroutes",
-      "label": "createManualEditRoutes()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "createmanualeditroutes()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-edit-routes.mjs",
-      "source_location": "L17"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_edit_routes_sendjson",
-      "label": "sendJson()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "sendjson()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-edit-routes.mjs",
-      "source_location": "L340"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_session_store_applyevent",
@@ -21308,6 +21296,18 @@
       "norm_label": "changedfilessincesnapshot()",
       "source_file": ".claude/skills/impeccable/scripts/live-commit-manual-edits.mjs",
       "source_location": "L631"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_commit_manual_edits_clearappliedentries",
+      "label": "clearAppliedEntries()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "live-commit-manual-edits.mjs",
+      "file_type": "code",
+      "norm_label": "clearappliedentries()",
+      "source_file": ".claude/skills/impeccable/scripts/live-commit-manual-edits.mjs",
+      "source_location": "L555"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_commit_manual_edits_collectapplyownedfiles",
@@ -24159,7 +24159,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-16 \u2014 guia oficial de buenas practicas de claude code",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L196"
+      "source_location": "L227"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_16_primera_pasada_del_radar",
@@ -24171,7 +24171,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-16 \u2014 primera pasada del radar",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L231"
+      "source_location": "L262"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_16_segunda_pasada_hooks_vs_claude_md_y_pr\u00e1cticas_de_la_comunidad",
@@ -24183,7 +24183,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-16 \u2014 segunda pasada: hooks vs. claude.md, y practicas de la comunidad",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L127"
+      "source_location": "L158"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_09_07_b\u00fasqueda_a_mano_herramientas_para_posts_de_blog_en_plataformas_de_clases",
@@ -24195,7 +24195,7 @@
       "node_kind": "heading",
       "norm_label": "2026-09-07 \u2014 busqueda a mano: herramientas para posts de blog en plataformas de clases",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L68"
+      "source_location": "L99"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_09_09_skill_humanizer_terceros_adaptada_a_mano",
@@ -24219,7 +24219,7 @@
       "node_kind": "heading",
       "norm_label": "anotado, no aplicado: hooks para reglas duras, no solo claude.md",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L149"
+      "source_location": "L180"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_anotado_no_aplicado_patrones_de_awattar_claude_code_best_practices",
@@ -24231,7 +24231,7 @@
       "node_kind": "heading",
       "norm_label": "anotado, no aplicado: patrones de `awattar/claude-code-best-practices`",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L175"
+      "source_location": "L206"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_aplicado_hook_stop_con_estado_de_git_radical_transparency",
@@ -24243,7 +24243,7 @@
       "node_kind": "heading",
       "norm_label": "aplicado: hook `stop` con estado de git (\"radical transparency\")",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L133"
+      "source_location": "L164"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_brisk_teaching_conector_mcp",
@@ -24255,7 +24255,7 @@
       "node_kind": "heading",
       "norm_label": "brisk teaching (conector mcp)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L251"
+      "source_location": "L282"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_c\u00f3mo_se_usa",
@@ -24279,7 +24279,7 @@
       "node_kind": "heading",
       "norm_label": "deepl (conector mcp)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L233"
+      "source_location": "L264"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_marketplaces_de_plugins_de_claude_code_oficial_y_comunidad",
@@ -24291,7 +24291,7 @@
       "node_kind": "heading",
       "norm_label": "marketplaces de plugins de claude code (oficial y comunidad)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L269"
+      "source_location": "L300"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_mencionados_pero_no_propuestos_con_tarjeta_por_completitud_sin_encajar_tan_bien_ahora_mismo",
@@ -24303,7 +24303,7 @@
       "node_kind": "heading",
       "norm_label": "mencionados pero no propuestos con tarjeta (por completitud, sin encajar tan bien ahora mismo)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L107"
+      "source_location": "L138"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_menor_learning_commons_y_learn_with_coursera",
@@ -24315,7 +24315,7 @@
       "node_kind": "heading",
       "norm_label": "(menor) learning commons y learn with coursera",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L286"
+      "source_location": "L317"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_novedades_de_herramientas_de_ia",
@@ -24339,7 +24339,7 @@
       "node_kind": "heading",
       "norm_label": "plugin \"marketing\" (`plugin_01eeb9y5m4ifuy3yrtytyfdc`)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L75"
+      "source_location": "L106"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_plugin_searchfit_seo_plugin_016u9h5nggkux18ridtj7otg",
@@ -24351,7 +24351,7 @@
       "node_kind": "heading",
       "norm_label": "plugin \"searchfit seo\" (`plugin_016u9h5nggkux18ridtj7otg`)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L92"
+      "source_location": "L123"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_completion",
@@ -25201,14 +25201,14 @@
       "label": "SKILL.md",
       "_origin": "ast",
       "community": 69,
-      "community_name": "Humanizer: reescribir para que no suene a IA",
+      "community_name": "Humanizer: reescribir para que no suene a IA (solo blog/redes/mensajes)",
       "file_type": "document",
       "frontmatter": {
         "name": "humanizer",
-        "description": "Use when Angel asks to &quot;humanizar&quot; a text, make it sound less like AI/a chatbot wrote it, or remove AI writing tells before publishing something under his own name (blog posts, emails, messages to alumnos). Triggers: &quot;human\u00edzalo&quot;, &quot;que no suene a IA&quot;, &quot;/humanizer&quot;.",
-        "version": "1.1.0",
+        "description": "Use when Angel asks to &quot;humanizar&quot; un texto para un blog, post en redes o mensaje bajo su propio nombre \u2014 hacer que no suene a chatbot. NO usar en trabajos de universidad/m\u00e1ster ni en el TFM (fuera de alcance a prop\u00f3sito, ver nota abajo). Triggers: &quot;human\u00edzalo&quot;, &quot;que no suene a IA&quot;, &quot;/humanizer&quot;.",
+        "version": "1.2.0",
         "user-invocable": "true",
-        "license": "MIT (adaptado y ampliado de github.com/blader/humanizer)"
+        "license": "MIT (adaptado y ampliado a partir de varios skills open-source, ver fuentes)"
       },
       "node_kind": "page",
       "norm_label": "skill.md",
@@ -25216,52 +25216,100 @@
       "source_location": "L1"
     },
     {
-      "id": "claude_skills_humanizer_skill_flujo_de_trabajo",
-      "label": "Flujo de trabajo",
+      "id": "claude_skills_humanizer_skill_flujo_de_trabajo_final",
+      "label": "Flujo de trabajo final",
       "_origin": "ast",
       "community": 69,
-      "community_name": "Humanizer: reescribir para que no suene a IA",
+      "community_name": "Humanizer: reescribir para que no suene a IA (solo blog/redes/mensajes)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "flujo de trabajo",
+      "norm_label": "flujo de trabajo final",
       "source_file": ".claude/skills/humanizer/SKILL.md",
-      "source_location": "L94"
+      "source_location": "L144"
     },
     {
-      "id": "claude_skills_humanizer_skill_humanizer_reescribir_para_que_no_suene_a_ia",
-      "label": "Humanizer: reescribir para que no suene a IA",
+      "id": "claude_skills_humanizer_skill_humanizer_reescribir_para_que_no_suene_a_ia_solo_blog_redes_mensajes",
+      "label": "Humanizer: reescribir para que no suene a IA (solo blog/redes/mensajes)",
       "_origin": "ast",
       "community": 69,
-      "community_name": "Humanizer: reescribir para que no suene a IA",
+      "community_name": "Humanizer: reescribir para que no suene a IA (solo blog/redes/mensajes)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "humanizer: reescribir para que no suene a ia",
+      "norm_label": "humanizer: reescribir para que no suene a ia (solo blog/redes/mensajes)",
       "source_file": ".claude/skills/humanizer/SKILL.md",
-      "source_location": "L26"
+      "source_location": "L30"
+    },
+    {
+      "id": "claude_skills_humanizer_skill_iterar_hasta_converger",
+      "label": "Iterar hasta converger",
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "Humanizer: reescribir para que no suene a IA (solo blog/redes/mensajes)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "iterar hasta converger",
+      "source_file": ".claude/skills/humanizer/SKILL.md",
+      "source_location": "L61"
     },
     {
       "id": "claude_skills_humanizer_skill_los_25_patrones_5_categor\u00edas",
       "label": "Los 25 patrones (5 categor\u00edas)",
       "_origin": "ast",
       "community": 69,
-      "community_name": "Humanizer: reescribir para que no suene a IA",
+      "community_name": "Humanizer: reescribir para que no suene a IA (solo blog/redes/mensajes)",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "los 25 patrones (5 categorias)",
       "source_file": ".claude/skills/humanizer/SKILL.md",
-      "source_location": "L35"
+      "source_location": "L74"
     },
     {
-      "id": "claude_skills_humanizer_skill_tics_espec\u00edficos_en_espa\u00f1ol_a\u00f1adido_no_est\u00e1_en_el_original",
-      "label": "Tics espec\u00edficos en espa\u00f1ol (a\u00f1adido, no est\u00e1 en el original)",
+      "id": "claude_skills_humanizer_skill_perfil_de_voz_opcional",
+      "label": "Perfil de voz (opcional)",
       "_origin": "ast",
       "community": 69,
-      "community_name": "Humanizer: reescribir para que no suene a IA",
+      "community_name": "Humanizer: reescribir para que no suene a IA (solo blog/redes/mensajes)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "tics especificos en espanol (anadido, no esta en el original)",
+      "norm_label": "perfil de voz (opcional)",
       "source_file": ".claude/skills/humanizer/SKILL.md",
-      "source_location": "L72"
+      "source_location": "L38"
+    },
+    {
+      "id": "claude_skills_humanizer_skill_proceso_en_3_pasadas",
+      "label": "Proceso en 3 pasadas",
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "Humanizer: reescribir para que no suene a IA (solo blog/redes/mensajes)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "proceso en 3 pasadas",
+      "source_file": ".claude/skills/humanizer/SKILL.md",
+      "source_location": "L50"
+    },
+    {
+      "id": "claude_skills_humanizer_skill_tics_espec\u00edficos_en_espa\u00f1ol_no_est\u00e1_en_las_fuentes_originales",
+      "label": "Tics espec\u00edficos en espa\u00f1ol (no est\u00e1 en las fuentes originales,",
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "Humanizer: reescribir para que no suene a IA (solo blog/redes/mensajes)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "tics especificos en espanol (no esta en las fuentes originales,",
+      "source_file": ".claude/skills/humanizer/SKILL.md",
+      "source_location": "L127"
+    },
+    {
+      "id": "claude_skills_humanizer_skill_vocabulario_prohibido_por_niveles",
+      "label": "Vocabulario prohibido (por niveles)",
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "Humanizer: reescribir para que no suene a IA (solo blog/redes/mensajes)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "vocabulario prohibido (por niveles)",
+      "source_file": ".claude/skills/humanizer/SKILL.md",
+      "source_location": "L114"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_ui_core",
@@ -69548,46 +69596,90 @@
     },
     {
       "source": "claude_skills_humanizer_skill",
-      "target": "claude_skills_humanizer_skill_humanizer_reescribir_para_que_no_suene_a_ia",
+      "target": "claude_skills_humanizer_skill_humanizer_reescribir_para_que_no_suene_a_ia_solo_blog_redes_mensajes",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".claude/skills/humanizer/SKILL.md",
-      "source_location": "L26",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
-      "source": "claude_skills_humanizer_skill_humanizer_reescribir_para_que_no_suene_a_ia",
+      "source": "claude_skills_humanizer_skill_humanizer_reescribir_para_que_no_suene_a_ia_solo_blog_redes_mensajes",
+      "target": "claude_skills_humanizer_skill_vocabulario_prohibido_por_niveles",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/humanizer/SKILL.md",
+      "source_location": "L114",
+      "weight": 1.0
+    },
+    {
+      "source": "claude_skills_humanizer_skill_humanizer_reescribir_para_que_no_suene_a_ia_solo_blog_redes_mensajes",
+      "target": "claude_skills_humanizer_skill_tics_espec\u00edficos_en_espa\u00f1ol_no_est\u00e1_en_las_fuentes_originales",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/humanizer/SKILL.md",
+      "source_location": "L127",
+      "weight": 1.0
+    },
+    {
+      "source": "claude_skills_humanizer_skill_humanizer_reescribir_para_que_no_suene_a_ia_solo_blog_redes_mensajes",
+      "target": "claude_skills_humanizer_skill_flujo_de_trabajo_final",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/humanizer/SKILL.md",
+      "source_location": "L144",
+      "weight": 1.0
+    },
+    {
+      "source": "claude_skills_humanizer_skill_humanizer_reescribir_para_que_no_suene_a_ia_solo_blog_redes_mensajes",
+      "target": "claude_skills_humanizer_skill_perfil_de_voz_opcional",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/humanizer/SKILL.md",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "claude_skills_humanizer_skill_humanizer_reescribir_para_que_no_suene_a_ia_solo_blog_redes_mensajes",
+      "target": "claude_skills_humanizer_skill_proceso_en_3_pasadas",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/humanizer/SKILL.md",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "claude_skills_humanizer_skill_humanizer_reescribir_para_que_no_suene_a_ia_solo_blog_redes_mensajes",
+      "target": "claude_skills_humanizer_skill_iterar_hasta_converger",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/humanizer/SKILL.md",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "claude_skills_humanizer_skill_humanizer_reescribir_para_que_no_suene_a_ia_solo_blog_redes_mensajes",
       "target": "claude_skills_humanizer_skill_los_25_patrones_5_categor\u00edas",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".claude/skills/humanizer/SKILL.md",
-      "source_location": "L35",
-      "weight": 1.0
-    },
-    {
-      "source": "claude_skills_humanizer_skill_humanizer_reescribir_para_que_no_suene_a_ia",
-      "target": "claude_skills_humanizer_skill_tics_espec\u00edficos_en_espa\u00f1ol_a\u00f1adido_no_est\u00e1_en_el_original",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": ".claude/skills/humanizer/SKILL.md",
-      "source_location": "L72",
-      "weight": 1.0
-    },
-    {
-      "source": "claude_skills_humanizer_skill_humanizer_reescribir_para_que_no_suene_a_ia",
-      "target": "claude_skills_humanizer_skill_flujo_de_trabajo",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": ".claude/skills/humanizer/SKILL.md",
-      "source_location": "L94",
+      "source_location": "L74",
       "weight": 1.0
     },
     {
@@ -91169,7 +91261,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L233",
+      "source_location": "L264",
       "weight": 1.0
     },
     {
@@ -91180,7 +91272,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L251",
+      "source_location": "L282",
       "weight": 1.0
     },
     {
@@ -91191,7 +91283,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L269",
+      "source_location": "L300",
       "weight": 1.0
     },
     {
@@ -91202,7 +91294,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L286",
+      "source_location": "L317",
       "weight": 1.0
     },
     {
@@ -91213,7 +91305,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L133",
+      "source_location": "L164",
       "weight": 1.0
     },
     {
@@ -91224,7 +91316,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L149",
+      "source_location": "L180",
       "weight": 1.0
     },
     {
@@ -91235,18 +91327,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L175",
-      "weight": 1.0
-    },
-    {
-      "source": "recursos_generales_herramientas_ia_novedades_2026_09_07_b\u00fasqueda_a_mano_herramientas_para_posts_de_blog_en_plataformas_de_clases",
-      "target": "recursos_generales_herramientas_ia_novedades_mencionados_pero_no_propuestos_con_tarjeta_por_completitud_sin_encajar_tan_bien_ahora_mismo",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L107",
+      "source_location": "L206",
       "weight": 1.0
     },
     {
@@ -91257,7 +91338,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L75",
+      "source_location": "L106",
       "weight": 1.0
     },
     {
@@ -91268,7 +91349,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L92",
+      "source_location": "L123",
+      "weight": 1.0
+    },
+    {
+      "source": "recursos_generales_herramientas_ia_novedades_2026_09_07_b\u00fasqueda_a_mano_herramientas_para_posts_de_blog_en_plataformas_de_clases",
+      "target": "recursos_generales_herramientas_ia_novedades_mencionados_pero_no_propuestos_con_tarjeta_por_completitud_sin_encajar_tan_bien_ahora_mismo",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L138",
       "weight": 1.0
     },
     {
@@ -91290,7 +91382,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L127",
+      "source_location": "L158",
       "weight": 1.0
     },
     {
@@ -91301,18 +91393,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L196",
-      "weight": 1.0
-    },
-    {
-      "source": "recursos_generales_herramientas_ia_novedades_novedades_de_herramientas_de_ia",
-      "target": "recursos_generales_herramientas_ia_novedades_2026_08_16_primera_pasada_del_radar",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L231",
+      "source_location": "L227",
       "weight": 1.0
     },
     {
@@ -91328,13 +91409,24 @@
     },
     {
       "source": "recursos_generales_herramientas_ia_novedades_novedades_de_herramientas_de_ia",
+      "target": "recursos_generales_herramientas_ia_novedades_2026_08_16_primera_pasada_del_radar",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L262",
+      "weight": 1.0
+    },
+    {
+      "source": "recursos_generales_herramientas_ia_novedades_novedades_de_herramientas_de_ia",
       "target": "recursos_generales_herramientas_ia_novedades_2026_09_07_b\u00fasqueda_a_mano_herramientas_para_posts_de_blog_en_plataformas_de_clases",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L68",
+      "source_location": "L99",
       "weight": 1.0
     },
     {
@@ -95427,5 +95519,5 @@
       "source_file": "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad6a_como-se-va-a-goya_interactivo.html"
     }
   ],
-  "built_at_commit": "ccd308ff10a6a38038a19be33d9f6808cc198aa9"
+  "built_at_commit": "0fec2700b16d180169ff40a05f4005886bf20163"
 }
