@@ -1020,15 +1020,21 @@
     "semantic_hash": ""
   },
   "recursos-generales/herramientas-ia/novedades.md": {
-    "mtime": 1788809613.746006,
-    "seen": 1788809623.3854692,
-    "ast_hash": "426fa2c6f02ef896848963bd202cc82b",
+    "mtime": 1788940814.5690167,
+    "seen": 1788940826.735717,
+    "ast_hash": "01f5bc3019f83fe4dd511832de502cc9",
     "semantic_hash": ""
   },
   "traduccion/README.md": {
     "mtime": 1788340487.7005281,
     "seen": 1788809276.2269933,
     "ast_hash": "6aab0363b0fe6bdc1be48fe2512f46e6",
+    "semantic_hash": ""
+  },
+  ".claude/skills/humanizer/SKILL.md": {
+    "mtime": 1788940801.8290162,
+    "seen": 1788940826.7353415,
+    "ast_hash": "32403b7f7a51ca06469b846bdc6361ff",
     "semantic_hash": ""
   }
 }
