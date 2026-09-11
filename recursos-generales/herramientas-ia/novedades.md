@@ -23,6 +23,172 @@ copias que puedan desincronizarse.
 
 ---
 
+## 2026-09-09 — Skill "humanizer" (terceros, adaptada a mano)
+
+Angel pidió instalar "Humanizer" tras ver un post de Instagram
+(@cinthyasanchezai) que lo promocionaba como habilidad de Claude. No es
+una función nativa de Anthropic — es un skill open-source de un tercero:
+[`blader/humanizer`](https://github.com/blader/humanizer) (MIT).
+
+**Qué es:** reescribe texto para quitar "tells" típicos de IA (aperturas
+escenificadas, tríadas forzadas, palabras infladas tipo "clave"/
+"panorama", negrita decorativa, coletillas de chatbot como "espero que
+esto ayude"). 25 patrones en 5 categorías.
+
+**Cómo se activó:** el repo original se instala con
+`npx skills add blader/humanizer --global`, pero eso ejecuta un paquete
+de npm de un tercero sin revisar y afecta fuera de este repo (`--global`).
+En vez de eso, revisé `SKILL.md` del repo (solo texto, sin nada
+sospechoso) y lo copié a mano a `.claude/skills/humanizer/SKILL.md`,
+con nota de atribución/licencia. Cero código de terceros ejecutado.
+
+**Aviso a Angel:** estas herramientas están pensadas para que un texto
+no sea detectable como escrito por IA. Para tu caso (post de blog para
+tu propio perfil) no hay nada deshonesto — pero si algún día lo usas en
+un contexto donde declarar que el texto es asistido por IA importa
+(una plataforma con esa política, un trabajo académico), ese es tu
+criterio a aplicar, no algo que el skill decida por ti.
+
+**Actualización 2026-09-09 — ampliada y verificada de nuevo:** a
+petición de Angel, dos mejoras sobre la versión inicial:
+- Los 25 patrones ahora aparecen nombrados uno a uno (antes solo se
+  copió el resumen por categoría del `SKILL.md` original; los nombres
+  concretos de cada patrón solo estaban en el `README.md` de la fuente).
+- Añadida una sección de tics específicos del **español** ("no
+  solo... sino también", "cabe destacar que", "en definitiva" como
+  cierre automático) — el original está pensado para inglés y varios
+  de sus patrones (dashes, "pivotal"/"landscape") no tienen equivalente
+  directo.
+- Reescaneado el archivo completo con un script de `unicodedata` en
+  busca de caracteres Unicode ocultos/de control/homóglifos antes y
+  después de la ampliación: 0 encontrados ambas veces.
+
+**Actualización 2026-09-09 (2) — Angel pidió usarlo para su TFM/máster,
+rechazado; luego ampliado más para blog con fuentes adicionales:**
+
+Angel preguntó si podía usar este skill para sus trabajos de
+universidad (máster) y su TFM. Se le explicó que eso es fraude
+académico (evadir detección de IA en una evaluación formal es distinto
+de raíz a un post de blog sin evaluación de por medio) y se rechazó
+ampliarlo con ese fin. Angel aceptó la explicación y pidió continuar
+solo con el uso de blog — el `description` del frontmatter ahora deja
+explícito ese límite de alcance ("NO usar en trabajos de
+universidad/máster ni en el TFM").
+
+Con el alcance ya acotado a blog/redes, se buscaron más fuentes
+open-source similares y se incorporaron ideas nuevas de:
+- `conorbronsdon/avoid-ai-writing` (MIT) — perfil de voz (casual/
+  profesional/cálido/directo) y el ciclo de "iterar hasta converger"
+  (máximo 2 pasadas).
+- `lguz/humanize-writing-skill` (MIT) — el marco de 3 pasadas
+  (vocabulario → estructura → textura humana) y la idea de niveles de
+  palabras prohibidas (Nivel 1 cortar siempre / Nivel 2 revisar caso a
+  caso).
+
+Ambas fuentes citan como referencia común el ensayo de Wikipedia
+"Signs of AI writing" — no se pudo acceder directamente (`en.wikipedia.org`
+bloqueado por el proxy de red de esta sesión), así que queda
+referenciado de segunda mano vía esas dos fuentes, no leído en
+directo. Reescaneado el archivo tras la ampliación: 2 caracteres "→"
+(flecha derecha) encontrados por el umbral del script, revisados a
+mano — son texto normal que escribí yo mismo ("vocabulario → estructura
+→ textura humana"), no nada oculto ni inyectado.
+
+**Actualización 2026-09-09 (3) — revisión con agente independiente,
+6 hallazgos corregidos:** a petición de Angel, se lanzó un agente sin
+contexto previo a revisar el post de blog, la skill `humanizer` y este
+mismo registro. Encontró 6 problemas reales, todos corregidos en el
+momento:
+
+1. **Contradicción en `humanizer`:** "clave" estaba en Nivel 1 ("cortar
+   siempre") y en Nivel 2 ("a veces preciso") a la vez. Corregido:
+   "clave" solo en Nivel 2 con el matiz; Nivel 1 se queda con
+   "fundamental"/"panorama".
+2. **El mismo tic repetido en 3 sitios** sin remitirse entre sí (fruto
+   de las 3 rondas de ampliación sin consolidar). Corregido: cada tic
+   vive en un solo sitio; la sección de tics de español ahora solo
+   tiene lo que no estaba ya cubierto.
+3. **"Los 25 patrones" en realidad documentaba 27** (dos colados en un
+   paréntesis del punto 11). Corregido: renumerados como 12-13
+   explícitos, cabecera actualizada a "27 patrones" con nota de qué
+   fuente aporta cuáles.
+4. **La nota de "no usar en TFM" se leía como más sólida de lo que
+   es.** Añadida una aclaración explícita: es documentación, no un
+   bloqueo técnico — no impide reescribir algo a mano sin invocar el
+   skill por su nombre.
+5. **Meta-descripción del post en 165 caracteres** (por encima del
+   límite de ~155-160 de Google). Acortada a 124.
+6. **El enlace Markdown del CTA no sobrevive a un editor WYSIWYG.**
+   Añadida una nota en el propio post explicando cómo recrearlo a mano
+   en el editor de la plataforma.
+
+El agente confirmó sin problemas: el contenido del blog no tiene datos
+inventados (contrastado contra los README reales de
+`docencia-espanol/`), las entradas de este registro coinciden con el
+estado real de los archivos, y no hay nada tipo inyección de prompt en
+`SKILL.md` (su propio escaneo con `unicodedata` también dio 0).
+
+---
+
+## 2026-09-07 — Búsqueda a mano: herramientas para posts de blog en plataformas de clases
+
+Angel pidió una búsqueda exhaustiva mientras preparaba un post de blog
+para el perfil de TusClasesParticulares (y potencialmente Superprof).
+Revisado el catálogo completo de conectores MCP y plugins con
+palabras clave de blog/SEO/marketing/tutoring — esto es lo que encajó.
+
+### Plugin "Marketing" (`plugin_01Eeb9y5m4iFuY3yRtytYfdc`)
+
+**Qué es:** paquete de skills para redactar contenido, planificar
+campañas y analizar rendimiento. Incluye `marketing:draft-content`
+(redactar un post con optimización SEO integrada), `content-creation`,
+`seo-audit` y `brand-review`.
+
+**Por qué le sirve a Angel:** encaja directo con el post que se acaba
+de escribir a mano en `docencia-espanol/materiales/blog/` — la próxima
+vez podría usarse `draft-content` para partir de una estructura ya
+pensada para SEO, en vez de escribir el post desde cero.
+
+**Cómo probarlo:** tarjeta de instalación ya mostrada en el chat.
+Bastantes de los conectores que lista (Ahrefs, HubSpot, Klaviyo,
+Supermetrics...) son opcionales — solo hacen falta si se usan las
+skills de analítica, no para simplemente redactar un post.
+
+### Plugin "SearchFit SEO" (`plugin_016u9h5nGGKuX18riDTJ7otg`)
+
+**Qué es:** kit de SEO gratuito con IA — auditoría de sitio,
+`content-brief`, `content-strategy`, `on-page-seo`,
+`keyword-clustering`, generación de schema markup.
+
+**Por qué le sirve a Angel:** más ligero que "Marketing", centrado solo
+en SEO. Útil para revisar palabras clave antes de escribir (¿qué busca
+alguien que quiere "clases de español para rusohablantes"?) y para que
+el post aparezca mejor en buscadores, tal y como promete
+TusClasesParticulares en su propia landing ("Tu post será visible en
+los motores de búsqueda como Google").
+
+**Cómo probarlo:** tarjeta de instalación ya mostrada en el chat.
+
+### Mencionados pero no propuestos con tarjeta (por completitud, sin encajar tan bien ahora mismo)
+
+- **Semrush** y **Ahrefs** (conectores MCP) — SEO avanzado, análisis de
+  competencia, investigación de keywords. Herramientas de pago
+  pensadas para negocios con varios sitios/canales; para un solo post
+  de blog de un profesor particular son sobredimensionadas. Quedan
+  anotadas por si en el futuro Angel monta una web propia y quiere
+  hacer SEO en serio.
+- **Metricool** (conector MCP) — programar y analizar publicaciones en
+  redes sociales. No es blog, pero es la herramienta natural si
+  algún día Angel quiere promocionar sus posts también en redes.
+- **WordPress.com** (conector MCP) — gestión de sitios WordPress.
+  Solo relevante si Angel tuviera su propia web en WordPress (no es el
+  caso: publica en plataformas de terceros como TusClasesParticulares).
+- Revisado también el resto del catálogo (CRM, ventas B2B, analítica
+  empresarial, herramientas de desarrollo) — no aplica a este caso de
+  uso, no se detalla aquí para no "volcar todo el mercado".
+
+---
+
 ## 2026-09-07 — sync-main.sh: ramas base viejas ya no se quedan sin funciones fusionadas
 
 **Qué pasó:** la sesión "Nivel B2" arrancó desde un commit (rama

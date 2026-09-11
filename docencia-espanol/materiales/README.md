@@ -51,3 +51,13 @@ Para usarla con un alumno: envíale el archivo `.pptx` tal cual (o
 expórtalo a PDF desde PowerPoint/Google Slides si prefieres que no lo
 edite). El archivo original se queda en el repo para reutilizarlo con
 el siguiente alumno que llegue a esa unidad.
+
+## Posts de blog para plataformas (`blog/`)
+
+Borradores de artículos para publicar en el blog de plataformas de
+clases particulares (TusClasesParticulares, Superprof...), donde
+aparecen en el perfil del profesor y son indexados por buscadores. Un
+archivo Markdown por post, sin datos personales de alumnos concretos.
+
+Convención de nombres: `plataforma_tema-en-kebab-case.md` (ej.
+`tusclasesparticulares_metodologia-clases-espanol-rusohablantes.md`).
