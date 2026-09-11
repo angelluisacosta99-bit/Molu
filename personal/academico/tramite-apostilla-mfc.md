@@ -93,7 +93,15 @@ conversación de Claude Code.
     acuse de recibo, se envió un correo de seguimiento a
     `spravka@rut-miit.ru` (mismo hilo) repitiendo la pregunta concreta
     (a qué expediente corresponde № 017/9760) y recordando el plazo.
-    **Sigue a la espera de la respuesta sustantiva.**
+    **Respuesta el mismo día (14:26, tercera persona distinta:
+    Ярополова Юлия — antes fueron Alexander Evgenievich y Татьяна
+    Соломатина): de nuevo solo redirige** ("Передали информацию в отдел
+    канцелярии" — lo pasaron al departamento de registro/canciller),
+    **sin responder la pregunta de fondo.** Sí aporta un contacto
+    telefónico directo para confirmarlo: **8-495-274-02-74, доб.
+    37-01.** Tres correos y tres personas distintas sin respuesta
+    sustantiva — **puede que llamar directamente sea más rápido que
+    seguir insistiendo por correo.**
 - **2026-09-03** — Alexander Evgenievich (RUT MIIT) confirmó que la
   petición del MFC probablemente **se perdió dentro de la burocracia
   interna de RUT MIIT** (no fue el MFC quien falló). Pasó el contacto de
