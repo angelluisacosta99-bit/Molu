@@ -7,6 +7,55 @@ rígida, antes de que decante en algo formal para `main.tex` o para
 
 ---
 
+## 2026-09-13 (continuación: dominios bloqueados para docs oficiales + para la sesión que retome esto)
+
+**Para quien retome esta sesión:** se acaba de fusionar el PR #111
+(arreglo de `picins.sty`, ver más abajo) y Angel abrirá una **sesión
+nueva** en un entorno con permisos de red ampliados. Contexto necesario
+que esa sesión debe tener claro de entrada:
+
+- El TFM es: sistemas inteligentes aplicados a energías renovables —
+  predicción de generación (deep learning) + módulo de decisión difuso.
+  Ver `ideas-tfm-energias-renovables.md` para el planteamiento completo
+  y `preparacion/plan-de-entrenamiento.md` para las 7 fases.
+- `main.tex` es la fuente única de la memoria (normativa DPTOIA-IT del
+  departamento) — no se cambia a Word como documento principal. Por
+  cada capítulo cerrado se entrega un `.docx` de repaso (skill `docx`)
+  y el `.pdf` recompilado como archivo, nunca solo un enlace de GitHub
+  (ver entrada de más abajo, "formato de entrega para Angel", para el
+  razonamiento completo).
+- Hay dos artefactos de índice/lección publicados y mantenidos entre
+  sesiones — al actualizarlos, republicar con el mismo `url`, no crear
+  uno nuevo: **"Preparación del TFM"**
+  (`https://claude.ai/code/artifact/83deaf92-8d01-48bb-80c7-d9bb8b88e737`,
+  índice de fases + enlaces a GitHub de `lluvia-de-ideas.md`/
+  `ideas-tfm-energias-renovables.md`/`main.tex`) y **"NumPy y Pandas
+  desde Cero"** (`https://claude.ai/code/artifact/b04569b0-a083-4a05-972d-1bcbe8b5a453`,
+  Lección 1 de la Fase 0).
+
+**El motivo concreto de la sesión nueva — dominios de red:** al ampliar
+la teoría de la Lección 1 (NumPy/Pandas) con fuentes oficiales
+verificadas, `numpy.org` y `pandas.pydata.org` dieron
+`EGRESS_BLOCKED` (política de red del entorno de esta sesión). Angel va
+a autorizar esos dos dominios en la configuración de red del entorno
+(`code.claude.com/docs/en/claude-code-on-the-web`) antes de abrir la
+sesión nueva. La ampliación de esta vez se hizo solo con los dos
+cuadernos oficiales de Géron (abiertos, sin bloqueo) — sirvió, pero es
+menos completo que tener también la documentación oficial.
+
+**Qué hacer en la sesión nueva con esos dominios ya disponibles:**
+1. Confirmar que `numpy.org` y `pandas.pydata.org` responden (probar un
+   fetch simple antes de dar por hecho que el permiso ya está activo).
+2. Volver a la Lección 1 (artefacto de arriba) y reforzar/contrastar la
+   teoría ya añadida (reglas de broadcasting, por qué NumPy es rápido
+   con vectorización/tipos fijos, `resample`/`interpolate` de Pandas)
+   contra la documentación oficial — citarla igual que se citó el
+   cuaderno de Géron, con el mismo cuidado de no inventar nada sin
+   fuente. No hace falta repetir lo ya verificado con los cuadernos,
+   solo completar lo que quedó pendiente por el bloqueo.
+3. A partir de ahí, seguir con las siguientes lecciones del plan de
+   entrenamiento (Fase 1 en adelante) ya sin esa limitación de red.
+
 ## 2026-09-13 (continuación: formato de entrega para Angel)
 
 Angel preguntó en qué formato podría ver/editar la tesis ("tipo Word,
