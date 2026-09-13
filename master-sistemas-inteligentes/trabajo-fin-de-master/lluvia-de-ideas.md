@@ -40,6 +40,17 @@ puro — esa parte no se replicó, solo el estilo de cita numérica en el
 cuerpo del texto, que es lo que de verdad exige la norma del
 departamento.
 
+**Sobre la fuente de esta comparación** — la memoria de Arlet
+(`Memoria_TFM__Arlet_Acosta_González.pdf`) **no está en este repo**,
+a propósito: `FUENTE.md` de esta misma carpeta la lista en "No copiado,
+deliberadamente" porque es su trabajo particular sobre Tor, no material
+reutilizable de plantilla. La comparación se hizo leyendo el archivo
+directamente de Google Drive en la sesión (fileId
+`13nWgUX5QomM-0mXeNyXbM6sIZwy9Dokk`, carpeta "TFM, Arlet Acosta
+González"), no de una copia en el repo — si hace falta reverificar esto
+en otra sesión, hace falta acceso a Drive, no basta con grepear el
+repo.
+
 **Flujo a seguir de aquí en adelante, para no acumular deuda:**
 1. Toda fuente nueva (libro, paper, página web, tesis) que se use en
    una lección, en `ideas-tfm-energias-renovables.md` o en `main.tex`

@@ -1051,7 +1051,7 @@ Nodes (4): parseTargetOptions(), parseTargetPath(), TargetArgError, resolveLiveT
 Cohesion: 0.20
 Nodes (9): Correspondencia relacionada, Dos opciones evaluadas, Ideas de TFM: sistemas inteligentes aplicados a energías renovables, Opción A — Predicción de generación renovable con deep learning, Opción B — Sistema multiagente para gestión de microrredes (smart grid), Por qué esta orientación tiene sentido, Qué tanto puede ayudar Claude Code en este TFM (evaluación honesta), Recomendación (+1 more)
 
-### Community 220 - "2026-09-13"
+### Community 220 - "Lluvia de ideas TFM"
 Cohesion: 0.50
 Nodes (3): 2026-09-13, Cómo citar (norma real del Departamento, no una convención inventada), Lluvia de ideas — TFM
 
