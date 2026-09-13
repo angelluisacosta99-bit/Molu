@@ -1,16 +1,16 @@
 # Graph Report - Molu  (2026-09-13)
 
 ## Corpus Check
-- 269 files · ~1,337,639 words
+- 269 files · ~1,338,056 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 3201 nodes · 6499 edges · 218 communities (195 shown, 23 thin omitted)
+- 3202 nodes · 6500 edges · 218 communities (195 shown, 23 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 121 edges (avg confidence: 0.84)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `f617fdf9`
+- Built from commit: `4f1fbee4`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -1052,25 +1052,25 @@ Cohesion: 0.20
 Nodes (9): Correspondencia relacionada, Dos opciones evaluadas, Ideas de TFM: sistemas inteligentes aplicados a energías renovables, Opción A — Predicción de generación renovable con deep learning, Opción B — Sistema multiagente para gestión de microrredes (smart grid), Por qué esta orientación tiene sentido, Qué tanto puede ayudar Claude Code en este TFM (evaluación honesta), Recomendación (+1 more)
 
 ### Community 220 - "Lluvia de ideas — TFM"
-Cohesion: 0.40
-Nodes (4): 2026-09-13, 2026-09-13 (continuación: formato de entrega para Angel), Cómo citar (norma real del Departamento, no una convención inventada), Lluvia de ideas — TFM
+Cohesion: 0.33
+Nodes (5): 2026-09-13, 2026-09-13 (continuación: dominios bloqueados para docs oficiales + para la sesión que retome esto), 2026-09-13 (continuación: formato de entrega para Angel), Cómo citar (norma real del Departamento, no una convención inventada), Lluvia de ideas — TFM
 
 ## Knowledge Gaps
-- **802 isolated node(s):** `2026-09-13 (continuación: formato de entrega para Angel)`, `Cómo citar (norma real del Departamento, no una convención inventada)`, `HEADING_TAGS`, `LAYOUT_TRANSITION_PROPS`, `POSITIONED_CHILD_INTERACTIVE_SELECTOR` (+797 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 994 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **803 isolated node(s):** `2026-09-13 (continuación: dominios bloqueados para docs oficiales + para la sesión que retome esto)`, `2026-09-13 (continuación: formato de entrega para Angel)`, `Cómo citar (norma real del Departamento, no una convención inventada)`, `HEADING_TAGS`, `LAYOUT_TRANSITION_PROPS` (+798 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 995 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **23 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `createManualApplyController()` connect `manual-apply.mjs` to `live-server.mjs`?**
-  _High betweenness centrality (0.005) - this node is a cross-community bridge._
+  _High betweenness centrality (0.004) - this node is a cross-community bridge._
 - **Why does `readBuffer()` connect `manual-edit-routes.mjs` to `live-manual-edit-evidence.mjs`, `manual-apply.mjs`, `live-commit-manual-edits.mjs`, `live-wrap.mjs`, `live-accept.mjs`?**
   _High betweenness centrality (0.002) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `initGlobalBar()` (e.g. with `hideAgentPollTooltip()` and `onDetectMessage()`) actually correct?**
   _`initGlobalBar()` has 7 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `2026-09-13 (continuación: formato de entrega para Angel)`, `Cómo citar (norma real del Departamento, no una convención inventada)`, `HEADING_TAGS` to the rest of the system?**
-  _802 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `2026-09-13 (continuación: dominios bloqueados para docs oficiales + para la sesión que retome esto)`, `2026-09-13 (continuación: formato de entrega para Angel)`, `Cómo citar (norma real del Departamento, no una convención inventada)` to the rest of the system?**
+  _803 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `live-browser.js` be split into smaller, more focused modules?**
   _Cohesion score 0.02863984674329502 - nodes in this community are weakly interconnected._
 - **Should `checks.mjs` be split into smaller, more focused modules?**

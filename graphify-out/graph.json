@@ -32708,7 +32708,19 @@
       "node_kind": "heading",
       "norm_label": "2026-09-13",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
-      "source_location": "L32"
+      "source_location": "L81"
+    },
+    {
+      "id": "master_sistemas_inteligentes_trabajo_fin_de_master_lluvia_de_ideas_2026_09_13_continuaci\u00f3n_dominios_bloqueados_para_docs_oficiales_para_la_sesi\u00f3n_que_retome_esto",
+      "label": "2026-09-13 (continuaci\u00f3n: dominios bloqueados para docs oficiales + para la sesi\u00f3n que retome esto)",
+      "_origin": "ast",
+      "community": 220,
+      "community_name": "Lluvia de ideas \u2014 TFM",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "2026-09-13 (continuacion: dominios bloqueados para docs oficiales + para la sesion que retome esto)",
+      "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
+      "source_location": "L10"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_lluvia_de_ideas_2026_09_13_continuaci\u00f3n_formato_de_entrega_para_angel",
@@ -32720,7 +32732,7 @@
       "node_kind": "heading",
       "norm_label": "2026-09-13 (continuacion: formato de entrega para angel)",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
-      "source_location": "L10"
+      "source_location": "L59"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_lluvia_de_ideas_c\u00f3mo_citar_norma_real_del_departamento_no_una_convenci\u00f3n_inventada",
@@ -32732,7 +32744,7 @@
       "node_kind": "heading",
       "norm_label": "como citar (norma real del departamento, no una convencion inventada)",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
-      "source_location": "L41"
+      "source_location": "L90"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_lluvia_de_ideas_lluvia_de_ideas_tfm",
@@ -108859,12 +108871,12 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
-      "source_location": "L41",
+      "source_location": "L90",
       "weight": 1.0
     },
     {
       "source": "master_sistemas_inteligentes_trabajo_fin_de_master_lluvia_de_ideas_lluvia_de_ideas_tfm",
-      "target": "master_sistemas_inteligentes_trabajo_fin_de_master_lluvia_de_ideas_2026_09_13_continuaci\u00f3n_formato_de_entrega_para_angel",
+      "target": "master_sistemas_inteligentes_trabajo_fin_de_master_lluvia_de_ideas_2026_09_13_continuaci\u00f3n_dominios_bloqueados_para_docs_oficiales_para_la_sesi\u00f3n_que_retome_esto",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -108875,13 +108887,24 @@
     },
     {
       "source": "master_sistemas_inteligentes_trabajo_fin_de_master_lluvia_de_ideas_lluvia_de_ideas_tfm",
+      "target": "master_sistemas_inteligentes_trabajo_fin_de_master_lluvia_de_ideas_2026_09_13_continuaci\u00f3n_formato_de_entrega_para_angel",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_trabajo_fin_de_master_lluvia_de_ideas_lluvia_de_ideas_tfm",
       "target": "master_sistemas_inteligentes_trabajo_fin_de_master_lluvia_de_ideas_2026_09_13",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
-      "source_location": "L32",
+      "source_location": "L81",
       "weight": 1.0
     },
     {
@@ -114236,5 +114259,5 @@
       "source_file": "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad6a_como-se-va-a-goya_interactivo.html"
     }
   ],
-  "built_at_commit": "f617fdf9cb04c820b5ca69a8f9dd7b94d932ed78"
+  "built_at_commit": "4f1fbee4b0e5a6095e321135ce1912c4f0d089d0"
 }
