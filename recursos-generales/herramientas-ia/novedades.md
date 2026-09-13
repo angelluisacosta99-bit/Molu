@@ -78,11 +78,17 @@ el modelo. Reconectar en los ajustes de conectores de claude.ai.
   preprints de bioRxiv/medRxiv. Relevante en concreto por la asignatura
   "Minería de datos aplicada a la bioinformática" del MUSI, no por el
   TFM actual (energía).
-- **Plugin Exa** (`plugin_01FWGx9cc7sCNN5aMZkuU63t`) — búsqueda web
+- **❌ Plugin Exa** (`plugin_01FWGx9cc7sCNN5aMZkuU63t`) — búsqueda web
   profunda con extracción de contenido, incluye papers académicos como
-  caso de uso explícito. Tarjeta mostrada dos veces, **sin activar
-  todavía** (`ListPlugins` sigue sin encontrarlo) — pendiente de que
-  Angel le dé al clic de instalar.
+  caso de uso explícito. Tarjeta de `SuggestPluginInstall` mostrada dos
+  veces (a diferencia de `SuggestConnectors`, que sí funcionó para
+  Elicit/Consensus/bioRxiv en la misma sesión), Angel no la vio en
+  ninguna de las dos — indicio de que la instalación de plugins no está
+  disponible en su cliente/plan actual (probado desde el navegador móvil),
+  no un fallo puntual de la llamada. No instalado. Revisar desde un
+  navegador de escritorio si se quiere retomar — no imprescindible,
+  Scite + alphaXiv + Firecrawl + Elicit + Consensus ya cubren bien la
+  búsqueda de papers verificados sin este plugin.
 
 ### Revisados y descartados por redundancia o desajuste (por completitud)
 
