@@ -165,10 +165,9 @@
   "163": "session-end-status.sh",
   "164": "session-start.sh",
   "165": "overleaf-trabajo-mi/README.md",
-  "166": "funciones.py",
+  "166": "detect-html.mjs",
   "167": "Ejercicios",
   "168": "Humanizer: reescribir para que no suene a IA (solo blog/redes/mensajes)",
-  "169": "dist",
   "170": "Ejercicios",
   "171": "Ejercicios",
   "172": "Ejercicios",
@@ -194,7 +193,7 @@
   "192": "Ejercicios",
   "193": "Ejercicios",
   "194": "Q: PR 90 re-review: verify 5 prior derangement/conjTable fixes on current HEAD",
-  "195": "detect-html.mjs",
+  "195": "detect-text.mjs",
   "196": "readLiveServerInfo",
   "197": "Carta de candidatura espontánea — academias de español, Salamanca",
   "198": "Ejercicios",
@@ -215,8 +214,6 @@
   "213": "Ejercicios",
   "214": "Clases de español para rusohablantes: mi método de enseñanza online",
   "215": "caveman-mode.sh",
-  "216": "resolveProject",
-  "217": "Ideas de TFM: sistemas inteligentes aplicados a energías renovables",
-  "218": "cli",
-  "219": "mio.py"
+  "216": "readWorkspacePatterns",
+  "217": "Ideas de TFM: sistemas inteligentes aplicados a energías renovables"
 }
