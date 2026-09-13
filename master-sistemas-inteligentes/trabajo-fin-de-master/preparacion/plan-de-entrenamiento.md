@@ -61,13 +61,20 @@ sin dar nada por supuesto.
 - Redes recurrentes (RNN, LSTM, GRU) y redes convolucionales temporales
   (TCN) — la base de la Opción A del TFM.
 - **Bibliografía:**
-  - Haykin, S., *Neural Networks: A Comprehensive Foundation*,
-    McMillan, 1998. (Bibliografía oficial de Computación Neuroborrosa,
-    MUSI — el clásico de referencia en redes neuronales.)
+  - Haykin, S., *Neural Networks: A Comprehensive Foundation*.
+    (Bibliografía oficial de Computación Neuroborrosa, MUSI — el
+    clásico de referencia en redes neuronales. La guía docente del
+    MUSI cita "McMillan, 1998", pero esa combinación no existe: la 1ª
+    edición, 1994, es de Macmillan; la 2ª edición, la de 1998, es de
+    **Prentice Hall**. Verificado por un agente independiente antes de
+    dar esta cita por buena — usar la 2ª ed., Prentice Hall, 1998, o
+    la 1ª ed., Macmillan, 1994, nunca la combinación de la guía.)
   - Gulli, A., Kapoor, A., Pal, S., *Deep Learning with TensorFlow 2
-    and Keras*, 2ª ed., Packt Publishing, 2021. (Bibliografía oficial
-    de Computación Neuroborrosa, MUSI — el más práctico/moderno de la
-    lista.)
+    and Keras*, 2ª ed., Packt Publishing. (Bibliografía oficial de
+    Computación Neuroborrosa, MUSI — el más práctico/moderno de la
+    lista. La guía docente cita el año 2021; verificado que la 2ª
+    edición se publicó en **diciembre de 2019** — se mantiene el año
+    real en vez del que trae la guía.)
   - Géron, capítulos 10-15 (redes neuronales y RNN con Keras).
 - **Entregable:** una LSTM simple entrenada sobre una serie temporal de
   ejemplo (antes de tocar datos reales de energía).

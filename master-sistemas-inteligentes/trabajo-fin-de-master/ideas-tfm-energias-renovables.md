@@ -30,8 +30,11 @@ tiene una línea de investigación propia en energía.
   grandes, lo que favorece un TFM con recursos limitados.
 - **Datasets:**
   - **REData (Red Eléctrica de España)** — API REST abierta y gratuita,
-    sin clave, series históricas desde 1990 (generación por tecnología,
-    demanda, mercado). La opción más práctica por accesibilidad.
+    sin clave, con datos de generación por tecnología, demanda y
+    mercado. La opción más práctica por accesibilidad. (El dato de
+    "series desde 1990" que circulaba antes no se pudo verificar de
+    forma independiente — confirmar el rango real de fechas al
+    consultar la API directamente, en vez de darlo por bueno aquí.)
     `https://www.ree.es/en/datos/apidata`
   - **NREL WIND Toolkit** — referencia en la literatura para eólica.
   - **SKIPP'D** — imágenes de cielo + generación fotovoltaica, para
