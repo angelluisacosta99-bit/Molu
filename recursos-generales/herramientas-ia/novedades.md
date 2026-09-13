@@ -52,14 +52,20 @@ GitHub para lo que no aparece en ningún catálogo de Claude.
   distintas de la búsqueda web genérica del mismo conector. Complementa
   a Scite/alphaXiv para papers que no están en Scite ni son de arXiv.
 
-### Necesita una acción tuya, no es un hallazgo nuevo — reconectar Wolfram
+### ✅ Wolfram — ya activo, el aviso de "needs_reconnect" era falso positivo
 
 **Wolfram** (`Inject precise, real-time computation and knowledge`)
-aparece como conector con `installState: needs_reconnect` — estuvo
-conectado y la autenticación caducó. Muy relevante para el TFM: permite
-verificar cálculos/fórmulas (estadística, control, series temporales)
-con Wolfram Language en vez de fiarse de una cuenta hecha a mano o por
-el modelo. Reconectar en los ajustes de conectores de claude.ai.
+aparece en `ListConnectors` con `installState: needs_reconnect`, pero
+es engañoso: es `isAuthless` (sin login de por medio), así que no hay
+sesión real que caduque. Probado en vivo con una consulta real
+(`WolframAlpha("speed of light")`) — respondió correctamente. Angel
+confirmó lo mismo por su lado ("a mí me sale como conectado"). No hace
+falta reconectar nada — el aviso de la lista de conectores no refleja
+el estado real de este conector en concreto.
+
+Muy relevante para el TFM: permite verificar cálculos/fórmulas
+(estadística, control, series temporales) con Wolfram Language en vez
+de fiarse de una cuenta hecha a mano o por el modelo.
 
 ### Propuestos con tarjeta y activados el mismo día
 
