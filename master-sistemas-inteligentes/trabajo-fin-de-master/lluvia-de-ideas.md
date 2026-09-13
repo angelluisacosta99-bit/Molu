@@ -15,3 +15,44 @@ renovable + módulo de decisión difuso) y `preparacion/plan-de-entrenamiento.md
 (7 fases desde cero). Este archivo es para todo lo que no encaje
 todavía en esos dos, o que sea demasiado crudo para ir directo a la
 tesis en `main.tex`.
+
+### Cómo citar (norma real del Departamento, no una convención inventada)
+
+El propio Departamento de Informática y Automática, en su norma de
+informes técnicos DPTOIA-IT (el mismo formato que usa `main.tex` —
+documento `DPTOIA-IT-2000-001.pdf`, ya en esta carpeta), deja libertad
+de estilo de cita **siempre que sea coherente en todo el documento**,
+y pone como ejemplos el estilo ACM (numérico) o **Apalike** (autor-año,
+más informativo). Se eligió **Apalike** — coincide además con que la
+USAL en general sigue normas tipo APA para TFG/TFM.
+
+**Flujo a seguir de aquí en adelante, para no acumular deuda:**
+1. Toda fuente nueva (libro, paper, página web, tesis) que se use en
+   una lección, en `ideas-tfm-energias-renovables.md` o en `main.tex`
+   se añade a `Bibliografia.bib` **en el momento en que se usa**, no
+   al final.
+2. Antes de añadirla, verificarla (autor/título/año/editorial reales —
+   ver la lección de esta sesión: hasta la propia guía docente de la
+   USAL tuvo dos citas mal fechadas/editorial, encontradas por un
+   agente independiente). No copiar una cita de memoria sin comprobar.
+3. En `main.tex`, citar con `\cite{clave}` en el punto exacto del texto
+   donde se usa el dato/afirmación — nunca meter la cita solo al final
+   en la bibliografía sin un `\cite` en el cuerpo.
+4. `\bibliographystyle{apalike}` ya configurado en `main.tex` — no
+   cambiarlo sin motivo, para mantener coherencia en todo el documento
+   (la propia norma del departamento lo exige).
+
+Bibliografía ya cargada en `Bibliografia.bib` con las fuentes usadas
+hasta ahora en la preparación (Jang/Sun/Mizutani, Haykin, Gulli et al.,
+Géron, Hernández/Ramírez/Ferri, Zaki & Meira, Shalev-Shwartz & Ben-David,
+Driankov et al., la tesis de Pablo Chamoso, la línea de energía de
+BISITE, el paper Grid-Agent, la API de REData, y los dos notebooks de
+Géron) — lista para citar con `\cite{}` en cuanto haya texto real que
+las use.
+
+**Pendiente, no relacionado con la bibliografía:** `picins.sty` (en esta
+misma carpeta) da error de compilación con el LaTeX moderno instalado
+en esta sesión ("Missing \begin{document}") — es un paquete legado,
+posiblemente incompatible o corrupto. No bloquea el trabajo de citar
+mientras se escribe, pero habrá que arreglarlo antes de compilar el
+documento completo.
