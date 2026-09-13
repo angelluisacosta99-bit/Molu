@@ -34550,7 +34550,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-16 \u2014 guia oficial de buenas practicas de claude code",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1671"
+      "source_location": "L1674"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_16_primera_pasada_del_radar",
@@ -34562,7 +34562,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-16 \u2014 primera pasada del radar",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1706"
+      "source_location": "L1709"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_16_segunda_pasada_hooks_vs_claude_md_y_pr\u00e1cticas_de_la_comunidad",
@@ -34574,7 +34574,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-16 \u2014 segunda pasada: hooks vs. claude.md, y practicas de la comunidad",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1461"
+      "source_location": "L1464"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_18_markitdown_microsoft_herramienta_puntual_no_instalada",
@@ -34586,7 +34586,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-18 \u2014 markitdown (microsoft): herramienta puntual, no instalada",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1436"
+      "source_location": "L1439"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_18_pr\u00e1ctica_desplazar_la_ventana_de_5h_de_l\u00edmite_de_uso",
@@ -34598,7 +34598,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-18 \u2014 practica: desplazar la ventana de 5h de limite de uso",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1422"
+      "source_location": "L1425"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_20_agent_browser_vercel_labs_activado",
@@ -34610,7 +34610,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-20 \u2014 agent-browser (vercel labs): activado",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1294"
+      "source_location": "L1297"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_21_find_skills_vercel_labs_activado",
@@ -34622,7 +34622,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-21 \u2014 find-skills (vercel labs): activado",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1262"
+      "source_location": "L1265"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_21_mcp_server_dev_anthropic_activado_deshabilitado_por_defecto",
@@ -34634,7 +34634,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-21 \u2014 mcp-server-dev (anthropic): activado, deshabilitado por defecto",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1174"
+      "source_location": "L1177"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_22_caveman_juliusbrussee_instalado_correcci\u00f3n_2026_08_30_no_se_activa_solo",
@@ -34646,7 +34646,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-22 \u2014 caveman (juliusbrussee): instalado (correccion 2026-08-30: no se activa solo)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L965"
+      "source_location": "L968"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_22_ponytail_dietrichgebert_activado_para_todas_las_sesiones",
@@ -34658,7 +34658,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-22 \u2014 ponytail (dietrichgebert): activado para todas las sesiones",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1073"
+      "source_location": "L1076"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_23_7_skills_m\u00e1s_de_juliusbrussee_caveman_activadas",
@@ -34670,7 +34670,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-23 \u2014 7 skills mas de juliusbrussee/caveman: activadas",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L772"
+      "source_location": "L775"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_23_statusline_de_ponytail_configurado",
@@ -34682,7 +34682,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-23 \u2014 statusline de ponytail: configurado",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L938"
+      "source_location": "L941"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_30_carrusel_4_conectores_que_le_dan_superpoderes_a_claude_revisado_nada_que_instalar",
@@ -34694,7 +34694,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-30 \u2014 carrusel \"4 conectores que le dan superpoderes a claude\": revisado, nada que instalar",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L506"
+      "source_location": "L509"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_30_compactaci\u00f3n_de_contexto_palancas_oficiales_para_ahorrar_tokens",
@@ -34706,7 +34706,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-30 \u2014 compactacion de contexto: palancas oficiales para ahorrar tokens",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L594"
+      "source_location": "L597"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_30_gemini_notebook_antes_notebooklm_sin_opci\u00f3n_segura_no_adoptado",
@@ -34718,7 +34718,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-30 \u2014 gemini notebook (antes notebooklm): sin opcion segura, no adoptado",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L705"
+      "source_location": "L708"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_30_memory_de_anthropic_memoria_compartida_entre_chats_nativo_oficial",
@@ -34730,7 +34730,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-30 \u2014 memory de anthropic: memoria compartida entre chats (nativo, oficial)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L542"
+      "source_location": "L545"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_30_pasada_del_radar_dos_funciones_nativas_nuevas_sin_hallazgos_de_terceros",
@@ -34742,7 +34742,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-30 \u2014 pasada del radar: dos funciones nativas nuevas, sin hallazgos de terceros",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L650"
+      "source_location": "L653"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_09_06_lecci\u00f3n_ampliar_una_regla_de_golden_rules_exige_revisar_todas_las_que_dependen_de_su_alcance",
@@ -34754,7 +34754,7 @@
       "node_kind": "heading",
       "norm_label": "2026-09-06 \u2014 leccion: ampliar una regla de golden rules exige revisar todas las que dependen de su alcance",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1789"
+      "source_location": "L1792"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_09_07_b\u00fasqueda_a_mano_herramientas_para_posts_de_blog_en_plataformas_de_clases",
@@ -34766,7 +34766,7 @@
       "node_kind": "heading",
       "norm_label": "2026-09-07 \u2014 busqueda a mano: herramientas para posts de blog en plataformas de clases",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L252"
+      "source_location": "L255"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_09_07_sync_main_sh_ramas_base_viejas_ya_no_se_quedan_sin_funciones_fusionadas",
@@ -34778,7 +34778,7 @@
       "node_kind": "heading",
       "norm_label": "2026-09-07 \u2014 sync-main.sh: ramas base viejas ya no se quedan sin funciones fusionadas",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L311"
+      "source_location": "L314"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_09_09_skill_humanizer_terceros_adaptada_a_mano",
@@ -34790,7 +34790,7 @@
       "node_kind": "heading",
       "norm_label": "2026-09-09 \u2014 skill \"humanizer\" (terceros, adaptada a mano)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L145"
+      "source_location": "L148"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_09_13_b\u00fasqueda_exhaustiva_herramientas_de_investigaci\u00f3n_cient\u00edfica_verificada_para_el_m\u00e1ster",
@@ -34814,7 +34814,7 @@
       "node_kind": "heading",
       "norm_label": "anotado, no aplicado (palancas oficiales sin necesidad clara todavia)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L618"
+      "source_location": "L621"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_anotado_no_aplicado_patrones_de_awattar_claude_code_best_practices",
@@ -34826,7 +34826,7 @@
       "node_kind": "heading",
       "norm_label": "anotado, no aplicado: patrones de `awattar/claude-code-best-practices`",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1650"
+      "source_location": "L1653"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_aplicado_hook_stop_con_estado_de_git_radical_transparency",
@@ -34838,7 +34838,7 @@
       "node_kind": "heading",
       "norm_label": "aplicado: hook `stop` con estado de git (\"radical transparency\")",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1467"
+      "source_location": "L1470"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_aplicado_instrucci\u00f3n_de_preservaci\u00f3n_al_compactar_en_claude_md",
@@ -34850,7 +34850,7 @@
       "node_kind": "heading",
       "norm_label": "aplicado: instruccion de preservacion al compactar, en `claude.md`",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L601"
+      "source_location": "L604"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_aplicado_tras_profundizar_hook_que_bloquea_merge_sin_revisi\u00f3n",
@@ -34862,7 +34862,7 @@
       "node_kind": "heading",
       "norm_label": "aplicado (tras profundizar): hook que bloquea merge sin revision",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1483"
+      "source_location": "L1486"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_auto_continue_al_resetear_el_l\u00edmite_de_uso_nativo_activado_por_defecto",
@@ -34874,7 +34874,7 @@
       "node_kind": "heading",
       "norm_label": "auto-continue al resetear el limite de uso (nativo, activado por defecto)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L665"
+      "source_location": "L668"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_brisk_teaching_conector_mcp",
@@ -34886,7 +34886,7 @@
       "node_kind": "heading",
       "norm_label": "brisk teaching (conector mcp)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1726"
+      "source_location": "L1729"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_c\u00f3mo_se_usa",
@@ -34910,7 +34910,7 @@
       "node_kind": "heading",
       "norm_label": "deepl (conector mcp)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1708"
+      "source_location": "L1711"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_encontrados_en_github_sin_tarjeta_posible_no_est\u00e1n_en_ning\u00fan_cat\u00e1logo_de_claude_documentados_no_instalados",
@@ -34922,7 +34922,7 @@
       "node_kind": "heading",
       "norm_label": "encontrados en github, sin tarjeta posible (no estan en ningun catalogo de claude) \u2014 documentados, no instalados",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L111"
+      "source_location": "L114"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_estilo_de_salida_concise_nativo",
@@ -34934,7 +34934,7 @@
       "node_kind": "heading",
       "norm_label": "estilo de salida \"concise\" (nativo)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L681"
+      "source_location": "L684"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_fuera_de_alcance_de_claude_code_mencionado_para_completar_el_cuadro",
@@ -34946,7 +34946,7 @@
       "node_kind": "heading",
       "norm_label": "fuera de alcance de claude code, mencionado para completar el cuadro",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L639"
+      "source_location": "L642"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_lecci\u00f3n_graphify_out_pending_changes_se_cuela_en_git_3a_vez",
@@ -34958,7 +34958,7 @@
       "node_kind": "heading",
       "norm_label": "leccion: `graphify-out/.pending_changes` se cuela en git (3a vez)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L752"
+      "source_location": "L755"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_marketplaces_de_plugins_de_claude_code_oficial_y_comunidad",
@@ -34970,7 +34970,7 @@
       "node_kind": "heading",
       "norm_label": "marketplaces de plugins de claude code (oficial y comunidad)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1751"
+      "source_location": "L1754"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_mencionados_pero_no_propuestos_con_tarjeta_por_completitud_sin_encajar_tan_bien_ahora_mismo",
@@ -34982,7 +34982,7 @@
       "node_kind": "heading",
       "norm_label": "mencionados pero no propuestos con tarjeta (por completitud, sin encajar tan bien ahora mismo)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L291"
+      "source_location": "L294"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_menor_learning_commons_y_learn_with_coursera",
@@ -34994,7 +34994,7 @@
       "node_kind": "heading",
       "norm_label": "(menor) learning commons y learn with coursera",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1768"
+      "source_location": "L1771"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_necesita_una_acci\u00f3n_tuya_no_es_un_hallazgo_nuevo_reconectar_wolfram",
@@ -35030,7 +35030,7 @@
       "node_kind": "heading",
       "norm_label": "plugin \"marketing\" (`plugin_01eeb9y5m4ifuy3yrtytyfdc`)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L259"
+      "source_location": "L262"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_plugin_searchfit_seo_plugin_016u9h5nggkux18ridtj7otg",
@@ -35042,7 +35042,7 @@
       "node_kind": "heading",
       "norm_label": "plugin \"searchfit seo\" (`plugin_016u9h5nggkux18ridtj7otg`)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L276"
+      "source_location": "L279"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_propuestos_con_tarjeta_y_activados_el_mismo_d\u00eda",
@@ -35066,7 +35066,7 @@
       "node_kind": "heading",
       "norm_label": "revisados y descartados por redundancia o desajuste (por completitud)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L93"
+      "source_location": "L96"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_sin_hallazgos_nuevos_de_terceros_en_los_dominios_de_angel",
@@ -35078,7 +35078,7 @@
       "node_kind": "heading",
       "norm_label": "sin hallazgos nuevos de terceros en los dominios de angel",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L694"
+      "source_location": "L697"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_ya_activos_en_esta_cuenta_sin_acci\u00f3n_solo_usarlos_adoptado",
@@ -109595,7 +109595,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1708",
+      "source_location": "L1711",
       "weight": 1.0
     },
     {
@@ -109606,7 +109606,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1726",
+      "source_location": "L1729",
       "weight": 1.0
     },
     {
@@ -109617,7 +109617,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1751",
+      "source_location": "L1754",
       "weight": 1.0
     },
     {
@@ -109628,7 +109628,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1768",
+      "source_location": "L1771",
       "weight": 1.0
     },
     {
@@ -109639,7 +109639,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1467",
+      "source_location": "L1470",
       "weight": 1.0
     },
     {
@@ -109650,7 +109650,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1483",
+      "source_location": "L1486",
       "weight": 1.0
     },
     {
@@ -109661,7 +109661,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1650",
+      "source_location": "L1653",
       "weight": 1.0
     },
     {
@@ -109672,7 +109672,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L601",
+      "source_location": "L604",
       "weight": 1.0
     },
     {
@@ -109683,7 +109683,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L618",
+      "source_location": "L621",
       "weight": 1.0
     },
     {
@@ -109694,7 +109694,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L639",
+      "source_location": "L642",
       "weight": 1.0
     },
     {
@@ -109705,7 +109705,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L752",
+      "source_location": "L755",
       "weight": 1.0
     },
     {
@@ -109716,7 +109716,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L665",
+      "source_location": "L668",
       "weight": 1.0
     },
     {
@@ -109727,7 +109727,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L681",
+      "source_location": "L684",
       "weight": 1.0
     },
     {
@@ -109738,7 +109738,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L694",
+      "source_location": "L697",
       "weight": 1.0
     },
     {
@@ -109749,7 +109749,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L259",
+      "source_location": "L262",
       "weight": 1.0
     },
     {
@@ -109760,7 +109760,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L276",
+      "source_location": "L279",
       "weight": 1.0
     },
     {
@@ -109771,7 +109771,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L291",
+      "source_location": "L294",
       "weight": 1.0
     },
     {
@@ -109782,7 +109782,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L111",
+      "source_location": "L114",
       "weight": 1.0
     },
     {
@@ -109826,7 +109826,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L93",
+      "source_location": "L96",
       "weight": 1.0
     },
     {
@@ -109848,7 +109848,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1073",
+      "source_location": "L1076",
       "weight": 1.0
     },
     {
@@ -109859,7 +109859,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1174",
+      "source_location": "L1177",
       "weight": 1.0
     },
     {
@@ -109870,7 +109870,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1262",
+      "source_location": "L1265",
       "weight": 1.0
     },
     {
@@ -109881,7 +109881,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1294",
+      "source_location": "L1297",
       "weight": 1.0
     },
     {
@@ -109892,7 +109892,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1422",
+      "source_location": "L1425",
       "weight": 1.0
     },
     {
@@ -109903,18 +109903,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1436",
-      "weight": 1.0
-    },
-    {
-      "source": "recursos_generales_herramientas_ia_novedades_novedades_de_herramientas_de_ia",
-      "target": "recursos_generales_herramientas_ia_novedades_2026_09_09_skill_humanizer_terceros_adaptada_a_mano",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L145",
+      "source_location": "L1439",
       "weight": 1.0
     },
     {
@@ -109925,7 +109914,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1461",
+      "source_location": "L1464",
+      "weight": 1.0
+    },
+    {
+      "source": "recursos_generales_herramientas_ia_novedades_novedades_de_herramientas_de_ia",
+      "target": "recursos_generales_herramientas_ia_novedades_2026_09_09_skill_humanizer_terceros_adaptada_a_mano",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L148",
       "weight": 1.0
     },
     {
@@ -109936,7 +109936,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1671",
+      "source_location": "L1674",
       "weight": 1.0
     },
     {
@@ -109947,7 +109947,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1706",
+      "source_location": "L1709",
       "weight": 1.0
     },
     {
@@ -109958,7 +109958,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1789",
+      "source_location": "L1792",
       "weight": 1.0
     },
     {
@@ -109969,7 +109969,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L252",
+      "source_location": "L255",
       "weight": 1.0
     },
     {
@@ -109991,7 +109991,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L311",
+      "source_location": "L314",
       "weight": 1.0
     },
     {
@@ -110002,7 +110002,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L506",
+      "source_location": "L509",
       "weight": 1.0
     },
     {
@@ -110013,7 +110013,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L542",
+      "source_location": "L545",
       "weight": 1.0
     },
     {
@@ -110024,7 +110024,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L594",
+      "source_location": "L597",
       "weight": 1.0
     },
     {
@@ -110035,7 +110035,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L650",
+      "source_location": "L653",
       "weight": 1.0
     },
     {
@@ -110046,7 +110046,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L705",
+      "source_location": "L708",
       "weight": 1.0
     },
     {
@@ -110057,7 +110057,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L772",
+      "source_location": "L775",
       "weight": 1.0
     },
     {
@@ -110068,7 +110068,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L938",
+      "source_location": "L941",
       "weight": 1.0
     },
     {
@@ -110079,7 +110079,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L965",
+      "source_location": "L968",
       "weight": 1.0
     },
     {
@@ -114465,5 +114465,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "453ae510ccff04b0168005111ada60eeb8da9b62"
+  "built_at_commit": "4c42416fb23fcc13c06479a91ba6149ef792d3e2"
 }
