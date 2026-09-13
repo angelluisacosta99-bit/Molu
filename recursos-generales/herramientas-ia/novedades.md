@@ -103,10 +103,13 @@ de fiarse de una cuenta hecha a mano o por el modelo.
 
 ### Revisados y descartados por redundancia o desajuste (por completitud)
 
-- **Plugin Tavily** — búsqueda/extracción/crawl general. Se solapa
-  con lo que ya cubren Firecrawl + `WebSearch`/`WebFetch` nativos —
-  mismo criterio que descartó Perplexity/Composio el 2026-08-30.
-  no instalado.
+- **Plugin Tavily** — búsqueda/extracción/crawl general. Se solapa con
+  lo que ya cubren Firecrawl + `WebSearch`/`WebFetch` nativos, ya
+  activos — no aporta nada nuevo. (Nota: no es el mismo motivo por el
+  que se descartaron Perplexity/Composio el 2026-08-30 — a esos ni
+  siquiera existían como conectores en el catálogo; Tavily sí existe,
+  se descarta solo por redundancia real de funcionalidad.) No
+  instalado.
 - **Plugin bio-research** (17 componentes: PubMed, bioRxiv, ChEMBL,
   Consensus + skills de genómica/single-cell/nf-core) — pensado para
   investigación preclínica de laboratorio (wet-lab), no para aplicar
