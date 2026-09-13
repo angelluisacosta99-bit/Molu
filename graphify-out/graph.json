@@ -32691,7 +32691,7 @@
       "label": "lluvia-de-ideas.md",
       "_origin": "ast",
       "community": 220,
-      "community_name": "Lluvia de ideas TFM",
+      "community_name": "Lluvia de ideas \u2014 TFM",
       "file_type": "document",
       "node_kind": "page",
       "norm_label": "lluvia-de-ideas.md",
@@ -32703,10 +32703,22 @@
       "label": "2026-09-13",
       "_origin": "ast",
       "community": 220,
-      "community_name": "Lluvia de ideas TFM",
+      "community_name": "Lluvia de ideas \u2014 TFM",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "2026-09-13",
+      "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
+      "source_location": "L32"
+    },
+    {
+      "id": "master_sistemas_inteligentes_trabajo_fin_de_master_lluvia_de_ideas_2026_09_13_continuaci\u00f3n_formato_de_entrega_para_angel",
+      "label": "2026-09-13 (continuaci\u00f3n: formato de entrega para Angel)",
+      "_origin": "ast",
+      "community": 220,
+      "community_name": "Lluvia de ideas \u2014 TFM",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "2026-09-13 (continuacion: formato de entrega para angel)",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
       "source_location": "L10"
     },
@@ -32715,19 +32727,19 @@
       "label": "C\u00f3mo citar (norma real del Departamento, no una convenci\u00f3n inventada)",
       "_origin": "ast",
       "community": 220,
-      "community_name": "Lluvia de ideas TFM",
+      "community_name": "Lluvia de ideas \u2014 TFM",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "como citar (norma real del departamento, no una convencion inventada)",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
-      "source_location": "L19"
+      "source_location": "L41"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_lluvia_de_ideas_lluvia_de_ideas_tfm",
       "label": "Lluvia de ideas \u2014 TFM",
       "_origin": "ast",
       "community": 220,
-      "community_name": "Lluvia de ideas TFM",
+      "community_name": "Lluvia de ideas \u2014 TFM",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "lluvia de ideas \u2014 tfm",
@@ -108847,7 +108859,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
-      "source_location": "L19",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_trabajo_fin_de_master_lluvia_de_ideas_lluvia_de_ideas_tfm",
+      "target": "master_sistemas_inteligentes_trabajo_fin_de_master_lluvia_de_ideas_2026_09_13_continuaci\u00f3n_formato_de_entrega_para_angel",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
+      "source_location": "L10",
       "weight": 1.0
     },
     {
@@ -108858,7 +108881,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
-      "source_location": "L10",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -114213,5 +114236,5 @@
       "source_file": "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad6a_como-se-va-a-goya_interactivo.html"
     }
   ],
-  "built_at_commit": "258d913b6de37ffca4878f9c5c3ed422a13a549b"
+  "built_at_commit": "f617fdf9cb04c820b5ca69a8f9dd7b94d932ed78"
 }
