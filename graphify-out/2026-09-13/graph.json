@@ -28123,7 +28123,7 @@
       "node_kind": "heading",
       "norm_label": "como usar este plan",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/preparacion/plan-de-entrenamiento.md",
-      "source_location": "L120"
+      "source_location": "L113"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_preparacion_plan_de_entrenamiento_fase_0_python_para_ciencia_de_datos_2_semanas",
@@ -28183,7 +28183,7 @@
       "node_kind": "heading",
       "norm_label": "fase 4 \u2014 logica difusa y sistemas neuroborrosos (2 semanas)",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/preparacion/plan-de-entrenamiento.md",
-      "source_location": "L82"
+      "source_location": "L75"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_preparacion_plan_de_entrenamiento_fase_5_dominio_datos_abiertos_de_energ\u00eda_1_2_semanas",
@@ -28195,7 +28195,7 @@
       "node_kind": "heading",
       "norm_label": "fase 5 \u2014 dominio: datos abiertos de energia (1-2 semanas)",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/preparacion/plan-de-entrenamiento.md",
-      "source_location": "L102"
+      "source_location": "L95"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_preparacion_plan_de_entrenamiento_fase_6_proyecto_aplicado_a_partir_de_la_semana_14_iterativo",
@@ -28207,7 +28207,7 @@
       "node_kind": "heading",
       "norm_label": "fase 6 \u2014 proyecto aplicado (a partir de la semana 14, iterativo)",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/preparacion/plan-de-entrenamiento.md",
-      "source_location": "L112"
+      "source_location": "L105"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_preparacion_plan_de_entrenamiento_plan_de_entrenamiento_para_el_tfm_energ\u00edas_renovables_sistemas_inteligentes",
@@ -32543,7 +32543,7 @@
       "node_kind": "heading",
       "norm_label": "correspondencia relacionada",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L90"
+      "source_location": "L87"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_dos_opciones_evaluadas",
@@ -32591,7 +32591,7 @@
       "node_kind": "heading",
       "norm_label": "opcion b \u2014 sistema multiagente para gestion de microrredes (smart grid)",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L46"
+      "source_location": "L43"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_por_qu\u00e9_esta_orientaci\u00f3n_tiene_sentido",
@@ -32615,7 +32615,7 @@
       "node_kind": "heading",
       "norm_label": "que tanto puede ayudar claude code en este tfm (evaluacion honesta)",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L103"
+      "source_location": "L100"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_recomendaci\u00f3n",
@@ -32627,7 +32627,7 @@
       "node_kind": "heading",
       "norm_label": "recomendacion",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L66"
+      "source_location": "L63"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_tutores_de_tfm_candidatos_concretos",
@@ -32639,7 +32639,7 @@
       "node_kind": "heading",
       "norm_label": "tutores de tfm \u2014 candidatos concretos",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L78"
+      "source_location": "L75"
     },
     {
       "id": "claude_skills_impeccable_scripts_hook_before_edit",
@@ -108699,7 +108699,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L46",
+      "source_location": "L43",
       "weight": 1.0
     },
     {
@@ -108710,7 +108710,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L66",
+      "source_location": "L63",
       "weight": 1.0
     },
     {
@@ -108721,7 +108721,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L103",
+      "source_location": "L100",
       "weight": 1.0
     },
     {
@@ -108754,7 +108754,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L78",
+      "source_location": "L75",
       "weight": 1.0
     },
     {
@@ -108765,7 +108765,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L90",
+      "source_location": "L87",
       "weight": 1.0
     },
     {
@@ -108836,24 +108836,13 @@
     },
     {
       "source": "master_sistemas_inteligentes_trabajo_fin_de_master_preparacion_plan_de_entrenamiento_plan_de_entrenamiento_para_el_tfm_energ\u00edas_renovables_sistemas_inteligentes",
-      "target": "master_sistemas_inteligentes_trabajo_fin_de_master_preparacion_plan_de_entrenamiento_fase_5_dominio_datos_abiertos_de_energ\u00eda_1_2_semanas",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/preparacion/plan-de-entrenamiento.md",
-      "source_location": "L102",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_trabajo_fin_de_master_preparacion_plan_de_entrenamiento_plan_de_entrenamiento_para_el_tfm_energ\u00edas_renovables_sistemas_inteligentes",
       "target": "master_sistemas_inteligentes_trabajo_fin_de_master_preparacion_plan_de_entrenamiento_fase_6_proyecto_aplicado_a_partir_de_la_semana_14_iterativo",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/preparacion/plan-de-entrenamiento.md",
-      "source_location": "L112",
+      "source_location": "L105",
       "weight": 1.0
     },
     {
@@ -108864,7 +108853,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/preparacion/plan-de-entrenamiento.md",
-      "source_location": "L120",
+      "source_location": "L113",
       "weight": 1.0
     },
     {
@@ -108919,7 +108908,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/preparacion/plan-de-entrenamiento.md",
-      "source_location": "L82",
+      "source_location": "L75",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_trabajo_fin_de_master_preparacion_plan_de_entrenamiento_plan_de_entrenamiento_para_el_tfm_energ\u00edas_renovables_sistemas_inteligentes",
+      "target": "master_sistemas_inteligentes_trabajo_fin_de_master_preparacion_plan_de_entrenamiento_fase_5_dominio_datos_abiertos_de_energ\u00eda_1_2_semanas",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/preparacion/plan-de-entrenamiento.md",
+      "source_location": "L95",
       "weight": 1.0
     },
     {
@@ -114109,5 +114109,5 @@
       "source_file": "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad6a_como-se-va-a-goya_interactivo.html"
     }
   ],
-  "built_at_commit": "bac91e38b60b7c62202278ad54a757ac365a30cc"
+  "built_at_commit": "8bca7ea84877ad2218742e635fc65c1668b745f1"
 }
