@@ -7,6 +7,28 @@ rígida, antes de que decante en algo formal para `main.tex` o para
 
 ---
 
+## 2026-09-13 (continuación: formato de entrega para Angel)
+
+Angel preguntó en qué formato podría ver/editar la tesis ("tipo Word,
+tipo artefacto..."). Aclarado: `main.tex` es el código fuente (no
+legible), el PDF compilado es el resultado legible/imprimible — un
+artefacto de claude.ai no aplica aquí (es para páginas web
+interactivas, no para el documento de la tesis).
+
+**Decisión de flujo, elegida explícitamente por Angel entre dos
+opciones:** `main.tex` sigue siendo la fuente única de la tesis (ya
+tiene la bibliografía y el formato del departamento funcionando, ver
+más abajo) — no se cambia a Word como documento principal, para no
+tener dos documentos de la tesis compitiendo. Como complemento, no
+sustituto: cada vez que se cierre un capítulo real de `main.tex`, se
+entrega también una copia `.docx` de esa misma versión (vía la skill
+`docx`) para que Angel pueda tocar texto suelto sin depender de LaTeX.
+Si edita esa copia, debe decírselo a la sesión para trasladar el
+cambio a `main.tex` — el `.docx` es solo una copia de trabajo, nunca la
+fuente. Del mismo modo, tras cada capítulo se le entrega el `main.pdf`
+recompilado como archivo (no un enlace a GitHub, que solo muestra el
+código fuente sin formato).
+
 ## 2026-09-13
 
 Arranque del apartado. Contexto ya fijado en
