@@ -75,9 +75,12 @@ BISITE, el paper Grid-Agent, la API de REData, y los dos notebooks de
 Géron) — lista para citar con `\cite{}` en cuanto haya texto real que
 las use.
 
-**Pendiente, no relacionado con la bibliografía:** `picins.sty` (en esta
-misma carpeta) da error de compilación con el LaTeX moderno instalado
-en esta sesión ("Missing \begin{document}") — es un paquete legado,
-posiblemente incompatible o corrupto. No bloquea el trabajo de citar
-mientras se escribe, pero habrá que arreglarlo antes de compilar el
-documento completo.
+**Resuelto (2026-09-13):** `picins.sty` daba "Missing \begin{document}"
+al compilar. Causa real: le faltaba `\makeatletter`/`\makeatother`
+alrededor de sus 380 comandos con `@` (`\@BILD`, `\old@par`...) —
+sin eso, TeX leía `\@BILD` como el primitivo `\@` seguido del texto
+literal "BILD", rompiendo el resto del parseo — más un typo de
+transcripción en la línea 455 (`Llong\def` en vez de `\long\def`).
+Corregido y verificado: `pdflatex main.tex` + `bibtex main` compilan
+limpio a PDF de 11 páginas, sin warnings de `Bibliografia.bib`. Ver
+PR #111.
