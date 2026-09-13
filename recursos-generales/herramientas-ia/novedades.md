@@ -23,6 +23,139 @@ copias que puedan desincronizarse.
 
 ---
 
+## 2026-09-13 — Búsqueda exhaustiva: herramientas de investigación científica verificada para el máster
+
+Angel pidió explícitamente una búsqueda exhaustiva de herramientas/
+conectores/MCP que ayuden a hacer investigación científica con fuentes
+verificadas para el MUSI y el TFM — "busca en fuentes oficiales, busca
+en GitHub, en todas partes". Cubierto: `ListConnectors`,
+`SearchMcpRegistry`, `SearchPlugins`, `SearchSkills` con palabras clave
+de investigación/citas/verificación/energía, más búsqueda web en
+GitHub para lo que no aparece en ningún catálogo de Claude.
+
+### Ya activos en esta cuenta — sin acción, solo usarlos (adoptado)
+
+- **✅ Scite** — `search_literature`, con verificación de retracciones
+  (`editorialNotices`), formato de cita real y `report_citations`/
+  `citation_report` para un registro auditable de qué se incluyó y qué
+  se descartó y por qué (estilo PRISMA). Es exactamente el mecanismo
+  que ya usa este repo a mano en `lluvia-de-ideas.md` ("verificar
+  autor/título/año/editorial reales antes de citar") — con Scite ese
+  paso se puede automatizar en vez de verificar cada cita por separado.
+- **✅ alphaXiv** — búsqueda y texto completo de preprints de arXiv.
+  Ya se usó de facto en la Opción B del TFM (paper Grid-Agent, arXiv
+  2508.05702) sin usar este conector todavía — a partir de ahora, para
+  cualquier paper de arXiv nuevo, usar `alphaXiv` en vez de buscar el
+  PDF a mano.
+- **✅ Firecrawl** — herramientas `firecrawl_research_*`
+  (`search_papers`, `read_paper`, `related_papers`, `search_github`),
+  distintas de la búsqueda web genérica del mismo conector. Complementa
+  a Scite/alphaXiv para papers que no están en Scite ni son de arXiv.
+
+### ✅ Wolfram — ya activo, el aviso de "needs_reconnect" era falso positivo
+
+**Wolfram** (`Inject precise, real-time computation and knowledge`)
+aparece en `ListConnectors` con `installState: needs_reconnect`, pero
+es engañoso: es `isAuthless` (sin login de por medio), así que no hay
+sesión real que caduque. Probado en vivo con una consulta real
+(`WolframAlpha("speed of light")`) — respondió correctamente. Angel
+confirmó lo mismo por su lado ("a mí me sale como conectado"). No hace
+falta reconectar nada — el aviso de la lista de conectores no refleja
+el estado real de este conector en concreto.
+
+Muy relevante para el TFM: permite verificar cálculos/fórmulas
+(estadística, control, series temporales) con Wolfram Language en vez
+de fiarse de una cuenta hecha a mano o por el modelo.
+
+### Propuestos con tarjeta y activados el mismo día
+
+- **✅ Elicit** (`directoryUuid: 1287875c-308f-4a61-9ebf-4a0201ef214f`)
+  — Activado el 2026-09-13. Busca y analiza papers científicos, genera
+  informes de síntesis de evidencia (`search_papers`, `search_trials`,
+  `create_report`, `create_systematic_review`). Herramienta real y
+  reconocida en investigación (usada para revisiones sistemáticas).
+- **✅ Consensus** (`directoryUuid: 65247229-f0c7-49df-9044-fcbb8b3894c6`)
+  — Activado el 2026-09-13. Buscador de literatura científica basado en
+  evidencia, respuestas ancladas a papers reales. Instrucción del propio
+  conector: citar inline con `[1]`/`[2]` y listar referencias con enlace
+  al final — respetar ese formato al usarlo, no resumir sin citar.
+- **✅ bioRxiv** (`directoryUuid: 7f750eb6-c3cb-47d7-9269-d35c43fe9925`,
+  sin autenticación) — Activado el 2026-09-13. Acceso oficial a
+  preprints de bioRxiv/medRxiv. Relevante en concreto por la asignatura
+  "Minería de datos aplicada a la bioinformática" del MUSI, no por el
+  TFM actual (energía).
+- **Plugin Exa** (`plugin_01FWGx9cc7sCNN5aMZkuU63t`) — búsqueda web
+  profunda con extracción de contenido, incluye papers académicos como
+  caso de uso explícito.
+
+  **Corrección importante (mismo día):** el diagnóstico de "requiere
+  plan de pago" de más arriba era una hipótesis, no el motivo real —
+  descartada al comprobar con una captura de Angel que **Exa ya estaba
+  instalado y activado en su cuenta desde hacía 3 días**, en
+  `claude.ai/new#settings/customize-plugins` → pestaña Plugins (así que
+  su plan sí soporta plugins). El problema real: esta sesión de Claude
+  Code en concreto nunca cargó sus herramientas (nunca apareció en la
+  lista de herramientas ni en `ListPlugins`, pese a estar activado a
+  nivel de cuenta) — probable límite de sincronización de esta sesión
+  en particular, no del plan. Pendiente de confirmar si una sesión
+  nueva sí lo carga (Angel va a abrir una de todas formas por lo de
+  numpy.org/pandas.pydata.org — comprobar ahí de paso).
+
+### Revisados y descartados por redundancia o desajuste (por completitud)
+
+- **Plugin Tavily** — búsqueda/extracción/crawl general. Se solapa con
+  lo que ya cubren Firecrawl + `WebSearch`/`WebFetch` nativos, ya
+  activos — no aporta nada nuevo. (Nota: no es el mismo motivo por el
+  que se descartaron Perplexity/Composio el 2026-08-30 — a esos ni
+  siquiera existían como conectores en el catálogo; Tavily sí existe,
+  se descarta solo por redundancia real de funcionalidad.) No
+  instalado.
+- **Plugin bio-research** (17 componentes: PubMed, bioRxiv, ChEMBL,
+  Consensus + skills de genómica/single-cell/nf-core) — pensado para
+  investigación preclínica de laboratorio (wet-lab), no para aplicar
+  minería de datos a datasets biológicos ya existentes, que es lo que
+  cubre la asignatura del MUSI. Sobredimensionado para el caso de uso
+  real; **bioRxiv suelto** (arriba) es la pieza que sí encaja.
+- **CourtListener / Midpage Legal Research** — investigación jurídica,
+  sin relación con Sistemas Inteligentes.
+- **EDEN (Basecamp Research)** — modelo fundacional biológico para
+  diseño de antibióticos/vacunas — dominio de investigación muy
+  específico, sin relación con el TFM ni las asignaturas del MUSI.
+
+### Encontrados en GitHub, sin tarjeta posible (no están en ningún catálogo de Claude) — documentados, no instalados
+
+Ninguno de estos tiene `directoryUuid`/`pluginId` real, así que no se
+puede proponer con tarjeta de un clic — instalarlos exigiría
+`claude mcp add` a mano, ejecutando código de un tercero no revisado
+por Anthropic ni por este repo. A diferencia de Gemini Notebook (entrada del
+2026-08-30, rechazado por necesitar cookies de sesión completas de
+Google), el riesgo aquí es menor porque las APIs subyacentes son
+públicas y de solo lectura (sin OAuth a una cuenta personal) — pero
+sigue siendo código de terceros sin auditar corriendo en el entorno.
+Si algún día quieres probar alguno, mirar primero cuál tiene más
+estrellas/actividad reciente, no el primero que aparezca:
+
+- **Semantic Scholar** (225M+ papers, grafos de citas) — varios forks;
+  el más visible en la búsqueda es `FujishigeTemma/semantic-scholar-mcp`.
+- **OpenAlex** (240M+ obras, catálogo abierto sin paywall) — varios
+  forks; `cyanheads/openalex-mcp-server` y `oksure/openalex-research-mcp`
+  parecen los más completos.
+- **CrossRef** (resuelve DOI → metadatos oficiales, exactamente el
+  mecanismo de "verificar que una cita es real antes de usarla" que
+  `lluvia-de-ideas.md` ya pide hacer a mano) — `cyanheads/crossref-mcp-server`.
+- **Zotero** (gestor de referencias, con inyección de códigos de cita
+  directo en `.docx` — encajaría con el flujo ya decidido de entregar
+  un `.docx` de repaso por capítulo del TFM) — `cookjohn/zotero-mcp` se
+  menciona como el más completo con acceso de escritura; alternativa de
+  solo lectura vía biblioteca local: `richardjlyon/zotero-mcp`.
+
+**No se instala nada de esta sección por ahora** — queda documentado
+para si Angel decide probar alguno bajo su propio criterio, revisando
+el código antes de correrlo (mismo estándar que se aplicó a
+`humanizer`, copiado a mano tras revisión en vez de `npx` directo).
+
+---
+
 ## 2026-09-09 — Skill "humanizer" (terceros, adaptada a mano)
 
 Angel pidió instalar "Humanizer" tras ver un post de Instagram

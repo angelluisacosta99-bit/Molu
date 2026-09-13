@@ -234,6 +234,23 @@ tampoco pasa nada: leer el render con `Read` es la fuente de verdad de
 todos modos (paso 3), tesseract solo ahorra el borrador previo, nunca es
 imprescindible.
 
+## Investigación científica verificada: usar siempre estos conectores
+
+Para el máster (MUSI) y el TFM, antes de citar un paper o dar un
+cálculo por bueno, usar estos conectores ya activos en vez de memoria o
+una búsqueda web sin verificar (justificación completa en
+`recursos-generales/herramientas-ia/novedades.md`, entrada 2026-09-13):
+
+- **Scite** — verificar una cita (autor/título/año/editorial, sin
+  retracciones) antes de añadirla a `Bibliografia.bib`.
+- **alphaXiv** — texto completo de papers de arXiv.
+- **Elicit** / **Consensus** — buscar y sintetizar evidencia científica
+  (Consensus exige citar `[1]`/`[2]` con lista de referencias al final).
+- **Firecrawl** (`firecrawl_research_*`) — respaldo si las anteriores no
+  tienen el paper.
+- **Wolfram** — verificar cálculos/fórmulas antes de darlos por buenos.
+- **bioRxiv** — solo para la asignatura de bioinformática, no el TFM.
+
 ## Nombre del profesor: sin tilde
 
 El nombre del usuario/profesor es **Angel Luis Acosta González**.
