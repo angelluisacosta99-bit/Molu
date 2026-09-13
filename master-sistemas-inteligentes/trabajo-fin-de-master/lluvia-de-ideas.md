@@ -52,7 +52,7 @@ departamento.
 3. En `main.tex`, citar con `\cite{clave}` en el punto exacto del texto
    donde se usa el dato/afirmación — nunca meter la cita solo al final
    en la bibliografía sin un `\cite` en el cuerpo.
-4. `\bibliographystyle{apalike}` ya configurado en `main.tex` — no
+4. `\bibliographystyle{unsrt}` ya configurado en `main.tex` — no
    cambiarlo sin motivo, para mantener coherencia en todo el documento
    (la propia norma del departamento lo exige).
 
