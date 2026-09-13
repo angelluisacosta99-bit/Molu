@@ -1,7 +1,7 @@
 # Graph Report - Molu  (2026-09-13)
 
 ## Corpus Check
-- 269 files · ~1,339,264 words
+- 269 files · ~1,339,316 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `4c42416f`
+- Built from commit: `ce4a95b4`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -1064,7 +1064,7 @@ Cohesion: 0.33
 Nodes (5): 2026-09-13, 2026-09-13 (continuación: dominios bloqueados para docs oficiales + para la sesión que retome esto), 2026-09-13 (continuación: formato de entrega para Angel), Cómo citar (norma real del Departamento, no una convención inventada), Lluvia de ideas — TFM
 
 ## Knowledge Gaps
-- **808 isolated node(s):** `Cómo se usa`, `Ya activos en esta cuenta — sin acción, solo usarlos (adoptado)`, `Necesita una acción tuya, no es un hallazgo nuevo — reconectar Wolfram`, `Propuestos con tarjeta y activados el mismo día`, `Revisados y descartados por redundancia o desajuste (por completitud)` (+803 more)
+- **808 isolated node(s):** `Cómo se usa`, `Ya activos en esta cuenta — sin acción, solo usarlos (adoptado)`, `✅ Wolfram — ya activo, el aviso de "needs_reconnect" era falso positivo`, `Propuestos con tarjeta y activados el mismo día`, `Revisados y descartados por redundancia o desajuste (por completitud)` (+803 more)
   These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1001 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **23 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -1077,7 +1077,7 @@ _Questions this graph is uniquely positioned to answer:_
   _High betweenness centrality (0.002) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `initGlobalBar()` (e.g. with `hideAgentPollTooltip()` and `onDetectMessage()`) actually correct?**
   _`initGlobalBar()` has 7 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `Cómo se usa`, `Ya activos en esta cuenta — sin acción, solo usarlos (adoptado)`, `Necesita una acción tuya, no es un hallazgo nuevo — reconectar Wolfram` to the rest of the system?**
+- **What connects `Cómo se usa`, `Ya activos en esta cuenta — sin acción, solo usarlos (adoptado)`, `✅ Wolfram — ya activo, el aviso de "needs_reconnect" era falso positivo` to the rest of the system?**
   _808 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `live-browser.js` be split into smaller, more focused modules?**
   _Cohesion score 0.028169014084507043 - nodes in this community are weakly interconnected._
