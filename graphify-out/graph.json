@@ -28123,6 +28123,18 @@
       "node_kind": "heading",
       "norm_label": "como usar este plan",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/preparacion/plan-de-entrenamiento.md",
+      "source_location": "L131"
+    },
+    {
+      "id": "master_sistemas_inteligentes_trabajo_fin_de_master_preparacion_plan_de_entrenamiento_entorno_de_ejecuci\u00f3n",
+      "label": "Entorno de ejecuci\u00f3n",
+      "_origin": "ast",
+      "community": 166,
+      "community_name": "Plan de entrenamiento para el TFM (energ\u00edas renovables + sistemas inteligentes)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "entorno de ejecucion",
+      "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/preparacion/plan-de-entrenamiento.md",
       "source_location": "L120"
     },
     {
@@ -108939,13 +108951,24 @@
     },
     {
       "source": "master_sistemas_inteligentes_trabajo_fin_de_master_preparacion_plan_de_entrenamiento_plan_de_entrenamiento_para_el_tfm_energ\u00edas_renovables_sistemas_inteligentes",
-      "target": "master_sistemas_inteligentes_trabajo_fin_de_master_preparacion_plan_de_entrenamiento_c\u00f3mo_usar_este_plan",
+      "target": "master_sistemas_inteligentes_trabajo_fin_de_master_preparacion_plan_de_entrenamiento_entorno_de_ejecuci\u00f3n",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/preparacion/plan-de-entrenamiento.md",
       "source_location": "L120",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_trabajo_fin_de_master_preparacion_plan_de_entrenamiento_plan_de_entrenamiento_para_el_tfm_energ\u00edas_renovables_sistemas_inteligentes",
+      "target": "master_sistemas_inteligentes_trabajo_fin_de_master_preparacion_plan_de_entrenamiento_c\u00f3mo_usar_este_plan",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/preparacion/plan-de-entrenamiento.md",
+      "source_location": "L131",
       "weight": 1.0
     },
     {
@@ -114190,5 +114213,5 @@
       "source_file": "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad6a_como-se-va-a-goya_interactivo.html"
     }
   ],
-  "built_at_commit": "47808503a2c879a3402c203cda44b3f63863fbb5"
+  "built_at_commit": "258d913b6de37ffca4878f9c5c3ed422a13a549b"
 }

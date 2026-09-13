@@ -1,16 +1,16 @@
 # Graph Report - Molu  (2026-09-13)
 
 ## Corpus Check
-- 269 files · ~1,337,101 words
+- 269 files · ~1,337,324 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 3199 nodes · 6497 edges · 218 communities (195 shown, 23 thin omitted)
+- 3200 nodes · 6498 edges · 218 communities (195 shown, 23 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 121 edges (avg confidence: 0.84)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `47808503`
+- Built from commit: `258d913b`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -856,8 +856,8 @@ Cohesion: 0.22
 Nodes (9): 1. Bolsa de trabajo — Cursos Internacionales de la USAL, 2. Másteres/títulos ELE de la propia USAL — comparativa, Alternativa a MUSALE: máster oficial online (UNED + Instituto Cervantes), Corrección (2026-09-04): sí hay un requisito de titulación duro, Oportunidades de docencia de español en Salamanca (USAL), Otras instituciones en Salamanca (donde sí podría optar), Puntos débiles y riesgos a tener en cuenta, Recomendación (actualizada 2026-09-04) (+1 more)
 
 ### Community 166 - "Plan de entrenamiento para el TFM (energías renovables + sistemas inteligentes)"
-Cohesion: 0.20
-Nodes (9): Cómo usar este plan, Fase 0 — Python para ciencia de datos (2 semanas), Fase 1 — Fundamentos matemáticos (2 semanas), Fase 2 — Machine Learning clásico (2 semanas), Fase 3 — Redes neuronales y deep learning para series temporales (3 semanas), Fase 4 — Lógica difusa y sistemas neuroborrosos (2 semanas), Fase 5 — Dominio: datos abiertos de energía (1-2 semanas), Fase 6 — Proyecto aplicado (a partir de la semana 14, iterativo) (+1 more)
+Cohesion: 0.18
+Nodes (10): Cómo usar este plan, Entorno de ejecución, Fase 0 — Python para ciencia de datos (2 semanas), Fase 1 — Fundamentos matemáticos (2 semanas), Fase 2 — Machine Learning clásico (2 semanas), Fase 3 — Redes neuronales y deep learning para series temporales (3 semanas), Fase 4 — Lógica difusa y sistemas neuroborrosos (2 semanas), Fase 5 — Dominio: datos abiertos de energía (1-2 semanas) (+2 more)
 
 ### Community 167 - "Ejercicios"
 Cohesion: 0.20
@@ -1056,21 +1056,21 @@ Cohesion: 0.50
 Nodes (3): 2026-09-13, Cómo citar (norma real del Departamento, no una convención inventada), Lluvia de ideas — TFM
 
 ## Knowledge Gaps
-- **800 isolated node(s):** `Cómo citar (norma real del Departamento, no una convención inventada)`, `HEADING_TAGS`, `LAYOUT_TRANSITION_PROPS`, `POSITIONED_CHILD_INTERACTIVE_SELECTOR`, `QUALITY_TEXT_TAGS` (+795 more)
+- **801 isolated node(s):** `Fase 0 — Python para ciencia de datos (2 semanas)`, `Fase 1 — Fundamentos matemáticos (2 semanas)`, `Fase 2 — Machine Learning clásico (2 semanas)`, `Fase 3 — Redes neuronales y deep learning para series temporales (3 semanas)`, `Fase 4 — Lógica difusa y sistemas neuroborrosos (2 semanas)` (+796 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **23 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `readBuffer()` connect `manual-edit-routes.mjs` to `live-manual-edit-evidence.mjs`, `manual-apply.mjs`, `live-commit-manual-edits.mjs`, `live-wrap.mjs`, `live-accept.mjs`?**
-  _High betweenness centrality (0.002) - this node is a cross-community bridge._
-- **Why does `runCopyEditBatchAgent()` connect `live-copy-edit-agent.mjs` to `live-commit-manual-edits.mjs`?**
-  _High betweenness centrality (0.002) - this node is a cross-community bridge._
+- **Why does `createManualApplyController()` connect `manual-apply.mjs` to `live-server.mjs`?**
+  _High betweenness centrality (0.005) - this node is a cross-community bridge._
+- **Why does `readLiveServerInfo()` connect `readLiveServerInfo` to `impeccable-paths.mjs`, `live-poll.mjs`, `live.mjs`, `live-server.mjs`?**
+  _High betweenness centrality (0.003) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `initGlobalBar()` (e.g. with `hideAgentPollTooltip()` and `onDetectMessage()`) actually correct?**
   _`initGlobalBar()` has 7 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `Cómo citar (norma real del Departamento, no una convención inventada)`, `HEADING_TAGS`, `LAYOUT_TRANSITION_PROPS` to the rest of the system?**
-  _800 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `Fase 0 — Python para ciencia de datos (2 semanas)`, `Fase 1 — Fundamentos matemáticos (2 semanas)`, `Fase 2 — Machine Learning clásico (2 semanas)` to the rest of the system?**
+  _801 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `live-browser.js` be split into smaller, more focused modules?**
   _Cohesion score 0.02863984674329502 - nodes in this community are weakly interconnected._
 - **Should `checks.mjs` be split into smaller, more focused modules?**
