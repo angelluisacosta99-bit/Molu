@@ -198,15 +198,16 @@
   "196": "readLiveServerInfo",
   "197": "Carta de candidatura espontánea — academias de español, Salamanca",
   "198": "Ejercicios",
+  "199": "cli",
   "200": "Ejercicios",
   "201": "Ejercicios",
   "202": "Ejercicios",
   "203": "Ejercicios",
   "204": "Ejercicios",
   "205": "Ejercicios",
-  "206": "sync-main.sh",
+  "206": "handleGo",
   "207": "Ejercicios",
-  "208": "readWorkspacePatterns",
+  "208": "resolveProject",
   "209": "Ejercicios",
   "210": "Ejercicios",
   "211": "Ejercicios",
@@ -216,5 +217,8 @@
   "215": "caveman-mode.sh",
   "216": "live-target.mjs",
   "217": "Ideas de TFM: sistemas inteligentes aplicados a energías renovables",
-  "220": "Lluvia de ideas — TFM"
+  "218": "funciones.py",
+  "219": "irobot_2.py",
+  "220": "Lluvia de ideas — TFM",
+  "221": "sync-main.sh"
 }
