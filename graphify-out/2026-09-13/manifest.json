@@ -2400,9 +2400,9 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md": {
-    "mtime": 1789276214.1446526,
-    "seen": 1789276266.3410416,
-    "ast_hash": "594db477a7703df0ce7796b1e5ee383b",
+    "mtime": 1789277413.080724,
+    "seen": 1789277434.11501,
+    "ast_hash": "3c107d9eece9150624a92b2c9aac6255",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/trabajo-fin-de-master/preparacion/01-python-numpy-pandas.md": {
@@ -2412,9 +2412,15 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/trabajo-fin-de-master/preparacion/plan-de-entrenamiento.md": {
-    "mtime": 1789276465.9126678,
-    "seen": 1789276512.2536857,
-    "ast_hash": "5a2e33bf9292c0ad0ce7bd41a51b1667",
+    "mtime": 1789277401.3167233,
+    "seen": 1789277434.1150126,
+    "ast_hash": "4341838ecc6da8126b54a90a51ce1144",
+    "semantic_hash": ""
+  },
+  "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md": {
+    "mtime": 1789279645.0794294,
+    "seen": 1789279663.9095972,
+    "ast_hash": "c5c2cf37c2b14d580b4b6577e8b521c6",
     "semantic_hash": ""
   }
 }
