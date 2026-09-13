@@ -147,11 +147,33 @@ Géron) — lista para citar con `\cite{}` en cuanto haya texto real que
 las use.
 
 **Resuelto (2026-09-13):** `picins.sty` daba "Missing \begin{document}"
-al compilar. Causa real: le faltaba `\makeatletter`/`\makeatother`
-alrededor de sus 380 comandos con `@` (`\@BILD`, `\old@par`...) —
-sin eso, TeX leía `\@BILD` como el primitivo `\@` seguido del texto
-literal "BILD", rompiendo el resto del parseo — más un typo de
-transcripción en la línea 455 (`Llong\def` en vez de `\long\def`).
-Corregido y verificado: `pdflatex main.tex` + `bibtex main` compilan
-limpio a PDF de 11 páginas, sin warnings de `Bibliografia.bib`. Ver
-PR #111.
+al compilar. **Causa real, corregida tras una revisión independiente
+del PR:** un único typo de transcripción en la línea 455
+(`Llong\def\frameenv` en vez de `\long\def\frameenv` — la "L" suelta se
+interpretaba como texto en modo vertical, disparando ese error). Eso
+era lo único que hacía falta arreglar. El `\makeatletter`/`\makeatother`
+que se añadió a la vez **no era necesario y no hacía nada**: LaTeX ya
+activa el catcode de letra para `@` automáticamente mientras procesa un
+`\usepackage`/`\RequirePackage` (documentado en `clsguide.pdf`) — los
+380 comandos con `@` del archivo (`\@BILD`, `\old@par`...) nunca
+estuvieron rotos por eso. Verificado compilando ambas variantes por
+separado: quitar el `makeatletter`/`makeatother` y dejar solo el typo
+corregido compila igual de limpio; dejar el `makeatletter`/`makeatother`
+y no tocar el typo sigue fallando con el mismo error. Se dejó el
+`makeatletter`/`makeatother` en el archivo de todas formas (es
+inofensivo, y documentar explícitamente el catcode de `@` no hace daño
+en un archivo con historial de transcripción a mano), pero que quede
+claro aquí para no repetir este diagnóstico equivocado en un futuro
+"Missing \begin{document}" de otro archivo legado: la primera sospecha
+debería ser una palabra suelta sin barra invertida en modo vertical,
+no el catcode de `@`.
+
+De paso, la misma revisión encontró un bug latente ya existente (no
+introducido por este PR) en `\endovalenv`: `\advance\d@tmpa
+by\p\env@box` usaba la secuencia de control indefinida `\p` en vez del
+primitivo real `\dp` (profundidad de una caja) — corregido también,
+aunque `\ovalenv`/`\endovalenv` no se usa actualmente en `main.tex`.
+
+Compilado y verificado tras ambas correcciones: `pdflatex main.tex` +
+`bibtex main` compilan limpio a PDF de 11 páginas, sin warnings de
+`Bibliografia.bib`. Ver PR #111.

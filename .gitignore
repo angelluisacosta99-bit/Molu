@@ -29,18 +29,6 @@ venv/
 *.tmp
 *.log
 
-# LaTeX: artefactos de compilación (regenerables con pdflatex/bibtex,
-# no el .tex fuente ni el .pdf final que se entrega)
-*.aux
-*.bbl
-*.blg
-*.brf
-*.toc
-*.lof
-*.lot
-*.out
-*.synctex.gz
-
 # graphify: archivos intermedios del pipeline y caché local.
 # graph.json, GRAPH_REPORT.md y graph.html sí se versionan (son el
 # resultado final consultable); esto solo ignora el trabajo en curso.
