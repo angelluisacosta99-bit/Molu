@@ -1,142 +1,7 @@
 {
   "directed": false,
   "multigraph": false,
-  "graph": {
-    "hyperedges": [
-      {
-        "id": "flujo_publicacion_capitulo",
-        "label": "Flujo de publicaci\u00f3n de un cap\u00edtulo (\u00edndice + c\u00f3digos de acceso)",
-        "nodes": [
-          "claude_skills_ejercicio_interactivo_skill",
-          "docencia_espanol_materiales_indice_clases_de_espanol_page",
-          "docencia_espanol_materiales_codigos_acceso_page"
-        ],
-        "relation": "form",
-        "confidence": "EXTRACTED",
-        "confidence_score": 0.9,
-        "source_file": ".claude/skills/ejercicio-interactivo/SKILL.md"
-      },
-      {
-        "id": "impeccable_setup_flow",
-        "label": "Impeccable skill setup flow (context, PRODUCT.md, DESIGN.md)",
-        "nodes": [
-          "claude_skills_impeccable_skill_impeccable",
-          "claude_skills_impeccable_skill_contextmjs",
-          "claude_skills_impeccable_skill_productmd",
-          "claude_skills_impeccable_skill_designmd"
-        ],
-        "relation": "form",
-        "confidence": "EXTRACTED",
-        "confidence_score": 0.9,
-        "source_file": ".claude/skills/impeccable/SKILL.md"
-      },
-      {
-        "id": "brand_typography_reflex_reject_process",
-        "label": "Brand Typography Reflex-Reject Decision Process",
-        "nodes": [
-          "_claude_skills_impeccable_reference_brand_font_selection_procedure",
-          "_claude_skills_impeccable_reference_brand_reflex_reject_font_list",
-          "_claude_skills_impeccable_reference_brand_reflex_reject_aesthetic_lanes"
-        ],
-        "relation": "form",
-        "confidence": "EXTRACTED",
-        "confidence_score": 1.0,
-        "source_file": ".claude/skills/impeccable/reference/brand.md"
-      },
-      {
-        "id": "critique_assessment_a_frameworks",
-        "label": "Critique Assessment A Evaluation Frameworks",
-        "nodes": [
-          "_claude_skills_impeccable_reference_critique_nielsen_heuristics",
-          "_claude_skills_impeccable_reference_critique_cognitive_load_assessment",
-          "_claude_skills_impeccable_reference_critique_persona_based_testing"
-        ],
-        "relation": "participate_in",
-        "confidence": "EXTRACTED",
-        "confidence_score": 1.0,
-        "source_file": ".claude/skills/impeccable/reference/critique.md"
-      },
-      {
-        "id": "unidad6_el_barrio_theme",
-        "label": "Unidad 6: El barrio (shared theme)",
-        "nodes": [
-          "docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad6a_como_se_va_a_goya_unidad6a",
-          "docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad6b_cierra_la_ventana_unidad6b",
-          "docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad6c_mi_barrio_es_tranquilo_unidad6c"
-        ],
-        "relation": "participate_in",
-        "confidence": "EXTRACTED",
-        "confidence_score": 1.0,
-        "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad6a_como-se-va-a-goya.md"
-      },
-      {
-        "id": "diseno_cuaderno_del_profesor",
-        "label": "Sistema de dise\u00f1o compartido: El Cuaderno del Profesor",
-        "nodes": [
-          "design_system_doc",
-          "product_doc",
-          "claude_skills_ejercicio_interactivo_reference_template_page"
-        ],
-        "relation": "participate_in",
-        "confidence": "INFERRED",
-        "confidence_score": 0.8,
-        "source_file": "DESIGN.md"
-      },
-      {
-        "id": "envio_al_profesor_channel_pattern",
-        "label": "Patr\u00f3n de botones de env\u00edo al profesor (WhatsApp/Telegram/Correo/Teams)",
-        "nodes": [
-          "claude_skills_ejercicio_interactivo_reference_template_page",
-          "claude_skills_ejercicio_interactivo_skill_channel_button_rule",
-          "docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_ejercicios_presente_gerundio_indefinido_interactivo_page"
-        ],
-        "relation": "implement",
-        "confidence": "INFERRED",
-        "confidence_score": 0.85,
-        "source_file": ".claude/skills/ejercicio-interactivo/SKILL.md"
-      },
-      {
-        "id": "impeccable_command_suite_recommendation_network",
-        "label": "Impeccable Command Suite Cross-Recommendation Network",
-        "nodes": [
-          "_claude_skills_impeccable_reference_audit",
-          "_claude_skills_impeccable_reference_critique",
-          "_claude_skills_impeccable_reference_live"
-        ],
-        "relation": "participate_in",
-        "confidence": "INFERRED",
-        "confidence_score": 0.85,
-        "source_file": ".claude/skills/impeccable/reference/critique.md"
-      },
-      {
-        "id": "impeccable_product_register_set",
-        "label": "Impeccable Product-Register Reference Set",
-        "nodes": [
-          "claude_skills_impeccable_reference_product_product",
-          "claude_skills_impeccable_reference_quieter_quieter",
-          "claude_skills_impeccable_reference_typeset_typeset"
-        ],
-        "relation": "participate_in",
-        "confidence": "INFERRED",
-        "confidence_score": 0.85,
-        "source_file": ".claude/skills/impeccable/reference/product.md"
-      },
-      {
-        "id": "a1_interactive_shared_template",
-        "label": "A1 Interactive Exercise Apps \u2014 Shared Paper/Ink Design Template",
-        "nodes": [
-          "docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_cuaderno_unidad6a_como_se_va_a_goya_interactivo_unidad6a_interactivo",
-          "docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_cuaderno_unidad6b_cierra_la_ventana_interactivo_unidad6b_interactivo",
-          "docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_cuaderno_unidad6c_mi_barrio_es_tranquilo_interactivo_unidad6c_interactivo",
-          "docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_cuaderno_practica_mas_3_interactivo_practica_mas_3_interactivo"
-        ],
-        "relation": "form",
-        "confidence": "INFERRED",
-        "confidence_score": 0.9,
-        "source_file": "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad6a_como-se-va-a-goya_interactivo.html"
-      }
-    ]
-  },
+  "graph": {},
   "nodes": [
     {
       "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_staticdocument",
@@ -7043,6 +6908,102 @@
       "source_location": "L909"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_event_validation_isvalidid",
+      "label": "isValidId()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "insert-ui.mjs",
+      "file_type": "code",
+      "norm_label": "isvalidid()",
+      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
+      "source_location": "L19"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_event_validation_isvalidvariantid",
+      "label": "isValidVariantId()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "insert-ui.mjs",
+      "file_type": "code",
+      "norm_label": "isvalidvariantid()",
+      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
+      "source_location": "L20"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_event_validation_validateannotationfields",
+      "label": "validateAnnotationFields()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "insert-ui.mjs",
+      "file_type": "code",
+      "norm_label": "validateannotationfields()",
+      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
+      "source_location": "L28"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_event_validation_validateevent",
+      "label": "validateEvent()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "insert-ui.mjs",
+      "file_type": "code",
+      "norm_label": "validateevent()",
+      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
+      "source_location": "L95"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_event_validation_validateinsertgenerate",
+      "label": "validateInsertGenerate()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "insert-ui.mjs",
+      "file_type": "code",
+      "norm_label": "validateinsertgenerate()",
+      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
+      "source_location": "L41"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_event_validation_validatemanualeditevent",
+      "label": "validateManualEditEvent()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "insert-ui.mjs",
+      "file_type": "code",
+      "norm_label": "validatemanualeditevent()",
+      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
+      "source_location": "L69"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_event_validation_validatemanualedittext",
+      "label": "validateManualEditText()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "insert-ui.mjs",
+      "file_type": "code",
+      "norm_label": "validatemanualedittext()",
+      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
+      "source_location": "L22"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_event_validation_validatereplacegenerate",
+      "label": "validateReplaceGenerate()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "insert-ui.mjs",
+      "file_type": "code",
+      "norm_label": "validatereplacegenerate()",
+      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
+      "source_location": "L63"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_insert_ui_applyinserttoggle",
       "label": "applyInsertToggle()",
       "_callable": true,
@@ -7653,6 +7614,102 @@
       "norm_label": "statuscli()",
       "source_file": ".claude/skills/impeccable/scripts/live-status.mjs",
       "source_location": "L25"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_buildmissingtargetdirective",
+      "label": "buildMissingTargetDirective()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 199,
+      "community_name": "cli",
+      "file_type": "code",
+      "norm_label": "buildmissingtargetdirective()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L927"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_buildresolvedcontextdirective",
+      "label": "buildResolvedContextDirective()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 199,
+      "community_name": "cli",
+      "file_type": "code",
+      "norm_label": "buildresolvedcontextdirective()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L904"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_buildtargetselectiondirective",
+      "label": "buildTargetSelectionDirective()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 199,
+      "community_name": "cli",
+      "file_type": "code",
+      "norm_label": "buildtargetselectiondirective()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L936"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_cli",
+      "label": "cli()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 199,
+      "community_name": "cli",
+      "file_type": "code",
+      "norm_label": "cli()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L837"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_hastargetoption",
+      "label": "hasTargetOption()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 199,
+      "community_name": "cli",
+      "file_type": "code",
+      "norm_label": "hastargetoption()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L895"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_parseclioptions",
+      "label": "parseCliOptions()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 199,
+      "community_name": "cli",
+      "file_type": "code",
+      "norm_label": "parseclioptions()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L891"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_pathexistsfortarget",
+      "label": "pathExistsForTarget()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 199,
+      "community_name": "cli",
+      "file_type": "code",
+      "norm_label": "pathexistsfortarget()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L899"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_shouldwarnmissingtarget",
+      "label": "shouldWarnMissingTarget()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 199,
+      "community_name": "cli",
+      "file_type": "code",
+      "norm_label": "shouldwarnmissingtarget()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L916"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_browser_injected_index_addbrowserfindings",
@@ -8512,7 +8569,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 208,
-      "community_name": "readWorkspacePatterns",
+      "community_name": "resolveProject",
       "file_type": "code",
       "norm_label": "findmonoreporoot()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
@@ -8524,7 +8581,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 208,
-      "community_name": "readWorkspacePatterns",
+      "community_name": "resolveProject",
       "file_type": "code",
       "norm_label": "hasfallbackworkspacechildren()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
@@ -8536,7 +8593,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 208,
-      "community_name": "readWorkspacePatterns",
+      "community_name": "resolveProject",
       "file_type": "code",
       "norm_label": "hasgitboundary()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
@@ -8548,59 +8605,35 @@
       "_callable": true,
       "_origin": "ast",
       "community": 208,
-      "community_name": "readWorkspacePatterns",
+      "community_name": "resolveProject",
       "file_type": "code",
       "norm_label": "ismonoreporoot()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
       "source_location": "L234"
     },
     {
-      "id": "claude_skills_impeccable_scripts_context_readjson",
-      "label": "readJson()",
+      "id": "claude_skills_impeccable_scripts_context_resolveproject",
+      "label": "resolveProject()",
       "_callable": true,
       "_origin": "ast",
       "community": 208,
-      "community_name": "readWorkspacePatterns",
+      "community_name": "resolveProject",
       "file_type": "code",
-      "norm_label": "readjson()",
+      "norm_label": "resolveproject()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L620"
+      "source_location": "L152"
     },
     {
-      "id": "claude_skills_impeccable_scripts_context_readlernaworkspaces",
-      "label": "readLernaWorkspaces()",
+      "id": "claude_skills_impeccable_scripts_context_resolvetargetdir",
+      "label": "resolveTargetDir()",
       "_callable": true,
       "_origin": "ast",
       "community": 208,
-      "community_name": "readWorkspacePatterns",
+      "community_name": "resolveProject",
       "file_type": "code",
-      "norm_label": "readlernaworkspaces()",
+      "norm_label": "resolvetargetdir()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L542"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_readpackageworkspaces",
-      "label": "readPackageWorkspaces()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 208,
-      "community_name": "readWorkspacePatterns",
-      "file_type": "code",
-      "norm_label": "readpackageworkspaces()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L534"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_readworkspacepatterns",
-      "label": "readWorkspacePatterns()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 208,
-      "community_name": "readWorkspacePatterns",
-      "file_type": "code",
-      "norm_label": "readworkspacepatterns()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L526"
+      "source_location": "L203"
     },
     {
       "id": "claude_skills_impeccable_scripts_hook_admin_addignorefile",
@@ -9069,6 +9102,114 @@
       "norm_label": "resolvelivetarget()",
       "source_file": ".claude/skills/impeccable/scripts/live-target.mjs",
       "source_location": "L5"
+    },
+    {
+      "id": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_ang_degree",
+      "label": "ang_degree()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 218,
+      "community_name": "funciones.py",
+      "file_type": "code",
+      "norm_label": "ang_degree()",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/irobot/funciones.py",
+      "source_location": "L291"
+    },
+    {
+      "id": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_automatico",
+      "label": "automatico()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 218,
+      "community_name": "funciones.py",
+      "file_type": "code",
+      "norm_label": "automatico()",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/irobot/funciones.py",
+      "source_location": "L11"
+    },
+    {
+      "id": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_cuadrado",
+      "label": "cuadrado()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 218,
+      "community_name": "funciones.py",
+      "file_type": "code",
+      "norm_label": "cuadrado()",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/irobot/funciones.py",
+      "source_location": "L167"
+    },
+    {
+      "id": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_dist",
+      "label": "dist()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 218,
+      "community_name": "funciones.py",
+      "file_type": "code",
+      "norm_label": "dist()",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/irobot/funciones.py",
+      "source_location": "L288"
+    },
+    {
+      "id": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_get_entero",
+      "label": "get_entero()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 218,
+      "community_name": "funciones.py",
+      "file_type": "code",
+      "norm_label": "get_entero()",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/irobot/funciones.py",
+      "source_location": "L295"
+    },
+    {
+      "id": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_graph",
+      "label": "graph()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 218,
+      "community_name": "funciones.py",
+      "file_type": "code",
+      "norm_label": "graph()",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/irobot/funciones.py",
+      "source_location": "L278"
+    },
+    {
+      "id": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2_ang_degree",
+      "label": "ang_degree()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 219,
+      "community_name": "irobot_2.py",
+      "file_type": "code",
+      "norm_label": "ang_degree()",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/irobot/irobot_2.py",
+      "source_location": "L20"
+    },
+    {
+      "id": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2_dist",
+      "label": "dist()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 219,
+      "community_name": "irobot_2.py",
+      "file_type": "code",
+      "norm_label": "dist()",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/irobot/irobot_2.py",
+      "source_location": "L17"
+    },
+    {
+      "id": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2_odometry",
+      "label": "odometry()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 219,
+      "community_name": "irobot_2.py",
+      "file_type": "code",
+      "norm_label": "odometry()",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/irobot/irobot_2.py",
+      "source_location": "L39"
     },
     {
       "id": "claude_skills_impeccable_scripts_hook_before_edit_allow",
@@ -14015,42 +14156,6 @@
       "source_location": "L240"
     },
     {
-      "id": "claude_skills_impeccable_scripts_context_buildmissingtargetdirective",
-      "label": "buildMissingTargetDirective()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "context.mjs",
-      "file_type": "code",
-      "norm_label": "buildmissingtargetdirective()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L927"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_buildresolvedcontextdirective",
-      "label": "buildResolvedContextDirective()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "context.mjs",
-      "file_type": "code",
-      "norm_label": "buildresolvedcontextdirective()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L904"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_buildtargetselectiondirective",
-      "label": "buildTargetSelectionDirective()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "context.mjs",
-      "file_type": "code",
-      "norm_label": "buildtargetselectiondirective()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L936"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_context_buildupdatedirective",
       "label": "buildUpdateDirective()",
       "_callable": true,
@@ -14061,18 +14166,6 @@
       "norm_label": "buildupdatedirective()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
       "source_location": "L772"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_cli",
-      "label": "cli()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "context.mjs",
-      "file_type": "code",
-      "norm_label": "cli()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L837"
     },
     {
       "id": "claude_skills_impeccable_scripts_context_comparesemver",
@@ -14111,18 +14204,6 @@
       "source_location": "L761"
     },
     {
-      "id": "claude_skills_impeccable_scripts_context_hastargetoption",
-      "label": "hasTargetOption()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "context.mjs",
-      "file_type": "code",
-      "norm_label": "hastargetoption()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L895"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_context_invokedasscript",
       "label": "invokedAsScript()",
       "_callable": true,
@@ -14133,18 +14214,6 @@
       "norm_label": "invokedasscript()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
       "source_location": "L949"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_parseclioptions",
-      "label": "parseCliOptions()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "context.mjs",
-      "file_type": "code",
-      "norm_label": "parseclioptions()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L891"
     },
     {
       "id": "claude_skills_impeccable_scripts_context_parseyamlflowlist",
@@ -14159,16 +14228,28 @@
       "source_location": "L590"
     },
     {
-      "id": "claude_skills_impeccable_scripts_context_pathexistsfortarget",
-      "label": "pathExistsForTarget()",
+      "id": "claude_skills_impeccable_scripts_context_readjson",
+      "label": "readJson()",
       "_callable": true,
       "_origin": "ast",
       "community": 37,
       "community_name": "context.mjs",
       "file_type": "code",
-      "norm_label": "pathexistsfortarget()",
+      "norm_label": "readjson()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L899"
+      "source_location": "L620"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_readlernaworkspaces",
+      "label": "readLernaWorkspaces()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "context.mjs",
+      "file_type": "code",
+      "norm_label": "readlernaworkspaces()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L542"
     },
     {
       "id": "claude_skills_impeccable_scripts_context_readlocalskillversion",
@@ -14181,6 +14262,18 @@
       "norm_label": "readlocalskillversion()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
       "source_location": "L721"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_readpackageworkspaces",
+      "label": "readPackageWorkspaces()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "context.mjs",
+      "file_type": "code",
+      "norm_label": "readpackageworkspaces()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L534"
     },
     {
       "id": "claude_skills_impeccable_scripts_context_readpnpmworkspaces",
@@ -14207,16 +14300,16 @@
       "source_location": "L733"
     },
     {
-      "id": "claude_skills_impeccable_scripts_context_shouldwarnmissingtarget",
-      "label": "shouldWarnMissingTarget()",
+      "id": "claude_skills_impeccable_scripts_context_readworkspacepatterns",
+      "label": "readWorkspacePatterns()",
       "_callable": true,
       "_origin": "ast",
       "community": 37,
       "community_name": "context.mjs",
       "file_type": "code",
-      "norm_label": "shouldwarnmissingtarget()",
+      "norm_label": "readworkspacepatterns()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L916"
+      "source_location": "L526"
     },
     {
       "id": "claude_skills_impeccable_scripts_context_stripyamlinlinecomment",
@@ -15599,6 +15692,30 @@
       "source_location": "L416"
     },
     {
+      "id": "claude_skills_impeccable_scripts_context_nearestpackagerootbetween",
+      "label": "nearestPackageRootBetween()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "discoverTargetCandidates",
+      "file_type": "code",
+      "norm_label": "nearestpackagerootbetween()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L488"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_nearestprojectlikeroot",
+      "label": "nearestProjectLikeRoot()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "discoverTargetCandidates",
+      "file_type": "code",
+      "norm_label": "nearestprojectlikeroot()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L471"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_context_normalizeworkspacepattern",
       "label": "normalizeWorkspacePattern()",
       "_callable": true,
@@ -15633,6 +15750,18 @@
       "norm_label": "projectrootfromworkspacepattern()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
       "source_location": "L628"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_resolveworkspaceprojectroot",
+      "label": "resolveWorkspaceProjectRoot()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "discoverTargetCandidates",
+      "file_type": "code",
+      "norm_label": "resolveworkspaceprojectroot()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L439"
     },
     {
       "id": "claude_skills_impeccable_scripts_context_segmentmatches",
@@ -19391,102 +19520,6 @@
       "source_location": "L155"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_event_validation_isvalidid",
-      "label": "isValidId()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "event-validation.mjs",
-      "file_type": "code",
-      "norm_label": "isvalidid()",
-      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
-      "source_location": "L19"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_event_validation_isvalidvariantid",
-      "label": "isValidVariantId()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "event-validation.mjs",
-      "file_type": "code",
-      "norm_label": "isvalidvariantid()",
-      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
-      "source_location": "L20"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_event_validation_validateannotationfields",
-      "label": "validateAnnotationFields()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "event-validation.mjs",
-      "file_type": "code",
-      "norm_label": "validateannotationfields()",
-      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
-      "source_location": "L28"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_event_validation_validateevent",
-      "label": "validateEvent()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "event-validation.mjs",
-      "file_type": "code",
-      "norm_label": "validateevent()",
-      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
-      "source_location": "L95"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_event_validation_validateinsertgenerate",
-      "label": "validateInsertGenerate()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "event-validation.mjs",
-      "file_type": "code",
-      "norm_label": "validateinsertgenerate()",
-      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
-      "source_location": "L41"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_event_validation_validatemanualeditevent",
-      "label": "validateManualEditEvent()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "event-validation.mjs",
-      "file_type": "code",
-      "norm_label": "validatemanualeditevent()",
-      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
-      "source_location": "L69"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_event_validation_validatemanualedittext",
-      "label": "validateManualEditText()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "event-validation.mjs",
-      "file_type": "code",
-      "norm_label": "validatemanualedittext()",
-      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
-      "source_location": "L22"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_event_validation_validatereplacegenerate",
-      "label": "validateReplaceGenerate()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "event-validation.mjs",
-      "file_type": "code",
-      "norm_label": "validatereplacegenerate()",
-      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
-      "source_location": "L63"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_hook_lib_cleanignorevaluedisplay",
       "label": "cleanIgnoreValueDisplay()",
       "_callable": true,
@@ -20711,30 +20744,6 @@
       "source_location": "L501"
     },
     {
-      "id": "claude_skills_impeccable_scripts_context_nearestpackagerootbetween",
-      "label": "nearestPackageRootBetween()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 75,
-      "community_name": "resolveContext",
-      "file_type": "code",
-      "norm_label": "nearestpackagerootbetween()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L488"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_nearestprojectlikeroot",
-      "label": "nearestProjectLikeRoot()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 75,
-      "community_name": "resolveContext",
-      "file_type": "code",
-      "norm_label": "nearestprojectlikeroot()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L471"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_context_resolvecandidatecontextsummary",
       "label": "resolveCandidateContextSummary()",
       "_callable": true,
@@ -20793,42 +20802,6 @@
       "norm_label": "resolvelocalcontextdir()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
       "source_location": "L183"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_resolveproject",
-      "label": "resolveProject()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 75,
-      "community_name": "resolveContext",
-      "file_type": "code",
-      "norm_label": "resolveproject()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L152"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_resolvetargetdir",
-      "label": "resolveTargetDir()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 75,
-      "community_name": "resolveContext",
-      "file_type": "code",
-      "norm_label": "resolvetargetdir()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L203"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_resolveworkspaceprojectroot",
-      "label": "resolveWorkspaceProjectRoot()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 75,
-      "community_name": "resolveContext",
-      "file_type": "code",
-      "norm_label": "resolveworkspaceprojectroot()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L439"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_detect_antipatterns_browser_checkelementtextoverflowdom",
@@ -30656,6 +30629,39 @@
       "source_location": "L5"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_event_validation",
+      "label": "event-validation.mjs",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "insert-ui.mjs",
+      "file_type": "code",
+      "norm_label": "event-validation.mjs",
+      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_event_validation_forbidden_manual_edit_text_chars",
+      "label": "FORBIDDEN_MANUAL_EDIT_TEXT_CHARS",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "insert-ui.mjs",
+      "file_type": "code",
+      "norm_label": "forbidden_manual_edit_text_chars",
+      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
+      "source_location": "L17"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_event_validation_insert_positions",
+      "label": "INSERT_POSITIONS",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "insert-ui.mjs",
+      "file_type": "code",
+      "norm_label": "insert_positions",
+      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
+      "source_location": "L16"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_insert_ui",
       "label": "insert-ui.mjs",
       "_origin": "ast",
@@ -30698,6 +30704,39 @@
       "norm_label": "placeholder_min_width",
       "source_file": ".claude/skills/impeccable/scripts/live/insert-ui.mjs",
       "source_location": "L8"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_vocabulary",
+      "label": "vocabulary.mjs",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "insert-ui.mjs",
+      "file_type": "code",
+      "norm_label": "vocabulary.mjs",
+      "source_file": ".claude/skills/impeccable/scripts/live/vocabulary.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_vocabulary_live_commands",
+      "label": "LIVE_COMMANDS",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "insert-ui.mjs",
+      "file_type": "code",
+      "norm_label": "live_commands",
+      "source_file": ".claude/skills/impeccable/scripts/live/vocabulary.mjs",
+      "source_location": "L20"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_vocabulary_visual_actions",
+      "label": "VISUAL_ACTIONS",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "insert-ui.mjs",
+      "file_type": "code",
+      "norm_label": "visual_actions",
+      "source_file": ".claude/skills/impeccable/scripts/live/vocabulary.mjs",
+      "source_location": "L36"
     },
     {
       "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad2b_donde_estan_mis_gafas",
@@ -31735,36 +31774,6 @@
       "source_location": "L5"
     },
     {
-      "id": "claude_hooks_sync_main",
-      "label": "sync-main.sh",
-      "_origin": "ast",
-      "community": 206,
-      "community_name": "sync-main.sh",
-      "file_type": "code",
-      "metadata": {
-        "language": "bash",
-        "kind": "file"
-      },
-      "norm_label": "sync-main.sh",
-      "source_file": ".claude/hooks/sync-main.sh",
-      "source_location": "L1"
-    },
-    {
-      "id": "claude_hooks_sync_main_sh__entry",
-      "label": "sync-main.sh script",
-      "_origin": "ast",
-      "community": 206,
-      "community_name": "sync-main.sh",
-      "file_type": "code",
-      "metadata": {
-        "language": "bash",
-        "kind": "bash_entrypoint"
-      },
-      "norm_label": "sync-main.sh script",
-      "source_file": ".claude/hooks/sync-main.sh",
-      "source_location": "L1"
-    },
-    {
       "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b1_cuaderno_unidad7a_un_buen_trabajo",
       "label": "cuaderno-unidad7a_un-buen-trabajo.md",
       "_origin": "ast",
@@ -32676,6 +32685,39 @@
       "source_location": "L78"
     },
     {
+      "id": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones",
+      "label": "funciones.py",
+      "_origin": "ast",
+      "community": 218,
+      "community_name": "funciones.py",
+      "file_type": "code",
+      "norm_label": "funciones.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/irobot/funciones.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_mio",
+      "label": "mio.py",
+      "_origin": "ast",
+      "community": 218,
+      "community_name": "funciones.py",
+      "file_type": "code",
+      "norm_label": "mio.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/irobot/mio.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2",
+      "label": "irobot_2.py",
+      "_origin": "ast",
+      "community": 219,
+      "community_name": "irobot_2.py",
+      "file_type": "code",
+      "norm_label": "irobot_2.py",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/irobot/irobot_2.py",
+      "source_location": "L1"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_hook_before_edit",
       "label": "hook-before-edit.mjs",
       "_origin": "ast",
@@ -32691,7 +32733,7 @@
       "label": "lluvia-de-ideas.md",
       "_origin": "ast",
       "community": 220,
-      "community_name": "Lluvia de ideas TFM",
+      "community_name": "2026-09-13",
       "file_type": "document",
       "node_kind": "page",
       "norm_label": "lluvia-de-ideas.md",
@@ -32703,7 +32745,7 @@
       "label": "2026-09-13",
       "_origin": "ast",
       "community": 220,
-      "community_name": "Lluvia de ideas TFM",
+      "community_name": "2026-09-13",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "2026-09-13",
@@ -32715,7 +32757,7 @@
       "label": "C\u00f3mo citar (norma real del Departamento, no una convenci\u00f3n inventada)",
       "_origin": "ast",
       "community": 220,
-      "community_name": "Lluvia de ideas TFM",
+      "community_name": "2026-09-13",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "como citar (norma real del departamento, no una convencion inventada)",
@@ -32727,11 +32769,41 @@
       "label": "Lluvia de ideas \u2014 TFM",
       "_origin": "ast",
       "community": 220,
-      "community_name": "Lluvia de ideas TFM",
+      "community_name": "2026-09-13",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "lluvia de ideas \u2014 tfm",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "claude_hooks_sync_main",
+      "label": "sync-main.sh",
+      "_origin": "ast",
+      "community": 221,
+      "community_name": "sync-main.sh",
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "norm_label": "sync-main.sh",
+      "source_file": ".claude/hooks/sync-main.sh",
+      "source_location": "L1"
+    },
+    {
+      "id": "claude_hooks_sync_main_sh__entry",
+      "label": "sync-main.sh script",
+      "_origin": "ast",
+      "community": 221,
+      "community_name": "sync-main.sh",
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "norm_label": "sync-main.sh script",
+      "source_file": ".claude/hooks/sync-main.sh",
       "source_location": "L1"
     },
     {
@@ -34311,72 +34383,6 @@
       "norm_label": "valid_commands",
       "source_file": ".claude/skills/impeccable/scripts/pin.mjs",
       "source_location": "L29"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_event_validation",
-      "label": "event-validation.mjs",
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "event-validation.mjs",
-      "file_type": "code",
-      "norm_label": "event-validation.mjs",
-      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
-      "source_location": "L1"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_event_validation_forbidden_manual_edit_text_chars",
-      "label": "FORBIDDEN_MANUAL_EDIT_TEXT_CHARS",
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "event-validation.mjs",
-      "file_type": "code",
-      "norm_label": "forbidden_manual_edit_text_chars",
-      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
-      "source_location": "L17"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_event_validation_insert_positions",
-      "label": "INSERT_POSITIONS",
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "event-validation.mjs",
-      "file_type": "code",
-      "norm_label": "insert_positions",
-      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
-      "source_location": "L16"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_vocabulary",
-      "label": "vocabulary.mjs",
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "event-validation.mjs",
-      "file_type": "code",
-      "norm_label": "vocabulary.mjs",
-      "source_file": ".claude/skills/impeccable/scripts/live/vocabulary.mjs",
-      "source_location": "L1"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_vocabulary_live_commands",
-      "label": "LIVE_COMMANDS",
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "event-validation.mjs",
-      "file_type": "code",
-      "norm_label": "live_commands",
-      "source_file": ".claude/skills/impeccable/scripts/live/vocabulary.mjs",
-      "source_location": "L20"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_vocabulary_visual_actions",
-      "label": "VISUAL_ACTIONS",
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "event-validation.mjs",
-      "file_type": "code",
-      "norm_label": "visual_actions",
-      "source_file": ".claude/skills/impeccable/scripts/live/vocabulary.mjs",
-      "source_location": "L36"
     },
     {
       "id": "recursos_generales_herramientas_ia_vercel_web_interface_guidelines",
@@ -75430,6 +75436,90 @@
       "weight": 1.0
     },
     {
+      "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_ang_degree",
+      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_dist",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/irobot/funciones.py",
+      "source_location": "L292",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_automatico",
+      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_get_entero",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/irobot/funciones.py",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_automatico",
+      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_graph",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/irobot/funciones.py",
+      "source_location": "L162",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_cuadrado",
+      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_get_entero",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/irobot/funciones.py",
+      "source_location": "L175",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_cuadrado",
+      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_graph",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/irobot/funciones.py",
+      "source_location": "L274",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2_ang_degree",
+      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2_dist",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/irobot/irobot_2.py",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2_odometry",
+      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2_dist",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/irobot/irobot_2.py",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
       "source": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_buildborderoverridemap",
       "target": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_buildborderoverridemap_resolvevar",
       "relation": "contains",
@@ -78355,6 +78445,18 @@
       "context": "import",
       "source_file": ".claude/skills/impeccable/scripts/live-wrap.mjs",
       "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_mio",
+      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/irobot/mio.py",
+      "source_location": "L4",
       "weight": 1.0
     },
     {
@@ -108587,6 +108689,105 @@
       "weight": 1.0
     },
     {
+      "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones",
+      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_automatico",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/irobot/funciones.py",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones",
+      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_cuadrado",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/irobot/funciones.py",
+      "source_location": "L167",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones",
+      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_graph",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/irobot/funciones.py",
+      "source_location": "L278",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones",
+      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_dist",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/irobot/funciones.py",
+      "source_location": "L288",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones",
+      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_ang_degree",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/irobot/funciones.py",
+      "source_location": "L291",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones",
+      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_get_entero",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/irobot/funciones.py",
+      "source_location": "L295",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2",
+      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2_dist",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/irobot/irobot_2.py",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2",
+      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2_ang_degree",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/irobot/irobot_2.py",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2",
+      "target": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_irobot_2_odometry",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "master-sistemas-inteligentes/robots-autonomos/roomba/irobot/irobot_2.py",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
       "source": "master_sistemas_inteligentes_tecnologias_del_habla_fuente",
       "target": "master_sistemas_inteligentes_tecnologias_del_habla_fuente_fuente_del_material",
       "relation": "contains",
@@ -110414,6 +110615,17 @@
     },
     {
       "source": "docencia_espanol_avito_readme",
+      "target": "docencia_espanol_readme_index",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docencia-espanol/README.md",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "docencia_espanol_avito_readme",
       "target": "docencia_espanol_avito_perfil_y_precios",
       "relation": "references",
       "_origin": "ast",
@@ -110435,25 +110647,36 @@
       "weight": 1.0
     },
     {
-      "source": "docencia_espanol_readme_index",
-      "target": "docencia_espanol_avito_readme",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docencia-espanol/README.md",
-      "source_location": "L15",
-      "weight": 1.0
-    },
-    {
-      "source": "docencia_espanol_readme_index",
-      "target": "docencia_espanol_empleo_salamanca_oportunidades",
+      "source": "docencia_espanol_empleo_salamanca_oportunidades",
+      "target": "docencia_espanol_readme_index",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docencia-espanol/README.md",
       "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "docencia_espanol_readme_index",
+      "target": "readme_repo_overview",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027",
+      "target": "master_sistemas_inteligentes_readme_index",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "master-sistemas-inteligentes/README.md",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -110469,13 +110692,24 @@
     },
     {
       "source": "master_sistemas_inteligentes_readme_index",
-      "target": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027",
+      "target": "readme_repo_overview",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/README.md",
-      "source_location": "L33",
+      "source_file": "README.md",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "personal_readme",
+      "target": "readme_repo_overview",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -110490,6 +110724,17 @@
       "weight": 1.0
     },
     {
+      "source": "python_readme_index",
+      "target": "readme_repo_overview",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
       "source": "readme_repo_overview",
       "target": "telecomunicaciones_readme_index",
       "relation": "references",
@@ -110501,52 +110746,8 @@
       "weight": 1.0
     },
     {
-      "source": "readme_repo_overview",
-      "target": "docencia_espanol_readme_index",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": "L13",
-      "weight": 1.0
-    },
-    {
-      "source": "readme_repo_overview",
-      "target": "traduccion_readme",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": "L14",
-      "weight": 1.0
-    },
-    {
-      "source": "readme_repo_overview",
-      "target": "python_readme_index",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": "L15",
-      "weight": 1.0
-    },
-    {
-      "source": "readme_repo_overview",
-      "target": "master_sistemas_inteligentes_readme_index",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": "L16",
-      "weight": 1.0
-    },
-    {
-      "source": "readme_repo_overview",
-      "target": "recursos_generales_readme",
+      "source": "recursos_generales_readme",
+      "target": "readme_repo_overview",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -110556,14 +110757,14 @@
       "weight": 1.0
     },
     {
-      "source": "readme_repo_overview",
-      "target": "personal_readme",
+      "source": "traduccion_readme",
+      "target": "readme_repo_overview",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L18",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -112308,17 +112509,6 @@
       "weight": 1.0
     },
     {
-      "source": "_claude_skills_impeccable_reference_bolder",
-      "target": "_claude_skills_impeccable_reference_live",
-      "relation": "references",
-      "_origin": "semantic",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": ".claude/skills/impeccable/reference/live.md",
-      "source_location": null,
-      "weight": 1.0
-    },
-    {
       "source": "_claude_skills_impeccable_reference_brand",
       "target": "_claude_skills_impeccable_reference_brand_reflex_reject_aesthetic_lanes",
       "relation": "references",
@@ -112838,6 +113028,17 @@
     {
       "source": "_claude_skills_impeccable_reference_live",
       "target": "_claude_skills_impeccable_reference_animate",
+      "relation": "references",
+      "_origin": "semantic",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/impeccable/reference/live.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "_claude_skills_impeccable_reference_live",
+      "target": "_claude_skills_impeccable_reference_bolder",
       "relation": "references",
       "_origin": "semantic",
       "confidence": "EXTRACTED",
@@ -113397,8 +113598,8 @@
       "weight": 1.0
     },
     {
-      "source": "docencia_espanol_fuentes_readme_nuevo_espanol_en_marcha",
-      "target": "docencia_espanol_fuentes_readme_index",
+      "source": "docencia_espanol_fuentes_readme_index",
+      "target": "docencia_espanol_fuentes_readme_nuevo_espanol_en_marcha",
       "relation": "references",
       "_origin": "semantic",
       "confidence": "EXTRACTED",
@@ -113617,8 +113818,8 @@
       "weight": 1.0
     },
     {
-      "source": "docencia_espanol_planificacion_readme_index",
-      "target": "docencia_espanol_readme_index",
+      "source": "docencia_espanol_readme_index",
+      "target": "docencia_espanol_planificacion_readme_index",
       "relation": "references",
       "_origin": "semantic",
       "confidence": "EXTRACTED",
@@ -114079,139 +114280,6 @@
       "weight": 1.0
     }
   ],
-  "hyperedges": [
-    {
-      "id": "flujo_publicacion_capitulo",
-      "label": "Flujo de publicaci\u00f3n de un cap\u00edtulo (\u00edndice + c\u00f3digos de acceso)",
-      "nodes": [
-        "claude_skills_ejercicio_interactivo_skill",
-        "docencia_espanol_materiales_indice_clases_de_espanol_page",
-        "docencia_espanol_materiales_codigos_acceso_page"
-      ],
-      "relation": "form",
-      "confidence": "EXTRACTED",
-      "confidence_score": 0.9,
-      "source_file": ".claude/skills/ejercicio-interactivo/SKILL.md"
-    },
-    {
-      "id": "impeccable_setup_flow",
-      "label": "Impeccable skill setup flow (context, PRODUCT.md, DESIGN.md)",
-      "nodes": [
-        "claude_skills_impeccable_skill_impeccable",
-        "claude_skills_impeccable_skill_contextmjs",
-        "claude_skills_impeccable_skill_productmd",
-        "claude_skills_impeccable_skill_designmd"
-      ],
-      "relation": "form",
-      "confidence": "EXTRACTED",
-      "confidence_score": 0.9,
-      "source_file": ".claude/skills/impeccable/SKILL.md"
-    },
-    {
-      "id": "brand_typography_reflex_reject_process",
-      "label": "Brand Typography Reflex-Reject Decision Process",
-      "nodes": [
-        "_claude_skills_impeccable_reference_brand_font_selection_procedure",
-        "_claude_skills_impeccable_reference_brand_reflex_reject_font_list",
-        "_claude_skills_impeccable_reference_brand_reflex_reject_aesthetic_lanes"
-      ],
-      "relation": "form",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": ".claude/skills/impeccable/reference/brand.md"
-    },
-    {
-      "id": "critique_assessment_a_frameworks",
-      "label": "Critique Assessment A Evaluation Frameworks",
-      "nodes": [
-        "_claude_skills_impeccable_reference_critique_nielsen_heuristics",
-        "_claude_skills_impeccable_reference_critique_cognitive_load_assessment",
-        "_claude_skills_impeccable_reference_critique_persona_based_testing"
-      ],
-      "relation": "participate_in",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": ".claude/skills/impeccable/reference/critique.md"
-    },
-    {
-      "id": "unidad6_el_barrio_theme",
-      "label": "Unidad 6: El barrio (shared theme)",
-      "nodes": [
-        "docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad6a_como_se_va_a_goya_unidad6a",
-        "docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad6b_cierra_la_ventana_unidad6b",
-        "docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad6c_mi_barrio_es_tranquilo_unidad6c"
-      ],
-      "relation": "participate_in",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad6a_como-se-va-a-goya.md"
-    },
-    {
-      "id": "diseno_cuaderno_del_profesor",
-      "label": "Sistema de dise\u00f1o compartido: El Cuaderno del Profesor",
-      "nodes": [
-        "design_system_doc",
-        "product_doc",
-        "claude_skills_ejercicio_interactivo_reference_template_page"
-      ],
-      "relation": "participate_in",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "DESIGN.md"
-    },
-    {
-      "id": "envio_al_profesor_channel_pattern",
-      "label": "Patr\u00f3n de botones de env\u00edo al profesor (WhatsApp/Telegram/Correo/Teams)",
-      "nodes": [
-        "claude_skills_ejercicio_interactivo_reference_template_page",
-        "claude_skills_ejercicio_interactivo_skill_channel_button_rule",
-        "docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_ejercicios_presente_gerundio_indefinido_interactivo_page"
-      ],
-      "relation": "implement",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "source_file": ".claude/skills/ejercicio-interactivo/SKILL.md"
-    },
-    {
-      "id": "impeccable_command_suite_recommendation_network",
-      "label": "Impeccable Command Suite Cross-Recommendation Network",
-      "nodes": [
-        "_claude_skills_impeccable_reference_audit",
-        "_claude_skills_impeccable_reference_critique",
-        "_claude_skills_impeccable_reference_live"
-      ],
-      "relation": "participate_in",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "source_file": ".claude/skills/impeccable/reference/critique.md"
-    },
-    {
-      "id": "impeccable_product_register_set",
-      "label": "Impeccable Product-Register Reference Set",
-      "nodes": [
-        "claude_skills_impeccable_reference_product_product",
-        "claude_skills_impeccable_reference_quieter_quieter",
-        "claude_skills_impeccable_reference_typeset_typeset"
-      ],
-      "relation": "participate_in",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "source_file": ".claude/skills/impeccable/reference/product.md"
-    },
-    {
-      "id": "a1_interactive_shared_template",
-      "label": "A1 Interactive Exercise Apps \u2014 Shared Paper/Ink Design Template",
-      "nodes": [
-        "docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_cuaderno_unidad6a_como_se_va_a_goya_interactivo_unidad6a_interactivo",
-        "docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_cuaderno_unidad6b_cierra_la_ventana_interactivo_unidad6b_interactivo",
-        "docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_cuaderno_unidad6c_mi_barrio_es_tranquilo_interactivo_unidad6c_interactivo",
-        "docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_cuaderno_practica_mas_3_interactivo_practica_mas_3_interactivo"
-      ],
-      "relation": "form",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad6a_como-se-va-a-goya_interactivo.html"
-    }
-  ],
-  "built_at_commit": "258d913b6de37ffca4878f9c5c3ed422a13a549b"
+  "hyperedges": [],
+  "built_at_commit": "29c1d1f76b4a6636d551b85e18aea18bc7fd55c4"
 }

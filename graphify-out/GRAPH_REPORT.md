@@ -1,16 +1,16 @@
 # Graph Report - Molu  (2026-09-13)
 
 ## Corpus Check
-- 269 files · ~1,337,324 words
+- 269 files · ~1,337,434 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 3200 nodes · 6498 edges · 218 communities (195 shown, 23 thin omitted)
+- 3212 nodes · 6515 edges · 220 communities (197 shown, 23 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 121 edges (avg confidence: 0.84)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `258d913b`
+- Built from commit: `29c1d1f7`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -81,7 +81,6 @@
 - pin.mjs
 - Ser / Estar (contraste)
 - Clarify Reference (UX Copy)
-- event-validation.mjs
 - normalizeIgnoreValueEntries
 - Web Interface Guidelines (Vercel)
 - Novedades de herramientas de IA
@@ -214,15 +213,15 @@
 - readLiveServerInfo
 - Carta de candidatura espontánea — academias de español, Salamanca
 - Ejercicios
+- cli
 - Ejercicios
 - Ejercicios
 - Ejercicios
 - Ejercicios
 - Ejercicios
 - Ejercicios
-- sync-main.sh
 - Ejercicios
-- readWorkspacePatterns
+- resolveProject
 - Ejercicios
 - Ejercicios
 - Ejercicios
@@ -232,7 +231,10 @@
 - caveman-mode.sh
 - live-target.mjs
 - Ideas de TFM: sistemas inteligentes aplicados a energías renovables
+- funciones.py
+- irobot_2.py
 - 2026-09-13
+- sync-main.sh
 
 ## God Nodes (most connected - your core abstractions)
 1. `initGlobalBar()` - 29 edges
@@ -261,19 +263,7 @@
 ## Import Cycles
 - None detected.
 
-## Hyperedges (group relationships)
-- **Flujo de publicación de un capítulo (índice + códigos de acceso)** — claude_skills_ejercicio_interactivo_skill, docencia_espanol_materiales_indice_clases_de_espanol_page, docencia_espanol_materiales_codigos_acceso_page [EXTRACTED 0.90]
-- **Impeccable skill setup flow (context, PRODUCT.md, DESIGN.md)** — claude_skills_impeccable_skill_impeccable, claude_skills_impeccable_skill_contextmjs, claude_skills_impeccable_skill_productmd, claude_skills_impeccable_skill_designmd [EXTRACTED 0.90]
-- **Brand Typography Reflex-Reject Decision Process** — _claude_skills_impeccable_reference_brand_font_selection_procedure, _claude_skills_impeccable_reference_brand_reflex_reject_font_list, _claude_skills_impeccable_reference_brand_reflex_reject_aesthetic_lanes [EXTRACTED 1.00]
-- **Critique Assessment A Evaluation Frameworks** — _claude_skills_impeccable_reference_critique_nielsen_heuristics, _claude_skills_impeccable_reference_critique_cognitive_load_assessment, _claude_skills_impeccable_reference_critique_persona_based_testing [EXTRACTED 1.00]
-- **Unidad 6: El barrio (shared theme)** — docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad6a_como_se_va_a_goya_unidad6a, docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad6b_cierra_la_ventana_unidad6b, docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad6c_mi_barrio_es_tranquilo_unidad6c [EXTRACTED 1.00]
-- **Sistema de diseño compartido: El Cuaderno del Profesor** — design_system_doc, product_doc, claude_skills_ejercicio_interactivo_reference_template_page [INFERRED 0.80]
-- **Patrón de botones de envío al profesor (WhatsApp/Telegram/Correo/Teams)** — claude_skills_ejercicio_interactivo_reference_template_page, claude_skills_ejercicio_interactivo_skill_channel_button_rule, docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_ejercicios_presente_gerundio_indefinido_interactivo_page [INFERRED 0.85]
-- **Impeccable Command Suite Cross-Recommendation Network** — _claude_skills_impeccable_reference_audit, _claude_skills_impeccable_reference_critique, _claude_skills_impeccable_reference_live [INFERRED 0.85]
-- **Impeccable Product-Register Reference Set** — claude_skills_impeccable_reference_product_product, claude_skills_impeccable_reference_quieter_quieter, claude_skills_impeccable_reference_typeset_typeset [INFERRED 0.85]
-- **A1 Interactive Exercise Apps — Shared Paper/Ink Design Template** — docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_cuaderno_unidad6a_como_se_va_a_goya_interactivo_unidad6a_interactivo, docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_cuaderno_unidad6b_cierra_la_ventana_interactivo_unidad6b_interactivo, docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_cuaderno_unidad6c_mi_barrio_es_tranquilo_interactivo_unidad6c_interactivo, docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_cuaderno_practica_mas_3_interactivo_practica_mas_3_interactivo [INFERRED 0.90]
-
-## Communities (218 total, 23 thin omitted)
+## Communities (220 total, 23 thin omitted)
 
 ### Community 0 - "live-browser.js"
 Cohesion: 0.03
@@ -352,8 +342,8 @@ Cohesion: 0.08
 Nodes (34): applyStaticDeclaration(), buildBorderOverrideMap(), parseShorthand(), resolveVar(), buildStaticStyleMap(), buildStaticWindow(), collectStaticCssRules(), compareStaticPriority() (+26 more)
 
 ### Community 19 - "insert-ui.mjs"
-Cohesion: 0.09
-Nodes (13): canCreateInsert(), clampPlaceholderSize(), computeInsertPosition(), groupSiblingRows(), hitSiblingInsertGap(), horizontalOverlap(), insertCreateDisabledReason(), insertLineCoords() (+5 more)
+Cohesion: 0.07
+Nodes (25): FORBIDDEN_MANUAL_EDIT_TEXT_CHARS, INSERT_POSITIONS, isValidId(), isValidVariantId(), validateAnnotationFields(), validateEvent(), validateInsertGenerate(), validateManualEditEvent() (+17 more)
 
 ### Community 20 - "Fuentes transcritas overview"
 Cohesion: 0.15
@@ -424,8 +414,8 @@ Cohesion: 0.15
 Nodes (25): analyzeSourceHint(), buildCandidatesForOp(), buildContextHintsByRef(), collectSearchFiles(), countOps(), decodeBasicHtml(), escapeRegExp(), findContextMatches() (+17 more)
 
 ### Community 37 - "context.mjs"
-Cohesion: 0.12
-Nodes (27): buildMissingTargetDirective(), buildResolvedContextDirective(), buildTargetSelectionDirective(), buildUpdateDirective(), cli(), compareSemver(), computeUpdateDirective(), DESIGN_NAMES (+19 more)
+Cohesion: 0.13
+Nodes (23): buildUpdateDirective(), compareSemver(), computeUpdateDirective(), DESIGN_NAMES, FALLBACK_DIRS, fetchLatestSkillVersion(), MONOREPO_FALLBACK_PROJECT_DIRS, MONOREPO_MARKER_FILES (+15 more)
 
 ### Community 38 - "handleManualEditActivity"
 Cohesion: 0.18
@@ -440,8 +430,8 @@ Cohesion: 0.17
 Nodes (21): resolveProjectRoot(), CRITIQUE_DIR, firstExisting(), getDesignSidecarCandidates(), getDesignSidecarPath(), getImpeccableDir(), getLegacyLiveAnnotationsDir(), getLegacyLiveConfigPath() (+13 more)
 
 ### Community 41 - "discoverTargetCandidates"
-Cohesion: 0.23
-Nodes (14): directChildDirs(), discoverRootsForPattern(), discoverTargetCandidates(), escapeRegExp(), expandSimplePattern(), findTargetExample(), isExcludedByWorkspacePattern(), isIgnoredWorkspaceDiscoveryDir() (+6 more)
+Cohesion: 0.18
+Nodes (17): directChildDirs(), discoverRootsForPattern(), discoverTargetCandidates(), escapeRegExp(), expandSimplePattern(), findTargetExample(), isExcludedByWorkspacePattern(), isIgnoredWorkspaceDiscoveryDir() (+9 more)
 
 ### Community 42 - "parseAnyColor"
 Cohesion: 0.12
@@ -535,10 +525,6 @@ Nodes (11): Imperativo afirmativo (tú/usted, enclítico), NEM1 Cuaderno Unidad 
 Cohesion: 0.20
 Nodes (10): Clarify Reference (UX Copy), Button Label Problem, Confirmation Dialogs Used Sparingly, Error Message Formula (What/Why/How to Fix), Writing for Translation (i18n Copy Expansion), Harden Reference (Edge Case Resilience), Internationalization Hardening, Interaction Design Reference (+2 more)
 
-### Community 66 - "event-validation.mjs"
-Cohesion: 0.25
-Nodes (12): FORBIDDEN_MANUAL_EDIT_TEXT_CHARS, INSERT_POSITIONS, isValidId(), isValidVariantId(), validateAnnotationFields(), validateEvent(), validateInsertGenerate(), validateManualEditEvent() (+4 more)
-
 ### Community 67 - "normalizeIgnoreValueEntries"
 Cohesion: 0.36
 Nodes (10): cleanIgnoreValueDisplay(), extractFindingIgnoreValue(), extractFindingIgnoreValueRaw(), extractMotionIgnoreValue(), filterFindings(), formatFindingIgnoreCommand(), isIgnoredFindingValue(), normalizeIgnoreRule() (+2 more)
@@ -572,8 +558,8 @@ Cohesion: 0.25
 Nodes (9): buildSelectorSegment(), generateSelector(), isElementHidden(), isLikelyHashedClass(), postSerializedFindings(), renderBrowserFindings(), scanResultMeta(), serializeFindings() (+1 more)
 
 ### Community 75 - "resolveContext"
-Cohesion: 0.15
-Nodes (16): contextSourcePath(), contextSourceStatus(), firstExisting(), isCandidateProjectRoot(), isPathInside(), isPathInsideOrEqual(), nearestPackageRootBetween(), nearestProjectLikeRoot() (+8 more)
+Cohesion: 0.20
+Nodes (11): contextSourcePath(), contextSourceStatus(), firstExisting(), isCandidateProjectRoot(), isPathInside(), isPathInsideOrEqual(), resolveCandidateContextSummary(), resolveContext() (+3 more)
 
 ### Community 76 - "isScreenReaderOnlyTextStyle"
 Cohesion: 0.32
@@ -987,6 +973,10 @@ Nodes (4): Asunto, Carta de candidatura espontánea — academias de español, S
 Cohesion: 0.29
 Nodes (6): 1. Deportes, Ej. 1 — Objetos deportivos: sopa de letras, Ej. 2 — ¿Con qué deporte está relacionado cada uno?, Ej. 3 — Completa con la palabra adecuada, Ej. 4 — Entrevista al ciclista Emilio Pedal, Ejercicios
 
+### Community 199 - "cli"
+Cohesion: 0.29
+Nodes (8): buildMissingTargetDirective(), buildResolvedContextDirective(), buildTargetSelectionDirective(), cli(), hasTargetOption(), parseCliOptions(), pathExistsForTarget(), shouldWarnMissingTarget()
+
 ### Community 200 - "Ejercicios"
 Cohesion: 0.29
 Nodes (6): 1. ¡Encantado!, Ej. 1 — Relaciona, Ej. 2 — Los gustos de Rafa y Alicia, Ej. 3 — Escribe las preguntas, Ej. 4 — Relaciona, Ejercicios
@@ -1015,9 +1005,9 @@ Nodes (4): 1. Costumbres, Ej. 1 — Piscina Sol y Agua, Ej. 2 — Antes de un ex
 Cohesion: 0.33
 Nodes (5): 1. Un buen trabajo, Ej. 1 — Relaciona, Ej. 2 — De profesión: adivinar el futuro, Ej. 3 — Sopa de letras: profesiones, Ejercicios
 
-### Community 208 - "readWorkspacePatterns"
-Cohesion: 0.29
-Nodes (8): findMonorepoRoot(), hasFallbackWorkspaceChildren(), hasGitBoundary(), isMonorepoRoot(), readJson(), readLernaWorkspaces(), readPackageWorkspaces(), readWorkspacePatterns()
+### Community 208 - "resolveProject"
+Cohesion: 0.33
+Nodes (6): findMonorepoRoot(), hasFallbackWorkspaceChildren(), hasGitBoundary(), isMonorepoRoot(), resolveProject(), resolveTargetDir()
 
 ### Community 209 - "Ejercicios"
 Cohesion: 0.18
@@ -1051,25 +1041,33 @@ Nodes (4): parseTargetOptions(), parseTargetPath(), TargetArgError, resolveLiveT
 Cohesion: 0.20
 Nodes (9): Correspondencia relacionada, Dos opciones evaluadas, Ideas de TFM: sistemas inteligentes aplicados a energías renovables, Opción A — Predicción de generación renovable con deep learning, Opción B — Sistema multiagente para gestión de microrredes (smart grid), Por qué esta orientación tiene sentido, Qué tanto puede ayudar Claude Code en este TFM (evaluación honesta), Recomendación (+1 more)
 
-### Community 220 - "Lluvia de ideas TFM"
+### Community 218 - "funciones.py"
+Cohesion: 0.43
+Nodes (6): ang_degree(), automatico(), cuadrado(), dist(), get_entero(), graph()
+
+### Community 219 - "irobot_2.py"
+Cohesion: 0.83
+Nodes (3): ang_degree(), dist(), odometry()
+
+### Community 220 - "2026-09-13"
 Cohesion: 0.50
 Nodes (3): 2026-09-13, Cómo citar (norma real del Departamento, no una convención inventada), Lluvia de ideas — TFM
 
 ## Knowledge Gaps
-- **801 isolated node(s):** `Fase 0 — Python para ciencia de datos (2 semanas)`, `Fase 1 — Fundamentos matemáticos (2 semanas)`, `Fase 2 — Machine Learning clásico (2 semanas)`, `Fase 3 — Redes neuronales y deep learning para series temporales (3 semanas)`, `Fase 4 — Lógica difusa y sistemas neuroborrosos (2 semanas)` (+796 more)
-  These have ≤1 connection - possible missing edges or undocumented components.
+- **801 isolated node(s):** `sync-main.sh script`, `1. Todo código de salida se comprueba antes de declarar éxito`, `2. Cada comando externo nuevo tiene `timeout`, sin excepción`, `3. Antes de inventar un mecanismo, buscar si ya existe uno oficial`, `4. "Probado de punta a punta" solo cuenta si reproduce la invocación real` (+796 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 994 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **23 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `createManualApplyController()` connect `manual-apply.mjs` to `live-server.mjs`?**
-  _High betweenness centrality (0.005) - this node is a cross-community bridge._
 - **Why does `readLiveServerInfo()` connect `readLiveServerInfo` to `impeccable-paths.mjs`, `live-poll.mjs`, `live.mjs`, `live-server.mjs`?**
   _High betweenness centrality (0.003) - this node is a cross-community bridge._
+- **Why does `countByPage()` connect `manual-edit-routes.mjs` to `live-commit-manual-edits.mjs`, `live-server.mjs`?**
+  _High betweenness centrality (0.002) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `initGlobalBar()` (e.g. with `hideAgentPollTooltip()` and `onDetectMessage()`) actually correct?**
   _`initGlobalBar()` has 7 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `Fase 0 — Python para ciencia de datos (2 semanas)`, `Fase 1 — Fundamentos matemáticos (2 semanas)`, `Fase 2 — Machine Learning clásico (2 semanas)` to the rest of the system?**
+- **What connects `sync-main.sh script`, `1. Todo código de salida se comprueba antes de declarar éxito`, `2. Cada comando externo nuevo tiene `timeout`, sin excepción` to the rest of the system?**
   _801 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `live-browser.js` be split into smaller, more focused modules?**
   _Cohesion score 0.02863984674329502 - nodes in this community are weakly interconnected._
