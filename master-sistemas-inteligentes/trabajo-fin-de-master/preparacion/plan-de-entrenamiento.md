@@ -117,6 +117,17 @@ batería o el consumo — el núcleo del TFM. Esta fase ya no tiene fecha
 de cierre fija, se itera con el tutor de TFM (ver
 `../ideas-tfm-energias-renovables.md` para candidatos).
 
+## Entorno de ejecución
+
+Angel tiene Claude Code integrado en Visual Studio Code para programar
+lo que haga falta — ahí corre el código real (entrenamiento de
+modelos, GPU, corridas largas de la Fase 3 en adelante), no en esta
+sesión de Claude Code en el repo (sandbox sin GPU, sin persistencia de
+entorno). Este repo sigue siendo el sitio de planificación, lecciones,
+bibliografía y la memoria en `main.tex` — el código pesado del pipeline
+se desarrolla en VS Code y solo el resultado/reporte se trae de vuelta
+aquí.
+
 ## Cómo usar este plan
 
 - Cada fase termina en un entregable concreto y comprobable, no solo
