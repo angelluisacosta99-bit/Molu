@@ -26,6 +26,20 @@ y pone como ejemplos el estilo ACM (numérico) o **Apalike** (autor-año,
 más informativo). Se eligió **Apalike** — coincide además con que la
 USAL en general sigue normas tipo APA para TFG/TFM.
 
+**Actualización 2026-09-13 (tarde): comparado contra la memoria real de
+Arlet** (`Memoria_TFM__Arlet_Acosta_González.pdf`, aprobada por el mismo
+departamento) — **no coincidía**. Ella usó el otro ejemplo que da la
+norma (cita numérica entre corchetes `[1]`, `[2]`... estilo "ACM"), no
+Apalike. Un precedente real ya aprobado pesa más que la suposición de
+"la USAL en general usa APA" — se cambió `\bibliographystyle` de
+`apalike` a **`unsrt`** (numérico, orden de aparición — coincide con el
+orden real de sus referencias, no alfabético como `plain`). Nota: su
+lista de referencias tiene DOI/ISSN/fecha de "visitado" con un formato
+muy rico que probablemente viene de un gestor tipo Zotero, no de BibTeX
+puro — esa parte no se replicó, solo el estilo de cita numérica en el
+cuerpo del texto, que es lo que de verdad exige la norma del
+departamento.
+
 **Flujo a seguir de aquí en adelante, para no acumular deuda:**
 1. Toda fuente nueva (libro, paper, página web, tesis) que se use en
    una lección, en `ideas-tfm-energias-renovables.md` o en `main.tex`
