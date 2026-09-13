@@ -61,23 +61,28 @@ verificar cálculos/fórmulas (estadística, control, series temporales)
 con Wolfram Language en vez de fiarse de una cuenta hecha a mano o por
 el modelo. Reconectar en los ajustes de conectores de claude.ai.
 
-### Nuevo, propuesto con tarjeta en este mismo turno
+### Propuestos con tarjeta y activados el mismo día
 
-- **Elicit** (`directoryUuid: 1287875c-308f-4a61-9ebf-4a0201ef214f`) —
-  busca y analiza papers científicos, genera informes de síntesis de
-  evidencia (`search_papers`, `search_trials`, `create_report`).
-  Herramienta real y reconocida en investigación (usada para revisiones
-  sistemáticas), no genérica de marketing.
-- **Consensus** (`directoryUuid: 65247229-f0c7-49df-9044-fcbb8b3894c6`)
-  — buscador de literatura científica basado en evidencia, respuestas
-  ancladas a papers reales en vez de resúmenes genéricos.
-- **bioRxiv** (`directoryUuid: 7f750eb6-c3cb-47d7-9269-d35c43fe9925`,
-  sin autenticación) — acceso oficial a preprints de bioRxiv/medRxiv.
-  Relevante en concreto por la asignatura "Minería de datos aplicada a
-  la bioinformática" del MUSI, no por el TFM actual (energía).
+- **✅ Elicit** (`directoryUuid: 1287875c-308f-4a61-9ebf-4a0201ef214f`)
+  — Activado el 2026-09-13. Busca y analiza papers científicos, genera
+  informes de síntesis de evidencia (`search_papers`, `search_trials`,
+  `create_report`, `create_systematic_review`). Herramienta real y
+  reconocida en investigación (usada para revisiones sistemáticas).
+- **✅ Consensus** (`directoryUuid: 65247229-f0c7-49df-9044-fcbb8b3894c6`)
+  — Activado el 2026-09-13. Buscador de literatura científica basado en
+  evidencia, respuestas ancladas a papers reales. Instrucción del propio
+  conector: citar inline con `[1]`/`[2]` y listar referencias con enlace
+  al final — respetar ese formato al usarlo, no resumir sin citar.
+- **✅ bioRxiv** (`directoryUuid: 7f750eb6-c3cb-47d7-9269-d35c43fe9925`,
+  sin autenticación) — Activado el 2026-09-13. Acceso oficial a
+  preprints de bioRxiv/medRxiv. Relevante en concreto por la asignatura
+  "Minería de datos aplicada a la bioinformática" del MUSI, no por el
+  TFM actual (energía).
 - **Plugin Exa** (`plugin_01FWGx9cc7sCNN5aMZkuU63t`) — búsqueda web
   profunda con extracción de contenido, incluye papers académicos como
-  caso de uso explícito. Tarjeta de instalación ya mostrada arriba.
+  caso de uso explícito. Tarjeta mostrada dos veces, **sin activar
+  todavía** (`ListPlugins` sigue sin encontrarlo) — pendiente de que
+  Angel le dé al clic de instalar.
 
 ### Revisados y descartados por redundancia o desajuste (por completitud)
 
