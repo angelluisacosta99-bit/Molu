@@ -236,36 +236,20 @@ imprescindible.
 
 ## Investigación científica verificada: usar siempre estos conectores
 
-Para el máster (MUSI) y el TFM — cualquier búsqueda de papers,
-verificación de una cita, o cálculo/fórmula que vaya a entrar en
-`main.tex` o en material de estudio — usar estos conectores ya
-activos en vez de fiarse de memoria o de una búsqueda web genérica sin
-verificar. Detalle completo de por qué cada uno y su historial de
-activación en `recursos-generales/herramientas-ia/novedades.md`
-(entrada del 2026-09-13), no repetido aquí.
+Para el máster (MUSI) y el TFM, antes de citar un paper o dar un
+cálculo por bueno, usar estos conectores ya activos en vez de memoria o
+una búsqueda web sin verificar (justificación completa en
+`recursos-generales/herramientas-ia/novedades.md`, entrada 2026-09-13):
 
-- **Scite** — verificar una cita (autor/título/año/editorial, y que no
-  esté retractada) antes de añadirla a `Bibliografia.bib`. Sustituye el
-  proceso manual que ya exige `lluvia-de-ideas.md` ("verificar antes de
-  citar").
-- **alphaXiv** — texto completo de cualquier paper de arXiv (ej. el
-  paper Grid-Agent ya citado en el TFM).
+- **Scite** — verificar una cita (autor/título/año/editorial, sin
+  retracciones) antes de añadirla a `Bibliografia.bib`.
+- **alphaXiv** — texto completo de papers de arXiv.
 - **Elicit** / **Consensus** — buscar y sintetizar evidencia científica
-  cuando la pregunta es de investigación, no solo "encontrar un paper
-  concreto". Con Consensus, seguir su propio formato de cita obligatorio
-  (numérico `[1]`/`[2]` con lista de referencias al final).
-- **Firecrawl** (`firecrawl_research_*`) — respaldo para papers/repos de
-  GitHub que no aparezcan en las anteriores.
-- **Wolfram** — verificar cualquier cálculo, fórmula o resultado
-  numérico (estadística, control, series temporales) antes de darlo por
-  bueno en la memoria, en vez de hacerlo a mano o confiar en el modelo.
-- **bioRxiv** — solo para la asignatura "Minería de datos aplicada a la
-  bioinformática", no para el TFM (energía).
-
-**Exa** está activado en la cuenta pero no se cargó en ninguna sesión de
-Claude Code probada hasta ahora — comprobar si aparece en sesiones
-nuevas antes de darlo por disponible (ver la corrección del 2026-09-13
-en `novedades.md`).
+  (Consensus exige citar `[1]`/`[2]` con lista de referencias al final).
+- **Firecrawl** (`firecrawl_research_*`) — respaldo si las anteriores no
+  tienen el paper.
+- **Wolfram** — verificar cálculos/fórmulas antes de darlos por buenos.
+- **bioRxiv** — solo para la asignatura de bioinformática, no el TFM.
 
 ## Nombre del profesor: sin tilde
 

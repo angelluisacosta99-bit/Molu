@@ -1,7 +1,7 @@
 # Graph Report - Molu  (2026-09-13)
 
 ## Corpus Check
-- 269 files · ~1,339,334 words
+- 269 files · ~1,339,638 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `013a827b`
+- Built from commit: `d6c987c6`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -264,6 +264,18 @@
 
 ## Import Cycles
 - None detected.
+
+## Hyperedges (group relationships)
+- **Flujo de publicación de un capítulo (índice + códigos de acceso)** — claude_skills_ejercicio_interactivo_skill, docencia_espanol_materiales_indice_clases_de_espanol_page, docencia_espanol_materiales_codigos_acceso_page [EXTRACTED 0.90]
+- **Impeccable skill setup flow (context, PRODUCT.md, DESIGN.md)** — claude_skills_impeccable_skill_impeccable, claude_skills_impeccable_skill_contextmjs, claude_skills_impeccable_skill_productmd, claude_skills_impeccable_skill_designmd [EXTRACTED 0.90]
+- **Brand Typography Reflex-Reject Decision Process** — _claude_skills_impeccable_reference_brand_font_selection_procedure, _claude_skills_impeccable_reference_brand_reflex_reject_font_list, _claude_skills_impeccable_reference_brand_reflex_reject_aesthetic_lanes [EXTRACTED 1.00]
+- **Critique Assessment A Evaluation Frameworks** — _claude_skills_impeccable_reference_critique_nielsen_heuristics, _claude_skills_impeccable_reference_critique_cognitive_load_assessment, _claude_skills_impeccable_reference_critique_persona_based_testing [EXTRACTED 1.00]
+- **Unidad 6: El barrio (shared theme)** — docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad6a_como_se_va_a_goya_unidad6a, docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad6b_cierra_la_ventana_unidad6b, docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad6c_mi_barrio_es_tranquilo_unidad6c [EXTRACTED 1.00]
+- **Sistema de diseño compartido: El Cuaderno del Profesor** — design_system_doc, product_doc, claude_skills_ejercicio_interactivo_reference_template_page [INFERRED 0.80]
+- **Patrón de botones de envío al profesor (WhatsApp/Telegram/Correo/Teams)** — claude_skills_ejercicio_interactivo_reference_template_page, claude_skills_ejercicio_interactivo_skill_channel_button_rule, docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_ejercicios_presente_gerundio_indefinido_interactivo_page [INFERRED 0.85]
+- **Impeccable Command Suite Cross-Recommendation Network** — _claude_skills_impeccable_reference_audit, _claude_skills_impeccable_reference_critique, _claude_skills_impeccable_reference_live [INFERRED 0.85]
+- **Impeccable Product-Register Reference Set** — claude_skills_impeccable_reference_product_product, claude_skills_impeccable_reference_quieter_quieter, claude_skills_impeccable_reference_typeset_typeset [INFERRED 0.85]
+- **A1 Interactive Exercise Apps — Shared Paper/Ink Design Template** — docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_cuaderno_unidad6a_como_se_va_a_goya_interactivo_unidad6a_interactivo, docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_cuaderno_unidad6b_cierra_la_ventana_interactivo_unidad6b_interactivo, docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_cuaderno_unidad6c_mi_barrio_es_tranquilo_interactivo_unidad6c_interactivo, docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_cuaderno_practica_mas_3_interactivo_practica_mas_3_interactivo [INFERRED 0.90]
 
 ## Communities (222 total, 23 thin omitted)
 
