@@ -2404,5 +2404,17 @@
     "seen": 1789276266.3410416,
     "ast_hash": "594db477a7703df0ce7796b1e5ee383b",
     "semantic_hash": ""
+  },
+  "master-sistemas-inteligentes/trabajo-fin-de-master/preparacion/01-python-numpy-pandas.md": {
+    "mtime": 1789276488.432669,
+    "seen": 1789276512.2536845,
+    "ast_hash": "81f7cef87d544ace011a0273f25e94f7",
+    "semantic_hash": ""
+  },
+  "master-sistemas-inteligentes/trabajo-fin-de-master/preparacion/plan-de-entrenamiento.md": {
+    "mtime": 1789276465.9126678,
+    "seen": 1789276512.2536857,
+    "ast_hash": "5a2e33bf9292c0ad0ce7bd41a51b1667",
+    "semantic_hash": ""
   }
 }
