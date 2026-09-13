@@ -83,12 +83,15 @@ el modelo. Reconectar en los ajustes de conectores de claude.ai.
   caso de uso explícito. Tarjeta de `SuggestPluginInstall` mostrada dos
   veces (a diferencia de `SuggestConnectors`, que sí funcionó para
   Elicit/Consensus/bioRxiv en la misma sesión), Angel no la vio en
-  ninguna de las dos — indicio de que la instalación de plugins no está
-  disponible en su cliente/plan actual (probado desde el navegador móvil),
-  no un fallo puntual de la llamada. No instalado. Revisar desde un
-  navegador de escritorio si se quiere retomar — no imprescindible,
-  Scite + alphaXiv + Firecrawl + Elicit + Consensus ya cubren bien la
-  búsqueda de papers verificados sin este plugin.
+  ninguna de las dos. **Causa real encontrada** (documentación oficial,
+  `support.claude.com/en/articles/13837440-use-plugins-in-claude`):
+  *"Plugins are available to all paid plans (Pro, Max, Team,
+  Enterprise)"* — si la cuenta es Free, la sección de plugins no existe,
+  con tarjeta o sin ella. Pendiente de que Angel confirme su plan. Ruta
+  manual si algún día hace falta: `https://claude.ai/new#settings/customize-plugins`
+  → pestaña Plugins → "+" en "Personal plugins" para marketplaces. No
+  imprescindible mientras tanto — Scite + alphaXiv + Firecrawl + Elicit
+  + Consensus ya cubren bien la búsqueda de papers verificados.
 
 ### Revisados y descartados por redundancia o desajuste (por completitud)
 
