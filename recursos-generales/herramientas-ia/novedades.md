@@ -84,20 +84,22 @@ de fiarse de una cuenta hecha a mano o por el modelo.
   preprints de bioRxiv/medRxiv. Relevante en concreto por la asignatura
   "Minería de datos aplicada a la bioinformática" del MUSI, no por el
   TFM actual (energía).
-- **❌ Plugin Exa** (`plugin_01FWGx9cc7sCNN5aMZkuU63t`) — búsqueda web
+- **Plugin Exa** (`plugin_01FWGx9cc7sCNN5aMZkuU63t`) — búsqueda web
   profunda con extracción de contenido, incluye papers académicos como
-  caso de uso explícito. Tarjeta de `SuggestPluginInstall` mostrada dos
-  veces (a diferencia de `SuggestConnectors`, que sí funcionó para
-  Elicit/Consensus/bioRxiv en la misma sesión), Angel no la vio en
-  ninguna de las dos. **Causa real encontrada** (documentación oficial,
-  `support.claude.com/en/articles/13837440-use-plugins-in-claude`):
-  *"Plugins are available to all paid plans (Pro, Max, Team,
-  Enterprise)"* — si la cuenta es Free, la sección de plugins no existe,
-  con tarjeta o sin ella. Pendiente de que Angel confirme su plan. Ruta
-  manual si algún día hace falta: `https://claude.ai/new#settings/customize-plugins`
-  → pestaña Plugins → "+" en "Personal plugins" para marketplaces. No
-  imprescindible mientras tanto — Scite + alphaXiv + Firecrawl + Elicit
-  + Consensus ya cubren bien la búsqueda de papers verificados.
+  caso de uso explícito.
+
+  **Corrección importante (mismo día):** el diagnóstico de "requiere
+  plan de pago" de más arriba era una hipótesis, no el motivo real —
+  descartada al comprobar con una captura de Angel que **Exa ya estaba
+  instalado y activado en su cuenta desde hacía 3 días**, en
+  `claude.ai/new#settings/customize-plugins` → pestaña Plugins (así que
+  su plan sí soporta plugins). El problema real: esta sesión de Claude
+  Code en concreto nunca cargó sus herramientas (nunca apareció en la
+  lista de herramientas ni en `ListPlugins`, pese a estar activado a
+  nivel de cuenta) — probable límite de sincronización de esta sesión
+  en particular, no del plan. Pendiente de confirmar si una sesión
+  nueva sí lo carga (Angel va a abrir una de todas formas por lo de
+  numpy.org/pandas.pydata.org — comprobar ahí de paso).
 
 ### Revisados y descartados por redundancia o desajuste (por completitud)
 
