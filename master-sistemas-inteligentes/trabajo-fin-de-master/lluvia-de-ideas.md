@@ -7,6 +7,109 @@ rígida, antes de que decante en algo formal para `main.tex` o para
 
 ---
 
+## 2026-09-14 — PARA LA SESIÓN QUE RETOME ESTO (con los dominios ya autorizados)
+
+Angel va a abrir una **sesión nueva** con la política de red ampliada.
+Esto es lo que esa sesión necesita saber de entrada. Sustituye, en lo
+que se solape, a la entrada del 2026-09-13 de más abajo.
+
+### Lo primero: comprobar los dominios
+
+Angel autoriza estos. **Probar un fetch simple de cada uno antes de dar
+por hecho que el permiso está activo** — la vez anterior se dio por
+supuesto y no lo estaba:
+
+| Dominio | Para qué |
+|---|---|
+| `numpy.org`, `pandas.pydata.org` | Completar la teoría de la Lección 1 (pendiente desde el 13/09) |
+| `apidatos.ree.es`, `www.ree.es` | API REData, si el TFM sigue por energía |
+| `networks.imdea.org`, `energia.imdea.org`, `jobs.energy.imdea.org` | Líneas de investigación y convocatorias reales de IMDEA |
+| `boe.es`, `inclusion.gob.es` | Normativa de extranjería en fuente primaria |
+
+**Si alguno sigue bloqueado, no recurrir a fuentes secundarias:** usar
+el conector MCP de **Firecrawl**, que descarga desde su propia
+infraestructura y no pasa por el proxy de salida del contenedor. Esto
+no es teoría — el 14/09 resolvió así una consulta al BOE que `WebFetch`
+y `curl` no pudieron hacer, y evitó dar por buena una cifra derogada.
+Ver la lección completa en
+`../admision-y-becas/becas-y-tramites-2026-2027.md`.
+
+### El estado real del TFM: NINGÚN tema está decidido
+
+Tres revisiones sucesivas desmontaron la idea original (predicción
+renovable + módulo difuso). El detalle completo, con las citas
+verificadas, está en `ideas-tfm-energias-renovables.md`. Resumen de lo
+que esa sesión NO debe volver a proponer como aportación propia:
+
+1. Módulo de decisión difuso para almacenamiento → publicado por
+   Arcos-Avilés et al. (2017, 2018).
+2. Comparativa de modelos fundacionales de series temporales → hecho
+   varias veces en 2026.
+3. "Medir cuánta precisión de pronóstico se traslada a la decisión" →
+   es el título literal de Yin, Lei y Feng (2024, *IEEE TPWRS*), y el
+   campo se llama *decision-focused learning* / Smart
+   Predict-then-Optimize (Elmachtoub y Grigas, 2022).
+
+**Hay cuatro caminos abiertos y Angel no ha elegido** (secciones
+"Decisión pendiente: los tres caminos" y "Camino D" de
+`ideas-tfm-energias-renovables.md`). No dar ninguno por supuesto:
+preguntarle.
+
+**El camino D es el que más ha ganado peso**, por motivos que no son
+académicos sino de empleabilidad — ver abajo. Pero su hueco **no está
+verificado**: que las búsquedas no encontraran DFL aplicado al apagado
+de estaciones base no demuestra que no exista. Antes de escribir a
+ningún tutor con ese tema hace falta una verificación sistemática
+dedicada. Este es exactamente el error que ya se cometió tres veces.
+
+### El contexto personal que cambió la ecuación
+
+- Angel es **cubano**, y su formación de base es **ingeniería de
+  telecomunicaciones** (RUT-MIIT, Moscú, especialidad ferroviaria).
+- Su hermana **Arlet trabaja en IMDEA Networks** — no en Energía, como
+  se supuso al principio. Entró **con contrato y haciendo el doctorado
+  a la vez**. Es un precedente real de que esa vía funciona para una
+  persona cubana.
+- IMDEA Networks: ~56 personas, 19 nacionalidades, **inglés como idioma
+  de trabajo**, plazas de doctorando **asalariadas** (contrato, no
+  beca). Tenía abierta una plaza de "Trustworthy Agentic AI for 6G
+  Networks".
+- **A Angel le gusta más el tema de energía.** No tratar el camino D
+  como una decisión ya tomada por él: es una recomendación razonada,
+  nada más.
+
+### Datos de extranjería ya verificados (no reinvestigar)
+
+- Residencia para búsqueda de empleo tras el máster: **24 meses
+  improrrogables** (DA 17ª Ley 14/2013, ampliada de 12 a 24 por la Ley
+  28/2022). **Las gestorías siguen publicando 12 — es la cifra
+  derogada.**
+- El permiso de estudiante ya habilita a trabajar **hasta 30 h
+  semanales** (RD 629/2022).
+- El permiso de investigador de la Ley 14/2013 **no aplica la situación
+  nacional de empleo**.
+- El RD 316/2026 habilita **provisionalmente para trabajar** en cuanto
+  se admite a trámite el cambio de estudios a residencia y trabajo.
+
+### Tareas concretas heredadas
+
+1. Verificación sistemática del hueco del camino D (si Angel lo elige).
+2. Lección 1 (NumPy/Pandas): contrastar con la documentación oficial, lo
+   que quedó bloqueado el 13/09.
+3. La lista de tutores de `ideas-tfm-energias-renovables.md` se hizo
+   para un tema de energía. Si el tema pasa a redes, **rehacerla**.
+4. `propuesta-tutoria-sara-rodriguez.md` está marcada **NO ENVIAR**. No
+   resucitarla sin rehacerla entera.
+5. **No se ha enviado ningún correo a nadie, y no se envía sin que
+   Angel lo pida explícitamente.**
+
+### Artefactos publicados (republicar con el mismo `url`, no crear otro)
+
+- "Preparación del TFM": `https://claude.ai/code/artifact/83deaf92-8d01-48bb-80c7-d9bb8b88e737`
+- "NumPy y Pandas desde Cero": `https://claude.ai/code/artifact/b04569b0-a083-4a05-972d-1bcbe8b5a453`
+
+---
+
 ## 2026-09-13 (continuación: dominios bloqueados para docs oficiales + para la sesión que retome esto)
 
 **Para quien retome esta sesión:** se acaba de fusionar el PR #111
