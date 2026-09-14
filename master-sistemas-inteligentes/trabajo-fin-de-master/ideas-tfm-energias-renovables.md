@@ -370,6 +370,70 @@ desajuste real entre el nivel que pide el tema reformulado y el punto de
 partida (Fase 0 recién hecha). Decisión pendiente de Angel, anotada sin
 resolver aquí.
 
+## Decisión pendiente: los tres caminos (abierta desde 2026-09-14)
+
+Cerrada la tercera revisión, Angel pidió guardar el veredicto y pensar
+la opción con calma. **Ninguna está elegida todavía.** Quien retome
+esto: no dar por hecho ningún camino, preguntarle.
+
+### Estado de recursos, verificado
+
+| Recurso | Estado real |
+|---|---|
+| Generación renovable (API REData, `apidatos.ree.es`) | ✅ Libre, sin clave, histórico desde 2014 |
+| Precios de mercado (API ESIOS, `api.esios.ree.es`) | ⚠️ **Exige solicitar un token personal.** El borrador descartado decía "sin trámite" — era falso |
+| Perfil de consumo / demanda | ❌ Ni siquiera estaba identificado en el borrador. Sin demanda que servir, una batería no tiene nada que decidir |
+| Cómputo | ✅ Chronos-2 son 119,5 M parámetros, licencia Apache-2.0, corre en CPU. Sin GPU necesaria |
+| Optimización bajo incertidumbre (MPC/LP) + degradación de batería | ❌ Ver el desajuste con el plan de entrenamiento, abajo |
+
+**Dato que conviene no olvidar:** la propia Sara Rodríguez, en su
+artículo de 2026 (*Electronics* 15(11):2269), **no usó REData**. Usó
+GEFCom2014 + carga sintética + precios españoles representativos. Si
+ella no vio práctico montarlo con datos reales del sistema español,
+proponérselo como si fuera trivial delata inexperiencia.
+
+### El desajuste con el plan de entrenamiento
+
+Lo único que sobrevive de la idea original es el **mapa de
+contingencias**: bajo qué configuración de activo (potencia, ciclos,
+degradación), qué estructura de mercado y qué régimen de precios se
+desplaza el umbral de saturación. Las pérdidas por arbitraje que
+reporta la literatura van del 6 % al 50 % sin que nadie explique esa
+horquilla — eso sí es una pregunta abierta de verdad.
+
+**Pero ese tema reformulado exige optimización bajo incertidumbre**
+(MPC o programación lineal), modelado de degradación de batería y el
+marco de *decision-focused learning*. Y `preparacion/plan-de-entrenamiento.md`
+va Python → matemáticas → ML → deep learning → lógica difusa → REData →
+proyecto: **no contempla ninguna fase de optimización**, y Angel está
+en la Fase 0. El desajuste es real, no un detalle de calendario.
+
+### Los tres caminos
+
+**A. Estrechar y ampliar el plan.** Mantener el mapa de contingencias
+con DFL/SPO como marco teórico, y añadir una fase de optimización al
+plan de entrenamiento. Es el camino más ambicioso y el que más tiempo
+consume antes de poder escribir una sola línea de la memoria.
+
+**B. Pivotar.** Buscar otro ángulo de energía + IA que encaje mejor con
+un TFM de un año empezando desde la Fase 0, sin necesitar optimización
+bajo incertidumbre.
+
+**C. Escribir a Sara como pregunta abierta informada**, no como
+propuesta cerrada: "he leído su artículo de 2026 y el de Yin et al.
+2024; veo este hueco concreto; ¿lo ve trabajable?". Esto sí se sostiene
+— la fuerza está en haber leído el estado del arte, no en fingir
+novedad.
+
+**Recomendación dada a Angel:** C, y decidir entre A y B con lo que ella
+conteste. Un tutor con experiencia prefiere a alguien que llega con el
+estado del arte leído y una pregunta afilada, antes que con una
+propuesta cerrada que va a tener que desmontar.
+
+**Antes de decidir:** Angel debería leer el artículo de Sara de 2026
+(*Electronics* 15(11):2269, acceso abierto, corto) para tener criterio
+propio y no depender solo del análisis de esta sesión.
+
 ## Tutores de TFM — candidatos concretos
 
 | Candidato | Especialidad | Encaje |
@@ -456,3 +520,67 @@ directamente, para que quede claro el rol esperado en sesiones futuras:
   USAL sobre uso de IA en el TFM (existe una "Declaración de Autoría"
   que hay que firmar, ver la carpeta del TFM de Arlet en Drive) y
   respetarla.
+
+## IMDEA como criterio de empleabilidad (abierto, 2026-09-14)
+
+Angel planteó una idea nueva: su hermana Arlet trabaja en **IMDEA** y
+está a gusto allí, así que quizá convenga elegir un tema de TFM que
+además resulte atractivo a ese instituto de cara a un trabajo tras la
+graduación. Es un criterio legítimo y, de hecho, útil para desempatar
+entre los tres caminos de la sección anterior.
+
+**Pendiente de confirmar con Angel: en cuál de los siete institutos
+IMDEA trabaja Arlet.** No es un detalle — cambia por completo qué tema
+sería atractivo. Los institutos son Agua, Alimentación/Nutrición,
+Energía, Materiales, Nanociencia, Networks y Software; son fundaciones
+independientes de la Comunidad de Madrid (creadas 2006-2007), no una
+sola empresa. Dado que el TFM de Arlet fue sobre Tor, lo más probable
+es **Networks** o **Software**, no Energía — pero no se ha verificado.
+
+### Si es IMDEA Energía (el que encaja con el tema actual)
+
+Sede en Móstoles (Madrid). Acreditación **Unidad de Excelencia "María
+de Maeztu"** (Agencia Estatal de Investigación, 2020). Está
+activamente metido en IA aplicada a energía, con hechos concretos:
+
+- **Mesa redonda "Energía e Inteligencia Artificial"** (28 de enero),
+  con Iberdrola, Endesa/Enel, Indra/Minsait, Sener y NCompany. Más de
+  70 asistentes.
+- **Seminario "Toward AI-Native Energy Systems"** (9 de febrero de
+  2026). Su contenido es directamente relevante: predicción guiada por
+  física (modelos espacio-temporales, PINNs), gemelos digitales
+  calibrados en continuo, y **toma de decisiones segura mediante MPC
+  con restricciones y RL seguro**. Es decir: el instituto ya piensa en
+  el mismo territorio (optimización bajo incertidumbre) que la
+  reformulación del tema exige.
+- Simposio **I-Labs4S** (27-28 mayo 2026) sobre laboratorios autónomos
+  con IA y robótica.
+- Su **Unidad de Análisis de Sistemas** hace evaluación de
+  sostenibilidad, diseño/simulación/optimización de procesos y
+  **modelos de planificación energética** — la unidad más cercana a un
+  perfil de sistemas inteligentes.
+
+**Vía de entrada concreta y verificada:** IMDEA Energía convoca
+**becas de prácticas para estudiantes de Grado y Máster** (una
+convocatoria reciente fue de 26 becas). Condiciones publicadas: hasta
+**2.500 €** para nivel máster, duración máxima **350 horas**, una sola
+solicitud por candidato, enviada al correo que indique cada línea de
+investigación. También ofrecen contratos de prácticas de un año
+(~13.500 € brutos anuales) con posible continuidad.
+
+**Consecuencia estratégica:** si Arlet está en Energía, el camino A
+(mapa de contingencias con DFL, que exige MPC/optimización) deja de ser
+solo "el más ambicioso" y pasa a ser el más alineado con lo que ese
+instituto hace y busca. Si está en Networks o Software, este criterio
+empuja hacia otro tipo de tema y habría que replantear.
+
+### Limitación técnica de esta sesión
+
+`energia.imdea.org` está **bloqueado por la política de red del
+entorno** (`EGRESS_BLOCKED`), igual que pasó con `numpy.org` y
+`pandas.pydata.org`. Todo lo anterior se obtuvo por búsqueda web
+indirecta, no leyendo sus páginas. Para verificar la convocatoria
+vigente, las líneas de investigación exactas y los correos de contacto
+hace falta autorizar `energia.imdea.org` y `jobs.energy.imdea.org` (y,
+según el instituto que sea, `networks.imdea.org` o
+`software.imdea.org`) en la configuración de red del entorno.
