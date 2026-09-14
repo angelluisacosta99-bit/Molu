@@ -125,7 +125,9 @@ conversación de Claude Code.
     MFC. **Angel no ve esa opción de exención al intentar presentar la
     solicitud de nuevo** — pendiente de preguntar directamente al MFC
     de Moscú (`md@mfc.mos.ru`, 8(495)777-77-77), citando este número de
-    referencia, cómo proceder en la práctica.
+    referencia, cómo proceder en la práctica. **Correo enviado el mismo
+    día** a `md@mfc.mos.ru`, citando el № 7638974873/У-04 y pidiendo el
+    procedimiento exacto — **a la espera de respuesta.**
 - **2026-09-03** — Alexander Evgenievich (RUT MIIT) confirmó que la
   petición del MFC probablemente **se perdió dentro de la burocracia
   interna de RUT MIIT** (no fue el MFC quien falló). Pasó el contacto de
