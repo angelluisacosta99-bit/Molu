@@ -1,16 +1,16 @@
 # Graph Report - Molu  (2026-09-14)
 
 ## Corpus Check
-- 269 files · ~1,341,172 words
+- 269 files · ~1,341,570 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 3230 nodes · 6533 edges · 220 communities (197 shown, 23 thin omitted)
+- 3231 nodes · 6534 edges · 220 communities (197 shown, 23 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 121 edges (avg confidence: 0.84)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `814bc116`
+- Built from commit: `c6d83dfd`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -1051,7 +1051,7 @@ Nodes (4): parseTargetOptions(), parseTargetPath(), TargetArgError, resolveLiveT
 
 ### Community 217 - "Ideas de TFM: sistemas inteligentes aplicados a energías renovables"
 Cohesion: 0.10
-Nodes (19): Correspondencia relacionada, Dos opciones evaluadas, Dos reencuadres posibles (decisión de Angel, no tomada aquí), Dónde se ha movido el estado del arte (y dónde queda hueco real), Hallazgo bloqueante: "predicción + módulo difuso para batería" está saturado, Ideas de TFM: sistemas inteligentes aplicados a energías renovables, Lo que sigue abierto de verdad (y es donde queda el TFM), Lo que sí aguanta del planteamiento original (+11 more)
+Nodes (20): Correspondencia relacionada, Dos opciones evaluadas, Dos reencuadres posibles (decisión de Angel, no tomada aquí), Dónde se ha movido el estado del arte (y dónde queda hueco real), Hallazgo bloqueante: "predicción + módulo difuso para batería" está saturado, Ideas de TFM: sistemas inteligentes aplicados a energías renovables, Lo que sigue abierto de verdad (y es donde queda el TFM), Lo que sí aguanta del planteamiento original (+12 more)
 
 ### Community 218 - "funciones.py"
 Cohesion: 0.43
@@ -1073,12 +1073,10 @@ Nodes (5): 2026-09-13, 2026-09-13 (continuación: dominios bloqueados para docs 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `StaticElement` connect `StaticElement` to `css-cascade.mjs`?**
-  _High betweenness centrality (0.001) - this node is a cross-community bridge._
 - **Why does `isGeneratedFile()` connect `isGeneratedFile` to `live-commit-manual-edits.mjs`, `live-accept.mjs`, `live-manual-edit-evidence.mjs`, `live-wrap.mjs`?**
-  _High betweenness centrality (0.001) - this node is a cross-community bridge._
-- **Why does `parseDesignMd()` connect `design-parser.mjs` to `live-server.mjs`?**
-  _High betweenness centrality (0.001) - this node is a cross-community bridge._
+  _High betweenness centrality (0.002) - this node is a cross-community bridge._
+- **Why does `readBuffer()` connect `manual-edit-routes.mjs` to `live-manual-edit-evidence.mjs`, `manual-apply.mjs`, `live-commit-manual-edits.mjs`, `live-wrap.mjs`, `live-accept.mjs`?**
+  _High betweenness centrality (0.002) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `initGlobalBar()` (e.g. with `hideAgentPollTooltip()` and `onDetectMessage()`) actually correct?**
   _`initGlobalBar()` has 7 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `Por qué esta orientación tiene sentido`, `Opción A — Predicción de generación renovable con deep learning`, `Opción B — Sistema multiagente para gestión de microrredes (smart grid)` to the rest of the system?**
@@ -1087,3 +1085,5 @@ _Questions this graph is uniquely positioned to answer:_
   _Cohesion score 0.02863984674329502 - nodes in this community are weakly interconnected._
 - **Should `checks.mjs` be split into smaller, more focused modules?**
   _Cohesion score 0.04078624078624079 - nodes in this community are weakly interconnected._
+- **Should `index.mjs` be split into smaller, more focused modules?**
+  _Cohesion score 0.06142410015649452 - nodes in this community are weakly interconnected._

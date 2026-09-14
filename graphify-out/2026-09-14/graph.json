@@ -32655,7 +32655,7 @@
       "node_kind": "heading",
       "norm_label": "correspondencia relacionada",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L273"
+      "source_location": "L301"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_dos_opciones_evaluadas",
@@ -32754,6 +32754,18 @@
       "source_location": "L217"
     },
     {
+      "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_nota_de_encaje_por_qu\u00e9_sara_rodr\u00edguez_pasa_a_ser_la_primera_opci\u00f3n",
+      "label": "Nota de encaje: por qu\u00e9 Sara Rodr\u00edguez pasa a ser la primera opci\u00f3n",
+      "_origin": "ast",
+      "community": 217,
+      "community_name": "Ideas de TFM: sistemas inteligentes aplicados a energ\u00edas renovables",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "nota de encaje: por que sara rodriguez pasa a ser la primera opcion",
+      "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
+      "source_location": "L275"
+    },
+    {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_opci\u00f3n_a_predicci\u00f3n_de_generaci\u00f3n_renovable_con_deep_learning",
       "label": "Opci\u00f3n A \u2014 Predicci\u00f3n de generaci\u00f3n renovable con deep learning",
       "_origin": "ast",
@@ -32799,7 +32811,7 @@
       "node_kind": "heading",
       "norm_label": "que tanto puede ayudar claude code en este tfm (evaluacion honesta)",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L286"
+      "source_location": "L314"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_recomendaci\u00f3n",
@@ -109366,7 +109378,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L273",
+      "source_location": "L301",
       "weight": 1.0
     },
     {
@@ -109377,7 +109389,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L286",
+      "source_location": "L314",
       "weight": 1.0
     },
     {
@@ -109488,6 +109500,17 @@
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
       "source_location": "L239",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_tutores_de_tfm_candidatos_concretos",
+      "target": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_nota_de_encaje_por_qu\u00e9_sara_rodr\u00edguez_pasa_a_ser_la_primera_opci\u00f3n",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
+      "source_location": "L275",
       "weight": 1.0
     },
     {
@@ -114963,5 +114986,5 @@
       "source_file": "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad6a_como-se-va-a-goya_interactivo.html"
     }
   ],
-  "built_at_commit": "814bc1162920685995e073540618e7a35e2ae780"
+  "built_at_commit": "c6d83dfdcbb280ef2fc4e04ebbf4fa11013c6bd6"
 }
