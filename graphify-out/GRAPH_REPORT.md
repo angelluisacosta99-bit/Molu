@@ -1,16 +1,16 @@
 # Graph Report - Molu  (2026-09-14)
 
 ## Corpus Check
-- 270 files · ~1,347,631 words
+- 270 files · ~1,347,912 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 3276 nodes · 6578 edges · 223 communities (200 shown, 23 thin omitted)
+- 3277 nodes · 6579 edges · 222 communities (199 shown, 23 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 121 edges (avg confidence: 0.84)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `eda34ada`
+- Built from commit: `efc22e24`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -81,7 +81,6 @@
 - pin.mjs
 - Ser / Estar (contraste)
 - Clarify Reference (UX Copy)
-- event-validation.mjs
 - normalizeIgnoreValueEntries
 - Web Interface Guidelines (Vercel)
 - Novedades de herramientas de IA
@@ -278,7 +277,7 @@
 - **Impeccable Product-Register Reference Set** — claude_skills_impeccable_reference_product_product, claude_skills_impeccable_reference_quieter_quieter, claude_skills_impeccable_reference_typeset_typeset [INFERRED 0.85]
 - **A1 Interactive Exercise Apps — Shared Paper/Ink Design Template** — docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_cuaderno_unidad6a_como_se_va_a_goya_interactivo_unidad6a_interactivo, docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_cuaderno_unidad6b_cierra_la_ventana_interactivo_unidad6b_interactivo, docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_cuaderno_unidad6c_mi_barrio_es_tranquilo_interactivo_unidad6c_interactivo, docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_cuaderno_practica_mas_3_interactivo_practica_mas_3_interactivo [INFERRED 0.90]
 
-## Communities (223 total, 23 thin omitted)
+## Communities (222 total, 23 thin omitted)
 
 ### Community 0 - "live-browser.js"
 Cohesion: 0.03
@@ -357,8 +356,8 @@ Cohesion: 0.08
 Nodes (34): applyStaticDeclaration(), buildBorderOverrideMap(), parseShorthand(), resolveVar(), buildStaticStyleMap(), buildStaticWindow(), collectStaticCssRules(), compareStaticPriority() (+26 more)
 
 ### Community 19 - "insert-ui.mjs"
-Cohesion: 0.09
-Nodes (13): canCreateInsert(), clampPlaceholderSize(), computeInsertPosition(), groupSiblingRows(), hitSiblingInsertGap(), horizontalOverlap(), insertCreateDisabledReason(), insertLineCoords() (+5 more)
+Cohesion: 0.07
+Nodes (25): FORBIDDEN_MANUAL_EDIT_TEXT_CHARS, INSERT_POSITIONS, isValidId(), isValidVariantId(), validateAnnotationFields(), validateEvent(), validateInsertGenerate(), validateManualEditEvent() (+17 more)
 
 ### Community 20 - "Fuentes transcritas overview"
 Cohesion: 0.15
@@ -469,8 +468,8 @@ Cohesion: 0.20
 Nodes (14): createLiveBrowserSessionState(), clearHandled(), clearScrollY(), clearSession(), isHandled(), loadSession(), markHandled(), nextCheckpointRevision() (+6 more)
 
 ### Community 47 - "session-store.mjs"
-Cohesion: 0.22
-Nodes (11): applyEvent(), baseSnapshot(), COMPLETED_PHASES, getReadableJournalPath(), loadCachedOrRebuild(), getJournalPath(), getSnapshotPath(), rebuildSnapshotFromJournal() (+3 more)
+Cohesion: 0.26
+Nodes (9): applyEvent(), baseSnapshot(), COMPLETED_PHASES, getJournalPath(), getSnapshotPath(), rebuildSnapshotFromJournal(), safeSessionId(), toPendingEvent() (+1 more)
 
 ### Community 48 - "createLiveBrowserDomHelpers"
 Cohesion: 0.19
@@ -539,10 +538,6 @@ Nodes (11): Imperativo afirmativo (tú/usted, enclítico), NEM1 Cuaderno Unidad 
 ### Community 65 - "Clarify Reference (UX Copy)"
 Cohesion: 0.20
 Nodes (10): Clarify Reference (UX Copy), Button Label Problem, Confirmation Dialogs Used Sparingly, Error Message Formula (What/Why/How to Fix), Writing for Translation (i18n Copy Expansion), Harden Reference (Edge Case Resilience), Internationalization Hardening, Interaction Design Reference (+2 more)
-
-### Community 66 - "event-validation.mjs"
-Cohesion: 0.25
-Nodes (12): FORBIDDEN_MANUAL_EDIT_TEXT_CHARS, INSERT_POSITIONS, isValidId(), isValidVariantId(), validateAnnotationFields(), validateEvent(), validateInsertGenerate(), validateManualEditEvent() (+4 more)
 
 ### Community 67 - "normalizeIgnoreValueEntries"
 Cohesion: 0.36
@@ -981,8 +976,8 @@ Cohesion: 0.40
 Nodes (9): addRules(), applyInlineIgnores(), getSet(), hasDirectives(), isInlineIgnored(), normalizeRule(), parseInlineIgnores(), parseRuleList() (+1 more)
 
 ### Community 196 - "readLiveServerInfo"
-Cohesion: 0.21
-Nodes (17): isLiveServerPidReachable(), readLiveServerInfo(), completeCli(), completeThroughServer(), parseArgs(), readServerInfo(), collectManualApplyFiles(), manualApplyReplyCommand() (+9 more)
+Cohesion: 0.18
+Nodes (19): isLiveServerPidReachable(), readLiveServerInfo(), completeCli(), completeThroughServer(), parseArgs(), readServerInfo(), collectManualApplyFiles(), manualApplyReplyCommand() (+11 more)
 
 ### Community 197 - "Carta de candidatura espontánea — academias de español, Salamanca"
 Cohesion: 0.40
@@ -1062,7 +1057,7 @@ Nodes (4): parseTargetOptions(), parseTargetPath(), TargetArgError, resolveLiveT
 
 ### Community 217 - "Ideas de TFM: sistemas inteligentes aplicados a energías renovables"
 Cohesion: 0.04
-Nodes (45): Camino D: pivotar a redes móviles (candidato, NO verificado del todo), Conclusión, Consecuencia práctica que hay que decidir antes de seguir, Correspondencia relacionada, Decisión pendiente: los tres caminos (abierta desde 2026-09-14), Dos opciones evaluadas, Dos reencuadres posibles (decisión de Angel, no tomada aquí), Dónde se ha movido el estado del arte (y dónde queda hueco real) (+37 more)
+Nodes (46): Camino D: pivotar a redes móviles (candidato, NO verificado del todo), Conclusión, Consecuencia práctica que hay que decidir antes de seguir, Correspondencia relacionada, Decisión pendiente: los tres caminos (abierta desde 2026-09-14), Dos opciones evaluadas, Dos reencuadres posibles (decisión de Angel, no tomada aquí), Dónde se ha movido el estado del arte (y dónde queda hueco real) (+38 more)
 
 ### Community 218 - "funciones.py"
 Cohesion: 0.43
@@ -1081,24 +1076,24 @@ Cohesion: 0.40
 Nodes (5): Cómo cerrarlo (por orden de fiabilidad), Dominios a autorizar en el entorno, Lo que sí quedó establecido, Por qué no se cerró, Residencia tras el máster: duda abierta sobre la duración (2026-09-14)
 
 ## Knowledge Gaps
-- **852 isolated node(s):** `Contexto del alumno`, `Estado de las becas evaluadas`, `Texto oficial de la convocatoria (documento firmado, aportado por Angel)`, `Hallazgo crítico: cláusula de nacionalidad/estancia`, `Enviados` (+847 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1046 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **853 isolated node(s):** `Por qué esta orientación tiene sentido`, `Opción A — Predicción de generación renovable con deep learning`, `Opción B — Sistema multiagente para gestión de microrredes (smart grid)`, `Recomendación`, `Hallazgo bloqueante: "predicción + módulo difuso para batería" está saturado` (+848 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1047 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **23 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `readBuffer()` connect `manual-edit-routes.mjs` to `live-manual-edit-evidence.mjs`, `manual-apply.mjs`, `live-commit-manual-edits.mjs`, `live-wrap.mjs`, `live-accept.mjs`?**
+- **Why does `readLiveServerInfo()` connect `readLiveServerInfo` to `impeccable-paths.mjs`, `live-poll.mjs`, `live.mjs`, `live-server.mjs`?**
   _High betweenness centrality (0.003) - this node is a cross-community bridge._
-- **Why does `createLiveSessionStore()` connect `readLiveServerInfo` to `impeccable-paths.mjs`, `live-server.mjs`, `session-store.mjs`?**
+- **Why does `readBuffer()` connect `manual-edit-routes.mjs` to `live-manual-edit-evidence.mjs`, `manual-apply.mjs`, `live-commit-manual-edits.mjs`, `live-wrap.mjs`, `live-accept.mjs`?**
+  _High betweenness centrality (0.002) - this node is a cross-community bridge._
+- **Why does `detectPageTheme()` connect `initGlobalBar` to `live-browser.js`, `resumeSession`, `el`, `setLiveState`?**
   _High betweenness centrality (0.002) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `initGlobalBar()` (e.g. with `hideAgentPollTooltip()` and `onDetectMessage()`) actually correct?**
   _`initGlobalBar()` has 7 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `Contexto del alumno`, `Estado de las becas evaluadas`, `Texto oficial de la convocatoria (documento firmado, aportado por Angel)` to the rest of the system?**
-  _852 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `Por qué esta orientación tiene sentido`, `Opción A — Predicción de generación renovable con deep learning`, `Opción B — Sistema multiagente para gestión de microrredes (smart grid)` to the rest of the system?**
+  _853 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `live-browser.js` be split into smaller, more focused modules?**
   _Cohesion score 0.02863984674329502 - nodes in this community are weakly interconnected._
 - **Should `checks.mjs` be split into smaller, more focused modules?**
   _Cohesion score 0.04078624078624079 - nodes in this community are weakly interconnected._
-- **Should `index.mjs` be split into smaller, more focused modules?**
-  _Cohesion score 0.06142410015649452 - nodes in this community are weakly interconnected._

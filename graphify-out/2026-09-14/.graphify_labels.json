@@ -198,7 +198,7 @@
   "196": "readLiveServerInfo",
   "197": "Carta de candidatura espontánea — academias de español, Salamanca",
   "198": "Ejercicios",
-  "199": "readWorkspacePatterns",
+  "199": "resolveProject",
   "200": "Ejercicios",
   "201": "Ejercicios",
   "202": "Ejercicios",
@@ -207,6 +207,7 @@
   "205": "Ejercicios",
   "206": "Parte 2 — Propuesta adjunta (2 páginas)",
   "207": "Ejercicios",
+  "208": "cli",
   "209": "Ejercicios",
   "210": "Ejercicios",
   "211": "Ejercicios",
@@ -219,5 +220,6 @@
   "218": "funciones.py",
   "219": "irobot_2.py",
   "220": "Lluvia de ideas — TFM",
-  "221": "sync-main.sh"
+  "221": "sync-main.sh",
+  "222": "Residencia tras el máster: duda abierta sobre la duración (2026-09-14)"
 }
