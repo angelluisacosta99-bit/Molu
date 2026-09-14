@@ -32,7 +32,7 @@ conversación de Claude Code.
 | N.º de expediente | Documento | Estado |
 |---|---|---|
 | № 7638524892 | Diploma de especialista | ✅ Apostilla concedida — n.º **857967**, fecha 06.08.2026 |
-| № 7638974873 | Diploma de reconversión profesional (ППК № 003589) | ❌ **Rechazada** (07.08.2026) — motivo alegado: RUT MIIT no respondió a tiempo al requerimiento del MFC. **Contradicho por RUT MIIT** (ver más abajo): la universidad sostiene que sí respondió en plazo, con referencia № 017/9760 del 15.07.2026. Se puede volver a solicitar sin pagar tasa, una vez el MFC de Moscú reciba/reconozca esa respuesta |
+| № 7638974873 | Diploma de reconversión profesional (ППК № 003589) | ❌ Rechazada (07.08.2026), **pero resuelta el 14.09.2026**: el MFC de Moscú confirmó por escrito (№ 7638974873/У-04, firmado por Курбатова Юлия Сергеевна) que **la respuesta de la universidad ya llegó** — habilita presentar la solicitud de nuevo, **sin pago repetido de tasa**. Pendiente solo el trámite práctico (ver más abajo) |
 
 ## Contactos relevantes
 
@@ -114,6 +114,18 @@ conversación de Claude Code.
     persona, con el correo impreso, el martes o miércoles (15-16 de
     septiembre), y que escribirá con lo que averigüe.** A la espera de
     esa respuesta.
+  - **2026-09-14 — Resuelto el fondo del caso, queda el trámite
+    práctico.** Llegó notificación oficial del MFC de Moscú
+    (`noreply@obrnadzor.gov.ru`, № 7638974873/У-04 del 14.09.2026,
+    firmado por Курбатова Юлия Сергеевна): confirma que **la respuesta
+    de la universidad ya llegó al MFC**, y habilita presentar la
+    solicitud de nuevo **sin pago repetido de la tasa estatal**. El
+    documento no explica el mecanismo — no dice si hay que adjuntar
+    algo, marcar una opción en el portal, o si lo gestiona el propio
+    MFC. **Angel no ve esa opción de exención al intentar presentar la
+    solicitud de nuevo** — pendiente de preguntar directamente al MFC
+    de Moscú (`md@mfc.mos.ru`, 8(495)777-77-77), citando este número de
+    referencia, cómo proceder en la práctica.
 - **2026-09-03** — Alexander Evgenievich (RUT MIIT) confirmó que la
   petición del MFC probablemente **se perdió dentro de la burocracia
   interna de RUT MIIT** (no fue el MFC quien falló). Pasó el contacto de
