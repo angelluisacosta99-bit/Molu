@@ -110,8 +110,10 @@ conversación de Claude Code.
     tres respuestas sin resolver de fondo de `spravka@rut-miit.ru`, y
     que las llamadas al doб. 37-01 no obtuvieron respuesta. Le pide
     que vaya en persona al MFC de RUT MIIT, como se ofreció el
-    2026-09-03. **A la espera de que Alexander confirme si puede ir y
-    qué averigua.**
+    2026-09-03. **Respondió el mismo día (08:28): confirma que irá en
+    persona, con el correo impreso, el martes o miércoles (15-16 de
+    septiembre), y que escribirá con lo que averigüe.** A la espera de
+    esa respuesta.
 - **2026-09-03** — Alexander Evgenievich (RUT MIIT) confirmó que la
   petición del MFC probablemente **se perdió dentro de la burocracia
   interna de RUT MIIT** (no fue el MFC quien falló). Pasó el contacto de
