@@ -318,3 +318,73 @@ El único paso fiable que queda es escribir directamente a
    pase por el mismo proxy) en vez de `WebFetch`, o pedirle directamente
    a Angel que pegue el texto del artículo si lo consulta él desde su
    propia conexión.
+
+## Residencia tras el máster: duda abierta sobre la duración (2026-09-14)
+
+**Sin resolver. No dar por buena ninguna de las dos cifras todavía.**
+
+Angel afirma que tras graduarse obtiene una residencia de **dos años**
+para búsqueda de empleo por haber terminado un máster oficial. En una
+respuesta anterior de esta misma sesión se le dijo **12 meses, no
+renovable**. Las dos cifras no pueden ser ciertas a la vez y **no se
+ha podido cerrar** cuál es la correcta.
+
+### Por qué no se cerró
+
+Todas las fuentes autorizadas están **bloqueadas por la política de red
+de este entorno** (`EGRESS_BLOCKED`): `boe.es`, `inclusion.gob.es`
+(donde vive la "Hoja informativa 20" oficial del trámite),
+`comunidad.madrid`, `iberley.es`, `laboral-social.com`,
+`conceptosjuridicos.com`. Solo se pudo trabajar con resúmenes de
+búsqueda web, que son de segunda mano y **se contradicen entre sí**:
+unos dicen "12 meses sin posibilidad de prórroga" y otros "máximo 24
+meses". Esa contradicción es real, no un artefacto de una sola
+búsqueda.
+
+### Lo que sí quedó establecido
+
+- **Hay un cambio normativo reciente que la respuesta anterior no tuvo
+  en cuenta**: el **RD 316/2026, de 14 de abril**, modifica el RD
+  1155/2024 y entró en vigor al día siguiente de publicarse. Cualquier
+  información anterior a abril de 2026 puede estar desfasada.
+- **RD 1155/2024** (en vigor desde el 20/05/2025) ya había ampliado el
+  permiso de búsqueda de empleo **de tres meses a un año**. Ese salto
+  está confirmado; lo que no está confirmado es si después admite
+  prórroga hasta 24.
+- **Mejora concreta del RD 316/2026**: admitida a trámite la solicitud
+  de cambio de estudios a residencia y trabajo, la persona queda
+  **habilitada provisionalmente para trabajar por cuenta ajena**, para
+  que la demora administrativa no frustre la oferta de empleo. Esto
+  elimina un tiempo muerto que antes existía.
+- **Dónde sí hay un "dos años" verificado, y probablemente es el origen
+  de la confusión**: el **arraigo**, que el RD 1155/2024 bajó de tres
+  a **dos años** de residencia continuada. Y, cambio importante, **el
+  tiempo como estudiante ahora computa** para el arraigo (antes no, o
+  al 50 %). Es un "dos años" real de la nueva normativa, pero de un
+  trámite distinto al de búsqueda de empleo.
+- Confirmado en varias fuentes, y coherente entre ellas: durante la
+  autorización de búsqueda de empleo **no se puede trabajar** hasta
+  tener oferta formal y cambiar de situación.
+
+### Cómo cerrarlo (por orden de fiabilidad)
+
+1. **Hoja informativa 20** del Ministerio de Inclusión, "Autorización de
+   residencia para búsqueda de empleo o inicio de proyecto
+   empresarial", en `inclusion.gob.es`. Es la ficha oficial del trámite
+   y Angel sí puede abrirla desde su navegador.
+2. **Texto consolidado del RD 1155/2024 en el BOE**, con el RD 316/2026
+   ya incorporado (`BOE-A-2024-24099`, modificado por `BOE-A-2026-8284`).
+3. **Servicio de Relaciones Internacionales de la USAL**
+   (`rrii@usal.es`, con quien ya hay correspondencia abierta por los
+   convenios Cuba-España) o la Oficina de Extranjería.
+
+**Preguntar a Angel de dónde sacó lo de los dos años**: si viene de una
+fuente oficial, de la USAL o de un abogado, eso pesa más que estas
+búsquedas bloqueadas.
+
+### Dominios a autorizar en el entorno
+
+`boe.es`, `inclusion.gob.es` — para poder verificar normativa en la
+fuente primaria en vez de por resúmenes de terceros. Se suman a los ya
+pendientes (`networks.imdea.org`, `energia.imdea.org`,
+`apidatos.ree.es`, `numpy.org`, `pandas.pydata.org`).
