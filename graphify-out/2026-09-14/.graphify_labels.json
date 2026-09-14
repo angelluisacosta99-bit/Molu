@@ -65,6 +65,7 @@
   "63": "pin.mjs",
   "64": "Ser / Estar (contraste)",
   "65": "Clarify Reference (UX Copy)",
+  "66": "event-validation.mjs",
   "67": "normalizeIgnoreValueEntries",
   "68": "Web Interface Guidelines (Vercel)",
   "69": "Novedades de herramientas de IA",
@@ -197,7 +198,6 @@
   "196": "readLiveServerInfo",
   "197": "Carta de candidatura espontánea — academias de español, Salamanca",
   "198": "Ejercicios",
-  "199": "resolveProject",
   "200": "Ejercicios",
   "201": "Ejercicios",
   "202": "Ejercicios",
@@ -220,5 +220,5 @@
   "219": "irobot_2.py",
   "220": "Lluvia de ideas — TFM",
   "221": "sync-main.sh",
-  "222": "Residencia tras el máster: duda abierta sobre la duración (2026-09-14)"
+  "222": "Residencia tras el máster para búsqueda de empleo: 24 meses (resuelto)"
 }

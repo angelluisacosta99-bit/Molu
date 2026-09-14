@@ -1,16 +1,16 @@
 # Graph Report - Molu  (2026-09-14)
 
 ## Corpus Check
-- 270 files · ~1,348,081 words
+- 270 files · ~1,348,831 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 3279 nodes · 6581 edges · 222 communities (199 shown, 23 thin omitted)
+- 3286 nodes · 6588 edges · 221 communities (198 shown, 23 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 121 edges (avg confidence: 0.84)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `4148841b`
+- Built from commit: `2259cfdf`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -54,7 +54,7 @@
 - live-manual-edit-evidence.mjs
 - context.mjs
 - handleManualEditActivity
-- isGeneratedFile
+- resolveProject
 - impeccable-paths.mjs
 - discoverTargetCandidates
 - parseAnyColor
@@ -81,7 +81,6 @@
 - pin.mjs
 - Ser / Estar (contraste)
 - Clarify Reference (UX Copy)
-- event-validation.mjs
 - normalizeIgnoreValueEntries
 - Web Interface Guidelines (Vercel)
 - Novedades de herramientas de IA
@@ -234,7 +233,7 @@
 - Ideas de TFM: sistemas inteligentes aplicados a energías renovables
 - funciones.py
 - irobot_2.py
-- Lluvia de ideas — TFM
+- 2026-09-14 — PARA LA SESIÓN QUE RETOME ESTO (con los dominios ya autorizados)
 - sync-main.sh
 - Residencia tras el máster para búsqueda de empleo: 24 meses (resuelto)
 
@@ -277,7 +276,7 @@
 - **Impeccable Product-Register Reference Set** — claude_skills_impeccable_reference_product_product, claude_skills_impeccable_reference_quieter_quieter, claude_skills_impeccable_reference_typeset_typeset [INFERRED 0.85]
 - **A1 Interactive Exercise Apps — Shared Paper/Ink Design Template** — docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_cuaderno_unidad6a_como_se_va_a_goya_interactivo_unidad6a_interactivo, docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_cuaderno_unidad6b_cierra_la_ventana_interactivo_unidad6b_interactivo, docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_cuaderno_unidad6c_mi_barrio_es_tranquilo_interactivo_unidad6c_interactivo, docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_cuaderno_practica_mas_3_interactivo_practica_mas_3_interactivo [INFERRED 0.90]
 
-## Communities (222 total, 23 thin omitted)
+## Communities (221 total, 23 thin omitted)
 
 ### Community 0 - "live-browser.js"
 Cohesion: 0.03
@@ -312,8 +311,8 @@ Cohesion: 0.08
 Nodes (69): abortSvelteComponentInjection(), applyEditing(), buildInsertPlaceholderSnapshotFromDom(), buildLocatorForLeaf(), buildPickedAnchorSnapshot(), cancelEditing(), cancelEditingToPicking(), cancelInsertConfigure() (+61 more)
 
 ### Community 8 - "live-commit-manual-edits.mjs"
-Cohesion: 0.10
-Nodes (49): allEntryIds(), argVal(), buildRepairBatch(), candidatesForEntry(), changedFilesSinceSnapshot(), clearAppliedEntries(), collectApplyOwnedFiles(), collectRollbackFiles() (+41 more)
+Cohesion: 0.09
+Nodes (52): hasGeneratedHeader(), HEADER_MARKERS, isGeneratedFile(), isGitIgnored(), allEntryIds(), argVal(), buildRepairBatch(), candidatesForEntry() (+44 more)
 
 ### Community 9 - "design-system.mjs"
 Cohesion: 0.09
@@ -329,7 +328,7 @@ Nodes (45): assembleLiveBrowserScript(), assertLiveBrowserScriptParts(), LIVE_BR
 
 ### Community 12 - "svelte-component.mjs"
 Cohesion: 0.09
-Nodes (47): applyLegacyDeferredAcceptsOnStartup(), appendCssToSvelteStyle(), appendSanitizedCssRule(), applyDeferredSvelteComponentAccepts(), bakeParamValuesInCss(), buildInsertVariantStub(), buildPropContract(), buildPropsScript() (+39 more)
+Nodes (46): applyLegacyDeferredAcceptsOnStartup(), appendCssToSvelteStyle(), appendSanitizedCssRule(), applyDeferredSvelteComponentAccepts(), bakeParamValuesInCss(), buildInsertVariantStub(), buildPropContract(), buildPropsScript() (+38 more)
 
 ### Community 13 - "detect-html.mjs"
 Cohesion: 0.13
@@ -345,7 +344,7 @@ Nodes (33): armPageChatForTyping(), clearSteerAwaitTimer(), collapsePageChat(), 
 
 ### Community 16 - "live-inject.mjs"
 Cohesion: 0.09
-Nodes (41): appendOriginToDirective(), buildTagBlock(), commentClose(), commentOpen(), CONFIG_PATH, detectLineEnding(), __dirname, ensureLiveGitIgnores() (+33 more)
+Nodes (43): appendOriginToDirective(), buildTagBlock(), commentClose(), commentOpen(), CONFIG_PATH, detectLineEnding(), __dirname, ensureLiveGitIgnores() (+35 more)
 
 ### Community 17 - "detect-antipatterns-browser.js"
 Cohesion: 0.08
@@ -356,8 +355,8 @@ Cohesion: 0.08
 Nodes (34): applyStaticDeclaration(), buildBorderOverrideMap(), parseShorthand(), resolveVar(), buildStaticStyleMap(), buildStaticWindow(), collectStaticCssRules(), compareStaticPriority() (+26 more)
 
 ### Community 19 - "insert-ui.mjs"
-Cohesion: 0.09
-Nodes (13): canCreateInsert(), clampPlaceholderSize(), computeInsertPosition(), groupSiblingRows(), hitSiblingInsertGap(), horizontalOverlap(), insertCreateDisabledReason(), insertLineCoords() (+5 more)
+Cohesion: 0.07
+Nodes (25): FORBIDDEN_MANUAL_EDIT_TEXT_CHARS, INSERT_POSITIONS, isValidId(), isValidVariantId(), validateAnnotationFields(), validateEvent(), validateInsertGenerate(), validateManualEditEvent() (+17 more)
 
 ### Community 20 - "Fuentes transcritas overview"
 Cohesion: 0.15
@@ -373,7 +372,7 @@ Nodes (37): allow(), bumpCursorDenial(), cursorBlockMessage(), deny(), done(), e
 
 ### Community 23 - "live-wrap.mjs"
 Cohesion: 0.13
-Nodes (35): argVal(), buildInsertWrapperLines(), computeInsertLine(), INSERT_POSITIONS, insertCli(), isInsertPosition(), resolveElementMatch(), buildSvelteComponentCssAuthoring() (+27 more)
+Nodes (36): argVal(), buildInsertWrapperLines(), computeInsertLine(), INSERT_POSITIONS, insertCli(), isInsertPosition(), resolveElementMatch(), buildSvelteComponentCssAuthoring() (+28 more)
 
 ### Community 24 - "Skill: ejercicio-interactivo"
 Cohesion: 0.08
@@ -420,32 +419,32 @@ Cohesion: 0.12
 Nodes (25): bumpEditCount(), clampGroupedToBudget(), clampToBudget(), dedupeAgainstCache(), depthIsSet(), directiveFooter(), ensureFile(), ensureSession() (+17 more)
 
 ### Community 35 - "manual-edit-routes.mjs"
-Cohesion: 0.18
-Nodes (22): args, buffer, cwd, pageUrlFilter, remaining, compactManualLogText(), summarizeManualApplyFailures(), summarizeManualDiagnostics() (+14 more)
+Cohesion: 0.17
+Nodes (22): clearAppliedEntries(), args, buffer, cwd, pageUrlFilter, remaining, compactManualLogText(), summarizeManualApplyFailures() (+14 more)
 
 ### Community 36 - "live-manual-edit-evidence.mjs"
 Cohesion: 0.15
-Nodes (25): analyzeSourceHint(), buildCandidatesForOp(), buildContextHintsByRef(), collectSearchFiles(), countOps(), decodeBasicHtml(), escapeRegExp(), findContextMatches() (+17 more)
+Nodes (26): analyzeSourceHint(), buildCandidatesForOp(), buildContextHintsByRef(), buildManualEditEvidence(), collectSearchFiles(), countOps(), decodeBasicHtml(), escapeRegExp() (+18 more)
 
 ### Community 37 - "context.mjs"
-Cohesion: 0.12
-Nodes (27): buildUpdateDirective(), compareSemver(), computeUpdateDirective(), DESIGN_NAMES, FALLBACK_DIRS, fetchLatestSkillVersion(), findMonorepoRoot(), hasFallbackWorkspaceChildren() (+19 more)
+Cohesion: 0.13
+Nodes (23): buildUpdateDirective(), compareSemver(), computeUpdateDirective(), DESIGN_NAMES, FALLBACK_DIRS, fetchLatestSkillVersion(), MONOREPO_FALLBACK_PROJECT_DIRS, MONOREPO_MARKER_FILES (+15 more)
 
 ### Community 38 - "handleManualEditActivity"
 Cohesion: 0.18
 Nodes (26): clearStoredManualApplyState(), fetchPendingCount(), handleManualEditActivity(), hidePendingApplyDock(), manualApplyLoadingText(), manualApplyStateKey(), manualEditEventForCurrentPage(), numberOrNull() (+18 more)
 
-### Community 39 - "isGeneratedFile"
-Cohesion: 0.60
-Nodes (4): hasGeneratedHeader(), HEADER_MARKERS, isGeneratedFile(), isGitIgnored()
+### Community 39 - "resolveProject"
+Cohesion: 0.33
+Nodes (6): findMonorepoRoot(), hasFallbackWorkspaceChildren(), hasGitBoundary(), isMonorepoRoot(), resolveProject(), resolveTargetDir()
 
 ### Community 40 - "impeccable-paths.mjs"
 Cohesion: 0.17
 Nodes (21): resolveProjectRoot(), CRITIQUE_DIR, firstExisting(), getDesignSidecarCandidates(), getDesignSidecarPath(), getImpeccableDir(), getLegacyLiveAnnotationsDir(), getLegacyLiveConfigPath() (+13 more)
 
 ### Community 41 - "discoverTargetCandidates"
-Cohesion: 0.23
-Nodes (14): directChildDirs(), discoverRootsForPattern(), discoverTargetCandidates(), escapeRegExp(), expandSimplePattern(), findTargetExample(), isExcludedByWorkspacePattern(), isIgnoredWorkspaceDiscoveryDir() (+6 more)
+Cohesion: 0.18
+Nodes (17): directChildDirs(), discoverRootsForPattern(), discoverTargetCandidates(), escapeRegExp(), expandSimplePattern(), findTargetExample(), isExcludedByWorkspacePattern(), isIgnoredWorkspaceDiscoveryDir() (+9 more)
 
 ### Community 42 - "parseAnyColor"
 Cohesion: 0.12
@@ -468,8 +467,8 @@ Cohesion: 0.20
 Nodes (14): createLiveBrowserSessionState(), clearHandled(), clearScrollY(), clearSession(), isHandled(), loadSession(), markHandled(), nextCheckpointRevision() (+6 more)
 
 ### Community 47 - "session-store.mjs"
-Cohesion: 0.22
-Nodes (11): applyEvent(), baseSnapshot(), COMPLETED_PHASES, getReadableJournalPath(), loadCachedOrRebuild(), getJournalPath(), getSnapshotPath(), rebuildSnapshotFromJournal() (+3 more)
+Cohesion: 0.26
+Nodes (9): applyEvent(), baseSnapshot(), COMPLETED_PHASES, getJournalPath(), getSnapshotPath(), rebuildSnapshotFromJournal(), safeSessionId(), toPendingEvent() (+1 more)
 
 ### Community 48 - "createLiveBrowserDomHelpers"
 Cohesion: 0.19
@@ -512,8 +511,8 @@ Cohesion: 0.22
 Nodes (8): 1. ¿Cómo te ha ido hoy?, Ej. 1 — Pretérito perfecto, Ej. 2 — Frases en pretérito perfecto, Ej. 3 — Forma frases, Ej. 4 — Presente o pretérito perfecto, Ej. 5 — Cambios culturales, Ej. 6 — Leo Verdura, Ejercicios
 
 ### Community 58 - "live.mjs"
-Cohesion: 0.26
-Nodes (13): loadContext(), resolveTargetSelection(), safeRead(), __dirname, ensureServerRunning(), globToRegex(), globToRegex(), resolveFiles() (+5 more)
+Cohesion: 0.32
+Nodes (11): loadContext(), resolveTargetSelection(), safeRead(), __dirname, ensureServerRunning(), globToRegex(), liveCli(), missingLiveContext() (+3 more)
 
 ### Community 59 - "readConfig"
 Cohesion: 0.18
@@ -538,10 +537,6 @@ Nodes (11): Imperativo afirmativo (tú/usted, enclítico), NEM1 Cuaderno Unidad 
 ### Community 65 - "Clarify Reference (UX Copy)"
 Cohesion: 0.20
 Nodes (10): Clarify Reference (UX Copy), Button Label Problem, Confirmation Dialogs Used Sparingly, Error Message Formula (What/Why/How to Fix), Writing for Translation (i18n Copy Expansion), Harden Reference (Edge Case Resilience), Internationalization Hardening, Interaction Design Reference (+2 more)
-
-### Community 66 - "event-validation.mjs"
-Cohesion: 0.25
-Nodes (12): FORBIDDEN_MANUAL_EDIT_TEXT_CHARS, INSERT_POSITIONS, isValidId(), isValidVariantId(), validateAnnotationFields(), validateEvent(), validateInsertGenerate(), validateManualEditEvent() (+4 more)
 
 ### Community 67 - "normalizeIgnoreValueEntries"
 Cohesion: 0.36
@@ -576,8 +571,8 @@ Cohesion: 0.25
 Nodes (9): buildSelectorSegment(), generateSelector(), isElementHidden(), isLikelyHashedClass(), postSerializedFindings(), renderBrowserFindings(), scanResultMeta(), serializeFindings() (+1 more)
 
 ### Community 75 - "resolveContext"
-Cohesion: 0.15
-Nodes (16): contextSourcePath(), contextSourceStatus(), firstExisting(), isCandidateProjectRoot(), isPathInside(), isPathInsideOrEqual(), nearestPackageRootBetween(), nearestProjectLikeRoot() (+8 more)
+Cohesion: 0.20
+Nodes (11): contextSourcePath(), contextSourceStatus(), firstExisting(), isCandidateProjectRoot(), isPathInside(), isPathInsideOrEqual(), resolveCandidateContextSummary(), resolveContext() (+3 more)
 
 ### Community 76 - "isScreenReaderOnlyTextStyle"
 Cohesion: 0.32
@@ -980,8 +975,8 @@ Cohesion: 0.40
 Nodes (9): addRules(), applyInlineIgnores(), getSet(), hasDirectives(), isInlineIgnored(), normalizeRule(), parseInlineIgnores(), parseRuleList() (+1 more)
 
 ### Community 196 - "readLiveServerInfo"
-Cohesion: 0.21
-Nodes (17): isLiveServerPidReachable(), readLiveServerInfo(), completeCli(), completeThroughServer(), parseArgs(), readServerInfo(), collectManualApplyFiles(), manualApplyReplyCommand() (+9 more)
+Cohesion: 0.18
+Nodes (19): isLiveServerPidReachable(), readLiveServerInfo(), completeCli(), completeThroughServer(), parseArgs(), readServerInfo(), collectManualApplyFiles(), manualApplyReplyCommand() (+11 more)
 
 ### Community 197 - "Carta de candidatura espontánea — academias de español, Salamanca"
 Cohesion: 0.40
@@ -1067,33 +1062,33 @@ Nodes (6): ang_degree(), automatico(), cuadrado(), dist(), get_entero(), graph()
 Cohesion: 0.83
 Nodes (3): ang_degree(), dist(), odometry()
 
-### Community 220 - "Lluvia de ideas — TFM"
-Cohesion: 0.33
-Nodes (5): 2026-09-13, 2026-09-13 (continuación: dominios bloqueados para docs oficiales + para la sesión que retome esto), 2026-09-13 (continuación: formato de entrega para Angel), Cómo citar (norma real del Departamento, no una convención inventada), Lluvia de ideas — TFM
+### Community 220 - "2026-09-14 — PARA LA SESIÓN QUE RETOME ESTO (con los dominios ya autorizados)"
+Cohesion: 0.15
+Nodes (12): 2026-09-13, 2026-09-13 (continuación: dominios bloqueados para docs oficiales + para la sesión que retome esto), 2026-09-13 (continuación: formato de entrega para Angel), 2026-09-14 — PARA LA SESIÓN QUE RETOME ESTO (con los dominios ya autorizados), Artefactos publicados (republicar con el mismo `url`, no crear otro), Cómo citar (norma real del Departamento, no una convención inventada), Datos de extranjería ya verificados (no reinvestigar), El contexto personal que cambió la ecuación (+4 more)
 
 ### Community 222 - "Residencia tras el máster para búsqueda de empleo: 24 meses (resuelto)"
 Cohesion: 0.29
 Nodes (7): Consecuencia práctica, Cómo se resolvió, y la lección, Detalles del trámite (Hoja informativa 20 del Ministerio de Inclusión), Dominios a autorizar en el entorno, ¿Habilita a trabajar?, La norma, verificada en el BOE, Residencia tras el máster para búsqueda de empleo: 24 meses (resuelto)
 
 ## Knowledge Gaps
-- **855 isolated node(s):** `Contexto del alumno`, `Estado de las becas evaluadas`, `Texto oficial de la convocatoria (documento firmado, aportado por Angel)`, `Hallazgo crítico: cláusula de nacionalidad/estancia`, `Enviados` (+850 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1049 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **861 isolated node(s):** `Lo primero: comprobar los dominios`, `El estado real del TFM: NINGÚN tema está decidido`, `El contexto personal que cambió la ecuación`, `Datos de extranjería ya verificados (no reinvestigar)`, `Tareas concretas heredadas` (+856 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1055 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **23 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `readLiveServerInfo()` connect `readLiveServerInfo` to `impeccable-paths.mjs`, `live-poll.mjs`, `live.mjs`, `live-server.mjs`?**
-  _High betweenness centrality (0.003) - this node is a cross-community bridge._
-- **Why does `loadContext()` connect `live.mjs` to `context.mjs`, `resolveContext`, `live-server.mjs`, `cli`, `context-signals.mjs`?**
+- **Why does `readBuffer()` connect `manual-edit-routes.mjs` to `live-manual-edit-evidence.mjs`, `manual-apply.mjs`, `live-commit-manual-edits.mjs`, `live-wrap.mjs`, `live-accept.mjs`?**
   _High betweenness centrality (0.002) - this node is a cross-community bridge._
-- **Why does `isGeneratedFile()` connect `isGeneratedFile` to `live-commit-manual-edits.mjs`, `live-accept.mjs`, `live-manual-edit-evidence.mjs`, `live-wrap.mjs`?**
+- **Why does `getCritiqueDir()` connect `critique-storage.mjs` to `impeccable-paths.mjs`, `context-signals.mjs`?**
   _High betweenness centrality (0.002) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `initGlobalBar()` (e.g. with `hideAgentPollTooltip()` and `onDetectMessage()`) actually correct?**
   _`initGlobalBar()` has 7 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `Contexto del alumno`, `Estado de las becas evaluadas`, `Texto oficial de la convocatoria (documento firmado, aportado por Angel)` to the rest of the system?**
-  _855 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `Lo primero: comprobar los dominios`, `El estado real del TFM: NINGÚN tema está decidido`, `El contexto personal que cambió la ecuación` to the rest of the system?**
+  _861 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `live-browser.js` be split into smaller, more focused modules?**
   _Cohesion score 0.02863984674329502 - nodes in this community are weakly interconnected._
 - **Should `checks.mjs` be split into smaller, more focused modules?**
   _Cohesion score 0.04078624078624079 - nodes in this community are weakly interconnected._
+- **Should `index.mjs` be split into smaller, more focused modules?**
+  _Cohesion score 0.06142410015649452 - nodes in this community are weakly interconnected._
