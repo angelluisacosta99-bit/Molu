@@ -38,7 +38,7 @@
   "36": "live-manual-edit-evidence.mjs",
   "37": "context.mjs",
   "38": "handleManualEditActivity",
-  "39": "isGeneratedFile",
+  "39": "resolveProject",
   "40": "impeccable-paths.mjs",
   "41": "discoverTargetCandidates",
   "42": "parseAnyColor",
@@ -65,7 +65,6 @@
   "63": "pin.mjs",
   "64": "Ser / Estar (contraste)",
   "65": "Clarify Reference (UX Copy)",
-  "66": "event-validation.mjs",
   "67": "normalizeIgnoreValueEntries",
   "68": "Web Interface Guidelines (Vercel)",
   "69": "Novedades de herramientas de IA",
@@ -218,7 +217,7 @@
   "217": "Ideas de TFM: sistemas inteligentes aplicados a energías renovables",
   "218": "funciones.py",
   "219": "irobot_2.py",
-  "220": "Lluvia de ideas — TFM",
+  "220": "2026-09-14 — PARA LA SESIÓN QUE RETOME ESTO (con los dominios ya autorizados)",
   "221": "sync-main.sh",
   "222": "Residencia tras el máster para búsqueda de empleo: 24 meses (resuelto)"
 }
