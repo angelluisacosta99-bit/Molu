@@ -46,7 +46,9 @@ que esa sesión NO debe volver a proponer como aportación propia:
 2. Comparativa de modelos fundacionales de series temporales → hecho
    varias veces en 2026.
 3. "Medir cuánta precisión de pronóstico se traslada a la decisión" →
-   es el título literal de Yin, Lei y Feng (2024, *IEEE TPWRS*), y el
+   es la pregunta que enuncia el título de Yin, Lei y Feng (2024,
+   *IEEE TPWRS*) — no con esas palabras exactas, pero sí el mismo
+   problema — y el
    campo se llama *decision-focused learning* / Smart
    Predict-then-Optimize (Elmachtoub y Grigas, 2022).
 
@@ -80,16 +82,25 @@ dedicada. Este es exactamente el error que ya se cometió tres veces.
 
 ### Datos de extranjería ya verificados (no reinvestigar)
 
+Verificados en fuente primaria (BOE y Hoja informativa 20 del
+Ministerio de Inclusión, alcanzados vía Firecrawl) **salvo el último,
+que va marcado aparte**:
+
 - Residencia para búsqueda de empleo tras el máster: **24 meses
-  improrrogables** (DA 17ª Ley 14/2013, ampliada de 12 a 24 por la Ley
+  improrrogables** (DA 17.ª Ley 14/2013, ampliada de 12 a 24 por la Ley
   28/2022). **Las gestorías siguen publicando 12 — es la cifra
   derogada.**
 - El permiso de estudiante ya habilita a trabajar **hasta 30 h
   semanales** (RD 629/2022).
 - El permiso de investigador de la Ley 14/2013 **no aplica la situación
   nacional de empleo**.
-- El RD 316/2026 habilita **provisionalmente para trabajar** en cuanto
-  se admite a trámite el cambio de estudios a residencia y trabajo.
+**Este NO está verificado, pese al título de la sección:**
+
+- El RD 316/2026 habilitaría **provisionalmente para trabajar** en
+  cuanto se admite a trámite el cambio de estudios a residencia y
+  trabajo. **Procede de resúmenes de terceros, no del texto del BOE
+  leído en directo. Confirmarlo antes de apoyarse en él para cualquier
+  decisión** — el "no reinvestigar" del título no aplica a este punto.
 
 ### Tareas concretas heredadas
 

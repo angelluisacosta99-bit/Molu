@@ -1895,3 +1895,51 @@ campo `query` vuelve vacío en la respuesta y `total` sale idéntico
 Scite precisamente para verificar citas, una llamada mal formada da
 falsa sensación de haber verificado: comprobar siempre que el `query`
 devuelto coincide con lo que se pidió.
+
+
+---
+
+## 2026-09-14 — Lección (ampliación): al propagar una corrección, el archivo "resumen para la siguiente sesión" va PRIMERO
+
+Amplía la entrada de arriba sobre propagar una corrección a sus reglas
+hermanas. Se registra por la regla de `CLAUDE.md` de "3+ rondas sobre lo
+mismo": el PR #113 necesitó **tres rondas** de revisión→corrección→
+revisión y en las tres apareció **la misma familia de fallo**, nunca
+hallazgos nuevos e independientes.
+
+**La saga.** Se verificó que la residencia para búsqueda de empleo tras
+el máster son 24 meses y no 12 (DA 17.ª de la Ley 14/2013, ampliada por
+la Ley 28/2022). La corrección se aplicó a `becas-y-tramites-2026-2027.md`
+y se dio el trabajo por terminado.
+
+- **Ronda 1** encontró que `ideas-tfm-energias-renovables.md` seguía con
+  la cifra derogada, dentro de una lista titulada "hechos verificados",
+  y con una remisión que llamaba "sin aclarar" a un dato que el archivo
+  destino ya daba por resuelto.
+- **Ronda 2**, tras corregir eso, encontró que `lluvia-de-ideas.md`
+  —que ni siquiera se había abierto— conservaba otra afirmación de la
+  misma tanda sin propagar, y presentaba como "verificado" un dato que
+  el archivo hermano marcaba explícitamente como no confirmado.
+- **Ronda 3** fue la que salió limpia.
+
+**Lo nuevo, y lo que más importa:** el archivo que hay que revisar
+**primero** al propagar una corrección es el que la sesión mantiene como
+**resumen/traspaso para la siguiente sesión** (aquí,
+`lluvia-de-ideas.md`). Razón: sus afirmaciones no se leen como
+información sino como **órdenes**. Ese archivo decía "Datos de
+extranjería ya verificados (**no reinvestigar**)" e incluía debajo un
+dato sin confirmar — es decir, el error no solo persistía, sino que
+venía con una instrucción activa para que nadie lo detectara.
+
+**Procedimiento concreto para la próxima vez.** Al corregir un hecho que
+aparece en más de un sitio, antes de dar por cerrado el trabajo:
+
+1. `grep -rn` del dato viejo **y** del nuevo por todo el repositorio —
+   no fiarse de recordar dónde se escribió.
+2. Abrir primero los archivos de traspaso/resumen entre sesiones, y
+   dentro de ellos revisar en especial lo que esté bajo epígrafes del
+   tipo "ya verificado", "no reinvestigar", "cerrado" o "resuelto".
+3. Comprobar que cada remisión cruzada sigue describiendo correctamente
+   el estado del archivo destino: una remisión que dice "pendiente"
+   apuntando a una sección titulada "(resuelto)" es el mismo fallo
+   visto desde el otro lado.

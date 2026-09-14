@@ -142,8 +142,9 @@ confianza: una autorización de **estancia por estudios** (lo que recibiría
 Angel al llegar en septiembre) **no cuenta como residencia** a efectos de
 estas becas — probable exclusión, salvo que consiga la condición de
 residente antes del cierre de plazo. **Pendiente de verificar contra el texto
-literal del art. 4.1.d) del RD 1721/2007 en el BOE** — bloqueado por proxy de
-red en todas las sesiones probadas hasta ahora (ver sección de acceso).
+literal del art. 4.1.d) del RD 1721/2007 en el BOE** — ya alcanzable vía
+Firecrawl desde el 2026-09-14, pendiente solo de rematar (ver punto 6 de la
+sección de acceso).
 
 ## Correspondencia oficial
 
@@ -313,11 +314,20 @@ El único paso fiable que queda es escribir directamente a
    algo que cambie de sesión a sesión (a diferencia del bloqueo de
    `becas.usal.es`/`bisite.usal.es` etc., que sí resultó ser por
    sesión). El mismo bloqueo aplica a `auip.org` (ver punto 5, arriba).
-   Alternativas para una futura sesión: probar con
-   `agent-browser` (navegador con su propia salida de red, puede que no
-   pase por el mismo proxy) en vez de `WebFetch`, o pedirle directamente
-   a Angel que pegue el texto del artículo si lo consulta él desde su
-   propia conexión.
+   **ACTUALIZACIÓN 2026-09-14: esto ya es resoluble.** El conector MCP
+   de **Firecrawl** descarga desde su propia infraestructura y no pasa
+   por el proxy de salida del contenedor: ese mismo día alcanzó sin
+   problema el texto consolidado del BOE (Ley 14/2013 y RD 1155/2024) y
+   la Hoja informativa 20 de `inclusion.gob.es`. Usarlo aquí antes que
+   `agent-browser` o que molestar a Angel.
+
+   Un primer sondeo con Firecrawl localizó el RD 1721/2007 en el BOE
+   (`BOE-A-2008-821`, art. 4 "Condiciones de los beneficiarios") y
+   varias resoluciones que emplean la fórmula "condición de residente,
+   quedando excluidos de concurrir a las becas" — **coherente con la
+   conclusión ya registrada arriba**, pero **el texto literal del art.
+   4.1.d) sigue sin extraerse**. Sigue pendiente; ya no por bloqueo,
+   solo por no haberlo rematado.
 
 ## Residencia tras el máster para búsqueda de empleo: 24 meses (resuelto)
 
@@ -421,8 +431,8 @@ máster no hay oferta cerrada: son dos años para buscar, no uno.
 
 ### Dominios a autorizar en el entorno
 
-`boe.es` e `inclusion.gob.es`, para verificar normativa en fuente
-primaria sin depender de Firecrawl. **La lista completa y canónica está
+Para verificar normativa en fuente primaria sin depender de Firecrawl.
+**La lista completa y canónica está
 en la entrada del 2026-09-14 de
 `../trabajo-fin-de-master/lluvia-de-ideas.md`** — mantenerla solo ahí,
 para que no haya copias parciales que se desincronicen.

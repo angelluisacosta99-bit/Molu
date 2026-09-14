@@ -132,7 +132,10 @@ El frente activo en 2026 son los **modelos fundacionales de series
 temporales (TSFM)** aplicados a energía — predicción *zero-shot* sin
 entrenar un modelo por dataset. Oleada de trabajo muy reciente en
 arXiv, toda de 2026: benchmark FETS sobre si los modelos fundacionales
-generalizan en series de energía (2604.22328); si pueden sustituir a
+generalizan en series de energía (arXiv 2604.22328; **es el preprint de
+lo que en este mismo archivo se cita después como artículo de *Energy
+and AI*, 2026** — verificar cuál de las dos versiones se cita al
+final); si pueden sustituir a
 los modelos específicos de mercado eléctrico, **incluyendo arbitraje de
 batería** (2609.00089); predicción de carga informada por covariables
 con TSFM (2609.06656, y la variante explicable de KIT 2604.28149);
@@ -195,8 +198,8 @@ existe.
 gateway de red de este entorno (`connect_rejected`, política de la
 organización). No es un fallo de REData. Para tocar los datos desde una
 sesión de Claude Code hay que **autorizar `apidatos.ree.es`** junto con
-`numpy.org` y `pandas.pydata.org` (ver la entrada del 2026-09-13 en
-`lluvia-de-ideas.md`). Alternativa
+`numpy.org` y `pandas.pydata.org` (la lista canónica y al día está en
+la entrada del **2026-09-14** de `lluvia-de-ideas.md`). Alternativa
 sin depender de eso: descargar los datos desde VS Code en la máquina de
 Angel, que es donde el plan ya dice que corre el código pesado.
 
@@ -296,6 +299,13 @@ literatura verificada:
   192 pronósticos y muestran que RMSE/MAE se correlacionan solo
   débilmente con el beneficio del BESS — casi palabra por palabra el
   "hallazgo" que el borrador presentaba como propio.
+
+**Pendiente:** estas cinco referencias (Mc Garrigle y Leahy 2015; Wang
+et al. 2016; Campos et al. 2022; Kiedanski et al. 2019; Maciejowska et
+al., **sin año todavía**) **no están en `Bibliografia.bib`**, porque sus
+metadatos no se han verificado con Scite. Según el flujo fijado en
+`lluvia-de-ideas.md`, verificarlas y añadirlas antes de usarlas en
+`main.tex`.
 
 ### Fallo 2 (bloqueante): faltaba el marco teórico del campo
 
@@ -583,9 +593,12 @@ entorno** (`EGRESS_BLOCKED`), igual que pasó con `numpy.org` y
 `pandas.pydata.org`. Todo lo anterior se obtuvo por búsqueda web
 indirecta, no leyendo sus páginas. Para verificar la convocatoria
 vigente, las líneas de investigación exactas y los correos de contacto
-hace falta autorizar `energia.imdea.org` y `jobs.energy.imdea.org` (y,
-según el instituto que sea, `networks.imdea.org` o
-`software.imdea.org`) en la configuración de red del entorno.
+hace falta autorizar los dominios de IMDEA en la configuración de red
+del entorno. **La lista canónica está en la entrada del 2026-09-14 de
+`lluvia-de-ideas.md`** — no mantener copias parciales aquí. (Nota: a
+esa lista habría que añadir `software.imdea.org` solo si en algún
+momento el instituto relevante pasara a ser IMDEA Software; hoy no lo
+es, Arlet está en Networks.)
 
 ## Camino D: pivotar a redes móviles (candidato, NO verificado del todo)
 
@@ -740,8 +753,10 @@ Cuatro hechos verificados que cambian el cálculo:
    publicando**). Se pide en los 60 días naturales previos a la
    expiración de la autorización de estudios, o en los 90 posteriores
    con riesgo de procedimiento sancionador. **No habilita por sí sola a
-   trabajar**, pero el RD 316/2026 habilita provisionalmente en cuanto
-   se admite a trámite la solicitud de cambio a residencia y trabajo.
+   trabajar**. El RD 316/2026 habilitaría provisionalmente en cuanto se
+   admite a trámite la solicitud de cambio a residencia y trabajo, pero
+   **ese punto concreto procede de resúmenes de terceros y sigue sin
+   confirmar en el BOE**.
    Detalle completo y fuentes en
    `../admision-y-becas/becas-y-tramites-2026-2027.md`.
 
@@ -767,9 +782,11 @@ energético dentro del dominio de redes.
   curriculares exigirían convenio USAL-IMDEA y resolver el
   desplazamiento. No comprobado ninguno de los dos puntos.
 - Plazas abiertas actuales en IMDEA Energía con perfil computacional.
-- La cuantía exacta del IPREM vigente para el requisito de medios
-  económicos del permiso de búsqueda de empleo, **calculada sobre sus
-  24 meses**, no sobre 12.
+- El requisito de medios económicos del permiso de búsqueda de empleo:
+  **tanto la cuantía del IPREM vigente como la base de cálculo**. Que
+  el permiso dure 24 meses no implica que haya que acreditar medios
+  para los 24 — ni el texto del BOE ni la Hoja informativa 20 lo dicen.
+  Ambas cosas están pendientes.
 - `networks.imdea.org`, `energia.imdea.org` y `jobs.energy.imdea.org`
   siguen bloqueados por la política de red del entorno. Todo lo anterior
   se obtuvo por búsqueda indirecta. **La lista completa y canónica de
