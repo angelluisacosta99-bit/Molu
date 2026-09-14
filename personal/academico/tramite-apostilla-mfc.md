@@ -131,6 +131,15 @@ conversación de Claude Code.
     va a escribir en paralelo al **chat de ayuda de Госуслуги**
     (mismo motivo: exención de tasa no visible al presentar de nuevo
     la solicitud) — segunda vía en paralelo al correo del MFC.
+  - **2026-09-14 — Avisado Alexander Evgenievich de que ya no hace
+    falta ir en persona.** Correo enviado a `vanshin.ae@yandex.ru`
+    informando que llegó la notificación del MFC (№ 7638974873/У-04) y
+    que el asunto se resolvió por esa vía, así que no hace falta que
+    vaya al MFC de RUT MIIT como se había ofrecido — y agradeciéndole
+    su ayuda. **No se mencionó la exención de tasa como algo confirmado
+    en la práctica**, porque ese punto sigue sin resolver (correo a
+    `md@mfc.mos.ru` y chat de Госуслуги, ambos pendientes de
+    respuesta).
 - **2026-09-03** — Alexander Evgenievich (RUT MIIT) confirmó que la
   petición del MFC probablemente **se perdió dentro de la burocracia
   interna de RUT MIIT** (no fue el MFC quien falló). Pasó el contacto de
