@@ -286,12 +286,12 @@ identificado en la revisión del 2026-09-14. Eso convierte el TFM en el
 complemento natural de su línea, que es la mejor posición posible para
 pedir tutoría.
 
-**Dos cosas sin verificar, no darlas por buenas:**
-- **No está confirmado que sea la profesora que dio clase a Arlet.**
-  Angel la recordaba como "Sara o Zara"; el nombre y el departamento
-  encajan, pero no se ha podido confirmar que imparta docencia en el
-  MUSI ni en qué asignatura. Confirmarlo preguntando a Arlet directamente
-  antes de mencionarlo en un correo.
+**Confirmado por Angel el 2026-09-14: sí es la profesora que dio clase a
+Arlet.** Eso da además una vía de presentación personal en el primer
+correo (mencionarla una vez, de pasada, sin apoyarse en ella como
+argumento).
+
+**Lo que sigue sin verificar:**
 - **Su categoría aparece distinta según la fuente**: la ficha de BISITE
   dice "Profesora Titular de Universidad" y el portal de producción
   científica de la USAL dice "Catedrática de Universidad". Usar el
