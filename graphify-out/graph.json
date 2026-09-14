@@ -5795,18 +5795,6 @@
       "source_location": "L483"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_inject_globtoregex",
-      "label": "globToRegex()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 16,
-      "community_name": "live-inject.mjs",
-      "file_type": "code",
-      "norm_label": "globtoregex()",
-      "source_file": ".claude/skills/impeccable/scripts/live-inject.mjs",
-      "source_location": "L291"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_inject_injectcli",
       "label": "injectCli()",
       "_callable": true,
@@ -5877,18 +5865,6 @@
       "norm_label": "removetag()",
       "source_file": ".claude/skills/impeccable/scripts/live-inject.mjs",
       "source_location": "L428"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_inject_resolvefiles",
-      "label": "resolveFiles()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 16,
-      "community_name": "live-inject.mjs",
-      "file_type": "code",
-      "norm_label": "resolvefiles()",
-      "source_file": ".claude/skills/impeccable/scripts/live-inject.mjs",
-      "source_location": "L243"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_inject_resolvegitinfoexcludepath",
@@ -7583,30 +7559,6 @@
       "source_location": "L7"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_session_store_createlivesessionstore_getreadablejournalpath",
-      "label": "getReadableJournalPath()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 196,
-      "community_name": "readLiveServerInfo",
-      "file_type": "code",
-      "norm_label": "getreadablejournalpath()",
-      "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
-      "source_location": "L22"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_session_store_createlivesessionstore_loadcachedorrebuild",
-      "label": "loadCachedOrRebuild()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 196,
-      "community_name": "readLiveServerInfo",
-      "file_type": "code",
-      "norm_label": "loadcachedorrebuild()",
-      "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
-      "source_location": "L13"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_status_fetchserverstatus",
       "label": "fetchServerStatus()",
       "_callable": true,
@@ -7653,306 +7605,6 @@
       "norm_label": "statuscli()",
       "source_file": ".claude/skills/impeccable/scripts/live-status.mjs",
       "source_location": "L25"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_clearmanualapplytransaction",
-      "label": "clearManualApplyTransaction()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "clearmanualapplytransaction()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L751"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_collectmanualapplyfiles",
-      "label": "collectManualApplyFiles()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "collectmanualapplyfiles()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L819"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller",
-      "label": "createManualApplyController()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "createmanualapplycontroller()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L15"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_cancelpendingevents",
-      "label": "cancelPendingEvents()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "cancelpendingevents()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L242"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_getdeferred",
-      "label": "getDeferred()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "getdeferred()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L170"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_hastimedoutid",
-      "label": "hasTimedOutId()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "hastimedoutid()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L174"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_prunestaleevidence",
-      "label": "pruneStaleEvidence()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "prunestaleevidence()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L209"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_pushapplyeventandwait",
-      "label": "pushApplyEventAndWait()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "pushapplyeventandwait()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L35"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_referencedmanualapplyevidencepaths",
-      "label": "referencedManualApplyEvidencePaths()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "referencedmanualapplyevidencepaths()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L198"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_rejectdeferred",
-      "label": "rejectDeferred()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "rejectdeferred()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L188"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_resolvedeferred",
-      "label": "resolveDeferred()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "resolvedeferred()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L178"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_rollbacktimedoutreply",
-      "label": "rollbackTimedOutReply()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "rollbacktimedoutreply()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L229"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_tombstonetimedoutapplyid",
-      "label": "tombstoneTimedOutApplyId()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "tombstonetimedoutapplyid()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L27"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_manualapplyevidencedir",
-      "label": "manualApplyEvidenceDir()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "manualapplyevidencedir()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L333"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_manualapplytransactionpath",
-      "label": "manualApplyTransactionPath()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "manualapplytransactionpath()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L712"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_normalizemanualapplyevidencepath",
-      "label": "normalizeManualApplyEvidencePath()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "normalizemanualapplyevidencepath()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L337"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_normalizeprojectfile",
-      "label": "normalizeProjectFile()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "normalizeprojectfile()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L837"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_readmanualapplytransaction",
-      "label": "readManualApplyTransaction()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "readmanualapplytransaction()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L716"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_removemanualapplyevidence",
-      "label": "removeManualApplyEvidence()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "removemanualapplyevidence()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L347"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_rollbackapplysnapshot",
-      "label": "rollbackApplySnapshot()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "rollbackapplysnapshot()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L845"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_rollbackmanualapplytransaction",
-      "label": "rollbackManualApplyTransaction()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "rollbackmanualapplytransaction()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L766"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_snapshotapplyeventfiles",
-      "label": "snapshotApplyEventFiles()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "snapshotapplyeventfiles()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L696"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualapplyevent",
-      "label": "summarizeManualApplyEvent()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "summarizemanualapplyevent()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L888"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_writemanualapplyevidence",
-      "label": "writeManualApplyEvidence()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "writemanualapplyevidence()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L325"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_writemanualapplytransaction",
-      "label": "writeManualApplyTransaction()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "writemanualapplytransaction()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L726"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_browser_injected_index_addbrowserfindings",
@@ -8805,78 +8457,6 @@
       "norm_label": "waitforvisualpaint()",
       "source_file": ".claude/skills/impeccable/scripts/detector/browser/injected/index.mjs",
       "source_location": "L1167"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_findmonoreporoot",
-      "label": "findMonorepoRoot()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 208,
-      "community_name": "resolveProject",
-      "file_type": "code",
-      "norm_label": "findmonoreporoot()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L215"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_hasfallbackworkspacechildren",
-      "label": "hasFallbackWorkspaceChildren()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 208,
-      "community_name": "resolveProject",
-      "file_type": "code",
-      "norm_label": "hasfallbackworkspacechildren()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L244"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_hasgitboundary",
-      "label": "hasGitBoundary()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 208,
-      "community_name": "resolveProject",
-      "file_type": "code",
-      "norm_label": "hasgitboundary()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L240"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_ismonoreporoot",
-      "label": "isMonorepoRoot()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 208,
-      "community_name": "resolveProject",
-      "file_type": "code",
-      "norm_label": "ismonoreporoot()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L234"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_resolveproject",
-      "label": "resolveProject()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 208,
-      "community_name": "resolveProject",
-      "file_type": "code",
-      "norm_label": "resolveproject()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L152"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_resolvetargetdir",
-      "label": "resolveTargetDir()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 208,
-      "community_name": "resolveProject",
-      "file_type": "code",
-      "norm_label": "resolvetargetdir()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L203"
     },
     {
       "id": "claude_skills_impeccable_scripts_hook_admin_addignorefile",
@@ -9995,90 +9575,6 @@
       "source_location": "L916"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_compactmanuallogtext",
-      "label": "compactManualLogText()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 223,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "compactmanuallogtext()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L934"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualapplyfailures",
-      "label": "summarizeManualApplyFailures()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 223,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "summarizemanualapplyfailures()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L900"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualdiagnostics",
-      "label": "summarizeManualDiagnostics()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 223,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "summarizemanualdiagnostics()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L913"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanuallogfile",
-      "label": "summarizeManualLogFile()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 223,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "summarizemanuallogfile()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L927"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_edit_routes_createmanualeditroutes",
-      "label": "createManualEditRoutes()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 223,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "createmanualeditroutes()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-edit-routes.mjs",
-      "source_location": "L17"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_edit_routes_sendjson",
-      "label": "sendJson()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 223,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "sendjson()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-edit-routes.mjs",
-      "source_location": "L340"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_edit_routes_summarizependingmanualeditbatch",
-      "label": "summarizePendingManualEditBatch()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 223,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "summarizependingmanualeditbatch()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-edit-routes.mjs",
-      "source_location": "L345"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_insert_argval",
       "label": "argVal()",
       "_callable": true,
@@ -11181,6 +10677,30 @@
       "norm_label": "reindentcontent()",
       "source_file": ".claude/skills/impeccable/scripts/live-accept.mjs",
       "source_location": "L325"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_accept_scrubmanualeditsagainstfile",
+      "label": "scrubManualEditsAgainstFile()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "live-accept.mjs",
+      "file_type": "code",
+      "norm_label": "scrubmanualeditsagainstfile()",
+      "source_file": ".claude/skills/impeccable/scripts/live-accept.mjs",
+      "source_location": "L230"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_accept_scrubmanualeditsagainstoriginalblock",
+      "label": "scrubManualEditsAgainstOriginalBlock()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "live-accept.mjs",
+      "file_type": "code",
+      "norm_label": "scrubmanualeditsagainstoriginalblock()",
+      "source_file": ".claude/skills/impeccable/scripts/live-accept.mjs",
+      "source_location": "L183"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_accept_searchdir",
@@ -14075,52 +13595,112 @@
       "source_location": "L18"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_accept_scrubmanualeditsagainstfile",
-      "label": "scrubManualEditsAgainstFile()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "manual-edits-buffer.mjs",
-      "file_type": "code",
-      "norm_label": "scrubmanualeditsagainstfile()",
-      "source_file": ".claude/skills/impeccable/scripts/live-accept.mjs",
-      "source_location": "L230"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_accept_scrubmanualeditsagainstoriginalblock",
-      "label": "scrubManualEditsAgainstOriginalBlock()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "manual-edits-buffer.mjs",
-      "file_type": "code",
-      "norm_label": "scrubmanualeditsagainstoriginalblock()",
-      "source_file": ".claude/skills/impeccable/scripts/live-accept.mjs",
-      "source_location": "L183"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_commit_manual_edits_clearappliedentries",
-      "label": "clearAppliedEntries()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "manual-edits-buffer.mjs",
-      "file_type": "code",
-      "norm_label": "clearappliedentries()",
-      "source_file": ".claude/skills/impeccable/scripts/live-commit-manual-edits.mjs",
-      "source_location": "L555"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_discard_manual_edits_argval",
       "label": "argVal()",
       "_callable": true,
       "_origin": "ast",
       "community": 35,
-      "community_name": "manual-edits-buffer.mjs",
+      "community_name": "manual-edit-routes.mjs",
       "file_type": "code",
       "norm_label": "argval()",
       "source_file": ".claude/skills/impeccable/scripts/live-discard-manual-edits.mjs",
       "source_location": "L21"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_compactmanuallogtext",
+      "label": "compactManualLogText()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "manual-edit-routes.mjs",
+      "file_type": "code",
+      "norm_label": "compactmanuallogtext()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L934"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualapplyfailures",
+      "label": "summarizeManualApplyFailures()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "manual-edit-routes.mjs",
+      "file_type": "code",
+      "norm_label": "summarizemanualapplyfailures()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L900"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualdiagnostics",
+      "label": "summarizeManualDiagnostics()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "manual-edit-routes.mjs",
+      "file_type": "code",
+      "norm_label": "summarizemanualdiagnostics()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L913"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanuallogfile",
+      "label": "summarizeManualLogFile()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "manual-edit-routes.mjs",
+      "file_type": "code",
+      "norm_label": "summarizemanuallogfile()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L927"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_edit_evidence_buildmanualeditevidence",
+      "label": "buildManualEditEvidence()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "manual-edit-routes.mjs",
+      "file_type": "code",
+      "norm_label": "buildmanualeditevidence()",
+      "source_file": ".claude/skills/impeccable/scripts/live-manual-edit-evidence.mjs",
+      "source_location": "L39"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_edit_routes_createmanualeditroutes",
+      "label": "createManualEditRoutes()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "manual-edit-routes.mjs",
+      "file_type": "code",
+      "norm_label": "createmanualeditroutes()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-edit-routes.mjs",
+      "source_location": "L17"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_edit_routes_sendjson",
+      "label": "sendJson()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "manual-edit-routes.mjs",
+      "file_type": "code",
+      "norm_label": "sendjson()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-edit-routes.mjs",
+      "source_location": "L340"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_edit_routes_summarizependingmanualeditbatch",
+      "label": "summarizePendingManualEditBatch()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "manual-edit-routes.mjs",
+      "file_type": "code",
+      "norm_label": "summarizependingmanualeditbatch()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-edit-routes.mjs",
+      "source_location": "L345"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_manual_edits_buffer_countbypage",
@@ -14128,7 +13708,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 35,
-      "community_name": "manual-edits-buffer.mjs",
+      "community_name": "manual-edit-routes.mjs",
       "file_type": "code",
       "norm_label": "countbypage()",
       "source_file": ".claude/skills/impeccable/scripts/live/manual-edits-buffer.mjs",
@@ -14140,7 +13720,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 35,
-      "community_name": "manual-edits-buffer.mjs",
+      "community_name": "manual-edit-routes.mjs",
       "file_type": "code",
       "norm_label": "getbufferpath()",
       "source_file": ".claude/skills/impeccable/scripts/live/manual-edits-buffer.mjs",
@@ -14152,7 +13732,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 35,
-      "community_name": "manual-edits-buffer.mjs",
+      "community_name": "manual-edit-routes.mjs",
       "file_type": "code",
       "norm_label": "readbuffer()",
       "source_file": ".claude/skills/impeccable/scripts/live/manual-edits-buffer.mjs",
@@ -14164,7 +13744,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 35,
-      "community_name": "manual-edits-buffer.mjs",
+      "community_name": "manual-edit-routes.mjs",
       "file_type": "code",
       "norm_label": "readbufferinternal()",
       "source_file": ".claude/skills/impeccable/scripts/live/manual-edits-buffer.mjs",
@@ -14176,7 +13756,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 35,
-      "community_name": "manual-edits-buffer.mjs",
+      "community_name": "manual-edit-routes.mjs",
       "file_type": "code",
       "norm_label": "readbufferstrict()",
       "source_file": ".claude/skills/impeccable/scripts/live/manual-edits-buffer.mjs",
@@ -14188,7 +13768,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 35,
-      "community_name": "manual-edits-buffer.mjs",
+      "community_name": "manual-edit-routes.mjs",
       "file_type": "code",
       "norm_label": "removeentries()",
       "source_file": ".claude/skills/impeccable/scripts/live/manual-edits-buffer.mjs",
@@ -14200,7 +13780,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 35,
-      "community_name": "manual-edits-buffer.mjs",
+      "community_name": "manual-edit-routes.mjs",
       "file_type": "code",
       "norm_label": "stageentry()",
       "source_file": ".claude/skills/impeccable/scripts/live/manual-edits-buffer.mjs",
@@ -14212,7 +13792,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 35,
-      "community_name": "manual-edits-buffer.mjs",
+      "community_name": "manual-edit-routes.mjs",
       "file_type": "code",
       "norm_label": "truncatebuffer()",
       "source_file": ".claude/skills/impeccable/scripts/live/manual-edits-buffer.mjs",
@@ -14224,7 +13804,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 35,
-      "community_name": "manual-edits-buffer.mjs",
+      "community_name": "manual-edit-routes.mjs",
       "file_type": "code",
       "norm_label": "writebuffer()",
       "source_file": ".claude/skills/impeccable/scripts/live/manual-edits-buffer.mjs",
@@ -14265,18 +13845,6 @@
       "norm_label": "buildcontexthintsbyref()",
       "source_file": ".claude/skills/impeccable/scripts/live-manual-edit-evidence.mjs",
       "source_location": "L108"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_edit_evidence_buildmanualeditevidence",
-      "label": "buildManualEditEvidence()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 36,
-      "community_name": "live-manual-edit-evidence.mjs",
-      "file_type": "code",
-      "norm_label": "buildmanualeditevidence()",
-      "source_file": ".claude/skills/impeccable/scripts/live-manual-edit-evidence.mjs",
-      "source_location": "L39"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_manual_edit_evidence_collectsearchfiles",
@@ -14555,6 +14123,42 @@
       "source_location": "L761"
     },
     {
+      "id": "claude_skills_impeccable_scripts_context_findmonoreporoot",
+      "label": "findMonorepoRoot()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "context.mjs",
+      "file_type": "code",
+      "norm_label": "findmonoreporoot()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L215"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_hasfallbackworkspacechildren",
+      "label": "hasFallbackWorkspaceChildren()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "context.mjs",
+      "file_type": "code",
+      "norm_label": "hasfallbackworkspacechildren()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L244"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_hasgitboundary",
+      "label": "hasGitBoundary()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "context.mjs",
+      "file_type": "code",
+      "norm_label": "hasgitboundary()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L240"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_context_invokedasscript",
       "label": "invokedAsScript()",
       "_callable": true,
@@ -14565,6 +14169,18 @@
       "norm_label": "invokedasscript()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
       "source_location": "L949"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_ismonoreporoot",
+      "label": "isMonorepoRoot()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "context.mjs",
+      "file_type": "code",
+      "norm_label": "ismonoreporoot()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L234"
     },
     {
       "id": "claude_skills_impeccable_scripts_context_parseyamlflowlist",
@@ -16043,30 +15659,6 @@
       "source_location": "L416"
     },
     {
-      "id": "claude_skills_impeccable_scripts_context_nearestpackagerootbetween",
-      "label": "nearestPackageRootBetween()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 41,
-      "community_name": "discoverTargetCandidates",
-      "file_type": "code",
-      "norm_label": "nearestpackagerootbetween()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L488"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_nearestprojectlikeroot",
-      "label": "nearestProjectLikeRoot()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 41,
-      "community_name": "discoverTargetCandidates",
-      "file_type": "code",
-      "norm_label": "nearestprojectlikeroot()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L471"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_context_normalizeworkspacepattern",
       "label": "normalizeWorkspacePattern()",
       "_callable": true,
@@ -16101,18 +15693,6 @@
       "norm_label": "projectrootfromworkspacepattern()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
       "source_location": "L628"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_resolveworkspaceprojectroot",
-      "label": "resolveWorkspaceProjectRoot()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 41,
-      "community_name": "discoverTargetCandidates",
-      "file_type": "code",
-      "norm_label": "resolveworkspaceprojectroot()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L439"
     },
     {
       "id": "claude_skills_impeccable_scripts_context_segmentmatches",
@@ -17037,6 +16617,30 @@
       "norm_label": "basesnapshot()",
       "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
       "source_location": "L103"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_session_store_createlivesessionstore_getreadablejournalpath",
+      "label": "getReadableJournalPath()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "session-store.mjs",
+      "file_type": "code",
+      "norm_label": "getreadablejournalpath()",
+      "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
+      "source_location": "L22"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_session_store_createlivesessionstore_loadcachedorrebuild",
+      "label": "loadCachedOrRebuild()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "session-store.mjs",
+      "file_type": "code",
+      "norm_label": "loadcachedorrebuild()",
+      "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
+      "source_location": "L13"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_session_store_getjournalpath",
@@ -18707,6 +18311,30 @@
       "source_location": "L224"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_inject_globtoregex",
+      "label": "globToRegex()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "live.mjs",
+      "file_type": "code",
+      "norm_label": "globtoregex()",
+      "source_file": ".claude/skills/impeccable/scripts/live-inject.mjs",
+      "source_location": "L291"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_inject_resolvefiles",
+      "label": "resolveFiles()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "live.mjs",
+      "file_type": "code",
+      "norm_label": "resolvefiles()",
+      "source_file": ".claude/skills/impeccable/scripts/live-inject.mjs",
+      "source_location": "L243"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_livecli",
       "label": "liveCli()",
       "_callable": true,
@@ -18935,6 +18563,30 @@
       "source_location": "L879"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_clearmanualapplytransaction",
+      "label": "clearManualApplyTransaction()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "clearmanualapplytransaction()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L751"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_collectmanualapplyfiles",
+      "label": "collectManualApplyFiles()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "collectmanualapplyfiles()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L819"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_manual_apply_compactmanualapplybatch",
       "label": "compactManualApplyBatch()",
       "_callable": true,
@@ -19055,6 +18707,78 @@
       "source_location": "L659"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller",
+      "label": "createManualApplyController()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "createmanualapplycontroller()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L15"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_cancelpendingevents",
+      "label": "cancelPendingEvents()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "cancelpendingevents()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L242"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_getdeferred",
+      "label": "getDeferred()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "getdeferred()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L170"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_hastimedoutid",
+      "label": "hasTimedOutId()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "hastimedoutid()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L174"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_prunestaleevidence",
+      "label": "pruneStaleEvidence()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "prunestaleevidence()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L209"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_pushapplyeventandwait",
+      "label": "pushApplyEventAndWait()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "pushapplyeventandwait()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L35"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_pushbatchinchunksandwait",
       "label": "pushBatchInChunksAndWait()",
       "_callable": true,
@@ -19065,6 +18789,66 @@
       "norm_label": "pushbatchinchunksandwait()",
       "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
       "source_location": "L81"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_referencedmanualapplyevidencepaths",
+      "label": "referencedManualApplyEvidencePaths()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "referencedmanualapplyevidencepaths()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L198"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_rejectdeferred",
+      "label": "rejectDeferred()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "rejectdeferred()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L188"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_resolvedeferred",
+      "label": "resolveDeferred()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "resolvedeferred()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L178"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_rollbacktimedoutreply",
+      "label": "rollbackTimedOutReply()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "rollbacktimedoutreply()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L229"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_tombstonetimedoutapplyid",
+      "label": "tombstoneTimedOutApplyId()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "tombstonetimedoutapplyid()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L27"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_manual_apply_filtermanualapplychunkcandidates",
@@ -19103,6 +18887,18 @@
       "source_location": "L485"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_manualapplyevidencedir",
+      "label": "manualApplyEvidenceDir()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "manualapplyevidencedir()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L333"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_manual_apply_manualapplyreplycommand",
       "label": "manualApplyReplyCommand()",
       "_callable": true,
@@ -19125,6 +18921,18 @@
       "norm_label": "manualapplyresultshapehint()",
       "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
       "source_location": "L481"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_manualapplytransactionpath",
+      "label": "manualApplyTransactionPath()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "manualapplytransactionpath()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L712"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_manual_apply_manualeditapplychunksize",
@@ -19163,6 +18971,90 @@
       "source_location": "L469"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_normalizemanualapplyevidencepath",
+      "label": "normalizeManualApplyEvidencePath()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "normalizemanualapplyevidencepath()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L337"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_normalizeprojectfile",
+      "label": "normalizeProjectFile()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "normalizeprojectfile()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L837"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_readmanualapplytransaction",
+      "label": "readManualApplyTransaction()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "readmanualapplytransaction()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L716"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_removemanualapplyevidence",
+      "label": "removeManualApplyEvidence()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "removemanualapplyevidence()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L347"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_rollbackapplysnapshot",
+      "label": "rollbackApplySnapshot()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "rollbackapplysnapshot()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L845"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_rollbackmanualapplytransaction",
+      "label": "rollbackManualApplyTransaction()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "rollbackmanualapplytransaction()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L766"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_snapshotapplyeventfiles",
+      "label": "snapshotApplyEventFiles()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "snapshotapplyeventfiles()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L696"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_manual_apply_splitmanualapplybatch",
       "label": "splitManualApplyBatch()",
       "_callable": true,
@@ -19173,6 +19065,18 @@
       "norm_label": "splitmanualapplybatch()",
       "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
       "source_location": "L595"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualapplyevent",
+      "label": "summarizeManualApplyEvent()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "summarizemanualapplyevent()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L888"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_manual_apply_truncatemanualapplytext",
@@ -19197,6 +19101,30 @@
       "norm_label": "validatemanualapplyresultmessage()",
       "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
       "source_location": "L497"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_writemanualapplyevidence",
+      "label": "writeManualApplyEvidence()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "writemanualapplyevidence()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L325"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_writemanualapplytransaction",
+      "label": "writeManualApplyTransaction()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "writemanualapplytransaction()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L726"
     },
     {
       "id": "master_sistemas_inteligentes_robots_autonomos_roomba_codigo_roomba_roomba_roombacontroller_avoid_obstacle",
@@ -20891,6 +20819,30 @@
       "source_location": "L501"
     },
     {
+      "id": "claude_skills_impeccable_scripts_context_nearestpackagerootbetween",
+      "label": "nearestPackageRootBetween()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 75,
+      "community_name": "resolveContext",
+      "file_type": "code",
+      "norm_label": "nearestpackagerootbetween()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L488"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_nearestprojectlikeroot",
+      "label": "nearestProjectLikeRoot()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 75,
+      "community_name": "resolveContext",
+      "file_type": "code",
+      "norm_label": "nearestprojectlikeroot()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L471"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_context_resolvecandidatecontextsummary",
       "label": "resolveCandidateContextSummary()",
       "_callable": true,
@@ -20949,6 +20901,42 @@
       "norm_label": "resolvelocalcontextdir()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
       "source_location": "L183"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_resolveproject",
+      "label": "resolveProject()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 75,
+      "community_name": "resolveContext",
+      "file_type": "code",
+      "norm_label": "resolveproject()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L152"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_resolvetargetdir",
+      "label": "resolveTargetDir()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 75,
+      "community_name": "resolveContext",
+      "file_type": "code",
+      "norm_label": "resolvetargetdir()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L203"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_resolveworkspaceprojectroot",
+      "label": "resolveWorkspaceProjectRoot()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 75,
+      "community_name": "resolveContext",
+      "file_type": "code",
+      "norm_label": "resolveworkspaceprojectroot()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L439"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_detect_antipatterns_browser_checkelementtextoverflowdom",
@@ -21261,6 +21249,18 @@
       "norm_label": "changedfilessincesnapshot()",
       "source_file": ".claude/skills/impeccable/scripts/live-commit-manual-edits.mjs",
       "source_location": "L631"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_commit_manual_edits_clearappliedentries",
+      "label": "clearAppliedEntries()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "live-commit-manual-edits.mjs",
+      "file_type": "code",
+      "norm_label": "clearappliedentries()",
+      "source_file": ".claude/skills/impeccable/scripts/live-commit-manual-edits.mjs",
+      "source_location": "L555"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_commit_manual_edits_collectapplyownedfiles",
@@ -32814,6 +32814,18 @@
       "source_location": "L1"
     },
     {
+      "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_camino_d_pivotar_a_redes_m\u00f3viles_candidato_no_verificado_del_todo",
+      "label": "Camino D: pivotar a redes m\u00f3viles (candidato, NO verificado del todo)",
+      "_origin": "ast",
+      "community": 217,
+      "community_name": "Ideas de TFM: sistemas inteligentes aplicados a energ\u00edas renovables",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "camino d: pivotar a redes moviles (candidato, no verificado del todo)",
+      "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
+      "source_location": "L588"
+    },
+    {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_consecuencia_pr\u00e1ctica_que_hay_que_decidir_antes_de_seguir",
       "label": "Consecuencia pr\u00e1ctica que hay que decidir antes de seguir",
       "_origin": "ast",
@@ -33018,6 +33030,18 @@
       "source_location": "L577"
     },
     {
+      "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_lo_que_se_comprob\u00f3_2026_09_14_y_lo_que_no",
+      "label": "Lo que se comprob\u00f3 (2026-09-14) y lo que NO",
+      "_origin": "ast",
+      "community": 217,
+      "community_name": "Ideas de TFM: sistemas inteligentes aplicados a energ\u00edas renovables",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "lo que se comprobo (2026-09-14) y lo que no",
+      "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
+      "source_location": "L621"
+    },
+    {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_lo_que_sigue_abierto_de_verdad_y_es_donde_queda_el_tfm",
       "label": "Lo que sigue abierto de verdad (y es donde queda el TFM)",
       "_origin": "ast",
@@ -33112,6 +33136,30 @@
       "norm_label": "opcion b \u2014 sistema multiagente para gestion de microrredes (smart grid)",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
       "source_location": "L46"
+    },
+    {
+      "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_pendiente_adem\u00e1s",
+      "label": "Pendiente adem\u00e1s",
+      "_origin": "ast",
+      "community": 217,
+      "community_name": "Ideas de TFM: sistemas inteligentes aplicados a energ\u00edas renovables",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "pendiente ademas",
+      "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
+      "source_location": "L661"
+    },
+    {
+      "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_por_qu\u00e9_encaja",
+      "label": "Por qu\u00e9 encaja",
+      "_origin": "ast",
+      "community": 217,
+      "community_name": "Ideas de TFM: sistemas inteligentes aplicados a energ\u00edas renovables",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "por que encaja",
+      "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
+      "source_location": "L596"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_por_qu\u00e9_esta_orientaci\u00f3n_tiene_sentido",
@@ -33377,17 +33425,6 @@
       },
       "norm_label": "sync-main.sh script",
       "source_file": ".claude/hooks/sync-main.sh",
-      "source_location": "L1"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_edit_routes",
-      "label": "manual-edit-routes.mjs",
-      "_origin": "ast",
-      "community": 223,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "manual-edit-routes.mjs",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-edit-routes.mjs",
       "source_location": "L1"
     },
     {
@@ -33893,7 +33930,7 @@
       "label": "live-discard-manual-edits.mjs",
       "_origin": "ast",
       "community": 35,
-      "community_name": "manual-edits-buffer.mjs",
+      "community_name": "manual-edit-routes.mjs",
       "file_type": "code",
       "norm_label": "live-discard-manual-edits.mjs",
       "source_file": ".claude/skills/impeccable/scripts/live-discard-manual-edits.mjs",
@@ -33904,7 +33941,7 @@
       "label": "args",
       "_origin": "ast",
       "community": 35,
-      "community_name": "manual-edits-buffer.mjs",
+      "community_name": "manual-edit-routes.mjs",
       "file_type": "code",
       "norm_label": "args",
       "source_file": ".claude/skills/impeccable/scripts/live-discard-manual-edits.mjs",
@@ -33915,7 +33952,7 @@
       "label": "buffer",
       "_origin": "ast",
       "community": 35,
-      "community_name": "manual-edits-buffer.mjs",
+      "community_name": "manual-edit-routes.mjs",
       "file_type": "code",
       "norm_label": "buffer",
       "source_file": ".claude/skills/impeccable/scripts/live-discard-manual-edits.mjs",
@@ -33926,7 +33963,7 @@
       "label": "cwd",
       "_origin": "ast",
       "community": 35,
-      "community_name": "manual-edits-buffer.mjs",
+      "community_name": "manual-edit-routes.mjs",
       "file_type": "code",
       "norm_label": "cwd",
       "source_file": ".claude/skills/impeccable/scripts/live-discard-manual-edits.mjs",
@@ -33937,7 +33974,7 @@
       "label": "pageUrlFilter",
       "_origin": "ast",
       "community": 35,
-      "community_name": "manual-edits-buffer.mjs",
+      "community_name": "manual-edit-routes.mjs",
       "file_type": "code",
       "norm_label": "pageurlfilter",
       "source_file": ".claude/skills/impeccable/scripts/live-discard-manual-edits.mjs",
@@ -33948,18 +33985,29 @@
       "label": "remaining",
       "_origin": "ast",
       "community": 35,
-      "community_name": "manual-edits-buffer.mjs",
+      "community_name": "manual-edit-routes.mjs",
       "file_type": "code",
       "norm_label": "remaining",
       "source_file": ".claude/skills/impeccable/scripts/live-discard-manual-edits.mjs",
       "source_location": "L50"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_manual_edit_routes",
+      "label": "manual-edit-routes.mjs",
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "manual-edit-routes.mjs",
+      "file_type": "code",
+      "norm_label": "manual-edit-routes.mjs",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-edit-routes.mjs",
+      "source_location": "L1"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_manual_edits_buffer",
       "label": "manual-edits-buffer.mjs",
       "_origin": "ast",
       "community": 35,
-      "community_name": "manual-edits-buffer.mjs",
+      "community_name": "manual-edit-routes.mjs",
       "file_type": "code",
       "norm_label": "manual-edits-buffer.mjs",
       "source_file": ".claude/skills/impeccable/scripts/live/manual-edits-buffer.mjs",
@@ -35418,6 +35466,18 @@
       "norm_label": "2026-09-13 \u2014 busqueda exhaustiva: herramientas de investigacion cientifica verificada para el master",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
       "source_location": "L26"
+    },
+    {
+      "id": "recursos_generales_herramientas_ia_novedades_2026_09_14_lecci\u00f3n_tres_rondas_declarando_hueco_sobre_trabajo_ya_publicado",
+      "label": "2026-09-14 \u2014 Lecci\u00f3n: tres rondas declarando \"hueco\" sobre trabajo ya publicado",
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "Novedades de herramientas de IA",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "2026-09-14 \u2014 leccion: tres rondas declarando \"hueco\" sobre trabajo ya publicado",
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L1837"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_anotado_no_aplicado_palancas_oficiales_sin_necesidad_clara_todav\u00eda",
@@ -109653,6 +109713,39 @@
       "weight": 1.0
     },
     {
+      "source": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_camino_d_pivotar_a_redes_m\u00f3viles_candidato_no_verificado_del_todo",
+      "target": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_por_qu\u00e9_encaja",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
+      "source_location": "L596",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_camino_d_pivotar_a_redes_m\u00f3viles_candidato_no_verificado_del_todo",
+      "target": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_lo_que_se_comprob\u00f3_2026_09_14_y_lo_que_no",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
+      "source_location": "L621",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_camino_d_pivotar_a_redes_m\u00f3viles_candidato_no_verificado_del_todo",
+      "target": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_pendiente_adem\u00e1s",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
+      "source_location": "L661",
+      "weight": 1.0
+    },
+    {
       "source": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_decisi\u00f3n_pendiente_los_tres_caminos_abierta_desde_2026_09_14",
       "target": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_estado_de_recursos_verificado",
       "relation": "contains",
@@ -109804,6 +109897,17 @@
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
       "source_location": "L524",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_ideas_de_tfm_sistemas_inteligentes_aplicados_a_energ\u00edas_renovables",
+      "target": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_camino_d_pivotar_a_redes_m\u00f3viles_candidato_no_verificado_del_todo",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
+      "source_location": "L588",
       "weight": 1.0
     },
     {
@@ -111003,6 +111107,17 @@
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
       "source_location": "L1803",
+      "weight": 1.0
+    },
+    {
+      "source": "recursos_generales_herramientas_ia_novedades_novedades_de_herramientas_de_ia",
+      "target": "recursos_generales_herramientas_ia_novedades_2026_09_14_lecci\u00f3n_tres_rondas_declarando_hueco_sobre_trabajo_ya_publicado",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L1837",
       "weight": 1.0
     },
     {
@@ -115642,5 +115757,5 @@
       "source_file": "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad6a_como-se-va-a-goya_interactivo.html"
     }
   ],
-  "built_at_commit": "43b8346761b21fee21b17f116ef1251678421320"
+  "built_at_commit": "f2bbe776894b10e1ee0143a8b72d925ce84939c8"
 }
