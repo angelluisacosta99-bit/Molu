@@ -54,7 +54,7 @@ que esa sesión NO debe volver a proponer como aportación propia:
    Predict-then-Optimize (Elmachtoub y Grigas, 2022).
 
 **Hay cuatro caminos abiertos y Angel no ha elegido** (secciones
-"Decisión pendiente: los tres caminos" y "Camino D" de
+"Decisión pendiente: los tres caminos (abierta desde 2026-09-14)" y "Camino D" de
 `ideas-tfm-energias-renovables.md`). No dar ninguno por supuesto:
 preguntarle.
 
@@ -84,8 +84,8 @@ dedicada. Este es exactamente el error que ya se cometió tres veces.
 ### Datos de extranjería ya verificados (no reinvestigar)
 
 Verificados en fuente primaria (BOE y Hoja informativa 20 del
-Ministerio de Inclusión, alcanzados vía Firecrawl) **salvo el último,
-que va marcado aparte**:
+Ministerio de Inclusión, alcanzados vía Firecrawl) **salvo el del RD
+316/2026, que va marcado aparte al final**:
 
 - Residencia para búsqueda de empleo tras el máster: **24 meses
   improrrogables** (DA 17.ª Ley 14/2013, ampliada de 12 a 24 por la Ley
@@ -116,8 +116,12 @@ que va marcado aparte**:
    para un tema de energía. Si el tema pasa a redes, **rehacerla**.
 4. `propuesta-tutoria-sara-rodriguez.md` está marcada **NO ENVIAR**. No
    resucitarla sin rehacerla entera.
-5. **No se ha enviado ningún correo a nadie, y no se envía sin que
-   Angel lo pida explícitamente.**
+5. **No se ha enviado ninguna propuesta de tutoría a ningún profesor, y
+   no se envía sin que Angel lo pida explícitamente.** Ojo, esto **no**
+   significa que no se haya escrito a nadie: el 12/09/2026 se envió un
+   correo genérico a `bisite@usal.es` (verificado en Gmail el
+   2026-09-14), todavía sin respuesta. Ver
+   `../admision-y-becas/becas-y-tramites-2026-2027.md`.
 
 ### Artefactos publicados (republicar con el mismo `url`, no crear otro)
 

@@ -5,7 +5,8 @@
 **Estado: DESCARTADO el 2026-09-14**, tras dos revisiones independientes
 con agentes. Se conserva solo como registro de lo que no funciona. Los
 motivos, en detalle, en `ideas-tfm-energias-renovables.md`, sección
-"Revisión 2026-09-14 (tercera pasada)". Resumen:
+"Revisión 2026-09-14 (tercera pasada): la propuesta se cae, y por qué".
+Resumen:
 
 1. **La afirmación de novedad es falsa.** Yin, Lei y Feng publicaron en
    2024 en *IEEE Transactions on Power Systems* "Assessing the Value of

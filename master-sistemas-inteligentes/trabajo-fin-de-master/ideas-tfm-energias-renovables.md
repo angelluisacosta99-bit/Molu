@@ -98,7 +98,7 @@ reales. Dos referencias canónicas, metadatos verificados con Scite
   Pública de Navarra. 142 publicaciones citantes. Acceso abierto
   (green OA): <https://hdl.handle.net/2454/38382>
 - Arcos-Avilés et al. (2018), *IEEE Transactions on Smart Grid*
-  9(2):530-543, DOI `10.1109/tsg.2016.2555245` — el FLC de 25 reglas.
+  9(2):530-543, DOI `10.1109/TSG.2016.2555245` — el FLC de 25 reglas.
   332 publicaciones citantes. Acceso abierto:
   <http://hdl.handle.net/2117/106638>
 
@@ -281,7 +281,7 @@ literatura verificada:
 - **Yin, W., Lei, S. y Feng, S. (2024). "Assessing the Value of
   Renewable Forecasting Accuracy in Power System Operation". *IEEE
   Transactions on Power Systems*, 39(2), 4561-4573.**
-  DOI `10.1109/tpwrs.2023.3317534` (metadatos verificados con Scite).
+  DOI `10.1109/TPWRS.2023.3317534` (metadatos verificados con Scite).
   Su título enuncia esa misma pregunta de investigación — no con las
   palabras exactas del borrador, pero sí el mismo problema, y publicado
   en una revista de primer nivel del área. Además deriva **fórmulas analíticas de sensibilidad** del
@@ -302,7 +302,9 @@ literatura verificada:
 
 **Pendiente:** estas cinco referencias (Mc Garrigle y Leahy 2015; Wang
 et al. 2016; Campos et al. 2022; Kiedanski et al. 2019; Maciejowska et
-al., **sin año todavía**) **no están en `Bibliografia.bib`**, porque sus
+al., **sin año todavía**; y también Wahdany et al. 2023, *EPSR*, y
+Beichter et al. 2025, citados más abajo) **no están en
+`Bibliografia.bib`**, porque sus
 metadatos no se han verificado con Scite. Según el flujo fijado en
 `lluvia-de-ideas.md`, verificarlas y añadirlas antes de usarlas en
 `main.tex`.
@@ -488,7 +490,8 @@ argumento).
 
 ## Correspondencia relacionada
 
-- **Enviado** a `bisite@usal.es` (13/09/2026): propuesta de TFM +
+- **Enviado** a `bisite@usal.es` (**12/09/2026**, 20:21 UTC; fecha
+  verificada en Gmail el 2026-09-14 — antes figuraba 13/09): propuesta de TFM +
   colaboración, nombrando explícitamente a Pablo Chamoso y su tesis
   sobre arquitecturas multiagente, mencionando la línea de energía de
   BISITE y la posible Beca de Colaboración en Departamentos. Sin
@@ -539,7 +542,8 @@ Angel planteó una idea nueva: su hermana Arlet trabaja en **IMDEA** y
 está a gusto allí, así que quizá convenga elegir un tema de TFM que
 además resulte atractivo a ese instituto de cara a un trabajo tras la
 graduación. Es un criterio legítimo y, de hecho, útil para desempatar
-entre los tres caminos de la sección anterior.
+entre los tres caminos de la sección `## Decisión pendiente: los tres
+caminos`.
 
 **Pendiente de confirmar con Angel: en cuál de los siete institutos
 IMDEA trabaja Arlet.** No es un detalle — cambia por completo qué tema
@@ -785,11 +789,11 @@ energético dentro del dominio de redes.
   el permiso dure 24 meses no implica que haya que acreditar medios
   para los 24 — ni el texto del BOE ni la Hoja informativa 20 lo dicen.
   Ambas cosas están pendientes.
-- `networks.imdea.org`, `energia.imdea.org` y `jobs.energy.imdea.org`
-  siguen bloqueados por la política de red del entorno. Todo lo anterior
-  se obtuvo por búsqueda indirecta. **La lista completa y canónica de
-  dominios a autorizar está en la entrada del 2026-09-14 de
-  `lluvia-de-ideas.md`** — no mantener copias parciales aquí.
+- Los tres dominios de IMDEA seguían bloqueados por la política de red
+  del entorno cuando se escribió esto, así que todo lo anterior se
+  obtuvo por búsqueda indirecta. **La lista de dominios a autorizar se
+  mantiene solo en la entrada del 2026-09-14 de `lluvia-de-ideas.md`**,
+  no aquí.
 
 ### Precedente real: el camino de Arlet (confirmado por Angel, 2026-09-14)
 

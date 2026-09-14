@@ -120,8 +120,8 @@ solicitud (Anexo II) exige un **proyecto de colaboración avalado por
 el consejo del departamento** receptor, puntuado por ese departamento
 (hasta 4 puntos: contenido innovador, aplicabilidad, metodología,
 tecnología). Sin el aval firmado del departamento, la solicitud se
-desestima. Esto conecta directamente con el borrador de correo a
-`bisite@usal.es` de la sección de correspondencia — aunque BISITE no
+desestima. Esto conecta directamente con el correo ya enviado a
+`bisite@usal.es` (12/09/2026, ver la sección de correspondencia) — aunque BISITE no
 sirva para la beca de Institutos/Centros Propios, sí podría ser el
 departamento que avale el proyecto para *esta* beca (Departamentos),
 si el máster está adscrito a él — **pendiente de confirmar**.
@@ -157,12 +157,16 @@ sección de acceso).
 - **`rrii@usal.es`** (enviado) — consulta sobre convenios de reducción de
   tasas para estudiantes cubanos. Sin respuesta aún.
 
-### Redactados, pendientes de enviar (a la espera de confirmación del alumno)
+- **`bisite@usal.es`** (enviado el **12/09/2026**, 20:21 UTC) — propuesta de
+  colaboración académica con el grupo de investigación BISITE (IA, sistemas
+  multiagente), mencionando la especialidad oficial, nota media y la Beca de
+  Colaboración en Departamentos. Asunto: "Propuesta de colaboración y TFM —
+  estudiante de nuevo ingreso, Máster en Sistemas Inteligentes". Sin respuesta
+  aún. Contacto: Juan Manuel Corchado, (+34) 923 294 400 ext. 1525.
+  **Verificado en Gmail el 2026-09-14**: este archivo lo listaba como
+  "pendiente de enviar" y era falso.
 
-- **`bisite@usal.es`** — propuesta de colaboración académica con el grupo de
-  investigación BISITE (IA, sistemas multiagente), mencionando la
-  especialidad oficial, nota media y la Beca de Colaboración en
-  Departamentos. Contacto: Juan Manuel Corchado, (+34) 923 294 400 ext. 1525.
+### Redactados, pendientes de enviar (a la espera de confirmación del alumno)
 - **`mastersi@usal.es`** (Dr. Therón — contacto habitual, ya ha respondido
   dos veces por correo: carta de admisión y su corrección) — pregunta sobre
   si la actualización de matrícula (de condicionada a definitiva) puede
@@ -303,6 +307,11 @@ Conclusión: se baja de 🟡 "pendiente" a 🟠 "improbable para la USAL
 este ciclo" — sin poder confirmarlo con certeza por el bloqueo de red.
 El único paso fiable que queda es escribir directamente a
 `becas.master@auip.org` preguntando si Salamanca participa este año.
+
+**ACTUALIZACIÓN 2026-09-14:** `auip.org` también es alcanzable vía
+Firecrawl (ver punto 6). Antes de escribir ese correo, intentar leer las
+bases con ese conector — el bloqueo ya no es un motivo válido para
+saltarse la fuente primaria.
 
 ### Pendiente de rematar — el literal del art. 4.1.d) ya es alcanzable vía Firecrawl (punto 6)
 

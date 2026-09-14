@@ -1903,10 +1903,9 @@ devuelto coincide con lo que se pidió.
 
 Amplía la entrada de arriba sobre propagar una corrección a sus reglas
 hermanas. Se registra por la regla de `CLAUDE.md` de "3+ rondas sobre lo
-mismo": el PR #113 necesitó **tres rondas** de revisión→corrección→
-revisión para que esa familia de fallo dejara de aparecer, y en las dos
-primeras fue **siempre la misma**, nunca hallazgos nuevos e
-independientes.
+mismo": el PR #113 necesitó **al menos cuatro rondas** de
+revisión→corrección→revisión, y en casi todas reapareció **la misma
+familia de fallo**, nunca hallazgos nuevos e independientes.
 
 **La saga.** Se verificó que la residencia para búsqueda de empleo tras
 el máster son 24 meses y no 12 (DA 17.ª de la Ley 14/2013, ampliada por
@@ -1954,3 +1953,25 @@ aparece en más de un sitio, antes de dar por cerrado el trabajo:
    el estado del archivo destino: una remisión que dice "pendiente"
    apuntando a una sección titulada "(resuelto)" es el mismo fallo
    visto desde el otro lado.
+
+**Ronda 4, y la lección que faltaba:** el barrido del paso 1 se había
+aplicado al dato corregido (los 24 meses) pero **no a los hechos nuevos
+que el propio trabajo introducía**. Así apareció una contradicción sobre
+si un correo a `bisite@usal.es` se había enviado o no: un archivo decía
+"enviado", otro lo listaba como "pendiente de enviar", y el archivo de
+traspaso afirmaba en redondo "no se ha enviado ningún correo a nadie".
+Se resolvió **comprobándolo en Gmail** (sí se envió, el 12/09/2026, sin
+respuesta) en vez de elegir la versión que sonara mejor.
+
+De ahí, dos reglas más:
+
+4. El barrido no es solo del dato que se corrige, sino **de todo hecho
+   afirmado en el trabajo**, incluidos los que se acaban de escribir.
+   Una afirmación categórica recién redactada ("no se ha enviado
+   ninguno", "no existe", "nunca se hizo") es sospechosa por
+   construcción: comprobar si hay un hermano que diga lo contrario.
+5. Cuando dos archivos se contradicen sobre un hecho **comprobable**
+   (un correo enviado, un archivo que existe, una fecha), no razonar
+   sobre cuál parece más fiable: **ir a la fuente y mirarlo**. Aquí
+   bastó una búsqueda en Gmail para cerrar una discusión que llevaba
+   varias rondas latente.
