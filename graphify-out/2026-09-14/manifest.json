@@ -894,9 +894,9 @@
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1789328829.5408943,
-    "seen": 1789369230.9624043,
-    "ast_hash": "11609961ec6e8b8ed5813dad78973c20",
+    "mtime": 1789369281.2962024,
+    "seen": 1789369315.9210186,
+    "ast_hash": "8f30bf72c53665cae9e27c51e6e1b2e9",
     "semantic_hash": ""
   },
   "DESIGN.md": {
@@ -2400,9 +2400,9 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md": {
-    "mtime": 1789295135.2390583,
-    "seen": 1789322349.507659,
-    "ast_hash": "3c107d9eece9150624a92b2c9aac6255",
+    "mtime": 1789369258.704203,
+    "seen": 1789369315.9212298,
+    "ast_hash": "0e226e0c556e161f7618cf5dcf7d623a",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/trabajo-fin-de-master/preparacion/01-python-numpy-pandas.md": {
@@ -2424,9 +2424,9 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/trabajo-fin-de-master/main.pdf": {
-    "mtime": 1789316214.235103,
-    "seen": 1789322349.5077722,
-    "ast_hash": "a72ff045f13ec8dc89081c0f784a6c99",
+    "mtime": 1789369297.712202,
+    "seen": 1789369315.9213023,
+    "ast_hash": "e0132452c58ef71d4723a71fe1d41523",
     "semantic_hash": ""
   }
 }
