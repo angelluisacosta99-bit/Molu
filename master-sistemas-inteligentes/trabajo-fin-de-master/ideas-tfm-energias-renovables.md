@@ -764,3 +764,35 @@ energético dentro del dominio de redes.
 - `networks.imdea.org`, `energia.imdea.org` y `jobs.energy.imdea.org`
   siguen bloqueados por la política de red del entorno. Todo lo anterior
   se obtuvo por búsqueda indirecta.
+
+### Precedente real: el camino de Arlet (confirmado por Angel, 2026-09-14)
+
+Angel precisó que **Arlet entró a trabajar con la oportunidad de empezar
+el doctorado, y compagina trabajo y doctorado**. Eso es exactamente el
+modelo de plaza asalariada de doctorando descrito más arriba: contrato
+laboral y doctorado a la vez, no beca.
+
+Vale más que cualquier búsqueda web hecha en esta sesión, por tres
+motivos:
+
+1. **Demuestra que la vía funciona para una persona cubana**, en ese
+   instituto concreto, y hace poco. No es una inferencia a partir de
+   estadísticas de plantilla: es un caso real y cercano.
+2. **Es el desenlace bueno del problema de extranjería.** Quien sale del
+   máster con contrato firmado no necesita la autorización de búsqueda
+   de empleo — ese permiso es la red de seguridad para quien termina sin
+   oferta, no el objetivo. Y es, además, el trámite cuya duración quedó
+   sin aclarar (ver `admision-y-becas/becas-y-tramites-2026-2027.md`).
+   Siguiendo el camino de Arlet, esa duda pierde casi toda su
+   importancia práctica.
+3. **Arlet conoce el procedimiento por dentro**: cómo se enteró de la
+   plaza, en qué mes se convoca, qué pesó en la selección, y cómo se
+   resolvió el cambio de situación de estudios a trabajo. Preguntárselo
+   es más barato y más fiable que seguir investigando por fuera.
+
+**Consecuencia para la planificación del TFM:** si la meta es reproducir
+ese camino, el TFM no es solo un requisito académico — es la carta de
+presentación técnica ante el tribunal de selección de una plaza de
+doctorando en ese ámbito. Eso refuerza el camino D (redes) frente al
+tema de energía: un TFM sobre redes leído por un comité de IMDEA
+Networks pesa de otra forma que uno sobre baterías.

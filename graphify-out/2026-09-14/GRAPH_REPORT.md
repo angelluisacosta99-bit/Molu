@@ -1,16 +1,16 @@
 # Graph Report - Molu  (2026-09-14)
 
 ## Corpus Check
-- 270 files · ~1,346,306 words
+- 270 files · ~1,347,087 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 3265 nodes · 6567 edges · 221 communities (198 shown, 23 thin omitted)
+- 3271 nodes · 6573 edges · 221 communities (198 shown, 23 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 121 edges (avg confidence: 0.84)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `f2bbe776`
+- Built from commit: `a523ea3a`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -214,6 +214,7 @@
 - readLiveServerInfo
 - Carta de candidatura espontánea — academias de español, Salamanca
 - Ejercicios
+- readWorkspacePatterns
 - Ejercicios
 - Ejercicios
 - Ejercicios
@@ -235,7 +236,6 @@
 - irobot_2.py
 - Lluvia de ideas — TFM
 - sync-main.sh
-- cli
 
 ## God Nodes (most connected - your core abstractions)
 1. `initGlobalBar()` - 29 edges
@@ -246,8 +246,8 @@
 6. `buildInsertConfigureRow()` - 26 edges
 7. `collectBrowserFindings()` - 26 edges
 8. `handleKeyDown()` - 26 edges
-9. `Novedades de herramientas de IA` - 25 edges
-10. `resumeSession()` - 25 edges
+9. `resumeSession()` - 25 edges
+10. `showToast()` - 25 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `Docencia de español overview` --semantically_similar_to--> `Python overview`  [INFERRED] [semantically similar]
@@ -344,7 +344,7 @@ Nodes (33): armPageChatForTyping(), clearSteerAwaitTimer(), collapsePageChat(), 
 
 ### Community 16 - "live-inject.mjs"
 Cohesion: 0.09
-Nodes (41): appendOriginToDirective(), buildTagBlock(), commentClose(), commentOpen(), CONFIG_PATH, detectLineEnding(), __dirname, ensureLiveGitIgnores() (+33 more)
+Nodes (43): appendOriginToDirective(), buildTagBlock(), commentClose(), commentOpen(), CONFIG_PATH, detectLineEnding(), __dirname, ensureLiveGitIgnores() (+35 more)
 
 ### Community 17 - "detect-antipatterns-browser.js"
 Cohesion: 0.08
@@ -428,7 +428,7 @@ Nodes (25): analyzeSourceHint(), buildCandidatesForOp(), buildContextHintsByRef(
 
 ### Community 37 - "context.mjs"
 Cohesion: 0.12
-Nodes (27): buildUpdateDirective(), compareSemver(), computeUpdateDirective(), DESIGN_NAMES, FALLBACK_DIRS, fetchLatestSkillVersion(), findMonorepoRoot(), hasFallbackWorkspaceChildren() (+19 more)
+Nodes (27): buildMissingTargetDirective(), buildResolvedContextDirective(), buildTargetSelectionDirective(), buildUpdateDirective(), cli(), compareSemver(), computeUpdateDirective(), DESIGN_NAMES (+19 more)
 
 ### Community 38 - "handleManualEditActivity"
 Cohesion: 0.18
@@ -467,8 +467,8 @@ Cohesion: 0.20
 Nodes (14): createLiveBrowserSessionState(), clearHandled(), clearScrollY(), clearSession(), isHandled(), loadSession(), markHandled(), nextCheckpointRevision() (+6 more)
 
 ### Community 47 - "session-store.mjs"
-Cohesion: 0.22
-Nodes (11): applyEvent(), baseSnapshot(), COMPLETED_PHASES, getReadableJournalPath(), loadCachedOrRebuild(), getJournalPath(), getSnapshotPath(), rebuildSnapshotFromJournal() (+3 more)
+Cohesion: 0.26
+Nodes (9): applyEvent(), baseSnapshot(), COMPLETED_PHASES, getJournalPath(), getSnapshotPath(), rebuildSnapshotFromJournal(), safeSessionId(), toPendingEvent() (+1 more)
 
 ### Community 48 - "createLiveBrowserDomHelpers"
 Cohesion: 0.19
@@ -511,8 +511,8 @@ Cohesion: 0.22
 Nodes (8): 1. ¿Cómo te ha ido hoy?, Ej. 1 — Pretérito perfecto, Ej. 2 — Frases en pretérito perfecto, Ej. 3 — Forma frases, Ej. 4 — Presente o pretérito perfecto, Ej. 5 — Cambios culturales, Ej. 6 — Leo Verdura, Ejercicios
 
 ### Community 58 - "live.mjs"
-Cohesion: 0.26
-Nodes (13): loadContext(), resolveTargetSelection(), safeRead(), __dirname, ensureServerRunning(), globToRegex(), globToRegex(), resolveFiles() (+5 more)
+Cohesion: 0.32
+Nodes (11): loadContext(), resolveTargetSelection(), safeRead(), __dirname, ensureServerRunning(), globToRegex(), liveCli(), missingLiveContext() (+3 more)
 
 ### Community 59 - "readConfig"
 Cohesion: 0.18
@@ -979,8 +979,8 @@ Cohesion: 0.40
 Nodes (9): addRules(), applyInlineIgnores(), getSet(), hasDirectives(), isInlineIgnored(), normalizeRule(), parseInlineIgnores(), parseRuleList() (+1 more)
 
 ### Community 196 - "readLiveServerInfo"
-Cohesion: 0.21
-Nodes (17): isLiveServerPidReachable(), readLiveServerInfo(), completeCli(), completeThroughServer(), parseArgs(), readServerInfo(), collectManualApplyFiles(), manualApplyReplyCommand() (+9 more)
+Cohesion: 0.18
+Nodes (19): isLiveServerPidReachable(), readLiveServerInfo(), completeCli(), completeThroughServer(), parseArgs(), readServerInfo(), collectManualApplyFiles(), manualApplyReplyCommand() (+11 more)
 
 ### Community 197 - "Carta de candidatura espontánea — academias de español, Salamanca"
 Cohesion: 0.40
@@ -989,6 +989,10 @@ Nodes (4): Asunto, Carta de candidatura espontánea — academias de español, S
 ### Community 198 - "Ejercicios"
 Cohesion: 0.29
 Nodes (6): 1. Deportes, Ej. 1 — Objetos deportivos: sopa de letras, Ej. 2 — ¿Con qué deporte está relacionado cada uno?, Ej. 3 — Completa con la palabra adecuada, Ej. 4 — Entrevista al ciclista Emilio Pedal, Ejercicios
+
+### Community 199 - "readWorkspacePatterns"
+Cohesion: 0.29
+Nodes (8): findMonorepoRoot(), hasFallbackWorkspaceChildren(), hasGitBoundary(), isMonorepoRoot(), readJson(), readLernaWorkspaces(), readPackageWorkspaces(), readWorkspacePatterns()
 
 ### Community 200 - "Ejercicios"
 Cohesion: 0.29
@@ -1051,8 +1055,8 @@ Cohesion: 0.48
 Nodes (4): parseTargetOptions(), parseTargetPath(), TargetArgError, resolveLiveTarget()
 
 ### Community 217 - "Ideas de TFM: sistemas inteligentes aplicados a energías renovables"
-Cohesion: 0.05
-Nodes (39): Camino D: pivotar a redes móviles (candidato, NO verificado del todo), Consecuencia práctica que hay que decidir antes de seguir, Correspondencia relacionada, Decisión pendiente: los tres caminos (abierta desde 2026-09-14), Dos opciones evaluadas, Dos reencuadres posibles (decisión de Angel, no tomada aquí), Dónde se ha movido el estado del arte (y dónde queda hueco real), El desajuste con el plan de entrenamiento (+31 more)
+Cohesion: 0.04
+Nodes (45): Camino D: pivotar a redes móviles (candidato, NO verificado del todo), Conclusión, Consecuencia práctica que hay que decidir antes de seguir, Correspondencia relacionada, Decisión pendiente: los tres caminos (abierta desde 2026-09-14), Dos opciones evaluadas, Dos reencuadres posibles (decisión de Angel, no tomada aquí), Dónde se ha movido el estado del arte (y dónde queda hueco real) (+37 more)
 
 ### Community 218 - "funciones.py"
 Cohesion: 0.43
@@ -1066,29 +1070,25 @@ Nodes (3): ang_degree(), dist(), odometry()
 Cohesion: 0.33
 Nodes (5): 2026-09-13, 2026-09-13 (continuación: dominios bloqueados para docs oficiales + para la sesión que retome esto), 2026-09-13 (continuación: formato de entrega para Angel), Cómo citar (norma real del Departamento, no una convención inventada), Lluvia de ideas — TFM
 
-### Community 222 - "cli"
-Cohesion: 0.29
-Nodes (8): buildMissingTargetDirective(), buildResolvedContextDirective(), buildTargetSelectionDirective(), cli(), hasTargetOption(), parseCliOptions(), pathExistsForTarget(), shouldWarnMissingTarget()
-
 ## Knowledge Gaps
-- **843 isolated node(s):** `Por qué esta orientación tiene sentido`, `Opción A — Predicción de generación renovable con deep learning`, `Opción B — Sistema multiagente para gestión de microrredes (smart grid)`, `Recomendación`, `Hallazgo bloqueante: "predicción + módulo difuso para batería" está saturado` (+838 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1037 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **848 isolated node(s):** `Por qué esta orientación tiene sentido`, `Opción A — Predicción de generación renovable con deep learning`, `Opción B — Sistema multiagente para gestión de microrredes (smart grid)`, `Recomendación`, `Hallazgo bloqueante: "predicción + módulo difuso para batería" está saturado` (+843 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1042 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **23 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `readLiveServerInfo()` connect `readLiveServerInfo` to `impeccable-paths.mjs`, `live-poll.mjs`, `live.mjs`, `live-server.mjs`?**
+  _High betweenness centrality (0.004) - this node is a cross-community bridge._
+- **Why does `runCopyEditBatchAgent()` connect `live-copy-edit-agent.mjs` to `live-commit-manual-edits.mjs`?**
   _High betweenness centrality (0.003) - this node is a cross-community bridge._
-- **Why does `StaticElement` connect `StaticElement` to `css-cascade.mjs`?**
+- **Why does `applyDeferredSvelteComponentAccepts()` connect `svelte-component.mjs` to `live-server.mjs`, `live-accept.mjs`?**
   _High betweenness centrality (0.002) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `initGlobalBar()` (e.g. with `hideAgentPollTooltip()` and `onDetectMessage()`) actually correct?**
   _`initGlobalBar()` has 7 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `Por qué esta orientación tiene sentido`, `Opción A — Predicción de generación renovable con deep learning`, `Opción B — Sistema multiagente para gestión de microrredes (smart grid)` to the rest of the system?**
-  _843 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _848 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `live-browser.js` be split into smaller, more focused modules?**
   _Cohesion score 0.02863984674329502 - nodes in this community are weakly interconnected._
 - **Should `checks.mjs` be split into smaller, more focused modules?**
   _Cohesion score 0.04078624078624079 - nodes in this community are weakly interconnected._
-- **Should `index.mjs` be split into smaller, more focused modules?**
-  _Cohesion score 0.06142410015649452 - nodes in this community are weakly interconnected._

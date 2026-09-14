@@ -198,6 +198,7 @@
   "196": "readLiveServerInfo",
   "197": "Carta de candidatura espontánea — academias de español, Salamanca",
   "198": "Ejercicios",
+  "199": "readWorkspacePatterns",
   "200": "Ejercicios",
   "201": "Ejercicios",
   "202": "Ejercicios",
@@ -218,6 +219,5 @@
   "218": "funciones.py",
   "219": "irobot_2.py",
   "220": "Lluvia de ideas — TFM",
-  "221": "sync-main.sh",
-  "222": "cli"
+  "221": "sync-main.sh"
 }
