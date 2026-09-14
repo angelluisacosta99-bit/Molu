@@ -262,13 +262,41 @@ mucho mejor, porque la respuesta no caduca cuando sale un modelo nuevo.
 
 | Candidato | Especialidad | Encaje |
 |---|---|---|
-| **Pablo Chamoso Santos** | Profesor Titular, BISITE desde 2011. Tesis doctoral: "Arquitectura multiagente auto-adaptativa para la gestión de smart cities". Coordina el grupo de transferencia "DeepTech" (IA, IoT, Blockchain). | **Alto** — su propia tesis es del mismo dominio que la Opción B. Primera opción. |
+| **Sara Rodríguez González** | BISITE, Departamento de Informática y Automática, Área de Ciencia de la Computación e IA. **Coautora en 2026 de "Enhancing Energy Efficiency and Economic Benefits with Battery Energy Storage Systems: An Agent-Based Optimization Approach"** (*Electronics* 15(11):2269, DOI `10.3390/electronics15112269`, metadatos verificados con Scite): gestión de batería + fotovoltaica + **precios del mercado eléctrico español**, evaluada por **beneficio económico**, no por error de predicción. | **El más alto tras el reencuadre** — es literalmente el vecindario de la pregunta que queda abierta (ver revisión del 2026-09-14). Ver nota de encaje abajo. |
+| **Pablo Chamoso Santos** | Profesor Titular, BISITE desde 2011. Tesis doctoral: "Arquitectura multiagente auto-adaptativa para la gestión de smart cities". Coordina el grupo de transferencia "DeepTech" (IA, IoT, Blockchain). | **Alto, pero el argumento cambió.** Su tesis encajaba con la Opción B (multiagente), que se descartó. Sigue siendo buena opción por la línea de energía de BISITE, pero al escribirle hay que apoyarse en esa línea, no en su tesis doctoral. |
+| **Alfonso González-Briones** | USAL/BISITE, coautor del paper de batería de arriba junto a Sara Rodríguez. | Medio-alto — misma línea de trabajo, alternativa natural si ella no tiene hueco. |
 | **Juan Manuel Corchado** | Director de BISITE, contacto principal del grupo (+34 923 294 400 ext. 1525). Línea de energía confirmada: Ambient Intelligence, Energy Efficiency, Green Computing. | Alto como puerta de entrada/director del grupo, aunque como director puede tener menos disponibilidad para tutorías directas. |
 | Francisco José García Peñalvo, Alicia García-Holgado, Diego Manuel Jiménez Bravo | Área de Ciencia de la Computación e IA (30 investigadores en total en esta área) | Sin confirmar línea exacta — preguntar si Chamoso no está disponible. |
 | **Dr. Carlos García Figuerola** (`figue@usal.es`) — tutor del TFM de Arlet Acosta González ("Caracterización de las darknets", 2024) | Cibermetría, análisis de redes/grafos, minería web | **Bajo** para este tema — no hay overlap natural con energía/smart grid salvo forzando el TFM hacia análisis de topología de red como grafo. Plan de respaldo, no primera opción. |
 
 Fuente BISITE energía: `https://bisite.usal.es/es/investigacion/lineas-investigacion/energia`
 Departamento (90 investigadores, 4 áreas): `https://produccioncientifica.usal.es/unidades/1871/investigadores`
+
+### Nota de encaje: por qué Sara Rodríguez pasa a ser la primera opción
+
+Su paper de 2026 hace battery storage + fotovoltaica + precios del
+mercado español y lo evalúa por **valor económico de la decisión**, que
+es justo el eje que el TFM necesita tras el reencuadre. Pero **no varía
+la calidad del pronóstico**: toma los datos como dados (GEFCom2014 +
+perfiles sintéticos + precios day-ahead) y optimiza la política de
+carga/descarga con Deep Q-Learning. Es decir, **la pregunta "¿cómo se
+propaga el error de predicción hasta la calidad de la decisión?" sigue
+sin responder incluso en su propio trabajo** — y es exactamente el hueco
+identificado en la revisión del 2026-09-14. Eso convierte el TFM en el
+complemento natural de su línea, que es la mejor posición posible para
+pedir tutoría.
+
+**Dos cosas sin verificar, no darlas por buenas:**
+- **No está confirmado que sea la profesora que dio clase a Arlet.**
+  Angel la recordaba como "Sara o Zara"; el nombre y el departamento
+  encajan, pero no se ha podido confirmar que imparta docencia en el
+  MUSI ni en qué asignatura. Confirmarlo preguntando a Arlet directamente
+  antes de mencionarlo en un correo.
+- **Su categoría aparece distinta según la fuente**: la ficha de BISITE
+  dice "Profesora Titular de Universidad" y el portal de producción
+  científica de la USAL dice "Catedrática de Universidad". Usar el
+  tratamiento neutro ("Dra.") al escribirle, o comprobar cuál es la
+  vigente, en vez de arriesgarse a degradarla en el saludo.
 
 ## Correspondencia relacionada
 
