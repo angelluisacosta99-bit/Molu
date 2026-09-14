@@ -7043,6 +7043,102 @@
       "source_location": "L909"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_event_validation_isvalidid",
+      "label": "isValidId()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "insert-ui.mjs",
+      "file_type": "code",
+      "norm_label": "isvalidid()",
+      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
+      "source_location": "L19"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_event_validation_isvalidvariantid",
+      "label": "isValidVariantId()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "insert-ui.mjs",
+      "file_type": "code",
+      "norm_label": "isvalidvariantid()",
+      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
+      "source_location": "L20"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_event_validation_validateannotationfields",
+      "label": "validateAnnotationFields()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "insert-ui.mjs",
+      "file_type": "code",
+      "norm_label": "validateannotationfields()",
+      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
+      "source_location": "L28"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_event_validation_validateevent",
+      "label": "validateEvent()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "insert-ui.mjs",
+      "file_type": "code",
+      "norm_label": "validateevent()",
+      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
+      "source_location": "L95"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_event_validation_validateinsertgenerate",
+      "label": "validateInsertGenerate()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "insert-ui.mjs",
+      "file_type": "code",
+      "norm_label": "validateinsertgenerate()",
+      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
+      "source_location": "L41"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_event_validation_validatemanualeditevent",
+      "label": "validateManualEditEvent()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "insert-ui.mjs",
+      "file_type": "code",
+      "norm_label": "validatemanualeditevent()",
+      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
+      "source_location": "L69"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_event_validation_validatemanualedittext",
+      "label": "validateManualEditText()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "insert-ui.mjs",
+      "file_type": "code",
+      "norm_label": "validatemanualedittext()",
+      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
+      "source_location": "L22"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_event_validation_validatereplacegenerate",
+      "label": "validateReplaceGenerate()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "insert-ui.mjs",
+      "file_type": "code",
+      "norm_label": "validatereplacegenerate()",
+      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
+      "source_location": "L63"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_insert_ui_applyinserttoggle",
       "label": "applyInsertToggle()",
       "_callable": true,
@@ -7581,6 +7677,30 @@
       "norm_label": "createlivesessionstore()",
       "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
       "source_location": "L7"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_session_store_createlivesessionstore_getreadablejournalpath",
+      "label": "getReadableJournalPath()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 196,
+      "community_name": "readLiveServerInfo",
+      "file_type": "code",
+      "norm_label": "getreadablejournalpath()",
+      "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
+      "source_location": "L22"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_session_store_createlivesessionstore_loadcachedorrebuild",
+      "label": "loadCachedOrRebuild()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 196,
+      "community_name": "readLiveServerInfo",
+      "file_type": "code",
+      "norm_label": "loadcachedorrebuild()",
+      "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
+      "source_location": "L13"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_status_fetchserverstatus",
@@ -16703,30 +16823,6 @@
       "source_location": "L103"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_session_store_createlivesessionstore_getreadablejournalpath",
-      "label": "getReadableJournalPath()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "session-store.mjs",
-      "file_type": "code",
-      "norm_label": "getreadablejournalpath()",
-      "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
-      "source_location": "L22"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_session_store_createlivesessionstore_loadcachedorrebuild",
-      "label": "loadCachedOrRebuild()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "session-store.mjs",
-      "file_type": "code",
-      "norm_label": "loadcachedorrebuild()",
-      "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
-      "source_location": "L13"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_session_store_getjournalpath",
       "label": "getJournalPath()",
       "_callable": true,
@@ -19557,102 +19653,6 @@
       "norm_label": "unpin()",
       "source_file": ".claude/skills/impeccable/scripts/pin.mjs",
       "source_location": "L155"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_event_validation_isvalidid",
-      "label": "isValidId()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "event-validation.mjs",
-      "file_type": "code",
-      "norm_label": "isvalidid()",
-      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
-      "source_location": "L19"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_event_validation_isvalidvariantid",
-      "label": "isValidVariantId()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "event-validation.mjs",
-      "file_type": "code",
-      "norm_label": "isvalidvariantid()",
-      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
-      "source_location": "L20"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_event_validation_validateannotationfields",
-      "label": "validateAnnotationFields()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "event-validation.mjs",
-      "file_type": "code",
-      "norm_label": "validateannotationfields()",
-      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
-      "source_location": "L28"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_event_validation_validateevent",
-      "label": "validateEvent()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "event-validation.mjs",
-      "file_type": "code",
-      "norm_label": "validateevent()",
-      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
-      "source_location": "L95"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_event_validation_validateinsertgenerate",
-      "label": "validateInsertGenerate()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "event-validation.mjs",
-      "file_type": "code",
-      "norm_label": "validateinsertgenerate()",
-      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
-      "source_location": "L41"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_event_validation_validatemanualeditevent",
-      "label": "validateManualEditEvent()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "event-validation.mjs",
-      "file_type": "code",
-      "norm_label": "validatemanualeditevent()",
-      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
-      "source_location": "L69"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_event_validation_validatemanualedittext",
-      "label": "validateManualEditText()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "event-validation.mjs",
-      "file_type": "code",
-      "norm_label": "validatemanualedittext()",
-      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
-      "source_location": "L22"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_event_validation_validatereplacegenerate",
-      "label": "validateReplaceGenerate()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "event-validation.mjs",
-      "file_type": "code",
-      "norm_label": "validatereplacegenerate()",
-      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
-      "source_location": "L63"
     },
     {
       "id": "claude_skills_impeccable_scripts_hook_lib_cleanignorevaluedisplay",
@@ -30764,6 +30764,39 @@
       "source_location": "L5"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_event_validation",
+      "label": "event-validation.mjs",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "insert-ui.mjs",
+      "file_type": "code",
+      "norm_label": "event-validation.mjs",
+      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_event_validation_forbidden_manual_edit_text_chars",
+      "label": "FORBIDDEN_MANUAL_EDIT_TEXT_CHARS",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "insert-ui.mjs",
+      "file_type": "code",
+      "norm_label": "forbidden_manual_edit_text_chars",
+      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
+      "source_location": "L17"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_event_validation_insert_positions",
+      "label": "INSERT_POSITIONS",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "insert-ui.mjs",
+      "file_type": "code",
+      "norm_label": "insert_positions",
+      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
+      "source_location": "L16"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_insert_ui",
       "label": "insert-ui.mjs",
       "_origin": "ast",
@@ -30806,6 +30839,39 @@
       "norm_label": "placeholder_min_width",
       "source_file": ".claude/skills/impeccable/scripts/live/insert-ui.mjs",
       "source_location": "L8"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_vocabulary",
+      "label": "vocabulary.mjs",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "insert-ui.mjs",
+      "file_type": "code",
+      "norm_label": "vocabulary.mjs",
+      "source_file": ".claude/skills/impeccable/scripts/live/vocabulary.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_vocabulary_live_commands",
+      "label": "LIVE_COMMANDS",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "insert-ui.mjs",
+      "file_type": "code",
+      "norm_label": "live_commands",
+      "source_file": ".claude/skills/impeccable/scripts/live/vocabulary.mjs",
+      "source_location": "L20"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_vocabulary_visual_actions",
+      "label": "VISUAL_ACTIONS",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "insert-ui.mjs",
+      "file_type": "code",
+      "norm_label": "visual_actions",
+      "source_file": ".claude/skills/impeccable/scripts/live/vocabulary.mjs",
+      "source_location": "L36"
     },
     {
       "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad2b_donde_estan_mis_gafas",
@@ -33222,6 +33288,18 @@
       "source_location": "L7"
     },
     {
+      "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_precedente_real_el_camino_de_arlet_confirmado_por_angel_2026_09_14",
+      "label": "Precedente real: el camino de Arlet (confirmado por Angel, 2026-09-14)",
+      "_origin": "ast",
+      "community": 217,
+      "community_name": "Ideas de TFM: sistemas inteligentes aplicados a energ\u00edas renovables",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "precedente real: el camino de arlet (confirmado por angel, 2026-09-14)",
+      "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
+      "source_location": "L768"
+    },
+    {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_qu\u00e9_tanto_puede_ayudar_claude_code_en_este_tfm_evaluaci\u00f3n_honesta",
       "label": "Qu\u00e9 tanto puede ayudar Claude Code en este TFM (evaluaci\u00f3n honesta)",
       "_origin": "ast",
@@ -35136,72 +35214,6 @@
       "norm_label": "valid_commands",
       "source_file": ".claude/skills/impeccable/scripts/pin.mjs",
       "source_location": "L29"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_event_validation",
-      "label": "event-validation.mjs",
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "event-validation.mjs",
-      "file_type": "code",
-      "norm_label": "event-validation.mjs",
-      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
-      "source_location": "L1"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_event_validation_forbidden_manual_edit_text_chars",
-      "label": "FORBIDDEN_MANUAL_EDIT_TEXT_CHARS",
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "event-validation.mjs",
-      "file_type": "code",
-      "norm_label": "forbidden_manual_edit_text_chars",
-      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
-      "source_location": "L17"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_event_validation_insert_positions",
-      "label": "INSERT_POSITIONS",
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "event-validation.mjs",
-      "file_type": "code",
-      "norm_label": "insert_positions",
-      "source_file": ".claude/skills/impeccable/scripts/live/event-validation.mjs",
-      "source_location": "L16"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_vocabulary",
-      "label": "vocabulary.mjs",
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "event-validation.mjs",
-      "file_type": "code",
-      "norm_label": "vocabulary.mjs",
-      "source_file": ".claude/skills/impeccable/scripts/live/vocabulary.mjs",
-      "source_location": "L1"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_vocabulary_live_commands",
-      "label": "LIVE_COMMANDS",
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "event-validation.mjs",
-      "file_type": "code",
-      "norm_label": "live_commands",
-      "source_file": ".claude/skills/impeccable/scripts/live/vocabulary.mjs",
-      "source_location": "L20"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_vocabulary_visual_actions",
-      "label": "VISUAL_ACTIONS",
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "event-validation.mjs",
-      "file_type": "code",
-      "norm_label": "visual_actions",
-      "source_file": ".claude/skills/impeccable/scripts/live/vocabulary.mjs",
-      "source_location": "L36"
     },
     {
       "id": "recursos_generales_herramientas_ia_vercel_web_interface_guidelines",
@@ -110054,6 +110066,17 @@
       "weight": 1.0
     },
     {
+      "source": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_empleabilidad_siendo_extracomunitario_networks_frente_a_energ\u00eda_2026_09_14",
+      "target": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_precedente_real_el_camino_de_arlet_confirmado_por_angel_2026_09_14",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
+      "source_location": "L768",
+      "weight": 1.0
+    },
+    {
       "source": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_ideas_de_tfm_sistemas_inteligentes_aplicados_a_energ\u00edas_renovables",
       "target": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_revisi\u00f3n_2026_09_14_segunda_pasada_verificaci\u00f3n_de_factibilidad",
       "relation": "contains",
@@ -116010,5 +116033,5 @@
       "source_file": "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad6a_como-se-va-a-goya_interactivo.html"
     }
   ],
-  "built_at_commit": "eda34adadc5ee49f15c5219f5c0daf5701b168b7"
+  "built_at_commit": "efc22e2435193858cb4d65ba081d4356d0ec7688"
 }
