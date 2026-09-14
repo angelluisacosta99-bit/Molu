@@ -195,7 +195,8 @@ existe.
 gateway de red de este entorno (`connect_rejected`, política de la
 organización). No es un fallo de REData. Para tocar los datos desde una
 sesión de Claude Code hay que **autorizar `apidatos.ree.es`** junto con
-`numpy.org` y `pandas.pydata.org` (ver entrada anterior). Alternativa
+`numpy.org` y `pandas.pydata.org` (ver la entrada del 2026-09-13 en
+`lluvia-de-ideas.md`). Alternativa
 sin depender de eso: descargar los datos desde VS Code en la máquina de
 Angel, que es donde el plan ya dice que corre el código pesado.
 
@@ -278,8 +279,9 @@ literatura verificada:
   Renewable Forecasting Accuracy in Power System Operation". *IEEE
   Transactions on Power Systems*, 39(2), 4561-4573.**
   DOI `10.1109/tpwrs.2023.3317534` (metadatos verificados con Scite).
-  El título es, literalmente, la pregunta de investigación que se iba a
-  proponer. Además deriva **fórmulas analíticas de sensibilidad** del
+  Su título enuncia esa misma pregunta de investigación — no con las
+  palabras exactas del borrador, pero sí el mismo problema, y publicado
+  en una revista de primer nivel del área. Además deriva **fórmulas analíticas de sensibilidad** del
   coste operativo al error, y cataloga explícitamente la *perturbación
   numérica* — el método del borrador — como el enfoque previo que ellos
   superan.
@@ -481,7 +483,7 @@ argumento).
   sobre arquitecturas multiagente, mencionando la línea de energía de
   BISITE y la posible Beca de Colaboración en Departamentos. Sin
   respuesta aún a la fecha de este registro.
-- Ver también `master-sistemas-inteligentes/admision-y-becas/becas-y-tramites-2026-2027.md`
+- Ver también `../admision-y-becas/becas-y-tramites-2026-2027.md`
   para el resto de correspondencia con la USAL (mastersi@usal.es,
   bintmaster@usal.es, rrii@usal.es) y el contexto de la matrícula
   condicionada/apostilla, que también condiciona la Beca de
@@ -676,7 +678,7 @@ dentro del ámbito de redes).
 Angel preguntó, sabiendo que le gusta más la energía, en cuál de los dos
 institutos hay más posibilidades reales de contrato, beca o prácticas
 **siendo cubano**. Lo que sigue es lo verificado en esa sesión. El punto
-de partida está en `admision-y-becas/becas-y-tramites-2026-2027.md`:
+de partida está en `../admision-y-becas/becas-y-tramites-2026-2027.md`:
 nacionalidad cubana, formación de ingeniería en RUT-MIIT (Moscú),
 matrícula en MUSI condicionada a la apostilla del título.
 
@@ -732,16 +734,22 @@ Cuatro hechos verificados que cambian el cálculo:
    jurídicamente más fáciles que existen en España. Aplica a los dos
    institutos por igual, pero solo sirve si hay puesto.
 4. **Tras titularse hay una autorización de residencia para búsqueda de
-   empleo de hasta 12 meses**, no renovable. Se pide entre 60 días
-   antes y 90 días después de terminar. Dos avisos importantes:
-   **durante ese año no se puede trabajar**, y hay que acreditar medios
-   económicos para los doce meses (en torno al 100 % del IPREM
-   mensual). Es un colchón para buscar, no una solución.
+   empleo de 24 meses improrrogables** (DA 17.ª de la Ley 14/2013,
+   ampliada de 12 a 24 por la Ley 28/2022; **la cifra de 12 meses es la
+   redacción derogada de 2018, que muchas gestorías siguen
+   publicando**). Se pide en los 60 días naturales previos a la
+   expiración de la autorización de estudios, o en los 90 posteriores
+   con riesgo de procedimiento sancionador. **No habilita por sí sola a
+   trabajar**, pero el RD 316/2026 habilita provisionalmente en cuanto
+   se admite a trámite la solicitud de cambio a residencia y trabajo.
+   Detalle completo y fuentes en
+   `../admision-y-becas/becas-y-tramites-2026-2027.md`.
 
 ### Conclusión
 
-Para **contrato**, Networks gana con claridad: idioma inglés, plantilla
-un tercio extranjera, plazas asalariadas en vez de becas, contratación
+Para **contrato**, Networks gana con claridad: idioma inglés, 19
+nacionalidades sobre unas 56 personas, plazas asalariadas en vez de
+becas, contratación
 internacional habitual, y una plaza abierta justo en IA para 6G. Para
 **volumen bruto de plantilla**, gana Energía, pero en áreas que no son
 las de Angel.
@@ -760,10 +768,13 @@ energético dentro del dominio de redes.
   desplazamiento. No comprobado ninguno de los dos puntos.
 - Plazas abiertas actuales en IMDEA Energía con perfil computacional.
 - La cuantía exacta del IPREM vigente para el requisito de medios
-  económicos del permiso de búsqueda de empleo.
+  económicos del permiso de búsqueda de empleo, **calculada sobre sus
+  24 meses**, no sobre 12.
 - `networks.imdea.org`, `energia.imdea.org` y `jobs.energy.imdea.org`
   siguen bloqueados por la política de red del entorno. Todo lo anterior
-  se obtuvo por búsqueda indirecta.
+  se obtuvo por búsqueda indirecta. **La lista completa y canónica de
+  dominios a autorizar está en la entrada del 2026-09-14 de
+  `lluvia-de-ideas.md`** — no mantener copias parciales aquí.
 
 ### Precedente real: el camino de Arlet (confirmado por Angel, 2026-09-14)
 
@@ -781,10 +792,10 @@ motivos:
 2. **Es el desenlace bueno del problema de extranjería.** Quien sale del
    máster con contrato firmado no necesita la autorización de búsqueda
    de empleo — ese permiso es la red de seguridad para quien termina sin
-   oferta, no el objetivo. Y es, además, el trámite cuya duración quedó
-   sin aclarar (ver `admision-y-becas/becas-y-tramites-2026-2027.md`).
-   Siguiendo el camino de Arlet, esa duda pierde casi toda su
-   importancia práctica.
+   oferta, no el objetivo. Su duración quedó verificada en **24 meses
+   improrrogables** (ver `../admision-y-becas/becas-y-tramites-2026-2027.md`),
+   lo que da bastante margen; aun así, siguiendo el camino de Arlet ese
+   permiso no llega a hacer falta.
 3. **Arlet conoce el procedimiento por dentro**: cómo se enteró de la
    plaza, en qué mes se convoca, qué pesó en la selección, y cómo se
    resolvió el cambio de situación de estudios a trabajo. Preguntárselo

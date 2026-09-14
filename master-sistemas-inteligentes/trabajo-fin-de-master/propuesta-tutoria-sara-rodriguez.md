@@ -8,10 +8,10 @@ motivos, en detalle, en `ideas-tfm-energias-renovables.md`, sección
 "Revisión 2026-09-14 (tercera pasada)". Resumen:
 
 1. **La afirmación de novedad es falsa.** Yin, Lei y Feng publicaron en
-   2024 en *IEEE Transactions on Power Systems* un artículo titulado
-   literalmente "Assessing the Value of Renewable Forecasting Accuracy
-   in Power System Operation". La pregunta de investigación de este
-   borrador es el título de ese paper.
+   2024 en *IEEE Transactions on Power Systems* "Assessing the Value of
+   Renewable Forecasting Accuracy in Power System Operation", un
+   artículo cuyo título enuncia la misma pregunta de investigación que
+   este borrador presentaba como hueco.
 2. **El "barrido controlado de error" es metodológicamente circular** si
    se hace con ruido sintético, y además ya está catalogado en la
    literatura como el método *anterior* al que trabajos de 2024 superan.
@@ -207,5 +207,8 @@ igualmente con la línea de energía y eficiencia energética de BISITE.
   presentación honesta, no un argumento; el peso lo lleva la propuesta.
 - Las referencias de arXiv del estado del arte (benchmarks de ERCOT,
   WindFM, etc.) están sin verificar en metadatos completos — por eso
-  aquí solo se citan las cuatro comprobadas. Verificar el resto antes de
-  llevarlas a `main.tex`.
+  aquí solo se citan las tres verificadas con Scite (Arcos-Avilés 2017 y
+  2018, y Rodríguez González 2026) más FETS, **cuyos metadatos están
+  incompletos**: sin DOI, sin volumen y sin lista de autores. Verificar
+  FETS y el resto antes de llevarlas a `main.tex`, y no darlo por
+  comprobado mientras tanto.

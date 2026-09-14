@@ -1851,8 +1851,8 @@ posterior, nunca por la pasada que introducía la afirmación:
    temporales. Ya había varias evaluaciones equivalentes de 2026.
 3. Se reformuló como "medir cuánta precisión de pronóstico se traslada
    a la decisión". Yin, Lei y Feng publicaron en 2024 en *IEEE
-   Transactions on Power Systems* un artículo **titulado literalmente
-   así**, y el marco teórico del campo (*decision-focused learning* /
+   Transactions on Power Systems* un artículo **cuyo título enuncia esa
+   misma pregunta**, y el marco teórico del campo (*decision-focused learning* /
    Smart Predict-then-Optimize, Elmachtoub y Grigas, *Management
    Science*, 2022, 905 citas) llevaba años existiendo sin que ninguna
    de las tres pasadas lo mencionara.

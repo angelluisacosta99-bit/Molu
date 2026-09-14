@@ -348,7 +348,13 @@ Muchísimas gestorías y blogs de extranjería siguen publicando la cifra
 antigua. Ese es exactamente el origen del error de la respuesta
 anterior.
 
-### Detalles del trámite (Hoja informativa 20 del Ministerio de Inclusión)
+### Detalles del trámite
+
+Fuente: **Hoja informativa 20 del Ministerio de Inclusión**
+("Autorización de residencia para búsqueda de empleo o inicio de
+proyecto empresarial"), leída el 2026-09-14 **vía el conector Firecrawl**
+—`inclusion.gob.es` está bloqueado desde este entorno—, no desde un
+resumen de terceros.
 
 - **Plazo de solicitud:** los **60 días naturales previos** a la
   expiración de la autorización de estancia por estudios. También cabe
@@ -373,7 +379,9 @@ correspondiente" de entre las de la LO 4/2000 o la Ley 14/2013. Si el
 propio permiso habilitara a trabajar, ese paso no haría falta.
 
 **Mejora asociada del RD 316/2026** (de 14 de abril, en vigor desde el
-día siguiente a su publicación): admitida a trámite esa solicitud de
+día siguiente a su publicación). **Atención: este punto concreto sí
+procede de resúmenes de terceros**, no del texto del BOE leído en
+directo — confirmarlo antes de apoyarse en él para una decisión: admitida a trámite esa solicitud de
 cambio, la persona queda **habilitada provisionalmente para trabajar
 por cuenta ajena**, para que la demora administrativa no frustre la
 oferta. Elimina el tiempo muerto que antes existía entre firmar y poder
@@ -391,7 +399,9 @@ la incorrecta.
 
 **Lo que sí funcionó: el conector MCP de Firecrawl**, que descarga desde
 su propia infraestructura y por tanto **no pasa por el proxy de salida
-de este contenedor**. Llegó al BOE sin problema.
+de este contenedor**. Alcanzó tanto el texto consolidado del BOE (Ley
+14/2013 y RD 1155/2024) como la Hoja informativa 20 de
+`inclusion.gob.es`.
 
 **Lección operativa, aplicable a cualquier tarea futura:** cuando un
 dominio esté bloqueado por `EGRESS_BLOCKED`, no darse por vencido ni
@@ -412,6 +422,7 @@ máster no hay oferta cerrada: son dos años para buscar, no uno.
 ### Dominios a autorizar en el entorno
 
 `boe.es` e `inclusion.gob.es`, para verificar normativa en fuente
-primaria sin depender de Firecrawl. Se suman a los ya pendientes
-(`networks.imdea.org`, `energia.imdea.org`, `apidatos.ree.es`,
-`numpy.org`, `pandas.pydata.org`).
+primaria sin depender de Firecrawl. **La lista completa y canónica está
+en la entrada del 2026-09-14 de
+`../trabajo-fin-de-master/lluvia-de-ideas.md`** — mantenerla solo ahí,
+para que no haya copias parciales que se desincronicen.
