@@ -1831,3 +1831,67 @@ alarga estas sagas a 3+ rondas. Aplica en particular a reglas de
 seguridad (como la (5) aquí): un descuido de propagación en ellas no es
 solo un desprolijidad de estilo, es una ventana real por la que puede
 colarse el daño que la regla existía para prevenir.
+
+---
+
+## 2026-09-14 — Lección: tres rondas declarando "hueco" sobre trabajo ya publicado
+
+Entrada creada por la regla de `CLAUDE.md` "3+ rondas de revisión sobre
+lo mismo → guardar la lección". No es un hook, y no encaja en ninguna
+skill existente, así que va aquí.
+
+**Qué pasó.** Al perfilar el tema del TFM, la misma familia de error se
+repitió tres veces seguidas, cada una detectada solo por una revisión
+posterior, nunca por la pasada que introducía la afirmación:
+
+1. Se propuso un módulo de decisión difuso para gestión de
+   almacenamiento como aportación propia. Ya estaba publicado por
+   Arcos-Avilés et al. en 2017 (*Applied Energy*) y 2018 (*IEEE TSG*).
+2. Se reformuló como comparativa de modelos fundacionales de series
+   temporales. Ya había varias evaluaciones equivalentes de 2026.
+3. Se reformuló como "medir cuánta precisión de pronóstico se traslada
+   a la decisión". Yin, Lei y Feng publicaron en 2024 en *IEEE
+   Transactions on Power Systems* un artículo **titulado literalmente
+   así**, y el marco teórico del campo (*decision-focused learning* /
+   Smart Predict-then-Optimize, Elmachtoub y Grigas, *Management
+   Science*, 2022, 905 citas) llevaba años existiendo sin que ninguna
+   de las tres pasadas lo mencionara.
+
+**El patrón concreto.** En las tres, la afirmación de novedad se
+construyó por ausencia: "no he encontrado trabajo que...". Se buscó lo
+que se iba a proponer, no se buscó **cómo se llama el campo que ya
+estudia eso**. Una búsqueda de "barrido controlado de error en
+pronóstico para gestión de baterías" no devuelve DFL, porque DFL es el
+nombre que la literatura le puso al problema; hay que llegar al nombre
+para encontrarlo.
+
+**La lección, para tareas futuras de estado del arte.** No dar por
+buena ninguna afirmación de novedad basada en no haber encontrado algo.
+Antes de escribir "no existe trabajo que...", hacen falta dos pasos que
+en las tres pasadas se saltaron:
+
+1. **Nombrar el campo, no el método.** Preguntarse "¿qué disciplina
+   estudiaría esto y con qué término técnico lo llamaría?" y buscar ese
+   término. Si no se sabe el término, eso mismo es la señal de que aún
+   no se conoce el campo lo bastante para declarar un hueco en él.
+2. **Ir a los trabajos que citan al artículo fundacional.** Una vez
+   localizado el marco (aquí, Elmachtoub y Grigas), revisar quién lo
+   cita dentro del dominio de aplicación concreto. Es la vía más
+   directa para ver si el cruce que se quiere proponer ya está hecho.
+
+Formulación segura mientras no se completen esos pasos: "las búsquedas
+realizadas no lo encontraron", nunca "no existe". La diferencia importa
+mucho si el texto va a leerlo un doctor del área.
+
+**Aviso operativo de la misma sesión — Scite ignora parámetros mal
+nombrados en silencio.** `mcp__Scite__search_literature` usa `term`
+(y `title`, `author`, `dois`...), **no** `query`. Al pasarle `query`,
+no da error: ignora el parámetro, navega el corpus entero y devuelve
+resultados arbitrarios con aspecto perfectamente normal (en esta sesión
+salieron artículos sobre sedimentos y astronomía babilónica para una
+consulta sobre redes móviles). El síntoma para detectarlo es que el
+campo `query` vuelve vacío en la respuesta y `total` sale idéntico
+(16.800.000) sea cual sea la consulta. Dado que `CLAUDE.md` manda usar
+Scite precisamente para verificar citas, una llamada mal formada da
+falsa sensación de haber verificado: comprobar siempre que el `query`
+devuelto coincide con lo que se pidió.

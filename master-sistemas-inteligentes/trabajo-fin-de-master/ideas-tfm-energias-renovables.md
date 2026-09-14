@@ -584,3 +584,89 @@ vigente, las líneas de investigación exactas y los correos de contacto
 hace falta autorizar `energia.imdea.org` y `jobs.energy.imdea.org` (y,
 según el instituto que sea, `networks.imdea.org` o
 `software.imdea.org`) en la configuración de red del entorno.
+
+## Camino D: pivotar a redes móviles (candidato, NO verificado del todo)
+
+Surge el 2026-09-14 al confirmar Angel que **Arlet trabaja en IMDEA
+Networks**, no en IMDEA Energía. Eso invalida el razonamiento de la
+sección anterior (elegir tema de energía para gustar a IMDEA) y abre
+una alternativa que, sobre el papel, encaja mejor con cuatro cosas a la
+vez.
+
+### Por qué encaja
+
+1. **Es el dominio propio de Angel.** Su formación es ingeniería de
+   telecomunicaciones (ver la carpeta `telecomunicaciones/` de este
+   repo, con especialidad ferroviaria). En un máster de Sistemas
+   Inteligentes, llegar con dominio de telecomunicaciones es un
+   diferencial real frente a un tema de energía donde parte de cero.
+2. **IMDEA Networks.** Lidera los proyectos **MAP-6G** (analítica con
+   preservación de privacidad para 6G), **RISC-6G** y **TUCAN6-CM**,
+   con entregables declarados en "inteligencia de red, **eficiencia
+   energética**, localización y analítica con privacidad", en
+   colaboración con Telefónica, NEC Europe, BluSpecs y PI Lighting. La
+   eficiencia energética de red es literalmente una de sus áreas.
+3. **Reaprovecha todo el trabajo teórico ya hecho.** El marco DFL/SPO,
+   Chronos-2 y los modelos fundacionales, y la pregunta
+   precisión-frente-a-decisión siguen valiendo tal cual. No se tira
+   nada de las tres revisiones anteriores.
+4. **El problema de decisión es mucho más simple que el de la
+   batería.** Encender/apagar una celda es binario: no hay degradación
+   del activo, ni rendimiento de ida y vuelta, ni precios de mercado,
+   ni token de ESIOS. Eso reduce mucho el desajuste con
+   `preparacion/plan-de-entrenamiento.md`, que no tiene fase de
+   optimización: un ILP o una política de umbral es abordable; un MPC
+   con dinámica de batería, no tanto.
+
+### Lo que se comprobó (2026-09-14) y lo que NO
+
+**Comprobado — el problema clásico está saturado.** "Predicción de
+tráfico + apagado de estaciones base" tiene al menos diez trabajos
+entre 2017 y 2026 en revistas fuertes (IEEE/ACM Transactions on
+Networking, IEEE Transactions on Communications, IEEE TNSE, IEEE
+TGCN). Proponer eso sin más sería repetir exactamente el error de las
+tres revisiones anteriores. **Todos ellos**, por lo que se ve en sus
+resúmenes, siguen el patrón de dos etapas (predecir, luego decidir) y
+evalúan ahorro de energía dando el pronóstico por dado.
+
+**Comprobado — DFL/SPO está llegando a redes, pero muy recientemente.**
+Song, Wang y Chin publicaron en 2026 en *IEEE Networking Letters* un
+tutorial de SPO para redes IoT cuyo propio resumen afirma que "a día de
+hoy no hay tutoriales ni trabajos específicos de IoT centrados en el
+marco SPO". Metadatos verificados con Scite. Hay además trabajo de DFL
+robusto para sistemas computacionales y de red (3D-Learning,
+arXiv:2602.02943, 2026), pero aplicado a servicio de LLM en nube,
+respuesta a demanda de centros de datos y planificación de carga en el
+borde — **no** a ahorro energético en la red de acceso radio.
+
+**Comprobado — el lado de energía está aún más saturado de lo que
+creíamos.** Búsquedas nuevas devuelven DFL aplicado a baterías
+(*IEEE TSG* 2025), sistemas multienergía (*IEEE TSG* 2026), bombeo
+hidráulico (*IEEE TSTE* 2026), PV-batería (*Journal of Energy Storage*
+2026), y hasta ajuste fino con decisión de modelos fundacionales de
+series temporales (Beichter et al., 2025). Esto **refuerza** el
+veredicto de la tercera revisión, no lo matiza.
+
+**NO comprobado, y es lo que decide si el camino D vale:** si alguien
+ya ha aplicado DFL/SPO —o simplemente la pregunta del valor de decisión
+del pronóstico— al apagado de estaciones base o al ahorro energético en
+la red de acceso. Las búsquedas hechas no lo encontraron, **pero no
+encontrarlo no es lo mismo que demostrar que no existe**: ese
+razonamiento es justo el que tumbó el primer borrador. Antes de que
+Angel escriba nada a nadie con este tema hace falta una verificación
+sistemática dedicada (varios conectores, varias formulaciones de la
+consulta, revisión de los trabajos que citan a Elmachtoub y Grigas
+dentro del ámbito de redes).
+
+### Pendiente además
+
+- Confirmar el grupo concreto de IMDEA Networks y si alguien allí
+  trabaja en eficiencia energética de red con aprendizaje automático.
+  `networks.imdea.org` no se ha podido leer directamente en esta
+  sesión (falta autorizar el dominio en la política de red).
+- Buscar datos abiertos de tráfico móvil. El candidato habitual en la
+  literatura es el conjunto de Telecom Italia (Milán/Trentino) — **sin
+  verificar** su disponibilidad y licencia actuales.
+- Replantear quién sería el tutor: la lista actual de
+  `## Tutores de TFM` se hizo para un tema de energía. Si el tema pasa
+  a redes, hay que rehacerla.
