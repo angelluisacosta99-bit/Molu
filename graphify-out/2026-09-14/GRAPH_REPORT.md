@@ -1,7 +1,7 @@
 # Graph Report - Molu  (2026-09-14)
 
 ## Corpus Check
-- 270 files · ~1,349,775 words
+- 270 files · ~1,349,915 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `c3d61c5f`
+- Built from commit: `cd04a66c`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -1084,8 +1084,10 @@ Nodes (7): Consecuencia práctica, Cómo se resolvió, y la lección, Detalles d
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `readBuffer()` connect `manual-edit-routes.mjs` to `live-manual-edit-evidence.mjs`, `manual-apply.mjs`, `live-commit-manual-edits.mjs`, `live-wrap.mjs`, `live-accept.mjs`?**
+  _High betweenness centrality (0.002) - this node is a cross-community bridge._
+- **Why does `countByPage()` connect `manual-edit-routes.mjs` to `live-commit-manual-edits.mjs`, `live-server.mjs`?**
   _High betweenness centrality (0.001) - this node is a cross-community bridge._
-- **Why does `layoutFlowChildren()` connect `live-browser.js` to `createLiveBrowserDomHelpers`?**
+- **Why does `createManualApplyController()` connect `manual-apply.mjs` to `live-server.mjs`?**
   _High betweenness centrality (0.001) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `initGlobalBar()` (e.g. with `hideAgentPollTooltip()` and `onDetectMessage()`) actually correct?**
   _`initGlobalBar()` has 7 INFERRED edges - model-reasoned connections that need verification._
@@ -1095,5 +1097,3 @@ _Questions this graph is uniquely positioned to answer:_
   _Cohesion score 0.02863984674329502 - nodes in this community are weakly interconnected._
 - **Should `checks.mjs` be split into smaller, more focused modules?**
   _Cohesion score 0.04078624078624079 - nodes in this community are weakly interconnected._
-- **Should `index.mjs` be split into smaller, more focused modules?**
-  _Cohesion score 0.06142410015649452 - nodes in this community are weakly interconnected._
