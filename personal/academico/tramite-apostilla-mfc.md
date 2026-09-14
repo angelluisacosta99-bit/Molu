@@ -102,6 +102,16 @@ conversación de Claude Code.
     37-01.** Tres correos y tres personas distintas sin respuesta
     sustantiva — **puede que llamar directamente sea más rápido que
     seguir insistiendo por correo.**
+  - **2026-09-14 — Correo enviado a Alexander Evgenievich**
+    (`vanshin.ae@yandex.ru`), con el PDF de la respuesta oficial de
+    ГБУ МФЦ города Москвы (№ 02-12-5443/26) adjunto. Le resume ambos
+    дела con todo el detalle (№ 7638524892 aprobado vs. № 7638974873
+    rechazado), la contradicción con la referencia № 017/9760, las
+    tres respuestas sin resolver de fondo de `spravka@rut-miit.ru`, y
+    que las llamadas al doб. 37-01 no obtuvieron respuesta. Le pide
+    que vaya en persona al MFC de RUT MIIT, como se ofreció el
+    2026-09-03. **A la espera de que Alexander confirme si puede ir y
+    qué averigua.**
 - **2026-09-03** — Alexander Evgenievich (RUT MIIT) confirmó que la
   petición del MFC probablemente **se perdió dentro de la burocracia
   interna de RUT MIIT** (no fue el MFC quien falló). Pasó el contacto de
