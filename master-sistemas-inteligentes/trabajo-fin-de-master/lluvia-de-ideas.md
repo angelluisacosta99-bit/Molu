@@ -24,6 +24,7 @@ supuesto y no lo estaba:
 | `numpy.org`, `pandas.pydata.org` | Completar la teoría de la Lección 1 (pendiente desde el 13/09) |
 | `apidatos.ree.es`, `www.ree.es` | API REData, si el TFM sigue por energía |
 | `networks.imdea.org`, `energia.imdea.org`, `jobs.energy.imdea.org` | Líneas de investigación y convocatorias reales de IMDEA |
+| `software.imdea.org` | **Solo si** el instituto relevante pasara a ser IMDEA Software. Hoy no lo es: Arlet está en Networks |
 | `boe.es`, `inclusion.gob.es` | Normativa de extranjería en fuente primaria |
 
 **Si alguno sigue bloqueado, no recurrir a fuentes secundarias:** usar
@@ -94,6 +95,10 @@ que va marcado aparte**:
   semanales** (RD 629/2022).
 - El permiso de investigador de la Ley 14/2013 **no aplica la situación
   nacional de empleo**.
+- El permiso de búsqueda de empleo **no habilita por sí solo a
+  trabajar**: al encontrar oferta hay que pedir la autorización
+  correspondiente.
+
 **Este NO está verificado, pese al título de la sección:**
 
 - El RD 316/2026 habilitaría **provisionalmente para trabajar** en

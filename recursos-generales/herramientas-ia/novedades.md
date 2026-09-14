@@ -1904,8 +1904,9 @@ devuelto coincide con lo que se pidió.
 Amplía la entrada de arriba sobre propagar una corrección a sus reglas
 hermanas. Se registra por la regla de `CLAUDE.md` de "3+ rondas sobre lo
 mismo": el PR #113 necesitó **tres rondas** de revisión→corrección→
-revisión y en las tres apareció **la misma familia de fallo**, nunca
-hallazgos nuevos e independientes.
+revisión para que esa familia de fallo dejara de aparecer, y en las dos
+primeras fue **siempre la misma**, nunca hallazgos nuevos e
+independientes.
 
 **La saga.** Se verificó que la residencia para búsqueda de empleo tras
 el máster son 24 meses y no 12 (DA 17.ª de la Ley 14/2013, ampliada por
@@ -1920,7 +1921,17 @@ y se dio el trabajo por terminado.
   —que ni siquiera se había abierto— conservaba otra afirmación de la
   misma tanda sin propagar, y presentaba como "verificado" un dato que
   el archivo hermano marcaba explícitamente como no confirmado.
-- **Ronda 3** fue la que salió limpia.
+- **Ronda 3** confirmó por fin la propagación completa... y encontró
+  que esta misma entrada, escrita en el commit que corregía la ronda 2,
+  **daba por hecho que la ronda 3 había salido limpia cuando todavía no
+  se había lanzado**. Es decir: el texto que existe para no dar nada por
+  verificado sin comprobarlo cometía exactamente ese error. Se corrigió
+  al cerrar esa ronda, y se deja aquí escrito porque es la parte más
+  instructiva de la saga.
+
+**Corolario, por si no fuera obvio:** no escribir el desenlace de una
+verificación en el mismo commit que la lanza. Si el texto va a decir
+"salió limpio", tiene que escribirse *después* de que salga limpio.
 
 **Lo nuevo, y lo que más importa:** el archivo que hay que revisar
 **primero** al propagar una corrección es el que la sesión mantiene como

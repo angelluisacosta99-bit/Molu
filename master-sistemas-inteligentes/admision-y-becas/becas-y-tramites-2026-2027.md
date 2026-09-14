@@ -112,7 +112,8 @@ impide primero.
 
 Confirma que esta convocatoria (Departamentos) remite al RD 1721/2007
 sin transcribirlo — sigue pendiente el punto 6 de la sección de acceso
-más abajo (leer el texto literal en boe.es).
+más abajo (leer el texto literal en boe.es, ya alcanzable vía
+Firecrawl).
 
 **Requisito adicional no registrado antes — aval del departamento**: la
 solicitud (Anexo II) exige un **proyecto de colaboración avalado por
@@ -303,9 +304,10 @@ este ciclo" — sin poder confirmarlo con certeza por el bloqueo de red.
 El único paso fiable que queda es escribir directamente a
 `becas.master@auip.org` preguntando si Salamanca participa este año.
 
-### Pendiente de verificar por acceso directo — boe.es sigue bloqueado en toda sesión probada (punto 6)
+### Pendiente de rematar — el literal del art. 4.1.d) ya es alcanzable vía Firecrawl (punto 6)
 
-6. Texto literal del art. 4.1.d) del RD 1721/2007: **sigue bloqueado**,
+6. Texto literal del art. 4.1.d) del RD 1721/2007: **sigue bloqueado por
+   acceso directo**,
    confirmado de nuevo en sesión del 2026-09-02 — tanto `www.boe.es`
    (ruta directa `/buscar/act.php` y el permalink ELI `/eli/es/rd/2007/12/21/1721/con`)
    como `noticias.juridicas.com` dieron `EGRESS_BLOCKED`. Con esta ya

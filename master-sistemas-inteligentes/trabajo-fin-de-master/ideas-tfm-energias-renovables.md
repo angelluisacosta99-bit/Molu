@@ -595,10 +595,7 @@ indirecta, no leyendo sus páginas. Para verificar la convocatoria
 vigente, las líneas de investigación exactas y los correos de contacto
 hace falta autorizar los dominios de IMDEA en la configuración de red
 del entorno. **La lista canónica está en la entrada del 2026-09-14 de
-`lluvia-de-ideas.md`** — no mantener copias parciales aquí. (Nota: a
-esa lista habría que añadir `software.imdea.org` solo si en algún
-momento el instituto relevante pasara a ser IMDEA Software; hoy no lo
-es, Arlet está en Networks.)
+`lluvia-de-ideas.md`** — no mantener copias parciales aquí.
 
 ## Camino D: pivotar a redes móviles (candidato, NO verificado del todo)
 
@@ -683,7 +680,8 @@ dentro del ámbito de redes).
   literatura es el conjunto de Telecom Italia (Milán/Trentino) — **sin
   verificar** su disponibilidad y licencia actuales.
 - Replantear quién sería el tutor: la lista actual de
-  `## Tutores de TFM` se hizo para un tema de energía. Si el tema pasa
+  `## Tutores de TFM — candidatos concretos` se hizo para un tema de
+  energía. Si el tema pasa
   a redes, hay que rehacerla.
 
 ## Empleabilidad siendo extracomunitario: Networks frente a Energía (2026-09-14)
