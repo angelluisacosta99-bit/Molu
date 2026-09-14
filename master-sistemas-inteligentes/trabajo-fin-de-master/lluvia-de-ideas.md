@@ -31,7 +31,8 @@ supuesto y no lo estaba:
 el conector MCP de **Firecrawl**, que descarga desde su propia
 infraestructura y no pasa por el proxy de salida del contenedor. Esto
 no es teoría — el 14/09 resolvió así una consulta al BOE que `WebFetch`
-y `curl` no pudieron hacer, y evitó dar por buena una cifra derogada.
+y `curl` no pudieron hacer, y **corrigió** una cifra derogada que ya se
+había dado por buena.
 Ver la lección completa en
 `../admision-y-becas/becas-y-tramites-2026-2027.md`.
 
@@ -117,7 +118,14 @@ Ministerio de Inclusión, alcanzados vía Firecrawl) **salvo el del RD
    para un tema de energía. Si el tema pasa a redes, **rehacerla**.
 4. `propuesta-tutoria-sara-rodriguez.md` está marcada **NO ENVIAR**. No
    resucitarla sin rehacerla entera.
-5. **No se ha enviado ninguna propuesta de tutoría a ningún profesor, y
+5. Confirmar el grupo concreto de IMDEA Networks y si alguien allí
+   trabaja en eficiencia energética de red con aprendizaje automático.
+6. Buscar datos abiertos de tráfico móvil: el candidato habitual es el
+   conjunto de Telecom Italia (Milán/Trentino), **sin verificar**
+   disponibilidad ni licencia actuales.
+7. El requisito de medios económicos del permiso de búsqueda de empleo:
+   cuantía del IPREM vigente **y** base de cálculo, ambas pendientes.
+8. **No se ha enviado ninguna propuesta de tutoría a ningún profesor, y
    no se envía sin que Angel lo pida explícitamente.** Ojo, esto **no**
    significa que no se haya escrito a nadie: el 12/09/2026 se envió un
    correo genérico a `bisite@usal.es` (verificado en Gmail el

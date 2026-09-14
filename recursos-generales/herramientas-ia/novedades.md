@@ -1903,10 +1903,11 @@ devuelto coincide con lo que se pidió.
 
 Amplía la entrada de arriba sobre propagar una corrección a sus reglas
 hermanas. Se registra por la regla de `CLAUDE.md` de "3+ rondas sobre lo
-mismo": el PR #113 necesitó **al menos cuatro rondas** de
-revisión→corrección→revisión, y en todas reapareció **la misma familia
-de fallo** — siempre acompañada, eso sí, de hallazgos nuevos e
-independientes.
+mismo": el PR #113 necesitó **cinco rondas** de
+revisión→corrección→revisión, y en casi todas reapareció **la misma
+familia de fallo** — siempre acompañada, eso sí, de hallazgos nuevos e
+independientes, y con la ronda 3 encontrando además un bloqueante de
+otra naturaleza.
 
 **La saga.** Se verificó que la residencia para búsqueda de empleo tras
 el máster son 24 meses y no 12 (DA 17.ª de la Ley 14/2013, ampliada por
@@ -1976,3 +1977,20 @@ De ahí, dos reglas más:
    sobre cuál parece más fiable: **ir a la fuente y mirarlo**. Aquí
    bastó una búsqueda en Gmail para cerrar una discusión que llevaba
    varias rondas latente.
+
+**Ronda 5, el caso más ilustrativo de toda la saga.** Una sección
+entera seguía abriendo con "pendiente de confirmar en cuál de los siete
+institutos IMDEA trabaja Arlet" cuando **el mismo archivo lo confirmaba
+cincuenta líneas más abajo** (Networks) y el archivo de traspaso lo daba
+por sabido. Lo grave no era la frase: de esa premisa ya falsada colgaban
+**treinta líneas** investigando el instituto equivocado y una
+*recomendación estratégica* construida sobre ella. De ahí, la sexta
+regla:
+
+6. Al confirmarse un hecho que hasta entonces era una incógnita, no
+   basta con escribir la confirmación donde toque: hay que **buscar qué
+   texto se escribió mientras la incógnita estaba abierta** y cerrarlo
+   — marcándolo como escenario descartado o borrándolo. Un análisis
+   hecho bajo una hipótesis que luego se cae no se corrige solo por que
+   la respuesta aparezca en otra sección; sigue ahí, leyéndose como
+   vigente.

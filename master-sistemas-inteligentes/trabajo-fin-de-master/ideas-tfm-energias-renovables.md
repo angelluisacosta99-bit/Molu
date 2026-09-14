@@ -203,7 +203,7 @@ la entrada del **2026-09-14** de `lluvia-de-ideas.md`). Alternativa
 sin depender de eso: descargar los datos desde VS Code en la máquina de
 Angel, que es donde el plan ya dice que corre el código pesado.
 
-### Sin GPU: confirmado que no hace falta (si se va por modelos fundacionales)
+### Sin GPU para inferencia zero-shot: confirmado (el barrido completo, no medido)
 
 Dato duro que resuelve la mayor duda de recursos: un benchmark de 2026
 evaluó Chronos-Bolt, Chronos-2, Moirai-2 y TinyTimeMixer sobre carga
@@ -394,10 +394,10 @@ esto: no dar por hecho ningún camino, preguntarle.
 
 | Recurso | Estado real |
 |---|---|
-| Generación renovable (API REData, `apidatos.ree.es`) | ✅ Libre, sin clave, histórico desde 2014 |
-| Precios de mercado (API ESIOS, `api.esios.ree.es`) | ⚠️ **Exige solicitar un token personal.** El borrador descartado decía "sin trámite" — era falso |
+| Generación renovable (API REData, `apidatos.ree.es`) | ✅ Libre, sin clave. Histórico **al menos** desde 2014 (los ejemplos oficiales llegan ahí; el inicio real de la serie sin confirmar) |
+| Precios de mercado (API ESIOS, `api.esios.ree.es`) | ⚠️ **Exige solicitar un token personal.** El borrador descartado ni siquiera contemplaba señal de precios — ver Fallo 4 |
 | Perfil de consumo / demanda | ❌ Ni siquiera estaba identificado en el borrador. Sin demanda que servir, una batería no tiene nada que decidir |
-| Cómputo | ⚠️ Chronos-2 son 119,5 M parámetros, licencia Apache-2.0, corre en CPU. Sin GPU **para inferencia zero-shot**; el barrido completo (N modelos × M horizontes × K configuraciones) **no está medido** — ver "Fallos menores" |
+| Cómputo | ⚠️ Chronos-2 son 119,5 M parámetros, licencia Apache-2.0, corre en CPU. Sin GPU **para inferencia zero-shot**; el barrido completo (N modelos × M horizontes × K configuraciones) **no está medido** — ver `### Fallos menores pero visibles` |
 | Optimización bajo incertidumbre (MPC/LP) + degradación de batería | ❌ Ver el desajuste con el plan de entrenamiento, abajo |
 
 **Dato que conviene no olvidar:** la propia Sara Rodríguez, en su
@@ -439,8 +439,11 @@ propuesta cerrada: "he leído su artículo de 2026 y el de Yin et al.
 — la fuerza está en haber leído el estado del arte, no en fingir
 novedad.
 
-**Recomendación dada a Angel:** C, y decidir entre A y B con lo que ella
-conteste. Un tutor con experiencia prefiere a alguien que llega con el
+**Recomendación dada a Angel el 2026-09-14, antes de que se abriera el
+camino D:** C, y decidir entre A y B con lo que ella conteste. **Léase
+junto a `## Camino D: pivotar a redes móviles (candidato, NO verificado
+del todo)`**, que cambió el peso relativo de las opciones.
+ Un tutor con experiencia prefiere a alguien que llega con el
 estado del arte leído y una pregunta afilada, antes que con una
 propuesta cerrada que va a tener que desmontar.
 
@@ -543,7 +546,8 @@ está a gusto allí, así que quizá convenga elegir un tema de TFM que
 además resulte atractivo a ese instituto de cara a un trabajo tras la
 graduación. Es un criterio legítimo y, de hecho, útil para desempatar
 entre los tres caminos de la sección `## Decisión pendiente: los tres
-caminos (abierta desde 2026-09-14)`.
+caminos (abierta desde 2026-09-14)` — y, de hecho, es el criterio del
+que sale el cuarto, el camino D.
 
 **Confirmado por Angel el 2026-09-14: Arlet trabaja en IMDEA
 Networks**, no en Energía — coherente con que su TFM fuera sobre Tor.
@@ -592,8 +596,9 @@ investigación. También ofrecen contratos de prácticas de un año
 Energía, el camino A (mapa de contingencias con DFL, que exige
 MPC/optimización) habría pasado de "el más ambicioso" a el más alineado
 con lo que ese instituto hace. Como está en **Networks**, este criterio
-empuja hacia otro tipo de tema — ver `## Camino D` más abajo, que es la
-vía que sí sale de aquí.
+empuja hacia otro tipo de tema — ver `## Camino D: pivotar a redes
+móviles (candidato, NO verificado del todo)` más abajo, que es la vía
+que sí sale de aquí.
 
 ### Limitación técnica de esta sesión
 
@@ -783,12 +788,17 @@ energético dentro del dominio de redes.
 
 ### Pendiente de verificar
 
-- Si las becas de prácticas de IMDEA Energía (350 h, hasta 2.500 €)
-  admiten extracomunitarios y si exigen convenio con la universidad de
+**Solo si el criterio volviera a IMDEA Energía** (hoy descartado, ver
+arriba):
+
+- Si sus becas de prácticas (350 h, hasta 2.500 €) admiten
+  extracomunitarios y si exigen convenio con la universidad de
   matrícula. **Salamanca está a ~2,5 h de Madrid**: unas prácticas
   curriculares exigirían convenio USAL-IMDEA y resolver el
   desplazamiento. No comprobado ninguno de los dos puntos.
 - Plazas abiertas actuales en IMDEA Energía con perfil computacional.
+
+**Vigentes:**
 - El requisito de medios económicos del permiso de búsqueda de empleo:
   **tanto la cuantía del IPREM vigente como la base de cálculo**. Que
   el permiso dure 24 meses no implica que haya que acreditar medios
