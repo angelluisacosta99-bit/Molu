@@ -7583,30 +7583,6 @@
       "source_location": "L7"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_session_store_createlivesessionstore_getreadablejournalpath",
-      "label": "getReadableJournalPath()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 196,
-      "community_name": "readLiveServerInfo",
-      "file_type": "code",
-      "norm_label": "getreadablejournalpath()",
-      "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
-      "source_location": "L22"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_session_store_createlivesessionstore_loadcachedorrebuild",
-      "label": "loadCachedOrRebuild()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 196,
-      "community_name": "readLiveServerInfo",
-      "file_type": "code",
-      "norm_label": "loadcachedorrebuild()",
-      "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
-      "source_location": "L13"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_status_fetchserverstatus",
       "label": "fetchServerStatus()",
       "_callable": true,
@@ -7653,306 +7629,6 @@
       "norm_label": "statuscli()",
       "source_file": ".claude/skills/impeccable/scripts/live-status.mjs",
       "source_location": "L25"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_clearmanualapplytransaction",
-      "label": "clearManualApplyTransaction()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "clearmanualapplytransaction()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L751"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_collectmanualapplyfiles",
-      "label": "collectManualApplyFiles()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "collectmanualapplyfiles()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L819"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller",
-      "label": "createManualApplyController()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "createmanualapplycontroller()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L15"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_cancelpendingevents",
-      "label": "cancelPendingEvents()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "cancelpendingevents()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L242"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_getdeferred",
-      "label": "getDeferred()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "getdeferred()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L170"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_hastimedoutid",
-      "label": "hasTimedOutId()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "hastimedoutid()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L174"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_prunestaleevidence",
-      "label": "pruneStaleEvidence()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "prunestaleevidence()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L209"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_pushapplyeventandwait",
-      "label": "pushApplyEventAndWait()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "pushapplyeventandwait()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L35"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_referencedmanualapplyevidencepaths",
-      "label": "referencedManualApplyEvidencePaths()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "referencedmanualapplyevidencepaths()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L198"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_rejectdeferred",
-      "label": "rejectDeferred()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "rejectdeferred()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L188"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_resolvedeferred",
-      "label": "resolveDeferred()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "resolvedeferred()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L178"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_rollbacktimedoutreply",
-      "label": "rollbackTimedOutReply()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "rollbacktimedoutreply()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L229"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_tombstonetimedoutapplyid",
-      "label": "tombstoneTimedOutApplyId()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "tombstonetimedoutapplyid()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L27"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_manualapplyevidencedir",
-      "label": "manualApplyEvidenceDir()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "manualapplyevidencedir()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L333"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_manualapplytransactionpath",
-      "label": "manualApplyTransactionPath()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "manualapplytransactionpath()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L712"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_normalizemanualapplyevidencepath",
-      "label": "normalizeManualApplyEvidencePath()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "normalizemanualapplyevidencepath()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L337"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_normalizeprojectfile",
-      "label": "normalizeProjectFile()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "normalizeprojectfile()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L837"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_readmanualapplytransaction",
-      "label": "readManualApplyTransaction()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "readmanualapplytransaction()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L716"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_removemanualapplyevidence",
-      "label": "removeManualApplyEvidence()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "removemanualapplyevidence()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L347"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_rollbackapplysnapshot",
-      "label": "rollbackApplySnapshot()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "rollbackapplysnapshot()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L845"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_rollbackmanualapplytransaction",
-      "label": "rollbackManualApplyTransaction()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "rollbackmanualapplytransaction()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L766"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_snapshotapplyeventfiles",
-      "label": "snapshotApplyEventFiles()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "snapshotapplyeventfiles()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L696"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualapplyevent",
-      "label": "summarizeManualApplyEvent()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "summarizemanualapplyevent()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L888"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_writemanualapplyevidence",
-      "label": "writeManualApplyEvidence()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "writemanualapplyevidence()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L325"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_writemanualapplytransaction",
-      "label": "writeManualApplyTransaction()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 199,
-      "community_name": "createManualApplyController",
-      "file_type": "code",
-      "norm_label": "writemanualapplytransaction()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L726"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_browser_injected_index_addbrowserfindings",
@@ -9993,90 +9669,6 @@
       "norm_label": "shouldwarnmissingtarget()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
       "source_location": "L916"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_compactmanuallogtext",
-      "label": "compactManualLogText()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 223,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "compactmanuallogtext()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L934"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualapplyfailures",
-      "label": "summarizeManualApplyFailures()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 223,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "summarizemanualapplyfailures()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L900"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualdiagnostics",
-      "label": "summarizeManualDiagnostics()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 223,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "summarizemanualdiagnostics()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L913"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanuallogfile",
-      "label": "summarizeManualLogFile()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 223,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "summarizemanuallogfile()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L927"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_edit_routes_createmanualeditroutes",
-      "label": "createManualEditRoutes()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 223,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "createmanualeditroutes()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-edit-routes.mjs",
-      "source_location": "L17"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_edit_routes_sendjson",
-      "label": "sendJson()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 223,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "sendjson()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-edit-routes.mjs",
-      "source_location": "L340"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_edit_routes_summarizependingmanualeditbatch",
-      "label": "summarizePendingManualEditBatch()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 223,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "summarizependingmanualeditbatch()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-edit-routes.mjs",
-      "source_location": "L345"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_insert_argval",
@@ -14099,28 +13691,112 @@
       "source_location": "L18"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_commit_manual_edits_clearappliedentries",
-      "label": "clearAppliedEntries()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "manual-edits-buffer.mjs",
-      "file_type": "code",
-      "norm_label": "clearappliedentries()",
-      "source_file": ".claude/skills/impeccable/scripts/live-commit-manual-edits.mjs",
-      "source_location": "L555"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_discard_manual_edits_argval",
       "label": "argVal()",
       "_callable": true,
       "_origin": "ast",
       "community": 35,
-      "community_name": "manual-edits-buffer.mjs",
+      "community_name": "manual-edit-routes.mjs",
       "file_type": "code",
       "norm_label": "argval()",
       "source_file": ".claude/skills/impeccable/scripts/live-discard-manual-edits.mjs",
       "source_location": "L21"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_compactmanuallogtext",
+      "label": "compactManualLogText()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "manual-edit-routes.mjs",
+      "file_type": "code",
+      "norm_label": "compactmanuallogtext()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L934"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualapplyfailures",
+      "label": "summarizeManualApplyFailures()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "manual-edit-routes.mjs",
+      "file_type": "code",
+      "norm_label": "summarizemanualapplyfailures()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L900"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualdiagnostics",
+      "label": "summarizeManualDiagnostics()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "manual-edit-routes.mjs",
+      "file_type": "code",
+      "norm_label": "summarizemanualdiagnostics()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L913"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanuallogfile",
+      "label": "summarizeManualLogFile()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "manual-edit-routes.mjs",
+      "file_type": "code",
+      "norm_label": "summarizemanuallogfile()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L927"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_edit_evidence_buildmanualeditevidence",
+      "label": "buildManualEditEvidence()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "manual-edit-routes.mjs",
+      "file_type": "code",
+      "norm_label": "buildmanualeditevidence()",
+      "source_file": ".claude/skills/impeccable/scripts/live-manual-edit-evidence.mjs",
+      "source_location": "L39"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_edit_routes_createmanualeditroutes",
+      "label": "createManualEditRoutes()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "manual-edit-routes.mjs",
+      "file_type": "code",
+      "norm_label": "createmanualeditroutes()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-edit-routes.mjs",
+      "source_location": "L17"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_edit_routes_sendjson",
+      "label": "sendJson()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "manual-edit-routes.mjs",
+      "file_type": "code",
+      "norm_label": "sendjson()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-edit-routes.mjs",
+      "source_location": "L340"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_edit_routes_summarizependingmanualeditbatch",
+      "label": "summarizePendingManualEditBatch()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "manual-edit-routes.mjs",
+      "file_type": "code",
+      "norm_label": "summarizependingmanualeditbatch()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-edit-routes.mjs",
+      "source_location": "L345"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_manual_edits_buffer_countbypage",
@@ -14128,7 +13804,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 35,
-      "community_name": "manual-edits-buffer.mjs",
+      "community_name": "manual-edit-routes.mjs",
       "file_type": "code",
       "norm_label": "countbypage()",
       "source_file": ".claude/skills/impeccable/scripts/live/manual-edits-buffer.mjs",
@@ -14140,7 +13816,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 35,
-      "community_name": "manual-edits-buffer.mjs",
+      "community_name": "manual-edit-routes.mjs",
       "file_type": "code",
       "norm_label": "getbufferpath()",
       "source_file": ".claude/skills/impeccable/scripts/live/manual-edits-buffer.mjs",
@@ -14152,7 +13828,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 35,
-      "community_name": "manual-edits-buffer.mjs",
+      "community_name": "manual-edit-routes.mjs",
       "file_type": "code",
       "norm_label": "readbuffer()",
       "source_file": ".claude/skills/impeccable/scripts/live/manual-edits-buffer.mjs",
@@ -14164,7 +13840,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 35,
-      "community_name": "manual-edits-buffer.mjs",
+      "community_name": "manual-edit-routes.mjs",
       "file_type": "code",
       "norm_label": "readbufferinternal()",
       "source_file": ".claude/skills/impeccable/scripts/live/manual-edits-buffer.mjs",
@@ -14176,7 +13852,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 35,
-      "community_name": "manual-edits-buffer.mjs",
+      "community_name": "manual-edit-routes.mjs",
       "file_type": "code",
       "norm_label": "readbufferstrict()",
       "source_file": ".claude/skills/impeccable/scripts/live/manual-edits-buffer.mjs",
@@ -14188,7 +13864,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 35,
-      "community_name": "manual-edits-buffer.mjs",
+      "community_name": "manual-edit-routes.mjs",
       "file_type": "code",
       "norm_label": "removeentries()",
       "source_file": ".claude/skills/impeccable/scripts/live/manual-edits-buffer.mjs",
@@ -14200,7 +13876,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 35,
-      "community_name": "manual-edits-buffer.mjs",
+      "community_name": "manual-edit-routes.mjs",
       "file_type": "code",
       "norm_label": "stageentry()",
       "source_file": ".claude/skills/impeccable/scripts/live/manual-edits-buffer.mjs",
@@ -14212,7 +13888,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 35,
-      "community_name": "manual-edits-buffer.mjs",
+      "community_name": "manual-edit-routes.mjs",
       "file_type": "code",
       "norm_label": "truncatebuffer()",
       "source_file": ".claude/skills/impeccable/scripts/live/manual-edits-buffer.mjs",
@@ -14224,7 +13900,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 35,
-      "community_name": "manual-edits-buffer.mjs",
+      "community_name": "manual-edit-routes.mjs",
       "file_type": "code",
       "norm_label": "writebuffer()",
       "source_file": ".claude/skills/impeccable/scripts/live/manual-edits-buffer.mjs",
@@ -14265,18 +13941,6 @@
       "norm_label": "buildcontexthintsbyref()",
       "source_file": ".claude/skills/impeccable/scripts/live-manual-edit-evidence.mjs",
       "source_location": "L108"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_edit_evidence_buildmanualeditevidence",
-      "label": "buildManualEditEvidence()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 36,
-      "community_name": "live-manual-edit-evidence.mjs",
-      "file_type": "code",
-      "norm_label": "buildmanualeditevidence()",
-      "source_file": ".claude/skills/impeccable/scripts/live-manual-edit-evidence.mjs",
-      "source_location": "L39"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_manual_edit_evidence_collectsearchfiles",
@@ -17039,6 +16703,30 @@
       "source_location": "L103"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_session_store_createlivesessionstore_getreadablejournalpath",
+      "label": "getReadableJournalPath()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "session-store.mjs",
+      "file_type": "code",
+      "norm_label": "getreadablejournalpath()",
+      "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
+      "source_location": "L22"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_session_store_createlivesessionstore_loadcachedorrebuild",
+      "label": "loadCachedOrRebuild()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "session-store.mjs",
+      "file_type": "code",
+      "norm_label": "loadcachedorrebuild()",
+      "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
+      "source_location": "L13"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_session_store_getjournalpath",
       "label": "getJournalPath()",
       "_callable": true,
@@ -18935,6 +18623,30 @@
       "source_location": "L879"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_clearmanualapplytransaction",
+      "label": "clearManualApplyTransaction()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "clearmanualapplytransaction()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L751"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_collectmanualapplyfiles",
+      "label": "collectManualApplyFiles()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "collectmanualapplyfiles()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L819"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_manual_apply_compactmanualapplybatch",
       "label": "compactManualApplyBatch()",
       "_callable": true,
@@ -19055,6 +18767,78 @@
       "source_location": "L659"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller",
+      "label": "createManualApplyController()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "createmanualapplycontroller()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L15"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_cancelpendingevents",
+      "label": "cancelPendingEvents()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "cancelpendingevents()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L242"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_getdeferred",
+      "label": "getDeferred()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "getdeferred()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L170"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_hastimedoutid",
+      "label": "hasTimedOutId()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "hastimedoutid()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L174"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_prunestaleevidence",
+      "label": "pruneStaleEvidence()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "prunestaleevidence()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L209"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_pushapplyeventandwait",
+      "label": "pushApplyEventAndWait()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "pushapplyeventandwait()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L35"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_pushbatchinchunksandwait",
       "label": "pushBatchInChunksAndWait()",
       "_callable": true,
@@ -19065,6 +18849,66 @@
       "norm_label": "pushbatchinchunksandwait()",
       "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
       "source_location": "L81"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_referencedmanualapplyevidencepaths",
+      "label": "referencedManualApplyEvidencePaths()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "referencedmanualapplyevidencepaths()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L198"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_rejectdeferred",
+      "label": "rejectDeferred()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "rejectdeferred()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L188"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_resolvedeferred",
+      "label": "resolveDeferred()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "resolvedeferred()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L178"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_rollbacktimedoutreply",
+      "label": "rollbackTimedOutReply()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "rollbacktimedoutreply()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L229"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_createmanualapplycontroller_tombstonetimedoutapplyid",
+      "label": "tombstoneTimedOutApplyId()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "tombstonetimedoutapplyid()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L27"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_manual_apply_filtermanualapplychunkcandidates",
@@ -19103,6 +18947,18 @@
       "source_location": "L485"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_manualapplyevidencedir",
+      "label": "manualApplyEvidenceDir()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "manualapplyevidencedir()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L333"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_manual_apply_manualapplyreplycommand",
       "label": "manualApplyReplyCommand()",
       "_callable": true,
@@ -19125,6 +18981,18 @@
       "norm_label": "manualapplyresultshapehint()",
       "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
       "source_location": "L481"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_manualapplytransactionpath",
+      "label": "manualApplyTransactionPath()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "manualapplytransactionpath()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L712"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_manual_apply_manualeditapplychunksize",
@@ -19163,6 +19031,90 @@
       "source_location": "L469"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_normalizemanualapplyevidencepath",
+      "label": "normalizeManualApplyEvidencePath()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "normalizemanualapplyevidencepath()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L337"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_normalizeprojectfile",
+      "label": "normalizeProjectFile()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "normalizeprojectfile()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L837"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_readmanualapplytransaction",
+      "label": "readManualApplyTransaction()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "readmanualapplytransaction()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L716"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_removemanualapplyevidence",
+      "label": "removeManualApplyEvidence()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "removemanualapplyevidence()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L347"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_rollbackapplysnapshot",
+      "label": "rollbackApplySnapshot()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "rollbackapplysnapshot()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L845"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_rollbackmanualapplytransaction",
+      "label": "rollbackManualApplyTransaction()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "rollbackmanualapplytransaction()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L766"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_snapshotapplyeventfiles",
+      "label": "snapshotApplyEventFiles()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "snapshotapplyeventfiles()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L696"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_manual_apply_splitmanualapplybatch",
       "label": "splitManualApplyBatch()",
       "_callable": true,
@@ -19173,6 +19125,18 @@
       "norm_label": "splitmanualapplybatch()",
       "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
       "source_location": "L595"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualapplyevent",
+      "label": "summarizeManualApplyEvent()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "summarizemanualapplyevent()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L888"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_manual_apply_truncatemanualapplytext",
@@ -19197,6 +19161,30 @@
       "norm_label": "validatemanualapplyresultmessage()",
       "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
       "source_location": "L497"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_writemanualapplyevidence",
+      "label": "writeManualApplyEvidence()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "writemanualapplyevidence()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L325"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_writemanualapplytransaction",
+      "label": "writeManualApplyTransaction()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "writemanualapplytransaction()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L726"
     },
     {
       "id": "master_sistemas_inteligentes_robots_autonomos_roomba_codigo_roomba_roomba_roombacontroller_avoid_obstacle",
@@ -21261,6 +21249,18 @@
       "norm_label": "changedfilessincesnapshot()",
       "source_file": ".claude/skills/impeccable/scripts/live-commit-manual-edits.mjs",
       "source_location": "L631"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_commit_manual_edits_clearappliedentries",
+      "label": "clearAppliedEntries()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "live-commit-manual-edits.mjs",
+      "file_type": "code",
+      "norm_label": "clearappliedentries()",
+      "source_file": ".claude/skills/impeccable/scripts/live-commit-manual-edits.mjs",
+      "source_location": "L555"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_commit_manual_edits_collectapplyownedfiles",
@@ -31864,7 +31864,7 @@
       "node_kind": "heading",
       "norm_label": "1. punto de partida",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/propuesta-tutoria-sara-rodriguez.md",
-      "source_location": "L57"
+      "source_location": "L82"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_propuesta_tutoria_sara_rodriguez_2_pregunta_de_investigaci\u00f3n",
@@ -31876,7 +31876,7 @@
       "node_kind": "heading",
       "norm_label": "2. pregunta de investigacion",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/propuesta-tutoria-sara-rodriguez.md",
-      "source_location": "L85"
+      "source_location": "L110"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_propuesta_tutoria_sara_rodriguez_3_metodolog\u00eda",
@@ -31888,7 +31888,7 @@
       "node_kind": "heading",
       "norm_label": "3. metodologia",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/propuesta-tutoria-sara-rodriguez.md",
-      "source_location": "L100"
+      "source_location": "L125"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_propuesta_tutoria_sara_rodriguez_4_viabilidad",
@@ -31900,7 +31900,7 @@
       "node_kind": "heading",
       "norm_label": "4. viabilidad",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/propuesta-tutoria-sara-rodriguez.md",
-      "source_location": "L122"
+      "source_location": "L147"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_propuesta_tutoria_sara_rodriguez_5_aportaci\u00f3n_esperada_y_su_l\u00edmite",
@@ -31912,7 +31912,7 @@
       "node_kind": "heading",
       "norm_label": "5. aportacion esperada, y su limite",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/propuesta-tutoria-sara-rodriguez.md",
-      "source_location": "L133"
+      "source_location": "L158"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_propuesta_tutoria_sara_rodriguez_6_encaje_con_la_l\u00ednea_de_trabajo_del_grupo",
@@ -31924,7 +31924,19 @@
       "node_kind": "heading",
       "norm_label": "6. encaje con la linea de trabajo del grupo",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/propuesta-tutoria-sara-rodriguez.md",
-      "source_location": "L145"
+      "source_location": "L170"
+    },
+    {
+      "id": "master_sistemas_inteligentes_trabajo_fin_de_master_propuesta_tutoria_sara_rodriguez_no_enviar_este_borrador_tiene_fallos_bloqueantes",
+      "label": "\u26d4 NO ENVIAR \u2014 ESTE BORRADOR TIENE FALLOS BLOQUEANTES",
+      "_origin": "ast",
+      "community": 206,
+      "community_name": "Parte 2 \u2014 Propuesta adjunta (2 p\u00e1ginas)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "\u26d4 no enviar \u2014 este borrador tiene fallos bloqueantes",
+      "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/propuesta-tutoria-sara-rodriguez.md",
+      "source_location": "L3"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_propuesta_tutoria_sara_rodriguez_notas_internas_no_enviar_quitar_antes_de_exportar",
@@ -31936,7 +31948,7 @@
       "node_kind": "heading",
       "norm_label": "notas internas (no enviar, quitar antes de exportar)",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/propuesta-tutoria-sara-rodriguez.md",
-      "source_location": "L173"
+      "source_location": "L198"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_propuesta_tutoria_sara_rodriguez_parte_1_cuerpo_del_correo_corto_es_lo_que_de_verdad_se_lee",
@@ -31948,7 +31960,7 @@
       "node_kind": "heading",
       "norm_label": "parte 1 \u2014 cuerpo del correo (corto, es lo que de verdad se lee)",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/propuesta-tutoria-sara-rodriguez.md",
-      "source_location": "L13"
+      "source_location": "L38"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_propuesta_tutoria_sara_rodriguez_parte_2_propuesta_adjunta_2_p\u00e1ginas",
@@ -31960,7 +31972,7 @@
       "node_kind": "heading",
       "norm_label": "parte 2 \u2014 propuesta adjunta (2 paginas)",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/propuesta-tutoria-sara-rodriguez.md",
-      "source_location": "L49"
+      "source_location": "L74"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_propuesta_tutoria_sara_rodriguez_propuesta_de_tfm_borrador_para_la_dra_sara_rodr\u00edguez_gonz\u00e1lez",
@@ -31984,7 +31996,7 @@
       "node_kind": "heading",
       "norm_label": "referencias",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/propuesta-tutoria-sara-rodriguez.md",
-      "source_location": "L152"
+      "source_location": "L177"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_propuesta_tutoria_sara_rodriguez_t\u00edtulo_provisional",
@@ -31996,7 +32008,7 @@
       "node_kind": "heading",
       "norm_label": "titulo provisional",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/propuesta-tutoria-sara-rodriguez.md",
-      "source_location": "L51"
+      "source_location": "L76"
     },
     {
       "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b1_cuaderno_unidad7a_un_buen_trabajo",
@@ -32802,6 +32814,18 @@
       "source_location": "L1"
     },
     {
+      "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_consecuencia_pr\u00e1ctica_que_hay_que_decidir_antes_de_seguir",
+      "label": "Consecuencia pr\u00e1ctica que hay que decidir antes de seguir",
+      "_origin": "ast",
+      "community": 217,
+      "community_name": "Ideas de TFM: sistemas inteligentes aplicados a energ\u00edas renovables",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "consecuencia practica que hay que decidir antes de seguir",
+      "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
+      "source_location": "L362"
+    },
+    {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_correspondencia_relacionada",
       "label": "Correspondencia relacionada",
       "_origin": "ast",
@@ -32811,7 +32835,7 @@
       "node_kind": "heading",
       "norm_label": "correspondencia relacionada",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L301"
+      "source_location": "L413"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_dos_opciones_evaluadas",
@@ -32848,6 +32872,66 @@
       "norm_label": "donde se ha movido el estado del arte (y donde queda hueco real)",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
       "source_location": "L129"
+    },
+    {
+      "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_fallo_1_bloqueante_la_novedad_declarada_no_existe",
+      "label": "Fallo 1 (bloqueante): la novedad declarada no existe",
+      "_origin": "ast",
+      "community": 217,
+      "community_name": "Ideas de TFM: sistemas inteligentes aplicados a energ\u00edas renovables",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "fallo 1 (bloqueante): la novedad declarada no existe",
+      "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
+      "source_location": "L270"
+    },
+    {
+      "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_fallo_2_bloqueante_faltaba_el_marco_te\u00f3rico_del_campo",
+      "label": "Fallo 2 (bloqueante): faltaba el marco te\u00f3rico del campo",
+      "_origin": "ast",
+      "community": 217,
+      "community_name": "Ideas de TFM: sistemas inteligentes aplicados a energ\u00edas renovables",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "fallo 2 (bloqueante): faltaba el marco teorico del campo",
+      "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
+      "source_location": "L298"
+    },
+    {
+      "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_fallo_3_bloqueante_el_barrido_sint\u00e9tico_es_circular",
+      "label": "Fallo 3 (bloqueante): el barrido sint\u00e9tico es circular",
+      "_origin": "ast",
+      "community": 217,
+      "community_name": "Ideas de TFM: sistemas inteligentes aplicados a energ\u00edas renovables",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "fallo 3 (bloqueante): el barrido sintetico es circular",
+      "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
+      "source_location": "L310"
+    },
+    {
+      "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_fallo_4_bloqueante_no_hab\u00eda_problema_de_decisi\u00f3n",
+      "label": "Fallo 4 (bloqueante): no hab\u00eda problema de decisi\u00f3n",
+      "_origin": "ast",
+      "community": 217,
+      "community_name": "Ideas de TFM: sistemas inteligentes aplicados a energ\u00edas renovables",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "fallo 4 (bloqueante): no habia problema de decision",
+      "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
+      "source_location": "L325"
+    },
+    {
+      "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_fallos_menores_pero_visibles",
+      "label": "Fallos menores pero visibles",
+      "_origin": "ast",
+      "community": 217,
+      "community_name": "Ideas de TFM: sistemas inteligentes aplicados a energ\u00edas renovables",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "fallos menores pero visibles",
+      "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
+      "source_location": "L337"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_hallazgo_bloqueante_predicci\u00f3n_m\u00f3dulo_difuso_para_bater\u00eda_est\u00e1_saturado",
@@ -32898,6 +32982,18 @@
       "source_location": "L117"
     },
     {
+      "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_lo_\u00fanico_que_sobrevive_como_hueco_defendible",
+      "label": "Lo \u00fanico que sobrevive como hueco defendible",
+      "_origin": "ast",
+      "community": 217,
+      "community_name": "Ideas de TFM: sistemas inteligentes aplicados a energ\u00edas renovables",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "lo unico que sobrevive como hueco defendible",
+      "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
+      "source_location": "L351"
+    },
+    {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_malo_el_reencuadre_que_propuse_ayer_tambi\u00e9n_se_est\u00e1_llenando",
       "label": "Malo: el reencuadre que propuse ayer tambi\u00e9n se est\u00e1 llenando",
       "_origin": "ast",
@@ -32919,7 +33015,7 @@
       "node_kind": "heading",
       "norm_label": "nota de encaje: por que sara rodriguez pasa a ser la primera opcion",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L275"
+      "source_location": "L387"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_opci\u00f3n_a_predicci\u00f3n_de_generaci\u00f3n_renovable_con_deep_learning",
@@ -32967,7 +33063,7 @@
       "node_kind": "heading",
       "norm_label": "que tanto puede ayudar claude code en este tfm (evaluacion honesta)",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L314"
+      "source_location": "L426"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_recomendaci\u00f3n",
@@ -33018,6 +33114,18 @@
       "source_location": "L178"
     },
     {
+      "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_revisi\u00f3n_2026_09_14_tercera_pasada_la_propuesta_se_cae_y_por_qu\u00e9",
+      "label": "Revisi\u00f3n 2026-09-14 (tercera pasada): la propuesta se cae, y por qu\u00e9",
+      "_origin": "ast",
+      "community": 217,
+      "community_name": "Ideas de TFM: sistemas inteligentes aplicados a energ\u00edas renovables",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "revision 2026-09-14 (tercera pasada): la propuesta se cae, y por que",
+      "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
+      "source_location": "L261"
+    },
+    {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_sin_gpu_confirmado_que_no_hace_falta_si_se_va_por_modelos_fundacionales",
       "label": "Sin GPU: confirmado que no hace falta (si se va por modelos fundacionales)",
       "_origin": "ast",
@@ -33039,7 +33147,7 @@
       "node_kind": "heading",
       "norm_label": "tutores de tfm \u2014 candidatos concretos",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L261"
+      "source_location": "L373"
     },
     {
       "id": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones",
@@ -33185,17 +33293,6 @@
       },
       "norm_label": "sync-main.sh script",
       "source_file": ".claude/hooks/sync-main.sh",
-      "source_location": "L1"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_edit_routes",
-      "label": "manual-edit-routes.mjs",
-      "_origin": "ast",
-      "community": 223,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "manual-edit-routes.mjs",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-edit-routes.mjs",
       "source_location": "L1"
     },
     {
@@ -33701,7 +33798,7 @@
       "label": "live-discard-manual-edits.mjs",
       "_origin": "ast",
       "community": 35,
-      "community_name": "manual-edits-buffer.mjs",
+      "community_name": "manual-edit-routes.mjs",
       "file_type": "code",
       "norm_label": "live-discard-manual-edits.mjs",
       "source_file": ".claude/skills/impeccable/scripts/live-discard-manual-edits.mjs",
@@ -33712,7 +33809,7 @@
       "label": "args",
       "_origin": "ast",
       "community": 35,
-      "community_name": "manual-edits-buffer.mjs",
+      "community_name": "manual-edit-routes.mjs",
       "file_type": "code",
       "norm_label": "args",
       "source_file": ".claude/skills/impeccable/scripts/live-discard-manual-edits.mjs",
@@ -33723,7 +33820,7 @@
       "label": "buffer",
       "_origin": "ast",
       "community": 35,
-      "community_name": "manual-edits-buffer.mjs",
+      "community_name": "manual-edit-routes.mjs",
       "file_type": "code",
       "norm_label": "buffer",
       "source_file": ".claude/skills/impeccable/scripts/live-discard-manual-edits.mjs",
@@ -33734,7 +33831,7 @@
       "label": "cwd",
       "_origin": "ast",
       "community": 35,
-      "community_name": "manual-edits-buffer.mjs",
+      "community_name": "manual-edit-routes.mjs",
       "file_type": "code",
       "norm_label": "cwd",
       "source_file": ".claude/skills/impeccable/scripts/live-discard-manual-edits.mjs",
@@ -33745,7 +33842,7 @@
       "label": "pageUrlFilter",
       "_origin": "ast",
       "community": 35,
-      "community_name": "manual-edits-buffer.mjs",
+      "community_name": "manual-edit-routes.mjs",
       "file_type": "code",
       "norm_label": "pageurlfilter",
       "source_file": ".claude/skills/impeccable/scripts/live-discard-manual-edits.mjs",
@@ -33756,18 +33853,29 @@
       "label": "remaining",
       "_origin": "ast",
       "community": 35,
-      "community_name": "manual-edits-buffer.mjs",
+      "community_name": "manual-edit-routes.mjs",
       "file_type": "code",
       "norm_label": "remaining",
       "source_file": ".claude/skills/impeccable/scripts/live-discard-manual-edits.mjs",
       "source_location": "L50"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_manual_edit_routes",
+      "label": "manual-edit-routes.mjs",
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "manual-edit-routes.mjs",
+      "file_type": "code",
+      "norm_label": "manual-edit-routes.mjs",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-edit-routes.mjs",
+      "source_location": "L1"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_manual_edits_buffer",
       "label": "manual-edits-buffer.mjs",
       "_origin": "ast",
       "community": 35,
-      "community_name": "manual-edits-buffer.mjs",
+      "community_name": "manual-edit-routes.mjs",
       "file_type": "code",
       "norm_label": "manual-edits-buffer.mjs",
       "source_file": ".claude/skills/impeccable/scripts/live/manual-edits-buffer.mjs",
@@ -109517,7 +109625,7 @@
     },
     {
       "source": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_ideas_de_tfm_sistemas_inteligentes_aplicados_a_energ\u00edas_renovables",
-      "target": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_tutores_de_tfm_candidatos_concretos",
+      "target": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_revisi\u00f3n_2026_09_14_tercera_pasada_la_propuesta_se_cae_y_por_qu\u00e9",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -109528,13 +109636,24 @@
     },
     {
       "source": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_ideas_de_tfm_sistemas_inteligentes_aplicados_a_energ\u00edas_renovables",
+      "target": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_tutores_de_tfm_candidatos_concretos",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
+      "source_location": "L373",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_ideas_de_tfm_sistemas_inteligentes_aplicados_a_energ\u00edas_renovables",
       "target": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_correspondencia_relacionada",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L301",
+      "source_location": "L413",
       "weight": 1.0
     },
     {
@@ -109545,7 +109664,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L314",
+      "source_location": "L426",
       "weight": 1.0
     },
     {
@@ -109659,6 +109778,83 @@
       "weight": 1.0
     },
     {
+      "source": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_revisi\u00f3n_2026_09_14_tercera_pasada_la_propuesta_se_cae_y_por_qu\u00e9",
+      "target": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_fallo_1_bloqueante_la_novedad_declarada_no_existe",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
+      "source_location": "L270",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_revisi\u00f3n_2026_09_14_tercera_pasada_la_propuesta_se_cae_y_por_qu\u00e9",
+      "target": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_fallo_2_bloqueante_faltaba_el_marco_te\u00f3rico_del_campo",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
+      "source_location": "L298",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_revisi\u00f3n_2026_09_14_tercera_pasada_la_propuesta_se_cae_y_por_qu\u00e9",
+      "target": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_fallo_3_bloqueante_el_barrido_sint\u00e9tico_es_circular",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
+      "source_location": "L310",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_revisi\u00f3n_2026_09_14_tercera_pasada_la_propuesta_se_cae_y_por_qu\u00e9",
+      "target": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_fallo_4_bloqueante_no_hab\u00eda_problema_de_decisi\u00f3n",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
+      "source_location": "L325",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_revisi\u00f3n_2026_09_14_tercera_pasada_la_propuesta_se_cae_y_por_qu\u00e9",
+      "target": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_fallos_menores_pero_visibles",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
+      "source_location": "L337",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_revisi\u00f3n_2026_09_14_tercera_pasada_la_propuesta_se_cae_y_por_qu\u00e9",
+      "target": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_lo_\u00fanico_que_sobrevive_como_hueco_defendible",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
+      "source_location": "L351",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_revisi\u00f3n_2026_09_14_tercera_pasada_la_propuesta_se_cae_y_por_qu\u00e9",
+      "target": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_consecuencia_pr\u00e1ctica_que_hay_que_decidir_antes_de_seguir",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
+      "source_location": "L362",
+      "weight": 1.0
+    },
+    {
       "source": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_tutores_de_tfm_candidatos_concretos",
       "target": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_nota_de_encaje_por_qu\u00e9_sara_rodr\u00edguez_pasa_a_ser_la_primera_opci\u00f3n",
       "relation": "contains",
@@ -109666,7 +109862,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L275",
+      "source_location": "L387",
       "weight": 1.0
     },
     {
@@ -109902,13 +110098,24 @@
     },
     {
       "source": "master_sistemas_inteligentes_trabajo_fin_de_master_propuesta_tutoria_sara_rodriguez_parte_2_propuesta_adjunta_2_p\u00e1ginas",
+      "target": "master_sistemas_inteligentes_trabajo_fin_de_master_propuesta_tutoria_sara_rodriguez_2_pregunta_de_investigaci\u00f3n",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/propuesta-tutoria-sara-rodriguez.md",
+      "source_location": "L110",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_trabajo_fin_de_master_propuesta_tutoria_sara_rodriguez_parte_2_propuesta_adjunta_2_p\u00e1ginas",
       "target": "master_sistemas_inteligentes_trabajo_fin_de_master_propuesta_tutoria_sara_rodriguez_3_metodolog\u00eda",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/propuesta-tutoria-sara-rodriguez.md",
-      "source_location": "L100",
+      "source_location": "L125",
       "weight": 1.0
     },
     {
@@ -109919,7 +110126,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/propuesta-tutoria-sara-rodriguez.md",
-      "source_location": "L122",
+      "source_location": "L147",
       "weight": 1.0
     },
     {
@@ -109930,7 +110137,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/propuesta-tutoria-sara-rodriguez.md",
-      "source_location": "L133",
+      "source_location": "L158",
       "weight": 1.0
     },
     {
@@ -109941,7 +110148,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/propuesta-tutoria-sara-rodriguez.md",
-      "source_location": "L145",
+      "source_location": "L170",
       "weight": 1.0
     },
     {
@@ -109952,7 +110159,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/propuesta-tutoria-sara-rodriguez.md",
-      "source_location": "L152",
+      "source_location": "L177",
       "weight": 1.0
     },
     {
@@ -109963,7 +110170,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/propuesta-tutoria-sara-rodriguez.md",
-      "source_location": "L51",
+      "source_location": "L76",
       "weight": 1.0
     },
     {
@@ -109974,29 +110181,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/propuesta-tutoria-sara-rodriguez.md",
-      "source_location": "L57",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_trabajo_fin_de_master_propuesta_tutoria_sara_rodriguez_parte_2_propuesta_adjunta_2_p\u00e1ginas",
-      "target": "master_sistemas_inteligentes_trabajo_fin_de_master_propuesta_tutoria_sara_rodriguez_2_pregunta_de_investigaci\u00f3n",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/propuesta-tutoria-sara-rodriguez.md",
-      "source_location": "L85",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_trabajo_fin_de_master_propuesta_tutoria_sara_rodriguez_propuesta_de_tfm_borrador_para_la_dra_sara_rodr\u00edguez_gonz\u00e1lez",
-      "target": "master_sistemas_inteligentes_trabajo_fin_de_master_propuesta_tutoria_sara_rodriguez_parte_1_cuerpo_del_correo_corto_es_lo_que_de_verdad_se_lee",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/propuesta-tutoria-sara-rodriguez.md",
-      "source_location": "L13",
+      "source_location": "L82",
       "weight": 1.0
     },
     {
@@ -110007,7 +110192,29 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/propuesta-tutoria-sara-rodriguez.md",
-      "source_location": "L173",
+      "source_location": "L198",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_trabajo_fin_de_master_propuesta_tutoria_sara_rodriguez_propuesta_de_tfm_borrador_para_la_dra_sara_rodr\u00edguez_gonz\u00e1lez",
+      "target": "master_sistemas_inteligentes_trabajo_fin_de_master_propuesta_tutoria_sara_rodriguez_no_enviar_este_borrador_tiene_fallos_bloqueantes",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/propuesta-tutoria-sara-rodriguez.md",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_trabajo_fin_de_master_propuesta_tutoria_sara_rodriguez_propuesta_de_tfm_borrador_para_la_dra_sara_rodr\u00edguez_gonz\u00e1lez",
+      "target": "master_sistemas_inteligentes_trabajo_fin_de_master_propuesta_tutoria_sara_rodriguez_parte_1_cuerpo_del_correo_corto_es_lo_que_de_verdad_se_lee",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/propuesta-tutoria-sara-rodriguez.md",
+      "source_location": "L38",
       "weight": 1.0
     },
     {
@@ -110018,7 +110225,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/propuesta-tutoria-sara-rodriguez.md",
-      "source_location": "L49",
+      "source_location": "L74",
       "weight": 1.0
     },
     {
@@ -115274,5 +115481,5 @@
       "source_file": "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad6a_como-se-va-a-goya_interactivo.html"
     }
   ],
-  "built_at_commit": "ea08cbad8c0f507eecd660f175dc42f8eb70a3fe"
+  "built_at_commit": "a690ebe011851e848dd6bb41ab70018202fe26e2"
 }
