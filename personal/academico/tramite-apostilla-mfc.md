@@ -127,7 +127,10 @@ conversación de Claude Code.
     de Moscú (`md@mfc.mos.ru`, 8(495)777-77-77), citando este número de
     referencia, cómo proceder en la práctica. **Correo enviado el mismo
     día** a `md@mfc.mos.ru`, citando el № 7638974873/У-04 y pidiendo el
-    procedimiento exacto — **a la espera de respuesta.**
+    procedimiento exacto — **a la espera de respuesta.** Angel también
+    va a escribir en paralelo al **chat de ayuda de Госуслуги**
+    (mismo motivo: exención de tasa no visible al presentar de nuevo
+    la solicitud) — segunda vía en paralelo al correo del MFC.
 - **2026-09-03** — Alexander Evgenievich (RUT MIIT) confirmó que la
   petición del MFC probablemente **se perdió dentro de la burocracia
   interna de RUT MIIT** (no fue el MFC quien falló). Pasó el contacto de
