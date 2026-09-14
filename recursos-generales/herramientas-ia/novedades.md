@@ -1831,3 +1831,166 @@ alarga estas sagas a 3+ rondas. Aplica en particular a reglas de
 seguridad (como la (5) aquí): un descuido de propagación en ellas no es
 solo un desprolijidad de estilo, es una ventana real por la que puede
 colarse el daño que la regla existía para prevenir.
+
+---
+
+## 2026-09-14 — Lección: tres rondas declarando "hueco" sobre trabajo ya publicado
+
+Entrada creada por la regla de `CLAUDE.md` "3+ rondas de revisión sobre
+lo mismo → guardar la lección". No es un hook, y no encaja en ninguna
+skill existente, así que va aquí.
+
+**Qué pasó.** Al perfilar el tema del TFM, la misma familia de error se
+repitió tres veces seguidas, cada una detectada solo por una revisión
+posterior, nunca por la pasada que introducía la afirmación:
+
+1. Se propuso un módulo de decisión difuso para gestión de
+   almacenamiento como aportación propia. Ya estaba publicado por
+   Arcos-Avilés et al. en 2017 (*Applied Energy*) y 2018 (*IEEE TSG*).
+2. Se reformuló como comparativa de modelos fundacionales de series
+   temporales. Ya había varias evaluaciones equivalentes de 2026.
+3. Se reformuló como "medir cuánta precisión de pronóstico se traslada
+   a la decisión". Yin, Lei y Feng publicaron en 2024 en *IEEE
+   Transactions on Power Systems* un artículo **cuyo título enuncia esa
+   misma pregunta**, y el marco teórico del campo (*decision-focused learning* /
+   Smart Predict-then-Optimize, Elmachtoub y Grigas, *Management
+   Science*, 2022, 905 citas) llevaba años existiendo sin que ninguna
+   de las tres pasadas lo mencionara.
+
+**El patrón concreto.** En las tres, la afirmación de novedad se
+construyó por ausencia: "no he encontrado trabajo que...". Se buscó lo
+que se iba a proponer, no se buscó **cómo se llama el campo que ya
+estudia eso**. Una búsqueda de "barrido controlado de error en
+pronóstico para gestión de baterías" no devuelve DFL, porque DFL es el
+nombre que la literatura le puso al problema; hay que llegar al nombre
+para encontrarlo.
+
+**La lección, para tareas futuras de estado del arte.** No dar por
+buena ninguna afirmación de novedad basada en no haber encontrado algo.
+Antes de escribir "no existe trabajo que...", hacen falta dos pasos que
+en las tres pasadas se saltaron:
+
+1. **Nombrar el campo, no el método.** Preguntarse "¿qué disciplina
+   estudiaría esto y con qué término técnico lo llamaría?" y buscar ese
+   término. Si no se sabe el término, eso mismo es la señal de que aún
+   no se conoce el campo lo bastante para declarar un hueco en él.
+2. **Ir a los trabajos que citan al artículo fundacional.** Una vez
+   localizado el marco (aquí, Elmachtoub y Grigas), revisar quién lo
+   cita dentro del dominio de aplicación concreto. Es la vía más
+   directa para ver si el cruce que se quiere proponer ya está hecho.
+
+Formulación segura mientras no se completen esos pasos: "las búsquedas
+realizadas no lo encontraron", nunca "no existe". La diferencia importa
+mucho si el texto va a leerlo un doctor del área.
+
+**Aviso operativo de la misma sesión — Scite ignora parámetros mal
+nombrados en silencio.** `mcp__Scite__search_literature` usa `term`
+(y `title`, `author`, `dois`...), **no** `query`. Al pasarle `query`,
+no da error: ignora el parámetro, navega el corpus entero y devuelve
+resultados arbitrarios con aspecto perfectamente normal (en esta sesión
+salieron artículos sobre sedimentos y astronomía babilónica para una
+consulta sobre redes móviles). El síntoma para detectarlo es que el
+campo `query` vuelve vacío en la respuesta y `total` sale idéntico
+(16.800.000) sea cual sea la consulta. Dado que `CLAUDE.md` manda usar
+Scite precisamente para verificar citas, una llamada mal formada da
+falsa sensación de haber verificado: comprobar siempre que el `query`
+devuelto coincide con lo que se pidió.
+
+
+---
+
+## 2026-09-14 — Lección (ampliación): al propagar una corrección, el archivo "resumen para la siguiente sesión" va PRIMERO
+
+Amplía la entrada de arriba sobre propagar una corrección a sus reglas
+hermanas. Se registra por la regla de `CLAUDE.md` de "3+ rondas sobre lo
+mismo": el PR #113 necesitó **cinco rondas** de
+revisión→corrección→revisión, y en casi todas reapareció **la misma
+familia de fallo** — siempre acompañada, eso sí, de hallazgos nuevos e
+independientes, y con la ronda 3 encontrando además un bloqueante de
+otra naturaleza.
+
+**La saga.** Se verificó que la residencia para búsqueda de empleo tras
+el máster son 24 meses y no 12 (DA 17.ª de la Ley 14/2013, ampliada por
+la Ley 28/2022). La corrección se aplicó a `becas-y-tramites-2026-2027.md`
+y se dio el trabajo por terminado.
+
+- **Ronda 1** encontró que `ideas-tfm-energias-renovables.md` seguía con
+  la cifra derogada, dentro de una lista titulada "hechos verificados",
+  y con una remisión que llamaba "sin aclarar" a un dato que el archivo
+  destino ya daba por resuelto.
+- **Ronda 2**, tras corregir eso, encontró que `lluvia-de-ideas.md`
+  —que ni siquiera se había abierto— conservaba otra afirmación de la
+  misma tanda sin propagar, y presentaba como "verificado" un dato que
+  el archivo hermano marcaba explícitamente como no confirmado.
+- **Ronda 3** confirmó por fin la propagación completa... y encontró
+  que esta misma entrada, escrita en el commit que corregía la ronda 2,
+  **daba por hecho que la ronda 3 había salido limpia cuando todavía no
+  se había lanzado**. Es decir: el texto que existe para no dar nada por
+  verificado sin comprobarlo cometía exactamente ese error. Se corrigió
+  al cerrar esa ronda, y se deja aquí escrito porque es la parte más
+  instructiva de la saga.
+
+**Corolario, por si no fuera obvio:** no escribir el desenlace de una
+verificación en el mismo commit que la lanza. Si el texto va a decir
+"salió limpio", tiene que escribirse *después* de que salga limpio.
+
+**Lo nuevo, y lo que más importa:** el archivo que hay que revisar
+**primero** al propagar una corrección es el que la sesión mantiene como
+**resumen/traspaso para la siguiente sesión** (aquí,
+`lluvia-de-ideas.md`). Razón: sus afirmaciones no se leen como
+información sino como **órdenes**. Ese archivo decía "Datos de
+extranjería ya verificados (**no reinvestigar**)" e incluía debajo un
+dato sin confirmar — es decir, el error no solo persistía, sino que
+venía con una instrucción activa para que nadie lo detectara.
+
+**Procedimiento concreto para la próxima vez.** Al corregir un hecho que
+aparece en más de un sitio, antes de dar por cerrado el trabajo:
+
+1. `grep -rn` del dato viejo **y** del nuevo por todo el repositorio —
+   no fiarse de recordar dónde se escribió.
+2. Abrir primero los archivos de traspaso/resumen entre sesiones, y
+   dentro de ellos revisar en especial lo que esté bajo epígrafes del
+   tipo "ya verificado", "no reinvestigar", "cerrado" o "resuelto".
+3. Comprobar que cada remisión cruzada sigue describiendo correctamente
+   el estado del archivo destino: una remisión que dice "pendiente"
+   apuntando a una sección titulada "(resuelto)" es el mismo fallo
+   visto desde el otro lado.
+
+**Ronda 4, y la lección que faltaba:** el barrido del paso 1 se había
+aplicado al dato corregido (los 24 meses) pero **no a los hechos nuevos
+que el propio trabajo introducía**. Así apareció una contradicción sobre
+si un correo a `bisite@usal.es` se había enviado o no: un archivo decía
+"enviado", otro lo listaba como "pendiente de enviar", y el archivo de
+traspaso afirmaba en redondo "no se ha enviado ningún correo a nadie".
+Se resolvió **comprobándolo en Gmail** (sí se envió, el 12/09/2026, sin
+respuesta) en vez de elegir la versión que sonara mejor.
+
+De ahí, dos reglas más:
+
+4. El barrido no es solo del dato que se corrige, sino **de todo hecho
+   afirmado en el trabajo**, incluidos los que se acaban de escribir.
+   Una afirmación categórica recién redactada ("no se ha enviado
+   ninguno", "no existe", "nunca se hizo") es sospechosa por
+   construcción: comprobar si hay un hermano que diga lo contrario.
+5. Cuando dos archivos se contradicen sobre un hecho **comprobable**
+   (un correo enviado, un archivo que existe, una fecha), no razonar
+   sobre cuál parece más fiable: **ir a la fuente y mirarlo**. Aquí
+   bastó una búsqueda en Gmail para cerrar una discusión que llevaba
+   varias rondas latente.
+
+**Ronda 5, el caso más ilustrativo de toda la saga.** Una sección
+entera seguía abriendo con "pendiente de confirmar en cuál de los siete
+institutos IMDEA trabaja Arlet" cuando **el mismo archivo lo confirmaba
+cincuenta líneas más abajo** (Networks) y el archivo de traspaso lo daba
+por sabido. Lo grave no era la frase: de esa premisa ya falsada colgaban
+**treinta líneas** investigando el instituto equivocado y una
+*recomendación estratégica* construida sobre ella. De ahí, la sexta
+regla:
+
+6. Al confirmarse un hecho que hasta entonces era una incógnita, no
+   basta con escribir la confirmación donde toque: hay que **buscar qué
+   texto se escribió mientras la incógnita estaba abierta** y cerrarlo
+   — marcándolo como escenario descartado o borrándolo. Un análisis
+   hecho bajo una hipótesis que luego se cae no se corrige solo por que
+   la respuesta aparezca en otra sección; sigue ahí, leyéndose como
+   vigente.
