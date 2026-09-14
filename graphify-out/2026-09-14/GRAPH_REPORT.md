@@ -1,7 +1,7 @@
 # Graph Report - Molu  (2026-09-14)
 
 ## Corpus Check
-- 270 files · ~1,348,831 words
+- 270 files · ~1,349,055 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `2259cfdf`
+- Built from commit: `6930c2e1`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -246,8 +246,8 @@
 6. `buildInsertConfigureRow()` - 26 edges
 7. `collectBrowserFindings()` - 26 edges
 8. `handleKeyDown()` - 26 edges
-9. `resumeSession()` - 25 edges
-10. `showToast()` - 25 edges
+9. `Novedades de herramientas de IA` - 25 edges
+10. `resumeSession()` - 25 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `Docencia de español overview` --semantically_similar_to--> `Python overview`  [INFERRED] [semantically similar]
@@ -1068,10 +1068,10 @@ Nodes (12): 2026-09-13, 2026-09-13 (continuación: dominios bloqueados para docs
 
 ### Community 222 - "Residencia tras el máster para búsqueda de empleo: 24 meses (resuelto)"
 Cohesion: 0.29
-Nodes (7): Consecuencia práctica, Cómo se resolvió, y la lección, Detalles del trámite (Hoja informativa 20 del Ministerio de Inclusión), Dominios a autorizar en el entorno, ¿Habilita a trabajar?, La norma, verificada en el BOE, Residencia tras el máster para búsqueda de empleo: 24 meses (resuelto)
+Nodes (7): Consecuencia práctica, Cómo se resolvió, y la lección, Detalles del trámite, Dominios a autorizar en el entorno, ¿Habilita a trabajar?, La norma, verificada en el BOE, Residencia tras el máster para búsqueda de empleo: 24 meses (resuelto)
 
 ## Knowledge Gaps
-- **861 isolated node(s):** `Lo primero: comprobar los dominios`, `El estado real del TFM: NINGÚN tema está decidido`, `El contexto personal que cambió la ecuación`, `Datos de extranjería ya verificados (no reinvestigar)`, `Tareas concretas heredadas` (+856 more)
+- **861 isolated node(s):** `Contexto del alumno`, `Estado de las becas evaluadas`, `Texto oficial de la convocatoria (documento firmado, aportado por Angel)`, `Hallazgo crítico: cláusula de nacionalidad/estancia`, `Enviados` (+856 more)
   These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1055 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **23 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -1079,16 +1079,16 @@ Nodes (7): Consecuencia práctica, Cómo se resolvió, y la lección, Detalles d
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `readBuffer()` connect `manual-edit-routes.mjs` to `live-manual-edit-evidence.mjs`, `manual-apply.mjs`, `live-commit-manual-edits.mjs`, `live-wrap.mjs`, `live-accept.mjs`?**
-  _High betweenness centrality (0.002) - this node is a cross-community bridge._
-- **Why does `getCritiqueDir()` connect `critique-storage.mjs` to `impeccable-paths.mjs`, `context-signals.mjs`?**
-  _High betweenness centrality (0.002) - this node is a cross-community bridge._
+  _High betweenness centrality (0.001) - this node is a cross-community bridge._
+- **Why does `loadContext()` connect `live.mjs` to `context.mjs`, `resolveContext`, `live-server.mjs`, `cli`, `context-signals.mjs`?**
+  _High betweenness centrality (0.001) - this node is a cross-community bridge._
+- **Why does `readLiveServerInfo()` connect `readLiveServerInfo` to `impeccable-paths.mjs`, `live-poll.mjs`, `live.mjs`, `live-server.mjs`?**
+  _High betweenness centrality (0.001) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `initGlobalBar()` (e.g. with `hideAgentPollTooltip()` and `onDetectMessage()`) actually correct?**
   _`initGlobalBar()` has 7 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `Lo primero: comprobar los dominios`, `El estado real del TFM: NINGÚN tema está decidido`, `El contexto personal que cambió la ecuación` to the rest of the system?**
+- **What connects `Contexto del alumno`, `Estado de las becas evaluadas`, `Texto oficial de la convocatoria (documento firmado, aportado por Angel)` to the rest of the system?**
   _861 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `live-browser.js` be split into smaller, more focused modules?**
   _Cohesion score 0.02863984674329502 - nodes in this community are weakly interconnected._
 - **Should `checks.mjs` be split into smaller, more focused modules?**
   _Cohesion score 0.04078624078624079 - nodes in this community are weakly interconnected._
-- **Should `index.mjs` be split into smaller, more focused modules?**
-  _Cohesion score 0.06142410015649452 - nodes in this community are weakly interconnected._
