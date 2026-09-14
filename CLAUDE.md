@@ -244,8 +244,14 @@ una búsqueda web sin verificar (justificación completa en
 - **Scite** — verificar una cita (autor/título/año/editorial, sin
   retracciones) antes de añadirla a `Bibliografia.bib`.
 - **alphaXiv** — texto completo de papers de arXiv.
-- **Elicit** / **Consensus** — buscar y sintetizar evidencia científica
-  (Consensus exige citar `[1]`/`[2]` con lista de referencias al final).
+- **Consensus** — buscar y sintetizar evidencia científica (exige citar
+  `[1]`/`[2]` con lista de referencias al final).
+- **alphaXiv `discover_papers`** — estado del arte reciente en arXiv;
+  devuelve título/fecha/ID, **no** metadatos completos: verificar autores
+  con Scite antes de citar nada de ahí en `main.tex`.
+- **Elicit** — conectado pero **inservible**: su API exige plan de pago
+  (`api_access_denied`, comprobado 2026-09-14). No perder tiempo con él
+  hasta que Angel diga que ha contratado Pro.
 - **Firecrawl** (`firecrawl_research_*`) — respaldo si las anteriores no
   tienen el paper.
 - **Wolfram** — verificar cálculos/fórmulas antes de darlos por buenos.

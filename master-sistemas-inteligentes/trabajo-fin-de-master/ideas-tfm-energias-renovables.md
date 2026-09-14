@@ -75,6 +75,106 @@ modelos), y conexión con "Computación Neuroborrosa" si se usa lógica
 difusa. Si BISITE empuja hacia el multiagente completo (Opción B), ya
 habría margen para subir la ambición más adelante.
 
+## Revisión 2026-09-14: la aportación propia declarada NO se sostiene
+
+Primera revisión de esta idea hecha con los conectores de investigación
+ya activos (Consensus, alphaXiv, Scite), en vez de con conocimiento del
+modelo. Resultado: **el planteamiento general aguanta, pero la
+"aportación propia" tal y como está escrita arriba no.**
+
+### Hallazgo bloqueante: "predicción + módulo difuso para batería" está saturado
+
+La recomendación de arriba dice que el módulo de decisión difuso es la
+aportación propia, "no solo comparar modelos". Contrastado contra la
+literatura real: **esa combinación exacta es un tema resuelto y
+publicado desde 2017**, con validación experimental en microrredes
+reales. Dos referencias canónicas, metadatos verificados con Scite
+(DOI, autores, revista y volumen reales, sin retracciones):
+
+- Arcos-Avilés et al. (2017), *Applied Energy* 205:69-84,
+  DOI `10.1016/j.apenergy.2017.07.123` — control difuso de baja
+  complejidad + **previsión de generación y demanda** + batería, con
+  validación experimental en una microrred real de la Universidad
+  Pública de Navarra. 142 publicaciones citantes. Acceso abierto
+  (green OA): <https://hdl.handle.net/2454/38382>
+- Arcos-Avilés et al. (2018), *IEEE Transactions on Smart Grid*
+  9(2):530-543, DOI `10.1109/tsg.2016.2555245` — el FLC de 25 reglas.
+  332 publicaciones citantes. Acceso abierto:
+  <http://hdl.handle.net/2117/106638>
+
+Y no es solo cosa de 2017-2018: la búsqueda devolvió la misma idea
+publicándose de forma continuada hasta hoy (microrred aislada con
+previsión, Ecuador 2021; EMS predictivo PV-batería con difusa y estado
+de salud, IEEE Access 2021; difusa multiobjetivo con batería+hidrógeno,
+2020; FLC-EMS para PV-eólica-batería, *Scientific Reports* 2025).
+
+**Consecuencia práctica:** si el TFM se presenta como "mi aportación es
+el módulo difuso que usa la predicción para gestionar la batería",
+cualquier miembro del tribunal que conozca a Arcos-Avilés preguntará
+qué aporta esto sobre un *Applied Energy* de 2017. Hay que reencuadrar
+la contribución antes de escribir la propuesta, no después.
+
+### Lo que sí aguanta del planteamiento original
+
+- **Que no hay una arquitectura ganadora única** y que las mejoras
+  vienen más de ingeniería de variables que de modelos más grandes:
+  confirmado por trabajo reciente (benchmark de modelos de espacio de
+  estados vs. Transformers vs. recurrentes para red eléctrica de EEUU,
+  arXiv 2602.21415, que concluye que el rendimiento depende sobre todo
+  de los datos disponibles; y modelos lineales ligeros que siguen
+  siendo "notablemente fuertes", arXiv 2606.01339).
+- **REData, alcance de un año, conexión con Computación Neuroborrosa**:
+  sin cambios, siguen siendo buenas decisiones.
+
+### Dónde se ha movido el estado del arte (y dónde queda hueco real)
+
+El frente activo en 2026 son los **modelos fundacionales de series
+temporales (TSFM)** aplicados a energía — predicción *zero-shot* sin
+entrenar un modelo por dataset. Oleada de trabajo muy reciente en
+arXiv, toda de 2026: benchmark FETS sobre si los modelos fundacionales
+generalizan en series de energía (2604.22328); si pueden sustituir a
+los modelos específicos de mercado eléctrico, **incluyendo arbitraje de
+batería** (2609.00089); predicción de carga informada por covariables
+con TSFM (2609.06656, y la variante explicable de KIT 2604.28149);
+riesgos de contaminación de datos y dependencia de covariables al
+evaluarlos (2607.02623); y viabilidad operativa real (2605.24381).
+TimesFM-3 (330M parámetros, multivariante) es de agosto de 2026.
+
+Importante: **la pregunta sigue abierta** — varios de esos papers
+encuentran que los TSFM *no* ganan claramente, y señalan por qué
+(cambio de distribución, dependencia de covariables, contaminación del
+conjunto de entrenamiento). Un tema abierto y discutido es mejor
+terreno de TFM que uno cerrado.
+
+### Dos reencuadres posibles (decisión de Angel, no tomada aquí)
+
+1. **Métrica orientada a la decisión, no al RMSE.** Mantener todo el
+   pipeline planeado (predicción + módulo difuso + REData) pero cambiar
+   la pregunta de investigación a: *¿mejorar el RMSE del pronóstico se
+   traduce de verdad en mejores decisiones de la batería?* El módulo
+   difuso deja de venderse como "la aportación" y pasa a ser el banco de
+   pruebas que mide valor de decisión. Ya hay precedente de este enfoque
+   para predicción de carga (métricas orientadas a la aplicación,
+   arXiv 2607.01966) pero está poco explorado para decisiones de
+   batería. Ventaja: no tira nada de lo planeado y convierte el riesgo
+   de "esto es solo un benchmark" en la contribución misma.
+2. **TSFM sobre datos españoles.** Evaluar modelos fundacionales
+   (zero-shot) frente a un LSTM/TCN entrenado a medida, sobre
+   generación renovable real de REData. El hueco: los trabajos citados
+   evalúan precios belgas, red de EEUU o benchmarks genéricos — no
+   generación renovable peninsular española. Más actual y más
+   arriesgado (depende de que los TSFM sean accesibles y de que el
+   resultado sea publicable aunque salga negativo, que sí lo es).
+
+Ambos son compatibles: 2 puede ser el modelo de predicción dentro de 1.
+
+**Aviso metodológico:** los identificadores de arXiv de esta sección
+vienen de una búsqueda con alphaXiv y **solo se verificó el título y la
+fecha**, no autores ni metadatos completos. Antes de citar cualquiera
+de ellos en `main.tex`, verificarlos uno a uno (Scite o la propia
+página de arXiv) igual que se hizo con los dos de Arcos-Avilés. Solo
+esos dos están ya en `Bibliografia.bib`.
+
 ## Tutores de TFM — candidatos concretos
 
 | Candidato | Especialidad | Encaje |
