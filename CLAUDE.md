@@ -243,19 +243,39 @@ una búsqueda web sin verificar (justificación completa en
 
 - **Scite** — verificar una cita (autor/título/año/editorial, sin
   retracciones) antes de añadirla a `Bibliografia.bib`.
-- **alphaXiv** — texto completo de papers de arXiv.
+- **alphaXiv** — texto completo de papers de arXiv y, con
+  `discover_papers`, estado del arte reciente. Devuelve título/fecha/ID
+  pero **no** metadatos completos: verificar autores con Scite antes de
+  citar nada de ahí en `main.tex`.
 - **Consensus** — buscar y sintetizar evidencia científica (exige citar
   `[1]`/`[2]` con lista de referencias al final).
-- **alphaXiv `discover_papers`** — estado del arte reciente en arXiv;
-  devuelve título/fecha/ID, **no** metadatos completos: verificar autores
-  con Scite antes de citar nada de ahí en `main.tex`.
-- **Elicit** — conectado pero **inservible**: su API exige plan de pago
-  (`api_access_denied`, comprobado 2026-09-14). No perder tiempo con él
-  hasta que Angel diga que ha contratado Pro.
 - **Firecrawl** (`firecrawl_research_*`) — respaldo si las anteriores no
   tienen el paper.
 - **Wolfram** — verificar cálculos/fórmulas antes de darlos por buenos.
 - **bioRxiv** — solo para la asignatura de bioinformática, no el TFM.
+- **Elicit** — conectado pero **inservible**: su API exige plan de pago
+  (`api_access_denied`, comprobado 2026-09-14). No perder tiempo con él
+  hasta que Angel diga que ha contratado Pro.
+
+Para el resto del trabajo del máster, no solo buscar papers:
+
+- **Hugging Face** — modelos y datasets reales en vez de suponer qué
+  existe: `amazon/chronos-2` (Apache-2.0, predicción de series
+  temporales) está disponible y es directamente relevante para el TFM,
+  comprobado el 2026-09-14. Buscar por **nombre** del modelo, no por
+  descripción: `"time series foundation model forecasting"` devolvió
+  cero resultados y `"chronos"` devolvió los cinco principales.
+- **DeepL** — el Abstract en inglés que exige la plantilla DPTOIA-IT y
+  el Anexo III de solicitud de defensa en inglés.
+- **Google Drive** — ahí viven la plantilla y normativa oficial del TFM
+  y el material heredado del máster (ver `FUENTE.md` de esa carpeta).
+- **Gmail** — seguimiento de la correspondencia con BISITE y posibles
+  tutores (hay un correo enviado sin respuesta, ver
+  `ideas-tfm-energias-renovables.md`).
+- Skills de formato: **`pdf`** (leer papers y normativa), **`xlsx`**
+  (series de REData y datasets de Minería de Datos), **`dataviz`**
+  (gráficas de la memoria), **`docx`**/**`pptx`** (copia de repaso por
+  capítulo y presentación de defensa).
 
 ## Nombre del profesor: sin tilde
 
