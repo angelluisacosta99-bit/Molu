@@ -175,6 +175,89 @@ de ellos en `main.tex`, verificarlos uno a uno (Scite o la propia
 página de arXiv) igual que se hizo con los dos de Arcos-Avilés. Solo
 esos dos están ya en `Bibliografia.bib`.
 
+## Revisión 2026-09-14 (segunda pasada): verificación de factibilidad
+
+Angel pidió no empezar a trabajar hasta tener verificado que la idea es
+factible. Esto es lo comprobado, con lo bueno y lo malo.
+
+### REData: la API existe y sirve, pero está bloqueada desde aquí
+
+Documentación oficial confirmada (vía Firecrawl, porque el dominio está
+bloqueado en este entorno): `apidatos.ree.es`, endpoint
+`generacion/estructura-generacion`, parámetro `time_trunc` con valor
+`hour` admitido, rango por fechas ISO 8601, y filtros geográficos
+(`geo_trunc=electric_system`, `geo_limit=peninsular|ccaa`). Los ejemplos
+oficiales usan fechas de 2014 a 2019, así que hay histórico de sobra.
+**No pide clave de API.** La granularidad horaria que necesita el TFM
+existe.
+
+**Bloqueo real:** `apidatos.ree.es` y `www.ree.es` devuelven 403 del
+gateway de red de este entorno (`connect_rejected`, política de la
+organización). No es un fallo de REData. Para tocar los datos desde una
+sesión de Claude Code hay que **autorizar `apidatos.ree.es`** junto con
+`numpy.org` y `pandas.pydata.org` (ver entrada anterior). Alternativa
+sin depender de eso: descargar los datos desde VS Code en la máquina de
+Angel, que es donde el plan ya dice que corre el código pesado.
+
+### Sin GPU: confirmado que no hace falta (si se va por modelos fundacionales)
+
+Dato duro que resuelve la mayor duda de recursos: un benchmark de 2026
+evaluó Chronos-Bolt, Chronos-2, Moirai-2 y TinyTimeMixer sobre carga
+horaria real de ERCOT (2020-2024) **en hardware de consumo — AMD Ryzen
+7, 16 GB de RAM, sin GPU**. El benchmark FETS (*Energy and AI*, 2026)
+añade que los modelos fundacionales tienen "bajas demandas de inferencia
+y hardware" y que Chronos-2 logró el menor NRMSE mediano (0,472),
+por debajo de XGBoost (0,611) y random forest (0,696) *entrenados con
+todo el histórico de la serie objetivo*.
+
+Traducción: el camino de modelos fundacionales es **más factible** que
+entrenar una LSTM propia, no menos. Y `amazon/chronos-2` está en Hugging
+Face con licencia Apache-2.0.
+
+### Malo: el reencuadre que propuse ayer también se está llenando
+
+Honestidad por encima de coherencia con lo que dije ayer. La opción
+"evaluar TSFM zero-shot frente a modelos entrenados a medida sobre
+generación renovable" **ya está hecha varias veces en 2026**:
+
+- Benchmark empírico de TSFM + transformers + baselines para **solar,
+  eólica y carga** sobre datos ERCOT, evaluando TimesFM, Chronos-Bolt,
+  Moirai, MOMENT, TinyTimeMixer, TFT, PatchTST, TimeXer, LSTM y CNN, en
+  ocho dimensiones (zero-shot, fine-tuning, generalización a
+  emplazamientos no vistos, probabilístico...). Es prácticamente el
+  reencuadre 2 entero, ya publicado.
+- Benchmark FETS: 54 datasets de energía, modelos fundacionales frente a
+  ML específico de tarea.
+- WindFM: modelo fundacional **específico de eólica**, 8,1M parámetros,
+  código abierto, SOTA zero-shot.
+- Varios más de predicción de carga a corto plazo con TSFM zero-shot.
+
+Lo único no reclamado es "sobre datos españoles de REData", que es
+novedad **geográfica** — la más débil de todas. Un tribunal puede decir
+con razón: "has replicado un paper de 2026 con datos de España".
+
+### Lo que sigue abierto de verdad (y es donde queda el TFM)
+
+Lo que ninguno de esos trabajos cubre: **traducir el pronóstico a una
+decisión de batería y medir el valor de esa decisión**, no el error de
+predicción. El benchmark de hardware de consumo toca "analítica
+prescriptiva para soporte a la decisión" pero sobre carga, no sobre
+despacho de batería con un controlador difuso. La pregunta
+*"¿un MASE más bajo produce mejores decisiones de batería, o a partir de
+cierto punto da igual?"* sigue sin responder, y es la intersección de
+todo lo que Angel ya tenía planeado.
+
+**Valoración honesta del nivel:** esto es una contribución
+*incremental*, no rompedora — replicación con extensión propia. Para un
+TFM es suficiente y defendible; para presentarlo como investigación
+original de calado, no. Conviene decirlo así al tutor desde el principio
+en vez de sobrevenderlo.
+
+**Riesgo de calendario:** el campo se mueve rápido (los papers citados
+son todos de 2026). Un TFM planteado como "benchmark de quién gana"
+llegará tarde. Planteado como pregunta de valor-de-decisión envejece
+mucho mejor, porque la respuesta no caduca cuando sale un modelo nuevo.
+
 ## Tutores de TFM — candidatos concretos
 
 | Candidato | Especialidad | Encaje |
