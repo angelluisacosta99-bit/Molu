@@ -670,3 +670,97 @@ dentro del ámbito de redes).
 - Replantear quién sería el tutor: la lista actual de
   `## Tutores de TFM` se hizo para un tema de energía. Si el tema pasa
   a redes, hay que rehacerla.
+
+## Empleabilidad siendo extracomunitario: Networks frente a Energía (2026-09-14)
+
+Angel preguntó, sabiendo que le gusta más la energía, en cuál de los dos
+institutos hay más posibilidades reales de contrato, beca o prácticas
+**siendo cubano**. Lo que sigue es lo verificado en esa sesión. El punto
+de partida está en `admision-y-becas/becas-y-tramites-2026-2027.md`:
+nacionalidad cubana, formación de ingeniería en RUT-MIIT (Moscú),
+matrícula en MUSI condicionada a la apostilla del título.
+
+### Tamaño y perfil de cada instituto
+
+| | IMDEA Networks | IMDEA Energía |
+|---|---|---|
+| Plantilla | ~56 personas | ~158 (117 investigadores, 19 técnicos, 22 gestión) |
+| Nacionalidades | 19 (cifra que el propio instituto publicita) | No publicada; documentación institucional en español |
+| Idioma de trabajo | **Inglés** — se define a sí mismo como "English-speaking institute" | Español, con entorno descrito como internacional |
+| Perfil dominante | 100 % computación y redes | Mayoría química, materiales, térmica; la parte computacional es la Unidad de Análisis de Sistemas |
+
+**Lectura honesta del tamaño:** en bruto, Energía casi triplica a
+Networks, y eso sí es un argumento a su favor. Pero de sus 117
+investigadores, la mayoría están en laboratorios experimentales. Para un
+perfil de IA y telecomunicaciones, el número de plazas *relevantes*
+probablemente favorece a Networks, no a Energía. No está medido: es una
+inferencia del reparto por unidades, no un dato publicado.
+
+### Vía de entrada concreta encontrada en Networks
+
+Networks publica **plazas de doctorando asalariadas** (contrato, no
+beca), con el candidato pre-aceptado condicionalmente en el programa de
+doctorado de la UC3M u otra universidad de Madrid. Piden CV, carta de
+motivación y dos cartas de referencia. Declaran explícitamente que
+promueven la diversidad y no discriminan por origen étnico.
+
+En el momento de esta consulta tenían abierta una plaza titulada
+**"PhD Student Position in Trustworthy Agentic AI for 6G Networks"** —
+IA aplicada a redes 6G, exactamente el cruce del camino D.
+
+### Lo jurídico, que es lo que de verdad decide
+
+Cuatro hechos verificados que cambian el cálculo:
+
+1. **Un contrato vale mucho más que una beca.** Las becas públicas
+   españolas remiten al régimen del RD 1721/2007, con requisito de
+   nacionalidad/residencia — es justo el obstáculo ya documentado para
+   la Beca de Colaboración. Un contrato laboral, en cambio, sí
+   construye camino hacia la residencia. Que Networks pague sus plazas
+   de doctorado como contrato, y no como beca, no es un detalle
+   administrativo: es la diferencia entre una vía que lleva a alguna
+   parte y otra que no.
+2. **Con el permiso de estudiante ya se puede trabajar hasta 30 h
+   semanales**, sin permiso aparte, desde el RD 629/2022 (en vigor el
+   16/08/2022), siempre que sea compatible con los estudios. Esto
+   habilita prácticas remuneradas o media jornada *durante* el máster.
+3. **El permiso de investigador de la Ley 14/2013** (sección de
+   movilidad internacional) **no aplica la situación nacional de
+   empleo** — es decir, no hay que demostrar que ningún español o
+   comunitario podía ocupar el puesto. Por eso un organismo de
+   investigación es, para un extracomunitario, de los empleadores
+   jurídicamente más fáciles que existen en España. Aplica a los dos
+   institutos por igual, pero solo sirve si hay puesto.
+4. **Tras titularse hay una autorización de residencia para búsqueda de
+   empleo de hasta 12 meses**, no renovable. Se pide entre 60 días
+   antes y 90 días después de terminar. Dos avisos importantes:
+   **durante ese año no se puede trabajar**, y hay que acreditar medios
+   económicos para los doce meses (en torno al 100 % del IPREM
+   mensual). Es un colchón para buscar, no una solución.
+
+### Conclusión
+
+Para **contrato**, Networks gana con claridad: idioma inglés, plantilla
+un tercio extranjera, plazas asalariadas en vez de becas, contratación
+internacional habitual, y una plaza abierta justo en IA para 6G. Para
+**volumen bruto de plantilla**, gana Energía, pero en áreas que no son
+las de Angel.
+
+**No obliga a renunciar a la energía.** La eficiencia energética de red
+es literalmente una de las áreas declaradas de Networks (proyectos
+MAP-6G, RISC-6G, TUCAN6-CM). El camino D permite trabajar sobre consumo
+energético dentro del dominio de redes.
+
+### Pendiente de verificar
+
+- Si las becas de prácticas de IMDEA Energía (350 h, hasta 2.500 €)
+  admiten extracomunitarios y si exigen convenio con la universidad de
+  matrícula. **Salamanca está a ~2,5 h de Madrid**: unas prácticas
+  curriculares exigirían convenio USAL-IMDEA y resolver el
+  desplazamiento. No comprobado ninguno de los dos puntos.
+- Plazas abiertas actuales en IMDEA Energía con perfil computacional.
+- La cuantía exacta del IPREM vigente para el requisito de medios
+  económicos del permiso de búsqueda de empleo.
+- `networks.imdea.org`, `energia.imdea.org` y `jobs.energy.imdea.org`
+  siguen bloqueados por la política de red del entorno. Todo lo anterior
+  se obtuvo por búsqueda indirecta.
