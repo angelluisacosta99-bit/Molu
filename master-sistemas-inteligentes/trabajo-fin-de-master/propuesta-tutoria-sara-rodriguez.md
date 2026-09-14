@@ -1,7 +1,32 @@
 # Propuesta de TFM — borrador para la Dra. Sara Rodríguez González
 
-**Estado: BORRADOR. No enviado.** Angel revisa y edita antes de que
-esto salga a ningún sitio.
+## ⛔ NO ENVIAR — ESTE BORRADOR TIENE FALLOS BLOQUEANTES
+
+**Estado: DESCARTADO el 2026-09-14**, tras dos revisiones independientes
+con agentes. Se conserva solo como registro de lo que no funciona. Los
+motivos, en detalle, en `ideas-tfm-energias-renovables.md`, sección
+"Revisión 2026-09-14 (tercera pasada)". Resumen:
+
+1. **La afirmación de novedad es falsa.** Yin, Lei y Feng publicaron en
+   2024 en *IEEE Transactions on Power Systems* un artículo titulado
+   literalmente "Assessing the Value of Renewable Forecasting Accuracy
+   in Power System Operation". La pregunta de investigación de este
+   borrador es el título de ese paper.
+2. **El "barrido controlado de error" es metodológicamente circular** si
+   se hace con ruido sintético, y además ya está catalogado en la
+   literatura como el método *anterior* al que trabajos de 2024 superan.
+3. **No hay problema de decisión bien planteado**: generación peninsular
+   agregada + una batería no define un escenario; faltan perfil de
+   consumo, señal de precios, modelo de batería y políticas ancla.
+4. **Falta el marco teórico correcto**: *decision-focused learning* /
+   Smart Predict-then-Optimize (Elmachtoub y Grigas, *Management
+   Science*, 2022, 905 citas). Presentar la disociación
+   precisión/decisión como hallazgo propio sin citarlo se leería como
+   desconocimiento del campo.
+
+Lo que sigue es el texto original, **inservible tal cual**.
+
+---
 
 Destinataria: Dra. Sara Rodríguez González (BISITE, Departamento de
 Informática y Automática, USAL). Ver `ideas-tfm-energias-renovables.md`

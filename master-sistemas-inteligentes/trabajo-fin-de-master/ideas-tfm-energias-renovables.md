@@ -258,6 +258,118 @@ son todos de 2026). Un TFM planteado como "benchmark de quién gana"
 llegará tarde. Planteado como pregunta de valor-de-decisión envejece
 mucho mejor, porque la respuesta no caduca cuando sale un modelo nuevo.
 
+## Revisión 2026-09-14 (tercera pasada): la propuesta se cae, y por qué
+
+Angel pidió verificar al detalle antes de enviar nada a una catedrática.
+Se lanzaron **dos agentes independientes**: uno con el papel de revisor
+adversarial experto en el dominio, otro a verificar la afirmación de
+novedad contra la literatura. **Los dos encontraron fallos bloqueantes.**
+Esta es la lección más cara de toda la planificación del TFM, así que se
+registra completa.
+
+### Fallo 1 (bloqueante): la novedad declarada no existe
+
+La afirmación era: "nadie ha variado deliberadamente el error de
+predicción para medir cuánto se traslada a la decisión de batería, ni ha
+buscado el umbral de saturación". **Falsa en las dos mitades**, con
+literatura verificada:
+
+- **Yin, W., Lei, S. y Feng, S. (2024). "Assessing the Value of
+  Renewable Forecasting Accuracy in Power System Operation". *IEEE
+  Transactions on Power Systems*, 39(2), 4561-4573.**
+  DOI `10.1109/tpwrs.2023.3317534` (metadatos verificados con Scite).
+  El título es, literalmente, la pregunta de investigación que se iba a
+  proponer. Además deriva **fórmulas analíticas de sensibilidad** del
+  coste operativo al error, y cataloga explícitamente la *perturbación
+  numérica* — el método del borrador — como el enfoque previo que ellos
+  superan.
+- Barridos sistemáticos de precisión ya hechos: Mc Garrigle y Leahy
+  (2015, *Renewable Energy*) generan pronósticos ARMA de precisión
+  especificada; Wang et al. (2016, *IEEE TSTE*) cruzan 270 escenarios de
+  mix, penetración y nivel de mejora del pronóstico.
+- Aplicado a **baterías** en concreto: Campos et al. (2022, *J. Energy
+  Storage*) evalúan 11 niveles de precisión sobre reparto de PV+batería;
+  Kiedanski et al. (2019) publican "Sensitivity to Forecast Errors in
+  Energy Storage Arbitrage"; Maciejowska et al. construyen un pool de
+  192 pronósticos y muestran que RMSE/MAE se correlacionan solo
+  débilmente con el beneficio del BESS — casi palabra por palabra el
+  "hallazgo" que el borrador presentaba como propio.
+
+### Fallo 2 (bloqueante): faltaba el marco teórico del campo
+
+**Decision-focused learning / Smart "Predict, then Optimize"**
+(Elmachtoub, A. N. y Grigas, P., 2022, *Management Science*, 68(1),
+9-26, DOI `10.1287/mnsc.2020.3922`, **905 publicaciones citantes**,
+acceso abierto en `arxiv.org/pdf/1710.08005`) es exactamente el marco
+que formaliza que minimizar el error de predicción no es lo mismo que
+optimizar la decisión. Ya está aplicado a energía (Wahdany et al., 2023,
+*EPSR*; y trabajo específico de *scheduling* PV-batería). Proponer la
+disociación precisión/decisión como idea propia sin citar SPO se lee
+como no conocer el campo.
+
+### Fallo 3 (bloqueante): el barrido sintético es circular
+
+Degradar un pronóstico con ruido i.i.d. no simula un modelo peor: el
+error real es autocorrelacionado, heterocedástico, con sesgo condicional
+en rampas y sobre todo con **error de fase** (la rampa ocurre, pero
+tarde). Para almacenamiento, el error de fase concentra casi todo el
+daño económico; el ruido blanco de media cero **se promedia solo** dentro
+del horizonte de decisión, produciendo una curva plana. Es decir: se
+obtendría "satura pronto" **por construcción**, que era justamente la
+conclusión buscada. Alternativas válidas: barrer por **horizonte de
+predicción** (error real degradándose con estructura real), o una
+escalera de modelos reales; la degradación sintética solo vale como
+ablación estructurada, y entonces la pregunta buena pasa a ser *qué
+componente del error destruye valor*.
+
+### Fallo 4 (bloqueante): no había problema de decisión
+
+Generación **peninsular agregada** + una batería no define un escenario.
+O se baja a autoconsumo local (hace falta perfil de consumo local, no el
+agregado nacional) o se sube a arbitraje de mercado (y entonces lo que
+se predice son **precios**, no generación). Faltaban además: modelo de
+batería (rendimiento de ida y vuelta ~0,85-0,92, límites de carga,
+degradación por ciclos), esquema rodante con re-optimización, y las dos
+**políticas ancla** sin las cuales los euros no significan nada —
+oráculo con previsión perfecta y política ingenua. El valor se mide
+normalizado entre esos extremos (VSS/EVPI).
+
+### Fallos menores pero visibles
+
+- **Métricas contradictorias**: coste, ciclos y autoconsumo se oponen
+  entre sí. Hace falta *una* función objetivo (coste neto incluyendo
+  coste de degradación) y el resto como descriptivas.
+- **La lógica difusa no optimiza**: es heurística. Una "saturación"
+  medida solo con control difuso puede ser saturación *del controlador*,
+  no del valor del pronóstico. Hace falta un módulo óptimo (MPC/LP) como
+  contraste.
+- **Contaminación de datos**: Chronos pudo entrenarse con datos de red
+  europeos que incluyan España. Un revisor lo preguntará.
+- La afirmación "sin GPU" vale para inferencia zero-shot, no para el
+  barrido completo (N modelos × M horizontes × K configuraciones).
+
+### Lo único que sobrevive como hueco defendible
+
+No *si* el error se traslada a la decisión (resuelto), sino el **mapa de
+contingencia**: bajo qué configuración de activo (potencia, ciclos,
+degradación), estructura de mercado y régimen de precios **se desplaza
+el umbral**. Se reportan pérdidas de arbitraje que van del 6% al 50%
+según contexto, sin explicación sistemática de por qué. Esa dispersión
+sin explicar es la grieta. Encuadre correcto: *caracterización del
+umbral condicionada al activo y al mercado, usando DFL como marco* —
+nunca como "descubrimiento de que el umbral existe".
+
+### Consecuencia práctica que hay que decidir antes de seguir
+
+El tema reformulado **exige más maquinaria de la que había**: optimización
+bajo incertidumbre (MPC/LP), modelo de degradación de batería, datos de
+mercado y el marco DFL. El plan de entrenamiento actual
+(`preparacion/plan-de-entrenamiento.md`) va de Python a deep learning y
+lógica difusa, pero **no incluye optimización en ninguna fase**. Hay un
+desajuste real entre el nivel que pide el tema reformulado y el punto de
+partida (Fase 0 recién hecha). Decisión pendiente de Angel, anotada sin
+resolver aquí.
+
 ## Tutores de TFM — candidatos concretos
 
 | Candidato | Especialidad | Encaje |
