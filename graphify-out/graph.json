@@ -4439,6 +4439,18 @@
       "source_location": "L310"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_svelte_component_scaffoldsveltecomponentinsertsession",
+      "label": "scaffoldSvelteComponentInsertSession()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "svelte-component.mjs",
+      "file_type": "code",
+      "norm_label": "scaffoldsveltecomponentinsertsession()",
+      "source_file": ".claude/skills/impeccable/scripts/live/svelte-component.mjs",
+      "source_location": "L186"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_svelte_component_scaffoldsveltecomponentsession",
       "label": "scaffoldSvelteComponentSession()",
       "_callable": true,
@@ -7571,6 +7583,30 @@
       "source_location": "L7"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_session_store_createlivesessionstore_getreadablejournalpath",
+      "label": "getReadableJournalPath()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 196,
+      "community_name": "readLiveServerInfo",
+      "file_type": "code",
+      "norm_label": "getreadablejournalpath()",
+      "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
+      "source_location": "L22"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_session_store_createlivesessionstore_loadcachedorrebuild",
+      "label": "loadCachedOrRebuild()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 196,
+      "community_name": "readLiveServerInfo",
+      "file_type": "code",
+      "norm_label": "loadcachedorrebuild()",
+      "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
+      "source_location": "L13"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_status_fetchserverstatus",
       "label": "fetchServerStatus()",
       "_callable": true,
@@ -7617,6 +7653,42 @@
       "norm_label": "statuscli()",
       "source_file": ".claude/skills/impeccable/scripts/live-status.mjs",
       "source_location": "L25"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_lib_is_generated_hasgeneratedheader",
+      "label": "hasGeneratedHeader()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 199,
+      "community_name": "isGeneratedFile",
+      "file_type": "code",
+      "norm_label": "hasgeneratedheader()",
+      "source_file": ".claude/skills/impeccable/scripts/lib/is-generated.mjs",
+      "source_location": "L56"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_lib_is_generated_isgeneratedfile",
+      "label": "isGeneratedFile()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 199,
+      "community_name": "isGeneratedFile",
+      "file_type": "code",
+      "norm_label": "isgeneratedfile()",
+      "source_file": ".claude/skills/impeccable/scripts/lib/is-generated.mjs",
+      "source_location": "L33"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_lib_is_generated_isgitignored",
+      "label": "isGitIgnored()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 199,
+      "community_name": "isGeneratedFile",
+      "file_type": "code",
+      "norm_label": "isgitignored()",
+      "source_file": ".claude/skills/impeccable/scripts/lib/is-generated.mjs",
+      "source_location": "L42"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_browser_injected_index_addbrowserfindings",
@@ -8469,102 +8541,6 @@
       "norm_label": "waitforvisualpaint()",
       "source_file": ".claude/skills/impeccable/scripts/detector/browser/injected/index.mjs",
       "source_location": "L1167"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_buildmissingtargetdirective",
-      "label": "buildMissingTargetDirective()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 208,
-      "community_name": "cli",
-      "file_type": "code",
-      "norm_label": "buildmissingtargetdirective()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L927"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_buildresolvedcontextdirective",
-      "label": "buildResolvedContextDirective()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 208,
-      "community_name": "cli",
-      "file_type": "code",
-      "norm_label": "buildresolvedcontextdirective()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L904"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_buildtargetselectiondirective",
-      "label": "buildTargetSelectionDirective()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 208,
-      "community_name": "cli",
-      "file_type": "code",
-      "norm_label": "buildtargetselectiondirective()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L936"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_cli",
-      "label": "cli()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 208,
-      "community_name": "cli",
-      "file_type": "code",
-      "norm_label": "cli()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L837"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_hastargetoption",
-      "label": "hasTargetOption()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 208,
-      "community_name": "cli",
-      "file_type": "code",
-      "norm_label": "hastargetoption()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L895"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_parseclioptions",
-      "label": "parseCliOptions()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 208,
-      "community_name": "cli",
-      "file_type": "code",
-      "norm_label": "parseclioptions()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L891"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_pathexistsfortarget",
-      "label": "pathExistsForTarget()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 208,
-      "community_name": "cli",
-      "file_type": "code",
-      "norm_label": "pathexistsfortarget()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L899"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_shouldwarnmissingtarget",
-      "label": "shouldWarnMissingTarget()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 208,
-      "community_name": "cli",
-      "file_type": "code",
-      "norm_label": "shouldwarnmissingtarget()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L916"
     },
     {
       "id": "claude_skills_impeccable_scripts_hook_admin_addignorefile",
@@ -9669,18 +9645,6 @@
       "norm_label": "buildsveltecomponentcssauthoring()",
       "source_file": ".claude/skills/impeccable/scripts/live/svelte-component.mjs",
       "source_location": "L802"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_svelte_component_scaffoldsveltecomponentinsertsession",
-      "label": "scaffoldSvelteComponentInsertSession()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 23,
-      "community_name": "live-wrap.mjs",
-      "file_type": "code",
-      "norm_label": "scaffoldsveltecomponentinsertsession()",
-      "source_file": ".claude/skills/impeccable/scripts/live/svelte-component.mjs",
-      "source_location": "L186"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_svelte_component_shouldusesveltecomponentinjection",
@@ -13619,18 +13583,6 @@
       "source_location": "L18"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_commit_manual_edits_clearappliedentries",
-      "label": "clearAppliedEntries()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "clearappliedentries()",
-      "source_file": ".claude/skills/impeccable/scripts/live-commit-manual-edits.mjs",
-      "source_location": "L555"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_discard_manual_edits_argval",
       "label": "argVal()",
       "_callable": true,
@@ -13845,54 +13797,6 @@
       "norm_label": "writebuffer()",
       "source_file": ".claude/skills/impeccable/scripts/live/manual-edits-buffer.mjs",
       "source_location": "L50"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_lib_is_generated_hasgeneratedheader",
-      "label": "hasGeneratedHeader()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 36,
-      "community_name": "live-manual-edit-evidence.mjs",
-      "file_type": "code",
-      "norm_label": "hasgeneratedheader()",
-      "source_file": ".claude/skills/impeccable/scripts/lib/is-generated.mjs",
-      "source_location": "L56"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_lib_is_generated_isgeneratedfile",
-      "label": "isGeneratedFile()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 36,
-      "community_name": "live-manual-edit-evidence.mjs",
-      "file_type": "code",
-      "norm_label": "isgeneratedfile()",
-      "source_file": ".claude/skills/impeccable/scripts/lib/is-generated.mjs",
-      "source_location": "L33"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_lib_is_generated_isgitignored",
-      "label": "isGitIgnored()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 36,
-      "community_name": "live-manual-edit-evidence.mjs",
-      "file_type": "code",
-      "norm_label": "isgitignored()",
-      "source_file": ".claude/skills/impeccable/scripts/lib/is-generated.mjs",
-      "source_location": "L42"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_commit_manual_edits_normalizeprojectsourcepath",
-      "label": "normalizeProjectSourcePath()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 36,
-      "community_name": "live-manual-edit-evidence.mjs",
-      "file_type": "code",
-      "norm_label": "normalizeprojectsourcepath()",
-      "source_file": ".claude/skills/impeccable/scripts/live-commit-manual-edits.mjs",
-      "source_location": "L224"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_manual_edit_evidence_analyzesourcehint",
@@ -14159,6 +14063,42 @@
       "source_location": "L240"
     },
     {
+      "id": "claude_skills_impeccable_scripts_context_buildmissingtargetdirective",
+      "label": "buildMissingTargetDirective()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "context.mjs",
+      "file_type": "code",
+      "norm_label": "buildmissingtargetdirective()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L927"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_buildresolvedcontextdirective",
+      "label": "buildResolvedContextDirective()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "context.mjs",
+      "file_type": "code",
+      "norm_label": "buildresolvedcontextdirective()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L904"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_buildtargetselectiondirective",
+      "label": "buildTargetSelectionDirective()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "context.mjs",
+      "file_type": "code",
+      "norm_label": "buildtargetselectiondirective()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L936"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_context_buildupdatedirective",
       "label": "buildUpdateDirective()",
       "_callable": true,
@@ -14169,6 +14109,18 @@
       "norm_label": "buildupdatedirective()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
       "source_location": "L772"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_cli",
+      "label": "cli()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "context.mjs",
+      "file_type": "code",
+      "norm_label": "cli()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L837"
     },
     {
       "id": "claude_skills_impeccable_scripts_context_comparesemver",
@@ -14207,6 +14159,18 @@
       "source_location": "L761"
     },
     {
+      "id": "claude_skills_impeccable_scripts_context_hastargetoption",
+      "label": "hasTargetOption()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "context.mjs",
+      "file_type": "code",
+      "norm_label": "hastargetoption()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L895"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_context_invokedasscript",
       "label": "invokedAsScript()",
       "_callable": true,
@@ -14217,6 +14181,18 @@
       "norm_label": "invokedasscript()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
       "source_location": "L949"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_parseclioptions",
+      "label": "parseCliOptions()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "context.mjs",
+      "file_type": "code",
+      "norm_label": "parseclioptions()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L891"
     },
     {
       "id": "claude_skills_impeccable_scripts_context_parseyamlflowlist",
@@ -14231,28 +14207,16 @@
       "source_location": "L590"
     },
     {
-      "id": "claude_skills_impeccable_scripts_context_readjson",
-      "label": "readJson()",
+      "id": "claude_skills_impeccable_scripts_context_pathexistsfortarget",
+      "label": "pathExistsForTarget()",
       "_callable": true,
       "_origin": "ast",
       "community": 37,
       "community_name": "context.mjs",
       "file_type": "code",
-      "norm_label": "readjson()",
+      "norm_label": "pathexistsfortarget()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L620"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_readlernaworkspaces",
-      "label": "readLernaWorkspaces()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "context.mjs",
-      "file_type": "code",
-      "norm_label": "readlernaworkspaces()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L542"
+      "source_location": "L899"
     },
     {
       "id": "claude_skills_impeccable_scripts_context_readlocalskillversion",
@@ -14265,18 +14229,6 @@
       "norm_label": "readlocalskillversion()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
       "source_location": "L721"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_readpackageworkspaces",
-      "label": "readPackageWorkspaces()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "context.mjs",
-      "file_type": "code",
-      "norm_label": "readpackageworkspaces()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L534"
     },
     {
       "id": "claude_skills_impeccable_scripts_context_readpnpmworkspaces",
@@ -14303,16 +14255,16 @@
       "source_location": "L733"
     },
     {
-      "id": "claude_skills_impeccable_scripts_context_readworkspacepatterns",
-      "label": "readWorkspacePatterns()",
+      "id": "claude_skills_impeccable_scripts_context_shouldwarnmissingtarget",
+      "label": "shouldWarnMissingTarget()",
       "_callable": true,
       "_origin": "ast",
       "community": 37,
       "community_name": "context.mjs",
       "file_type": "code",
-      "norm_label": "readworkspacepatterns()",
+      "norm_label": "shouldwarnmissingtarget()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L526"
+      "source_location": "L916"
     },
     {
       "id": "claude_skills_impeccable_scripts_context_stripyamlinlinecomment",
@@ -14680,7 +14632,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 39,
-      "community_name": "resolveProject",
+      "community_name": "readWorkspacePatterns",
       "file_type": "code",
       "norm_label": "findmonoreporoot()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
@@ -14692,7 +14644,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 39,
-      "community_name": "resolveProject",
+      "community_name": "readWorkspacePatterns",
       "file_type": "code",
       "norm_label": "hasfallbackworkspacechildren()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
@@ -14704,7 +14656,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 39,
-      "community_name": "resolveProject",
+      "community_name": "readWorkspacePatterns",
       "file_type": "code",
       "norm_label": "hasgitboundary()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
@@ -14716,35 +14668,59 @@
       "_callable": true,
       "_origin": "ast",
       "community": 39,
-      "community_name": "resolveProject",
+      "community_name": "readWorkspacePatterns",
       "file_type": "code",
       "norm_label": "ismonoreporoot()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
       "source_location": "L234"
     },
     {
-      "id": "claude_skills_impeccable_scripts_context_resolveproject",
-      "label": "resolveProject()",
+      "id": "claude_skills_impeccable_scripts_context_readjson",
+      "label": "readJson()",
       "_callable": true,
       "_origin": "ast",
       "community": 39,
-      "community_name": "resolveProject",
+      "community_name": "readWorkspacePatterns",
       "file_type": "code",
-      "norm_label": "resolveproject()",
+      "norm_label": "readjson()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L152"
+      "source_location": "L620"
     },
     {
-      "id": "claude_skills_impeccable_scripts_context_resolvetargetdir",
-      "label": "resolveTargetDir()",
+      "id": "claude_skills_impeccable_scripts_context_readlernaworkspaces",
+      "label": "readLernaWorkspaces()",
       "_callable": true,
       "_origin": "ast",
       "community": 39,
-      "community_name": "resolveProject",
+      "community_name": "readWorkspacePatterns",
       "file_type": "code",
-      "norm_label": "resolvetargetdir()",
+      "norm_label": "readlernaworkspaces()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L203"
+      "source_location": "L542"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_readpackageworkspaces",
+      "label": "readPackageWorkspaces()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 39,
+      "community_name": "readWorkspacePatterns",
+      "file_type": "code",
+      "norm_label": "readpackageworkspaces()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L534"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_readworkspacepatterns",
+      "label": "readWorkspacePatterns()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 39,
+      "community_name": "readWorkspacePatterns",
+      "file_type": "code",
+      "norm_label": "readworkspacepatterns()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L526"
     },
     {
       "id": "claude_skills_impeccable_scripts_modern_screenshot_umd_ae",
@@ -15731,30 +15707,6 @@
       "source_location": "L416"
     },
     {
-      "id": "claude_skills_impeccable_scripts_context_nearestpackagerootbetween",
-      "label": "nearestPackageRootBetween()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 41,
-      "community_name": "discoverTargetCandidates",
-      "file_type": "code",
-      "norm_label": "nearestpackagerootbetween()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L488"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_nearestprojectlikeroot",
-      "label": "nearestProjectLikeRoot()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 41,
-      "community_name": "discoverTargetCandidates",
-      "file_type": "code",
-      "norm_label": "nearestprojectlikeroot()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L471"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_context_normalizeworkspacepattern",
       "label": "normalizeWorkspacePattern()",
       "_callable": true,
@@ -15789,18 +15741,6 @@
       "norm_label": "projectrootfromworkspacepattern()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
       "source_location": "L628"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_resolveworkspaceprojectroot",
-      "label": "resolveWorkspaceProjectRoot()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 41,
-      "community_name": "discoverTargetCandidates",
-      "file_type": "code",
-      "norm_label": "resolveworkspaceprojectroot()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L439"
     },
     {
       "id": "claude_skills_impeccable_scripts_context_segmentmatches",
@@ -16725,30 +16665,6 @@
       "norm_label": "basesnapshot()",
       "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
       "source_location": "L103"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_session_store_createlivesessionstore_getreadablejournalpath",
-      "label": "getReadableJournalPath()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "session-store.mjs",
-      "file_type": "code",
-      "norm_label": "getreadablejournalpath()",
-      "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
-      "source_location": "L22"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_session_store_createlivesessionstore_loadcachedorrebuild",
-      "label": "loadCachedOrRebuild()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "session-store.mjs",
-      "file_type": "code",
-      "norm_label": "loadcachedorrebuild()",
-      "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
-      "source_location": "L13"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_session_store_getjournalpath",
@@ -20903,6 +20819,30 @@
       "source_location": "L501"
     },
     {
+      "id": "claude_skills_impeccable_scripts_context_nearestpackagerootbetween",
+      "label": "nearestPackageRootBetween()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 75,
+      "community_name": "resolveContext",
+      "file_type": "code",
+      "norm_label": "nearestpackagerootbetween()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L488"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_nearestprojectlikeroot",
+      "label": "nearestProjectLikeRoot()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 75,
+      "community_name": "resolveContext",
+      "file_type": "code",
+      "norm_label": "nearestprojectlikeroot()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L471"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_context_resolvecandidatecontextsummary",
       "label": "resolveCandidateContextSummary()",
       "_callable": true,
@@ -20961,6 +20901,42 @@
       "norm_label": "resolvelocalcontextdir()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
       "source_location": "L183"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_resolveproject",
+      "label": "resolveProject()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 75,
+      "community_name": "resolveContext",
+      "file_type": "code",
+      "norm_label": "resolveproject()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L152"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_resolvetargetdir",
+      "label": "resolveTargetDir()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 75,
+      "community_name": "resolveContext",
+      "file_type": "code",
+      "norm_label": "resolvetargetdir()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L203"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_resolveworkspaceprojectroot",
+      "label": "resolveWorkspaceProjectRoot()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 75,
+      "community_name": "resolveContext",
+      "file_type": "code",
+      "norm_label": "resolveworkspaceprojectroot()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L439"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_detect_antipatterns_browser_checkelementtextoverflowdom",
@@ -21275,6 +21251,18 @@
       "source_location": "L631"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_commit_manual_edits_clearappliedentries",
+      "label": "clearAppliedEntries()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "live-commit-manual-edits.mjs",
+      "file_type": "code",
+      "norm_label": "clearappliedentries()",
+      "source_file": ".claude/skills/impeccable/scripts/live-commit-manual-edits.mjs",
+      "source_location": "L555"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_commit_manual_edits_collectapplyownedfiles",
       "label": "collectApplyOwnedFiles()",
       "_callable": true,
@@ -21453,6 +21441,18 @@
       "norm_label": "normalizefailedentries()",
       "source_file": ".claude/skills/impeccable/scripts/live-commit-manual-edits.mjs",
       "source_location": "L97"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_commit_manual_edits_normalizeprojectsourcepath",
+      "label": "normalizeProjectSourcePath()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "live-commit-manual-edits.mjs",
+      "file_type": "code",
+      "norm_label": "normalizeprojectsourcepath()",
+      "source_file": ".claude/skills/impeccable/scripts/live-commit-manual-edits.mjs",
+      "source_location": "L224"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_commit_manual_edits_normalizerelativefile",
@@ -31352,6 +31352,28 @@
       "source_location": "L5"
     },
     {
+      "id": "claude_skills_impeccable_scripts_lib_is_generated",
+      "label": "is-generated.mjs",
+      "_origin": "ast",
+      "community": 199,
+      "community_name": "isGeneratedFile",
+      "file_type": "code",
+      "norm_label": "is-generated.mjs",
+      "source_file": ".claude/skills/impeccable/scripts/lib/is-generated.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_lib_is_generated_header_markers",
+      "label": "HEADER_MARKERS",
+      "_origin": "ast",
+      "community": 199,
+      "community_name": "isGeneratedFile",
+      "file_type": "code",
+      "norm_label": "header_markers",
+      "source_file": ".claude/skills/impeccable/scripts/lib/is-generated.mjs",
+      "source_location": "L21"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_detector_browser_injected_index",
       "label": "index.mjs",
       "_origin": "ast",
@@ -32081,6 +32103,74 @@
       "norm_label": "ejercicios",
       "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad7a_un-buen-trabajo.md",
       "source_location": "L5"
+    },
+    {
+      "id": "graphify_out_memory_query_20260914_113442_2fa71a59_imdea_arlet_contrato_doctorado_correo_bisite_permi",
+      "label": "query_20260914_113442_2fa71a59_imdea_arlet_contrato_doctorado_correo_bisite_permi.md",
+      "_origin": "ast",
+      "community": 208,
+      "community_name": "Q: IMDEA Arlet contrato doctorado correo BISITE permiso de busqueda de empleo TFM caminos",
+      "file_type": "document",
+      "frontmatter": {
+        "type": "query",
+        "date": "2026-09-14T11:34:42.755632+00:00",
+        "question": "IMDEA Arlet contrato doctorado correo BISITE permiso de busqueda de empleo TFM caminos",
+        "contributor": "graphify",
+        "outcome": "useful",
+        "source_nodes": "[&quot;IMDEA como criterio de empleabilidad (abierto, 2026-09-14)&quot;, &quot;Decisi\u00f3n pendiente: los tres caminos (abierta desde 2026-09-14)&quot;, &quot;Residencia tras el m\u00e1ster para b\u00fasqueda de empleo: 24 meses (resuelto)&quot;]"
+      },
+      "node_kind": "page",
+      "norm_label": "query_20260914_113442_2fa71a59_imdea_arlet_contrato_doctorado_correo_bisite_permi.md",
+      "source_file": "graphify-out/memory/query_20260914_113442_2fa71a59_imdea_arlet_contrato_doctorado_correo_bisite_permi.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "graphify_out_memory_query_20260914_113442_2fa71a59_imdea_arlet_contrato_doctorado_correo_bisite_permi_answer",
+      "label": "Answer",
+      "_origin": "ast",
+      "community": 208,
+      "community_name": "Q: IMDEA Arlet contrato doctorado correo BISITE permiso de busqueda de empleo TFM caminos",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "answer",
+      "source_file": "graphify-out/memory/query_20260914_113442_2fa71a59_imdea_arlet_contrato_doctorado_correo_bisite_permi.md",
+      "source_location": "L12"
+    },
+    {
+      "id": "graphify_out_memory_query_20260914_113442_2fa71a59_imdea_arlet_contrato_doctorado_correo_bisite_permi_outcome",
+      "label": "Outcome",
+      "_origin": "ast",
+      "community": 208,
+      "community_name": "Q: IMDEA Arlet contrato doctorado correo BISITE permiso de busqueda de empleo TFM caminos",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "outcome",
+      "source_file": "graphify-out/memory/query_20260914_113442_2fa71a59_imdea_arlet_contrato_doctorado_correo_bisite_permi.md",
+      "source_location": "L16"
+    },
+    {
+      "id": "graphify_out_memory_query_20260914_113442_2fa71a59_imdea_arlet_contrato_doctorado_correo_bisite_permi_q_imdea_arlet_contrato_doctorado_correo_bisite_permiso_de_busqueda_de_empleo_tfm_caminos",
+      "label": "Q: IMDEA Arlet contrato doctorado correo BISITE permiso de busqueda de empleo TFM caminos",
+      "_origin": "ast",
+      "community": 208,
+      "community_name": "Q: IMDEA Arlet contrato doctorado correo BISITE permiso de busqueda de empleo TFM caminos",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "q: imdea arlet contrato doctorado correo bisite permiso de busqueda de empleo tfm caminos",
+      "source_file": "graphify-out/memory/query_20260914_113442_2fa71a59_imdea_arlet_contrato_doctorado_correo_bisite_permi.md",
+      "source_location": "L10"
+    },
+    {
+      "id": "graphify_out_memory_query_20260914_113442_2fa71a59_imdea_arlet_contrato_doctorado_correo_bisite_permi_source_nodes",
+      "label": "Source Nodes",
+      "_origin": "ast",
+      "community": 208,
+      "community_name": "Q: IMDEA Arlet contrato doctorado correo BISITE permiso de busqueda de empleo TFM caminos",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "source nodes",
+      "source_file": "graphify-out/memory/query_20260914_113442_2fa71a59_imdea_arlet_contrato_doctorado_correo_bisite_permi.md",
+      "source_location": "L20"
     },
     {
       "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b1_cuaderno_unidad8b_salimos",
@@ -32823,7 +32913,7 @@
       "node_kind": "heading",
       "norm_label": "camino d: pivotar a redes moviles (candidato, no verificado del todo)",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L609"
+      "source_location": "L614"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_conclusi\u00f3n",
@@ -32835,7 +32925,7 @@
       "node_kind": "heading",
       "norm_label": "conclusion",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L770"
+      "source_location": "L775"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_consecuencia_pr\u00e1ctica_que_hay_que_decidir_antes_de_seguir",
@@ -32859,7 +32949,7 @@
       "node_kind": "heading",
       "norm_label": "correspondencia relacionada",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L491"
+      "source_location": "L494"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_decisi\u00f3n_pendiente_los_tres_caminos_abierta_desde_2026_09_14",
@@ -32931,7 +33021,7 @@
       "node_kind": "heading",
       "norm_label": "empleabilidad siendo extracomunitario: networks frente a energia (2026-09-14)",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L696"
+      "source_location": "L701"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_estado_de_recursos_verificado",
@@ -33039,7 +33129,7 @@
       "node_kind": "heading",
       "norm_label": "imdea como criterio de empleabilidad (abierto, 2026-09-14)",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L539"
+      "source_location": "L542"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_limitaci\u00f3n_t\u00e9cnica_de_esta_sesi\u00f3n",
@@ -33051,7 +33141,7 @@
       "node_kind": "heading",
       "norm_label": "limitacion tecnica de esta sesion",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L598"
+      "source_location": "L603"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_lo_jur\u00eddico_que_es_lo_que_de_verdad_decide",
@@ -33063,7 +33153,7 @@
       "node_kind": "heading",
       "norm_label": "lo juridico, que es lo que de verdad decide",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L733"
+      "source_location": "L738"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_lo_que_se_comprob\u00f3_2026_09_14_y_lo_que_no",
@@ -33075,7 +33165,7 @@
       "node_kind": "heading",
       "norm_label": "lo que se comprobo (2026-09-14) y lo que no",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L642"
+      "source_location": "L647"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_lo_que_sigue_abierto_de_verdad_y_es_donde_queda_el_tfm",
@@ -33147,7 +33237,7 @@
       "node_kind": "heading",
       "norm_label": "nota de encaje: por que sara rodriguez pasa a ser la primera opcion",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L465"
+      "source_location": "L468"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_opci\u00f3n_a_predicci\u00f3n_de_generaci\u00f3n_renovable_con_deep_learning",
@@ -33183,7 +33273,7 @@
       "node_kind": "heading",
       "norm_label": "pendiente ademas",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L682"
+      "source_location": "L687"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_pendiente_de_verificar",
@@ -33195,7 +33285,7 @@
       "node_kind": "heading",
       "norm_label": "pendiente de verificar",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L784"
+      "source_location": "L789"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_por_qu\u00e9_encaja",
@@ -33207,7 +33297,7 @@
       "node_kind": "heading",
       "norm_label": "por que encaja",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L617"
+      "source_location": "L622"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_por_qu\u00e9_esta_orientaci\u00f3n_tiene_sentido",
@@ -33231,7 +33321,7 @@
       "node_kind": "heading",
       "norm_label": "precedente real: el camino de arlet (confirmado por angel, 2026-09-14)",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L803"
+      "source_location": "L813"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_qu\u00e9_tanto_puede_ayudar_claude_code_en_este_tfm_evaluaci\u00f3n_honesta",
@@ -33243,7 +33333,7 @@
       "node_kind": "heading",
       "norm_label": "que tanto puede ayudar claude code en este tfm (evaluacion honesta)",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L505"
+      "source_location": "L508"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_recomendaci\u00f3n",
@@ -33315,17 +33405,17 @@
       "node_kind": "heading",
       "norm_label": "si hubiera sido imdea energia (escenario descartado; se conserva solo por si el criterio cambia)",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L557"
+      "source_location": "L561"
     },
     {
-      "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_sin_gpu_confirmado_que_no_hace_falta_si_se_va_por_modelos_fundacionales",
-      "label": "Sin GPU: confirmado que no hace falta (si se va por modelos fundacionales)",
+      "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_sin_gpu_para_inferencia_zero_shot_confirmado_el_barrido_completo_no_medido",
+      "label": "Sin GPU para inferencia zero-shot: confirmado (el barrido completo, no medido)",
       "_origin": "ast",
       "community": 217,
       "community_name": "Ideas de TFM: sistemas inteligentes aplicados a energ\u00edas renovables",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "sin gpu: confirmado que no hace falta (si se va por modelos fundacionales)",
+      "norm_label": "sin gpu para inferencia zero-shot: confirmado (el barrido completo, no medido)",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
       "source_location": "L206"
     },
@@ -33339,7 +33429,7 @@
       "node_kind": "heading",
       "norm_label": "tamano y perfil de cada instituto",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L705"
+      "source_location": "L710"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_tutores_de_tfm_candidatos_concretos",
@@ -33351,7 +33441,7 @@
       "node_kind": "heading",
       "norm_label": "tutores de tfm \u2014 candidatos concretos",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L451"
+      "source_location": "L454"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_v\u00eda_de_entrada_concreta_encontrada_en_networks",
@@ -33363,7 +33453,7 @@
       "node_kind": "heading",
       "norm_label": "via de entrada concreta encontrada en networks",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L721"
+      "source_location": "L726"
     },
     {
       "id": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones",
@@ -33431,7 +33521,7 @@
       "node_kind": "heading",
       "norm_label": "2026-09-13",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
-      "source_location": "L205"
+      "source_location": "L213"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_lluvia_de_ideas_2026_09_13_continuaci\u00f3n_dominios_bloqueados_para_docs_oficiales_para_la_sesi\u00f3n_que_retome_esto",
@@ -33443,7 +33533,7 @@
       "node_kind": "heading",
       "norm_label": "2026-09-13 (continuacion: dominios bloqueados para docs oficiales + para la sesion que retome esto)",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
-      "source_location": "L134"
+      "source_location": "L142"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_lluvia_de_ideas_2026_09_13_continuaci\u00f3n_formato_de_entrega_para_angel",
@@ -33455,7 +33545,7 @@
       "node_kind": "heading",
       "norm_label": "2026-09-13 (continuacion: formato de entrega para angel)",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
-      "source_location": "L183"
+      "source_location": "L191"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_lluvia_de_ideas_2026_09_14_para_la_sesi\u00f3n_que_retome_esto_con_los_dominios_ya_autorizados",
@@ -33479,7 +33569,7 @@
       "node_kind": "heading",
       "norm_label": "artefactos publicados (republicar con el mismo `url`, no crear otro)",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
-      "source_location": "L127"
+      "source_location": "L135"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_lluvia_de_ideas_c\u00f3mo_citar_norma_real_del_departamento_no_una_convenci\u00f3n_inventada",
@@ -33491,7 +33581,7 @@
       "node_kind": "heading",
       "norm_label": "como citar (norma real del departamento, no una convencion inventada)",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
-      "source_location": "L214"
+      "source_location": "L222"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_lluvia_de_ideas_datos_de_extranjer\u00eda_ya_verificados_no_reinvestigar",
@@ -33503,7 +33593,7 @@
       "node_kind": "heading",
       "norm_label": "datos de extranjeria ya verificados (no reinvestigar)",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
-      "source_location": "L85"
+      "source_location": "L86"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_lluvia_de_ideas_el_contexto_personal_que_cambi\u00f3_la_ecuaci\u00f3n",
@@ -33515,7 +33605,7 @@
       "node_kind": "heading",
       "norm_label": "el contexto personal que cambio la ecuacion",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
-      "source_location": "L69"
+      "source_location": "L70"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_lluvia_de_ideas_el_estado_real_del_tfm_ning\u00fan_tema_est\u00e1_decidido",
@@ -33527,7 +33617,7 @@
       "node_kind": "heading",
       "norm_label": "el estado real del tfm: ningun tema esta decidido",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
-      "source_location": "L38"
+      "source_location": "L39"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_lluvia_de_ideas_lluvia_de_ideas_tfm",
@@ -33563,7 +33653,7 @@
       "node_kind": "heading",
       "norm_label": "tareas concretas heredadas",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
-      "source_location": "L111"
+      "source_location": "L112"
     },
     {
       "id": "claude_hooks_sync_main",
@@ -34264,28 +34354,6 @@
       "norm_label": "manual-edits-buffer.mjs",
       "source_file": ".claude/skills/impeccable/scripts/live/manual-edits-buffer.mjs",
       "source_location": "L1"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_lib_is_generated",
-      "label": "is-generated.mjs",
-      "_origin": "ast",
-      "community": 36,
-      "community_name": "live-manual-edit-evidence.mjs",
-      "file_type": "code",
-      "norm_label": "is-generated.mjs",
-      "source_file": ".claude/skills/impeccable/scripts/lib/is-generated.mjs",
-      "source_location": "L1"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_lib_is_generated_header_markers",
-      "label": "HEADER_MARKERS",
-      "_origin": "ast",
-      "community": 36,
-      "community_name": "live-manual-edit-evidence.mjs",
-      "file_type": "code",
-      "norm_label": "header_markers",
-      "source_file": ".claude/skills/impeccable/scripts/lib/is-generated.mjs",
-      "source_location": "L21"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_manual_edit_evidence",
@@ -109075,6 +109143,50 @@
       "weight": 1.0
     },
     {
+      "source": "graphify_out_memory_query_20260914_113442_2fa71a59_imdea_arlet_contrato_doctorado_correo_bisite_permi",
+      "target": "graphify_out_memory_query_20260914_113442_2fa71a59_imdea_arlet_contrato_doctorado_correo_bisite_permi_q_imdea_arlet_contrato_doctorado_correo_bisite_permiso_de_busqueda_de_empleo_tfm_caminos",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-out/memory/query_20260914_113442_2fa71a59_imdea_arlet_contrato_doctorado_correo_bisite_permi.md",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "graphify_out_memory_query_20260914_113442_2fa71a59_imdea_arlet_contrato_doctorado_correo_bisite_permi_q_imdea_arlet_contrato_doctorado_correo_bisite_permiso_de_busqueda_de_empleo_tfm_caminos",
+      "target": "graphify_out_memory_query_20260914_113442_2fa71a59_imdea_arlet_contrato_doctorado_correo_bisite_permi_answer",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-out/memory/query_20260914_113442_2fa71a59_imdea_arlet_contrato_doctorado_correo_bisite_permi.md",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "graphify_out_memory_query_20260914_113442_2fa71a59_imdea_arlet_contrato_doctorado_correo_bisite_permi_q_imdea_arlet_contrato_doctorado_correo_bisite_permiso_de_busqueda_de_empleo_tfm_caminos",
+      "target": "graphify_out_memory_query_20260914_113442_2fa71a59_imdea_arlet_contrato_doctorado_correo_bisite_permi_outcome",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-out/memory/query_20260914_113442_2fa71a59_imdea_arlet_contrato_doctorado_correo_bisite_permi.md",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "graphify_out_memory_query_20260914_113442_2fa71a59_imdea_arlet_contrato_doctorado_correo_bisite_permi_q_imdea_arlet_contrato_doctorado_correo_bisite_permiso_de_busqueda_de_empleo_tfm_caminos",
+      "target": "graphify_out_memory_query_20260914_113442_2fa71a59_imdea_arlet_contrato_doctorado_correo_bisite_permi_source_nodes",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-out/memory/query_20260914_113442_2fa71a59_imdea_arlet_contrato_doctorado_correo_bisite_permi.md",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
       "source": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027",
       "target": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_becas_y_tr\u00e1mites_de_admisi\u00f3n_musi_2026_2027",
       "relation": "contains",
@@ -110061,7 +110173,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L617",
+      "source_location": "L622",
       "weight": 1.0
     },
     {
@@ -110072,7 +110184,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L642",
+      "source_location": "L647",
       "weight": 1.0
     },
     {
@@ -110083,7 +110195,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L682",
+      "source_location": "L687",
       "weight": 1.0
     },
     {
@@ -110160,7 +110272,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L705",
+      "source_location": "L710",
       "weight": 1.0
     },
     {
@@ -110171,7 +110283,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L721",
+      "source_location": "L726",
       "weight": 1.0
     },
     {
@@ -110182,7 +110294,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L733",
+      "source_location": "L738",
       "weight": 1.0
     },
     {
@@ -110193,7 +110305,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L770",
+      "source_location": "L775",
       "weight": 1.0
     },
     {
@@ -110204,7 +110316,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L784",
+      "source_location": "L789",
       "weight": 1.0
     },
     {
@@ -110215,7 +110327,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L803",
+      "source_location": "L813",
       "weight": 1.0
     },
     {
@@ -110270,7 +110382,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L451",
+      "source_location": "L454",
       "weight": 1.0
     },
     {
@@ -110281,7 +110393,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L491",
+      "source_location": "L494",
       "weight": 1.0
     },
     {
@@ -110292,7 +110404,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L505",
+      "source_location": "L508",
       "weight": 1.0
     },
     {
@@ -110303,7 +110415,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L539",
+      "source_location": "L542",
       "weight": 1.0
     },
     {
@@ -110314,18 +110426,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L609",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_ideas_de_tfm_sistemas_inteligentes_aplicados_a_energ\u00edas_renovables",
-      "target": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_empleabilidad_siendo_extracomunitario_networks_frente_a_energ\u00eda_2026_09_14",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L696",
+      "source_location": "L614",
       "weight": 1.0
     },
     {
@@ -110337,6 +110438,17 @@
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
       "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_ideas_de_tfm_sistemas_inteligentes_aplicados_a_energ\u00edas_renovables",
+      "target": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_empleabilidad_siendo_extracomunitario_networks_frente_a_energ\u00eda_2026_09_14",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
+      "source_location": "L701",
       "weight": 1.0
     },
     {
@@ -110358,7 +110470,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L557",
+      "source_location": "L561",
       "weight": 1.0
     },
     {
@@ -110369,7 +110481,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L598",
+      "source_location": "L603",
       "weight": 1.0
     },
     {
@@ -110429,7 +110541,7 @@
     },
     {
       "source": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_revisi\u00f3n_2026_09_14_segunda_pasada_verificaci\u00f3n_de_factibilidad",
-      "target": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_sin_gpu_confirmado_que_no_hace_falta_si_se_va_por_modelos_fundacionales",
+      "target": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_sin_gpu_para_inferencia_zero_shot_confirmado_el_barrido_completo_no_medido",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -110545,7 +110657,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L465",
+      "source_location": "L468",
       "weight": 1.0
     },
     {
@@ -110567,7 +110679,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
-      "source_location": "L214",
+      "source_location": "L222",
       "weight": 1.0
     },
     {
@@ -110578,7 +110690,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
-      "source_location": "L111",
+      "source_location": "L112",
       "weight": 1.0
     },
     {
@@ -110589,7 +110701,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
-      "source_location": "L127",
+      "source_location": "L135",
       "weight": 1.0
     },
     {
@@ -110611,7 +110723,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
-      "source_location": "L38",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -110622,7 +110734,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
-      "source_location": "L69",
+      "source_location": "L70",
       "weight": 1.0
     },
     {
@@ -110633,7 +110745,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
-      "source_location": "L85",
+      "source_location": "L86",
       "weight": 1.0
     },
     {
@@ -110655,7 +110767,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
-      "source_location": "L134",
+      "source_location": "L142",
       "weight": 1.0
     },
     {
@@ -110666,7 +110778,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
-      "source_location": "L183",
+      "source_location": "L191",
       "weight": 1.0
     },
     {
@@ -110677,7 +110789,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
-      "source_location": "L205",
+      "source_location": "L213",
       "weight": 1.0
     },
     {
@@ -116263,5 +116375,5 @@
       "source_file": "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad6a_como-se-va-a-goya_interactivo.html"
     }
   ],
-  "built_at_commit": "43bdf8b7042c9b11a6eecd01005765b6b5901217"
+  "built_at_commit": "7b57f73e76cebedc29438995b87e13c139575283"
 }

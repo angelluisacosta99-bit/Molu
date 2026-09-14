@@ -23338,14 +23338,14 @@
       "source_location": "L316"
     },
     {
-      "id": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_redactados_pendientes_de_enviar_a_la_espera_de_confirmaci\u00f3n_del_alumno",
-      "label": "Redactados, pendientes de enviar (a la espera de confirmaci\u00f3n del alumno)",
+      "id": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_redactado_pendiente_de_enviar_a_la_espera_de_confirmaci\u00f3n_del_alumno",
+      "label": "Redactado, pendiente de enviar (a la espera de confirmaci\u00f3n del alumno)",
       "_origin": "ast",
       "community": 106,
       "community_name": "Becas y tr\u00e1mites de admisi\u00f3n \u2014 MUSI 2026/2027",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "redactados, pendientes de enviar (a la espera de confirmacion del alumno)",
+      "norm_label": "redactado, pendiente de enviar (a la espera de confirmacion del alumno)",
       "source_file": "master-sistemas-inteligentes/admision-y-becas/becas-y-tramites-2026-2027.md",
       "source_location": "L169"
     },
@@ -32823,7 +32823,7 @@
       "node_kind": "heading",
       "norm_label": "camino d: pivotar a redes moviles (candidato, no verificado del todo)",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L604"
+      "source_location": "L609"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_conclusi\u00f3n",
@@ -32835,7 +32835,7 @@
       "node_kind": "heading",
       "norm_label": "conclusion",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L765"
+      "source_location": "L770"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_consecuencia_pr\u00e1ctica_que_hay_que_decidir_antes_de_seguir",
@@ -32931,7 +32931,7 @@
       "node_kind": "heading",
       "norm_label": "empleabilidad siendo extracomunitario: networks frente a energia (2026-09-14)",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L691"
+      "source_location": "L696"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_estado_de_recursos_verificado",
@@ -33051,7 +33051,7 @@
       "node_kind": "heading",
       "norm_label": "limitacion tecnica de esta sesion",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L593"
+      "source_location": "L598"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_lo_jur\u00eddico_que_es_lo_que_de_verdad_decide",
@@ -33063,7 +33063,7 @@
       "node_kind": "heading",
       "norm_label": "lo juridico, que es lo que de verdad decide",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L728"
+      "source_location": "L733"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_lo_que_se_comprob\u00f3_2026_09_14_y_lo_que_no",
@@ -33075,7 +33075,7 @@
       "node_kind": "heading",
       "norm_label": "lo que se comprobo (2026-09-14) y lo que no",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L637"
+      "source_location": "L642"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_lo_que_sigue_abierto_de_verdad_y_es_donde_queda_el_tfm",
@@ -33183,7 +33183,7 @@
       "node_kind": "heading",
       "norm_label": "pendiente ademas",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L677"
+      "source_location": "L682"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_pendiente_de_verificar",
@@ -33195,7 +33195,7 @@
       "node_kind": "heading",
       "norm_label": "pendiente de verificar",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L779"
+      "source_location": "L784"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_por_qu\u00e9_encaja",
@@ -33207,7 +33207,7 @@
       "node_kind": "heading",
       "norm_label": "por que encaja",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L612"
+      "source_location": "L617"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_por_qu\u00e9_esta_orientaci\u00f3n_tiene_sentido",
@@ -33231,7 +33231,7 @@
       "node_kind": "heading",
       "norm_label": "precedente real: el camino de arlet (confirmado por angel, 2026-09-14)",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L798"
+      "source_location": "L803"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_qu\u00e9_tanto_puede_ayudar_claude_code_en_este_tfm_evaluaci\u00f3n_honesta",
@@ -33306,16 +33306,16 @@
       "source_location": "L265"
     },
     {
-      "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_si_es_imdea_energ\u00eda_el_que_encaja_con_el_tema_actual",
-      "label": "Si es IMDEA Energ\u00eda (el que encaja con el tema actual)",
+      "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_si_hubiera_sido_imdea_energ\u00eda_escenario_descartado_se_conserva_solo_por_si_el_criterio_cambia",
+      "label": "Si hubiera sido IMDEA Energ\u00eda (escenario DESCARTADO; se conserva solo por si el criterio cambia)",
       "_origin": "ast",
       "community": 217,
       "community_name": "Ideas de TFM: sistemas inteligentes aplicados a energ\u00edas renovables",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "si es imdea energia (el que encaja con el tema actual)",
+      "norm_label": "si hubiera sido imdea energia (escenario descartado; se conserva solo por si el criterio cambia)",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L556"
+      "source_location": "L557"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_sin_gpu_confirmado_que_no_hace_falta_si_se_va_por_modelos_fundacionales",
@@ -33339,7 +33339,7 @@
       "node_kind": "heading",
       "norm_label": "tamano y perfil de cada instituto",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L700"
+      "source_location": "L705"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_tutores_de_tfm_candidatos_concretos",
@@ -33363,7 +33363,7 @@
       "node_kind": "heading",
       "norm_label": "via de entrada concreta encontrada en networks",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L716"
+      "source_location": "L721"
     },
     {
       "id": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones",
@@ -33431,7 +33431,7 @@
       "node_kind": "heading",
       "norm_label": "2026-09-13",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
-      "source_location": "L204"
+      "source_location": "L205"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_lluvia_de_ideas_2026_09_13_continuaci\u00f3n_dominios_bloqueados_para_docs_oficiales_para_la_sesi\u00f3n_que_retome_esto",
@@ -33443,7 +33443,7 @@
       "node_kind": "heading",
       "norm_label": "2026-09-13 (continuacion: dominios bloqueados para docs oficiales + para la sesion que retome esto)",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
-      "source_location": "L133"
+      "source_location": "L134"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_lluvia_de_ideas_2026_09_13_continuaci\u00f3n_formato_de_entrega_para_angel",
@@ -33455,7 +33455,7 @@
       "node_kind": "heading",
       "norm_label": "2026-09-13 (continuacion: formato de entrega para angel)",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
-      "source_location": "L182"
+      "source_location": "L183"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_lluvia_de_ideas_2026_09_14_para_la_sesi\u00f3n_que_retome_esto_con_los_dominios_ya_autorizados",
@@ -33479,7 +33479,7 @@
       "node_kind": "heading",
       "norm_label": "artefactos publicados (republicar con el mismo `url`, no crear otro)",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
-      "source_location": "L126"
+      "source_location": "L127"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_lluvia_de_ideas_c\u00f3mo_citar_norma_real_del_departamento_no_una_convenci\u00f3n_inventada",
@@ -33491,7 +33491,7 @@
       "node_kind": "heading",
       "norm_label": "como citar (norma real del departamento, no una convencion inventada)",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
-      "source_location": "L213"
+      "source_location": "L214"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_lluvia_de_ideas_datos_de_extranjer\u00eda_ya_verificados_no_reinvestigar",
@@ -33503,7 +33503,7 @@
       "node_kind": "heading",
       "norm_label": "datos de extranjeria ya verificados (no reinvestigar)",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
-      "source_location": "L84"
+      "source_location": "L85"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_lluvia_de_ideas_el_contexto_personal_que_cambi\u00f3_la_ecuaci\u00f3n",
@@ -33515,7 +33515,7 @@
       "node_kind": "heading",
       "norm_label": "el contexto personal que cambio la ecuacion",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
-      "source_location": "L68"
+      "source_location": "L69"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_lluvia_de_ideas_el_estado_real_del_tfm_ning\u00fan_tema_est\u00e1_decidido",
@@ -33563,7 +33563,7 @@
       "node_kind": "heading",
       "norm_label": "tareas concretas heredadas",
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
-      "source_location": "L110"
+      "source_location": "L111"
     },
     {
       "id": "claude_hooks_sync_main",
@@ -109219,7 +109219,7 @@
     },
     {
       "source": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_correspondencia_oficial",
-      "target": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_redactados_pendientes_de_enviar_a_la_espera_de_confirmaci\u00f3n_del_alumno",
+      "target": "master_sistemas_inteligentes_admision_y_becas_becas_y_tramites_2026_2027_redactado_pendiente_de_enviar_a_la_espera_de_confirmaci\u00f3n_del_alumno",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -110061,7 +110061,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L612",
+      "source_location": "L617",
       "weight": 1.0
     },
     {
@@ -110072,7 +110072,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L637",
+      "source_location": "L642",
       "weight": 1.0
     },
     {
@@ -110083,7 +110083,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L677",
+      "source_location": "L682",
       "weight": 1.0
     },
     {
@@ -110160,7 +110160,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L700",
+      "source_location": "L705",
       "weight": 1.0
     },
     {
@@ -110171,7 +110171,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L716",
+      "source_location": "L721",
       "weight": 1.0
     },
     {
@@ -110182,7 +110182,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L728",
+      "source_location": "L733",
       "weight": 1.0
     },
     {
@@ -110193,7 +110193,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L765",
+      "source_location": "L770",
       "weight": 1.0
     },
     {
@@ -110204,7 +110204,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L779",
+      "source_location": "L784",
       "weight": 1.0
     },
     {
@@ -110215,7 +110215,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L798",
+      "source_location": "L803",
       "weight": 1.0
     },
     {
@@ -110314,7 +110314,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L604",
+      "source_location": "L609",
       "weight": 1.0
     },
     {
@@ -110325,7 +110325,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L691",
+      "source_location": "L696",
       "weight": 1.0
     },
     {
@@ -110352,13 +110352,13 @@
     },
     {
       "source": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_imdea_como_criterio_de_empleabilidad_abierto_2026_09_14",
-      "target": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_si_es_imdea_energ\u00eda_el_que_encaja_con_el_tema_actual",
+      "target": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_si_hubiera_sido_imdea_energ\u00eda_escenario_descartado_se_conserva_solo_por_si_el_criterio_cambia",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L556",
+      "source_location": "L557",
       "weight": 1.0
     },
     {
@@ -110369,7 +110369,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md",
-      "source_location": "L593",
+      "source_location": "L598",
       "weight": 1.0
     },
     {
@@ -110567,7 +110567,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
-      "source_location": "L213",
+      "source_location": "L214",
       "weight": 1.0
     },
     {
@@ -110578,7 +110578,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
-      "source_location": "L110",
+      "source_location": "L111",
       "weight": 1.0
     },
     {
@@ -110589,7 +110589,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
-      "source_location": "L126",
+      "source_location": "L127",
       "weight": 1.0
     },
     {
@@ -110622,7 +110622,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
-      "source_location": "L68",
+      "source_location": "L69",
       "weight": 1.0
     },
     {
@@ -110633,7 +110633,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
-      "source_location": "L84",
+      "source_location": "L85",
       "weight": 1.0
     },
     {
@@ -110655,7 +110655,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
-      "source_location": "L133",
+      "source_location": "L134",
       "weight": 1.0
     },
     {
@@ -110666,7 +110666,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
-      "source_location": "L182",
+      "source_location": "L183",
       "weight": 1.0
     },
     {
@@ -110677,7 +110677,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md",
-      "source_location": "L204",
+      "source_location": "L205",
       "weight": 1.0
     },
     {
@@ -116263,5 +116263,5 @@
       "source_file": "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad6a_como-se-va-a-goya_interactivo.html"
     }
   ],
-  "built_at_commit": "d44ffe1a766856ff3c77235ed5b5b4263eab0487"
+  "built_at_commit": "43bdf8b7042c9b11a6eecd01005765b6b5901217"
 }
