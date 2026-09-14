@@ -166,14 +166,14 @@ sección de acceso).
   **Verificado en Gmail el 2026-09-14**: este archivo lo listaba como
   "pendiente de enviar" y era falso.
 
-### Redactados, pendientes de enviar (a la espera de confirmación del alumno)
+### Redactado, pendiente de enviar (a la espera de confirmación del alumno)
 - **`mastersi@usal.es`** (Dr. Therón — contacto habitual, ya ha respondido
   dos veces por correo: carta de admisión y su corrección) — pregunta sobre
   si la actualización de matrícula (de condicionada a definitiva) puede
   completarse antes del 22 de septiembre, y si la autorización de estancia
   por estudios contaría como "residente" para la Beca de Colaboración.
 
-El texto completo de ambos borradores está en el historial de la sesión de
+El texto completo de ese borrador está en el historial de la sesión de
 Claude Code que generó este registro (no reproducido aquí por brevedad;
 pedir a Angel si hace falta recuperarlo).
 

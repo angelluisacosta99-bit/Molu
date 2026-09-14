@@ -300,7 +300,7 @@ literatura verificada:
   débilmente con el beneficio del BESS — casi palabra por palabra el
   "hallazgo" que el borrador presentaba como propio.
 
-**Pendiente:** estas cinco referencias (Mc Garrigle y Leahy 2015; Wang
+**Pendiente:** estas siete referencias (Mc Garrigle y Leahy 2015; Wang
 et al. 2016; Campos et al. 2022; Kiedanski et al. 2019; Maciejowska et
 al., **sin año todavía**; y también Wahdany et al. 2023, *EPSR*, y
 Beichter et al. 2025, citados más abajo) **no están en
@@ -397,7 +397,7 @@ esto: no dar por hecho ningún camino, preguntarle.
 | Generación renovable (API REData, `apidatos.ree.es`) | ✅ Libre, sin clave, histórico desde 2014 |
 | Precios de mercado (API ESIOS, `api.esios.ree.es`) | ⚠️ **Exige solicitar un token personal.** El borrador descartado decía "sin trámite" — era falso |
 | Perfil de consumo / demanda | ❌ Ni siquiera estaba identificado en el borrador. Sin demanda que servir, una batería no tiene nada que decidir |
-| Cómputo | ✅ Chronos-2 son 119,5 M parámetros, licencia Apache-2.0, corre en CPU. Sin GPU necesaria |
+| Cómputo | ⚠️ Chronos-2 son 119,5 M parámetros, licencia Apache-2.0, corre en CPU. Sin GPU **para inferencia zero-shot**; el barrido completo (N modelos × M horizontes × K configuraciones) **no está medido** — ver "Fallos menores" |
 | Optimización bajo incertidumbre (MPC/LP) + degradación de batería | ❌ Ver el desajuste con el plan de entrenamiento, abajo |
 
 **Dato que conviene no olvidar:** la propia Sara Rodríguez, en su
@@ -543,17 +543,21 @@ está a gusto allí, así que quizá convenga elegir un tema de TFM que
 además resulte atractivo a ese instituto de cara a un trabajo tras la
 graduación. Es un criterio legítimo y, de hecho, útil para desempatar
 entre los tres caminos de la sección `## Decisión pendiente: los tres
-caminos`.
+caminos (abierta desde 2026-09-14)`.
 
-**Pendiente de confirmar con Angel: en cuál de los siete institutos
-IMDEA trabaja Arlet.** No es un detalle — cambia por completo qué tema
-sería atractivo. Los institutos son Agua, Alimentación/Nutrición,
-Energía, Materiales, Nanociencia, Networks y Software; son fundaciones
-independientes de la Comunidad de Madrid (creadas 2006-2007), no una
-sola empresa. Dado que el TFM de Arlet fue sobre Tor, lo más probable
-es **Networks** o **Software**, no Energía — pero no se ha verificado.
+**Confirmado por Angel el 2026-09-14: Arlet trabaja en IMDEA
+Networks**, no en Energía — coherente con que su TFM fuera sobre Tor.
+Conviene tenerlo claro porque IMDEA no es una empresa: son siete
+fundaciones independientes de la Comunidad de Madrid (creadas
+2006-2007) — Agua, Alimentación/Nutrición, Energía, Materiales,
+Nanociencia, Networks y Software — y trabajar en una no es trabajar en
+las otras. **Qué tema resulta atractivo depende por completo de cuál
+sea.**
 
-### Si es IMDEA Energía (el que encaja con el tema actual)
+### Si hubiera sido IMDEA Energía (escenario DESCARTADO; se conserva solo por si el criterio cambia)
+
+Lo que sigue se investigó antes de que Angel confirmara el instituto.
+**No es la vía real** — se deja como registro, no como recomendación.
 
 Sede en Móstoles (Madrid). Acreditación **Unidad de Excelencia "María
 de Maeztu"** (Agencia Estatal de Investigación, 2020). Está
@@ -584,11 +588,12 @@ solicitud por candidato, enviada al correo que indique cada línea de
 investigación. También ofrecen contratos de prácticas de un año
 (~13.500 € brutos anuales) con posible continuidad.
 
-**Consecuencia estratégica:** si Arlet está en Energía, el camino A
-(mapa de contingencias con DFL, que exige MPC/optimización) deja de ser
-solo "el más ambicioso" y pasa a ser el más alineado con lo que ese
-instituto hace y busca. Si está en Networks o Software, este criterio
-empuja hacia otro tipo de tema y habría que replantear.
+**Consecuencia estratégica, que NO aplica:** si Arlet estuviera en
+Energía, el camino A (mapa de contingencias con DFL, que exige
+MPC/optimización) habría pasado de "el más ambicioso" a el más alineado
+con lo que ese instituto hace. Como está en **Networks**, este criterio
+empuja hacia otro tipo de tema — ver `## Camino D` más abajo, que es la
+vía que sí sale de aquí.
 
 ### Limitación técnica de esta sesión
 

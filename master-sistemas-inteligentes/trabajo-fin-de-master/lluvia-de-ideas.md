@@ -54,8 +54,9 @@ que esa sesión NO debe volver a proponer como aportación propia:
    Predict-then-Optimize (Elmachtoub y Grigas, 2022).
 
 **Hay cuatro caminos abiertos y Angel no ha elegido** (secciones
-"Decisión pendiente: los tres caminos (abierta desde 2026-09-14)" y "Camino D" de
-`ideas-tfm-energias-renovables.md`). No dar ninguno por supuesto:
+"Decisión pendiente: los tres caminos (abierta desde 2026-09-14)" y
+"Camino D: pivotar a redes móviles (candidato, NO verificado del todo)"
+de `ideas-tfm-energias-renovables.md`). No dar ninguno por supuesto:
 preguntarle.
 
 **El camino D es el que más ha ganado peso**, por motivos que no son

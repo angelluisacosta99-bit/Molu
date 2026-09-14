@@ -1904,8 +1904,9 @@ devuelto coincide con lo que se pidió.
 Amplía la entrada de arriba sobre propagar una corrección a sus reglas
 hermanas. Se registra por la regla de `CLAUDE.md` de "3+ rondas sobre lo
 mismo": el PR #113 necesitó **al menos cuatro rondas** de
-revisión→corrección→revisión, y en casi todas reapareció **la misma
-familia de fallo**, nunca hallazgos nuevos e independientes.
+revisión→corrección→revisión, y en todas reapareció **la misma familia
+de fallo** — siempre acompañada, eso sí, de hallazgos nuevos e
+independientes.
 
 **La saga.** Se verificó que la residencia para búsqueda de empleo tras
 el máster son 24 meses y no 12 (DA 17.ª de la Ley 14/2013, ampliada por
