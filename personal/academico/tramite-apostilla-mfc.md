@@ -138,6 +138,16 @@ conversación de Claude Code.
     haga (requiere su login/identidad, no algo que Claude pueda hacer
     por él). Angel también va a escribir en paralelo al **chat de
     ayuda de Госуслуги** (mismo motivo) — segunda vía en paralelo.
+  - **2026-09-15 — Mejor vía encontrada: videoconsulta ya prevista en
+    el propio PDF de la obращение** (№ 02-12-5443/26, del 03.09.2026,
+    sección final que se había pasado por alto en el primer resumen).
+    ГБУ МФЦ города Москвы tiene un **servicio de videoconsulta
+    específico para trámites de confirmación de documentos de
+    educación/cualificación**, reservable en
+    `mos.ru/uslugi/dokumenty/conference/` desde el gabinete personal
+    en mos.ru. Es más directo que la obращение escrita — mejor opción
+    recomendada: reservar ahí, llevando el № 7638974873/У-04, para
+    preguntar en vivo cómo activar la exención de tasa.
   - **2026-09-14 — Avisado Alexander Evgenievich de que ya no hace
     falta ir en persona.** Correo enviado a `vanshin.ae@yandex.ru`
     informando que llegó la notificación del MFC (№ 7638974873/У-04) y
