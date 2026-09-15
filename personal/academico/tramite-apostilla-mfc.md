@@ -127,10 +127,17 @@ conversación de Claude Code.
     de Moscú (`md@mfc.mos.ru`, 8(495)777-77-77), citando este número de
     referencia, cómo proceder en la práctica. **Correo enviado el mismo
     día** a `md@mfc.mos.ru`, citando el № 7638974873/У-04 y pidiendo el
-    procedimiento exacto — **a la espera de respuesta.** Angel también
-    va a escribir en paralelo al **chat de ayuda de Госуслуги**
-    (mismo motivo: exención de tasa no visible al presentar de nuevo
-    la solicitud) — segunda vía en paralelo al correo del MFC.
+    procedimiento exacto. **Respuesta del 2026-09-15 (05:50): no es una
+    respuesta real, es un aviso automático** — desde la Ley Federal №
+    547-ФЗ (vigente desde 30.03.2025), `md@mfc.mos.ru` ya no procesa
+    obращения por correo normal; hay que presentarlas identificándose
+    en el portal oficial **`mos.ru/feedback/reception/`**. El correo
+    dice explícitamente "no responda a este mensaje". **Siguiente
+    paso: presentar la misma consulta como obращение formal en ese
+    portal, citando el № 7638974873/У-04** — pendiente de que Angel lo
+    haga (requiere su login/identidad, no algo que Claude pueda hacer
+    por él). Angel también va a escribir en paralelo al **chat de
+    ayuda de Госуслуги** (mismo motivo) — segunda vía en paralelo.
   - **2026-09-14 — Avisado Alexander Evgenievich de que ya no hace
     falta ir en persona.** Correo enviado a `vanshin.ae@yandex.ru`
     informando que llegó la notificación del MFC (№ 7638974873/У-04) y
