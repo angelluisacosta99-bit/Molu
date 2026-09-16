@@ -837,6 +837,76 @@ objeción.
 por el Camino D en firme, o para escribir a alguien (a Martínez-Durive,
 a un tutor de la USAL, o ambos). Sigue siendo su decisión.
 
+## Revisión 2026-09-16 (segunda pasada): profesorado real del MUSI, fuente primaria
+
+Angel pidió investigar más profesores candidatos y sus líneas. La
+tabla de `## Tutores de TFM` de arriba se construyó navegando la web
+de BISITE — útil, pero es una fuente secundaria. Esta vez se usó la
+fuente primaria correcta: el **"Perfil del Currículum Vitae del
+Personal Docente e Investigador que imparte docencia en la
+titulación"** del MUSI, curso 2024-2025, documento oficial de la USAL
+para la renovación de la acreditación
+(`https://usal.es/files/cv/sistinteligentes-4314233_cvprof24-25.pdf`,
+28 páginas, texto extraído con `pymupdf` porque `poppler-utils` volvió
+a fallar con el mismo 404 de índice caducado ya documentado en
+`ejercicio-interactivo/SKILL.md`). Lista **los 18 profesores que de
+verdad imparten docencia en el MUSI este curso**, con su grupo de
+investigación, líneas y proyectos activos — no una lista de "quién
+está en BISITE", sino de quién enseña en el máster de Angel.
+
+### Hallazgo que corrige la tabla anterior: tres candidatos no aparecen aquí
+
+**Sara Rodríguez González, Pablo Chamoso Santos y Alfonso
+González-Briones no figuran en este documento oficial de docencia del
+MUSI 2024-2025.** Esto no demuestra que no puedan ser tutores del TFM
+(la normativa de tutoría puede no exigir impartir una asignatura
+concreta del máster — pendiente de confirmar en el Reglamento de TFM
+ya en esta carpeta), pero sí es una discrepancia real con la tabla
+anterior, que los presentaba como los candidatos más fuertes sin haber
+verificado esto. Matiz a favor de Chamoso: **sí aparece** como
+miembro del equipo (no IP) del proyecto SUNHIVE (ver abajo) — sigue
+activo en investigación con BISITE, solo que no consta que enseñe en
+el MUSI este curso.
+
+### Candidatos nuevos o reforzados, con proyecto financiado verificado
+
+| Candidato | Categoría / área | Asignatura MUSI 24-25 | Proyecto financiado verificado (fuente: `produccioncientifica.usal.es`) | Encaje |
+|---|---|---|---|---|
+| **Juan Manuel Corchado Rodríguez** | Catedrático, Ciencia Computación e IA. Director BISITE (ya conocido, reforzado aquí) | Inteligencia Ambiental y Sistemas Multiagente | **IP de 6GEMELLUS** ("Entorno avanzado... IA eXplicable, Gemelos Digitales y Ciberseguridad en el ámbito del 5G avanzado y el 6G", ref. TSI-064100-2023-0019, €332.449, Ministerio de Asuntos Económicos y Transformación Digital, ejecutado ene-2024 a jun-2025, **ya finalizado**). También IP de SCRIN (IoT seguro) y de "Virtualización para la Protección de redes IoT en infraestructura de Comunicaciones 5G" | **El más fuerte para el Camino D con docencia real en el máster** — a diferencia de Martínez-Durive (IMDEA), él sí puede ser tutor formal. El proyecto ya cerró, pero el track record en 5G/6G de BISITE es real y verificado, no solo declarado |
+| **Pastora Isabel Vega Cruz** | Catedrática, Ingeniería de Sistemas y Automática. Nueva | Nuevas Tendencias en Sistemas Inteligentes / Control Inteligente / Herramientas Interactivas de Simulación y Control | **IP** de "Aprendizaje automático y metodologías híbridas para sistemas de aguas urbanas óptimos y energéticamente neutros" (PID2024-156522OB-C31, financiación nacional competitiva 2024) y de control distribuido con teoría de juegos (PID2019-105434RB-C31). Además, miembro del equipo (no IP) de **SUNHIVE** — ver abajo | Fuerte para el Camino A: control/optimización + ML aplicado a sistemas energéticamente neutros, con financiación activa real, no solo líneas declaradas en una web |
+| **María Belén Pérez Lancho** | Profesora Titular, Ingeniería de Sistemas y Automática. Nueva | Mismas asignaturas que Vega Cruz | Miembro del equipo de **SUNHIVE** y de los proyectos IoT/5G de BISITE (SCRIN, virtualización redes IoT 5G) | Puente entre Camino A y Camino D — es de los pocos con proyectos activos en ambos frentes a la vez |
+| **Emilio Santiago Corchado Rodríguez** | Catedrático, Ciencia Computación e IA (no confundir con Juan Manuel — hermano, ambos catedráticos en el mismo departamento). Nueva | **Computación Neuroborrosa** — la asignatura que la Opción A original ya conectaba con lógica difusa | Coordina el programa de doctorado "Energía y Propulsión Marina"; participa en las plataformas de energía renovable/Edge-IoT de BISITE | Encaje directo con la asignatura de Angel y con energía, aunque sin un proyecto de IP tan concreto como los de arriba |
+| **María Angélica González Arrieta** | Profesora Titular, Ciencia Computación e IA. Nueva | También Computación Neuroborrosa | Mismos proyectos BISITE de energía/IoT/5G que los Corchado (Edge-IoT DLT, SCRIN, virtualización redes 5G) | Alternativa si los de arriba no tienen hueco |
+
+**Importante — quién NO es candidato pese a lo prometedor de su
+proyecto:** el **IP real de SUNHIVE** ("Federated Learning and
+Bio-inspired models for optimising demand-response in photovoltaic
+generation", CPP2022-009747, €460.875, Ministerio de Ciencia e
+Innovación, en ejecución hasta oct-2026 — el proyecto de energía +
+aprendizaje federado más fuerte y mejor financiado de todos los
+encontrados en esta sesión) es **Fernando de la Prieta Pintado**, que
+**no aparece en el documento de docencia del MUSI 24-25**. No consta
+que pueda ser tutor formal del TFM por esta vía; como mucho, un
+colaborador si el reglamento admite cotutoría con alguien fuera de la
+lista de profesorado del máster — sin confirmar.
+
+### Contacto no-investigador a tener presente
+
+**Roberto Therón Sánchez**, Catedrático, es el **Director actual del
+MUSI** ("Dtor. Máster Tipo 1 MU Sistemas inteligentes") y Presidente de
+la Comisión de Máster — su línea de investigación (analítica visual,
+interacción persona-ordenador) no encaja con ningún camino del TFM,
+pero es el contacto procedimental si hace falta resolver algo a nivel
+de máster, no de tutoría de investigación.
+
+### No decidido aquí
+
+Sigue sin elegirse ningún camino ni ningún tutor. Esta tabla amplía las
+opciones con fuente primaria verificada — no sustituye la decisión de
+Angel entre A/B/C/D, ni descarta a Sara Rodríguez/Chamoso/
+González-Briones, solo señala que su presencia en la docencia oficial
+del MUSI este curso no está confirmada.
+
 ## Empleabilidad siendo extracomunitario: Networks frente a Energía (2026-09-14)
 
 Angel preguntó, sabiendo que le gusta más la energía, en cuál de los dos

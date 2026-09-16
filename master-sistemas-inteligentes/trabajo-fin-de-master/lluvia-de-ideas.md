@@ -23,9 +23,20 @@ completo de citas (917 papers) del paper fundacional de SPO
   for mobile networks"), #6 (dataset de Milán confirmado, abierto,
   usado ya para este problema exacto).
 - **Sigue pendiente**: #2 (Lección 1 con numpy.org/pandas.pydata.org,
-  ya accesibles pero sin usar todavía), #3 (rehacer la lista de
-  tutores para redes), #7 (IPREM), y el punto del RD 316/2026 sin
-  confirmar en el BOE.
+  ya accesibles pero sin usar todavía), #7 (IPREM), y el punto del RD
+  316/2026 sin confirmar en el BOE.
+- **#3 (rehacer la lista de tutores) — avanzado, no cerrado.** Angel
+  pidió investigar más profesores. Se usó el CV oficial de docencia
+  del MUSI 24-25 (fuente primaria, no la web de BISITE) — ver la
+  sección `## Revisión 2026-09-16 (segunda pasada)` de
+  `ideas-tfm-energias-renovables.md`. Hallazgo importante: Sara
+  Rodríguez González, Chamoso y González-Briones **no** aparecen
+  impartiendo docencia en el MUSI este curso, a diferencia de lo que
+  asumía la tabla original. Candidatos nuevos con proyecto financiado
+  verificado: Juan Manuel Corchado (6GEMELLUS, 5G/6G), Pastora Isabel
+  Vega Cruz y María Belén Pérez Lancho (SUNHIVE, energía + federated
+  learning), Emilio Santiago Corchado y María Angélica González
+  Arrieta (Computación Neuroborrosa + BISITE energía/IoT).
 - `apidatos.ree.es` sigue sin poder consultarse, pero por un motivo
   distinto al de antes: ya no es bloqueo de política de red de este
   entorno (`connect_rejected`), sino un 403 de Incapsula (el antibot
