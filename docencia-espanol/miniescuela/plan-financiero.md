@@ -47,7 +47,7 @@ CONFIRMADO: [consultant.ru](https://www.consultant.ru/law/podborki/mozhet_li_ino
 
 **Acción:** confirmar el régimen exacto antes de montar nada encima.
 
-### 2.2 Sin contrato de agencia, el impuesto se come el 40 % del margen
+### 2.2 Sin contrato de agencia, el impuesto se come el 30 % del margen
 
 En УСН «доходы» la base imponible es el **ingreso bruto**: lo que se le
 paga a un colaborador no se deduce (para eso existe УСН «доходы минус
@@ -139,9 +139,9 @@ transferencia bancaria (0 ₽ de comisión).
 | Concepto | Importe |
 |---|---|
 | Cobrado a los alumnos | 32.000 ₽ |
-| − Impuesto (6 % de **todo**) | −1.920 ₽ |
-| Recibe la profesora (80 %) | 24.064 ₽ |
-| **Te queda a ti** | **6.016 ₽** |
+| − Parte de la profesora (fija, 1.600 ₽/hora) | −25.600 ₽ |
+| − Impuesto (6 % de **todo** lo cobrado) | −1.920 ₽ |
+| **Te queda a ti** | **4.480 ₽** |
 
 ### Con contrato de agencia
 
@@ -155,13 +155,12 @@ transferencia bancaria (0 ₽ de comisión).
 | **Te queda a ti** | **6.016 ₽** |
 
 El impuesto total pagado cae de 1.920 ₽ a 384 ₽: **1.536 ₽ al mes por
-profesor que dejan de irse en impuestos** (18.432 ₽ al año). En la tabla
-de arriba ese ahorro va entero a ella; también se puede repartir, o
-mantener su pago igual y quedárselo Angel (su neto pasaría entonces de
-6.016 ₽ a unos 7.460 ₽ al mes).
-
+profesor que dejan de irse en impuestos** (18.432 ₽ al año). Lo que
+cobra la profesora no cambia en ninguna de las dos tablas (25.600 ₽) —
+todo el ahorro es para ti: tu neto pasa de 4.480 ₽ a 6.016 ₽ al mes.
 Es una decisión de reparto, no de aritmética: el contrato de agencia
-crea valor, y hay que acordar de quién es.
+crea valor (el ahorro fiscal), y también se puede compartir con ella en
+vez de quedártelo entero.
 
 ### Efecto en las cuotas de ИП
 
