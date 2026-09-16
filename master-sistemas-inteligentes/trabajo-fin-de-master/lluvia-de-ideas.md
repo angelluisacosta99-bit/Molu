@@ -7,6 +7,25 @@ rígida, antes de que decante en algo formal para `main.tex` o para
 
 ---
 
+## 2026-09-16 (continuación) — el PDF de Géron en Drive es la edición equivocada
+
+Angel subió el libro de Géron a la carpeta `MSI` de Drive de Arlet
+(subcarpeta etiquetada "3ª edición (2022)", 5 PDFs de ~150 páginas
+cada uno). **El contenido real es la 1ª edición (marzo 2017, sin
+Keras)**, no la 3ª — verificado leyendo el propio PDF: copyright 2017,
+"First Edition", código con `tf.Session`/placeholders (TensorFlow
+1.x). Detalle y qué hacer al respecto en la nueva entrada de
+`Bibliografia.bib` (`geron2017handson` vs `geron2022handson`).
+
+**Consecuencia práctica:** la Fase 3 del plan de entrenamiento
+(`preparacion/plan-de-entrenamiento.md`) exige la 3ª edición
+("capítulos 10-15 con Keras") porque así lo pide la guía docente
+oficial del MUSI — el archivo real disponible no sirve para esa fase.
+Sí sirve para Fase 0-2 (NumPy/Pandas, ML clásico), que no dependen de
+la versión del framework. **Pendiente, sin decidir:** conseguir la 3ª
+edición real, o adaptar la Fase 3 al código de la 1ª edición
+(TensorFlow 1.x sin Keras).
+
 ## 2026-09-16 — sesión con acceso de red ampliado, verificación del Camino D
 
 Se hizo la verificación sistemática dedicada que pedía la entrada de
