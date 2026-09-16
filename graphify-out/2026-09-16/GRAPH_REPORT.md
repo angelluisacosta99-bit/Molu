@@ -1,11 +1,11 @@
 # Graph Report - Molu  (2026-09-16)
 
 ## Corpus Check
-- 271 files · ~1,350,795 words
+- 272 files · ~1,352,417 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 3299 nodes · 6600 edges · 224 communities (201 shown, 23 thin omitted)
+- 3316 nodes · 6616 edges · 226 communities (203 shown, 23 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 121 edges (avg confidence: 0.84)
 - Token cost: 0 input · 0 output
 
@@ -239,6 +239,8 @@
 - sync-main.sh
 - Residencia tras el máster para búsqueda de empleo: 24 meses (resuelto)
 - cli
+- 2. Hallazgos verificados que cambian el plan
+- resolveProject
 
 ## God Nodes (most connected - your core abstractions)
 1. `runHook()` - 29 edges
@@ -279,7 +281,7 @@
 - **Impeccable Product-Register Reference Set** — claude_skills_impeccable_reference_product_product, claude_skills_impeccable_reference_quieter_quieter, claude_skills_impeccable_reference_typeset_typeset [INFERRED 0.85]
 - **A1 Interactive Exercise Apps — Shared Paper/Ink Design Template** — docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_cuaderno_unidad6a_como_se_va_a_goya_interactivo_unidad6a_interactivo, docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_cuaderno_unidad6b_cierra_la_ventana_interactivo_unidad6b_interactivo, docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_cuaderno_unidad6c_mi_barrio_es_tranquilo_interactivo_unidad6c_interactivo, docencia_espanol_materiales_a1_nuevo_espanol_en_marcha_1_cuaderno_practica_mas_3_interactivo_practica_mas_3_interactivo [INFERRED 0.90]
 
-## Communities (224 total, 23 thin omitted)
+## Communities (226 total, 23 thin omitted)
 
 ### Community 0 - "live-browser.js"
 Cohesion: 0.03
@@ -306,8 +308,8 @@ Cohesion: 0.08
 Nodes (49): actionLabel(), applyConfigureBarChrome(), bindConfigureCountPillTooltip(), bindConfigureInlineControlHover(), bindConfigureModifierPillHover(), buildConfigureActionControl(), buildConfigureCountControl(), buildConfigureRow() (+41 more)
 
 ### Community 6 - "manual-apply.mjs"
-Cohesion: 0.09
-Nodes (49): addOpToManualApplyChunk(), APPLY_EVENT_HARD_TIMEOUT_MS, APPLY_EVENT_SOFT_DEADLINE_MS, buildManualApplyAgentAction(), clearManualApplyTransaction(), collectManualApplyFiles(), compactManualApplyBatch(), compactManualApplyCandidates() (+41 more)
+Cohesion: 0.08
+Nodes (53): addOpToManualApplyChunk(), APPLY_EVENT_HARD_TIMEOUT_MS, APPLY_EVENT_SOFT_DEADLINE_MS, buildManualApplyAgentAction(), clearManualApplyTransaction(), collectManualApplyFiles(), compactManualApplyBatch(), compactManualApplyCandidates() (+45 more)
 
 ### Community 7 - "setLiveState"
 Cohesion: 0.08
@@ -347,7 +349,7 @@ Nodes (33): armPageChatForTyping(), clearSteerAwaitTimer(), collapsePageChat(), 
 
 ### Community 16 - "live-inject.mjs"
 Cohesion: 0.09
-Nodes (41): appendOriginToDirective(), buildTagBlock(), commentClose(), commentOpen(), CONFIG_PATH, detectLineEnding(), __dirname, ensureLiveGitIgnores() (+33 more)
+Nodes (43): appendOriginToDirective(), buildTagBlock(), commentClose(), commentOpen(), CONFIG_PATH, detectLineEnding(), __dirname, ensureLiveGitIgnores() (+35 more)
 
 ### Community 17 - "detect-antipatterns-browser.js"
 Cohesion: 0.08
@@ -394,8 +396,8 @@ Cohesion: 0.22
 Nodes (8): 1. Unas vacaciones inolvidables, Ej. 1 — Regular o irregular, Ej. 2 — Un domingo con Chema, Ej. 3 — El sábado pasado, Ej. 4 — Completa el texto, Ej. 5 — La postal de Maribel, Ej. 6 — Busca el error, Ejercicios
 
 ### Community 28 - "live-accept.mjs"
-Cohesion: 0.15
-Nodes (30): acceptCli(), argVal(), buildCarbonizeReplacement(), decodeHtmlAttr(), deindentContent(), detectCommentSyntax(), escapeRegExp(), expandReplaceRange() (+22 more)
+Cohesion: 0.14
+Nodes (32): acceptCli(), argVal(), buildCarbonizeReplacement(), decodeHtmlAttr(), deindentContent(), detectCommentSyntax(), escapeRegExp(), expandReplaceRange() (+24 more)
 
 ### Community 29 - "live-copy-edit-agent.mjs"
 Cohesion: 0.14
@@ -422,16 +424,16 @@ Cohesion: 0.12
 Nodes (25): bumpEditCount(), clampGroupedToBudget(), clampToBudget(), dedupeAgainstCache(), depthIsSet(), directiveFooter(), ensureFile(), ensureSession() (+17 more)
 
 ### Community 35 - "manual-edit-routes.mjs"
-Cohesion: 0.15
-Nodes (24): scrubManualEditsAgainstFile(), scrubManualEditsAgainstOriginalBlock(), clearAppliedEntries(), args, buffer, cwd, pageUrlFilter, remaining (+16 more)
+Cohesion: 0.19
+Nodes (19): clearAppliedEntries(), args, buffer, cwd, pageUrlFilter, remaining, buildManualEditEvidence(), createManualEditRoutes() (+11 more)
 
 ### Community 36 - "live-manual-edit-evidence.mjs"
 Cohesion: 0.15
-Nodes (26): analyzeSourceHint(), buildCandidatesForOp(), buildContextHintsByRef(), buildManualEditEvidence(), collectSearchFiles(), countOps(), decodeBasicHtml(), escapeRegExp() (+18 more)
+Nodes (25): analyzeSourceHint(), buildCandidatesForOp(), buildContextHintsByRef(), collectSearchFiles(), countOps(), decodeBasicHtml(), escapeRegExp(), findContextMatches() (+17 more)
 
 ### Community 37 - "context.mjs"
-Cohesion: 0.12
-Nodes (27): buildUpdateDirective(), compareSemver(), computeUpdateDirective(), DESIGN_NAMES, FALLBACK_DIRS, fetchLatestSkillVersion(), findMonorepoRoot(), hasFallbackWorkspaceChildren() (+19 more)
+Cohesion: 0.13
+Nodes (23): buildUpdateDirective(), compareSemver(), computeUpdateDirective(), DESIGN_NAMES, FALLBACK_DIRS, fetchLatestSkillVersion(), MONOREPO_FALLBACK_PROJECT_DIRS, MONOREPO_MARKER_FILES (+15 more)
 
 ### Community 38 - "handleManualEditActivity"
 Cohesion: 0.18
@@ -446,8 +448,8 @@ Cohesion: 0.17
 Nodes (21): resolveProjectRoot(), CRITIQUE_DIR, firstExisting(), getDesignSidecarCandidates(), getDesignSidecarPath(), getImpeccableDir(), getLegacyLiveAnnotationsDir(), getLegacyLiveConfigPath() (+13 more)
 
 ### Community 41 - "discoverTargetCandidates"
-Cohesion: 0.23
-Nodes (14): directChildDirs(), discoverRootsForPattern(), discoverTargetCandidates(), escapeRegExp(), expandSimplePattern(), findTargetExample(), isExcludedByWorkspacePattern(), isIgnoredWorkspaceDiscoveryDir() (+6 more)
+Cohesion: 0.18
+Nodes (17): directChildDirs(), discoverRootsForPattern(), discoverTargetCandidates(), escapeRegExp(), expandSimplePattern(), findTargetExample(), isExcludedByWorkspacePattern(), isIgnoredWorkspaceDiscoveryDir() (+9 more)
 
 ### Community 42 - "parseAnyColor"
 Cohesion: 0.12
@@ -514,8 +516,8 @@ Cohesion: 0.22
 Nodes (8): 1. ¿Cómo te ha ido hoy?, Ej. 1 — Pretérito perfecto, Ej. 2 — Frases en pretérito perfecto, Ej. 3 — Forma frases, Ej. 4 — Presente o pretérito perfecto, Ej. 5 — Cambios culturales, Ej. 6 — Leo Verdura, Ejercicios
 
 ### Community 58 - "live.mjs"
-Cohesion: 0.26
-Nodes (13): loadContext(), resolveTargetSelection(), safeRead(), __dirname, ensureServerRunning(), globToRegex(), globToRegex(), resolveFiles() (+5 more)
+Cohesion: 0.32
+Nodes (11): loadContext(), resolveTargetSelection(), safeRead(), __dirname, ensureServerRunning(), globToRegex(), liveCli(), missingLiveContext() (+3 more)
 
 ### Community 59 - "readConfig"
 Cohesion: 0.18
@@ -578,8 +580,8 @@ Cohesion: 0.25
 Nodes (9): buildSelectorSegment(), generateSelector(), isElementHidden(), isLikelyHashedClass(), postSerializedFindings(), renderBrowserFindings(), scanResultMeta(), serializeFindings() (+1 more)
 
 ### Community 75 - "resolveContext"
-Cohesion: 0.15
-Nodes (16): contextSourcePath(), contextSourceStatus(), firstExisting(), isCandidateProjectRoot(), isPathInside(), isPathInsideOrEqual(), nearestPackageRootBetween(), nearestProjectLikeRoot() (+8 more)
+Cohesion: 0.20
+Nodes (11): contextSourcePath(), contextSourceStatus(), firstExisting(), isCandidateProjectRoot(), isPathInside(), isPathInsideOrEqual(), resolveCandidateContextSummary(), resolveContext() (+3 more)
 
 ### Community 76 - "isScreenReaderOnlyTextStyle"
 Cohesion: 0.32
@@ -1085,16 +1087,24 @@ Nodes (7): Consecuencia práctica, Cómo se resolvió, y la lección, Detalles d
 Cohesion: 0.29
 Nodes (8): buildMissingTargetDirective(), buildResolvedContextDirective(), buildTargetSelectionDirective(), cli(), hasTargetOption(), parseCliOptions(), pathExistsForTarget(), shouldWarnMissingTarget()
 
+### Community 224 - "2. Hallazgos verificados que cambian el plan"
+Cohesion: 0.12
+Nodes (16): 1. Situación de partida, 2.1 Angel casi con seguridad es ИП на УСН «доходы», no самозанятый, 2.2 Sin contrato de agencia, el impuesto se come el 40 % del margen, 2.3 La salida legal: договор агентский (contrato de agencia), 2.4 La profesora debe darse de alta — y es trivial hacerlo, 2.5 Pagarle en USDT no es viable legalmente, 2.6 Lo que queda sin verificar, 2. Hallazgos verificados que cambian el plan (+8 more)
+
+### Community 225 - "resolveProject"
+Cohesion: 0.33
+Nodes (6): findMonorepoRoot(), hasFallbackWorkspaceChildren(), hasGitBoundary(), isMonorepoRoot(), resolveProject(), resolveTargetDir()
+
 ## Knowledge Gaps
-- **865 isolated node(s):** `caveman-mode.sh script`, `mark-pr-reviewed.sh script`, `session-end-status.sh script`, `session-start.sh script`, `sync-main.sh script` (+860 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1067 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **878 isolated node(s):** `caveman-mode.sh script`, `mark-pr-reviewed.sh script`, `session-end-status.sh script`, `session-start.sh script`, `sync-main.sh script` (+873 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1081 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **23 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `createManualApplyController()` connect `manual-apply.mjs` to `live-server.mjs`?**
-  _High betweenness centrality (0.003) - this node is a cross-community bridge._
+  _High betweenness centrality (0.002) - this node is a cross-community bridge._
 - **Why does `showShaderOverlay()` connect `captureElementToBlob` to `live-browser.js`, `resumeSession`, `setLiveState`?**
   _High betweenness centrality (0.002) - this node is a cross-community bridge._
 - **Why does `readLiveServerInfo()` connect `readLiveServerInfo` to `impeccable-paths.mjs`, `live-poll.mjs`, `live.mjs`, `live-server.mjs`?**
@@ -1102,7 +1112,7 @@ _Questions this graph is uniquely positioned to answer:_
 - **Are the 7 inferred relationships involving `initGlobalBar()` (e.g. with `hideAgentPollTooltip()` and `onDetectMessage()`) actually correct?**
   _`initGlobalBar()` has 7 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `caveman-mode.sh script`, `mark-pr-reviewed.sh script`, `session-end-status.sh script` to the rest of the system?**
-  _865 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _878 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `live-browser.js` be split into smaller, more focused modules?**
   _Cohesion score 0.02863984674329502 - nodes in this community are weakly interconnected._
 - **Should `checks.mjs` be split into smaller, more focused modules?**

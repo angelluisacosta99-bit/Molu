@@ -5483,6 +5483,18 @@
       "source_location": "L483"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_inject_globtoregex",
+      "label": "globToRegex()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "live-inject.mjs",
+      "file_type": "code",
+      "norm_label": "globtoregex()",
+      "source_file": ".claude/skills/impeccable/scripts/live-inject.mjs",
+      "source_location": "L291"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_inject_injectcli",
       "label": "injectCli()",
       "_callable": true,
@@ -5553,6 +5565,18 @@
       "norm_label": "removetag()",
       "source_file": ".claude/skills/impeccable/scripts/live-inject.mjs",
       "source_location": "L428"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_inject_resolvefiles",
+      "label": "resolveFiles()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "live-inject.mjs",
+      "file_type": "code",
+      "norm_label": "resolvefiles()",
+      "source_file": ".claude/skills/impeccable/scripts/live-inject.mjs",
+      "source_location": "L243"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_inject_resolvegitinfoexcludepath",
@@ -9419,6 +9443,78 @@
       "source_location": "L916"
     },
     {
+      "id": "claude_skills_impeccable_scripts_context_findmonoreporoot",
+      "label": "findMonorepoRoot()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 225,
+      "community_name": "resolveProject",
+      "file_type": "code",
+      "norm_label": "findmonoreporoot()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L215"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_hasfallbackworkspacechildren",
+      "label": "hasFallbackWorkspaceChildren()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 225,
+      "community_name": "resolveProject",
+      "file_type": "code",
+      "norm_label": "hasfallbackworkspacechildren()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L244"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_hasgitboundary",
+      "label": "hasGitBoundary()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 225,
+      "community_name": "resolveProject",
+      "file_type": "code",
+      "norm_label": "hasgitboundary()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L240"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_ismonoreporoot",
+      "label": "isMonorepoRoot()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 225,
+      "community_name": "resolveProject",
+      "file_type": "code",
+      "norm_label": "ismonoreporoot()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L234"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_resolveproject",
+      "label": "resolveProject()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 225,
+      "community_name": "resolveProject",
+      "file_type": "code",
+      "norm_label": "resolveproject()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L152"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_resolvetargetdir",
+      "label": "resolveTargetDir()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 225,
+      "community_name": "resolveProject",
+      "file_type": "code",
+      "norm_label": "resolvetargetdir()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L203"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_insert_argval",
       "label": "argVal()",
       "_callable": true,
@@ -10521,6 +10617,30 @@
       "norm_label": "reindentcontent()",
       "source_file": ".claude/skills/impeccable/scripts/live-accept.mjs",
       "source_location": "L325"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_accept_scrubmanualeditsagainstfile",
+      "label": "scrubManualEditsAgainstFile()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "live-accept.mjs",
+      "file_type": "code",
+      "norm_label": "scrubmanualeditsagainstfile()",
+      "source_file": ".claude/skills/impeccable/scripts/live-accept.mjs",
+      "source_location": "L230"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_accept_scrubmanualeditsagainstoriginalblock",
+      "label": "scrubManualEditsAgainstOriginalBlock()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "live-accept.mjs",
+      "file_type": "code",
+      "norm_label": "scrubmanualeditsagainstoriginalblock()",
+      "source_file": ".claude/skills/impeccable/scripts/live-accept.mjs",
+      "source_location": "L183"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_accept_searchdir",
@@ -13415,30 +13535,6 @@
       "source_location": "L18"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_accept_scrubmanualeditsagainstfile",
-      "label": "scrubManualEditsAgainstFile()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "scrubmanualeditsagainstfile()",
-      "source_file": ".claude/skills/impeccable/scripts/live-accept.mjs",
-      "source_location": "L230"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_accept_scrubmanualeditsagainstoriginalblock",
-      "label": "scrubManualEditsAgainstOriginalBlock()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "scrubmanualeditsagainstoriginalblock()",
-      "source_file": ".claude/skills/impeccable/scripts/live-accept.mjs",
-      "source_location": "L183"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_commit_manual_edits_clearappliedentries",
       "label": "clearAppliedEntries()",
       "_callable": true,
@@ -13463,52 +13559,16 @@
       "source_location": "L21"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_compactmanuallogtext",
-      "label": "compactManualLogText()",
+      "id": "claude_skills_impeccable_scripts_live_manual_edit_evidence_buildmanualeditevidence",
+      "label": "buildManualEditEvidence()",
       "_callable": true,
       "_origin": "ast",
       "community": 35,
       "community_name": "manual-edit-routes.mjs",
       "file_type": "code",
-      "norm_label": "compactmanuallogtext()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L934"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualapplyfailures",
-      "label": "summarizeManualApplyFailures()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "summarizemanualapplyfailures()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L900"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualdiagnostics",
-      "label": "summarizeManualDiagnostics()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "summarizemanualdiagnostics()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L913"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanuallogfile",
-      "label": "summarizeManualLogFile()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "summarizemanuallogfile()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L927"
+      "norm_label": "buildmanualeditevidence()",
+      "source_file": ".claude/skills/impeccable/scripts/live-manual-edit-evidence.mjs",
+      "source_location": "L39"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_manual_edit_routes_createmanualeditroutes",
@@ -13689,18 +13749,6 @@
       "norm_label": "buildcontexthintsbyref()",
       "source_file": ".claude/skills/impeccable/scripts/live-manual-edit-evidence.mjs",
       "source_location": "L108"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_edit_evidence_buildmanualeditevidence",
-      "label": "buildManualEditEvidence()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 36,
-      "community_name": "live-manual-edit-evidence.mjs",
-      "file_type": "code",
-      "norm_label": "buildmanualeditevidence()",
-      "source_file": ".claude/skills/impeccable/scripts/live-manual-edit-evidence.mjs",
-      "source_location": "L39"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_manual_edit_evidence_collectsearchfiles",
@@ -13979,42 +14027,6 @@
       "source_location": "L761"
     },
     {
-      "id": "claude_skills_impeccable_scripts_context_findmonoreporoot",
-      "label": "findMonorepoRoot()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "context.mjs",
-      "file_type": "code",
-      "norm_label": "findmonoreporoot()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L215"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_hasfallbackworkspacechildren",
-      "label": "hasFallbackWorkspaceChildren()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "context.mjs",
-      "file_type": "code",
-      "norm_label": "hasfallbackworkspacechildren()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L244"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_hasgitboundary",
-      "label": "hasGitBoundary()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "context.mjs",
-      "file_type": "code",
-      "norm_label": "hasgitboundary()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L240"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_context_invokedasscript",
       "label": "invokedAsScript()",
       "_callable": true,
@@ -14025,18 +14037,6 @@
       "norm_label": "invokedasscript()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
       "source_location": "L949"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_ismonoreporoot",
-      "label": "isMonorepoRoot()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "context.mjs",
-      "file_type": "code",
-      "norm_label": "ismonoreporoot()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L234"
     },
     {
       "id": "claude_skills_impeccable_scripts_context_parseyamlflowlist",
@@ -15671,6 +15671,30 @@
       "source_location": "L416"
     },
     {
+      "id": "claude_skills_impeccable_scripts_context_nearestpackagerootbetween",
+      "label": "nearestPackageRootBetween()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "discoverTargetCandidates",
+      "file_type": "code",
+      "norm_label": "nearestpackagerootbetween()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L488"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_nearestprojectlikeroot",
+      "label": "nearestProjectLikeRoot()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "discoverTargetCandidates",
+      "file_type": "code",
+      "norm_label": "nearestprojectlikeroot()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L471"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_context_normalizeworkspacepattern",
       "label": "normalizeWorkspacePattern()",
       "_callable": true,
@@ -15705,6 +15729,18 @@
       "norm_label": "projectrootfromworkspacepattern()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
       "source_location": "L628"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_resolveworkspaceprojectroot",
+      "label": "resolveWorkspaceProjectRoot()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "discoverTargetCandidates",
+      "file_type": "code",
+      "norm_label": "resolveworkspaceprojectroot()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L439"
     },
     {
       "id": "claude_skills_impeccable_scripts_context_segmentmatches",
@@ -18299,30 +18335,6 @@
       "source_location": "L224"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_inject_globtoregex",
-      "label": "globToRegex()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 58,
-      "community_name": "live.mjs",
-      "file_type": "code",
-      "norm_label": "globtoregex()",
-      "source_file": ".claude/skills/impeccable/scripts/live-inject.mjs",
-      "source_location": "L291"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_inject_resolvefiles",
-      "label": "resolveFiles()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 58,
-      "community_name": "live.mjs",
-      "file_type": "code",
-      "norm_label": "resolvefiles()",
-      "source_file": ".claude/skills/impeccable/scripts/live-inject.mjs",
-      "source_location": "L243"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_livecli",
       "label": "liveCli()",
       "_callable": true,
@@ -18657,6 +18669,18 @@
       "norm_label": "compactmanualapplysourcematches()",
       "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
       "source_location": "L393"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_compactmanuallogtext",
+      "label": "compactManualLogText()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "compactmanuallogtext()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L934"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_manual_apply_compactnearbymanualedittexts",
@@ -19065,6 +19089,42 @@
       "norm_label": "summarizemanualapplyevent()",
       "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
       "source_location": "L888"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualapplyfailures",
+      "label": "summarizeManualApplyFailures()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "summarizemanualapplyfailures()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L900"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualdiagnostics",
+      "label": "summarizeManualDiagnostics()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "summarizemanualdiagnostics()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L913"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanuallogfile",
+      "label": "summarizeManualLogFile()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "summarizemanuallogfile()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L927"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_manual_apply_truncatemanualapplytext",
@@ -20975,30 +21035,6 @@
       "source_location": "L501"
     },
     {
-      "id": "claude_skills_impeccable_scripts_context_nearestpackagerootbetween",
-      "label": "nearestPackageRootBetween()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 75,
-      "community_name": "resolveContext",
-      "file_type": "code",
-      "norm_label": "nearestpackagerootbetween()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L488"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_nearestprojectlikeroot",
-      "label": "nearestProjectLikeRoot()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 75,
-      "community_name": "resolveContext",
-      "file_type": "code",
-      "norm_label": "nearestprojectlikeroot()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L471"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_context_resolvecandidatecontextsummary",
       "label": "resolveCandidateContextSummary()",
       "_callable": true,
@@ -21057,42 +21093,6 @@
       "norm_label": "resolvelocalcontextdir()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
       "source_location": "L183"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_resolveproject",
-      "label": "resolveProject()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 75,
-      "community_name": "resolveContext",
-      "file_type": "code",
-      "norm_label": "resolveproject()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L152"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_resolvetargetdir",
-      "label": "resolveTargetDir()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 75,
-      "community_name": "resolveContext",
-      "file_type": "code",
-      "norm_label": "resolvetargetdir()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L203"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_resolveworkspaceprojectroot",
-      "label": "resolveWorkspaceProjectRoot()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 75,
-      "community_name": "resolveContext",
-      "file_type": "code",
-      "norm_label": "resolveworkspaceprojectroot()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L439"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_detect_antipatterns_browser_checkelementtextoverflowdom",
@@ -33889,6 +33889,210 @@
       "norm_label": "residencia tras el master para busqueda de empleo: 24 meses (resuelto)",
       "source_file": "master-sistemas-inteligentes/admision-y-becas/becas-y-tramites-2026-2027.md",
       "source_location": "L343"
+    },
+    {
+      "id": "docencia_espanol_miniescuela_plan_financiero",
+      "label": "plan-financiero.md",
+      "_origin": "ast",
+      "community": 224,
+      "community_name": "2. Hallazgos verificados que cambian el plan",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "plan-financiero.md",
+      "source_file": "docencia-espanol/miniescuela/plan-financiero.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docencia_espanol_miniescuela_plan_financiero_1_situaci\u00f3n_de_partida",
+      "label": "1. Situaci\u00f3n de partida",
+      "_origin": "ast",
+      "community": 224,
+      "community_name": "2. Hallazgos verificados que cambian el plan",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "1. situacion de partida",
+      "source_file": "docencia-espanol/miniescuela/plan-financiero.md",
+      "source_location": "L17"
+    },
+    {
+      "id": "docencia_espanol_miniescuela_plan_financiero_2_1_angel_casi_con_seguridad_es_\u0438\u043f_\u043d\u0430_\u0443\u0441\u043d_\u0434\u043e\u0445\u043e\u0434\u044b_no_\u0441\u0430\u043c\u043e\u0437\u0430\u043d\u044f\u0442\u044b\u0439",
+      "label": "2.1 Angel casi con seguridad es \u0418\u041f \u043d\u0430 \u0423\u0421\u041d \u00ab\u0434\u043e\u0445\u043e\u0434\u044b\u00bb, no \u0441\u0430\u043c\u043e\u0437\u0430\u043d\u044f\u0442\u044b\u0439",
+      "_origin": "ast",
+      "community": 224,
+      "community_name": "2. Hallazgos verificados que cambian el plan",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "2.1 angel casi con seguridad es \u0438\u043f \u043d\u0430 \u0443\u0441\u043d \u00ab\u0434\u043e\u0445\u043e\u0434\u044b\u00bb, no \u0441\u0430\u043c\u043e\u0437\u0430\u043d\u044f\u0442\u044b\u0438",
+      "source_file": "docencia-espanol/miniescuela/plan-financiero.md",
+      "source_location": "L37"
+    },
+    {
+      "id": "docencia_espanol_miniescuela_plan_financiero_2_2_sin_contrato_de_agencia_el_impuesto_se_come_el_40_del_margen",
+      "label": "2.2 Sin contrato de agencia, el impuesto se come el 40 % del margen",
+      "_origin": "ast",
+      "community": 224,
+      "community_name": "2. Hallazgos verificados que cambian el plan",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "2.2 sin contrato de agencia, el impuesto se come el 40 % del margen",
+      "source_file": "docencia-espanol/miniescuela/plan-financiero.md",
+      "source_location": "L50"
+    },
+    {
+      "id": "docencia_espanol_miniescuela_plan_financiero_2_3_la_salida_legal_\u0434\u043e\u0433\u043e\u0432\u043e\u0440_\u0430\u0433\u0435\u043d\u0442\u0441\u043a\u0438\u0439_contrato_de_agencia",
+      "label": "2.3 La salida legal: \u0434\u043e\u0433\u043e\u0432\u043e\u0440 \u0430\u0433\u0435\u043d\u0442\u0441\u043a\u0438\u0439 (contrato de agencia)",
+      "_origin": "ast",
+      "community": 224,
+      "community_name": "2. Hallazgos verificados que cambian el plan",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "2.3 la salida legal: \u0434\u043e\u0433\u043e\u0432\u043e\u0440 \u0430\u0433\u0435\u043d\u0442\u0441\u043a\u0438\u0438 (contrato de agencia)",
+      "source_file": "docencia-espanol/miniescuela/plan-financiero.md",
+      "source_location": "L61"
+    },
+    {
+      "id": "docencia_espanol_miniescuela_plan_financiero_2_4_la_profesora_debe_darse_de_alta_y_es_trivial_hacerlo",
+      "label": "2.4 La profesora debe darse de alta \u2014 y es trivial hacerlo",
+      "_origin": "ast",
+      "community": 224,
+      "community_name": "2. Hallazgos verificados que cambian el plan",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "2.4 la profesora debe darse de alta \u2014 y es trivial hacerlo",
+      "source_file": "docencia-espanol/miniescuela/plan-financiero.md",
+      "source_location": "L78"
+    },
+    {
+      "id": "docencia_espanol_miniescuela_plan_financiero_2_5_pagarle_en_usdt_no_es_viable_legalmente",
+      "label": "2.5 Pagarle en USDT no es viable legalmente",
+      "_origin": "ast",
+      "community": 224,
+      "community_name": "2. Hallazgos verificados que cambian el plan",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "2.5 pagarle en usdt no es viable legalmente",
+      "source_file": "docencia-espanol/miniescuela/plan-financiero.md",
+      "source_location": "L98"
+    },
+    {
+      "id": "docencia_espanol_miniescuela_plan_financiero_2_6_lo_que_queda_sin_verificar",
+      "label": "2.6 Lo que queda sin verificar",
+      "_origin": "ast",
+      "community": 224,
+      "community_name": "2. Hallazgos verificados que cambian el plan",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "2.6 lo que queda sin verificar",
+      "source_file": "docencia-espanol/miniescuela/plan-financiero.md",
+      "source_location": "L119"
+    },
+    {
+      "id": "docencia_espanol_miniescuela_plan_financiero_2_hallazgos_verificados_que_cambian_el_plan",
+      "label": "2. Hallazgos verificados que cambian el plan",
+      "_origin": "ast",
+      "community": 224,
+      "community_name": "2. Hallazgos verificados que cambian el plan",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "2. hallazgos verificados que cambian el plan",
+      "source_file": "docencia-espanol/miniescuela/plan-financiero.md",
+      "source_location": "L35"
+    },
+    {
+      "id": "docencia_espanol_miniescuela_plan_financiero_3_los_n\u00fameros_al_20_de_comisi\u00f3n",
+      "label": "3. Los n\u00fameros, al 20 % de comisi\u00f3n",
+      "_origin": "ast",
+      "community": 224,
+      "community_name": "2. Hallazgos verificados que cambian el plan",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "3. los numeros, al 20 % de comision",
+      "source_file": "docencia-espanol/miniescuela/plan-financiero.md",
+      "source_location": "L132"
+    },
+    {
+      "id": "docencia_espanol_miniescuela_plan_financiero_4_si_la_escuela_crece",
+      "label": "4. Si la escuela crece",
+      "_origin": "ast",
+      "community": 224,
+      "community_name": "2. Hallazgos verificados que cambian el plan",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "4. si la escuela crece",
+      "source_file": "docencia-espanol/miniescuela/plan-financiero.md",
+      "source_location": "L182"
+    },
+    {
+      "id": "docencia_espanol_miniescuela_plan_financiero_5_checklist_de_arranque",
+      "label": "5. Checklist de arranque",
+      "_origin": "ast",
+      "community": 224,
+      "community_name": "2. Hallazgos verificados que cambian el plan",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "5. checklist de arranque",
+      "source_file": "docencia-espanol/miniescuela/plan-financiero.md",
+      "source_location": "L202"
+    },
+    {
+      "id": "docencia_espanol_miniescuela_plan_financiero_6_qu\u00e9_replicar_con_futuros_profesores",
+      "label": "6. Qu\u00e9 replicar con futuros profesores",
+      "_origin": "ast",
+      "community": 224,
+      "community_name": "2. Hallazgos verificados que cambian el plan",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "6. que replicar con futuros profesores",
+      "source_file": "docencia-espanol/miniescuela/plan-financiero.md",
+      "source_location": "L223"
+    },
+    {
+      "id": "docencia_espanol_miniescuela_plan_financiero_con_contrato_de_agencia",
+      "label": "Con contrato de agencia",
+      "_origin": "ast",
+      "community": 224,
+      "community_name": "2. Hallazgos verificados que cambian el plan",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "con contrato de agencia",
+      "source_file": "docencia-espanol/miniescuela/plan-financiero.md",
+      "source_location": "L146"
+    },
+    {
+      "id": "docencia_espanol_miniescuela_plan_financiero_efecto_en_las_cuotas_de_\u0438\u043f",
+      "label": "Efecto en las cuotas de \u0418\u041f",
+      "_origin": "ast",
+      "community": 224,
+      "community_name": "2. Hallazgos verificados que cambian el plan",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "efecto en las cuotas de \u0438\u043f",
+      "source_file": "docencia-espanol/miniescuela/plan-financiero.md",
+      "source_location": "L166"
+    },
+    {
+      "id": "docencia_espanol_miniescuela_plan_financiero_miniescuela_plan_financiero_y_estructura_legal",
+      "label": "Miniescuela: plan financiero y estructura legal",
+      "_origin": "ast",
+      "community": 224,
+      "community_name": "2. Hallazgos verificados que cambian el plan",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "miniescuela: plan financiero y estructura legal",
+      "source_file": "docencia-espanol/miniescuela/plan-financiero.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docencia_espanol_miniescuela_plan_financiero_sin_contrato_de_agencia_situaci\u00f3n_actual",
+      "label": "Sin contrato de agencia (situaci\u00f3n actual)",
+      "_origin": "ast",
+      "community": 224,
+      "community_name": "2. Hallazgos verificados que cambian el plan",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "sin contrato de agencia (situacion actual)",
+      "source_file": "docencia-espanol/miniescuela/plan-financiero.md",
+      "source_location": "L137"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_insert",
@@ -109173,6 +109377,182 @@
       "confidence_score": 1.0,
       "source_file": "docencia-espanol/materiales/blog/tusclasesparticulares_metodologia-clases-espanol-rusohablantes.md",
       "source_location": "L79",
+      "weight": 1.0
+    },
+    {
+      "source": "docencia_espanol_miniescuela_plan_financiero",
+      "target": "docencia_espanol_miniescuela_plan_financiero_miniescuela_plan_financiero_y_estructura_legal",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docencia-espanol/miniescuela/plan-financiero.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "docencia_espanol_miniescuela_plan_financiero_2_hallazgos_verificados_que_cambian_el_plan",
+      "target": "docencia_espanol_miniescuela_plan_financiero_2_6_lo_que_queda_sin_verificar",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docencia-espanol/miniescuela/plan-financiero.md",
+      "source_location": "L119",
+      "weight": 1.0
+    },
+    {
+      "source": "docencia_espanol_miniescuela_plan_financiero_2_hallazgos_verificados_que_cambian_el_plan",
+      "target": "docencia_espanol_miniescuela_plan_financiero_2_1_angel_casi_con_seguridad_es_\u0438\u043f_\u043d\u0430_\u0443\u0441\u043d_\u0434\u043e\u0445\u043e\u0434\u044b_no_\u0441\u0430\u043c\u043e\u0437\u0430\u043d\u044f\u0442\u044b\u0439",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docencia-espanol/miniescuela/plan-financiero.md",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "docencia_espanol_miniescuela_plan_financiero_2_hallazgos_verificados_que_cambian_el_plan",
+      "target": "docencia_espanol_miniescuela_plan_financiero_2_2_sin_contrato_de_agencia_el_impuesto_se_come_el_40_del_margen",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docencia-espanol/miniescuela/plan-financiero.md",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "docencia_espanol_miniescuela_plan_financiero_2_hallazgos_verificados_que_cambian_el_plan",
+      "target": "docencia_espanol_miniescuela_plan_financiero_2_3_la_salida_legal_\u0434\u043e\u0433\u043e\u0432\u043e\u0440_\u0430\u0433\u0435\u043d\u0442\u0441\u043a\u0438\u0439_contrato_de_agencia",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docencia-espanol/miniescuela/plan-financiero.md",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "docencia_espanol_miniescuela_plan_financiero_2_hallazgos_verificados_que_cambian_el_plan",
+      "target": "docencia_espanol_miniescuela_plan_financiero_2_4_la_profesora_debe_darse_de_alta_y_es_trivial_hacerlo",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docencia-espanol/miniescuela/plan-financiero.md",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "docencia_espanol_miniescuela_plan_financiero_2_hallazgos_verificados_que_cambian_el_plan",
+      "target": "docencia_espanol_miniescuela_plan_financiero_2_5_pagarle_en_usdt_no_es_viable_legalmente",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docencia-espanol/miniescuela/plan-financiero.md",
+      "source_location": "L98",
+      "weight": 1.0
+    },
+    {
+      "source": "docencia_espanol_miniescuela_plan_financiero_3_los_n\u00fameros_al_20_de_comisi\u00f3n",
+      "target": "docencia_espanol_miniescuela_plan_financiero_sin_contrato_de_agencia_situaci\u00f3n_actual",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docencia-espanol/miniescuela/plan-financiero.md",
+      "source_location": "L137",
+      "weight": 1.0
+    },
+    {
+      "source": "docencia_espanol_miniescuela_plan_financiero_3_los_n\u00fameros_al_20_de_comisi\u00f3n",
+      "target": "docencia_espanol_miniescuela_plan_financiero_con_contrato_de_agencia",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docencia-espanol/miniescuela/plan-financiero.md",
+      "source_location": "L146",
+      "weight": 1.0
+    },
+    {
+      "source": "docencia_espanol_miniescuela_plan_financiero_3_los_n\u00fameros_al_20_de_comisi\u00f3n",
+      "target": "docencia_espanol_miniescuela_plan_financiero_efecto_en_las_cuotas_de_\u0438\u043f",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docencia-espanol/miniescuela/plan-financiero.md",
+      "source_location": "L166",
+      "weight": 1.0
+    },
+    {
+      "source": "docencia_espanol_miniescuela_plan_financiero_miniescuela_plan_financiero_y_estructura_legal",
+      "target": "docencia_espanol_miniescuela_plan_financiero_3_los_n\u00fameros_al_20_de_comisi\u00f3n",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docencia-espanol/miniescuela/plan-financiero.md",
+      "source_location": "L132",
+      "weight": 1.0
+    },
+    {
+      "source": "docencia_espanol_miniescuela_plan_financiero_miniescuela_plan_financiero_y_estructura_legal",
+      "target": "docencia_espanol_miniescuela_plan_financiero_1_situaci\u00f3n_de_partida",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docencia-espanol/miniescuela/plan-financiero.md",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "docencia_espanol_miniescuela_plan_financiero_miniescuela_plan_financiero_y_estructura_legal",
+      "target": "docencia_espanol_miniescuela_plan_financiero_4_si_la_escuela_crece",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docencia-espanol/miniescuela/plan-financiero.md",
+      "source_location": "L182",
+      "weight": 1.0
+    },
+    {
+      "source": "docencia_espanol_miniescuela_plan_financiero_miniescuela_plan_financiero_y_estructura_legal",
+      "target": "docencia_espanol_miniescuela_plan_financiero_5_checklist_de_arranque",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docencia-espanol/miniescuela/plan-financiero.md",
+      "source_location": "L202",
+      "weight": 1.0
+    },
+    {
+      "source": "docencia_espanol_miniescuela_plan_financiero_miniescuela_plan_financiero_y_estructura_legal",
+      "target": "docencia_espanol_miniescuela_plan_financiero_6_qu\u00e9_replicar_con_futuros_profesores",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docencia-espanol/miniescuela/plan-financiero.md",
+      "source_location": "L223",
+      "weight": 1.0
+    },
+    {
+      "source": "docencia_espanol_miniescuela_plan_financiero_miniescuela_plan_financiero_y_estructura_legal",
+      "target": "docencia_espanol_miniescuela_plan_financiero_2_hallazgos_verificados_que_cambian_el_plan",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docencia-espanol/miniescuela/plan-financiero.md",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
