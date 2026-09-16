@@ -686,17 +686,156 @@ dentro del ámbito de redes).
 
 ### Pendiente además
 
-- Confirmar el grupo concreto de IMDEA Networks y si alguien allí
-  trabaja en eficiencia energética de red con aprendizaje automático.
-  `networks.imdea.org` no se ha podido leer directamente en esta
-  sesión (falta autorizar el dominio en la política de red).
-- Buscar datos abiertos de tráfico móvil. El candidato habitual en la
-  literatura es el conjunto de Telecom Italia (Milán/Trentino) — **sin
-  verificar** su disponibilidad y licencia actuales.
+- ~~Confirmar el grupo concreto de IMDEA Networks...~~ **Hecho
+  2026-09-16**, ver la revisión de más abajo: es Orlando E.
+  Martínez-Durive, Networks Data Science Group.
+- ~~Buscar datos abiertos de tráfico móvil (Telecom Italia)...~~
+  **Hecho 2026-09-16**: confirmado, es abierto y ya usado para este
+  problema exacto — ver la revisión de más abajo.
 - Replantear quién sería el tutor: la lista actual de
   `## Tutores de TFM — candidatos concretos` se hizo para un tema de
   energía. Si el tema pasa
-  a redes, hay que rehacerla.
+  a redes, hay que rehacerla. **Sigue pendiente** — Martínez-Durive es
+  de IMDEA (Madrid), no de la USAL, así que no puede ser tutor formal
+  del TFM (tiene que ser profesorado de la USAL); como mucho es un
+  contacto de colaboración o referencia a citar, no un tutor.
+
+## Revisión 2026-09-16: verificación sistemática del hueco del Camino D (con acceso de red ampliado)
+
+Angel abrió esta sesión con la política de red ampliada que pedían las
+dos entradas de 2026-09-13/14 de `lluvia-de-ideas.md`. Esto es la
+verificación sistemática dedicada que quedaba pendiente antes de
+escribir a nadie sobre el Camino D — la única forma de saber si de
+verdad no existe el hueco es buscarlo en serio, no otra vez de pasada.
+
+### Dominios: confirmado en vivo, con un matiz importante
+
+- `networks.imdea.org` — **accesible**, probado con una consulta real
+  (ver más abajo, esta misma sesión).
+- `numpy.org`, `pandas.pydata.org` — **accesibles**, probados con un
+  fetch simple. Pendiente todavía completar la Lección 1 con esto (no
+  se ha hecho en esta sesión, era una tarea distinta).
+- `apidatos.ree.es` — **matiz, no es un bloqueo de política de red**:
+  con `curl` directo (no `WebFetch`) se confirma que el problema ya no
+  es `connect_rejected` de nuestro entorno, sino un **403 de Incapsula**
+  (el WAF/antibot propio de REData) que rechaza el patrón de la
+  petición automatizada, no el dominio en sí. Es un problema distinto
+  al que describían las entradas anteriores — no se soluciona
+  autorizando más dominios. Sigue en pie la alternativa ya conocida:
+  descargar los datos desde la máquina de Angel.
+
+### El hueco sigue sin encontrarse — ahora con búsqueda mucho más amplia
+
+Se buscó con **Consensus** (3 formulaciones), **alphaXiv** (2
+formulaciones) y el **grafo de citas de Scite** sobre el propio paper
+de Elmachtoub y Grigas (SPO), en vez de con una sola búsqueda como la
+vez anterior.
+
+**Lo que sí existe, en abundancia (2017-2026):** "predicción de
+tráfico + apagado de estaciones base/celdas" es un campo maduro y muy
+publicado — DeepBSC (Wu et al., 2021, *IEEE/ACM ToN*, 127 citas),
+DeepNap (Liu et al., 2018, *IEEE IoT Journal*), y al menos otros ocho
+trabajos de 2020-2026 en revistas IEEE fuertes (TGCN, TNSE, redes
+neuronales+RL en distintas variantes). **Todos** siguen uno de dos
+patrones: (a) dos etapas clásicas — predecir tráfico con LSTM/GCN,
+luego decidir con una heurística, ILP o umbral; o (b) un MDP/RL de
+extremo a extremo que aprende la política directamente de la
+recompensa, sin pasar por una predicción explícita. **Ninguno** de los
+encontrados enmarca el problema como *decision-focused learning*/SPO,
+ni mide explícitamente si mejorar la precisión del pronóstico se
+traduce en más ahorro energético real — la pregunta que sí se ha hecho
+para baterías (Yin, Lei y Feng, 2024) y que aquí sigue sin respuesta.
+
+**Grafo de citas de Elmachtoub y Grigas (2022):** 917 papers citantes
+resueltos por Scite. Filtrando por palabras clave de redes/telecom en
+el título, solo aparece **uno**: *"Black-box optimization for
+anticipated baseband-function placement in 5G networks"* (Zorello,
+Bliek y Troia, 2024, *Computer Networks*) — y es un problema distinto
+(ubicación de funciones de banda base, no apagado de celdas/RAN).
+**Cero** de los 917 tocan apagado de estaciones base o eficiencia
+energética de RAN. Es evidencia mucho más fuerte que la búsqueda de la
+sesión anterior, pero sigue siendo evidencia de ausencia, no prueba de
+ausencia — no cambia esa cautela metodológica.
+
+### Lo más cercano encontrado: un seminario invitado en IMDEA Networks, no una línea propia
+
+`networks.imdea.org` sí tiene contenido directamente relevante, pero
+hay que leerlo con precisión: el **11 de septiembre de 2026**, el
+`#NetworksWeeklySeminar` (organizado con el grupo NETCOM del
+Departamento de Ingeniería Telemática de la UC3M) tuvo una **charla
+invitada** — no un proyecto propio de IMDEA — de **Tianxin Wang**
+(investigadora postdoctoral en la Universidad de Edimburgo) sobre
+**TWINERGY**: "Digital Twin Empowered Practical Energy Saving in
+Heterogeneous Mobile Networks". Su enfoque: un gemelo digital de red
+de alta fidelidad busca decisiones seguras de apagado de estación
+base y las traduce a umbrales para políticas ya desplegadas basadas en
+umbrales, combinando el gemelo digital con aprendizaje por refuerzo
+multiagente. Resultados: 26,0%/12,4% de ahorro energético en
+evaluación 4G/5G con gemelo digital, y 13,07%/12,20% en redes reales
+rurales/densas 5G sin degradar la calidad de servicio. **Sigue siendo
+un enfoque de dos etapas** (el gemelo digital genera la decisión,
+luego se traduce a umbral) — no menciona *decision-focused learning*.
+Al ser una charla invitada de fuera, no cambia el argumento de
+empleabilidad con IMDEA Networks como institución (Arlet sigue siendo
+el precedente real), pero sí confirma que el tema interesa lo bastante
+para que IMDEA Networks organice un seminario sobre él en fechas muy
+recientes.
+
+### El hallazgo que sí cambia algo: quién en IMDEA Networks trabaja en esto de verdad
+
+**Dr. Orlando E. Martínez-Durive**, investigador postdoctoral del
+**Networks Data Science Group** de IMDEA Networks (dirigido por el
+Dr. Marco Fiore), tiene como línea de investigación declarada
+literalmente **"ML solutions for energy-saving policies for mobile
+networks"**. No es una inferencia — está en su propia página del
+instituto. Su publicación más relevante en esto es *"An Evaluation of
+RAN Sustainability Strategies in Production Networks"* (IEEE INFOCOM
+2025), fruto de una estancia en **Telefónica Innovación Digital**
+(febrero 2023 - agosto 2024): evalúa **cinco políticas de apagado de
+celda basadas en umbrales fijos** desplegadas en una red de producción
+real a gran escala, y concluye que las redes de producción de hoy
+dependen de políticas simples y pide explícitamente **"enfoques más
+flexibles"**. Es importante leer esto con precisión: **no** resuelve
+el hueco del Camino D — no usa predicción de tráfico ni DFL/SPO, mide
+políticas de umbral tal cual están desplegadas — pero sí es la
+confirmación más fuerte hasta ahora de dos cosas: (1) que el problema
+real de producción sigue resuelto con reglas simples, dejando hueco de
+verdad para algo más sofisticado, y (2) que hay un investigador
+concreto, activo, publicando en 2025, con acceso a datos de operador
+real (vía Telefónica), cuya línea es exactamente el dominio del Camino
+D. Email: `orlando.martinez@networks.imdea.org` (formato deducido de
+la página, confirmarlo antes de escribir).
+
+### Telecom Italia (Milán/Trentino): confirmado
+
+El conjunto abierto de CDR de Milán, candidato mencionado sin verificar
+en `lluvia-de-ideas.md`, está confirmado: Öztürk, Abubakar y Nadas
+(2021, *IEEE Transactions on Green Communications and Networking*,
+acceso abierto CC-BY, metadatos verificados con Scite) lo usan
+directamente para exactamente este problema — apagado de celdas con
+RL informado por predicción de tráfico — y lo describen como "the open
+call detail record (CDR) data set from the city of Milan, Italy".
+Añadido a `Bibliografia.bib` junto con el paper de Martínez-Durive.
+
+### Conclusión de esta revisión
+
+El hueco identificado el 2026-09-14 (aplicar DFL/SPO, o simplemente la
+pregunta de "¿cuánta precisión de pronóstico se traduce en cuánto
+ahorro energético real?", al apagado de estaciones base) **sigue sin
+encontrarse reclamado por nadie**, y esta vez con una búsqueda mucho
+más amplia (tres conectores, varias formulaciones, y el grafo completo
+de citas del paper fundacional de SPO). Eso no lo convierte en
+garantía — la cautela de la revisión anterior sigue aplicando — pero
+sí sube la confianza. Además, ahora hay un contacto concreto y activo
+en IMDEA Networks (Martínez-Durive) cuya propia publicación de 2025
+deja dicho, en sus propias palabras, que faltan "enfoques más
+flexibles" que los umbrales fijos de hoy — lo cual es, de hecho, un
+apoyo directo a la premisa del Camino D, no solo la ausencia de una
+objeción.
+
+**No decidido aquí:** si esto es suficiente para que Angel se decante
+por el Camino D en firme, o para escribir a alguien (a Martínez-Durive,
+a un tutor de la USAL, o ambos). Sigue siendo su decisión.
 
 ## Empleabilidad siendo extracomunitario: Networks frente a Energía (2026-09-14)
 

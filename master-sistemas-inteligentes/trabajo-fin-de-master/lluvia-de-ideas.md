@@ -7,6 +7,33 @@ rígida, antes de que decante en algo formal para `main.tex` o para
 
 ---
 
+## 2026-09-16 — sesión con acceso de red ampliado, verificación del Camino D
+
+Se hizo la verificación sistemática dedicada que pedía la entrada de
+abajo (2026-09-14): 3 conectores, varias formulaciones, y el grafo
+completo de citas (917 papers) del paper fundacional de SPO
+(Elmachtoub y Grigas). Detalle completo en la nueva sección
+`## Revisión 2026-09-16` de `ideas-tfm-energias-renovables.md`. Resumen:
+
+- **El hueco sigue sin encontrarse** — ahora con mucha más búsqueda
+  detrás, lo que sube la confianza sin ser garantía.
+- **Tareas heredadas resueltas**: #1 (verificación sistemática), #5
+  (grupo de IMDEA Networks: Dr. Orlando E. Martínez-Durive, Networks
+  Data Science Group, línea "ML solutions for energy-saving policies
+  for mobile networks"), #6 (dataset de Milán confirmado, abierto,
+  usado ya para este problema exacto).
+- **Sigue pendiente**: #2 (Lección 1 con numpy.org/pandas.pydata.org,
+  ya accesibles pero sin usar todavía), #3 (rehacer la lista de
+  tutores para redes), #7 (IPREM), y el punto del RD 316/2026 sin
+  confirmar en el BOE.
+- `apidatos.ree.es` sigue sin poder consultarse, pero por un motivo
+  distinto al de antes: ya no es bloqueo de política de red de este
+  entorno (`connect_rejected`), sino un 403 de Incapsula (el antibot
+  propio de REData) — confirmado con `curl` directo, no con `WebFetch`.
+  No se arregla autorizando más dominios.
+
+---
+
 ## 2026-09-14 — PARA LA SESIÓN QUE RETOME ESTO (con los dominios ya autorizados)
 
 Angel va a abrir una **sesión nueva** con la política de red ampliada.
