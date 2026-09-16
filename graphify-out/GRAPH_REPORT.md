@@ -1,7 +1,7 @@
 # Graph Report - Molu  (2026-09-16)
 
 ## Corpus Check
-- 272 files · ~1,355,077 words
+- 272 files · ~1,355,230 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `fc8f3581`
+- Built from commit: `70006f9f`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -1129,11 +1129,7 @@ Nodes (5): Candidatos nuevos o reforzados, con proyecto financiado verificado, C
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `readLiveServerInfo()` connect `readLiveServerInfo` to `live-poll.mjs`, `createLiveSessionStore`, `impeccable-paths.mjs`, `live-server.mjs`, `live.mjs`?**
-  _High betweenness centrality (0.003) - this node is a cross-community bridge._
-- **Why does `parseDesignMd()` connect `design-parser.mjs` to `live-server.mjs`?**
-  _High betweenness centrality (0.002) - this node is a cross-community bridge._
-- **Why does `layoutFlowChildren()` connect `live-browser.js` to `createLiveBrowserDomHelpers`?**
+- **Why does `StaticElement` connect `StaticElement` to `css-cascade.mjs`?**
   _High betweenness centrality (0.002) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `initGlobalBar()` (e.g. with `hideAgentPollTooltip()` and `onDetectMessage()`) actually correct?**
   _`initGlobalBar()` has 7 INFERRED edges - model-reasoned connections that need verification._
@@ -1143,3 +1139,7 @@ _Questions this graph is uniquely positioned to answer:_
   _Cohesion score 0.02863984674329502 - nodes in this community are weakly interconnected._
 - **Should `checks.mjs` be split into smaller, more focused modules?**
   _Cohesion score 0.04258098223615465 - nodes in this community are weakly interconnected._
+- **Should `index.mjs` be split into smaller, more focused modules?**
+  _Cohesion score 0.06142410015649452 - nodes in this community are weakly interconnected._
+- **Should `resumeSession` be split into smaller, more focused modules?**
+  _Cohesion score 0.07365967365967366 - nodes in this community are weakly interconnected._
