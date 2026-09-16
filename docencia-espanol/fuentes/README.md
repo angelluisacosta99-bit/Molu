@@ -104,6 +104,7 @@ el archivo correspondiente, no editarlo a mano.
 | `nuevo-espanol-en-marcha/b2/12b_turismo-cultural.md` | Nuevo Español en Marcha 4 (B2), unidad 12B | 12B | **solucionario oficial** del libro |
 | `nuevo-espanol-en-marcha/b2/12c_perifrasis-verbales.md` | Nuevo Español en Marcha 4 (B2), unidad 12C | 12C | **solucionario oficial** del libro |
 | `nuevo-espanol-en-marcha/b2/examen-unidades1-2.md` | Nuevo Español en Marcha 4 (B2), **Guía didáctica del profesor**, examen unidades 1-2 | 86-87 (examen), 98 (solucionario) | **solucionario oficial** de la guía, salvo el ej. 6 (localiza y corrige el error): el libro pide reescribir la frase entera, y aquí se adaptó a completar solo la forma verbal correcta, tomando la palabra exacta del solucionario |
+| `nuevo-espanol-en-marcha/b2/examen-unidades3-4.md` | Nuevo Español en Marcha 4 (B2), **Guía didáctica del profesor**, examen unidades 3-4 | 88-89 (examen), 98 (solucionario) | **solucionario oficial** de la guía, con una excepción señalada en el propio ejercicio 5: el solucionario da "No mover un dedo" para el ítem 5 ("Ayudar a alguien"), aunque esa definición encaja mejor con "echar una mano" (sin "no") — se dejan aceptadas ambas respuestas en vez de resolverlo por cuenta propia |
 
 **La columna de respuestas importa.** Las de 12B y 12C vienen del solucionario impreso del
 libro, que el profesor envió aparte: son autoridad.
