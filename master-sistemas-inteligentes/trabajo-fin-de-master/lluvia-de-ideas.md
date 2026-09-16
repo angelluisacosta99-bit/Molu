@@ -7,6 +7,50 @@ rígida, antes de que decante en algo formal para `main.tex` o para
 
 ---
 
+## 2026-09-16 — sesión con acceso de red ampliado, verificación del Camino D
+
+Se hizo la verificación sistemática dedicada que pedía la entrada de
+abajo (2026-09-14): 3 conectores, varias formulaciones, y el grafo
+completo de citas (917 papers) del paper fundacional de SPO
+(Elmachtoub y Grigas). Detalle completo en la nueva sección
+`## Revisión 2026-09-16` de `ideas-tfm-energias-renovables.md`. Resumen:
+
+- **El hueco sigue sin encontrarse** — ahora con mucha más búsqueda
+  detrás, lo que sube la confianza sin ser garantía.
+- **Tareas heredadas resueltas**: #1 (verificación sistemática), #5
+  (grupo de IMDEA Networks: Dr. Orlando E. Martínez-Durive, Networks
+  Data Science Group, línea "ML solutions for energy-saving policies
+  for mobile networks"), #6 (dataset de Milán confirmado, abierto,
+  usado ya para este problema exacto).
+- **Sigue pendiente**: #2 (Lección 1 con numpy.org/pandas.pydata.org,
+  ya accesibles pero sin usar todavía), #7 (IPREM), y el punto del RD
+  316/2026 sin confirmar en el BOE.
+- **#4 (`propuesta-tutoria-sara-rodriguez.md`, marcada NO ENVIAR)
+  reforzado, no resuelto**: el hallazgo de abajo (Sara Rodríguez no
+  imparte docencia en el MUSI 24-25) es justo la razón por la que
+  seguía marcada NO ENVIAR — confirma que no se debe reactivar sin
+  antes verificar si puede seguir siendo tutora por otra vía (ver
+  Reglamento de TFM, pendiente de confirmar).
+- **#3 (rehacer la lista de tutores) — avanzado, no cerrado.** Angel
+  pidió investigar más profesores. Se usó el CV oficial de docencia
+  del MUSI 24-25 (fuente primaria, no la web de BISITE) — ver la
+  sección `## Revisión 2026-09-16 (segunda pasada)` de
+  `ideas-tfm-energias-renovables.md`. Hallazgo importante: Sara
+  Rodríguez González, Chamoso y González-Briones **no** aparecen
+  impartiendo docencia en el MUSI este curso, a diferencia de lo que
+  asumía la tabla original. Candidatos nuevos con proyecto financiado
+  verificado: Juan Manuel Corchado (6GEMELLUS, 5G/6G), Pastora Isabel
+  Vega Cruz y María Belén Pérez Lancho (SUNHIVE, energía + federated
+  learning), Emilio Santiago Corchado y María Angélica González
+  Arrieta (Computación Neuroborrosa + BISITE energía/IoT).
+- `apidatos.ree.es` sigue sin poder consultarse, pero por un motivo
+  distinto al de antes: ya no es bloqueo de política de red de este
+  entorno (`connect_rejected`), sino un 403 de Incapsula (el antibot
+  propio de REData) — confirmado con `curl` directo, no con `WebFetch`.
+  No se arregla autorizando más dominios.
+
+---
+
 ## 2026-09-14 — PARA LA SESIÓN QUE RETOME ESTO (con los dominios ya autorizados)
 
 Angel va a abrir una **sesión nueva** con la política de red ampliada.

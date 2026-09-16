@@ -686,17 +686,247 @@ dentro del ámbito de redes).
 
 ### Pendiente además
 
-- Confirmar el grupo concreto de IMDEA Networks y si alguien allí
-  trabaja en eficiencia energética de red con aprendizaje automático.
-  `networks.imdea.org` no se ha podido leer directamente en esta
-  sesión (falta autorizar el dominio en la política de red).
-- Buscar datos abiertos de tráfico móvil. El candidato habitual en la
-  literatura es el conjunto de Telecom Italia (Milán/Trentino) — **sin
-  verificar** su disponibilidad y licencia actuales.
+- ~~Confirmar el grupo concreto de IMDEA Networks...~~ **Hecho
+  2026-09-16**, ver la revisión de más abajo: es Orlando E.
+  Martínez-Durive, Networks Data Science Group.
+- ~~Buscar datos abiertos de tráfico móvil (Telecom Italia)...~~
+  **Hecho 2026-09-16**: confirmado, es abierto y ya usado para este
+  problema exacto — ver la revisión de más abajo.
 - Replantear quién sería el tutor: la lista actual de
   `## Tutores de TFM — candidatos concretos` se hizo para un tema de
   energía. Si el tema pasa
-  a redes, hay que rehacerla.
+  a redes, hay que rehacerla. **Sigue pendiente** — Martínez-Durive es
+  de IMDEA (Madrid), no de la USAL, así que no puede ser tutor formal
+  del TFM (tiene que ser profesorado de la USAL); como mucho es un
+  contacto de colaboración o referencia a citar, no un tutor.
+
+## Revisión 2026-09-16: verificación sistemática del hueco del Camino D (con acceso de red ampliado)
+
+Angel abrió esta sesión con la política de red ampliada que pedían las
+dos entradas de 2026-09-13/14 de `lluvia-de-ideas.md`. Esto es la
+verificación sistemática dedicada que quedaba pendiente antes de
+escribir a nadie sobre el Camino D — la única forma de saber si de
+verdad no existe el hueco es buscarlo en serio, no otra vez de pasada.
+
+### Dominios: confirmado en vivo, con un matiz importante
+
+- `networks.imdea.org` — **accesible**, probado con una consulta real
+  (ver más abajo, esta misma sesión).
+- `numpy.org`, `pandas.pydata.org` — **accesibles**, probados con un
+  fetch simple. Pendiente todavía completar la Lección 1 con esto (no
+  se ha hecho en esta sesión, era una tarea distinta).
+- `apidatos.ree.es` — **matiz, no es un bloqueo de política de red**:
+  con `curl` directo (no `WebFetch`) se confirma que el problema ya no
+  es `connect_rejected` de nuestro entorno, sino un **403 de Incapsula**
+  (el WAF/antibot propio de REData) que rechaza el patrón de la
+  petición automatizada, no el dominio en sí. Es un problema distinto
+  al que describían las entradas anteriores — no se soluciona
+  autorizando más dominios. Sigue en pie la alternativa ya conocida:
+  descargar los datos desde la máquina de Angel.
+
+### El hueco sigue sin encontrarse — ahora con búsqueda mucho más amplia
+
+Se buscó con **Consensus** (3 formulaciones), **alphaXiv** (2
+formulaciones) y el **grafo de citas de Scite** sobre el propio paper
+de Elmachtoub y Grigas (SPO), en vez de con una sola búsqueda como la
+vez anterior.
+
+**Lo que sí existe, en abundancia (2017-2026):** "predicción de
+tráfico + apagado de estaciones base/celdas" es un campo maduro y muy
+publicado — DeepBSC (Wu et al., 2021, *IEEE/ACM ToN*, 127 citas),
+DeepNap (Liu et al., 2018, *IEEE IoT Journal*), y al menos otros ocho
+trabajos de 2020-2026 en revistas IEEE fuertes (TGCN, TNSE, redes
+neuronales+RL en distintas variantes). **Todos** siguen uno de dos
+patrones: (a) dos etapas clásicas — predecir tráfico con LSTM/GCN,
+luego decidir con una heurística, ILP o umbral; o (b) un MDP/RL de
+extremo a extremo que aprende la política directamente de la
+recompensa, sin pasar por una predicción explícita. **Ninguno** de los
+encontrados enmarca el problema como *decision-focused learning*/SPO,
+ni mide explícitamente si mejorar la precisión del pronóstico se
+traduce en más ahorro energético real — la pregunta que sí se ha hecho
+para baterías (Yin, Lei y Feng, 2024) y que aquí sigue sin respuesta.
+
+**Grafo de citas de Elmachtoub y Grigas (2022):** 917 papers citantes
+resueltos por Scite. Filtrando por palabras clave de redes/telecom en
+el título, solo aparece **uno**: *"Black-box optimization for
+anticipated baseband-function placement in 5G networks"* (Zorello,
+Bliek y Troia, 2024, *Computer Networks*) — y es un problema distinto
+(ubicación de funciones de banda base, no apagado de celdas/RAN).
+**Cero** de los 917 tocan apagado de estaciones base o eficiencia
+energética de RAN, **según el filtro de palabras clave usado** (redes/
+telecom en el título) — un paper on-topic con un título que no incluya
+esas palabras (p. ej. "traffic-aware sleep scheduling for energy
+savings") se habría colado sin detectarse; el filtrado fue por título,
+no por resumen ni texto completo de los 917. Es evidencia mucho más
+fuerte que la búsqueda de la sesión anterior, pero sigue siendo
+evidencia de ausencia, no prueba de ausencia — no cambia esa cautela
+metodológica, y esta limitación del método la refuerza todavía más.
+
+### Lo más cercano encontrado: un seminario invitado en IMDEA Networks, no una línea propia
+
+`networks.imdea.org` sí tiene contenido directamente relevante, pero
+hay que leerlo con precisión: el **11 de septiembre de 2026**, el
+`#NetworksWeeklySeminar` (organizado con el grupo NETCOM del
+Departamento de Ingeniería Telemática de la UC3M) tuvo una **charla
+invitada** — no un proyecto propio de IMDEA — de **Tianxin Wang**
+(investigadora postdoctoral en la Universidad de Edimburgo) sobre
+**TWINERGY**: "Digital Twin Empowered Practical Energy Saving in
+Heterogeneous Mobile Networks". Su enfoque: un gemelo digital de red
+de alta fidelidad busca decisiones seguras de apagado de estación
+base y las traduce a umbrales para políticas ya desplegadas basadas en
+umbrales, combinando el gemelo digital con aprendizaje por refuerzo
+multiagente. Resultados: 26,0%/12,4% de ahorro energético en
+evaluación 4G/5G con gemelo digital, y 13,07%/12,20% en redes reales
+rurales/densas 5G sin degradar la calidad de servicio. **Sigue siendo
+un enfoque de dos etapas** (el gemelo digital genera la decisión,
+luego se traduce a umbral) — no menciona *decision-focused learning*.
+Al ser una charla invitada de fuera, no cambia el argumento de
+empleabilidad con IMDEA Networks como institución (Arlet sigue siendo
+el precedente real), pero sí confirma que el tema interesa lo bastante
+para que IMDEA Networks organice un seminario sobre él en fechas muy
+recientes.
+
+### El hallazgo que sí cambia algo: quién en IMDEA Networks trabaja en esto de verdad
+
+**Dr. Orlando E. Martínez-Durive**, investigador postdoctoral del
+**Networks Data Science Group** de IMDEA Networks (dirigido por el
+Dr. Marco Fiore), tiene como línea de investigación declarada
+literalmente **"ML solutions for energy-saving policies for mobile
+networks"**. No es una inferencia — está en su propia página del
+instituto. Su publicación más relevante en esto es *"An Evaluation of
+RAN Sustainability Strategies in Production Networks"* (IEEE INFOCOM
+2025), fruto de una estancia en **Telefónica Innovación Digital**
+(febrero 2023 - agosto 2024): evalúa **cinco políticas de apagado de
+celda basadas en umbrales fijos** desplegadas en una red de producción
+real a gran escala, y concluye que las redes de producción de hoy
+dependen de políticas simples y pide explícitamente **"enfoques más
+flexibles"**. Es importante leer esto con precisión: **no** resuelve
+el hueco del Camino D — no usa predicción de tráfico ni DFL/SPO, mide
+políticas de umbral tal cual están desplegadas — pero sí es la
+confirmación más fuerte hasta ahora de dos cosas: (1) que el problema
+real de producción sigue resuelto con reglas simples, dejando hueco de
+verdad para algo más sofisticado, y (2) que hay un investigador
+concreto, activo, publicando en 2025, con acceso a datos de operador
+real (vía Telefónica), cuya línea es exactamente el dominio del Camino
+D. Email: `orlando.martinez@networks.imdea.org` (formato deducido de
+la página, confirmarlo antes de escribir).
+
+### Telecom Italia (Milán/Trentino): confirmado
+
+El conjunto abierto de CDR de Milán, candidato mencionado sin verificar
+en `lluvia-de-ideas.md`, está confirmado: Öztürk, Abubakar y Nadas
+(2021, *IEEE Transactions on Green Communications and Networking*,
+acceso abierto CC-BY, metadatos verificados con Scite) lo usan
+directamente para exactamente este problema — apagado de celdas con
+RL informado por predicción de tráfico — y lo describen como "the open
+call detail record (CDR) data set from the city of Milan, Italy".
+Añadido a `Bibliografia.bib` junto con el paper de Martínez-Durive.
+
+### Conclusión de esta revisión
+
+El hueco identificado el 2026-09-14 (aplicar DFL/SPO, o simplemente la
+pregunta de "¿cuánta precisión de pronóstico se traduce en cuánto
+ahorro energético real?", al apagado de estaciones base) **sigue sin
+encontrarse reclamado por nadie**, y esta vez con una búsqueda mucho
+más amplia (tres conectores, varias formulaciones, y el grafo completo
+de citas del paper fundacional de SPO). Eso no lo convierte en
+garantía — la cautela de la revisión anterior sigue aplicando — pero
+sí sube la confianza. Además, ahora hay un contacto concreto y activo
+en IMDEA Networks (Martínez-Durive) cuya propia publicación de 2025
+deja dicho, en sus propias palabras, que faltan "enfoques más
+flexibles" que los umbrales fijos de hoy — lo cual es, de hecho, un
+apoyo directo a la premisa del Camino D, no solo la ausencia de una
+objeción.
+
+**No decidido aquí:** si esto es suficiente para que Angel se decante
+por el Camino D en firme, o para escribir a alguien (a Martínez-Durive,
+a un tutor de la USAL, o ambos). Sigue siendo su decisión.
+
+## Revisión 2026-09-16 (segunda pasada): profesorado real del MUSI, fuente primaria
+
+Angel pidió investigar más profesores candidatos y sus líneas. La
+tabla de `## Tutores de TFM` de arriba se construyó navegando la web
+de BISITE — útil, pero es una fuente secundaria. Esta vez se usó la
+fuente primaria correcta: el **"Perfil del Currículum Vitae del
+Personal Docente e Investigador que imparte docencia en la
+titulación"** del MUSI, curso 2024-2025, documento oficial de la USAL
+para la renovación de la acreditación
+(`https://usal.es/files/cv/sistinteligentes-4314233_cvprof24-25.pdf`,
+28 páginas, texto extraído con `pymupdf` porque `poppler-utils` volvió
+a fallar con el mismo 404 de índice caducado ya documentado en
+`ejercicio-interactivo/SKILL.md`). Lista a los 18 profesores que
+impartían docencia en el MUSI en el curso 2024-2025, con su grupo de
+investigación, líneas y proyectos activos — no una lista de "quién
+está en BISITE", sino de quién enseñaba en el máster.
+
+**Aviso de fecha, corregido tras que Angel lo señalara:** 24-25 **no
+es el curso actual** (hoy es septiembre de 2026, así que ya se cursó
+también el 25-26) — es simplemente **la versión más reciente que la
+USAL ha publicado**. Comprobado en vivo: ni
+`sistinteligentes-4314233_cvprof25-26.pdf` ni `...cvprof26-27.pdf`
+existen (404 ambos), y hasta la propia página
+`https://usal.es/master-sistemas-inteligentes`, titulada "Curso
+2026/2027", enlaza ese mismo PDF de 24-25 — la USAL no lo actualiza
+cada curso. Consecuencia real: cada dato de proyecto financiado
+(código de referencia, importe, fechas) sigue siendo verificado y
+fiable, pero el vínculo concreto "esta persona imparte en el MUSI" es
+una foto con hasta dos cursos de antigüedad, no una confirmación de
+que siga siendo así hoy. Quien retome esto y quiera confirmarlo del
+todo: preguntar directamente, no asumir que la lista de abajo sigue
+100% vigente.
+
+### Hallazgo que corrige la tabla anterior: tres candidatos no aparecen aquí
+
+**Sara Rodríguez González, Pablo Chamoso Santos y Alfonso
+González-Briones no figuran en este documento oficial de docencia del
+MUSI 2024-2025.** Esto no demuestra que no puedan ser tutores del TFM
+(la normativa de tutoría puede no exigir impartir una asignatura
+concreta del máster — pendiente de confirmar en el Reglamento de TFM
+ya en esta carpeta), pero sí es una discrepancia real con la tabla
+anterior, que los presentaba como los candidatos más fuertes sin haber
+verificado esto. Matiz a favor de Chamoso: **sí aparece** como
+miembro del equipo (no IP) del proyecto SUNHIVE (ver abajo) — sigue
+activo en investigación con BISITE, solo que no consta que enseñe en
+el MUSI este curso.
+
+### Candidatos nuevos o reforzados, con proyecto financiado verificado
+
+| Candidato | Categoría / área | Asignatura MUSI 24-25 | Proyecto financiado verificado (fuente: `produccioncientifica.usal.es`) | Encaje |
+|---|---|---|---|---|
+| **Juan Manuel Corchado Rodríguez** | Catedrático, Ciencia Computación e IA. Director BISITE (ya conocido, reforzado aquí) | Inteligencia Ambiental y Sistemas Multiagente | **IP de 6GEMELLUS** ("Entorno avanzado... IA eXplicable, Gemelos Digitales y Ciberseguridad en el ámbito del 5G avanzado y el 6G", ref. TSI-064100-2023-0019, €332.449, Ministerio de Asuntos Económicos y Transformación Digital, ejecutado ene-2024 a jun-2025, **ya finalizado**). También IP de SCRIN (IoT seguro) y de "Virtualización para la Protección de redes IoT en infraestructura de Comunicaciones 5G" | **El más fuerte para el Camino D con docencia real en el máster** — a diferencia de Martínez-Durive (IMDEA), él sí puede ser tutor formal. El proyecto ya cerró, pero el track record en 5G/6G de BISITE es real y verificado, no solo declarado |
+| **Pastora Isabel Vega Cruz** | Catedrática, Ingeniería de Sistemas y Automática. Nueva | Nuevas Tendencias en Sistemas Inteligentes / Control Inteligente / Herramientas Interactivas de Simulación y Control | **IP** de "Aprendizaje automático y metodologías híbridas para sistemas de aguas urbanas óptimos y energéticamente neutros" (PID2024-156522OB-C31, financiación nacional competitiva 2024) y de control distribuido con teoría de juegos (PID2019-105434RB-C31). Además, miembro del equipo (no IP) de **SUNHIVE** — ver abajo | Fuerte para el Camino A: control/optimización + ML aplicado a sistemas energéticamente neutros, con financiación activa real, no solo líneas declaradas en una web |
+| **María Belén Pérez Lancho** | Profesora Titular, Ingeniería de Sistemas y Automática. Nueva | Mismas asignaturas que Vega Cruz | Miembro del equipo de **SUNHIVE** y de los proyectos IoT/5G de BISITE (SCRIN, virtualización redes IoT 5G) | Puente entre Camino A y Camino D — es de los pocos con proyectos activos en ambos frentes a la vez |
+| **Emilio Santiago Corchado Rodríguez** | Catedrático, Ciencia Computación e IA (no confundir con Juan Manuel — es su hermano, confirmado por prensa independiente: Salamancahoy, 31/05/2024, artículo centrado en Juan Manuel Corchado como rector electo de la USAL, que dice de él: "...con eventos como Startup Olé, que dirige su hermano Emilio Corchado" — el sujeto elidido de la frase es Juan Manuel, no otra persona mencionada antes en el artículo; ambos catedráticos en el mismo departamento). Nueva | **Computación Neuroborrosa** — la asignatura que la Opción A original ya conectaba con lógica difusa | Coordina el programa de doctorado "Energía y Propulsión Marina"; participa en las plataformas de energía renovable/Edge-IoT de BISITE | Encaje directo con la asignatura de Angel y con energía, aunque sin un proyecto de IP tan concreto como los de arriba |
+| **María Angélica González Arrieta** | Profesora Titular, Ciencia Computación e IA. Nueva | También Computación Neuroborrosa | Mismos proyectos BISITE de energía/IoT/5G que los Corchado (Edge-IoT DLT, SCRIN, virtualización redes 5G) | Alternativa si los de arriba no tienen hueco |
+
+**Importante — quién NO es candidato pese a lo prometedor de su
+proyecto:** el **IP real de SUNHIVE** ("Federated Learning and
+Bio-inspired models for optimising demand-response in photovoltaic
+generation", CPP2022-009747, €460.875, Ministerio de Ciencia e
+Innovación, en ejecución hasta oct-2026 — el proyecto de energía +
+aprendizaje federado más fuerte y mejor financiado de todos los
+encontrados en esta sesión) es **Fernando de la Prieta Pintado**, que
+**no aparece en el documento de docencia del MUSI 24-25**. No consta
+que pueda ser tutor formal del TFM por esta vía; como mucho, un
+colaborador si el reglamento admite cotutoría con alguien fuera de la
+lista de profesorado del máster — sin confirmar.
+
+### Contacto no-investigador a tener presente
+
+**Roberto Therón Sánchez**, Catedrático, es el **Director actual del
+MUSI** ("Dtor. Máster Tipo 1 MU Sistemas inteligentes") y Presidente de
+la Comisión de Máster — su línea de investigación (analítica visual,
+interacción persona-ordenador) no encaja con ningún camino del TFM,
+pero es el contacto procedimental si hace falta resolver algo a nivel
+de máster, no de tutoría de investigación.
+
+### No decidido aquí
+
+Sigue sin elegirse ningún camino ni ningún tutor. Esta tabla amplía las
+opciones con fuente primaria verificada — no sustituye la decisión de
+Angel entre A/B/C/D, ni descarta a Sara Rodríguez/Chamoso/
+González-Briones, solo señala que su presencia en la docencia oficial
+del MUSI este curso no está confirmada.
 
 ## Empleabilidad siendo extracomunitario: Networks frente a Energía (2026-09-14)
 
