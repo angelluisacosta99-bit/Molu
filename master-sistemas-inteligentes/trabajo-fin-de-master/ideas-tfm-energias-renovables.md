@@ -849,10 +849,26 @@ para la renovación de la acreditación
 (`https://usal.es/files/cv/sistinteligentes-4314233_cvprof24-25.pdf`,
 28 páginas, texto extraído con `pymupdf` porque `poppler-utils` volvió
 a fallar con el mismo 404 de índice caducado ya documentado en
-`ejercicio-interactivo/SKILL.md`). Lista **los 18 profesores que de
-verdad imparten docencia en el MUSI este curso**, con su grupo de
+`ejercicio-interactivo/SKILL.md`). Lista a los 18 profesores que
+impartían docencia en el MUSI en el curso 2024-2025, con su grupo de
 investigación, líneas y proyectos activos — no una lista de "quién
-está en BISITE", sino de quién enseña en el máster de Angel.
+está en BISITE", sino de quién enseñaba en el máster.
+
+**Aviso de fecha, corregido tras que Angel lo señalara:** 24-25 **no
+es el curso actual** (hoy es septiembre de 2026, así que ya se cursó
+también el 25-26) — es simplemente **la versión más reciente que la
+USAL ha publicado**. Comprobado en vivo: ni
+`sistinteligentes-4314233_cvprof25-26.pdf` ni `...cvprof26-27.pdf`
+existen (404 ambos), y hasta la propia página
+`https://usal.es/master-sistemas-inteligentes`, titulada "Curso
+2026/2027", enlaza ese mismo PDF de 24-25 — la USAL no lo actualiza
+cada curso. Consecuencia real: cada dato de proyecto financiado
+(código de referencia, importe, fechas) sigue siendo verificado y
+fiable, pero el vínculo concreto "esta persona imparte en el MUSI" es
+una foto con hasta dos cursos de antigüedad, no una confirmación de
+que siga siendo así hoy. Quien retome esto y quiera confirmarlo del
+todo: preguntar directamente, no asumir que la lista de abajo sigue
+100% vigente.
 
 ### Hallazgo que corrige la tabla anterior: tres candidatos no aparecen aquí
 
