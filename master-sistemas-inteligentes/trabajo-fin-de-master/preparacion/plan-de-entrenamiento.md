@@ -75,7 +75,15 @@ sin dar nada por supuesto.
     lista. La guía docente cita el año 2021; verificado que la 2ª
     edición se publicó en **diciembre de 2019** — se mantiene el año
     real en vez del que trae la guía.)
-  - Géron, capítulos 10-15 (redes neuronales y RNN con Keras).
+  - Géron, capítulos 10-15 (redes neuronales, CNN, RNN). **Decisión de
+    Angel (2026-09-16):** usar la 1ª edición real (2017, ya disponible
+    en Drive, ver `Bibliografia.bib` → `geron2017handson`) en vez de
+    esperar a conseguir la 3ª que exige la guía docente. Diferencia
+    real a tener en cuenta: el código de la 1ª edición es TensorFlow
+    1.x puro (`tf.Session`, placeholders), sin Keras — sirve igual para
+    los conceptos (perceptrón, retropropagación, CNN, RNN/LSTM), pero
+    el código práctico en Keras/TF2 se cubre con Gulli et al. (arriba),
+    no con este libro.
 - **Entregable:** una LSTM simple entrenada sobre una serie temporal de
   ejemplo (antes de tocar datos reales de energía).
 
