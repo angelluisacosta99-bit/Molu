@@ -44,6 +44,12 @@ completo de citas (917 papers) del paper fundacional de SPO
 - **Sigue pendiente**: #2 (Lección 1 con numpy.org/pandas.pydata.org,
   ya accesibles pero sin usar todavía), #7 (IPREM), y el punto del RD
   316/2026 sin confirmar en el BOE.
+- **#4 (`propuesta-tutoria-sara-rodriguez.md`, marcada NO ENVIAR)
+  reforzado, no resuelto**: el hallazgo de abajo (Sara Rodríguez no
+  imparte docencia en el MUSI 24-25) es justo la razón por la que
+  seguía marcada NO ENVIAR — confirma que no se debe reactivar sin
+  antes verificar si puede seguir siendo tutora por otra vía (ver
+  Reglamento de TFM, pendiente de confirmar).
 - **#3 (rehacer la lista de tutores) — avanzado, no cerrado.** Angel
   pidió investigar más profesores. Se usó el CV oficial de docencia
   del MUSI 24-25 (fuente primaria, no la web de BISITE) — ver la

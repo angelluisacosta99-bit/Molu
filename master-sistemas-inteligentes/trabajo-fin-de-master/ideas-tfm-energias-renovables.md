@@ -753,9 +753,14 @@ anticipated baseband-function placement in 5G networks"* (Zorello,
 Bliek y Troia, 2024, *Computer Networks*) — y es un problema distinto
 (ubicación de funciones de banda base, no apagado de celdas/RAN).
 **Cero** de los 917 tocan apagado de estaciones base o eficiencia
-energética de RAN. Es evidencia mucho más fuerte que la búsqueda de la
-sesión anterior, pero sigue siendo evidencia de ausencia, no prueba de
-ausencia — no cambia esa cautela metodológica.
+energética de RAN, **según el filtro de palabras clave usado** (redes/
+telecom en el título) — un paper on-topic con un título que no incluya
+esas palabras (p. ej. "traffic-aware sleep scheduling for energy
+savings") se habría colado sin detectarse; el filtrado fue por título,
+no por resumen ni texto completo de los 917. Es evidencia mucho más
+fuerte que la búsqueda de la sesión anterior, pero sigue siendo
+evidencia de ausencia, no prueba de ausencia — no cambia esa cautela
+metodológica, y esta limitación del método la refuerza todavía más.
 
 ### Lo más cercano encontrado: un seminario invitado en IMDEA Networks, no una línea propia
 
@@ -891,7 +896,7 @@ el MUSI este curso.
 | **Juan Manuel Corchado Rodríguez** | Catedrático, Ciencia Computación e IA. Director BISITE (ya conocido, reforzado aquí) | Inteligencia Ambiental y Sistemas Multiagente | **IP de 6GEMELLUS** ("Entorno avanzado... IA eXplicable, Gemelos Digitales y Ciberseguridad en el ámbito del 5G avanzado y el 6G", ref. TSI-064100-2023-0019, €332.449, Ministerio de Asuntos Económicos y Transformación Digital, ejecutado ene-2024 a jun-2025, **ya finalizado**). También IP de SCRIN (IoT seguro) y de "Virtualización para la Protección de redes IoT en infraestructura de Comunicaciones 5G" | **El más fuerte para el Camino D con docencia real en el máster** — a diferencia de Martínez-Durive (IMDEA), él sí puede ser tutor formal. El proyecto ya cerró, pero el track record en 5G/6G de BISITE es real y verificado, no solo declarado |
 | **Pastora Isabel Vega Cruz** | Catedrática, Ingeniería de Sistemas y Automática. Nueva | Nuevas Tendencias en Sistemas Inteligentes / Control Inteligente / Herramientas Interactivas de Simulación y Control | **IP** de "Aprendizaje automático y metodologías híbridas para sistemas de aguas urbanas óptimos y energéticamente neutros" (PID2024-156522OB-C31, financiación nacional competitiva 2024) y de control distribuido con teoría de juegos (PID2019-105434RB-C31). Además, miembro del equipo (no IP) de **SUNHIVE** — ver abajo | Fuerte para el Camino A: control/optimización + ML aplicado a sistemas energéticamente neutros, con financiación activa real, no solo líneas declaradas en una web |
 | **María Belén Pérez Lancho** | Profesora Titular, Ingeniería de Sistemas y Automática. Nueva | Mismas asignaturas que Vega Cruz | Miembro del equipo de **SUNHIVE** y de los proyectos IoT/5G de BISITE (SCRIN, virtualización redes IoT 5G) | Puente entre Camino A y Camino D — es de los pocos con proyectos activos en ambos frentes a la vez |
-| **Emilio Santiago Corchado Rodríguez** | Catedrático, Ciencia Computación e IA (no confundir con Juan Manuel — hermano, ambos catedráticos en el mismo departamento). Nueva | **Computación Neuroborrosa** — la asignatura que la Opción A original ya conectaba con lógica difusa | Coordina el programa de doctorado "Energía y Propulsión Marina"; participa en las plataformas de energía renovable/Edge-IoT de BISITE | Encaje directo con la asignatura de Angel y con energía, aunque sin un proyecto de IP tan concreto como los de arriba |
+| **Emilio Santiago Corchado Rodríguez** | Catedrático, Ciencia Computación e IA (no confundir con Juan Manuel — es su hermano, confirmado por prensa independiente: Salamancahoy, 31/05/2024, artículo centrado en Juan Manuel Corchado como rector electo de la USAL, que dice de él: "...con eventos como Startup Olé, que dirige su hermano Emilio Corchado" — el sujeto elidido de la frase es Juan Manuel, no otra persona mencionada antes en el artículo; ambos catedráticos en el mismo departamento). Nueva | **Computación Neuroborrosa** — la asignatura que la Opción A original ya conectaba con lógica difusa | Coordina el programa de doctorado "Energía y Propulsión Marina"; participa en las plataformas de energía renovable/Edge-IoT de BISITE | Encaje directo con la asignatura de Angel y con energía, aunque sin un proyecto de IP tan concreto como los de arriba |
 | **María Angélica González Arrieta** | Profesora Titular, Ciencia Computación e IA. Nueva | También Computación Neuroborrosa | Mismos proyectos BISITE de energía/IoT/5G que los Corchado (Edge-IoT DLT, SCRIN, virtualización redes 5G) | Alternativa si los de arriba no tienen hueco |
 
 **Importante — quién NO es candidato pese a lo prometedor de su
