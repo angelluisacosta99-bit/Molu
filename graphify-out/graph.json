@@ -13535,18 +13535,6 @@
       "source_location": "L18"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_commit_manual_edits_clearappliedentries",
-      "label": "clearAppliedEntries()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "clearappliedentries()",
-      "source_file": ".claude/skills/impeccable/scripts/live-commit-manual-edits.mjs",
-      "source_location": "L555"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_discard_manual_edits_argval",
       "label": "argVal()",
       "_callable": true,
@@ -13557,6 +13545,54 @@
       "norm_label": "argval()",
       "source_file": ".claude/skills/impeccable/scripts/live-discard-manual-edits.mjs",
       "source_location": "L21"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_compactmanuallogtext",
+      "label": "compactManualLogText()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "manual-edit-routes.mjs",
+      "file_type": "code",
+      "norm_label": "compactmanuallogtext()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L934"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualapplyfailures",
+      "label": "summarizeManualApplyFailures()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "manual-edit-routes.mjs",
+      "file_type": "code",
+      "norm_label": "summarizemanualapplyfailures()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L900"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualdiagnostics",
+      "label": "summarizeManualDiagnostics()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "manual-edit-routes.mjs",
+      "file_type": "code",
+      "norm_label": "summarizemanualdiagnostics()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L913"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanuallogfile",
+      "label": "summarizeManualLogFile()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "manual-edit-routes.mjs",
+      "file_type": "code",
+      "norm_label": "summarizemanuallogfile()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L927"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_manual_edit_evidence_buildmanualeditevidence",
@@ -18671,18 +18707,6 @@
       "source_location": "L393"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_compactmanuallogtext",
-      "label": "compactManualLogText()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "compactmanuallogtext()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L934"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_manual_apply_compactnearbymanualedittexts",
       "label": "compactNearbyManualEditTexts()",
       "_callable": true,
@@ -19089,42 +19113,6 @@
       "norm_label": "summarizemanualapplyevent()",
       "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
       "source_location": "L888"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualapplyfailures",
-      "label": "summarizeManualApplyFailures()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "summarizemanualapplyfailures()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L900"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualdiagnostics",
-      "label": "summarizeManualDiagnostics()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "summarizemanualdiagnostics()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L913"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanuallogfile",
-      "label": "summarizeManualLogFile()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "summarizemanuallogfile()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L927"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_manual_apply_truncatemanualapplytext",
@@ -21405,6 +21393,18 @@
       "norm_label": "changedfilessincesnapshot()",
       "source_file": ".claude/skills/impeccable/scripts/live-commit-manual-edits.mjs",
       "source_location": "L631"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_commit_manual_edits_clearappliedentries",
+      "label": "clearAppliedEntries()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "live-commit-manual-edits.mjs",
+      "file_type": "code",
+      "norm_label": "clearappliedentries()",
+      "source_file": ".claude/skills/impeccable/scripts/live-commit-manual-edits.mjs",
+      "source_location": "L555"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_commit_manual_edits_collectapplyownedfiles",
@@ -34093,6 +34093,162 @@
       "norm_label": "sin contrato de agencia (situacion actual)",
       "source_file": "docencia-espanol/miniescuela/plan-financiero.md",
       "source_location": "L137"
+    },
+    {
+      "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b2_examen_unidades3_4",
+      "label": "examen-unidades3-4.md",
+      "_origin": "ast",
+      "community": 226,
+      "community_name": "Ejercicios",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "examen-unidades3-4.md",
+      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b2/examen-unidades3-4.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b2_examen_unidades3_4_1_examen_unidades_3_4",
+      "label": "1. Examen unidades 3-4",
+      "_origin": "ast",
+      "community": 226,
+      "community_name": "Ejercicios",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "1. examen unidades 3-4",
+      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b2/examen-unidades3-4.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b2_examen_unidades3_4_ej_10_escribe_un_art\u00edculo_sobre_la_adopci\u00f3n",
+      "label": "Ej. 10 \u2014 Escribe un art\u00edculo sobre la adopci\u00f3n",
+      "_origin": "ast",
+      "community": 226,
+      "community_name": "Ejercicios",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "ej. 10 \u2014 escribe un articulo sobre la adopcion",
+      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b2/examen-unidades3-4.md",
+      "source_location": "L120"
+    },
+    {
+      "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b2_examen_unidades3_4_ej_1_completa_la_receta_de_cocina",
+      "label": "Ej. 1 \u2014 Completa la receta de cocina",
+      "_origin": "ast",
+      "community": 226,
+      "community_name": "Ejercicios",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "ej. 1 \u2014 completa la receta de cocina",
+      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b2/examen-unidades3-4.md",
+      "source_location": "L7"
+    },
+    {
+      "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b2_examen_unidades3_4_ej_2_verbos_del_recuadro_temporales",
+      "label": "Ej. 2 \u2014 Verbos del recuadro (temporales)",
+      "_origin": "ast",
+      "community": 226,
+      "community_name": "Ejercicios",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "ej. 2 \u2014 verbos del recuadro (temporales)",
+      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b2/examen-unidades3-4.md",
+      "source_location": "L13"
+    },
+    {
+      "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b2_examen_unidades3_4_ej_3_condicionales",
+      "label": "Ej. 3 \u2014 Condicionales",
+      "_origin": "ast",
+      "community": 226,
+      "community_name": "Ejercicios",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "ej. 3 \u2014 condicionales",
+      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b2/examen-unidades3-4.md",
+      "source_location": "L30"
+    },
+    {
+      "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b2_examen_unidades3_4_ej_4_vocabulario_partes_del_cuerpo",
+      "label": "Ej. 4 \u2014 Vocabulario: partes del cuerpo",
+      "_origin": "ast",
+      "community": 226,
+      "community_name": "Ejercicios",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "ej. 4 \u2014 vocabulario: partes del cuerpo",
+      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b2/examen-unidades3-4.md",
+      "source_location": "L40"
+    },
+    {
+      "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b2_examen_unidades3_4_ej_5_expresiones_con_partes_del_cuerpo",
+      "label": "Ej. 5 \u2014 Expresiones con partes del cuerpo",
+      "_origin": "ast",
+      "community": 226,
+      "community_name": "Ejercicios",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "ej. 5 \u2014 expresiones con partes del cuerpo",
+      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b2/examen-unidades3-4.md",
+      "source_location": "L55"
+    },
+    {
+      "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b2_examen_unidades3_4_ej_6_adjetivo_nombre",
+      "label": "Ej. 6 \u2014 Adjetivo \u2192 nombre",
+      "_origin": "ast",
+      "community": 226,
+      "community_name": "Ejercicios",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "ej. 6 \u2014 adjetivo \u2192 nombre",
+      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b2/examen-unidades3-4.md",
+      "source_location": "L65"
+    },
+    {
+      "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b2_examen_unidades3_4_ej_7_termina_las_frases_con_relativo",
+      "label": "Ej. 7 \u2014 Termina las frases con relativo",
+      "_origin": "ast",
+      "community": 226,
+      "community_name": "Ejercicios",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "ej. 7 \u2014 termina las frases con relativo",
+      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b2/examen-unidades3-4.md",
+      "source_location": "L82"
+    },
+    {
+      "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b2_examen_unidades3_4_ej_8_el_lo_que_de",
+      "label": "Ej. 8 \u2014 El / lo + que / de",
+      "_origin": "ast",
+      "community": 226,
+      "community_name": "Ejercicios",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "ej. 8 \u2014 el / lo + que / de",
+      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b2/examen-unidades3-4.md",
+      "source_location": "L98"
+    },
+    {
+      "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b2_examen_unidades3_4_ej_9_intercambia_una_receta",
+      "label": "Ej. 9 \u2014 Intercambia una receta",
+      "_origin": "ast",
+      "community": 226,
+      "community_name": "Ejercicios",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "ej. 9 \u2014 intercambia una receta",
+      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b2/examen-unidades3-4.md",
+      "source_location": "L113"
+    },
+    {
+      "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b2_examen_unidades3_4_ejercicios",
+      "label": "Ejercicios",
+      "_origin": "ast",
+      "community": 226,
+      "community_name": "Ejercicios",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "ejercicios",
+      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b2/examen-unidades3-4.md",
+      "source_location": "L5"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_insert",
@@ -109292,6 +109448,138 @@
       "weight": 1.0
     },
     {
+      "source": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b2_examen_unidades3_4",
+      "target": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b2_examen_unidades3_4_1_examen_unidades_3_4",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b2/examen-unidades3-4.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b2_examen_unidades3_4_1_examen_unidades_3_4",
+      "target": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b2_examen_unidades3_4_ejercicios",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b2/examen-unidades3-4.md",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b2_examen_unidades3_4_ejercicios",
+      "target": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b2_examen_unidades3_4_ej_9_intercambia_una_receta",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b2/examen-unidades3-4.md",
+      "source_location": "L113",
+      "weight": 1.0
+    },
+    {
+      "source": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b2_examen_unidades3_4_ejercicios",
+      "target": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b2_examen_unidades3_4_ej_10_escribe_un_art\u00edculo_sobre_la_adopci\u00f3n",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b2/examen-unidades3-4.md",
+      "source_location": "L120",
+      "weight": 1.0
+    },
+    {
+      "source": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b2_examen_unidades3_4_ejercicios",
+      "target": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b2_examen_unidades3_4_ej_2_verbos_del_recuadro_temporales",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b2/examen-unidades3-4.md",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b2_examen_unidades3_4_ejercicios",
+      "target": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b2_examen_unidades3_4_ej_3_condicionales",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b2/examen-unidades3-4.md",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b2_examen_unidades3_4_ejercicios",
+      "target": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b2_examen_unidades3_4_ej_4_vocabulario_partes_del_cuerpo",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b2/examen-unidades3-4.md",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b2_examen_unidades3_4_ejercicios",
+      "target": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b2_examen_unidades3_4_ej_5_expresiones_con_partes_del_cuerpo",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b2/examen-unidades3-4.md",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b2_examen_unidades3_4_ejercicios",
+      "target": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b2_examen_unidades3_4_ej_6_adjetivo_nombre",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b2/examen-unidades3-4.md",
+      "source_location": "L65",
+      "weight": 1.0
+    },
+    {
+      "source": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b2_examen_unidades3_4_ejercicios",
+      "target": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b2_examen_unidades3_4_ej_1_completa_la_receta_de_cocina",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b2/examen-unidades3-4.md",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b2_examen_unidades3_4_ejercicios",
+      "target": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b2_examen_unidades3_4_ej_7_termina_las_frases_con_relativo",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b2/examen-unidades3-4.md",
+      "source_location": "L82",
+      "weight": 1.0
+    },
+    {
+      "source": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b2_examen_unidades3_4_ejercicios",
+      "target": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b2_examen_unidades3_4_ej_8_el_lo_que_de",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b2/examen-unidades3-4.md",
+      "source_location": "L98",
+      "weight": 1.0
+    },
+    {
       "source": "docencia_espanol_fuentes_paginas",
       "target": "docencia_espanol_fuentes_paginas_sh__entry",
       "relation": "contains",
@@ -116895,5 +117183,5 @@
       "source_file": "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad6a_como-se-va-a-goya_interactivo.html"
     }
   ],
-  "built_at_commit": "13b2f020e4a7c8136cd1bb732d7a92aa3619c2dc"
+  "built_at_commit": "3feeef2eb3290fbb34710b8444d7fe5eca376e23"
 }
