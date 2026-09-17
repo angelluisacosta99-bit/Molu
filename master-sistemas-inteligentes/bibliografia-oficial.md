@@ -12,7 +12,6 @@ Recopilación de la bibliografía **oficial** de cada asignatura del Máster Uni
 
 ### Analítica visual y visualización de la información
 
-
 *Código: 304478 · 3 ECTS*
 
 ```
@@ -79,10 +78,7 @@ o http://www.ieee.org.
 o http://computer.org.
 ```
 
-## Asignaturas optativas (elegir 6 de estas 10)
-
 ### Computación neuroborrosa
-
 
 *Código: 304473 · 3 ECTS*
 
@@ -152,7 +148,6 @@ https://artelnics.com/technology/#neural-designer
 
 ### Control inteligente
 
-
 *Código: 304475 · 3 ECTS*
 
 ```
@@ -191,7 +186,6 @@ la que se podrán consultar las actividades anuales organizadas por dicho grupo
 ```
 
 ### Inteligencia ambiental y sistemas multiagente
-
 
 *Código: 304472 · 3 ECTS*
 
@@ -271,7 +265,6 @@ Society.
 
 ### Lógica para web semántica
 
-
 *Código: 304477 · 3 ECTS*
 
 ```
@@ -297,7 +290,6 @@ dela-logica
 ```
 
 ### Metodología de la investigación
-
 
 *Código: 304470 · 3 ECTS*
 
@@ -388,7 +380,6 @@ Latex
 
 ### Minería de datos
 
-
 *Código: 304476 · 3 ECTS*
 
 ```
@@ -410,7 +401,6 @@ Kaggle https://www.kaggle.com/
 
 ### Nuevas tendencias en sistemas inteligentes
 
-
 *Código: 304471 · 3 ECTS*
 
 ```
@@ -419,7 +409,6 @@ conferencia, además se cuelga el contenido de las mismas.
 ```
 
 ### Robots autónomos
-
 
 *Código: 304474 · 3 ECTS*
 
@@ -441,7 +430,6 @@ Congresos
 ## Optativas elegidas este curso (6)
 
 ### Cibermetría
-
 
 *Código: 304485 · 3 ECTS*
 
@@ -504,7 +492,6 @@ Conferencias
 
 ### Herramientas interactivas de simulación y control
 
-
 *Código: 304481 · 3 ECTS*
 
 ```
@@ -530,7 +517,6 @@ Open Source Physics     https://www.compadre.org/osp/
 
 ### Minería de datos aplicada a la bioinformática
 
-
 *Código: 304483 · 3 ECTS*
 
 ```
@@ -553,7 +539,6 @@ Studies, Springer, 2019
 
 ### Procesos y métodos de modelado para la ingeniería web y web semántica
 
-
 *Código: 304486 · 3 ECTS*
 
 ```
@@ -575,7 +560,6 @@ Stanford Medical Informatics Technical Report SMI-2001-0880
 ```
 
 ### Recuperación avanzada de la información
-
 
 *Código: 304484 · 3 ECTS*
 
@@ -650,7 +634,6 @@ Research and Advanced Technology for Digital Libraries (ECDL)
 
 ### Tecnologías del habla
 
-
 *Código: 304487 · 3 ECTS*
 
 ```
@@ -668,9 +651,6 @@ Las referencias electrónicas están actualizadas en la página de la asignatura
 
 ## Trabajo Fin de Máster
 
-### Trabajo Fin de Máster
-
-
 *Código: 304489 · 15 ECTS*
 
 _Sin bibliografía específica en la ficha oficial (asignatura de seminario/TFM)._
@@ -680,7 +660,6 @@ _Sin bibliografía específica en la ficha oficial (asignatura de seminario/TFM)
 El máster ofrece 10 optativas en total, de las que se eligen 6 (ver el [calendario de clases](README.md#calendario-de-clases)). Estas 4 no están en el plan de este curso, pero se dejan aquí por si cambia la elección o interesa la bibliografía de todas formas.
 
 ### Técnicas de Planificación de Robots
-
 
 *Código: 304479 · 3 ECTS*
 
@@ -700,7 +679,6 @@ Congresos
 ```
 
 ### Navegación de Robots
-
 
 *Código: 304480 · 3 ECTS*
 
@@ -734,7 +712,6 @@ Congresos
 
 ### Minería Web
 
-
 *Código: 304482 · 3 ECTS*
 
 ```
@@ -754,7 +731,6 @@ Surprise: A Python scikit for recommender systems. http://surpriselib.com/
 ```
 
 ### Interacción Gestual
-
 
 *Código: 304488 · 3 ECTS*
 
@@ -796,5 +772,3 @@ https://aipo.es
 • 
 HCI Collab. Red latinoamericana https://hci-collab.uxartetic.com/
 ```
-
-## Trabajo de Fin de Máster
