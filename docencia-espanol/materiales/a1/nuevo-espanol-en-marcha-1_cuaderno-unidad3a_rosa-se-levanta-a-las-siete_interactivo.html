@@ -1,0 +1,2149 @@
+<!--
+  Unidad 3A del cuaderno de ejercicios de Nuevo Español en Marcha 1 (A1), página 14-15:
+  "Rosa se levanta a las siete" (verbos reflexivos, preposiciones, presente). El PDF del
+  cuaderno es un escaneado sin texto extraíble, así que el contenido se transcribió
+  mirando la página renderizada, y las respuestas salen del solucionario oficial que el
+  propio cuaderno trae al final (página 57). El ej. 3 es un "relaciona" genuino (verbos
+  opuestos/relacionados) construido con type:"match" y columna barajada. El ej. 5 (sopa
+  de letras de formas verbales) se archiva como lista de pistas, igual que en 1B/2B. Sin
+  ejercicios de audio.
+  Construido sobre .claude/skills/ejercicio-interactivo/reference/template.html.
+-->
+<title>Cuaderno A1 · 3A — Rosa se levanta a las siete</title>
+<style>
+  :root {
+    --paper: #F3F5F0;
+    --paper-raised: #FFFFFF;
+    --ink: #17223B;
+    --ink-soft: #4B5468;
+    --pencil: #6E7280;
+    --gold: #A8790C;
+    --gold-soft: #F1E4C2;
+    --good: #1F7A4C;
+    --good-bg: #E7F3EC;
+    --bad: #B23A2E;
+    --bad-bg: #FBECE9;
+    --border: #DCDFD3;
+    --input-bg: #FCFDFB;
+    --focus: #A8790C;
+    --shadow: 0 1px 2px rgba(23,34,59,0.06), 0 4px 14px rgba(23,34,59,0.06);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #101626;
+      --paper-raised: #182036;
+      --ink: #ECEEF3;
+      --ink-soft: #AEB6C9;
+      --pencil: #8B93A6;
+      --gold: #E0B44A;
+      --gold-soft: #3A3220;
+      --good: #4CB47F;
+      --good-bg: #163326;
+      --bad: #E17868;
+      --bad-bg: #3A1E1B;
+      --border: #2A3348;
+      --input-bg: #131A2C;
+      --focus: #E0B44A;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 20px rgba(0,0,0,0.35);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #101626;
+    --paper-raised: #182036;
+    --ink: #ECEEF3;
+    --ink-soft: #AEB6C9;
+    --pencil: #8B93A6;
+    --gold: #E0B44A;
+    --gold-soft: #3A3220;
+    --good: #4CB47F;
+    --good-bg: #163326;
+    --bad: #E17868;
+    --bad-bg: #3A1E1B;
+    --border: #2A3348;
+    --input-bg: #131A2C;
+    --focus: #E0B44A;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 20px rgba(0,0,0,0.35);
+  }
+
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--paper);
+    color: var(--ink);
+  }
+  body {
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 4rem;
+  }
+  h1, h2, h3 {
+    font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+    text-wrap: balance;
+    margin: 0;
+  }
+  .mono, input, .score, .exnum, .navdot-label {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  }
+  a { color: inherit; }
+
+  /* ---------- top bar ---------- */
+  .topbar {
+    position: sticky; top: 0; z-index: 20;
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+  .topbar-inner {
+    max-width: 760px; margin: 0 auto;
+    padding: 0.7rem 1.25rem;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 1rem; flex-wrap: wrap;
+  }
+  .brand { display: flex; align-items: baseline; gap: 0.6rem; }
+  .brand-title { font-size: 0.95rem; font-weight: 700; letter-spacing: 0.01em; }
+  .brand-sub { font-size: 0.78rem; color: var(--pencil); }
+  /* overflow-x en vez de envolver: con muchas secciones la fila de píldoras no cabe entera
+     en ninguna pantalla razonable. Se desliza en horizontal en su lugar — mismo patrón que
+     .table-wrap para las tablas anchas. */
+  .nav-dots {
+    display: flex; gap: 0.4rem;
+    overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: thin;
+  }
+  .nav-dots a {
+    text-decoration: none;
+    font-size: 0.7rem;
+    padding: 0.28rem 0.6rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    color: var(--ink-soft);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .nav-dots a:hover { border-color: var(--gold); color: var(--gold); }
+  .score-wrap { display: flex; align-items: center; gap: 0.6rem; }
+  .score { font-size: 0.82rem; font-weight: 600; }
+  .score .num { color: var(--gold); }
+  .bar {
+    width: 84px; height: 6px; border-radius: 999px;
+    background: var(--border); overflow: hidden;
+  }
+  .bar-fill { height: 100%; background: var(--gold); width: 0%; transition: width 0.35s ease; }
+
+  /* ---------- hero ---------- */
+  .hero {
+    max-width: 760px; margin: 0 auto;
+    padding: 2.6rem 1.25rem 1.6rem;
+  }
+  .eyebrow {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 0.7rem;
+  }
+  .hero h1 { font-size: clamp(1.7rem, 4vw, 2.3rem); font-weight: 700; margin-bottom: 0.6rem; }
+  .hero p { color: var(--ink-soft); max-width: 62ch; font-size: 0.98rem; }
+  .hero-meta {
+    margin-top: 1.1rem; display: flex; gap: 1.2rem; flex-wrap: wrap;
+    font-size: 0.82rem; color: var(--pencil);
+  }
+  .hero-meta strong { color: var(--ink); }
+  .correct-all-wrap {
+    max-width: 760px; margin: 2.4rem auto 0; padding: 0 1.25rem 2.4rem;
+    text-align: center;
+  }
+  .correct-all-btn {
+    margin-top: 1.3rem;
+    background: var(--ink); color: var(--paper-raised);
+    border: none; border-radius: 8px;
+    padding: 0.65rem 1.2rem; font-size: 0.88rem; font-weight: 600;
+    cursor: pointer;
+  }
+  .correct-all-btn:hover { background: var(--gold); color: var(--ink); }
+  :root[data-theme="dark"] .correct-all-btn:hover,
+  :root:not([data-theme="light"]) .correct-all-btn:hover { color: #10142699; }
+  .progress-hint { margin-top: 0.7rem; font-size: 0.82rem; color: var(--pencil); text-align: center; }
+  .progress-hint.complete { color: var(--good); font-weight: 600; }
+
+  /* ---------- blocks ---------- */
+  main { max-width: 760px; margin: 0 auto; padding: 0 1.25rem; }
+  .block { margin-top: 2.4rem; scroll-margin-top: 6rem; }
+  .block-head {
+    display: flex; align-items: baseline; gap: 0.75rem;
+    padding-bottom: 0.6rem; margin-bottom: 1.3rem;
+    border-bottom: 2px solid var(--ink);
+  }
+  .block-num {
+    font-family: Georgia, serif; font-weight: 700; font-size: 1.05rem;
+    color: var(--paper-raised); background: var(--ink);
+    width: 2rem; height: 2rem; border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .block-titles h2 { font-size: 1.25rem; }
+  .block-titles .sub { font-size: 0.8rem; color: var(--pencil); margin-top: 0.15rem; }
+
+  /* ---------- exercise card ---------- */
+  .exercise {
+    background: var(--paper-raised);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    padding: 1.15rem 1.3rem 1.3rem;
+    margin-bottom: 1.1rem;
+  }
+  .exercise-head {
+    display: flex; align-items: flex-start; justify-content: space-between;
+    gap: 1rem; margin-bottom: 0.3rem;
+  }
+  .exercise-title { display: flex; gap: 0.6rem; align-items: baseline; }
+  .exnum { color: var(--gold); font-weight: 700; font-size: 0.85rem; }
+  .exercise-title h3 { font-size: 1.02rem; font-weight: 700; }
+  .exercise-instr { color: var(--pencil); font-size: 0.85rem; font-style: italic; margin-bottom: 0.85rem; }
+  .exercise-model { color: var(--pencil); font-size: 0.85rem; font-style: italic; margin-bottom: 0.7rem; }
+
+  /* Recuadro de referencia dentro de un ejercicio (banco de opciones, lista de verbos...).
+     Si el libro le enseña unas opciones al alumno, el artefacto TIENE que enseñárselas:
+     un "relaciona" sin las opciones a la vista es sencillamente irresoluble. */
+  .exercise-ref {
+    background: var(--gold-soft); border-radius: 10px; padding: 0.9rem 1.1rem;
+    margin-bottom: 1rem; font-size: 0.86rem; color: var(--ink);
+  }
+  .exercise-ref .ref-label {
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--ink-soft); font-family: -apple-system, sans-serif; display: block; margin-bottom: 0.3rem;
+  }
+  .exercise-ref .ref-options { display: flex; flex-wrap: wrap; gap: 0.4rem 0.9rem; }
+  /* Opciones que son frases enteras, no palabras sueltas: una por línea. En fila y con
+     nowrap, una sola opción larga se sale de la pantalla en el móvil y arrastra scroll
+     horizontal a TODA la página. */
+  .exercise-ref .ref-options.ref-list { display: block; }
+  .exercise-ref .ref-options.ref-list .ref-opt { display: block; white-space: normal; }
+  .exercise-ref .ref-options.ref-list .ref-opt + .ref-opt { margin-top: 0.3rem; }
+  /* Texto de lectura dentro del recuadro de referencia (ej. 7). A diferencia de un banco
+     de opciones, aquí el recuadro SÍ debe ocupar el ancho de la tarjeta: un párrafo largo
+     en una caja estrecha se lee fatal. */
+  .exercise-ref:has(.lectura) { width: 100%; max-width: none; }
+  .lectura { line-height: 1.7; }
+  .lectura p { margin: 0 0 0.7rem; }
+  .lectura p:last-of-type { margin-bottom: 0.9rem; }
+  .lectura img.foto-act { display: block; max-width: min(100%, 380px); border-radius: 8px; }
+  .exercise-ref .ref-opt { white-space: nowrap; }
+  @media (max-width: 560px) {
+    /* Red de seguridad: en pantalla estrecha ninguna opción se queda en nowrap. Va
+       DESPUÉS de la regla de arriba a propósito: misma especificidad, así que si se
+       escribe antes gana el nowrap y esto no hace nada (pasó, y no se vio porque el
+       ejercicio que lo destapó usaba además .ref-list, que sí tiene más peso). */
+    .exercise-ref .ref-opt { white-space: normal; }
+  }
+
+  /* Ejercicio sin respuesta única (una encuesta, marcar algo en un plano, una redacción):
+     se muestra porque está en el libro y el alumno tiene que poder verlo, pero no puntúa
+     ni lleva botón "Corregir" — uno que al pulsarlo no hace nada es peor que no tenerlo. */
+  .open-block {
+    background: var(--gold-soft); border-radius: 10px; padding: 0.9rem 1.1rem;
+    font-size: 0.9rem; line-height: 1.7; color: var(--ink-soft);
+    max-width: 64ch; margin-left: auto; margin-right: auto;
+  }
+  .open-block b { color: var(--ink); }
+  .open-note {
+    font-size: 0.82rem; color: var(--ink-soft); max-width: 64ch;
+    margin: 0.7rem auto 0.5rem; text-align: center;
+  }
+  .open-answer {
+    display: block; width: 100%; max-width: 64ch; margin: 0 auto;
+    font-family: inherit; font-size: 0.92rem; line-height: 1.6;
+    background: var(--paper-raised); border: 1px solid var(--border); border-radius: 8px;
+    padding: 0.65rem 0.85rem; color: var(--ink); resize: vertical;
+  }
+  .open-answer::placeholder { color: var(--pencil); }
+  .open-answer:focus { outline: none; border-color: var(--focus); }
+  /* Relaciona con columnas (type: "match") — se toca un elemento de la columna ancla
+     (la primera, fija) y luego su pareja en la(s) columna(s) siguiente(s); se dibuja una
+     línea de color entre ambos. Nació porque el truco anterior para "relaciona" (escribir
+     la letra en un hueco de texto) obligaba a aceptar mil variantes de tecleo ("d, 2",
+     "d,2", "d 2"...) y no se parecía en nada al ejercicio de tocar/unir del libro.
+     .match-wrap tiene overflow-x propio: con 3+ columnas puede no caber en 390px, y debe
+     desplazarse ella sola, nunca la página entera (ver la regla general de tablas anchas). */
+  .match-wrap { position: relative; display: flex; gap: 1.6rem; margin-top: 0.6rem; overflow-x: auto; padding-bottom: 0.3rem; }
+  .match-col { display: flex; flex-direction: column; gap: 0.5rem; min-width: 11em; flex: 1 0 auto; }
+  .match-col-label {
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--pencil); margin-bottom: 0.1rem;
+  }
+  .match-item {
+    text-align: left; font: inherit; font-size: 0.88rem; line-height: 1.4;
+    background: var(--paper-raised); border: 1.5px solid var(--border); border-radius: 8px;
+    padding: 0.5rem 0.7rem; color: var(--ink); cursor: pointer;
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+  .match-item.match-armed { border-color: var(--gold); background: var(--gold-soft); box-shadow: 0 0 0 2px var(--gold-soft); }
+  .match-item.match-solved { border-style: dashed; color: var(--ink-soft); font-style: italic; cursor: default; }
+  .match-item.match-correct { border-color: var(--good); background: var(--good-bg); }
+  .match-item.match-incorrect { border-color: var(--bad); background: var(--bad-bg); }
+  .match-row-reveal {
+    font-size: 0.76rem; color: var(--bad); margin: -0.25rem 0 0; display: none;
+  }
+  .match-row-reveal.show { display: block; }
+  .match-svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
+  .match-svg line { stroke-width: 2.5; }
+  /* Con 3+ columnas, .match-wrap suele necesitar scroll horizontal propio en móvil — y sin
+     ningún aviso visual, la columna final queda fuera de pantalla sin que nada indique que
+     sigue ahí (se descubrió mirando la propia captura de móvil: la columna "Final" del
+     ejemplo de 3 columnas desaparecía entera, sin rastro). .match-outer no se desplaza —
+     solo lo hace .match-wrap, que va dentro — así que estos degradados se quedan fijos en
+     los bordes mientras el contenido se mueve debajo, y JS los muestra/oculta según haga
+     falta (ver refreshFades() en el renderizador). El color va a juego con el fondo de la
+     tarjeta (--paper-raised) para que el degradado se funda con ella. */
+  .match-outer { position: relative; }
+  .match-fade {
+    position: absolute; top: 0; bottom: 0; width: 1.6rem;
+    pointer-events: none; opacity: 0; transition: opacity 0.15s ease; z-index: 2;
+  }
+  .match-fade.show { opacity: 1; }
+  .match-fade-left { left: 0; background: linear-gradient(to right, var(--paper-raised), transparent); }
+  .match-fade-right { right: 0; background: linear-gradient(to left, var(--paper-raised), transparent); }
+  @media (max-width: 560px) {
+    .match-col { min-width: 8.5em; font-size: 0.92em; }
+    .match-wrap { gap: 0.9rem; }
+  }
+  .open-block img { max-width: 100%; border-radius: 8px; display: block; margin: 0.6rem auto 0; }
+  .exercise-ref img { max-width: 100%; border-radius: 8px; display: block; margin: 0.5rem auto 0; }
+
+  .check-btn {
+    background: transparent; color: var(--ink);
+    border: 1px solid var(--ink); border-radius: 7px;
+    padding: 0.32rem 0.75rem; font-size: 0.78rem; font-weight: 600;
+    cursor: pointer; white-space: nowrap; flex-shrink: 0;
+  }
+  .check-btn:hover { background: var(--ink); color: var(--paper-raised); }
+
+  .items { display: flex; flex-direction: column; gap: 0.55rem; }
+  .item-row { font-size: 0.95rem; line-height: 1.7; }
+  .item-letter { color: var(--gold); font-weight: 700; margin-right: 0.3rem; }
+  /* Fila ya resuelta en el libro: se ve, sirve de modelo, pero no se pide rellenarla. */
+  .solved-row { color: var(--ink-soft); font-style: italic; }
+  .solved-row .item-letter { color: var(--pencil); }
+
+  /* Foto delante del hueco (ej. "escribe el nombre de la actividad"): item.img. */
+  .foto-act {
+    display: block; margin: 0.35rem 0 0.5rem;
+    max-width: 260px; width: 100%;
+    border-radius: 8px; border: 1px solid var(--border);
+  }
+
+  /* Sopa de letras: rejilla monoespaciada, para que las columnas cuadren. */
+  .wordsearch {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.9rem; line-height: 1.6; letter-spacing: 0.18em;
+    white-space: pre; overflow-x: auto;
+    background: var(--paper-raised); border: 1px solid var(--border);
+    border-radius: 8px; padding: 0.8rem 0.9rem; margin-top: 0.5rem;
+  }
+
+  /* Texto de partida que hay que leer o reescribir (una postal, un párrafo). */
+  .postcard {
+    background: var(--input-bg); border: 1px solid var(--border); border-radius: 10px;
+    padding: 0.9rem 1.1rem; font-size: 0.9rem; line-height: 1.75;
+    max-width: 60ch; margin: 0.5rem auto 0;
+  }
+
+  /* Diálogos: cada réplica en su línea y con el interlocutor destacado. Sin esto, A y B
+     —que son dos personas distintas— se leen como una sola frase corrida. */
+  .dialog-row { padding: 0.15rem 0 0.35rem; }
+  .dialog-row + .dialog-row { border-top: 1px dashed var(--border); padding-top: 0.75rem; }
+  .dialog-row br { line-height: 2.4; }
+  .speaker {
+    display: inline-block; min-width: 1.4em;
+    color: var(--gold); font-weight: 700;
+    border-bottom: 2px solid var(--gold-soft);
+    margin-right: 0.45rem;
+  }
+
+  input.blank {
+    background: var(--input-bg);
+    border: none; border-bottom: 2px solid var(--pencil);
+    color: var(--ink);
+    font-size: 0.95rem;
+    padding: 0.1rem 0.3rem;
+    width: 8.5em;
+    text-align: center;
+    border-radius: 3px 3px 0 0;
+  }
+  input.blank.wide { width: 15em; }
+  input.blank.full { width: 100%; max-width: 26em; text-align: left; }
+  input.blank:focus { outline: none; border-bottom-color: var(--focus); box-shadow: 0 1px 0 0 var(--focus); }
+  input.blank.correct { background: var(--good-bg); border-bottom-color: var(--good); color: var(--good); font-weight: 600; }
+  input.blank.incorrect { background: var(--bad-bg); border-bottom-color: var(--bad); color: var(--bad); }
+
+  .reveal {
+    font-size: 0.82rem; color: var(--good); font-style: italic;
+    margin-left: 0.3rem; display: none;
+  }
+  .reveal.show { display: inline; }
+  .reveal.bad-reveal { color: var(--bad); }
+
+  /* Sopa de letras interactiva (type: "wordsearch") — se toca una letra para armarla (igual
+     que la columna ancla de "match") y luego otra en línea recta (horizontal, vertical o
+     diagonal, en cualquiera de los dos sentidos) para completar la selección. Si las dos
+     letras no forman una línea recta, no pasa nada y se puede reintentar. Nace de un error
+     real: una versión anterior sustituía la sopa de letras por una lista de pistas
+     inventadas (dos letras + una descripción) en vez de digitalizar la rejilla real del
+     libro — nunca inventar el contenido, ni siquiera cuando falta una imagen.
+     Segunda corrección real, en la misma sopa de letras: cuando el libro da la pista con un
+     DIBUJO (profesiones, objetos, lugares...), la palabra NO puede aparecer como texto en la
+     lista antes de resolverla — eso le da la respuesta al alumno en vez de dejarle recordarla
+     mirando la imagen, que es justo lo que el ejercicio pide. Por eso ex.words[i] admite un
+     campo `img` (recortado de la página real con PIL/pdfimages, nunca inventado ni genérico
+     — ver el paso 1 de "Fundamenta el contenido en material real") en vez de un `label`
+     visible desde el principio: si `img` está presente, la imagen es la pista y el nombre
+     solo aparece DESPUÉS de encontrar la palabra, como confirmación — igual que un .reveal en
+     cualquier otro tipo de ejercicio. Si la pista del libro es solo texto (sin dibujo), omite
+     `img` y el nombre se ve desde el principio como en cualquier otra lista. REGLA GENERAL,
+     no solo para esta sopa de letras: en CUALQUIER ejercicio donde el libro dé la pista con
+     una imagen (`item.img` en "items" incluido), el texto de la respuesta nunca va visible
+     antes de que el alumno la resuelva — la imagen es la pista, no un adorno junto al texto
+     que ya la da. */
+  .ws-outer { display: flex; flex-wrap: wrap; gap: 1.6rem; margin-top: 0.6rem; align-items: flex-start; }
+  .ws-grid {
+    display: grid; gap: 2px; background: var(--border); padding: 3px; border-radius: 8px;
+    width: max-content; flex-shrink: 0;
+  }
+  .ws-cell {
+    width: 2rem; height: 2rem; display: flex; align-items: center; justify-content: center;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.88rem; font-weight: 700; line-height: 1;
+    background: var(--paper-raised); color: var(--ink); border: none; border-radius: 4px;
+    cursor: pointer; padding: 0; transition: background 0.1s ease, color 0.1s ease;
+  }
+  .ws-cell:hover { background: var(--gold-soft); }
+  .ws-cell.ws-armed { background: var(--gold); color: var(--paper-raised); }
+  .ws-cell.ws-found { background: var(--good-bg); color: var(--good); }
+  .ws-cell.ws-wrong { background: var(--bad-bg); color: var(--bad); }
+  /* Lista de palabras SIN imagen (item.img ausente): el nombre se ve desde el principio. */
+  .ws-words { list-style: none; margin: 0; padding: 0; min-width: 10em; }
+  .ws-words li {
+    padding: 0.4rem 0; font-size: 0.92rem; border-bottom: 1px dashed var(--border); color: var(--ink);
+  }
+  .ws-words li:last-child { border-bottom: none; }
+  .ws-words li.ws-solved { color: var(--ink-soft); font-style: italic; }
+  .ws-words li.ws-solved::before { content: "✓ "; }
+  .ws-words li.ws-found-item { color: var(--good); font-weight: 600; }
+  .ws-words li.ws-found-item::before { content: "✓ "; }
+  .ws-words li.ws-incorrect { color: var(--bad); }
+  /* Lista de palabras CON imagen (item.img presente): grid de tarjetas foto+nombre-oculto. */
+  .ws-words:has(img) { display: flex; flex-wrap: wrap; gap: 0.9rem; max-width: 22em; padding: 0; }
+  .ws-words:has(img) li {
+    width: 6.4em; text-align: center; font-size: 0.82rem; color: var(--ink);
+    padding: 0; border-bottom: none;
+  }
+  .ws-words li img {
+    width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 8px;
+    border: 1.5px solid var(--border); display: block; margin-bottom: 0.3rem;
+    filter: grayscale(1) contrast(1.05);
+  }
+  .ws-words li .ws-prof-name { display: none; }
+  .ws-words li.ws-solved img,
+  .ws-words li.ws-found-item img { border-color: var(--good); filter: none; }
+  .ws-words li.ws-solved .ws-prof-name,
+  .ws-words li.ws-found-item .ws-prof-name { display: block; color: var(--good); font-weight: 600; }
+  .ws-words li.ws-solved .ws-prof-name::before,
+  .ws-words li.ws-found-item .ws-prof-name::before { content: "✓ "; }
+  .ws-words li.ws-incorrect img { border-color: var(--bad); }
+  .ws-words li.ws-incorrect .ws-prof-name { display: block; color: var(--bad); }
+  @media (max-width: 560px) {
+    .ws-cell { width: 1.7rem; height: 1.7rem; font-size: 0.78rem; }
+    .ws-words:has(img) { max-width: 100%; }
+    .ws-words:has(img) li { width: 5.4em; }
+  }
+
+  /* Hueco de verdadero/falso con botones — ver item.vf en "items" más abajo. */
+  .vf-toggle { display: inline-flex; gap: 0.35rem; margin: 0 0.15rem; vertical-align: middle; }
+  .vf-btn {
+    background: var(--input-bg); color: var(--ink);
+    border: 2px solid var(--pencil); border-radius: 6px;
+    min-width: 2.1em; height: 2.1em; padding: 0 0.55rem;
+    font-size: 0.88rem; font-weight: 700; line-height: 1;
+    cursor: pointer;
+  }
+  .vf-btn:hover { border-color: var(--focus); }
+  .vf-btn:focus-visible { outline: none; border-color: var(--focus); box-shadow: 0 0 0 2px var(--focus); }
+  .vf-btn.selected { background: var(--gold-soft); border-color: var(--gold); color: var(--ink); }
+  .vf-btn.correct { background: var(--good-bg); border-color: var(--good); color: var(--good); }
+  .vf-btn.incorrect { background: var(--bad-bg); border-color: var(--bad); color: var(--bad); }
+  /* Sin responder y ya corregido: un hueco de texto vacío se pinta en rojo, así que un
+     V/F sin pulsar tiene que verse igual de mal — si no, el alumno lo lee como "bien". */
+  .vf-toggle.unanswered .vf-btn { border-color: var(--bad); background: var(--bad-bg); }
+
+  /* Transcripción de un audio, plegada por defecto: en un ejercicio de comprensión oral la
+     transcripción ES la solución, así que debe estar disponible sin quedar a la vista
+     mientras el alumno responde. <details> nativo — sin JS y accesible por teclado. */
+  .transcript { margin-top: 1rem; border-top: 1px dashed var(--border); padding-top: 0.85rem; }
+  .transcript summary {
+    cursor: pointer; font-size: 0.82rem; font-weight: 600; color: var(--gold);
+    list-style: none; display: flex; align-items: baseline; gap: 0.4rem;
+  }
+  .transcript summary::-webkit-details-marker { display: none; }
+  .transcript summary::before {
+    content: "\25B6"; font-size: 0.62em; transition: transform 0.15s ease;
+  }
+  .transcript[open] summary::before { transform: rotate(90deg); }
+  .transcript summary:hover { color: var(--ink); }
+  .transcript summary:focus-visible {
+    outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 4px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .transcript summary::before { transition: none; }
+  }
+  .transcript-body {
+    margin-top: 0.75rem; background: var(--gold-soft); border-radius: 10px;
+    padding: 0.95rem 1.1rem; font-size: 0.88rem; line-height: 1.8; color: var(--ink);
+  }
+  .transcript-body .line { display: block; }
+  .transcript-body .line + .line { margin-top: 0.25rem; }
+  .transcript-body .who { color: var(--gold); font-weight: 700; margin-right: 0.35rem; }
+  .transcript-note {
+    margin-top: 0.7rem; font-size: 0.78rem; color: var(--pencil); font-style: italic;
+  }
+
+  .paragraph { font-size: 0.97rem; line-height: 2; }
+
+  table.exercise-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+  table.exercise-table th, table.exercise-table td {
+    text-align: left; padding: 0.45rem 0.6rem; border-bottom: 1px solid var(--border);
+  }
+  table.exercise-table th { color: var(--pencil); font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.03em; }
+  /* Celda que el libro ya trae resuelta: se distingue del hueco sin parecer un acierto
+     (no usa el verde de "correcto", que significa otra cosa en esta página). */
+  table.exercise-table td.fixed-cell { color: var(--ink-soft); font-style: italic; }
+  .table-wrap { overflow-x: auto; }
+  /* Varios cuadros seguidos dentro del MISMO ejercicio: sin aire entre ellos se leen
+     como una sola tabla larga con cabeceras intercaladas. */
+  .table-wrap + .table-wrap { margin-top: 1.1rem; }
+  .ref-table { margin-bottom: 0.9rem; }
+  .ref-table td:first-child { color: var(--gold); font-weight: 600; text-transform: capitalize; }
+
+  /* ---------- footer ---------- */
+  footer {
+    max-width: 760px; margin: 3rem auto 0; padding: 1.5rem 1.25rem 0;
+    border-top: 1px solid var(--border);
+    color: var(--pencil); font-size: 0.8rem;
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;
+  }
+
+  @media (max-width: 560px) {
+    /* Fila propia debajo de marca+puntuación, en vez de compartir línea con ellas — así no
+       les roba ancho y se desliza con toda la anchura de la pantalla disponible. */
+    .nav-dots { flex-basis: 100%; order: 3; }
+    input.blank.wide { width: 11em; }
+    input.blank.full { max-width: 100%; }
+  }
+
+  /* ---------- access gate ---------- */
+  html[data-locked="true"] .gated-content { display: none; }
+  html[data-locked="false"] .gate-overlay { display: none; }
+  .gate-overlay {
+    position: fixed; inset: 0; z-index: 100; background: var(--paper);
+    display: flex; align-items: center; justify-content: center; padding: 1.5rem;
+  }
+  .gate-card {
+    max-width: 360px; width: 100%; background: var(--paper-raised);
+    border: 1px solid var(--border); border-radius: 12px; box-shadow: var(--shadow);
+    padding: 2.2rem 1.9rem; text-align: center;
+  }
+  .gate-card .eyebrow { justify-content: center; display: flex; }
+  .gate-card h2 { font-size: 1.15rem; margin: 0.4rem 0 0.5rem; }
+  .gate-card p { color: var(--ink-soft); font-size: 0.86rem; margin: 0 0 1.2rem; }
+  .gate-card input {
+    width: 100%; text-align: center; font-size: 1rem; letter-spacing: 0.08em;
+    background: var(--input-bg); border: 1.5px solid var(--border); border-radius: 8px;
+    padding: 0.6rem 0.8rem; color: var(--ink); margin-bottom: 0.8rem; text-transform: uppercase;
+  }
+  .gate-card input:focus { outline: none; border-color: var(--focus); }
+  .gate-card button {
+    width: 100%; background: var(--ink); color: var(--paper-raised); border: none;
+    border-radius: 8px; padding: 0.65rem 1rem; font-size: 0.9rem; font-weight: 600; cursor: pointer;
+  }
+  .gate-card button:hover { background: var(--gold); color: var(--ink); }
+  .gate-error { color: var(--bad); font-size: 0.82rem; margin-top: 0.7rem; min-height: 1.1em; }
+
+  /* ---------- results panel ---------- */
+  /* Deliberately single-theme (always dark), independent of the page's light/dark mode —
+     uses fixed local custom properties instead of the swappable --ink/--paper-raised/--gold
+     tokens, which invert meaning in dark mode and would otherwise make this unreadable. */
+  .results-panel {
+    --rp-bg: #17223B;
+    --rp-card: rgba(255,255,255,0.06);
+    --rp-text: #ECEEF3;
+    --rp-text-soft: #C7CEDD;
+    --rp-placeholder: #8E97AC;
+    --rp-accent: #D9A441;
+    --rp-bad: #E17868;
+    --rp-input-bg: rgba(255,255,255,0.08);
+    --rp-input-border: rgba(255,255,255,0.22);
+    background: var(--rp-bg); color: var(--rp-text); border-radius: 14px;
+    padding: 1.8rem 1.7rem; margin: 2.2rem 0 2rem; scroll-margin-top: 6rem;
+  }
+  .results-panel[hidden] { display: none; }
+  .results-headline { font-family: Georgia, serif; font-size: 1.5rem; font-weight: 700; margin-bottom: 0.35rem; color: var(--rp-text); }
+  .results-sub { font-size: 0.92rem; color: var(--rp-text-soft); margin-bottom: 1.3rem; max-width: 56ch; }
+  .results-score-row { display: flex; align-items: baseline; gap: 0.6rem; margin-bottom: 1.3rem; }
+  .results-score-num { font-family: Georgia, serif; font-size: 2.4rem; font-weight: 700; color: var(--rp-accent); }
+  .results-score-den { font-size: 1rem; color: var(--rp-text-soft); }
+  .results-name {
+    display: block; width: 100%; max-width: 320px; font-size: 0.9rem;
+    background: var(--rp-input-bg); border: 1px solid var(--rp-input-border); border-radius: 8px;
+    padding: 0.55rem 0.75rem; color: var(--rp-text); margin-bottom: 1.1rem; font-family: inherit;
+  }
+  .results-name::placeholder { color: var(--rp-placeholder); }
+  .results-name:focus { outline: none; border-color: var(--rp-accent); }
+  .results-errors {
+    background: var(--rp-card); border-radius: 10px; padding: 0.9rem 1.1rem;
+    margin-bottom: 1.3rem; max-height: 220px; overflow-y: auto;
+  }
+  .results-errors-title { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--rp-text-soft); margin-bottom: 0.5rem; }
+  .results-error-item { font-size: 0.85rem; line-height: 1.6; color: var(--rp-text); }
+  .results-error-item b { color: var(--rp-accent); font-weight: 600; }
+  .results-error-item s { color: var(--rp-bad); text-decoration: line-through; opacity: 0.85; }
+  .channel-label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--rp-text-soft); margin-bottom: 0.6rem; }
+  .channel-row { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+  .channel-btn {
+    display: inline-flex; align-items: center; gap: 0.45rem;
+    background: var(--rp-text); color: var(--rp-bg); text-decoration: none;
+    border-radius: 8px; padding: 0.55rem 0.95rem; font-size: 0.85rem; font-weight: 600;
+    border: none; cursor: pointer; font-family: inherit;
+  }
+  .channel-btn:hover { background: var(--rp-accent); }
+  .channel-copied { font-size: 0.8rem; color: var(--rp-accent); margin-top: 0.6rem; display: none; width: 100%; }
+
+  /* ---------- REGLA DE CENTRADO ---------- */
+  /* Hueco de frase entera en una fila SIN columna de etiqueta: baja a su propia línea y
+     ocupa todo el ancho. Con enunciados de largo muy distinto —hay alguno de 114
+     caracteres— no existe ninguna columna que valga, y dejando la casilla en línea cada
+     una acaba de un tamaño. Así todas miden lo mismo, empiecen donde empiecen. */
+  .item-row:not(:has(.item-pre)) input.blank.full {
+    display: block; width: 100%; max-width: none; margin: 0.25rem 0 0;
+  }
+
+  /* Fotos, tablas y sopas de letras van SIEMPRE centradas en su tarjeta. Por defecto un
+     bloque se queda pegado a la izquierda y, con el texto del ejercicio alrededor, se lee
+     como si estuviera descolocado. */
+  .foto-act, .wordsearch, table.gustos, .exercise-ref img, .open-block img, .postcard {
+    margin-left: auto; margin-right: auto;
+  }
+  .wordsearch, table.gustos { display: block; width: fit-content; max-width: 100%; }
+  table.gustos { display: table; }
+  /* Una fila de opciones que son dibujos se centra; si son palabras, se deja a la
+     izquierda, que es como se lee una lista. */
+  .exercise-ref .ref-options:has(img) { justify-content: center; }
+  /* El recuadro se ajusta a su contenido en vez de ocupar todo el ancho: con una sopa de
+     letras o una foto estrecha dentro, un fondo de borde a borde deja una franja de color
+     enorme y vacía. fit-content lo encoge hasta lo que mide su contenido y, si ese contenido
+     ya es ancho (una lista larga de opciones), se queda a lo ancho igual que antes. */
+  .exercise-ref { width: fit-content; max-width: 100%; margin-left: auto; margin-right: auto; }
+  /* El título del recuadro, centrado sobre su contenido: ahora que la caja se ajusta a lo
+     que hay dentro, una etiqueta pegada a la esquina izquierda queda descolgada. */
+  .exercise-ref .ref-label { text-align: center; }
+  /* Filas en columnas (item.pre): etiqueta, casilla y botones alineados entre sí. Sin esto
+     cada fila empieza el hueco donde acaba su palabra, y las casillas y los botones quedan
+     a distinta altura — se ve descuadrado aunque cada fila por separado esté bien. */
+  .item-row:has(.item-pre) {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 0.55rem;
+  }
+  /* Ancho fijo, no mínimo: con min-width, una etiqueta más larga que el resto (aquí
+     «sentarse») empuja su fila unos píxeles y rompe la columna. */
+  .item-pre { flex: 0 0 var(--pre-w, 8.8em); }
+  .item-row:has(.item-pre) input.blank { flex: 0 0 auto; }
+  /* Un hueco de frase entera ocupa lo que sobra: como la columna de la etiqueta es fija,
+     «lo que sobra» es lo mismo en todas las filas y las casillas salen iguales. */
+  .item-row:has(.item-pre) input.blank.full { flex: 1 1 auto; width: auto; min-width: 0; }
+  /* La letra del ítem también entra en la columna: «i.» y «m.» no miden lo mismo, y
+     sin fijarla arrastra unos píxeles de diferencia a todo lo que va detrás. */
+  .item-row:has(.item-pre) .item-letter { flex: 0 0 1.7em; margin-right: 0; }
+  /* Un aviso de corrección ocupa su propia línea y no descoloca las columnas. */
+  .item-row:has(.item-pre) .reveal.show { flex-basis: 100%; margin-left: 0; }
+  .vf-toggle.vf-words .vf-btn { width: 6.4em; padding: 0; }
+  @media (max-width: 560px) {
+    /* En pantalla estrecha la etiqueta y el hueco se reparten el ancho, y el hueco baja
+       a su propia línea: siguen alineados sin robarle ancho a la casilla. La etiqueta
+       NO se lleva la línea entera (`flex: 0 0 100%`), porque entonces el número se
+       quedaba solo en la línea de arriba y cada ítem pasaba a ocupar tres o cuatro
+       líneas — el mismo defecto del número huérfano que ya se corrigió en las filas
+       que acaban en hueco. */
+    .item-row:has(.item-pre) .item-letter { flex: 0 0 auto; }
+    .item-pre { flex: 1 1 auto; }
+    .item-row:has(.item-pre) input.blank { flex: 1 1 100%; }
+    .vf-toggle.vf-words .vf-btn { width: 5.6em; }
+  }
+  /* Una fila con foto se centra entera —número, imagen y casilla—, para que quede una
+     columna ordenada. Con la casilla pegada a la izquierda y la foto en el centro, la fila
+     se lee descolocada. */
+  .item-row:has(.foto-act) { text-align: center; }
+  .item-row:has(.foto-act) .item-letter { display: block; margin: 0 0 0.1rem; }
+
+  /* Fila que acaba en el hueco: la casilla se estira hasta el borde derecho. El hueco es la
+     continuación natural de la frase, así que empieza justo donde acaba el texto —no baja a
+     una línea aparte— pero todas las de un ejercicio TERMINAN en el mismo sitio, que es lo
+     que hace que se vean parejas. La fila es flex: los nodos de texto se convierten en
+     items anónimos y la casilla, con flex:1, se queda con lo que sobra. */
+  .item-row.tail-blank {
+    display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 0.3rem;
+  }
+  .item-row.tail-blank input.blank {
+    flex: 1 1 8em; width: auto; max-width: none; min-width: 6em; text-align: left;
+  }
+  .item-row.tail-blank .tail-text { flex: 0 1 auto; min-width: 0; }
+  /* Fila que acaba en los botones V/F: el texto se estira y empuja los botones al borde
+     derecho, así todos los pares quedan en la misma columna. */
+  .item-row.vf-tail {
+    display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 0.3rem;
+  }
+  .item-row.vf-tail .tail-text { flex: 1 1 auto; min-width: 0; }
+  .item-row.vf-tail .vf-wrap { flex: 0 0 auto; }
+  .item-row.vf-tail .reveal.show { flex-basis: 100%; margin-left: 0; }
+  .item-row.tail-blank .reveal.show { flex-basis: 100%; margin-left: 0; }
+</style>
+
+<script>
+  // unlocked-cuaderno-8a here MUST be byte-identical to the one set further down in the gate
+  // script (search "STORAGE_KEY =") — same placeholder, same value, both occurrences.
+  document.documentElement.setAttribute(
+    "data-locked",
+    localStorage.getItem("unlocked-cuaderno-3a") === "1" ? "false" : "true"
+  );
+</script>
+
+<div class="gate-overlay">
+  <div class="gate-card">
+    <div class="eyebrow">Acceso privado</div>
+    <h2>Unidad 3A · Rosa se levanta a las siete</h2>
+    <p>Pídele el código a tu profesor para entrar.</p>
+    <input type="text" id="gateInput" placeholder="CÓDIGO" autocomplete="off" autocapitalize="characters" />
+    <button id="gateBtn">Entrar</button>
+    <div class="gate-error" id="gateError"></div>
+  </div>
+</div>
+<script>
+  (function () {
+    // El código es solo un disuasivo, no seguridad real — cualquiera que vea el HTML
+    // fuente lo ve. Elige una palabra corta, memorable y ligada al tema, en MAYÚSCULAS.
+    const CODE = "ROSA";
+    // MUST be byte-identical al unlocked-cuaderno-8a usado arriba (ver comentario junto al
+    // primer occurrence). Usa un valor único por ejercicio, p. ej. "unlocked-b2-13a-tema".
+    const STORAGE_KEY = "unlocked-cuaderno-3a";
+    function tryUnlock() {
+      const val = document.getElementById("gateInput").value.trim().toUpperCase();
+      if (val === CODE) {
+        localStorage.setItem(STORAGE_KEY, "1");
+        document.documentElement.setAttribute("data-locked", "false");
+      } else {
+        document.getElementById("gateError").textContent = "Código incorrecto. Inténtalo de nuevo.";
+      }
+    }
+    document.getElementById("gateBtn").addEventListener("click", tryUnlock);
+    document.getElementById("gateInput").addEventListener("keydown", function (e) {
+      if (e.key === "Enter") tryUnlock();
+    });
+  })();
+</script>
+
+<div class="topbar gated-content">
+  <div class="topbar-inner">
+    <div class="brand">
+      <!-- Cuaderno A1 · Unidad 3A / Rosa se levanta a las siete -->
+      <span class="brand-title">Cuaderno A1 · Unidad 3A</span>
+      <span class="brand-sub">Rosa se levanta a las siete</span>
+    </div>
+    <nav class="nav-dots" id="navDots"></nav>
+    <div class="score-wrap">
+      <div class="bar"><div class="bar-fill" id="barFill"></div></div>
+      <div class="score"><span class="num" id="scoreNum" translate="no">0</span><span style="color:var(--pencil)"> / </span><span id="scoreTotal" translate="no">0</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="hero gated-content">
+  <div class="eyebrow">Nuevo Español en Marcha 1 · Cuaderno de ejercicios · Unidad 3</div>
+  <h1>Rosa se levanta a las siete</h1>
+  <p>Verbos reflexivos, preposiciones y presente. Escribe tus respuestas, corrige al instante y envía el resultado a tu profesor.</p>
+  <div class="hero-meta">
+    <span><strong id="totalBlanksLabel" translate="no">—</strong> huecos en total</span>
+    <span><strong>1</strong> bloque</span>
+    <span><strong>6</strong> ejercicios</span>
+  </div>
+</div>
+
+<main id="main" class="gated-content"></main>
+
+<div class="correct-all-wrap gated-content">
+  <button class="correct-all-btn" id="correctAllBtn">Corregir todos los ejercicios</button>
+  <div class="progress-hint" id="progressHint"></div>
+</div>
+
+<div id="resultsPanel" class="results-panel gated-content" hidden>
+  <div class="results-headline" id="resHeadline"></div>
+  <div class="results-sub" id="resSub"></div>
+  <div class="results-score-row">
+    <span class="results-score-num" id="resScoreNum" translate="no"></span>
+    <span class="results-score-den" id="resScoreDen" translate="no"></span>
+  </div>
+  <input type="text" class="results-name" id="resName" placeholder="Tu nombre (para que tu profesor sepa quién eres)" />
+  <div class="results-errors" id="resErrors"></div>
+  <div class="channel-label">Enviar este resumen a tu profesor</div>
+  <div class="channel-row">
+    <a class="channel-btn" id="chWhatsapp" target="_blank" rel="noopener">WhatsApp</a>
+    <a class="channel-btn" id="chTelegram" target="_blank" rel="noopener">Telegram</a>
+    <a class="channel-btn" id="chEmail" target="_blank" rel="noopener">Correo</a>
+    <a class="channel-btn" id="chTeams" target="_blank" rel="noopener">Teams</a>
+    <button class="channel-btn" id="chCopy" type="button">Copiar resumen</button>
+    <span class="channel-copied" id="chCopiedMsg">¡Copiado!</span>
+  </div>
+</div>
+
+<footer class="gated-content">
+  <span>© Angel Luis Acosta González · Nuevo Español en Marcha 1 (A1), cuaderno, unidad 3A</span>
+  <span>© Angel Luis Acosta González</span>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  // ---------- grading helpers ----------
+  // ACCENTS ARE STRICT BY DEFAULT ON THE ARRAY PATH (isCorrect below): typing "esta" is
+  // wrong when the key is "está". This is a deliberate default, not an oversight — in most
+  // Spanish grammar drills the accent IS the point being tested (e.g. "trabaja" [presente]
+  // vs. "trabajó" [indefinido] differ only by the accent; "esta"/"está" are different words).
+  // Loosening this for a whole exercise set would silently mark wrong tenses/words as
+  // correct. If THIS exercise is testing something where accents are incidental (open-ended
+  // short answers, vocabulary content rather than verb-form precision), use the {flex:[...]}
+  // spec instead (see isCorrect below) for just those items — it's accent-insensitive by
+  // design. Don't blanket-change norm()/isCorrect() to strip accents; ask the teacher first
+  // if you're unsure which behavior a given exercise needs.
+  function norm(s) {
+    return (s || "")
+      .toLowerCase()
+      .replace(/[¿?¡!.,]/g, "")
+      .trim()
+      .replace(/\s+/g, " ");
+  }
+  function stripAccents(s) {
+    return s.normalize("NFD").replace(/[̀-ͯ]/g, "");
+  }
+  function escapeHtml(s) {
+    return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+  // answer spec: array of accepted exact strings, OR {flex:[...]} meaning all keywords must appear (accent-insensitive)
+  function isCorrect(input, spec) {
+    const n = norm(input);
+    if (!n) return false;
+    if (Array.isArray(spec)) {
+      return spec.some(function (a) { return norm(a) === n; });
+    }
+    if (spec && spec.flex) {
+      const hay = stripAccents(n);
+      return spec.flex.every(function (k) { return hay.indexOf(stripAccents(k)) !== -1; });
+    }
+    return false;
+  }
+
+  // ---------- exercise data ----------
+  // template blanks use {0},{1}... matched to item.answers[i]
+  const blocks = [
+    {
+      id: "unidad-3a", num: 1, title: "Rosa se levanta a las siete",
+      sub: "Verbos reflexivos y presente",
+      exercises: [
+        {
+          num: 1, title: "Forma frases",
+          instr: "La 1 ya la trae resuelta el libro.",
+          type: "items", numbered: true,
+          items: [
+            { t: "María / bañarse / por la mañana.\nMaría se baña por la mañana.", solved: true },
+            { t: "Jorge / levantarse / muy tarde.\n{0}", a: [["Jorge se levanta muy tarde."]], wide: "full" },
+            { t: "¿Tú / acostarse / antes de las 12?\n{0}", a: [["¿Tú te acuestas antes de las 12?"]], wide: "full" },
+            { t: "Mi novio no / afeitarse / todos los días.\n{0}", a: [["Mi novio no se afeita todos los días."]], wide: "full" },
+            { t: "Clarita / peinarse / sola.\n{0}", a: [["Clarita se peina sola."]], wide: "full" },
+            { t: "Yo / acostarse / antes que mi mujer.\n{0}", a: [["Yo me acuesto antes que mi mujer."]], wide: "full" },
+            { t: "Mis padres / levantarse / temprano.\n{0}", a: [["Mis padres se levantan temprano."]], wide: "full" },
+            { t: "Peter / sentarse / en la última fila.\n{0}", a: [["Peter se sienta en la última fila."]], wide: "full" }
+          ]
+        },
+        {
+          num: 2, title: "Completa con la preposición adecuada",
+          instr: "a (al) · de · desde · hasta · en · por. La 1 ya la trae resuelta el libro.",
+          type: "items", numbered: true,
+          items: [
+            { t: "El lunes próximo vuelvo a mi país.", solved: true },
+            { t: "La farmacia está abierta {0} las diez {1} la mañana {2} las ocho {3} la tarde.", a: [["desde"], ["de"], ["hasta"], ["de"]], wide: "full" },
+            { t: "Rebeca sale {0} casa {1} las 8.", a: [["de"], ["a"]], wide: "full" },
+            { t: "Yo voy {0} trabajar {1} metro y vuelvo {2} casa andando.", a: [["a"], ["en"], ["a"]], wide: "full" },
+            { t: "¿{0} qué hora te levantas?", a: [["A"]], wide: "full" },
+            { t: "Los bancos abren {0} ocho {1} tres.", a: [["de"], ["a"]], wide: "full" },
+            { t: "Los sábados {0} la mañana voy {1} gimnasio.", a: [["por"], ["al"]], wide: "full" },
+            { t: "Raúl y Luisa vuelven {0} las vacaciones mañana.", a: [["de"]], wide: "full" },
+            { t: "En esta escuela hay clases {0} la mañana y {1} la tarde.", a: [["por"], ["por"]], wide: "full" },
+            { t: "Yo trabajo {0} casa.", a: [["en"]], wide: "full" },
+            { t: "No he visto {0} Juan {1} el verano pasado.", a: [["a"], ["desde"]], wide: "full" }
+          ]
+        },
+        {
+          num: 3, title: "Relaciona",
+          instr: "Toca un verbo y después el verbo relacionado con él.",
+          type: "match",
+          columns: [
+            { label: "Verbo", items: ["ir", "dormir", "abrir", "entrar", "acostarse", "empezar"] },
+            { label: "Relacionado", items: ["salir", "levantarse", "terminar", "volver", "despertarse", "cerrar"] }
+          ],
+          rows: [
+            { a: [["volver"]] },
+            { a: [["despertarse"]] },
+            { a: [["cerrar"]] },
+            { a: [["salir"]] },
+            { a: [["levantarse"]] },
+            { a: [["terminar"]] }
+          ]
+        },
+        {
+          num: 4, title: "Completa la tabla",
+          type: "conjTable",
+          subjectLabel: "",
+          subjects: ["yo", "tú", "él/ella/usted", "nosotros/as", "vosotros/as", "ellos/as/ustedes"],
+          cols: [
+            { label: "Acostarse", a: ["me acuesto", ["te acuestas"], ["se acuesta"], ["nos acostamos"], "os acostáis", ["se acuestan"]] },
+            { label: "Volver", a: [["vuelvo"], "vuelves", ["vuelve"], "volvemos", ["volvéis"], ["vuelven"]] },
+            { label: "Ir", a: [["voy"], ["vas"], "va", ["vamos"], ["vais"], "van"] }
+          ]
+        },
+        {
+          num: 5, title: "Busca en la sopa de letras estas formas verbales",
+          instr: "\"ir, yo\" ya lo trae resuelto el libro (rodeado en la sopa de letras): voy. Para las demás, piensa la forma correcta y búscala en la rejilla.",
+          type: "wordsearch",
+          grid: [
+            "CEMPEZAMOS",
+            "IWRVOYÑEMA",
+            "ECIERRAMHL",
+            "RVENGOBPXG",
+            "RMQIZMÑIKO",
+            "OUZSSALENC",
+            "ZWRTMBOZQL",
+            "VBRETUMAXL"
+          ],
+          words: [
+            { label: "ir, yo → voy", cells: [[1,3],[1,4],[1,5]], solved: true },
+            { label: "cerrar, ella", cells: [[2,1],[2,2],[2,3],[2,4],[2,5],[2,6]] },
+            { label: "empezar, nosotros", cells: [[0,1],[0,2],[0,3],[0,4],[0,5],[0,6],[0,7],[0,8],[0,9]] },
+            { label: "salir, yo", cells: [[0,9],[1,9],[2,9],[3,9],[4,9]] },
+            { label: "venir, vosotros", cells: [[1,3],[2,3],[3,3],[4,3],[5,3]] },
+            { label: "cerrar, yo", cells: [[0,0],[1,0],[2,0],[3,0],[4,0],[5,0]] },
+            { label: "venir, yo", cells: [[3,1],[3,2],[3,3],[3,4],[3,5]] },
+            { label: "empezar, usted", cells: [[1,7],[2,7],[3,7],[4,7],[5,7],[6,7],[7,7]] },
+            { label: "salir, ellos", cells: [[5,4],[5,5],[5,6],[5,7],[5,8]] }
+          ]
+        },
+        {
+          num: 6, title: "Completa con el verbo en presente",
+          type: "items",
+          items: [
+            { t: "A Hola, María, ¿de dónde (venir) vienes?\nB (venir) {0} de comprar unos regalos y (ir) {1} ahora mismo al supermercado, que (cerrar) {2} a las 9.",
+              a: [["Vengo"], ["voy"], ["cierran"]], wide: "full" },
+            { t: "A ¿(ir, nosotros) {0} mañana a la playa?\nB Si (acostarse, nosotros) {1} pronto hoy, sí.",
+              a: [["Vamos"], ["nos acostamos"]], wide: "full" },
+            { t: "A ¿A qué hora (empezar) {0} la película?\nB A las 12, pero yo (acostarse) {1} ya, estoy muy cansada.",
+              a: [["empieza"], ["me acuesto"]], wide: "full" },
+            { t: "A Es tarde, ¿(volver, nosotros) {0} a casa?\nB Sí, ¿(ir, nosotros) {1} en metro o en taxi?",
+              a: [["volvemos"], ["vamos"]], wide: "full" },
+            { t: "¿Tú (levantarse) {0} muy temprano?", a: [["te levantas"]], wide: "full" }
+          ]
+        }
+      ]
+    }
+  ];
+
+  // ---------- render ----------
+  const main = document.getElementById("main");
+  const navDots = document.getElementById("navDots");
+  const allInputs = []; // {el, spec}
+  const openAnswers = []; // { num, title, el } de cada textarea de un ejercicio "open"
+  const pendingMatchDraws = []; // drawLines() de cada ejercicio "match", pendientes hasta que el bloque esté insertado en el DOM
+  const allExercises = []; // ex objects, para poder llamar a ex._onGraded desde "Corregir todos"
+
+  // wide: true  -> input intermedio (una o dos palabras)
+  // wide: "full" -> input de frase entera, para los ejercicios de transformar oraciones:
+  //                 con el ancho normal la respuesta se escribe pero no se lee.
+  function makeInput(spec, wide, label) {
+    const inp = document.createElement("input");
+    inp.type = "text";
+    inp.className = "blank" + (wide === "full" ? " full" : wide ? " wide" : "");
+    inp.autocomplete = "off";
+    inp.autocapitalize = "off";
+    inp.spellcheck = false;
+    allInputs.push({ el: inp, spec: spec, label: label || "" });
+    return inp;
+  }
+
+  // Hueco de verdadero/falso: dos botones en vez de texto libre. El input real que
+  // guarda el motor de corrección se queda oculto (type="hidden") para que gradeRange,
+  // isCorrect y el archivador extraer.mjs (que busca "input.blank") sigan funcionando
+  // exactamente igual — solo cambia cómo el alumno rellena el valor. Úsalo poniendo
+  // vf: true en el item (ver ejemplo de "items" más abajo); la respuesta (item.a) sigue
+  // siendo ["V"] o ["F"] como cualquier otro hueco de texto.
+  function makeVfButtons(spec, label, opciones) {
+    const inp = document.createElement("input");
+    inp.type = "hidden";
+    inp.className = "blank";
+    const wrap = document.createElement("span");
+    wrap.className = "vf-toggle";
+    const lista = opciones && opciones.length ? opciones : ["V", "F"];
+    // Un par de opciones que son palabras («regular»/«irregular») necesita que los dos
+    // botones midan lo mismo; si no, cada fila los coloca a una altura distinta.
+    if (lista.some(function (o) { return o.length > 1; })) wrap.classList.add("vf-words");
+    const rec = { el: inp, spec: spec, label: label || "" };
+    lista.forEach(function (letter) {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "vf-btn";
+      b.setAttribute("translate", "no");
+      b.textContent = letter;
+      b.addEventListener("click", function () {
+        inp.value = letter;
+        wrap.classList.remove("unanswered");
+        wrap.querySelectorAll(".vf-btn").forEach(function (x) {
+          x.classList.remove("selected", "correct", "incorrect");
+        });
+        b.classList.add("selected");
+      });
+      wrap.appendChild(b);
+    });
+    rec.onGrade = function (ok) {
+      const sel = wrap.querySelector(".vf-btn.selected");
+      // Sin nada pulsado no hay botón que colorear: se marca el grupo entero, o el hueco
+      // se quedaría sin ninguna señal de error (a diferencia de un input de texto vacío).
+      wrap.classList.toggle("unanswered", !sel);
+      if (sel) sel.classList.add(ok ? "correct" : "incorrect");
+    };
+    allInputs.push(rec);
+    const holder = document.createElement("span");
+    holder.className = "vf-wrap";
+    holder.appendChild(inp);
+    holder.appendChild(wrap);
+    return holder;
+  }
+
+  // Qué botones lleva el hueco número `idx` de un ítem, según su campo `vf`:
+  //   vf: true                      -> V/F en todos los huecos del ítem
+  //   vf: ["regular", "irregular"]  -> ese par en todos los huecos del ítem
+  //   vf: { 1: ["sí", "no"] }       -> solo en el hueco {1}; los demás siguen siendo texto
+  // El tercer caso es el que hace falta cuando un ítem mezcla un hueco de escribir con uno
+  // de elegir, como "hablar → [imperativo] · [regular|irregular]".
+  function opcionesDe(vf, idx) {
+    if (!vf) return null;
+    if (vf === true) return ["V", "F"];
+    if (Array.isArray(vf)) return vf;
+    return vf[idx] || null;
+  }
+
+  function renderTemplate(container, template, answers, wide, labelBase, forceIndex, vf, dialog) {
+    const parts = template.split(/\{(\d+)\}/g);
+    let blankCount = 0;
+    for (let k = 1; k < parts.length; k += 2) blankCount++;
+    parts.forEach(function (part, i) {
+      if (i % 2 === 1) {
+        const tokenIdx = parseInt(part, 10);
+        const spec = answers[tokenIdx];
+        const label = (blankCount > 1 || forceIndex) ? labelBase + " (" + (tokenIdx + 1) + ")" : labelBase;
+        const opts = opcionesDe(vf, tokenIdx);
+        container.appendChild(opts
+          ? makeVfButtons(spec, label, opts)
+          : makeInput(spec, wide, label));
+        const reveal = document.createElement("span");
+        reveal.className = "reveal";
+        container.appendChild(reveal);
+        allInputs[allInputs.length - 1].reveal = reveal;
+      } else if (part) {
+        // Un "\n" en la plantilla del ítem es un salto de línea real. Lo necesitan los
+        // diálogos: A y B son dos personas distintas y sus réplicas no pueden compartir
+        // línea. Fuera de los diálogos no hay "\n", así que esto no afecta al resto.
+        part.split("\n").forEach(function (linea, li) {
+          if (li > 0) container.appendChild(document.createElement("br"));
+          if (!linea) return;
+          // En un diálogo, la letra del interlocutor al principio de línea se marca como
+          // tal en vez de quedar suelta dentro de la frase.
+          // Interlocutor: la «A»/«B» del libro, o un nombre en mayúsculas seguido de dos
+          // puntos (ROSA:, ANDRÉS:), que es como el propio cuaderno marca los diálogos con
+          // personajes. Solo se aplica dentro de ejercicios con dialog: true.
+          const m = dialog && (li > 0 || i === 0)
+            ? linea.match(/^([A-ZÁÉÍÓÚÑÜ]{2,12}:|[AB])\s+/) : null;
+          if (m) {
+            const who = document.createElement("span");
+            who.className = "speaker";
+            who.setAttribute("translate", "no");
+            who.textContent = m[1];
+            container.appendChild(who);
+            linea = linea.slice(m[0].length);
+          }
+          container.appendChild(document.createTextNode(linea));
+        });
+      }
+    });
+  }
+
+  function exerciseHeader(ex) {
+    const head = document.createElement("div");
+    head.className = "exercise-head";
+    const titleWrap = document.createElement("div");
+    titleWrap.className = "exercise-title";
+    titleWrap.innerHTML = '<span class="exnum" translate="no">Ej. ' + ex.num + "</span>";
+    const h3 = document.createElement("h3");
+    h3.textContent = ex.title;
+    titleWrap.appendChild(h3);
+    head.appendChild(titleWrap);
+    // Los ejercicios "open" no puntúan, así que no llevan botón: ver .open-block.
+    if (ex.type === "open") return { head: head, btn: null };
+    const btn = document.createElement("button");
+    btn.className = "check-btn";
+    btn.textContent = "Corregir";
+    head.appendChild(btn);
+    return { head: head, btn: btn };
+  }
+
+  blocks.forEach(function (block) {
+    const sec = document.createElement("section");
+    sec.className = "block";
+    sec.id = block.id;
+
+    const bh = document.createElement("div");
+    bh.className = "block-head";
+    bh.innerHTML =
+      '<div class="block-num">' + block.num + '</div>' +
+      '<div class="block-titles"><h2>' + block.title + '</h2><div class="sub">' + block.sub + '</div></div>';
+    sec.appendChild(bh);
+
+    const navA = document.createElement("a");
+    navA.href = "#" + block.id;
+    navA.textContent = "Bloque " + block.num;
+    navDots.appendChild(navA);
+
+    block.exercises.forEach(function (ex) {
+      allExercises.push(ex);
+      const card = document.createElement("div");
+      card.className = "exercise";
+      // ex.preWidth: ancho de la columna de item.pre para ESTE ejercicio.
+      if (ex.preWidth) card.style.setProperty("--pre-w", ex.preWidth);
+      const startIdx = allInputs.length;
+      const hdr = exerciseHeader(ex);
+      card.appendChild(hdr.head);
+
+      if (ex.instr) {
+        const instr = document.createElement("div");
+        instr.className = "exercise-instr";
+        instr.textContent = ex.instr;
+        card.appendChild(instr);
+      }
+      if (ex.refHTML) {
+        const ref = document.createElement("div");
+        ref.className = "exercise-ref";
+        ref.innerHTML = ex.refHTML;
+        card.appendChild(ref);
+      }
+      if (ex.model) {
+        const model = document.createElement("div");
+        model.className = "exercise-model";
+        model.textContent = ex.model;
+        card.appendChild(model);
+      }
+
+      if (ex.type === "items") {
+        const wrap = document.createElement("div");
+        wrap.className = "items";
+        ex.items.forEach(function (item, i) {
+          const row = document.createElement("div");
+          row.className = "item-row";
+          // ex.numbered: marca 1., 2., 3. en vez de a., b., c. — obligatorio en los diálogos,
+          // donde a/b/c chocaría con las letras A/B de los propios interlocutores.
+          const marca = ex.numbered ? (i + 1) + "." : String.fromCharCode(97 + i) + ".";
+          if (ex.dialog) row.classList.add("dialog-row");
+          // item.solved = fila que el libro ya trae resuelta (el típico ítem 1 hecho como
+          // modelo). Se muestra porque está en el original, pero va sin huecos: pedirle al
+          // alumno algo que en su cuaderno ya está impreso descuadra además la puntuación.
+          if (item.solved) row.classList.add("solved-row");
+          const letter = document.createElement("span");
+          letter.className = "item-letter";
+          letter.setAttribute("translate", "no");
+          letter.textContent = marca;
+          row.appendChild(letter);
+          // item.pre: etiqueta fija al principio de la fila (el verbo, la palabra que se
+          // clasifica...). Existe para poder alinear en columnas: metida dentro de item.t
+          // sería un nodo de texto suelto y cada fila empezaría el hueco en un sitio.
+          if (item.pre) {
+            const pre = document.createElement("span");
+            pre.className = "item-pre";
+            pre.textContent = item.pre;
+            row.appendChild(pre);
+          }
+          // item.img: la foto va DESPUÉS del número y antes del hueco. Al revés, el
+          // número quedaba debajo de su propia foto y pegado a la siguiente, y no se sabía
+          // a cuál se refería. Se declara como campo propio, no como HTML dentro de item.t.
+          if (item.img) {
+            const im = document.createElement("img");
+            im.className = "foto-act";
+            im.src = item.img;
+            im.alt = item.alt || "Fotografía del ejercicio";
+            row.appendChild(im);
+          }
+          renderTemplate(row, item.t, item.a, item.wide, "Ej. " + ex.num + " " + marca.replace(".", ""), false, item.vf, ex.dialog);
+          // Si la fila termina en el hueco (enunciado + «→» + casilla), se marca para que la
+          // casilla se estire hasta el borde derecho: empieza justo donde acaba el texto,
+          // pero todas las del ejercicio terminan en el mismo sitio. No se toca cuando el
+          // hueco va DENTRO de la frase (un rellenar-el-espacio), donde alinear no tiene
+          // sentido, ni cuando la fila ya usa la columna de item.pre, ni cuando la fila
+          // lleva foto: ahí el hueco va DEBAJO de la imagen (así lo pide el enunciado del
+          // libro, «escribe debajo qué actividad es») y al volverse flex se subía a su lado.
+          // Fila que acaba en botones V/F: los botones se van al borde derecho, para que
+          // todos queden en la misma columna por larga que sea la frase. Sin esto, cada par
+          // de botones empieza donde acaba su frase y la lista se ve descuadrada.
+          if (!item.pre && !row.querySelector(".foto-act")) {
+            const vfw = row.querySelector(".vf-wrap");
+            if (vfw && row.querySelectorAll("input.blank").length === 1) {
+              let cola = "", n = vfw.nextSibling;
+              while (n) { cola += n.textContent || ""; n = n.nextSibling; }
+              if (/^[\s.,;:!?¿¡…"»)]*$/.test(cola)) {
+                row.classList.add("vf-tail");
+                const head = document.createElement("span");
+                head.className = "tail-text";
+                while (row.firstChild && row.firstChild !== vfw) head.appendChild(row.firstChild);
+                row.insertBefore(head, vfw);
+              }
+            }
+          }
+          if (!item.pre && !row.querySelector(".foto-act")) {
+            const huecos = row.querySelectorAll("input.blank");
+            if (huecos.length === 1) {
+              // Después del hueco solo puede quedar puntuación de cierre. Si hay palabras,
+              // el hueco está DENTRO de la frase (un rellenar-el-espacio) y no se toca:
+              // estirarlo hasta el borde derecho partiría la oración por la mitad.
+              let cola = "", n = huecos[0].nextSibling;
+              while (n) { cola += n.textContent || ""; n = n.nextSibling; }
+              // Si el autor puso un salto de línea justo antes del hueco, es que quiere la
+              // casilla en su propia línea a ancho completo (respuestas de frase entera):
+              // estirarla en la misma línea la dejaría flotando a media altura del texto.
+              let antes = huecos[0].previousSibling;
+              while (antes && antes.nodeType === 3 && !antes.textContent.trim()) antes = antes.previousSibling;
+              const saltoAntes = !!antes && antes.nodeName === "BR";
+              if (!saltoAntes && /^[\s.,;:!?¿¡…"»)]*$/.test(cola)) {
+                row.classList.add("tail-blank");
+                // Todo lo anterior al hueco (número + frase) va en UN solo envoltorio.
+                // Si se dejan sueltos, cada nodo de texto es un elemento flex distinto y
+                // una frase larga salta de línea entera, dejando el "e." solo en la
+                // línea de arriba. Con el envoltorio, el número siempre va pegado a su
+                // frase y es la frase la que parte por dentro.
+                const head = document.createElement("span");
+                head.className = "tail-text";
+                while (row.firstChild && row.firstChild !== huecos[0]) head.appendChild(row.firstChild);
+                row.insertBefore(head, huecos[0]);
+              }
+            }
+          }
+          wrap.appendChild(row);
+        });
+        // Estirar el hueco hasta el borde derecho solo tiene sentido si hay VARIAS
+        // filas que acaben así: es lo que las hace terminar todas en el mismo sitio.
+        // Una sola, rodeada de frases con el hueco dentro, se ve como una raya larga
+        // y suelta; en ese caso se deja con el ancho normal.
+        const colas = wrap.querySelectorAll(".item-row.tail-blank");
+        if (colas.length === 1) colas[0].classList.remove("tail-blank");
+        card.appendChild(wrap);
+      } else if (ex.type === "text") {
+        const p = document.createElement("div");
+        p.className = "paragraph";
+        ex.text.split("\n").forEach(function (line, li) {
+          if (li > 0) p.appendChild(document.createElement("br"));
+          renderTemplate(p, line, ex.a, false, "Ej. " + ex.num, true);
+        });
+        card.appendChild(p);
+      } else if (ex.type === "table2") {
+        const twrap = document.createElement("div");
+        twrap.className = "table-wrap";
+        const table = document.createElement("table");
+        table.className = "exercise-table";
+        table.innerHTML = "<thead><tr><th>Infinitivo</th><th>Gerundio</th></tr></thead>";
+        const tbody = document.createElement("tbody");
+        ex.rows.forEach(function (r) {
+          const tr = document.createElement("tr");
+          const td1 = document.createElement("td");
+          td1.textContent = r[0];
+          const td2 = document.createElement("td");
+          td2.appendChild(makeInput(r[1][0], false, "Ej. " + ex.num + " " + r[0]));
+          const reveal = document.createElement("span");
+          reveal.className = "reveal";
+          td2.appendChild(reveal);
+          allInputs[allInputs.length - 1].reveal = reveal;
+          tr.appendChild(td1); tr.appendChild(td2);
+          tbody.appendChild(tr);
+        });
+        table.appendChild(tbody);
+        twrap.appendChild(table);
+        card.appendChild(twrap);
+      } else if (ex.type === "conjTable") {
+        const twrap = document.createElement("div");
+        twrap.className = "table-wrap";
+        const table = document.createElement("table");
+        table.className = "exercise-table";
+        let thead = "<thead><tr><th>" + (ex.subjectLabel || "Sujeto") + "</th>";
+        ex.cols.forEach(function (c) { thead += "<th>" + c.label + "</th>"; });
+        thead += "</tr></thead>";
+        table.innerHTML = thead;
+        const tbody = document.createElement("tbody");
+        ex.subjects.forEach(function (subj, si) {
+          const tr = document.createElement("tr");
+          const td0 = document.createElement("td");
+          td0.textContent = subj;
+          tr.appendChild(td0);
+          ex.cols.forEach(function (c) {
+            const td = document.createElement("td");
+            const spec = c.a[si];
+            // Una cadena en vez de un array = celda que el libro ya trae resuelta: se pinta
+            // fija y no cuenta como hueco. Si se pusiera como hueco, el alumno tendría que
+            // "adivinar" algo que en su cuaderno está impreso, y el total de huecos dejaría
+            // de coincidir con lo que realmente hay que rellenar.
+            if (typeof spec === "string") {
+              td.textContent = spec;
+              td.className = "fixed-cell";
+            } else {
+              td.appendChild(makeInput(spec, false, "Ej. " + ex.num + " " + subj + "/" + c.label));
+              const reveal = document.createElement("span");
+              reveal.className = "reveal";
+              td.appendChild(reveal);
+              allInputs[allInputs.length - 1].reveal = reveal;
+            }
+            tr.appendChild(td);
+          });
+          tbody.appendChild(tr);
+        });
+        table.appendChild(tbody);
+        twrap.appendChild(table);
+        card.appendChild(twrap);
+      } else if (ex.type === "open") {
+        const box = document.createElement("div");
+        box.className = "open-block";
+        box.innerHTML = ex.html;
+        card.appendChild(box);
+        const note = document.createElement("p");
+        note.className = "open-note";
+        note.textContent = "✏️ Esta actividad no se corrige aquí: escribe tu respuesta y, cuando envíes tus resultados a tu profesor, se incluirá para que la revise personalmente.";
+        card.appendChild(note);
+        const ta = document.createElement("textarea");
+        ta.className = "open-answer";
+        ta.rows = 4;
+        ta.placeholder = "Escribe aquí tu respuesta…";
+        card.appendChild(ta);
+        openAnswers.push({ num: ex.num, title: ex.title, el: ta });
+      } else if (ex.type === "agenda") {
+        const twrap = document.createElement("div");
+        twrap.className = "table-wrap";
+        const table = document.createElement("table");
+        table.className = "exercise-table ref-table";
+        table.innerHTML = "<thead><tr><th>Día</th><th>Actividad</th></tr></thead>";
+        const tbody = document.createElement("tbody");
+        ex.table.forEach(function (r) {
+          const tr = document.createElement("tr");
+          const td1 = document.createElement("td"); td1.textContent = r[0];
+          const td2 = document.createElement("td"); td2.textContent = r[1];
+          tr.appendChild(td1); tr.appendChild(td2);
+          tbody.appendChild(tr);
+        });
+        table.appendChild(tbody);
+        twrap.appendChild(table);
+        card.appendChild(twrap);
+        const wrap = document.createElement("div");
+        wrap.className = "items";
+        ex.items.forEach(function (item, i) {
+          const row = document.createElement("div");
+          row.className = "item-row";
+          // ex.numbered: marca 1., 2., 3. en vez de a., b., c. — obligatorio en los diálogos,
+          // donde a/b/c chocaría con las letras A/B de los propios interlocutores.
+          const marca = ex.numbered ? (i + 1) + "." : String.fromCharCode(97 + i) + ".";
+          if (ex.dialog) row.classList.add("dialog-row");
+          // item.solved = fila que el libro ya trae resuelta (el típico ítem 1 hecho como
+          // modelo). Se muestra porque está en el original, pero va sin huecos: pedirle al
+          // alumno algo que en su cuaderno ya está impreso descuadra además la puntuación.
+          if (item.solved) row.classList.add("solved-row");
+          const letter = document.createElement("span");
+          letter.className = "item-letter";
+          letter.setAttribute("translate", "no");
+          letter.textContent = marca;
+          row.appendChild(letter);
+          // item.pre: etiqueta fija al principio de la fila (el verbo, la palabra que se
+          // clasifica...). Existe para poder alinear en columnas: metida dentro de item.t
+          // sería un nodo de texto suelto y cada fila empezaría el hueco en un sitio.
+          if (item.pre) {
+            const pre = document.createElement("span");
+            pre.className = "item-pre";
+            pre.textContent = item.pre;
+            row.appendChild(pre);
+          }
+          // item.img: la foto va DESPUÉS del número y antes del hueco. Al revés, el
+          // número quedaba debajo de su propia foto y pegado a la siguiente, y no se sabía
+          // a cuál se refería. Se declara como campo propio, no como HTML dentro de item.t.
+          if (item.img) {
+            const im = document.createElement("img");
+            im.className = "foto-act";
+            im.src = item.img;
+            im.alt = item.alt || "Fotografía del ejercicio";
+            row.appendChild(im);
+          }
+          renderTemplate(row, item.t, item.a, item.wide, "Ej. " + ex.num + " " + marca.replace(".", ""), false, item.vf, ex.dialog);
+          // Si la fila termina en el hueco (enunciado + «→» + casilla), se marca para que la
+          // casilla se estire hasta el borde derecho: empieza justo donde acaba el texto,
+          // pero todas las del ejercicio terminan en el mismo sitio. No se toca cuando el
+          // hueco va DENTRO de la frase (un rellenar-el-espacio), donde alinear no tiene
+          // sentido, ni cuando la fila ya usa la columna de item.pre, ni cuando la fila
+          // lleva foto: ahí el hueco va DEBAJO de la imagen (así lo pide el enunciado del
+          // libro, «escribe debajo qué actividad es») y al volverse flex se subía a su lado.
+          // Fila que acaba en botones V/F: los botones se van al borde derecho, para que
+          // todos queden en la misma columna por larga que sea la frase. Sin esto, cada par
+          // de botones empieza donde acaba su frase y la lista se ve descuadrada.
+          if (!item.pre && !row.querySelector(".foto-act")) {
+            const vfw = row.querySelector(".vf-wrap");
+            if (vfw && row.querySelectorAll("input.blank").length === 1) {
+              let cola = "", n = vfw.nextSibling;
+              while (n) { cola += n.textContent || ""; n = n.nextSibling; }
+              if (/^[\s.,;:!?¿¡…"»)]*$/.test(cola)) {
+                row.classList.add("vf-tail");
+                const head = document.createElement("span");
+                head.className = "tail-text";
+                while (row.firstChild && row.firstChild !== vfw) head.appendChild(row.firstChild);
+                row.insertBefore(head, vfw);
+              }
+            }
+          }
+          if (!item.pre && !row.querySelector(".foto-act")) {
+            const huecos = row.querySelectorAll("input.blank");
+            if (huecos.length === 1) {
+              // Después del hueco solo puede quedar puntuación de cierre. Si hay palabras,
+              // el hueco está DENTRO de la frase (un rellenar-el-espacio) y no se toca:
+              // estirarlo hasta el borde derecho partiría la oración por la mitad.
+              let cola = "", n = huecos[0].nextSibling;
+              while (n) { cola += n.textContent || ""; n = n.nextSibling; }
+              // Si el autor puso un salto de línea justo antes del hueco, es que quiere la
+              // casilla en su propia línea a ancho completo (respuestas de frase entera):
+              // estirarla en la misma línea la dejaría flotando a media altura del texto.
+              let antes = huecos[0].previousSibling;
+              while (antes && antes.nodeType === 3 && !antes.textContent.trim()) antes = antes.previousSibling;
+              const saltoAntes = !!antes && antes.nodeName === "BR";
+              if (!saltoAntes && /^[\s.,;:!?¿¡…"»)]*$/.test(cola)) {
+                row.classList.add("tail-blank");
+                // Todo lo anterior al hueco (número + frase) va en UN solo envoltorio.
+                // Si se dejan sueltos, cada nodo de texto es un elemento flex distinto y
+                // una frase larga salta de línea entera, dejando el "e." solo en la
+                // línea de arriba. Con el envoltorio, el número siempre va pegado a su
+                // frase y es la frase la que parte por dentro.
+                const head = document.createElement("span");
+                head.className = "tail-text";
+                while (row.firstChild && row.firstChild !== huecos[0]) head.appendChild(row.firstChild);
+                row.insertBefore(head, huecos[0]);
+              }
+            }
+          }
+          wrap.appendChild(row);
+        });
+        // Estirar el hueco hasta el borde derecho solo tiene sentido si hay VARIAS
+        // filas que acaben así: es lo que las hace terminar todas en el mismo sitio.
+        // Una sola, rodeada de frases con el hueco dentro, se ve como una raya larga
+        // y suelta; en ese caso se deja con el ancho normal.
+        const colas = wrap.querySelectorAll(".item-row.tail-blank");
+        if (colas.length === 1) colas[0].classList.remove("tail-blank");
+        card.appendChild(wrap);
+      } else if (ex.type === "match") {
+        // Relaciona con columnas: se toca un elemento de la columna ancla (columns[0], fija)
+        // y luego su pareja en la(s) columna(s) siguiente(s) — se dibuja una línea de color
+        // entre ambos. ex.columns = [{label, items:[...]}, ...]; columns[0] son las anclas.
+        // ex.rows es paralelo a columns[0].items: { solved: true } para una fila ya resuelta
+        // en el libro (sin huecos, sin interacción), o { a: [spec1, spec2, ...] } con un spec
+        // de isCorrect() por cada columna elegible (columns[1], columns[2]...), en ese orden.
+        if (ex.rows.length !== ex.columns[0].items.length) {
+          // Sin este chequeo, un rows/columns[0].items desalineados (copiar/pegar de otro
+          // capítulo, un elemento de más o de menos) no revienta aquí con un mensaje claro,
+          // sino más tarde y críptico: el primer clic en el ancla sobrante deja armedRow
+          // apuntando a un índice sin fila en `state`, y state[i][c] revienta con
+          // "Cannot read properties of undefined" dentro del listener de clic, sin pista de
+          // cuál es la causa real ni de que el problema son los datos, no el motor.
+          throw new Error('type "match": ex.rows.length (' + ex.rows.length + ') debe coincidir con ex.columns[0].items.length (' + ex.columns[0].items.length + ')');
+        }
+        const state = ex.rows.map(function () { return {}; }); // state[i][c] = índice elegido en columns[c] para la fila i
+        const usedBy = Object.create(null); // usedBy["c-idx"] = qué fila reclama esa opción (una opción, una fila)
+        const columnEls = []; // columnEls[c][idx] = elemento <button> de esa opción
+        const anchorRevealEls = []; // anchorRevealEls[i] = <div> con la respuesta correcta si falla
+        const hiddenByRowCol = Object.create(null); // hiddenByRowCol["i-c"] = <input type=hidden>
+        let armedRow = null;
+        // Paleta corta y fija (no depende del tema claro/oscuro: son colores ya diferenciados
+        // en ambos) para que dos o más conexiones a la vez no se confundan entre sí.
+        const PALETTE = ["#62744c", "#b04e72", "#5b7596", "#a3651f", "#7a6ba8", "#3f7a75"];
+        function rowColor(i) { return PALETTE[i % PALETTE.length]; }
+
+        const mouter = document.createElement("div");
+        mouter.className = "match-outer";
+        const fadeLeft = document.createElement("div");
+        fadeLeft.className = "match-fade match-fade-left";
+        const fadeRight = document.createElement("div");
+        fadeRight.className = "match-fade match-fade-right";
+        mouter.appendChild(fadeLeft);
+        mouter.appendChild(fadeRight);
+
+        const mwrap = document.createElement("div");
+        mwrap.className = "match-wrap";
+        mouter.appendChild(mwrap);
+        const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        svg.classList.add("match-svg");
+        mwrap.appendChild(svg);
+
+        ex.columns.forEach(function (colDef, c) {
+          const colEl = document.createElement("div");
+          colEl.className = "match-col";
+          if (colDef.label) {
+            const lab = document.createElement("div");
+            lab.className = "match-col-label";
+            lab.textContent = colDef.label;
+            colEl.appendChild(lab);
+          }
+          columnEls[c] = [];
+          colDef.items.forEach(function (text, idx) {
+            const isAnchor = c === 0;
+            const rowSpec = isAnchor ? ex.rows[idx] : null;
+            const solvedAnchor = isAnchor && rowSpec && rowSpec.solved;
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "match-item" + (isAnchor ? " match-anchor" : "") + (solvedAnchor ? " match-solved" : "");
+            btn.textContent = text;
+            btn.dataset.col = String(c);
+            btn.dataset.idx = String(idx);
+            if (solvedAnchor) btn.disabled = true;
+            columnEls[c][idx] = btn;
+            colEl.appendChild(btn);
+            if (isAnchor && !solvedAnchor) {
+              const reveal = document.createElement("div");
+              reveal.className = "match-row-reveal";
+              anchorRevealEls[idx] = reveal;
+              colEl.appendChild(reveal);
+            }
+          });
+          mwrap.appendChild(colEl);
+        });
+
+        // Un hueco (input oculto, como en el V/F de "items") por cada columna elegible de
+        // cada fila NO resuelta. gradeRange() los corrige exactamente igual que a cualquier
+        // otro: los lee, los colorea .correct/.incorrect y los cuenta en el total — todo el
+        // resto (colorear la ficha y la línea, mostrar la respuesta si falla) lo hace
+        // ex._onGraded() más abajo, después de que gradeRange termine, leyendo esas clases.
+        ex.rows.forEach(function (row, i) {
+          if (row.solved) return;
+          for (let j = 0; j < ex.columns.length - 1; j++) {
+            const c = j + 1;
+            const inp = document.createElement("input");
+            inp.type = "hidden";
+            inp.className = "blank";
+            const spec = row.a[j];
+            const label = "Ej. " + ex.num + " " + (i + 1) + " → " + (ex.columns[c].label || "columna " + c);
+            allInputs.push({ el: inp, spec: spec, label: label });
+            hiddenByRowCol[i + "-" + c] = inp;
+            mwrap.appendChild(inp);
+          }
+        });
+
+        function syncHiddenInputs() {
+          ex.rows.forEach(function (row, i) {
+            if (row.solved) return;
+            for (let j = 0; j < ex.columns.length - 1; j++) {
+              const c = j + 1;
+              const idx = state[i][c];
+              hiddenByRowCol[i + "-" + c].value = idx !== undefined ? ex.columns[c].items[idx] : "";
+            }
+          });
+        }
+
+        function refreshArmedStyles() {
+          columnEls[0].forEach(function (btn, idx) {
+            btn.classList.toggle("match-armed", armedRow === idx);
+          });
+          for (let c = 1; c < ex.columns.length; c++) {
+            columnEls[c].forEach(function (btn, idx) {
+              btn.classList.toggle("match-armed", armedRow !== null && state[armedRow][c] === idx);
+            });
+          }
+        }
+
+        function drawLines() {
+          while (svg.lastChild) svg.lastChild.remove();
+          const wrapRect = mwrap.getBoundingClientRect();
+          function pointFor(el, side) {
+            const r = el.getBoundingClientRect();
+            return { x: (side === "right" ? r.right : r.left) - wrapRect.left, y: r.top + r.height / 2 - wrapRect.top };
+          }
+          ex.rows.forEach(function (row, i) {
+            if (row.solved) return;
+            let fromEl = columnEls[0][i];
+            for (let j = 0; j < ex.columns.length - 1; j++) {
+              const c = j + 1;
+              const idx = state[i][c];
+              if (idx === undefined) break; // cadena incompleta: no se dibuja lo que falta
+              const toEl = columnEls[c][idx];
+              const p1 = pointFor(fromEl, "right");
+              const p2 = pointFor(toEl, "left");
+              const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+              line.setAttribute("x1", p1.x); line.setAttribute("y1", p1.y);
+              line.setAttribute("x2", p2.x); line.setAttribute("y2", p2.y);
+              line.setAttribute("stroke", rowColor(i));
+              line.dataset.row = String(i);
+              line.dataset.col = String(c);
+              svg.appendChild(line);
+              fromEl = toEl;
+            }
+          });
+        }
+        function colorLine(i, c, color) {
+          const line = svg.querySelector('line[data-row="' + i + '"][data-col="' + c + '"]');
+          if (line) line.setAttribute("stroke", color);
+        }
+
+        // Sin esto, un hueco ya corregido (dataset.checked="1" + .correct/.incorrect,
+        // que updateScore()/buildSummary() leen tal cual, sin volver a mirar el valor
+        // actual) sigue contando como "respondido bien" aunque su pareja se le acabe de
+        // quitar (se la roba otra fila) o cambie a otra distinta — el marcador y el
+        // resumen que se envía al profesor podían mostrar más aciertos de los reales
+        // hasta que el alumno pulsara "Corregir" de nuevo. Se marca sin corregir para que
+        // vuelva a contar como pendiente, no como acertado.
+        function invalidateGrading(rowIdx, col) {
+          const inp = hiddenByRowCol[rowIdx + "-" + col];
+          if (!inp) return;
+          delete inp.dataset.checked;
+          inp.classList.remove("correct", "incorrect");
+        }
+
+        mwrap.addEventListener("click", function (e) {
+          const btn = e.target.closest(".match-item");
+          if (!btn || btn.disabled) return;
+          const c = parseInt(btn.dataset.col, 10);
+          const idx = parseInt(btn.dataset.idx, 10);
+          if (c === 0) {
+            // Siempre arma la fila tocada, nunca la desarma (antes alternaba y volver a
+            // tocar la misma ancla —el gesto natural de "quiero repetir esta pareja"—
+            // desarmaba en vez de dejarla lista para elegir de nuevo). No hace falta un
+            // gesto explícito de "desarmar nada": tocar una opción ya elegida en esa
+            // columna la desasigna (ver más abajo), así que "nada armado" solo pasa antes
+            // de la primera vez que se toca cualquier ancla.
+            armedRow = idx;
+            refreshArmedStyles();
+            return;
+          }
+          if (armedRow === null) return; // hay que armar primero una fila de la columna ancla
+          const i = armedRow;
+          const prev = state[i][c];
+          const claimKey = c + "-" + idx;
+          if (prev === idx) {
+            delete state[i][c];
+            delete usedBy[claimKey];
+            invalidateGrading(i, c);
+            // Sin esto, una ficha que ya se había corregido (.match-correct/-incorrect)
+            // se queda coloreada para siempre al desmarcarla — nada más la vuelve a tocar
+            // tras gradeRange(), solo ex._onGraded() la recolorea, y eso solo pasa si sigue
+            // elegida por alguna fila.
+            btn.classList.remove("match-correct", "match-incorrect");
+          } else {
+            const priorRow = usedBy[claimKey];
+            // Cada opción, una sola fila a la vez: si ya la tenía otra fila, se la quita.
+            if (priorRow !== undefined && priorRow !== i) {
+              delete state[priorRow][c];
+              invalidateGrading(priorRow, c);
+            }
+            if (prev !== undefined) {
+              delete usedBy[c + "-" + prev];
+              // Igual que arriba: la ficha que se abandona (el alumno cambia de opción en
+              // esta misma fila) puede llevar un color de una corrección anterior que ya
+              // no aplica a nada — visto en vivo: se corrige, se re-arma la fila y se elige
+              // otra opción, y la ficha vieja se queda roja/verde para siempre.
+              columnEls[c][prev].classList.remove("match-correct", "match-incorrect");
+            }
+            btn.classList.remove("match-correct", "match-incorrect");
+            invalidateGrading(i, c);
+            state[i][c] = idx;
+            usedBy[claimKey] = i;
+          }
+          syncHiddenInputs();
+          refreshArmedStyles();
+          drawLines();
+        });
+
+        ex._onGraded = function () {
+          ex.rows.forEach(function (row, i) {
+            if (row.solved) return;
+            let anyChecked = false, allOk = true;
+            for (let j = 0; j < ex.columns.length - 1; j++) {
+              const c = j + 1;
+              const inp = hiddenByRowCol[i + "-" + c];
+              if (inp.dataset.checked !== "1") continue;
+              anyChecked = true;
+              const ok = inp.classList.contains("correct");
+              if (!ok) allOk = false;
+              const idx = state[i][c];
+              if (idx !== undefined) {
+                const chip = columnEls[c][idx];
+                chip.classList.remove("match-correct", "match-incorrect");
+                chip.classList.add(ok ? "match-correct" : "match-incorrect");
+                colorLine(i, c, ok ? "var(--good)" : "var(--bad)");
+              }
+            }
+            const revealEl = anchorRevealEls[i];
+            if (!revealEl) return;
+            if (anyChecked && !allOk) {
+              const parts = [];
+              for (let j = 0; j < ex.columns.length - 1; j++) parts.push(correctTextFor(row.a[j]));
+              revealEl.textContent = "→ " + parts.join(" · ");
+              revealEl.classList.add("show");
+            } else {
+              revealEl.classList.remove("show");
+            }
+          });
+        };
+
+        function refreshFades() {
+          const canLeft = mwrap.scrollLeft > 2;
+          const canRight = mwrap.scrollLeft < mwrap.scrollWidth - mwrap.clientWidth - 2;
+          fadeLeft.classList.toggle("show", canLeft);
+          fadeRight.classList.toggle("show", canRight);
+        }
+        mwrap.addEventListener("scroll", refreshFades);
+        pendingMatchDraws.push(function () { drawLines(); refreshFades(); });
+        card.appendChild(mouter);
+      } else if (ex.type === "wordsearch") {
+        // Sopa de letras interactiva. ex.grid = array de strings (una por fila); ex.words =
+        // [{ label, cells:[[r,c],...], solved?, img? }]. `cells` es la secuencia exacta de
+        // casillas que forma la palabra en la rejilla real del libro (en cualquiera de las
+        // 8 direcciones), calculada una vez con un script de búsqueda, no a mano — así no
+        // hay duda de que coincide con lo impreso. Una palabra "solved" (el ejemplo que el
+        // libro ya trae resuelto) se pinta encontrada desde el principio, sin hueco de
+        // corrección; el resto se juega tocando la letra de inicio y luego la de fin.
+        // `img` (opcional): si la pista del libro es un DIBUJO, no un texto, pásala aquí en
+        // vez de dejar `label` visible desde el principio — ver el comentario largo junto a
+        // .ws-outer en el CSS de arriba (regla general: una pista con imagen no lleva el
+        // texto de la respuesta al lado, o deja de ser una pista).
+        const gridRows = ex.grid.length, gridCols = ex.grid[0].length;
+        const outer = document.createElement("div");
+        outer.className = "ws-outer";
+        const gridEl = document.createElement("div");
+        gridEl.className = "ws-grid";
+        gridEl.style.gridTemplateColumns = "repeat(" + gridCols + ", 1fr)";
+        const cellEls = [];
+        for (let r = 0; r < gridRows; r++) {
+          cellEls[r] = [];
+          for (let c = 0; c < gridCols; c++) {
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "ws-cell";
+            btn.textContent = ex.grid[r][c];
+            btn.dataset.r = String(r);
+            btn.dataset.c = String(c);
+            btn.setAttribute("translate", "no");
+            cellEls[r][c] = btn;
+            gridEl.appendChild(btn);
+          }
+        }
+        outer.appendChild(gridEl);
+
+        const wordsEl = document.createElement("ul");
+        wordsEl.className = "ws-words";
+        const wordRecs = []; // { word, li, input }
+        ex.words.forEach(function (w) {
+          const li = document.createElement("li");
+          li.setAttribute("translate", "no");
+          if (w.img) {
+            // La pista es el dibujo, no el texto: el nombre se guarda en un span oculto por
+            // CSS hasta que la palabra se encuentra (ver .ws-prof-name arriba).
+            const img = document.createElement("img");
+            img.src = w.img;
+            img.alt = w.label;
+            li.appendChild(img);
+            const nameSpan = document.createElement("span");
+            nameSpan.className = "ws-prof-name";
+            nameSpan.textContent = w.label;
+            li.appendChild(nameSpan);
+          } else {
+            li.textContent = w.label;
+          }
+          if (w.solved) {
+            li.classList.add("ws-solved");
+            w.cells.forEach(function (rc) { cellEls[rc[0]][rc[1]].classList.add("ws-found"); });
+          } else {
+            const inp = document.createElement("input");
+            inp.type = "hidden";
+            inp.className = "blank";
+            const rec = { el: inp, spec: [w.label], label: "Ej. " + ex.num + " sopa de letras (" + w.label + ")" };
+            rec.onGrade = function (ok) {
+              li.classList.toggle("ws-found-item", ok);
+              li.classList.toggle("ws-incorrect", !ok);
+            };
+            allInputs.push(rec);
+            li.appendChild(inp);
+            wordRecs.push({ word: w, li: li, input: inp });
+          }
+          wordsEl.appendChild(li);
+        });
+        outer.appendChild(wordsEl);
+
+        // Dos casillas forman una selección válida solo si están en la misma fila, misma
+        // columna, o a igual distancia en ambos ejes (diagonal exacta) — cualquier otra
+        // combinación no es una línea recta y se ignora.
+        function pathBetween(r1, c1, r2, c2) {
+          const dr = Math.sign(r2 - r1), dc = Math.sign(c2 - c1);
+          if (r1 !== r2 && c1 !== c2 && Math.abs(r2 - r1) !== Math.abs(c2 - c1)) return null;
+          const dist = Math.max(Math.abs(r2 - r1), Math.abs(c2 - c1));
+          const path = [];
+          for (let i = 0; i <= dist; i++) path.push([r1 + dr * i, c1 + dc * i]);
+          return path;
+        }
+        function sameCells(a, b) {
+          if (a.length !== b.length) return false;
+          for (let i = 0; i < a.length; i++) if (a[i][0] !== b[i][0] || a[i][1] !== b[i][1]) return false;
+          return true;
+        }
+
+        let armed = null;
+        gridEl.addEventListener("click", function (e) {
+          // Las casillas NO se desactivan al encontrarse: dos palabras pueden compartir una
+          // letra, así que una casilla ya resuelta por una palabra tiene que seguir
+          // pudiendo tocarse como extremo de otra.
+          const btn = e.target.closest(".ws-cell");
+          if (!btn) return;
+          const r = parseInt(btn.dataset.r, 10), c = parseInt(btn.dataset.c, 10);
+          if (armed === null) {
+            armed = [r, c];
+            btn.classList.add("ws-armed");
+            return;
+          }
+          const ar = armed[0], ac = armed[1];
+          cellEls[ar][ac].classList.remove("ws-armed");
+          armed = null;
+          if (ar === r && ac === c) return; // tocar la misma casilla desarma sin seleccionar
+          const path = pathBetween(ar, ac, r, c);
+          if (!path) return; // no es línea recta: se ignora, se puede reintentar
+          const rev = path.slice().reverse();
+          const rec = wordRecs.find(function (wr) {
+            return wr.input.value !== wr.word.label &&
+              (sameCells(path, wr.word.cells) || sameCells(rev, wr.word.cells));
+          });
+          if (rec) {
+            rec.input.value = rec.word.label;
+            rec.li.classList.add("ws-found-item");
+            rec.word.cells.forEach(function (rc) { cellEls[rc[0]][rc[1]].classList.add("ws-found"); });
+          } else {
+            path.forEach(function (rc) { cellEls[rc[0]][rc[1]].classList.add("ws-wrong"); });
+            setTimeout(function () {
+              path.forEach(function (rc) { cellEls[rc[0]][rc[1]].classList.remove("ws-wrong"); });
+            }, 450);
+          }
+        });
+
+        card.appendChild(outer);
+      }
+
+      // Transcripción de audio, si el ejercicio la trae. Va al final de la tarjeta, después
+      // de las preguntas: leerla antes de responder resuelve el ejercicio, así que ni se
+      // abre sola ni se coloca arriba.
+      if (ex.transcriptHTML) {
+        const det = document.createElement("details");
+        det.className = "transcript";
+        const sum = document.createElement("summary");
+        sum.textContent = ex.transcriptLabel || "Ver la transcripción del audio";
+        det.appendChild(sum);
+        const body = document.createElement("div");
+        body.className = "transcript-body";
+        body.innerHTML = ex.transcriptHTML;
+        det.appendChild(body);
+        card.appendChild(det);
+      }
+
+      const endIdx = allInputs.length;
+      if (hdr.btn) hdr.btn.addEventListener("click", function () {
+        gradeRange(startIdx, endIdx);
+        updateScore();
+        if (typeof ex._onGraded === "function") ex._onGraded();
+      });
+
+      sec.appendChild(card);
+    });
+
+    main.appendChild(sec);
+  });
+
+  pendingMatchDraws.forEach(function (fn) { fn(); });
+  if (pendingMatchDraws.length) {
+    window.addEventListener("resize", function () { pendingMatchDraws.forEach(function (fn) { fn(); }); });
+    document.addEventListener("cuaderno:unlocked", function () { pendingMatchDraws.forEach(function (fn) { fn(); }); });
+  }
+
+  document.getElementById("totalBlanksLabel").textContent = allInputs.length;
+  document.getElementById("scoreTotal").textContent = allInputs.length;
+
+  function correctTextFor(spec) {
+    const t = Array.isArray(spec) ? spec[0] : (spec.show || (spec.flex ? spec.flex.join(" / ") : ""));
+    return typeof t === "string" ? t : "";
+  }
+
+  function gradeRange(start, end) {
+    for (let i = start; i < end; i++) {
+      const rec = allInputs[i];
+      const ok = isCorrect(rec.el.value, rec.spec);
+      rec.el.classList.remove("correct", "incorrect");
+      rec.el.classList.add(ok ? "correct" : "incorrect");
+      rec.el.dataset.checked = "1";
+      if (rec.onGrade) rec.onGrade(ok);
+      if (!ok && rec.reveal) {
+        rec.reveal.textContent = "→ " + correctTextFor(rec.spec);
+        rec.reveal.classList.add("show", "bad-reveal");
+      } else if (rec.reveal) {
+        rec.reveal.classList.remove("show", "bad-reveal");
+      }
+    }
+  }
+
+  function updateScore() {
+    let checked = 0, correct = 0;
+    allInputs.forEach(function (rec) {
+      if (rec.el.dataset.checked === "1") {
+        checked++;
+        if (rec.el.classList.contains("correct")) correct++;
+      }
+    });
+    document.getElementById("scoreNum").textContent = correct;
+    document.getElementById("scoreTotal").textContent = allInputs.length;
+    const pct = allInputs.length ? (correct / allInputs.length) * 100 : 0;
+    document.getElementById("barFill").style.width = pct + "%";
+    updateResultsPanel(checked, correct);
+  }
+
+  document.getElementById("correctAllBtn").addEventListener("click", function () {
+    gradeRange(0, allInputs.length);
+    updateScore();
+    allExercises.forEach(function (ex) { if (typeof ex._onGraded === "function") ex._onGraded(); });
+  });
+
+  // ---------- results panel: motivational message + send to teacher ----------
+  const TITLE_LABEL = "Cuaderno A1 · 3A Rosa se levanta a las siete"; // short label used in email subject / summary header
+  // These are Angel's real, reusable contact details — copy verbatim into every new
+  // exercise unless he says they changed. IMPORTANT: telegram MUST be his @username
+  // (no @, no phone number) — t.me/+<phone> links silently ignore ?text= and never
+  // pre-fill; only t.me/<username>?text=... does. See SKILL.md "Canal por canal".
+  const TEACHER = {
+    whatsapp: "79856456905",
+    telegram: "angel9904",
+    email: "angelluisacosta99@gmail.com",
+    teamsEmail: "angelluisacosta99@gmail.com"
+  };
+
+  function tierFor(pct) {
+    if (pct >= 90) return { headline: "¡Excelente trabajo! 🎉", sub: "Dominas muy bien este tema. ¡Sigue así!" };
+    if (pct >= 70) return { headline: "¡Muy bien! 👏", sub: "Vas por muy buen camino. Repasa los pocos fallos y lo tendrás perfecto." };
+    if (pct >= 50) return { headline: "Buen intento 💪", sub: "Vas progresando. Repasa los fallos marcados y el recuadro de gramática." };
+    return { headline: "¡Ánimo, esto es parte de aprender! 🌱", sub: "Vuelve a leer los ejemplos y repite el ejercicio — cada intento suma." };
+  }
+
+  function buildSummary(name, correct, total, pct) {
+    const lines = [];
+    lines.push("📋 Resultados — " + TITLE_LABEL);
+    lines.push("Alumno: " + (name || "(sin nombre)"));
+    lines.push("Puntuación: " + correct + "/" + total + " (" + pct + "%)");
+    lines.push("");
+    const wrong = allInputs.filter(function (rec) {
+      return rec.el.dataset.checked === "1" && !rec.el.classList.contains("correct");
+    });
+    if (wrong.length === 0) {
+      lines.push("¡Sin errores! 🎉");
+    } else {
+      lines.push("Fallos (" + wrong.length + "):");
+      wrong.forEach(function (rec) {
+        const given = rec.el.value.trim() || "(en blanco)";
+        lines.push("- " + rec.label + ": escribió \"" + given + "\" → correcto: \"" + correctTextFor(rec.spec) + "\"");
+      });
+    }
+    if (openAnswers.length) {
+      lines.push("");
+      lines.push("📝 Respuestas de texto libre (para que las revises tú):");
+      openAnswers.forEach(function (rec) {
+        const text = rec.el.value.trim() || "(no ha escrito nada)";
+        lines.push("— Ej. " + rec.num + (rec.title ? " (" + rec.title + ")" : "") + ": " + text);
+      });
+    }
+    return lines.join("\n");
+  }
+
+  function updateResultsPanel(checked, correct) {
+    const panel = document.getElementById("resultsPanel");
+    const hint = document.getElementById("progressHint");
+    const total = allInputs.length;
+    if (checked === 0) {
+      panel.hidden = true;
+      if (hint) { hint.textContent = ""; hint.classList.remove("complete"); }
+      return;
+    }
+    if (checked < total) {
+      if (hint) {
+        hint.textContent = "Corregidos " + checked + "/" + total + " — corrige el resto de ejercicios (o pulsa \"Corregir todos\") para ver tu resumen final.";
+        hint.classList.remove("complete");
+      }
+      return; // wait until everything has been corrected at least once
+    }
+    if (hint) {
+      hint.textContent = "¡Todo corregido! Tu resumen está más abajo 👇";
+      hint.classList.add("complete");
+    }
+    const wasHidden = panel.hidden;
+    panel.hidden = false;
+    if (wasHidden) setTimeout(function () { panel.scrollIntoView({ behavior: "smooth", block: "start" }); }, 50);
+
+    const pct = Math.round((correct / total) * 100);
+    const tier = tierFor(pct);
+    document.getElementById("resHeadline").textContent = tier.headline;
+    document.getElementById("resSub").textContent = tier.sub;
+    document.getElementById("resScoreNum").textContent = correct;
+    document.getElementById("resScoreDen").textContent = "/ " + total + " (" + pct + "%)";
+
+    const wrong = allInputs.filter(function (rec) {
+      return rec.el.dataset.checked === "1" && !rec.el.classList.contains("correct");
+    });
+    const errBox = document.getElementById("resErrors");
+    if (wrong.length === 0) {
+      errBox.innerHTML = '<div class="results-error-item">¡Ni un solo fallo! 🎉</div>';
+    } else {
+      errBox.innerHTML = '<div class="results-errors-title">Fallos (' + wrong.length + ')</div>' +
+        wrong.map(function (rec) {
+          const given = escapeHtml(rec.el.value.trim() || "(en blanco)");
+          return '<div class="results-error-item"><b>' + rec.label + ':</b> <s>' + given + "</s> → " + correctTextFor(rec.spec) + "</div>";
+        }).join("");
+    }
+
+    wireChannels();
+  }
+
+  function wireChannels() {
+    const nameEl = document.getElementById("resName");
+    function currentSummary() {
+      const correct = parseInt(document.getElementById("resScoreNum").textContent, 10);
+      const total = allInputs.length;
+      const pct = Math.round((correct / total) * 100);
+      return buildSummary(nameEl.value.trim(), correct, total, pct);
+    }
+    // Long reports risk pushing the whole URL past the ~2000-char limit some browsers/
+    // servers truncate at. Keeps as many full lines as fit within an encoded-length budget,
+    // then appends a note — measuring the ENCODED length, since encodeURIComponent can
+    // roughly triple raw length (newlines, accents, emoji all expand).
+    function truncateForUrl(text, maxEncodedLen) {
+      const note = "\n\n(Informe truncado por ser muy largo para el enlace — usa \"Copiar resumen\" para ver todos los fallos.)";
+      if (encodeURIComponent(text).length <= maxEncodedLen) return text;
+      const lines = text.split("\n");
+      let out = "";
+      for (let i = 0; i < lines.length; i++) {
+        const candidate = out + (out ? "\n" : "") + lines[i];
+        if (encodeURIComponent(candidate + note).length > maxEncodedLen) break;
+        out = candidate;
+      }
+      return out + note;
+    }
+    function refreshLinks() {
+      const text = currentSummary();
+      const encoded = encodeURIComponent(text);
+      // t.me's server (nginx) rejects long query strings outright with a 400 Bad Request —
+      // wa.me tolerates the same length fine, so only Telegram needs the same length budget
+      // already used for the Gmail link below.
+      const shortText = truncateForUrl(text, 1200);
+      document.getElementById("chWhatsapp").href = "https://wa.me/" + TEACHER.whatsapp + "?text=" + encoded;
+      // t.me links only pre-fill the message box when addressed to a @username — the
+      // phone-number form (t.me/+<number>) has no equivalent and ignores ?text= entirely.
+      document.getElementById("chTelegram").href = "https://t.me/" + TEACHER.telegram + "?text=" + encodeURIComponent(shortText);
+      // encodeURIComponent on the recipient, matching every other channel's params (was raw
+      // before) — @ is technically legal unencoded in a query string, but the Teams desktop
+      // app parses this deep link with its own internal handler, not a browser, and may be
+      // stricter than what wa.me/t.me/mail.google.com's own parsers tolerate.
+      document.getElementById("chTeams").href = "https://teams.microsoft.com/l/chat/0/0?users=" + encodeURIComponent(TEACHER.teamsEmail) + "&message=" + encoded;
+      // Gmail's web compose URL, set as a plain https:// href — a native <a target="_blank">
+      // click is trusted browser navigation, exempt from the "block pop-ups" site permission
+      // that silently swallows a script-triggered window.open() call (this broke a previous
+      // version of this button on both desktop and mobile: the Correo button had, at some
+      // point during testing, triggered enough popups that Chrome's per-site "block
+      // pop-ups" permission for this origin got set, which only affects window.open(), not
+      // real link clicks). On Android with the Gmail app installed, the OS still intercepts
+      // this link and opens the app instead of the browser, which ignores the compose
+      // params — that's a separate, unrelated limitation covered by the copy fallback below.
+      document.getElementById("chEmail").href = "https://mail.google.com/mail/?view=cm&fs=1&to=" +
+        encodeURIComponent(TEACHER.email) + "&su=" + encodeURIComponent("Resultados — " + TITLE_LABEL) +
+        "&body=" + encodeURIComponent(shortText);
+    }
+    refreshLinks();
+    nameEl.oninput = refreshLinks;
+    function showCopied(text) {
+      const msg = document.getElementById("chCopiedMsg");
+      msg.textContent = text || "¡Copiado!";
+      msg.style.display = "block";
+      setTimeout(function () { msg.style.display = "none"; }, 3200);
+    }
+    function copyText(text, onDone) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () { onDone(true); }, function () { fallbackCopy(text, onDone); });
+      } else {
+        fallbackCopy(text, onDone);
+      }
+    }
+    function fallbackCopy(text, onDone) {
+      try {
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.style.position = "fixed";
+        ta.style.top = "-9999px";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.focus();
+        ta.select();
+        const ok = document.execCommand("copy");
+        document.body.removeChild(ta);
+        onDone(ok);
+      } catch (e) { onDone(false); }
+    }
+    document.getElementById("chCopy").onclick = function () {
+      copyText(currentSummary(), function (ok) { if (ok) showCopied(); });
+    };
+    // Teams' chat link works fully on mobile (recipient selected, message pasted), but on
+    // desktop the app has only shown the message pasted, not the recipient auto-selected —
+    // the same category of gap as Correo on Android: a native app intercepting a web deep
+    // link and only partially honoring its parameters, which the page has no way to detect
+    // or control. The button also copies the summary and names the exact manual step that
+    // might still be needed, covering both platforms without guessing which one applies.
+    document.getElementById("chTeams").addEventListener("click", function () {
+      copyText(currentSummary(), function (ok) {
+        if (ok) showCopied("Texto copiado. Si el destinatario no se seleccionó solo, elige a " + TEACHER.teamsEmail + ". Pégalo (mantén pulsado → Pegar) si el mensaje no se rellenó.");
+      });
+    });
+    // Correo: like Teams, its own link can't be trusted to fully deliver the message (on
+    // Android with the Gmail app installed, the OS intercepts mail.google.com links and
+    // opens the APP instead of the browser, which ignores the compose params and just opens
+    // normally — "redirects to Gmail but does nothing"). This is a genuinely additive
+    // listener on the native <a href> click (NOT a onclick handler calling window.open()
+    // itself) — a script-triggered window.open() is what a "block pop-ups" site permission
+    // targets, and a real link click is exempt from it, which is what actually matters here.
+    document.getElementById("chEmail").addEventListener("click", function () {
+      copyText(currentSummary(), function (ok) {
+        if (ok) showCopied("Texto copiado. Si no se abrió tu correo solo, pégalo (mantén pulsado → Pegar) en un email a " + TEACHER.email + ".");
+      });
+    });
+  }
+
+  allInputs.forEach(function (rec) {
+    rec.el.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        gradeRange(0, allInputs.length);
+        updateScore();
+      }
+    });
+  });
+
+  updateScore();
+})();
+</script>

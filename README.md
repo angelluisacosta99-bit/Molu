@@ -15,6 +15,7 @@ mi aprendizaje de Python.
 | [`python/`](python/README.md) | Ejercicios y proyectos mientras aprendo Python. |
 | [`master-sistemas-inteligentes/`](master-sistemas-inteligentes/README.md) | Apuntes y trabajos del máster en Salamanca. |
 | [`recursos-generales/`](recursos-generales/README.md) | Radar de herramientas de IA y notas sueltas que aún no encajan en ninguna otra carpeta. |
+| [`personal/`](personal/README.md) | Información personal, sobre todo trayectoria académica. |
 
 ## Reglas básicas
 

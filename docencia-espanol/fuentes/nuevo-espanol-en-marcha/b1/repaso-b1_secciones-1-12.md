@@ -711,9 +711,7 @@ h. Para que la lechuga **conserve** (conservar) todos sus nutrientes, córtala c
 
 #### Ej. 3 — Sopa de letras: diez partes del cuerpo
 
-*Busca las diez partes del cuerpo escondidas en la sopa de letras (en horizontal, vertical y diagonal, en cualquier sentido). Escríbelas en orden alfabético; entre paréntesis, el número de letras.*
-
-> **Sopa de letras:** 
+*Busca las diez partes del cuerpo escondidas en la sopa de letras (en horizontal, vertical y diagonal, en cualquier sentido).*
 
 ```
 CADERAVILE
@@ -726,16 +724,16 @@ QTSAOURDZP
 DEDORCIWIO
 ```
 
-a. B… (5 letras) → **brazo**
-b. C… (6 letras) → **cabeza**
-c. C… (6 letras) → **cadera**
-d. C… (4 letras) → **codo**
-e. C… (6 letras) → **cuello**
-f. D… (4 letras) → **dedo**
-g. E… (7 letras) → **espalda**
-h. F… (6 letras) → **frente**
-i. P… (5 letras) → **pecho**
-j. R… (7 letras) → **rodilla**
+- Brazo
+- Cabeza
+- Cadera
+- Codo
+- Cuello
+- Dedo
+- Espalda
+- Frente
+- Pecho
+- Rodilla
 
 #### Ej. 4 — Imperativos irregulares
 

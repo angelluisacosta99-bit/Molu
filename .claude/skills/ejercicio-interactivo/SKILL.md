@@ -1,7 +1,7 @@
 ---
 name: ejercicio-interactivo
 description: "Use when Angel asks to build a new interactive Spanish grammar/vocabulary exercise page with instant grading — a self-contained HTML artifact where a student fills in blanks, gets corrected instantly, and can send their results to the teacher via WhatsApp/Telegram/Teams/Correo. Also use when asked to add a new chapter/unit to this format, or to fix/extend an existing one (e.g. the A1 \"Presente, gerundio, indefinido\" or B2 12C \"¿Sigues pintando?\" exercises already in docencia-espanol/materiales/). Triggers: \"ejercicio interactivo\", \"como el de A1/12C\", \"corrección instantánea\", \"página interactiva para practicar\", \"haz lo mismo con otro capítulo\"."
-version: 1.9.0
+version: 1.13.0
 user-invocable: true
 license: Apache 2.0
 ---
@@ -25,6 +25,75 @@ menos una vez. Antes de proponer un cambio nuevo en esta zona, confirma qué PRs
 tocaron esas líneas (`git log -p --follow <archivo>` o revisa los PRs #19-#31 con
 `pull_request_read`) en vez de fiarte de la memoria — así se detectó, por ejemplo, que
 PR #22 invertía el orden que PR #20 daba por bueno.
+
+## Reglas vigentes (resumen de una pantalla)
+
+Este documento es largo y crece con cada sesión — en una lectura rápida, o si el
+archivo se trunca, es fácil quedarse solo con el principio y perderse una decisión
+tomada más abajo. Estas cuatro reglas son las que más veces se han tenido que repetir
+porque una sesión anterior las siguió y otra no. **Si algo de aquí choca con una
+lección más antigua de "Lecciones aprendidas", esta sección gana.**
+
+- **Cualquier elemento visual del cuaderno — no solo sopas de letras — se incrusta
+  como foto real, siempre.** Foto, dibujo, cómic, cartel, tabla con ilustraciones,
+  plano: si el libro lo imprime junto a un ejercicio, se recorta de la página
+  renderizada (300 dpi) y se incrusta en `ex.refHTML`/`item.img`. Nunca se sustituye
+  por una pista de texto inventada ("dos primeras letras", descripción del dibujo),
+  y si la imagen ES la pista (el alumno debe reconocer/recordar mirándola), el
+  nombre/respuesta no aparece visible hasta que se acierta. Detalle completo,
+  incluida la excepción real (texto puro sin nada gráfico en la página), en el punto
+  del checklist "TODO lo visual que el libro imprime..." más abajo.
+- **Antes de dar un recorte por bueno: enderezarlo si el libro lo imprime inclinado,
+  y anclarlo a un borde real, no a un margen a ojo.** Tres herramientas ya resueltas,
+  no las reinventes: (1) medir la inclinación contra el silueteado de la propia
+  foto con `opencv-python` (`pip3 install opencv-python-headless numpy`) — nunca a
+  ojo ni con Hough directo sobre el contenido, ver el procedimiento de 4 pasos en la
+  lección de fotos inclinadas; (2) para contenido con borde de caja limpio (sopa de
+  letras, tabla), usar `cv2.adaptiveThreshold` + `MORPH_CLOSE` + `findContours`
+  para encontrar el rectángulo de tinta exacto, en vez de leer la rejilla a ojo —
+  ver la lección "Un recorte que parece limpio a menudo no lo está"; (3) para una
+  forma circular, curva o irregular (un retrato ovalado, una viñeta de cómic, un
+  globo de diálogo) donde no hay un rectángulo que valga, usar `cv2.floodFill` con
+  tolerancia de tono (`loDiff`/`upDiff`) en vez de estimar el contorno a ojo — ver
+  "Recortar formas circulares/curvas: floodFill con tolerancia de tono" más abajo.
+  Tras recortar, reléelo con el propósito explícito de buscarle un defecto, no de
+  confirmar que "parece que está bien".
+- **Sé muy minucioso con las fotos — más de lo que parece necesario.** No basta con
+  que el recorte "se vea bien" en una miniatura: revisa el borde entero a resolución
+  real antes de incrustar, no solo el centro de la imagen. Incidente real (unidad 7C
+  de B1, "Cosas de niños"): un recorte ya publicado e incluso re-verificado con
+  Playwright (imagen cargaba, dimensiones correctas, cero errores) seguía arrastrando
+  restos de texto del ejercicio vecino por el borde izquierdo y dejaba visible la
+  franja negra de diseño del margen de página por el derecho — ninguno de los dos
+  defectos afecta a que la imagen "cargue bien", así que la verificación automática no
+  los detectó; solo se vieron cuando el profesor miró la imagen ya publicada. La
+  verificación con Playwright (naturalWidth/Height, cero errores) confirma que el
+  `<img>` funciona, no que el CONTENIDO del recorte esté limpio — son dos comprobaciones
+  distintas y hace falta la segunda, a ojo, sobre el recorte final antes de
+  publicarlo, no solo sobre el `<img>` ya montado en la página.
+- **Sopa de letras siempre `type: "wordsearch"` interactiva** (rejilla real, tocar
+  dos letras para marcar la palabra) — nunca una lista de pistas de texto inventadas
+  ni la foto de la rejilla como único soporte. Ver la lección homónima más abajo
+  para el formato de datos (`ex.words[i] = {label, cells, img?}`) y el motor ya
+  resuelto en `reference/template.html`.
+- **Audio: buscarlo activamente en Drive antes de conformarte con la transcripción.**
+  No es "si hay tiempo" ni algo que esperar a que "ya esté" — se busca primero, se
+  usa la transcripción como apoyo o último recurso. Ver el paso del checklist
+  correspondiente y la lección "Audio: busca siempre en Drive".
+- **Nunca inventes una formulación distinta del ejercicio. El ejercicio va tal cual
+  está en el libro — mismo enunciado, misma tarea, mismas partes.** Si el motor
+  actual no puede reproducir el ejercicio exactamente como lo imprime el cuaderno
+  (una interacción que no existe todavía, un formato que no encaja en ningún
+  `type` actual), **no lo rediseñes ni lo aproximes por tu cuenta: pregúntale al
+  profesor primero** — puede que la respuesta sea añadir un tipo nuevo al motor (así
+  nació `wordsearch`, así nació `crossword`), o construir el ejercicio de otra
+  forma con su visto bueno, pero la decisión no es tuya a falta de instrucción.
+  Error real de este repo: la 8A de B1 imprime un solo ejercicio ("busca en la sopa
+  de letras... ¿con qué deporte está relacionado cada uno?"), y en vez de preguntar
+  cómo tratar la segunda parte con el motor de `wordsearch` (que solo puntúa
+  encontrar la palabra en la rejilla), se decidió sin consultar partirlo en dos
+  ejercicios separados — un cambio razonable con buena intención, pero no es lo que
+  dice el libro, y no se pidió permiso antes de hacerlo.
 
 ## Flujo de trabajo
 
@@ -74,6 +143,113 @@ PR #22 invertía el orden que PR #20 daba por bueno.
    Todo lo que llegue por fotos hay que archivarlo después en `fuentes/` (paso 8): esa
    carpeta existe justo para que no se vuelva a fotografiar dos veces el mismo capítulo.
 
+   **Audio: busca siempre en Drive antes de asumir que no existe.** Si un capítulo hace
+   referencia a una "Pista N" (audición de comprensión oral, ej. "Escucha y completa"), NO
+   des por hecho que solo tienes la transcripción en texto del PDF — el profesor tiene los
+   mp3 reales en Drive y espera que se incrusten como audio de verdad, reproducible, no solo
+   como texto. Búscalos con `mcp__Google_Drive__search_files` (por ejemplo
+   `title contains 'AUDIO CUADERNO'` o navegando la carpeta de Google Drive de A1 —
+   `Nuevo Español en Marcha/A1/AUDIO CUADERNO A1 OK`, confirmada con el profesor) antes de
+   decir que el audio no está disponible. Los archivos ahí están nombrados solo con el
+   número de pista (`1.mp3`, `2.mp3`...). Descárgalos con `download_file_content` (mismo
+   límite de tamaño que los PDF, ver más arriba) y decodifícalos de base64. Incrusta el
+   resultado como `<audio controls>` con el mp3 en un `data:` URI base64 (los archivos
+   rondan 1-2 MB, muy por debajo del límite de artefacto) en vez de dejar solo la
+   transcripción en un `<details>`. Este es un error real ya cometido en este repo **dos
+   veces**: la primera en A1, donde se afirmó que "solo había transcripción del PDF" sin
+   haber buscado en Drive; la segunda en A2 Unidad 1 (ejercicio de audio "Pista 1" sobre la
+   rutina de Lucía), publicado solo con transcripción sin ni siquiera intentar la búsqueda
+   en Drive primero. El profesor tuvo que corregirlo las dos veces — la carpeta sí existe y
+   sí las tiene. Por eso este paso está también en la checklist de cierre del capítulo, no
+   solo aquí: comprobar la existencia del audio real en Drive es obligatorio para CUALQUIER
+   ejercicio de audio, siempre, no una vez que "se acuerde".
+
+   **El reproductor de audio va SIEMPRE centrado, nunca pegado al margen izquierdo.**
+   Instrucción explícita del profesor. Ya corregido en `reference/template.html`
+   (`.exercise-audio { margin: 0 auto ... }`, con `.audio-label` también centrada) — si
+   alguna vez tocas ese CSS, no le quites el centrado sin querer.
+
+   **`item.wide: "full"` es SOLO para huecos que sustituyen una frase entera propia,
+   nunca para una palabra suelta dentro de una frase que sigue visible alrededor.**
+   `"full"` pone el input en `display: block; width: 100%` — cualquier texto que venga
+   detrás del hueco en esa misma línea de plantilla (una palabra, un signo de cierre) se
+   ve empujado a SU PROPIA línea, debajo de la caja, en vez de seguir pegado. Encontrado
+   real en `a1/..._cuaderno-practica-mas-1_interactivo.html`: un ejercicio de posesivos
+   («¿Dónde están {0} gafas? (yo)», respuesta de una palabra «mis») y uno de números
+   («diez, {0}, doce, ...») llevaban `wide: "full"` sin necesidad — la caja ocupaba toda
+   la tarjeta y « gafas? (yo)»/«, doce,» quedaban huérfanos en la línea de abajo. Regla:
+   si después del `{0}` en la plantilla queda CUALQUIER cosa más que un salto de línea
+   (`\n`) — una palabra, «?», lo que sea — el hueco NO es de frase entera; quítale
+   `wide: "full"` (usa `wide: true` para una respuesta de una o dos palabras algo larga,
+   o ningún `wide` para una palabra corta — el ancho por defecto ya es generoso).
+   **Caso particular — preguntas completas con el interrogante fuera del hueco (`"A
+   ¿{0}?\nB ..."`): el profesor SÍ quiere el «¿» y el «?» visibles como texto fijo de la
+   plantilla, a ambos lados del hueco — NO escondidos dentro de la respuesta.** Un primer
+   intento de arreglar este mismo bug (ejercicio 5 de `practica-mas-1`) metió la pregunta
+   entera dentro de `a: [["¿Eres español?"]]` para que no quedara ningún «?» suelto en la
+   plantilla — el profesor lo rechazó explícitamente: quiere el signo visible antes de
+   empezar el hueco y el signo visible al terminar, en la misma línea. La solución correcta
+   no toca el contenido, corrige el motor: el bug real estaba en cómo `template.html`
+   decide si un hueco puede estirarse a la derecha sin romper el «?» que le sigue
+   (`row.classList.add("tail-blank")`) — calculaba la "cola" (lo que viene después del
+   hueco) recorriendo TODOS los hermanos siguientes sin parar en el primer `<br>`, así que
+   en un diálogo A/B la cola incluía también la réplica de B («?B No, soy mexicano.») y
+   nunca pasaba el test de "solo puntuación de cierre" — el hueco se quedaba sin la clase
+   `tail-blank` y `wide:"full"` (`display:block; width:100%`) empujaba el «?» a su propia
+   línea. Corregido en `reference/template.html`: los dos bucles `let cola = ...,
+   n = ...nextSibling; while (n) {...}` (huecos de texto y V/F) ahora cortan en el primer
+   `<br>` (`while (n && n.nodeName !== "BR")`), así que la cola solo mira lo que queda en
+   la MISMA línea del hueco. Aparte: si después del hueco viene una PALABRA además del
+   signo de cierre (`"A ¿{0} madrileñas?\nB ..."`, respuesta de una sola palabra «Sois»),
+   eso no es un hueco de frase entera — aplica la regla del párrafo anterior y quítale
+   `wide: "full"` en vez de depender de `tail-blank` (que solo trata colas de puntuación
+   pura, nunca de una palabra suelta). Con esto arreglado, la plantilla del ejercicio se
+   queda tal cual el libro (`t: "A ¿{0}?\nB ..."`, `a: [["Eres español"]]`, con `wide:
+   "full"`) — ese es el patrón correcto para "escribe la pregunta completa", no el que
+   probé primero.
+
+   **El "tail-blank"/"vf-tail" NO se marca en la fila entera — se envuelve solo la línea
+   del hueco en un `<span>` aparte.** Segunda vuelta del mismo bug: arreglar el corte en
+   `<br>` de arriba bastaba para un diálogo de dos turnos (A/B), pero con tres o más
+   (A/B/C) "B" y "C" aparecían descolocados, cada uno en una columna distinta, en vez de
+   uno debajo de otro. Causa: el mecanismo ORIGINAL ponía `row.classList.add("tail-blank")`
+   en la fila `.item-row` entera (`display:flex` en toda la fila, réplicas B/C incluidas),
+   y un `<br>` dentro de un contenedor flex no garantiza que la línea siguiente arranque en
+   el borde izquierdo del padding — el motor de layout la coloca donde le sobra sitio en la
+   fila flex, no en una columna fija. Arreglado envolviendo SOLO lo de antes del primer
+   `<br>` (cabecera + hueco + cola de puntuación) en un `<span class="tail-blank">` (o
+   `vf-tail`) nuevo, dejando el resto de la fila — el `<br>` y las réplicas siguientes— en
+   flujo de bloque normal, fuera del flex. Cambios en `reference/template.html`: el CSS
+   pasa de `.item-row.tail-blank {...}` a `.item-row .tail-blank {...}` (selector
+   descendiente, apunta al span, no a la fila — mismo cambio para `.vf-tail`); el JS ya no
+   hace `row.classList.add("tail-blank")`, crea `const tailLine = document.createElement
+   ("span"); tailLine.className = "tail-blank";` y mueve a él `row.firstChild` mientras
+   `row.firstChild.nodeName !== "BR"`, y ese `tailLine` (no ya el hueco) es lo que
+   `row.insertBefore(...)` coloca en la fila; y `wrap.querySelectorAll(".item-row.tail-
+   blank")` (para deshacer el caso de un único tail-blank en el ejercicio) pasa a
+   `wrap.querySelectorAll(".tail-blank")`. **Si vuelves a tocar este mecanismo, no lo
+   regreses a poner la clase en la fila — tiene que ir en un span que envuelva solo hasta
+   el primer `<br>`, o los diálogos de 3+ turnos se rompen otra vez.**
+
+   **Los turnos de un diálogo (A, B, C...) van SIEMPRE alineados verticalmente, cada letra
+   justo debajo de la anterior — instrucción explícita del profesor, repetida más de una
+   vez.** El primer turno arranca después del número de ítem («2. A ...»), pero los
+   siguientes (tras el `<br>`) no llevan ese número delante y arrancaban pegados al margen
+   izquierdo de la tarjeta — un escalón entre A y el resto. Arreglado con sangría francesa
+   en `.dialog-row` (`padding-left: 1.9em`) y el número sacado de esa columna con margen
+   negativo (`.dialog-row .item-letter { width: 1.9em; margin-left: -1.9em; }`) — así todas
+   las líneas de la fila, número aparte, arrancan en el mismo sitio. **Solo funciona si la
+   fila NO es `display:flex` en toda su extensión** (ver el punto anterior: el mecanismo
+   de `tail-blank`/`vf-tail` tuvo que dejar de flexear la fila entera precisamente por
+   esto). También hacía falta ampliar el regex que detecta el interlocutor —
+   `/^([A-ZÁÉÍÓÚÑÜ]{2,12}:|[AB])\s+/` solo reconocía «A» y «B» como marca de turno suelta
+   (sin dos puntos); con un tercer personaje («C Y yo en Sevilla.») el 3 no se marcaba como
+   `.speaker` y se colaba como texto normal — cambiado a `[A-Z]` (cualquier letra mayúscula
+   suelta) para soportar C, D... **Si un ejercicio usa turnos A/B(/C/D...) escritos con
+   `\n`, ponle `dialog: true`** — sin ese flag el motor no detecta ni formatea las letras
+   de interlocutor en absoluto (se quedan como texto plano, sin color ni alineación), sea
+   cual sea el CSS que exista.
+
    **Y mires lo que mires, mira la página.** Antes de dar por buena una transcripción,
    renderiza la página y ábrela con `Read`, aunque el texto se haya extraído perfectamente.
    Hay contenido que el texto **no puede** representar y que cambia las respuestas: las
@@ -86,14 +262,34 @@ PR #22 invertía el orden que PR #20 daba por bueno.
 
 2. **Copia la plantilla, no la reescribas.** `cp .claude/skills/ejercicio-interactivo/reference/template.html <destino>`.
    Sustituye **todos** los marcadores `{{...}}` (grep por `{{` para confirmar que no quede
-   ninguno) y rellena `blocks` con los ejercicios reales, siguiendo los cinco tipos ya
-   soportados por el motor de renderizado (`items`, `text`, `table2`, `conjTable`,
-   `agenda` — documentados con ejemplos dentro de la propia plantilla). Si necesitas un tipo
-   nuevo, tendrás que extender también el renderizador (busca `ex.type ===` en el archivo).
+   ninguno) y rellena `blocks` con los ejercicios reales, siguiendo los tipos ya soportados
+   por el motor de renderizado (`items`, `text`, `table2`, `conjTable`, `open`, `crossword`,
+   `agenda`, `match`, `wordsearch` — documentados con ejemplos dentro de la propia plantilla,
+   y con más detalle en la sección de lecciones más abajo). Si necesitas un tipo nuevo,
+   tendrás que extender también el renderizador (busca `ex.type ===` en el archivo).
    Dentro de `items`, para un hueco de verdadero/falso pon `vf: true` en el item en vez de
    escribir un tipo de ejercicio nuevo — cambia el input de texto por dos botones "V"/"F"
    sin tocar el motor de corrección (la respuesta sigue siendo `["V"]`/`["F"]`); ver el
    ejemplo ya incluido en la propia plantilla y la lección más abajo.
+
+   **REGLA DURA, sin excepciones — pedida expresamente por el profesor, incumplida ya una
+   vez: un ejercicio de "relaciona" (el libro pide unir una columna con otra) usa SIEMPRE
+   `type: "match"` — columnas de verdad, tocar para conectar — nunca un hueco de texto donde
+   el alumno escribe la letra/número de la pareja.** Esto aplica igual si el ejercicio se
+   llama "Relaciona", "Une cada X con Y", o pide emparejar dos listas de cualquier forma. El
+   patrón antiguo (escribir la letra en un `input` de `items`) quedó obsoleto tras la unidad
+   6 de B1 — ver la lección `"Relaciona" con columnas de verdad` más abajo para el porqué y
+   el formato exacto de `columns`/`rows`. Antes de dar un capítulo por terminado, busca en su
+   propio archivo cada exercise cuyo `title` contenga "Relaciona" o "relaciona" y confirma
+   que su `type` es `"match"` — si no lo es, corrígelo antes de publicar, no lo dejes para
+   después. **`reference/template.html` sí trae el motor de `match`, pero varios capítulos ya
+   construidos en `docencia-espanol/materiales/` NO** (se copiaron de una base más antigua
+   que el propio `template.html`, no de la plantilla más reciente) — antes de copiar un
+   capítulo existente como base para uno nuevo, comprueba con
+   `grep -c '"match"' <archivo-base>`: si da 0 y el capítulo nuevo tiene algún "relaciona",
+   hay que portar el motor completo (CSS + rama de renderizado + `pendingMatchDraws`) desde
+   `reference/template.html` antes de escribir el primer ejercicio, no después de
+   descubrir que falta.
 
 3. **Tildes: decide, no asumas.** La corrección del camino principal (`isCorrect`/`norm`)
    exige tilde exacta por diseño — en la mayoría de ejercicios de gramática la tilde
@@ -203,11 +399,114 @@ El fallo no fue no saber los pasos, fue no volver a mirarlos al final.
       en el README de esa carpeta indicando el origen de las respuestas (paso 8).
 - [ ] No queda ningún marcador `{{...}}` ni la cabecera de la plantilla sin adaptar (esa
       cabecera se publica en el código fuente que ve el alumno).
+- [ ] **Si algún ejercicio del capítulo es de audio ("Pista N", "Escucha y..."), se buscó
+      el mp3 real en Drive ANTES de conformarse con solo la transcripción.** No es
+      opcional ni "si hay tiempo": es un paso obligatorio del checklist, exactamente
+      porque ya se saltó dos veces (A1, y de nuevo en A2 Unidad 1) dando la transcripción
+      por suficiente sin buscar en Drive primero. Ver la lección "Audio: busca siempre en
+      Drive" más abajo para cómo buscarlo y embebido.
+- [ ] **TODO lo visual que el libro imprime junto a un ejercicio — foto, retrato, cartel,
+      cómic, tabla con dibujos, plano, cuadro, ilustración de cualquier tipo — se recorta de
+      la página renderizada y se incrusta como `ex.refHTML`/`item.img`. Nunca solo texto
+      cuando el libro trae una imagen real. Esto es un requisito permanente, no algo que
+      haya que pedir cada vez.** El profesor lo ha tenido que repetir en más de una unidad
+      (A2 U1/U2 al publicarlas sin ninguna foto real; luego otra vez con Ángel Hervás en la
+      1B, la postal de Barcelona en la 1C, el cartel de la piscina y el cómic de Leo Verdura
+      en la Unidad 3 — encontrados en una revisión posterior, no en la primera pasada) — la
+      regla de este repo es que si el cuaderno imprime algo visual, se usa, sin que el
+      profesor tenga que señalar cada foto que falta una por una. Por defecto, asume que SÍ
+      hay que incrustarlo e incrústalo; la excepción (texto puro, sin nada gráfico en esa
+      página) es la que hay que justificar, no al revés. Encontrado en A2 Unidades 1 y 2: se
+      publicaron sin ninguna de las fotos reales del libro (Nicole Manderson, Sevilla/Córdoba,
+      Cervantes, Gabriela Mistral/Almodóvar/Induráin, Camilo José Cela) pese a que el propio
+      flujo (paso 1, "Y mires lo que mires, mira la página") ya exige mirar la página
+      entera — mirarla para no perderse contenido de texto no es lo mismo que decidir
+      incrustar sus fotos. Recórtalas con PIL sobre el render a
+      300 dpi (ver "Auto-instalación" más abajo para pymupdf si falta poppler), en blanco
+      y negro y compresión JPEG moderada (`quality=75-80`) para no disparar el tamaño del
+      artefacto, e incrústalas como `data:` URI — igual que el audio, un artefacto no
+      puede enlazar un archivo externo. `ex.refHTML` ya soporta HTML arbitrario (`<img>`,
+      `<figure>`), así que no hace falta un campo nuevo en el motor; dale siempre un
+      `style="max-width:XXXpx"` explícito a la imagen — sin él hereda el ancho completo
+      de `.exercise-ref` y sale desproporcionada (visto en vivo con el retrato de Nicole
+      Manderson, que salía más alto que toda la tarjeta antes de acotarlo).
+      **Ojo: `max-width:XXXpx` a secas, sin más, desborda la página en móvil si XXX es
+      mayor que el ancho de un móvil pequeño (390 px menos el padding de la tarjeta).**
+      El estilo inline con un `px` fijo GANA a la regla global `.exercise-ref img {
+      max-width: 100% }` (misma especificidad, inline pesa más), así que esa regla
+      responsiva deja de aplicar y la imagen fuerza su ancho fijo aunque no quepa. Usa
+      `style="max-width:min(XXXpx, 100%)"` siempre, no un píxel suelto — encontrado en
+      la unidad 8A de B1 con una ilustración de 420 px que desbordaba 89 px a 390 px de
+      viewport hasta cambiar a `min()`. Si el bloque
+      ya tiene otro `refHTML` (un banco de palabras, por ejemplo), añade las fotos AL
+      PRINCIPIO de esa misma cadena — el campo es uno solo, no se puede repetir la clave.
+      **Antes de dar una foto por buena, comprueba si el propio libro la imprime inclinada**
+      (frecuente en fotos tipo "collage" o revista — boda, ciudades tipo postal, foto de
+      escritorio/control): si una referencia real de la foto (un horizonte, un edificio, una
+      persona de pie, el borde recto de la propia foto impresa) no queda vertical/horizontal,
+      no te limites a recortar el rectángulo tal cual sale — está reflejando la inclinación de
+      impresión, no un defecto de tu recorte, así que hay que enderezarla antes de incrustarla.
+      `pip3 install opencv-python-headless numpy` (auto-instálalo si falta, igual que el resto
+      de herramientas de esta skill).
+      **No confíes en el ojo, ni en Hough directamente sobre el contenido de la foto — mide el
+      ángulo del RECTÁNGULO DE LA FOTO contra el fondo de la página, con su propio silueteado:**
+      1. Umbraliza una región amplia de la página (`cv2.threshold(gray, 200, 255,
+         THRESH_BINARY_INV)`, ajusta el 200 si el fondo no es blanco puro) y cierra huecos
+         (`cv2.morphologyEx(..., MORPH_CLOSE, np.ones((9,9)))`) para obtener la silueta de la
+         foto como un blob sólido contra el fondo claro de la página.
+      2. Recorta con MUCHO margen alrededor de la foto — si el contorno toca el borde de tu
+         recorte, `cv2.boundingRect`/`minAreaRect` da lecturas degeneradas (ángulos como
+         exactamente 0° o -90°, o un rectángulo que ocupa todo el ancho del recorte). Si dos
+         fotos están pegadas (como Sevilla/Córdoba en collage), aísla la región de UNA sola,
+         no las dos juntas, o sus siluetas se fusionan en un solo blob mal formado.
+      3. Con el contorno más grande ya aislado (`max(contours, key=cv2.contourArea)`), en vez
+         de fiarte del ángulo que da `cv2.minAreaRect` (su convención de signo y qué lado es
+         "ancho" es ambigua y da resultados contraintuitivos), mide tú mismo la pendiente:
+         recorre columnas (`for x in range(...)`) y anota la primera fila `True` de la
+         máscara en cada una (el borde superior de la foto), luego `np.polyfit(xs, ys, 1)` y
+         `np.degrees(np.arctan(pendiente))` — un ajuste por mínimos cuadrados sobre decenas de
+         puntos reales es mucho más preciso que cualquier estimación a ojo. Si la fila-scan da
+         valores ruidosos/no monótonos (habitual cuando el "borde" pasa cerca de texto o de
+         otro elemento), aísla antes el contorno con `cv2.drawContours(mask, [c], -1, 255, -1)`
+         y repite el escaneo sobre esa máscara limpia en vez de sobre el umbral bruto.
+      4. Rota con el ángulo medido (`PIL.Image.rotate(-ángulo, expand=True, fillcolor=...)` —
+         prueba el signo con una comprobación visual rápida la primera vez en cada sesión,
+         pero una vez fijado el criterio de signo es el mismo para todas las fotos de esa
+         tanda) y vuelve a recortar ajustado (`cv2.boundingRect` sobre la imagen ya rotada,
+         que ahora sí debería dar un rectángulo limpio sin ambigüedad de ángulo).
+      Ejemplo real de esta sesión: Sevilla medía +1,4°, Córdoba -4,3°, la postal de Barcelona
+      +1,9° — todas inclinadas en sentidos distintos porque el libro las imprime como recortes
+      de collage sueltos. **La tira cómica "Leo Verdura" es la lección inversa**: a ojo (y con
+      Hough sobre un recorte estrecho) parecía tener ~1-2° de inclinación, así que se rotó esa
+      cantidad — pero al medir con este método sobre el marco superior del propio cómic
+      (un borde limpio y largo, ideal para el ajuste por mínimos cuadrados) el ángulo real era
+      -0,5°, prácticamente cero: la rotación aplicada la había torcido más, no menos. Ninguna
+      foto ni el ojo son fiables por sí solos — mide siempre contra un borde recto real antes
+      de dar la corrección por buena. La foto de la boda de Unidad 3A (fondo de personas y
+      árboles, sin silueta limpia contra la página) fue la excepción real: ahí ni el
+      silueteado ni Hough dieron una lectura fiable, y se resolvió a ojo comparando contra la
+      verticalidad del propio novio en la foto — documenta explícitamente cuando tengas que
+      recurrir a esto, es el último recurso, no el primero. Este es un error real de este mismo
+      repo: tres unidades de A2 se publicaron con fotos correctamente identificadas e
+      incrustadas pero sin comprobar que además estuvieran rectas — el profesor tuvo que
+      pedirlo explícitamente una segunda vez, y ni la primera corrección (a ojo) fue
+      suficientemente precisa, hizo falta una tercera pasada con medición real.
 - [ ] Si el material no viene claramente de un manual concreto, **pregúntale al profesor**
       en vez de archivarlo por deducción. `RepasoB1.pdf` era un PDF suelto y se colocó bajo
       "Nuevo Español en Marcha 3" por parecido de formato; el profesor confirmó después que
       era correcto, pero la deducción se dio por buena sin preguntar y podría no haberlo
       sido. Preguntar cuesta una frase; moverlo después, rehacer índice y códigos.
+- [ ] Si índice/códigos/README se sincronizaron copiando el estado ya publicado de una
+      rama hermana todavía sin fusionar (para no revertir sus filas en vivo — ver más
+      abajo), **revisa fila por fila que cada una tenga su archivo real en ESTA rama**
+      antes de commitear. Copiar el `README.md` de otra rama trae también SUS filas de
+      archivo (`.md` de unidades que esa otra rama sí construyó pero la tuya no) — índice
+      y códigos solo enlazan a artefactos ya publicados (válido, aunque el `.html` fuente
+      no esté en tu rama), pero una fila de README que dice "archivado, ver este .md" para
+      un archivo que no existe en tu checkout es una afirmación falsa, no una excepción
+      aceptable. Encontrado en revisión de PR (unidad 2 de B1): tres filas de unidad 6
+      quedaron copiadas del README de la rama de la unidad 6, sin que sus `.md` vinieran
+      con ellas.
 
 ## Lecciones aprendidas (no las repitas)
 
@@ -215,6 +514,75 @@ Cada una de estas causó un PR de corrección real. Están en `reference/templat
 resueltas — esta lista es para que entiendas *por qué* el código está como está, y para que
 no las deshagas sin querer al modificar la plantilla.
 
+- **Cuando el libro organiza un capítulo en secciones con letra (A, B, C...), cada sección
+  es un ARTEFACTO/ARCHIVO SEPARADO — nunca varias secciones metidas en un único artefacto,
+  ni con `blocks` múltiples ni de ninguna otra forma.** Esta es la convención real y ya
+  establecida en TODO el repo desde el principio: A1 y B1 llevan un `.html` (y un artefacto
+  publicado, con su propio código de acceso) por cada sección — `cuaderno-unidad1a_
+  encantado_interactivo.html`, `cuaderno-unidad1b_a-que-te-dedicas_interactivo.html`,
+  `cuaderno-unidad1c_...html`, etc. — nunca un "Unidad 1" combinado. Cada uno de esos
+  archivos usa la plantilla tal cual viene: un único `block` con `num: 1` (no una letra), sin
+  píldoras de navegación entre secciones porque no hacen falta — cada sección ES el
+  documento entero. El campo `blocks` (plural, varios bloques en un mismo archivo) SOLO es
+  para el otro caso genuino: una guía de repaso que de verdad es un único documento con
+  varias secciones temáticas (ver la guía de repaso B1 de 12 secciones) — nunca para dividir
+  un capítulo normal del cuaderno.
+  **Error real de dos rondas en este mismo repo, con la lección a extraer:** en Unidad 1 y 2
+  de A2 se cometió primero el error de arriba (todo en un `block` numerado 1..14 seguido); al
+  señalarlo el profesor ("por qué no dividiste las unidades por A, B y C"), la corrección fue
+  meter TRES `blocks` (uno por letra) DENTRO del mismo artefacto — mejor que numerar seguido,
+  pero seguía sin ser la convención real del repo, y esa "corrección" se dejó documentada aquí
+  como si fuera la regla correcta, arrastrando el error a Unidad 3. El profesor tuvo que
+  señalarlo una segunda vez ("si siempre hemos hecho artefactos separados para cada A, B y
+  C..."). La lección: ante una corrección de estructura, comprobar primero cómo lo resuelven
+  capítulos ya existentes de OTRO nivel (`ls docencia-espanol/materiales/a1/`,
+  `ls docencia-espanol/materiales/b1/`) antes de inventar un mecanismo nuevo — la respuesta
+  ya estaba en el propio repo, con 30+ archivos de precedente, y no hacía falta adivinarla.
+  Las tres unidades de A2 se rehicieron como 9 archivos separados tras este segundo aviso.
+- **Dividir un artefacto ya publicado en varios (o renumerar/renombrar capítulos) exige
+  volver a publicar el índice y `codigos-acceso.html` — un `git push` de los archivos fuente
+  NO actualiza esas dos páginas, que viven como artefactos aparte.** Error real: al deshacer
+  el capítulo combinado de arriba (3 unidades de A2 → 9 archivos), se corrigieron y publicaron
+  correctamente los 9 artefactos nuevos, pero el índice y los códigos se quedaron editados
+  solo en el archivo fuente — el PR se fusionó con `git push`, sin volver a llamar al tool
+  `Artifact` sobre esas dos páginas. El profesor tuvo que mandar una captura de la página
+  real (`claude.ai/code/artifact/...`) mostrando las filas viejas para que se detectara. La
+  checklist de "Publicar NO es terminar" (pasos 6-7 más arriba) ya avisa de esto para un
+  capítulo nuevo; el caso nuevo es que también aplica al EDITAR uno ya existente — cualquier
+  cambio en `indice-clases-de-espanol.html`/`codigos-acceso.html`, sea alta, baja o edición
+  de fila, no cuenta como hecho hasta que se ve reflejado en la URL pública, no en el archivo
+  del repo. Si no tienes la URL a mano, `Artifact` con `action: "list"` la encuentra por
+  título ("Clases de Español — Índice", "Códigos de acceso — Clases de Español").
+- **Una sopa de letras SIEMPRE va como `type: "wordsearch"` interactiva (rejilla real +
+  tocar dos letras para marcar la palabra), nunca como una lista de pistas de texto
+  inventadas.** Error real en este repo: la 1B sustituyó la sopa de letras del libro (ocho
+  profesiones, con dibujo cada una) por una lista "PR ___ (corta el pelo a un niño)" — ni la
+  rejilla era real ni la interacción se parecía al ejercicio del libro. El profesor lo
+  corrigió explícitamente: "cíñete al libro" + "busca una forma interactiva... donde el
+  alumno pueda seleccionar directamente en la sopa". La rejilla y las coordenadas de cada
+  palabra se calculan con un script de búsqueda direccional sobre la transcripción de la
+  página (nunca a mano — un error de una letra hace que `cells` no encaje con lo impreso),
+  ver `reference/template.html` para el motor ya resuelto.
+  **Segundo fallo en el mismo arreglo, ronda siguiente**: la primera versión corregida sí
+  puso la rejilla real, pero listaba el NOMBRE de cada profesión en texto junto al dibujo
+  — dándole la respuesta al alumno en vez de dejarle recordarla mirando la imagen, que es
+  justo lo que pide el ejercicio ("ellos deben recordar mirando las fotos, tú no debes
+  decírselo"). Regla general que sale de este segundo fallo, no solo para sopas de letras:
+  **cuando la pista del libro es un DIBUJO (no texto), el nombre/respuesta nunca va visible
+  hasta que el alumno la resuelve** — ni en `item.img` de "items" ni en `ex.words[i].img` de
+  "wordsearch". El texto solo se revela DESPUÉS de acertar, como un `.reveal` normal.
+- **Un bug de motor encontrado por revisión hay que arreglarlo en `reference/template.html`
+  Y en la copia horneada de CADA capítulo ya construido en esa misma rama** — cada
+  `..._interactivo.html` es una copia independiente del motor con los datos ya insertados,
+  no algo que herede de la plantilla en tiempo real. Arreglar solo el capítulo donde se vio
+  el bug dos veces seguidas (en la revisión de la unidad 2 de B1, un bug de "match" se
+  parcheó primero solo en 1B — el único con un ejercicio "match" real — y quedó sin
+  propagar a 1A/1C/2A/2B/2C, que llevan el mismo código de motor aunque no lo usen; en la
+  siguiente ronda, al propagar el SIGUIENTE bug a los seis archivos, 1C se quedó otra vez
+  fuera porque el script de parcheo asumía por error que ya tenía el primer arreglo). Antes
+  de dar por cerrado un arreglo de motor: `grep` el patrón roto (o su versión ya arreglada)
+  en los seis `..._interactivo.html` de la rama, uno por uno, y confirma que todos
+  coinciden — no solo el que disparó el hallazgo.
 - **El panel de resultados debe ser de un solo tema, no adaptable.** Usa sus propias
   variables CSS fijas (`--rp-bg`, `--rp-text`, etc., definidas dentro de `.results-panel`),
   nunca los tokens intercambiables `--ink`/`--paper-raised`/`--gold` del resto de la página
@@ -227,6 +595,24 @@ no las deshagas sin querer al modificar la plantilla.
   corregir. Sin él, si el alumno se salta un ejercicio en una página larga, no aparece
   ninguna señal de por qué no sale el resumen final — "no pasa nada" desde su punto de
   vista.
+- **`isCorrect()` NO soporta mezclar cadenas exactas y `{flex:[...]}` dentro del mismo
+  array — un solo hueco con varias formas cortas aceptadas va TODO como cadenas.** Spec
+  real: `a: [["curar"]]` (array de cadenas, comparación exacta) O `a: {flex:["curar"]}`
+  (objeto suelto, todas las claves deben aparecer) — nunca los dos mezclados dentro de un
+  mismo array (`a: [["curar"], {flex:["cura"]}]`). `isCorrect()` hace
+  `spec.some(a => norm(a) === n)` sobre cada elemento cuando `spec` es un array: si un
+  elemento es un objeto `{flex:...}` en vez de una cadena, `norm(objeto)` revienta
+  (`objeto.toLowerCase is not a function`), y esa excepción sin capturar **aborta
+  silenciosamente `gradeRange()` para TODOS los huecos restantes de la página**, no solo
+  el roto — sin ningún error visible para el alumno, solo en la consola del navegador.
+  Encontrado en revisión de PR (unidad 2 de B1, ej. 5 de 2C: `reproductor de música` /
+  `lavaplatos` con alternativas `{flex:...}` mezcladas) y agravado por una trampa real:
+  **la suite de regresión que rellena siempre la respuesta PRIMARIA nunca lo detecta**,
+  porque `Array.prototype.some()` corta en cuanto encuentra la cadena correcta (la
+  primera, siempre una cadena válida) sin llegar a evaluar el elemento roto — hace falta
+  una prueba dedicada que escriba explícitamente cada alternativa. Para aceptar varias
+  formas cortas en un mismo hueco, simplemente lístalas todas como cadenas:
+  `a: [["reproductor de música", "reproductor", "mp3"]]`.
 - **Escapa el texto que escribe el alumno antes de insertarlo en `innerHTML`**
   (`escapeHtml()`, usado en la lista de fallos del panel de resultados). Sin esto, un
   alumno que escribe `<algo>` en un hueco rompe el renderizado o ejecuta su propio HTML
@@ -287,6 +673,44 @@ no las deshagas sin querer al modificar la plantilla.
   frase archivada (`→ **?**VF`) en vez de la respuesta real. Si añades otro hueco "no-texto"
   (chips, un slider, lo que sea) que también oculte el input real, revisa si necesita el
   mismo tipo de ajuste en `extraer.mjs` antes de darlo por archivable.
+- **En un diálogo A/B (o CELIA:/ANA:...), las réplicas van SIEMPRE una debajo de otra, nunca
+  corridas en la misma línea** — pedido explícitamente por el profesor tras verlo mal en A2
+  Unidad 1. Basta con `\n` entre las réplicas dentro de `item.t` (o de `ex.text` en tipo
+  `"text"`): el motor inserta un `<br>` real por cada `\n`, así que las réplicas SIEMPRE
+  quedan apiladas aunque el ejercicio no use `ex.dialog: true` — ese flag solo añade el
+  chip en negrita/dorado sobre la letra del interlocutor, no afecta a si las líneas se
+  apilan o no. Nunca escribas "A ... B ..." seguido seguido en la misma cadena sin `\n` — ni
+  siquiera como atajo temporal para evitar el bug de abajo.
+  - **Bug de motor real, ya arreglado en `reference/template.html`**: un ítem con un solo
+    hueco `{0}` cuyo texto tiene un `\n` ANTES de ese hueco (p. ej. `"A ¿Qué tal?\nB Muy
+    bien, fui. → {0}"`) hacía que la casilla se pintara flotando a media altura de la
+    PRIMERA línea en vez de pegada al final de la segunda — donde va de verdad. Causa: el
+    ajuste "estira el hueco final hasta el borde derecho" (clase `.tail-blank`, ver más
+    abajo) envuelve TODO lo anterior al hueco en un único `<span>` flex con
+    `align-items: baseline`; si ese span contiene un `<br>` interno (diálogo de 2+ líneas),
+    el alineado "baseline" del flex usa la línea de base de la PRIMERA línea del span, no la
+    de la última — de ahí que el hueco apareciera "descolgado" junto a la primera réplica.
+    El arreglo: antes de envolver, comprobar si hay algún `<br>` en CUALQUIER punto anterior
+    al hueco (no solo el nodo inmediatamente anterior, que es lo que ya comprobaba el caso
+    de "casilla en su propia línea a ancho completo") y, si lo hay, no envolver — el hueco
+    se queda en flujo normal, pegado a la última línea, sin el estirado a la derecha (que de
+    todas formas no tenía sentido con contenido multilínea). Si ves este síntoma (casilla
+    "flotando" en un ítem con `\n`), ya está resuelto en la plantilla; solo falta portarlo al
+    capítulo si se copió de una base más antigua (mismo aviso que con el motor de `match`).
+  - **`ex.dialog: true` detecta como interlocutor CUALQUIER línea que empiece por "A " o
+    "B " seguido de espacio, no solo cuando de verdad hay un personaje A/B.** Encontrado en
+    A2 Unidad 1: un ejercicio mezclaba turnos de diálogo reales ("A ¿Vienes al cine? / B
+    Vale...") con frases sueltas que, por gramática normal del español, también empiezan por
+    la preposición "A" ("A los jóvenes españoles les encanta...") — con `ex.dialog: true`
+    puesto a nivel de ejercicio, esa frase se leía como si "A" fuera el interlocutor,
+    dejando "los jóvenes españoles..." como si fuera lo que dice. No hay forma sintáctica
+    fiable de distinguir el "A" preposición del "A" interlocutor con una regex, así que la
+    solución es de contenido, no de motor: si un ejercicio mezcla diálogos reales con frases
+    sueltas que puedan empezar por "A "/"B ", dilo con "A ..."/"B ..." en el texto (sigue
+    apilándose por el `\n`, ver arriba) pero **no actives `ex.dialog: true`** para todo el
+    ejercicio — así pierdes el chip de color en las réplicas reales, pero evitas falsos
+    interlocutores en las frases sueltas. Actívalo solo cuando TODOS los ítems del ejercicio
+    son diálogo de verdad.
 
 - **REGLA DEL PROFESOR, sin excepciones: todo ejercicio con audio lleva su transcripción en
   un plegable.** No es opcional ni depende de si tenemos la grabación — de hecho es cuando
@@ -330,6 +754,15 @@ no las deshagas sin querer al modificar la plantilla.
     motor por defecto significa que hay que forzar `audio.load()` y esperar el evento
     `loadedmetadata` (o `error`) para comprobar la duración, no basta con contar
     `<audio>` en el DOM.
+  - **Esto es una excepción deliberada, no un descuido, a la regla general de
+    `README.md` raíz** («archivos pesados de audio/video no se suben a este
+    repositorio»): esa regla apunta a grabaciones de clase enteras
+    (`docencia-espanol/grabaciones/`), que sí viven solo en Drive. Aquí el audio
+    incrustado *es* el contenido del ejercicio publicado, no un archivo aparte que
+    archivar — el artefacto tiene que ser autocontenido para funcionar (nada de
+    referencias externas), así que no hay alternativa a incrustarlo. Precedente ya
+    fusionado en `main`: 5B y 5C de B1 (PR #52), cada uno con su propio `data:` URI de
+    varios MB.
 - **El cuaderno de B1 también trae solucionario y transcripciones**, con el mismo reparto:
   **64-68 transcripciones, 69-76 soluciones** (las 52-63 son los textos de «Leer más», la
   76 son las soluciones de esas lecturas y la 77 es la contracubierta; el PDF tiene 77
@@ -505,6 +938,78 @@ no las deshagas sin querer al modificar la plantilla.
   dibujos vecinos), recorta el blanco sobrante de cada uno y **monta una hoja de contacto
   con los recortes y míralos** antes de incrustarlos. Es la única forma de ver que están
   enteros y que cada uno corresponde a la respuesta que dice el solucionario.
+- **Un "recorte que parece limpio" a menudo no lo está — no te fíes de tu propio primer
+  vistazo.** En la guía de repaso A1 (unidades 1-10), 7 de 10 recortes de cuaderno dados
+  por buenos en una primera pasada tenían defectos reales al reexaminarlos con ojo crítico:
+  texto de un enunciado vecino colándose por arriba (el "3 Mira el árbol genealógico..."
+  metido en el recorte del árbol), contenido cortado por abajo (la fila de fotos d-g de un
+  ejercicio de profesiones, con "Hospital" partido a la mitad), y márgenes puestos a ojo sin
+  anclarlos a nada (una habitación desordenada con la cama y el brazo cortados por el borde).
+  Esto pasó en varias imágenes de la misma tarea antes de que el usuario lo señalara — la
+  señal de las "3+ rondas" de CLAUDE.md, aquí repartida entre imágenes en vez de en una sola.
+  La causa no era la técnica de rejilla (que funciona bien), sino dar por bueno un recorte
+  sin releerlo con ojo escéptico. Corrección aplicada desde entonces: (1) si la fuente tiene
+  un borde de caja limpio (sopa de letras, tabla), ancla el recorte a ese borde exacto, no a
+  un margen estimado cerca del texto; (2) si no hay borde (una ilustración suelta), usa la
+  rejilla sobre la página COMPLETA sin recortar antes, lee los bordes reales del dibujo antes
+  de cortar; (3) tras cada recorte, vuelve a leerlo con el propósito explícito de buscarle un
+  defecto, no de confirmar que "parece que está bien" — son dos lecturas distintas y solo la
+  primera encuentra el problema; (4) si el recorte no cabe entero sin arrastrar un elemento
+  ajeno (como un pie de página), recorta al máximo real y tapa de blanco solo la franja
+  ajena, en vez de aceptar el corte o encoger el contenido bueno.
+  **Punto (1) en la práctica: incluso ancladas "al borde", las coordenadas leídas a ojo sobre
+  la rejilla pueden fallar por poco.** El recorte de la sopa de letras del capítulo 1, ya
+  "corregido" y revisado visualmente, seguía sin la columna de letras más a la derecha (9 de
+  10) — un defecto sutil que ni la lectura de la rejilla ni la relectura crítica pillaron,
+  porque las 9 columnas visibles ya parecían un cuadro completo. Se encontró y confirmó con
+  `opencv-python` (`pip install opencv-python-headless`, gratis, sin cuenta):
+  `cv2.adaptiveThreshold` + `cv2.morphologyEx(..., MORPH_CLOSE)` + `cv2.findContours` sobre la
+  página completa, filtrando por área (2-60% de la página) y por relación área-contorno/
+  área-caja (>0.5, para exigir un rectángulo relleno de verdad y no una silueta cualquiera),
+  encuentra el rectángulo de tinta exacto de una caja con borde — sopa de letras, tabla — sin
+  intervención manual. Cuando la fuente tiene un borde de caja limpio, es más fiable que leer
+  la rejilla a ojo: úsalo como primer intento y usa la rejilla solo si no hay contorno
+  rectangular claro (dibujos sueltos sin caja, como el árbol genealógico o la habitación
+  desordenada, donde este método no aplica).
+- **Recortar formas circulares/curvas: floodFill con tolerancia de tono.** Cuando el
+  contorno de contorno-por-área-de-cv2.findContours no basta (una forma redonda,
+  ovalada o de silueta irregular — un retrato circular, una viñeta, un globo de
+  cómic — donde no hay un rectángulo de tinta que buscar), el equivalente en código
+  de la "varita mágica"/"selección por color" de un editor de imágenes (GIMP,
+  Photoshop) es `cv2.floodFill`: parte de un punto semilla en el FONDO (una esquina
+  vacía cerca de la forma) y rellena hacia fuera todo lo que esté dentro de una
+  tolerancia de tono (`loDiff`/`upDiff`) respecto a ese punto — se detiene solo
+  donde el tono cambia más de lo permitido, así que sigue la silueta real por
+  curvas e irregularidades en vez de asumir un rectángulo. Patrón:
+  ```python
+  import cv2, numpy as np
+  img = cv2.imread("pagina.jpg")
+  h, w = img.shape[:2]
+  mask = np.zeros((h + 2, w + 2), np.uint8)  # floodFill exige 2px de margen
+  seed = (x_fondo, y_fondo)  # un punto DENTRO del fondo, pegado a la forma
+  # loDiff/upDiff: cuánto puede oscurecerse/aclararse un píxel del fondo y seguir
+  # contando como fondo. Empieza con (10,10,10) y sube si deja huecos sin
+  # rellenar (fondo con textura/ruido de escaneo); baja si se "escapa" hacia
+  # dentro de la forma (el tono del fondo se parece demasiado al de la forma —
+  # el caso típico es un fondo GRIS claro que se confunde con líneas grises de
+  # la ilustración: baja la tolerancia o cambia el punto semilla).
+  cv2.floodFill(img, mask, seed, (255,255,255), (10,10,10), (10,10,10),
+                cv2.FLOODFILL_FIXED_RANGE)
+  content_mask = 1 - mask[1:-1, 1:-1]  # invierte: 1 = forma, 0 = fondo rellenado
+  ys, xs = np.where(content_mask)
+  x0, x1, y0, y1 = xs.min(), xs.max(), ys.min(), ys.max()  # bounding box real de la forma
+  ```
+  El resultado (`x0,y0,x1,y1`) es el rectángulo mínimo que SÍ contiene la forma
+  irregular completa — sigue recortando en rectángulo (un `<img>` no puede tener
+  máscara de forma libre sin CSS `clip-path`, que complica más de lo que aporta
+  aquí), pero ese rectángulo está anclado a los píxeles reales de la silueta, no a
+  una estimación visual. Si el fondo no es uniforme (varias zonas de blanco/gris
+  separadas por líneas), puede hacer falta más de un punto semilla — combina las
+  máscaras de cada uno con `|=` antes de invertir. Depurar visualmente: guarda
+  `content_mask * 255` como PNG y mírala con `Read` — un hueco negro dentro de la
+  forma (donde debería ser blanco) es una zona con tolerancia insuficiente; una
+  mancha blanca fuera de la forma (donde debería ser negro) es tolerancia excesiva
+  o un segundo punto de fondo con tono distinto sin su propio floodFill.
 - **Un salto de línea justo antes del hueco significa «esta respuesta va en su propia
   línea».** La detección de hueco-de-cola lo respeta y no estira la casilla: si lo hace,
   queda flotando a media altura, ni en línea ni debajo. Es el caso de los ejercicios de
@@ -520,8 +1025,13 @@ no las deshagas sin querer al modificar la plantilla.
   12C hasta el borde derecho, igual que las casillas de texto y los botones V/F. El profesor
   lo vio y lo rechazó: los desplegables no necesitan alinearse. No lo vuelvas a proponer.
 - **Un «relaciona» donde un ítem admite varias letras: genera las permutaciones.** En
-  Practica más 3 el aceite está en tres platos. `norm()` ya se come las comas, así que basta
-  con generar cada orden con y sin espacio (la función `combos()` de ese capítulo).
+  Practica más 3 el aceite está en tres platos. Basta con generar cada orden con espacio
+  después de la coma (`"a, b, c"`) — **ya no hace falta además la variante sin espacio**
+  (`"a,b,c"`, lo que hacía la función `combos()` de ese capítulo): `norm()` sustituye la
+  coma por un espacio y colapsa espacios seguidos, así que las dos formas —y cualquier
+  mezcla de espaciado— ya normalizan a la misma cadena (arreglado en revisión de PR,
+  unidad 2 de B1; antes `norm()` solo borraba la coma sin más, y "a,b,c" sin espacio
+  normalizaba distinto de "a, b, c").
 - **Una sopa de letras necesita una pista por hueco, y comprobar la rejilla por programa.**
   Los huecos se corrigen en un orden fijo, así que sin pista cualquier palabra valdría en
   cualquier hueco: se añaden las dos primeras letras (y se dice en el enunciado que es un
@@ -568,6 +1078,65 @@ no las deshagas sin querer al modificar la plantilla.
   para esto, reutilizable tal cual. El resultado no es pixel-perfect al libro, pero está
   garantizado correcto por construcción, que es lo que de verdad importa en un ejercicio
   que se publica para que un alumno lo resuelva.
+
+- **"Relaciona" con columnas de verdad (`type: "match"`), añadido tras la unidad 6 de B1.**
+  Hasta entonces, un ejercicio de "relaciona" (verbo → final, columna A → columna B) se
+  resolvía escribiendo la letra/número de la pareja en un hueco de texto (ver 6A ej. 2 y 6B
+  ej. 3, que se quedaron así — no se retocaron). Funcionaba, pero tenía dos problemas: no
+  se parecía en nada al ejercicio real del libro (tocar/unir), y obligaba a aceptar un
+  montón de variantes de tecleo para la misma respuesta (`"d, 2"`, `"d,2"`, `"d 2"`, `"d2"`)
+  porque `norm()` quita comas y puntos pero no espacios internos, así que dos formas
+  "iguales" a ojo no siempre normalizan a la misma cadena.
+  El profesor pidió una interacción de tocar-para-conectar en vez de otra ronda de aceptar
+  variantes de texto. `ex.columns` es un array de columnas (`{ label, items: [...] }`);
+  `columns[0]` es la columna ancla, fija, una por fila — las demás son elegibles. `ex.rows`
+  es paralelo a `columns[0].items`: `{ solved: true }` para una fila ya resuelta en el
+  libro (sin huecos, sin botones), o `{ a: [spec1, spec2, ...] }` con un spec de
+  `isCorrect()` por cada columna elegible, en orden. Se toca primero un elemento de la
+  columna ancla (se arma, queda resaltado en dorado) y luego su pareja en la columna
+  siguiente: se guarda en un `input type="hidden"` (el mismo truco que ya usaba el V/F de
+  "items" para que `gradeRange`/gradeRange lo trate exactamente igual que cualquier otro
+  hueco de texto) y se dibuja una línea de color entre ambos con un `<svg>` superpuesto a
+  `.match-wrap`. Con 3 columnas la interacción encadena: primero columna ancla → columna 1,
+  y sin desarmar la fila, columna 1 → columna 2 (la línea sigue el camino elegido tramo a
+  tramo). Una opción solo puede pertenecer a una fila a la vez — tocarla desde otra fila se
+  la quita a la que la tenía antes, para que no se pueda "hacer trampa" repitiendo la misma
+  pareja en dos sitios.
+  **Trampa de timing que costó encontrar:** `getBoundingClientRect()` de las fichas da
+  0,0,0,0 si se llama durante la propia construcción del ejercicio, porque `<section>` del
+  bloque todavía no está insertado en `#main` en ese momento (se inserta una vez por
+  bloque, al final de `block.exercises.forEach`, no ejercicio a ejercicio). La función
+  `drawLines()` de cada ejercicio "match" se guarda en un array (`pendingMatchDraws`) y se
+  llama a TODAS una sola vez, justo después de que `blocks.forEach(...)` termina — ahí el
+  documento ya tiene el layout real. Un solo listener de `resize` (no uno por ejercicio)
+  las vuelve a llamar si la ventana cambia de tamaño.
+  `extraer.mjs` no sabía leer esto (no hay `.item-row` ni `.reveal` por celda): como el
+  archivador nunca toca los botones (solo rellena `input.blank` de texto y pulsa
+  "Corregir"), cada fila de "match" llega sin ninguna opción elegida — exactamente el caso
+  que hace que `ex._onGraded()` rellene su `.match-row-reveal` con la respuesta completa,
+  el mismo mecanismo que ya usaba el crucigrama para su reveal-junto-a-la-definición. El
+  archivador solo tiene que leer `.match-anchor`/`.match-solved` + el `.match-row-reveal`
+  siguiente, si lo hay.
+  **Bug real encontrado en revisión de PR (color de corrección que se queda pegado):**
+  `ex._onGraded()` solo añade `.match-correct`/`.match-incorrect` a la ficha elegida en ese
+  momento; nada las quitaba al desmarcar una ficha o al cambiar de elección dentro de la
+  misma fila. Caso real: el alumno corrige, ve una ficha en rojo, rearma la fila y elige
+  otra opción (correcta) — la ficha vieja se quedaba roja para siempre, porque nada vuelve
+  a tocarla salvo que otra fila la reclame y la corrija de nuevo. Arreglado quitando esas
+  dos clases de la ficha abandonada (y de la recién elegida, por si venía de otra fila ya
+  corregida) en el propio manejador de clic de `mwrap`, no solo en `_onGraded()`.
+  **`columns[1].items` (y cualquier columna no ancla) van SIEMPRE en un orden distinto al
+  de `columns[0]` — nunca fila i con fila i.** Error real cometido al construir 10C de A1:
+  las dos columnas se escribieron en el mismo orden que la pareja correcta (pregunta 1 con
+  su respuesta en la posición 1, país 1 con su actividad en la posición 1…), así que el
+  ejercicio de "relaciona" salía ya resuelto con solo unir en horizontal — cero dificultad
+  real, aunque técnicamente usara `type: "match"` y puntuara bien. El profesor lo vio de un
+  vistazo en la captura. La corrección no toca `rows` (el emparejamiento correcto sigue
+  siendo por contenido de texto, no por posición): basta con revolver el array `items` de
+  la columna no ancla a un orden distinto — un derangement completo si es fácil, o al menos
+  que ninguna fila quede alineada por casualidad. Antes de publicar un `match`, mira la
+  captura del ejercicio ya renderizado y confirma a ojo que ninguna pareja correcta queda
+  en la misma fila visual entre columnas.
 
 ### Canal por canal (la parte que más costó)
 
@@ -704,6 +1273,15 @@ parezca más "controlable" desde JS — ya se demostró que rompe el caso más b
       incluye porque está en el libro y el alumno tiene que poder verlo. Cuando un ejercicio
       del original no tenga respuesta única, esta es la salida: transcribirlo así, no
       omitirlo ni inventarle una respuesta correcta.
+      Desde que el profesor lo pidió, el motor añade automáticamente debajo de `ex.html`
+      un aviso ("esto no se corrige aquí, lo revisará tu profesor") y un `<textarea>`
+      (`.open-answer`) donde el alumno escribe su respuesta — no hay que montar nada de eso
+      a mano en el chapter script. Ese texto se guarda en `openAnswers` (junto a `allInputs`
+      y `allExercises`) y `buildSummary()` lo añade tal cual, con el número y título del
+      ejercicio, al final del resumen que se envía por WhatsApp/Telegram/correo/Teams — así
+      el profesor recibe la redacción del alumno en el mismo mensaje que la puntuación,
+      sin tener que pedírsela aparte. No hace falta ninguna respuesta "correcta" para esto:
+      es contenido libre que se reenvía tal cual, no se evalúa.
     - Cuando `flex` se quede corto, cambia el diseño del hueco antes que la respuesta.
       `flex` es un **Y** de palabras clave: no sabe expresar alternativas. Si el ejercicio
       admite de verdad varias respuestas distintas (vosotros/ustedes, `-ara`/`-ase`,
