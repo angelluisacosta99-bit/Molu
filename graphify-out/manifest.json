@@ -42,8 +42,8 @@
     "semantic_hash": ""
   },
   ".claude/settings.json": {
-    "mtime": 1789637088.3151822,
-    "seen": 1789637247.6665635,
+    "mtime": 1789639369.5865803,
+    "seen": 1789639765.9913428,
     "ast_hash": "0c63da850ce186c9b377a91df153cd4a",
     "semantic_hash": ""
   },
@@ -2448,9 +2448,9 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/bibliografia-oficial.md": {
-    "mtime": 1789637220.0463855,
-    "seen": 1789637247.6670423,
-    "ast_hash": "35069dd6cdf1f6de3f40f86fef7727ab",
+    "mtime": 1789639734.3427591,
+    "seen": 1789639765.9918928,
+    "ast_hash": "7a398c68df158553f1ddc0ded2b22458",
     "semantic_hash": ""
   }
 }
