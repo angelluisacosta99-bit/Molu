@@ -1,7 +1,7 @@
 # Graph Report - Molu  (2026-09-18)
 
 ## Corpus Check
-- 289 files · ~1,368,415 words
+- 289 files · ~1,368,443 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 91 file(s) not represented in the graph (top: .csv 30, .arff 22, .pptx 15)
 
@@ -11,7 +11,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `b2e57623`
+- Built from commit: `4cb81ece`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -1170,9 +1170,9 @@ Nodes (4): GIT(), GIT_NET(), GIT_REBASE(), mark-permission-scan.sh script
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Novedades de herramientas de IA` connect `Novedades de herramientas de IA` to `2026-08-16 — Primera pasada del radar`, `2026-08-30 — Compactación de contexto: palancas oficiales para ahorrar tokens`, `2026-08-30 — Pasada del radar: dos funciones nativas nuevas, sin hallazgos de terceros`, `2026-09-07 — Búsqueda a mano: herramientas para posts de blog en plataformas de clases`, `hook-before-edit.mjs`, `RoombaController`, `2026-09-13 — Búsqueda exhaustiva: herramientas de investigación científica verificada para el máster`?**
-  _High betweenness centrality (0.027) - this node is a cross-community bridge._
+  _High betweenness centrality (0.031) - this node is a cross-community bridge._
 - **Why does `2026-08-16 — Segunda pasada: hooks vs. CLAUDE.md, y prácticas de la comunidad` connect `hook-before-edit.mjs` to `Novedades de herramientas de IA`?**
-  _High betweenness centrality (0.026) - this node is a cross-community bridge._
+  _High betweenness centrality (0.030) - this node is a cross-community bridge._
 - **Why does `deny()` connect `hook-before-edit.mjs` to `readConfig`?**
   _High betweenness centrality (0.020) - this node is a cross-community bridge._
 - **What connects `HEADING_TAGS`, `LAYOUT_TRANSITION_PROPS`, `POSITIONED_CHILD_INTERACTIVE_SELECTOR` to the rest of the system?**

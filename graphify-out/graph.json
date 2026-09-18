@@ -42000,7 +42000,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": ".claude/hooks/mark-permission-scan.sh",
-      "source_location": "L123",
+      "source_location": "L124",
       "weight": 1.0
     },
     {
@@ -121488,5 +121488,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "b2e576233a478a3edecdc8af595974cb0235033f"
+  "built_at_commit": "4cb81eceefb3828d09404269bbabb35ecc8dd2d0"
 }
