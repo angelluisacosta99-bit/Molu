@@ -642,9 +642,9 @@
     "semantic_hash": ""
   },
   ".claude/skills/ejercicio-interactivo/SKILL.md": {
-    "mtime": 1789754433.9287212,
-    "seen": 1789754472.5623608,
-    "ast_hash": "3fb8d262973688975857fc43bc6c1704",
+    "mtime": 1789769720.0667253,
+    "seen": 1789769790.4765878,
+    "ast_hash": "ddd5b420661ce07e3a056de65a355f5a",
     "semantic_hash": ""
   },
   ".claude/skills/ejercicio-interactivo/reference/template.html": {
@@ -2538,9 +2538,9 @@
     "semantic_hash": ""
   },
   ".claude/hooks/fewer-permission-prompts-reminder.sh": {
-    "mtime": 1789767994.9066226,
-    "seen": 1789768082.642554,
-    "ast_hash": "0e96193fad105aa514cc6fe9fd95f340",
+    "mtime": 1789770001.802742,
+    "seen": 1789770027.7976813,
+    "ast_hash": "2d16bf97e48ffbb90b5340878548ca00",
     "semantic_hash": ""
   },
   ".claude/hooks/mark-permission-scan.sh": {
