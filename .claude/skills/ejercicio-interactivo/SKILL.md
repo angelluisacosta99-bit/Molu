@@ -182,6 +182,18 @@ lección más antigua de "Lecciones aprendidas", esta sección gana.**
    (`\n`) — una palabra, «?», lo que sea — el hueco NO es de frase entera; quítale
    `wide: "full"` (usa `wide: true` para una respuesta de una o dos palabras algo larga,
    o ningún `wide` para una palabra corta — el ancho por defecto ya es generoso).
+   **Pero "el ancho por defecto ya es generoso" deja de ser cierto en cuanto el MISMO item
+   mete VARIOS huecos cortos en la misma frase** («La farmacia está abierta {0} las diez
+   {1} la mañana...», cada `{n}` una preposición de 1-5 letras) — con el ancho por defecto
+   (8.5em), 3-4 huecos así ya no caben junto al texto en una línea de móvil y cada uno
+   salta a la suya, partiendo la frase en trozos sueltos en vez de leerse seguida (visto
+   real en 3A, ej. "Completa con la preposición adecuada", 10 items). Para eso existe
+   `wide: "narrow"` (4.2em) — úsalo cuando el item tenga 2 o más huecos y CADA uno se
+   rellena con una sola palabra muy corta (preposición, artículo); con un solo hueco corto
+   por item, el ancho por defecto sigue siendo la opción correcta. Resumen de las cuatro
+   opciones: ningún `wide` = una palabra corta, un hueco por item; `"narrow"` = una palabra
+   muy corta pero VARIOS huecos en la misma frase; `true` = una o dos palabras algo larga;
+   `"full"` = frase entera propia (ver arriba).
    **Caso particular — preguntas completas con el interrogante fuera del hueco (`"A
    ¿{0}?\nB ..."`): el profesor SÍ quiere el «¿» y el «?» visibles como texto fijo de la
    plantilla, a ambos lados del hueco — NO escondidos dentro de la respuesta.** Un primer
