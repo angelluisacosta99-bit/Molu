@@ -310,9 +310,45 @@ que el usuario necesita que pase sí o sí), y en ese caso, presupuestar
 varias rondas de revisión para las sutilezas de las herramientas
 subyacentes (aquí, git) antes de darla por simple.
 
+## 11. Si el hook necesita que algo persista entre contenedores efímeros,
+que lo persista el propio script, nunca una instrucción que el modelo
+debe recordar seguir
+
+**El error real:** `fewer-permission-prompts-reminder.sh` inyecta
+contexto pidiéndole a la sesión que corra una skill y luego "deje
+constancia" de que lo hizo, escribiendo un marcador con timestamp para
+que el propio hook sepa cuándo volver a recordarlo. La primera versión
+dejaba el paso de comitear y subir ese marcador como una instrucción
+de texto aparte ("si añade patrones nuevos... comitea y sube") — una
+revisión encontró que, en el caso más común (sin patrones nuevos que
+añadir), esa instrucción nunca se disparaba: el script que escribe el
+marcador (`mark-permission-scan.sh`) solo tocaba el disco local del
+contenedor, nada lo subía a git, y ese archivo se pierde al reciclarse
+el contenedor. Efecto real: el recordatorio se repetía en cada
+arranque de sesión sin avanzar nunca los 7 días — exactamente el coste
+que el mecanismo existía para evitar. Una segunda versión "arregló" el
+texto de la instrucción (forzar "SIEMPRE comitea y sube") pero seguía
+dependiendo de que la sesión no se saltara ese segundo paso — una
+tercera ronda de revisión encontró que una sesión interrumpida entre
+medias reproducía el mismo bug por una vía distinta, y que forzar
+"rama+PR nuevo cada vez" además acumulaba PRs casi duplicados sin
+fusionar nunca. Solo la cuarta versión, donde `mark-permission-scan.sh`
+comitea y sube el marcador él mismo (con reintento tras rebase si el
+push choca), quedó realmente determinista.
+
+**Comprobación:** si un hook necesita que algo sobreviva a que el
+contenedor se recicle (un marcador, un contador, cualquier estado que
+tiene que verse desde la próxima sesión), preguntar desde el diseño
+inicial: ¿quién garantiza que ese dato llega a git? Si la respuesta es
+"una instrucción en el texto que se inyecta, que la sesión debe
+recordar ejecutar", esa és la señal de la misma familia de bug —
+moverlo al propio script que escribe el estado (o a un hook
+determinista), no a una instrucción de la que depende que el modelo no
+se distraiga, se interrumpa, o decida que "ya lo hizo" sin comprobarlo.
+
 ## Antes de pedir/lanzar la revisión externa
 
-Repasar estos 10 puntos uno por uno contra el diff, con al menos un
+Repasar estos 11 puntos uno por uno contra el diff, con al menos un
 comando ejecutado en vivo por punto que lo confirme (no solo "leído y
 parece bien") — así cada ronda de revisión encuentra menos, en vez de
 encontrar la misma clase de bug que un pase manual ya podría haber

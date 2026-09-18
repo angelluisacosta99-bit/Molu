@@ -23,6 +23,175 @@ copias que puedan desincronizarse.
 
 ---
 
+## 2026-09-18 — Recreada la Routine del Radar (estaba duplicada y rota)
+
+Angel avisó de que "el Radar no funciona bien" y pidió borrar la
+rutina actual y crear una nueva. Investigado antes de tocar nada:
+
+**Lo que había:** dos Routines con el mismo nombre. La original
+(`trig_01Jx2UqBq8ezuTzpknMj7SAW`, agosto) estaba **deshabilitada**
+desde el 7 de septiembre — era la que este CLAUDE.md seguía citando,
+así que en la práctica llevaba dos semanas sin disparar nada. La otra
+(`trig_016qL349a6rEEmaeCCoYmerT`, creada el 7 de septiembre) seguía
+activa pero su única ejecución (14 de septiembre) terminó en estado
+`FAILED` a los 8 segundos, sin subir ninguna rama — se había creado
+con `allowed_tools` vacío en su configuración.
+
+**Ambas se borraron** y se creó una rutina nueva
+(`trig_01N46fmEJzqk7ZrS3L9cPcqt`). Al crearla, la propia herramienta
+avisó de que las sesiones que dispara no llevan conectores MCP — para
+no repetir el mismo fallo a ciegas, se lanzó un disparo de prueba
+única (borrado después de comprobar) para verificar en vivo qué
+herramientas tiene realmente disponibles una sesión disparada por
+Routine en este entorno, en vez de suponerlo:
+
+- ✅ `Bash`, `Read`, `Write`, `Edit`, `Glob`, `Grep`, `WebFetch`,
+  `WebSearch`, `Agent`, `Artifact` — disponibles.
+- ❌ `mcp__github__*` (crear PR, etc.) — **no disponible**. `git push`
+  por Bash sí funciona (el proxy/credenciales del entorno ya lo
+  permiten), solo falla la API de GitHub para abrir el PR.
+- El prompt de la rutina se corrigió para asumir esto: clona/commitea/
+  sube con `git` por Bash, deja la rama subida sin intentar abrir el
+  PR, y lo dice claramente en el mensaje final para que se abra a
+  mano.
+
+**Otro fallo real detectado en el prompt viejo (ambas rutinas):**
+asumía que la rama por defecto del repo es `main` — dejó de serlo en
+algún momento reciente (ver el PR #119/#121 de este mismo registro).
+El prompt nuevo comprueba `git ls-remote --symref origin HEAD` en vez
+de asumirlo, para no volver a romperse si cambia otra vez.
+
+**Lección para futuras Routines creadas por Claude Code (no solo esta
+del Radar):** `create_trigger` invocada desde una sesión de Claude Code
+Remote no hereda conectores MCP ni un preset de herramientas completo
+por defecto — probarlo en vivo con un disparo único antes de confiar
+en que una rutina nueva funciona como la que sustituye, en vez de
+asumir paridad.
+
+---
+
+## 2026-09-18 — Pasada por `code.claude.com/docs/en/whats-new` (Weeks 13-37)
+
+Angel pidió una búsqueda de "qué otras herramientas o instrucciones da
+el equipo de Anthropic que debería usar aquí". Cubierto todo el digest
+semanal desde marzo hasta la semana del 7-11 de septiembre de 2026 —
+lo de abajo es lo que pasa el criterio de relevancia (resuelve una
+necesidad real de este repo), no un volcado del changelog completo.
+Todo esto son comandos nativos, sin tarjeta de instalación — se prueban
+directamente escribiéndolos.
+
+**`/skill-doctor`** (semana del 31 ago-4 sep) — muestra cuánto contexto
+cuesta cada skill instalada y con qué frecuencia se usa realmente.
+Angel tiene ya 10+ skills propias (`graphify`, `impeccable`,
+`ejercicio-interactivo`, `hook-hardening`, `caveman`, `cavecrew`,
+`humanizer`...) — con esto se ve con datos reales cuáles compensan su
+coste de contexto y cuáles no, en vez de adivinar.
+
+**`/usage`** — desglosa qué consume el límite del plan por skill,
+subagente, plugin y servidor MCP. Con la cantidad de conectores MCP
+activos en este repo (Drive, DeepL, GitHub, Scite, alphaXiv,
+Consensus, Wolfram, Hugging Face...), esto identifica cuáles pesan de
+verdad en vez de suponerlo.
+
+**`claude plugin eval`** (semana del 7-11 sep) — corre un plugin
+propio contra una batería de casos de prueba y compara con/sin el
+plugin; `claude plugin eval init` genera los casos y criterios de
+evaluación solos. Directamente aplicable al plugin `caveman-cavecrew`
+que se acaba de empaquetar en este repo — pendiente de que Angel lo
+pruebe.
+
+**Auto mode ya no es "preview"** — llegó en preview en marzo de 2026
+(semana 13) y para julio-agosto ya es el modo de permisos por defecto
+en cuentas Pro/Max/Team (semana 32): un clasificador aprueba solo las
+acciones seguras en segundo plano y bloquea las arriesgadas, en vez de
+preguntar cada vez. Esto actualiza la entrada del 2026-08-16 de este
+mismo registro, que dejó "permisos por nivel de riesgo" anotado como
+"no aplicado, decisión de fondo" por ser una alternativa poco madura
+frente al `defaultMode: dontAsk` que ya usa este repo — ahora es una
+opción bastante más asentada, sigue siendo una decisión de Angel, no
+algo para cambiar de pasada.
+
+**Subagentes en segundo plano por defecto + fork mode** (semanas 27 y
+33) — un subagente delegado sigue corriendo mientras Claude sigue
+trabajando, y "fork mode" deja que un subagente herede la conversación
+completa en vez de arrancar con un prompt aislado. Relevante para
+cómo se invocan `cavecrew-investigator`/`builder`/`reviewer` — no
+cambia nada por sí solo, pero es la explicación de por qué delegar a
+un subagente ya no bloquea el hilo principal.
+
+**`/goal`** (semana del 11-15 may) — mantiene a Claude trabajando entre
+turnos hasta que se cumple una condición de terminación explícita, en
+vez de un solo turno. Podría servir para tareas largas y repetitivas
+de este repo (una tanda de `ejercicio-interactivo` para varios
+capítulos seguidos, una curación larga de `graphify label`).
+
+**`claude ultrareview`** (semana del 20-24 abr) — una flota de agentes
+de búsqueda de bugs en la nube, pensado para CI/scripts. Complementa
+(no sustituye) la skill `code-review` ya usada en el flujo de PR de
+este repo — candidato para un trabajo de código grande y puntual
+(un script largo de `python/` o `telecomunicaciones/`), no para el
+flujo normal de cada PR.
+
+**Cómo seguir mirando esta fuente:** `code.claude.com/docs/en/whats-new`
+tiene un digest semanal — la próxima pasada del radar solo necesita
+mirar las entradas posteriores a la semana 37 (7-11 sep 2026).
+
+### Con tarjeta: plugin oficial `security-guidance`
+
+**Qué es:** plugin oficial de Anthropic (`anthropics/claude-plugins-official`,
+marketplace `knowledge-work-plugins`) — revisión de seguridad del
+código que genera Claude: avisos basados en patrones en cada edición,
+revisión de diff con LLM al terminar la sesión (hook `Stop`), y un
+revisor de commits que detecta inyección, XSS, SSRF, secretos
+hardcodeados y 25+ clases de vulnerabilidad más.
+
+**Por qué le sirve a Angel:** este repo tiene bastante código propio
+con permisos reales (`.claude/hooks/*.sh`, con `defaultMode: dontAsk`
+— sin cortafuegos de permisos interactivo) y carpetas de código
+(`python/`, `telecomunicaciones/`). La propia skill `hook-hardening`
+de este repo nació de bugs de seguridad reales en hooks anteriores
+(`restrict-cavecrew-bash.sh`, 4 rondas solo para cerrar bypasses) —
+una revisión de seguridad automática en cada sesión habría podido
+detectar alguno de esos antes de que hiciera falta una revisión
+externa.
+
+**Cómo probarlo:** tarjeta de instalación en el mismo turno de este
+registro.
+
+---
+
+## 2026-09-18 — Aplicado: `fewer-permission-prompts` en piloto automático
+
+**Qué es:** `.claude/hooks/fewer-permission-prompts-reminder.sh` (hook
+`SessionStart`, matcher `startup`) — comprueba un marcador con
+timestamp (`.claude/.fewer-permission-prompts-last-run.json`, mismo
+patrón de escritura atómica que `mark-pr-reviewed.sh`) y, si han
+pasado 7+ días o nunca se ha corrido, le pide a la sesión que ejecute
+la skill `fewer-permission-prompts` sola, sin que Angel tenga que
+acordarse de pedirlo. `.claude/hooks/mark-permission-scan.sh` escribe
+el marcador al terminar, y **lo comitea y sube él mismo** (git add +
+commit + push, solo ese archivo, directo a la rama activa, con
+reintento tras rebase si el push choca) — no depende de que la sesión
+recuerde subirlo aparte. Ver la entrada de esa misma fecha sobre la
+reconstrucción de la Routine del Radar para el porqué de este diseño
+(costó 3 rondas de revisión encontrar que la versión con instrucción
+manual perdía el marcador en el caso más común).
+
+**Por qué le sirve a Angel:** lo pidió explícitamente ("quiero esto
+para todas las sesiones siempre activa"). No es literal "cada sesión"
+— correr la skill completa (escanear transcripciones) en cada arranque
+gastaría tokens de más sin necesidad; el umbral de 7 días mantiene el
+allowlist actualizado solo, sin ese coste repetido. Es un recordatorio
+en el contexto, no un gate técnico — si una sesión no lo sigue, no
+rompe nada, simplemente se repite en el siguiente arranque.
+
+**Cómo probarlo:** ya está activo — se dispara solo cuando toque. Las
+5 pruebas del checklist de `hook-hardening` (sin marcador, justo tras
+marcar, marcador de 10 días, marcador corrupto, jq ausente) se
+corrieron en vivo antes de activarlo.
+
+---
+
 ## 2026-09-18 — Catálogo de Claude Academy (cursos oficiales)
 
 **Qué es:** `academy.claude.com` (antes Anthropic Academy) tiene 26+

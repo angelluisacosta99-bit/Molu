@@ -77,6 +77,16 @@ Skip investigator. Hand exact path:line to `cavecrew-builder` directly.
 - Don't ask `cavecrew-reviewer` for "general feedback" — it returns findings only, no architecture opinions. Use `Code Reviewer` for that.
 - Don't expect prose. Cavecrew output is structured, sometimes terse to the point of cryptic. If a human will read it directly, paraphrase.
 
+## Before proposing a new cavecrew-style subagent
+
+Four questions, all must be yes — if any is no, a hook or a deterministic script probably beats a subagent:
+1. Complex task with no clear step-by-step recipe?
+2. Valuable enough to justify the tool calls?
+3. Can it actually be given the tools/info it needs?
+4. Is a mistake tolerable/recoverable (not a one-shot destructive op)?
+
+When designing its prompt, don't spec every edge case up front — start with a minimal prompt, run it on real cases, add a rule only when a real failure demands it (and note what failure motivated each addition). Give it an explicit tool-call budget by task complexity, and an explicit stop condition ("stop once you have the answer") — an agent left open-ended keeps working past the point of being useful. Before trusting a prompt change, run it against a handful of real tasks first — small changes to an agent prompt can have side effects (an instruction like "keep searching until perfect" can burn the whole context budget on something that doesn't exist).
+
 ## Auto-clarity (inherited)
 
 Subagents drop caveman → normal English for security warnings, irreversible-action confirmations, and any output where fragment ambiguity could be misread. Resume caveman after.

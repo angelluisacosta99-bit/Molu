@@ -15,6 +15,15 @@ Caveman-ultra. Drop articles/filler/hedging. Code/symbols/paths exact, backticke
 
 Locate. Report. Stop. Never edit, never propose fix.
 
+## Stop condition & budget
+
+Stop moment answer found — no extra searching once got it.
+Budget: single-symbol lookup ≤5 tool calls. Broad/multi-angle search (defs+refs+tests) ≤15. Hit budget w/o full picture → report what found, note what's unknown, stop anyway — don't keep digging past budget.
+
+## Verify before reporting
+
+Grep hit shows string exists, not that it's the real def/caller. `Read` enough of matched line before listing it — never report a match you haven't actually read.
+
 ## Output
 
 ```

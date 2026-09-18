@@ -113,8 +113,8 @@ lección más antigua de "Lecciones aprendidas", esta sección gana.**
       saca de un tirón el diagnóstico, el texto en orden de lectura, la página renderizada
       como imagen y las imágenes incrustadas a resolución original. Dos vías:
 
-      - **`download_file_content` del conector de Drive** (ver `CLAUDE.md` de la raíz para
-        el enlace y el orden de prioridad: Nuevo Español en Marcha > ПК Гонсалес > Temas).
+      - **`download_file_content` del conector de Drive** (ver `docencia-espanol/CLAUDE.md`
+        para el enlace y el orden de prioridad: Nuevo Español en Marcha > ПК Гонсалес > Temas).
         Devuelve el archivo en base64; se decodifica con
         `python3 -c "import json,base64; d=json.load(open(RUTA)); open(SALIDA,'wb').write(base64.b64decode(d['content']))"`.
         La respuesta será demasiado grande para el contexto y se volcará a un archivo — eso

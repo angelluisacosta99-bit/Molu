@@ -42,9 +42,9 @@
     "semantic_hash": ""
   },
   ".claude/settings.json": {
-    "mtime": 1789754433.9287212,
-    "seen": 1789754472.5622096,
-    "ast_hash": "0c63da850ce186c9b377a91df153cd4a",
+    "mtime": 1789768041.8306255,
+    "seen": 1789768082.6425645,
+    "ast_hash": "9bb90853692d05c0ee33d81c4011678c",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/scripts/command-metadata.json": {
@@ -522,9 +522,9 @@
     "semantic_hash": ""
   },
   ".agents/skills/cavecrew/SKILL.md": {
-    "mtime": 1789754433.9280894,
-    "seen": 1789754472.5623426,
-    "ast_hash": "f184873cd9c507fa872cc86fd36722e3",
+    "mtime": 1789767591.4545987,
+    "seen": 1789767775.9615846,
+    "ast_hash": "24f48c50a000b2f29ddd05cfd237bc92",
     "semantic_hash": ""
   },
   ".agents/skills/caveman/README.md": {
@@ -630,21 +630,21 @@
     "semantic_hash": ""
   },
   ".claude/agents/cavecrew-investigator.md": {
-    "mtime": 1789754433.9287212,
-    "seen": 1789754472.562359,
-    "ast_hash": "d7f6af8a21a84244710d19b65fd1effa",
+    "mtime": 1789767563.338597,
+    "seen": 1789767775.9616005,
+    "ast_hash": "64ab4f5c72dc151f2c27e75457850a18",
     "semantic_hash": ""
   },
   ".claude/agents/cavecrew-reviewer.md": {
-    "mtime": 1789754433.9287212,
-    "seen": 1789754472.56236,
-    "ast_hash": "20a28dd438babfa70be41fac696220b2",
+    "mtime": 1789767566.2145972,
+    "seen": 1789767775.9616013,
+    "ast_hash": "85e8447c06b901a38490fb112e907ac1",
     "semantic_hash": ""
   },
   ".claude/skills/ejercicio-interactivo/SKILL.md": {
-    "mtime": 1789754433.9287212,
-    "seen": 1789754472.5623608,
-    "ast_hash": "3fb8d262973688975857fc43bc6c1704",
+    "mtime": 1789769720.0667253,
+    "seen": 1789769790.4765878,
+    "ast_hash": "ddd5b420661ce07e3a056de65a355f5a",
     "semantic_hash": ""
   },
   ".claude/skills/ejercicio-interactivo/reference/template.html": {
@@ -708,9 +708,9 @@
     "semantic_hash": ""
   },
   ".claude/skills/hook-hardening/SKILL.md": {
-    "mtime": 1789754433.930901,
-    "seen": 1789754472.562371,
-    "ast_hash": "cc0ae2bd95840807cc579893b6616886",
+    "mtime": 1789770836.8507917,
+    "seen": 1789770851.419824,
+    "ast_hash": "615a7ecfa7266695ecf47b5b5bc28d92",
     "semantic_hash": ""
   },
   ".claude/skills/humanizer/SKILL.md": {
@@ -894,9 +894,9 @@
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1789754433.930901,
-    "seen": 1789754472.562399,
-    "ast_hash": "d6c67949386c5ab33102d7c9781eb7b2",
+    "mtime": 1789769383.0827053,
+    "seen": 1789769414.4112334,
+    "ast_hash": "4173d77fe8bdd1c54ee3466a9aa483eb",
     "semantic_hash": ""
   },
   "DESIGN.md": {
@@ -2016,9 +2016,9 @@
     "semantic_hash": ""
   },
   "recursos-generales/herramientas-ia/novedades.md": {
-    "mtime": 1789754454.516,
-    "seen": 1789754472.5626013,
-    "ast_hash": "b346b4d3158e67e1acd21a899135bf08",
+    "mtime": 1789770817.0147903,
+    "seen": 1789770851.420037,
+    "ast_hash": "366012d292c0732547af3b594ba99272",
     "semantic_hash": ""
   },
   "recursos-generales/herramientas-ia/vercel-web-interface-guidelines.md": {
@@ -2454,75 +2454,99 @@
     "semantic_hash": ""
   },
   ".claude-plugin/marketplace.json": {
-    "mtime": 1789754580.9160075,
-    "seen": 1789754600.2879856,
-    "ast_hash": "9b4905fb462a9d151cde603148cb15f1",
+    "mtime": 1789767065.5465674,
+    "seen": 1789767071.2210107,
+    "ast_hash": "4434aaf85dc3a446850e9c81b4b5aa9d",
     "semantic_hash": ""
   },
   "plugins/caveman-cavecrew/.claude-plugin/plugin.json": {
-    "mtime": 1789754577.9040074,
-    "seen": 1789754600.2880926,
+    "mtime": 1789767065.5757215,
+    "seen": 1789767071.221115,
     "ast_hash": "f70ad1bef0fbb7767333430241314bec",
     "semantic_hash": ""
   },
   "plugins/caveman-cavecrew/hooks.json": {
-    "mtime": 1789754574.6680074,
-    "seen": 1789754600.2880943,
+    "mtime": 1789767065.5758555,
+    "seen": 1789767071.221117,
     "ast_hash": "a872adf087bac3339dc38d9a0e249cae",
     "semantic_hash": ""
   },
   "plugins/caveman-cavecrew/hooks/caveman-mode.sh": {
-    "mtime": 1789754570.200007,
-    "seen": 1789754600.2880952,
-    "ast_hash": "2fc290c762fba3f7bc45ff6713905b0d",
+    "mtime": 1789767065.5758555,
+    "seen": 1789767071.221118,
+    "ast_hash": "94da0fc5d1dc2fe91aa7f6f1f7096ca2",
     "semantic_hash": ""
   },
   "plugins/caveman-cavecrew/hooks/restrict-cavecrew-bash.sh": {
-    "mtime": 1789754561.7449439,
-    "seen": 1789754600.2880962,
-    "ast_hash": "7d2a0a66d9c7489723257329fb0923db",
+    "mtime": 1789767065.5760384,
+    "seen": 1789767071.221119,
+    "ast_hash": "a1ea2c0b1cd18cf56de228c5ec031f9b",
     "semantic_hash": ""
   },
   "plugins/caveman-cavecrew/agents/cavecrew-builder.md": {
-    "mtime": 1789754530.3981442,
-    "seen": 1789754600.2884288,
+    "mtime": 1789767065.5757215,
+    "seen": 1789767071.2213624,
     "ast_hash": "6f3649a6cc4db33c31dfff788703057f",
     "semantic_hash": ""
   },
   "plugins/caveman-cavecrew/agents/cavecrew-investigator.md": {
-    "mtime": 1789754530.3964987,
-    "seen": 1789754600.28843,
-    "ast_hash": "d7f6af8a21a84244710d19b65fd1effa",
+    "mtime": 1789767572.8865976,
+    "seen": 1789767775.961848,
+    "ast_hash": "64ab4f5c72dc151f2c27e75457850a18",
     "semantic_hash": ""
   },
   "plugins/caveman-cavecrew/agents/cavecrew-reviewer.md": {
-    "mtime": 1789754530.3997982,
-    "seen": 1789754600.2884312,
-    "ast_hash": "20a28dd438babfa70be41fac696220b2",
+    "mtime": 1789767575.9425979,
+    "seen": 1789767775.9618487,
+    "ast_hash": "85e8447c06b901a38490fb112e907ac1",
     "semantic_hash": ""
   },
   "plugins/caveman-cavecrew/skills/cavecrew/README.md": {
-    "mtime": 1789754530.3945558,
-    "seen": 1789754600.288432,
-    "ast_hash": "14eec7b6e3c9020b6302be4763dcf5fa",
+    "mtime": 1789767065.5761223,
+    "seen": 1789767071.221365,
+    "ast_hash": "b939e24630555bfc301e51ea5e8e3b6a",
     "semantic_hash": ""
   },
   "plugins/caveman-cavecrew/skills/cavecrew/SKILL.md": {
-    "mtime": 1789754530.3931663,
-    "seen": 1789754600.2884326,
-    "ast_hash": "f184873cd9c507fa872cc86fd36722e3",
+    "mtime": 1789767595.878599,
+    "seen": 1789767775.9618506,
+    "ast_hash": "24f48c50a000b2f29ddd05cfd237bc92",
     "semantic_hash": ""
   },
   "plugins/caveman-cavecrew/skills/caveman/README.md": {
-    "mtime": 1789754530.3916864,
-    "seen": 1789754600.2884333,
-    "ast_hash": "14801a83830df3284b11a2752da83a39",
+    "mtime": 1789767065.5761836,
+    "seen": 1789767071.221367,
+    "ast_hash": "08d0a2a4b81886e0361787c60d1da343",
     "semantic_hash": ""
   },
   "plugins/caveman-cavecrew/skills/caveman/SKILL.md": {
-    "mtime": 1789754530.3895712,
-    "seen": 1789754600.2884343,
+    "mtime": 1789767065.5762851,
+    "seen": 1789767071.2213676,
     "ast_hash": "5c05422ff18a4b8a75d4f78725a7ae87",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/CLAUDE.md": {
+    "mtime": 1789767729.554607,
+    "seen": 1789767775.9616683,
+    "ast_hash": "b459e88313c8d97de768ea5f6f8a8f73",
+    "semantic_hash": ""
+  },
+  ".claude/.fewer-permission-prompts-last-run.json": {
+    "mtime": 1789768048.6931815,
+    "seen": 1789768082.6425476,
+    "ast_hash": "fa8ae94a56271965e3f2e957083ce3e2",
+    "semantic_hash": ""
+  },
+  ".claude/hooks/fewer-permission-prompts-reminder.sh": {
+    "mtime": 1789770460.9227693,
+    "seen": 1789770508.6671956,
+    "ast_hash": "fed4e9687fb278c86133a032b37e9685",
+    "semantic_hash": ""
+  },
+  ".claude/hooks/mark-permission-scan.sh": {
+    "mtime": 1789771395.4148247,
+    "seen": 1789771416.9049687,
+    "ast_hash": "4a30a68cb4aed5aa8809220ec01718fb",
     "semantic_hash": ""
   }
 }
