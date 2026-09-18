@@ -234,6 +234,49 @@ tampoco pasa nada: leer el render con `Read` es la fuente de verdad de
 todos modos (paso 3), tesseract solo ahorra el borrador previo, nunca es
 imprescindible.
 
+## Investigación científica verificada: usar siempre estos conectores
+
+Para el máster (MUSI) y el TFM, antes de citar un paper o dar un
+cálculo por bueno, usar estos conectores ya activos en vez de memoria o
+una búsqueda web sin verificar (justificación completa en
+`recursos-generales/herramientas-ia/novedades.md`, entrada 2026-09-13):
+
+- **Scite** — verificar una cita (autor/título/año/editorial, sin
+  retracciones) antes de añadirla a `Bibliografia.bib`.
+- **alphaXiv** — texto completo de papers de arXiv y, con
+  `discover_papers`, estado del arte reciente. Devuelve título/fecha/ID
+  pero **no** metadatos completos: verificar autores con Scite antes de
+  citar nada de ahí en `main.tex`.
+- **Consensus** — buscar y sintetizar evidencia científica (exige citar
+  `[1]`/`[2]` con lista de referencias al final).
+- **Firecrawl** (`firecrawl_research_*`) — respaldo si las anteriores no
+  tienen el paper.
+- **Wolfram** — verificar cálculos/fórmulas antes de darlos por buenos.
+- **bioRxiv** — solo para la asignatura de bioinformática, no el TFM.
+- **Elicit** — conectado pero **inservible**: su API exige plan de pago
+  (`api_access_denied`, comprobado 2026-09-14). No perder tiempo con él
+  hasta que Angel diga que ha contratado Pro.
+
+Para el resto del trabajo del máster, no solo buscar papers:
+
+- **Hugging Face** — modelos y datasets reales en vez de suponer qué
+  existe: `amazon/chronos-2` (Apache-2.0, predicción de series
+  temporales) está disponible y es directamente relevante para el TFM,
+  comprobado el 2026-09-14. Buscar por **nombre** del modelo, no por
+  descripción: `"time series foundation model forecasting"` devolvió
+  cero resultados y `"chronos"` devolvió los cinco principales.
+- **DeepL** — el Abstract en inglés que exige la plantilla DPTOIA-IT y
+  el Anexo III de solicitud de defensa en inglés.
+- **Google Drive** — ahí viven la plantilla y normativa oficial del TFM
+  y el material heredado del máster (ver `FUENTE.md` de esa carpeta).
+- **Gmail** — seguimiento de la correspondencia con BISITE y posibles
+  tutores (hay un correo enviado sin respuesta, ver
+  `ideas-tfm-energias-renovables.md`).
+- Skills de formato: **`pdf`** (leer papers y normativa), **`xlsx`**
+  (series de REData y datasets de Minería de Datos), **`dataviz`**
+  (gráficas de la memoria), **`docx`**/**`pptx`** (copia de repaso por
+  capítulo y presentación de defensa).
+
 ## Nombre del profesor: sin tilde
 
 El nombre del usuario/profesor es **Angel Luis Acosta González**.
@@ -464,7 +507,19 @@ conversación cuenta como comprometida aunque el archivo esté fuera de Git.
   naturales (por ejemplo, al terminar una tarea grande y empezar otra sin
   relación) comprime el historial en vez de dejar que crezca sin límite.
   No hace falta automatizarlo; es una práctica a tener presente cuando la
-  sesión se alarga mucho.
+  sesión se alarga mucho. Mejor antes de que el contexto llegue al
+  90%+ (~60-70% ya es buen momento, según `code.claude.com/docs/en/costs`)
+  — cuanto antes se compacta, más margen tiene el resumen para quedarse
+  con lo importante.
+- **Instrucción de preservación al compactar** — `code.claude.com/docs/en/context-window`
+  documenta que Claude Code respeta instrucciones explícitas de qué
+  conservar durante el resumen automático. Este mismo archivo sufrió el
+  problema contrario (PR #63: podar `CLAUDE.md` perdió hechos verificados,
+  hicieron falta 6-7 rondas de revisión para recuperarlos) — la
+  instrucción es: **al compactar, preservar siempre la rama de trabajo
+  actual, la lista de archivos modificados sin comitear, los comandos de
+  verificación/test relevantes, y las decisiones de diseño ya tomadas en
+  la tarea en curso.**
 - **Podar este archivo, no solo hacerlo crecer.** Según la guía oficial
   (`code.claude.com/docs/en/best-practices`): "Bloated CLAUDE.md files
   cause Claude to ignore your actual instructions" — para cada línea,

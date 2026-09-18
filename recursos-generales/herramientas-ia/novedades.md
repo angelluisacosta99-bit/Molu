@@ -23,6 +23,746 @@ copias que puedan desincronizarse.
 
 ---
 
+## 2026-09-13 — Búsqueda exhaustiva: herramientas de investigación científica verificada para el máster
+
+Angel pidió explícitamente una búsqueda exhaustiva de herramientas/
+conectores/MCP que ayuden a hacer investigación científica con fuentes
+verificadas para el MUSI y el TFM — "busca en fuentes oficiales, busca
+en GitHub, en todas partes". Cubierto: `ListConnectors`,
+`SearchMcpRegistry`, `SearchPlugins`, `SearchSkills` con palabras clave
+de investigación/citas/verificación/energía, más búsqueda web en
+GitHub para lo que no aparece en ningún catálogo de Claude.
+
+### Ya activos en esta cuenta — sin acción, solo usarlos (adoptado)
+
+- **✅ Scite** — `search_literature`, con verificación de retracciones
+  (`editorialNotices`), formato de cita real y `report_citations`/
+  `citation_report` para un registro auditable de qué se incluyó y qué
+  se descartó y por qué (estilo PRISMA). Es exactamente el mecanismo
+  que ya usa este repo a mano en `lluvia-de-ideas.md` ("verificar
+  autor/título/año/editorial reales antes de citar") — con Scite ese
+  paso se puede automatizar en vez de verificar cada cita por separado.
+- **✅ alphaXiv** — búsqueda y texto completo de preprints de arXiv.
+  Ya se usó de facto en la Opción B del TFM (paper Grid-Agent, arXiv
+  2508.05702) sin usar este conector todavía — a partir de ahora, para
+  cualquier paper de arXiv nuevo, usar `alphaXiv` en vez de buscar el
+  PDF a mano.
+- **✅ Firecrawl** — herramientas `firecrawl_research_*`
+  (`search_papers`, `read_paper`, `related_papers`, `search_github`),
+  distintas de la búsqueda web genérica del mismo conector. Complementa
+  a Scite/alphaXiv para papers que no están en Scite ni son de arXiv.
+
+### ✅ Wolfram — ya activo, el aviso de "needs_reconnect" era falso positivo
+
+**Wolfram** (`Inject precise, real-time computation and knowledge`)
+aparece en `ListConnectors` con `installState: needs_reconnect`, pero
+es engañoso: es `isAuthless` (sin login de por medio), así que no hay
+sesión real que caduque. Probado en vivo con una consulta real
+(`WolframAlpha("speed of light")`) — respondió correctamente. Angel
+confirmó lo mismo por su lado ("a mí me sale como conectado"). No hace
+falta reconectar nada — el aviso de la lista de conectores no refleja
+el estado real de este conector en concreto.
+
+Muy relevante para el TFM: permite verificar cálculos/fórmulas
+(estadística, control, series temporales) con Wolfram Language en vez
+de fiarse de una cuenta hecha a mano o por el modelo.
+
+### Propuestos con tarjeta y activados el mismo día
+
+- **✅ Elicit** (`directoryUuid: 1287875c-308f-4a61-9ebf-4a0201ef214f`)
+  — Activado el 2026-09-13. Busca y analiza papers científicos, genera
+  informes de síntesis de evidencia (`search_papers`, `search_trials`,
+  `create_report`, `create_systematic_review`). Herramienta real y
+  reconocida en investigación (usada para revisiones sistemáticas).
+- **✅ Consensus** (`directoryUuid: 65247229-f0c7-49df-9044-fcbb8b3894c6`)
+  — Activado el 2026-09-13. Buscador de literatura científica basado en
+  evidencia, respuestas ancladas a papers reales. Instrucción del propio
+  conector: citar inline con `[1]`/`[2]` y listar referencias con enlace
+  al final — respetar ese formato al usarlo, no resumir sin citar.
+- **✅ bioRxiv** (`directoryUuid: 7f750eb6-c3cb-47d7-9269-d35c43fe9925`,
+  sin autenticación) — Activado el 2026-09-13. Acceso oficial a
+  preprints de bioRxiv/medRxiv. Relevante en concreto por la asignatura
+  "Minería de datos aplicada a la bioinformática" del MUSI, no por el
+  TFM actual (energía).
+- **Plugin Exa** (`plugin_01FWGx9cc7sCNN5aMZkuU63t`) — búsqueda web
+  profunda con extracción de contenido, incluye papers académicos como
+  caso de uso explícito.
+
+  **Corrección importante (mismo día):** el diagnóstico de "requiere
+  plan de pago" de más arriba era una hipótesis, no el motivo real —
+  descartada al comprobar con una captura de Angel que **Exa ya estaba
+  instalado y activado en su cuenta desde hacía 3 días**, en
+  `claude.ai/new#settings/customize-plugins` → pestaña Plugins (así que
+  su plan sí soporta plugins). El problema real: esta sesión de Claude
+  Code en concreto nunca cargó sus herramientas (nunca apareció en la
+  lista de herramientas ni en `ListPlugins`, pese a estar activado a
+  nivel de cuenta) — probable límite de sincronización de esta sesión
+  en particular, no del plan. Pendiente de confirmar si una sesión
+  nueva sí lo carga (Angel va a abrir una de todas formas por lo de
+  numpy.org/pandas.pydata.org — comprobar ahí de paso).
+
+### Revisados y descartados por redundancia o desajuste (por completitud)
+
+- **Plugin Tavily** — búsqueda/extracción/crawl general. Se solapa con
+  lo que ya cubren Firecrawl + `WebSearch`/`WebFetch` nativos, ya
+  activos — no aporta nada nuevo. (Nota: no es el mismo motivo por el
+  que se descartaron Perplexity/Composio el 2026-08-30 — a esos ni
+  siquiera existían como conectores en el catálogo; Tavily sí existe,
+  se descarta solo por redundancia real de funcionalidad.) No
+  instalado.
+- **Plugin bio-research** (17 componentes: PubMed, bioRxiv, ChEMBL,
+  Consensus + skills de genómica/single-cell/nf-core) — pensado para
+  investigación preclínica de laboratorio (wet-lab), no para aplicar
+  minería de datos a datasets biológicos ya existentes, que es lo que
+  cubre la asignatura del MUSI. Sobredimensionado para el caso de uso
+  real; **bioRxiv suelto** (arriba) es la pieza que sí encaja.
+- **CourtListener / Midpage Legal Research** — investigación jurídica,
+  sin relación con Sistemas Inteligentes.
+- **EDEN (Basecamp Research)** — modelo fundacional biológico para
+  diseño de antibióticos/vacunas — dominio de investigación muy
+  específico, sin relación con el TFM ni las asignaturas del MUSI.
+
+### Encontrados en GitHub, sin tarjeta posible (no están en ningún catálogo de Claude) — documentados, no instalados
+
+Ninguno de estos tiene `directoryUuid`/`pluginId` real, así que no se
+puede proponer con tarjeta de un clic — instalarlos exigiría
+`claude mcp add` a mano, ejecutando código de un tercero no revisado
+por Anthropic ni por este repo. A diferencia de Gemini Notebook (entrada del
+2026-08-30, rechazado por necesitar cookies de sesión completas de
+Google), el riesgo aquí es menor porque las APIs subyacentes son
+públicas y de solo lectura (sin OAuth a una cuenta personal) — pero
+sigue siendo código de terceros sin auditar corriendo en el entorno.
+Si algún día quieres probar alguno, mirar primero cuál tiene más
+estrellas/actividad reciente, no el primero que aparezca:
+
+- **Semantic Scholar** (225M+ papers, grafos de citas) — varios forks;
+  el más visible en la búsqueda es `FujishigeTemma/semantic-scholar-mcp`.
+- **OpenAlex** (240M+ obras, catálogo abierto sin paywall) — varios
+  forks; `cyanheads/openalex-mcp-server` y `oksure/openalex-research-mcp`
+  parecen los más completos.
+- **CrossRef** (resuelve DOI → metadatos oficiales, exactamente el
+  mecanismo de "verificar que una cita es real antes de usarla" que
+  `lluvia-de-ideas.md` ya pide hacer a mano) — `cyanheads/crossref-mcp-server`.
+- **Zotero** (gestor de referencias, con inyección de códigos de cita
+  directo en `.docx` — encajaría con el flujo ya decidido de entregar
+  un `.docx` de repaso por capítulo del TFM) — `cookjohn/zotero-mcp` se
+  menciona como el más completo con acceso de escritura; alternativa de
+  solo lectura vía biblioteca local: `richardjlyon/zotero-mcp`.
+
+**No se instala nada de esta sección por ahora** — queda documentado
+para si Angel decide probar alguno bajo su propio criterio, revisando
+el código antes de correrlo (mismo estándar que se aplicó a
+`humanizer`, copiado a mano tras revisión en vez de `npx` directo).
+
+---
+
+## 2026-09-09 — Skill "humanizer" (terceros, adaptada a mano)
+
+Angel pidió instalar "Humanizer" tras ver un post de Instagram
+(@cinthyasanchezai) que lo promocionaba como habilidad de Claude. No es
+una función nativa de Anthropic — es un skill open-source de un tercero:
+[`blader/humanizer`](https://github.com/blader/humanizer) (MIT).
+
+**Qué es:** reescribe texto para quitar "tells" típicos de IA (aperturas
+escenificadas, tríadas forzadas, palabras infladas tipo "clave"/
+"panorama", negrita decorativa, coletillas de chatbot como "espero que
+esto ayude"). 25 patrones en 5 categorías.
+
+**Cómo se activó:** el repo original se instala con
+`npx skills add blader/humanizer --global`, pero eso ejecuta un paquete
+de npm de un tercero sin revisar y afecta fuera de este repo (`--global`).
+En vez de eso, revisé `SKILL.md` del repo (solo texto, sin nada
+sospechoso) y lo copié a mano a `.claude/skills/humanizer/SKILL.md`,
+con nota de atribución/licencia. Cero código de terceros ejecutado.
+
+**Aviso a Angel:** estas herramientas están pensadas para que un texto
+no sea detectable como escrito por IA. Para tu caso (post de blog para
+tu propio perfil) no hay nada deshonesto — pero si algún día lo usas en
+un contexto donde declarar que el texto es asistido por IA importa
+(una plataforma con esa política, un trabajo académico), ese es tu
+criterio a aplicar, no algo que el skill decida por ti.
+
+**Actualización 2026-09-09 — ampliada y verificada de nuevo:** a
+petición de Angel, dos mejoras sobre la versión inicial:
+- Los 25 patrones ahora aparecen nombrados uno a uno (antes solo se
+  copió el resumen por categoría del `SKILL.md` original; los nombres
+  concretos de cada patrón solo estaban en el `README.md` de la fuente).
+- Añadida una sección de tics específicos del **español** ("no
+  solo... sino también", "cabe destacar que", "en definitiva" como
+  cierre automático) — el original está pensado para inglés y varios
+  de sus patrones (dashes, "pivotal"/"landscape") no tienen equivalente
+  directo.
+- Reescaneado el archivo completo con un script de `unicodedata` en
+  busca de caracteres Unicode ocultos/de control/homóglifos antes y
+  después de la ampliación: 0 encontrados ambas veces.
+
+**Actualización 2026-09-09 (2) — Angel pidió usarlo para su TFM/máster,
+rechazado; luego ampliado más para blog con fuentes adicionales:**
+
+Angel preguntó si podía usar este skill para sus trabajos de
+universidad (máster) y su TFM. Se le explicó que eso es fraude
+académico (evadir detección de IA en una evaluación formal es distinto
+de raíz a un post de blog sin evaluación de por medio) y se rechazó
+ampliarlo con ese fin. Angel aceptó la explicación y pidió continuar
+solo con el uso de blog — el `description` del frontmatter ahora deja
+explícito ese límite de alcance ("NO usar en trabajos de
+universidad/máster ni en el TFM").
+
+Con el alcance ya acotado a blog/redes, se buscaron más fuentes
+open-source similares y se incorporaron ideas nuevas de:
+- `conorbronsdon/avoid-ai-writing` (MIT) — perfil de voz (casual/
+  profesional/cálido/directo) y el ciclo de "iterar hasta converger"
+  (máximo 2 pasadas).
+- `lguz/humanize-writing-skill` (MIT) — el marco de 3 pasadas
+  (vocabulario → estructura → textura humana) y la idea de niveles de
+  palabras prohibidas (Nivel 1 cortar siempre / Nivel 2 revisar caso a
+  caso).
+
+Ambas fuentes citan como referencia común el ensayo de Wikipedia
+"Signs of AI writing" — no se pudo acceder directamente (`en.wikipedia.org`
+bloqueado por el proxy de red de esta sesión), así que queda
+referenciado de segunda mano vía esas dos fuentes, no leído en
+directo. Reescaneado el archivo tras la ampliación: 2 caracteres "→"
+(flecha derecha) encontrados por el umbral del script, revisados a
+mano — son texto normal que escribí yo mismo ("vocabulario → estructura
+→ textura humana"), no nada oculto ni inyectado.
+
+**Actualización 2026-09-09 (3) — revisión con agente independiente,
+6 hallazgos corregidos:** a petición de Angel, se lanzó un agente sin
+contexto previo a revisar el post de blog, la skill `humanizer` y este
+mismo registro. Encontró 6 problemas reales, todos corregidos en el
+momento:
+
+1. **Contradicción en `humanizer`:** "clave" estaba en Nivel 1 ("cortar
+   siempre") y en Nivel 2 ("a veces preciso") a la vez. Corregido:
+   "clave" solo en Nivel 2 con el matiz; Nivel 1 se queda con
+   "fundamental"/"panorama".
+2. **El mismo tic repetido en 3 sitios** sin remitirse entre sí (fruto
+   de las 3 rondas de ampliación sin consolidar). Corregido: cada tic
+   vive en un solo sitio; la sección de tics de español ahora solo
+   tiene lo que no estaba ya cubierto.
+3. **"Los 25 patrones" en realidad documentaba 27** (dos colados en un
+   paréntesis del punto 11). Corregido: renumerados como 12-13
+   explícitos, cabecera actualizada a "27 patrones" con nota de qué
+   fuente aporta cuáles.
+4. **La nota de "no usar en TFM" se leía como más sólida de lo que
+   es.** Añadida una aclaración explícita: es documentación, no un
+   bloqueo técnico — no impide reescribir algo a mano sin invocar el
+   skill por su nombre.
+5. **Meta-descripción del post en 165 caracteres** (por encima del
+   límite de ~155-160 de Google). Acortada a 124.
+6. **El enlace Markdown del CTA no sobrevive a un editor WYSIWYG.**
+   Añadida una nota en el propio post explicando cómo recrearlo a mano
+   en el editor de la plataforma.
+
+El agente confirmó sin problemas: el contenido del blog no tiene datos
+inventados (contrastado contra los README reales de
+`docencia-espanol/`), las entradas de este registro coinciden con el
+estado real de los archivos, y no hay nada tipo inyección de prompt en
+`SKILL.md` (su propio escaneo con `unicodedata` también dio 0).
+
+---
+
+## 2026-09-07 — Búsqueda a mano: herramientas para posts de blog en plataformas de clases
+
+Angel pidió una búsqueda exhaustiva mientras preparaba un post de blog
+para el perfil de TusClasesParticulares (y potencialmente Superprof).
+Revisado el catálogo completo de conectores MCP y plugins con
+palabras clave de blog/SEO/marketing/tutoring — esto es lo que encajó.
+
+### Plugin "Marketing" (`plugin_01Eeb9y5m4iFuY3yRtytYfdc`)
+
+**Qué es:** paquete de skills para redactar contenido, planificar
+campañas y analizar rendimiento. Incluye `marketing:draft-content`
+(redactar un post con optimización SEO integrada), `content-creation`,
+`seo-audit` y `brand-review`.
+
+**Por qué le sirve a Angel:** encaja directo con el post que se acaba
+de escribir a mano en `docencia-espanol/materiales/blog/` — la próxima
+vez podría usarse `draft-content` para partir de una estructura ya
+pensada para SEO, en vez de escribir el post desde cero.
+
+**Cómo probarlo:** tarjeta de instalación ya mostrada en el chat.
+Bastantes de los conectores que lista (Ahrefs, HubSpot, Klaviyo,
+Supermetrics...) son opcionales — solo hacen falta si se usan las
+skills de analítica, no para simplemente redactar un post.
+
+### Plugin "SearchFit SEO" (`plugin_016u9h5nGGKuX18riDTJ7otg`)
+
+**Qué es:** kit de SEO gratuito con IA — auditoría de sitio,
+`content-brief`, `content-strategy`, `on-page-seo`,
+`keyword-clustering`, generación de schema markup.
+
+**Por qué le sirve a Angel:** más ligero que "Marketing", centrado solo
+en SEO. Útil para revisar palabras clave antes de escribir (¿qué busca
+alguien que quiere "clases de español para rusohablantes"?) y para que
+el post aparezca mejor en buscadores, tal y como promete
+TusClasesParticulares en su propia landing ("Tu post será visible en
+los motores de búsqueda como Google").
+
+**Cómo probarlo:** tarjeta de instalación ya mostrada en el chat.
+
+### Mencionados pero no propuestos con tarjeta (por completitud, sin encajar tan bien ahora mismo)
+
+- **Semrush** y **Ahrefs** (conectores MCP) — SEO avanzado, análisis de
+  competencia, investigación de keywords. Herramientas de pago
+  pensadas para negocios con varios sitios/canales; para un solo post
+  de blog de un profesor particular son sobredimensionadas. Quedan
+  anotadas por si en el futuro Angel monta una web propia y quiere
+  hacer SEO en serio.
+- **Metricool** (conector MCP) — programar y analizar publicaciones en
+  redes sociales. No es blog, pero es la herramienta natural si
+  algún día Angel quiere promocionar sus posts también en redes.
+- **WordPress.com** (conector MCP) — gestión de sitios WordPress.
+  Solo relevante si Angel tuviera su propia web en WordPress (no es el
+  caso: publica en plataformas de terceros como TusClasesParticulares).
+- Revisado también el resto del catálogo (CRM, ventas B2B, analítica
+  empresarial, herramientas de desarrollo) — no aplica a este caso de
+  uso, no se detalla aquí para no "volcar todo el mercado".
+
+---
+
+## 2026-09-07 — sync-main.sh: ramas base viejas ya no se quedan sin funciones fusionadas
+
+**Qué pasó:** la sesión "Nivel B2" arrancó desde un commit (rama
+`claude/molu-repo-status-l7y50m`) anterior a que `caveman-mode.sh`
+existiera siquiera en `main` -- `/caveman` no funcionaba ahí, y nada lo
+avisó hasta que Angel preguntó por qué, varias sesiones después. Pidió
+explícitamente arreglarlo para que no vuelva a pasar, de forma
+automática en cada sesión nueva.
+
+**Por qué pasa en general, no solo con caveman:** cada sesión de Claude
+Code Remote puede arrancar desde cualquier commit/rama que se le indique
+al crearla. Si ese punto de partida es anterior a un merge reciente a
+`main` (una skill, un hook, una corrección), esa sesión simplemente no
+tiene ese contenido -- no hay forma de que un archivo fusionado *después*
+de ese commit aparezca por arte de magia en un checkout de *antes*. Eso
+no tiene arreglo desde el propio repo (es cómo funciona git). Lo que sí
+se puede hacer: detectarlo y corregirlo (cuando sea seguro) o avisarlo
+(cuando no lo sea) en el arranque de cada sesión, en vez de descubrirlo
+por sorpresa como pasó aquí.
+
+**Qué es:** `.claude/hooks/sync-main.sh`, nuevo hook `SessionStart` con
+`"matcher": "startup"` (solo arranque real, nunca resume/clear/compact --
+ver por qué abajo). En cada arranque: hace `fetch` de `origin/main` y,
+si la rama actual está detrás:
+- **Árbol de trabajo limpio (incluyendo archivos ignorados sin
+  trackear, ver corrección de revisión más abajo) y sin commits propios
+  que diverjan** (el caso exacto de "Nivel B2": una sesión recién
+  creada, todavía sin su propio trabajo) → fast-forward automático
+  (`git merge --ff-only`).
+- **Árbol sucio (cambios sin comitear O archivos locales ignorados por
+  `.gitignore`), o rama ya con commits propios que divergen de `main`**
+  (el caso normal de cualquier sesión ya trabajando en su propia tarea)
+  → no toca nada, solo avisa con un mensaje corto sugiriendo
+  `git merge origin/main` a mano.
+- Sin red o sin remoto → avisa y sigue, nunca bloquea el arranque.
+
+**Por qué solo `matcher: "startup"`, nunca resume/clear/compact:** un
+merge a mitad de una tarea, con cambios sin comitear en danza, tocaría
+el árbol de trabajo bajo los pies de la sesión -- exactamente el efecto
+secundario que `hook-hardening` (punto 7) pide evitar. En un arranque
+real todavía no hay nada propio que una sesión pueda perder.
+
+**Revisión antes de fusionar, ronda 1 -- hallazgo real, reproducido en
+vivo:** la primera versión comprobaba `git status --porcelain` sin
+`--ignored` -- un archivo local sin trackear que coincide con un
+patrón de `.gitignore` (ej. un `secret.env` propio) es invisible a esa
+comprobación, así que el chequeo de "árbol limpio" lo daba por bueno.
+Si `origin/main` empieza a trackear un archivo en esa misma ruta, `git
+merge --ff-only` lo sobrescribe en silencio, sin conflicto, sin aviso,
+`exit 0` -- **la propia revisión lo reprodujo en vivo** (un `secret.env`
+local real sustituido por el contenido subido, sin ningún mensaje de
+git avisando). Primer arreglo: añadir `--ignored` a la comprobación
+(`git status --porcelain --ignored`), tratando cualquier archivo
+ignorado sin trackear como "árbol no limpio".
+
+**Ronda 2 -- ese primer arreglo, aunque cerraba el hueco, dejaba el
+hook casi permanentemente inútil en este repo en concreto:** verificado
+en vivo contra el propio checkout de este repo, `git status --porcelain
+--ignored` ya devuelve 8 entradas de siempre (`graphify-out/.graphify_*`,
+`graphify-out/cache/`, `.claude/.pr-review-state/`...) -- artefactos
+rutinarios de `graphify`/`check-pr-review.sh`, no trabajo real sin
+comitear. Con el primer arreglo, el chequeo de "árbol limpio" fallaba
+casi siempre en este repo, así que el auto-heal (el propósito entero
+del hook) casi nunca llegaba a dispararse -- ni siquiera en el caso
+exacto de "Nivel B2" que lo motivó. Rediseñado: en vez de un chequeo
+genérico de "¿hay algo raro en el árbol?", una comprobación precisa de
+colisión de rutas -- se compara la lista de archivos que `origin/main`
+cambiaría (`git diff --name-only HEAD..origin/main`) contra los
+archivos locales sin trackear o ignorados (`git status --porcelain
+--ignored=matching`, que sí lista archivo por archivo en vez de
+colapsar directorios). Solo si una ruta aparece en ambas listas se
+bloquea el auto-heal; un artefacto ignorado que no coincide con nada
+de lo que cambiaría ya no bloquea nada. Se apoya además en que `git
+merge --ff-only` ya protege por sí solo, sin ayuda de este script,
+cualquier cambio local sin comitear en un archivo *trackeado*
+(verificado en vivo: aborta limpio, "Your local changes... would be
+overwritten by merge", contenido intacto) -- por eso ya no hacía falta
+un chequeo propio para ese caso, solo para el hueco real (archivos sin
+trackear/ignorados).
+
+**Ronda 3 -- el propio chequeo de colisión de rutas capturaba de más:**
+al no filtrar por el código de estado de `git status --porcelain`
+(`??`/`!!` para sin trackear/ignorado, pero también ` M`/`M ` etc. para
+trackeados modificados), un archivo trackeado modificado sin comitear
+en una ruta que `origin/main` también cambia caía en el mensaje de
+"colisión con archivo sin trackear" -- resultado seguro (no fusionaba
+igual) pero diagnóstico engañoso, atribuyendo a un archivo sin
+trackear algo que en realidad era un cambio trackeado. Corregido
+filtrando solo `^(\?\?|!!) ` antes de comparar rutas.
+
+**Ronda 4 -- otra revisión externa rompió la propia comprobación de
+colisión de rutas de la ronda 2-3, con dos fallos reales, ambos
+reproducidos en vivo:**
+1. **Citado inconsistente.** `git diff --name-only` y `git status
+   --porcelain` no citan igual una ruta con espacio o carácter
+   no-ASCII sin el flag `-z` -- una colisión real (`mi secreto.txt`)
+   salía citada (`"mi secreto.txt"`) de un lado y sin citar del otro,
+   así que la comparación de cadena exacta nunca coincidía y el
+   archivo se sobrescribía igual, sin aviso.
+2. **Colapso de directorios.** `git status --porcelain
+   --ignored=matching` sigue colapsando un directorio entero a una
+   sola línea cuando el patrón de `.gitignore` apunta al directorio
+   (no a archivos sueltos) -- confirmado en vivo contra los propios
+   `.claude/.pr-review-state/`/`graphify-out/cache/` de este repo. Un
+   archivo *dentro* de esos directorios que colisionara con
+   `origin/main` no se habría detectado nunca.
+
+Corregido con `-z` en ambos lados de la comparación (elimina el
+citado) y sustituyendo `git status --porcelain` por `git ls-files
+--others --exclude-standard -z` (sin trackear) + `git ls-files
+--others --ignored --exclude-standard -z` (ignorados) -- `ls-files`
+nunca colapsa un directorio, a diferencia de `status`. Esta es la
+misma familia de error (citado/formato inconsistente entre dos
+comandos de git al comparar rutas) que ya se documentó como lección
+general en `hook-hardening` (punto 9) tras esta saga de 4 rondas sobre
+el mismo archivo -- regla de "3+ rondas" de `CLAUDE.md` aplicada.
+
+**Verificado en vivo, los 9 casos (7 + los 2 de la ronda 4), contra un
+remoto git real (no simulado con texto) tras cada ronda:** rama detrás
+sin commits propios → fast-forward correcto; rama detrás con commit
+propio que diverge → NO fusiona, `HEAD` idéntico, solo avisa; archivo
+*trackeado* modificado sin comitear en la misma ruta que `origin/main`
+cambia → NO fusiona (git lo protege solo), mensaje genérico correcto;
+rama ya al día → sin ningún output; remoto roto → avisa, `exit 0`;
+archivo ignorado sin trackear que SÍ colisiona → NO fusiona, contenido
+local preservado; archivo ignorado sin trackear que NO colisiona (el
+caso real de `graphify-out/`/`.pr-review-state/` de este mismo repo) →
+SÍ fusiona, confirmado también contra el checkout real de `Molu`;
+archivo *dentro* de un directorio colapsado que colisiona → NO fusiona
+tras la ronda 4 (antes de corregir, sí fusionaba y lo perdía); archivo
+ignorado con espacio en el nombre que colisiona → NO fusiona tras la
+ronda 4 (antes, el citado inconsistente lo dejaba pasar). `shellcheck`
+limpio en cada ronda.
+
+**Ronda 6 -- otra revisión externa, sin haber tocado nada más entre
+medias, encontró un tercer bypass real de la misma comprobación de
+colisión:** la comparación solo miraba igualdad exacta de cadena entre
+rutas -- no detecta que `origin/main` añada un archivo trackeado
+*dentro* de una ruta que localmente es un archivo suelto (`foo` local
+como archivo, `origin/main` empieza a trackear `foo/bar.txt`): ninguna
+ruta es igual a la otra, pero el fast-forward destruye `foo` igual para
+convertirlo en carpeta -- reproducido en vivo, misma clase de pérdida
+silenciosa que las rondas anteriores, un nivel de ruta más profundo.
+Corregido comprobando también el prefijo `ruta/` en ambos sentidos, no
+solo la igualdad -- verificado en vivo con un 10º caso (`foo` local
+preservado tras el arreglo). Ampliada la lección del punto 9 de
+`hook-hardening` con esta segunda vuelta sobre el mismo tipo de error.
+
+**Ronda 7 -- exactamente el escenario anticipado arriba, y la decisión
+tomada en consecuencia:** una séptima revisión encontró que la propia
+comparación de listas (`CHANGED_PATHS` contra `LOCAL_STRAY`, un bucle
+anidado en bash sin cota) es O(n×m) sin límite de tamaño -- con una
+rama muy detrás de `main` y muchos archivos sueltos, puede tardar
+segundos o minutos, colgando el arranque de sesión -- justo lo que este
+hook promete no hacer nunca. Medido en vivo: 2000×2000 rutas tardaron
+54,8s. **Decisión: abandonar la comparación precisa entera, no
+parchearla una vez más.** Vuelto al chequeo simple original (¿hay algo
+sin trackear o ignorado en el árbol, sin más?) -- sin comparar nada, no
+puede sufrir ninguna de las 6 clases de bug encontradas (citado,
+colapso de directorios, colisión de prefijo) ni la de rendimiento.
+Coste aceptado: el auto-heal ahora vuelve a disparar menos veces en
+este repo en concreto (cualquier artefacto ignorado presente, colisione
+o no, bloquea el auto-heal) -- el mismo trade-off que la ronda 2 había
+rechazado, pero esta vez aceptado deliberadamente tras ver hasta dónde
+llevaba la alternativa "inteligente". Verificado en vivo: los 6 casos
+esenciales (fast-forward limpio, diverge, trackeado modificado
+preservado, ya al día, remoto roto, artefacto ignorado sin colisión
+ahora también bloquea) más una prueba de rendimiento explícita (2000
+archivos sueltos, misma rama muy detrás) -- completa en 0,022s en vez
+de colgarse. `shellcheck` limpio. Documentado como punto 10 nuevo en
+`hook-hardening` ("antes de comparar/enumerar con precisión en un hook,
+preguntar si el chequeo simple ya basta").
+
+**Balance final tras 7 rondas sobre el mismo archivo, para que quede
+constancia honesta:** cada ronda encontró un bypass real y distinto
+(citado, colapso de directorios, colisión de prefijo, rendimiento) --
+no fue una sola corrección con ruido alrededor, fue una familia
+completa de sutilezas de git agotándose una a una hasta que el coste de
+seguir agotándolas superó el beneficio de la precisión. La lección
+que se lleva de aquí (punto 10 de `hook-hardening`) es más importante
+que el propio hook: cuando el chequeo conservador solo cuesta "actuar
+menos veces" y nunca "perder algo o colgarse", empezar por él y solo
+complicarlo si de verdad hace falta -- no al revés.
+
+**Límite honesto:** esto NO resuelve el caso de "Nivel B2" en sí (esa
+sesión sigue en su rama vieja, sin este hook ahí tampoco, porque su
+checkout es anterior a que este mismo hook exista -- el mismo problema
+que el hook intenta resolver para el futuro no puede resolverse
+retroactivamente para una sesión que ya arrancó). Tampoco fusiona
+cuando una sesión ya tiene trabajo propio divergente -- ahí sigue
+haciendo falta un merge a mano, a propósito, para no fusionar sin
+revisar.
+
+---
+
+## 2026-08-30 — Carrusel "4 conectores que le dan superpoderes a Claude": revisado, nada que instalar
+
+**Contexto:** Angel compartió una captura de estilo carrusel de redes
+sociales listando 4 "conectores": Perplexity, Firecrawl, Playwright,
+Composio. Mismo patrón que el carrusel de Instagram del PR #67 —
+verificado contra el catálogo real en vez de fiarse del texto de la
+imagen.
+
+**Verificado con `SearchMcpRegistry`/`SearchPlugins`/`ListConnectors`:**
+- **Perplexity** — no existe como conector en este catálogo.
+- **Playwright** — no existe como conector en este catálogo, y su
+  función (Claude operando un navegador real) ya la cubre `agent-browser`
+  (Vercel Labs), activo en este repo desde el 2026-08-20.
+- **Composio** — no existe como conector en este catálogo. Aunque
+  existiera, agregar el acceso a "cientos de apps" a través de un único
+  intermediario externo concentra el riesgo de una filtración en un
+  solo punto — el mismo motivo por el que se descartaron las opciones de
+  Gemini Notebook, ver entrada de más abajo — en vez de conectores
+  oficiales uno a uno, que es como ya están conectados Drive, Calendar,
+  Gmail, GitHub, DeepL, Brisk Teaching, Figma, Canva, Gamma, Zoom y
+  Microsoft Learn.
+- **Firecrawl** — el único real: sí existe como conector oficial
+  (`directoryUuid: 8bedbd43-e074-4a82-8bc3-53ef89afc032`, sin instalar).
+  Pero sus herramientas reales aquí (`firecrawl_search`,
+  `firecrawl_research_*` para papers/GitHub) son más estrechas que lo
+  que promete la imagen ("cualquier sitio web, análisis de marca,
+  research de competencia") — y lo que sí hace se solapa con
+  `WebSearch`/`WebFetch`, ya nativos de Claude Code sin instalar nada.
+
+**Decisión:** no instalar ninguno. Ninguno resuelve una necesidad real
+que no esté ya cubierta (Firecrawl) o no exista siquiera como conector
+(los otros tres). Registrado para no volver a investigar el mismo
+carrusel si se repite.
+
+---
+
+## 2026-08-30 — Memory de Anthropic: memoria compartida entre chats (nativo, oficial)
+
+**Contexto:** Angel pidió explícitamente algo para que Claude "tenga
+memoria de todos los chats" y conecte lo hablado en una conversación con
+otra independiente. Fuentes oficiales:
+[claude.com/blog/memory](https://claude.com/blog/memory) y
+[anthropic.com/news/memory](https://www.anthropic.com/news/memory)
+(anuncio del 2026-08-25, cinco días antes de esta pasada).
+
+**Qué es:** función nativa de Anthropic, no un conector ni un plugin —
+nada que instalar. Claude procesa las conversaciones automáticamente
+(aprox. cada 24h) y extrae un resumen de lo que vale la pena recordar a
+largo plazo (profesión, preferencias, herramientas que usas a menudo,
+contexto personal recurrente) — no guarda la transcripción literal.
+Activada por defecto desde marzo de 2026 para cuentas Free/Pro/Max.
+La novedad del 25 de agosto es que ahora esa memoria se **comparte
+entre el chat normal de claude.ai y Claude Cowork** — lo que se cuenta
+en un chat puede informar una tarea de Cowork, y viceversa.
+
+**Por qué le sirve a Angel en concreto:** es justo lo que pidió — deja
+de tener que re-explicar contexto (qué libro de texto usa, qué alumnos
+tiene, qué convenciones sigue en `telecomunicaciones/` o el máster) cada
+vez que abre un chat nuevo sin relación con este repo. Y si usa
+**Proyectos** en claude.ai, la memoria queda separada por proyecto — un
+proyecto de "docencia de español" no mezcla su memoria con uno de
+"máster" o "traducción", que es exactamente como ya tiene organizado
+este propio repositorio por carpetas de dominio.
+
+**Seguridad/privacidad, la parte que Angel pidió comprobar
+explícitamente ("no malignas"):** la memoria queda ligada solo a la
+cuenta de Angel, nunca se comparte con otros usuarios, y no se usa para
+entrenar a Claude salvo que él mismo active compartir datos de
+entrenamiento (`Ajustes > Privacidad > Help improve Claude`, opt-in, no
+por defecto). Desde el propio anuncio del 25 de agosto, además, hay
+categorías sensibles que se excluyen por defecto sin acción suya: salud,
+raza/etnia, creencias religiosas, política, identidad de género.
+
+**Cómo comprobarlo/gestionarlo:** `Ajustes > Capacidades > Memory` en
+claude.ai — ver, editar o borrar recuerdos concretos, pausar la memoria,
+o resetearla entera. Es un ajuste de cuenta personal, no algo que se
+pueda activar desde aquí (barrera de plataforma, igual que un
+conector) — Angel tiene que revisarlo él mismo en sus ajustes.
+
+**Duda honesta sin verificar:** no está confirmado si la unificación
+chat↔Cowork del 25 de agosto ya cubre su plan concreto — varias fuentes
+la describen empezando a desplegarse primero para cuentas Team/Enterprise;
+la memoria base (desde marzo) sí debería estar activa ya para Free/Pro/Max.
+Comprobar en `Ajustes > Capacidades > Memory` si ya aparece la opción
+compartida con Cowork, en vez de asumirlo.
+
+---
+
+## 2026-08-30 — Compactación de contexto: palancas oficiales para ahorrar tokens
+
+**Contexto:** pedido explícito de Angel — herramientas "realmente
+efectivas y oficiales, no malignas" para ahorrar tokens. Fuentes, todas
+oficiales esta vez: `code.claude.com/docs/en/context-window`,
+`code.claude.com/docs/en/costs`, `code.claude.com/docs/en/best-practices`.
+
+### Aplicado: instrucción de preservación al compactar, en `CLAUDE.md`
+
+**Qué es:** Claude Code respeta instrucciones explícitas en `CLAUDE.md`
+sobre qué conservar durante el resumen automático de contexto (ej.
+"When compacting, always preserve the full list of modified files and
+any test commands").
+
+**Por qué le sirve a Angel en concreto:** este mismo archivo ya sufrió
+el problema contrario (PR #63, entrada del 2026-08-16): podar
+`CLAUDE.md` perdió hechos verificados y hicieron falta 6-7 rondas de
+revisión para recuperarlos. Esta instrucción ataca la causa (qué
+sobrevive a una compactación), no solo el síntoma de podar con cuidado
+después del hecho.
+
+**Cómo se aplicó:** nueva línea en la sección "Ahorro de tokens" de
+`CLAUDE.md`, en el bloque de `/compact`.
+
+### Anotado, no aplicado (palancas oficiales sin necesidad clara todavía)
+
+- **`/autocompact <tamaño>`** — fija a mano el umbral de compactación
+  automática (ej. `/autocompact 500k`) en vez de esperar al límite del
+  modelo. Útil para sesiones largas como las de revisión de PRs de este
+  repo, pero no se ha fijado un valor por defecto — depende del modelo
+  activo en cada sesión, sin un tamaño "típico" claro todavía.
+- **`/compact <instrucciones>`** — variante manual, dirige qué preservar
+  en una compactación puntual (ej. `/compact Focus on the API changes`).
+- **Umbral ~60-70% de contexto** para lanzar `/compact`, en vez de
+  esperar al 90%+ — ya añadido como práctica en `CLAUDE.md`.
+- **`MAX_THINKING_TOKENS`** (variable de entorno) — limita el gasto en
+  tokens de pensamiento extendido. No activada: sin evidencia de que las
+  sesiones de este repo gasten de más ahí, y capar el límite arriesga
+  recortar razonamiento donde sí hace falta.
+- **Delegar en subagentes las tareas de lectura pesada de contexto** —
+  confirmado como práctica oficial recomendada
+  (`code.claude.com/docs/en/costs`). Este repo ya lo hace de forma
+  consistente (`Explore`, `cavecrew`) — sin acción nueva, solo confirma
+  que la práctica actual va en la dirección correcta.
+
+### Fuera de alcance de Claude Code, mencionado para completar el cuadro
+
+**Context Editing API + Memory Tool** (Claude Developer Platform, beta,
+`claude.com/blog/context-management`) — recorta hasta 84% el consumo de
+tokens en bucles largos de uso de herramientas, pero es una función de
+la API/SDK de Anthropic, no del chat de Claude Code. Solo relevante si
+Angel construye sus propios agentes con el SDK (la skill `claude-api`
+ya instalada cubre esto) — no aplica a esta sesión directamente.
+
+---
+
+## 2026-08-30 — Pasada del radar: dos funciones nativas nuevas, sin hallazgos de terceros
+
+**Contexto:** pasada pedida explícitamente por Angel tras preguntar por
+Gemini Notebook, para repasar qué se ha recomendado y no se ha instalado
+(ver correcciones más arriba: Brisk Teaching y Learn with Coursera
+resultaron ya activos, sin que este registro lo reflejara) y qué hay
+nuevo hoy. Fuentes consultadas: `code.claude.com/docs/en/whats-new`
+(semana 34, 17-21 agosto 2026), `SearchMcpRegistry`/`SearchPlugins`
+para telecomunicaciones/ferrocarril/traducción/Python/docencia (sin
+resultados relevantes — solo herramientas de empresa sin relación,
+tipo Honeycomb/DataRobot/Twilio/Auth0), y `anthropic.com/news` (solo
+anuncios corporativos: chips propios, Model Hardware Standard para
+robots/laboratorio, marca de agua en contenido generado — ninguno
+aplica a este repo).
+
+### Auto-continue al resetear el límite de uso (nativo, activado por defecto)
+
+**Qué es:** Claude Code sigue la sesión automáticamente en cuanto se
+resetea el límite de uso de 5h, en vez de quedarse parado esperando a
+que Angel vuelva a escribir. Activado por defecto desde la versión
+2.1.234; se puede desactivar en `/config` → "Continue automatically at
+usage limit".
+
+**Por qué le sirve a Angel:** complementa directamente la práctica ya
+registrada el 2026-08-18 ("desplazar la ventana de 5h mandando un
+mensaje corto al empezar") — ahora, además de desplazar cuándo empieza
+la ventana, Claude Code no pierde tiempo muerto en cuanto se resetea.
+
+**Cómo probarlo:** nada que instalar — ya viene activado. Revisar
+`/config` si se prefiere desactivarlo.
+
+### Estilo de salida "Concise" (nativo)
+
+**Qué es:** nuevo output style incorporado (`/config` o `settings.json`,
+desde la versión 2.1.237) que recorta la narración de relleno y
+antepone el resultado a la explicación.
+
+**Por qué probablemente no aporta aquí:** `caveman` ya cubre ese mismo
+objetivo con más matices propios (niveles de intensidad, reglas de
+cuándo NO comprimir) cuando está activo — ver la corrección del
+2026-08-30 más abajo sobre cómo se activa de verdad. Mencionado por
+completitud, no se recomienda activar el estilo "Concise" también —
+redundante con lo que ya tienes.
+
+### Sin hallazgos nuevos de terceros en los dominios de Angel
+
+Ninguna skill, plugin o conector nuevo relevante para
+docencia-espanol/python/telecomunicaciones/traduccion/máster esta
+pasada — los resultados de `SearchMcpRegistry`/`SearchPlugins` para esos
+dominios fueron herramientas de empresa (DevOps, observability, CRM) sin
+relación real. No se crea nada más en este registro por esta parte de
+la pasada.
+
+---
+
+## 2026-08-30 — Gemini Notebook (antes NotebookLM): sin opción segura, no adoptado
+
+**Nota sobre cómo se activó:** a petición explícita de Angel ("quiero
+conectarte a Gemini Notebook, encuentra todas las formas que existen y
+selecciona la más segura"). Búsqueda vía `SearchMcpRegistry` (nada
+relevante — el único resultado fue "Goodnotes", sin relación),
+`SearchSkills` (vacío) y búsqueda web.
+
+**Qué es:** Google renombró NotebookLM a **Gemini Notebook** el
+2026-07-16. Es la herramienta de notas/investigación con fuentes
+propias de Google — encajaría con `docencia-espanol/`, `python/`,
+`telecomunicaciones/` y el máster como espacio de apuntes con RAG sobre
+material propio.
+
+**Por qué no se adoptó ninguna opción:** no existe API de consumidor
+todavía (Google la tiene "en desarrollo", sin fecha) ni conector MCP
+oficial. Solo hay una API Enterprise (requiere proyecto de Google Cloud
++ licencia Gemini Enterprise/Education Premium, no aplica a una cuenta
+personal) y un puñado de proyectos de comunidad no oficiales
+(`teng-lin/notebooklm-py` ~18.5k★, `roomi-fields/notebooklm-mcp` 16★,
+más wrappers finos de menor reputación como `DevstackK/Notebooklm-Unofficial-API-MCP`
+y `moodRobotics/notebooklm-mcp-server`) — todos hacen ingeniería inversa
+de la API interna de Google o automatizan el navegador con Playwright.
+
+La diferencia real frente a los conectores ya activos (Google
+Drive/Calendar): esos usan OAuth con alcance acotado y revocable en un
+clic; **todas** las opciones de Gemini Notebook necesitan en cambio las
+cookies completas de la sesión de Google (`__Secure-1PSID`/`-1PSIDTS`)
+o un login real vía Playwright — acceso de facto a toda la cuenta
+(Gmail, Drive, Calendar...), no solo a Notebook, y con el añadido de
+incumplir los términos de Google sobre acceso automatizado. Ningún
+proyecto de la lista cambia esa arquitectura de fondo, así que ninguno
+cruza la barra de seguridad que sí cumplen los conectores oficiales que
+Angel ya usa.
+
+**Decisión:** no instalar nada ahora. Si en el futuro Angel quiere
+probarlo pese al riesgo, hacerlo solo desde una cuenta de Google
+secundaria (nunca la personal) y con `teng-lin/notebooklm-py` (el más
+usado y mantenido de los no oficiales) en vez de los forks con menos
+reputación. Revisar de nuevo cuando Google publique la API de
+consumidor que ya confirmó — en ese momento sí encajaría con el criterio
+normal de esta lista.
+
+❌ No adoptado — revisar si Google publica una API de consumidor oficial.
+
+---
+
 ### Lección: `graphify-out/.pending_changes` se cuela en git (3ª vez)
 
 **Qué pasó:** el `.gitignore` solo excluía `graphify-out/.graphify_*`, y
@@ -236,7 +976,75 @@ el badge esperado.
 
 ✅ Configurado el 2026-08-23.
 
-## 2026-08-22 — caveman (JuliusBrussee): activado para todas las sesiones
+## 2026-08-22 — caveman (JuliusBrussee): instalado (corrección 2026-08-30: no se activa solo)
+
+**Corrección del 2026-08-30, tras investigar por qué `/skill-doctor`
+mostraba 0 usos en más de una semana:** el título original de esta
+entrada ("activado para todas las sesiones") describía la intención,
+no lo que quedó técnicamente implementado. Comparado en vivo contra
+`ponytail`: `ponytail` es un **plugin** de verdad
+(`enabledPlugins: {"ponytail@ponytail": true}` en
+`.claude/settings.json`) con un hook propio empaquetado dentro del
+plugin que inyecta sus reglas completas en cada sesión (visible como
+`"SessionStart:compact hook success: PONYTAIL MODE ACTIVE"`) —
+`caveman`, en cambio, es una **skill suelta** instalada con `npx
+skills add` (solo `README.md` + `SKILL.md`, ver más abajo), sin ningún
+plugin ni hook asociado. Verificado con `grep caveman
+.claude/settings.json`: cero coincidencias. No existe ningún mecanismo
+técnico que la dispare sola al empezar una sesión — **solo se activa
+si se escribe `/caveman [modo]`, o si el lenguaje natural del mensaje
+dispara su propio trigger** ("caveman mode", "less tokens"...),
+exactamente como cualquier otra skill. Mientras nadie pida explícitamente
+modo caveman, las respuestas siguen en prosa normal, con razón.
+
+**Arreglo técnico del 2026-08-30 (Angel eligió esta opción sobre solo
+corregir la documentación):** `.claude/hooks/caveman-mode.sh`, nuevo
+hook `SessionStart` (añadido como entrada extra en
+`.claude/settings.json`, sin tocar `session-start.sh`) que vuelca el
+contenido íntegro de `.claude/skills/caveman/SKILL.md` como
+`hookSpecificOutput.additionalContext` -- el mismo mecanismo documentado
+en el esquema de `settings.json` que usa el hook propio del plugin
+`ponytail`. Best-effort, no bloqueante: si falta `jq` o el archivo de la
+skill no está (symlink roto), sale en silencio sin romper el arranque de
+sesión -- verificado en vivo en los tres casos (normal, sin `jq`, sin
+archivo) y comprobado el JSON de salida contra el propio esquema de
+`settings.json` (`hookSpecificOutput.hookEventName`/`additionalContext`).
+
+**Límite honesto, no un "probado de punta a punta" falso:** `SessionStart`
+solo dispara en un arranque/resume/clear/compact real, ninguno de los
+cuales ocurrió *después* de registrar este hook en la sesión donde se
+escribió -- así que se verificó la forma exacta del JSON que produce,
+pero no (todavía) que Claude Code lo recoja e inyecte de verdad en el
+contexto de la siguiente sesión. Pendiente de confirmar la primera vez
+que se vea el banner "CAVEMAN MODE ACTIVE" al arrancar.
+
+**Revisión antes de fusionar encontró tres hallazgos, los tres corregidos
+o documentados como límite aceptado:**
+1. `cat "$SKILL_FILE"` no tenía `timeout` -- si el symlink de la skill
+   algún día apuntara a algo que bloquea la lectura, este hook (que
+   corre en *cada* arranque/resume/clear/compact) colgaría la sesión
+   entera sin límite, justo lo que el resto del script evita a
+   propósito. Corregido con `timeout 5`, verificado en vivo simulando
+   un cuelgue real (un FIFO como archivo de la skill): el hook sale
+   limpio a los 5s en vez de bloquear indefinidamente.
+2. El comentario original decía "replicar lo que ponytail hace" sin
+   matizar -- la propia revisión detectó en vivo que `ponytail` también
+   se dispara en `SubagentStart` (un subagente heredó su ruleset a
+   mitad de esta sesión), mientras que este hook solo cubre
+   `SessionStart`. Corregido el comentario para no reclamar una
+   paridad que no existe: un subagente lanzado a mitad de sesión no
+   hereda el modo caveman con este diseño. Aceptado así por ahora
+   (cubrir `SubagentStart` también es una extensión futura, no parte
+   de lo pedido).
+3. **Coste aceptado, no corregido:** volcar el `SKILL.md` completo
+   (~6,5 KB) en cada `SessionStart`, incluidos los disparados por
+   `/compact`, añade un coste de tokens recurrente que va justo en
+   contra de la guía de compactación temprana añadida esta misma
+   sesión a `CLAUDE.md`. Es el mismo trade-off que ya acepta `ponytail`
+   (que hace exactamente lo mismo con su propio ruleset) -- no se
+   corrige con un tope de tamaño o deduplicación porque complicaría el
+   hook para un ahorro marginal frente a los ~1500-1700 tokens que ya
+   cuesta cada vez.
 
 **Nota sobre cómo se activó:** a petición explícita de Angel, tras
 preguntar por la herramienta al ver que el propio `ponytail` la
@@ -265,14 +1073,16 @@ punto 7 de `hook-hardening`) — descartado todo con `rm -rf` y
 reinstalado con `npx skills add JuliusBrussee/caveman --skill caveman`,
 que sí trae solo la skill pedida.
 
-**Cómo se activó:** igual que `find-skills` — puro Markdown
+**Cómo se instaló:** igual que `find-skills` — puro Markdown
 (`.agents/skills/caveman/SKILL.md`, symlinkeado desde
 `.claude/skills/caveman`), sin binario ni CLI propio que instalar. No
 hizo falta tocar `.claude/hooks/session-start.sh`. Verificado que
 `.claude/settings.json` no cambió ni un byte tras la instalación (se
 guardó una copia de antes para comparar).
 
-✅ Activado el 2026-08-22.
+✅ Instalado y disponible el 2026-08-22 — **pero no automático**: se
+activa con `/caveman [modo]` o cuando el mensaje dispara su trigger de
+lenguaje natural, nunca solo al empezar sesión (ver corrección arriba).
 
 ## 2026-08-22 — ponytail (DietrichGebert): activado para todas las sesiones
 
@@ -945,6 +1755,13 @@ claude.ai (buscar "Brisk Teaching"). Está pensado sobre todo para K-12
 en inglés — probar con un caso concreto antes de adoptarlo, puede que
 no encaje igual de bien con adultos rusohablantes aprendiendo español.
 
+✅ Activado (visto conectado vía `ListConnectors` el 2026-08-30, sin
+fecha exacta de activación registrada — corregido este marcador con
+retraso). Nota: `connected: true` pero `enabledInChat: false` la última
+vez que se comprobó — está autenticado a nivel de cuenta pero apagado
+para esta conversación en concreto; activarlo en los ajustes de
+conectores de este chat si se quiere usar aquí.
+
 ### Marketplaces de plugins de Claude Code (oficial y comunidad)
 
 **Qué es:** Anthropic mantiene dos catálogos navegables de plugins
@@ -972,6 +1789,14 @@ Dos hallazgos menos prioritarios, mencionados por completitud:
   aprendizaje en una ruta personalizada de cursos de Coursera. Podría
   servirte para tu propio aprendizaje de Python o para el máster,
   requiere el conector de Coursera.
+  ✅ Activado (visto `enabled: true` vía `ListPlugins` el 2026-08-30, sin
+  fecha exacta de activación registrada — corregido este marcador con
+  retraso).
+
+**Learning Commons sigue sin activar** (`ListConnectors` no lo encuentra,
+comprobado el 2026-08-30) — sigue siendo de baja prioridad para el
+perfil de alumnos de Angel (adultos rusohablantes, no K-12), no se
+insiste más salvo que aparezca algo nuevo sobre él.
 
 ---
 
@@ -1006,3 +1831,166 @@ alarga estas sagas a 3+ rondas. Aplica en particular a reglas de
 seguridad (como la (5) aquí): un descuido de propagación en ellas no es
 solo un desprolijidad de estilo, es una ventana real por la que puede
 colarse el daño que la regla existía para prevenir.
+
+---
+
+## 2026-09-14 — Lección: tres rondas declarando "hueco" sobre trabajo ya publicado
+
+Entrada creada por la regla de `CLAUDE.md` "3+ rondas de revisión sobre
+lo mismo → guardar la lección". No es un hook, y no encaja en ninguna
+skill existente, así que va aquí.
+
+**Qué pasó.** Al perfilar el tema del TFM, la misma familia de error se
+repitió tres veces seguidas, cada una detectada solo por una revisión
+posterior, nunca por la pasada que introducía la afirmación:
+
+1. Se propuso un módulo de decisión difuso para gestión de
+   almacenamiento como aportación propia. Ya estaba publicado por
+   Arcos-Avilés et al. en 2017 (*Applied Energy*) y 2018 (*IEEE TSG*).
+2. Se reformuló como comparativa de modelos fundacionales de series
+   temporales. Ya había varias evaluaciones equivalentes de 2026.
+3. Se reformuló como "medir cuánta precisión de pronóstico se traslada
+   a la decisión". Yin, Lei y Feng publicaron en 2024 en *IEEE
+   Transactions on Power Systems* un artículo **cuyo título enuncia esa
+   misma pregunta**, y el marco teórico del campo (*decision-focused learning* /
+   Smart Predict-then-Optimize, Elmachtoub y Grigas, *Management
+   Science*, 2022, 905 citas) llevaba años existiendo sin que ninguna
+   de las tres pasadas lo mencionara.
+
+**El patrón concreto.** En las tres, la afirmación de novedad se
+construyó por ausencia: "no he encontrado trabajo que...". Se buscó lo
+que se iba a proponer, no se buscó **cómo se llama el campo que ya
+estudia eso**. Una búsqueda de "barrido controlado de error en
+pronóstico para gestión de baterías" no devuelve DFL, porque DFL es el
+nombre que la literatura le puso al problema; hay que llegar al nombre
+para encontrarlo.
+
+**La lección, para tareas futuras de estado del arte.** No dar por
+buena ninguna afirmación de novedad basada en no haber encontrado algo.
+Antes de escribir "no existe trabajo que...", hacen falta dos pasos que
+en las tres pasadas se saltaron:
+
+1. **Nombrar el campo, no el método.** Preguntarse "¿qué disciplina
+   estudiaría esto y con qué término técnico lo llamaría?" y buscar ese
+   término. Si no se sabe el término, eso mismo es la señal de que aún
+   no se conoce el campo lo bastante para declarar un hueco en él.
+2. **Ir a los trabajos que citan al artículo fundacional.** Una vez
+   localizado el marco (aquí, Elmachtoub y Grigas), revisar quién lo
+   cita dentro del dominio de aplicación concreto. Es la vía más
+   directa para ver si el cruce que se quiere proponer ya está hecho.
+
+Formulación segura mientras no se completen esos pasos: "las búsquedas
+realizadas no lo encontraron", nunca "no existe". La diferencia importa
+mucho si el texto va a leerlo un doctor del área.
+
+**Aviso operativo de la misma sesión — Scite ignora parámetros mal
+nombrados en silencio.** `mcp__Scite__search_literature` usa `term`
+(y `title`, `author`, `dois`...), **no** `query`. Al pasarle `query`,
+no da error: ignora el parámetro, navega el corpus entero y devuelve
+resultados arbitrarios con aspecto perfectamente normal (en esta sesión
+salieron artículos sobre sedimentos y astronomía babilónica para una
+consulta sobre redes móviles). El síntoma para detectarlo es que el
+campo `query` vuelve vacío en la respuesta y `total` sale idéntico
+(16.800.000) sea cual sea la consulta. Dado que `CLAUDE.md` manda usar
+Scite precisamente para verificar citas, una llamada mal formada da
+falsa sensación de haber verificado: comprobar siempre que el `query`
+devuelto coincide con lo que se pidió.
+
+
+---
+
+## 2026-09-14 — Lección (ampliación): al propagar una corrección, el archivo "resumen para la siguiente sesión" va PRIMERO
+
+Amplía la entrada de arriba sobre propagar una corrección a sus reglas
+hermanas. Se registra por la regla de `CLAUDE.md` de "3+ rondas sobre lo
+mismo": el PR #113 necesitó **cinco rondas** de
+revisión→corrección→revisión, y en casi todas reapareció **la misma
+familia de fallo** — siempre acompañada, eso sí, de hallazgos nuevos e
+independientes, y con la ronda 3 encontrando además un bloqueante de
+otra naturaleza.
+
+**La saga.** Se verificó que la residencia para búsqueda de empleo tras
+el máster son 24 meses y no 12 (DA 17.ª de la Ley 14/2013, ampliada por
+la Ley 28/2022). La corrección se aplicó a `becas-y-tramites-2026-2027.md`
+y se dio el trabajo por terminado.
+
+- **Ronda 1** encontró que `ideas-tfm-energias-renovables.md` seguía con
+  la cifra derogada, dentro de una lista titulada "hechos verificados",
+  y con una remisión que llamaba "sin aclarar" a un dato que el archivo
+  destino ya daba por resuelto.
+- **Ronda 2**, tras corregir eso, encontró que `lluvia-de-ideas.md`
+  —que ni siquiera se había abierto— conservaba otra afirmación de la
+  misma tanda sin propagar, y presentaba como "verificado" un dato que
+  el archivo hermano marcaba explícitamente como no confirmado.
+- **Ronda 3** confirmó por fin la propagación completa... y encontró
+  que esta misma entrada, escrita en el commit que corregía la ronda 2,
+  **daba por hecho que la ronda 3 había salido limpia cuando todavía no
+  se había lanzado**. Es decir: el texto que existe para no dar nada por
+  verificado sin comprobarlo cometía exactamente ese error. Se corrigió
+  al cerrar esa ronda, y se deja aquí escrito porque es la parte más
+  instructiva de la saga.
+
+**Corolario, por si no fuera obvio:** no escribir el desenlace de una
+verificación en el mismo commit que la lanza. Si el texto va a decir
+"salió limpio", tiene que escribirse *después* de que salga limpio.
+
+**Lo nuevo, y lo que más importa:** el archivo que hay que revisar
+**primero** al propagar una corrección es el que la sesión mantiene como
+**resumen/traspaso para la siguiente sesión** (aquí,
+`lluvia-de-ideas.md`). Razón: sus afirmaciones no se leen como
+información sino como **órdenes**. Ese archivo decía "Datos de
+extranjería ya verificados (**no reinvestigar**)" e incluía debajo un
+dato sin confirmar — es decir, el error no solo persistía, sino que
+venía con una instrucción activa para que nadie lo detectara.
+
+**Procedimiento concreto para la próxima vez.** Al corregir un hecho que
+aparece en más de un sitio, antes de dar por cerrado el trabajo:
+
+1. `grep -rn` del dato viejo **y** del nuevo por todo el repositorio —
+   no fiarse de recordar dónde se escribió.
+2. Abrir primero los archivos de traspaso/resumen entre sesiones, y
+   dentro de ellos revisar en especial lo que esté bajo epígrafes del
+   tipo "ya verificado", "no reinvestigar", "cerrado" o "resuelto".
+3. Comprobar que cada remisión cruzada sigue describiendo correctamente
+   el estado del archivo destino: una remisión que dice "pendiente"
+   apuntando a una sección titulada "(resuelto)" es el mismo fallo
+   visto desde el otro lado.
+
+**Ronda 4, y la lección que faltaba:** el barrido del paso 1 se había
+aplicado al dato corregido (los 24 meses) pero **no a los hechos nuevos
+que el propio trabajo introducía**. Así apareció una contradicción sobre
+si un correo a `bisite@usal.es` se había enviado o no: un archivo decía
+"enviado", otro lo listaba como "pendiente de enviar", y el archivo de
+traspaso afirmaba en redondo "no se ha enviado ningún correo a nadie".
+Se resolvió **comprobándolo en Gmail** (sí se envió, el 12/09/2026, sin
+respuesta) en vez de elegir la versión que sonara mejor.
+
+De ahí, dos reglas más:
+
+4. El barrido no es solo del dato que se corrige, sino **de todo hecho
+   afirmado en el trabajo**, incluidos los que se acaban de escribir.
+   Una afirmación categórica recién redactada ("no se ha enviado
+   ninguno", "no existe", "nunca se hizo") es sospechosa por
+   construcción: comprobar si hay un hermano que diga lo contrario.
+5. Cuando dos archivos se contradicen sobre un hecho **comprobable**
+   (un correo enviado, un archivo que existe, una fecha), no razonar
+   sobre cuál parece más fiable: **ir a la fuente y mirarlo**. Aquí
+   bastó una búsqueda en Gmail para cerrar una discusión que llevaba
+   varias rondas latente.
+
+**Ronda 5, el caso más ilustrativo de toda la saga.** Una sección
+entera seguía abriendo con "pendiente de confirmar en cuál de los siete
+institutos IMDEA trabaja Arlet" cuando **el mismo archivo lo confirmaba
+cincuenta líneas más abajo** (Networks) y el archivo de traspaso lo daba
+por sabido. Lo grave no era la frase: de esa premisa ya falsada colgaban
+**treinta líneas** investigando el instituto equivocado y una
+*recomendación estratégica* construida sobre ella. De ahí, la sexta
+regla:
+
+6. Al confirmarse un hecho que hasta entonces era una incógnita, no
+   basta con escribir la confirmación donde toque: hay que **buscar qué
+   texto se escribió mientras la incógnita estaba abierta** y cerrarlo
+   — marcándolo como escenario descartado o borrándolo. Un análisis
+   hecho bajo una hipótesis que luego se cae no se corrige solo por que
+   la respuesta aparezca en otra sección; sigue ahí, leyéndose como
+   vigente.
