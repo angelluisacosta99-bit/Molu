@@ -415,7 +415,19 @@ proponer algo, para no repetir una recomendación.
 
 **Fuentes:** (1) oficiales — lo de arriba más `whats-new`, el blog de
 `claude.com`, `anthropic.com/news`, los marketplaces
-`anthropics/claude-plugins-official`/`-community`; (2) terceros
+`anthropics/claude-plugins-official`/`-community`, y el canal oficial de
+YouTube de Anthropic (`@anthropic-ai`, canal `UCrDwWp7EBBv4NwvScIpBDOA`
+— buscar con `mcp__TubeAlfred__youtube_search_query` acotado a ese
+`channel_id`, nunca navegar la lista completa de 175+ vídeos a pelo).
+Dentro del canal, dos carpetas dan señal, el resto es lanzamiento de
+producto sin contenido técnico que aplicar: la serie de charlas **"Code
+w/ Claude"** (best practices, prompting de agentes — formato ~25-35 min,
+con transcripción completa vía `youtube_video_transcript`) y los
+**"Getting started with X"** cortos (~3-7 min, un feature concreto de
+claude.ai/Claude Code explicado). Ya se hizo una pasada completa el
+2026-09-18 (ver `novedades.md`, entrada de esa fecha) — no repetir esos
+5 vídeos, solo cubrir los que se publiquen después o queden sin ver.
+(2) terceros
 relevantes para docencia de español, traducción, Python,
 telecomunicaciones o el máster, vía
 `SearchMcpRegistry`/`SearchPlugins`/`SearchSkills` (catálogo real de

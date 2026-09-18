@@ -23,6 +23,96 @@ copias que puedan desincronizarse.
 
 ---
 
+## 2026-09-18 — Pasada por `code.claude.com/docs/en/whats-new` (Weeks 13-37)
+
+Angel pidió una búsqueda de "qué otras herramientas o instrucciones da
+el equipo de Anthropic que debería usar aquí". Cubierto todo el digest
+semanal desde marzo hasta la semana del 7-11 de septiembre de 2026 —
+lo de abajo es lo que pasa el criterio de relevancia (resuelve una
+necesidad real de este repo), no un volcado del changelog completo.
+Todo esto son comandos nativos, sin tarjeta de instalación — se prueban
+directamente escribiéndolos.
+
+**`/skill-doctor`** (semana del 31 ago-4 sep) — muestra cuánto contexto
+cuesta cada skill instalada y con qué frecuencia se usa realmente.
+Angel tiene ya 10+ skills propias (`graphify`, `impeccable`,
+`ejercicio-interactivo`, `hook-hardening`, `caveman`, `cavecrew`,
+`humanizer`...) — con esto se ve con datos reales cuáles compensan su
+coste de contexto y cuáles no, en vez de adivinar.
+
+**`/usage`** — desglosa qué consume el límite del plan por skill,
+subagente, plugin y servidor MCP. Con la cantidad de conectores MCP
+activos en este repo (Drive, DeepL, GitHub, Scite, alphaXiv,
+Consensus, Wolfram, Hugging Face...), esto identifica cuáles pesan de
+verdad en vez de suponerlo.
+
+**`claude plugin eval`** (semana del 7-11 sep) — corre un plugin
+propio contra una batería de casos de prueba y compara con/sin el
+plugin; `claude plugin eval init` genera los casos y criterios de
+evaluación solos. Directamente aplicable al plugin `caveman-cavecrew`
+que se acaba de empaquetar en este repo — pendiente de que Angel lo
+pruebe.
+
+**Auto mode ya no es "preview"** — llegó en preview en marzo de 2026
+(semana 13) y para julio-agosto ya es el modo de permisos por defecto
+en cuentas Pro/Max/Team (semana 32): un clasificador aprueba solo las
+acciones seguras en segundo plano y bloquea las arriesgadas, en vez de
+preguntar cada vez. Esto actualiza la entrada del 2026-08-16 de este
+mismo registro, que dejó "permisos por nivel de riesgo" anotado como
+"no aplicado, decisión de fondo" por ser una alternativa poco madura
+frente al `defaultMode: dontAsk` que ya usa este repo — ahora es una
+opción bastante más asentada, sigue siendo una decisión de Angel, no
+algo para cambiar de pasada.
+
+**Subagentes en segundo plano por defecto + fork mode** (semanas 27 y
+33) — un subagente delegado sigue corriendo mientras Claude sigue
+trabajando, y "fork mode" deja que un subagente herede la conversación
+completa en vez de arrancar con un prompt aislado. Relevante para
+cómo se invocan `cavecrew-investigator`/`builder`/`reviewer` — no
+cambia nada por sí solo, pero es la explicación de por qué delegar a
+un subagente ya no bloquea el hilo principal.
+
+**`/goal`** (semana del 11-15 may) — mantiene a Claude trabajando entre
+turnos hasta que se cumple una condición de terminación explícita, en
+vez de un solo turno. Podría servir para tareas largas y repetitivas
+de este repo (una tanda de `ejercicio-interactivo` para varios
+capítulos seguidos, una curación larga de `graphify label`).
+
+**`claude ultrareview`** (semana del 20-24 abr) — una flota de agentes
+de búsqueda de bugs en la nube, pensado para CI/scripts. Complementa
+(no sustituye) la skill `code-review` ya usada en el flujo de PR de
+este repo — candidato para un trabajo de código grande y puntual
+(un script largo de `python/` o `telecomunicaciones/`), no para el
+flujo normal de cada PR.
+
+**Cómo seguir mirando esta fuente:** `code.claude.com/docs/en/whats-new`
+tiene un digest semanal — la próxima pasada del radar solo necesita
+mirar las entradas posteriores a la semana 37 (7-11 sep 2026).
+
+### Con tarjeta: plugin oficial `security-guidance`
+
+**Qué es:** plugin oficial de Anthropic (`anthropics/claude-plugins-official`,
+marketplace `knowledge-work-plugins`) — revisión de seguridad del
+código que genera Claude: avisos basados en patrones en cada edición,
+revisión de diff con LLM al terminar la sesión (hook `Stop`), y un
+revisor de commits que detecta inyección, XSS, SSRF, secretos
+hardcodeados y 25+ clases de vulnerabilidad más.
+
+**Por qué le sirve a Angel:** este repo tiene bastante código propio
+con permisos reales (`.claude/hooks/*.sh`, con `defaultMode: dontAsk`
+— sin cortafuegos de permisos interactivo) y carpetas de código
+(`python/`, `telecomunicaciones/`). La propia skill `hook-hardening`
+de este repo nació de bugs de seguridad reales en hooks anteriores
+(`restrict-cavecrew-bash.sh`, 4 rondas solo para cerrar bypasses) —
+una revisión de seguridad automática en cada sesión habría podido
+detectar alguno de esos antes de que hiciera falta una revisión
+externa.
+
+**Cómo probarlo:** tarjeta de instalación en el mismo turno de este
+registro.
+
+---
+
 ## 2026-09-18 — Aplicado: `fewer-permission-prompts` en piloto automático
 
 **Qué es:** `.claude/hooks/fewer-permission-prompts-reminder.sh` (hook
