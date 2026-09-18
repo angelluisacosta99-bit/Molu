@@ -8,9 +8,23 @@
 # sesión (coste de tokens/tiempo) -- de ahí el umbral de días en vez de
 # "siempre, literal".
 #
-# Mecanismo: un marcador JSON con timestamp -- mismo patrón que ya usa
-# mark-pr-reviewed.sh para su propio gate (hook-hardening, punto 3: no
-# inventar un mecanismo nuevo si ya hay uno establecido en este repo).
+# Mecanismo: un marcador JSON con timestamp -- misma FORMA de escritura
+# atómica (mktemp + mv) que ya usa mark-pr-reviewed.sh (hook-hardening,
+# punto 3: no inventar un mecanismo nuevo si ya hay uno establecido en
+# este repo), pero NO el mismo patrón de versionado: el de
+# mark-pr-reviewed.sh vive en .claude/.pr-review-state/, gitignorado a
+# propósito (estado de sesión, nunca debe persistir entre sesiones por
+# motivos de seguridad del gate de merge). Este marcador es justo lo
+# contrario a propósito: SÍ se versiona, porque Angel pidió que el
+# recordatorio funcione "en todas las sesiones" y los contenedores de
+# este entorno son efímeros -- un marcador sin versionar nunca
+# sobreviviría a un checkout fresco en un contenedor distinto (incluida
+# la Routine semanal del Radar, que clona limpio cada vez). El coste
+# aceptado de esa decisión: dos ramas que corran la skill en paralelo y
+# comiteen el marcador a la vez producen un conflicto de merge normal y
+# visible en este archivo -- no una pérdida de datos silenciosa, solo
+# hay que resolverlo (quedarse con el timestamp más reciente) como
+# cualquier otro conflicto de este repo.
 # Lo escribe mark-permission-scan.sh, que esta sesión debe llamar tras
 # correr la skill (instrucción va en el propio texto inyectado).
 #
