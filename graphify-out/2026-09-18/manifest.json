@@ -954,9 +954,9 @@
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/README.md": {
-    "mtime": 1789767211.9672265,
-    "seen": 1789767310.5515532,
-    "ast_hash": "2c764e8edbc799f76fc4c2b8e326eda5",
+    "mtime": 1789594982.0616107,
+    "seen": 1789594997.3846834,
+    "ast_hash": "7d04a4c13dbc87263510e0a1c3ca4bbb",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad10a_la-salud.md": {
@@ -1776,15 +1776,15 @@
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/codigos-acceso.html": {
-    "mtime": 1789767264.5312297,
-    "seen": 1789767310.5516768,
-    "ast_hash": "a546e04ef233b9e330f564a2008ccc1f",
+    "mtime": 1789594982.0616107,
+    "seen": 1789594997.3848171,
+    "ast_hash": "38451589fd53718e873bb9eff00bc649",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/indice-clases-de-espanol.html": {
-    "mtime": 1789767230.8792276,
-    "seen": 1789767310.5516775,
-    "ast_hash": "db65da8b467d13d9f18ca4db3ea18599",
+    "mtime": 1789594982.0616107,
+    "seen": 1789594997.3848178,
+    "ast_hash": "ab4b3c86ad5eecabd37204f2df1895ed",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/quizlet/nuevo-espanol-en-marcha-1_unidad1.md": {
@@ -2457,18 +2457,6 @@
     "mtime": 1789594982.1305196,
     "seen": 1789594997.3848138,
     "ast_hash": "0ab2c78a8cda2a313449cdfc773e6e1e",
-    "semantic_hash": ""
-  },
-  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b2/examen-unidades5-6.md": {
-    "mtime": 1789767202.317431,
-    "seen": 1789767310.5516107,
-    "ast_hash": "1ea6e63b13eea260d8a1844dc86694de",
-    "semantic_hash": ""
-  },
-  "docencia-espanol/materiales/b2/nuevo-espanol-en-marcha-4_examen-unidades5-6_interactivo.html": {
-    "mtime": 1789767105.3832202,
-    "seen": 1789767310.5516734,
-    "ast_hash": "bf8f38ce25b4d4686538ac713890a009",
     "semantic_hash": ""
   }
 }
