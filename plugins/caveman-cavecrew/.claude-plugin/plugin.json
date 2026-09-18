@@ -1,0 +1,16 @@
+{
+  "name": "caveman-cavecrew",
+  "description": "Modo de comunicación ultra-comprimida (caveman, hasta 65% menos tokens de salida) más tres subagentes cavecrew (investigator/builder/reviewer) que devuelven resultados comprimidos, para alargar el contexto principal en sesiones largas de Claude Code.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Angel Luis Acosta González"
+  },
+  "keywords": ["caveman", "cavecrew", "token-efficiency", "subagents", "context-management"],
+  "skills": ["./skills/caveman", "./skills/cavecrew"],
+  "agents": [
+    "./agents/cavecrew-investigator.md",
+    "./agents/cavecrew-builder.md",
+    "./agents/cavecrew-reviewer.md"
+  ],
+  "hooks": "./hooks.json"
+}

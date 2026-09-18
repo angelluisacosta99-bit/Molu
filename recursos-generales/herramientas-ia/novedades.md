@@ -23,6 +23,38 @@ copias que puedan desincronizarse.
 
 ---
 
+## 2026-09-18 — Catálogo de Claude Academy (cursos oficiales)
+
+**Qué es:** `academy.claude.com` (antes Anthropic Academy) tiene 26+
+cursos gratis, gratuitos y sin tarjeta, en `anthropic.skilljar.com`.
+Los relevantes para el flujo de este repo: **Claude Code 101**
+(flujo diario de trabajo), **Claude Code in Action** (sesiones largas
+sin supervisión: dirigir, configurar, automatizar, verificar),
+**Introduction to agent skills** (crear/compartir/depurar skills en
+Markdown — este repo ya tiene varias propias en `.claude/skills/`),
+**Introduction to subagents** (delegar tareas para no gastar contexto
+principal), e **Introduction to Model Context Protocol** (cómo
+funcionan los conectores MCP que ya usa este repo — Google Drive,
+DeepL, GitHub, etc.).
+
+**Por qué le sirve a Angel:** surgió al investigar un reel de
+Instagram que prometía "cursos validados por Anthropic" a cambio de
+comentar y dar el contacto por privado — patrón típico de
+engagement-bait, sin verificar. Esto es la alternativa real y oficial:
+mismo tema (aprender Claude Code a fondo), pero verificable y sin
+intermediario. Los cursos de skills/subagentes/MCP en concreto pueden
+formalizar prácticas que este repo ya usa de forma intuitiva
+(`graphify`, `impeccable`, `ejercicio-interactivo` como skills; el
+subagente de revisión antes de cada merge) y rellenar el hueco ya
+anotado el 2026-08-16 sobre subagentes de dominio (ej. uno dedicado a
+revisar ejercicios interactivos).
+
+**Cómo probarlo:** no hace falta instalar nada — son cursos con vídeo,
+quiz y certificado en `academy.claude.com`, con registro simple (sin
+tarjeta ni suscripción de Claude necesaria).
+
+---
+
 ## 2026-09-13 — Búsqueda exhaustiva: herramientas de investigación científica verificada para el máster
 
 Angel pidió explícitamente una búsqueda exhaustiva de herramientas/
