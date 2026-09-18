@@ -57,7 +57,15 @@ echo "Marcador escrito: fewer-permission-prompts corrida el $(date -u +%Y-%m-%dT
 # trabajando (y por tanto subiendo) en esa rama con normalidad, igual
 # que el resto de este repo empuja cambios sin esperar a acumular un
 # lote.
+# Timeout corto para comandos locales (rev-parse/add/diff/commit/branch
+# -- nunca tocan la red, 15s es de sobra); timeout más largo aparte
+# para push/fetch, que sí van por red y pueden tener que mover commits
+# grandes ya en cola (este repo empuja regeneraciones de graphify-out
+# de cientos de miles de líneas) -- un único timeout de 15s para todo
+# le quitaba margen justo al push, la operación que este script existe
+# para garantizar.
 GIT() { timeout 15 git -C "${CLAUDE_PROJECT_DIR:-.}" "$@"; }
+GIT_NET() { timeout 60 git -C "${CLAUDE_PROJECT_DIR:-.}" "$@"; }
 
 if ! GIT rev-parse --is-inside-work-tree >/dev/null 2>&1; then
   echo "Aviso: no es un repo git, el marcador se queda solo en local." >&2
@@ -85,7 +93,7 @@ if [ -z "$BRANCH" ]; then
   exit 0
 fi
 
-if GIT push origin "$BRANCH" >/dev/null 2>&1; then
+if GIT_NET push origin "$BRANCH" >/dev/null 2>&1; then
   echo "Marcador comiteado y subido a $BRANCH."
   exit 0
 fi
@@ -96,8 +104,8 @@ fi
 # sin cota. Si el rebase choca (conflicto real en el propio marcador,
 # muy improbable en un JSON de 2 campos pero posible), se aborta y se
 # deja todo como estaba -- nunca se fuerza un push.
-if GIT fetch origin "$BRANCH" >/dev/null 2>&1 && GIT rebase "origin/$BRANCH" >/dev/null 2>&1; then
-  if GIT push origin "$BRANCH" >/dev/null 2>&1; then
+if GIT_NET fetch origin "$BRANCH" >/dev/null 2>&1 && GIT rebase "origin/$BRANCH" >/dev/null 2>&1; then
+  if GIT_NET push origin "$BRANCH" >/dev/null 2>&1; then
     echo "Marcador comiteado y subido a $BRANCH (tras un rebase)."
     exit 0
   fi
