@@ -372,6 +372,10 @@
     border-radius: 3px 3px 0 0;
   }
   input.blank.wide { width: 15em; }
+  /* Hueco de una sola palabra corta (una preposición, un artículo...): con el ancho normal
+     (8.5em) una frase con 3-4 huecos seguidos no cabe en una línea de móvil y cada hueco
+     salta a la suya, partiendo la frase en trozos sueltos en vez de leerse seguida. */
+  input.blank.narrow { width: 4.2em; }
   input.blank.full { width: 100%; max-width: 26em; text-align: left; }
   input.blank:focus { outline: none; border-bottom-color: var(--focus); box-shadow: 0 1px 0 0 var(--focus); }
   input.blank.correct { background: var(--good-bg); border-bottom-color: var(--good); color: var(--good); font-weight: 600; }
@@ -876,16 +880,16 @@
           type: "items", numbered: true,
           items: [
             { t: "El lunes próximo vuelvo a mi país.", solved: true },
-            { t: "La farmacia está abierta {0} las diez {1} la mañana {2} las ocho {3} la tarde.", a: [["desde"], ["de"], ["hasta"], ["de"]] },
-            { t: "Rebeca sale {0} casa {1} las 8.", a: [["de"], ["a"]] },
-            { t: "Yo voy {0} trabajar {1} metro y vuelvo {2} casa andando.", a: [["a"], ["en"], ["a"]] },
-            { t: "¿{0} qué hora te levantas?", a: [["A"]] },
-            { t: "Los bancos abren {0} ocho {1} tres.", a: [["de"], ["a"]] },
-            { t: "Los sábados {0} la mañana voy {1} gimnasio.", a: [["por"], ["al"]] },
-            { t: "Raúl y Luisa vuelven {0} las vacaciones mañana.", a: [["de"]] },
-            { t: "En esta escuela hay clases {0} la mañana y {1} la tarde.", a: [["por"], ["por"]] },
-            { t: "Yo trabajo {0} casa.", a: [["en"]] },
-            { t: "No he visto {0} Juan {1} el verano pasado.", a: [["a"], ["desde"]] }
+            { t: "La farmacia está abierta {0} las diez {1} la mañana {2} las ocho {3} la tarde.", a: [["desde"], ["de"], ["hasta"], ["de"]], wide: "narrow" },
+            { t: "Rebeca sale {0} casa {1} las 8.", a: [["de"], ["a"]], wide: "narrow" },
+            { t: "Yo voy {0} trabajar {1} metro y vuelvo {2} casa andando.", a: [["a"], ["en"], ["a"]], wide: "narrow" },
+            { t: "¿{0} qué hora te levantas?", a: [["A"]], wide: "narrow" },
+            { t: "Los bancos abren {0} ocho {1} tres.", a: [["de"], ["a"]], wide: "narrow" },
+            { t: "Los sábados {0} la mañana voy {1} gimnasio.", a: [["por"], ["al"]], wide: "narrow" },
+            { t: "Raúl y Luisa vuelven {0} las vacaciones mañana.", a: [["de"]], wide: "narrow" },
+            { t: "En esta escuela hay clases {0} la mañana y {1} la tarde.", a: [["por"], ["por"]], wide: "narrow" },
+            { t: "Yo trabajo {0} casa.", a: [["en"]], wide: "narrow" },
+            { t: "No he visto {0} Juan {1} el verano pasado.", a: [["a"], ["desde"]], wide: "narrow" }
           ]
         },
         {
@@ -975,7 +979,7 @@
   function makeInput(spec, wide, label) {
     const inp = document.createElement("input");
     inp.type = "text";
-    inp.className = "blank" + (wide === "full" ? " full" : wide ? " wide" : "");
+    inp.className = "blank" + (wide === "full" ? " full" : wide === "narrow" ? " narrow" : wide ? " wide" : "");
     inp.autocomplete = "off";
     inp.autocapitalize = "off";
     inp.spellcheck = false;
