@@ -9,8 +9,8 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 216,
-      "community_name": "live-target.mjs",
+      "community": 58,
+      "community_name": "live.mjs",
       "file_type": "code",
       "norm_label": "targetargerror",
       "source_file": ".claude/skills/impeccable/scripts/lib/target-args.mjs",
@@ -2984,18 +2984,6 @@
       "source_location": "L285"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_server_applylegacydeferredacceptsonstartup",
-      "label": "applyLegacyDeferredAcceptsOnStartup()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "live-server.mjs",
-      "file_type": "code",
-      "norm_label": "applylegacydeferredacceptsonstartup()",
-      "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
-      "source_location": "L974"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_server_broadcast",
       "label": "broadcast()",
       "_callable": true,
@@ -3344,18 +3332,6 @@
       "source_location": "L325"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_svelte_component_applydeferredsveltecomponentaccepts",
-      "label": "applyDeferredSvelteComponentAccepts()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 12,
-      "community_name": "svelte-component.mjs",
-      "file_type": "code",
-      "norm_label": "applydeferredsveltecomponentaccepts()",
-      "source_file": ".claude/skills/impeccable/scripts/live/svelte-component.mjs",
-      "source_location": "L767"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_svelte_component_bakeparamvaluesincss",
       "label": "bakeParamValuesInCss()",
       "_callable": true,
@@ -3426,18 +3402,6 @@
       "norm_label": "componentsessiondir()",
       "source_file": ".claude/skills/impeccable/scripts/live/svelte-component.mjs",
       "source_location": "L25"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_svelte_component_deferredacceptspath",
-      "label": "deferredAcceptsPath()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 12,
-      "community_name": "svelte-component.mjs",
-      "file_type": "code",
-      "norm_label": "deferredacceptspath()",
-      "source_file": ".claude/skills/impeccable/scripts/live/svelte-component.mjs",
-      "source_location": "L744"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_svelte_component_derivepropname",
@@ -3632,18 +3596,6 @@
       "source_location": "L98"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_svelte_component_readdeferredaccepts",
-      "label": "readDeferredAccepts()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 12,
-      "community_name": "svelte-component.mjs",
-      "file_type": "code",
-      "norm_label": "readdeferredaccepts()",
-      "source_file": ".claude/skills/impeccable/scripts/live/svelte-component.mjs",
-      "source_location": "L749"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_svelte_component_readmanifest",
       "label": "readManifest()",
       "_callable": true,
@@ -3824,18 +3776,6 @@
       "source_location": "L488"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_svelte_component_writedeferredaccept",
-      "label": "writeDeferredAccept()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 12,
-      "community_name": "svelte-component.mjs",
-      "file_type": "code",
-      "norm_label": "writedeferredaccept()",
-      "source_file": ".claude/skills/impeccable/scripts/live/svelte-component.mjs",
-      "source_location": "L758"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_context_directchilddirs",
       "label": "directChildDirs()",
       "_callable": true,
@@ -3870,18 +3810,6 @@
       "norm_label": "discovertargetcandidates()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
       "source_location": "L258"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_escaperegexp",
-      "label": "escapeRegExp()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "discoverTargetCandidates",
-      "file_type": "code",
-      "norm_label": "escaperegexp()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L690"
     },
     {
       "id": "claude_skills_impeccable_scripts_context_expandsimplepattern",
@@ -3920,18 +3848,6 @@
       "source_location": "L405"
     },
     {
-      "id": "claude_skills_impeccable_scripts_context_isexcludedbyworkspacepattern",
-      "label": "isExcludedByWorkspacePattern()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "discoverTargetCandidates",
-      "file_type": "code",
-      "norm_label": "isexcludedbyworkspacepattern()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L463"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_context_isignoredworkspacediscoverydir",
       "label": "isIgnoredWorkspaceDiscoveryDir()",
       "_callable": true,
@@ -3944,66 +3860,6 @@
       "source_location": "L416"
     },
     {
-      "id": "claude_skills_impeccable_scripts_context_nearestpackagerootbetween",
-      "label": "nearestPackageRootBetween()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "discoverTargetCandidates",
-      "file_type": "code",
-      "norm_label": "nearestpackagerootbetween()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L488"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_normalizeworkspacepattern",
-      "label": "normalizeWorkspacePattern()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "discoverTargetCandidates",
-      "file_type": "code",
-      "norm_label": "normalizeworkspacepattern()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L659"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_projectrootfromdoublestarpattern",
-      "label": "projectRootFromDoubleStarPattern()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "discoverTargetCandidates",
-      "file_type": "code",
-      "norm_label": "projectrootfromdoublestarpattern()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L643"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_projectrootfromworkspacepattern",
-      "label": "projectRootFromWorkspacePattern()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "discoverTargetCandidates",
-      "file_type": "code",
-      "norm_label": "projectrootfromworkspacepattern()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L628"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_segmentmatches",
-      "label": "segmentMatches()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "discoverTargetCandidates",
-      "file_type": "code",
-      "norm_label": "segmentmatches()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L667"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_context_walkdirs",
       "label": "walkDirs()",
       "_callable": true,
@@ -4014,18 +3870,6 @@
       "norm_label": "walkdirs()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
       "source_location": "L390"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_workspacepatternmatchesrel",
-      "label": "workspacePatternMatchesRel()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "discoverTargetCandidates",
-      "file_type": "code",
-      "norm_label": "workspacepatternmatchesrel()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L505"
     },
     {
       "id": "claude_skills_impeccable_scripts_hook_lib_bumpeditcount",
@@ -6973,7 +6817,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 196,
-      "community_name": "session-store.mjs",
+      "community_name": "readLiveServerInfo",
       "file_type": "code",
       "norm_label": "isliveserverpidreachable()",
       "source_file": ".claude/skills/impeccable/scripts/lib/impeccable-paths.mjs",
@@ -6985,7 +6829,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 196,
-      "community_name": "session-store.mjs",
+      "community_name": "readLiveServerInfo",
       "file_type": "code",
       "norm_label": "readliveserverinfo()",
       "source_file": ".claude/skills/impeccable/scripts/lib/impeccable-paths.mjs",
@@ -6997,7 +6841,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 196,
-      "community_name": "session-store.mjs",
+      "community_name": "readLiveServerInfo",
       "file_type": "code",
       "norm_label": "completecli()",
       "source_file": ".claude/skills/impeccable/scripts/live-complete.mjs",
@@ -7009,7 +6853,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 196,
-      "community_name": "session-store.mjs",
+      "community_name": "readLiveServerInfo",
       "file_type": "code",
       "norm_label": "completethroughserver()",
       "source_file": ".claude/skills/impeccable/scripts/live-complete.mjs",
@@ -7021,7 +6865,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 196,
-      "community_name": "session-store.mjs",
+      "community_name": "readLiveServerInfo",
       "file_type": "code",
       "norm_label": "parseargs()",
       "source_file": ".claude/skills/impeccable/scripts/live-complete.mjs",
@@ -7033,7 +6877,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 196,
-      "community_name": "session-store.mjs",
+      "community_name": "readLiveServerInfo",
       "file_type": "code",
       "norm_label": "readserverinfo()",
       "source_file": ".claude/skills/impeccable/scripts/live-complete.mjs",
@@ -7045,7 +6889,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 196,
-      "community_name": "session-store.mjs",
+      "community_name": "readLiveServerInfo",
       "file_type": "code",
       "norm_label": "collectmanualapplyfiles()",
       "source_file": ".claude/skills/impeccable/scripts/live-resume.mjs",
@@ -7057,7 +6901,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 196,
-      "community_name": "session-store.mjs",
+      "community_name": "readLiveServerInfo",
       "file_type": "code",
       "norm_label": "manualapplyreplycommand()",
       "source_file": ".claude/skills/impeccable/scripts/live-resume.mjs",
@@ -7069,7 +6913,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 196,
-      "community_name": "session-store.mjs",
+      "community_name": "readLiveServerInfo",
       "file_type": "code",
       "norm_label": "manualapplyresumehint()",
       "source_file": ".claude/skills/impeccable/scripts/live-resume.mjs",
@@ -7081,7 +6925,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 196,
-      "community_name": "session-store.mjs",
+      "community_name": "readLiveServerInfo",
       "file_type": "code",
       "norm_label": "parseargs()",
       "source_file": ".claude/skills/impeccable/scripts/live-resume.mjs",
@@ -7093,7 +6937,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 196,
-      "community_name": "session-store.mjs",
+      "community_name": "readLiveServerInfo",
       "file_type": "code",
       "norm_label": "resumecli()",
       "source_file": ".claude/skills/impeccable/scripts/live-resume.mjs",
@@ -7105,35 +6949,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 196,
-      "community_name": "session-store.mjs",
+      "community_name": "readLiveServerInfo",
       "file_type": "code",
       "norm_label": "summarizemanualapplyevent()",
       "source_file": ".claude/skills/impeccable/scripts/live-resume.mjs",
       "source_location": "L25"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_session_store_applyevent",
-      "label": "applyEvent()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 196,
-      "community_name": "session-store.mjs",
-      "file_type": "code",
-      "norm_label": "applyevent()",
-      "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
-      "source_location": "L155"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_session_store_basesnapshot",
-      "label": "baseSnapshot()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 196,
-      "community_name": "session-store.mjs",
-      "file_type": "code",
-      "norm_label": "basesnapshot()",
-      "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
-      "source_location": "L103"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_session_store_createlivesessionstore",
@@ -7141,7 +6961,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 196,
-      "community_name": "session-store.mjs",
+      "community_name": "readLiveServerInfo",
       "file_type": "code",
       "norm_label": "createlivesessionstore()",
       "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
@@ -7153,7 +6973,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 196,
-      "community_name": "session-store.mjs",
+      "community_name": "readLiveServerInfo",
       "file_type": "code",
       "norm_label": "getreadablejournalpath()",
       "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
@@ -7165,107 +6985,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 196,
-      "community_name": "session-store.mjs",
+      "community_name": "readLiveServerInfo",
       "file_type": "code",
       "norm_label": "loadcachedorrebuild()",
       "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
       "source_location": "L13"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_session_store_getjournalpath",
-      "label": "getJournalPath()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 196,
-      "community_name": "session-store.mjs",
-      "file_type": "code",
-      "norm_label": "getjournalpath()",
-      "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
-      "source_location": "L90"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_session_store_getsnapshotpath",
-      "label": "getSnapshotPath()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 196,
-      "community_name": "session-store.mjs",
-      "file_type": "code",
-      "norm_label": "getsnapshotpath()",
-      "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
-      "source_location": "L94"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_session_store_normalizeevent",
-      "label": "normalizeEvent()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 196,
-      "community_name": "session-store.mjs",
-      "file_type": "code",
-      "norm_label": "normalizeevent()",
-      "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
-      "source_location": "L82"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_session_store_rebuildsnapshotfromjournal",
-      "label": "rebuildSnapshotFromJournal()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 196,
-      "community_name": "session-store.mjs",
-      "file_type": "code",
-      "norm_label": "rebuildsnapshotfromjournal()",
-      "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
-      "source_location": "L128"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_session_store_safesessionid",
-      "label": "safeSessionId()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 196,
-      "community_name": "session-store.mjs",
-      "file_type": "code",
-      "norm_label": "safesessionid()",
-      "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
-      "source_location": "L98"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_session_store_topendingevent",
-      "label": "toPendingEvent()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 196,
-      "community_name": "session-store.mjs",
-      "file_type": "code",
-      "norm_label": "topendingevent()",
-      "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
-      "source_location": "L275"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_session_store_upsertartifact",
-      "label": "upsertArtifact()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 196,
-      "community_name": "session-store.mjs",
-      "file_type": "code",
-      "norm_label": "upsertartifact()",
-      "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
-      "source_location": "L281"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_session_store_writesnapshot",
-      "label": "writeSnapshot()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 196,
-      "community_name": "session-store.mjs",
-      "file_type": "code",
-      "norm_label": "writesnapshot()",
-      "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
-      "source_location": "L287"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_status_fetchserverstatus",
@@ -7273,7 +6997,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 196,
-      "community_name": "session-store.mjs",
+      "community_name": "readLiveServerInfo",
       "file_type": "code",
       "norm_label": "fetchserverstatus()",
       "source_file": ".claude/skills/impeccable/scripts/live-status.mjs",
@@ -7285,7 +7009,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 196,
-      "community_name": "session-store.mjs",
+      "community_name": "readLiveServerInfo",
       "file_type": "code",
       "norm_label": "findpendingmanualapply()",
       "source_file": ".claude/skills/impeccable/scripts/live-status.mjs",
@@ -7297,7 +7021,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 196,
-      "community_name": "session-store.mjs",
+      "community_name": "readLiveServerInfo",
       "file_type": "code",
       "norm_label": "readserverinfo()",
       "source_file": ".claude/skills/impeccable/scripts/live-status.mjs",
@@ -7309,7 +7033,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 196,
-      "community_name": "session-store.mjs",
+      "community_name": "readLiveServerInfo",
       "file_type": "code",
       "norm_label": "statuscli()",
       "source_file": ".claude/skills/impeccable/scripts/live-status.mjs",
@@ -8588,52 +8312,124 @@
       "source_location": "L126"
     },
     {
-      "id": "claude_skills_impeccable_scripts_lib_target_args_parsetargetoptions",
-      "label": "parseTargetOptions()",
+      "id": "claude_skills_impeccable_scripts_palette_buildweights",
+      "label": "buildWeights()",
       "_callable": true,
       "_origin": "ast",
       "community": 216,
-      "community_name": "live-target.mjs",
+      "community_name": "palette.mjs",
       "file_type": "code",
-      "norm_label": "parsetargetoptions()",
-      "source_file": ".claude/skills/impeccable/scripts/lib/target-args.mjs",
-      "source_location": "L39"
+      "norm_label": "buildweights()",
+      "source_file": ".claude/skills/impeccable/scripts/palette.mjs",
+      "source_location": "L447"
     },
     {
-      "id": "claude_skills_impeccable_scripts_lib_target_args_parsetargetpath",
-      "label": "parseTargetPath()",
+      "id": "claude_skills_impeccable_scripts_palette_fmtoklch",
+      "label": "fmtOklch()",
       "_callable": true,
       "_origin": "ast",
       "community": 216,
-      "community_name": "live-target.mjs",
+      "community_name": "palette.mjs",
       "file_type": "code",
-      "norm_label": "parsetargetpath()",
-      "source_file": ".claude/skills/impeccable/scripts/lib/target-args.mjs",
-      "source_location": "L9"
+      "norm_label": "fmtoklch()",
+      "source_file": ".claude/skills/impeccable/scripts/palette.mjs",
+      "source_location": "L478"
     },
     {
-      "id": "claude_skills_impeccable_scripts_lib_target_args_targetargerror_constructor",
-      "label": ".constructor()",
+      "id": "claude_skills_impeccable_scripts_palette_hashunit",
+      "label": "hashUnit()",
       "_callable": true,
       "_origin": "ast",
       "community": 216,
-      "community_name": "live-target.mjs",
+      "community_name": "palette.mjs",
       "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": ".claude/skills/impeccable/scripts/lib/target-args.mjs",
-      "source_location": "L2"
+      "norm_label": "hashunit()",
+      "source_file": ".claude/skills/impeccable/scripts/palette.mjs",
+      "source_location": "L436"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_target_resolvelivetarget",
-      "label": "resolveLiveTarget()",
+      "id": "claude_skills_impeccable_scripts_palette_hueword",
+      "label": "hueWord()",
       "_callable": true,
       "_origin": "ast",
       "community": 216,
-      "community_name": "live-target.mjs",
+      "community_name": "palette.mjs",
       "file_type": "code",
-      "norm_label": "resolvelivetarget()",
-      "source_file": ".claude/skills/impeccable/scripts/live-target.mjs",
-      "source_location": "L5"
+      "norm_label": "hueword()",
+      "source_file": ".claude/skills/impeccable/scripts/palette.mjs",
+      "source_location": "L482"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_palette_parseargs",
+      "label": "parseArgs()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 216,
+      "community_name": "palette.mjs",
+      "file_type": "code",
+      "norm_label": "parseargs()",
+      "source_file": ".claude/skills/impeccable/scripts/palette.mjs",
+      "source_location": "L425"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_palette_pickseed",
+      "label": "pickSeed()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 216,
+      "community_name": "palette.mjs",
+      "file_type": "code",
+      "norm_label": "pickseed()",
+      "source_file": ".claude/skills/impeccable/scripts/palette.mjs",
+      "source_location": "L466"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_palette_weightedpick",
+      "label": "weightedPick()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 216,
+      "community_name": "palette.mjs",
+      "file_type": "code",
+      "norm_label": "weightedpick()",
+      "source_file": ".claude/skills/impeccable/scripts/palette.mjs",
+      "source_location": "L456"
+    },
+    {
+      "id": "docencia_espanol_fuentes_extraer_emittable",
+      "label": "emitTable()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 218,
+      "community_name": "ref_node_path",
+      "file_type": "code",
+      "norm_label": "emittable()",
+      "source_file": "docencia-espanol/fuentes/extraer.mjs",
+      "source_location": "L152"
+    },
+    {
+      "id": "docencia_espanol_fuentes_extraer_emittheory",
+      "label": "emitTheory()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 218,
+      "community_name": "ref_node_path",
+      "file_type": "code",
+      "norm_label": "emittheory()",
+      "source_file": "docencia-espanol/fuentes/extraer.mjs",
+      "source_location": "L119"
+    },
+    {
+      "id": "docencia_espanol_fuentes_extraer_textwithblanks",
+      "label": "textWithBlanks()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 218,
+      "community_name": "ref_node_path",
+      "file_type": "code",
+      "norm_label": "textwithblanks()",
+      "source_file": "docencia-espanol/fuentes/extraer.mjs",
+      "source_location": "L61"
     },
     {
       "id": "claude_skills_impeccable_scripts_hook_lib_applypatchtext",
@@ -9618,6 +9414,66 @@
       "norm_label": "wrapcli()",
       "source_file": ".claude/skills/impeccable/scripts/live-wrap.mjs",
       "source_location": "L26"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_server_applylegacydeferredacceptsonstartup",
+      "label": "applyLegacyDeferredAcceptsOnStartup()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 234,
+      "community_name": "applyDeferredSvelteComponentAccepts",
+      "file_type": "code",
+      "norm_label": "applylegacydeferredacceptsonstartup()",
+      "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
+      "source_location": "L974"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_svelte_component_applydeferredsveltecomponentaccepts",
+      "label": "applyDeferredSvelteComponentAccepts()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 234,
+      "community_name": "applyDeferredSvelteComponentAccepts",
+      "file_type": "code",
+      "norm_label": "applydeferredsveltecomponentaccepts()",
+      "source_file": ".claude/skills/impeccable/scripts/live/svelte-component.mjs",
+      "source_location": "L767"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_svelte_component_deferredacceptspath",
+      "label": "deferredAcceptsPath()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 234,
+      "community_name": "applyDeferredSvelteComponentAccepts",
+      "file_type": "code",
+      "norm_label": "deferredacceptspath()",
+      "source_file": ".claude/skills/impeccable/scripts/live/svelte-component.mjs",
+      "source_location": "L744"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_svelte_component_readdeferredaccepts",
+      "label": "readDeferredAccepts()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 234,
+      "community_name": "applyDeferredSvelteComponentAccepts",
+      "file_type": "code",
+      "norm_label": "readdeferredaccepts()",
+      "source_file": ".claude/skills/impeccable/scripts/live/svelte-component.mjs",
+      "source_location": "L749"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_svelte_component_writedeferredaccept",
+      "label": "writeDeferredAccept()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 234,
+      "community_name": "applyDeferredSvelteComponentAccepts",
+      "file_type": "code",
+      "norm_label": "writedeferredaccept()",
+      "source_file": ".claude/skills/impeccable/scripts/live/svelte-component.mjs",
+      "source_location": "L758"
     },
     {
       "id": "master_sistemas_inteligentes_robots_autonomos_roomba_irobot_funciones_ang_degree",
@@ -13136,6 +12992,18 @@
       "source_location": "L934"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_rollbackmanualapplytransaction",
+      "label": "rollbackManualApplyTransaction()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "manual-edits-buffer.mjs",
+      "file_type": "code",
+      "norm_label": "rollbackmanualapplytransaction()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L766"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualapplyfailures",
       "label": "summarizeManualApplyFailures()",
       "_callable": true,
@@ -13170,6 +13038,18 @@
       "norm_label": "summarizemanuallogfile()",
       "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
       "source_location": "L927"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_edit_evidence_buildmanualeditevidence",
+      "label": "buildManualEditEvidence()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "manual-edits-buffer.mjs",
+      "file_type": "code",
+      "norm_label": "buildmanualeditevidence()",
+      "source_file": ".claude/skills/impeccable/scripts/live-manual-edit-evidence.mjs",
+      "source_location": "L39"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_manual_edit_routes_createmanualeditroutes",
@@ -13350,18 +13230,6 @@
       "norm_label": "buildcontexthintsbyref()",
       "source_file": ".claude/skills/impeccable/scripts/live-manual-edit-evidence.mjs",
       "source_location": "L108"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_edit_evidence_buildmanualeditevidence",
-      "label": "buildManualEditEvidence()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 36,
-      "community_name": "live-manual-edit-evidence.mjs",
-      "file_type": "code",
-      "norm_label": "buildmanualeditevidence()",
-      "source_file": ".claude/skills/impeccable/scripts/live-manual-edit-evidence.mjs",
-      "source_location": "L39"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_manual_edit_evidence_collectsearchfiles",
@@ -13628,6 +13496,42 @@
       "source_location": "L802"
     },
     {
+      "id": "claude_skills_impeccable_scripts_context_contextsourcepath",
+      "label": "contextSourcePath()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "context.mjs",
+      "file_type": "code",
+      "norm_label": "contextsourcepath()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L330"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_contextsourcestatus",
+      "label": "contextSourceStatus()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "context.mjs",
+      "file_type": "code",
+      "norm_label": "contextsourcestatus()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L316"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_escaperegexp",
+      "label": "escapeRegExp()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "context.mjs",
+      "file_type": "code",
+      "norm_label": "escaperegexp()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L690"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_context_fetchlatestskillversion",
       "label": "fetchLatestSkillVersion()",
       "_callable": true,
@@ -13650,6 +13554,18 @@
       "norm_label": "findmonoreporoot()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
       "source_location": "L215"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_firstexisting",
+      "label": "firstExisting()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "context.mjs",
+      "file_type": "code",
+      "norm_label": "firstexisting()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L674"
     },
     {
       "id": "claude_skills_impeccable_scripts_context_hasfallbackworkspacechildren",
@@ -13688,6 +13604,18 @@
       "source_location": "L949"
     },
     {
+      "id": "claude_skills_impeccable_scripts_context_isexcludedbyworkspacepattern",
+      "label": "isExcludedByWorkspacePattern()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "context.mjs",
+      "file_type": "code",
+      "norm_label": "isexcludedbyworkspacepattern()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L463"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_context_ismonoreporoot",
       "label": "isMonorepoRoot()",
       "_callable": true,
@@ -13700,6 +13628,66 @@
       "source_location": "L234"
     },
     {
+      "id": "claude_skills_impeccable_scripts_context_ispathinside",
+      "label": "isPathInside()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "context.mjs",
+      "file_type": "code",
+      "norm_label": "ispathinside()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L178"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_ispathinsideorequal",
+      "label": "isPathInsideOrEqual()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "context.mjs",
+      "file_type": "code",
+      "norm_label": "ispathinsideorequal()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L501"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_nearestpackagerootbetween",
+      "label": "nearestPackageRootBetween()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "context.mjs",
+      "file_type": "code",
+      "norm_label": "nearestpackagerootbetween()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L488"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_nearestprojectlikeroot",
+      "label": "nearestProjectLikeRoot()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "context.mjs",
+      "file_type": "code",
+      "norm_label": "nearestprojectlikeroot()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L471"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_normalizeworkspacepattern",
+      "label": "normalizeWorkspacePattern()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "context.mjs",
+      "file_type": "code",
+      "norm_label": "normalizeworkspacepattern()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L659"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_context_parseyamlflowlist",
       "label": "parseYamlFlowList()",
       "_callable": true,
@@ -13710,6 +13698,30 @@
       "norm_label": "parseyamlflowlist()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
       "source_location": "L590"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_projectrootfromdoublestarpattern",
+      "label": "projectRootFromDoubleStarPattern()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "context.mjs",
+      "file_type": "code",
+      "norm_label": "projectrootfromdoublestarpattern()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L643"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_projectrootfromworkspacepattern",
+      "label": "projectRootFromWorkspacePattern()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "context.mjs",
+      "file_type": "code",
+      "norm_label": "projectrootfromworkspacepattern()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L628"
     },
     {
       "id": "claude_skills_impeccable_scripts_context_readjson",
@@ -13796,6 +13808,114 @@
       "source_location": "L526"
     },
     {
+      "id": "claude_skills_impeccable_scripts_context_resolvecandidatecontextsummary",
+      "label": "resolveCandidateContextSummary()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "context.mjs",
+      "file_type": "code",
+      "norm_label": "resolvecandidatecontextsummary()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L300"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_resolvecontext",
+      "label": "resolveContext()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "context.mjs",
+      "file_type": "code",
+      "norm_label": "resolvecontext()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L84"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_resolvecontextdir",
+      "label": "resolveContextDir()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "context.mjs",
+      "file_type": "code",
+      "norm_label": "resolvecontextdir()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L57"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_resolveenvcontextdir",
+      "label": "resolveEnvContextDir()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "context.mjs",
+      "file_type": "code",
+      "norm_label": "resolveenvcontextdir()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L196"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_resolvelocalcontextdir",
+      "label": "resolveLocalContextDir()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "context.mjs",
+      "file_type": "code",
+      "norm_label": "resolvelocalcontextdir()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L183"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_resolveproject",
+      "label": "resolveProject()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "context.mjs",
+      "file_type": "code",
+      "norm_label": "resolveproject()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L152"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_resolvetargetdir",
+      "label": "resolveTargetDir()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "context.mjs",
+      "file_type": "code",
+      "norm_label": "resolvetargetdir()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L203"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_resolveworkspaceprojectroot",
+      "label": "resolveWorkspaceProjectRoot()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "context.mjs",
+      "file_type": "code",
+      "norm_label": "resolveworkspaceprojectroot()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L439"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_segmentmatches",
+      "label": "segmentMatches()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "context.mjs",
+      "file_type": "code",
+      "norm_label": "segmentmatches()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L667"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_context_stripyamlinlinecomment",
       "label": "stripYamlInlineComment()",
       "_callable": true,
@@ -13830,6 +13950,18 @@
       "norm_label": "updatecheckdisabledbyconfig()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
       "source_location": "L791"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_workspacepatternmatchesrel",
+      "label": "workspacePatternMatchesRel()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "context.mjs",
+      "file_type": "code",
+      "norm_label": "workspacepatternmatchesrel()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L505"
     },
     {
       "id": "claude_skills_impeccable_scripts_context_writeupdatecache",
@@ -14156,172 +14288,124 @@
       "source_location": "L3735"
     },
     {
-      "id": "claude_skills_impeccable_scripts_context_contextsourcepath",
-      "label": "contextSourcePath()",
+      "id": "claude_skills_impeccable_scripts_live_session_store_applyevent",
+      "label": "applyEvent()",
       "_callable": true,
       "_origin": "ast",
       "community": 39,
-      "community_name": "resolveContext",
+      "community_name": "session-store.mjs",
       "file_type": "code",
-      "norm_label": "contextsourcepath()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L330"
+      "norm_label": "applyevent()",
+      "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
+      "source_location": "L155"
     },
     {
-      "id": "claude_skills_impeccable_scripts_context_contextsourcestatus",
-      "label": "contextSourceStatus()",
+      "id": "claude_skills_impeccable_scripts_live_session_store_basesnapshot",
+      "label": "baseSnapshot()",
       "_callable": true,
       "_origin": "ast",
       "community": 39,
-      "community_name": "resolveContext",
+      "community_name": "session-store.mjs",
       "file_type": "code",
-      "norm_label": "contextsourcestatus()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L316"
+      "norm_label": "basesnapshot()",
+      "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
+      "source_location": "L103"
     },
     {
-      "id": "claude_skills_impeccable_scripts_context_firstexisting",
-      "label": "firstExisting()",
+      "id": "claude_skills_impeccable_scripts_live_session_store_getjournalpath",
+      "label": "getJournalPath()",
       "_callable": true,
       "_origin": "ast",
       "community": 39,
-      "community_name": "resolveContext",
+      "community_name": "session-store.mjs",
       "file_type": "code",
-      "norm_label": "firstexisting()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L674"
+      "norm_label": "getjournalpath()",
+      "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
+      "source_location": "L90"
     },
     {
-      "id": "claude_skills_impeccable_scripts_context_ispathinside",
-      "label": "isPathInside()",
+      "id": "claude_skills_impeccable_scripts_live_session_store_getsnapshotpath",
+      "label": "getSnapshotPath()",
       "_callable": true,
       "_origin": "ast",
       "community": 39,
-      "community_name": "resolveContext",
+      "community_name": "session-store.mjs",
       "file_type": "code",
-      "norm_label": "ispathinside()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L178"
+      "norm_label": "getsnapshotpath()",
+      "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
+      "source_location": "L94"
     },
     {
-      "id": "claude_skills_impeccable_scripts_context_ispathinsideorequal",
-      "label": "isPathInsideOrEqual()",
+      "id": "claude_skills_impeccable_scripts_live_session_store_normalizeevent",
+      "label": "normalizeEvent()",
       "_callable": true,
       "_origin": "ast",
       "community": 39,
-      "community_name": "resolveContext",
+      "community_name": "session-store.mjs",
       "file_type": "code",
-      "norm_label": "ispathinsideorequal()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L501"
+      "norm_label": "normalizeevent()",
+      "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
+      "source_location": "L82"
     },
     {
-      "id": "claude_skills_impeccable_scripts_context_nearestprojectlikeroot",
-      "label": "nearestProjectLikeRoot()",
+      "id": "claude_skills_impeccable_scripts_live_session_store_rebuildsnapshotfromjournal",
+      "label": "rebuildSnapshotFromJournal()",
       "_callable": true,
       "_origin": "ast",
       "community": 39,
-      "community_name": "resolveContext",
+      "community_name": "session-store.mjs",
       "file_type": "code",
-      "norm_label": "nearestprojectlikeroot()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L471"
+      "norm_label": "rebuildsnapshotfromjournal()",
+      "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
+      "source_location": "L128"
     },
     {
-      "id": "claude_skills_impeccable_scripts_context_resolvecandidatecontextsummary",
-      "label": "resolveCandidateContextSummary()",
+      "id": "claude_skills_impeccable_scripts_live_session_store_safesessionid",
+      "label": "safeSessionId()",
       "_callable": true,
       "_origin": "ast",
       "community": 39,
-      "community_name": "resolveContext",
+      "community_name": "session-store.mjs",
       "file_type": "code",
-      "norm_label": "resolvecandidatecontextsummary()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L300"
+      "norm_label": "safesessionid()",
+      "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
+      "source_location": "L98"
     },
     {
-      "id": "claude_skills_impeccable_scripts_context_resolvecontext",
-      "label": "resolveContext()",
+      "id": "claude_skills_impeccable_scripts_live_session_store_topendingevent",
+      "label": "toPendingEvent()",
       "_callable": true,
       "_origin": "ast",
       "community": 39,
-      "community_name": "resolveContext",
+      "community_name": "session-store.mjs",
       "file_type": "code",
-      "norm_label": "resolvecontext()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L84"
+      "norm_label": "topendingevent()",
+      "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
+      "source_location": "L275"
     },
     {
-      "id": "claude_skills_impeccable_scripts_context_resolvecontextdir",
-      "label": "resolveContextDir()",
+      "id": "claude_skills_impeccable_scripts_live_session_store_upsertartifact",
+      "label": "upsertArtifact()",
       "_callable": true,
       "_origin": "ast",
       "community": 39,
-      "community_name": "resolveContext",
+      "community_name": "session-store.mjs",
       "file_type": "code",
-      "norm_label": "resolvecontextdir()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L57"
+      "norm_label": "upsertartifact()",
+      "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
+      "source_location": "L281"
     },
     {
-      "id": "claude_skills_impeccable_scripts_context_resolveenvcontextdir",
-      "label": "resolveEnvContextDir()",
+      "id": "claude_skills_impeccable_scripts_live_session_store_writesnapshot",
+      "label": "writeSnapshot()",
       "_callable": true,
       "_origin": "ast",
       "community": 39,
-      "community_name": "resolveContext",
+      "community_name": "session-store.mjs",
       "file_type": "code",
-      "norm_label": "resolveenvcontextdir()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L196"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_resolvelocalcontextdir",
-      "label": "resolveLocalContextDir()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 39,
-      "community_name": "resolveContext",
-      "file_type": "code",
-      "norm_label": "resolvelocalcontextdir()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L183"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_resolveproject",
-      "label": "resolveProject()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 39,
-      "community_name": "resolveContext",
-      "file_type": "code",
-      "norm_label": "resolveproject()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L152"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_resolvetargetdir",
-      "label": "resolveTargetDir()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 39,
-      "community_name": "resolveContext",
-      "file_type": "code",
-      "norm_label": "resolvetargetdir()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L203"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_resolveworkspaceprojectroot",
-      "label": "resolveWorkspaceProjectRoot()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 39,
-      "community_name": "resolveContext",
-      "file_type": "code",
-      "norm_label": "resolveworkspaceprojectroot()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L439"
+      "norm_label": "writesnapshot()",
+      "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
+      "source_location": "L287"
     },
     {
       "id": "claude_skills_impeccable_scripts_modern_screenshot_umd_ae",
@@ -14994,42 +15078,6 @@
       "norm_label": "zt()",
       "source_file": ".claude/skills/impeccable/scripts/modern-screenshot.umd.js",
       "source_location": "L14"
-    },
-    {
-      "id": "docencia_espanol_fuentes_extraer_emittable",
-      "label": "emitTable()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "modern-screenshot.umd.js",
-      "file_type": "code",
-      "norm_label": "emittable()",
-      "source_file": "docencia-espanol/fuentes/extraer.mjs",
-      "source_location": "L152"
-    },
-    {
-      "id": "docencia_espanol_fuentes_extraer_emittheory",
-      "label": "emitTheory()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "modern-screenshot.umd.js",
-      "file_type": "code",
-      "norm_label": "emittheory()",
-      "source_file": "docencia-espanol/fuentes/extraer.mjs",
-      "source_location": "L119"
-    },
-    {
-      "id": "docencia_espanol_fuentes_extraer_textwithblanks",
-      "label": "textWithBlanks()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "modern-screenshot.umd.js",
-      "file_type": "code",
-      "norm_label": "textwithblanks()",
-      "source_file": "docencia-espanol/fuentes/extraer.mjs",
-      "source_location": "L61"
     },
     {
       "id": "claude_skills_impeccable_scripts_context_resolveprojectroot",
@@ -17936,16 +17984,16 @@
       "source_location": "L61"
     },
     {
-      "id": "claude_skills_impeccable_scripts_context_resolvetargetselection",
-      "label": "resolveTargetSelection()",
+      "id": "claude_skills_impeccable_scripts_context_parseclioptions",
+      "label": "parseCliOptions()",
       "_callable": true,
       "_origin": "ast",
       "community": 58,
       "community_name": "live.mjs",
       "file_type": "code",
-      "norm_label": "resolvetargetselection()",
+      "norm_label": "parseclioptions()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L127"
+      "source_location": "L891"
     },
     {
       "id": "claude_skills_impeccable_scripts_context_saferead",
@@ -17958,6 +18006,42 @@
       "norm_label": "saferead()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
       "source_location": "L682"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_lib_target_args_parsetargetoptions",
+      "label": "parseTargetOptions()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "live.mjs",
+      "file_type": "code",
+      "norm_label": "parsetargetoptions()",
+      "source_file": ".claude/skills/impeccable/scripts/lib/target-args.mjs",
+      "source_location": "L39"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_lib_target_args_parsetargetpath",
+      "label": "parseTargetPath()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "live.mjs",
+      "file_type": "code",
+      "norm_label": "parsetargetpath()",
+      "source_file": ".claude/skills/impeccable/scripts/lib/target-args.mjs",
+      "source_location": "L9"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_lib_target_args_targetargerror_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "live.mjs",
+      "file_type": "code",
+      "norm_label": ".constructor()",
+      "source_file": ".claude/skills/impeccable/scripts/lib/target-args.mjs",
+      "source_location": "L2"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_ensureserverrunning",
@@ -18042,6 +18126,18 @@
       "norm_label": "scanfordrift()",
       "source_file": ".claude/skills/impeccable/scripts/live.mjs",
       "source_location": "L169"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_target_resolvelivetarget",
+      "label": "resolveLiveTarget()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "live.mjs",
+      "file_type": "code",
+      "norm_label": "resolvelivetarget()",
+      "source_file": ".claude/skills/impeccable/scripts/live-target.mjs",
+      "source_location": "L5"
     },
     {
       "id": "claude_skills_impeccable_scripts_hook_lib_applyconfigsource",
@@ -18692,18 +18788,6 @@
       "source_location": "L845"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_rollbackmanualapplytransaction",
-      "label": "rollbackManualApplyTransaction()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "rollbackmanualapplytransaction()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L766"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_manual_apply_snapshotapplyeventfiles",
       "label": "snapshotApplyEventFiles()",
       "_callable": true,
@@ -18786,90 +18870,6 @@
       "norm_label": "writemanualapplytransaction()",
       "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
       "source_location": "L726"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_palette_buildweights",
-      "label": "buildWeights()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "buildweights()",
-      "source_file": ".claude/skills/impeccable/scripts/palette.mjs",
-      "source_location": "L447"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_palette_fmtoklch",
-      "label": "fmtOklch()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "fmtoklch()",
-      "source_file": ".claude/skills/impeccable/scripts/palette.mjs",
-      "source_location": "L478"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_palette_hashunit",
-      "label": "hashUnit()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "hashunit()",
-      "source_file": ".claude/skills/impeccable/scripts/palette.mjs",
-      "source_location": "L436"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_palette_hueword",
-      "label": "hueWord()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "hueword()",
-      "source_file": ".claude/skills/impeccable/scripts/palette.mjs",
-      "source_location": "L482"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_palette_parseargs",
-      "label": "parseArgs()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "parseargs()",
-      "source_file": ".claude/skills/impeccable/scripts/palette.mjs",
-      "source_location": "L425"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_palette_pickseed",
-      "label": "pickSeed()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "pickseed()",
-      "source_file": ".claude/skills/impeccable/scripts/palette.mjs",
-      "source_location": "L466"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_palette_weightedpick",
-      "label": "weightedPick()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "weightedpick()",
-      "source_file": ".claude/skills/impeccable/scripts/palette.mjs",
-      "source_location": "L456"
     },
     {
       "id": "master_sistemas_inteligentes_robots_autonomos_roomba_codigo_roomba_roomba_roombacontroller_avoid_obstacle",
@@ -19549,7 +19549,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 63,
-      "community_name": "ref_node_path",
+      "community_name": "ref_node_fs",
       "file_type": "code",
       "norm_label": "findharnessdirs()",
       "source_file": ".claude/skills/impeccable/scripts/pin.mjs",
@@ -19561,7 +19561,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 63,
-      "community_name": "ref_node_path",
+      "community_name": "ref_node_fs",
       "file_type": "code",
       "norm_label": "findprojectroot()",
       "source_file": ".claude/skills/impeccable/scripts/pin.mjs",
@@ -19573,7 +19573,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 63,
-      "community_name": "ref_node_path",
+      "community_name": "ref_node_fs",
       "file_type": "code",
       "norm_label": "generatepinnedskill()",
       "source_file": ".claude/skills/impeccable/scripts/pin.mjs",
@@ -19585,7 +19585,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 63,
-      "community_name": "ref_node_path",
+      "community_name": "ref_node_fs",
       "file_type": "code",
       "norm_label": "loadcommandmetadata()",
       "source_file": ".claude/skills/impeccable/scripts/pin.mjs",
@@ -19597,7 +19597,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 63,
-      "community_name": "ref_node_path",
+      "community_name": "ref_node_fs",
       "file_type": "code",
       "norm_label": "pin()",
       "source_file": ".claude/skills/impeccable/scripts/pin.mjs",
@@ -19609,7 +19609,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 63,
-      "community_name": "ref_node_path",
+      "community_name": "ref_node_fs",
       "file_type": "code",
       "norm_label": "unpin()",
       "source_file": ".claude/skills/impeccable/scripts/pin.mjs",
@@ -22820,18 +22820,6 @@
       "source_location": "L895"
     },
     {
-      "id": "claude_skills_impeccable_scripts_context_parseclioptions",
-      "label": "parseCliOptions()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 90,
-      "community_name": "cli",
-      "file_type": "code",
-      "norm_label": "parseclioptions()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L891"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_context_pathexistsfortarget",
       "label": "pathExistsForTarget()",
       "_callable": true,
@@ -22842,6 +22830,18 @@
       "norm_label": "pathexistsfortarget()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
       "source_location": "L899"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_resolvetargetselection",
+      "label": "resolveTargetSelection()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 90,
+      "community_name": "cli",
+      "file_type": "code",
+      "norm_label": "resolvetargetselection()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L127"
     },
     {
       "id": "claude_skills_impeccable_scripts_context_shouldwarnmissingtarget",
@@ -24812,6 +24812,18 @@
       "source_location": "L286"
     },
     {
+      "id": "claude_skills_hook_hardening_skill_11_si_el_hook_necesita_que_algo_persista_entre_contenedores_ef\u00edmeros",
+      "label": "11. Si el hook necesita que algo persista entre contenedores ef\u00edmeros,",
+      "_origin": "ast",
+      "community": 122,
+      "community_name": "hook-hardening",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "11. si el hook necesita que algo persista entre contenedores efimeros,",
+      "source_file": ".claude/skills/hook-hardening/SKILL.md",
+      "source_location": "L313"
+    },
+    {
       "id": "claude_skills_hook_hardening_skill_1_todo_c\u00f3digo_de_salida_se_comprueba_antes_de_declarar_\u00e9xito",
       "label": "1. Todo c\u00f3digo de salida se comprueba antes de declarar \u00e9xito",
       "_origin": "ast",
@@ -24929,7 +24941,7 @@
       "node_kind": "heading",
       "norm_label": "antes de pedir/lanzar la revision externa",
       "source_file": ".claude/skills/hook-hardening/SKILL.md",
-      "source_location": "L313"
+      "source_location": "L349"
     },
     {
       "id": "claude_skills_hook_hardening_skill_hook_hardening",
@@ -31184,7 +31196,7 @@
       "label": "live-complete.mjs",
       "_origin": "ast",
       "community": 196,
-      "community_name": "session-store.mjs",
+      "community_name": "readLiveServerInfo",
       "file_type": "code",
       "norm_label": "live-complete.mjs",
       "source_file": ".claude/skills/impeccable/scripts/live-complete.mjs",
@@ -31195,40 +31207,18 @@
       "label": "live-resume.mjs",
       "_origin": "ast",
       "community": 196,
-      "community_name": "session-store.mjs",
+      "community_name": "readLiveServerInfo",
       "file_type": "code",
       "norm_label": "live-resume.mjs",
       "source_file": ".claude/skills/impeccable/scripts/live-resume.mjs",
       "source_location": "L1"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_session_store",
-      "label": "session-store.mjs",
-      "_origin": "ast",
-      "community": 196,
-      "community_name": "session-store.mjs",
-      "file_type": "code",
-      "norm_label": "session-store.mjs",
-      "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
-      "source_location": "L1"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_session_store_completed_phases",
-      "label": "COMPLETED_PHASES",
-      "_origin": "ast",
-      "community": 196,
-      "community_name": "session-store.mjs",
-      "file_type": "code",
-      "norm_label": "completed_phases",
-      "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
-      "source_location": "L5"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_status",
       "label": "live-status.mjs",
       "_origin": "ast",
       "community": 196,
-      "community_name": "session-store.mjs",
+      "community_name": "readLiveServerInfo",
       "file_type": "code",
       "norm_label": "live-status.mjs",
       "source_file": ".claude/skills/impeccable/scripts/live-status.mjs",
@@ -32995,26 +32985,48 @@
       "source_location": "L1"
     },
     {
-      "id": "claude_skills_impeccable_scripts_lib_target_args",
-      "label": "target-args.mjs",
+      "id": "claude_skills_impeccable_scripts_palette",
+      "label": "palette.mjs",
       "_origin": "ast",
       "community": 216,
-      "community_name": "live-target.mjs",
+      "community_name": "palette.mjs",
       "file_type": "code",
-      "norm_label": "target-args.mjs",
-      "source_file": ".claude/skills/impeccable/scripts/lib/target-args.mjs",
+      "norm_label": "palette.mjs",
+      "source_file": ".claude/skills/impeccable/scripts/palette.mjs",
       "source_location": "L1"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_target",
-      "label": "live-target.mjs",
+      "id": "claude_skills_impeccable_scripts_palette_args",
+      "label": "args",
       "_origin": "ast",
       "community": 216,
-      "community_name": "live-target.mjs",
+      "community_name": "palette.mjs",
       "file_type": "code",
-      "norm_label": "live-target.mjs",
-      "source_file": ".claude/skills/impeccable/scripts/live-target.mjs",
-      "source_location": "L1"
+      "norm_label": "args",
+      "source_file": ".claude/skills/impeccable/scripts/palette.mjs",
+      "source_location": "L500"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_palette_seed",
+      "label": "seed",
+      "_origin": "ast",
+      "community": 216,
+      "community_name": "palette.mjs",
+      "file_type": "code",
+      "norm_label": "seed",
+      "source_file": ".claude/skills/impeccable/scripts/palette.mjs",
+      "source_location": "L501"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_palette_seeds",
+      "label": "SEEDS",
+      "_origin": "ast",
+      "community": 216,
+      "community_name": "palette.mjs",
+      "file_type": "code",
+      "norm_label": "seeds",
+      "source_file": ".claude/skills/impeccable/scripts/palette.mjs",
+      "source_location": "L35"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables",
@@ -33137,6 +33149,50 @@
       "source_location": "L454"
     },
     {
+      "id": "docencia_espanol_fuentes_extraer",
+      "label": "extraer.mjs",
+      "_origin": "ast",
+      "community": 218,
+      "community_name": "ref_node_path",
+      "file_type": "code",
+      "norm_label": "extraer.mjs",
+      "source_file": "docencia-espanol/fuentes/extraer.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "docencia_espanol_fuentes_extraer_chromium",
+      "label": "{ chromium }",
+      "_origin": "ast",
+      "community": 218,
+      "community_name": "ref_node_path",
+      "file_type": "code",
+      "norm_label": "{ chromium }",
+      "source_file": "docencia-espanol/fuentes/extraer.mjs",
+      "source_location": "L17"
+    },
+    {
+      "id": "docencia_espanol_fuentes_extraer_file_code",
+      "label": "[file, code]",
+      "_origin": "ast",
+      "community": 218,
+      "community_name": "ref_node_path",
+      "file_type": "code",
+      "norm_label": "[file, code]",
+      "source_file": "docencia-espanol/fuentes/extraer.mjs",
+      "source_location": "L21"
+    },
+    {
+      "id": "docencia_espanol_fuentes_extraer_require",
+      "label": "require",
+      "_origin": "ast",
+      "community": 218,
+      "community_name": "ref_node_path",
+      "file_type": "code",
+      "norm_label": "require",
+      "source_file": "docencia-espanol/fuentes/extraer.mjs",
+      "source_location": "L16"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_hook_before_edit",
       "label": "hook-before-edit.mjs",
       "_origin": "ast",
@@ -33157,7 +33213,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-16 \u2014 segunda pasada: hooks vs. claude.md, y practicas de la comunidad",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1670"
+      "source_location": "L1676"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_anotado_no_aplicado_patrones_de_awattar_claude_code_best_practices",
@@ -33169,7 +33225,7 @@
       "node_kind": "heading",
       "norm_label": "anotado, no aplicado: patrones de `awattar/claude-code-best-practices`",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1859"
+      "source_location": "L1865"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_aplicado_hook_stop_con_estado_de_git_radical_transparency",
@@ -33181,7 +33237,7 @@
       "node_kind": "heading",
       "norm_label": "aplicado: hook `stop` con estado de git (\"radical transparency\")",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1676"
+      "source_location": "L1682"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_aplicado_tras_profundizar_hook_que_bloquea_merge_sin_revisi\u00f3n",
@@ -33193,7 +33249,7 @@
       "node_kind": "heading",
       "norm_label": "aplicado (tras profundizar): hook que bloquea merge sin revision",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1692"
+      "source_location": "L1698"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_lluvia_de_ideas",
@@ -33403,7 +33459,7 @@
       "node_kind": "heading",
       "norm_label": "2026-09-13 \u2014 busqueda exhaustiva: herramientas de investigacion cientifica verificada para el master",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L221"
+      "source_location": "L227"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_encontrados_en_github_sin_tarjeta_posible_no_est\u00e1n_en_ning\u00fan_cat\u00e1logo_de_claude_documentados_no_instalados",
@@ -33415,7 +33471,7 @@
       "node_kind": "heading",
       "norm_label": "encontrados en github, sin tarjeta posible (no estan en ningun catalogo de claude) \u2014 documentados, no instalados",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L320"
+      "source_location": "L326"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_propuestos_con_tarjeta_y_activados_el_mismo_d\u00eda",
@@ -33427,7 +33483,7 @@
       "node_kind": "heading",
       "norm_label": "propuestos con tarjeta y activados el mismo dia",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L265"
+      "source_location": "L271"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_revisados_y_descartados_por_redundancia_o_desajuste_por_completitud",
@@ -33439,7 +33495,7 @@
       "node_kind": "heading",
       "norm_label": "revisados y descartados por redundancia o desajuste (por completitud)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L299"
+      "source_location": "L305"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_wolfram_ya_activo_el_aviso_de_needs_reconnect_era_falso_positivo",
@@ -33451,7 +33507,7 @@
       "node_kind": "heading",
       "norm_label": "\u2705 wolfram \u2014 ya activo, el aviso de \"needs_reconnect\" era falso positivo",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L250"
+      "source_location": "L256"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_ya_activos_en_esta_cuenta_sin_acci\u00f3n_solo_usarlos_adoptado",
@@ -33463,7 +33519,7 @@
       "node_kind": "heading",
       "norm_label": "ya activos en esta cuenta \u2014 sin accion, solo usarlos (adoptado)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L231"
+      "source_location": "L237"
     },
     {
       "id": "docencia_espanol_miniescuela_plan_financiero",
@@ -34135,7 +34191,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-16 \u2014 primera pasada del radar",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1915"
+      "source_location": "L1921"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_brisk_teaching_conector_mcp",
@@ -34147,7 +34203,7 @@
       "node_kind": "heading",
       "norm_label": "brisk teaching (conector mcp)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1935"
+      "source_location": "L1941"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_deepl_conector_mcp",
@@ -34159,7 +34215,7 @@
       "node_kind": "heading",
       "norm_label": "deepl (conector mcp)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1917"
+      "source_location": "L1923"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_marketplaces_de_plugins_de_claude_code_oficial_y_comunidad",
@@ -34171,7 +34227,7 @@
       "node_kind": "heading",
       "norm_label": "marketplaces de plugins de claude code (oficial y comunidad)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1960"
+      "source_location": "L1966"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_menor_learning_commons_y_learn_with_coursera",
@@ -34183,7 +34239,7 @@
       "node_kind": "heading",
       "norm_label": "(menor) learning commons y learn with coursera",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1977"
+      "source_location": "L1983"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_30_compactaci\u00f3n_de_contexto_palancas_oficiales_para_ahorrar_tokens",
@@ -34195,7 +34251,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-30 \u2014 compactacion de contexto: palancas oficiales para ahorrar tokens",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L803"
+      "source_location": "L809"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_anotado_no_aplicado_palancas_oficiales_sin_necesidad_clara_todav\u00eda",
@@ -34207,7 +34263,7 @@
       "node_kind": "heading",
       "norm_label": "anotado, no aplicado (palancas oficiales sin necesidad clara todavia)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L827"
+      "source_location": "L833"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_aplicado_instrucci\u00f3n_de_preservaci\u00f3n_al_compactar_en_claude_md",
@@ -34219,7 +34275,7 @@
       "node_kind": "heading",
       "norm_label": "aplicado: instruccion de preservacion al compactar, en `claude.md`",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L810"
+      "source_location": "L816"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_fuera_de_alcance_de_claude_code_mencionado_para_completar_el_cuadro",
@@ -34231,7 +34287,7 @@
       "node_kind": "heading",
       "norm_label": "fuera de alcance de claude code, mencionado para completar el cuadro",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L848"
+      "source_location": "L854"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_30_pasada_del_radar_dos_funciones_nativas_nuevas_sin_hallazgos_de_terceros",
@@ -34243,7 +34299,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-30 \u2014 pasada del radar: dos funciones nativas nuevas, sin hallazgos de terceros",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L859"
+      "source_location": "L865"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_auto_continue_al_resetear_el_l\u00edmite_de_uso_nativo_activado_por_defecto",
@@ -34255,7 +34311,7 @@
       "node_kind": "heading",
       "norm_label": "auto-continue al resetear el limite de uso (nativo, activado por defecto)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L874"
+      "source_location": "L880"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_estilo_de_salida_concise_nativo",
@@ -34267,7 +34323,7 @@
       "node_kind": "heading",
       "norm_label": "estilo de salida \"concise\" (nativo)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L890"
+      "source_location": "L896"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_sin_hallazgos_nuevos_de_terceros_en_los_dominios_de_angel",
@@ -34279,7 +34335,7 @@
       "node_kind": "heading",
       "norm_label": "sin hallazgos nuevos de terceros en los dominios de angel",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L903"
+      "source_location": "L909"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_candidatos_nuevos_o_reforzados_con_proyecto_financiado_verificado",
@@ -34351,7 +34407,7 @@
       "node_kind": "heading",
       "norm_label": "2026-09-07 \u2014 busqueda a mano: herramientas para posts de blog en plataformas de clases",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L461"
+      "source_location": "L467"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_mencionados_pero_no_propuestos_con_tarjeta_por_completitud_sin_encajar_tan_bien_ahora_mismo",
@@ -34363,7 +34419,7 @@
       "node_kind": "heading",
       "norm_label": "mencionados pero no propuestos con tarjeta (por completitud, sin encajar tan bien ahora mismo)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L500"
+      "source_location": "L506"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_plugin_marketing_plugin_01eeb9y5m4ifuy3yrtytyfdc",
@@ -34375,7 +34431,7 @@
       "node_kind": "heading",
       "norm_label": "plugin \"marketing\" (`plugin_01eeb9y5m4ifuy3yrtytyfdc`)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L468"
+      "source_location": "L474"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_plugin_searchfit_seo_plugin_016u9h5nggkux18ridtj7otg",
@@ -34387,7 +34443,7 @@
       "node_kind": "heading",
       "norm_label": "plugin \"searchfit seo\" (`plugin_016u9h5nggkux18ridtj7otg`)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L485"
+      "source_location": "L491"
     },
     {
       "id": "plugins_caveman_cavecrew_hooks_restrict_cavecrew_bash",
@@ -34603,6 +34659,21 @@
       "norm_label": "mark-permission-scan.sh",
       "source_file": ".claude/hooks/mark-permission-scan.sh",
       "source_location": "L1"
+    },
+    {
+      "id": "claude_hooks_mark_permission_scan_git",
+      "label": "GIT()",
+      "_origin": "ast",
+      "community": 243,
+      "community_name": "mark-permission-scan.sh",
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "norm_label": "git()",
+      "source_file": ".claude/hooks/mark-permission-scan.sh",
+      "source_location": "L60"
     },
     {
       "id": "claude_hooks_mark_permission_scan_sh__entry",
@@ -35346,6 +35417,28 @@
       "source_location": "L30"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_session_store",
+      "label": "session-store.mjs",
+      "_origin": "ast",
+      "community": 39,
+      "community_name": "session-store.mjs",
+      "file_type": "code",
+      "norm_label": "session-store.mjs",
+      "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_session_store_completed_phases",
+      "label": "COMPLETED_PHASES",
+      "_origin": "ast",
+      "community": 39,
+      "community_name": "session-store.mjs",
+      "file_type": "code",
+      "norm_label": "completed_phases",
+      "source_file": ".claude/skills/impeccable/scripts/live/session-store.mjs",
+      "source_location": "L5"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_modern_screenshot_umd",
       "label": "modern-screenshot.umd.js",
       "_origin": "ast",
@@ -35355,50 +35448,6 @@
       "norm_label": "modern-screenshot.umd.js",
       "source_file": ".claude/skills/impeccable/scripts/modern-screenshot.umd.js",
       "source_location": "L1"
-    },
-    {
-      "id": "docencia_espanol_fuentes_extraer",
-      "label": "extraer.mjs",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "modern-screenshot.umd.js",
-      "file_type": "code",
-      "norm_label": "extraer.mjs",
-      "source_file": "docencia-espanol/fuentes/extraer.mjs",
-      "source_location": "L1"
-    },
-    {
-      "id": "docencia_espanol_fuentes_extraer_chromium",
-      "label": "{ chromium }",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "modern-screenshot.umd.js",
-      "file_type": "code",
-      "norm_label": "{ chromium }",
-      "source_file": "docencia-espanol/fuentes/extraer.mjs",
-      "source_location": "L17"
-    },
-    {
-      "id": "docencia_espanol_fuentes_extraer_file_code",
-      "label": "[file, code]",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "modern-screenshot.umd.js",
-      "file_type": "code",
-      "norm_label": "[file, code]",
-      "source_file": "docencia-espanol/fuentes/extraer.mjs",
-      "source_location": "L21"
-    },
-    {
-      "id": "docencia_espanol_fuentes_extraer_require",
-      "label": "require",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "modern-screenshot.umd.js",
-      "file_type": "code",
-      "norm_label": "require",
-      "source_file": "docencia-espanol/fuentes/extraer.mjs",
-      "source_location": "L16"
     },
     {
       "id": "claude_skills_impeccable_scripts_lib_impeccable_paths",
@@ -36428,6 +36477,17 @@
       "source_location": "L5"
     },
     {
+      "id": "claude_skills_impeccable_scripts_lib_target_args",
+      "label": "target-args.mjs",
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "live.mjs",
+      "file_type": "code",
+      "norm_label": "target-args.mjs",
+      "source_file": ".claude/skills/impeccable/scripts/lib/target-args.mjs",
+      "source_location": "L1"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live",
       "label": "live.mjs",
       "_origin": "ast",
@@ -36448,6 +36508,17 @@
       "norm_label": "__dirname",
       "source_file": ".claude/skills/impeccable/scripts/live.mjs",
       "source_location": "L29"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_target",
+      "label": "live-target.mjs",
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "live.mjs",
+      "file_type": "code",
+      "norm_label": "live-target.mjs",
+      "source_file": ".claude/skills/impeccable/scripts/live-target.mjs",
+      "source_location": "L1"
     },
     {
       "id": "claude_skills_impeccable_scripts_hook",
@@ -36494,50 +36565,6 @@
       "source_location": "L8"
     },
     {
-      "id": "claude_skills_impeccable_scripts_palette",
-      "label": "palette.mjs",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "palette.mjs",
-      "source_file": ".claude/skills/impeccable/scripts/palette.mjs",
-      "source_location": "L1"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_palette_args",
-      "label": "args",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "args",
-      "source_file": ".claude/skills/impeccable/scripts/palette.mjs",
-      "source_location": "L500"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_palette_seed",
-      "label": "seed",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "seed",
-      "source_file": ".claude/skills/impeccable/scripts/palette.mjs",
-      "source_location": "L501"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_palette_seeds",
-      "label": "SEEDS",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "file_type": "code",
-      "norm_label": "seeds",
-      "source_file": ".claude/skills/impeccable/scripts/palette.mjs",
-      "source_location": "L35"
-    },
-    {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_22_ponytail_dietrichgebert_activado_para_todas_las_sesiones",
       "label": "2026-08-22 \u2014 ponytail (DietrichGebert): activado para todas las sesiones",
       "_origin": "ast",
@@ -36547,7 +36574,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-22 \u2014 ponytail (dietrichgebert): activado para todas las sesiones",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1282"
+      "source_location": "L1288"
     },
     {
       "id": "claude_skills_impeccable_scripts_detect_csp",
@@ -36719,7 +36746,7 @@
       "label": "detect.mjs",
       "_origin": "ast",
       "community": 63,
-      "community_name": "ref_node_path",
+      "community_name": "ref_node_fs",
       "file_type": "code",
       "norm_label": "detect.mjs",
       "source_file": ".claude/skills/impeccable/scripts/detect.mjs",
@@ -36730,7 +36757,7 @@
       "label": "candidates",
       "_origin": "ast",
       "community": 63,
-      "community_name": "ref_node_path",
+      "community_name": "ref_node_fs",
       "file_type": "code",
       "norm_label": "candidates",
       "source_file": ".claude/skills/impeccable/scripts/detect.mjs",
@@ -36741,7 +36768,7 @@
       "label": "detectorPath",
       "_origin": "ast",
       "community": 63,
-      "community_name": "ref_node_path",
+      "community_name": "ref_node_fs",
       "file_type": "code",
       "norm_label": "detectorpath",
       "source_file": ".claude/skills/impeccable/scripts/detect.mjs",
@@ -36752,7 +36779,7 @@
       "label": "__dirname",
       "_origin": "ast",
       "community": 63,
-      "community_name": "ref_node_path",
+      "community_name": "ref_node_fs",
       "file_type": "code",
       "norm_label": "__dirname",
       "source_file": ".claude/skills/impeccable/scripts/detect.mjs",
@@ -36763,7 +36790,7 @@
       "label": "pin.mjs",
       "_origin": "ast",
       "community": 63,
-      "community_name": "ref_node_path",
+      "community_name": "ref_node_fs",
       "file_type": "code",
       "norm_label": "pin.mjs",
       "source_file": ".claude/skills/impeccable/scripts/pin.mjs",
@@ -36774,7 +36801,7 @@
       "label": "__dirname",
       "_origin": "ast",
       "community": 63,
-      "community_name": "ref_node_path",
+      "community_name": "ref_node_fs",
       "file_type": "code",
       "norm_label": "__dirname",
       "source_file": ".claude/skills/impeccable/scripts/pin.mjs",
@@ -36785,7 +36812,7 @@
       "label": "HARNESS_DIRS",
       "_origin": "ast",
       "community": 63,
-      "community_name": "ref_node_path",
+      "community_name": "ref_node_fs",
       "file_type": "code",
       "norm_label": "harness_dirs",
       "source_file": ".claude/skills/impeccable/scripts/pin.mjs",
@@ -36796,7 +36823,7 @@
       "label": "root",
       "_origin": "ast",
       "community": 63,
-      "community_name": "ref_node_path",
+      "community_name": "ref_node_fs",
       "file_type": "code",
       "norm_label": "root",
       "source_file": ".claude/skills/impeccable/scripts/pin.mjs",
@@ -36807,7 +36834,7 @@
       "label": "VALID_COMMANDS",
       "_origin": "ast",
       "community": 63,
-      "community_name": "ref_node_path",
+      "community_name": "ref_node_fs",
       "file_type": "code",
       "norm_label": "valid_commands",
       "source_file": ".claude/skills/impeccable/scripts/pin.mjs",
@@ -37039,7 +37066,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-16 \u2014 guia oficial de buenas practicas de claude code",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1880"
+      "source_location": "L1886"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_18_markitdown_microsoft_herramienta_puntual_no_instalada",
@@ -37051,7 +37078,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-18 \u2014 markitdown (microsoft): herramienta puntual, no instalada",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1645"
+      "source_location": "L1651"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_18_pr\u00e1ctica_desplazar_la_ventana_de_5h_de_l\u00edmite_de_uso",
@@ -37063,7 +37090,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-18 \u2014 practica: desplazar la ventana de 5h de limite de uso",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1631"
+      "source_location": "L1637"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_20_agent_browser_vercel_labs_activado",
@@ -37075,7 +37102,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-20 \u2014 agent-browser (vercel labs): activado",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1503"
+      "source_location": "L1509"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_21_find_skills_vercel_labs_activado",
@@ -37087,7 +37114,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-21 \u2014 find-skills (vercel labs): activado",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1471"
+      "source_location": "L1477"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_21_mcp_server_dev_anthropic_activado_deshabilitado_por_defecto",
@@ -37099,7 +37126,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-21 \u2014 mcp-server-dev (anthropic): activado, deshabilitado por defecto",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1383"
+      "source_location": "L1389"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_22_caveman_juliusbrussee_instalado_correcci\u00f3n_2026_08_30_no_se_activa_solo",
@@ -37111,7 +37138,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-22 \u2014 caveman (juliusbrussee): instalado (correccion 2026-08-30: no se activa solo)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1174"
+      "source_location": "L1180"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_23_7_skills_m\u00e1s_de_juliusbrussee_caveman_activadas",
@@ -37123,7 +37150,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-23 \u2014 7 skills mas de juliusbrussee/caveman: activadas",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L981"
+      "source_location": "L987"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_23_statusline_de_ponytail_configurado",
@@ -37135,7 +37162,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-23 \u2014 statusline de ponytail: configurado",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1147"
+      "source_location": "L1153"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_30_carrusel_4_conectores_que_le_dan_superpoderes_a_claude_revisado_nada_que_instalar",
@@ -37147,7 +37174,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-30 \u2014 carrusel \"4 conectores que le dan superpoderes a claude\": revisado, nada que instalar",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L715"
+      "source_location": "L721"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_30_gemini_notebook_antes_notebooklm_sin_opci\u00f3n_segura_no_adoptado",
@@ -37159,7 +37186,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-30 \u2014 gemini notebook (antes notebooklm): sin opcion segura, no adoptado",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L914"
+      "source_location": "L920"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_30_memory_de_anthropic_memoria_compartida_entre_chats_nativo_oficial",
@@ -37171,7 +37198,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-30 \u2014 memory de anthropic: memoria compartida entre chats (nativo, oficial)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L751"
+      "source_location": "L757"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_09_06_lecci\u00f3n_ampliar_una_regla_de_golden_rules_exige_revisar_todas_las_que_dependen_de_su_alcance",
@@ -37183,7 +37210,7 @@
       "node_kind": "heading",
       "norm_label": "2026-09-06 \u2014 leccion: ampliar una regla de golden rules exige revisar todas las que dependen de su alcance",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1998"
+      "source_location": "L2004"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_09_07_sync_main_sh_ramas_base_viejas_ya_no_se_quedan_sin_funciones_fusionadas",
@@ -37195,7 +37222,7 @@
       "node_kind": "heading",
       "norm_label": "2026-09-07 \u2014 sync-main.sh: ramas base viejas ya no se quedan sin funciones fusionadas",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L520"
+      "source_location": "L526"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_09_09_skill_humanizer_terceros_adaptada_a_mano",
@@ -37207,7 +37234,7 @@
       "node_kind": "heading",
       "norm_label": "2026-09-09 \u2014 skill \"humanizer\" (terceros, adaptada a mano)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L354"
+      "source_location": "L360"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_09_14_lecci\u00f3n_ampliaci\u00f3n_al_propagar_una_correcci\u00f3n_el_archivo_resumen_para_la_siguiente_sesi\u00f3n_va_primero",
@@ -37219,7 +37246,7 @@
       "node_kind": "heading",
       "norm_label": "2026-09-14 \u2014 leccion (ampliacion): al propagar una correccion, el archivo \"resumen para la siguiente sesion\" va primero",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L2097"
+      "source_location": "L2103"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_09_14_lecci\u00f3n_tres_rondas_declarando_hueco_sobre_trabajo_ya_publicado",
@@ -37231,7 +37258,7 @@
       "node_kind": "heading",
       "norm_label": "2026-09-14 \u2014 leccion: tres rondas declarando \"hueco\" sobre trabajo ya publicado",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L2032"
+      "source_location": "L2038"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_09_18_aplicado_fewer_permission_prompts_en_piloto_autom\u00e1tico",
@@ -37255,7 +37282,7 @@
       "node_kind": "heading",
       "norm_label": "2026-09-18 \u2014 catalogo de claude academy (cursos oficiales)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L189"
+      "source_location": "L195"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_09_18_pasada_por_code_claude_com_docs_en_whats_new_weeks_13_37",
@@ -37315,7 +37342,7 @@
       "node_kind": "heading",
       "norm_label": "leccion: `graphify-out/.pending_changes` se cuela en git (3a vez)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L961"
+      "source_location": "L967"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_novedades_de_herramientas_de_ia",
@@ -41705,6 +41732,42 @@
       "type": "external"
     },
     {
+      "id": "ref_node_crypto",
+      "label": "ref_node_crypto",
+      "_origin": "semantic",
+      "community": 216,
+      "community_name": "palette.mjs",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "ref_node_crypto",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "ref_node_module",
+      "label": "ref_node_module",
+      "_origin": "semantic",
+      "community": 218,
+      "community_name": "ref_node_path",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "ref_node_module",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "ref_node_path",
+      "label": "ref_node_path",
+      "_origin": "semantic",
+      "community": 218,
+      "community_name": "ref_node_path",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "ref_node_path",
+      "source_file": "",
+      "type": "external"
+    },
+    {
       "id": "sys",
       "label": "sys",
       "_origin": "semantic",
@@ -41729,38 +41792,26 @@
       "type": "external"
     },
     {
-      "id": "ref_node_os",
-      "label": "ref_node_os",
-      "_origin": "semantic",
-      "community": 37,
-      "community_name": "context.mjs",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "ref_node_os",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "ref_node_module",
-      "label": "ref_node_module",
-      "_origin": "semantic",
-      "community": 4,
-      "community_name": "modern-screenshot.umd.js",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "ref_node_module",
-      "source_file": "",
-      "type": "external"
-    },
-    {
       "id": "ref_node_child_process",
       "label": "ref_node_child_process",
       "_origin": "semantic",
-      "community": 51,
-      "community_name": "context-signals.mjs",
+      "community": 240,
+      "community_name": "isGeneratedFile",
       "external": true,
       "file_type": "concept",
       "norm_label": "ref_node_child_process",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "ref_node_os",
+      "label": "ref_node_os",
+      "_origin": "semantic",
+      "community": 47,
+      "community_name": "live-copy-edit-agent.mjs",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "ref_node_os",
       "source_file": "",
       "type": "external"
     },
@@ -41773,18 +41824,6 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "ref_node_net",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "ref_node_crypto",
-      "label": "ref_node_crypto",
-      "_origin": "semantic",
-      "community": 6,
-      "community_name": "manual-apply.mjs",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "ref_node_crypto",
       "source_file": "",
       "type": "external"
     },
@@ -41853,22 +41892,10 @@
       "label": "ref_node_fs",
       "_origin": "semantic",
       "community": 63,
-      "community_name": "ref_node_path",
+      "community_name": "ref_node_fs",
       "external": true,
       "file_type": "concept",
       "norm_label": "ref_node_fs",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "ref_node_path",
-      "label": "ref_node_path",
-      "_origin": "semantic",
-      "community": 63,
-      "community_name": "ref_node_path",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "ref_node_path",
       "source_file": "",
       "type": "external"
     },
@@ -41877,7 +41904,7 @@
       "label": "ref_node_url",
       "_origin": "semantic",
       "community": 63,
-      "community_name": "ref_node_path",
+      "community_name": "ref_node_fs",
       "external": true,
       "file_type": "concept",
       "norm_label": "ref_node_url",
@@ -41920,6 +41947,18 @@
       "context": "call",
       "source_file": ".claude/hooks/check-pr-review.sh",
       "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "claude_hooks_mark_permission_scan_sh__entry",
+      "target": "claude_hooks_mark_permission_scan_git",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": ".claude/hooks/mark-permission-scan.sh",
+      "source_location": "L62",
       "weight": 1.0
     },
     {
@@ -86299,13 +86338,24 @@
     },
     {
       "source": "claude_skills_hook_hardening_skill_hook_hardening",
-      "target": "claude_skills_hook_hardening_skill_antes_de_pedir_lanzar_la_revisi\u00f3n_externa",
+      "target": "claude_skills_hook_hardening_skill_11_si_el_hook_necesita_que_algo_persista_entre_contenedores_ef\u00edmeros",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".claude/skills/hook-hardening/SKILL.md",
       "source_location": "L313",
+      "weight": 1.0
+    },
+    {
+      "source": "claude_skills_hook_hardening_skill_hook_hardening",
+      "target": "claude_skills_hook_hardening_skill_antes_de_pedir_lanzar_la_revisi\u00f3n_externa",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/hook-hardening/SKILL.md",
+      "source_location": "L349",
       "weight": 1.0
     },
     {
@@ -116148,7 +116198,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1917",
+      "source_location": "L1923",
       "weight": 1.0
     },
     {
@@ -116159,7 +116209,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1935",
+      "source_location": "L1941",
       "weight": 1.0
     },
     {
@@ -116170,7 +116220,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1960",
+      "source_location": "L1966",
       "weight": 1.0
     },
     {
@@ -116181,7 +116231,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1977",
+      "source_location": "L1983",
       "weight": 1.0
     },
     {
@@ -116192,7 +116242,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1676",
+      "source_location": "L1682",
       "weight": 1.0
     },
     {
@@ -116203,7 +116253,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1692",
+      "source_location": "L1698",
       "weight": 1.0
     },
     {
@@ -116214,7 +116264,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1859",
+      "source_location": "L1865",
       "weight": 1.0
     },
     {
@@ -116225,7 +116275,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L810",
+      "source_location": "L816",
       "weight": 1.0
     },
     {
@@ -116236,7 +116286,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L827",
+      "source_location": "L833",
       "weight": 1.0
     },
     {
@@ -116247,7 +116297,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L848",
+      "source_location": "L854",
       "weight": 1.0
     },
     {
@@ -116258,7 +116308,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L961",
+      "source_location": "L967",
       "weight": 1.0
     },
     {
@@ -116269,7 +116319,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L874",
+      "source_location": "L880",
       "weight": 1.0
     },
     {
@@ -116280,7 +116330,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L890",
+      "source_location": "L896",
       "weight": 1.0
     },
     {
@@ -116291,7 +116341,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L903",
+      "source_location": "L909",
       "weight": 1.0
     },
     {
@@ -116302,7 +116352,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L468",
+      "source_location": "L474",
       "weight": 1.0
     },
     {
@@ -116313,7 +116363,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L485",
+      "source_location": "L491",
       "weight": 1.0
     },
     {
@@ -116324,7 +116374,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L500",
+      "source_location": "L506",
       "weight": 1.0
     },
     {
@@ -116335,7 +116385,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L231",
+      "source_location": "L237",
       "weight": 1.0
     },
     {
@@ -116346,7 +116396,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L250",
+      "source_location": "L256",
       "weight": 1.0
     },
     {
@@ -116357,7 +116407,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L265",
+      "source_location": "L271",
       "weight": 1.0
     },
     {
@@ -116368,7 +116418,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L299",
+      "source_location": "L305",
       "weight": 1.0
     },
     {
@@ -116379,7 +116429,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L320",
+      "source_location": "L326",
       "weight": 1.0
     },
     {
@@ -116412,7 +116462,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1147",
+      "source_location": "L1153",
       "weight": 1.0
     },
     {
@@ -116423,7 +116473,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1174",
+      "source_location": "L1180",
       "weight": 1.0
     },
     {
@@ -116434,7 +116484,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1282",
+      "source_location": "L1288",
       "weight": 1.0
     },
     {
@@ -116445,7 +116495,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1383",
+      "source_location": "L1389",
       "weight": 1.0
     },
     {
@@ -116456,7 +116506,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1471",
+      "source_location": "L1477",
       "weight": 1.0
     },
     {
@@ -116467,7 +116517,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1503",
+      "source_location": "L1509",
       "weight": 1.0
     },
     {
@@ -116489,7 +116539,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1631",
+      "source_location": "L1637",
       "weight": 1.0
     },
     {
@@ -116500,7 +116550,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1645",
+      "source_location": "L1651",
       "weight": 1.0
     },
     {
@@ -116511,7 +116561,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1670",
+      "source_location": "L1676",
       "weight": 1.0
     },
     {
@@ -116522,18 +116572,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1880",
-      "weight": 1.0
-    },
-    {
-      "source": "recursos_generales_herramientas_ia_novedades_novedades_de_herramientas_de_ia",
-      "target": "recursos_generales_herramientas_ia_novedades_2026_09_18_cat\u00e1logo_de_claude_academy_cursos_oficiales",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L189",
+      "source_location": "L1886",
       "weight": 1.0
     },
     {
@@ -116544,7 +116583,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1915",
+      "source_location": "L1921",
+      "weight": 1.0
+    },
+    {
+      "source": "recursos_generales_herramientas_ia_novedades_novedades_de_herramientas_de_ia",
+      "target": "recursos_generales_herramientas_ia_novedades_2026_09_18_cat\u00e1logo_de_claude_academy_cursos_oficiales",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L195",
       "weight": 1.0
     },
     {
@@ -116555,7 +116605,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1998",
+      "source_location": "L2004",
       "weight": 1.0
     },
     {
@@ -116566,7 +116616,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L2032",
+      "source_location": "L2038",
       "weight": 1.0
     },
     {
@@ -116577,7 +116627,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L2097",
+      "source_location": "L2103",
       "weight": 1.0
     },
     {
@@ -116588,7 +116638,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L221",
+      "source_location": "L227",
       "weight": 1.0
     },
     {
@@ -116610,7 +116660,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L354",
+      "source_location": "L360",
       "weight": 1.0
     },
     {
@@ -116621,7 +116671,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L461",
+      "source_location": "L467",
       "weight": 1.0
     },
     {
@@ -116632,7 +116682,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L520",
+      "source_location": "L526",
       "weight": 1.0
     },
     {
@@ -116643,7 +116693,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L715",
+      "source_location": "L721",
       "weight": 1.0
     },
     {
@@ -116665,7 +116715,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L751",
+      "source_location": "L757",
       "weight": 1.0
     },
     {
@@ -116676,7 +116726,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L803",
+      "source_location": "L809",
       "weight": 1.0
     },
     {
@@ -116687,7 +116737,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L859",
+      "source_location": "L865",
       "weight": 1.0
     },
     {
@@ -116698,7 +116748,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L914",
+      "source_location": "L920",
       "weight": 1.0
     },
     {
@@ -116709,7 +116759,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L981",
+      "source_location": "L987",
       "weight": 1.0
     },
     {
@@ -116875,6 +116925,17 @@
       "confidence_score": 1.0,
       "source_file": ".claude/hooks/check-pr-review.sh",
       "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "claude_hooks_mark_permission_scan",
+      "target": "claude_hooks_mark_permission_scan_git",
+      "relation": "defines",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/hooks/mark-permission-scan.sh",
+      "source_location": "L60",
       "weight": 1.0
     },
     {
@@ -118890,7 +118951,7 @@
       "confidence_score": 0.95,
       "context": "allow",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1864",
+      "source_location": "L1870",
       "weight": 1.0
     },
     {
@@ -118902,7 +118963,7 @@
       "confidence_score": 0.95,
       "context": "deny",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1865",
+      "source_location": "L1871",
       "weight": 1.0
     },
     {
@@ -118914,7 +118975,7 @@
       "confidence_score": 0.95,
       "context": "deny()",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1718",
+      "source_location": "L1724",
       "weight": 1.0
     },
     {
@@ -118926,7 +118987,7 @@
       "confidence_score": 0.95,
       "context": "update",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1326",
+      "source_location": "L1332",
       "weight": 1.0
     },
     {
@@ -121351,5 +121412,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "3567d34fd20b3ba2f5a8edbe9682e229bdc58d96"
+  "built_at_commit": "a116879f08ce3eb116f8b06746e4bc043058d2c4"
 }
