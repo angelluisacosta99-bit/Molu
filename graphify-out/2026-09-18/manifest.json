@@ -642,9 +642,9 @@
     "semantic_hash": ""
   },
   ".claude/skills/ejercicio-interactivo/SKILL.md": {
-    "mtime": 1789754433.9287212,
-    "seen": 1789754472.5623608,
-    "ast_hash": "3fb8d262973688975857fc43bc6c1704",
+    "mtime": 1789769720.0667253,
+    "seen": 1789769790.4765878,
+    "ast_hash": "ddd5b420661ce07e3a056de65a355f5a",
     "semantic_hash": ""
   },
   ".claude/skills/ejercicio-interactivo/reference/template.html": {
@@ -894,9 +894,9 @@
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1789768214.9066358,
-    "seen": 1789768466.7038925,
-    "ast_hash": "9616126d2ea2ce6dceefd63dfbd7d0b3",
+    "mtime": 1789769383.0827053,
+    "seen": 1789769414.4112334,
+    "ast_hash": "4173d77fe8bdd1c54ee3466a9aa483eb",
     "semantic_hash": ""
   },
   "DESIGN.md": {
@@ -2016,9 +2016,9 @@
     "semantic_hash": ""
   },
   "recursos-generales/herramientas-ia/novedades.md": {
-    "mtime": 1789768444.6186495,
-    "seen": 1789768466.7040854,
-    "ast_hash": "ceaa98ba4b9873eb50299c7c996ce0b7",
+    "mtime": 1789769404.1987064,
+    "seen": 1789769414.4114294,
+    "ast_hash": "a136aeea97c259e65380cd07c91fcda7",
     "semantic_hash": ""
   },
   "recursos-generales/herramientas-ia/vercel-web-interface-guidelines.md": {
@@ -2538,15 +2538,15 @@
     "semantic_hash": ""
   },
   ".claude/hooks/fewer-permission-prompts-reminder.sh": {
-    "mtime": 1789767994.9066226,
-    "seen": 1789768082.642554,
-    "ast_hash": "0e96193fad105aa514cc6fe9fd95f340",
+    "mtime": 1789770460.9227693,
+    "seen": 1789770508.6671956,
+    "ast_hash": "fed4e9687fb278c86133a032b37e9685",
     "semantic_hash": ""
   },
   ".claude/hooks/mark-permission-scan.sh": {
-    "mtime": 1789767979.8946218,
-    "seen": 1789768082.6425555,
-    "ast_hash": "c4e222def5e41416bc0e32f17373b8d5",
+    "mtime": 1789770443.8147683,
+    "seen": 1789770508.667198,
+    "ast_hash": "fa49ead42fe3ab441328c53188b1bce2",
     "semantic_hash": ""
   }
 }
