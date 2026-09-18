@@ -28,7 +28,7 @@
   "26": "design-parser.mjs",
   "27": "Ejercicios",
   "28": "live-accept.mjs",
-  "29": "enableInlineEdit",
+  "29": "documentRefForElement",
   "30": "parseRgb",
   "31": "captureElementToBlob",
   "32": "initGlobalBar",
@@ -40,7 +40,7 @@
   "38": "handleManualEditActivity",
   "39": "detect-url.mjs",
   "40": "impeccable-paths.mjs",
-  "41": "syncEditBadgeHitProxies",
+  "41": "caveman-cavecrew/agents/cavecrew-investigator.md",
   "42": "parseAnyColor",
   "43": "Ejercicios",
   "44": "collectRepeatedSectionKickerCandidates",
@@ -226,6 +226,7 @@
   "224": "2. Hallazgos verificados que cambian el plan",
   "225": "Revisión 2026-09-14: la aportación propia declarada NO se sostiene",
   "226": "Revisión 2026-09-14 (segunda pasada): verificación de factibilidad",
+  "227": "caveman-cavecrew/skills/caveman/SKILL.md",
   "228": "Camino D: pivotar a redes móviles (candidato, NO verificado del todo)",
   "229": "Decisión pendiente: los tres caminos (abierta desde 2026-09-14)",
   "230": "Dos opciones evaluadas",
@@ -234,5 +235,7 @@
   "233": "2026-08-30 — Pasada del radar: dos funciones nativas nuevas, sin hallazgos de terceros",
   "234": "session-store.mjs",
   "235": "Revisión 2026-09-16 (segunda pasada): profesorado real del MUSI, fuente primaria",
-  "236": "2026-09-07 — Búsqueda a mano: herramientas para posts de blog en plataformas de clases"
+  "236": "2026-09-07 — Búsqueda a mano: herramientas para posts de blog en plataformas de clases",
+  "237": "caveman-cavecrew/hooks/restrict-cavecrew-bash.sh",
+  "238": "caveman-cavecrew/hooks/caveman-mode.sh"
 }

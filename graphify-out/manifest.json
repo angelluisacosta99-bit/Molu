@@ -42,8 +42,8 @@
     "semantic_hash": ""
   },
   ".claude/settings.json": {
-    "mtime": 1789754433.9287212,
-    "seen": 1789754472.5622096,
+    "mtime": 1789756949.9153202,
+    "seen": 1789767071.2210305,
     "ast_hash": "0c63da850ce186c9b377a91df153cd4a",
     "semantic_hash": ""
   },
@@ -2016,8 +2016,8 @@
     "semantic_hash": ""
   },
   "recursos-generales/herramientas-ia/novedades.md": {
-    "mtime": 1789754454.516,
-    "seen": 1789754472.5626013,
+    "mtime": 1789767065.5762851,
+    "seen": 1789767071.2213724,
     "ast_hash": "b346b4d3158e67e1acd21a899135bf08",
     "semantic_hash": ""
   },
@@ -2454,74 +2454,74 @@
     "semantic_hash": ""
   },
   ".claude-plugin/marketplace.json": {
-    "mtime": 1789754580.9160075,
-    "seen": 1789754600.2879856,
-    "ast_hash": "9b4905fb462a9d151cde603148cb15f1",
+    "mtime": 1789767065.5465674,
+    "seen": 1789767071.2210107,
+    "ast_hash": "4434aaf85dc3a446850e9c81b4b5aa9d",
     "semantic_hash": ""
   },
   "plugins/caveman-cavecrew/.claude-plugin/plugin.json": {
-    "mtime": 1789754577.9040074,
-    "seen": 1789754600.2880926,
+    "mtime": 1789767065.5757215,
+    "seen": 1789767071.221115,
     "ast_hash": "f70ad1bef0fbb7767333430241314bec",
     "semantic_hash": ""
   },
   "plugins/caveman-cavecrew/hooks.json": {
-    "mtime": 1789754574.6680074,
-    "seen": 1789754600.2880943,
+    "mtime": 1789767065.5758555,
+    "seen": 1789767071.221117,
     "ast_hash": "a872adf087bac3339dc38d9a0e249cae",
     "semantic_hash": ""
   },
   "plugins/caveman-cavecrew/hooks/caveman-mode.sh": {
-    "mtime": 1789754570.200007,
-    "seen": 1789754600.2880952,
-    "ast_hash": "2fc290c762fba3f7bc45ff6713905b0d",
+    "mtime": 1789767065.5758555,
+    "seen": 1789767071.221118,
+    "ast_hash": "94da0fc5d1dc2fe91aa7f6f1f7096ca2",
     "semantic_hash": ""
   },
   "plugins/caveman-cavecrew/hooks/restrict-cavecrew-bash.sh": {
-    "mtime": 1789754561.7449439,
-    "seen": 1789754600.2880962,
-    "ast_hash": "7d2a0a66d9c7489723257329fb0923db",
+    "mtime": 1789767065.5760384,
+    "seen": 1789767071.221119,
+    "ast_hash": "a1ea2c0b1cd18cf56de228c5ec031f9b",
     "semantic_hash": ""
   },
   "plugins/caveman-cavecrew/agents/cavecrew-builder.md": {
-    "mtime": 1789754530.3981442,
-    "seen": 1789754600.2884288,
+    "mtime": 1789767065.5757215,
+    "seen": 1789767071.2213624,
     "ast_hash": "6f3649a6cc4db33c31dfff788703057f",
     "semantic_hash": ""
   },
   "plugins/caveman-cavecrew/agents/cavecrew-investigator.md": {
-    "mtime": 1789754530.3964987,
-    "seen": 1789754600.28843,
+    "mtime": 1789767065.5758555,
+    "seen": 1789767071.2213635,
     "ast_hash": "d7f6af8a21a84244710d19b65fd1effa",
     "semantic_hash": ""
   },
   "plugins/caveman-cavecrew/agents/cavecrew-reviewer.md": {
-    "mtime": 1789754530.3997982,
-    "seen": 1789754600.2884312,
+    "mtime": 1789767065.5758555,
+    "seen": 1789767071.2213643,
     "ast_hash": "20a28dd438babfa70be41fac696220b2",
     "semantic_hash": ""
   },
   "plugins/caveman-cavecrew/skills/cavecrew/README.md": {
-    "mtime": 1789754530.3945558,
-    "seen": 1789754600.288432,
-    "ast_hash": "14eec7b6e3c9020b6302be4763dcf5fa",
+    "mtime": 1789767065.5761223,
+    "seen": 1789767071.221365,
+    "ast_hash": "b939e24630555bfc301e51ea5e8e3b6a",
     "semantic_hash": ""
   },
   "plugins/caveman-cavecrew/skills/cavecrew/SKILL.md": {
-    "mtime": 1789754530.3931663,
-    "seen": 1789754600.2884326,
+    "mtime": 1789767065.5761836,
+    "seen": 1789767071.2213657,
     "ast_hash": "f184873cd9c507fa872cc86fd36722e3",
     "semantic_hash": ""
   },
   "plugins/caveman-cavecrew/skills/caveman/README.md": {
-    "mtime": 1789754530.3916864,
-    "seen": 1789754600.2884333,
-    "ast_hash": "14801a83830df3284b11a2752da83a39",
+    "mtime": 1789767065.5761836,
+    "seen": 1789767071.221367,
+    "ast_hash": "08d0a2a4b81886e0361787c60d1da343",
     "semantic_hash": ""
   },
   "plugins/caveman-cavecrew/skills/caveman/SKILL.md": {
-    "mtime": 1789754530.3895712,
-    "seen": 1789754600.2884343,
+    "mtime": 1789767065.5762851,
+    "seen": 1789767071.2213676,
     "ast_hash": "5c05422ff18a4b8a75d4f78725a7ae87",
     "semantic_hash": ""
   }
