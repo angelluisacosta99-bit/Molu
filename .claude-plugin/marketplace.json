@@ -1,8 +1,7 @@
 {
   "name": "molu-plugins",
   "owner": {
-    "name": "Angel Luis Acosta González",
-    "email": "angelluisacosta99@gmail.com"
+    "name": "Angel Luis Acosta González"
   },
   "description": "Plugins de Claude Code de Angel Luis Acosta González, empaquetados para instalarse en cualquier repo o sesión sin copiar archivos a mano.",
   "plugins": [

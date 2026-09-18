@@ -19,6 +19,17 @@
 # está definido, o el SKILL.md no es legible, la sesión arranca igual
 # sin caveman activado automáticamente esa vez (fallback: /caveman a
 # mano sigue funcionando mientras la skill del plugin esté instalada).
+#
+# Si este plugin se instala DENTRO de un repo que ya trae su propia
+# copia nativa de caveman con el mismo hook (como Molu, que tiene
+# .claude/hooks/caveman-mode.sh + .claude/skills/caveman) hay que
+# saltarse la inyección aquí -- si no, el contexto "CAVEMAN MODE
+# ACTIVE" se duplica en cada arranque de sesión (dos copias del mismo
+# SKILL.md, tokens desperdiciados). Se detecta comprobando si el propio
+# repo anfitrión ya tiene esa skill nativa en su ruta de siempre.
+if [ -r "${CLAUDE_PROJECT_DIR:-.}/.claude/skills/caveman/SKILL.md" ]; then
+  exit 0
+fi
 
 command -v jq >/dev/null 2>&1 || exit 0
 
