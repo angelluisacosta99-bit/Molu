@@ -1,0 +1,17 @@
+{
+  "name": "molu-plugins",
+  "owner": {
+    "name": "Angel Luis Acosta González",
+    "email": "angelluisacosta99@gmail.com"
+  },
+  "description": "Plugins de Claude Code de Angel Luis Acosta González, empaquetados para instalarse en cualquier repo o sesión sin copiar archivos a mano.",
+  "plugins": [
+    {
+      "name": "caveman-cavecrew",
+      "source": "./plugins/caveman-cavecrew",
+      "description": "Modo de comunicación ultra-comprimida (caveman) más subagentes cavecrew (investigator/builder/reviewer) con salida comprimida.",
+      "version": "1.0.0",
+      "keywords": ["caveman", "cavecrew", "token-efficiency"]
+    }
+  ]
+}
