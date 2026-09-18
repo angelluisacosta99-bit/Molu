@@ -41,6 +41,15 @@
             "command": "\"$CLAUDE_PROJECT_DIR/.claude/hooks/sync-main.sh\""
           }
         ]
+      },
+      {
+        "matcher": "startup",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR/.claude/hooks/fewer-permission-prompts-reminder.sh\""
+          }
+        ]
       }
     ],
     "Stop": [

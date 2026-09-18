@@ -23,6 +23,32 @@ copias que puedan desincronizarse.
 
 ---
 
+## 2026-09-18 — Aplicado: `fewer-permission-prompts` en piloto automático
+
+**Qué es:** `.claude/hooks/fewer-permission-prompts-reminder.sh` (hook
+`SessionStart`, matcher `startup`) — comprueba un marcador con
+timestamp (`.claude/.fewer-permission-prompts-last-run.json`, mismo
+patrón de escritura atómica que `mark-pr-reviewed.sh`) y, si han
+pasado 7+ días o nunca se ha corrido, le pide a la sesión que ejecute
+la skill `fewer-permission-prompts` sola, sin que Angel tenga que
+acordarse de pedirlo. `.claude/hooks/mark-permission-scan.sh` escribe
+el marcador al terminar.
+
+**Por qué le sirve a Angel:** lo pidió explícitamente ("quiero esto
+para todas las sesiones siempre activa"). No es literal "cada sesión"
+— correr la skill completa (escanear transcripciones) en cada arranque
+gastaría tokens de más sin necesidad; el umbral de 7 días mantiene el
+allowlist actualizado solo, sin ese coste repetido. Es un recordatorio
+en el contexto, no un gate técnico — si una sesión no lo sigue, no
+rompe nada, simplemente se repite en el siguiente arranque.
+
+**Cómo probarlo:** ya está activo — se dispara solo cuando toque. Las
+5 pruebas del checklist de `hook-hardening` (sin marcador, justo tras
+marcar, marcador de 10 días, marcador corrupto, jq ausente) se
+corrieron en vivo antes de activarlo.
+
+---
+
 ## 2026-09-18 — Catálogo de Claude Academy (cursos oficiales)
 
 **Qué es:** `academy.claude.com` (antes Anthropic Academy) tiene 26+
