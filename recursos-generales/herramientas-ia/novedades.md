@@ -23,6 +23,53 @@ copias que puedan desincronizarse.
 
 ---
 
+## 2026-09-18 — Recreada la Routine del Radar (estaba duplicada y rota)
+
+Angel avisó de que "el Radar no funciona bien" y pidió borrar la
+rutina actual y crear una nueva. Investigado antes de tocar nada:
+
+**Lo que había:** dos Routines con el mismo nombre. La original
+(`trig_01Jx2UqBq8ezuTzpknMj7SAW`, agosto) estaba **deshabilitada**
+desde el 7 de septiembre — era la que este CLAUDE.md seguía citando,
+así que en la práctica llevaba dos semanas sin disparar nada. La otra
+(`trig_016qL349a6rEEmaeCCoYmerT`, creada el 7 de septiembre) seguía
+activa pero su única ejecución (14 de septiembre) terminó en estado
+`FAILED` a los 8 segundos, sin subir ninguna rama — se había creado
+con `allowed_tools` vacío en su configuración.
+
+**Ambas se borraron** y se creó una rutina nueva
+(`trig_01N46fmEJzqk7ZrS3L9cPcqt`). Al crearla, la propia herramienta
+avisó de que las sesiones que dispara no llevan conectores MCP — para
+no repetir el mismo fallo a ciegas, se lanzó un disparo de prueba
+única (borrado después de comprobar) para verificar en vivo qué
+herramientas tiene realmente disponibles una sesión disparada por
+Routine en este entorno, en vez de suponerlo:
+
+- ✅ `Bash`, `Read`, `Write`, `Edit`, `Glob`, `Grep`, `WebFetch`,
+  `WebSearch`, `Agent`, `Artifact` — disponibles.
+- ❌ `mcp__github__*` (crear PR, etc.) — **no disponible**. `git push`
+  por Bash sí funciona (el proxy/credenciales del entorno ya lo
+  permiten), solo falla la API de GitHub para abrir el PR.
+- El prompt de la rutina se corrigió para asumir esto: clona/commitea/
+  sube con `git` por Bash, deja la rama subida sin intentar abrir el
+  PR, y lo dice claramente en el mensaje final para que se abra a
+  mano.
+
+**Otro fallo real detectado en el prompt viejo (ambas rutinas):**
+asumía que la rama por defecto del repo es `main` — dejó de serlo en
+algún momento reciente (ver el PR #119/#121 de este mismo registro).
+El prompt nuevo comprueba `git ls-remote --symref origin HEAD` en vez
+de asumirlo, para no volver a romperse si cambia otra vez.
+
+**Lección para futuras Routines creadas por Claude Code (no solo esta
+del Radar):** `create_trigger` invocada desde una sesión de Claude Code
+Remote no hereda conectores MCP ni un preset de herramientas completo
+por defecto — probarlo en vivo con un disparo único antes de confiar
+en que una rutina nueva funciona como la que sustituye, en vez de
+asumir paridad.
+
+---
+
 ## 2026-09-18 — Pasada por `code.claude.com/docs/en/whats-new` (Weeks 13-37)
 
 Angel pidió una búsqueda de "qué otras herramientas o instrucciones da

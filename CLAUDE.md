@@ -399,8 +399,10 @@ conversación cuenta como comprometida aunque el archivo esté fuera de Git.
 
 ## Radar de herramientas de IA
 
-Una Routine semanal (`trig_01Jx2UqBq8ezuTzpknMj7SAW`, configurada fuera
-del repo vía `create_trigger`) busca novedades para el trabajo de Angel:
+Una Routine semanal (`trig_01N46fmEJzqk7ZrS3L9cPcqt`, configurada fuera
+del repo vía `create_trigger`; recreada el 2026-09-18 — ver
+`novedades.md`, entrada de esa fecha, sobre la rutina duplicada/rota
+que sustituyó) busca novedades para el trabajo de Angel:
 funciones nuevas de Claude Code, skills, plugins, conectores MCP,
 modelos, terceros (como graphify, que Angel encontró navegando por su
 cuenta antes de que existiera este radar), **y estrategias/buenas
