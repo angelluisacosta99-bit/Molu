@@ -1,25 +1,25 @@
 {
   ".claude/hooks/caveman-mode.sh": {
-    "mtime": 1789637088.3151822,
-    "seen": 1789637247.666542,
+    "mtime": 1789754433.9287212,
+    "seen": 1789754472.5621924,
     "ast_hash": "a0ebafdb05260e92257bb5785ac03ff6",
     "semantic_hash": ""
   },
   ".claude/hooks/check-pr-review.sh": {
-    "mtime": 1789637088.3151822,
-    "seen": 1789637247.6665478,
+    "mtime": 1789754433.9287212,
+    "seen": 1789754472.5621967,
     "ast_hash": "601c21183100af822ee4d60944285b0a",
     "semantic_hash": ""
   },
   ".claude/hooks/mark-pr-reviewed.sh": {
-    "mtime": 1789637088.3151822,
-    "seen": 1789637247.6665506,
+    "mtime": 1789754433.9287212,
+    "seen": 1789754472.5621989,
     "ast_hash": "0acd3b0acf53c917d67d6f6acbdfe76c",
     "semantic_hash": ""
   },
   ".claude/hooks/restrict-cavecrew-bash.sh": {
-    "mtime": 1789637088.3151822,
-    "seen": 1789637247.6665533,
+    "mtime": 1789754433.9287212,
+    "seen": 1789754472.562201,
     "ast_hash": "7d2a0a66d9c7489723257329fb0923db",
     "semantic_hash": ""
   },
@@ -30,20 +30,20 @@
     "semantic_hash": ""
   },
   ".claude/hooks/session-start.sh": {
-    "mtime": 1789637088.3151822,
-    "seen": 1789637247.6665592,
+    "mtime": 1789754433.9287212,
+    "seen": 1789754472.5622058,
     "ast_hash": "bf3a5c94ec3906d6d895b80ac5db90a8",
     "semantic_hash": ""
   },
   ".claude/hooks/sync-main.sh": {
-    "mtime": 1789637088.3151822,
-    "seen": 1789637247.6665614,
+    "mtime": 1789754433.9287212,
+    "seen": 1789754472.5622075,
     "ast_hash": "959eb5603b73350acd00a2eeb6852b36",
     "semantic_hash": ""
   },
   ".claude/settings.json": {
-    "mtime": 1789639369.5865803,
-    "seen": 1789639765.9913428,
+    "mtime": 1789754433.9287212,
+    "seen": 1789754472.5622096,
     "ast_hash": "0c63da850ce186c9b377a91df153cd4a",
     "semantic_hash": ""
   },
@@ -456,8 +456,8 @@
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/extraer.mjs": {
-    "mtime": 1789637088.3187172,
-    "seen": 1789637247.6666882,
+    "mtime": 1789754433.9320512,
+    "seen": 1789754472.5623307,
     "ast_hash": "256f778495b9624d2ca18d9d0985a3a5",
     "semantic_hash": ""
   },
@@ -468,152 +468,152 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/herramientas-interactivas-de-simulacion-y-control/p_carrito.m": {
-    "mtime": 1789637088.964381,
-    "seen": 1789637247.666691,
+    "mtime": 1789754434.579999,
+    "seen": 1789754472.5623329,
     "ast_hash": "7718abded8d607de6cea8538086aa84c",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/herramientas-interactivas-de-simulacion-y-control/practica-1-simulink/deposito.m": {
-    "mtime": 1789637088.9677596,
-    "seen": 1789637247.6666925,
+    "mtime": 1789754434.583999,
+    "seen": 1789754472.5623343,
     "ast_hash": "0eefd57c9fbb89262ee00afd71685d69",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/roomba.py": {
-    "mtime": 1789637089.1803808,
-    "seen": 1789637247.666694,
+    "mtime": 1789754434.819999,
+    "seen": 1789754472.5623355,
     "ast_hash": "acbaff103c8af04340f1ec08e1d72954",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/robots-autonomos/roomba/irobot/funciones.py": {
-    "mtime": 1789637089.1803808,
-    "seen": 1789637247.6666956,
+    "mtime": 1789754434.819999,
+    "seen": 1789754472.5623364,
     "ast_hash": "2e90381bb6edd64c86446c83aebf2812",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/robots-autonomos/roomba/irobot/irobot_2.py": {
-    "mtime": 1789637089.181193,
-    "seen": 1789637247.666697,
+    "mtime": 1789754434.8237298,
+    "seen": 1789754472.5623376,
     "ast_hash": "62a27e867efa53a9352f6ed9a33f2e8f",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/robots-autonomos/roomba/irobot/mio.py": {
-    "mtime": 1789637089.181193,
-    "seen": 1789637247.6666985,
+    "mtime": 1789754434.8237298,
+    "seen": 1789754472.5623386,
     "ast_hash": "cc2c6b6fd002a7109f0afa77b8ad5cba",
     "semantic_hash": ""
   },
   "skills-lock.json": {
-    "mtime": 1789637089.2583616,
-    "seen": 1789637247.6667001,
+    "mtime": 1789754434.918669,
+    "seen": 1789754472.5623395,
     "ast_hash": "9550adc8aebe995fd0663a353e6f09f2",
     "semantic_hash": ""
   },
   ".agents/skills/agent-browser/SKILL.md": {
-    "mtime": 1789637088.3141713,
-    "seen": 1789637247.6667013,
+    "mtime": 1789754433.9279537,
+    "seen": 1789754472.5623405,
     "ast_hash": "ed92243681e40e1c279a284e1c7e9735",
     "semantic_hash": ""
   },
   ".agents/skills/cavecrew/README.md": {
-    "mtime": 1789637088.3141713,
-    "seen": 1789637247.6667025,
+    "mtime": 1789754433.9279537,
+    "seen": 1789754472.5623417,
     "ast_hash": "14eec7b6e3c9020b6302be4763dcf5fa",
     "semantic_hash": ""
   },
   ".agents/skills/cavecrew/SKILL.md": {
-    "mtime": 1789637088.3143508,
-    "seen": 1789637247.666704,
+    "mtime": 1789754433.9280894,
+    "seen": 1789754472.5623426,
     "ast_hash": "f184873cd9c507fa872cc86fd36722e3",
     "semantic_hash": ""
   },
   ".agents/skills/caveman/README.md": {
-    "mtime": 1789637088.3143508,
-    "seen": 1789637247.6667054,
+    "mtime": 1789754433.9280894,
+    "seen": 1789754472.5623434,
     "ast_hash": "14801a83830df3284b11a2752da83a39",
     "semantic_hash": ""
   },
   ".agents/skills/caveman/SKILL.md": {
-    "mtime": 1789637088.314445,
-    "seen": 1789637247.6667068,
+    "mtime": 1789754433.9281719,
+    "seen": 1789754472.5623448,
     "ast_hash": "5c05422ff18a4b8a75d4f78725a7ae87",
     "semantic_hash": ""
   },
   ".agents/skills/find-skills/SKILL.md": {
-    "mtime": 1789637088.314445,
-    "seen": 1789637247.6667085,
+    "mtime": 1789754433.9281719,
+    "seen": 1789754472.562346,
     "ast_hash": "62b297abdee9aea84c577ab2e04e1974",
     "semantic_hash": ""
   },
   ".agents/skills/investigate-first/SKILL.md": {
-    "mtime": 1789637088.314445,
-    "seen": 1789637247.6667097,
+    "mtime": 1789754433.9281719,
+    "seen": 1789754472.5623467,
     "ast_hash": "521931896078b281b65861c28cee19e6",
     "semantic_hash": ""
   },
   ".agents/skills/investigate-first/agents/openai.yaml": {
-    "mtime": 1789637088.314661,
-    "seen": 1789637247.6667113,
+    "mtime": 1789754433.928342,
+    "seen": 1789754472.562348,
     "ast_hash": "2e40d635059c35d5e15efdac38ae5e75",
     "semantic_hash": ""
   },
   ".agents/skills/lean-build/SKILL.md": {
-    "mtime": 1789637088.314661,
-    "seen": 1789637247.6667125,
+    "mtime": 1789754433.928342,
+    "seen": 1789754472.5623486,
     "ast_hash": "dc89b03c34bd2bcae8b0e4d6ab3bd982",
     "semantic_hash": ""
   },
   ".agents/skills/lean-build/agents/openai.yaml": {
-    "mtime": 1789637088.3147578,
-    "seen": 1789637247.6667147,
+    "mtime": 1789754433.9284306,
+    "seen": 1789754472.5623496,
     "ast_hash": "aa929ee1d741fc29c8e743110a081f38",
     "semantic_hash": ""
   },
   ".agents/skills/migration/SKILL.md": {
-    "mtime": 1789637088.3147578,
-    "seen": 1789637247.6667159,
+    "mtime": 1789754433.9284306,
+    "seen": 1789754472.5623505,
     "ast_hash": "aa0ffea732f9e5e900dbf7929a6da704",
     "semantic_hash": ""
   },
   ".agents/skills/migration/agents/openai.yaml": {
-    "mtime": 1789637088.3148446,
-    "seen": 1789637247.6667175,
+    "mtime": 1789754433.9284856,
+    "seen": 1789754472.5623515,
     "ast_hash": "3f9eea1166d8e521f431614d458ae06b",
     "semantic_hash": ""
   },
   ".agents/skills/safe-refactor/SKILL.md": {
-    "mtime": 1789637088.3148446,
-    "seen": 1789637247.666719,
+    "mtime": 1789754433.9284856,
+    "seen": 1789754472.5623522,
     "ast_hash": "1695e48c4cba2ccbbbb4f5703f8964cd",
     "semantic_hash": ""
   },
   ".agents/skills/safe-refactor/agents/openai.yaml": {
-    "mtime": 1789637088.3149185,
-    "seen": 1789637247.6667209,
+    "mtime": 1789754433.9285417,
+    "seen": 1789754472.562353,
     "ast_hash": "ef7571ec17e45892f66acf5cf3820344",
     "semantic_hash": ""
   },
   ".agents/skills/surgical-patch/SKILL.md": {
-    "mtime": 1789637088.3149185,
-    "seen": 1789637247.6667223,
+    "mtime": 1789754433.9285417,
+    "seen": 1789754472.5623536,
     "ast_hash": "47e717800975837013361bde6707c598",
     "semantic_hash": ""
   },
   ".agents/skills/surgical-patch/agents/openai.yaml": {
-    "mtime": 1789637088.3149903,
-    "seen": 1789637247.6667237,
+    "mtime": 1789754433.9285986,
+    "seen": 1789754472.5623543,
     "ast_hash": "59a79fa5b6bcae061f2922d81a0b1016",
     "semantic_hash": ""
   },
   ".agents/skills/verify-and-stop/SKILL.md": {
-    "mtime": 1789637088.3149903,
-    "seen": 1789637247.6667252,
+    "mtime": 1789754433.9285986,
+    "seen": 1789754472.5623553,
     "ast_hash": "31d8303e3b11303f3aa38c7105765736",
     "semantic_hash": ""
   },
   ".agents/skills/verify-and-stop/agents/openai.yaml": {
-    "mtime": 1789637088.315067,
-    "seen": 1789637247.6667266,
+    "mtime": 1789754433.9286482,
+    "seen": 1789754472.5623562,
     "ast_hash": "0fcf3d3b783820fdd064244e95912b15",
     "semantic_hash": ""
   },
@@ -624,32 +624,32 @@
     "semantic_hash": ""
   },
   ".claude/agents/cavecrew-builder.md": {
-    "mtime": 1789637088.315067,
-    "seen": 1789637247.66673,
+    "mtime": 1789754433.9286482,
+    "seen": 1789754472.562358,
     "ast_hash": "6f3649a6cc4db33c31dfff788703057f",
     "semantic_hash": ""
   },
   ".claude/agents/cavecrew-investigator.md": {
-    "mtime": 1789637088.3151822,
-    "seen": 1789637247.6667316,
+    "mtime": 1789754433.9287212,
+    "seen": 1789754472.562359,
     "ast_hash": "d7f6af8a21a84244710d19b65fd1effa",
     "semantic_hash": ""
   },
   ".claude/agents/cavecrew-reviewer.md": {
-    "mtime": 1789637088.3151822,
-    "seen": 1789637247.6667328,
+    "mtime": 1789754433.9287212,
+    "seen": 1789754472.56236,
     "ast_hash": "20a28dd438babfa70be41fac696220b2",
     "semantic_hash": ""
   },
   ".claude/skills/ejercicio-interactivo/SKILL.md": {
-    "mtime": 1789637088.3151822,
-    "seen": 1789637247.6667347,
+    "mtime": 1789754433.9287212,
+    "seen": 1789754472.5623608,
     "ast_hash": "3fb8d262973688975857fc43bc6c1704",
     "semantic_hash": ""
   },
   ".claude/skills/ejercicio-interactivo/reference/template.html": {
-    "mtime": 1789637088.316381,
-    "seen": 1789637247.6667361,
+    "mtime": 1789754433.9287212,
+    "seen": 1789754472.5623617,
     "ast_hash": "4caf99b3e02d6cf63ea7416ea58ac8bd",
     "semantic_hash": ""
   },
@@ -708,14 +708,14 @@
     "semantic_hash": ""
   },
   ".claude/skills/hook-hardening/SKILL.md": {
-    "mtime": 1789637088.316381,
-    "seen": 1789637247.666752,
+    "mtime": 1789754433.930901,
+    "seen": 1789754472.562371,
     "ast_hash": "cc0ae2bd95840807cc579893b6616886",
     "semantic_hash": ""
   },
   ".claude/skills/humanizer/SKILL.md": {
-    "mtime": 1789637088.316381,
-    "seen": 1789637247.666753,
+    "mtime": 1789754433.930901,
+    "seen": 1789754472.5623722,
     "ast_hash": "ecd468380f51684ec1911164480767b3",
     "semantic_hash": ""
   },
@@ -894,8 +894,8 @@
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1789637088.316381,
-    "seen": 1789637247.6667993,
+    "mtime": 1789754433.930901,
+    "seen": 1789754472.562399,
     "ast_hash": "d6c67949386c5ab33102d7c9781eb7b2",
     "semantic_hash": ""
   },
@@ -912,158 +912,158 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1789637088.316381,
-    "seen": 1789637247.6668031,
+    "mtime": 1789754433.930901,
+    "seen": 1789754472.562402,
     "ast_hash": "4ea6f0ad02fa777a3ecee666ef19a811",
     "semantic_hash": ""
   },
   "docencia-espanol/README.md": {
-    "mtime": 1789637088.316381,
-    "seen": 1789637247.6668046,
+    "mtime": 1789754433.930901,
+    "seen": 1789754472.562403,
     "ast_hash": "5eeaaf5243470367e4163f7366431439",
     "semantic_hash": ""
   },
   "docencia-espanol/avito/README.md": {
-    "mtime": 1789637088.316381,
-    "seen": 1789637247.666806,
+    "mtime": 1789754433.930901,
+    "seen": 1789754472.562404,
     "ast_hash": "3b5106c7dff7a875ef4ca9cac230e113",
     "semantic_hash": ""
   },
   "docencia-espanol/avito/perfil-y-precios.md": {
-    "mtime": 1789637088.3183846,
-    "seen": 1789637247.6668077,
+    "mtime": 1789754433.9317694,
+    "seen": 1789754472.5624049,
     "ast_hash": "6a37adcf03186d890fcfb4097d5de136",
     "semantic_hash": ""
   },
   "docencia-espanol/avito/resenas.md": {
-    "mtime": 1789637088.3183846,
-    "seen": 1789637247.6668086,
+    "mtime": 1789754433.9317694,
+    "seen": 1789754472.5624058,
     "ast_hash": "3c04183337fe84c34894d0b2a98fd894",
     "semantic_hash": ""
   },
   "docencia-espanol/empleo-salamanca/carta-candidatura-academias.md": {
-    "mtime": 1789637088.3183846,
-    "seen": 1789637247.6668103,
+    "mtime": 1789754433.9317694,
+    "seen": 1789754472.5624065,
     "ast_hash": "3ad107dece2949b03dc69b41f08d550a",
     "semantic_hash": ""
   },
   "docencia-espanol/empleo-salamanca/oportunidades.md": {
-    "mtime": 1789637088.3187172,
-    "seen": 1789637247.6668117,
+    "mtime": 1789754433.9320512,
+    "seen": 1789754472.5624077,
     "ast_hash": "a5f3ba25ed46bfdcdc96b0f4e076d6b2",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/README.md": {
-    "mtime": 1789637088.3187172,
-    "seen": 1789637247.6668131,
+    "mtime": 1789754433.9320512,
+    "seen": 1789754472.5624084,
     "ast_hash": "22aa2cca6dcd853d42718d7099b5f780",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad10a_la-salud.md": {
-    "mtime": 1789637088.3187172,
-    "seen": 1789637247.6668148,
+    "mtime": 1789754433.9320512,
+    "seen": 1789754472.5624094,
     "ast_hash": "2c1f5c9e1c842ef914d6c87b98ce612d",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad10b_antes-saliamos-con-los-amigos.md": {
-    "mtime": 1789637088.3187172,
-    "seen": 1789637247.6668165,
+    "mtime": 1789754433.9320512,
+    "seen": 1789754472.5624106,
     "ast_hash": "e1b1b98129dfc7ef2396b4e2406fb85d",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad10c_voy-a-trabajar-en-un-hotel.md": {
-    "mtime": 1789637088.3187172,
-    "seen": 1789637247.6668184,
+    "mtime": 1789754433.9320512,
+    "seen": 1789754472.5624118,
     "ast_hash": "79916fedfdb85d1fa154544f1106f5f5",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad1a_encantado.md": {
-    "mtime": 1789637088.3187172,
-    "seen": 1789637247.66682,
+    "mtime": 1789754433.9320512,
+    "seen": 1789754472.5624125,
     "ast_hash": "2cb1bab04aa68cab32ed18b4a466aed4",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad1b_a-que-te-dedicas.md": {
-    "mtime": 1789637088.3187172,
-    "seen": 1789637247.6668215,
+    "mtime": 1789754433.9320512,
+    "seen": 1789754472.5624132,
     "ast_hash": "41cd6ee770f8432e38189c6bf8ad3aca",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad1c_cual-es-tu-numero-de-movil.md": {
-    "mtime": 1789637088.3187172,
-    "seen": 1789637247.666823,
+    "mtime": 1789754433.9320512,
+    "seen": 1789754472.5624142,
     "ast_hash": "d1dcd95e5d13711552a1e1e761ccb7f2",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad2a_estas-casado.md": {
-    "mtime": 1789637088.3187172,
-    "seen": 1789637247.666825,
+    "mtime": 1789754433.9320512,
+    "seen": 1789754472.5624151,
     "ast_hash": "e9335fe3dd93b8e520558e0158b565b4",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad2b_donde-estan-mis-gafas.md": {
-    "mtime": 1789637088.3187172,
-    "seen": 1789637247.6668265,
+    "mtime": 1789754433.9320512,
+    "seen": 1789754472.562416,
     "ast_hash": "5002ef17397d50f0d88fa7f2c89a1206",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad2c_que-hora-es.md": {
-    "mtime": 1789637088.3187172,
-    "seen": 1789637247.666828,
+    "mtime": 1789754433.9320512,
+    "seen": 1789754472.5624173,
     "ast_hash": "00c49dfcc62f2ede94962924115e1175",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad3a_rosa-se-levanta-a-las-siete.md": {
-    "mtime": 1789637088.3187172,
-    "seen": 1789637247.6668298,
+    "mtime": 1789754433.9320512,
+    "seen": 1789754472.5624185,
     "ast_hash": "e67c730c4884672082498036cca55769",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad3b_estudias-o-trabajas.md": {
-    "mtime": 1789637088.3187172,
-    "seen": 1789637247.6668313,
+    "mtime": 1789754433.9320512,
+    "seen": 1789754472.5624192,
     "ast_hash": "ee1cce9fff95764d60a360a503085411",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad3c_que-desayunas.md": {
-    "mtime": 1789637088.3187172,
-    "seen": 1789637247.6668327,
+    "mtime": 1789754433.9320512,
+    "seen": 1789754472.56242,
     "ast_hash": "a3e1eb1fb943b6609c4bb6cf57ff3bbc",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad4a_donde-vives.md": {
-    "mtime": 1789637088.3187172,
-    "seen": 1789637247.6668339,
+    "mtime": 1789754433.9320512,
+    "seen": 1789754472.5624208,
     "ast_hash": "bdd1081e40f7a26aa5ce30ec355c9c25",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad4b_interiores.md": {
-    "mtime": 1789637088.3187172,
-    "seen": 1789637247.6668355,
+    "mtime": 1789754433.9320512,
+    "seen": 1789754472.5624216,
     "ast_hash": "2dd3c1adc4af4d69e5df565b3efccace",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad4c_visita-a-cordoba.md": {
-    "mtime": 1789637088.3187172,
-    "seen": 1789637247.6668367,
+    "mtime": 1789754433.9320512,
+    "seen": 1789754472.5624225,
     "ast_hash": "1e04260b5ca6dcae395b04ad34e24002",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad5a_comer-fuera-de-casa.md": {
-    "mtime": 1789637088.3187172,
-    "seen": 1789637247.666838,
+    "mtime": 1789754433.9320512,
+    "seen": 1789754472.5624232,
     "ast_hash": "e4d7df977e64c5798441866127218222",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad5b_te-gusta-el-cine.md": {
-    "mtime": 1789637088.3187172,
-    "seen": 1789637247.6668394,
+    "mtime": 1789754433.9320512,
+    "seen": 1789754472.5624242,
     "ast_hash": "f8ec81c93c1b3bbffd735d6e1dfdf615",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad5c_receta-del-caribe.md": {
-    "mtime": 1789637088.3187172,
-    "seen": 1789637247.6668403,
+    "mtime": 1789754433.9320512,
+    "seen": 1789754472.562425,
     "ast_hash": "f28275f208c7ae4ab0effc1622cc15a2",
     "semantic_hash": ""
   },
@@ -1092,86 +1092,86 @@
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad7b_que-estas-haciendo.md": {
-    "mtime": 1789637088.320381,
-    "seen": 1789637247.6668482,
+    "mtime": 1789754433.9320512,
+    "seen": 1789754472.5624292,
     "ast_hash": "696a2773e8e6e21284451d77e41b9ca0",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad7c_como-es.md": {
-    "mtime": 1789637088.320381,
-    "seen": 1789637247.6668496,
+    "mtime": 1789754433.9320512,
+    "seen": 1789754472.5624304,
     "ast_hash": "df9f819f7ed67ebc92baf6ebef5daf34",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad8a_por-favor-para-ir-a-la-catedral.md": {
-    "mtime": 1789637088.320381,
-    "seen": 1789637247.6668508,
+    "mtime": 1789754433.9320512,
+    "seen": 1789754472.5624313,
     "ast_hash": "f85ef7358869872518fc2e8f394478fd",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad8b_que-hizo-rosa-ayer.md": {
-    "mtime": 1789637088.320381,
-    "seen": 1789637247.6668522,
+    "mtime": 1789754433.9320512,
+    "seen": 1789754472.562432,
     "ast_hash": "6c8570b706533afcd070219d03234e6c",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad8c_que-tiempo-hace-hoy.md": {
-    "mtime": 1789637088.320381,
-    "seen": 1789637247.6668537,
+    "mtime": 1789754433.9320512,
+    "seen": 1789754472.5624328,
     "ast_hash": "0864f23a2dfed8696de5ad19dd9f715a",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad9a_cuanto-cuestan-estos-zapatos.md": {
-    "mtime": 1789637088.320381,
-    "seen": 1789637247.6668549,
+    "mtime": 1789754433.9320512,
+    "seen": 1789754472.5624335,
     "ast_hash": "70cee8fc629436f1b38795bbffebdbba",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad9b_mi-novio-lleva-corbata.md": {
-    "mtime": 1789637088.320381,
-    "seen": 1789637247.6668563,
+    "mtime": 1789754433.9320512,
+    "seen": 1789754472.5624352,
     "ast_hash": "8da564eeae72bf7cc85be60e20d3b4bd",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad9c_buenos-aires-es-mas-grande-que-toledo.md": {
-    "mtime": 1789637088.320381,
-    "seen": 1789637247.6668575,
+    "mtime": 1789754433.9320512,
+    "seen": 1789754472.562436,
     "ast_hash": "83318c466acc07118e56d373637dc7cc",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/guia-repaso-unidades-1-10.md": {
-    "mtime": 1789637088.320381,
-    "seen": 1789637247.6668587,
+    "mtime": 1789754433.9320512,
+    "seen": 1789754472.562437,
     "ast_hash": "92547316ef5ade91d46a83bebba038eb",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/practica-mas-1_unidades-1-2.md": {
-    "mtime": 1789637088.320381,
-    "seen": 1789637247.6668599,
+    "mtime": 1789754433.9320512,
+    "seen": 1789754472.5624378,
     "ast_hash": "1025113cb94ddea2586ca52f71394dcd",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/practica-mas-2_unidades-3-4.md": {
-    "mtime": 1789637088.320381,
-    "seen": 1789637247.666861,
+    "mtime": 1789754433.9320512,
+    "seen": 1789754472.562439,
     "ast_hash": "d4c3f36f27274615105f9d8cfc9e9871",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/practica-mas-3_unidades-5-6.md": {
-    "mtime": 1789637088.320381,
-    "seen": 1789637247.666862,
+    "mtime": 1789754433.9320512,
+    "seen": 1789754472.5624397,
     "ast_hash": "7d36c38a12025f35f2adb1e5470bd63a",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/practica-mas-4_unidades-7-8.md": {
-    "mtime": 1789637088.320381,
-    "seen": 1789637247.6668634,
+    "mtime": 1789754433.9320512,
+    "seen": 1789754472.5624404,
     "ast_hash": "d4405b1856e3b527f2d7e5d5b937123b",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/practica-mas-5_unidades-9-10.md": {
-    "mtime": 1789637088.320381,
-    "seen": 1789637247.6668644,
+    "mtime": 1789754433.9320512,
+    "seen": 1789754472.562441,
     "ast_hash": "59ec4e060ee9888dc7c9c0f04bef2a5d",
     "semantic_hash": ""
   },
@@ -1182,98 +1182,98 @@
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a2/cuaderno-unidad0_antes-de-empezar.md": {
-    "mtime": 1789637088.320381,
-    "seen": 1789637247.666867,
+    "mtime": 1789754433.9320512,
+    "seen": 1789754472.5624433,
     "ast_hash": "8c760d014a521f0e434adb858966137f",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a2/cuaderno-unidad1a_encantado.md": {
-    "mtime": 1789637088.3225486,
-    "seen": 1789637247.6668682,
+    "mtime": 1789754433.9359326,
+    "seen": 1789754472.562444,
     "ast_hash": "8dd0756cb6cd9fabddfa16e34891f025",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a2/cuaderno-unidad1b_duermo-poco.md": {
-    "mtime": 1789637088.3225486,
-    "seen": 1789637247.6668692,
+    "mtime": 1789754433.9359326,
+    "seen": 1789754472.5624452,
     "ast_hash": "7beb71c80ff80046d935290681319a9b",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a2/cuaderno-unidad1c_unas-vacaciones-inolvidables.md": {
-    "mtime": 1789637088.3225486,
-    "seen": 1789637247.6668706,
+    "mtime": 1789754433.9359326,
+    "seen": 1789754472.5624459,
     "ast_hash": "2492fd3b7e3b53e0205b0caf2f1331d7",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a2/cuaderno-unidad2a_quieres-ser-millonario.md": {
-    "mtime": 1789637088.3225486,
-    "seen": 1789637247.6668718,
+    "mtime": 1789754433.9359326,
+    "seen": 1789754472.5624547,
     "ast_hash": "e4593152f05c9caf65da932e1a5e0311",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a2/cuaderno-unidad2b_biografias.md": {
-    "mtime": 1789637088.3225486,
-    "seen": 1789637247.6668727,
+    "mtime": 1789754433.9359326,
+    "seen": 1789754472.562456,
     "ast_hash": "807352cc25236ec9fa2438f6c06fee6a",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a2/cuaderno-unidad2c_ganadores.md": {
-    "mtime": 1789637088.3225486,
-    "seen": 1789637247.6668742,
+    "mtime": 1789754433.9359326,
+    "seen": 1789754472.5624566,
     "ast_hash": "9adb981a9f60dccb13eed43df05605b2",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a2/cuaderno-unidad3a_la-boda-de-pili.md": {
-    "mtime": 1789637088.3225486,
-    "seen": 1789637247.6668751,
+    "mtime": 1789754433.9359326,
+    "seen": 1789754472.5624578,
     "ast_hash": "d89c805373925507fffcf06840cbe6fa",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a2/cuaderno-unidad3b_como-te-ha-ido-hoy.md": {
-    "mtime": 1789637088.3225486,
-    "seen": 1789637247.6668763,
+    "mtime": 1789754433.9359326,
+    "seen": 1789754472.5624585,
     "ast_hash": "7063e27441d9b791d0578887750888c5",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a2/cuaderno-unidad3c_costumbres.md": {
-    "mtime": 1789637088.3225486,
-    "seen": 1789637247.6668777,
+    "mtime": 1789754433.9359326,
+    "seen": 1789754472.5624595,
     "ast_hash": "89857b117bb39e1cdc1b641d9b05a5e2",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad1a_vida-cotidiana.md": {
-    "mtime": 1789637088.3225486,
-    "seen": 1789637247.666879,
+    "mtime": 1789754433.935999,
+    "seen": 1789754472.5624604,
     "ast_hash": "f29358b27039e4e66844374fa7c24d16",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad1b_que-hiciste-que-has-hecho.md": {
-    "mtime": 1789637088.3243809,
-    "seen": 1789637247.6668804,
+    "mtime": 1789754433.9399989,
+    "seen": 1789754472.5624616,
     "ast_hash": "ba207e6e51c6a78069623625d25a0ac4",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad1c_el-futuro-que-nos-espera.md": {
-    "mtime": 1789637088.3283808,
-    "seen": 1789637247.6668813,
+    "mtime": 1789754433.9399989,
+    "seen": 1789754472.5624628,
     "ast_hash": "0f5e6b3e9e984b0b6cc50d0f21045f5b",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad2a_en-la-estacion.md": {
-    "mtime": 1789637088.3283808,
-    "seen": 1789637247.6668828,
+    "mtime": 1789754433.9399989,
+    "seen": 1789754472.5624635,
     "ast_hash": "39231b248bd36c5781538b066fbb3842",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad2b_como-vas-al-trabajo.md": {
-    "mtime": 1789637088.3283808,
-    "seen": 1789637247.6668842,
+    "mtime": 1789754433.9399989,
+    "seen": 1789754472.5624645,
     "ast_hash": "30ac4c3e5d4cd032919762a039a4e1be",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad2c_intercambio-de-casa.md": {
-    "mtime": 1789637088.3283808,
-    "seen": 1789637247.6668854,
+    "mtime": 1789754433.9399989,
+    "seen": 1789754472.5624654,
     "ast_hash": "1776cea0914bafb6f41bd8325c771c02",
     "semantic_hash": ""
   },
@@ -1296,44 +1296,44 @@
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad7a_un-buen-trabajo.md": {
-    "mtime": 1789637088.3283808,
-    "seen": 1789637247.6668901,
+    "mtime": 1789754433.9399989,
+    "seen": 1789754472.5624697,
     "ast_hash": "c0a8f5ed8d1945b14c509769323dd833",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad7b_cuando-pueda-cambiare-de-trabajo.md": {
-    "mtime": 1789637088.3283808,
-    "seen": 1789637247.6668913,
+    "mtime": 1789754433.9399989,
+    "seen": 1789754472.5624707,
     "ast_hash": "417b34e2a75ad3f04b1908c5f3386055",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad7c_si-tuviera-dinero.md": {
-    "mtime": 1789637088.3283808,
-    "seen": 1789637247.6668923,
+    "mtime": 1789754433.9399989,
+    "seen": 1789754472.5624716,
     "ast_hash": "6f22f4b6c5c8eb959a6d44aff41d268e",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad8a_deportes.md": {
-    "mtime": 1789637088.3283808,
-    "seen": 1789637247.6668935,
+    "mtime": 1789754433.9399989,
+    "seen": 1789754472.5624728,
     "ast_hash": "398d657c95a754f64c604676a93a0fd6",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad8b_salimos.md": {
-    "mtime": 1789637088.3283808,
-    "seen": 1789637247.666895,
+    "mtime": 1789754433.9399989,
+    "seen": 1789754472.5624738,
     "ast_hash": "daf727fdc0c66adc4d221e87da92295e",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad8c_musica-arte-y-literatura.md": {
-    "mtime": 1789637088.3283808,
-    "seen": 1789637247.666896,
+    "mtime": 1789754433.9399989,
+    "seen": 1789754472.5624745,
     "ast_hash": "481e7f62bb7ff4812b668299f9b51a97",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/repaso-b1_secciones-1-12.md": {
-    "mtime": 1789637088.3283808,
-    "seen": 1789637247.666897,
+    "mtime": 1789754433.9439988,
+    "seen": 1789754472.5624754,
     "ast_hash": "350d0db05c5128a6feea9da6f319f417",
     "semantic_hash": ""
   },
@@ -1350,8 +1350,8 @@
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b2/examen-unidades1-2.md": {
-    "mtime": 1789637088.3283808,
-    "seen": 1789637247.6669004,
+    "mtime": 1789754433.9439988,
+    "seen": 1789754472.5624783,
     "ast_hash": "6a620f5ee2e7e66afa6f832193126e83",
     "semantic_hash": ""
   },
@@ -1368,152 +1368,152 @@
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/README.md": {
-    "mtime": 1789637088.3283808,
-    "seen": 1789637247.6669037,
+    "mtime": 1789754433.9439988,
+    "seen": 1789754472.5624812,
     "ast_hash": "94181860c8a0b40c5d9b4356618af88d",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-practica-mas-1_interactivo.html": {
-    "mtime": 1789637088.3323808,
-    "seen": 1789637247.6669054,
+    "mtime": 1789754433.947999,
+    "seen": 1789754472.562482,
     "ast_hash": "38539706ce6e4f5551f82162fb0fc600",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-practica-mas-2_interactivo.html": {
-    "mtime": 1789637088.3323808,
-    "seen": 1789637247.6669064,
+    "mtime": 1789754433.947999,
+    "seen": 1789754472.5624833,
     "ast_hash": "73d0948dff50a83f913517ba22a64cc0",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-practica-mas-3_interactivo.html": {
-    "mtime": 1789637088.336381,
-    "seen": 1789637247.6669075,
+    "mtime": 1789754433.951999,
+    "seen": 1789754472.5624843,
     "ast_hash": "799d7994323d6668dec478142e6ebae7",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-practica-mas-4_interactivo.html": {
-    "mtime": 1789637088.336381,
-    "seen": 1789637247.6669087,
+    "mtime": 1789754433.951999,
+    "seen": 1789754472.5624852,
     "ast_hash": "c7f9211d0c2ee227adb3d3363ff14f27",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-practica-mas-5_interactivo.html": {
-    "mtime": 1789637088.340381,
-    "seen": 1789637247.66691,
+    "mtime": 1789754433.951999,
+    "seen": 1789754472.5624862,
     "ast_hash": "4cef905fa5e3d9d99d0f718cde57f145",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad10a_la-salud_interactivo.html": {
-    "mtime": 1789637088.340381,
-    "seen": 1789637247.666911,
+    "mtime": 1789754433.955999,
+    "seen": 1789754472.5624871,
     "ast_hash": "42b0160a69bc36ec7d960d3814f283e0",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad10b_antes-saliamos-con-los-amigos_interactivo.html": {
-    "mtime": 1789637088.3443809,
-    "seen": 1789637247.6669128,
+    "mtime": 1789754433.955999,
+    "seen": 1789754472.5624878,
     "ast_hash": "dc1f0c7c9d644a4a05becdd7c3594607",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad10c_voy-a-trabajar-en-un-hotel_interactivo.html": {
-    "mtime": 1789637088.3443809,
-    "seen": 1789637247.666914,
+    "mtime": 1789754433.955999,
+    "seen": 1789754472.5624886,
     "ast_hash": "ef425dbfa7658ba7d137a5d8dd8f99f5",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad1a_encantado_interactivo.html": {
-    "mtime": 1789637088.3443809,
-    "seen": 1789637247.6669152,
+    "mtime": 1789754433.955999,
+    "seen": 1789754472.5624895,
     "ast_hash": "b5427ae62c11d367c7e52810c87afef0",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad1b_a-que-te-dedicas_interactivo.html": {
-    "mtime": 1789637088.3443809,
-    "seen": 1789637247.6669164,
+    "mtime": 1789754433.9599988,
+    "seen": 1789754472.562491,
     "ast_hash": "2b4d7ab89b9e00f94a35d9db833336a0",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad1c_cual-es-tu-numero-de-movil_interactivo.html": {
-    "mtime": 1789637088.356381,
-    "seen": 1789637247.6669176,
+    "mtime": 1789754433.971999,
+    "seen": 1789754472.5624921,
     "ast_hash": "902e0c4d1dcefcc507dc6e23d528ba5c",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad2a_estas-casado_interactivo.html": {
-    "mtime": 1789637088.356381,
-    "seen": 1789637247.6669192,
+    "mtime": 1789754433.971999,
+    "seen": 1789754472.5624928,
     "ast_hash": "a1bdde07a337fc730e04bb0e6df9eee2",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad2b_donde-estan-mis-gafas_interactivo.html": {
-    "mtime": 1789637088.356381,
-    "seen": 1789637247.6669202,
+    "mtime": 1789754433.971999,
+    "seen": 1789754472.5624943,
     "ast_hash": "ce74d7622137040bef2321aa3aef471a",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad2c_que-hora-es_interactivo.html": {
-    "mtime": 1789637088.372381,
-    "seen": 1789637247.6669214,
+    "mtime": 1789754433.991999,
+    "seen": 1789754472.5624952,
     "ast_hash": "8930deee0b7903160ca27cf88a0ebd5d",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad3a_rosa-se-levanta-a-las-siete_interactivo.html": {
-    "mtime": 1789637088.372381,
-    "seen": 1789637247.6669226,
+    "mtime": 1789754433.991999,
+    "seen": 1789754472.5624962,
     "ast_hash": "b0cd812c41647b80aba1af8ebb47a27c",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad3b_estudias-o-trabajas_interactivo.html": {
-    "mtime": 1789637088.372381,
-    "seen": 1789637247.6669238,
+    "mtime": 1789754433.991999,
+    "seen": 1789754472.5624974,
     "ast_hash": "d66435c4a1760d7352a6d94eb66b0709",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad3c_que-desayunas_interactivo.html": {
-    "mtime": 1789637088.3803809,
-    "seen": 1789637247.6669247,
+    "mtime": 1789754433.9999988,
+    "seen": 1789754472.562498,
     "ast_hash": "d13a22def6c5126a8ca5f9cafdfaadf5",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad4a_donde-vives_interactivo.html": {
-    "mtime": 1789637088.3803809,
-    "seen": 1789637247.6669261,
+    "mtime": 1789754433.9999988,
+    "seen": 1789754472.5624995,
     "ast_hash": "eda530acabbb2627164102fedc0bb432",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad4b_interiores_interactivo.html": {
-    "mtime": 1789637088.3843808,
-    "seen": 1789637247.666927,
+    "mtime": 1789754434.003999,
+    "seen": 1789754472.5625007,
     "ast_hash": "186d2daa6d5f9f907d43b6be80f9f6b6",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad4c_visita-a-cordoba_interactivo.html": {
-    "mtime": 1789637088.3843808,
-    "seen": 1789637247.6669283,
+    "mtime": 1789754434.003999,
+    "seen": 1789754472.5625017,
     "ast_hash": "e900db13013d0846344a9725493d9089",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad5a_comer-fuera-de-casa_interactivo.html": {
-    "mtime": 1789637088.3843808,
-    "seen": 1789637247.6669297,
+    "mtime": 1789754434.003999,
+    "seen": 1789754472.5625026,
     "ast_hash": "f538402377fab193dd3405246ee2f8d0",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad5b_te-gusta-el-cine_interactivo.html": {
-    "mtime": 1789637088.3843808,
-    "seen": 1789637247.6669307,
+    "mtime": 1789754434.003999,
+    "seen": 1789754472.5625036,
     "ast_hash": "ed3d1376280fa0eb330b32adaf5ebc99",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad5c_receta-del-caribe_interactivo.html": {
-    "mtime": 1789637088.392381,
-    "seen": 1789637247.6669316,
+    "mtime": 1789754434.011999,
+    "seen": 1789754472.5625045,
     "ast_hash": "3e0d21327ea044d27dc91c2859e7783b",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad6a_como-se-va-a-goya_interactivo.html": {
-    "mtime": 1789637088.4003808,
-    "seen": 1789637247.6669328,
+    "mtime": 1789754434.0199988,
+    "seen": 1789754472.5625055,
     "ast_hash": "119b584b87e700d982a793d50bb150ee",
     "semantic_hash": ""
   },
@@ -1524,62 +1524,62 @@
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad6c_mi-barrio-es-tranquilo_interactivo.html": {
-    "mtime": 1789637088.408381,
-    "seen": 1789637247.666935,
+    "mtime": 1789754434.0319989,
+    "seen": 1789754472.5625076,
     "ast_hash": "19e1575139ebc659cdd3733d12cf83e1",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad7a_donde-quedamos_interactivo.html": {
-    "mtime": 1789637088.4243808,
-    "seen": 1789637247.6669362,
+    "mtime": 1789754434.047999,
+    "seen": 1789754472.5625083,
     "ast_hash": "89454d7127cf77e19786f3993eb1d126",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad7b_que-estas-haciendo_interactivo.html": {
-    "mtime": 1789637088.4243808,
-    "seen": 1789637247.6669374,
+    "mtime": 1789754434.047999,
+    "seen": 1789754472.5625093,
     "ast_hash": "fc739f8ca1203da78f1ec2382e2768c4",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad7c_como-es_interactivo.html": {
-    "mtime": 1789637088.4243808,
-    "seen": 1789637247.6669383,
+    "mtime": 1789754434.047999,
+    "seen": 1789754472.56251,
     "ast_hash": "d38417cfbca29dcddea1ec291888a992",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad8a_por-favor-para-ir-a-la-catedral_interactivo.html": {
-    "mtime": 1789637088.4243808,
-    "seen": 1789637247.6669397,
+    "mtime": 1789754434.0519989,
+    "seen": 1789754472.5625112,
     "ast_hash": "6100eeb73df05a4758bdf44beb3f4eb1",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad8b_que-hizo-rosa-ayer_interactivo.html": {
-    "mtime": 1789637088.428381,
-    "seen": 1789637247.666941,
+    "mtime": 1789754434.0559988,
+    "seen": 1789754472.5625122,
     "ast_hash": "6cdca093fa79ddcb75f6db94bad3da31",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad8c_que-tiempo-hace-hoy_interactivo.html": {
-    "mtime": 1789637088.428381,
-    "seen": 1789637247.666942,
+    "mtime": 1789754434.0559988,
+    "seen": 1789754472.562513,
     "ast_hash": "50133e8beefc7676b113ff4aeae58e0d",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad9a_cuanto-cuestan-estos-zapatos_interactivo.html": {
-    "mtime": 1789637088.4363809,
-    "seen": 1789637247.666943,
+    "mtime": 1789754434.067999,
+    "seen": 1789754472.562514,
     "ast_hash": "da57d5f56b92ae0bcd4fea2e6acac202",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad9b_mi-novio-lleva-corbata_interactivo.html": {
-    "mtime": 1789637088.4403808,
-    "seen": 1789637247.6669443,
+    "mtime": 1789754434.067999,
+    "seen": 1789754472.5625153,
     "ast_hash": "77e7568296e42b1aa340177e683378ed",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad9c_buenos-aires-es-mas-grande-que-toledo_interactivo.html": {
-    "mtime": 1789637088.4403808,
-    "seen": 1789637247.6669455,
+    "mtime": 1789754434.067999,
+    "seen": 1789754472.5625165,
     "ast_hash": "4aeca290a8d857a85cb6d30b53752740",
     "semantic_hash": ""
   },
@@ -1590,104 +1590,104 @@
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_guia-repaso-unidades-1-10_interactivo.html": {
-    "mtime": 1789637088.452381,
-    "seen": 1789637247.6669478,
+    "mtime": 1789754434.083999,
+    "seen": 1789754472.5625188,
     "ast_hash": "926a786313368be4b00ef6a9875d7801",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a2/nuevo-espanol-en-marcha-2_cuaderno-unidad0_antes-de-empezar_interactivo.html": {
-    "mtime": 1789637088.464381,
-    "seen": 1789637247.666949,
+    "mtime": 1789754434.095999,
+    "seen": 1789754472.5625196,
     "ast_hash": "d4d5c1755aae340caf7e00818e5e8e94",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a2/nuevo-espanol-en-marcha-2_cuaderno-unidad1a_encantado_interactivo.html": {
-    "mtime": 1789637088.464381,
-    "seen": 1789637247.6669502,
+    "mtime": 1789754434.095999,
+    "seen": 1789754472.5625203,
     "ast_hash": "0db298995939ab40a8327ab1bc4c3df7",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a2/nuevo-espanol-en-marcha-2_cuaderno-unidad1b_duermo-poco_interactivo.html": {
-    "mtime": 1789637088.4803808,
-    "seen": 1789637247.6669514,
+    "mtime": 1789754434.1119988,
+    "seen": 1789754472.5625215,
     "ast_hash": "f2e9c0fbe8db6f15e94c3d771a484dc4",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a2/nuevo-espanol-en-marcha-2_cuaderno-unidad1c_unas-vacaciones-inolvidables_interactivo.html": {
-    "mtime": 1789637088.4803808,
-    "seen": 1789637247.6669524,
+    "mtime": 1789754434.1119988,
+    "seen": 1789754472.5625224,
     "ast_hash": "ee5af9dfd3f67a318f990c000997dbe6",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a2/nuevo-espanol-en-marcha-2_cuaderno-unidad2a_quieres-ser-millonario_interactivo.html": {
-    "mtime": 1789637088.4803808,
-    "seen": 1789637247.6669538,
+    "mtime": 1789754434.1119988,
+    "seen": 1789754472.5625234,
     "ast_hash": "11e4266c35d4c04cb73b08b469279bdb",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a2/nuevo-espanol-en-marcha-2_cuaderno-unidad2b_biografias_interactivo.html": {
-    "mtime": 1789637088.484381,
-    "seen": 1789637247.6669548,
+    "mtime": 1789754434.115999,
+    "seen": 1789754472.5625243,
     "ast_hash": "e00d219f686dc84ede1633bbf18740c5",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a2/nuevo-espanol-en-marcha-2_cuaderno-unidad2c_ganadores_interactivo.html": {
-    "mtime": 1789637088.500381,
-    "seen": 1789637247.666956,
+    "mtime": 1789754434.131999,
+    "seen": 1789754472.5625255,
     "ast_hash": "147fc9f2ff05ec0a0341f8cb48c73b11",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a2/nuevo-espanol-en-marcha-2_cuaderno-unidad3a_la-boda-de-pili_interactivo.html": {
-    "mtime": 1789637088.500381,
-    "seen": 1789637247.6669574,
+    "mtime": 1789754434.135999,
+    "seen": 1789754472.5625262,
     "ast_hash": "69ff1c4785d3a7edd65ead7c8172542c",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a2/nuevo-espanol-en-marcha-2_cuaderno-unidad3b_como-te-ha-ido-hoy_interactivo.html": {
-    "mtime": 1789637088.500381,
-    "seen": 1789637247.6669583,
+    "mtime": 1789754434.135999,
+    "seen": 1789754472.5625272,
     "ast_hash": "a9d4efd34e27ca6ce0a3f63bb3401579",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a2/nuevo-espanol-en-marcha-2_cuaderno-unidad3c_costumbres_interactivo.html": {
-    "mtime": 1789637088.500381,
-    "seen": 1789637247.6669593,
+    "mtime": 1789754434.135999,
+    "seen": 1789754472.562528,
     "ast_hash": "203012fea13c2c2a9f3bf13e79deeb9e",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad1a_vida-cotidiana_interactivo.html": {
-    "mtime": 1789637088.500381,
-    "seen": 1789637247.6669607,
+    "mtime": 1789754434.135999,
+    "seen": 1789754472.562529,
     "ast_hash": "f5a7c6585a6a802607754fbc4be6becf",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad1b_que-hiciste-que-has-hecho_interactivo.html": {
-    "mtime": 1789637088.500381,
-    "seen": 1789637247.666962,
+    "mtime": 1789754434.135999,
+    "seen": 1789754472.5625303,
     "ast_hash": "e05879be19df995e1caa36c12063937f",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad1c_el-futuro-que-nos-espera_interactivo.html": {
-    "mtime": 1789637088.508381,
-    "seen": 1789637247.666963,
+    "mtime": 1789754434.1439989,
+    "seen": 1789754472.5625312,
     "ast_hash": "434e0fe1fef423a559e1ac5983c1d569",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad2a_en-la-estacion_interactivo.html": {
-    "mtime": 1789637088.508381,
-    "seen": 1789637247.6669645,
+    "mtime": 1789754434.1439989,
+    "seen": 1789754472.5625322,
     "ast_hash": "28a76e734069838acbb9fc6a7e3ce000",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad2b_como-vas-al-trabajo_interactivo.html": {
-    "mtime": 1789637088.5123808,
-    "seen": 1789637247.6669655,
+    "mtime": 1789754434.1479988,
+    "seen": 1789754472.5625331,
     "ast_hash": "6761a108d3c316eb3cf3b313f27d7394",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad2c_intercambio-de-casa_interactivo.html": {
-    "mtime": 1789637088.5123808,
-    "seen": 1789637247.6669672,
+    "mtime": 1789754434.1479988,
+    "seen": 1789754472.562534,
     "ast_hash": "07f80df7d4ef22294f8be664edd9a402",
     "semantic_hash": ""
   },
@@ -1698,62 +1698,62 @@
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad5b_las-otras-medicinas_interactivo.html": {
-    "mtime": 1789637088.5283809,
-    "seen": 1789637247.6669695,
+    "mtime": 1789754434.1679988,
+    "seen": 1789754472.5625362,
     "ast_hash": "a0eebe418a35c5f7d73d7bb8fbedfc7d",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad5c_el-sueno_interactivo.html": {
-    "mtime": 1789637088.544381,
-    "seen": 1789637247.6669712,
+    "mtime": 1789754434.1839988,
+    "seen": 1789754472.5625374,
     "ast_hash": "596223d84d75352a232ec0277e192571",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad7a_un-buen-trabajo_interactivo.html": {
-    "mtime": 1789637088.556381,
-    "seen": 1789637247.6669722,
+    "mtime": 1789754434.195999,
+    "seen": 1789754472.5625384,
     "ast_hash": "14980766c2f757d078d0cd8d97a93277",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad7b_cuando-pueda-cambiare-de-trabajo_interactivo.html": {
-    "mtime": 1789637088.560381,
-    "seen": 1789637247.6669734,
+    "mtime": 1789754434.1999989,
+    "seen": 1789754472.5625393,
     "ast_hash": "3868a1827ce025e229a6ba52c86c7739",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad7c_si-tuviera-dinero_interactivo.html": {
-    "mtime": 1789637088.576381,
-    "seen": 1789637247.6669745,
+    "mtime": 1789754434.215999,
+    "seen": 1789754472.5625403,
     "ast_hash": "51d1aec71af821f897e59b650c353333",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad8a_deportes_interactivo.html": {
-    "mtime": 1789637088.580381,
-    "seen": 1789637247.6669757,
+    "mtime": 1789754434.2199988,
+    "seen": 1789754472.562541,
     "ast_hash": "7ec6ca987d816ff35395ce1e44bcd5f4",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad8b_salimos_interactivo.html": {
-    "mtime": 1789637088.5883808,
-    "seen": 1789637247.666977,
+    "mtime": 1789754434.227999,
+    "seen": 1789754472.562542,
     "ast_hash": "8290ba59882f6898c67883ee3af3c84e",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad8c_musica-arte-y-literatura_interactivo.html": {
-    "mtime": 1789637088.600381,
-    "seen": 1789637247.6669781,
+    "mtime": 1789754434.243999,
+    "seen": 1789754472.562543,
     "ast_hash": "00440990666cef71345c2726b5fb7382",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_repaso-b1_interactivo.html": {
-    "mtime": 1789637088.6043808,
-    "seen": 1789637247.6669793,
+    "mtime": 1789754434.247999,
+    "seen": 1789754472.562544,
     "ast_hash": "40fd444e2b8e5746eedb1b68c17d0fd1",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b2/nuevo-espanol-en-marcha-4_examen-unidades1-2_interactivo.html": {
-    "mtime": 1789637088.6043808,
-    "seen": 1789637247.6669805,
+    "mtime": 1789754434.247999,
+    "seen": 1789754472.562545,
     "ast_hash": "2506d5fcb73dd9b01e4e292efbc18b8a",
     "semantic_hash": ""
   },
@@ -1770,20 +1770,20 @@
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/blog/tusclasesparticulares_metodologia-clases-espanol-rusohablantes.md": {
-    "mtime": 1789637088.6043808,
-    "seen": 1789637247.666984,
+    "mtime": 1789754434.247999,
+    "seen": 1789754472.562548,
     "ast_hash": "7a911b0ebc35e2cd59afa5851dde837a",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/codigos-acceso.html": {
-    "mtime": 1789637088.6043808,
-    "seen": 1789637247.6669853,
+    "mtime": 1789754434.247999,
+    "seen": 1789754472.5625489,
     "ast_hash": "e11ab77c6438e5ed2d22de731206d62b",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/indice-clases-de-espanol.html": {
-    "mtime": 1789637088.6043808,
-    "seen": 1789637247.6669867,
+    "mtime": 1789754434.247999,
+    "seen": 1789754472.56255,
     "ast_hash": "98f4e3facea74205beac0cabfaa65ce1",
     "semantic_hash": ""
   },
@@ -1854,140 +1854,140 @@
     "semantic_hash": ""
   },
   "graphify-out/memory/query_20260903_070844_pr_90_re_review__verify_5_prior_derangement_conjta.md": {
-    "mtime": 1789637088.7763808,
-    "seen": 1789637247.6670039,
+    "mtime": 1789754434.3839989,
+    "seen": 1789754472.5625644,
     "ast_hash": "2a40e9d0fd31c369167c435ee66097e6",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/README.md": {
-    "mtime": 1789637229.4957998,
-    "seen": 1789637247.6670067,
+    "mtime": 1789754434.3853045,
+    "seen": 1789754472.5625668,
     "ast_hash": "3d317c32600ea83a92c2418da5b93cba",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/admision-y-becas/becas-y-tramites-2026-2027.md": {
-    "mtime": 1789637088.7792916,
-    "seen": 1789637247.6670337,
+    "mtime": 1789754434.3853045,
+    "seen": 1789754472.562568,
     "ast_hash": "24b1b959c9e0e682adcf230fb3dc79a4",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/analitica-visual-y-visualizacion-de-la-informacion/FUENTE.md": {
-    "mtime": 1789637088.7792916,
-    "seen": 1789637247.6670356,
+    "mtime": 1789754434.3853045,
+    "seen": 1789754472.5625687,
     "ast_hash": "7f98b67c1bd52efb50ab93336842e9bd",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/analitica-visual-y-visualizacion-de-la-informacion/Librer\u00edas de python para visualizaci\u00f3n de datos.txt": {
-    "mtime": 1789637088.7798188,
-    "seen": 1789637247.6670396,
+    "mtime": 1789754434.3860314,
+    "seen": 1789754472.5625718,
     "ast_hash": "4408bfb17bd89eff42d12160b2660dc8",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/control-inteligente/FUENTE.md": {
-    "mtime": 1789637088.7963808,
-    "seen": 1789637247.6670446,
+    "mtime": 1789754434.395999,
+    "seen": 1789754472.5625741,
     "ast_hash": "6718f36b43b0cb7c7bbb7cd50144f144",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/herramientas-interactivas-de-simulacion-y-control/FUENTE.md": {
-    "mtime": 1789637088.928381,
-    "seen": 1789637247.6670463,
+    "mtime": 1789754434.547999,
+    "seen": 1789754472.5625749,
     "ast_hash": "abc09e57a8c27e83d33e5dd09f304404",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/inteligencia-ambiental-y-sistemas-multiagente/FUENTE.md": {
-    "mtime": 1789637088.9707325,
-    "seen": 1789637247.6670477,
+    "mtime": 1789754434.5879989,
+    "seen": 1789754472.5625758,
     "ast_hash": "026f66e4e9b4bab60b5bc711d23bc5f6",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/logica-para-web-semantica/FUENTE.md": {
-    "mtime": 1789637088.9801753,
-    "seen": 1789637247.6670492,
+    "mtime": 1789754434.599999,
+    "seen": 1789754472.5625765,
     "ast_hash": "73ccd786e9caf9f5ea51ac98f9bc7bb5",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/FUENTE.md": {
-    "mtime": 1789637088.9803808,
-    "seen": 1789637247.6670513,
+    "mtime": 1789754434.599999,
+    "seen": 1789754472.562578,
     "ast_hash": "1176bf27d3f8e6820f9857c7adff6376",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/overleaf-poster-mi/LICENSE.md": {
-    "mtime": 1789637088.984381,
-    "seen": 1789637247.667053,
+    "mtime": 1789754434.6079988,
+    "seen": 1789754472.562579,
     "ast_hash": "1aba168df65f00a09839c546d315d930",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/overleaf-poster-mi/README.md": {
-    "mtime": 1789637088.9872797,
-    "seen": 1789637247.667055,
+    "mtime": 1789754434.6091433,
+    "seen": 1789754472.5625799,
     "ast_hash": "dc427cd4d442a60468818f847b00b930",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/overleaf-trabajo-mi/README.md": {
-    "mtime": 1789637088.988381,
-    "seen": 1789637247.6670563,
+    "mtime": 1789754434.611999,
+    "seen": 1789754472.5625808,
     "ast_hash": "d6dd42f8227423c90b5bc04c967792ca",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/mineria-de-datos-aplicada-a-la-bioinformatica/FUENTE.md": {
-    "mtime": 1789637089.0163808,
-    "seen": 1789637247.6670578,
+    "mtime": 1789754434.639999,
+    "seen": 1789754472.5625815,
     "ast_hash": "515ab4bb438087ebbf67c5683e8b04b3",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/mineria-de-datos/FUENTE.md": {
-    "mtime": 1789637089.024381,
-    "seen": 1789637247.6670592,
+    "mtime": 1789754434.647999,
+    "seen": 1789754472.5625823,
     "ast_hash": "7edd6cc58edb892beb8ca355e8e2b0d8",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/procesos-y-metodos-de-modelado-para-la-ingenieria-web-y-web-semantica/FUENTE.md": {
-    "mtime": 1789637089.1403809,
-    "seen": 1789637247.6670604,
+    "mtime": 1789754434.7762234,
+    "seen": 1789754472.5625834,
     "ast_hash": "b7d9a4297aaf6f3bbeffc66fbb165554",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/robots-autonomos/FUENTE.md": {
-    "mtime": 1789637089.160088,
-    "seen": 1789637247.667062,
+    "mtime": 1789754434.798951,
+    "seen": 1789754472.5625844,
     "ast_hash": "708276f89259e0a9ae15459a29e6bc4e",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/tecnologias-del-habla/FUENTE.md": {
-    "mtime": 1789637089.188381,
-    "seen": 1789637247.667064,
+    "mtime": 1789754434.831999,
+    "seen": 1789754472.5625854,
     "ast_hash": "5d785a445fb804225bd1959ca910a27e",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/tecnologias-del-habla/entrega-1/Formantes_vocales.txt": {
-    "mtime": 1789637089.2203808,
-    "seen": 1789637247.6670651,
+    "mtime": 1789754434.8679988,
+    "seen": 1789754472.5625863,
     "ast_hash": "1ef5af125670ca8505535ffff04e2c8c",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/tecnologias-del-habla/entrega-2/pitch_list.txt": {
-    "mtime": 1789637089.2403808,
-    "seen": 1789637247.6670668,
+    "mtime": 1789754434.891999,
+    "seen": 1789754472.562587,
     "ast_hash": "7eab6ae2f471e34857afaddec340a740",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/trabajo-fin-de-master/FUENTE.md": {
-    "mtime": 1789637089.244381,
-    "seen": 1789637247.6670682,
+    "mtime": 1789754434.899999,
+    "seen": 1789754472.5625882,
     "ast_hash": "59c513126fa4ee6d49265bc194caa99e",
     "semantic_hash": ""
   },
   "personal/README.md": {
-    "mtime": 1789637089.257779,
-    "seen": 1789637247.6670794,
+    "mtime": 1789754434.9180498,
+    "seen": 1789754472.5625951,
     "ast_hash": "78065f729244344ef5c1cac0151ca505",
     "semantic_hash": ""
   },
   "personal/academico/formacion-academica.md": {
-    "mtime": 1789637089.2580283,
-    "seen": 1789637247.6670804,
+    "mtime": 1789754434.9183164,
+    "seen": 1789754472.562596,
     "ast_hash": "37a744cbea57e0266295178de4c4bf8f",
     "semantic_hash": ""
   },
@@ -2016,14 +2016,14 @@
     "semantic_hash": ""
   },
   "recursos-generales/herramientas-ia/novedades.md": {
-    "mtime": 1789637089.2583616,
-    "seen": 1789637247.6670866,
-    "ast_hash": "84a88d59d17fa3986c0dfe56582aa8a9",
+    "mtime": 1789754454.516,
+    "seen": 1789754472.5626013,
+    "ast_hash": "b346b4d3158e67e1acd21a899135bf08",
     "semantic_hash": ""
   },
   "recursos-generales/herramientas-ia/vercel-web-interface-guidelines.md": {
-    "mtime": 1789637089.2583616,
-    "seen": 1789637247.6670878,
+    "mtime": 1789754434.918669,
+    "seen": 1789754472.562602,
     "ast_hash": "0833b7ad5b0e2df9b83f62e70bb50631",
     "semantic_hash": ""
   },
@@ -2058,398 +2058,398 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/control-inteligente/confs/CI2023_Parte1_FundamentosControl.pdf": {
-    "mtime": 1789637088.804381,
-    "seen": 1789637247.6670952,
+    "mtime": 1789754434.4079988,
+    "seen": 1789754472.562612,
     "ast_hash": "f4629f073fca96b3a5cff88b83b08e2a",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/control-inteligente/confs/CI2023_Parte1_FundamentosControl__ESTU.pdf": {
-    "mtime": 1789637088.8243809,
-    "seen": 1789637247.6670969,
+    "mtime": 1789754434.427999,
+    "seen": 1789754472.5626135,
     "ast_hash": "711debd76418845c074ea0829f864265",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/control-inteligente/confs/QueeselControlPredictivoyHaciaDonde.pdf": {
-    "mtime": 1789637088.8443809,
-    "seen": 1789637247.667098,
+    "mtime": 1789754434.451999,
+    "seen": 1789754472.5626154,
     "ast_hash": "d042c25da58cfc0ac12ff30bf90fca2d",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/control-inteligente/confs/SistemasInteligentesencontrolintroduccion2019.pdf": {
-    "mtime": 1789637088.8483808,
-    "seen": 1789637247.6670992,
+    "mtime": 1789754434.4599988,
+    "seen": 1789754472.5626166,
     "ast_hash": "3026e5896f7d8dbf2da29000007a3634",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/control-inteligente/confs/Tema 2 Control con Redes Neuronales2022.pdf": {
-    "mtime": 1789637088.856381,
-    "seen": 1789637247.6671007,
+    "mtime": 1789754434.463999,
+    "seen": 1789754472.5626178,
     "ast_hash": "445ddf6d04237096419b8c39e1d43002",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/control-inteligente/practicas-control-inteligente/gravity-drain-tank-loop-pro/PRACTICA1_LOOP-PRO_2023.pdf": {
-    "mtime": 1789637088.860381,
-    "seen": 1789637247.6671019,
+    "mtime": 1789754434.471999,
+    "seen": 1789754472.5626194,
     "ast_hash": "c991adb77868f013808d11aa18af3c13",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/control-inteligente/practicas-control-inteligente/heat-exchanger-loop-pro/Arlet Acosta Gonz\u00e1lez, Heat Exchanger LOOP-PRO.pdf": {
-    "mtime": 1789637088.876381,
-    "seen": 1789637247.667104,
+    "mtime": 1789754434.491999,
+    "seen": 1789754472.562622,
     "ast_hash": "620d00903ed1cb1ea3bb16dd1bde12fb",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/herramientas-interactivas-de-simulacion-y-control/Arlet Acosta Gonzalez, Trabajo Final EJS.pdf": {
-    "mtime": 1789637088.9203808,
-    "seen": 1789637247.6671054,
+    "mtime": 1789754434.539999,
+    "seen": 1789754472.5626235,
     "ast_hash": "760b95d729c60dfc1a430b23dcd889f2",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/herramientas-interactivas-de-simulacion-y-control/Arlet Acosta Gonz\u00e1lez, Trabajo Final Simulink.pdf": {
-    "mtime": 1789637088.928381,
-    "seen": 1789637247.6671073,
+    "mtime": 1789754434.547999,
+    "seen": 1789754472.5626261,
     "ast_hash": "3bc4d03f7aff0381e9eb3e496a1d2d71",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/herramientas-interactivas-de-simulacion-y-control/PI en un dep\u00f3sito.pdf": {
-    "mtime": 1789637088.9363809,
-    "seen": 1789637247.667109,
+    "mtime": 1789754434.555999,
+    "seen": 1789754472.5626283,
     "ast_hash": "763138de82ce2c70c87107f45e763a07",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/herramientas-interactivas-de-simulacion-y-control/practica-1-simulink/Arlet Acosta Gonz\u00e1lez, Informe depositos simulink .pdf": {
-    "mtime": 1789637088.964381,
-    "seen": 1789637247.6671112,
+    "mtime": 1789754434.583999,
+    "seen": 1789754472.5626307,
     "ast_hash": "cdde7f04abc2d1b182fdab790f608e49",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/inteligencia-ambiental-y-sistemas-multiagente/Arlet Acosta Gonz\u00e1lez, IoT and IoT in Medicine and Healthcare sector.pdf": {
-    "mtime": 1789637088.968381,
-    "seen": 1789637247.6671126,
+    "mtime": 1789754434.5879989,
+    "seen": 1789754472.562633,
     "ast_hash": "07a4fb5b61d191f955129d7b02372e0b",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/inteligencia-ambiental-y-sistemas-multiagente/word-template/word-template-paper/ADCAIJ-WordTemplate2016_V4.dotx.pdf": {
-    "mtime": 1789637088.9763808,
-    "seen": 1789637247.6671143,
+    "mtime": 1789754434.595999,
+    "seen": 1789754472.5626347,
     "ast_hash": "65bca73542f07b15ca6351d4ac84d3a0",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/logica-para-web-semantica/Arlet Acosta Gonz\u00e1lez, TF de L\u00f3gica para la web sem\u00e1ntica.pdf": {
-    "mtime": 1789637088.9763808,
-    "seen": 1789637247.6671164,
+    "mtime": 1789754434.599999,
+    "seen": 1789754472.5626369,
     "ast_hash": "469504761515311c9ce8df48919cee0f",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/logica-para-web-semantica/Huertas 2006.pdf": {
-    "mtime": 1789637088.9803808,
-    "seen": 1789637247.6671176,
+    "mtime": 1789754434.599999,
+    "seen": 1789754472.5626383,
     "ast_hash": "5b3531d57e9f10d907499fc2725bd455",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/Poster_MI.pdf": {
-    "mtime": 1789637088.9809468,
-    "seen": 1789637247.667119,
+    "mtime": 1789754434.603999,
+    "seen": 1789754472.5626402,
     "ast_hash": "4618535902e1188955c3809deb85c5f2",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/Trabajo_de_MI.pdf": {
-    "mtime": 1789637088.984381,
-    "seen": 1789637247.6671212,
+    "mtime": 1789754434.6079988,
+    "seen": 1789754472.5626416,
     "ast_hash": "9ecf25457d289bad59e05fd16842a50d",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/mineria-de-datos-aplicada-a-la-bioinformatica/01-Biologia4bioinformaticos_r.pdf": {
-    "mtime": 1789637089.004381,
-    "seen": 1789637247.6671233,
+    "mtime": 1789754434.6239989,
+    "seen": 1789754472.5626435,
     "ast_hash": "2c8cc5d260804e13348566aa9fdd51b1",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/mineria-de-datos-aplicada-a-la-bioinformatica/03-Genotipado y microarrays_r.pdf": {
-    "mtime": 1789637089.0163808,
-    "seen": 1789637247.6671247,
+    "mtime": 1789754434.639999,
+    "seen": 1789754472.5626452,
     "ast_hash": "83e5ccce7d1017f876c01c385ee953e5",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/mineria-de-datos/0-Presentaci\u00f3n asignatura.pdf": {
-    "mtime": 1789637089.020381,
-    "seen": 1789637247.667127,
+    "mtime": 1789754434.6439989,
+    "seen": 1789754472.562647,
     "ast_hash": "dae64cdd41c046ee628275902a482287",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/mineria-de-datos/Arlet Acosta Gonz\u00e1lez, Trabajo Miner\u00eda de datos.pdf": {
-    "mtime": 1789637089.024381,
-    "seen": 1789637247.6671283,
+    "mtime": 1789754434.647999,
+    "seen": 1789754472.562649,
     "ast_hash": "eab140cdb6cd6481ddb2ff5e7c3d5639",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/mineria-de-datos/MANUAL WEKA.pdf": {
-    "mtime": 1789637089.0283809,
-    "seen": 1789637247.6671298,
+    "mtime": 1789754434.655999,
+    "seen": 1789754472.562651,
     "ast_hash": "6ee215679b9a8428245fe52304dc0479",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/mineria-de-datos/Miner\u00edaDatos Tema1.pdf": {
-    "mtime": 1789637089.040381,
-    "seen": 1789637247.667132,
+    "mtime": 1789754434.667999,
+    "seen": 1789754472.5626526,
     "ast_hash": "44f75505a871842ecf69c40334423e47",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/mineria-de-datos/Miner\u00edaDatos Tema2.pdf": {
-    "mtime": 1789637089.060381,
-    "seen": 1789637247.6671343,
+    "mtime": 1789754434.687999,
+    "seen": 1789754472.5626545,
     "ast_hash": "37e941392282b544eb57e0cae5b346a1",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/mineria-de-datos/Miner\u00edaDatos Tema3.pdf": {
-    "mtime": 1789637089.0683808,
-    "seen": 1789637247.667136,
+    "mtime": 1789754434.6999989,
+    "seen": 1789754472.5626562,
     "ast_hash": "d0b3e8b81bf887b219519299cac26876",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/mineria-de-datos/Miner\u00edaDatos Tema4.pdf": {
-    "mtime": 1789637089.0883808,
-    "seen": 1789637247.6671379,
+    "mtime": 1789754434.723999,
+    "seen": 1789754472.562658,
     "ast_hash": "96aaca7be651c74d26bf0075956f090a",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/mineria-de-datos/Trabajo obligatorio (2023-2024).pdf": {
-    "mtime": 1789637089.0883808,
-    "seen": 1789637247.6671393,
+    "mtime": 1789754434.723999,
+    "seen": 1789754472.5626595,
     "ast_hash": "c915397b676cd132bac35eb117144822",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/mineria-de-datos/Weka-EjemploAplicaci\u00f3n.pdf": {
-    "mtime": 1789637089.0923808,
-    "seen": 1789637247.667141,
+    "mtime": 1789754434.731999,
+    "seen": 1789754472.562662,
     "ast_hash": "35dc46d93f0eb12524c5d3ee6463d3f7",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/procesos-y-metodos-de-modelado-para-la-ingenieria-web-y-web-semantica/Arlet Acosta Gonz\u00e1lez, TF Mapping TFM.pdf": {
-    "mtime": 1789637089.1403809,
-    "seen": 1789637247.6671424,
+    "mtime": 1789754434.7762234,
+    "seen": 1789754472.5626645,
     "ast_hash": "7ae64a4e49896f4aeef0814ae2b4fc8f",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/procesos-y-metodos-de-modelado-para-la-ingenieria-web-y-web-semantica/ejemplo de mapping.pdf": {
-    "mtime": 1789637089.156381,
-    "seen": 1789637247.6671443,
+    "mtime": 1789754434.795999,
+    "seen": 1789754472.5626662,
     "ast_hash": "909daace3d44a2906e791cc102e25839",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/robots-autonomos/Comportamientos_odometria.pdf": {
-    "mtime": 1789637089.156381,
-    "seen": 1789637247.6671455,
+    "mtime": 1789754434.795999,
+    "seen": 1789754472.5626686,
     "ast_hash": "a4236af97617d7df097083067f317c28",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/robots-autonomos/RA0-Inicio2023Evaluacion.pdf": {
-    "mtime": 1789637089.1603808,
-    "seen": 1789637247.667147,
+    "mtime": 1789754434.798951,
+    "seen": 1789754472.56267,
     "ast_hash": "2eb56d4f82e0b6424ec92b7f498cd034",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/robots-autonomos/RA0-Inicio2023Trabajos.pdf": {
-    "mtime": 1789637089.1603808,
-    "seen": 1789637247.6671484,
+    "mtime": 1789754434.798951,
+    "seen": 1789754472.562672,
     "ast_hash": "312510878da2a51db948d1f6561585df",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/robots-autonomos/roomba/codigo-roomba/2018-07-19_iRobot_Roomba_600_Open_Interface_Spec (Recuperado 1).pdf": {
-    "mtime": 1789637089.1803808,
-    "seen": 1789637247.6671495,
+    "mtime": 1789754434.819999,
+    "seen": 1789754472.5626736,
     "ast_hash": "ebf8ca6e522d8cb83ee54cffe7e07587",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/robots-autonomos/trabajo-teorico/presentaci\u00f3n robots aut\u00f3nomos_ FINAL.pdf": {
-    "mtime": 1789637089.1843808,
-    "seen": 1789637247.6671517,
+    "mtime": 1789754434.8279989,
+    "seen": 1789754472.5626755,
     "ast_hash": "a9d23b306234894c7468f5458905ab17",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/tecnologias-del-habla/Arlet Acosta Gonz\u00e1lez Trabajo final TH.pdf": {
-    "mtime": 1789637089.188381,
-    "seen": 1789637247.6671534,
+    "mtime": 1789754434.831999,
+    "seen": 1789754472.562677,
     "ast_hash": "cbcdf77e8fdcdc109d93abe7d3cc76d7",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/tecnologias-del-habla/SINTESIS DE HABLA_TH2022.pdf": {
-    "mtime": 1789637089.192381,
-    "seen": 1789637247.667155,
+    "mtime": 1789754434.835999,
+    "seen": 1789754472.5626795,
     "ast_hash": "94b0061517cc636e2b761d1d7efd79d7",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/tecnologias-del-habla/T0_2022.pdf": {
-    "mtime": 1789637089.1963809,
-    "seen": 1789637247.6671565,
+    "mtime": 1789754434.843999,
+    "seen": 1789754472.5626812,
     "ast_hash": "707a5bb2e6b7deec9912ee3168bfd499",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/tecnologias-del-habla/T1_2022.pdf": {
-    "mtime": 1789637089.2043808,
-    "seen": 1789637247.6671576,
+    "mtime": 1789754434.8479989,
+    "seen": 1789754472.5626824,
     "ast_hash": "e61987399690083cf1a673ef022e6357",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/tecnologias-del-habla/T2_2022.pdf": {
-    "mtime": 1789637089.2043808,
-    "seen": 1789637247.6671593,
+    "mtime": 1789754434.851999,
+    "seen": 1789754472.5626843,
     "ast_hash": "1d94aa7595b2e05b7dd1d85eede9de23",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/tecnologias-del-habla/ejercicios-fonetica-y-fonologiaSordo-Sonoro.pdf": {
-    "mtime": 1789637089.212381,
-    "seen": 1789637247.6671605,
+    "mtime": 1789754434.859999,
+    "seen": 1789754472.5626855,
     "ast_hash": "c263abb7da47140c6e9e1e1da5b5330a",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/tecnologias-del-habla/entrega-1/Entrega 1.pdf": {
-    "mtime": 1789637089.2163808,
-    "seen": 1789637247.6671622,
+    "mtime": 1789754434.8679988,
+    "seen": 1789754472.5626872,
     "ast_hash": "0e7d0e6f4c2f96bf0fa8a3bd3b3ccabe",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/tecnologias-del-habla/entrega-2/Entrega 2.pdf": {
-    "mtime": 1789637089.2403808,
-    "seen": 1789637247.6671636,
+    "mtime": 1789754434.891999,
+    "seen": 1789754472.5626888,
     "ast_hash": "42dc776efce9709b70e1996f13b6df88",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/trabajo-fin-de-master/1-publicacion-en-gredos.-autorizacion-y-datos.pdf": {
-    "mtime": 1789637089.2413611,
-    "seen": 1789637247.667165,
+    "mtime": 1789754434.8961477,
+    "seen": 1789754472.5626907,
     "ast_hash": "d44312c4dfa3703cd07c22b6735028e6",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/trabajo-fin-de-master/ESTE OK -- DPTOIA-IT-2000-001.pdf": {
-    "mtime": 1789637089.244381,
-    "seen": 1789637247.6671662,
+    "mtime": 1789754434.899999,
+    "seen": 1789754472.5626924,
     "ast_hash": "fbb8aa324fe1032e3a345f7219e8225a",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/trabajo-fin-de-master/Reglamento de los Trabajos de Fin de Master de la Universidad de Salamanca..pdf": {
-    "mtime": 1789637089.244381,
-    "seen": 1789637247.667168,
+    "mtime": 1789754434.9039989,
+    "seen": 1789754472.5626938,
     "ast_hash": "9a94657b93a04822f0fa7da7027480a6",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/trabajo-fin-de-master/modelo.tfm-anexo-iii-sol.defensa.ingles.pdf": {
-    "mtime": 1789637089.2563808,
-    "seen": 1789637247.667171,
+    "mtime": 1789754434.915999,
+    "seen": 1789754472.562697,
     "ast_hash": "f4caa608b0923ac60f266ec481959a83",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/overleaf-poster-mi/high_res.jpg": {
-    "mtime": 1789637088.988381,
-    "seen": 1789637247.6671727,
+    "mtime": 1789754434.6091433,
+    "seen": 1789754472.5626986,
     "ast_hash": "cd2f3bb8668586073845f47dd1d5d0e9",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/overleaf-poster-mi/logo_usal_footer2.png": {
-    "mtime": 1789637088.988381,
-    "seen": 1789637247.6671739,
+    "mtime": 1789754434.6091433,
+    "seen": 1789754472.5626998,
     "ast_hash": "6ebaa1661ff490cf771601252df1d10e",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/overleaf-trabajo-mi/high_res.jpg": {
-    "mtime": 1789637088.9923809,
-    "seen": 1789637247.667175,
+    "mtime": 1789754434.6124527,
+    "seen": 1789754472.5627015,
     "ast_hash": "cd2f3bb8668586073845f47dd1d5d0e9",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/overleaf-trabajo-mi/image/Imagen1.png": {
-    "mtime": 1789637088.9923809,
-    "seen": 1789637247.6671767,
+    "mtime": 1789754434.6124527,
+    "seen": 1789754472.562703,
     "ast_hash": "94a0d59b94c9e6938a3861ad74feb5f6",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/overleaf-trabajo-mi/image/frog.jpg": {
-    "mtime": 1789637088.9937196,
-    "seen": 1789637247.6671784,
+    "mtime": 1789754434.6162074,
+    "seen": 1789754472.5627048,
     "ast_hash": "45d6bf5c480ba5646ad481a1aebf0b45",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/overleaf-trabajo-mi/image/logo.png": {
-    "mtime": 1789637088.9937196,
-    "seen": 1789637247.6671803,
+    "mtime": 1789754434.6162074,
+    "seen": 1789754472.5627067,
     "ast_hash": "a830b26fe42da139f23759b07406b51a",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/overleaf-trabajo-mi/logo_usal_footer2.png": {
-    "mtime": 1789637088.9937196,
-    "seen": 1789637247.6671815,
+    "mtime": 1789754434.6162074,
+    "seen": 1789754472.5627081,
     "ast_hash": "6ebaa1661ff490cf771601252df1d10e",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/trabajo-fin-de-master/figures/1280px-Linear_regression.jpg": {
-    "mtime": 1789637089.248381,
-    "seen": 1789637247.6671832,
+    "mtime": 1789754434.9039989,
+    "seen": 1789754472.56271,
     "ast_hash": "f3f975fde5754bc0f2d8d85ab1ce6215",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/trabajo-fin-de-master/figures/LogoDIA.jpg": {
-    "mtime": 1789637089.248381,
-    "seen": 1789637247.6671846,
+    "mtime": 1789754434.907999,
+    "seen": 1789754472.5627115,
     "ast_hash": "66670fc3ced1939c67a214ce22ba9153",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/trabajo-fin-de-master/figures/usal_en_ver.jpg": {
-    "mtime": 1789637089.248381,
-    "seen": 1789637247.6671863,
+    "mtime": 1789754434.907999,
+    "seen": 1789754472.5627134,
     "ast_hash": "f3e34b19cdfa68d4d1f59546d4fb98de",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/trabajo-fin-de-master/ideas-tfm-energias-renovables.md": {
-    "mtime": 1789637089.248381,
-    "seen": 1789637247.6670706,
+    "mtime": 1789754434.907999,
+    "seen": 1789754472.5625896,
     "ast_hash": "1027a0f4fa8806d93c7fc4ba6dfd0a2d",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/trabajo-fin-de-master/preparacion/01-python-numpy-pandas.md": {
-    "mtime": 1789637089.2563808,
-    "seen": 1789637247.667075,
+    "mtime": 1789754434.915999,
+    "seen": 1789754472.562592,
     "ast_hash": "81f7cef87d544ace011a0273f25e94f7",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/trabajo-fin-de-master/preparacion/plan-de-entrenamiento.md": {
-    "mtime": 1789637089.257779,
-    "seen": 1789637247.6670763,
+    "mtime": 1789754434.9180498,
+    "seen": 1789754472.562593,
     "ast_hash": "d51d7d96fc7b26983b0f651346b005a7",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/trabajo-fin-de-master/lluvia-de-ideas.md": {
-    "mtime": 1789637089.248381,
-    "seen": 1789637247.6670728,
+    "mtime": 1789754434.907999,
+    "seen": 1789754472.562591,
     "ast_hash": "17594d563c0fcff15608a9cb768f83e2",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/trabajo-fin-de-master/main.pdf": {
-    "mtime": 1789637089.2563808,
-    "seen": 1789637247.6671698,
+    "mtime": 1789754434.915999,
+    "seen": 1789754472.5626955,
     "ast_hash": "e0132452c58ef71d4723a71fe1d41523",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/trabajo-fin-de-master/propuesta-tutoria-sara-rodriguez.md": {
-    "mtime": 1789637089.257779,
-    "seen": 1789637247.6670778,
+    "mtime": 1789754434.9180498,
+    "seen": 1789754472.562594,
     "ast_hash": "f082d171903ec3b47ec3e815ef07d2ed",
     "semantic_hash": ""
   },
   "graphify-out/memory/query_20260914_113442_2fa71a59_imdea_arlet_contrato_doctorado_correo_bisite_permi.md": {
-    "mtime": 1789637088.7792916,
-    "seen": 1789637247.6670055,
+    "mtime": 1789754434.3853045,
+    "seen": 1789754472.5625656,
     "ast_hash": "06e319f42f0c106135afdbb07ea085ef",
     "semantic_hash": ""
   },
   "docencia-espanol/miniescuela/plan-financiero.md": {
-    "mtime": 1789637088.6043808,
-    "seen": 1789637247.6669908,
+    "mtime": 1789754434.247999,
+    "seen": 1789754472.5625541,
     "ast_hash": "43cb80951dfb53cb2c692531a644ad3d",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/bibliografia-oficial.md": {
-    "mtime": 1789639734.3427591,
-    "seen": 1789639765.9918928,
+    "mtime": 1789754434.395999,
+    "seen": 1789754472.562573,
     "ast_hash": "7a398c68df158553f1ddc0ded2b22458",
     "semantic_hash": ""
   }
