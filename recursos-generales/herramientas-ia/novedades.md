@@ -169,7 +169,13 @@ patrón de escritura atómica que `mark-pr-reviewed.sh`) y, si han
 pasado 7+ días o nunca se ha corrido, le pide a la sesión que ejecute
 la skill `fewer-permission-prompts` sola, sin que Angel tenga que
 acordarse de pedirlo. `.claude/hooks/mark-permission-scan.sh` escribe
-el marcador al terminar.
+el marcador al terminar, y **lo comitea y sube él mismo** (git add +
+commit + push, solo ese archivo, directo a la rama activa, con
+reintento tras rebase si el push choca) — no depende de que la sesión
+recuerde subirlo aparte. Ver la entrada de esa misma fecha sobre la
+reconstrucción de la Routine del Radar para el porqué de este diseño
+(costó 3 rondas de revisión encontrar que la versión con instrucción
+manual perdía el marcador en el caso más común).
 
 **Por qué le sirve a Angel:** lo pidió explícitamente ("quiero esto
 para todas las sesiones siempre activa"). No es literal "cada sesión"

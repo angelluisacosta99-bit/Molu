@@ -49,36 +49,60 @@ mv -f "$TMP" "$MARKER" || exit 1
 
 echo "Marcador escrito: fewer-permission-prompts corrida el $(date -u +%Y-%m-%dT%H:%M:%SZ) ($SUMMARY)"
 
-# Comitear y subir SOLO este archivo -- nunca arrastrar otros cambios
-# sin comitear que la sesión pueda tener en curso.
-if ! git -C "${CLAUDE_PROJECT_DIR:-.}" rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+# El commit se acota a este único archivo (git commit -- "$MARKER_REL"),
+# pero `git push` sube el estado completo de la rama, no solo este
+# commit -- si la sesión tenía otros commits locales sin subir en la
+# misma rama, este script los publica también. Aceptado a propósito:
+# este hook solo tiene sentido invocarlo en una sesión que ya está
+# trabajando (y por tanto subiendo) en esa rama con normalidad, igual
+# que el resto de este repo empuja cambios sin esperar a acumular un
+# lote.
+GIT() { timeout 15 git -C "${CLAUDE_PROJECT_DIR:-.}" "$@"; }
+
+if ! GIT rev-parse --is-inside-work-tree >/dev/null 2>&1; then
   echo "Aviso: no es un repo git, el marcador se queda solo en local." >&2
   exit 0
 fi
 
-git -C "${CLAUDE_PROJECT_DIR:-.}" add -- "$MARKER_REL" || {
+GIT add -- "$MARKER_REL" || {
   echo "Aviso: no se pudo git add el marcador, se queda solo en local." >&2
   exit 0
 }
 
-if git -C "${CLAUDE_PROJECT_DIR:-.}" diff --cached --quiet -- "$MARKER_REL"; then
+if GIT diff --cached --quiet -- "$MARKER_REL"; then
   echo "Marcador sin cambios respecto al commit anterior, nada que subir."
   exit 0
 fi
 
-if ! git -C "${CLAUDE_PROJECT_DIR:-.}" commit -m "Actualizar marcador de fewer-permission-prompts ($SUMMARY)" -- "$MARKER_REL" >/dev/null 2>&1; then
+if ! GIT commit -m "Actualizar marcador de fewer-permission-prompts ($SUMMARY)" -- "$MARKER_REL" >/dev/null 2>&1; then
   echo "Aviso: git commit del marcador falló, se queda solo en local." >&2
   exit 0
 fi
 
-BRANCH="$(git -C "${CLAUDE_PROJECT_DIR:-.}" branch --show-current 2>/dev/null)"
+BRANCH="$(GIT branch --show-current 2>/dev/null)"
 if [ -z "$BRANCH" ]; then
   echo "Aviso: HEAD separado, no se puede subir el marcador (queda comiteado en local)." >&2
   exit 0
 fi
 
-if timeout 30 git -C "${CLAUDE_PROJECT_DIR:-.}" push origin "$BRANCH" >/dev/null 2>&1; then
+if GIT push origin "$BRANCH" >/dev/null 2>&1; then
   echo "Marcador comiteado y subido a $BRANCH."
-else
-  echo "Aviso: git push del marcador falló o se agotó el tiempo (queda comiteado en local, sin subir)." >&2
+  exit 0
 fi
+
+# Un solo reintento tras traer lo nuevo del remoto -- cubre el caso más
+# probable de rechazo (la rama avanzó mientras tanto, ej. otra sesión
+# subió su propio marcador o un rebuild de graphify-out) sin reintentos
+# sin cota. Si el rebase choca (conflicto real en el propio marcador,
+# muy improbable en un JSON de 2 campos pero posible), se aborta y se
+# deja todo como estaba -- nunca se fuerza un push.
+if GIT fetch origin "$BRANCH" >/dev/null 2>&1 && GIT rebase "origin/$BRANCH" >/dev/null 2>&1; then
+  if GIT push origin "$BRANCH" >/dev/null 2>&1; then
+    echo "Marcador comiteado y subido a $BRANCH (tras un rebase)."
+    exit 0
+  fi
+else
+  GIT rebase --abort >/dev/null 2>&1
+fi
+
+echo "Aviso: git push del marcador falló incluso tras reintentar (queda comiteado en local, sin subir)." >&2
