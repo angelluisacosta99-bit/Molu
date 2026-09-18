@@ -42,9 +42,9 @@
     "semantic_hash": ""
   },
   ".claude/settings.json": {
-    "mtime": 1789756949.9153202,
-    "seen": 1789767071.2210305,
-    "ast_hash": "0c63da850ce186c9b377a91df153cd4a",
+    "mtime": 1789767690.9106045,
+    "seen": 1789767775.9614978,
+    "ast_hash": "48bc395d29ac1b456af694cb1d96fce6",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/scripts/command-metadata.json": {
@@ -522,9 +522,9 @@
     "semantic_hash": ""
   },
   ".agents/skills/cavecrew/SKILL.md": {
-    "mtime": 1789754433.9280894,
-    "seen": 1789754472.5623426,
-    "ast_hash": "f184873cd9c507fa872cc86fd36722e3",
+    "mtime": 1789767591.4545987,
+    "seen": 1789767775.9615846,
+    "ast_hash": "24f48c50a000b2f29ddd05cfd237bc92",
     "semantic_hash": ""
   },
   ".agents/skills/caveman/README.md": {
@@ -630,15 +630,15 @@
     "semantic_hash": ""
   },
   ".claude/agents/cavecrew-investigator.md": {
-    "mtime": 1789754433.9287212,
-    "seen": 1789754472.562359,
-    "ast_hash": "d7f6af8a21a84244710d19b65fd1effa",
+    "mtime": 1789767563.338597,
+    "seen": 1789767775.9616005,
+    "ast_hash": "64ab4f5c72dc151f2c27e75457850a18",
     "semantic_hash": ""
   },
   ".claude/agents/cavecrew-reviewer.md": {
-    "mtime": 1789754433.9287212,
-    "seen": 1789754472.56236,
-    "ast_hash": "20a28dd438babfa70be41fac696220b2",
+    "mtime": 1789767566.2145972,
+    "seen": 1789767775.9616013,
+    "ast_hash": "85e8447c06b901a38490fb112e907ac1",
     "semantic_hash": ""
   },
   ".claude/skills/ejercicio-interactivo/SKILL.md": {
@@ -894,9 +894,9 @@
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1789754433.930901,
-    "seen": 1789754472.562399,
-    "ast_hash": "d6c67949386c5ab33102d7c9781eb7b2",
+    "mtime": 1789767751.1746082,
+    "seen": 1789767775.961663,
+    "ast_hash": "667ae5ffc5ca25e8d9f814e87784299a",
     "semantic_hash": ""
   },
   "DESIGN.md": {
@@ -2490,15 +2490,15 @@
     "semantic_hash": ""
   },
   "plugins/caveman-cavecrew/agents/cavecrew-investigator.md": {
-    "mtime": 1789767065.5758555,
-    "seen": 1789767071.2213635,
-    "ast_hash": "d7f6af8a21a84244710d19b65fd1effa",
+    "mtime": 1789767572.8865976,
+    "seen": 1789767775.961848,
+    "ast_hash": "64ab4f5c72dc151f2c27e75457850a18",
     "semantic_hash": ""
   },
   "plugins/caveman-cavecrew/agents/cavecrew-reviewer.md": {
-    "mtime": 1789767065.5758555,
-    "seen": 1789767071.2213643,
-    "ast_hash": "20a28dd438babfa70be41fac696220b2",
+    "mtime": 1789767575.9425979,
+    "seen": 1789767775.9618487,
+    "ast_hash": "85e8447c06b901a38490fb112e907ac1",
     "semantic_hash": ""
   },
   "plugins/caveman-cavecrew/skills/cavecrew/README.md": {
@@ -2508,9 +2508,9 @@
     "semantic_hash": ""
   },
   "plugins/caveman-cavecrew/skills/cavecrew/SKILL.md": {
-    "mtime": 1789767065.5761836,
-    "seen": 1789767071.2213657,
-    "ast_hash": "f184873cd9c507fa872cc86fd36722e3",
+    "mtime": 1789767595.878599,
+    "seen": 1789767775.9618506,
+    "ast_hash": "24f48c50a000b2f29ddd05cfd237bc92",
     "semantic_hash": ""
   },
   "plugins/caveman-cavecrew/skills/caveman/README.md": {
@@ -2523,6 +2523,12 @@
     "mtime": 1789767065.5762851,
     "seen": 1789767071.2213676,
     "ast_hash": "5c05422ff18a4b8a75d4f78725a7ae87",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/CLAUDE.md": {
+    "mtime": 1789767729.554607,
+    "seen": 1789767775.9616683,
+    "ast_hash": "b459e88313c8d97de768ea5f6f8a8f73",
     "semantic_hash": ""
   }
 }

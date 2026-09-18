@@ -42,9 +42,9 @@
     "semantic_hash": ""
   },
   ".claude/settings.json": {
-    "mtime": 1789767690.9106045,
-    "seen": 1789767775.9614978,
-    "ast_hash": "48bc395d29ac1b456af694cb1d96fce6",
+    "mtime": 1789768041.8306255,
+    "seen": 1789768082.6425645,
+    "ast_hash": "9bb90853692d05c0ee33d81c4011678c",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/scripts/command-metadata.json": {
@@ -2016,9 +2016,9 @@
     "semantic_hash": ""
   },
   "recursos-generales/herramientas-ia/novedades.md": {
-    "mtime": 1789767065.5762851,
-    "seen": 1789767071.2213724,
-    "ast_hash": "b346b4d3158e67e1acd21a899135bf08",
+    "mtime": 1789768061.7146266,
+    "seen": 1789768082.6429398,
+    "ast_hash": "9f1b96d20bf290fcc0c07d8e3da57f13",
     "semantic_hash": ""
   },
   "recursos-generales/herramientas-ia/vercel-web-interface-guidelines.md": {
@@ -2529,6 +2529,24 @@
     "mtime": 1789767729.554607,
     "seen": 1789767775.9616683,
     "ast_hash": "b459e88313c8d97de768ea5f6f8a8f73",
+    "semantic_hash": ""
+  },
+  ".claude/.fewer-permission-prompts-last-run.json": {
+    "mtime": 1789768048.6931815,
+    "seen": 1789768082.6425476,
+    "ast_hash": "fa8ae94a56271965e3f2e957083ce3e2",
+    "semantic_hash": ""
+  },
+  ".claude/hooks/fewer-permission-prompts-reminder.sh": {
+    "mtime": 1789767994.9066226,
+    "seen": 1789768082.642554,
+    "ast_hash": "0e96193fad105aa514cc6fe9fd95f340",
+    "semantic_hash": ""
+  },
+  ".claude/hooks/mark-permission-scan.sh": {
+    "mtime": 1789767979.8946218,
+    "seen": 1789768082.6425555,
+    "ast_hash": "c4e222def5e41416bc0e32f17373b8d5",
     "semantic_hash": ""
   }
 }
