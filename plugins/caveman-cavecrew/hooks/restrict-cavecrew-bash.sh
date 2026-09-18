@@ -1,7 +1,10 @@
 #!/bin/bash
 # PreToolUse hook para Bash, pero solo actúa sobre dos subagentes
 # concretos: cavecrew-investigator y cavecrew-reviewer
-# (.claude/agents/cavecrew-{investigator,reviewer}.md). Ambos se
+# (agents/cavecrew-{investigator,reviewer}.md dentro de este plugin,
+# instalados bajo $CLAUDE_PLUGIN_ROOT/agents/ -- copia empaquetada de
+# .claude/agents/cavecrew-{investigator,reviewer}.md en el repo Molu).
+# Ambos se
 # autodescriben "solo lectura"/"sin comandos que mutan", pero el campo
 # `tools:` de un subagente no admite acotar `Bash` a subcomandos (a
 # diferencia del sistema de permisos general, que sí soporta

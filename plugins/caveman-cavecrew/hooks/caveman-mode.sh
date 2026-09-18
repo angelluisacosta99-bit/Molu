@@ -25,9 +25,18 @@
 # .claude/hooks/caveman-mode.sh + .claude/skills/caveman) hay que
 # saltarse la inyección aquí -- si no, el contexto "CAVEMAN MODE
 # ACTIVE" se duplica en cada arranque de sesión (dos copias del mismo
-# SKILL.md, tokens desperdiciados). Se detecta comprobando si el propio
-# repo anfitrión ya tiene esa skill nativa en su ruta de siempre.
-if [ -r "${CLAUDE_PROJECT_DIR:-.}/.claude/skills/caveman/SKILL.md" ]; then
+# SKILL.md, tokens desperdiciados).
+#
+# No basta con mirar si existe .claude/skills/caveman/SKILL.md: un
+# repo podría tener ese archivo solo para invocación manual (/caveman)
+# sin ningún hook de SessionStart que lo dispare solo -- en ese caso
+# saltarse la inyección aquí dejaría el plugin sin hacer lo único que
+# promete (activarse solo). Se exige ver AMBAS cosas -- el SKILL.md Y
+# el script de hook con el mismo nombre que esta copia -- como señal de
+# que el repo anfitrión ya tiene el mecanismo completo duplicado, no
+# solo la skill suelta.
+if [ -r "${CLAUDE_PROJECT_DIR:-.}/.claude/skills/caveman/SKILL.md" ] \
+  && [ -r "${CLAUDE_PROJECT_DIR:-.}/.claude/hooks/caveman-mode.sh" ]; then
   exit 0
 fi
 
