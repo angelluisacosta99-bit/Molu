@@ -2544,9 +2544,9 @@
     "semantic_hash": ""
   },
   ".claude/hooks/mark-permission-scan.sh": {
-    "mtime": 1789771068.4548054,
-    "seen": 1789771086.0501807,
-    "ast_hash": "0ac89103ee13f635c39a5526cac793fa",
+    "mtime": 1789771395.4148247,
+    "seen": 1789771416.9049687,
+    "ast_hash": "4a30a68cb4aed5aa8809220ec01718fb",
     "semantic_hash": ""
   }
 }
