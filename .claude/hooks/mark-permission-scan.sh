@@ -120,13 +120,17 @@ fi
 # sin cota. Si el rebase choca (conflicto real en el propio marcador,
 # muy improbable en un JSON de 2 campos pero posible), se aborta y se
 # deja todo como estaba -- nunca se fuerza un push.
-if GIT_NET fetch origin "$BRANCH" >/dev/null 2>&1 && GIT_REBASE rebase "origin/$BRANCH" >/dev/null 2>&1; then
-  if GIT_NET push origin "$BRANCH" >/dev/null 2>&1; then
-    echo "Marcador comiteado y subido a $BRANCH (tras un rebase)."
-    exit 0
+if GIT_NET fetch origin "$BRANCH" >/dev/null 2>&1; then
+  if GIT_REBASE rebase "origin/$BRANCH" >/dev/null 2>&1; then
+    if GIT_NET push origin "$BRANCH" >/dev/null 2>&1; then
+      echo "Marcador comiteado y subido a $BRANCH (tras un rebase)."
+      exit 0
+    fi
+  else
+    # Solo abortar si de verdad se llegó a iniciar un rebase -- si fue
+    # el fetch el que falló, no hay nada que abortar.
+    GIT_REBASE rebase --abort >/dev/null 2>&1
   fi
-else
-  GIT_REBASE rebase --abort >/dev/null 2>&1
 fi
 
 echo "Aviso: git push del marcador falló incluso tras reintentar (queda comiteado en local, sin subir)." >&2
