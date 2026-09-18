@@ -57,15 +57,31 @@ echo "Marcador escrito: fewer-permission-prompts corrida el $(date -u +%Y-%m-%dT
 # trabajando (y por tanto subiendo) en esa rama con normalidad, igual
 # que el resto de este repo empuja cambios sin esperar a acumular un
 # lote.
-# Timeout corto para comandos locales (rev-parse/add/diff/commit/branch
-# -- nunca tocan la red, 15s es de sobra); timeout más largo aparte
-# para push/fetch, que sí van por red y pueden tener que mover commits
-# grandes ya en cola (este repo empuja regeneraciones de graphify-out
-# de cientos de miles de líneas) -- un único timeout de 15s para todo
-# le quitaba margen justo al push, la operación que este script existe
-# para garantizar.
+# Tres presupuestos de timeout distintos, no uno solo para todo:
+# - GIT (15s): comandos locales puros (add/diff/commit/branch) que
+#   nunca tocan disco pesado ni red.
+# - GIT_REBASE (30s): rebase/abort son locales pero pueden tener que
+#   reaplicar un commit grande ya en cola (este repo empuja
+#   regeneraciones de graphify-out de cientos de miles de líneas) --
+#   más margen que un comando trivial, sin llegar al de red.
+# - GIT_NET (30s): push/fetch, que sí van por red.
+# Nota sobre el límite externo: la propia llamada a este script desde
+# la sesión pasa por el Bash tool, que tiene su propio timeout (120s
+# por defecto) fuera del control de este script -- sumando el peor
+# caso de todos los pasos (varios locales + fetch + rebase + reintento
+# de push) se puede superar esa cota externa en una red muy lenta. No
+# se persigue una garantía matemática de quedar siempre por debajo:
+# encoger más los timeouts de red para "caber seguro" reintroduciría
+# el problema original (un push legítimamente grande fallando por
+# quedarse corto de tiempo). Si el Bash tool mata este script a mitad,
+# el fallo es seguro igual -- el marcador ya quedó escrito en el JSON
+# local antes de tocar git (líneas de arriba), nunca se pierde el
+# dato, solo no llega a subirse esta vez y el recordatorio se repite
+# la próxima sesión -- exactamente el coste "best-effort" que este
+# hook ya asume desde su diseño, no una regresión nueva.
 GIT() { timeout 15 git -C "${CLAUDE_PROJECT_DIR:-.}" "$@"; }
-GIT_NET() { timeout 60 git -C "${CLAUDE_PROJECT_DIR:-.}" "$@"; }
+GIT_REBASE() { timeout 30 git -C "${CLAUDE_PROJECT_DIR:-.}" "$@"; }
+GIT_NET() { timeout 30 git -C "${CLAUDE_PROJECT_DIR:-.}" "$@"; }
 
 if ! GIT rev-parse --is-inside-work-tree >/dev/null 2>&1; then
   echo "Aviso: no es un repo git, el marcador se queda solo en local." >&2
@@ -104,13 +120,13 @@ fi
 # sin cota. Si el rebase choca (conflicto real en el propio marcador,
 # muy improbable en un JSON de 2 campos pero posible), se aborta y se
 # deja todo como estaba -- nunca se fuerza un push.
-if GIT_NET fetch origin "$BRANCH" >/dev/null 2>&1 && GIT rebase "origin/$BRANCH" >/dev/null 2>&1; then
+if GIT_NET fetch origin "$BRANCH" >/dev/null 2>&1 && GIT_REBASE rebase "origin/$BRANCH" >/dev/null 2>&1; then
   if GIT_NET push origin "$BRANCH" >/dev/null 2>&1; then
     echo "Marcador comiteado y subido a $BRANCH (tras un rebase)."
     exit 0
   fi
 else
-  GIT rebase --abort >/dev/null 2>&1
+  GIT_REBASE rebase --abort >/dev/null 2>&1
 fi
 
 echo "Aviso: git push del marcador falló incluso tras reintentar (queda comiteado en local, sin subir)." >&2
