@@ -42,9 +42,9 @@
     "semantic_hash": ""
   },
   ".claude/settings.json": {
-    "mtime": 1789768041.8306255,
-    "seen": 1789768082.6425645,
-    "ast_hash": "9bb90853692d05c0ee33d81c4011678c",
+    "mtime": 1789851337.838532,
+    "seen": 1789851525.3957691,
+    "ast_hash": "ff1db20cd5a52eed0abef736dbe53a0b",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/scripts/command-metadata.json": {
@@ -636,9 +636,9 @@
     "semantic_hash": ""
   },
   ".claude/agents/cavecrew-reviewer.md": {
-    "mtime": 1789805926.2445762,
-    "seen": 1789805962.5992258,
-    "ast_hash": "b4bdcc329270eddb01700055e4ef3200",
+    "mtime": 1789851402.5145304,
+    "seen": 1789851525.3958995,
+    "ast_hash": "66d72a8f73376d9e01febf7f2388e6c1",
     "semantic_hash": ""
   },
   ".claude/skills/ejercicio-interactivo/SKILL.md": {
@@ -2016,9 +2016,9 @@
     "semantic_hash": ""
   },
   "recursos-generales/herramientas-ia/novedades.md": {
-    "mtime": 1789805951.708577,
-    "seen": 1789805962.59958,
-    "ast_hash": "31e2cf8f1e48612d5bf09e956d60c072",
+    "mtime": 1789851493.7785285,
+    "seen": 1789851525.3961926,
+    "ast_hash": "fe1d6b4da3e841942d6bb8ca04fe9344",
     "semantic_hash": ""
   },
   "recursos-generales/herramientas-ia/vercel-web-interface-guidelines.md": {
@@ -2466,9 +2466,9 @@
     "semantic_hash": ""
   },
   "plugins/caveman-cavecrew/hooks.json": {
-    "mtime": 1789767065.5758555,
-    "seen": 1789767071.221117,
-    "ast_hash": "a872adf087bac3339dc38d9a0e249cae",
+    "mtime": 1789851342.602532,
+    "seen": 1789851525.3958712,
+    "ast_hash": "9bff9b2fcb0f96015f3346c8435a5412",
     "semantic_hash": ""
   },
   "plugins/caveman-cavecrew/hooks/caveman-mode.sh": {
@@ -2496,9 +2496,9 @@
     "semantic_hash": ""
   },
   "plugins/caveman-cavecrew/agents/cavecrew-reviewer.md": {
-    "mtime": 1789805934.4641938,
-    "seen": 1789805962.5995672,
-    "ast_hash": "b4bdcc329270eddb01700055e4ef3200",
+    "mtime": 1789851406.8049285,
+    "seen": 1789851525.39618,
+    "ast_hash": "66d72a8f73376d9e01febf7f2388e6c1",
     "semantic_hash": ""
   },
   "plugins/caveman-cavecrew/skills/cavecrew/README.md": {
@@ -2547,6 +2547,42 @@
     "mtime": 1789771814.4108498,
     "seen": 1789771833.15151,
     "ast_hash": "46dd7c1d492e5da6708739f434d7f9a9",
+    "semantic_hash": ""
+  },
+  "plugins/caveman-cavecrew/evals/results/2026-09-19T12-54-59-381Z/aggregate-result.json": {
+    "mtime": 1789822538.3191402,
+    "seen": 1789822738.173899,
+    "ast_hash": "d67adff74442e5a7b613b9f71c5a18dc",
+    "semantic_hash": ""
+  },
+  "plugins/caveman-cavecrew/evals/caveman-terseness/graders/criteria.md": {
+    "mtime": 1789822494.809416,
+    "seen": 1789822738.174171,
+    "ast_hash": "4877554b735840e4bf987aa80ba85cdc",
+    "semantic_hash": ""
+  },
+  "plugins/caveman-cavecrew/evals/caveman-terseness/prompt.md": {
+    "mtime": 1789822729.0654302,
+    "seen": 1789822738.174172,
+    "ast_hash": "b4135ff72e0ef497bdb898c3647c3720",
+    "semantic_hash": ""
+  },
+  "plugins/caveman-cavecrew/evals/results/2026-09-19T12-54-59-381Z/report.html": {
+    "mtime": 1789822538.3250275,
+    "seen": 1789822738.174173,
+    "ast_hash": "02c82a840753ede489278d75ef44e0bd",
+    "semantic_hash": ""
+  },
+  ".claude/hooks/restrict-cavecrew-reviewer-memory.sh": {
+    "mtime": 1789852014.8505166,
+    "seen": 1789852037.6225367,
+    "ast_hash": "1ed08b2d18d2baf2cf70fe08916d8a89",
+    "semantic_hash": ""
+  },
+  "plugins/caveman-cavecrew/hooks/restrict-cavecrew-reviewer-memory.sh": {
+    "mtime": 1789852027.820633,
+    "seen": 1789852037.6226447,
+    "ast_hash": "1ed08b2d18d2baf2cf70fe08916d8a89",
     "semantic_hash": ""
   }
 }

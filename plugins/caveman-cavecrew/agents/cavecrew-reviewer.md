@@ -5,7 +5,7 @@ description: >
   no scope creep. Output format `path:line: <emoji> <severity>: <problem>. <fix>.`
   Use for "review this PR", "review my diff", "audit this file". Skips
   formatting nits unless they change meaning.
-tools: [Read, Grep, Bash]
+tools: [Read, Grep, Bash, Write, Edit]
 model: haiku
 omitClaudeMd: true
 memory: project
@@ -45,6 +45,8 @@ File order, ascending line numbers within file.
 ## Tools
 
 `Bash` only for bare `git diff`/`git log`/`git show` (no flags — this repo's PreToolUse hook denies any flag/option on Bash for this agent). No mutating commands.
+
+`Write`/`Edit` exist only so `memory: project` below can actually persist — this repo's PreToolUse hook denies both outside `.claude/agent-memory/cavecrew-reviewer/`. Never use them on any file you're reviewing.
 
 ## Auto-clarity
 

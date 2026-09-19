@@ -125,11 +125,54 @@ activarlo (los otros dos, `-investigator`/`-builder`, se quedan sin
 memoria: no revisan código en el sentido de acumular patrones de
 fallo). Añadido `memory: project` al frontmatter y una sección
 "Memory" en el cuerpo del agente indicándole que consulte su propia
-memoria antes de revisar y anote hallazgos nuevos al terminar — sin
-esa instrucción explícita, el directorio existiría pero el agente no
-lo usaría de forma consistente. Mismo archivo espejado en
-`plugins/caveman-cavecrew/agents/cavecrew-reviewer.md`. Pendiente de
-verificar en una revisión real qué escribe en `.claude/agent-memory/`.
+memoria antes de revisar y anote hallazgos nuevos al terminar. Mismo
+archivo espejado en `plugins/caveman-cavecrew/agents/cavecrew-reviewer.md`.
+
+**Verificado el 2026-09-19 con una revisión real — no escribió nada.**
+Se le pidió revisar un diff real; devolvió 1 hallazgo (nit) pero
+`.claude/agent-memory/` no se creó.
+
+**Causa raíz encontrada (mismo día, con un subagente de diagnóstico
+dedicado, no solo hipótesis):** la documentación oficial de Claude Code
+dice que `memory: project` concede `Read`/`Write`/`Edit` en automático,
+sin depender de `tools:` — pero un test directo ("intenta escribir una
+nota de memoria ahora mismo") confirmó **"Write or Edit tool available:
+NO"** en este entorno concreto. No es un límite de este repo, es un
+hueco entre lo que documenta Anthropic y lo que este entorno concede de
+verdad (puede ser una versión de harness distinta a la que describe la
+documentación — `CLAUDE_CODE_VERSION` en este contenedor marca 2.1.42,
+muy por detrás del CLI local instalado, 2.1.278).
+
+**Arreglo aplicado (pedido explícitamente por Angel), con Auto Mode
+pidiendo confirmación antes de tocar `.claude/hooks/` (categoría
+"Self-Modification" — aprobado por Angel):**
+- `tools:` de `cavecrew-reviewer` (nativo + plugin) pasa a
+  `[Read, Grep, Bash, Write, Edit]` — explícito, ya no depende de que
+  el entorno conceda memoria en automático.
+- Como Write/Edit sin acotar contradice el diseño "solo lectura" del
+  agente (mismo motivo que ya tiene `restrict-cavecrew-bash.sh` para
+  `Bash`), hook nuevo `.claude/hooks/restrict-cavecrew-reviewer-memory.sh`
+  (+ espejo en `plugins/caveman-cavecrew/hooks/`, registrado en ambos
+  `settings.json`/`hooks.json`): deniega cualquier `Write`/`Edit` de
+  `cavecrew-reviewer` fuera de `.claude/agent-memory/cavecrew-reviewer/`
+  — resuelve la ruta con `realpath -m` (a prueba de `../`), y falla
+  **cerrado** (deniega) en cuanto identifica que es `cavecrew-reviewer`
+  pero no puede verificar la ruta, al revés que el resto de hooks
+  best-effort de este repo — aquí fallar abierto sería el propio agravio
+  que el hook existe para evitar. 7/7 casos de prueba manuales (ruta
+  válida, ruta externa, traversal, otro agente, sin `agent_type`,
+  `file_path` ausente, la carpeta misma sin archivo) se comportaron como
+  se esperaba.
+
+**Sin verificar de punta a punta todavía — límite nuevo encontrado, no
+un supuesto.** Con el hook ya activo, un subagente real de
+`cavecrew-reviewer` invocado en esta misma sesión **seguía sin ver
+`Write`/`Edit`** (intentó `Bash` con `>`, bloqueado por
+`restrict-cavecrew-bash.sh` como se esperaba de ese hook, pero
+`Write`/`Edit` ni aparecía en su lista de herramientas) — el cambio de
+`tools:` a mitad de sesión no se recoge para un agente ya en curso;
+hace falta una sesión nueva para confirmar que funciona de verdad.
+Pendiente: repetir el mismo test de escritura en una sesión nueva.
 
 ### Projects (beta) y Claude Design/Slides/Docs en desktop y web (beta)
 
@@ -251,8 +294,25 @@ verdad en vez de suponerlo.
 propio contra una batería de casos de prueba y compara con/sin el
 plugin; `claude plugin eval init` genera los casos y criterios de
 evaluación solos. Directamente aplicable al plugin `caveman-cavecrew`
-que se acaba de empaquetar en este repo — pendiente de que Angel lo
-pruebe.
+que se acaba de empaquetar en este repo.
+
+**✅ Probado el 2026-09-19** — primer caso real
+(`plugins/caveman-cavecrew/evals/caveman-terseness/`, `--bare` +
+criterio escrito a mano: pregunta técnica de React re-render por
+objeto inline, exige explicación correcta + solución correcta + tono
+caveman). Resultado real, no hipotético: **con plugin 0.33 (1/3
+pases), sin plugin 1.00 (3/3) — Δ -0.67, coste $0.30, 6 runs.** Mirando
+la evidencia de los runs "with" que fallaron, el contenido técnico
+seguía siendo correcto (referencia nueva por objeto literal, fix con
+`useMemo`) pero más comprimido de lo que el juez LLM aceptó como
+"completo" bajo este criterio en concreto — puede ser el propio modo
+caveman recortando de más en este caso, o el criterio siendo más
+estricto de lo que debería (n=3 es poco para distinguir una cosa de la
+otra). No se ajusta el criterio ni se toca el plugin desde aquí sin
+que Angel lo decida — es su primera señal real con datos, no un
+veredicto. Informe completo en
+`plugins/caveman-cavecrew/evals/results/2026-09-19T12-54-59-381Z/report.html`
+(local, sin publicar).
 
 **Auto mode ya no es "preview"** — llegó en preview en marzo de 2026
 (semana 13) y para julio-agosto ya es el modo de permisos por defecto
@@ -309,8 +369,9 @@ una revisión de seguridad automática en cada sesión habría podido
 detectar alguno de esos antes de que hiciera falta una revisión
 externa.
 
-**Cómo probarlo:** tarjeta de instalación en el mismo turno de este
-registro.
+**✅ Activado el 2026-09-19** — Angel lo instaló desde Settings →
+Plugins (confirmado por captura de pantalla: mismo autor, David
+Dworken, versión 2.0.8, toggle encendido). Sin acción adicional.
 
 ---
 
@@ -451,10 +512,18 @@ de fiarse de una cuenta hecha a mano o por el modelo.
   su plan sí soporta plugins). El problema real: esta sesión de Claude
   Code en concreto nunca cargó sus herramientas (nunca apareció en la
   lista de herramientas ni en `ListPlugins`, pese a estar activado a
-  nivel de cuenta) — probable límite de sincronización de esta sesión
-  en particular, no del plan. Pendiente de confirmar si una sesión
-  nueva sí lo carga (Angel va a abrir una de todas formas por lo de
-  numpy.org/pandas.pydata.org — comprobar ahí de paso).
+  nivel de cuenta).
+
+  **Confirmado el 2026-09-19, en una sesión distinta:** sigue sin
+  cargar — `ListPlugins` con "exa" da vacío, y ni `ListConnectors` ni
+  `ToolSearch` encuentran ninguna herramienta de Exa disponible. Ya no
+  es "pendiente de confirmar si es solo esta sesión" — persiste entre
+  sesiones nuevas, no es una fluctuación puntual. Nada que este repo
+  pueda arreglar desde aquí (no es un ajuste de `.claude/settings.json`
+  ni de este código) — si a Angel le sigue importando Exa en concreto,
+  el siguiente paso sería desinstalar/reinstalar el plugin desde
+  `claude.ai/new#settings/customize-plugins`, o reportarlo con
+  `/feedback` como bug de sincronización de plugins.
 
 ### Revisados y descartados por redundancia o desajuste (por completitud)
 
