@@ -64,6 +64,20 @@ fi
 PROJECT_DIR="${CLAUDE_PROJECT_DIR:-$PWD}"
 TARGET_DIR="$(realpath -m -- "$PROJECT_DIR/.claude/agent-memory/cavecrew-reviewer")" || \
   deny "cavecrew-reviewer: no se pudo resolver su directorio de memoria -- denegado por defecto."
+
+# FILE_PATH puede llegar relativa (el Write/Edit tool no la fuerza a
+# absoluta en todos los casos) -- si se resuelve con realpath contra el
+# $PWD real de este hook en vez de anclarla a $PROJECT_DIR (igual que
+# TARGET_DIR arriba), diverge en cuanto el hook se invoque desde un
+# directorio de trabajo distinto de $CLAUDE_PROJECT_DIR (un worktree,
+# un cambio de cwd del harness) -- verificado en vivo como un falso
+# "denegado" real en ese caso, encontrado por revisión externa antes de
+# fusionar. Anclar explícitamente a $PROJECT_DIR cuando no es absoluta,
+# nunca dejarlo en el $PWD implícito de realpath.
+case "$FILE_PATH" in
+  /*) ;;
+  *) FILE_PATH="$PROJECT_DIR/$FILE_PATH" ;;
+esac
 RESOLVED_PATH="$(realpath -m -- "$FILE_PATH")" || \
   deny "cavecrew-reviewer: no se pudo resolver la ruta destino '$FILE_PATH' -- denegado por defecto."
 
