@@ -1,17 +1,17 @@
-# Graph Report - Molu  (2026-09-18)
+# Graph Report - Molu  (2026-09-19)
 
 ## Corpus Check
-- 289 files · ~1,368,443 words
+- 289 files · ~1,369,720 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 91 file(s) not represented in the graph (top: .csv 30, .arff 22, .pptx 15)
 
 ## Summary
-- 3444 nodes · 6890 edges · 243 communities (218 shown, 25 thin omitted)
+- 3459 nodes · 6905 edges · 246 communities (220 shown, 26 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 135 edges (avg confidence: 0.84)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `4cb81ece`
+- Built from commit: `f2fd0431`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -63,7 +63,7 @@
 - collectRepeatedSectionKickerCandidates
 - onAnnotDown
 - createLiveBrowserSessionState
-- live-copy-edit-agent.mjs
+- createManualApplyController
 - createLiveBrowserDomHelpers
 - sampleCssBackground
 - Critique Reference (Design Review)
@@ -96,7 +96,7 @@
 - graphify: Incremental Update & Cluster-only
 - Impeccable: Typeset
 - resolveLiveInjectionAnchor
-- detectHtml
+- detect-html.mjs
 - Revisión 2026-09-16: verificación sistemática del hueco del Camino D (con acceso de red ampliado)
 - Animate Reference (Motion Design)
 - Optativas elegidas este curso (6)
@@ -165,7 +165,7 @@
 - Ejercicios
 - Ejercicios
 - Ejercicios
-- irobot_2.py
+- funciones.py
 - guia-repaso-unidades-1-10.md
 - Ejercicios
 - Ejercicios
@@ -211,8 +211,8 @@
 - Ejercicios
 - Ejercicios
 - Q: PR 90 re-review: verify 5 prior derangement/conjTable fixes on current HEAD
-- detect-html.mjs
-- readLiveServerInfo
+- detect-text.mjs
+- createLiveSessionStore
 - Carta de candidatura espontánea — academias de español, Salamanca
 - Ejercicios
 - Asignaturas obligatorias (9)
@@ -255,22 +255,25 @@
 - 2026-09-07 — Búsqueda a mano: herramientas para posts de blog en plataformas de clases
 - caveman-cavecrew/hooks/restrict-cavecrew-bash.sh
 - caveman-cavecrew/hooks/caveman-mode.sh
-- funciones.py
+- StaticElement
+- 2026-09-19 — Pasada por el correo semanal "This week in Claude Code" (4 números, 21 ago-18 sep)
 - Materiales de referencia para clases de español
 - fewer-permission-prompts-reminder.sh
 - mark-permission-scan.sh
+- readLiveServerInfo
+- browser-script-parts.mjs
 
 ## God Nodes (most connected - your core abstractions)
 1. `detectHtml()` - 32 edges
-2. `Novedades de herramientas de IA` - 30 edges
+2. `Novedades de herramientas de IA` - 31 edges
 3. `runHook()` - 29 edges
-4. `initGlobalBar()` - 29 edges
-5. `setLiveState()` - 29 edges
+4. `setLiveState()` - 29 edges
+5. `initGlobalBar()` - 29 edges
 6. `el()` - 27 edges
-7. `buildInsertConfigureRow()` - 26 edges
-8. `collectBrowserFindings()` - 26 edges
+7. `collectBrowserFindings()` - 26 edges
+8. `buildInsertConfigureRow()` - 26 edges
 9. `handleKeyDown()` - 26 edges
-10. `resumeSession()` - 25 edges
+10. `showToast()` - 25 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `Aplicado (tras profundizar): hook que bloquea merge sin revisión` --references--> `deny()`  [INFERRED]
@@ -287,15 +290,15 @@
 ## Import Cycles
 - None detected.
 
-## Communities (243 total, 25 thin omitted)
+## Communities (246 total, 26 thin omitted)
 
 ### Community 0 - "live-browser.js"
 Cohesion: 0.03
 Nodes (120): applyGlobalBarLabelState(), applyPlaceholderSizingStyles(), applySvelteComponentVariantStyle(), bindEditBadgeProxy(), bufferToBase64(), buildCollapsible(), buildColorModels(), buildDesignHeader() (+112 more)
 
 ### Community 1 - "checks.mjs"
-Cohesion: 0.04
-Nodes (86): borderColorsFromStyle(), borderWidthsFromStyle(), checkClippedOverflow(), checkCreamPalette(), checkElementClippedOverflow(), checkElementClippedOverflowDOM(), checkElementGptBorderShadow(), checkElementGptBorderShadowDOM() (+78 more)
+Cohesion: 0.05
+Nodes (83): borderColorsFromStyle(), borderWidthsFromStyle(), checkBorders(), checkClippedOverflow(), checkCreamPalette(), checkElementBorders(), checkElementBordersDOM(), checkElementClippedOverflow() (+75 more)
 
 ### Community 2 - "index.mjs"
 Cohesion: 0.06
@@ -306,24 +309,24 @@ Cohesion: 0.07
 Nodes (65): applyOriginalAttrsToSvelteAnchor(), applyParamDefaults(), applyParamValue(), applyPlaceholderDimensions(), applySavedSessionMeta(), buildParamsPanel(), clampVariantIndex(), closedClipPath() (+57 more)
 
 ### Community 4 - "modern-screenshot.umd.js"
-Cohesion: 0.09
-Nodes (55): ae(), be(), bt(), Ce(), s(), Ct(), de(), dt() (+47 more)
+Cohesion: 0.07
+Nodes (62): ae(), be(), bt(), Ce(), s(), Ct(), de(), dt() (+54 more)
 
 ### Community 5 - "el"
 Cohesion: 0.08
 Nodes (51): actionLabel(), applyConfigureBarChrome(), bindConfigureCountPillTooltip(), bindConfigureInlineControlHover(), bindConfigureModifierPillHover(), buildConfigureActionControl(), buildConfigureCountControl(), buildConfigureRow() (+43 more)
 
 ### Community 6 - "manual-apply.mjs"
-Cohesion: 0.09
-Nodes (49): addOpToManualApplyChunk(), APPLY_EVENT_HARD_TIMEOUT_MS, APPLY_EVENT_SOFT_DEADLINE_MS, buildManualApplyAgentAction(), clearManualApplyTransaction(), collectManualApplyFiles(), compactManualApplyBatch(), compactManualApplyCandidates() (+41 more)
+Cohesion: 0.14
+Nodes (26): addOpToManualApplyChunk(), APPLY_EVENT_HARD_TIMEOUT_MS, APPLY_EVENT_SOFT_DEADLINE_MS, buildManualApplyAgentAction(), compactManualApplyBatch(), compactManualApplyCandidates(), compactManualApplyContext(), compactManualApplyEntry() (+18 more)
 
 ### Community 7 - "setLiveState"
 Cohesion: 0.08
 Nodes (69): abortSvelteComponentInjection(), applyEditing(), buildInsertPlaceholderSnapshotFromDom(), buildLocatorForLeaf(), buildPickedAnchorSnapshot(), cancelEditing(), cancelEditingToPicking(), cancelInsertConfigure() (+61 more)
 
 ### Community 8 - "live-commit-manual-edits.mjs"
-Cohesion: 0.10
-Nodes (49): allEntryIds(), argVal(), buildRepairBatch(), candidatesForEntry(), changedFilesSinceSnapshot(), clearAppliedEntries(), collectApplyOwnedFiles(), collectRollbackFiles() (+41 more)
+Cohesion: 0.06
+Nodes (81): allEntryIds(), argVal(), buildRepairBatch(), candidatesForEntry(), changedFilesSinceSnapshot(), clearAppliedEntries(), collectApplyOwnedFiles(), collectRollbackFiles() (+73 more)
 
 ### Community 9 - "design-system.mjs"
 Cohesion: 0.09
@@ -331,11 +334,11 @@ Nodes (49): addColorObject(), addDesignColor(), addRoundedScale(), addRoundedTok
 
 ### Community 10 - "impeccable-config.mjs"
 Cohesion: 0.10
-Nodes (47): applyDetectionConfigSource(), clampByte(), cleanIgnoreValueDisplay(), cloneDetectionConfig(), cloneRawDetectionConfig(), colorIgnoreKey(), DEFAULT_DETECTION_CONFIG, DETECTOR_CONFIG_KEYS (+39 more)
+Nodes (48): applyDetectionConfigSource(), clampByte(), cleanIgnoreValueDisplay(), cloneDetectionConfig(), cloneRawDetectionConfig(), colorIgnoreKey(), DEFAULT_DETECTION_CONFIG, DETECTOR_CONFIG_KEYS (+40 more)
 
 ### Community 11 - "live-server.mjs"
-Cohesion: 0.09
-Nodes (46): assembleLiveBrowserScript(), assertLiveBrowserScriptParts(), LIVE_BROWSER_SCRIPT_PARTS, readLiveBrowserScriptParts(), resolveLiveBrowserScriptParts(), acknowledgePendingEvent(), activeSessionSummaries(), agentPollingConnected() (+38 more)
+Cohesion: 0.10
+Nodes (40): acknowledgePendingEvent(), activeSessionSummaries(), agentPollingConnected(), annotRoot, args, broadcast(), broadcastAgentPollingIfChanged(), cancelQueuedAnonymousExitEvents() (+32 more)
 
 ### Community 12 - "svelte-component.mjs"
 Cohesion: 0.10
@@ -477,9 +480,9 @@ Nodes (15): beginEditPin(), buildAnnotationsForCapture(), buildPinElement(), can
 Cohesion: 0.20
 Nodes (14): createLiveBrowserSessionState(), clearHandled(), clearScrollY(), clearSession(), isHandled(), loadSession(), markHandled(), nextCheckpointRevision() (+6 more)
 
-### Community 47 - "live-copy-edit-agent.mjs"
-Cohesion: 0.10
-Nodes (39): applyMockWrites(), buildCopyEditBatchPrompt(), checkFrameworkSourceSyntax(), chooseCopyEditAgent(), COMMAND_AUTH_CACHE, commandAuthed(), commandExists(), compactBatchForPrompt() (+31 more)
+### Community 47 - "createManualApplyController"
+Cohesion: 0.15
+Nodes (23): clearManualApplyTransaction(), collectManualApplyFiles(), createManualApplyController(), cancelPendingEvents(), pruneStaleEvidence(), pushApplyEventAndWait(), referencedManualApplyEvidencePaths(), rejectDeferred() (+15 more)
 
 ### Community 48 - "createLiveBrowserDomHelpers"
 Cohesion: 0.19
@@ -534,8 +537,8 @@ Cohesion: 0.20
 Nodes (10): detectCsp(), INLINE_HEADER_SIGNALS, LAYOUT_EXTS, MONOREPO_HELPER_SIGNALS, NUXT_ROUTE_RULES_SIGNALS, NUXT_SECURITY_SIGNALS, SCAN_EXTS, SKIP_DIRS (+2 more)
 
 ### Community 62 - "detect-url.mjs"
-Cohesion: 0.18
-Nodes (22): detectUrl(), runVisualContrastFallback(), serializeDesignSystemForBrowser(), runRegexMatchers(), captureVisualContrastCandidate(), compareScreenshotContrast(), sanitizeScreenshotClip(), finding() (+14 more)
+Cohesion: 0.13
+Nodes (27): detectUrl(), runVisualContrastFallback(), serializeDesignSystemForBrowser(), runRegexMatchers(), captureVisualContrastCandidate(), compareScreenshotContrast(), sanitizeScreenshotClip(), finding() (+19 more)
 
 ### Community 63 - "pin.mjs"
 Cohesion: 0.25
@@ -586,8 +589,8 @@ Cohesion: 0.13
 Nodes (16): browserColorsClose(), browserHasDirectText(), browserRadiusTokens(), browserSampleText(), buildSelectorSegment(), checkElementDesignSystemDOM(), generateSelector(), isBrowserDesignColorAllowed() (+8 more)
 
 ### Community 75 - "parseRgb"
-Cohesion: 0.20
-Nodes (22): checkColors(), checkElementAIPaletteDOM(), checkElementColors(), checkElementColorsDOM(), checkElementGlow(), checkElementGlowDOM(), checkElementIconTile(), checkElementIconTileDOM() (+14 more)
+Cohesion: 0.22
+Nodes (21): checkColors(), checkElementAIPaletteDOM(), checkElementColors(), checkElementColorsDOM(), checkElementGlowDOM(), checkElementIconTile(), checkElementIconTileDOM(), checkGlow() (+13 more)
 
 ### Community 76 - "isScreenReaderOnlyTextStyle"
 Cohesion: 0.32
@@ -605,9 +608,9 @@ Nodes (9): Bolder Reference (Visual Amplification), Bolder AI Slop Trap Warning,
 Cohesion: 0.62
 Nodes (7): elementMatchesOriginalMarkup(), findLiveElementForOriginalMarkup(), findLiveElementFromAnchorSnapshot(), isUsableInjectionAnchor(), normalizeElementClassName(), parseOriginalMarkupElement(), resolveLiveInjectionAnchor()
 
-### Community 80 - "detectHtml"
-Cohesion: 0.08
-Nodes (11): buildStaticWindow(), collectStaticCssText(), StaticDocument, StaticElement, checkStaticPageTypography(), detectHtml(), checkHtmlPatterns(), ref_css_select (+3 more)
+### Community 80 - "detect-html.mjs"
+Cohesion: 0.09
+Nodes (18): buildStaticWindow(), collectStaticCssText(), StaticDocument, checkStaticPageTypography(), detectHtml(), STATIC_ELEMENT_RULES, checkElementGlow(), checkHtmlPatterns() (+10 more)
 
 ### Community 81 - "Revisión 2026-09-16: verificación sistemática del hueco del Camino D (con acceso de red ampliado)"
 Cohesion: 0.29
@@ -626,8 +629,8 @@ Cohesion: 0.40
 Nodes (5): graphify: GitHub Clone & Cross-repo Merge, graphify merge-graphs Command, graphify: Query, Path, Explain, save-result Work-Memory Loop (--outcome), Constrained Query Vocab Expansion
 
 ### Community 85 - "detect-antipatterns.mjs"
-Cohesion: 0.14
-Nodes (30): confirm(), detectCli(), formatFindings(), formatFindingSummary(), handleStdin(), printUsage(), loadDesignSystemForCwd(), parseFrontmatter() (+22 more)
+Cohesion: 0.11
+Nodes (33): confirm(), detectCli(), formatFindings(), formatFindingSummary(), handleStdin(), printUsage(), loadDesignSystemForCwd(), parseFrontmatter() (+25 more)
 
 ### Community 86 - ".agents/skills/cavecrew/SKILL.md"
 Cohesion: 0.13
@@ -829,9 +832,9 @@ Nodes (6): 8. De vacaciones, Ej. 29 — Conjuga el pretérito indefinido, Ej. 30
 Cohesion: 0.33
 Nodes (6): 9. Compras, Ej. 33 — Completa con el pronombre de objeto directo, Ej. 34 — Completa con el comparativo, Ej. 35 — ¿Qué prenda es?, Ej. 36 — Escribe el adjetivo contrario, Ejercicios
 
-### Community 149 - "irobot_2.py"
-Cohesion: 0.29
-Nodes (8): ang_degree(), dist(), odometry(), math, matplotlib_pyplot, pycreate2, telnetlib, tkinter
+### Community 149 - "funciones.py"
+Cohesion: 0.17
+Nodes (16): ang_degree(), automatico(), cuadrado(), dist(), get_entero(), graph(), ang_degree(), dist() (+8 more)
 
 ### Community 150 - "guia-repaso-unidades-1-10.md"
 Cohesion: 0.29
@@ -989,13 +992,13 @@ Nodes (5): 1. Comer fuera de casa, Ej. 1 — Mira los dibujos y escribe las comi
 Cohesion: 0.40
 Nodes (4): Answer, Outcome, Q: PR 90 re-review: verify 5 prior derangement/conjTable fixes on current HEAD, Source Nodes
 
-### Community 195 - "detect-html.mjs"
-Cohesion: 0.07
-Nodes (33): CSS_IN_JS_EXTENSIONS, extFromFilePath(), isNeutralBorderColor(), PAGE_ANALYZER_EXTS, REGEX_ANALYZERS, REGEX_MATCHERS, runTextContentAnalyzers(), shouldRunPageAnalyzers() (+25 more)
+### Community 195 - "detect-text.mjs"
+Cohesion: 0.12
+Nodes (20): CSS_IN_JS_EXTENSIONS, extFromFilePath(), isNeutralBorderColor(), PAGE_ANALYZER_EXTS, REGEX_ANALYZERS, REGEX_MATCHERS, runTextContentAnalyzers(), shouldRunPageAnalyzers() (+12 more)
 
-### Community 196 - "readLiveServerInfo"
-Cohesion: 0.18
-Nodes (19): isLiveServerPidReachable(), readLiveServerInfo(), completeCli(), completeThroughServer(), parseArgs(), readServerInfo(), collectManualApplyFiles(), manualApplyReplyCommand() (+11 more)
+### Community 196 - "createLiveSessionStore"
+Cohesion: 0.27
+Nodes (13): collectManualApplyFiles(), manualApplyReplyCommand(), manualApplyResumeHint(), parseArgs(), resumeCli(), summarizeManualApplyEvent(), createLiveSessionStore(), getReadableJournalPath() (+5 more)
 
 ### Community 197 - "Carta de candidatura espontánea — academias de español, Salamanca"
 Cohesion: 0.40
@@ -1153,33 +1156,41 @@ Nodes (4): 2026-09-07 — Búsqueda a mano: herramientas para posts de blog en p
 Cohesion: 0.83
 Nodes (3): allow(), deny(), restrict-cavecrew-bash.sh script
 
-### Community 239 - "funciones.py"
-Cohesion: 0.31
-Nodes (8): ang_degree(), automatico(), cuadrado(), dist(), get_entero(), graph(), sys, time
+### Community 240 - "2026-09-19 — Pasada por el correo semanal "This week in Claude Code" (4 números, 21 ago-18 sep)"
+Cohesion: 0.25
+Nodes (8): 2026-09-19 — Pasada por el correo semanal "This week in Claude Code" (4 números, 21 ago-18 sep), Fable 5.1 en Claude Code + ajuste de effort por modelo, Memoria persistente de subagentes (`memory: project|user|local`), Nota rápida: Fable 5.1 Build Days, `omitClaudeMd: true` en frontmatter de subagentes (2.1.x, semana 18 sep), Projects (beta) y Claude Design/Slides/Docs en desktop y web (beta), Reglas de Auto Mode en texto plano (`autoMode.hard_deny`/`soft_deny`), Remote Control desde el móvil (`claude rc`) — ya en uso de facto
 
 ### Community 243 - "mark-permission-scan.sh"
 Cohesion: 0.70
 Nodes (4): GIT(), GIT_NET(), GIT_REBASE(), mark-permission-scan.sh script
 
+### Community 244 - "readLiveServerInfo"
+Cohesion: 0.48
+Nodes (6): isLiveServerPidReachable(), readLiveServerInfo(), completeCli(), completeThroughServer(), parseArgs(), readServerInfo()
+
+### Community 245 - "browser-script-parts.mjs"
+Cohesion: 0.33
+Nodes (6): assembleLiveBrowserScript(), assertLiveBrowserScriptParts(), LIVE_BROWSER_SCRIPT_PARTS, readLiveBrowserScriptParts(), resolveLiveBrowserScriptParts(), loadBrowserScripts()
+
 ## Knowledge Gaps
-- **956 isolated node(s):** `HEADING_TAGS`, `LAYOUT_TRANSITION_PROPS`, `POSITIONED_CHILD_INTERACTIVE_SELECTOR`, `QUALITY_TEXT_TAGS`, `REPEATED_KICKER_CARD_CONTEXT_SELECTOR` (+951 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1162 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **25 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **963 isolated node(s):** `caveman-mode.sh script`, `fewer-permission-prompts-reminder.sh script`, `mark-pr-reviewed.sh script`, `session-end-status.sh script`, `session-start.sh script` (+958 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1176 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **26 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Novedades de herramientas de IA` connect `Novedades de herramientas de IA` to `2026-08-16 — Primera pasada del radar`, `2026-08-30 — Compactación de contexto: palancas oficiales para ahorrar tokens`, `2026-08-30 — Pasada del radar: dos funciones nativas nuevas, sin hallazgos de terceros`, `2026-09-07 — Búsqueda a mano: herramientas para posts de blog en plataformas de clases`, `hook-before-edit.mjs`, `RoombaController`, `2026-09-13 — Búsqueda exhaustiva: herramientas de investigación científica verificada para el máster`?**
-  _High betweenness centrality (0.031) - this node is a cross-community bridge._
+- **Why does `Novedades de herramientas de IA` connect `Novedades de herramientas de IA` to `2026-08-16 — Primera pasada del radar`, `2026-08-30 — Compactación de contexto: palancas oficiales para ahorrar tokens`, `2026-08-30 — Pasada del radar: dos funciones nativas nuevas, sin hallazgos de terceros`, `2026-09-07 — Búsqueda a mano: herramientas para posts de blog en plataformas de clases`, `2026-09-19 — Pasada por el correo semanal "This week in Claude Code" (4 números, 21 ago-18 sep)`, `hook-before-edit.mjs`, `RoombaController`, `2026-09-13 — Búsqueda exhaustiva: herramientas de investigación científica verificada para el máster`?**
+  _High betweenness centrality (0.012) - this node is a cross-community bridge._
 - **Why does `2026-08-16 — Segunda pasada: hooks vs. CLAUDE.md, y prácticas de la comunidad` connect `hook-before-edit.mjs` to `Novedades de herramientas de IA`?**
-  _High betweenness centrality (0.030) - this node is a cross-community bridge._
-- **Why does `deny()` connect `hook-before-edit.mjs` to `readConfig`?**
-  _High betweenness centrality (0.020) - this node is a cross-community bridge._
-- **What connects `HEADING_TAGS`, `LAYOUT_TRANSITION_PROPS`, `POSITIONED_CHILD_INTERACTIVE_SELECTOR` to the rest of the system?**
-  _956 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _High betweenness centrality (0.012) - this node is a cross-community bridge._
+- **What connects `caveman-mode.sh script`, `fewer-permission-prompts-reminder.sh script`, `mark-pr-reviewed.sh script` to the rest of the system?**
+  _963 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `live-browser.js` be split into smaller, more focused modules?**
   _Cohesion score 0.03319333423655331 - nodes in this community are weakly interconnected._
 - **Should `checks.mjs` be split into smaller, more focused modules?**
-  _Cohesion score 0.044148380355276906 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.045658263305322126 - nodes in this community are weakly interconnected._
 - **Should `index.mjs` be split into smaller, more focused modules?**
   _Cohesion score 0.06142410015649452 - nodes in this community are weakly interconnected._
+- **Should `resumeSession` be split into smaller, more focused modules?**
+  _Cohesion score 0.075 - nodes in this community are weakly interconnected._
