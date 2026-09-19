@@ -46,13 +46,11 @@ crecer" ya anotada más abajo). Los subagentes `cavecrew-investigator`/
 reglas (coaching, docencia, máster...) para hacer su trabajo — con
 `omitClaudeMd: true` arrancan con menos contexto y más rápido.
 
-**Cómo probarlo:** añadir la línea al frontmatter de
-`.claude/agents/cavecrew-*.md` y comparar con `/skill-doctor` o
-`/usage` si baja el coste de contexto por spawn. No aplicado todavía
-— pendiente de que Angel decida si quiere perder el acceso a las
-reglas del repo en esos tres subagentes (ninguna de las 3 referencia
-hoy nada de `CLAUDE.md` directamente, así que probablemente es seguro,
-pero es una decisión suya).
+**✅ Aplicado el 2026-09-19** — Angel pidió activarlo. Añadido a las 3
+(`.claude/agents/cavecrew-*.md`, y su espejo en
+`plugins/caveman-cavecrew/agents/`, que este repo mantiene sincronizado
+desde el PR #119/#121). Comparar con `/skill-doctor` o `/usage` más
+adelante si se quiere medir el ahorro real de contexto por spawn.
 
 ### Fable 5.1 en Claude Code + ajuste de effort por modelo
 
@@ -120,12 +118,18 @@ sesiones anteriores.
 lección" — `cavecrew-reviewer` podría acumular en su propia memoria
 los patrones de fallo ya vistos (los de `hook-hardening`, por
 ejemplo) sin depender de que la lección se guarde solo en el
-`SKILL.md`. No aplicado todavía — evaluar si conviene antes de
-tocar los 3 agentes de `cavecrew`.
+`SKILL.md`.
 
-**Cómo probarlo:** añadir `memory: project` al frontmatter de
-`.claude/agents/cavecrew-reviewer.md` y revisar qué escribe en
-`.claude/agent-memory/` tras una revisión real.
+**✅ Aplicado el 2026-09-19, solo en `cavecrew-reviewer`** — Angel pidió
+activarlo (los otros dos, `-investigator`/`-builder`, se quedan sin
+memoria: no revisan código en el sentido de acumular patrones de
+fallo). Añadido `memory: project` al frontmatter y una sección
+"Memory" en el cuerpo del agente indicándole que consulte su propia
+memoria antes de revisar y anote hallazgos nuevos al terminar — sin
+esa instrucción explícita, el directorio existiría pero el agente no
+lo usaría de forma consistente. Mismo archivo espejado en
+`plugins/caveman-cavecrew/agents/cavecrew-reviewer.md`. Pendiente de
+verificar en una revisión real qué escribe en `.claude/agent-memory/`.
 
 ### Projects (beta) y Claude Design/Slides/Docs en desktop y web (beta)
 

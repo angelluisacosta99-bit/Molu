@@ -624,21 +624,21 @@
     "semantic_hash": ""
   },
   ".claude/agents/cavecrew-builder.md": {
-    "mtime": 1789754433.9286482,
-    "seen": 1789754472.562358,
-    "ast_hash": "6f3649a6cc4db33c31dfff788703057f",
+    "mtime": 1789805923.4205763,
+    "seen": 1789805962.599222,
+    "ast_hash": "f4749a399e9b2261b9cb7ec8c2f7e3af",
     "semantic_hash": ""
   },
   ".claude/agents/cavecrew-investigator.md": {
-    "mtime": 1789767563.338597,
-    "seen": 1789767775.9616005,
-    "ast_hash": "64ab4f5c72dc151f2c27e75457850a18",
+    "mtime": 1789805922.3245761,
+    "seen": 1789805962.599224,
+    "ast_hash": "2af374651d510069ee2b0bfe704d53e3",
     "semantic_hash": ""
   },
   ".claude/agents/cavecrew-reviewer.md": {
-    "mtime": 1789767566.2145972,
-    "seen": 1789767775.9616013,
-    "ast_hash": "85e8447c06b901a38490fb112e907ac1",
+    "mtime": 1789805926.2445762,
+    "seen": 1789805962.5992258,
+    "ast_hash": "b4bdcc329270eddb01700055e4ef3200",
     "semantic_hash": ""
   },
   ".claude/skills/ejercicio-interactivo/SKILL.md": {
@@ -2016,9 +2016,9 @@
     "semantic_hash": ""
   },
   "recursos-generales/herramientas-ia/novedades.md": {
-    "mtime": 1789805292.1885607,
-    "seen": 1789805319.051964,
-    "ast_hash": "a93eae481419f91c084b05fe5c40cc80",
+    "mtime": 1789805951.708577,
+    "seen": 1789805962.59958,
+    "ast_hash": "31e2cf8f1e48612d5bf09e956d60c072",
     "semantic_hash": ""
   },
   "recursos-generales/herramientas-ia/vercel-web-interface-guidelines.md": {
@@ -2484,21 +2484,21 @@
     "semantic_hash": ""
   },
   "plugins/caveman-cavecrew/agents/cavecrew-builder.md": {
-    "mtime": 1789767065.5757215,
-    "seen": 1789767071.2213624,
-    "ast_hash": "6f3649a6cc4db33c31dfff788703057f",
+    "mtime": 1789805934.4618835,
+    "seen": 1789805962.5995634,
+    "ast_hash": "f4749a399e9b2261b9cb7ec8c2f7e3af",
     "semantic_hash": ""
   },
   "plugins/caveman-cavecrew/agents/cavecrew-investigator.md": {
-    "mtime": 1789767572.8865976,
-    "seen": 1789767775.961848,
-    "ast_hash": "64ab4f5c72dc151f2c27e75457850a18",
+    "mtime": 1789805934.4593318,
+    "seen": 1789805962.5995655,
+    "ast_hash": "2af374651d510069ee2b0bfe704d53e3",
     "semantic_hash": ""
   },
   "plugins/caveman-cavecrew/agents/cavecrew-reviewer.md": {
-    "mtime": 1789767575.9425979,
-    "seen": 1789767775.9618487,
-    "ast_hash": "85e8447c06b901a38490fb112e907ac1",
+    "mtime": 1789805934.4641938,
+    "seen": 1789805962.5995672,
+    "ast_hash": "b4bdcc329270eddb01700055e4ef3200",
     "semantic_hash": ""
   },
   "plugins/caveman-cavecrew/skills/cavecrew/README.md": {
