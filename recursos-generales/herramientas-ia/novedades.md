@@ -129,19 +129,50 @@ memoria antes de revisar y anote hallazgos nuevos al terminar. Mismo
 archivo espejado en `plugins/caveman-cavecrew/agents/cavecrew-reviewer.md`.
 
 **Verificado el 2026-09-19 con una revisión real — no escribió nada.**
-Se le pidió revisar un diff real (edición de este mismo archivo + una
-suite de eval nueva); devolvió 1 hallazgo (nit) pero
-`.claude/agent-memory/` no se creó. Confirma la sospecha que ya había
-quedado anotada en la revisión del PR que aplicó esto:
-`cavecrew-reviewer` solo tiene `tools: [Read, Grep, Bash]` — sin
-`Write`/`Edit` — así que aunque `memory: project` esté en el
-frontmatter, puede que no tenga con qué escribir su propia memoria (o,
-alternativa menos probable: un solo nit de config no le pareció un
-patrón lo bastante recurrente como para anotarlo — un test con un
-hallazgo claramente repetido haría falta para distinguir las dos
-causas). Un solo run no es concluyente — si a Angel le importa que esto
-funcione de verdad, el siguiente paso sería añadir `Write` (acotado a
-`.claude/agent-memory/`, no de más) y repetir la prueba.
+Se le pidió revisar un diff real; devolvió 1 hallazgo (nit) pero
+`.claude/agent-memory/` no se creó.
+
+**Causa raíz encontrada (mismo día, con un subagente de diagnóstico
+dedicado, no solo hipótesis):** la documentación oficial de Claude Code
+dice que `memory: project` concede `Read`/`Write`/`Edit` en automático,
+sin depender de `tools:` — pero un test directo ("intenta escribir una
+nota de memoria ahora mismo") confirmó **"Write or Edit tool available:
+NO"** en este entorno concreto. No es un límite de este repo, es un
+hueco entre lo que documenta Anthropic y lo que este entorno concede de
+verdad (puede ser una versión de harness distinta a la que describe la
+documentación — `CLAUDE_CODE_VERSION` en este contenedor marca 2.1.42,
+muy por detrás del CLI local instalado, 2.1.278).
+
+**Arreglo aplicado (pedido explícitamente por Angel), con Auto Mode
+pidiendo confirmación antes de tocar `.claude/hooks/` (categoría
+"Self-Modification" — aprobado por Angel):**
+- `tools:` de `cavecrew-reviewer` (nativo + plugin) pasa a
+  `[Read, Grep, Bash, Write, Edit]` — explícito, ya no depende de que
+  el entorno conceda memoria en automático.
+- Como Write/Edit sin acotar contradice el diseño "solo lectura" del
+  agente (mismo motivo que ya tiene `restrict-cavecrew-bash.sh` para
+  `Bash`), hook nuevo `.claude/hooks/restrict-cavecrew-reviewer-memory.sh`
+  (+ espejo en `plugins/caveman-cavecrew/hooks/`, registrado en ambos
+  `settings.json`/`hooks.json`): deniega cualquier `Write`/`Edit` de
+  `cavecrew-reviewer` fuera de `.claude/agent-memory/cavecrew-reviewer/`
+  — resuelve la ruta con `realpath -m` (a prueba de `../`), y falla
+  **cerrado** (deniega) en cuanto identifica que es `cavecrew-reviewer`
+  pero no puede verificar la ruta, al revés que el resto de hooks
+  best-effort de este repo — aquí fallar abierto sería el propio agravio
+  que el hook existe para evitar. 7/7 casos de prueba manuales (ruta
+  válida, ruta externa, traversal, otro agente, sin `agent_type`,
+  `file_path` ausente, la carpeta misma sin archivo) se comportaron como
+  se esperaba.
+
+**Sin verificar de punta a punta todavía — límite nuevo encontrado, no
+un supuesto.** Con el hook ya activo, un subagente real de
+`cavecrew-reviewer` invocado en esta misma sesión **seguía sin ver
+`Write`/`Edit`** (intentó `Bash` con `>`, bloqueado por
+`restrict-cavecrew-bash.sh` como se esperaba de ese hook, pero
+`Write`/`Edit` ni aparecía en su lista de herramientas) — el cambio de
+`tools:` a mitad de sesión no se recoge para un agente ya en curso;
+hace falta una sesión nueva para confirmar que funciona de verdad.
+Pendiente: repetir el mismo test de escritura en una sesión nueva.
 
 ### Projects (beta) y Claude Design/Slides/Docs en desktop y web (beta)
 
