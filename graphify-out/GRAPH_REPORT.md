@@ -1,7 +1,7 @@
 # Graph Report - Molu  (2026-09-19)
 
 ## Corpus Check
-- 289 files · ~1,369,845 words
+- 289 files · ~1,369,861 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 91 file(s) not represented in the graph (top: .csv 30, .arff 22, .pptx 15)
 
@@ -11,7 +11,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `c9c37b0e`
+- Built from commit: `0db822af`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -1153,7 +1153,7 @@ Cohesion: 0.70
 Nodes (4): GIT(), GIT_NET(), GIT_REBASE(), mark-permission-scan.sh script
 
 ## Knowledge Gaps
-- **965 isolated node(s):** `Scope`, `Workflow`, `Output (receipt)`, `Refusals (terminal lines)`, `Auto-clarity` (+960 more)
+- **965 isolated node(s):** `Cómo se usa`, ``omitClaudeMd: true` en frontmatter de subagentes (2.1.x, semana 18 sep)`, `Fable 5.1 en Claude Code + ajuste de effort por modelo`, `Reglas de Auto Mode en texto plano (`autoMode.hard_deny`/`soft_deny`)`, `Memoria persistente de subagentes (`memory: project|user|local`)` (+960 more)
   These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1171 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **26 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -1161,12 +1161,12 @@ Nodes (4): GIT(), GIT_NET(), GIT_REBASE(), mark-permission-scan.sh script
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Novedades de herramientas de IA` connect `Novedades de herramientas de IA` to `2026-08-16 — Primera pasada del radar`, `2026-08-30 — Compactación de contexto: palancas oficiales para ahorrar tokens`, `2026-08-30 — Pasada del radar: dos funciones nativas nuevas, sin hallazgos de terceros`, `2026-09-07 — Búsqueda a mano: herramientas para posts de blog en plataformas de clases`, `2026-09-19 — Pasada por el correo semanal "This week in Claude Code" (4 números, 21 ago-18 sep)`, `hook-before-edit.mjs`, `RoombaController`, `2026-09-13 — Búsqueda exhaustiva: herramientas de investigación científica verificada para el máster`?**
-  _High betweenness centrality (0.019) - this node is a cross-community bridge._
+  _High betweenness centrality (0.015) - this node is a cross-community bridge._
 - **Why does `2026-08-16 — Segunda pasada: hooks vs. CLAUDE.md, y prácticas de la comunidad` connect `hook-before-edit.mjs` to `Novedades de herramientas de IA`?**
-  _High betweenness centrality (0.019) - this node is a cross-community bridge._
+  _High betweenness centrality (0.015) - this node is a cross-community bridge._
 - **Why does `deny()` connect `hook-before-edit.mjs` to `readConfig`?**
-  _High betweenness centrality (0.013) - this node is a cross-community bridge._
-- **What connects `Scope`, `Workflow`, `Output (receipt)` to the rest of the system?**
+  _High betweenness centrality (0.010) - this node is a cross-community bridge._
+- **What connects `Cómo se usa`, ``omitClaudeMd: true` en frontmatter de subagentes (2.1.x, semana 18 sep)`, `Fable 5.1 en Claude Code + ajuste de effort por modelo` to the rest of the system?**
   _965 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `live-browser.js` be split into smaller, more focused modules?**
   _Cohesion score 0.03319333423655331 - nodes in this community are weakly interconnected._

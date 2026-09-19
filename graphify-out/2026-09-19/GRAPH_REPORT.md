@@ -1,7 +1,7 @@
 # Graph Report - Molu  (2026-09-19)
 
 ## Corpus Check
-- 289 files · ~1,369,845 words
+- 289 files · ~1,369,861 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 91 file(s) not represented in the graph (top: .csv 30, .arff 22, .pptx 15)
 
@@ -11,7 +11,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `b8698de8`
+- Built from commit: `a3d84519`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -250,18 +250,18 @@
 - 2026-08-16 — Primera pasada del radar
 - 2026-08-30 — Compactación de contexto: palancas oficiales para ahorrar tokens
 - 2026-08-30 — Pasada del radar: dos funciones nativas nuevas, sin hallazgos de terceros
-- live-target.mjs
+- readLiveServerInfo
 - Revisión 2026-09-16 (segunda pasada): profesorado real del MUSI, fuente primaria
 - 2026-09-07 — Búsqueda a mano: herramientas para posts de blog en plataformas de clases
 - caveman-cavecrew/hooks/restrict-cavecrew-bash.sh
 - caveman-cavecrew/hooks/caveman-mode.sh
-- applyDeferredSvelteComponentAccepts
+- live-target.mjs
 - 2026-09-19 — Pasada por el correo semanal "This week in Claude Code" (4 números, 21 ago-18 sep)
 - Materiales de referencia para clases de español
 - fewer-permission-prompts-reminder.sh
 - mark-permission-scan.sh
-- readLiveServerInfo
 - browser-script-parts.mjs
+- applyDeferredSvelteComponentAccepts
 
 ## God Nodes (most connected - your core abstractions)
 1. `detectHtml()` - 32 edges
@@ -1136,9 +1136,9 @@ Nodes (4): 2026-08-30 — Compactación de contexto: palancas oficiales para aho
 Cohesion: 0.50
 Nodes (4): 2026-08-30 — Pasada del radar: dos funciones nativas nuevas, sin hallazgos de terceros, Auto-continue al resetear el límite de uso (nativo, activado por defecto), Estilo de salida "Concise" (nativo), Sin hallazgos nuevos de terceros en los dominios de Angel
 
-### Community 234 - "live-target.mjs"
+### Community 234 - "readLiveServerInfo"
 Cohesion: 0.48
-Nodes (4): parseTargetOptions(), parseTargetPath(), TargetArgError, resolveLiveTarget()
+Nodes (6): isLiveServerPidReachable(), readLiveServerInfo(), completeCli(), completeThroughServer(), parseArgs(), readServerInfo()
 
 ### Community 235 - "Revisión 2026-09-16 (segunda pasada): profesorado real del MUSI, fuente primaria"
 Cohesion: 0.40
@@ -1152,9 +1152,9 @@ Nodes (4): 2026-09-07 — Búsqueda a mano: herramientas para posts de blog en p
 Cohesion: 0.83
 Nodes (3): allow(), deny(), restrict-cavecrew-bash.sh script
 
-### Community 239 - "applyDeferredSvelteComponentAccepts"
-Cohesion: 0.60
-Nodes (5): applyLegacyDeferredAcceptsOnStartup(), applyDeferredSvelteComponentAccepts(), deferredAcceptsPath(), readDeferredAccepts(), writeDeferredAccept()
+### Community 239 - "live-target.mjs"
+Cohesion: 0.48
+Nodes (4): parseTargetOptions(), parseTargetPath(), TargetArgError, resolveLiveTarget()
 
 ### Community 240 - "2026-09-19 — Pasada por el correo semanal "This week in Claude Code" (4 números, 21 ago-18 sep)"
 Cohesion: 0.25
@@ -1164,13 +1164,13 @@ Nodes (8): 2026-09-19 — Pasada por el correo semanal "This week in Claude Code
 Cohesion: 0.70
 Nodes (4): GIT(), GIT_NET(), GIT_REBASE(), mark-permission-scan.sh script
 
-### Community 244 - "readLiveServerInfo"
-Cohesion: 0.48
-Nodes (6): isLiveServerPidReachable(), readLiveServerInfo(), completeCli(), completeThroughServer(), parseArgs(), readServerInfo()
-
-### Community 245 - "browser-script-parts.mjs"
+### Community 244 - "browser-script-parts.mjs"
 Cohesion: 0.33
 Nodes (6): assembleLiveBrowserScript(), assertLiveBrowserScriptParts(), LIVE_BROWSER_SCRIPT_PARTS, readLiveBrowserScriptParts(), resolveLiveBrowserScriptParts(), loadBrowserScripts()
+
+### Community 245 - "applyDeferredSvelteComponentAccepts"
+Cohesion: 0.60
+Nodes (5): applyLegacyDeferredAcceptsOnStartup(), applyDeferredSvelteComponentAccepts(), deferredAcceptsPath(), readDeferredAccepts(), writeDeferredAccept()
 
 ## Knowledge Gaps
 - **965 isolated node(s):** `caveman-mode.sh script`, `fewer-permission-prompts-reminder.sh script`, `mark-pr-reviewed.sh script`, `session-end-status.sh script`, `session-start.sh script` (+960 more)

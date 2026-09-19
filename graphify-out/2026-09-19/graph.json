@@ -22,7 +22,7 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 234,
+      "community": 239,
       "community_name": "live-target.mjs",
       "file_type": "code",
       "norm_label": "targetargerror",
@@ -9452,119 +9452,11 @@
       "source_location": "L26"
     },
     {
-      "id": "claude_skills_impeccable_scripts_lib_target_args_parsetargetoptions",
-      "label": "parseTargetOptions()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 234,
-      "community_name": "live-target.mjs",
-      "file_type": "code",
-      "norm_label": "parsetargetoptions()",
-      "source_file": ".claude/skills/impeccable/scripts/lib/target-args.mjs",
-      "source_location": "L39"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_lib_target_args_parsetargetpath",
-      "label": "parseTargetPath()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 234,
-      "community_name": "live-target.mjs",
-      "file_type": "code",
-      "norm_label": "parsetargetpath()",
-      "source_file": ".claude/skills/impeccable/scripts/lib/target-args.mjs",
-      "source_location": "L9"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_lib_target_args_targetargerror_constructor",
-      "label": ".constructor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 234,
-      "community_name": "live-target.mjs",
-      "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": ".claude/skills/impeccable/scripts/lib/target-args.mjs",
-      "source_location": "L2"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_target_resolvelivetarget",
-      "label": "resolveLiveTarget()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 234,
-      "community_name": "live-target.mjs",
-      "file_type": "code",
-      "norm_label": "resolvelivetarget()",
-      "source_file": ".claude/skills/impeccable/scripts/live-target.mjs",
-      "source_location": "L5"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_server_applylegacydeferredacceptsonstartup",
-      "label": "applyLegacyDeferredAcceptsOnStartup()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 239,
-      "community_name": "applyDeferredSvelteComponentAccepts",
-      "file_type": "code",
-      "norm_label": "applylegacydeferredacceptsonstartup()",
-      "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
-      "source_location": "L974"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_svelte_component_applydeferredsveltecomponentaccepts",
-      "label": "applyDeferredSvelteComponentAccepts()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 239,
-      "community_name": "applyDeferredSvelteComponentAccepts",
-      "file_type": "code",
-      "norm_label": "applydeferredsveltecomponentaccepts()",
-      "source_file": ".claude/skills/impeccable/scripts/live/svelte-component.mjs",
-      "source_location": "L767"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_svelte_component_deferredacceptspath",
-      "label": "deferredAcceptsPath()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 239,
-      "community_name": "applyDeferredSvelteComponentAccepts",
-      "file_type": "code",
-      "norm_label": "deferredacceptspath()",
-      "source_file": ".claude/skills/impeccable/scripts/live/svelte-component.mjs",
-      "source_location": "L744"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_svelte_component_readdeferredaccepts",
-      "label": "readDeferredAccepts()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 239,
-      "community_name": "applyDeferredSvelteComponentAccepts",
-      "file_type": "code",
-      "norm_label": "readdeferredaccepts()",
-      "source_file": ".claude/skills/impeccable/scripts/live/svelte-component.mjs",
-      "source_location": "L749"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_svelte_component_writedeferredaccept",
-      "label": "writeDeferredAccept()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 239,
-      "community_name": "applyDeferredSvelteComponentAccepts",
-      "file_type": "code",
-      "norm_label": "writedeferredaccept()",
-      "source_file": ".claude/skills/impeccable/scripts/live/svelte-component.mjs",
-      "source_location": "L758"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_lib_impeccable_paths_isliveserverpidreachable",
       "label": "isLiveServerPidReachable()",
       "_callable": true,
       "_origin": "ast",
-      "community": 244,
+      "community": 234,
       "community_name": "readLiveServerInfo",
       "file_type": "code",
       "norm_label": "isliveserverpidreachable()",
@@ -9576,7 +9468,7 @@
       "label": "readLiveServerInfo()",
       "_callable": true,
       "_origin": "ast",
-      "community": 244,
+      "community": 234,
       "community_name": "readLiveServerInfo",
       "file_type": "code",
       "norm_label": "readliveserverinfo()",
@@ -9588,7 +9480,7 @@
       "label": "completeCli()",
       "_callable": true,
       "_origin": "ast",
-      "community": 244,
+      "community": 234,
       "community_name": "readLiveServerInfo",
       "file_type": "code",
       "norm_label": "completecli()",
@@ -9600,7 +9492,7 @@
       "label": "completeThroughServer()",
       "_callable": true,
       "_origin": "ast",
-      "community": 244,
+      "community": 234,
       "community_name": "readLiveServerInfo",
       "file_type": "code",
       "norm_label": "completethroughserver()",
@@ -9612,7 +9504,7 @@
       "label": "parseArgs()",
       "_callable": true,
       "_origin": "ast",
-      "community": 244,
+      "community": 234,
       "community_name": "readLiveServerInfo",
       "file_type": "code",
       "norm_label": "parseargs()",
@@ -9624,7 +9516,7 @@
       "label": "readServerInfo()",
       "_callable": true,
       "_origin": "ast",
-      "community": 244,
+      "community": 234,
       "community_name": "readLiveServerInfo",
       "file_type": "code",
       "norm_label": "readserverinfo()",
@@ -9632,11 +9524,59 @@
       "source_location": "L49"
     },
     {
+      "id": "claude_skills_impeccable_scripts_lib_target_args_parsetargetoptions",
+      "label": "parseTargetOptions()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 239,
+      "community_name": "live-target.mjs",
+      "file_type": "code",
+      "norm_label": "parsetargetoptions()",
+      "source_file": ".claude/skills/impeccable/scripts/lib/target-args.mjs",
+      "source_location": "L39"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_lib_target_args_parsetargetpath",
+      "label": "parseTargetPath()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 239,
+      "community_name": "live-target.mjs",
+      "file_type": "code",
+      "norm_label": "parsetargetpath()",
+      "source_file": ".claude/skills/impeccable/scripts/lib/target-args.mjs",
+      "source_location": "L9"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_lib_target_args_targetargerror_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 239,
+      "community_name": "live-target.mjs",
+      "file_type": "code",
+      "norm_label": ".constructor()",
+      "source_file": ".claude/skills/impeccable/scripts/lib/target-args.mjs",
+      "source_location": "L2"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_target_resolvelivetarget",
+      "label": "resolveLiveTarget()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 239,
+      "community_name": "live-target.mjs",
+      "file_type": "code",
+      "norm_label": "resolvelivetarget()",
+      "source_file": ".claude/skills/impeccable/scripts/live-target.mjs",
+      "source_location": "L5"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_browser_script_parts_assemblelivebrowserscript",
       "label": "assembleLiveBrowserScript()",
       "_callable": true,
       "_origin": "ast",
-      "community": 245,
+      "community": 244,
       "community_name": "browser-script-parts.mjs",
       "file_type": "code",
       "norm_label": "assemblelivebrowserscript()",
@@ -9648,7 +9588,7 @@
       "label": "assertLiveBrowserScriptParts()",
       "_callable": true,
       "_origin": "ast",
-      "community": 245,
+      "community": 244,
       "community_name": "browser-script-parts.mjs",
       "file_type": "code",
       "norm_label": "assertlivebrowserscriptparts()",
@@ -9660,7 +9600,7 @@
       "label": "readLiveBrowserScriptParts()",
       "_callable": true,
       "_origin": "ast",
-      "community": 245,
+      "community": 244,
       "community_name": "browser-script-parts.mjs",
       "file_type": "code",
       "norm_label": "readlivebrowserscriptparts()",
@@ -9672,7 +9612,7 @@
       "label": "resolveLiveBrowserScriptParts()",
       "_callable": true,
       "_origin": "ast",
-      "community": 245,
+      "community": 244,
       "community_name": "browser-script-parts.mjs",
       "file_type": "code",
       "norm_label": "resolvelivebrowserscriptparts()",
@@ -9684,12 +9624,72 @@
       "label": "loadBrowserScripts()",
       "_callable": true,
       "_origin": "ast",
-      "community": 245,
+      "community": 244,
       "community_name": "browser-script-parts.mjs",
       "file_type": "code",
       "norm_label": "loadbrowserscripts()",
       "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
       "source_location": "L345"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_server_applylegacydeferredacceptsonstartup",
+      "label": "applyLegacyDeferredAcceptsOnStartup()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 245,
+      "community_name": "applyDeferredSvelteComponentAccepts",
+      "file_type": "code",
+      "norm_label": "applylegacydeferredacceptsonstartup()",
+      "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
+      "source_location": "L974"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_svelte_component_applydeferredsveltecomponentaccepts",
+      "label": "applyDeferredSvelteComponentAccepts()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 245,
+      "community_name": "applyDeferredSvelteComponentAccepts",
+      "file_type": "code",
+      "norm_label": "applydeferredsveltecomponentaccepts()",
+      "source_file": ".claude/skills/impeccable/scripts/live/svelte-component.mjs",
+      "source_location": "L767"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_svelte_component_deferredacceptspath",
+      "label": "deferredAcceptsPath()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 245,
+      "community_name": "applyDeferredSvelteComponentAccepts",
+      "file_type": "code",
+      "norm_label": "deferredacceptspath()",
+      "source_file": ".claude/skills/impeccable/scripts/live/svelte-component.mjs",
+      "source_location": "L744"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_svelte_component_readdeferredaccepts",
+      "label": "readDeferredAccepts()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 245,
+      "community_name": "applyDeferredSvelteComponentAccepts",
+      "file_type": "code",
+      "norm_label": "readdeferredaccepts()",
+      "source_file": ".claude/skills/impeccable/scripts/live/svelte-component.mjs",
+      "source_location": "L749"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_svelte_component_writedeferredaccept",
+      "label": "writeDeferredAccept()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 245,
+      "community_name": "applyDeferredSvelteComponentAccepts",
+      "file_type": "code",
+      "norm_label": "writedeferredaccept()",
+      "source_file": ".claude/skills/impeccable/scripts/live/svelte-component.mjs",
+      "source_location": "L758"
     },
     {
       "id": "claude_skills_impeccable_scripts_lib_design_parser_assesscoverage",
@@ -33073,7 +33073,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-16 \u2014 segunda pasada: hooks vs. claude.md, y practicas de la comunidad",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1830"
+      "source_location": "L1831"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_anotado_no_aplicado_patrones_de_awattar_claude_code_best_practices",
@@ -33085,7 +33085,7 @@
       "node_kind": "heading",
       "norm_label": "anotado, no aplicado: patrones de `awattar/claude-code-best-practices`",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L2019"
+      "source_location": "L2020"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_aplicado_hook_stop_con_estado_de_git_radical_transparency",
@@ -33097,7 +33097,7 @@
       "node_kind": "heading",
       "norm_label": "aplicado: hook `stop` con estado de git (\"radical transparency\")",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1836"
+      "source_location": "L1837"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_aplicado_tras_profundizar_hook_que_bloquea_merge_sin_revisi\u00f3n",
@@ -33109,7 +33109,7 @@
       "node_kind": "heading",
       "norm_label": "aplicado (tras profundizar): hook que bloquea merge sin revision",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1852"
+      "source_location": "L1853"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_lluvia_de_ideas",
@@ -33319,7 +33319,7 @@
       "node_kind": "heading",
       "norm_label": "2026-09-13 \u2014 busqueda exhaustiva: herramientas de investigacion cientifica verificada para el master",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L381"
+      "source_location": "L382"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_encontrados_en_github_sin_tarjeta_posible_no_est\u00e1n_en_ning\u00fan_cat\u00e1logo_de_claude_documentados_no_instalados",
@@ -33331,7 +33331,7 @@
       "node_kind": "heading",
       "norm_label": "encontrados en github, sin tarjeta posible (no estan en ningun catalogo de claude) \u2014 documentados, no instalados",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L480"
+      "source_location": "L481"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_propuestos_con_tarjeta_y_activados_el_mismo_d\u00eda",
@@ -33343,7 +33343,7 @@
       "node_kind": "heading",
       "norm_label": "propuestos con tarjeta y activados el mismo dia",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L425"
+      "source_location": "L426"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_revisados_y_descartados_por_redundancia_o_desajuste_por_completitud",
@@ -33355,7 +33355,7 @@
       "node_kind": "heading",
       "norm_label": "revisados y descartados por redundancia o desajuste (por completitud)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L459"
+      "source_location": "L460"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_wolfram_ya_activo_el_aviso_de_needs_reconnect_era_falso_positivo",
@@ -33367,7 +33367,7 @@
       "node_kind": "heading",
       "norm_label": "\u2705 wolfram \u2014 ya activo, el aviso de \"needs_reconnect\" era falso positivo",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L410"
+      "source_location": "L411"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_ya_activos_en_esta_cuenta_sin_acci\u00f3n_solo_usarlos_adoptado",
@@ -33379,7 +33379,7 @@
       "node_kind": "heading",
       "norm_label": "ya activos en esta cuenta \u2014 sin accion, solo usarlos (adoptado)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L391"
+      "source_location": "L392"
     },
     {
       "id": "docencia_espanol_miniescuela_plan_financiero",
@@ -34051,7 +34051,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-16 \u2014 primera pasada del radar",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L2075"
+      "source_location": "L2076"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_brisk_teaching_conector_mcp",
@@ -34063,7 +34063,7 @@
       "node_kind": "heading",
       "norm_label": "brisk teaching (conector mcp)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L2095"
+      "source_location": "L2096"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_deepl_conector_mcp",
@@ -34075,7 +34075,7 @@
       "node_kind": "heading",
       "norm_label": "deepl (conector mcp)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L2077"
+      "source_location": "L2078"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_marketplaces_de_plugins_de_claude_code_oficial_y_comunidad",
@@ -34087,7 +34087,7 @@
       "node_kind": "heading",
       "norm_label": "marketplaces de plugins de claude code (oficial y comunidad)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L2120"
+      "source_location": "L2121"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_menor_learning_commons_y_learn_with_coursera",
@@ -34099,7 +34099,7 @@
       "node_kind": "heading",
       "norm_label": "(menor) learning commons y learn with coursera",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L2137"
+      "source_location": "L2138"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_30_compactaci\u00f3n_de_contexto_palancas_oficiales_para_ahorrar_tokens",
@@ -34111,7 +34111,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-30 \u2014 compactacion de contexto: palancas oficiales para ahorrar tokens",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L963"
+      "source_location": "L964"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_anotado_no_aplicado_palancas_oficiales_sin_necesidad_clara_todav\u00eda",
@@ -34123,7 +34123,7 @@
       "node_kind": "heading",
       "norm_label": "anotado, no aplicado (palancas oficiales sin necesidad clara todavia)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L987"
+      "source_location": "L988"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_aplicado_instrucci\u00f3n_de_preservaci\u00f3n_al_compactar_en_claude_md",
@@ -34135,7 +34135,7 @@
       "node_kind": "heading",
       "norm_label": "aplicado: instruccion de preservacion al compactar, en `claude.md`",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L970"
+      "source_location": "L971"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_fuera_de_alcance_de_claude_code_mencionado_para_completar_el_cuadro",
@@ -34147,7 +34147,7 @@
       "node_kind": "heading",
       "norm_label": "fuera de alcance de claude code, mencionado para completar el cuadro",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1008"
+      "source_location": "L1009"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_30_pasada_del_radar_dos_funciones_nativas_nuevas_sin_hallazgos_de_terceros",
@@ -34159,7 +34159,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-30 \u2014 pasada del radar: dos funciones nativas nuevas, sin hallazgos de terceros",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1019"
+      "source_location": "L1020"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_auto_continue_al_resetear_el_l\u00edmite_de_uso_nativo_activado_por_defecto",
@@ -34171,7 +34171,7 @@
       "node_kind": "heading",
       "norm_label": "auto-continue al resetear el limite de uso (nativo, activado por defecto)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1034"
+      "source_location": "L1035"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_estilo_de_salida_concise_nativo",
@@ -34183,7 +34183,7 @@
       "node_kind": "heading",
       "norm_label": "estilo de salida \"concise\" (nativo)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1050"
+      "source_location": "L1051"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_sin_hallazgos_nuevos_de_terceros_en_los_dominios_de_angel",
@@ -34195,28 +34195,17 @@
       "node_kind": "heading",
       "norm_label": "sin hallazgos nuevos de terceros en los dominios de angel",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1063"
+      "source_location": "L1064"
     },
     {
-      "id": "claude_skills_impeccable_scripts_lib_target_args",
-      "label": "target-args.mjs",
+      "id": "claude_skills_impeccable_scripts_live_complete",
+      "label": "live-complete.mjs",
       "_origin": "ast",
       "community": 234,
-      "community_name": "live-target.mjs",
+      "community_name": "readLiveServerInfo",
       "file_type": "code",
-      "norm_label": "target-args.mjs",
-      "source_file": ".claude/skills/impeccable/scripts/lib/target-args.mjs",
-      "source_location": "L1"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_target",
-      "label": "live-target.mjs",
-      "_origin": "ast",
-      "community": 234,
-      "community_name": "live-target.mjs",
-      "file_type": "code",
-      "norm_label": "live-target.mjs",
-      "source_file": ".claude/skills/impeccable/scripts/live-target.mjs",
+      "norm_label": "live-complete.mjs",
+      "source_file": ".claude/skills/impeccable/scripts/live-complete.mjs",
       "source_location": "L1"
     },
     {
@@ -34289,7 +34278,7 @@
       "node_kind": "heading",
       "norm_label": "2026-09-07 \u2014 busqueda a mano: herramientas para posts de blog en plataformas de clases",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L621"
+      "source_location": "L622"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_mencionados_pero_no_propuestos_con_tarjeta_por_completitud_sin_encajar_tan_bien_ahora_mismo",
@@ -34301,7 +34290,7 @@
       "node_kind": "heading",
       "norm_label": "mencionados pero no propuestos con tarjeta (por completitud, sin encajar tan bien ahora mismo)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L660"
+      "source_location": "L661"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_plugin_marketing_plugin_01eeb9y5m4ifuy3yrtytyfdc",
@@ -34313,7 +34302,7 @@
       "node_kind": "heading",
       "norm_label": "plugin \"marketing\" (`plugin_01eeb9y5m4ifuy3yrtytyfdc`)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L628"
+      "source_location": "L629"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_plugin_searchfit_seo_plugin_016u9h5nggkux18ridtj7otg",
@@ -34325,7 +34314,7 @@
       "node_kind": "heading",
       "norm_label": "plugin \"searchfit seo\" (`plugin_016u9h5nggkux18ridtj7otg`)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L645"
+      "source_location": "L646"
     },
     {
       "id": "plugins_caveman_cavecrew_hooks_restrict_cavecrew_bash",
@@ -34415,6 +34404,28 @@
       },
       "norm_label": "caveman-mode.sh script",
       "source_file": "plugins/caveman-cavecrew/hooks/caveman-mode.sh",
+      "source_location": "L1"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_lib_target_args",
+      "label": "target-args.mjs",
+      "_origin": "ast",
+      "community": 239,
+      "community_name": "live-target.mjs",
+      "file_type": "code",
+      "norm_label": "target-args.mjs",
+      "source_file": ".claude/skills/impeccable/scripts/lib/target-args.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_target",
+      "label": "live-target.mjs",
+      "_origin": "ast",
+      "community": 239,
+      "community_name": "live-target.mjs",
+      "file_type": "code",
+      "norm_label": "live-target.mjs",
+      "source_file": ".claude/skills/impeccable/scripts/live-target.mjs",
       "source_location": "L1"
     },
     {
@@ -34655,21 +34666,10 @@
       "source_location": "L1"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_complete",
-      "label": "live-complete.mjs",
-      "_origin": "ast",
-      "community": 244,
-      "community_name": "readLiveServerInfo",
-      "file_type": "code",
-      "norm_label": "live-complete.mjs",
-      "source_file": ".claude/skills/impeccable/scripts/live-complete.mjs",
-      "source_location": "L1"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_browser_script_parts",
       "label": "browser-script-parts.mjs",
       "_origin": "ast",
-      "community": 245,
+      "community": 244,
       "community_name": "browser-script-parts.mjs",
       "file_type": "code",
       "norm_label": "browser-script-parts.mjs",
@@ -34680,7 +34680,7 @@
       "id": "claude_skills_impeccable_scripts_live_browser_script_parts_live_browser_script_parts",
       "label": "LIVE_BROWSER_SCRIPT_PARTS",
       "_origin": "ast",
-      "community": 245,
+      "community": 244,
       "community_name": "browser-script-parts.mjs",
       "file_type": "code",
       "norm_label": "live_browser_script_parts",
@@ -36651,7 +36651,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-22 \u2014 ponytail (dietrichgebert): activado para todas las sesiones",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1442"
+      "source_location": "L1443"
     },
     {
       "id": "claude_skills_impeccable_scripts_detect_csp",
@@ -37198,7 +37198,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-16 \u2014 guia oficial de buenas practicas de claude code",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L2040"
+      "source_location": "L2041"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_18_markitdown_microsoft_herramienta_puntual_no_instalada",
@@ -37210,7 +37210,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-18 \u2014 markitdown (microsoft): herramienta puntual, no instalada",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1805"
+      "source_location": "L1806"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_18_pr\u00e1ctica_desplazar_la_ventana_de_5h_de_l\u00edmite_de_uso",
@@ -37222,7 +37222,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-18 \u2014 practica: desplazar la ventana de 5h de limite de uso",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1791"
+      "source_location": "L1792"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_20_agent_browser_vercel_labs_activado",
@@ -37234,7 +37234,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-20 \u2014 agent-browser (vercel labs): activado",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1663"
+      "source_location": "L1664"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_21_find_skills_vercel_labs_activado",
@@ -37246,7 +37246,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-21 \u2014 find-skills (vercel labs): activado",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1631"
+      "source_location": "L1632"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_21_mcp_server_dev_anthropic_activado_deshabilitado_por_defecto",
@@ -37258,7 +37258,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-21 \u2014 mcp-server-dev (anthropic): activado, deshabilitado por defecto",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1543"
+      "source_location": "L1544"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_22_caveman_juliusbrussee_instalado_correcci\u00f3n_2026_08_30_no_se_activa_solo",
@@ -37270,7 +37270,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-22 \u2014 caveman (juliusbrussee): instalado (correccion 2026-08-30: no se activa solo)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1334"
+      "source_location": "L1335"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_23_7_skills_m\u00e1s_de_juliusbrussee_caveman_activadas",
@@ -37282,7 +37282,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-23 \u2014 7 skills mas de juliusbrussee/caveman: activadas",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1141"
+      "source_location": "L1142"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_23_statusline_de_ponytail_configurado",
@@ -37294,7 +37294,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-23 \u2014 statusline de ponytail: configurado",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1307"
+      "source_location": "L1308"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_30_carrusel_4_conectores_que_le_dan_superpoderes_a_claude_revisado_nada_que_instalar",
@@ -37306,7 +37306,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-30 \u2014 carrusel \"4 conectores que le dan superpoderes a claude\": revisado, nada que instalar",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L875"
+      "source_location": "L876"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_30_gemini_notebook_antes_notebooklm_sin_opci\u00f3n_segura_no_adoptado",
@@ -37318,7 +37318,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-30 \u2014 gemini notebook (antes notebooklm): sin opcion segura, no adoptado",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1074"
+      "source_location": "L1075"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_30_memory_de_anthropic_memoria_compartida_entre_chats_nativo_oficial",
@@ -37330,7 +37330,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-30 \u2014 memory de anthropic: memoria compartida entre chats (nativo, oficial)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L911"
+      "source_location": "L912"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_09_06_lecci\u00f3n_ampliar_una_regla_de_golden_rules_exige_revisar_todas_las_que_dependen_de_su_alcance",
@@ -37342,7 +37342,7 @@
       "node_kind": "heading",
       "norm_label": "2026-09-06 \u2014 leccion: ampliar una regla de golden rules exige revisar todas las que dependen de su alcance",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L2158"
+      "source_location": "L2159"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_09_07_sync_main_sh_ramas_base_viejas_ya_no_se_quedan_sin_funciones_fusionadas",
@@ -37354,7 +37354,7 @@
       "node_kind": "heading",
       "norm_label": "2026-09-07 \u2014 sync-main.sh: ramas base viejas ya no se quedan sin funciones fusionadas",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L680"
+      "source_location": "L681"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_09_09_skill_humanizer_terceros_adaptada_a_mano",
@@ -37366,7 +37366,7 @@
       "node_kind": "heading",
       "norm_label": "2026-09-09 \u2014 skill \"humanizer\" (terceros, adaptada a mano)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L514"
+      "source_location": "L515"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_09_14_lecci\u00f3n_ampliaci\u00f3n_al_propagar_una_correcci\u00f3n_el_archivo_resumen_para_la_siguiente_sesi\u00f3n_va_primero",
@@ -37378,7 +37378,7 @@
       "node_kind": "heading",
       "norm_label": "2026-09-14 \u2014 leccion (ampliacion): al propagar una correccion, el archivo \"resumen para la siguiente sesion\" va primero",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L2257"
+      "source_location": "L2258"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_09_14_lecci\u00f3n_tres_rondas_declarando_hueco_sobre_trabajo_ya_publicado",
@@ -37390,7 +37390,7 @@
       "node_kind": "heading",
       "norm_label": "2026-09-14 \u2014 leccion: tres rondas declarando \"hueco\" sobre trabajo ya publicado",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L2192"
+      "source_location": "L2193"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_09_18_aplicado_fewer_permission_prompts_en_piloto_autom\u00e1tico",
@@ -37402,7 +37402,7 @@
       "node_kind": "heading",
       "norm_label": "2026-09-18 \u2014 aplicado: `fewer-permission-prompts` en piloto automatico",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L317"
+      "source_location": "L318"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_09_18_cat\u00e1logo_de_claude_academy_cursos_oficiales",
@@ -37414,7 +37414,7 @@
       "node_kind": "heading",
       "norm_label": "2026-09-18 \u2014 catalogo de claude academy (cursos oficiales)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L349"
+      "source_location": "L350"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_09_18_pasada_por_code_claude_com_docs_en_whats_new_weeks_13_37",
@@ -37474,7 +37474,7 @@
       "node_kind": "heading",
       "norm_label": "leccion: `graphify-out/.pending_changes` se cuela en git (3a vez)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1121"
+      "source_location": "L1122"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_novedades_de_herramientas_de_ia",
@@ -116475,7 +116475,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L2077",
+      "source_location": "L2078",
       "weight": 1.0
     },
     {
@@ -116486,7 +116486,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L2095",
+      "source_location": "L2096",
       "weight": 1.0
     },
     {
@@ -116497,7 +116497,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L2120",
+      "source_location": "L2121",
       "weight": 1.0
     },
     {
@@ -116508,7 +116508,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L2137",
+      "source_location": "L2138",
       "weight": 1.0
     },
     {
@@ -116519,7 +116519,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1836",
+      "source_location": "L1837",
       "weight": 1.0
     },
     {
@@ -116530,7 +116530,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1852",
+      "source_location": "L1853",
       "weight": 1.0
     },
     {
@@ -116541,7 +116541,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L2019",
+      "source_location": "L2020",
       "weight": 1.0
     },
     {
@@ -116552,7 +116552,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1008",
+      "source_location": "L1009",
       "weight": 1.0
     },
     {
@@ -116563,7 +116563,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L970",
+      "source_location": "L971",
       "weight": 1.0
     },
     {
@@ -116574,7 +116574,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L987",
+      "source_location": "L988",
       "weight": 1.0
     },
     {
@@ -116585,7 +116585,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1121",
+      "source_location": "L1122",
       "weight": 1.0
     },
     {
@@ -116596,7 +116596,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1034",
+      "source_location": "L1035",
       "weight": 1.0
     },
     {
@@ -116607,7 +116607,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1050",
+      "source_location": "L1051",
       "weight": 1.0
     },
     {
@@ -116618,7 +116618,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1063",
+      "source_location": "L1064",
       "weight": 1.0
     },
     {
@@ -116629,7 +116629,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L628",
+      "source_location": "L629",
       "weight": 1.0
     },
     {
@@ -116640,7 +116640,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L645",
+      "source_location": "L646",
       "weight": 1.0
     },
     {
@@ -116651,7 +116651,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L660",
+      "source_location": "L661",
       "weight": 1.0
     },
     {
@@ -116662,7 +116662,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L391",
+      "source_location": "L392",
       "weight": 1.0
     },
     {
@@ -116673,7 +116673,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L410",
+      "source_location": "L411",
       "weight": 1.0
     },
     {
@@ -116684,7 +116684,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L425",
+      "source_location": "L426",
       "weight": 1.0
     },
     {
@@ -116695,7 +116695,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L459",
+      "source_location": "L460",
       "weight": 1.0
     },
     {
@@ -116706,7 +116706,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L480",
+      "source_location": "L481",
       "weight": 1.0
     },
     {
@@ -116816,7 +116816,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1019",
+      "source_location": "L1020",
       "weight": 1.0
     },
     {
@@ -116827,7 +116827,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1074",
+      "source_location": "L1075",
       "weight": 1.0
     },
     {
@@ -116838,7 +116838,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1141",
+      "source_location": "L1142",
       "weight": 1.0
     },
     {
@@ -116849,7 +116849,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1307",
+      "source_location": "L1308",
       "weight": 1.0
     },
     {
@@ -116860,7 +116860,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1334",
+      "source_location": "L1335",
       "weight": 1.0
     },
     {
@@ -116871,7 +116871,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1442",
+      "source_location": "L1443",
       "weight": 1.0
     },
     {
@@ -116882,7 +116882,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1543",
+      "source_location": "L1544",
       "weight": 1.0
     },
     {
@@ -116893,7 +116893,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1631",
+      "source_location": "L1632",
       "weight": 1.0
     },
     {
@@ -116904,7 +116904,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1663",
+      "source_location": "L1664",
       "weight": 1.0
     },
     {
@@ -116915,7 +116915,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1791",
+      "source_location": "L1792",
       "weight": 1.0
     },
     {
@@ -116937,7 +116937,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1805",
+      "source_location": "L1806",
       "weight": 1.0
     },
     {
@@ -116948,7 +116948,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1830",
+      "source_location": "L1831",
       "weight": 1.0
     },
     {
@@ -116959,7 +116959,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L2040",
+      "source_location": "L2041",
       "weight": 1.0
     },
     {
@@ -116970,7 +116970,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L2075",
+      "source_location": "L2076",
       "weight": 1.0
     },
     {
@@ -116981,7 +116981,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L2158",
+      "source_location": "L2159",
       "weight": 1.0
     },
     {
@@ -116992,7 +116992,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L2192",
+      "source_location": "L2193",
       "weight": 1.0
     },
     {
@@ -117003,7 +117003,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L2257",
+      "source_location": "L2258",
       "weight": 1.0
     },
     {
@@ -117036,7 +117036,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L317",
+      "source_location": "L318",
       "weight": 1.0
     },
     {
@@ -117047,7 +117047,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L349",
+      "source_location": "L350",
       "weight": 1.0
     },
     {
@@ -117058,7 +117058,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L381",
+      "source_location": "L382",
       "weight": 1.0
     },
     {
@@ -117069,7 +117069,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L514",
+      "source_location": "L515",
       "weight": 1.0
     },
     {
@@ -117080,7 +117080,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L621",
+      "source_location": "L622",
       "weight": 1.0
     },
     {
@@ -117091,7 +117091,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L680",
+      "source_location": "L681",
       "weight": 1.0
     },
     {
@@ -117102,7 +117102,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L875",
+      "source_location": "L876",
       "weight": 1.0
     },
     {
@@ -117113,7 +117113,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L911",
+      "source_location": "L912",
       "weight": 1.0
     },
     {
@@ -117124,7 +117124,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L963",
+      "source_location": "L964",
       "weight": 1.0
     },
     {
@@ -119401,7 +119401,7 @@
       "confidence_score": 0.95,
       "context": "allow",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L2024",
+      "source_location": "L2025",
       "weight": 1.0
     },
     {
@@ -119413,7 +119413,7 @@
       "confidence_score": 0.95,
       "context": "deny",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L2025",
+      "source_location": "L2026",
       "weight": 1.0
     },
     {
@@ -119425,7 +119425,7 @@
       "confidence_score": 0.95,
       "context": "deny()",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1878",
+      "source_location": "L1879",
       "weight": 1.0
     },
     {
@@ -119437,7 +119437,7 @@
       "confidence_score": 0.95,
       "context": "update",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1486",
+      "source_location": "L1487",
       "weight": 1.0
     },
     {
@@ -121862,5 +121862,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "b8698de896212b0cc111a12a8e8efd8cc3711292"
+  "built_at_commit": "a3d84519fbaa8af76eb788415c9f3f65a4799527"
 }
