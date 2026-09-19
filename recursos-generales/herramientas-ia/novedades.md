@@ -309,8 +309,9 @@ una revisión de seguridad automática en cada sesión habría podido
 detectar alguno de esos antes de que hiciera falta una revisión
 externa.
 
-**Cómo probarlo:** tarjeta de instalación en el mismo turno de este
-registro.
+**✅ Activado el 2026-09-19** — Angel lo instaló desde Settings →
+Plugins (confirmado por captura de pantalla: mismo autor, David
+Dworken, versión 2.0.8, toggle encendido). Sin acción adicional.
 
 ---
 
