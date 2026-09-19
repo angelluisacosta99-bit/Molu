@@ -2574,15 +2574,15 @@
     "semantic_hash": ""
   },
   ".claude/hooks/restrict-cavecrew-reviewer-memory.sh": {
-    "mtime": 1789851302.7305326,
-    "seen": 1789851525.395762,
-    "ast_hash": "a5581e5f2b8d7cfaebd3c05ae2252292",
+    "mtime": 1789852014.8505166,
+    "seen": 1789852037.6225367,
+    "ast_hash": "1ed08b2d18d2baf2cf70fe08916d8a89",
     "semantic_hash": ""
   },
   "plugins/caveman-cavecrew/hooks/restrict-cavecrew-reviewer-memory.sh": {
-    "mtime": 1789851332.2983162,
-    "seen": 1789851525.3958747,
-    "ast_hash": "a5581e5f2b8d7cfaebd3c05ae2252292",
+    "mtime": 1789852027.820633,
+    "seen": 1789852037.6226447,
+    "ast_hash": "1ed08b2d18d2baf2cf70fe08916d8a89",
     "semantic_hash": ""
   }
 }
