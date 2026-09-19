@@ -429,6 +429,14 @@ con transcripción completa vía `youtube_video_transcript`) y los
 claude.ai/Claude Code explicado). Ya se hizo una pasada completa el
 2026-09-18 (ver `novedades.md`, entrada de esa fecha) — no repetir esos
 5 vídeos, solo cubrir los que se publiquen después o queden sin ver.
+También revisar el correo semanal **"This week in Claude Code"**
+(remitente `no-reply@email.claude.com`, firmado por Lydia del equipo
+de Claude Code) en la bandeja de Angel — `mcp__Gmail__search_threads`
+con query `from:lydia claude` — antes de dar la pasada por completa:
+es el mismo digest que `whats-new` pero puede traer highlights o citas
+del equipo ("How to Claude like Anthropic") que no siempre están en la
+página. Primera pasada completa (4 números, 21 ago-18 sep) el
+2026-09-19 — la próxima solo necesita cubrir los números posteriores.
 (2) terceros
 relevantes para docencia de español, traducción, Python,
 telecomunicaciones o el máster, vía

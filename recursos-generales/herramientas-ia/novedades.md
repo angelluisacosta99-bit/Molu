@@ -23,6 +23,160 @@ copias que puedan desincronizarse.
 
 ---
 
+## 2026-09-19 — Pasada por el correo semanal "This week in Claude Code" (4 números, 21 ago-18 sep)
+
+Angel preguntó de qué tratan los correos de Lydia (Claude Code team,
+`no-reply@email.claude.com`) y pidió la pasada completa. Son el mismo
+digest semanal que `whats-new`, así que se cruzó contra la pasada ya
+hecha el 2026-09-18 para no duplicar — lo de abajo es solo lo que
+faltaba. Se añade este correo como fuente propia al Radar (ver
+`CLAUDE.md`).
+
+### `omitClaudeMd: true` en frontmatter de subagentes (2.1.x, semana 18 sep)
+
+**Qué es:** un subagente normalmente carga todos los `CLAUDE.md` del
+repo en su contexto al arrancar; con `omitClaudeMd: true` en su
+frontmatter, se lo salta.
+
+**Por qué le sirve a Angel:** el `CLAUDE.md` raíz de este repo es
+largo (400+ líneas, con la propia regla de "podarlo, no solo hacerlo
+crecer" ya anotada más abajo). Los subagentes `cavecrew-investigator`/
+`-builder`/`-reviewer` son workers acotados (localizar código, editar
+1-2 archivos, revisar un diff) que no necesitan la mayoría de esas
+reglas (coaching, docencia, máster...) para hacer su trabajo — con
+`omitClaudeMd: true` arrancan con menos contexto y más rápido.
+
+**✅ Aplicado el 2026-09-19** — Angel pidió activarlo. Añadido a las 3
+(`.claude/agents/cavecrew-*.md`, y su espejo en
+`plugins/caveman-cavecrew/agents/`, que este repo mantiene sincronizado
+desde el PR #119/#121). Comparar con `/skill-doctor` o `/usage` más
+adelante si se quiere medir el ahorro real de contexto por spawn.
+
+### Fable 5.1 en Claude Code + ajuste de effort por modelo
+
+**Qué es:** `claude update` + `/model fable` cambia al modelo Fable
+5.1. Lydia avisa que es "más eager" que Fable 5 — puede hacer falta
+bajar el nivel de esfuerzo (ella pasó de `high` a `medium`) y revisar
+instrucciones de CLAUDE.md escritas pensando en modelos anteriores.
+`/effort` ahora recuerda el nivel por modelo (`modelSettings` en
+`~/.claude/settings.json`), y `CLAUDE_CODE_SUBAGENT_MODEL` fija qué
+modelo usan los subagentes por defecto, aparte del de la conversación
+principal.
+
+**Por qué le sirve a Angel:** este mismo repo es el caso de uso que
+describe el correo — un `CLAUDE.md` extenso escrito con distintos
+modelos en mente. Si Angel prueba Fable 5.1, `/claude-api prompt-audit`
+(ya cubierto como skill en este repo) es la herramienta hecha a medida
+para detectar instrucciones de CLAUDE.md que asumen un modelo más
+antiguo, en vez de revisarlo a ojo. `CLAUDE_CODE_SUBAGENT_MODEL` (o
+`modelSettings` por modelo) permite, por ejemplo, correr la sesión
+principal en Fable 5.1 pero mantener los subagentes de `cavecrew` en
+Sonnet/Opus si Fable resulta demasiado "eager" para ediciones
+quirúrgicas de 1-2 archivos.
+
+**Cómo probarlo:** `/model fable` para probarlo en una sesión suelta;
+`/claude-api prompt-audit` sobre `CLAUDE.md` antes de adoptarlo en
+serio.
+
+### Reglas de Auto Mode en texto plano (`autoMode.hard_deny`/`soft_deny`)
+
+**Qué es:** las reglas que sigue el clasificador de Auto Mode
+(activo en este repo, `defaultMode: dontAsk`) se pueden escribir en
+frases sueltas en `~/.claude/settings.json` bajo `autoMode.hard_deny`
+(bloquea siempre) y `autoMode.soft_deny` (bloquea salvo petición
+directa), o editarlas desde la pestaña Auto mode de `/permissions` en
+vez de tocar el JSON a mano. `claude auto-mode critique` señala reglas
+ambiguas o redundantes.
+
+**Por qué le sirve a Angel:** esto es una capa **adicional**, no un
+sustituto, a la regla dura de "nunca fusionar sin revisión
+independiente" que ya aplica este repo vía el hook `PreToolUse`
+`check-pr-review.sh`. Un `hard_deny` como *"Never merge a pull request
+without a recent independent review marker"* añadiría un segundo gate
+a nivel de clasificador — coste bajo, y refuerza justo el punto que ya
+tiene más peso en este repo (regla "sin excepciones" del flujo de PR).
+Al vivir en `~/.claude/settings.json` (settings de usuario, no de
+proyecto), estas reglas persisten entre repos y ningún `.claude/
+settings.json` de un proyecto puede sobrescribirlas — relevante si
+Angel trabaja alguna vez en un repo ajeno sin el hook de este.
+
+**Cómo probarlo:** no se toca `settings.json` de Angel desde esta
+sesión sin que lo pida — es su configuración personal de usuario, no
+algo versionado en este repo. Si quiere probarlo, la regla de ejemplo
+de arriba + `claude auto-mode critique` para validarla.
+
+### Memoria persistente de subagentes (`memory: project|user|local`)
+
+**Qué es:** un subagente con `memory: project` (o `user`/`local`) en
+su frontmatter obtiene su propio directorio en
+`.claude/agent-memory/`, que lee al arrancar y escribe mientras
+trabaja — no repite desde cero lo que ya aprendió sobre el repo en
+sesiones anteriores.
+
+**Por qué le sirve a Angel:** encaja con la propia regla de este
+`CLAUDE.md` de "3+ rondas de revisión sobre lo mismo → guardar la
+lección" — `cavecrew-reviewer` podría acumular en su propia memoria
+los patrones de fallo ya vistos (los de `hook-hardening`, por
+ejemplo) sin depender de que la lección se guarde solo en el
+`SKILL.md`.
+
+**✅ Aplicado el 2026-09-19, solo en `cavecrew-reviewer`** — Angel pidió
+activarlo (los otros dos, `-investigator`/`-builder`, se quedan sin
+memoria: no revisan código en el sentido de acumular patrones de
+fallo). Añadido `memory: project` al frontmatter y una sección
+"Memory" en el cuerpo del agente indicándole que consulte su propia
+memoria antes de revisar y anote hallazgos nuevos al terminar — sin
+esa instrucción explícita, el directorio existiría pero el agente no
+lo usaría de forma consistente. Mismo archivo espejado en
+`plugins/caveman-cavecrew/agents/cavecrew-reviewer.md`. Pendiente de
+verificar en una revisión real qué escribe en `.claude/agent-memory/`.
+
+### Projects (beta) y Claude Design/Slides/Docs en desktop y web (beta)
+
+**Qué son:** *Projects* (rediseño completo, en beta para cuentas
+Pro/Max en sesiones cloud) deja describir en una conversación todo lo
+que hace falta y Claude lo reparte en varios hilos, cada uno como
+sesión cloud en su propia rama, en vez de que Angel gestione varias
+sesiones a mano. *Claude Design*, *Claude Slides* y el nuevo *Claude
+Docs* (evolución del `/design` en research preview del 21 ago) ahora
+funcionan dentro de Claude Code en desktop y web, no solo en
+claude.ai — genera una maqueta/deck/RFC desde el propio repo y se
+edita en el panel de vista previa.
+
+**Por qué probablemente no aporta aquí todavía:** este repo ya cubre
+diseño visual con la skill `impeccable` (regla propia en este mismo
+`CLAUDE.md`) y documentos con `docx`/`pptx`/Claude Docs (conector
+propio) — Projects y Claude Design/Slides nativos de Claude Code son
+alternativas a flujos que ya existen, no huecos sin cubrir. Sí vale la
+pena que Angel lo tenga en el radar por si el máster/TFM llega a
+necesitar coordinar varios hilos de trabajo en paralelo desde una sola
+conversación (Projects) — pero no se propone nada activo esta pasada.
+
+**Cómo probarlo (si Angel quiere):** Projects — buscar la opción en
+sesiones cloud de Pro/Max (lista de espera si no aparece aún). Claude
+Design — `/design` o el prompt de ejemplo del correo.
+
+### Nota rápida: Fable 5.1 Build Days
+
+Buildathons de la comunidad de Claude en varias ciudades, hasta el 25
+de septiembre de 2026 — `claude.com/community` tiene el listado. Sin
+acción de este repo, solo FYI por si a Angel le interesa uno cercano
+antes de esa fecha.
+
+### Remote Control desde el móvil (`claude rc`) — ya en uso de facto
+
+**Qué es:** cualquier máquina con `claude rc` corriendo aparece como
+tarjeta en la pestaña Code del móvil — tocarla, elegir directorio, y
+arranca la sesión ahí mismo con todos sus archivos, conectores MCP y
+herramientas.
+
+**Por qué le sirve a Angel:** esta misma sesión (la que escribió esta
+entrada) arrancó con `entrypoint: remote_mobile` — Angel ya lo está
+usando, esto es solo la confirmación de que es un feature soportado y
+documentado, no un hallazgo nuevo que instalar.
+
+---
+
 ## 2026-09-18 — Recreada la Routine del Radar (estaba duplicada y rota)
 
 Angel avisó de que "el Radar no funciona bien" y pidió borrar la
