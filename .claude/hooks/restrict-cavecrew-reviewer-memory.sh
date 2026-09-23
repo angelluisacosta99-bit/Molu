@@ -47,7 +47,6 @@ deny() {
 }
 
 command -v jq >/dev/null 2>&1 || allow
-command -v realpath >/dev/null 2>&1 || allow
 
 INPUT=$(cat) || allow
 
@@ -56,6 +55,18 @@ AGENT_TYPE=$(jq -r '.agent_type // empty' <<<"$INPUT" 2>/dev/null)
 
 # A partir de aquí SÍ sabemos que es cavecrew-reviewer -- cualquier
 # fallo de verificación a partir de este punto deniega, no permite.
+#
+# realpath se comprueba AQUÍ, no junto a jq más arriba: jq hace falta
+# para IDENTIFICAR al agente (sin él no se distingue esta llamada de
+# una del hilo principal, de ahí su fail-open documentado arriba),
+# pero realpath solo hace falta para VERIFICAR LA RUTA de un agente ya
+# identificado -- es decir, cae exactamente en la rama que la cabecera
+# define como fail-closed. Comprobarlo antes del agent_type lo dejaba
+# fallando abierto, devolviendo a cavecrew-reviewer el Write/Edit sin
+# acotar sobre todo el repo que este hook existe para cerrar.
+command -v realpath >/dev/null 2>&1 || \
+  deny "cavecrew-reviewer: falta realpath, no se puede verificar que la ruta caiga dentro de su carpeta de memoria -- denegado por defecto."
+
 FILE_PATH=$(jq -r '.tool_input.file_path // empty' <<<"$INPUT" 2>/dev/null)
 if [ -z "$FILE_PATH" ]; then
   deny "cavecrew-reviewer: Write/Edit sin tool_input.file_path -- no se puede verificar que caiga dentro de su carpeta de memoria, denegado por defecto."
