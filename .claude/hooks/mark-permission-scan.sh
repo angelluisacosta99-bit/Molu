@@ -38,6 +38,11 @@ mkdir -p "$DIR"
 MARKER="$DIR/.fewer-permission-prompts-last-run.json"
 MARKER_REL=".claude/.fewer-permission-prompts-last-run.json"
 
+command -v jq >/dev/null 2>&1 || {
+  echo "mark-permission-scan.sh: falta jq, no se puede escribir el marcador." >&2
+  exit 1
+}
+
 TMP="$(mktemp "$DIR/.tmp.fewer-permission-prompts.XXXXXX")" || exit 1
 trap 'rm -f "$TMP"' EXIT
 jq -n \

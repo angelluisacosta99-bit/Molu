@@ -115,6 +115,21 @@ cat /proc/$$/cmdline | tr '\0' ' '; echo
 en el contexto real (no en una subshell que tú mismo construiste a
 medida) antes de diseñar la prueba alrededor de esa asunción.
 
+**Corolario: el texto que un hook INYECTA no lo ejecuta el hook.** Si un
+hook `SessionStart` inyecta una instrucción con un comando dentro, ese
+comando lo correrá el Bash tool de la sesión, no el proceso del hook —
+y no comparten entorno. En concreto, `CLAUDE_PROJECT_DIR` **sí** existe
+para los procesos de hook (el harness se la pasa) pero **no** está
+definida en el Bash tool (verificado en vivo: `echo
+"${CLAUDE_PROJECT_DIR:-<VACIA>}"` desde una llamada normal de Bash
+devuelve vacío). Así que "anclar la ruta a `$CLAUDE_PROJECT_DIR` en vez
+de dejarla relativa al cwd", que es la corrección correcta *dentro* de
+un script de hook, la rompe *dentro del texto inyectado*: se expande a
+`/.claude/hooks/...` y falla siempre. Para una ruta dentro de una
+instrucción inyectada, usar algo que el Bash tool sí pueda resolver por
+sí mismo — `$(git rev-parse --show-toplevel)` en un repo — nunca una
+variable que solo existe del lado del hook.
+
 ## 5. Tras cualquier intento de arreglo, re-verificar, no asumir
 
 **El error real:** tras detectar una versión desajustada y lanzar una
@@ -341,7 +356,7 @@ contenedor se recicle (un marcador, un contador, cualquier estado que
 tiene que verse desde la próxima sesión), preguntar desde el diseño
 inicial: ¿quién garantiza que ese dato llega a git? Si la respuesta es
 "una instrucción en el texto que se inyecta, que la sesión debe
-recordar ejecutar", esa és la señal de la misma familia de bug —
+recordar ejecutar", esa es la señal de la misma familia de bug —
 moverlo al propio script que escribe el estado (o a un hook
 determinista), no a una instrucción de la que depende que el modelo no
 se distraiga, se interrumpa, o decida que "ya lo hizo" sin comprobarlo.
