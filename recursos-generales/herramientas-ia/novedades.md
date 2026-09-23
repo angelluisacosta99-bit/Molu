@@ -23,6 +23,422 @@ copias que puedan desincronizarse.
 
 ---
 
+## 2026-09-19 — Pasada por el correo semanal "This week in Claude Code" (4 números, 21 ago-18 sep)
+
+Angel preguntó de qué tratan los correos de Lydia (Claude Code team,
+`no-reply@email.claude.com`) y pidió la pasada completa. Son el mismo
+digest semanal que `whats-new`, así que se cruzó contra la pasada ya
+hecha el 2026-09-18 para no duplicar — lo de abajo es solo lo que
+faltaba. Se añade este correo como fuente propia al Radar (ver
+`CLAUDE.md`).
+
+### `omitClaudeMd: true` en frontmatter de subagentes (2.1.x, semana 18 sep)
+
+**Qué es:** un subagente normalmente carga todos los `CLAUDE.md` del
+repo en su contexto al arrancar; con `omitClaudeMd: true` en su
+frontmatter, se lo salta.
+
+**Por qué le sirve a Angel:** el `CLAUDE.md` raíz de este repo es
+largo (400+ líneas, con la propia regla de "podarlo, no solo hacerlo
+crecer" ya anotada más abajo). Los subagentes `cavecrew-investigator`/
+`-builder`/`-reviewer` son workers acotados (localizar código, editar
+1-2 archivos, revisar un diff) que no necesitan la mayoría de esas
+reglas (coaching, docencia, máster...) para hacer su trabajo — con
+`omitClaudeMd: true` arrancan con menos contexto y más rápido.
+
+**✅ Aplicado el 2026-09-19** — Angel pidió activarlo. Añadido a las 3
+(`.claude/agents/cavecrew-*.md`, y su espejo en
+`plugins/caveman-cavecrew/agents/`, que este repo mantiene sincronizado
+desde el PR #119/#121). Comparar con `/skill-doctor` o `/usage` más
+adelante si se quiere medir el ahorro real de contexto por spawn.
+
+### Fable 5.1 en Claude Code + ajuste de effort por modelo
+
+**Qué es:** `claude update` + `/model fable` cambia al modelo Fable
+5.1. Lydia avisa que es "más eager" que Fable 5 — puede hacer falta
+bajar el nivel de esfuerzo (ella pasó de `high` a `medium`) y revisar
+instrucciones de CLAUDE.md escritas pensando en modelos anteriores.
+`/effort` ahora recuerda el nivel por modelo (`modelSettings` en
+`~/.claude/settings.json`), y `CLAUDE_CODE_SUBAGENT_MODEL` fija qué
+modelo usan los subagentes por defecto, aparte del de la conversación
+principal.
+
+**Por qué le sirve a Angel:** este mismo repo es el caso de uso que
+describe el correo — un `CLAUDE.md` extenso escrito con distintos
+modelos en mente. Si Angel prueba Fable 5.1, `/claude-api prompt-audit`
+(ya cubierto como skill en este repo) es la herramienta hecha a medida
+para detectar instrucciones de CLAUDE.md que asumen un modelo más
+antiguo, en vez de revisarlo a ojo. `CLAUDE_CODE_SUBAGENT_MODEL` (o
+`modelSettings` por modelo) permite, por ejemplo, correr la sesión
+principal en Fable 5.1 pero mantener los subagentes de `cavecrew` en
+Sonnet/Opus si Fable resulta demasiado "eager" para ediciones
+quirúrgicas de 1-2 archivos.
+
+**Cómo probarlo:** `/model fable` para probarlo en una sesión suelta;
+`/claude-api prompt-audit` sobre `CLAUDE.md` antes de adoptarlo en
+serio.
+
+### Reglas de Auto Mode en texto plano (`autoMode.hard_deny`/`soft_deny`)
+
+**Qué es:** las reglas que sigue el clasificador de Auto Mode
+(activo en este repo, `defaultMode: dontAsk`) se pueden escribir en
+frases sueltas en `~/.claude/settings.json` bajo `autoMode.hard_deny`
+(bloquea siempre) y `autoMode.soft_deny` (bloquea salvo petición
+directa), o editarlas desde la pestaña Auto mode de `/permissions` en
+vez de tocar el JSON a mano. `claude auto-mode critique` señala reglas
+ambiguas o redundantes.
+
+**Por qué le sirve a Angel:** esto es una capa **adicional**, no un
+sustituto, a la regla dura de "nunca fusionar sin revisión
+independiente" que ya aplica este repo vía el hook `PreToolUse`
+`check-pr-review.sh`. Un `hard_deny` como *"Never merge a pull request
+without a recent independent review marker"* añadiría un segundo gate
+a nivel de clasificador — coste bajo, y refuerza justo el punto que ya
+tiene más peso en este repo (regla "sin excepciones" del flujo de PR).
+Al vivir en `~/.claude/settings.json` (settings de usuario, no de
+proyecto), estas reglas persisten entre repos y ningún `.claude/
+settings.json` de un proyecto puede sobrescribirlas — relevante si
+Angel trabaja alguna vez en un repo ajeno sin el hook de este.
+
+**Cómo probarlo:** no se toca `settings.json` de Angel desde esta
+sesión sin que lo pida — es su configuración personal de usuario, no
+algo versionado en este repo. Si quiere probarlo, la regla de ejemplo
+de arriba + `claude auto-mode critique` para validarla.
+
+### Memoria persistente de subagentes (`memory: project|user|local`)
+
+**Qué es:** un subagente con `memory: project` (o `user`/`local`) en
+su frontmatter obtiene su propio directorio en
+`.claude/agent-memory/`, que lee al arrancar y escribe mientras
+trabaja — no repite desde cero lo que ya aprendió sobre el repo en
+sesiones anteriores.
+
+**Por qué le sirve a Angel:** encaja con la propia regla de este
+`CLAUDE.md` de "3+ rondas de revisión sobre lo mismo → guardar la
+lección" — `cavecrew-reviewer` podría acumular en su propia memoria
+los patrones de fallo ya vistos (los de `hook-hardening`, por
+ejemplo) sin depender de que la lección se guarde solo en el
+`SKILL.md`.
+
+**✅ Aplicado el 2026-09-19, solo en `cavecrew-reviewer`** — Angel pidió
+activarlo (los otros dos, `-investigator`/`-builder`, se quedan sin
+memoria: no revisan código en el sentido de acumular patrones de
+fallo). Añadido `memory: project` al frontmatter y una sección
+"Memory" en el cuerpo del agente indicándole que consulte su propia
+memoria antes de revisar y anote hallazgos nuevos al terminar. Mismo
+archivo espejado en `plugins/caveman-cavecrew/agents/cavecrew-reviewer.md`.
+
+**Verificado el 2026-09-19 con una revisión real — no escribió nada.**
+Se le pidió revisar un diff real; devolvió 1 hallazgo (nit) pero
+`.claude/agent-memory/` no se creó.
+
+**Causa raíz encontrada (mismo día, con un subagente de diagnóstico
+dedicado, no solo hipótesis):** la documentación oficial de Claude Code
+dice que `memory: project` concede `Read`/`Write`/`Edit` en automático,
+sin depender de `tools:` — pero un test directo ("intenta escribir una
+nota de memoria ahora mismo") confirmó **"Write or Edit tool available:
+NO"** en este entorno concreto. No es un límite de este repo, es un
+hueco entre lo que documenta Anthropic y lo que este entorno concede de
+verdad (puede ser una versión de harness distinta a la que describe la
+documentación — `CLAUDE_CODE_VERSION` en este contenedor marca 2.1.42,
+muy por detrás del CLI local instalado, 2.1.278).
+
+**Arreglo aplicado (pedido explícitamente por Angel), con Auto Mode
+pidiendo confirmación antes de tocar `.claude/hooks/` (categoría
+"Self-Modification" — aprobado por Angel):**
+- `tools:` de `cavecrew-reviewer` (nativo + plugin) pasa a
+  `[Read, Grep, Bash, Write, Edit]` — explícito, ya no depende de que
+  el entorno conceda memoria en automático.
+- Como Write/Edit sin acotar contradice el diseño "solo lectura" del
+  agente (mismo motivo que ya tiene `restrict-cavecrew-bash.sh` para
+  `Bash`), hook nuevo `.claude/hooks/restrict-cavecrew-reviewer-memory.sh`
+  (+ espejo en `plugins/caveman-cavecrew/hooks/`, registrado en ambos
+  `settings.json`/`hooks.json`): deniega cualquier `Write`/`Edit` de
+  `cavecrew-reviewer` fuera de `.claude/agent-memory/cavecrew-reviewer/`
+  — resuelve la ruta con `realpath -m` (a prueba de `../`), y falla
+  **cerrado** (deniega) en cuanto identifica que es `cavecrew-reviewer`
+  pero no puede verificar la ruta, al revés que el resto de hooks
+  best-effort de este repo — aquí fallar abierto sería el propio agravio
+  que el hook existe para evitar. 7/7 casos de prueba manuales (ruta
+  válida, ruta externa, traversal, otro agente, sin `agent_type`,
+  `file_path` ausente, la carpeta misma sin archivo) se comportaron como
+  se esperaba.
+
+**Sin verificar de punta a punta todavía — límite nuevo encontrado, no
+un supuesto.** Con el hook ya activo, un subagente real de
+`cavecrew-reviewer` invocado en esta misma sesión **seguía sin ver
+`Write`/`Edit`** (intentó `Bash` con `>`, bloqueado por
+`restrict-cavecrew-bash.sh` como se esperaba de ese hook, pero
+`Write`/`Edit` ni aparecía en su lista de herramientas) — el cambio de
+`tools:` a mitad de sesión no se recoge para un agente ya en curso;
+hace falta una sesión nueva para confirmar que funciona de verdad.
+Pendiente: repetir el mismo test de escritura en una sesión nueva.
+
+### Projects (beta) y Claude Design/Slides/Docs en desktop y web (beta)
+
+**Qué son:** *Projects* (rediseño completo, en beta para cuentas
+Pro/Max en sesiones cloud) deja describir en una conversación todo lo
+que hace falta y Claude lo reparte en varios hilos, cada uno como
+sesión cloud en su propia rama, en vez de que Angel gestione varias
+sesiones a mano. *Claude Design*, *Claude Slides* y el nuevo *Claude
+Docs* (evolución del `/design` en research preview del 21 ago) ahora
+funcionan dentro de Claude Code en desktop y web, no solo en
+claude.ai — genera una maqueta/deck/RFC desde el propio repo y se
+edita en el panel de vista previa.
+
+**Por qué probablemente no aporta aquí todavía:** este repo ya cubre
+diseño visual con la skill `impeccable` (regla propia en este mismo
+`CLAUDE.md`) y documentos con `docx`/`pptx`/Claude Docs (conector
+propio) — Projects y Claude Design/Slides nativos de Claude Code son
+alternativas a flujos que ya existen, no huecos sin cubrir. Sí vale la
+pena que Angel lo tenga en el radar por si el máster/TFM llega a
+necesitar coordinar varios hilos de trabajo en paralelo desde una sola
+conversación (Projects) — pero no se propone nada activo esta pasada.
+
+**Cómo probarlo (si Angel quiere):** Projects — buscar la opción en
+sesiones cloud de Pro/Max (lista de espera si no aparece aún). Claude
+Design — `/design` o el prompt de ejemplo del correo.
+
+### Nota rápida: Fable 5.1 Build Days
+
+Buildathons de la comunidad de Claude en varias ciudades, hasta el 25
+de septiembre de 2026 — `claude.com/community` tiene el listado. Sin
+acción de este repo, solo FYI por si a Angel le interesa uno cercano
+antes de esa fecha.
+
+### Remote Control desde el móvil (`claude rc`) — ya en uso de facto
+
+**Qué es:** cualquier máquina con `claude rc` corriendo aparece como
+tarjeta en la pestaña Code del móvil — tocarla, elegir directorio, y
+arranca la sesión ahí mismo con todos sus archivos, conectores MCP y
+herramientas.
+
+**Por qué le sirve a Angel:** esta misma sesión (la que escribió esta
+entrada) arrancó con `entrypoint: remote_mobile` — Angel ya lo está
+usando, esto es solo la confirmación de que es un feature soportado y
+documentado, no un hallazgo nuevo que instalar.
+
+---
+
+## 2026-09-18 — Recreada la Routine del Radar (estaba duplicada y rota)
+
+Angel avisó de que "el Radar no funciona bien" y pidió borrar la
+rutina actual y crear una nueva. Investigado antes de tocar nada:
+
+**Lo que había:** dos Routines con el mismo nombre. La original
+(`trig_01Jx2UqBq8ezuTzpknMj7SAW`, agosto) estaba **deshabilitada**
+desde el 7 de septiembre — era la que este CLAUDE.md seguía citando,
+así que en la práctica llevaba dos semanas sin disparar nada. La otra
+(`trig_016qL349a6rEEmaeCCoYmerT`, creada el 7 de septiembre) seguía
+activa pero su única ejecución (14 de septiembre) terminó en estado
+`FAILED` a los 8 segundos, sin subir ninguna rama — se había creado
+con `allowed_tools` vacío en su configuración.
+
+**Ambas se borraron** y se creó una rutina nueva
+(`trig_01N46fmEJzqk7ZrS3L9cPcqt`). Al crearla, la propia herramienta
+avisó de que las sesiones que dispara no llevan conectores MCP — para
+no repetir el mismo fallo a ciegas, se lanzó un disparo de prueba
+única (borrado después de comprobar) para verificar en vivo qué
+herramientas tiene realmente disponibles una sesión disparada por
+Routine en este entorno, en vez de suponerlo:
+
+- ✅ `Bash`, `Read`, `Write`, `Edit`, `Glob`, `Grep`, `WebFetch`,
+  `WebSearch`, `Agent`, `Artifact` — disponibles.
+- ❌ `mcp__github__*` (crear PR, etc.) — **no disponible**. `git push`
+  por Bash sí funciona (el proxy/credenciales del entorno ya lo
+  permiten), solo falla la API de GitHub para abrir el PR.
+- El prompt de la rutina se corrigió para asumir esto: clona/commitea/
+  sube con `git` por Bash, deja la rama subida sin intentar abrir el
+  PR, y lo dice claramente en el mensaje final para que se abra a
+  mano.
+
+**Otro fallo real detectado en el prompt viejo (ambas rutinas):**
+asumía que la rama por defecto del repo es `main` — dejó de serlo en
+algún momento reciente (ver el PR #119/#121 de este mismo registro).
+El prompt nuevo comprueba `git ls-remote --symref origin HEAD` en vez
+de asumirlo, para no volver a romperse si cambia otra vez.
+
+**Lección para futuras Routines creadas por Claude Code (no solo esta
+del Radar):** `create_trigger` invocada desde una sesión de Claude Code
+Remote no hereda conectores MCP ni un preset de herramientas completo
+por defecto — probarlo en vivo con un disparo único antes de confiar
+en que una rutina nueva funciona como la que sustituye, en vez de
+asumir paridad.
+
+---
+
+## 2026-09-18 — Pasada por `code.claude.com/docs/en/whats-new` (Weeks 13-37)
+
+Angel pidió una búsqueda de "qué otras herramientas o instrucciones da
+el equipo de Anthropic que debería usar aquí". Cubierto todo el digest
+semanal desde marzo hasta la semana del 7-11 de septiembre de 2026 —
+lo de abajo es lo que pasa el criterio de relevancia (resuelve una
+necesidad real de este repo), no un volcado del changelog completo.
+Todo esto son comandos nativos, sin tarjeta de instalación — se prueban
+directamente escribiéndolos.
+
+**`/skill-doctor`** (semana del 31 ago-4 sep) — muestra cuánto contexto
+cuesta cada skill instalada y con qué frecuencia se usa realmente.
+Angel tiene ya 10+ skills propias (`graphify`, `impeccable`,
+`ejercicio-interactivo`, `hook-hardening`, `caveman`, `cavecrew`,
+`humanizer`...) — con esto se ve con datos reales cuáles compensan su
+coste de contexto y cuáles no, en vez de adivinar.
+
+**`/usage`** — desglosa qué consume el límite del plan por skill,
+subagente, plugin y servidor MCP. Con la cantidad de conectores MCP
+activos en este repo (Drive, DeepL, GitHub, Scite, alphaXiv,
+Consensus, Wolfram, Hugging Face...), esto identifica cuáles pesan de
+verdad en vez de suponerlo.
+
+**`claude plugin eval`** (semana del 7-11 sep) — corre un plugin
+propio contra una batería de casos de prueba y compara con/sin el
+plugin; `claude plugin eval init` genera los casos y criterios de
+evaluación solos. Directamente aplicable al plugin `caveman-cavecrew`
+que se acaba de empaquetar en este repo.
+
+**✅ Probado el 2026-09-19** — primer caso real
+(`plugins/caveman-cavecrew/evals/caveman-terseness/`, `--bare` +
+criterio escrito a mano: pregunta técnica de React re-render por
+objeto inline, exige explicación correcta + solución correcta + tono
+caveman). Resultado real, no hipotético: **con plugin 0.33 (1/3
+pases), sin plugin 1.00 (3/3) — Δ -0.67, coste $0.30, 6 runs.** Mirando
+la evidencia de los runs "with" que fallaron, el contenido técnico
+seguía siendo correcto (referencia nueva por objeto literal, fix con
+`useMemo`) pero más comprimido de lo que el juez LLM aceptó como
+"completo" bajo este criterio en concreto — puede ser el propio modo
+caveman recortando de más en este caso, o el criterio siendo más
+estricto de lo que debería (n=3 es poco para distinguir una cosa de la
+otra). No se ajusta el criterio ni se toca el plugin desde aquí sin
+que Angel lo decida — es su primera señal real con datos, no un
+veredicto. Informe completo en
+`plugins/caveman-cavecrew/evals/results/2026-09-19T12-54-59-381Z/report.html`
+(local, sin publicar).
+
+**Auto mode ya no es "preview"** — llegó en preview en marzo de 2026
+(semana 13) y para julio-agosto ya es el modo de permisos por defecto
+en cuentas Pro/Max/Team (semana 32): un clasificador aprueba solo las
+acciones seguras en segundo plano y bloquea las arriesgadas, en vez de
+preguntar cada vez. Esto actualiza la entrada del 2026-08-16 de este
+mismo registro, que dejó "permisos por nivel de riesgo" anotado como
+"no aplicado, decisión de fondo" por ser una alternativa poco madura
+frente al `defaultMode: dontAsk` que ya usa este repo — ahora es una
+opción bastante más asentada, sigue siendo una decisión de Angel, no
+algo para cambiar de pasada.
+
+**Subagentes en segundo plano por defecto + fork mode** (semanas 27 y
+33) — un subagente delegado sigue corriendo mientras Claude sigue
+trabajando, y "fork mode" deja que un subagente herede la conversación
+completa en vez de arrancar con un prompt aislado. Relevante para
+cómo se invocan `cavecrew-investigator`/`builder`/`reviewer` — no
+cambia nada por sí solo, pero es la explicación de por qué delegar a
+un subagente ya no bloquea el hilo principal.
+
+**`/goal`** (semana del 11-15 may) — mantiene a Claude trabajando entre
+turnos hasta que se cumple una condición de terminación explícita, en
+vez de un solo turno. Podría servir para tareas largas y repetitivas
+de este repo (una tanda de `ejercicio-interactivo` para varios
+capítulos seguidos, una curación larga de `graphify label`).
+
+**`claude ultrareview`** (semana del 20-24 abr) — una flota de agentes
+de búsqueda de bugs en la nube, pensado para CI/scripts. Complementa
+(no sustituye) la skill `code-review` ya usada en el flujo de PR de
+este repo — candidato para un trabajo de código grande y puntual
+(un script largo de `python/` o `telecomunicaciones/`), no para el
+flujo normal de cada PR.
+
+**Cómo seguir mirando esta fuente:** `code.claude.com/docs/en/whats-new`
+tiene un digest semanal — la próxima pasada del radar solo necesita
+mirar las entradas posteriores a la semana 37 (7-11 sep 2026).
+
+### Con tarjeta: plugin oficial `security-guidance`
+
+**Qué es:** plugin oficial de Anthropic (`anthropics/claude-plugins-official`,
+marketplace `knowledge-work-plugins`) — revisión de seguridad del
+código que genera Claude: avisos basados en patrones en cada edición,
+revisión de diff con LLM al terminar la sesión (hook `Stop`), y un
+revisor de commits que detecta inyección, XSS, SSRF, secretos
+hardcodeados y 25+ clases de vulnerabilidad más.
+
+**Por qué le sirve a Angel:** este repo tiene bastante código propio
+con permisos reales (`.claude/hooks/*.sh`, con `defaultMode: dontAsk`
+— sin cortafuegos de permisos interactivo) y carpetas de código
+(`python/`, `telecomunicaciones/`). La propia skill `hook-hardening`
+de este repo nació de bugs de seguridad reales en hooks anteriores
+(`restrict-cavecrew-bash.sh`, 4 rondas solo para cerrar bypasses) —
+una revisión de seguridad automática en cada sesión habría podido
+detectar alguno de esos antes de que hiciera falta una revisión
+externa.
+
+**✅ Activado el 2026-09-19** — Angel lo instaló desde Settings →
+Plugins (confirmado por captura de pantalla: mismo autor, David
+Dworken, versión 2.0.8, toggle encendido). Sin acción adicional.
+
+---
+
+## 2026-09-18 — Aplicado: `fewer-permission-prompts` en piloto automático
+
+**Qué es:** `.claude/hooks/fewer-permission-prompts-reminder.sh` (hook
+`SessionStart`, matcher `startup`) — comprueba un marcador con
+timestamp (`.claude/.fewer-permission-prompts-last-run.json`, mismo
+patrón de escritura atómica que `mark-pr-reviewed.sh`) y, si han
+pasado 7+ días o nunca se ha corrido, le pide a la sesión que ejecute
+la skill `fewer-permission-prompts` sola, sin que Angel tenga que
+acordarse de pedirlo. `.claude/hooks/mark-permission-scan.sh` escribe
+el marcador al terminar, y **lo comitea y sube él mismo** (git add +
+commit + push, solo ese archivo, directo a la rama activa, con
+reintento tras rebase si el push choca) — no depende de que la sesión
+recuerde subirlo aparte. Ver la entrada de esa misma fecha sobre la
+reconstrucción de la Routine del Radar para el porqué de este diseño
+(costó 3 rondas de revisión encontrar que la versión con instrucción
+manual perdía el marcador en el caso más común).
+
+**Por qué le sirve a Angel:** lo pidió explícitamente ("quiero esto
+para todas las sesiones siempre activa"). No es literal "cada sesión"
+— correr la skill completa (escanear transcripciones) en cada arranque
+gastaría tokens de más sin necesidad; el umbral de 7 días mantiene el
+allowlist actualizado solo, sin ese coste repetido. Es un recordatorio
+en el contexto, no un gate técnico — si una sesión no lo sigue, no
+rompe nada, simplemente se repite en el siguiente arranque.
+
+**Cómo probarlo:** ya está activo — se dispara solo cuando toque. Las
+5 pruebas del checklist de `hook-hardening` (sin marcador, justo tras
+marcar, marcador de 10 días, marcador corrupto, jq ausente) se
+corrieron en vivo antes de activarlo.
+
+---
+
+## 2026-09-18 — Catálogo de Claude Academy (cursos oficiales)
+
+**Qué es:** `academy.claude.com` (antes Anthropic Academy) tiene 26+
+cursos gratis, gratuitos y sin tarjeta, en `anthropic.skilljar.com`.
+Los relevantes para el flujo de este repo: **Claude Code 101**
+(flujo diario de trabajo), **Claude Code in Action** (sesiones largas
+sin supervisión: dirigir, configurar, automatizar, verificar),
+**Introduction to agent skills** (crear/compartir/depurar skills en
+Markdown — este repo ya tiene varias propias en `.claude/skills/`),
+**Introduction to subagents** (delegar tareas para no gastar contexto
+principal), e **Introduction to Model Context Protocol** (cómo
+funcionan los conectores MCP que ya usa este repo — Google Drive,
+DeepL, GitHub, etc.).
+
+**Por qué le sirve a Angel:** surgió al investigar un reel de
+Instagram que prometía "cursos validados por Anthropic" a cambio de
+comentar y dar el contacto por privado — patrón típico de
+engagement-bait, sin verificar. Esto es la alternativa real y oficial:
+mismo tema (aprender Claude Code a fondo), pero verificable y sin
+intermediario. Los cursos de skills/subagentes/MCP en concreto pueden
+formalizar prácticas que este repo ya usa de forma intuitiva
+(`graphify`, `impeccable`, `ejercicio-interactivo` como skills; el
+subagente de revisión antes de cada merge) y rellenar el hueco ya
+anotado el 2026-08-16 sobre subagentes de dominio (ej. uno dedicado a
+revisar ejercicios interactivos).
+
+**Cómo probarlo:** no hace falta instalar nada — son cursos con vídeo,
+quiz y certificado en `academy.claude.com`, con registro simple (sin
+tarjeta ni suscripción de Claude necesaria).
+
+---
+
 ## 2026-09-13 — Búsqueda exhaustiva: herramientas de investigación científica verificada para el máster
 
 Angel pidió explícitamente una búsqueda exhaustiva de herramientas/
@@ -96,10 +512,18 @@ de fiarse de una cuenta hecha a mano o por el modelo.
   su plan sí soporta plugins). El problema real: esta sesión de Claude
   Code en concreto nunca cargó sus herramientas (nunca apareció en la
   lista de herramientas ni en `ListPlugins`, pese a estar activado a
-  nivel de cuenta) — probable límite de sincronización de esta sesión
-  en particular, no del plan. Pendiente de confirmar si una sesión
-  nueva sí lo carga (Angel va a abrir una de todas formas por lo de
-  numpy.org/pandas.pydata.org — comprobar ahí de paso).
+  nivel de cuenta).
+
+  **Confirmado el 2026-09-19, en una sesión distinta:** sigue sin
+  cargar — `ListPlugins` con "exa" da vacío, y ni `ListConnectors` ni
+  `ToolSearch` encuentran ninguna herramienta de Exa disponible. Ya no
+  es "pendiente de confirmar si es solo esta sesión" — persiste entre
+  sesiones nuevas, no es una fluctuación puntual. Nada que este repo
+  pueda arreglar desde aquí (no es un ajuste de `.claude/settings.json`
+  ni de este código) — si a Angel le sigue importando Exa en concreto,
+  el siguiente paso sería desinstalar/reinstalar el plugin desde
+  `claude.ai/new#settings/customize-plugins`, o reportarlo con
+  `/feedback` como bug de sincronización de plugins.
 
 ### Revisados y descartados por redundancia o desajuste (por completitud)
 
