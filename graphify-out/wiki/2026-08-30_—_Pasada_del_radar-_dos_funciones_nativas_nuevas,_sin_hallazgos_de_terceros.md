@@ -11,7 +11,7 @@
 
 ## Relationships
 
-- [Novedades de herramientas de IA](Novedades_de_herramientas_de_IA.md) (1 shared connections)
+- [Novedades de herramientas de IA (comunidad)](Novedades_de_herramientas_de_IA_comunidad.md) (1 shared connections)
 
 ## Source Files
 

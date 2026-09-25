@@ -18,7 +18,7 @@
 
 ## Relationships
 
-- [detect-html.mjs](detect-html.mjs.md) (2 shared connections)
+- [ref_node_path](ref_node_path.md) (2 shared connections)
 
 ## Source Files
 

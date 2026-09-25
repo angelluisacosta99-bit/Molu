@@ -33,10 +33,9 @@
 
 ## Relationships
 
-- [detect-html.mjs](detect-html.mjs.md) (4 shared connections)
-- [live.mjs](live.mjs.md) (3 shared connections)
+- [ref_node_path](ref_node_path.md) (5 shared connections)
+- [context.mjs](context.mjs.md) (3 shared connections)
 - [impeccable-paths.mjs](impeccable-paths.mjs.md) (2 shared connections)
-- [pin.mjs](pin.mjs.md) (1 shared connections)
 
 ## Source Files
 

@@ -33,7 +33,7 @@
 
 ## Relationships
 
-- [live-copy-edit-agent.mjs](live-copy-edit-agent.mjs.md) (1 shared connections)
+- [extraer.mjs](extraer.mjs.md) (1 shared connections)
 
 ## Source Files
 

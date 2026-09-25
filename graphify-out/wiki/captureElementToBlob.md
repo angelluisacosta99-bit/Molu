@@ -1,6 +1,6 @@
 # captureElementToBlob
 
-> 21 nodes
+> 19 nodes
 
 ## Key Concepts
 
@@ -16,9 +16,7 @@
 - **cssColorToRgb01()** (3 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
 - **findBackdropAncestor()** (3 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
 - **findShaderProxyCaptureRoot()** (3 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **hideCaptureChromeForShaderProxy()** (3 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
 - **resolveCanvasBackground()** (3 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **captureChromeNodes()** (2 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
 - **dominantRgb01()** (2 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
 - **loadModernScreenshot()** (2 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
 - **sampleSurroundingRgb()** (2 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
@@ -28,7 +26,7 @@
 
 ## Relationships
 
-- [live-browser.js](live-browser.js.md) (21 shared connections)
+- [live-browser.js](live-browser.js.md) (20 shared connections)
 - [resumeSession](resumeSession.md) (3 shared connections)
 - [setLiveState](setLiveState.md) (2 shared connections)
 - [onAnnotDown](onAnnotDown.md) (1 shared connections)
@@ -39,7 +37,7 @@
 
 ## Audit Trail
 
-- EXTRACTED: 54 (100%)
+- EXTRACTED: 51 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

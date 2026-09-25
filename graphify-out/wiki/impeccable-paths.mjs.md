@@ -31,14 +31,13 @@
 
 - [live-server.mjs](live-server.mjs.md) (11 shared connections)
 - [readLiveServerInfo](readLiveServerInfo.md) (8 shared connections)
+- [context.mjs](context.mjs.md) (6 shared connections)
 - [manual-apply.mjs](manual-apply.mjs.md) (4 shared connections)
-- [context.mjs](context.mjs.md) (3 shared connections)
-- [live.mjs](live.mjs.md) (3 shared connections)
 - [critique-storage.mjs](critique-storage.mjs.md) (3 shared connections)
 - [session-store.mjs](session-store.mjs.md) (3 shared connections)
 - [manual-edits-buffer.mjs](manual-edits-buffer.mjs.md) (3 shared connections)
 - [live-inject.mjs](live-inject.mjs.md) (2 shared connections)
-- [detect-html.mjs](detect-html.mjs.md) (2 shared connections)
+- [ref_node_path](ref_node_path.md) (2 shared connections)
 - [context-signals.mjs](context-signals.mjs.md) (1 shared connections)
 - [live-poll.mjs](live-poll.mjs.md) (1 shared connections)
 

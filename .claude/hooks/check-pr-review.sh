@@ -109,7 +109,7 @@ REPO_LOWER=$(printf '%s' "$REPO" | tr '[:upper:]' '[:lower:]')
 MARKER="$DIR/${OWNER_LOWER}__${REPO_LOWER}__${PR_NUMBER}.json"
 
 if [ ! -f "$MARKER" ]; then
-  deny "No hay marcador de revisión para $OWNER/$REPO#$PR_NUMBER. Corre una revisión independiente (skill code-review) sobre el estado actual del PR y, si sale limpia, deja constancia con: .claude/hooks/mark-pr-reviewed.sh $OWNER $REPO $PR_NUMBER <head_sha> \"<resumen>\" -- antes de intentar fusionar de nuevo."
+  deny "No hay marcador de revisión para $OWNER/$REPO#$PR_NUMBER. Corre una revisión independiente (skill code-review) sobre el estado actual del PR y, si sale limpia, deja constancia con: bash \"\$(git rev-parse --show-toplevel)/.claude/hooks/mark-pr-reviewed.sh\" $OWNER $REPO $PR_NUMBER <head_sha> \"<resumen>\" -- antes de intentar fusionar de nuevo."
 fi
 
 # Una sola invocación de jq (un solo open()+parse del archivo) para leer

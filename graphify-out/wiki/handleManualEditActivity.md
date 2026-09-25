@@ -1,12 +1,13 @@
 # handleManualEditActivity
 
-> 25 nodes
+> 26 nodes
 
 ## Key Concepts
 
 - **handleManualEditActivity()** (14 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
 - **updatePendingCounter()** (13 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
 - **setPendingApplyLoading()** (12 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **refreshLiveControlsForManualApply()** (10 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
 - **onPendingPillClick()** (8 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
 - **readStoredManualApplyState()** (8 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
 - **onPendingKeepFixingClick()** (7 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
@@ -28,14 +29,16 @@
 - **manualApplyLoadingText()** (3 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
 - **shouldResumeManualApplyLoading()** (3 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
 - **manualEditEventForCurrentPage()** (2 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **playPendingIntroAnimation()** (2 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- *... and 1 more nodes in this community*
 
 ## Relationships
 
 - [live-browser.js](live-browser.js.md) (26 shared connections)
-- [setLiveState](setLiveState.md) (8 shared connections)
-- [initGlobalBar](initGlobalBar.md) (6 shared connections)
+- [setLiveState](setLiveState.md) (9 shared connections)
+- [initGlobalBar](initGlobalBar.md) (7 shared connections)
 - [resumeSession](resumeSession.md) (1 shared connections)
+- [el](el.md) (1 shared connections)
+- [documentRefForElement](documentRefForElement.md) (1 shared connections)
 
 ## Source Files
 
@@ -43,7 +46,7 @@
 
 ## Audit Trail
 
-- EXTRACTED: 92 (96%)
+- EXTRACTED: 99 (96%)
 - INFERRED: 4 (4%)
 - AMBIGUOUS: 0 (0%)
 

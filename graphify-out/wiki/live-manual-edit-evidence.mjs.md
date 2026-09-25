@@ -35,7 +35,7 @@
 
 - [manual-edits-buffer.mjs](manual-edits-buffer.mjs.md) (9 shared connections)
 - [isGeneratedFile](isGeneratedFile.md) (4 shared connections)
-- [detect-html.mjs](detect-html.mjs.md) (2 shared connections)
+- [ref_node_path](ref_node_path.md) (2 shared connections)
 - [live-commit-manual-edits.mjs](live-commit-manual-edits.mjs.md) (1 shared connections)
 
 ## Source Files

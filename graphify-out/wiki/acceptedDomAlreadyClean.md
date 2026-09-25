@@ -14,8 +14,7 @@
 ## Relationships
 
 - [live-browser.js](live-browser.js.md) (6 shared connections)
-- [resumeSession](resumeSession.md) (1 shared connections)
-- [setLiveState](setLiveState.md) (1 shared connections)
+- [setLiveState](setLiveState.md) (2 shared connections)
 
 ## Source Files
 

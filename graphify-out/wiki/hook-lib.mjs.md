@@ -38,8 +38,7 @@
 - [readConfig](readConfig.md) (17 shared connections)
 - [hook-admin.mjs](hook-admin.mjs.md) (9 shared connections)
 - [normalizeGitHubEvent](normalizeGitHubEvent.md) (7 shared connections)
-- [detect-html.mjs](detect-html.mjs.md) (2 shared connections)
-- [pin.mjs](pin.mjs.md) (1 shared connections)
+- [ref_node_path](ref_node_path.md) (3 shared connections)
 
 ## Source Files
 

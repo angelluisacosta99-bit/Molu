@@ -12,9 +12,9 @@
 
 ## Relationships
 
-- [svelte-component.mjs](svelte-component.mjs.md) (5 shared connections)
+- [svelte-component.mjs](svelte-component.mjs.md) (6 shared connections)
 - [live-server.mjs](live-server.mjs.md) (2 shared connections)
-- [live-accept.mjs](live-accept.mjs.md) (2 shared connections)
+- [live-accept.mjs](live-accept.mjs.md) (1 shared connections)
 
 ## Source Files
 

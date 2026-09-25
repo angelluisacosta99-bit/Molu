@@ -1,6 +1,6 @@
 # live-accept.mjs
 
-> 35 nodes
+> 33 nodes
 
 ## Key Concepts
 
@@ -9,7 +9,6 @@
 - **handleAccept()** (10 connections) — `.claude/skills/impeccable/scripts/live-accept.mjs`
 - **handleDiscard()** (7 connections) — `.claude/skills/impeccable/scripts/live-accept.mjs`
 - **scrubManualEditsAgainstOriginalBlock()** (6 connections) — `.claude/skills/impeccable/scripts/live-accept.mjs`
-- **findSvelteComponentManifest()** (6 connections) — `.claude/skills/impeccable/scripts/live/svelte-component.mjs`
 - **escapeRegExp()** (5 connections) — `.claude/skills/impeccable/scripts/live-accept.mjs`
 - **expandReplaceRange()** (5 connections) — `.claude/skills/impeccable/scripts/live-accept.mjs`
 - **extractOriginal()** (5 connections) — `.claude/skills/impeccable/scripts/live-accept.mjs`
@@ -29,24 +28,24 @@
 - **isVariantEndMarkerLine()** (3 connections) — `.claude/skills/impeccable/scripts/live-accept.mjs`
 - **manualEditOpAppearsInBlock()** (3 connections) — `.claude/skills/impeccable/scripts/live-accept.mjs`
 - **manualEditTextSegments()** (3 connections) — `.claude/skills/impeccable/scripts/live-accept.mjs`
-- *... and 10 more nodes in this community*
+- **normalizeManualEditText()** (3 connections) — `.claude/skills/impeccable/scripts/live-accept.mjs`
+- *... and 8 more nodes in this community*
 
 ## Relationships
 
-- [svelte-component.mjs](svelte-component.mjs.md) (8 shared connections)
+- [svelte-component.mjs](svelte-component.mjs.md) (7 shared connections)
 - [manual-edits-buffer.mjs](manual-edits-buffer.mjs.md) (5 shared connections)
 - [isGeneratedFile](isGeneratedFile.md) (3 shared connections)
-- [applyDeferredSvelteComponentAccepts](applyDeferredSvelteComponentAccepts.md) (2 shared connections)
-- [detect-html.mjs](detect-html.mjs.md) (2 shared connections)
+- [ref_node_path](ref_node_path.md) (2 shared connections)
+- [applyDeferredSvelteComponentAccepts](applyDeferredSvelteComponentAccepts.md) (1 shared connections)
 
 ## Source Files
 
 - `.claude/skills/impeccable/scripts/live-accept.mjs`
-- `.claude/skills/impeccable/scripts/live/svelte-component.mjs`
 
 ## Audit Trail
 
-- EXTRACTED: 98 (99%)
+- EXTRACTED: 93 (99%)
 - INFERRED: 1 (1%)
 - AMBIGUOUS: 0 (0%)
 

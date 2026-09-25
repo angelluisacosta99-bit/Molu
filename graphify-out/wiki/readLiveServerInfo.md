@@ -31,7 +31,7 @@
 
 - [impeccable-paths.mjs](impeccable-paths.mjs.md) (8 shared connections)
 - [session-store.mjs](session-store.mjs.md) (6 shared connections)
-- [live.mjs](live.mjs.md) (2 shared connections)
+- [context.mjs](context.mjs.md) (2 shared connections)
 - [live-poll.mjs](live-poll.mjs.md) (2 shared connections)
 - [live-server.mjs](live-server.mjs.md) (2 shared connections)
 

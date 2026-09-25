@@ -23,13 +23,10 @@
 
 ## Relationships
 
-- [live.mjs](live.mjs.md) (3 shared connections)
-- [context.mjs](context.mjs.md) (2 shared connections)
+- [context.mjs](context.mjs.md) (6 shared connections)
+- [ref_node_path](ref_node_path.md) (3 shared connections)
 - [critique-storage.mjs](critique-storage.mjs.md) (2 shared connections)
-- [detect-html.mjs](detect-html.mjs.md) (2 shared connections)
 - [live-server.mjs](live-server.mjs.md) (2 shared connections)
-- [cli](cli.md) (1 shared connections)
-- [pin.mjs](pin.mjs.md) (1 shared connections)
 - [impeccable-paths.mjs](impeccable-paths.mjs.md) (1 shared connections)
 - [isGeneratedFile](isGeneratedFile.md) (1 shared connections)
 - [live-copy-edit-agent.mjs](live-copy-edit-agent.mjs.md) (1 shared connections)

@@ -21,8 +21,8 @@
 
 ## Relationships
 
-- [css-cascade.mjs](css-cascade.mjs.md) (2 shared connections)
-- [detect-html.mjs](detect-html.mjs.md) (1 shared connections)
+- [detect-html.mjs](detect-html.mjs.md) (2 shared connections)
+- [css-cascade.mjs](css-cascade.mjs.md) (1 shared connections)
 
 ## Source Files
 

@@ -1,11 +1,10 @@
 # checks.mjs
 
-> 88 nodes
+> 87 nodes
 
 ## Key Concepts
 
 - **checks.mjs** (126 connections) — `.claude/skills/impeccable/scripts/detector/rules/checks.mjs`
-- **resolveLengthPx()** (14 connections) — `.claude/skills/impeccable/scripts/detector/rules/checks.mjs`
 - **parseAnyColor()** (13 connections) — `.claude/skills/impeccable/scripts/detector/rules/checks.mjs`
 - **checkClippedOverflow()** (8 connections) — `.claude/skills/impeccable/scripts/detector/rules/checks.mjs`
 - **checkQuality()** (8 connections) — `.claude/skills/impeccable/scripts/detector/rules/checks.mjs`
@@ -29,15 +28,17 @@
 - **checkElementOversizedH1()** (4 connections) — `.claude/skills/impeccable/scripts/detector/rules/checks.mjs`
 - **checkElementTextOverflowDOM()** (4 connections) — `.claude/skills/impeccable/scripts/detector/rules/checks.mjs`
 - **checkHeroEyebrow()** (4 connections) — `.claude/skills/impeccable/scripts/detector/rules/checks.mjs`
-- *... and 63 more nodes in this community*
+- **checkItalicSerif()** (4 connections) — `.claude/skills/impeccable/scripts/detector/rules/checks.mjs`
+- *... and 62 more nodes in this community*
 
 ## Relationships
 
-- [parseRgb (2)](parseRgb_2.md) (27 shared connections)
-- [detect-html.mjs](detect-html.mjs.md) (21 shared connections)
+- [parseRgb](parseRgb.md) (26 shared connections)
+- [detect-html.mjs](detect-html.mjs.md) (20 shared connections)
 - [detect-antipatterns.mjs](detect-antipatterns.mjs.md) (12 shared connections)
-- [css-cascade.mjs](css-cascade.mjs.md) (7 shared connections)
-- [design-system.mjs](design-system.mjs.md) (7 shared connections)
+- [design-system.mjs](design-system.mjs.md) (11 shared connections)
+- [css-cascade.mjs](css-cascade.mjs.md) (5 shared connections)
+- [detect-text.mjs](detect-text.mjs.md) (2 shared connections)
 
 ## Source Files
 
@@ -46,7 +47,7 @@
 
 ## Audit Trail
 
-- EXTRACTED: 244 (100%)
+- EXTRACTED: 238 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

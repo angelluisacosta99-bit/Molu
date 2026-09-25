@@ -21,9 +21,8 @@
 ## Relationships
 
 - [impeccable-paths.mjs](impeccable-paths.mjs.md) (3 shared connections)
+- [ref_node_path](ref_node_path.md) (3 shared connections)
 - [context-signals.mjs](context-signals.mjs.md) (2 shared connections)
-- [detect-html.mjs](detect-html.mjs.md) (2 shared connections)
-- [pin.mjs](pin.mjs.md) (1 shared connections)
 
 ## Source Files
 

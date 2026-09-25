@@ -1,12 +1,12 @@
 # resumeSession
 
-> 64 nodes
+> 65 nodes
 
 ## Key Concepts
 
 - **resumeSession()** (25 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **connectSSE()** (23 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
 - **injectVariantsFromSource()** (22 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **showBar()** (22 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
 - **startVariantObserver()** (22 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
 - **injectSvelteComponentsFromManifest()** (20 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
 - **restoreSessionWithoutWrapper()** (16 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
@@ -26,24 +26,21 @@
 - **loadSession()** (8 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
 - **openTunePopover()** (8 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
 - **startScrollTracking()** (8 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **maybeCompleteAcceptedSession()** (7 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **closeTunePopover()** (7 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
 - **positionParamsPanel()** (7 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
 - **rememberSessionFileMeta()** (7 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- *... and 39 more nodes in this community*
+- *... and 40 more nodes in this community*
 
 ## Relationships
 
-- [live-browser.js](live-browser.js.md) (71 shared connections)
-- [setLiveState](setLiveState.md) (52 shared connections)
-- [el](el.md) (9 shared connections)
-- [initGlobalBar](initGlobalBar.md) (7 shared connections)
+- [live-browser.js](live-browser.js.md) (74 shared connections)
+- [setLiveState](setLiveState.md) (51 shared connections)
+- [el](el.md) (16 shared connections)
 - [resolveLiveInjectionAnchor](resolveLiveInjectionAnchor.md) (5 shared connections)
+- [initGlobalBar](initGlobalBar.md) (4 shared connections)
 - [captureElementToBlob](captureElementToBlob.md) (3 shared connections)
-- [onAnnotDown](onAnnotDown.md) (2 shared connections)
-- [initPageChat](initPageChat.md) (1 shared connections)
+- [onAnnotDown](onAnnotDown.md) (1 shared connections)
 - [handleManualEditActivity](handleManualEditActivity.md) (1 shared connections)
-- [acceptedDomAlreadyClean](acceptedDomAlreadyClean.md) (1 shared connections)
-- [syncEditBadgeHitProxies](syncEditBadgeHitProxies.md) (1 shared connections)
 
 ## Source Files
 
@@ -51,7 +48,7 @@
 
 ## Audit Trail
 
-- EXTRACTED: 308 (100%)
+- EXTRACTED: 313 (100%)
 - INFERRED: 1 (0%)
 - AMBIGUOUS: 0 (0%)
 

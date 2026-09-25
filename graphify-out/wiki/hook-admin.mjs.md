@@ -37,7 +37,7 @@
 - [normalizeIgnoreValueEntries](normalizeIgnoreValueEntries.md) (5 shared connections)
 - [readConfig](readConfig.md) (5 shared connections)
 - [hook-before-edit.mjs](hook-before-edit.mjs.md) (2 shared connections)
-- [detect-html.mjs](detect-html.mjs.md) (2 shared connections)
+- [ref_node_path](ref_node_path.md) (2 shared connections)
 
 ## Source Files
 

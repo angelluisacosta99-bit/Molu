@@ -1,6 +1,6 @@
 # manual-apply.mjs
 
-> 52 nodes
+> 56 nodes
 
 ## Key Concepts
 
@@ -8,8 +8,11 @@
 - **createManualApplyController()** (21 connections) — `.claude/skills/impeccable/scripts/live/manual-apply.mjs`
 - **pushApplyEventAndWait()** (10 connections) — `.claude/skills/impeccable/scripts/live/manual-apply.mjs`
 - **rollbackManualApplyTransaction()** (8 connections) — `.claude/skills/impeccable/scripts/live/manual-apply.mjs`
+- **summarizeManualApplyFailures()** (8 connections) — `.claude/skills/impeccable/scripts/live/manual-apply.mjs`
 - **collectManualApplyFiles()** (7 connections) — `.claude/skills/impeccable/scripts/live/manual-apply.mjs`
 - **pushBatchInChunksAndWait()** (7 connections) — `.claude/skills/impeccable/scripts/live/manual-apply.mjs`
+- **summarizeManualDiagnostics()** (7 connections) — `.claude/skills/impeccable/scripts/live/manual-apply.mjs`
+- **summarizeManualLogFile()** (7 connections) — `.claude/skills/impeccable/scripts/live/manual-apply.mjs`
 - **removeManualApplyEvidence()** (6 connections) — `.claude/skills/impeccable/scripts/live/manual-apply.mjs`
 - **splitManualApplyBatch()** (6 connections) — `.claude/skills/impeccable/scripts/live/manual-apply.mjs`
 - **clearManualApplyTransaction()** (5 connections) — `.claude/skills/impeccable/scripts/live/manual-apply.mjs`
@@ -26,17 +29,14 @@
 - **compactManualApplySourceMatch()** (4 connections) — `.claude/skills/impeccable/scripts/live/manual-apply.mjs`
 - **cancelPendingEvents()** (4 connections) — `.claude/skills/impeccable/scripts/live/manual-apply.mjs`
 - **normalizeManualApplyEvidencePath()** (4 connections) — `.claude/skills/impeccable/scripts/live/manual-apply.mjs`
-- **rollbackApplySnapshot()** (4 connections) — `.claude/skills/impeccable/scripts/live/manual-apply.mjs`
-- **validateManualApplyResultMessage()** (4 connections) — `.claude/skills/impeccable/scripts/live/manual-apply.mjs`
-- **writeManualApplyTransaction()** (4 connections) — `.claude/skills/impeccable/scripts/live/manual-apply.mjs`
-- *... and 27 more nodes in this community*
+- *... and 31 more nodes in this community*
 
 ## Relationships
 
-- [manual-edits-buffer.mjs](manual-edits-buffer.mjs.md) (11 shared connections)
+- [manual-edits-buffer.mjs](manual-edits-buffer.mjs.md) (10 shared connections)
+- [live-server.mjs](live-server.mjs.md) (4 shared connections)
 - [impeccable-paths.mjs](impeccable-paths.mjs.md) (4 shared connections)
-- [live-server.mjs](live-server.mjs.md) (2 shared connections)
-- [detect-html.mjs](detect-html.mjs.md) (2 shared connections)
+- [ref_node_path](ref_node_path.md) (2 shared connections)
 - [palette.mjs](palette.mjs.md) (1 shared connections)
 
 ## Source Files
@@ -45,8 +45,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 123 (90%)
-- INFERRED: 13 (10%)
+- EXTRACTED: 136 (91%)
+- INFERRED: 13 (9%)
 - AMBIGUOUS: 0 (0%)
 
 ---

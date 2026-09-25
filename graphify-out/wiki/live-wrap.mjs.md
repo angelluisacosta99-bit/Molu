@@ -35,7 +35,7 @@
 
 - [isGeneratedFile](isGeneratedFile.md) (8 shared connections)
 - [svelte-component.mjs](svelte-component.mjs.md) (8 shared connections)
-- [detect-html.mjs](detect-html.mjs.md) (4 shared connections)
+- [ref_node_path](ref_node_path.md) (4 shared connections)
 - [manual-edits-buffer.mjs](manual-edits-buffer.mjs.md) (3 shared connections)
 
 ## Source Files

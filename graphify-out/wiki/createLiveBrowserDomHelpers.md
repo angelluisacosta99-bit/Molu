@@ -1,6 +1,6 @@
 # createLiveBrowserDomHelpers
 
-> 16 nodes
+> 15 nodes
 
 ## Key Concepts
 
@@ -11,7 +11,6 @@
 - **pickable()** (3 connections) — `.claude/skills/impeccable/scripts/live-browser-dom.js`
 - **uiAppend()** (3 connections) — `.claude/skills/impeccable/scripts/live-browser-dom.js`
 - **uiAppendStyle()** (3 connections) — `.claude/skills/impeccable/scripts/live-browser-dom.js`
-- **layoutFlowChildren()** (3 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
 - **activeElementDeep()** (2 connections) — `.claude/skills/impeccable/scripts/live-browser-dom.js`
 - **cssId()** (2 connections) — `.claude/skills/impeccable/scripts/live-browser-dom.js`
 - **makeFrozenAnchor()** (2 connections) — `.claude/skills/impeccable/scripts/live-browser-dom.js`
@@ -23,18 +22,17 @@
 
 ## Relationships
 
-- [live-browser.js](live-browser.js.md) (7 shared connections)
-- [enableInlineEdit](enableInlineEdit.md) (1 shared connections)
+- [live-browser.js](live-browser.js.md) (6 shared connections)
+- [documentRefForElement](documentRefForElement.md) (1 shared connections)
 
 ## Source Files
 
 - `.claude/skills/impeccable/scripts/live-browser-dom.js`
-- `.claude/skills/impeccable/scripts/live-browser.js`
 
 ## Audit Trail
 
-- EXTRACTED: 8 (28%)
-- INFERRED: 21 (72%)
+- EXTRACTED: 6 (22%)
+- INFERRED: 21 (78%)
 - AMBIGUOUS: 0 (0%)
 
 ---

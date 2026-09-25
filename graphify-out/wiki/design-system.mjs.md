@@ -1,13 +1,13 @@
 # design-system.mjs
 
-> 52 nodes
+> 50 nodes
 
 ## Key Concepts
 
 - **design-system.mjs** (64 connections) — `.claude/skills/impeccable/scripts/detector/design-system.mjs`
 - **checkSourceDesignSystem()** (17 connections) — `.claude/skills/impeccable/scripts/detector/design-system.mjs`
 - **collectStaticDesignSystemFindings()** (15 connections) — `.claude/skills/impeccable/scripts/detector/design-system.mjs`
-- **loadDesignSystemForCwd()** (9 connections) — `.claude/skills/impeccable/scripts/detector/design-system.mjs`
+- **resolveLengthPx()** (14 connections) — `.claude/skills/impeccable/scripts/detector/rules/checks.mjs`
 - **normalizeDesignSystem()** (8 connections) — `.claude/skills/impeccable/scripts/detector/design-system.mjs`
 - **canonicalDesignFindingKey()** (7 connections) — `.claude/skills/impeccable/scripts/detector/design-system.mjs`
 - **parseDesignColor()** (7 connections) — `.claude/skills/impeccable/scripts/detector/design-system.mjs`
@@ -29,21 +29,25 @@
 - **parseFrontmatter()** (4 connections) — `.claude/skills/impeccable/scripts/detector/design-system.mjs`
 - **splitFontStack()** (4 connections) — `.claude/skills/impeccable/scripts/detector/design-system.mjs`
 - **unquoteYamlKey()** (4 connections) — `.claude/skills/impeccable/scripts/detector/design-system.mjs`
-- *... and 27 more nodes in this community*
+- *... and 25 more nodes in this community*
 
 ## Relationships
 
-- [detect-html.mjs](detect-html.mjs.md) (15 shared connections)
-- [detect-antipatterns.mjs](detect-antipatterns.mjs.md) (11 shared connections)
-- [checks.mjs](checks.mjs.md) (7 shared connections)
+- [detect-antipatterns.mjs](detect-antipatterns.mjs.md) (14 shared connections)
+- [checks.mjs](checks.mjs.md) (11 shared connections)
+- [detect-html.mjs](detect-html.mjs.md) (10 shared connections)
+- [detect-text.mjs](detect-text.mjs.md) (3 shared connections)
+- [css-cascade.mjs](css-cascade.mjs.md) (2 shared connections)
+- [ref_node_path](ref_node_path.md) (2 shared connections)
 
 ## Source Files
 
 - `.claude/skills/impeccable/scripts/detector/design-system.mjs`
+- `.claude/skills/impeccable/scripts/detector/rules/checks.mjs`
 
 ## Audit Trail
 
-- EXTRACTED: 151 (99%)
+- EXTRACTED: 156 (99%)
 - INFERRED: 1 (1%)
 - AMBIGUOUS: 0 (0%)
 

@@ -6,9 +6,15 @@
 # con el SHA correcto, para el mismo owner/repo/PR.
 #
 # Uso: mark-pr-reviewed.sh <owner> <repo> <pr_number> <head_sha> <resumen corto>
-# Ej:  mark-pr-reviewed.sh angelluisacosta99-bit molu 65 a1b2c3d4e5f6... "limpia, sin hallazgos"
+# Ej:  bash "$(git rev-parse --show-toplevel)/.claude/hooks/mark-pr-reviewed.sh" \
+#        angelluisacosta99-bit molu 65 a1b2c3d4e5f6... "limpia, sin hallazgos"
 
 set -euo pipefail
+
+command -v jq >/dev/null 2>&1 || {
+  echo "mark-pr-reviewed.sh: falta jq, no se puede escribir el marcador." >&2
+  exit 1
+}
 
 OWNER="${1:?falta el owner del repo}"
 REPO="${2:?falta el nombre del repo}"

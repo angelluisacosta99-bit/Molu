@@ -17,7 +17,7 @@
 - [live-commit-manual-edits.mjs](live-commit-manual-edits.mjs.md) (4 shared connections)
 - [live-manual-edit-evidence.mjs](live-manual-edit-evidence.mjs.md) (4 shared connections)
 - [live-accept.mjs](live-accept.mjs.md) (3 shared connections)
-- [detect-html.mjs](detect-html.mjs.md) (2 shared connections)
+- [ref_node_path](ref_node_path.md) (2 shared connections)
 - [context-signals.mjs](context-signals.mjs.md) (1 shared connections)
 
 ## Source Files

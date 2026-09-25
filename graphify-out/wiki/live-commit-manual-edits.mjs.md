@@ -1,6 +1,6 @@
 # live-commit-manual-edits.mjs
 
-> 51 nodes
+> 50 nodes
 
 ## Key Concepts
 
@@ -10,7 +10,6 @@
 - **candidatesForEntry()** (8 connections) — `.claude/skills/impeccable/scripts/live-commit-manual-edits.mjs`
 - **normalizeRelativeFile()** (8 connections) — `.claude/skills/impeccable/scripts/live-commit-manual-edits.mjs`
 - **verifyAppliedEntry()** (8 connections) — `.claude/skills/impeccable/scripts/live-commit-manual-edits.mjs`
-- **runCopyEditPostApplyChecks()** (8 connections) — `.claude/skills/impeccable/scripts/live-copy-edit-agent.mjs`
 - **normalizeRollbackPath()** (7 connections) — `.claude/skills/impeccable/scripts/live-commit-manual-edits.mjs`
 - **findUnappliedEntrySourceChanges()** (6 connections) — `.claude/skills/impeccable/scripts/live-commit-manual-edits.mjs`
 - **uniqueStrings()** (6 connections) — `.claude/skills/impeccable/scripts/live-commit-manual-edits.mjs`
@@ -29,24 +28,24 @@
 - **normalizeProjectSourcePath()** (4 connections) — `.claude/skills/impeccable/scripts/live-commit-manual-edits.mjs`
 - **objectKeyMatchStillUsesOriginal()** (4 connections) — `.claude/skills/impeccable/scripts/live-commit-manual-edits.mjs`
 - **rollbackChangedFiles()** (4 connections) — `.claude/skills/impeccable/scripts/live-commit-manual-edits.mjs`
-- *... and 26 more nodes in this community*
+- **sourceHintWindowFailure()** (4 connections) — `.claude/skills/impeccable/scripts/live-commit-manual-edits.mjs`
+- *... and 25 more nodes in this community*
 
 ## Relationships
 
 - [manual-edits-buffer.mjs](manual-edits-buffer.mjs.md) (15 shared connections)
-- [live-copy-edit-agent.mjs](live-copy-edit-agent.mjs.md) (9 shared connections)
+- [live-copy-edit-agent.mjs](live-copy-edit-agent.mjs.md) (7 shared connections)
 - [isGeneratedFile](isGeneratedFile.md) (4 shared connections)
-- [detect-html.mjs](detect-html.mjs.md) (2 shared connections)
+- [ref_node_path](ref_node_path.md) (2 shared connections)
 - [live-manual-edit-evidence.mjs](live-manual-edit-evidence.mjs.md) (1 shared connections)
 
 ## Source Files
 
 - `.claude/skills/impeccable/scripts/live-commit-manual-edits.mjs`
-- `.claude/skills/impeccable/scripts/live-copy-edit-agent.mjs`
 
 ## Audit Trail
 
-- EXTRACTED: 162 (100%)
+- EXTRACTED: 157 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

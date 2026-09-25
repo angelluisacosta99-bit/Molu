@@ -1,6 +1,6 @@
 # el
 
-> 48 nodes
+> 51 nodes
 
 ## Key Concepts
 
@@ -24,21 +24,22 @@
 - **configureRowTextMetrics()** (5 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
 - **ensureCyclingRenderable()** (5 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
 - **removeConfigureSelection()** (5 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
+- **applyConfigureBarChrome()** (4 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
 - **bindConfigureInlineControlHover()** (4 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
 - **buildConfigureSubmitButton()** (4 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
 - **buildConfigureTrailingCluster()** (4 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
 - **buildConfigureVoiceButton()** (4 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- **buildSavingRow()** (4 connections) — `.claude/skills/impeccable/scripts/live-browser.js`
-- *... and 23 more nodes in this community*
+- *... and 26 more nodes in this community*
 
 ## Relationships
 
-- [live-browser.js](live-browser.js.md) (49 shared connections)
-- [setLiveState](setLiveState.md) (30 shared connections)
-- [initGlobalBar](initGlobalBar.md) (10 shared connections)
-- [resumeSession](resumeSession.md) (9 shared connections)
-- [initPageChat](initPageChat.md) (7 shared connections)
+- [live-browser.js](live-browser.js.md) (52 shared connections)
+- [setLiveState](setLiveState.md) (22 shared connections)
+- [resumeSession](resumeSession.md) (16 shared connections)
+- [initGlobalBar](initGlobalBar.md) (12 shared connections)
+- [initPageChat](initPageChat.md) (6 shared connections)
 - [onAnnotDown](onAnnotDown.md) (1 shared connections)
+- [handleManualEditActivity](handleManualEditActivity.md) (1 shared connections)
 
 ## Source Files
 
@@ -46,7 +47,7 @@
 
 ## Audit Trail
 
-- EXTRACTED: 201 (100%)
+- EXTRACTED: 208 (100%)
 - INFERRED: 1 (0%)
 - AMBIGUOUS: 0 (0%)
 

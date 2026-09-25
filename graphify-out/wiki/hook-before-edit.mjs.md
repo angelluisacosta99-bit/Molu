@@ -37,9 +37,9 @@
 - [readConfig](readConfig.md) (7 shared connections)
 - [normalizeIgnoreValueEntries](normalizeIgnoreValueEntries.md) (2 shared connections)
 - [hook-admin.mjs](hook-admin.mjs.md) (2 shared connections)
-- [detect-html.mjs](detect-html.mjs.md) (2 shared connections)
+- [ref_node_path](ref_node_path.md) (2 shared connections)
 - [normalizeGitHubEvent](normalizeGitHubEvent.md) (1 shared connections)
-- [Novedades de herramientas de IA](Novedades_de_herramientas_de_IA.md) (1 shared connections)
+- [Novedades de herramientas de IA (comunidad)](Novedades_de_herramientas_de_IA_comunidad.md) (1 shared connections)
 
 ## Source Files
 

@@ -1,6 +1,6 @@
-# parseRgb (2)
+# parseRgb
 
-> 23 nodes
+> 22 nodes
 
 ## Key Concepts
 
@@ -22,7 +22,6 @@
 - **colorToHex()** (5 connections) — `.claude/skills/impeccable/scripts/detector/shared/color.mjs`
 - **contrastRatio()** (5 connections) — `.claude/skills/impeccable/scripts/detector/shared/color.mjs`
 - **getHue()** (5 connections) — `.claude/skills/impeccable/scripts/detector/shared/color.mjs`
-- **checkElementGlow()** (4 connections) — `.claude/skills/impeccable/scripts/detector/rules/checks.mjs`
 - **checkElementGlowDOM()** (4 connections) — `.claude/skills/impeccable/scripts/detector/rules/checks.mjs`
 - **checkElementIconTileDOM()** (4 connections) — `.claude/skills/impeccable/scripts/detector/rules/checks.mjs`
 - **resolveGradientStops()** (4 connections) — `.claude/skills/impeccable/scripts/detector/rules/checks.mjs`
@@ -30,9 +29,10 @@
 
 ## Relationships
 
-- [checks.mjs](checks.mjs.md) (27 shared connections)
-- [detect-antipatterns.mjs](detect-antipatterns.mjs.md) (9 shared connections)
-- [detect-html.mjs](detect-html.mjs.md) (6 shared connections)
+- [checks.mjs](checks.mjs.md) (26 shared connections)
+- [detect-antipatterns.mjs](detect-antipatterns.mjs.md) (8 shared connections)
+- [detect-html.mjs](detect-html.mjs.md) (4 shared connections)
+- [detect-text.mjs](detect-text.mjs.md) (2 shared connections)
 - [css-cascade.mjs](css-cascade.mjs.md) (1 shared connections)
 
 ## Source Files
@@ -42,7 +42,7 @@
 
 ## Audit Trail
 
-- EXTRACTED: 94 (100%)
+- EXTRACTED: 91 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 
