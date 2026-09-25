@@ -45,7 +45,7 @@ futuro, algo que este hook no puede verificar ahora — usar
 `merge_pull_request` directo tras revisar, no auto-merge. En cuanto la
 revisión de un PR salga limpia (o tras corregir sus hallazgos), antes
 de fusionar, dejar constancia con:
-`.claude/hooks/mark-pr-reviewed.sh <owner> <repo> <PR> <head_sha> "<resumen>"`.
+`bash "$(git rev-parse --show-toplevel)/.claude/hooks/mark-pr-reviewed.sh" <owner> <repo> <PR> <head_sha> "<resumen>"`.
 **No cubre** fusionar por otras vías (ej. `gh pr merge` por Bash, si
 `gh` estuviera disponible) — la regla dura sigue aplicando igual a esos
 caminos, solo que sin gate técnico. Detalle completo del diseño y sus

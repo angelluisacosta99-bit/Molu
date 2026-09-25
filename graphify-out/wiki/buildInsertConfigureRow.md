@@ -2,12 +2,12 @@
 
 > God node · 26 connections · `.claude/skills/impeccable/scripts/live-browser.js`
 
-**Community:** [Impeccable Live Browser Engine (3)](Impeccable_Live_Browser_Engine_3.md)
+**Community:** [el](el.md)
 
 ## Connections by Relation
 
 ### calls
-- [el()](el.md) `EXTRACTED`
+- [el()](el_2.md) `EXTRACTED`
 - showBar() `EXTRACTED`
 - showManualApplyBusyToast() `EXTRACTED`
 - handleInsertCreate() `EXTRACTED`
@@ -27,9 +27,10 @@
 - buildConfigureTrailingCluster() `EXTRACTED`
 - configureInputShellStyle() `EXTRACTED`
 - cycleSelectedCount() `EXTRACTED`
+- *…and 5 more `calls` connection(s) not listed (lowest-degree first to go)*
 
 ### contains
-- live-browser.js `EXTRACTED`
+- [live-browser.js](live-browser.js.md) `EXTRACTED`
 
 ---
 
