@@ -2,7 +2,7 @@
 
 > God node · 29 connections · `.claude/skills/impeccable/scripts/hook-lib.mjs`
 
-**Community:** [Impeccable Hook Library (2)](Impeccable_Hook_Library_2.md)
+**Community:** [hook-lib.mjs](hook-lib.mjs.md)
 
 ## Connections by Relation
 
@@ -27,9 +27,10 @@
 - appendDesignSystemNote() `EXTRACTED`
 - main() `EXTRACTED`
 - resolveTargetFiles() `EXTRACTED`
+- *…and 7 more `calls` connection(s) not listed (lowest-degree first to go)*
 
 ### contains
-- hook-lib.mjs `EXTRACTED`
+- [hook-lib.mjs](hook-lib.mjs.md) `EXTRACTED`
 
 ### imports
 - hook.mjs `EXTRACTED`

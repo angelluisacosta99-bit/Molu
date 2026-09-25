@@ -12,9 +12,9 @@
     "semantic_hash": ""
   },
   ".claude/hooks/mark-pr-reviewed.sh": {
-    "mtime": 1790054543.932976,
-    "seen": 1790174685.4710147,
-    "ast_hash": "0acd3b0acf53c917d67d6f6acbdfe76c",
+    "mtime": 1790306822.447987,
+    "seen": 1790306908.134185,
+    "ast_hash": "8b488f9325a2e87b6dc799dff03b2c3f",
     "semantic_hash": ""
   },
   ".claude/hooks/restrict-cavecrew-bash.sh": {
@@ -708,9 +708,9 @@
     "semantic_hash": ""
   },
   ".claude/skills/hook-hardening/SKILL.md": {
-    "mtime": 1790174664.0606804,
-    "seen": 1790174685.4711475,
-    "ast_hash": "af86f24cd79e1b8ca93a8fd5611ae4d4",
+    "mtime": 1790306786.9915228,
+    "seen": 1790306908.134339,
+    "ast_hash": "d923fc3f07efc8106dc726552f49821c",
     "semantic_hash": ""
   },
   ".claude/skills/humanizer/SKILL.md": {
@@ -894,9 +894,9 @@
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1790054543.9356666,
-    "seen": 1790174685.4711769,
-    "ast_hash": "3e88e3a87ca53ac8d62f2a2daa64dd4d",
+    "mtime": 1790306822.4482453,
+    "seen": 1790306908.134387,
+    "ast_hash": "803f0741fd77260f43adb68ba9fafaa9",
     "semantic_hash": ""
   },
   "DESIGN.md": {
@@ -2472,9 +2472,9 @@
     "semantic_hash": ""
   },
   ".claude/hooks/mark-permission-scan.sh": {
-    "mtime": 1790174552.006279,
-    "seen": 1790174685.4710126,
-    "ast_hash": "113a2cfd83f94c2b82873cdbe147fffb",
+    "mtime": 1790306740.4978628,
+    "seen": 1790306908.1341827,
+    "ast_hash": "4a511b435efd492637481e49a4012880",
     "semantic_hash": ""
   },
   ".claude/hooks/restrict-cavecrew-reviewer-memory.sh": {
