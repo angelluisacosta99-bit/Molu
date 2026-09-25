@@ -25,7 +25,8 @@
 # script solo se ocupa del marcador.
 #
 # Uso: mark-permission-scan.sh [resumen corto]
-# Ej:  mark-permission-scan.sh "4 patrones nuevos añadidos"
+# Ej:  bash "$(git rev-parse --show-toplevel)/.claude/hooks/mark-permission-scan.sh" \
+#        "4 patrones nuevos añadidos"
 
 set -uo pipefail
 
