@@ -29,7 +29,22 @@ if ! [[ "$HEAD_SHA" =~ ^[0-9a-fA-F]{7,40}$ ]]; then
   exit 1
 fi
 
-DIR="${CLAUDE_PROJECT_DIR:-.}/.claude/.pr-review-state"
+# Este script NO es un hook registrado en .claude/settings.json: lo
+# invoca la sesión por el Bash tool, y ahí CLAUDE_PROJECT_DIR no está
+# definida (solo la reciben los procesos de hook). Con el antiguo
+# "${CLAUDE_PROJECT_DIR:-.}" el marcador se escribía relativo al cwd de
+# la llamada, así que invocarlo desde una subcarpeta lo dejaba donde
+# check-pr-review.sh -- que sí es hook y sí recibe la variable -- nunca
+# lo buscaría: el merge quedaba bloqueado sin explicación. git rev-parse
+# resuelve la raíz desde cualquier cwd dentro del repo y no depende del
+# harness. Ver el punto 4 de .claude/skills/hook-hardening/SKILL.md.
+ROOT="${CLAUDE_PROJECT_DIR:-}"
+if [ -z "$ROOT" ]; then
+  ROOT="$(timeout 15 git rev-parse --show-toplevel 2>/dev/null)" || ROOT=""
+fi
+[ -n "$ROOT" ] || ROOT="."
+
+DIR="$ROOT/.claude/.pr-review-state"
 mkdir -p "$DIR"
 
 OWNER_LOWER=$(printf '%s' "$OWNER" | tr '[:upper:]' '[:lower:]')

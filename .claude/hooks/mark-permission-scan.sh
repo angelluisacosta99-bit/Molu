@@ -31,17 +31,42 @@ set -uo pipefail
 
 SUMMARY="${1:-sin cambios}"
 
-cd "${CLAUDE_PROJECT_DIR:-.}" || exit 1
-
-DIR="${CLAUDE_PROJECT_DIR:-.}/.claude"
-mkdir -p "$DIR"
-MARKER="$DIR/.fewer-permission-prompts-last-run.json"
-MARKER_REL=".claude/.fewer-permission-prompts-last-run.json"
-
 command -v jq >/dev/null 2>&1 || {
   echo "mark-permission-scan.sh: falta jq, no se puede escribir el marcador." >&2
   exit 1
 }
+
+# La raíz del proyecto se resuelve UNA vez, aquí, y todo lo de abajo usa
+# $ROOT -- nunca "${CLAUDE_PROJECT_DIR:-.}" repetido.
+#
+# El motivo es concreto, no estilístico: este script lo invoca el Bash
+# tool de la sesión (se lo pide la instrucción que inyecta
+# fewer-permission-prompts-reminder.sh), no el harness, y
+# CLAUDE_PROJECT_DIR **no está definida en el Bash tool** -- solo la
+# reciben los procesos de hook. Así que el ":-." caía siempre en el cwd
+# de la llamada: invocado desde una subcarpeta, escribía y comiteaba el
+# marcador en <subcarpeta>/.claude/ en vez de en la raíz. El hook que
+# luego LEE ese marcador sí recibe CLAUDE_PROJECT_DIR del harness y mira
+# la raíz, así que no lo encontraba nunca: el recordatorio se repetiría
+# en cada arranque sin avanzar los 7 días (el bug del punto 11 de
+# hook-hardening por otra vía), dejando además un .claude/ espurio
+# comiteado donde no toca.
+#
+# git rev-parse funciona desde cualquier cwd dentro del repo y no
+# depende de ninguna variable del harness. Si tampoco hay repo git, se
+# cae a "." y el chequeo de más abajo ya avisa y sale limpio.
+ROOT="${CLAUDE_PROJECT_DIR:-}"
+if [ -z "$ROOT" ]; then
+  ROOT="$(timeout 15 git rev-parse --show-toplevel 2>/dev/null)" || ROOT=""
+fi
+[ -n "$ROOT" ] || ROOT="."
+
+cd "$ROOT" || exit 1
+
+DIR="$ROOT/.claude"
+mkdir -p "$DIR"
+MARKER="$DIR/.fewer-permission-prompts-last-run.json"
+MARKER_REL=".claude/.fewer-permission-prompts-last-run.json"
 
 TMP="$(mktemp "$DIR/.tmp.fewer-permission-prompts.XXXXXX")" || exit 1
 trap 'rm -f "$TMP"' EXIT
@@ -84,9 +109,9 @@ echo "Marcador escrito: fewer-permission-prompts corrida el $(date -u +%Y-%m-%dT
 # dato, solo no llega a subirse esta vez y el recordatorio se repite
 # la próxima sesión -- exactamente el coste "best-effort" que este
 # hook ya asume desde su diseño, no una regresión nueva.
-GIT() { timeout 15 git -C "${CLAUDE_PROJECT_DIR:-.}" "$@"; }
-GIT_REBASE() { timeout 30 git -C "${CLAUDE_PROJECT_DIR:-.}" "$@"; }
-GIT_NET() { timeout 30 git -C "${CLAUDE_PROJECT_DIR:-.}" "$@"; }
+GIT() { timeout 15 git -C "$ROOT" "$@"; }
+GIT_REBASE() { timeout 30 git -C "$ROOT" "$@"; }
+GIT_NET() { timeout 30 git -C "$ROOT" "$@"; }
 
 if ! GIT rev-parse --is-inside-work-tree >/dev/null 2>&1; then
   echo "Aviso: no es un repo git, el marcador se queda solo en local." >&2

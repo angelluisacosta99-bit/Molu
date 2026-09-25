@@ -130,6 +130,33 @@ instrucción inyectada, usar algo que el Bash tool sí pueda resolver por
 sí mismo — `$(git rev-parse --show-toplevel)` en un repo — nunca una
 variable que solo existe del lado del hook.
 
+**Tercera ronda sobre esto mismo, y la lección de verdad: arreglar la
+ruta del script no basta si el script tampoco puede fiarse de esa
+variable.** La corrección de arriba (cambiar la ruta *dentro del texto
+inyectado*) cerró dónde *estaba* el script, pero `mark-permission-scan.sh`
+seguía resolviendo la raíz del proyecto con `"${CLAUDE_PROJECT_DIR:-.}"`
+en cinco sitios (el `cd`, el `DIR` del marcador y las tres funciones
+`GIT*`). Como la variable está vacía en el Bash tool, ese `:-.` caía
+siempre en el cwd: invocado desde una subcarpeta, el script escribía **y
+comiteaba** el marcador en `<subcarpeta>/.claude/` — reproducido en vivo —
+mientras el hook que lo lee sí recibe la variable del harness y mira la
+raíz, así que no lo encontraba nunca. El recordatorio se repetiría en
+cada arranque sin avanzar los 7 días: el bug del punto 11 otra vez, por
+una vía nueva, más un `.claude/` espurio comiteado donde no toca. Una
+revisión externa lo encontró *después* de que la ronda anterior diera el
+problema por cerrado.
+
+**Comprobación, y es la que resume las tres rondas:** cuando descubras
+que una variable del entorno no llega a un consumidor, `grep` esa
+variable en **todo** el camino de ejecución —el hook, el texto que
+inyecta, y cada script que ese texto invoca— y arréglalos todos de una
+vez. Arreglar solo el sitio donde saltó el síntoma es dejar el mismo bug
+vivo un nivel más abajo. En la práctica: resolver la raíz **una sola
+vez** al principio del script, con un respaldo que no dependa del
+harness (`git rev-parse --show-toplevel`), y usar esa variable en todas
+partes — nunca repetir `"${CLAUDE_PROJECT_DIR:-.}"` inline, porque cada
+repetición es un sitio más donde el fallback silencioso puede morder.
+
 ## 5. Tras cualquier intento de arreglo, re-verificar, no asumir
 
 **El error real:** tras detectar una versión desajustada y lanzar una
