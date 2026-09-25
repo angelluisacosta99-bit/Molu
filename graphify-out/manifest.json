@@ -2472,9 +2472,9 @@
     "semantic_hash": ""
   },
   ".claude/hooks/mark-permission-scan.sh": {
-    "mtime": 1790306740.4978628,
-    "seen": 1790306908.1341827,
-    "ast_hash": "4a511b435efd492637481e49a4012880",
+    "mtime": 1790308355.8916044,
+    "seen": 1790308761.2267754,
+    "ast_hash": "854a0f70c7d09aaacb8fbde16f035a0b",
     "semantic_hash": ""
   },
   ".claude/hooks/restrict-cavecrew-reviewer-memory.sh": {
