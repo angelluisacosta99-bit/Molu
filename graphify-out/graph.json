@@ -34621,7 +34621,7 @@
       "node_kind": "heading",
       "norm_label": "4. puntos debiles y riesgos",
       "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L108"
+      "source_location": "L106"
     },
     {
       "id": "recursos_generales_hardware_compra_tarjeta_grafica_5_tu_equipo_borey_2_0_plus_\u0440\u043e\u0431\u043e\u0442\u043a\u043e\u043c\u043f",
@@ -34633,7 +34633,7 @@
       "node_kind": "heading",
       "norm_label": "5. tu equipo: borey 2.0 plus (\u0440\u043e\u0431\u043e\u0442\u043a\u043e\u043c\u043f)",
       "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L130"
+      "source_location": "L128"
     },
     {
       "id": "recursos_generales_hardware_compra_tarjeta_grafica_6_qu\u00e9_comprar_y_d\u00f3nde_salamanca",
@@ -34645,7 +34645,7 @@
       "node_kind": "heading",
       "norm_label": "6. que comprar y donde (salamanca)",
       "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L157"
+      "source_location": "L156"
     },
     {
       "id": "recursos_generales_hardware_compra_tarjeta_grafica_7_lista_de_comprobaci\u00f3n_antes_de_comprar",
@@ -34657,7 +34657,7 @@
       "node_kind": "heading",
       "norm_label": "7. lista de comprobacion antes de comprar",
       "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L185"
+      "source_location": "L184"
     },
     {
       "id": "recursos_generales_hardware_compra_tarjeta_grafica_8_despu\u00e9s_de_montarla",
@@ -34669,7 +34669,7 @@
       "node_kind": "heading",
       "norm_label": "8. despues de montarla",
       "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L198"
+      "source_location": "L197"
     },
     {
       "id": "recursos_generales_hardware_compra_tarjeta_grafica_amd_rx_9060_xt_16_gb_nueva_sapphire",
@@ -116836,7 +116836,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L108",
+      "source_location": "L106",
       "weight": 1.0
     },
     {
@@ -116858,7 +116858,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L130",
+      "source_location": "L128",
       "weight": 1.0
     },
     {
@@ -116869,7 +116869,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L157",
+      "source_location": "L156",
       "weight": 1.0
     },
     {
@@ -116880,7 +116880,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L185",
+      "source_location": "L184",
       "weight": 1.0
     },
     {
@@ -116891,7 +116891,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L198",
+      "source_location": "L197",
       "weight": 1.0
     },
     {
@@ -122303,5 +122303,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "e7ae1713db71dc2b65976bb83973dcfc05df4a4e"
+  "built_at_commit": "ee3eae1ef270b981dec88a7adb6315acb3feee0b"
 }
