@@ -94,15 +94,13 @@ Mismo nombre, dos memorias: comprueba siempre que el anuncio dice
 
 ### Recomendación
 
-1. **Primero, la garantía de la 4070.** Con estos precios, recuperarla
-   gratis es con diferencia la mejor opción.
-2. **Si no hay garantía:** RTX 3060 12 GB de segunda mano (~240 €).
+1. **Elegida para el máster: RTX 3060 12 GB de segunda mano (~220–250 €).**
    Basta para el TFM y LLMs pequeños, y deja margen para cambiarla
    cuando bajen los precios.
-3. **Si quieres 16 GB ya:** RTX 5060 Ti 16 GB de segunda mano (~540 €)
+2. **Solo si quieres 16 GB ya:** RTX 5060 Ti 16 GB de segunda mano (~540 €)
    con factura, o la RX 9060 XT 16 GB nueva (~593 €) si aceptas que la
    instalación de IA con AMD da más trabajo.
-4. **Esperar también es opción:** la RTX 5060 Ti 16 GB está un ~48 %
+3. **Para la de 16 GB, esperar es opción:** la RTX 5060 Ti 16 GB está un ~48 %
    por encima de su media de 12 meses. Alerta de precio en idealo.es.
 
 ## 4. Puntos débiles y riesgos
@@ -151,8 +149,9 @@ Conclusiones:
 - **Diagnóstico hecho:** Angel probó el PC con otra tarjeta y
   funcionaba. La averiada es la 4070, no el PC ni la fuente, así que una
   tarjeta nueva no corre el riesgo de estropearse por la misma causa.
-- **Garantía de la 4070:** el equipo es de Роботкомп. Revisar su garantía
-  (y la de Gigabyte, con el número de serie) antes de darla por perdida.
+- **La 4070 no tiene garantía ni arreglo** (confirmado por Angel el
+  2026-09-26). Se puede vender en Wallapop "para piezas": algunos
+  talleres las compran para reparar o aprovechar componentes.
 
 ## 6. Qué comprar y dónde (Salamanca)
 
