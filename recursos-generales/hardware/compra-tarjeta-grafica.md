@@ -119,7 +119,34 @@ Conclusiones:
 - **Garantía de la 4070:** el equipo es de Роботкомп. Revisar su garantía
   (y la de Gigabyte, con el número de serie) antes de darla por perdida.
 
-## 6. Lista de comprobación antes de comprar
+## 6. Qué comprar y dónde (Salamanca)
+
+**Elección: NVIDIA RTX 5060 Ti 16 GB.** La fuente ya aguantaba la 4070,
+así que no hace falta cambiar nada más. Una RTX 4070 de segunda mano no
+compensa: las SUPER rondan los 600 € y siguen teniendo 12 GB.
+
+Cualquier fabricante conocido vale (ASUS, MSI, Gigabyte, Zotac, PNY).
+Mejor dos o tres ventiladores que uno, y un largo igual o menor que el de
+la 4070 Windforce.
+
+Tiendas físicas en Salamanca (datos del 2026-09-26; confirmar por
+teléfono que tienen el modelo de **16 GB** antes de ir):
+
+| Tienda | Dirección | Notas |
+|--------|-----------|-------|
+| PCBox Salamanca | P.º del Dr. Torres Villarroel, 17 · 923 188 118 | Tienda de informática. L–V 10:00–14:30 y 16:30–20:00, S 10:00–14:00. Pueden pedirla si no la tienen |
+| MediaMarkt Salamanca | Parque Comercial Capuchinos, Ctra. N-501, Santa Marta de Tormes | Tenía la MSI RTX 5060 Ti 16G a 599 € (oferta hasta el 28-09-2026) |
+
+Por internet sale más barata: desde ~492 € en idealo.es, con envío a
+Salamanca. Tienes 14 días para devolverla si la compras en una tienda
+española.
+
+**Estrategia calidad-precio:** mirar el precio más bajo en idealo.es y
+Chollometro, y pedir a PCBox que lo iguale o se acerque. Pagar unos
+30–50 € más en una tienda física compensa si te da tranquilidad tener
+la garantía cerca.
+
+## 7. Lista de comprobación antes de comprar
 
 - [ ] Modelo de la fuente de alimentación y sus vatios (mirar la
       etiqueta de la fuente)
@@ -132,7 +159,7 @@ Conclusiones:
 Con estos datos, Claude puede confirmar que la tarjeta elegida es
 compatible antes de pagar.
 
-## 7. Después de montarla
+## 8. Después de montarla
 
 1. Instalar el driver de NVIDIA más reciente.
 2. Instalar PyTorch con CUDA siguiendo el selector de
