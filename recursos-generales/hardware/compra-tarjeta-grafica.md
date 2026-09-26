@@ -113,9 +113,9 @@ Conclusiones:
   etiqueta de todas formas.
 - **Tamaño:** si cabía la 4070 Windforce, cabe una tarjeta de largo
   parecido o menor. Comparar el largo del modelo concreto antes de pagar.
-- **Antes de comprar, averiguar qué falló.** Si fue la fuente o un pico
-  de tensión, la tarjeta nueva puede acabar igual. La prueba más barata:
-  poner la 4070 en otro PC, o una tarjeta prestada en este.
+- **Diagnóstico hecho:** Angel probó el PC con otra tarjeta y
+  funcionaba. La averiada es la 4070, no el PC ni la fuente, así que una
+  tarjeta nueva no corre el riesgo de estropearse por la misma causa.
 - **Garantía de la 4070:** el equipo es de Роботкомп. Revisar su garantía
   (y la de Gigabyte, con el número de serie) antes de darla por perdida.
 
