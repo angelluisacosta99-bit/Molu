@@ -149,9 +149,9 @@ Conclusiones:
 - **Diagnóstico hecho:** Angel probó el PC con otra tarjeta y
   funcionaba. La averiada es la 4070, no el PC ni la fuente, así que una
   tarjeta nueva no corre el riesgo de estropearse por la misma causa.
-- **La 4070 no tiene garantía ni arreglo** (confirmado por Angel el
-  2026-09-26). Se puede vender en Wallapop "para piezas": algunos
-  talleres las compran para reparar o aprovechar componentes.
+- **La 4070 no tenía garantía ni arreglo.** Se vendió rota por unos
+  110 € (2026-09-26), así que una RTX 3060 12 GB de segunda mano sale
+  por unos 110–140 € netos.
 
 ## 6. Qué comprar y dónde (Salamanca)
 
