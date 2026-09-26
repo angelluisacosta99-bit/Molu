@@ -92,7 +92,34 @@ nombre. Comprueba que el anuncio dice **16 GB** antes de pagar.
 - **RAM del PC.** Para IA local conviene tener 32 GB de RAM; con 16 GB
   funciona, pero más justo.
 
-## 5. Lista de comprobación antes de comprar
+## 5. Tu equipo: BOREY 2.0 Plus (Роботкомп)
+
+| Pieza | Modelo | Qué implica |
+|-------|--------|-------------|
+| CPU | Intel Core i7-12700KF | **Sin gráficos integrados**: sin tarjeta, el PC no da imagen |
+| Placa | ASUS Prime B660M-K D4 | Ranura PCIe 4.0 x16; cualquier opción de la tabla es compatible |
+| RAM | 32 GB DDR4 3000 MHz | Suficiente para IA local |
+| Almacenamiento | SSD 960 GB + SSD 480 GB (PCIe) | Sin problema |
+| Monitor | MSI Optix G27C7 (1080p, 165 Hz, DisplayPort y HDMI) | Cualquier tarjeta de la tabla sobra para él |
+| GPU anterior (dañada) | Gigabyte RTX 4070 Windforce (GV-N4070WF3-12GD), 12 GB | Consumía ~200 W: la fuente la aguantaba |
+| Fuente | **Pendiente** (mirar la etiqueta lateral) | — |
+
+Conclusiones:
+
+- **Compatibilidad:** la RTX 5060 Ti funciona en PCIe 4.0 x8 en esta placa;
+  la pérdida frente a x16 es mínima, sobre todo para IA.
+- **Consumo:** todas las opciones consumen menos que la 4070 (160–180 W
+  frente a ~200 W), así que la fuente debería valer. Confirmarlo con la
+  etiqueta de todas formas.
+- **Tamaño:** si cabía la 4070 Windforce, cabe una tarjeta de largo
+  parecido o menor. Comparar el largo del modelo concreto antes de pagar.
+- **Antes de comprar, averiguar qué falló.** Si fue la fuente o un pico
+  de tensión, la tarjeta nueva puede acabar igual. La prueba más barata:
+  poner la 4070 en otro PC, o una tarjeta prestada en este.
+- **Garantía de la 4070:** el equipo es de Роботкомп. Revisar su garantía
+  (y la de Gigabyte, con el número de serie) antes de darla por perdida.
+
+## 6. Lista de comprobación antes de comprar
 
 - [ ] Modelo de la fuente de alimentación y sus vatios (mirar la
       etiqueta de la fuente)
@@ -105,7 +132,7 @@ nombre. Comprueba que el anuncio dice **16 GB** antes de pagar.
 Con estos datos, Claude puede confirmar que la tarjeta elegida es
 compatible antes de pagar.
 
-## 6. Después de montarla
+## 7. Después de montarla
 
 1. Instalar el driver de NVIDIA más reciente.
 2. Instalar PyTorch con CUDA siguiendo el selector de
