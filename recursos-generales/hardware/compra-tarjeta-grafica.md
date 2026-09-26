@@ -49,26 +49,61 @@ Face y casi todos los tutoriales dan por hecho CUDA (el sistema de
 NVIDIA). AMD funciona (ROCm, Vulkan), pero da más problemas de
 instalación, sobre todo en Windows.
 
-## 3. Opciones dentro del presupuesto
+## 3. Opciones y precios reales (idealo.es, 2026-09-26)
 
-| Opción | VRAM | Precio aprox. (sept. 2026) | Veredicto |
-|--------|------|----------------------------|-----------|
-| **NVIDIA RTX 5060 Ti 16 GB** (nueva) | 16 GB | 490–600 € | ✅ **Recomendada.** 16 GB + CUDA, nueva y con garantía |
-| NVIDIA RTX 3060 12 GB (segunda mano) | 12 GB | 235–250 € | 👍 La más barata que sirve de verdad. Riesgo de segunda mano |
-| AMD RX 9060 XT 16 GB (nueva) | 16 GB | 350–490 € | ⚠️ Más barata por GB, pero sin CUDA: más difícil para empezar |
-| RTX 5060 / 5060 Ti **8 GB** | 8 GB | — | ❌ No comprar para IA |
+**Aviso:** los precios "desde 470–520 €" que muestra idealo para la RTX
+5060 Ti son de la versión de **8 GB**. La de 16 GB está ahora muy por
+encima del presupuesto (ver tabla). Primera versión de esta guía lo
+confundía; corregido el 2026-09-26.
 
-Cuidado: la RTX 5060 Ti existe en **8 GB y en 16 GB** con el mismo
-nombre. Comprueba que el anuncio dice **16 GB** antes de pagar.
+### NVIDIA RTX 5060 Ti 16 GB, nueva (precio más bajo por modelo)
+
+| Modelo | Precio |
+|--------|--------|
+| MSI 16G Ventus 2X OC Plus | 746 € |
+| MSI 16G Shadow 2X OC Plus | 750 € |
+| ASUS 16GB Dual OC | 781 € |
+| Zotac 16GB AMP | 796 € |
+| ASUS 16GB Prime OC | 825 € |
+| PNY Dual Fan OC 16GB | 825 € |
+| ASUS 16GB TUF Gaming OC | 850 € |
+| Gigabyte Eagle OC Ice 16G | 938 € |
+| Gigabyte Windforce OC 16G | 970 € |
+
+### AMD RX 9060 XT 16 GB, nueva (Sapphire)
+
+| Modelo | Precio |
+|--------|--------|
+| Sapphire Pure 16G | 593 € |
+| Sapphire Pulse 16G | 644 € |
+| Sapphire Nitro+ 16G | 673 € |
+
+### Otras referencias
+
+| Opción | VRAM | Precio aprox. | Veredicto |
+|--------|------|---------------|-----------|
+| RTX 3060 12 GB (segunda mano, Wallapop) | 12 GB | 235–250 € | ✅ **Mejor calidad-precio dentro del presupuesto** |
+| RTX 5060 Ti 16 GB (segunda mano, eBay UE) | 16 GB | ~540 € | 👍 Si aparece en buen estado y con factura |
+| RX 9060 XT 16 GB nueva | 16 GB | 593–673 € | ⚠️ Cabe justo, pero sin CUDA |
+| RTX 5060 Ti 16 GB nueva | 16 GB | 746 € o más | ❌ Fuera de presupuesto ahora |
+| RTX 5070 12 GB nueva | 12 GB | 774 € o más | ❌ Más cara y con menos VRAM |
+| Cualquier tarjeta de **8 GB** | 8 GB | — | ❌ No comprar para IA |
+
+Mismo nombre, dos memorias: comprueba siempre que el anuncio dice
+**16 GB** (o 12 GB en la RTX 3060) antes de pagar.
 
 ### Recomendación
 
-1. **Si puedes llegar a ~500 €:** RTX 5060 Ti **16 GB** nueva. Es la
-   opción con menos sorpresas para aprender y para el máster.
-2. **Si quieres gastar lo mínimo:** RTX 3060 **12 GB** de segunda mano
-   (~240 €). Suficiente para el TFM y LLMs pequeños.
-3. La AMD solo si encuentras una oferta muy buena y no te importa pelear
-   con la instalación.
+1. **Primero, la garantía de la 4070.** Con estos precios, recuperarla
+   gratis es con diferencia la mejor opción.
+2. **Si no hay garantía:** RTX 3060 12 GB de segunda mano (~240 €).
+   Basta para el TFM y LLMs pequeños, y deja margen para cambiarla
+   cuando bajen los precios.
+3. **Si quieres 16 GB ya:** RTX 5060 Ti 16 GB de segunda mano (~540 €)
+   con factura, o la RX 9060 XT 16 GB nueva (~593 €) si aceptas que la
+   instalación de IA con AMD da más trabajo.
+4. **Esperar también es opción:** la RTX 5060 Ti 16 GB está un ~48 %
+   por encima de su media de 12 meses. Alerta de precio en idealo.es.
 
 ## 4. Puntos débiles y riesgos
 
@@ -121,9 +156,10 @@ Conclusiones:
 
 ## 6. Qué comprar y dónde (Salamanca)
 
-**Elección: NVIDIA RTX 5060 Ti 16 GB.** La fuente ya aguantaba la 4070,
-así que no hace falta cambiar nada más. Una RTX 4070 de segunda mano no
-compensa: las SUPER rondan los 600 € y siguen teniendo 12 GB.
+**Elección:** ver la recomendación del apartado 3. La fuente ya
+aguantaba la 4070, así que no hace falta cambiar nada más. Una RTX 4070
+de segunda mano no compensa: las SUPER rondan los 600 € y siguen
+teniendo 12 GB.
 
 Cualquier fabricante conocido vale (ASUS, MSI, Gigabyte, Zotac, PNY).
 Mejor dos o tres ventiladores que uno, y un largo igual o menor que el de
@@ -135,10 +171,10 @@ teléfono que tienen el modelo de **16 GB** antes de ir):
 | Tienda | Dirección | Notas |
 |--------|-----------|-------|
 | PCBox Salamanca | P.º del Dr. Torres Villarroel, 17 · 923 188 118 | Tienda de informática. L–V 10:00–14:30 y 16:30–20:00, S 10:00–14:00. Pueden pedirla si no la tienen |
-| MediaMarkt Salamanca | Parque Comercial Capuchinos, Ctra. N-501, Santa Marta de Tormes | Tenía la MSI RTX 5060 Ti 16G a 599 € (oferta hasta el 28-09-2026) |
+| MediaMarkt Salamanca | Parque Comercial Capuchinos, Ctra. N-501, Santa Marta de Tormes | Su web anuncia la MSI RTX 5060 Ti 16G a 1.282 €: muy por encima de idealo |
 
-Por internet sale más barata: desde ~492 € en idealo.es, con envío a
-Salamanca. Tienes 14 días para devolverla si la compras en una tienda
+Por internet suele salir más barata (precios del apartado 3), con envío
+a Salamanca. Tienes 14 días para devolverla si la compras en una tienda
 española.
 
 **Estrategia calidad-precio:** mirar el precio más bajo en idealo.es y
