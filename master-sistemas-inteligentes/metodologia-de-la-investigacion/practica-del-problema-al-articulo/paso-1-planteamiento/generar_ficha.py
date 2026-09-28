@@ -16,7 +16,7 @@ B=[
 ('p',[('Este trabajo parte del diseño que propuse en mi trabajo de fin de grado (RUT MIIT, 2026) para la red primaria de comunicaciones del tramo Moscú-Kazánskaya – Riazán-1 (198,3 km): un anillo DWDM entre Moscú-Kazánskaya, Voskresensk y Riazán-1, más una cadena de acceso de 22 estaciones, con canales de 10 Gbit/s sobre fibra G.652 (α'+N+'='+N+'0,22 dB/km). La calidad de transmisión (QoT) se verificó con un modelo analítico aplicado solo al tramo más desfavorable (Voskresensk – Riazán-1, 108,9 km). El resultado fue Q'+N+'='+N+'7,37 y BER'+N+'='+N+'8,9·10',''),('−14','sup'),(', frente a un umbral normativo de 10',''),('−11','sup'),(' (Q'+N+'='+N+'6,71).','')]),
 ('p',[('El enfoque utilizado en ese proyecto es estático y conservador: se calcula una sola vez, para un caso extremo y con márgenes fijos. No tiene en cuenta la degradación durante la explotación: envejecimiento de la fibra y de los amplificadores EDFA, empalmes por reparaciones o variaciones de temperatura. Tampoco recoge el hielo y las inundaciones, que el propio proyecto identifica como riesgos del trazado, ni la reconfiguración de canales en los OADM. Recalcular a mano cada canal óptico (',''),('lightpath','i'),(') en cada situación es costoso, y los márgenes fijos tienden a sobredimensionar la red.','')]),
 ('h','2. PREGUNTA INICIAL DE INVESTIGACIÓN'),
-('p',[('¿Puede un modelo de aprendizaje automático, entrenado con parámetros observables de los enlaces, predecir si cada canal de la red ferroviaria cumple el umbral de calidad BER'+N+'≤'+N+'10',''),('−11','sup'),(' en condiciones de degradación, con más acierto que un modelo sencillo y con menos margen de diseño que el criterio fijo del proyecto?','')]),
+('p',[('¿Puede un modelo de aprendizaje automático, entrenado con parámetros que el operador puede medir, predecir si cada canal de la red ferroviaria cumple el umbral de calidad BER'+N+'≤'+N+'10',''),('−11','sup'),(' en condiciones de degradación, con más acierto que un modelo sencillo?','')]),
 ('h','3. NOVEDAD E INTERÉS'),
 ('li',[('Vacío: ','b'),('la estimación de QoT con aprendizaje automático está consolidada en redes troncales de larga distancia [1, 2], incluso con modelos entrenados con datos sintéticos [3]. Sin embargo, no se han encontrado trabajos que la apliquen a redes de comunicaciones ferroviarias, lo que se confirmará en la revisión bibliográfica del Paso 2. Estas redes son regionales, con muchas estaciones de acceso, expuestas a condiciones ambientales severas y, en este caso, limitadas a equipos de fabricación nacional.','')]),
 ('li',[('Interés: ','b'),('se sustituye un cálculo puntual por un sistema inteligente que evalúa la red de forma continua. Es un paso hacia la gestión autónoma de redes y el mantenimiento predictivo de una infraestructura crítica para la seguridad ferroviaria.','')]),
@@ -27,8 +27,8 @@ B=[
 ('p',[('3. Evaluar su acierto en canales y condiciones no vistos durante el entrenamiento.','')]),
 ('p',[('4. Cuantificar el margen de diseño que podría ahorrarse sin incumplir el umbral de BER.','')]),
 ('h','5. HIPÓTESIS PROVISIONAL'),
-('p',[('Si se entrena un modelo de ensamble (por ejemplo, ',''),('Random Forest','i'),(') con parámetros observables de los enlaces, será posible predecir si un canal cumple el umbral BER'+N+'≤'+N+'10',''),('−11','sup'),(' con mayor acierto que un modelo lineal sencillo y con menos margen de diseño que el criterio fijo del proyecto.','')]),
-('p',[('Limitación prevista: ','b'),('el conjunto de datos será sintético, generado con un modelo físico, y no con mediciones reales del operador. La validez externa deberá contrastarse con conjuntos de datos públicos de QoT.','')]),
+('p',[('Si se entrena un modelo de ensamble (por ejemplo, ',''),('Random Forest','i'),(') con parámetros que el operador puede medir, será posible predecir si un canal cumple el umbral BER'+N+'≤'+N+'10',''),('−11','sup'),(' con mayor acierto que un modelo lineal sencillo.','')]),
+('p',[('Limitación prevista: ','b'),('los datos no serán mediciones reales de la red, sino que se generarán por ordenador con ecuaciones físicas de transmisión óptica (datos sintéticos). Por ello, los resultados deberán contrastarse con conjuntos de datos públicos medidos en redes reales.','')]),
 ]
 REFS=[
 [('[1] Pointurier, Y. (2021). Machine learning techniques for quality of transmission estimation in optical networks. ',''),('Journal of Optical Communications and Networking','i'),(', 13(4), B60. https://doi.org/10.1364/JOCN.417434','')],
@@ -82,4 +82,10 @@ for r in REFS:
     p=add(r,WD_ALIGN_PARAGRAPH.LEFT,False,FS-2); p.paragraph_format.left_indent=Pt(FS); p.paragraph_format.first_line_indent=Pt(-FS)
 z=d.settings.element.find(qn('w:zoom'))
 if z is not None: z.set(qn('w:percent'),'100')
+order=['pStyle','keepNext','keepLines','pageBreakBefore','framePr','widowControl','numPr','suppressLineNumbers','pBdr','shd','tabs','suppressAutoHyphens','spacing','ind','contextualSpacing','jc','rPr']
+rank={qn('w:'+n):i for i,n in enumerate(order)}
+for pp in d.element.body.iter(qn('w:pPr')):
+    k=list(pp)
+    for e in k: pp.remove(e)
+    for e in sorted(k,key=lambda e:rank.get(e.tag,99)): pp.append(e)
 d.save(OUT+'ficha-paso-1.docx')
