@@ -2592,15 +2592,15 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-1-planteamiento/ficha-paso-1.html": {
-    "mtime": 1790631835.534773,
-    "seen": 1790633298.7575243,
-    "ast_hash": "6e0636fdb9ab9b393d490a24ca20a8ad",
+    "mtime": 1790637009.5497751,
+    "seen": 1790637032.540091,
+    "ast_hash": "dd8b8875359462e19dabae3ec9d7f9c6",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-1-planteamiento/ficha-paso-1.pdf": {
-    "mtime": 1790631838.330426,
-    "seen": 1790633298.7576609,
-    "ast_hash": "56e96686767f217677205f0236166f63",
+    "mtime": 1790637009.9947348,
+    "seen": 1790637032.5402043,
+    "ast_hash": "08d7f0415ee435518f4581ba7586130d",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/plantilla-lncs/llncs.cls": {
@@ -2661,6 +2661,18 @@
     "mtime": 1790634284.2471418,
     "seen": 1790634310.3699422,
     "ast_hash": "ab689bedf45fedbcbef5f1a1efc5d28b",
+    "semantic_hash": ""
+  },
+  "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-1-planteamiento/generar_ficha.py": {
+    "mtime": 1790637027.7489274,
+    "seen": 1790637032.5398376,
+    "ast_hash": "daf55a7e7162de0a33deab6240f7127a",
+    "semantic_hash": ""
+  },
+  "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-1-planteamiento/Angel_Luis_Acosta_Gonzalez_Paso1-version-final.pdf": {
+    "mtime": 1790635734.5451891,
+    "seen": 1790637032.5402029,
+    "ast_hash": "0dc24401962aea2494db49b7e69476a7",
     "semantic_hash": ""
   }
 }
