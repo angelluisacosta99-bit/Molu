@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Ficha Paso 1 — Planteamiento del problema</title>
+<style>
+  @page { size: A4; margin: 14mm 16mm 12mm 16mm; }
+  body { font-family: "Latin Modern Roman", "CMU Serif", "Times New Roman", serif; font-size: 9.6pt; line-height: 1.3; color: #111; margin: 0; }
+  header { border-bottom: 1.2px solid #111; padding-bottom: 4px; margin-bottom: 6px; }
+  .meta { font-size: 8.4pt; color: #333; display: flex; justify-content: space-between; }
+  h1 { font-size: 12.4pt; margin: 3px 0 2px; line-height: 1.2; }
+  h2 { font-size: 10pt; margin: 7px 0 2px; font-variant: small-caps; letter-spacing: .02em; }
+  p { margin: 0 0 3px; text-align: justify; hyphens: auto; }
+  ol, ul { margin: 1px 0 3px 16px; padding: 0; }
+  li { margin: 0 0 1.5px; text-align: justify; }
+  .box { border: 1px solid #111; padding: 4px 7px; margin: 3px 0; }
+  .refs { font-size: 7.9pt; margin-top: 6px; border-top: .6px solid #888; padding-top: 3px; }
+  sup, sub { line-height: 0; }
+  .refs p { margin: 0 0 1px; text-align: left; }
+</style>
+</head>
+<body>
+<header>
+  <div class="meta"><span>Máster Universitario en Sistemas Inteligentes — USAL · Metodología de la Investigación</span><span>Paso 1 · Día 1</span></div>
+  <h1>Estimación de la calidad de transmisión mediante aprendizaje automático en la red DWDM ferroviaria Moscú-Kazánskaya – Riazán</h1>
+  <div class="meta"><span>Angel Luis Acosta González</span><span>Título provisional · 28 de septiembre de 2026</span></div>
+</header>
+
+<h2>1. Planteamiento del problema</h2>
+<p>En mi trabajo de fin de grado (ingeniería ferroviaria, RUT MIIT, 2026) diseñé la red primaria de comunicaciones del tramo Moscú-Kazánskaya – Riazán-1 (198,3 km): un anillo DWDM entre Moscú-Kazánskaya, Voskresensk y Riazán-1, más una cadena de acceso de 22 estaciones, con canales de 10 Gbit/s sobre fibra G.652 (α = 0,22 dB/km). La calidad de transmisión (QoT) se verificó con un modelo analítico aplicado solo al tramo más desfavorable (Voskresensk – Riazán-1, 108,9 km). El resultado fue Q&nbsp;=&nbsp;7,37 y BER&nbsp;=&nbsp;8,9·10<sup>−14</sup>, frente a un umbral normativo de 10<sup>−11</sup> (Q = 6,71).</p>
+<p>Ese enfoque es <b>estático y conservador</b>: se calcula una sola vez, para un caso extremo y con márgenes fijos. No tiene en cuenta la degradación durante la explotación: envejecimiento de la fibra y de los amplificadores EDFA, empalmes por reparaciones o variaciones de temperatura. Tampoco recoge el hielo y las inundaciones, que el propio proyecto identifica como riesgos del trazado, ni la reconfiguración de canales en los OADM. Recalcular a mano cada canal óptico (<i>lightpath</i>) en cada situación es costoso, y los márgenes fijos tienden a sobredimensionar la red.</p>
+
+<h2>2. Pregunta inicial de investigación</h2>
+<div class="box">¿Puede un modelo de aprendizaje automático, entrenado con parámetros de enlace a los que accede el operador, estimar el factor Q y la BER de todos los canales de la red ferroviaria con una precisión comparable al modelo analítico, en mucho menos tiempo y también en condiciones degradadas?</div>
+
+<h2>3. Novedad e interés</h2>
+<ul>
+  <li><b>Vacío:</b> la estimación de QoT con aprendizaje automático está consolidada en redes troncales de larga distancia [1–3]. Su aplicación a <b>redes de comunicaciones ferroviarias</b> parece mucho menos tratada, lo que se confirmará en la revisión bibliográfica del Paso 2. Estas redes son regionales, con muchas estaciones de acceso, expuestas a condiciones ambientales severas y, en este caso, limitadas a equipos de fabricación nacional.</li>
+  <li><b>Interés:</b> se sustituye un cálculo puntual por un sistema inteligente que evalúa la red de forma continua. Es un paso hacia la gestión autónoma de redes y el mantenimiento predictivo de una infraestructura crítica para la seguridad ferroviaria.</li>
+</ul>
+
+<h2>4. Objetivos</h2>
+<p><b>General:</b> desarrollar y evaluar un estimador de QoT basado en aprendizaje automático para la red DWDM del tramo Moscú-Kazánskaya – Riazán.</p>
+<ol>
+  <li>Generar un conjunto de datos de canales ópticos a partir del modelo analítico del proyecto de grado. Se variarán la longitud, los empalmes, la potencia, la ganancia EDFA, el envejecimiento y la temperatura.</li>
+  <li>Entrenar y comparar varios modelos: una regresión lineal como referencia, <i>Random Forest</i>, XGBoost y un perceptrón multicapa.</li>
+  <li>Evaluar el error de estimación del factor Q (MAE, RMSE), el acierto al clasificar el umbral BER ≤ 10<sup>−11</sup> y el tiempo de cálculo frente al método analítico.</li>
+  <li>Cuantificar el margen de diseño que podría reducirse sin incumplir el umbral de BER.</li>
+</ol>
+
+<h2>5. Hipótesis provisional</h2>
+<div class="box"><b>H<sub>1</sub>:</b> un modelo de ensemble de árboles (<i>Random Forest</i> o XGBoost) estimará el factor Q de los canales de la red con un error absoluto medio inferior a 0,3. Además, clasificará correctamente el cumplimiento de BER ≤ 10<sup>−11</sup> en al menos el 95 % de los casos, con un tiempo de inferencia al menos un orden de magnitud menor que el cálculo analítico.<br>
+<b>H<sub>0</sub>:</b> los modelos de aprendizaje automático no mejoran de forma significativa a la regresión lineal de referencia.</div>
+<p><b>Limitación prevista:</b> el conjunto de datos será sintético, generado con el modelo físico del proyecto, y no con mediciones reales del operador. La validez externa deberá contrastarse con conjuntos de datos públicos de QoT.</p>
+
+<div class="refs">
+  <p>[1] Pointurier, Y. (2021). Machine learning techniques for quality of transmission estimation in optical networks. <i>Journal of Optical Communications and Networking</i>, 13(4), B60. https://doi.org/10.1364/JOCN.417434</p>
+  <p>[2] Mata, J., de Miguel, I., Durán Barroso, R. J., et al. (2018). Supervised machine learning techniques for quality of transmission assessment in optical networks. <i>ICTON 2018</i>, 1–4. IEEE. https://doi.org/10.1109/ICTON.2018.8473819</p>
+  <p>[3] Kozdrowski, S., Cichosz, P., Paziewski, P., &amp; Sujecki, S. (2020). Machine learning algorithms for prediction of the quality of transmission in optical networks. <i>Entropy</i>, 23(1), 7. https://doi.org/10.3390/e23010007</p>
+</div>
+</body>
+</html>
