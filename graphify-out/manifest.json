@@ -2632,5 +2632,35 @@
     "seen": 1790633298.7576647,
     "ast_hash": "551e8c2c0de43c54a50d6ebefae51185",
     "semantic_hash": ""
+  },
+  "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/FUENTE.md": {
+    "mtime": 1790634295.4385452,
+    "seen": 1790634310.3698676,
+    "ast_hash": "d6cf82156f255623f13a7438ec75a2ee",
+    "semantic_hash": ""
+  },
+  "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/ejemplos/articulo-operadores-logicos-espejo.pdf": {
+    "mtime": 1790634284.2440202,
+    "seen": 1790634310.3699398,
+    "ast_hash": "8cba18af5234a2a398c0e8aab466266b",
+    "semantic_hash": ""
+  },
+  "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/ejemplos/poster-correlated-events-cordon.pdf": {
+    "mtime": 1790634284.2378879,
+    "seen": 1790634310.3699408,
+    "ast_hash": "e293c5cd67c74ffa4ac1ad018e9ccd8c",
+    "semantic_hash": ""
+  },
+  "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/ejemplos/poster-prospectos-caballero.pdf": {
+    "mtime": 1790634284.241424,
+    "seen": 1790634310.3699417,
+    "ast_hash": "3e16e40be2e9625682700c8a61aa0fad",
+    "semantic_hash": ""
+  },
+  "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/presentacion-asignatura-2026-2027.pdf": {
+    "mtime": 1790634284.2471418,
+    "seen": 1790634310.3699422,
+    "ast_hash": "ab689bedf45fedbcbef5f1a1efc5d28b",
+    "semantic_hash": ""
   }
 }

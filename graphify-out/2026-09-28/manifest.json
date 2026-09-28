@@ -2586,21 +2586,51 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/README.md": {
-    "mtime": 1790629998.552941,
-    "seen": 1790630017.0678916,
-    "ast_hash": "f1e126c05d290993890365f7fbc7e7a9",
+    "mtime": 1790633280.8107975,
+    "seen": 1790633298.7575216,
+    "ast_hash": "d39bb7f95c94d657da6ca3d93a6594a0",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-1-planteamiento/ficha-paso-1.html": {
-    "mtime": 1790629987.5372825,
-    "seen": 1790630017.0678937,
-    "ast_hash": "20e9afb65dfb9399e7e7307d2d06779a",
+    "mtime": 1790631835.534773,
+    "seen": 1790633298.7575243,
+    "ast_hash": "6e0636fdb9ab9b393d490a24ca20a8ad",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-1-planteamiento/ficha-paso-1.pdf": {
-    "mtime": 1790629988.2825377,
-    "seen": 1790630017.0679972,
-    "ast_hash": "7ad1058232e6836db7c4e660a703a6f4",
+    "mtime": 1790631838.330426,
+    "seen": 1790633298.7576609,
+    "ast_hash": "56e96686767f217677205f0236166f63",
+    "semantic_hash": ""
+  },
+  "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/plantilla-lncs/llncs.cls": {
+    "mtime": 1092731332.0,
+    "seen": 1790633298.756967,
+    "ast_hash": "58816aeb60fb84909ab8aed56b1cca5a",
+    "semantic_hash": ""
+  },
+  "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/plantilla-lncs/FUENTE.md": {
+    "mtime": 1790633280.8041313,
+    "seen": 1790633298.7575274,
+    "ast_hash": "91ebe174236e488e8dbbab8eaf00ba1a",
+    "semantic_hash": ""
+  },
+  "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/plantilla-lncs/history.txt": {
+    "mtime": 1160997556.0,
+    "seen": 1790633298.7575295,
+    "ast_hash": "698dacb7ce0a1097273d4feb28f0f88d",
+    "semantic_hash": ""
+  },
+  "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/plantilla-lncs/llncsdoc.pdf": {
+    "mtime": 1147016768.0,
+    "seen": 1790633298.757663,
+    "ast_hash": "3195bdf0ab1d15537575cdb2ceb2cda6",
+    "semantic_hash": ""
+  },
+  "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/plantilla-lncs/typeinst.pdf": {
+    "mtime": 1380708818.0,
+    "seen": 1790633298.7576647,
+    "ast_hash": "551e8c2c0de43c54a50d6ebefae51185",
     "semantic_hash": ""
   }
 }
