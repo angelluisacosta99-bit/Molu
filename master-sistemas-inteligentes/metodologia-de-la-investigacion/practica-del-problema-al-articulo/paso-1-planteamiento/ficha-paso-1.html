@@ -42,15 +42,15 @@
 <h2>4. Objetivos</h2>
 <p><b>General:</b> desarrollar y evaluar un estimador de QoT basado en aprendizaje automático para la red DWDM del tramo Moscú-Kazánskaya – Riazán.</p>
 <ol>
-  <li>Generar un conjunto de datos de canales ópticos a partir del modelo analítico del proyecto de grado. Se variarán la longitud, los empalmes, la potencia, la ganancia EDFA, el envejecimiento y la temperatura.</li>
-  <li>Entrenar y comparar varios modelos: una regresión lineal como referencia, <i>Random Forest</i>, XGBoost y un perceptrón multicapa.</li>
-  <li>Evaluar el error de estimación del factor Q (MAE, RMSE), el acierto al clasificar el umbral BER ≤ 10<sup>−11</sup> y el tiempo de cálculo frente al método analítico.</li>
-  <li>Cuantificar el margen de diseño que podría reducirse sin incumplir el umbral de BER.</li>
+  <li>Construir un conjunto de datos de canales ópticos de la red a partir del modelo analítico del proyecto de grado, incluyendo condiciones de degradación.</li>
+  <li>Entrenar y comparar distintos modelos de aprendizaje automático con un modelo de referencia sencillo.</li>
+  <li>Evaluar su precisión y su tiempo de cálculo frente al método analítico.</li>
+  <li>Analizar si la estimación permitiría ajustar los márgenes de diseño de la red.</li>
 </ol>
 
 <h2>5. Hipótesis provisional</h2>
-<div class="box"><b>H<sub>1</sub>:</b> un modelo de ensemble de árboles (<i>Random Forest</i> o XGBoost) estimará el factor Q de los canales de la red con un error absoluto medio inferior a 0,3. Además, clasificará correctamente el cumplimiento de BER ≤ 10<sup>−11</sup> en al menos el 95 % de los casos, con un tiempo de inferencia al menos un orden de magnitud menor que el cálculo analítico.<br>
-<b>H<sub>0</sub>:</b> los modelos de aprendizaje automático no mejoran de forma significativa a la regresión lineal de referencia.</div>
+<div class="box"><b>H<sub>1</sub>:</b> un modelo de aprendizaje automático entrenado con parámetros del enlace podrá determinar si un canal cumple el umbral BER ≤ 10<sup>−11</sup> con una exactitud de al menos el 95 %, en un tiempo de cálculo inferior al del método analítico.<br>
+<b>H<sub>0</sub>:</b> los modelos de aprendizaje automático no mejoran de forma significativa al modelo de referencia sencillo.</div>
 <p><b>Limitación prevista:</b> el conjunto de datos será sintético, generado con el modelo físico del proyecto, y no con mediciones reales del operador. La validez externa deberá contrastarse con conjuntos de datos públicos de QoT.</p>
 
 <div class="refs">
