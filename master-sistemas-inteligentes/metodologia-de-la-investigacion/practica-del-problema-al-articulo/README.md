@@ -11,8 +11,8 @@ del trabajo de fin de grado de Angel (RUT MIIT, 2026).
 | Paso | Contenido | Estado |
 |---|---|---|
 | 1 | Ficha: problema, pregunta, objetivos, hipótesis (PDF 1 pág.) | `paso-1-planteamiento/` |
-| 2 | Búsqueda bibliográfica, `referencias.bib` (8-10 artículos) | pendiente |
-| 3 | Diseño experimental: dataset, ≥1 tabla, ≥1 figura | pendiente |
+| 2 | Búsqueda bibliográfica, `referencias.bib` (8-10 artículos) | `paso-2-bibliografia/` |
+| 3 | Diseño experimental: dataset, ≥1 tabla, ≥1 figura | `paso-3-experimento/` |
 | 4 | Redacción inversa ("método de la Casa") | pendiente |
 | 5 | Maquetación en Overleaf con plantilla LNCS + póster | pendiente (plantilla de clase en `plantilla-lncs/`) |
 
