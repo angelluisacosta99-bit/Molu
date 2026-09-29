@@ -2586,21 +2586,21 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/README.md": {
-    "mtime": 1790701327.631727,
-    "seen": 1790701332.2222424,
-    "ast_hash": "2828eb2480303c26a46fdd951ec7ae38",
+    "mtime": 1790633280.8107975,
+    "seen": 1790633298.7575216,
+    "ast_hash": "d39bb7f95c94d657da6ca3d93a6594a0",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-1-planteamiento/ficha-paso-1.html": {
-    "mtime": 1790639103.8938448,
-    "seen": 1790639119.2581136,
-    "ast_hash": "e8a35fc7edcf05f057ede93c7646edde",
+    "mtime": 1790631835.534773,
+    "seen": 1790633298.7575243,
+    "ast_hash": "6e0636fdb9ab9b393d490a24ca20a8ad",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-1-planteamiento/ficha-paso-1.pdf": {
-    "mtime": 1790639105.462335,
-    "seen": 1790639119.258167,
-    "ast_hash": "dd4d0f44303543fbd11ea9d81294d181",
+    "mtime": 1790631838.330426,
+    "seen": 1790633298.7576609,
+    "ast_hash": "56e96686767f217677205f0236166f63",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/plantilla-lncs/llncs.cls": {
@@ -2661,102 +2661,6 @@
     "mtime": 1790634284.2471418,
     "seen": 1790634310.3699422,
     "ast_hash": "ab689bedf45fedbcbef5f1a1efc5d28b",
-    "semantic_hash": ""
-  },
-  "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-1-planteamiento/generar_ficha.py": {
-    "mtime": 1790639103.7500443,
-    "seen": 1790639119.2578895,
-    "ast_hash": "9a870940d43da2ef6d888d513b72881e",
-    "semantic_hash": ""
-  },
-  "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-1-planteamiento/Angel_Luis_Acosta_Gonzalez_Paso1-version-final.pdf": {
-    "mtime": 1790635734.5451891,
-    "seen": 1790637032.5402029,
-    "ast_hash": "0dc24401962aea2494db49b7e69476a7",
-    "semantic_hash": ""
-  },
-  "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-2-bibliografia/README.md": {
-    "mtime": 1790701681.944247,
-    "seen": 1790701692.026184,
-    "ast_hash": "4f87d3f99b5dd6b9e18bab119c7ca379",
-    "semantic_hash": ""
-  },
-  "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-2-bibliografia/wos-export-2026-09-29.txt": {
-    "mtime": 1790697695.2365592,
-    "seen": 1790698876.1735995,
-    "ast_hash": "479e32f4602699cf3d8c6bec4b32858d",
-    "semantic_hash": ""
-  },
-  "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-2-bibliografia/notas-de-lectura.md": {
-    "mtime": 1790701681.9444506,
-    "seen": 1790701692.026185,
-    "ast_hash": "60faf706fae13b91baa24a03206ee06c",
-    "semantic_hash": ""
-  },
-  "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/crear_cuaderno.py": {
-    "mtime": 1790701116.1697953,
-    "seen": 1790701332.2220128,
-    "ast_hash": "f790686dff3ad57ea41e97b774892cd3",
-    "semantic_hash": ""
-  },
-  "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/experimento.py": {
-    "mtime": 1790700914.382829,
-    "seen": 1790701332.2220151,
-    "ast_hash": "c48319d1369d738b9a1cca8569fee7b8",
-    "semantic_hash": ""
-  },
-  "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/simulador.py": {
-    "mtime": 1790701681.9447377,
-    "seen": 1790701692.0259607,
-    "ast_hash": "6a71a506e81f2faafddf38e95885b812",
-    "semantic_hash": ""
-  },
-  "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/README.md": {
-    "mtime": 1790701681.9446073,
-    "seen": 1790701692.0261858,
-    "ast_hash": "2bc557f9e412091fb7ede3a7ab4622b7",
-    "semantic_hash": ""
-  },
-  "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/resultados/mcnemar.txt": {
-    "mtime": 1790701267.6294308,
-    "seen": 1790701332.2222474,
-    "ast_hash": "36d226ff782a6bc60cb4986d66b37604",
-    "semantic_hash": ""
-  },
-  "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/figuras/fig1_q_vs_longitud.pdf": {
-    "mtime": 1790701268.0698044,
-    "seen": 1790701332.2223423,
-    "ast_hash": "c67bfb52821f735d93fcb07ae8ce703d",
-    "semantic_hash": ""
-  },
-  "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/figuras/fig2_f1_escenarios.pdf": {
-    "mtime": 1790701268.2258043,
-    "seen": 1790701332.2223434,
-    "ast_hash": "44872ac276e99b1c43e367ceac4937b0",
-    "semantic_hash": ""
-  },
-  "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/figuras/fig3_importancia.pdf": {
-    "mtime": 1790701278.301805,
-    "seen": 1790701332.2223442,
-    "ast_hash": "87d977ff4ff14f86f222c1503f9036f8",
-    "semantic_hash": ""
-  },
-  "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/figuras/fig1_q_vs_longitud.png": {
-    "mtime": 1790701267.8578043,
-    "seen": 1790701332.2223854,
-    "ast_hash": "27b57976ade06680844d9016878e2899",
-    "semantic_hash": ""
-  },
-  "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/figuras/fig2_f1_escenarios.png": {
-    "mtime": 1790701268.1738043,
-    "seen": 1790701332.2223864,
-    "ast_hash": "28712f9bda67880c4b66b93c561ed8a5",
-    "semantic_hash": ""
-  },
-  "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/figuras/fig3_importancia.png": {
-    "mtime": 1790701278.2578049,
-    "seen": 1790701332.2223876,
-    "ast_hash": "4a15ac319ca55a7d3a52e6cc7121bd76",
     "semantic_hash": ""
   }
 }
