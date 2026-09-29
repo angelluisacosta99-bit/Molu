@@ -33,5 +33,5 @@ Scopus y WoS: desde la red de la USAL o con su VPN.
 2. En Zotero: botón de la varita («Añadir elemento por identificador») y pegar cada DOI.
 3. Seleccionar los 10 → clic derecho → «Exportar elementos…» → formato BibTeX → `referencias.bib`.
 
-`referencias.bib` de esta carpeta es una versión de referencia generada por DOI y
+`referencias.bib` = exportación final de Web of Science (10 registros, claves renombradas, DOI de Samadi añadido; validado con pybtex). `savedrecs-wos-original.bib` = exportación sin tocar. `referencias-borrador-crossref.bib` = borrador anterior generado por DOI,
 validada con pybtex (10 entradas, sin errores).
