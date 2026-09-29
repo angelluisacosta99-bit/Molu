@@ -9,8 +9,9 @@ balance de potencia más ruido del receptor y de los amplificadores EDFA:
                       conectores, OADM, incidencias por hielo)
   Q térmico  : receptor limitado por ruido térmico (Q proporcional a la
                potencia recibida en lineal)
-  Q ASE      : si el tramo lleva preamplificador EDFA, ruido de emisión
-               espontánea amplificada (OSNR en 0,1 nm)
+  Q ASE      : si el canal va amplificado (EDFA cada <= 110 km, vanos
+               iguales), ruido de emisión espontánea amplificada con la
+               OSNR acumulada de todos los vanos (0,1 nm)
   penalización de dispersión cromática (tramos sin compensar)
   cumple = Q_efectivo >= 6,71  (equivale a BER <= 1e-11)
 
@@ -18,7 +19,9 @@ Parámetros de partida tomados del trabajo de fin de grado (RUT MIIT, 2026):
 distancias entre estaciones, alfa = 0,22 dB/km, empalmes cada 4 km de
 0,1 dB, sensibilidad del receptor -25 dBm, figura de ruido del EDFA 6-9 dB.
 Los rangos de degradación (envejecimiento, reparaciones, hielo) son
-supuestos del estudio y se documentan en el artículo.
+supuestos del estudio y se documentan en el artículo. Simplificación:
+la pérdida de OADM (5 dB) se aplica igual a todos los canales, con
+independencia de cuántos OADM atraviesen.
 """
 
 import numpy as np

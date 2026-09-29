@@ -12,20 +12,22 @@ Entrega en Studium: archivo `.bib` validado con al menos 8 citas en BibTeX
 
 Scopus y WoS: desde la red de la USAL o con su VPN.
 
-## Los 10 artículos (metadatos de Crossref; sin retracciones según Crossref y Scite, 2026-09-29)
+## Los 10 artículos del `referencias.bib` final (exportados de Web of Science; sin retracciones según Crossref)
 
 | Clave | Por qué está |
 |---|---|
+| morais2018 | ML para estimar QoT en redes DWDM (el más cercano al tema) |
+| rottondi2018 | Random Forest entrenado con datos sintéticos (precedente directo) |
 | pointurier2021 | Revisión de ML para QoT: marco general |
-| musumeci2019 | Revisión muy citada de ML en redes ópticas |
-| mata2018survey | Revisión de IA en redes ópticas (Univ. Valladolid) |
-| mata2018icton | Random Forest para clasificar lightpaths (~99,9 %) |
-| rottondi2018 | Clasificador de QoT entrenado con datos sintéticos |
-| kozdrowski2020 | ML con datos reales de un operador DWDM |
-| fu2021 | QoT con ML + ecuación de propagación (datos simulados) |
-| damico2020 | ML en el controlador de una línea óptica real |
-| bergk2021 | Colección pública de datasets de QoT |
-| santos2024 | Dataset experimental público para ML en comunicaciones ópticas |
+| kozdrowski2021 | ML con datos reales de un operador DWDM; desbalance de clases |
+| aladin2020 | Estimación y pronóstico de QoT; efecto de reducir variables |
+| allogba2022 | Tutorial de estimación y pronóstico de QoT |
+| yu2019 | Transferencia de modelos entre redes |
+| samadi2017 | Trabajo pionero de ML para QoT en WDM |
+| igarashi2024 | QoT en sistemas IM/DD (como la red ferroviaria de 10 Gbit/s) |
+| dicicco2023 | Pronóstico de QoT con incertidumbre (márgenes) |
+
+Detalle de cada uno en `notas-de-lectura.md`.
 
 ## Cómo pasarlo por Zotero (lo que pide la tarea)
 
@@ -33,5 +35,10 @@ Scopus y WoS: desde la red de la USAL o con su VPN.
 2. En Zotero: botón de la varita («Añadir elemento por identificador») y pegar cada DOI.
 3. Seleccionar los 10 → clic derecho → «Exportar elementos…» → formato BibTeX → `referencias.bib`.
 
-`referencias.bib` = exportación final de Web of Science (10 registros, claves renombradas, DOI de Samadi añadido; validado con pybtex). `savedrecs-wos-original.bib` = exportación sin tocar. `referencias-borrador-crossref.bib` = borrador anterior generado por DOI,
-validada con pybtex (10 entradas, sin errores).
+## Archivos de esta carpeta
+- `referencias.bib`: versión de trabajo para el artículo (exportación de WoS con claves renombradas y el DOI de Samadi añadido; validado con pybtex). Lo entregado en Studium fue la exportación corta sin tocar, renombrada.
+- `savedrecs-wos-corto-original.bib`: exportación corta de WoS sin tocar (lo que se entregó).
+- `savedrecs-wos-original.bib`: exportación completa de WoS (con resúmenes y referencias citadas).
+- `wos-export-2026-09-29.txt`: 50 registros de la búsqueda hecha en clase, de la que se eligieron los 10.
+- `referencias-borrador-crossref.bib`: primer borrador generado por DOI desde Crossref, sustituido por la búsqueda en WoS; validado con pybtex (10 entradas).
+- `notas-de-lectura.md`: resumen de los 10 artículos y lecciones para el diseño experimental.

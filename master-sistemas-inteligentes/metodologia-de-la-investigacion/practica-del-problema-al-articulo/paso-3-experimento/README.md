@@ -4,11 +4,11 @@ Entregable de Studium: archivo de datos/código y las imágenes/tablas listas
 para insertar en el manuscrito.
 
 ## Cómo ejecutarlo (en VS Code)
-1. Abrir `experimento.ipynb` → *Select Kernel* → Python 3.14 → *Run All*.
+1. Abrir `experimento.ipynb` → *Select Kernel* → Python 3 → *Run All*.
 2. Tarda unos 2–3 minutos. Regenera `datos/`, `resultados/` y `figuras/`.
    Sin el cuaderno: `python experimento.py`.
 
-Librerías: numpy, pandas, scipy, scikit-learn, xgboost y matplotlib.
+Probado con Python 3.11. Librerías: numpy, pandas, scipy, scikit-learn, xgboost y matplotlib.
 
 ## Archivos
 | Archivo | Qué es |

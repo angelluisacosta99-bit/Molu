@@ -35,7 +35,7 @@ Las cifras vienen de los artículos; no inventar otras al citarlos.
    exactitud baje de ~99 % a ~85–90 %: es un resultado realista, no un
    fallo.
 4. **Tamaño:** ~1000 muestras bastan para RF (Rottondi). Usaremos más
-   (unas 10 000) y mostraremos una curva de aprendizaje.
+   (unas 10 000). Curva de aprendizaje: pendiente, opcional para el Paso 4.
 5. **Desbalance:** en la red real casi todos los canales cumplen
    (Kozdrowski). Hay que generar suficientes casos "no cumple" o usar pesos
    de clase, y usar validación cruzada estratificada.
