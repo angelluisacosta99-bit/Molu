@@ -58,6 +58,17 @@ López Batista en Studium).
   cifras coherentes con el texto; «un póster no es un artículo en letra
   grande»; legible a 1-2 m.
 
+- `latex/` (enviados el 2026-09-30; no estaban ni en el repo ni en el
+  Drive de Arlet) — manuales de LaTeX en español para el Paso 5:
+  - `introduccion-a-latex-randez-2013.pdf` — Luis Rández (Univ. Zaragoza),
+    40 págs.: la más corta para empezar (fórmulas, tablas, figuras).
+  - `bibliografia-en-latex-bibtex-mata-2014.pdf` — Miguel Mata, 14 págs.:
+    `thebibliography` y BibTeX (`\cite`, `\bibliography`, estilos).
+  - `una-descripcion-de-latex2e-oetiker.pdf` — traducción de *The Not So
+    Short Introduction to LaTeX2e* (Oetiker et al., v0.4b, 1998), 86 págs.
+  - `manual-latex-mora-borbon-2005.pdf` — Mora y Borbón (TEC Costa Rica),
+    57 págs. Es el mismo archivo que trae `Plantilla_IT_05022007.rar`.
+
 Enviados también el 2026-09-30 y **no copiados aquí** porque ya estaban en
 `../../trabajo-fin-de-master/`: `DPTOIA-IT-2000-001.pdf` (idéntico, byte a
 byte) y `Plantilla_IT_05022007.rar` (versión de 2007 de la plantilla de
