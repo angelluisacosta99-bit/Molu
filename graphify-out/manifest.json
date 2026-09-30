@@ -2694,15 +2694,15 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/crear_cuaderno.py": {
-    "mtime": 1790701116.1697953,
-    "seen": 1790701332.2220128,
-    "ast_hash": "f790686dff3ad57ea41e97b774892cd3",
+    "mtime": 1790774386.531127,
+    "seen": 1790774618.8996596,
+    "ast_hash": "d63c8a3416da57db2df8ed172e671d49",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/experimento.py": {
-    "mtime": 1790700914.382829,
-    "seen": 1790701332.2220151,
-    "ast_hash": "c48319d1369d738b9a1cca8569fee7b8",
+    "mtime": 1790774386.5273933,
+    "seen": 1790774618.8996615,
+    "ast_hash": "81d30d47a64403d513b5742bac9dee44",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/simulador.py": {
@@ -2712,9 +2712,9 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/README.md": {
-    "mtime": 1790766218.8868585,
-    "seen": 1790766230.9892864,
-    "ast_hash": "ece26474b3d59bc15794e4e4b486b925",
+    "mtime": 1790774613.5641992,
+    "seen": 1790774618.8999672,
+    "ast_hash": "04a894070378983330195322c816effd",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/resultados/mcnemar.txt": {
@@ -2865,6 +2865,12 @@
     "mtime": 1790773261.0900893,
     "seen": 1790773284.4860811,
     "ast_hash": "b0b1bb434559a9fe716af91a8e22a39e",
+    "semantic_hash": ""
+  },
+  "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/requirements.txt": {
+    "mtime": 1790774386.5802045,
+    "seen": 1790774618.899969,
+    "ast_hash": "fb1ec57c16d834f489a3e2c25cf1d7a0",
     "semantic_hash": ""
   }
 }

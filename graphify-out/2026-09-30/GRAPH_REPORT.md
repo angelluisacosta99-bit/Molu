@@ -1,7 +1,7 @@
 # Graph Report - Molu  (2026-09-30)
 
 ## Corpus Check
-- 307 files · ~1,400,559 words
+- 307 files · ~1,405,807 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 102 file(s) not represented in the graph (top: .csv 32, .arff 22, .pptx 15)
 
@@ -11,7 +11,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `41370c1d`
+- Built from commit: `aa7866ca`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -1203,7 +1203,7 @@ Cohesion: 0.33
 Nodes (4): csv, Genera resumen-paso-3.pdf (tabla + figuras + interpretación) a partir de…, pathlib, subprocess
 
 ## Knowledge Gaps
-- **980 isolated node(s):** `Materiales de clase — Metodología de la Investigación (2026-2027)`, `Pautas de redacción para el artículo (materiales de clase)`, `HEADING_TAGS`, `LAYOUT_TRANSITION_PROPS`, `POSITIONED_CHILD_INTERACTIVE_SELECTOR` (+975 more)
+- **980 isolated node(s):** `Pautas de redacción para el artículo (materiales de clase)`, `HEADING_TAGS`, `LAYOUT_TRANSITION_PROPS`, `POSITIONED_CHILD_INTERACTIVE_SELECTOR`, `QUALITY_TEXT_TAGS` (+975 more)
   These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1224 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **34 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -1211,12 +1211,12 @@ Nodes (4): csv, Genera resumen-paso-3.pdf (tabla + figuras + interpretación) a 
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Novedades de herramientas de IA` connect `Novedades de herramientas de IA` to `2026-09-07 — Búsqueda a mano: herramientas para posts de blog en plataformas de clases`, `2026-09-19 — Pasada por el correo semanal "This week in Claude Code" (4 números, 21 ago-18 sep)`, `hook-before-edit.mjs`, `2026-09-13 — Búsqueda exhaustiva: herramientas de investigación científica verificada para el máster`, `2026-08-16 — Primera pasada del radar`, `2026-08-30 — Compactación de contexto: palancas oficiales para ahorrar tokens`, `2026-08-30 — Pasada del radar: dos funciones nativas nuevas, sin hallazgos de terceros`?**
-  _High betweenness centrality (0.039) - this node is a cross-community bridge._
+  _High betweenness centrality (0.033) - this node is a cross-community bridge._
 - **Why does `2026-08-16 — Segunda pasada: hooks vs. CLAUDE.md, y prácticas de la comunidad` connect `hook-before-edit.mjs` to `Novedades de herramientas de IA`?**
-  _High betweenness centrality (0.038) - this node is a cross-community bridge._
-- **Why does `deny()` connect `hook-before-edit.mjs` to `readConfig`?**
-  _High betweenness centrality (0.026) - this node is a cross-community bridge._
-- **What connects `Materiales de clase — Metodología de la Investigación (2026-2027)`, `Pautas de redacción para el artículo (materiales de clase)`, `HEADING_TAGS` to the rest of the system?**
+  _High betweenness centrality (0.033) - this node is a cross-community bridge._
+- **Why does `2026-08-22 — ponytail (DietrichGebert): activado para todas las sesiones` connect `Novedades de herramientas de IA` to `RoombaController`?**
+  _High betweenness centrality (0.022) - this node is a cross-community bridge._
+- **What connects `Pautas de redacción para el artículo (materiales de clase)`, `HEADING_TAGS`, `LAYOUT_TRANSITION_PROPS` to the rest of the system?**
   _980 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `live-browser.js` be split into smaller, more focused modules?**
   _Cohesion score 0.03238095238095238 - nodes in this community are weakly interconnected._
