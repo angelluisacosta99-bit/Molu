@@ -18,6 +18,11 @@ López Batista en Studium).
   la USAL (inglés, 4 columnas, plantilla tipo Gemini).
 - `ejemplos/poster-prospectos-caballero.pdf` — póster de un alumno de la
   USAL (español, 3 columnas, colores USAL).
+- `fuentes-de-informacion-en-ciencia-y-tecnologia.pdf` (enviado el
+  2026-09-30, 23 págs., texto de 2003 con enlaces antiguos) — teoría:
+  obras de referencia directas/indirectas y 15 tipos de fuentes. Útil
+  para el artículo: las normas UIT-T que citemos (p. ej. G.652) son
+  «fuentes técnicas» y el TFG es «literatura gris» (fuentes inéditas).
 
 No copiados (demasiado grandes o ya extraídos en la sesión):
 `Arquitectura_de_la_Investigacion_Cientifica.pdf` (26 MB, práctica por
