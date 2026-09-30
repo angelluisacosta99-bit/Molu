@@ -2634,9 +2634,9 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/FUENTE.md": {
-    "mtime": 1790767912.0244474,
-    "seen": 1790767915.1005666,
-    "ast_hash": "a9b2f6c06e65bbf65b5348f70b34b03e",
+    "mtime": 1790768140.9227645,
+    "seen": 1790768143.9815354,
+    "ast_hash": "6f8798a9afd72053464784104a3fb8dd",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/ejemplos/articulo-operadores-logicos-espejo.pdf": {
@@ -2829,6 +2829,30 @@
     "mtime": 1790767603.6382387,
     "seen": 1790767628.5801158,
     "ast_hash": "0d7b4eb205197bec09732d4ce4caa844",
+    "semantic_hash": ""
+  },
+  "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/latex/bibliografia-en-latex-bibtex-mata-2014.pdf": {
+    "mtime": 1790768140.9039345,
+    "seen": 1790768143.981627,
+    "ast_hash": "d4e5de2d1b986355a4cd6acedf7cbec7",
+    "semantic_hash": ""
+  },
+  "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/latex/introduccion-a-latex-randez-2013.pdf": {
+    "mtime": 1790768140.9061775,
+    "seen": 1790768143.9816282,
+    "ast_hash": "90629577d22917259c9181cff2d3a463",
+    "semantic_hash": ""
+  },
+  "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/latex/manual-latex-mora-borbon-2005.pdf": {
+    "mtime": 1790768140.910994,
+    "seen": 1790768143.9816291,
+    "ast_hash": "806b04689195a15c8e8efedfdab31287",
+    "semantic_hash": ""
+  },
+  "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/latex/una-descripcion-de-latex2e-oetiker.pdf": {
+    "mtime": 1790768140.9086034,
+    "seen": 1790768143.9816298,
+    "ast_hash": "7aebb3d7926db089082c6c9f402defbc",
     "semantic_hash": ""
   }
 }
