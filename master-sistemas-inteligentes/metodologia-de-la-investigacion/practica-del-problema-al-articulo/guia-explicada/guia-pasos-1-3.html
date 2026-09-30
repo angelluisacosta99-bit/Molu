@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<title>Guía explicada de los Pasos 1-3</title>
+<style>
+@page{size:A4;margin:1.8cm 1.9cm 1.8cm 1.9cm}
+body{font-family:"DejaVu Serif",Georgia,serif;font-size:10.5pt;line-height:1.38;color:#111;margin:0}
+h1{font-size:19pt;margin:0 0 4pt;text-align:center}
+h2{font-size:14pt;margin:18pt 0 5pt;border-bottom:1.2pt solid #1f4e79;color:#1f4e79;break-after:avoid}
+h3{font-size:11.5pt;margin:11pt 0 3pt;color:#1f4e79;break-after:avoid}
+p{margin:0 0 5pt;text-align:justify}
+ul,ol{margin:0 0 5pt;padding-left:1.3em} li{margin-bottom:2pt;text-align:justify}
+.sub{text-align:center;font-size:10pt;color:#444;margin-bottom:10pt}
+.caja{border:1pt solid #9bb7d4;background:#eef4fa;padding:6pt 9pt;margin:6pt 0 8pt;break-inside:avoid}
+.aviso{border:1pt solid #d9a441;background:#fdf6e7;padding:6pt 9pt;margin:6pt 0 8pt;break-inside:avoid}
+.analogia{border-left:3pt solid #4a9a5b;padding:3pt 9pt;margin:5pt 0 7pt;background:#f1f8f2;break-inside:avoid}
+code,.mono{font-family:"DejaVu Sans Mono",Consolas,monospace;font-size:8.8pt}
+pre{font-family:"DejaVu Sans Mono",Consolas,monospace;font-size:8.3pt;background:#f4f4f2;border:0.6pt solid #ccc;padding:5pt 7pt;margin:4pt 0 7pt;white-space:pre-wrap;break-inside:avoid;line-height:1.3}
+.f{font-family:"DejaVu Serif",serif;text-align:center;margin:5pt 0 7pt;font-size:11pt;break-inside:avoid}
+table{border-collapse:collapse;width:100%;font-size:9pt;margin:3pt 0 9pt;break-inside:avoid}
+th,td{border:0.5pt solid #aaa;padding:2.5pt 4pt;vertical-align:top;text-align:left}
+th{background:#dde8f3}
+.cap{font-size:9.3pt;margin:8pt 0 2pt;break-after:avoid}
+figure{margin:6pt 0 10pt;text-align:center;break-inside:avoid}
+figcaption{font-size:9.3pt;text-align:center;margin-top:3pt}
+.flujo{display:flex;flex-wrap:nowrap;gap:3pt;justify-content:center;align-items:center;font-size:8.8pt}
+.flujo div.b{border:1pt solid #1f4e79;background:#eef4fa;padding:4pt 4pt;border-radius:3pt;text-align:center;width:76pt}
+.flujo span{font-size:12pt;color:#1f4e79}
+.toc{padding-left:2em}.toc li{margin-bottom:0}
+.pb{break-before:page}
+</style></head><body>
+
+<h1>Guía explicada de la práctica<br>«Del problema científico al artículo» — Pasos 1, 2 y 3</h1>
+<div class="sub">Angel Luis Acosta González · Máster Universitario en Sistemas Inteligentes (USAL) · Metodología de la Investigación<br>
+Qué se hizo, con qué herramientas, dónde se ejecutó y de dónde sale cada dato, fórmula, tabla y figura · 30 de septiembre de 2026</div>
+
+<div class="caja"><b>Para qué sirve esta guía.</b> Para que entiendas, paso a paso, todo lo que hemos hecho y puedas
+explicarle a la profesora el origen de cada número. Está escrita para alguien que empieza: cada concepto técnico lleva una
+explicación sencilla y, cuando ayuda, una analogía (recuadros verdes). Los avisos importantes van en recuadros amarillos.
+Al final (sección 12) hay una lista de preguntas que la profesora podría hacerte, con la respuesta.</div>
+
+<h3>Contenido</h3>
+<ol class="toc">
+<li>Visión general: el camino completo en una página</li>
+<li>Dónde está cada archivo</li>
+<li>Paso 1 — Ficha del problema, pregunta, objetivos e hipótesis</li>
+<li>Paso 2 — Búsqueda bibliográfica y el archivo <code>.bib</code></li>
+<li>Paso 3 — Herramientas: lenguaje, librerías y dónde se ejecutó</li>
+<li>El modelo físico: cada fórmula y cada constante</li>
+<li>El conjunto de datos (dataset)</li>
+<li>Los tres modelos de aprendizaje automático</li>
+<li>Cómo se evaluaron: validación cruzada, métricas y McNemar</li>
+<li>Cómo se hicieron la tabla, las figuras y el PDF de resumen</li>
+<li>Cómo repetirlo tú mismo en tu ordenador</li>
+<li>Preguntas que puede hacerte la profesora (con respuesta)</li>
+<li>Trazabilidad: de dónde sale cada dato</li>
+</ol>
+
+<h2>1. Visión general: el camino completo en una página</h2>
+<p>La práctica pide ir del problema científico al artículo en cinco pasos. Hasta ahora hemos completado tres. La idea de
+fondo es sencilla: tu trabajo de fin de grado (TFG, RUT MIIT 2026) diseñó una red DWDM de fibra óptica para el tramo
+ferroviario Moscú-Kazánskaya – Riazán-1 y comprobó con una fórmula que el caso más desfavorable cumplía la calidad
+exigida. Nosotros preguntamos si un modelo de aprendizaje automático puede decir, <i>para cualquier canal y con la red
+envejecida</i>, si cumple o no esa calidad.</p>
+<p>La Fig. 1 resume el recorrido completo, de izquierda a derecha y de arriba abajo. Cada caja corresponde a una
+sección de esta guía.</p>
+
+<figure>
+<div class="flujo">
+<div class="b"><b>TFG</b><br>distancias, fibra, receptor</div><span>→</span>
+<div class="b"><b>Paso 1</b><br>problema, pregunta, hipótesis</div><span>→</span>
+<div class="b"><b>Paso 2</b><br>10 artículos (WoS) → <code>.bib</code></div><span>→</span>
+<div class="b"><b>Modelo físico</b><br><code>simulador.py</code></div><span>→</span>
+<div class="b"><b>Dataset</b><br>10 000 canales</div>
+</div>
+<div class="flujo" style="margin-top:6pt">
+<span>→</span>
+<div class="b"><b>3 modelos ML</b><br>logística, RF, XGBoost</div><span>→</span>
+<div class="b"><b>Evaluación</b><br>CV 10×3, McNemar</div><span>→</span>
+<div class="b"><b>Resultados</b><br>Tabla + 3 figuras</div><span>→</span>
+<div class="b"><b>Entrega</b><br>zip + PDF resumen</div>
+</div>
+<figcaption><b>Fig. 1.</b> Flujo de trabajo de los Pasos 1-3: de los datos del TFG a los entregables de Studium.</figcaption>
+</figure>
+
+<div class="analogia"><b>Analogía.</b> Es como estudiar si un médico puede predecir qué pacientes enfermarán. No tenemos
+historiales reales, así que construimos un «simulador de pacientes» basado en la fisiología conocida (el modelo físico),
+generamos 10 000 pacientes ficticios, y comprobamos qué método predice mejor quién enferma usando solo lo que el médico
+puede medir en consulta.</div>
+
+<h2>2. Dónde está cada archivo</h2>
+<p>Todo está guardado en tu repositorio de GitHub <code>angelluisacosta99-bit/Molu</code>, dentro de la carpeta
+<code>master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/</code>.
+La Tabla 1 lista las carpetas y qué contiene cada una.</p>
+<div class="cap"><b>Tabla 1.</b> Carpetas de la práctica y su contenido.</div>
+<table><tr><th>Carpeta</th><th>Contenido principal</th></tr>
+<tr><td><code>paso-1-planteamiento/</code></td><td><code>generar_ficha.py</code> (genera la ficha), <code>ficha-paso-1.pdf/.docx</code> (mi versión) y <code>Angel_Luis_Acosta_Gonzalez_Paso1-version-final.pdf</code> (la tuya, la entregada).</td></tr>
+<tr><td><code>paso-2-bibliografia/</code></td><td><code>referencias.bib</code> (10 artículos), las exportaciones originales de Web of Science, <code>notas-de-lectura.md</code> (resumen de los 10 artículos).</td></tr>
+<tr><td><code>paso-3-experimento/</code></td><td><code>simulador.py</code> (modelo físico y datos), <code>experimento.py</code> (modelos, evaluación, figuras), <code>experimento.ipynb</code> (cuaderno), <code>datos/</code>, <code>resultados/</code>, <code>figuras/</code>, <code>generar_resumen.py</code> y <code>resumen-paso-3.pdf</code>.</td></tr>
+<tr><td><code>plantilla-lncs/</code></td><td>La plantilla LaTeX de Springer LNCS que dio la profesora (para el Paso 5).</td></tr>
+<tr><td><code>../materiales-de-clase/</code></td><td>Presentación de la asignatura, artículos y pósters de ejemplo, guías de redacción, citas, póster y LaTeX.</td></tr>
+</table>
+
+<h2>3. Paso 1 — Ficha del problema, pregunta, objetivos e hipótesis</h2>
+<p><b>Qué pedía la profesora:</b> una ficha de una página con el problema, la pregunta de investigación, la novedad,
+los objetivos y una hipótesis.</p>
+<p><b>De dónde salió el contenido:</b></p>
+<ul>
+<li><b>Problema:</b> de tu TFG. El TFG calculó la calidad (factor Q = 7,37; BER = 8,9·10<sup>−14</sup>) solo para el tramo más
+desfavorable (Voskresensk – Riazán-1, 108,9 km), una vez y con márgenes fijos. No contempla el envejecimiento, las
+reparaciones ni el hielo, riesgos que el propio TFG menciona.</li>
+<li><b>Umbral de calidad</b> BER ≤ 10<sup>−11</sup> (equivale a Q = 6,71): es la norma que usaba el TFG.</li>
+<li><b>Novedad:</b> la estimación de calidad con aprendizaje automático ya existe en redes troncales [Pointurier 2021;
+Kozdrowski 2021], también con datos sintéticos [Rottondi 2018], pero no encontramos trabajos en redes ferroviarias.</li>
+<li><b>Hipótesis (redacción final):</b> «Si se entrena un modelo de ensamble (por ejemplo, Random Forest) con parámetros que
+el operador puede medir, será posible predecir si un canal cumple el umbral BER ≤ 10<sup>−11</sup> con mayor acierto que un
+modelo lineal sencillo». Sigue el modelo de la presentación de la profesora y del artículo de Espejo et al.: una
+comparación clara, verificable y sin cifras inventadas.</li>
+</ul>
+<p><b>Herramientas:</b> el script <code>generar_ficha.py</code> (Python) escribe el mismo texto en dos formatos: HTML, que
+Chromium (el navegador) convierte en PDF A4 con Times New Roman 11 pt, y Word (<code>.docx</code>) con la librería
+<code>python-docx</code>. Tú hiciste después tu versión final en Word y es la que se entregó.</p>
+
+<h2>4. Paso 2 — Búsqueda bibliográfica y el archivo <code>.bib</code></h2>
+<p><b>Qué pedía:</b> un archivo <code>referencias.bib</code> con 8-10 artículos de bases de datos científicas (WoS, Scopus,
+IEEE), exportado con un gestor bibliográfico.</p>
+<ol>
+<li><b>Búsqueda:</b> la hiciste tú en clase en <b>Web of Science</b> (acceso USAL) con cadenas como
+<code>("quality of transmission" OR QoT) AND ("machine learning" OR "random forest") AND ("optical network*" OR DWDM)</code>.
+Salieron 50 registros (<code>wos-export-2026-09-29.txt</code>).</li>
+<li><b>Selección:</b> elegimos 10, los más cercanos al tema, y comprobé con Crossref que ninguno está retractado.</li>
+<li><b>Exportación:</b> exportaste de WoS en formato BibTeX. Lo que entregaste en Studium es esa exportación sin tocar,
+solo renombrada (<code>savedrecs-wos-corto-original.bib</code>).</li>
+<li><b>Versión de trabajo:</b> para el artículo usaremos <code>referencias.bib</code>, la misma exportación con claves
+cortas (<code>rottondi2018</code>, <code>kozdrowski2021</code>…) y el DOI que faltaba de Samadi 2017. Se validó con la
+librería <code>pybtex</code>, que lee el archivo como lo haría LaTeX y confirma que hay 10 entradas sin errores.</li>
+<li><b>Lectura:</b> <code>notas-de-lectura.md</code> resume los 10 artículos. De ellos salieron decisiones del Paso 3:
+Random Forest por Rottondi y Kozdrowski; cuidar el desbalance de clases por Kozdrowski; no dar a los modelos las causas
+ocultas, siguiendo a Aladin 2020.</li>
+</ol>
+
+<h2>5. Paso 3 — Herramientas: lenguaje, librerías y dónde se ejecutó</h2>
+<p><b>Qué pedía:</b> un diseño experimental con al menos una tabla y una figura, entregando datos y código.</p>
+<p><b>Dónde se ejecutó:</b> yo (Claude, el asistente de IA) escribí y ejecuté el código en un ordenador Linux en la nube
+(el entorno de Claude Code), con Python 3.11. Todo quedó guardado en tu repositorio. El cuaderno
+<code>experimento.ipynb</code> se entrega ya ejecutado: al abrirlo en VS Code se ven los resultados sin ejecutar nada. Si lo
+ejecutas tú (sección 11), obtendrás los mismos datos, porque usamos una «semilla» fija.</p>
+<p>La Tabla 2 recoge el lenguaje y cada librería, con la versión exacta usada y para qué sirvió.</p>
+<div class="cap"><b>Tabla 2.</b> Software utilizado en el Paso 3.</div>
+<table><tr><th>Herramienta</th><th>Versión</th><th>Para qué</th></tr>
+<tr><td>Python</td><td>3.11.15</td><td>Lenguaje de programación de todo el experimento.</td></tr>
+<tr><td>NumPy</td><td>2.4.6</td><td>Cálculo numérico: fórmulas y números aleatorios.</td></tr>
+<tr><td>pandas</td><td>3.0.6</td><td>Tablas de datos (el dataset y la tabla de resultados); guarda el CSV y el <code>.tex</code>.</td></tr>
+<tr><td>SciPy</td><td>1.17.1</td><td>Función <code>erfc</code> (paso de Q a BER) y distribución χ² (McNemar).</td></tr>
+<tr><td>scikit-learn</td><td>1.9.1</td><td>Regresión logística, Random Forest, validación cruzada, métricas, importancia por permutación.</td></tr>
+<tr><td>XGBoost</td><td>3.2.0</td><td>El tercer modelo (gradient boosting).</td></tr>
+<tr><td>Matplotlib</td><td>3.11.2</td><td>Las tres figuras (PNG a 300 ppp y PDF vectorial).</td></tr>
+<tr><td>Jupyter (nbformat)</td><td>—</td><td>El cuaderno <code>experimento.ipynb</code>, creado por <code>crear_cuaderno.py</code>.</td></tr>
+<tr><td>Chromium</td><td>—</td><td>Convierte HTML en PDF (ficha del Paso 1, resumen del Paso 3 y esta guía).</td></tr>
+</table>
+
+<div class="analogia"><b>¿Qué es la «semilla» (<code>semilla=42</code>)?</b> Los números «aleatorios» de un ordenador salen
+de una receta fija que arranca en un número inicial. Con la misma semilla sale exactamente la misma secuencia, como
+barajar las cartas siempre igual. Por eso cualquiera que ejecute el código obtiene los mismos 10 000 canales y los mismos
+resultados. El 42 no tiene ningún significado; solo importa que sea siempre el mismo.</div>
+
+<h2>6. El modelo físico: cada fórmula y cada constante</h2>
+<p>El archivo <code>simulador.py</code> contiene un modelo de cómo viaja la luz por la fibra y llega al receptor. No es un
+modelo inventado: son las fórmulas estándar de los sistemas ópticos de 10 Gbit/s con modulación NRZ y detección directa
+(IM/DD, como tu red). Con él calculamos, para cada canal, si cumple o no.</p>
+
+<div class="aviso"><b>Si la profesora pregunta «¿por qué datos sintéticos si el modelo es real?»:</b> las fórmulas son
+reales, pero no tenemos mediciones de una red real envejecida (ningún operador ferroviario las publica). Simulamos
+muchos estados posibles de la red (años, reparaciones, hielo) y el modelo físico dice qué pasaría en cada uno. Por eso los
+datos se llaman sintéticos: los genera un simulador a partir de física conocida, no un aparato de medida.</div>
+
+<h3>6.1 Constantes y de dónde sale cada una</h3>
+<p>La Tabla 3 lista todas las constantes del código (primeras líneas de <code>simulador.py</code>) con su origen. Es la
+tabla más importante para defender el trabajo: separa lo que viene de tu TFG de lo que es una suposición nuestra.</p>
+<div class="cap"><b>Tabla 3.</b> Constantes del modelo físico y su origen.</div>
+<table><tr><th>Constante (código)</th><th>Valor</th><th>Significado</th><th>Origen</th></tr>
+<tr><td><code>ESTACIONES_KM</code></td><td>21 estaciones, 0-198,3 km</td><td>Kilómetro de cada estación</td><td>TFG (tabla de estaciones). Se omite Rýbnoye porque su kilómetro no se lee en la tabla.</td></tr>
+<tr><td><code>ALFA_NOMINAL</code></td><td>0,22 dB/km</td><td>Atenuación de la fibra G.652 a 1550 nm</td><td>TFG</td></tr>
+<tr><td><code>LONG_CONSTRUCCION</code>, <code>PERDIDA_EMPALME</code></td><td>4 km; 0,1 dB</td><td>Un empalme de fábrica cada 4 km, 0,1 dB cada uno</td><td>TFG</td></tr>
+<tr><td><code>SENSIBILIDAD</code></td><td>−25 dBm</td><td>Potencia mínima del receptor</td><td>TFG</td></tr>
+<tr><td><code>PERDIDA_CONECTORES</code></td><td>1,0 dB</td><td>Dos conectores</td><td>Valor típico de ficha técnica (0,5 dB por conector)</td></tr>
+<tr><td><code>PERDIDA_OADM</code></td><td>5,0 dB</td><td>Multiplexor + demultiplexor</td><td>Valor típico de ficha técnica. Simplificación: se aplica igual a todos los canales.</td></tr>
+<tr><td><code>Q_SENSIBILIDAD</code></td><td>7,03</td><td>Q en la sensibilidad (BER = 10<sup>−12</sup>)</td><td>Cálculo: BER(7,03) = 1,03·10<sup>−12</sup></td></tr>
+<tr><td><code>Q_UMBRAL</code></td><td>6,71</td><td>Q mínimo exigido (BER = 10<sup>−11</sup>)</td><td>Norma del TFG; comprobado: BER(6,71) = 9,7·10<sup>−12</sup></td></tr>
+<tr><td><code>MARGEN_DISENO</code></td><td>3 dB</td><td>Si el margen nominal es menor, se pone amplificador</td><td>Suposición de diseño (margen habitual)</td></tr>
+<tr><td><code>DISPERSION</code></td><td>17 ps/(nm·km)</td><td>Dispersión cromática de la fibra G.652</td><td>Valor estándar de la norma UIT-T G.652</td></tr>
+<tr><td><code>TOLERANCIA_DISP</code></td><td>1600 ps/nm</td><td>Dispersión que tolera el transceptor</td><td>Valor típico de transceptor de 10G (suposición)</td></tr>
+<tr><td><code>BO_BE</code></td><td>12,5/7,5 ≈ 1,67</td><td>Ancho óptico de referencia (0,1 nm = 12,5 GHz) / ancho eléctrico del receptor (7,5 GHz)</td><td>Valores estándar para 10G</td></tr>
+<tr><td>Figura de ruido del EDFA</td><td>6-7 dB (+ envejecimiento)</td><td>Ruido que añade el amplificador</td><td>TFG (rango de 6-9 dB)</td></tr>
+</table>
+
+<h3>6.2 Paso a paso: cómo se calcula un canal</h3>
+<p><b>(a) Elegir un canal.</b> Un canal va de una estación a otra. Hay 208 pares posibles separados por al menos 5 km; el
+código elige uno al azar para cada una de las 10 000 filas. Su longitud <i>d</i> es la diferencia de kilómetros.</p>
+
+<p><b>(b) Pérdida nominal (la red recién instalada).</b> Es la suma de todo lo que «se come» la señal:</p>
+<div class="f">Pérdida<sub>nominal</sub> = 0,22·<i>d</i> + ⌈<i>d</i>/4⌉·0,1 + 1,0 + 5,0 &nbsp;&nbsp;[dB]</div>
+<p>(⌈ ⌉ significa redondear hacia arriba: 33,4/4 = 8,35 → 9 empalmes.) En código: <code>perdida_nominal(d_km)</code>.</p>
+
+<p><b>(c) Regla de diseño: ¿lleva amplificador?</b> El láser emite 0 dBm. Si la potencia que llega (−Pérdida) supera la
+sensibilidad (−25 dBm) en menos de 3 dB, el diseñador pone un preamplificador EDFA:</p>
+<div class="f">margen = −Pérdida<sub>nominal</sub> − (−25) &nbsp;&nbsp; → &nbsp;&nbsp; amplificado si margen &lt; 3 dB</div>
+<p>Con estos números, a partir de unos 65,5 km el canal va amplificado. Los amplificados llevan un EDFA cada 110 km como
+máximo: número de vanos <i>n</i> = ⌈<i>d</i>/110⌉ (1 o 2 en esta línea).</p>
+
+<p><b>(d) Envejecimiento y averías (la red en explotación).</b> Aquí entra el azar. La Tabla 4 resume qué se sortea para
+cada canal (líneas «Estado de explotación» y «Causas físicas ocultas» de <code>generar()</code>). Estos rangos son
+<b>supuestos del estudio</b>, no salen del TFG, y habrá que declararlos así en el artículo.</p>
+<div class="cap"><b>Tabla 4.</b> Variables aleatorias de degradación (por canal).</div>
+<table><tr><th>Qué</th><th>Cómo se sortea</th><th>¿Lo ve el operador?</th></tr>
+<tr><td>Antigüedad</td><td>Uniforme 0-25 años</td><td>Sí</td></tr>
+<tr><td>Temperatura</td><td>Uniforme −30 a 35 °C (clima de Riazán)</td><td>Sí</td></tr>
+<tr><td>Averías reales</td><td>Poisson con media = tasa × <i>d</i> × años; tasa uniforme 0,002-0,015 por km y año</td><td>No</td></tr>
+<tr><td>Averías registradas</td><td>Cada avería real se registra con probabilidad 0,6 (binomial)</td><td>Sí</td></tr>
+<tr><td>Pérdida por reparaciones</td><td>2 empalmes por avería, cada uno uniforme 0,05-0,5 dB</td><td>No</td></tr>
+<tr><td>Atenuación envejecida</td><td>0,22 + (0-0,0015)×años + 0,0002×(frío bajo 0 °C)/10 dB/km</td><td>No</td></tr>
+<tr><td>Empalmes de fábrica</td><td>⌈<i>d</i>/4⌉ × Normal(0,1; 0,02) dB, mínimo 0,03</td><td>No</td></tr>
+<tr><td>Hielo</td><td>Si hace menos de −5 °C, con probabilidad 0,30: pérdida uniforme 0,5-5 dB</td><td>No</td></tr>
+<tr><td>Conectores sucios</td><td>1,0 + exponencial de media 0,4 dB</td><td>No</td></tr>
+<tr><td>Potencia del láser</td><td>Normal(0; 0,3) dBm − (0-0,1 dB)×años</td><td>No</td></tr>
+<tr><td>Figura de ruido del EDFA</td><td>Uniforme 6-7 dB + (0-0,08 dB)×años</td><td>No</td></tr>
+<tr><td>Dispersión residual (amplificados)</td><td>Uniforme −250 a 250 ps/nm (queda tras compensar)</td><td>No</td></tr>
+</table>
+
+<p><b>(e) Potencia recibida real.</b> Se suman todas las pérdidas reales y, si hay varios vanos, se reparten entre
+ellos. La potencia calculada es la de la entrada de cada amplificador o del receptor:</p>
+<div class="f">P<sub>rx</sub> = P<sub>láser</sub> − (α·<i>d</i> + empalmes + reparaciones + hielo + conectores + 5) / <i>n</i> &nbsp;&nbsp;[dBm]</div>
+
+<p><b>(f) Factor Q.</b> El factor Q mide la separación entre «0» y «1» frente al ruido: cuanto mayor, menos errores. Se
+calcula distinto según el tipo de canal.</p>
+<ul>
+<li><b>Canal sin amplificar</b> (limitado por el ruido térmico del receptor). Q es proporcional a la potencia en unidades
+lineales: en la sensibilidad (−25 dBm) vale 7,03, y cada 10 dB más lo multiplican por 10.
+<div class="f">Q<sub>térmico</sub> = 7,03 · 10<sup>(P<sub>rx</sub> + 25)/10</sup></div></li>
+<li><b>Canal amplificado</b> (limitado por el ruido ASE de los EDFA). Primero la OSNR, relación señal/ruido óptica en
+0,1 nm, con la regla estándar para 1550 nm (el 58 sale de la energía de un fotón por el ancho de 0,1 nm, −58 dBm):
+<div class="f">OSNR = 58 + P<sub>rx</sub> − NF − 10·log<sub>10</sub>(<i>n</i>) &nbsp;&nbsp;[dB]</div>
+Luego Q, con la fórmula de detección directa con ruido señal-ASE (OSNR en lineal):
+<div class="f">Q<sub>ASE</sub> = √(B<sub>o</sub>/B<sub>e</sub>) · 2·OSNR / (1 + √(1 + 4·OSNR))</div>
+Por último se combina con el ruido del receptor: el preamplificador sube la señal, que queda unas 10 veces por encima de
+la sensibilidad (Q = 70,3):
+<div class="f">Q = 1 / √( 1/Q<sub>ASE</sub><sup>2</sup> + 1/70,3<sup>2</sup> )</div></li>
+</ul>
+
+<p><b>(g) Penalización por dispersión cromática.</b> Los pulsos se ensanchan al viajar. En los canales sin amplificar la
+dispersión acumulada es 17·<i>d</i> ps/nm; en los amplificados, la residual tras compensar. La penalización se resta de Q:</p>
+<div class="f">Penalización = 2 · (D<sub>acum</sub>/1600)<sup>2</sup> dB &nbsp;&nbsp;→&nbsp;&nbsp; Q<sub>efectivo</sub> = Q · 10<sup>−Penalización/10</sup></div>
+
+<p><b>(h) BER y etiqueta.</b> De Q se pasa a la tasa de errores con la fórmula estándar, y se decide si cumple:</p>
+<div class="f">BER = ½ · erfc( Q / √2 ) &nbsp;&nbsp;&nbsp;&nbsp; cumple = 1 si Q<sub>efectivo</sub> ≥ 6,71 (⇔ BER ≤ 10<sup>−11</sup>)</div>
+
+<p><b>(i) Medición que hace el operador.</b> El transceptor SFP mide la potencia recibida con un error de ±0,5 dB:
+<code>p_rx_medida = P<sub>rx</sub> + Normal(0; 0,5)</code>. Es la variable clave del escenario B.</p>
+
+<h3>6.3 Tres ejemplos resueltos (red nueva, sin degradación)</h3>
+<p>Para que veas las fórmulas funcionando, la Tabla 5 calcula tres canales con valores nominales (sin azar) y NF = 6,5 dB.
+Los números salen de ejecutar las funciones de <code>simulador.py</code>.</p>
+<div class="cap"><b>Tabla 5.</b> Ejemplos de cálculo con la red recién instalada.</div>
+<table><tr><th>Canal</th><th>Pérdida nominal</th><th>Margen</th><th>¿Amplificado?</th><th>Cálculo</th><th>Q</th></tr>
+<tr><td>33,4 km</td><td>7,35 + 9·0,1 + 1 + 5 = 14,25 dB</td><td>10,75 dB</td><td>No</td><td>Q<sub>t</sub> = 7,03·10<sup>1,075</sup> = 83,6; D = 568 ps/nm → penalización 0,25 dB</td><td>78,9</td></tr>
+<tr><td>108,9 km (caso del TFG)</td><td>23,96 + 28·0,1 + 1 + 5 = 32,76 dB</td><td>−7,76 dB</td><td>Sí, 1 vano</td><td>P = −32,76 dBm; OSNR = 58 − 32,76 − 6,5 = 18,74 dB; Q<sub>ASE</sub> = 10,54</td><td>10,4</td></tr>
+<tr><td>145,8 km</td><td>41,78 dB</td><td>−16,8 dB</td><td>Sí, 2 vanos</td><td>P = −20,89 dBm por vano; OSNR = 58 − 20,89 − 6,5 − 3,01 = 27,6 dB; Q<sub>ASE</sub> = 30,3</td><td>27,9</td></tr>
+</table>
+<div class="aviso"><b>Diferencia con el TFG (Q = 7,37 frente a 10,4):</b> el TFG usó otro planteamiento y, en la revisión,
+detectamos incoherencias internas en su cálculo (por ejemplo, recalculando sus propios números sale Q = 7,31, no 7,37).
+Nuestro modelo añade el preamplificador EDFA que exige la regla de diseño. En el artículo el TFG se cita como el
+<i>diseño de partida</i>, no como fuente de estos números.</div>
+
+<h2>7. El conjunto de datos (dataset)</h2>
+<p><code>generar(n=10000, semilla=42)</code> repite el cálculo de la sección 6 para 10 000 canales y guarda el resultado en
+<code>datos/dataset.csv</code>, una tabla que se abre con Excel. La Tabla 6 describe sus columnas. Las que empiezan por
+<code>oculta_</code> son causas que el operador <b>no</b> puede medir: no se dan a los modelos (salvo en el escenario C, de
+referencia).</p>
+<div class="cap"><b>Tabla 6.</b> Columnas de <code>datos/dataset.csv</code>.</div>
+<table><tr><th>Columna</th><th>Tipo</th><th>Qué es</th></tr>
+<tr><td><code>longitud_km</code>, <code>amplificado</code>, <code>n_vanos</code></td><td>Observable (inventario)</td><td>Longitud; 1 si lleva EDFA; número de vanos</td></tr>
+<tr><td><code>antiguedad_anios</code>, <code>reparaciones_registradas</code>, <code>temperatura_c</code></td><td>Observable (inventario)</td><td>Años en servicio; averías apuntadas; temperatura</td></tr>
+<tr><td><code>p_rx_medida_dbm</code></td><td>Observable (monitorización)</td><td>Potencia recibida medida por el transceptor (±0,5 dB)</td></tr>
+<tr><td><code>oculta_*</code> (5 columnas)</td><td>Oculta</td><td>Pérdida por reparaciones, hielo y conectores; figura de ruido; atenuación real</td></tr>
+<tr><td><code>q</code>, <code>ber</code></td><td>Resultado físico</td><td>Q efectivo y BER calculados</td></tr>
+<tr><td><code>cumple</code></td><td>Etiqueta</td><td>1 = cumple BER ≤ 10<sup>−11</sup>; 0 = no cumple</td></tr>
+</table>
+<p><b>Cifras del dataset</b> (calculadas sobre el CSV): 10 000 canales de 5,4 a 198,3 km; el 50,3 % van amplificados (7670
+con 1 vano y 2330 con 2); <b>no cumple el 20,4 %</b> (2039 canales). Por debajo de 40 km cumple el 99 %.</p>
+<div class="analogia"><b>¿Por qué importa que haya un 20 % de «no cumple»?</b> Si solo fallara el 1 %, un modelo que dijera
+siempre «cumple» acertaría el 99 % y no serviría para nada. Por eso no usamos la exactitud simple, sino métricas que miran
+cómo se detectan los que fallan (sección 9), y damos más peso a la clase minoritaria.</div>
+
+<h2>8. Los tres modelos de aprendizaje automático</h2>
+<p>Los tres reciben las variables observables de un canal y responden «cumple» o «no cumple». Aprenden de ejemplos: se
+les enseñan canales con la respuesta correcta y ajustan sus reglas internas.</p>
+<ul>
+<li><b>Regresión logística</b> (modelo lineal, la referencia sencilla). Suma las variables multiplicadas por pesos y
+convierte el resultado en una probabilidad. Antes se estandarizan las variables (<code>StandardScaler</code>) para que
+todas pesen en la misma escala.
+<div class="analogia">Como una balanza: cada variable pone un peso a favor o en contra, y según hacia dónde se incline se
+decide.</div></li>
+<li><b>Random Forest</b> (ensamble de 300 árboles de decisión). Cada árbol hace preguntas del tipo «¿potencia &lt; −27 dBm?»
+y aprende con una muestra distinta de datos; al final votan.
+<div class="analogia">Como preguntar a 300 expertos que han visto casos distintos y quedarse con lo que diga la mayoría.</div></li>
+<li><b>XGBoost</b> (gradient boosting, 300 árboles de profundidad 4). Construye los árboles uno detrás de otro; cada nuevo
+árbol se centra en corregir los errores de los anteriores.
+<div class="analogia">Como un alumno que repasa solo los ejercicios que falló en el examen anterior.</div></li>
+</ul>
+<p><b>Pesos de clase:</b> como hay menos canales «no cumple», se les da más peso. En la logística y en Random Forest con
+<code>class_weight="balanced"</code>; en XGBoost con <code>scale_pos_weight</code> = 79,6/20,4 ≈ 3,9.</p>
+<p><b>Tres escenarios</b> (según qué variables ve el modelo):</p>
+<ul>
+<li><b>A — planificación:</b> solo el inventario (longitud, amplificado, vanos, antigüedad, reparaciones registradas,
+temperatura).</li>
+<li><b>B — monitorización:</b> A + potencia recibida medida.</li>
+<li><b>C — oráculo:</b> B + las 5 causas ocultas. Es irreal; sirve de techo para saber cuánto se pierde por no conocerlas.</li>
+</ul>
+
+<h2>9. Cómo se evaluaron: validación cruzada, métricas y McNemar</h2>
+<h3>9.1 Validación cruzada estratificada 10 × 3</h3>
+<p>No se puede evaluar un modelo con los mismos datos con los que aprendió, porque sería como corregir un examen cuyas
+respuestas el alumno ya había visto. La validación cruzada divide los 10 000 canales en 10 partes («pliegues»): entrena con
+9 y evalúa con la restante, 10 veces, rotando. «Estratificada» significa que cada parte mantiene el 20,4 % de «no cumple».
+Todo se repite 3 veces con mezclas distintas: 30 evaluaciones por modelo y escenario. La tabla da la <b>media ± desviación
+típica</b> de esas 30. Código: <code>RepeatedStratifiedKFold(n_splits=10, n_repeats=3, random_state=42)</code> y
+<code>cross_validate</code>.</p>
+
+<h3>9.2 Las métricas</h3>
+<p>Clase positiva = «no cumple» (lo que interesa detectar). Con VP = no cumple detectados, FN = no cumple que se escapan,
+FP = falsas alarmas y VN = cumple bien clasificados:</p>
+<ul>
+<li><b>Sensibilidad</b> = VP / (VP + FN): de los que fallan, qué fracción detecta el modelo.</li>
+<li><b>Precisión</b> = VP / (VP + FP): de las alarmas que da, qué fracción es real.</li>
+<li><b>F1</b> = 2 · Precisión · Sensibilidad / (Precisión + Sensibilidad): equilibrio entre las dos.</li>
+<li><b>Exactitud equilibrada</b> = (Sensibilidad + Especificidad) / 2, con Especificidad = VN / (VN + FP).</li>
+<li><b>AUC</b> (área bajo la curva ROC): probabilidad de que el modelo dé más «riesgo» a un canal que falla que a uno que
+cumple, escogidos al azar. 0,5 = tirar una moneda; 1 = perfecto.</li>
+</ul>
+
+<h3>9.3 Prueba de McNemar</h3>
+<p>Compara dos modelos sobre <b>los mismos</b> canales de prueba: 30 % de los datos (3000 canales, 612 «no cumple»),
+separados con <code>train_test_split(..., test_size=0.3, stratify=y, random_state=42)</code>. Solo cuentan los casos en que
+uno acierta y el otro falla:</p>
+<div class="f">χ<sup>2</sup> = ( |n<sub>01</sub> − n<sub>10</sub>| − 1 )<sup>2</sup> / ( n<sub>01</sub> + n<sub>10</sub> ), &nbsp; con 1 grado de libertad</div>
+<ul>
+<li>Random Forest frente a logística (escenario B): n<sub>01</sub> = 44, n<sub>10</sub> = 13 → χ<sup>2</sup> = 30<sup>2</sup>/57 = 15,79 → p = 7,1·10<sup>−5</sup>.</li>
+<li>XGBoost frente a logística: 54 y 23 → χ<sup>2</sup> = 30<sup>2</sup>/77 = 11,69 → p = 6,3·10<sup>−4</sup>.</li>
+</ul>
+<p>p &lt; 0,05 indica que la diferencia no se debe al azar. Los números están en <code>resultados/mcnemar.txt</code> y la
+función es <code>mcnemar()</code> de <code>experimento.py</code>.</p>
+
+<h2>10. Cómo se hicieron la tabla, las figuras y el PDF de resumen</h2>
+<h3>10.1 La tabla de resultados</h3>
+<p><code>experimento.py</code> guarda las 9 filas (3 escenarios × 3 modelos) con pandas en dos formatos:
+<code>resultados/tabla_resultados.csv</code> (para Excel) y <code>tabla_resultados.tex</code> (código LaTeX listo para
+pegar en el artículo LNCS). La Tabla 7 reproduce esos resultados.</p>
+<div class="cap"><b>Tabla 7.</b> Resultados de la validación cruzada (media ± desviación típica). Es la Tabla 1 del resumen y del artículo.</div>
+<table><tr><th>Escenario</th><th>Modelo</th><th>AUC</th><th>Exact. equilibrada</th><th>Sensibilidad</th><th>F1</th></tr>
+<tr><td>A</td><td>Regresión logística</td><td>0,983 ± 0,003</td><td>0,929 ± 0,009</td><td>0,939 ± 0,017</td><td>0,832 ± 0,014</td></tr>
+<tr><td>A</td><td>Random Forest</td><td>0,981 ± 0,003</td><td>0,921 ± 0,011</td><td>0,901 ± 0,023</td><td>0,847 ± 0,015</td></tr>
+<tr><td>A</td><td>XGBoost</td><td>0,982 ± 0,003</td><td>0,925 ± 0,010</td><td>0,914 ± 0,019</td><td>0,845 ± 0,014</td></tr>
+<tr><td>B</td><td>Regresión logística</td><td>0,998 ± 0,001</td><td>0,977 ± 0,004</td><td>0,987 ± 0,007</td><td>0,931 ± 0,009</td></tr>
+<tr><td>B</td><td>Random Forest</td><td>0,998 ± 0,001</td><td>0,976 ± 0,007</td><td>0,974 ± 0,012</td><td>0,947 ± 0,012</td></tr>
+<tr><td>B</td><td>XGBoost</td><td>0,998 ± 0,001</td><td>0,973 ± 0,008</td><td>0,964 ± 0,014</td><td>0,947 ± 0,012</td></tr>
+<tr><td>C</td><td>Regresión logística</td><td>0,998 ± 0,001</td><td>0,980 ± 0,004</td><td>0,991 ± 0,006</td><td>0,940 ± 0,010</td></tr>
+<tr><td>C</td><td>Random Forest</td><td>0,998 ± 0,001</td><td>0,978 ± 0,006</td><td>0,976 ± 0,011</td><td>0,951 ± 0,011</td></tr>
+<tr><td>C</td><td>XGBoost</td><td>0,999 ± 0,001</td><td>0,978 ± 0,007</td><td>0,969 ± 0,012</td><td>0,958 ± 0,011</td></tr>
+</table>
+<p><b>Cómo leerla:</b> en B, los ensambles tienen mejor F1 (0,947 frente a 0,931), pero la logística detecta más canales que
+fallan (sensibilidad 0,987) a costa de más falsas alarmas. El AUC es prácticamente igual en todos. Por eso decimos que la
+hipótesis se cumple <b>solo en parte</b>.</p>
+
+<h3>10.2 Las tres figuras</h3>
+<p>Se dibujan con Matplotlib al final de <code>experimento.py</code> y se guardan en <code>figuras/</code> en PNG
+(300 ppp) y en PDF (vectorial, para LaTeX). Los colores siguen una paleta comprobada para daltonismo. La Fig. 2 es el
+factor Q frente a la longitud.</p>
+<figure><img src="../paso-3-experimento/figuras/fig1_q_vs_longitud.png" style="width:52%">
+<figcaption><b>Fig. 2.</b> Factor Q de cada canal según su longitud (<code>fig1_q_vs_longitud</code>; es la Fig. 1 del resumen).
+Por claridad se dibujan 1500 puntos de cada clase, eje vertical logarítmico y línea discontinua en Q = 6,71.</figcaption></figure>
+<p>La Fig. 3 muestra el F1 de la Tabla 7 como puntos con barras de error (media ± desviación típica), para comparar
+escenarios y modelos de un vistazo.</p>
+<figure><img src="../paso-3-experimento/figuras/fig2_f1_escenarios.png" style="width:52%">
+<figcaption><b>Fig. 3.</b> F1 por escenario y modelo (<code>fig2_f1_escenarios</code>; es la Fig. 2 del resumen).</figcaption></figure>
+<p>La Fig. 4 es la importancia por permutación: sobre el 30 % de prueba y con el Random Forest del escenario B, se
+desordena una columna cada vez y se mide cuánto baja el AUC (10 repeticiones). Si al desordenar una variable el modelo
+empeora mucho, esa variable es importante. Código: <code>permutation_importance(..., scoring="roc_auc", n_repeats=10)</code>.</p>
+<figure><img src="../paso-3-experimento/figuras/fig3_importancia.png" style="width:52%">
+<figcaption><b>Fig. 4.</b> Importancia de las variables (<code>fig3_importancia</code>; es la Fig. 3 del resumen).</figcaption></figure>
+
+<h3>10.3 El cuaderno y el PDF de resumen</h3>
+<ul>
+<li><code>crear_cuaderno.py</code> genera <code>experimento.ipynb</code>: un cuaderno guiado que comprueba el caso del TFG,
+genera los datos, llama a <code>experimento.py</code> (<code>%run experimento.py</code>) y muestra la tabla y las figuras.</li>
+<li><code>generar_resumen.py</code> lee el CSV y las figuras, escribe una página HTML y Chromium la convierte en
+<code>resumen-paso-3.pdf</code> (2 páginas). Cumple la regla de la profesora: cada tabla y figura se cita antes de aparecer.</li>
+</ul>
+
+<h2>11. Cómo repetirlo tú mismo en tu ordenador</h2>
+<ol>
+<li>Instala <b>Python 3.11</b> (python.org) y, en VS Code, las extensiones <b>Python</b> y <b>Jupyter</b> de Microsoft.</li>
+<li>Abre una terminal en VS Code (menú <i>Terminal → New Terminal</i>) e instala las librerías:
+<pre>pip install numpy pandas scipy scikit-learn xgboost matplotlib jupyter</pre></li>
+<li>Abre la carpeta <code>paso-3-experimento</code> en VS Code y el archivo <code>experimento.ipynb</code>.</li>
+<li>Arriba a la derecha, <i>Select Kernel</i> → Python 3.11. Luego <b>Run All</b>. Tarda unos 2-3 minutos.</li>
+<li>Se regeneran <code>datos/</code>, <code>resultados/</code> y <code>figuras/</code>. Sin cuaderno, en la terminal:
+<pre>python experimento.py</pre></li>
+</ol>
+<div class="aviso"><b>¿Saldrán exactamente los mismos números?</b> Los datos (<code>dataset.csv</code>), sí: dependen solo de la
+semilla. Las métricas pueden variar en la tercera cifra decimal si tu versión de scikit-learn o XGBoost es distinta de la
+de la Tabla 2. No cambia ninguna conclusión.</div>
+
+<h2>12. Preguntas que puede hacerte la profesora (con respuesta)</h2>
+<p><b>¿Por qué datos sintéticos?</b> No existen datos públicos de calidad de canales de redes ferroviarias envejecidas.
+Rottondi et al. (2018) y Aladin et al. (2020) también entrenan con datos sintéticos de modelos físicos. Es un primer paso;
+la validación con datos reales queda como trabajo futuro (por ejemplo, el conjunto de datos de Microsoft que usan Allogba y
+Di Cicco).</p>
+<p><b>¿De dónde salen las fórmulas?</b> Son las estándar de un enlace óptico IM/DD: balance de potencia, Q térmico, OSNR
+con la regla de 58 dB, Q con ruido señal-ASE, penalización por dispersión y BER = ½·erfc(Q/√2). Los parámetros del TFG
+están en la Tabla 3; el resto son valores típicos o supuestos que se declaran.</p>
+<p><b>¿Qué es la «circularidad»?</b> La etiqueta sale del mismo modelo físico que genera las variables, así que la tarea es
+más fácil que con datos reales (AUC ≥ 0,98). Por eso ocultamos las causas físicas a los modelos, y lo declaramos como la
+limitación principal.</p>
+<p><b>¿Por qué la logística tiene el mismo AUC que los ensambles?</b> Porque la relación entre potencia medida y calidad es
+casi monótona (a menos potencia, peor Q), algo que un modelo lineal capta bien. Los ensambles ganan en F1 porque colocan
+mejor el punto de corte, no porque ordenen mejor los canales.</p>
+<p><b>¿Por qué 10 pliegues × 3 repeticiones?</b> Diez pliegues es el estándar; repetir tres veces da 30 medidas y una
+desviación típica fiable.</p>
+<p><b>¿Por qué semilla 42?</b> El valor da igual; lo importante es fijarlo para que el experimento sea reproducible.</p>
+<p><b>¿Por qué la hipótesis «se cumple solo en parte»?</b> McNemar muestra que Random Forest acierta significativamente más
+(p = 7·10<sup>−5</sup>), pero el AUC es igual y la logística detecta más fallos. Un resultado matizado también es válido: el
+artículo de Espejo et al. que usa la profesora de ejemplo publica una hipótesis que no se cumple.</p>
+<p><b>¿Usaste inteligencia artificial?</b> Respuesta honesta: sí, un asistente (Claude) programó el simulador y el
+experimento a partir de tu TFG, y tú dirigiste las decisiones y revisaste los resultados. Conviene decirlo si te lo
+preguntan, y comprobar si la asignatura pide declararlo en el artículo (muchas revistas lo exigen ya en un apartado de
+agradecimientos o de métodos). Lo que te protege es poder explicar cada paso, y para eso es esta guía.</p>
+
+<h2>13. Trazabilidad: de dónde sale cada dato</h2>
+<p>La Tabla 8 relaciona cada cifra que aparece en el resumen del Paso 3 con el archivo o el cálculo del que sale.</p>
+<div class="cap"><b>Tabla 8.</b> Origen de cada dato del resumen del Paso 3.</div>
+<table><tr><th>Dato</th><th>Dónde se calcula</th><th>Dónde queda guardado</th></tr>
+<tr><td>10 000 canales, 5-198 km</td><td><code>simulador.generar(n=10000, semilla=42)</code></td><td><code>datos/dataset.csv</code></td></tr>
+<tr><td>α = 0,22 dB/km; sensibilidad −25 dBm; estaciones</td><td>Constantes de <code>simulador.py</code></td><td>TFG (Tabla 3)</td></tr>
+<tr><td>Q = 6,71 ⇔ BER = 10<sup>−11</sup></td><td><code>ber_desde_q()</code></td><td><code>Q_UMBRAL</code> en <code>simulador.py</code></td></tr>
+<tr><td>No cumple el 20,4 %</td><td><code>1 − df.cumple.mean()</code></td><td>Salida de <code>experimento.py</code> y del cuaderno</td></tr>
+<tr><td>Cumple el 99 % por debajo de 40 km; fallos entre 40 y 110 km</td><td>Recuento por tramos de longitud sobre el CSV</td><td>Cálculo de comprobación (pandas <code>crosstab</code>)</td></tr>
+<tr><td>AUC, exactitud equilibrada, sensibilidad, F1</td><td><code>cross_validate</code> con CV 10×3</td><td><code>resultados/tabla_resultados.csv</code> y <code>.tex</code></td></tr>
+<tr><td>McNemar 44/13 y 54/23, p</td><td><code>mcnemar()</code> sobre el 30 % de prueba</td><td><code>resultados/mcnemar.txt</code></td></tr>
+<tr><td>AUC de 0,98 (A) a 0,998 (B)</td><td>Columna AUC de la tabla</td><td><code>tabla_resultados.csv</code></td></tr>
+<tr><td>Potencia recibida = variable decisiva</td><td><code>permutation_importance</code></td><td><code>figuras/fig3_importancia.*</code></td></tr>
+<tr><td>Q ≈ 10,5 en 108,9 km</td><td>Celda 1 del cuaderno (<code>q_ase</code>)</td><td><code>experimento.ipynb</code></td></tr>
+</table>
+
+<div class="caja"><b>Resumen en tres frases para la profesora.</b> (1) A partir del diseño de mi TFG construí un modelo
+físico estándar de enlace óptico y generé 10 000 canales con degradaciones realistas. (2) Comparé una regresión logística
+con Random Forest y XGBoost usando solo variables que el operador puede medir, con validación cruzada estratificada 10×3
+y la prueba de McNemar. (3) Los ensambles aciertan significativamente más en F1, pero el AUC es igual y la potencia
+recibida medida es lo que más aporta; la limitación principal es que los datos son sintéticos.</div>
+
+</body></html>

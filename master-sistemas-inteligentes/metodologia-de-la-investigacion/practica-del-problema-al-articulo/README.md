@@ -23,6 +23,10 @@ La ficha se edita en `ficha-paso-1.html` y se regenera el PDF con Chromium:
 
 Referencias de la ficha verificadas con Scite y Crossref (2026-09-28).
 
+**Guía explicada** de todo lo hecho en los Pasos 1-3 (herramientas, fórmulas,
+origen de cada dato, preguntas de la profesora): `guia-explicada/guia-pasos-1-3.pdf`
+(se regenera desde el `.html` con Chromium, igual que la ficha).
+
 ## Pautas de redacción para el artículo (materiales de clase)
 
 Resumen de `../materiales-de-clase/redaccion-y-citas/` para los Pasos 4-5:
