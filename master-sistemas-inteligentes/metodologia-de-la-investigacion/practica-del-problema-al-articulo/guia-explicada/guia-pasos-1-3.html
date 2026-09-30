@@ -204,7 +204,7 @@ código elige uno al azar para cada una de las 10 000 filas. Su longitud <i>d</i
 <p><b>(c) Regla de diseño: ¿lleva amplificador?</b> El láser emite 0 dBm. Si la potencia que llega (−Pérdida) supera la
 sensibilidad (−25 dBm) en menos de 3 dB, el diseñador pone un preamplificador EDFA:</p>
 <div class="f">margen = −Pérdida<sub>nominal</sub> − (−25) &nbsp;&nbsp; → &nbsp;&nbsp; amplificado si margen &lt; 3 dB</div>
-<p>Con estos números, a partir de unos 65,5 km el canal va amplificado. Los amplificados llevan un EDFA cada 110 km como
+<p>Con estos números, todo canal de más de 65 km va amplificado (a 65,0 km el margen es justo 3 dB). Los amplificados llevan un EDFA cada 110 km como
 máximo: número de vanos <i>n</i> = ⌈<i>d</i>/110⌉ (1 o 2 en esta línea).</p>
 
 <p><b>(d) Envejecimiento y averías (la red en explotación).</b> Aquí entra el azar. La Tabla 4 resume qué se sortea para
@@ -284,8 +284,8 @@ referencia).</p>
 <tr><td><code>q</code>, <code>ber</code></td><td>Resultado físico</td><td>Q efectivo y BER calculados</td></tr>
 <tr><td><code>cumple</code></td><td>Etiqueta</td><td>1 = cumple BER ≤ 10<sup>−11</sup>; 0 = no cumple</td></tr>
 </table>
-<p><b>Cifras del dataset</b> (calculadas sobre el CSV): 10 000 canales de 5,4 a 198,3 km; el 50,3 % van amplificados (7670
-con 1 vano y 2330 con 2); <b>no cumple el 20,4 %</b> (2039 canales). Por debajo de 40 km cumple el 99 %.</p>
+<p><b>Cifras del dataset</b> (calculadas sobre el CSV): 10 000 canales de 5,4 a 198,3 km; el 50,3 % (5028) van amplificados: 2698
+con 1 vano y 2330 con 2; <b>no cumple el 20,4 %</b> (2039 canales). Por debajo de 40 km cumple el 99 %.</p>
 <div class="analogia"><b>¿Por qué importa que haya un 20 % de «no cumple»?</b> Si solo fallara el 1 %, un modelo que dijera
 siempre «cumple» acertaría el 99 % y no serviría para nada. Por eso no usamos la exactitud simple, sino métricas que miran
 cómo se detectan los que fallan (sección 9), y damos más peso a la clase minoritaria.</div>
@@ -399,7 +399,7 @@ genera los datos, llama a <code>experimento.py</code> (<code>%run experimento.py
 <ol>
 <li>Instala <b>Python 3.11</b> (python.org) y, en VS Code, las extensiones <b>Python</b> y <b>Jupyter</b> de Microsoft.</li>
 <li>Abre una terminal en VS Code (menú <i>Terminal → New Terminal</i>) e instala las librerías:
-<pre>pip install numpy pandas scipy scikit-learn xgboost matplotlib jupyter</pre></li>
+<pre>py -m pip install -r requirements.txt</pre></li>
 <li>Abre la carpeta <code>paso-3-experimento</code> en VS Code y el archivo <code>experimento.ipynb</code>.</li>
 <li>Arriba a la derecha, <i>Select Kernel</i> → Python 3.11. Luego <b>Run All</b>. Tarda unos 2-3 minutos.</li>
 <li>Se regeneran <code>datos/</code>, <code>resultados/</code> y <code>figuras/</code>. Sin cuaderno, en la terminal:

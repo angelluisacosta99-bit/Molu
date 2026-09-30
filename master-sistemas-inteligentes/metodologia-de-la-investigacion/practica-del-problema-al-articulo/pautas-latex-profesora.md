@@ -5,6 +5,13 @@ Resumen de sus diapositivas `../materiales-de-clase/latex/introduccion-a-latex-l
 enseña; solo se cambia algo cuando es anticuado o menos eficiente, y aquí se
 explica por qué y qué se usa en su lugar.
 
+**Modelo de artículo:** la profesora indica que `plantilla-lncs/typeinst.pdf`
+(con su fuente `typeinst.tex`) es el ejemplo por el que guiarse. El artículo
+del Paso 5 parte de `typeinst.tex` como esqueleto: misma estructura
+(`\title`, `\author`, `\institute`, resumen, `\keywords`, secciones, figuras,
+tabla, bibliografía) con nuestro contenido. Ejercicios de clase de apoyo en
+`../materiales-de-clase/latex/ejemplos-latex-profesora/`.
+
 ## Lo que se sigue tal cual
 
 | Qué enseña ella | Diapositivas | Cómo lo aplicaremos |

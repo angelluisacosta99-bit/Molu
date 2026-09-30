@@ -1,11 +1,12 @@
 """Genera resumen-paso-3.pdf (tabla + figuras + interpretación) a partir de
 resultados/ y figuras/. Ejecutar después de experimento.py.
-Uso: python generar_resumen.py   (necesita Chromium; ruta en CHROME)"""
-import csv, subprocess
+Uso: python generar_resumen.py   (necesita Chrome/Chromium; en Windows, poner su ruta
+en la variable de entorno CHROME, p. ej. C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe)"""
+import csv, os, subprocess
 from pathlib import Path
 
 AQUI = Path(__file__).parent
-CHROME = "/opt/pw-browsers/chromium-1194/chrome-linux/chrome"
+CHROME = os.environ.get("CHROME", "/opt/pw-browsers/chromium-1194/chrome-linux/chrome")
 
 filas = list(csv.DictReader(open(AQUI / "resultados" / "tabla_resultados.csv", encoding="utf-8")))
 coma = lambda s: s.replace(".", ",")

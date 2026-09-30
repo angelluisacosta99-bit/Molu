@@ -69,6 +69,16 @@ López Batista en Studium).
     LaTeX → BibTeX → LaTeX ×2). Partes anticuadas: instalar MiKTeX/
     TeXnicCenter e `inputenc[latin1]`; en Overleaf no hace falta instalar
     nada y se usa UTF-8.
+  - `ejemplos-latex-profesora/` (enviado el 2026-09-30 como `Ej_Latex.zip`,
+    de 2015; no estaba ni en el repo ni en el Drive de Arlet) — los 5
+    ejercicios de clase: `Ejercicio1.tex` tipos y tamaños de letra,
+    `verbatim`; `Ejercicio2.tex` fórmulas en línea y centradas, nota al pie;
+    `Ejercicio3.tex` listas, tablas `tabular`, cajas; `Ejercicio4.tex`
+    figuras flotantes (`tiger.pdf`), matrices, `eqnarray` con `\label`;
+    `Ejercicio5.tex` libro con título, índice, capítulos, ecuaciones y
+    bibliografía con `thebibliography`. Se omiten `.DS_Store` y
+    `__MACOSX/` del zip. Algunos acentos de los ejercicios 2-4 vienen
+    dañados en el original.
   - `introduccion-a-latex-randez-2013.pdf` — Luis Rández (Univ. Zaragoza),
     40 págs.: la más corta para empezar (fórmulas, tablas, figuras).
   - `bibliografia-en-latex-bibtex-mata-2014.pdf` — Miguel Mata, 14 págs.:
