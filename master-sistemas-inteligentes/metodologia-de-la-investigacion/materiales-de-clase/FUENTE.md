@@ -39,6 +39,30 @@ López Batista en Studium).
     — guías de la norma ISO 690 / 690-2 para referencias bibliográficas
     (formato APELLIDO, Nombre. Título...). La plantilla LNCS usa su propio
     estilo (`splncs.bst`, numérico); ver README de la práctica.
+  - `como-elaborar-referencias-une-50-104.pdf` y
+    `como-elaborar-referencias-iso-690-sevilla.pdf` — otras dos guías de
+    la misma norma (UNE 50-104 = ISO 690, adaptación de la Univ. de
+    Sevilla). Mismo contenido que las anteriores, con más ejemplos.
+  - `quindos-2009-factor-impacto-indice-h.pdf` — Quindós, G. (2009), Rev.
+    Iberoam. Micol. 26(2): factor de impacto, índice h y «valor Q». Idea
+    clave: el factor de impacto sirve para comparar revistas de un mismo
+    área, no para valorar a un investigador. Útil para justificar la
+    calidad de las revistas elegidas en el Paso 2.
+- `poster/el-poster-guardiola-2002.pdf` (enviado el 2026-09-30) — Elena
+  Guardiola, guía para hacer un póster de congreso. Pautas para el Paso 5:
+  título ≥ 36 pt en negrita, autores/apartados ≥ 30 pt, subapartados
+  ≥ 24 pt, texto ≥ 20 pt sin negrita; tipografía sencilla (Arial/Helvetica,
+  no Times), como mucho dos tipos; nada solo en mayúsculas; ≥ 50 % de
+  superficie para figuras y tablas; columnas; cada tabla/figura con pie;
+  cifras coherentes con el texto; «un póster no es un artículo en letra
+  grande»; legible a 1-2 m.
+
+Enviados también el 2026-09-30 y **no copiados aquí** porque ya estaban en
+`../../trabajo-fin-de-master/`: `DPTOIA-IT-2000-001.pdf` (idéntico, byte a
+byte) y `Plantilla_IT_05022007.rar` (versión de 2007 de la plantilla de
+informe técnico; en el TFM ya está la de 2021). Tampoco
+`Plantilla_Tesis_05022007.rar`: es la plantilla LaTeX de **tesis
+doctoral** de la USAL (2007, clase `book`), no se usa en el máster.
 
 No copiados (demasiado grandes o ya extraídos en la sesión):
 `Arquitectura_de_la_Investigacion_Cientifica.pdf` (26 MB, práctica por

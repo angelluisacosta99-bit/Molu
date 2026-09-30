@@ -43,3 +43,6 @@ Resumen de `../materiales-de-clase/redaccion-y-citas/` para los Pasos 4-5:
 8. **Estilo de referencias**: la plantilla LNCS impone `splncs.bst`
    (numérico, [1]); la profesora dio también la norma ISO 690. Pendiente
    confirmar con ella cuál quiere en el artículo.
+9. **Póster** (Guardiola, `../materiales-de-clase/poster/`): texto ≥ 20 pt,
+   título ≥ 36 pt, letra sencilla (no Times), ≥ 50 % figuras y tablas,
+   columnas, y no es «el artículo en letra grande».
