@@ -13484,18 +13484,6 @@
       "source_location": "L934"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_rollbackmanualapplytransaction",
-      "label": "rollbackManualApplyTransaction()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "manual-edits-buffer.mjs",
-      "file_type": "code",
-      "norm_label": "rollbackmanualapplytransaction()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L766"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualapplyfailures",
       "label": "summarizeManualApplyFailures()",
       "_callable": true,
@@ -19398,6 +19386,18 @@
       "norm_label": "rollbackapplysnapshot()",
       "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
       "source_location": "L845"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_rollbackmanualapplytransaction",
+      "label": "rollbackManualApplyTransaction()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "rollbackmanualapplytransaction()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L766"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_manual_apply_snapshotapplyeventfiles",
@@ -35742,6 +35742,66 @@
       "norm_label": "reglas para los trabajos del master (musi)",
       "source_file": "master-sistemas-inteligentes/CLAUDE.md",
       "source_location": "L1"
+    },
+    {
+      "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_pautas_latex_profesora",
+      "label": "pautas-latex-profesora.md",
+      "_origin": "ast",
+      "community": 259,
+      "community_name": "C\u00f3mo quiere la profesora el LaTeX, y qu\u00e9 haremos en el Paso 5",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "pautas-latex-profesora.md",
+      "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/pautas-latex-profesora.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_pautas_latex_profesora_c\u00f3mo_quiere_la_profesora_el_latex_y_qu\u00e9_haremos_en_el_paso_5",
+      "label": "C\u00f3mo quiere la profesora el LaTeX, y qu\u00e9 haremos en el Paso 5",
+      "_origin": "ast",
+      "community": 259,
+      "community_name": "C\u00f3mo quiere la profesora el LaTeX, y qu\u00e9 haremos en el Paso 5",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "como quiere la profesora el latex, y que haremos en el paso 5",
+      "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/pautas-latex-profesora.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_pautas_latex_profesora_detalles_que_hay_que_vigilar",
+      "label": "Detalles que hay que vigilar",
+      "_origin": "ast",
+      "community": 259,
+      "community_name": "C\u00f3mo quiere la profesora el LaTeX, y qu\u00e9 haremos en el Paso 5",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "detalles que hay que vigilar",
+      "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/pautas-latex-profesora.md",
+      "source_location": "L73"
+    },
+    {
+      "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_pautas_latex_profesora_lo_que_se_cambia_por_qu\u00e9_y_por_qu\u00e9_no_afecta_a_lo_que_pide",
+      "label": "Lo que se cambia, por qu\u00e9 y por qu\u00e9 no afecta a lo que pide",
+      "_origin": "ast",
+      "community": 259,
+      "community_name": "C\u00f3mo quiere la profesora el LaTeX, y qu\u00e9 haremos en el Paso 5",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "lo que se cambia, por que y por que no afecta a lo que pide",
+      "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/pautas-latex-profesora.md",
+      "source_location": "L24"
+    },
+    {
+      "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_pautas_latex_profesora_lo_que_se_sigue_tal_cual",
+      "label": "Lo que se sigue tal cual",
+      "_origin": "ast",
+      "community": 259,
+      "community_name": "C\u00f3mo quiere la profesora el LaTeX, y qu\u00e9 haremos en el Paso 5",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "lo que se sigue tal cual",
+      "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/pautas-latex-profesora.md",
+      "source_location": "L8"
     },
     {
       "id": "claude_skills_impeccable_scripts_lib_design_parser",
@@ -115918,6 +115978,50 @@
       "weight": 1.0
     },
     {
+      "source": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_pautas_latex_profesora",
+      "target": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_pautas_latex_profesora_c\u00f3mo_quiere_la_profesora_el_latex_y_qu\u00e9_haremos_en_el_paso_5",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/pautas-latex-profesora.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_pautas_latex_profesora_c\u00f3mo_quiere_la_profesora_el_latex_y_qu\u00e9_haremos_en_el_paso_5",
+      "target": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_pautas_latex_profesora_lo_que_se_cambia_por_qu\u00e9_y_por_qu\u00e9_no_afecta_a_lo_que_pide",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/pautas-latex-profesora.md",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_pautas_latex_profesora_c\u00f3mo_quiere_la_profesora_el_latex_y_qu\u00e9_haremos_en_el_paso_5",
+      "target": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_pautas_latex_profesora_detalles_que_hay_que_vigilar",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/pautas-latex-profesora.md",
+      "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_pautas_latex_profesora_c\u00f3mo_quiere_la_profesora_el_latex_y_qu\u00e9_haremos_en_el_paso_5",
+      "target": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_pautas_latex_profesora_lo_que_se_sigue_tal_cual",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/pautas-latex-profesora.md",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
       "source": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_plantilla_lncs_fuente",
       "target": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_plantilla_lncs_fuente_fuente_de_la_plantilla_lncs",
       "relation": "contains",
@@ -123588,5 +123692,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "8bafecf2f2945d55cb6740b0652bd2139195a313"
+  "built_at_commit": "ea432bf3c0bb7bbd461c0df07f5e1a4207ff7cde"
 }

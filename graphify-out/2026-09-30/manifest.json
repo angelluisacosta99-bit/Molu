@@ -2586,9 +2586,9 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/README.md": {
-    "mtime": 1790773278.5327663,
-    "seen": 1790773284.4859755,
-    "ast_hash": "6ec15cce76d87bfca5ec06d744b6f0a0",
+    "mtime": 1790784034.7447898,
+    "seen": 1790784041.1836371,
+    "ast_hash": "369e7abb74d023b8c5dfc557644813a5",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-1-planteamiento/ficha-paso-1.html": {
@@ -2877,6 +2877,12 @@
     "mtime": 1790781438.3048363,
     "seen": 1790781442.9777493,
     "ast_hash": "d75f9396d9497bfaef7c6358c7b9baa2",
+    "semantic_hash": ""
+  },
+  "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/pautas-latex-profesora.md": {
+    "mtime": 1790784021.7588718,
+    "seen": 1790784041.1836581,
+    "ast_hash": "b63ecbf3c81468281efcbdb655ad5e0e",
     "semantic_hash": ""
   }
 }

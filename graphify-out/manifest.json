@@ -2634,9 +2634,9 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/FUENTE.md": {
-    "mtime": 1790781438.3190875,
-    "seen": 1790781442.9775572,
-    "ast_hash": "7c7b7b9599e890de596943b4e12ac0f9",
+    "mtime": 1790786859.1807053,
+    "seen": 1790786875.1342208,
+    "ast_hash": "1010868faee229cf81e59520e7c355bf",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/ejemplos/articulo-operadores-logicos-espejo.pdf": {
@@ -2760,9 +2760,9 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/generar_resumen.py": {
-    "mtime": 1790766820.7913218,
-    "seen": 1790766838.0096114,
-    "ast_hash": "bf6d200c632b4a3dddd7faa310423f44",
+    "mtime": 1790786829.0060554,
+    "seen": 1790786875.1336303,
+    "ast_hash": "1f4ba14e56099cdfa7e5a9ee5960af68",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/fuentes-de-informacion-en-ciencia-y-tecnologia.pdf": {
@@ -2772,8 +2772,8 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/resumen-paso-3.pdf": {
-    "mtime": 1790766821.658852,
-    "seen": 1790766838.0104117,
+    "mtime": 1790786846.9566472,
+    "seen": 1790786875.134448,
     "ast_hash": "d553a5fb4a7b6aba5b7f97a1c54ab86f",
     "semantic_hash": ""
   },
@@ -2856,21 +2856,21 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/guia-explicada/guia-pasos-1-3.html": {
-    "mtime": 1790773260.0670738,
-    "seen": 1790773284.4859784,
-    "ast_hash": "606cc823826de38a016f556d4d50580f",
+    "mtime": 1790786829.0055115,
+    "seen": 1790786875.1342351,
+    "ast_hash": "536a9c0181a2e4157cbd3fb65fe6f61e",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/guia-explicada/guia-pasos-1-3.pdf": {
-    "mtime": 1790773261.0900893,
-    "seen": 1790773284.4860811,
-    "ast_hash": "b0b1bb434559a9fe716af91a8e22a39e",
+    "mtime": 1790786839.5446475,
+    "seen": 1790786875.1344328,
+    "ast_hash": "aada51ec1fc533197dd13f640b249344",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/requirements.txt": {
-    "mtime": 1790774386.5802045,
-    "seen": 1790774618.899969,
-    "ast_hash": "fb1ec57c16d834f489a3e2c25cf1d7a0",
+    "mtime": 1790786829.0109463,
+    "seen": 1790786875.1342504,
+    "ast_hash": "a0f0edbfd920f37aea6e12310d09f677",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/latex/introduccion-a-latex-lopez-batista.pdf": {
@@ -2880,9 +2880,15 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/pautas-latex-profesora.md": {
-    "mtime": 1790784021.7588718,
-    "seen": 1790784041.1836581,
-    "ast_hash": "b63ecbf3c81468281efcbdb655ad5e0e",
+    "mtime": 1790786859.1812944,
+    "seen": 1790786875.1342552,
+    "ast_hash": "aba8448f373c36edc8d4d653704b7f89",
+    "semantic_hash": ""
+  },
+  "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/latex/ejemplos-latex-profesora/tiger.pdf": {
+    "mtime": 1790786846.9741373,
+    "seen": 1790786875.134399,
+    "ast_hash": "b3c7d16a863d80250723a9030b9db46c",
     "semantic_hash": ""
   }
 }
