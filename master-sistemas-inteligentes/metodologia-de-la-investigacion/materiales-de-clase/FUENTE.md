@@ -38,7 +38,8 @@ López Batista en Studium).
   - `iso-690-documentos-impresos.pdf` e `iso-690-2-documentos-electronicos.pdf`
     — guías de la norma ISO 690 / 690-2 para referencias bibliográficas
     (formato APELLIDO, Nombre. Título...). La plantilla LNCS usa su propio
-    estilo (`splncs.bst`, numérico); ver README de la práctica.
+    estilo (`splncs.bst`, numérico [1]), que es el que pidió la profesora
+    para el artículo (2026-09-30).
   - `como-elaborar-referencias-une-50-104.pdf` y
     `como-elaborar-referencias-iso-690-sevilla.pdf` — otras dos guías de
     la misma norma (UNE 50-104 = ISO 690, adaptación de la Univ. de

@@ -40,9 +40,9 @@ Resumen de `../materiales-de-clase/redaccion-y-citas/` para los Pasos 4-5:
    circularidad) y no despreciar trabajos previos.
 7. **Tablas y figuras citadas en el texto antes de aparecer** (regla de
    la profesora, ver `master-sistemas-inteligentes/CLAUDE.md`).
-8. **Estilo de referencias**: la plantilla LNCS impone `splncs.bst`
-   (numérico, [1]); la profesora dio también la norma ISO 690. Pendiente
-   confirmar con ella cuál quiere en el artículo.
+8. **Estilo de referencias: numérico [1]** con el `splncs.bst` de la
+   plantilla LNCS (confirmado por la profesora el 2026-09-30). Las guías
+   ISO 690 de clase no se aplican al artículo.
 9. **Póster** (Guardiola, `../materiales-de-clase/poster/`): texto ≥ 20 pt,
    título ≥ 36 pt, letra sencilla (no Times), ≥ 50 % figuras y tablas,
    columnas, y no es «el artículo en letra grande».
