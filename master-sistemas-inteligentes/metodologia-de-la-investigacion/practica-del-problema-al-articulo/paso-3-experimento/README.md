@@ -8,7 +8,8 @@ para insertar en el manuscrito.
 2. Tarda unos 2–3 minutos. Regenera `datos/`, `resultados/` y `figuras/`.
    Sin el cuaderno: `python experimento.py`.
 
-Probado con Python 3.11. Librerías: numpy, pandas, scipy, scikit-learn, xgboost y matplotlib.
+Probado con Python 3.11. Librerías (versiones exactas en `requirements.txt`):
+`py -m pip install -r requirements.txt` en Windows.
 
 ## Archivos
 | Archivo | Qué es |
@@ -17,6 +18,8 @@ Probado con Python 3.11. Librerías: numpy, pandas, scipy, scikit-learn, xgboost
 | `experimento.py` | Entrenamiento, validación cruzada, McNemar y figuras |
 | `experimento.ipynb` | Cuaderno guiado y ya ejecutado (se ven los resultados sin volver a ejecutarlo) |
 | `crear_cuaderno.py` | Regenera el cuaderno si se cambia su texto |
+| `resumen-paso-3.pdf` | Resumen de 2 páginas para Studium: diseño, tabla, figuras e interpretación |
+| `generar_resumen.py` | Regenera ese PDF desde `resultados/` y `figuras/` (usa Chromium) |
 | `datos/dataset.csv` | Conjunto de datos generado (semilla 42) |
 | `resultados/tabla_resultados.{csv,tex}` | Tabla de métricas; la `.tex` va directa al artículo LNCS |
 | `resultados/mcnemar.txt` | Prueba estadística Random Forest / XGBoost frente a regresión logística |

@@ -1,17 +1,17 @@
 # Graph Report - Molu  (2026-09-30)
 
 ## Corpus Check
-- 308 files · ~1,406,953 words
+- 308 files · ~1,406,797 words
 - Verdict: corpus is large enough that graph structure adds value.
-- Unclassified: 107 file(s) not represented in the graph (top: .csv 32, .arff 22, .pptx 15)
+- Unclassified: 102 file(s) not represented in the graph (top: .csv 32, .arff 22, .pptx 15)
 
 ## Summary
-- 3542 nodes · 6980 edges · 262 communities (228 shown, 34 thin omitted)
+- 3541 nodes · 6979 edges · 260 communities (226 shown, 34 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 131 edges (avg confidence: 0.84)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `cef90d38`
+- Built from commit: `ea432bf3`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -91,7 +91,7 @@
 - Craft Flow Reference
 - Init Reference (Project Setup)
 - checkElementDesignSystemDOM
-- resolveContext
+- event-validation.mjs
 - isScreenReaderOnlyTextStyle
 - graphify: Incremental Update & Cluster-only
 - Impeccable: Typeset
@@ -212,7 +212,7 @@
 - Ejercicios
 - Q: PR 90 re-review: verify 5 prior derangement/conjTable fixes on current HEAD
 - detect-html.mjs
-- createLiveSessionStore
+- readLiveServerInfo
 - Carta de candidatura espontánea — academias de español, Salamanca
 - Ejercicios
 - Asignaturas obligatorias (9)
@@ -252,7 +252,7 @@
 - syncEditBadgeHitProxies
 - session-store.mjs
 - Revisión 2026-09-16 (segunda pasada): profesorado real del MUSI, fuente primaria
-- cli
+- readWorkspacePatterns
 - caveman-cavecrew/hooks/restrict-cavecrew-bash.sh
 - caveman-cavecrew/hooks/caveman-mode.sh
 - Fuente de la plantilla LNCS
@@ -269,12 +269,10 @@
 - Paso 2 — Búsqueda bibliográfica y referencias.bib
 - Paso 3 — Diseño experimental y resultados
 - crear_cuaderno.py
-- readLiveServerInfo
+- ref_node_url
 - generar_resumen.py
 - Reglas para los trabajos del máster (MUSI)
 - Cómo quiere la profesora el LaTeX, y qué haremos en el Paso 5
-- browser-script-parts.mjs
-- isGeneratedFile
 
 ## God Nodes (most connected - your core abstractions)
 1. `detectHtml()` - 32 edges
@@ -303,7 +301,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (262 total, 34 thin omitted)
+## Communities (260 total, 34 thin omitted)
 
 ### Community 0 - "live-browser.js"
 Cohesion: 0.03
@@ -350,8 +348,8 @@ Cohesion: 0.10
 Nodes (47): applyDetectionConfigSource(), clampByte(), cleanIgnoreValueDisplay(), cloneDetectionConfig(), cloneRawDetectionConfig(), colorIgnoreKey(), DEFAULT_DETECTION_CONFIG, DETECTOR_CONFIG_KEYS (+39 more)
 
 ### Community 11 - "live-server.mjs"
-Cohesion: 0.10
-Nodes (40): acknowledgePendingEvent(), activeSessionSummaries(), agentPollingConnected(), annotRoot, args, broadcast(), broadcastAgentPollingIfChanged(), cancelQueuedAnonymousExitEvents() (+32 more)
+Cohesion: 0.09
+Nodes (46): assembleLiveBrowserScript(), assertLiveBrowserScriptParts(), LIVE_BROWSER_SCRIPT_PARTS, readLiveBrowserScriptParts(), resolveLiveBrowserScriptParts(), acknowledgePendingEvent(), activeSessionSummaries(), agentPollingConnected() (+38 more)
 
 ### Community 12 - "svelte-component.mjs"
 Cohesion: 0.09
@@ -382,8 +380,8 @@ Cohesion: 0.11
 Nodes (30): applyStaticDeclaration(), buildBorderOverrideMap(), parseShorthand(), resolveVar(), buildStaticWindow(), collectStaticCssRules(), compareStaticPriority(), cssPropToCamel() (+22 more)
 
 ### Community 19 - "insert-ui.mjs"
-Cohesion: 0.07
-Nodes (25): FORBIDDEN_MANUAL_EDIT_TEXT_CHARS, INSERT_POSITIONS, isValidId(), isValidVariantId(), validateAnnotationFields(), validateEvent(), validateInsertGenerate(), validateManualEditEvent() (+17 more)
+Cohesion: 0.09
+Nodes (13): canCreateInsert(), clampPlaceholderSize(), computeInsertPosition(), groupSiblingRows(), hitSiblingInsertGap(), horizontalOverlap(), insertCreateDisabledReason(), insertLineCoords() (+5 more)
 
 ### Community 20 - "Fuentes transcritas overview"
 Cohesion: 0.15
@@ -454,8 +452,8 @@ Cohesion: 0.15
 Nodes (26): analyzeSourceHint(), buildCandidatesForOp(), buildContextHintsByRef(), buildManualEditEvidence(), collectSearchFiles(), countOps(), decodeBasicHtml(), escapeRegExp() (+18 more)
 
 ### Community 37 - "context.mjs"
-Cohesion: 0.11
-Nodes (28): buildUpdateDirective(), compareSemver(), computeUpdateDirective(), DESIGN_NAMES, FALLBACK_DIRS, fetchLatestSkillVersion(), findMonorepoRoot(), hasFallbackWorkspaceChildren() (+20 more)
+Cohesion: 0.08
+Nodes (41): buildMissingTargetDirective(), buildResolvedContextDirective(), buildTargetSelectionDirective(), buildUpdateDirective(), cli(), compareSemver(), computeUpdateDirective(), contextSourcePath() (+33 more)
 
 ### Community 38 - "handleManualEditActivity"
 Cohesion: 0.18
@@ -555,7 +553,7 @@ Nodes (6): applyPatchText(), envProjectDir(), looksLikeApplyPatch(), normalizeGi
 
 ### Community 63 - "ref_node_path"
 Cohesion: 0.15
-Nodes (15): candidates, detectorPath, __dirname, __dirname, findHarnessDirs(), generatePinnedSkill(), HARNESS_DIRS, loadCommandMetadata() (+7 more)
+Nodes (16): hasGeneratedHeader(), HEADER_MARKERS, isGeneratedFile(), isGitIgnored(), searchDir(), __dirname, findHarnessDirs(), generatePinnedSkill() (+8 more)
 
 ### Community 64 - "Ser / Estar (contraste)"
 Cohesion: 0.18
@@ -601,9 +599,9 @@ Nodes (9): Document Reference (DESIGN.md Generation), .impeccable/design.json Si
 Cohesion: 0.13
 Nodes (16): browserColorsClose(), browserHasDirectText(), browserRadiusTokens(), browserSampleText(), buildSelectorSegment(), checkElementDesignSystemDOM(), generateSelector(), isBrowserDesignColorAllowed() (+8 more)
 
-### Community 75 - "resolveContext"
-Cohesion: 0.18
-Nodes (14): contextSourcePath(), contextSourceStatus(), firstExisting(), isPathInside(), isPathInsideOrEqual(), nearestProjectLikeRoot(), resolveCandidateContextSummary(), resolveContext() (+6 more)
+### Community 75 - "event-validation.mjs"
+Cohesion: 0.25
+Nodes (12): FORBIDDEN_MANUAL_EDIT_TEXT_CHARS, INSERT_POSITIONS, isValidId(), isValidVariantId(), validateAnnotationFields(), validateEvent(), validateInsertGenerate(), validateManualEditEvent() (+4 more)
 
 ### Community 76 - "isScreenReaderOnlyTextStyle"
 Cohesion: 0.32
@@ -1005,9 +1003,9 @@ Nodes (4): Answer, Outcome, Q: PR 90 re-review: verify 5 prior derangement/conjT
 Cohesion: 0.09
 Nodes (37): createBrowserDetector(), detectUrl(), runVisualContrastFallback(), serializeDesignSystemForBrowser(), buildStaticStyleMap(), collectStaticCssText(), parseStaticStyleAttribute(), StaticDocument (+29 more)
 
-### Community 196 - "createLiveSessionStore"
-Cohesion: 0.27
-Nodes (13): collectManualApplyFiles(), manualApplyReplyCommand(), manualApplyResumeHint(), parseArgs(), resumeCli(), summarizeManualApplyEvent(), createLiveSessionStore(), getReadableJournalPath() (+5 more)
+### Community 196 - "readLiveServerInfo"
+Cohesion: 0.18
+Nodes (19): isLiveServerPidReachable(), readLiveServerInfo(), completeCli(), completeThroughServer(), parseArgs(), readServerInfo(), collectManualApplyFiles(), manualApplyReplyCommand() (+11 more)
 
 ### Community 197 - "Carta de candidatura espontánea — academias de español, Salamanca"
 Cohesion: 0.40
@@ -1153,9 +1151,9 @@ Nodes (9): applyEvent(), baseSnapshot(), COMPLETED_PHASES, getJournalPath(), get
 Cohesion: 0.40
 Nodes (5): Candidatos nuevos o reforzados, con proyecto financiado verificado, Contacto no-investigador a tener presente, Hallazgo que corrige la tabla anterior: tres candidatos no aparecen aquí, No decidido aquí, Revisión 2026-09-16 (segunda pasada): profesorado real del MUSI, fuente primaria
 
-### Community 236 - "cli"
-Cohesion: 0.29
-Nodes (8): buildMissingTargetDirective(), buildResolvedContextDirective(), buildTargetSelectionDirective(), cli(), hasTargetOption(), parseCliOptions(), pathExistsForTarget(), shouldWarnMissingTarget()
+### Community 236 - "readWorkspacePatterns"
+Cohesion: 0.32
+Nodes (8): parseYamlFlowList(), readJson(), readLernaWorkspaces(), readPackageWorkspaces(), readPnpmWorkspaces(), readWorkspacePatterns(), stripYamlInlineComment(), unquoteYamlValue()
 
 ### Community 237 - "caveman-cavecrew/hooks/restrict-cavecrew-bash.sh"
 Cohesion: 0.83
@@ -1186,8 +1184,8 @@ Cohesion: 0.48
 Nodes (4): parseTargetOptions(), parseTargetPath(), TargetArgError, resolveLiveTarget()
 
 ### Community 252 - "discoverTargetCandidates"
-Cohesion: 0.19
-Nodes (16): directChildDirs(), discoverRootsForPattern(), discoverTargetCandidates(), escapeRegExp(), expandSimplePattern(), findTargetExample(), isCandidateProjectRoot(), isExcludedByWorkspacePattern() (+8 more)
+Cohesion: 0.18
+Nodes (17): directChildDirs(), discoverRootsForPattern(), discoverTargetCandidates(), escapeRegExp(), expandSimplePattern(), findTargetExample(), isExcludedByWorkspacePattern(), isIgnoredWorkspaceDiscoveryDir() (+9 more)
 
 ### Community 253 - "Paso 2 — Búsqueda bibliográfica y referencias.bib"
 Cohesion: 0.33
@@ -1197,41 +1195,33 @@ Nodes (5): Archivos de esta carpeta, Cadenas de búsqueda (Scopus / Web of Scien
 Cohesion: 0.29
 Nodes (6): Archivos, Cómo ejecutarlo (en VS Code), Diseño (resumen para la sección de Métodos), Interpretación honesta (para Resultados y Discusión), Paso 3 — Diseño experimental y resultados, Resultados
 
-### Community 256 - "readLiveServerInfo"
-Cohesion: 0.48
-Nodes (6): isLiveServerPidReachable(), readLiveServerInfo(), completeCli(), completeThroughServer(), parseArgs(), readServerInfo()
+### Community 256 - "ref_node_url"
+Cohesion: 0.40
+Nodes (4): candidates, detectorPath, __dirname, ref_node_url
 
 ### Community 257 - "generar_resumen.py"
-Cohesion: 0.29
-Nodes (5): csv, Genera resumen-paso-3.pdf (tabla + figuras + interpretación) a partir de…, os, pathlib, subprocess
+Cohesion: 0.33
+Nodes (4): csv, Genera resumen-paso-3.pdf (tabla + figuras + interpretación) a partir de…, pathlib, subprocess
 
 ### Community 259 - "Cómo quiere la profesora el LaTeX, y qué haremos en el Paso 5"
 Cohesion: 0.40
 Nodes (4): Cómo quiere la profesora el LaTeX, y qué haremos en el Paso 5, Detalles que hay que vigilar, Lo que se cambia, por qué y por qué no afecta a lo que pide, Lo que se sigue tal cual
 
-### Community 260 - "browser-script-parts.mjs"
-Cohesion: 0.33
-Nodes (6): assembleLiveBrowserScript(), assertLiveBrowserScriptParts(), LIVE_BROWSER_SCRIPT_PARTS, readLiveBrowserScriptParts(), resolveLiveBrowserScriptParts(), loadBrowserScripts()
-
-### Community 261 - "isGeneratedFile"
-Cohesion: 0.47
-Nodes (5): hasGeneratedHeader(), HEADER_MARKERS, isGeneratedFile(), isGitIgnored(), searchDir()
-
 ## Knowledge Gaps
-- **983 isolated node(s):** `Materiales de clase — Metodología de la Investigación (2026-2027)`, `Lo que se sigue tal cual`, `Lo que se cambia, por qué y por qué no afecta a lo que pide`, `Detalles que hay que vigilar`, `HEADING_TAGS` (+978 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1229 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **983 isolated node(s):** `Pautas de redacción para el artículo (materiales de clase)`, `Lo que se sigue tal cual`, `Lo que se cambia, por qué y por qué no afecta a lo que pide`, `Detalles que hay que vigilar`, `HEADING_TAGS` (+978 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1228 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **34 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Novedades de herramientas de IA` connect `Novedades de herramientas de IA` to `2026-09-07 — Búsqueda a mano: herramientas para posts de blog en plataformas de clases`, `2026-09-19 — Pasada por el correo semanal "This week in Claude Code" (4 números, 21 ago-18 sep)`, `hook-before-edit.mjs`, `2026-09-13 — Búsqueda exhaustiva: herramientas de investigación científica verificada para el máster`, `2026-08-16 — Primera pasada del radar`, `2026-08-30 — Compactación de contexto: palancas oficiales para ahorrar tokens`, `2026-08-30 — Pasada del radar: dos funciones nativas nuevas, sin hallazgos de terceros`?**
-  _High betweenness centrality (0.036) - this node is a cross-community bridge._
 - **Why does `2026-08-16 — Segunda pasada: hooks vs. CLAUDE.md, y prácticas de la comunidad` connect `hook-before-edit.mjs` to `Novedades de herramientas de IA`?**
-  _High betweenness centrality (0.035) - this node is a cross-community bridge._
+  _High betweenness centrality (0.042) - this node is a cross-community bridge._
+- **Why does `Novedades de herramientas de IA` connect `Novedades de herramientas de IA` to `2026-09-07 — Búsqueda a mano: herramientas para posts de blog en plataformas de clases`, `2026-09-19 — Pasada por el correo semanal "This week in Claude Code" (4 números, 21 ago-18 sep)`, `hook-before-edit.mjs`, `2026-09-13 — Búsqueda exhaustiva: herramientas de investigación científica verificada para el máster`, `2026-08-16 — Primera pasada del radar`, `2026-08-30 — Compactación de contexto: palancas oficiales para ahorrar tokens`, `2026-08-30 — Pasada del radar: dos funciones nativas nuevas, sin hallazgos de terceros`?**
+  _High betweenness centrality (0.039) - this node is a cross-community bridge._
 - **Why does `deny()` connect `hook-before-edit.mjs` to `readConfig`?**
-  _High betweenness centrality (0.025) - this node is a cross-community bridge._
-- **What connects `Materiales de clase — Metodología de la Investigación (2026-2027)`, `Lo que se sigue tal cual`, `Lo que se cambia, por qué y por qué no afecta a lo que pide` to the rest of the system?**
+  _High betweenness centrality (0.028) - this node is a cross-community bridge._
+- **What connects `Pautas de redacción para el artículo (materiales de clase)`, `Lo que se sigue tal cual`, `Lo que se cambia, por qué y por qué no afecta a lo que pide` to the rest of the system?**
   _983 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `live-browser.js` be split into smaller, more focused modules?**
   _Cohesion score 0.03238095238095238 - nodes in this community are weakly interconnected._

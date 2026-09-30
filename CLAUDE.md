@@ -103,6 +103,12 @@ parte del repo. Incluye qué carpeta de Google Drive usar, el orden de
 prioridad de las subcarpetas, y el procedimiento completo de OCR para
 PDFs escaneados.
 
+## Máster (MUSI): tablas y figuras siempre citadas antes
+
+Regla inquebrantable en todo entregable del máster: cada tabla, figura o
+esquema se cita por su número en el texto **antes** de aparecer. Detalle
+en `master-sistemas-inteligentes/CLAUDE.md`.
+
 ## Investigación científica verificada: usar siempre estos conectores
 
 Para el máster (MUSI) y el TFM, antes de citar un paper o dar un
