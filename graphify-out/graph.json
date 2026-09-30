@@ -34581,7 +34581,7 @@
       "node_kind": "heading",
       "norm_label": "pautas de redaccion para el articulo (materiales de clase)",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/README.md",
-      "source_location": "L26"
+      "source_location": "L30"
     },
     {
       "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_readme_pr\u00e1ctica_del_problema_cient\u00edfico_al_art\u00edculo_en_latex",
@@ -115958,7 +115958,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/README.md",
-      "source_location": "L26",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -123588,5 +123588,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "41370c1d81e942216564a7a6253757b2e5fef802"
+  "built_at_commit": "aa7866cac0fa4d493f1731e364585d67c67dc990"
 }
