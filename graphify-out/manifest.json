@@ -2586,9 +2586,9 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/README.md": {
-    "mtime": 1790767300.9173846,
-    "seen": 1790767314.7265246,
-    "ast_hash": "981376526d95604cbab29627b5e78568",
+    "mtime": 1790767618.5188339,
+    "seen": 1790767628.5800178,
+    "ast_hash": "a464b6b537c660bd3292c26479366cb8",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-1-planteamiento/ficha-paso-1.html": {
@@ -2634,9 +2634,9 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/FUENTE.md": {
-    "mtime": 1790767300.916355,
-    "seen": 1790767314.72651,
-    "ast_hash": "a362ad2ad415d670aa4ebc2961f59c27",
+    "mtime": 1790767612.782834,
+    "seen": 1790767628.580011,
+    "ast_hash": "15204dc78b1b736e290998e882060aa3",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/ejemplos/articulo-operadores-logicos-espejo.pdf": {
@@ -2805,6 +2805,30 @@
     "mtime": 1790767282.2052097,
     "seen": 1790767314.726749,
     "ast_hash": "e0aedb30ee19e6d0e53cde568c7baa7b",
+    "semantic_hash": ""
+  },
+  "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/poster/el-poster-guardiola-2002.pdf": {
+    "mtime": 1790767603.6432812,
+    "seen": 1790767628.5801067,
+    "ast_hash": "f8ed743a6ccf968cb93839126e9efa76",
+    "semantic_hash": ""
+  },
+  "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/redaccion-y-citas/como-elaborar-referencias-iso-690-sevilla.pdf": {
+    "mtime": 1790767603.6357598,
+    "seen": 1790767628.5801105,
+    "ast_hash": "d6a103ce8ca4dbef530fb447353b929b",
+    "semantic_hash": ""
+  },
+  "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/redaccion-y-citas/como-elaborar-referencias-une-50-104.pdf": {
+    "mtime": 1790767603.6334517,
+    "seen": 1790767628.5801113,
+    "ast_hash": "21420307febf0a196a9a52eae164c264",
+    "semantic_hash": ""
+  },
+  "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/redaccion-y-citas/quindos-2009-factor-impacto-indice-h.pdf": {
+    "mtime": 1790767603.6382387,
+    "seen": 1790767628.5801158,
+    "ast_hash": "0d7b4eb205197bec09732d4ce4caa844",
     "semantic_hash": ""
   }
 }
