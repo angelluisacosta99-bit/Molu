@@ -2634,9 +2634,9 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/FUENTE.md": {
-    "mtime": 1790768140.9227645,
-    "seen": 1790768143.9815354,
-    "ast_hash": "6f8798a9afd72053464784104a3fb8dd",
+    "mtime": 1790781438.3190875,
+    "seen": 1790781442.9775572,
+    "ast_hash": "7c7b7b9599e890de596943b4e12ac0f9",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/ejemplos/articulo-operadores-logicos-espejo.pdf": {
@@ -2871,6 +2871,12 @@
     "mtime": 1790774386.5802045,
     "seen": 1790774618.899969,
     "ast_hash": "fb1ec57c16d834f489a3e2c25cf1d7a0",
+    "semantic_hash": ""
+  },
+  "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/latex/introduccion-a-latex-lopez-batista.pdf": {
+    "mtime": 1790781438.3048363,
+    "seen": 1790781442.9777493,
+    "ast_hash": "d75f9396d9497bfaef7c6358c7b9baa2",
     "semantic_hash": ""
   }
 }
