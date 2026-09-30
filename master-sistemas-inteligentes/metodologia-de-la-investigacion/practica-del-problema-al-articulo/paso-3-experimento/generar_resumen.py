@@ -52,15 +52,23 @@ Clase positiva = «no cumple». Semilla fija (42): resultados reproducibles.</li
 </ul>
 
 <h2>2. Resultados</h2>
+<p>En la Tabla 1 se recogen las métricas de validación cruzada de los tres modelos en los tres escenarios:
+AUC, exactitud equilibrada, sensibilidad y F1 de la clase «no cumple».</p>
 <div class="cap"><b>Tabla 1.</b> Validación cruzada (media ± desviación típica). Clase positiva: canal que no cumple BER&nbsp;≤&nbsp;10<sup>−11</sup>.</div>
 <table><thead><tr><th>Escenario</th><th>Modelo</th><th>AUC</th><th>Exactitud equilibrada</th><th>Sensibilidad</th><th>F1</th></tr></thead>
 <tbody>{tabla}</tbody></table>
 <p style="margin-top:5pt"><b>McNemar (escenario B):</b> Random Forest acierta 44 casos que la logística falla, frente a 13 al revés
 (p&nbsp;=&nbsp;7·10<sup>−5</sup>); XGBoost, 54 frente a 23 (p&nbsp;=&nbsp;6·10<sup>−4</sup>).</p>
 
-{figura(1, "fig1_q_vs_longitud", "Factor Q de cada canal según su longitud; la línea discontinua es el umbral BER = 10<sup>−11</sup>.", "52%")}
-{figura(2, "fig2_f1_escenarios", "F1 de la clase «no cumple» por escenario y modelo (media ± desviación típica).", "52%")}
-{figura(3, "fig3_importancia", "Importancia de las variables por permutación (Random Forest, escenario B).", "52%")}
+<p>La Fig. 1 representa el factor Q de cada canal frente a su longitud: los canales que no cumplen quedan por debajo del
+umbral y se concentran entre 40 y 110&nbsp;km; por debajo de 40&nbsp;km cumple el 99&nbsp;%.</p>
+{figura(1, "fig1_q_vs_longitud", "Factor Q de cada canal según su longitud; la línea discontinua es el umbral BER = 10<sup>−11</sup>.", "44%")}
+<p>En la Fig. 2 se compara el F1 de los tres modelos en cada escenario: la mayor mejora se debe a pasar
+del escenario A al B, no al cambio de modelo.</p>
+{figura(2, "fig2_f1_escenarios", "F1 de la clase «no cumple» por escenario y modelo (media ± desviación típica).", "44%")}
+<p>La Fig. 3 muestra cuánto empeora el AUC del Random Forest al desordenar cada variable: la potencia recibida
+medida es, con diferencia, la más importante.</p>
+{figura(3, "fig3_importancia", "Importancia de las variables por permutación (Random Forest, escenario B).", "44%")}
 
 <h2>3. Interpretación</h2>
 <ul>
