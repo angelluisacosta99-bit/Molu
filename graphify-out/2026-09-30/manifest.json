@@ -2634,9 +2634,9 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/FUENTE.md": {
-    "mtime": 1790634295.4385452,
-    "seen": 1790634310.3698676,
-    "ast_hash": "d6cf82156f255623f13a7438ec75a2ee",
+    "mtime": 1790766156.3988674,
+    "seen": 1790766230.9892695,
+    "ast_hash": "9baefbf8cc083e3e061dcdbb7ea8a42b",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/ejemplos/articulo-operadores-logicos-espejo.pdf": {
@@ -2712,9 +2712,9 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/README.md": {
-    "mtime": 1790701681.9446073,
-    "seen": 1790701692.0261858,
-    "ast_hash": "2bc557f9e412091fb7ede3a7ab4622b7",
+    "mtime": 1790766218.8868585,
+    "seen": 1790766230.9892864,
+    "ast_hash": "ece26474b3d59bc15794e4e4b486b925",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/resultados/mcnemar.txt": {
@@ -2757,6 +2757,24 @@
     "mtime": 1790701278.2578049,
     "seen": 1790701332.2223876,
     "ast_hash": "4a15ac319ca55a7d3a52e6cc7121bd76",
+    "semantic_hash": ""
+  },
+  "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/generar_resumen.py": {
+    "mtime": 1790766212.7167048,
+    "seen": 1790766230.988938,
+    "ast_hash": "7be41aedd3e4ebeee782a3ba1aa7f160",
+    "semantic_hash": ""
+  },
+  "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/fuentes-de-informacion-en-ciencia-y-tecnologia.pdf": {
+    "mtime": 1790766153.2476485,
+    "seen": 1790766230.9893656,
+    "ast_hash": "650004bbdbb83d3781a05102e8546ff8",
+    "semantic_hash": ""
+  },
+  "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/resumen-paso-3.pdf": {
+    "mtime": 1790766213.5108662,
+    "seen": 1790766230.9893749,
+    "ast_hash": "ca3c4243ed8739ed1089128fee8ef9ff",
     "semantic_hash": ""
   }
 }

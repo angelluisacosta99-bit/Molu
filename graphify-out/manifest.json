@@ -894,9 +894,9 @@
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1790628491.7961898,
-    "seen": 1790630017.0675502,
-    "ast_hash": "803f0741fd77260f43adb68ba9fafaa9",
+    "mtime": 1790766805.1708527,
+    "seen": 1790766838.0097785,
+    "ast_hash": "dd2a11e5c4a8b928501bde50c1119071",
     "semantic_hash": ""
   },
   "DESIGN.md": {
@@ -2760,9 +2760,9 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/generar_resumen.py": {
-    "mtime": 1790766212.7167048,
-    "seen": 1790766230.988938,
-    "ast_hash": "7be41aedd3e4ebeee782a3ba1aa7f160",
+    "mtime": 1790766820.7913218,
+    "seen": 1790766838.0096114,
+    "ast_hash": "bf6d200c632b4a3dddd7faa310423f44",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/fuentes-de-informacion-en-ciencia-y-tecnologia.pdf": {
@@ -2772,9 +2772,15 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/resumen-paso-3.pdf": {
-    "mtime": 1790766213.5108662,
-    "seen": 1790766230.9893749,
-    "ast_hash": "ca3c4243ed8739ed1089128fee8ef9ff",
+    "mtime": 1790766821.658852,
+    "seen": 1790766838.0104117,
+    "ast_hash": "d553a5fb4a7b6aba5b7f97a1c54ab86f",
+    "semantic_hash": ""
+  },
+  "master-sistemas-inteligentes/CLAUDE.md": {
+    "mtime": 1790766799.9748526,
+    "seen": 1790766838.010179,
+    "ast_hash": "7d80f7536da51235cbe80cdca42d0727",
     "semantic_hash": ""
   }
 }
