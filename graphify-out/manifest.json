@@ -2586,9 +2586,9 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/README.md": {
-    "mtime": 1790701327.631727,
-    "seen": 1790701332.2222424,
-    "ast_hash": "2828eb2480303c26a46fdd951ec7ae38",
+    "mtime": 1790767300.9173846,
+    "seen": 1790767314.7265246,
+    "ast_hash": "981376526d95604cbab29627b5e78568",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-1-planteamiento/ficha-paso-1.html": {
@@ -2634,9 +2634,9 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/FUENTE.md": {
-    "mtime": 1790766156.3988674,
-    "seen": 1790766230.9892695,
-    "ast_hash": "9baefbf8cc083e3e061dcdbb7ea8a42b",
+    "mtime": 1790767300.916355,
+    "seen": 1790767314.72651,
+    "ast_hash": "a362ad2ad415d670aa4ebc2961f59c27",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/ejemplos/articulo-operadores-logicos-espejo.pdf": {
@@ -2781,6 +2781,30 @@
     "mtime": 1790766799.9748526,
     "seen": 1790766838.010179,
     "ast_hash": "7d80f7536da51235cbe80cdca42d0727",
+    "semantic_hash": ""
+  },
+  "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/redaccion-y-citas/10-consejos-articulo-terrible-blocken-2017.pdf": {
+    "mtime": 1790767282.1981816,
+    "seen": 1790767314.7267406,
+    "ast_hash": "682e50b8ab790be260d07557f611a74f",
+    "semantic_hash": ""
+  },
+  "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/redaccion-y-citas/escritura-estructurada-cameron.pdf": {
+    "mtime": 1790767282.2018676,
+    "seen": 1790767314.7267437,
+    "ast_hash": "54ce8f339027a97ed54acc397ed079c1",
+    "semantic_hash": ""
+  },
+  "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/redaccion-y-citas/iso-690-2-documentos-electronicos.pdf": {
+    "mtime": 1790767282.2082298,
+    "seen": 1790767314.7267463,
+    "ast_hash": "4f81e9a0d94a7b6f2251484ca3bab336",
+    "semantic_hash": ""
+  },
+  "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/redaccion-y-citas/iso-690-documentos-impresos.pdf": {
+    "mtime": 1790767282.2052097,
+    "seen": 1790767314.726749,
+    "ast_hash": "e0aedb30ee19e6d0e53cde568c7baa7b",
     "semantic_hash": ""
   }
 }
