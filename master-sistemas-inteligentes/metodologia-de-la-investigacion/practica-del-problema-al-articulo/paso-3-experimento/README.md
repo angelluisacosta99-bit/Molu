@@ -8,7 +8,8 @@ para insertar en el manuscrito.
 2. Tarda unos 2–3 minutos. Regenera `datos/`, `resultados/` y `figuras/`.
    Sin el cuaderno: `python experimento.py`.
 
-Probado con Python 3.11. Librerías: numpy, pandas, scipy, scikit-learn, xgboost y matplotlib.
+Probado con Python 3.11. Librerías (versiones exactas en `requirements.txt`):
+`py -m pip install -r requirements.txt` en Windows.
 
 ## Archivos
 | Archivo | Qué es |

@@ -98,7 +98,7 @@ def mcnemar(a, b, verdad):
     return n01, n10, est, 1 - chi2.cdf(est, 1)
 
 
-with open(AQUI / "resultados" / "mcnemar.txt", "w") as f:
+with open(AQUI / "resultados" / "mcnemar.txt", "w", encoding="utf-8") as f:
     for otro in ("Random Forest", "XGBoost"):
         n01, n10, est, p = mcnemar(pred[otro], pred["Regresión logística"], yte)
         linea = (f"{otro} vs Regresión logística (escenario B, test 30 %): "

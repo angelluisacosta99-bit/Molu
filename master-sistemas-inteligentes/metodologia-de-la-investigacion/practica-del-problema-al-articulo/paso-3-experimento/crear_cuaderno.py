@@ -41,7 +41,7 @@ M("## 4. Resultados")
 C("""import pandas as pd
 tabla = pd.read_csv("resultados/tabla_resultados.csv")
 tabla[["Escenario", "Modelo", "AUC", "Exactitud equilibrada", "Sensibilidad (no cumple)", "F1 (no cumple)"]]""")
-C("""print(open("resultados/mcnemar.txt").read())""")
+C("""print(open("resultados/mcnemar.txt", encoding="utf-8").read())""")
 C("""from IPython.display import Image, display
 for f in ["fig1_q_vs_longitud", "fig2_f1_escenarios", "fig3_importancia"]:
     display(Image(f"figuras/{f}.png", width=450))""")
