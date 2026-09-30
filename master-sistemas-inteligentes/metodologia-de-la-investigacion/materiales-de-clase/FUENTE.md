@@ -60,6 +60,15 @@ López Batista en Studium).
 
 - `latex/` (enviados el 2026-09-30; no estaban ni en el repo ni en el
   Drive de Arlet) — manuales de LaTeX en español para el Paso 5:
+  - `introduccion-a-latex-lopez-batista.pdf` — **diapositivas de la propia
+    profesora** (70 págs., 2013): estructura de un `.tex`, formato, listas,
+    figuras (`figure` con `[htbp]`, subfiguras), tablas (`tabular`),
+    referencias cruzadas (`\label`/`\ref`/`\pageref`, la forma de citar
+    tablas y figuras antes de que aparezcan), ecuaciones y BibTeX
+    (`\bibliographystyle` + `\bibliography` + `\cite`, compilar
+    LaTeX → BibTeX → LaTeX ×2). Partes anticuadas: instalar MiKTeX/
+    TeXnicCenter e `inputenc[latin1]`; en Overleaf no hace falta instalar
+    nada y se usa UTF-8.
   - `introduccion-a-latex-randez-2013.pdf` — Luis Rández (Univ. Zaragoza),
     40 págs.: la más corta para empezar (fórmulas, tablas, figuras).
   - `bibliografia-en-latex-bibtex-mata-2014.pdf` — Miguel Mata, 14 págs.:
