@@ -9,11 +9,11 @@ C = lambda t: c.append(nbf.v4.new_code_cell(t))
 M("""# Paso 3 — Diseño experimental y resultados
 **Pregunta:** ¿puede un modelo de ensamble predecir si un canal de la red DWDM ferroviaria Moscú-Kazánskaya – Riazán cumple BER ≤ 10⁻¹¹ mejor que un modelo lineal sencillo?
 
-Este cuaderno se ejecuta de arriba abajo con ▶ (o *Run All*). Usa dos archivos de esta carpeta:
+El cuaderno se ejecuta en orden, de arriba abajo. Usa dos archivos de esta carpeta:
 - `simulador.py`: el modelo físico que genera los datos sintéticos.
 - `experimento.py`: entrena los modelos, calcula la tabla y dibuja las figuras.""")
 M("""## 1. Comprobar el modelo físico con el caso del TFG
-El tramo más desfavorable del proyecto (Voskresensk – Riazán-1, 108,9 km) debe cumplir cuando la red es nueva.""")
+El tramo más desfavorable del proyecto (Voskresensk – Riazán-1, 108,9 km) cumple el umbral con la red nueva.""")
 C("""import numpy as np
 import simulador as sim
 
@@ -21,7 +21,7 @@ d = np.array([108.9])
 perdida = sim.perdida_nominal(d)[0]
 print(f"Pérdida nominal: {perdida:.1f} dB -> potencia en el preamplificador: {-perdida:.1f} dBm")
 q = sim.q_ase(58 - perdida - 6.5)          # figura de ruido del EDFA: 6,5 dB
-print(f"Q = {q:.2f}  ->  BER = {sim.ber_desde_q(q):.1e}  (el TFG obtuvo Q = 7,37)")""")
+print(f"Q = {q:.2f}  ->  BER = {sim.ber_desde_q(q):.1e}  (valor del TFG, con otro planteamiento: Q = 7,37)")""")
 M("""## 2. Generar el conjunto de datos
 10 000 canales entre pares de estaciones reales de la línea, con entre 0 y 25 años de servicio, reparaciones, hielo y envejecimiento.
 Las columnas `oculta_*` son causas físicas que **el operador no puede medir**: no se dan a los modelos en los escenarios A y B.""")

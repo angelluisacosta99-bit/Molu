@@ -29,7 +29,7 @@ for carpeta in ("datos", "resultados", "figuras"):
     (AQUI / carpeta).mkdir(exist_ok=True)
 
 SEMILLA = 42
-AZUL, NARANJA, VERDE = "#2a78d6", "#eb6834", "#1baf7a"   # paleta validada (dataviz)
+AZUL, NARANJA, VERDE = "#2a78d6", "#eb6834", "#1baf7a"   # paleta distinguible con daltonismo
 TINTA, GRIS = "#1f1f1e", "#8a8a85"
 plt.rcParams.update({"font.family": "serif", "font.size": 9, "axes.edgecolor": GRIS,
                      "axes.labelcolor": TINTA, "xtick.color": TINTA, "ytick.color": TINTA,

@@ -1,5 +1,5 @@
-# Librerías del Paso 3 (versiones con las que se obtuvieron los resultados).
-# Instalar con:  py -m pip install -r requirements.txt
+# Dependencias (versiones con las que se obtuvieron los resultados).
+# Instalación: python -m pip install -r requirements.txt
 numpy==2.4.6
 pandas==3.0.6
 scipy==1.17.1
