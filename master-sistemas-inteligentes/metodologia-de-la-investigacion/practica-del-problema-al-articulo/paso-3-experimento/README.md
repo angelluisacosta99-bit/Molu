@@ -83,10 +83,11 @@ frente a la logística, 54 frente a 23, p = 6·10⁻⁴.
    físico determinista. Es la limitación principal del estudio; la
    validación con datos medidos (p. ej., el conjunto público de Microsoft)
    queda como trabajo futuro.
-5. **El modelo físico no reproduce el cálculo del TFG** (Q ≈ 10,5 frente a
+5. **El modelo físico no reproduce el cálculo del TFG** (Q ≈ 10,4 frente a
    7,37 en el tramo de 108,9 km, con distinto planteamiento): el TFG aporta el
    diseño de partida, y las cifras de este estudio proceden del modelo físico
    de `simulador.py`.
 6. **Generalización:** los 10 000 canales proceden de 208 pares de
    estaciones, así que la validación cruzada no mide el acierto en
-   trayectos no vistos (validación agrupada por trayecto: trabajo futuro).
+   trayectos no vistos; esa validación agrupada por trayecto se presenta en
+   el artículo (`paso-4-redaccion/analisis_no_vistos.py`).

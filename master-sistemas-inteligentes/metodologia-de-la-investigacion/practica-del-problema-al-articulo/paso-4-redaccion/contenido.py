@@ -259,7 +259,7 @@ BLOQUES = [
     ("p", "Este trabajo ha construido un modelo físico de la red DWDM ferroviaria Moscú-Kazánskaya – Riazán con "
           "degradación en explotación y ha evaluado tres modelos de aprendizaje automático para predecir si cada "
           "canal cumple BER ≤ 10<sup>−11</sup> (objetivos 1 y 2). En el escenario de monitorización (B), los modelos "
-          "de ensamble cometen significativamente menos errores que la regresión logística (McNemar, p < 0,001 tras "
+          "de ensamble cometen significativamente menos errores que la regresión logística (McNemar, p ≤ 0,0013 tras "
           "Bonferroni) y obtienen mayor F1, de modo que la hipótesis se confirma según el criterio principal, aunque "
           "con matices: la ventaja no se extiende a la capacidad de ordenar los canales (AUC de 0,998 en los tres modelos) ni a la "
           "detección de canales que no cumplen (sensibilidad 0,987 de la logística frente a 0,974 de Random Forest "

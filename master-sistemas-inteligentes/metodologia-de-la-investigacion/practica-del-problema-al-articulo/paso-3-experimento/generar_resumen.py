@@ -81,7 +81,7 @@ medida es, con diferencia, la más importante.</p>
 <h2>3. Interpretación</h2>
 <ul>
 <li><b>La hipótesis se cumple solo en parte:</b> los ensambles obtienen mayor F1 y mayor exactitud global, con diferencia
-significativa (McNemar, p&nbsp;&lt;&nbsp;0,001, también tras la corrección de Bonferroni para dos comparaciones). Sin embargo, el AUC
+significativa (McNemar, p&nbsp;&lt;&nbsp;0,001; p&nbsp;≤&nbsp;0,0013 tras la corrección de Bonferroni para dos comparaciones). Sin embargo, el AUC
 y la exactitud equilibrada son prácticamente iguales en los tres modelos. En el conjunto de prueba (escenario B), Random
 Forest deja sin detectar 12 canales que no cumplen, frente a 2 de la logística, a cambio de 41 falsas alarmas menos (49
 frente a 90). La ventaja del ensamble depende, por tanto, del umbral de decisión y del coste que el operador asigne a cada error.</li>
