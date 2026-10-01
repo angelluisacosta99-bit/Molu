@@ -63,7 +63,7 @@ def pdf():
     try:
         from pypdf import PdfWriter
         w = PdfWriter(clone_from=AQUI / "borrador-articulo.pdf")
-        w.add_metadata({"/Title": TITULO, "/Author": "Angel Luis Acosta González"})
+        w.add_metadata({"/Title": TITULO, "/Author": "Angel L. Acosta-González"})
         w.write(AQUI / "borrador-articulo.pdf")
     except ImportError:
         pass
@@ -126,7 +126,7 @@ def docx():
                 p = d.add_paragraph(); p.paragraph_format.left_indent = Cm(0.6)
                 p.paragraph_format.first_line_indent = Cm(-0.6); escribir(p, f"{i}. {r}.", size=9)
     d.core_properties.title = re.sub("<[^>]+>", "", TITULO)
-    d.core_properties.author = "Angel Luis Acosta González"
+    d.core_properties.author = "Angel L. Acosta-González"
     d.save(AQUI / "borrador-articulo.docx")
 
 if __name__ == "__main__":

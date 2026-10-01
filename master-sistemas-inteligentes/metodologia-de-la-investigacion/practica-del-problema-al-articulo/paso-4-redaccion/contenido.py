@@ -22,9 +22,9 @@ RESUMEN = (
 )
 
 REFS = [
-    "Acosta González, A.L.: Organización de la red primaria de comunicaciones en el tramo ferroviario "
+    "Acosta-González, A.L.: Organización de la red primaria de comunicaciones en el tramo ferroviario "
     "Moscú-Kazánskaya – Riazán. Trabajo de fin de grado (no publicado, en ruso), Universidad Rusa de Transporte "
-    "(RUT MIIT), Moscú (2026)",
+    "(RUT MIIT), Moscú (2026). Título traducido del ruso",
     "Pointurier, Y.: Machine learning techniques for quality of transmission estimation in optical networks. "
     "J. Opt. Commun. Netw. <b>13</b>(4), B60–B71 (2021)",
     "Samadi, P., Amar, D., Lepers, C., Lourdiane, M., Bergman, K.: Quality of transmission prediction with "
@@ -77,7 +77,7 @@ TABLA_RESULTADOS = [
 BLOQUES = [
     ("titulo", "Estimación de la calidad de transmisión con aprendizaje automático en la red DWDM ferroviaria "
                "Moscú-Kazánskaya – Riazán"),
-    ("autor", "Angel Luis Acosta González<br>Máster Universitario en Sistemas Inteligentes, Universidad de Salamanca"),
+    ("autor", "Angel L. Acosta-González<br>Máster Universitario en Sistemas Inteligentes, Universidad de Salamanca"),
     ("resumen", RESUMEN),
     ("claves", "redes ópticas DWDM · calidad de transmisión · aprendizaje automático · Random Forest · "
                "comunicaciones ferroviarias"),
