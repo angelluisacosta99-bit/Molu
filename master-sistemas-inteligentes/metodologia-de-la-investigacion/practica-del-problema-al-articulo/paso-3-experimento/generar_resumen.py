@@ -35,7 +35,7 @@ figcaption{{font-size:9.5pt;text-align:center}}
 <div class="m">Angel Luis Acosta González · Máster Universitario en Sistemas Inteligentes (USAL) · Metodología de la Investigación<br>
 Estimación de la calidad de transmisión (QoT) con aprendizaje automático en la red DWDM ferroviaria Moscú‑Kazánskaya&nbsp;–&nbsp;Riazán</div>
 
-<p style="text-align:left"><b>Hipótesis</b> (ficha de planteamiento revisada)<b>.</b> Si se entrena un modelo de ensamble (Random Forest, XGBoost) con
+<p style="text-align:left"><b>Hipótesis</b><b>.</b> Si se entrena un modelo de ensamble (Random Forest, XGBoost) con
 parámetros observables de los enlaces, será posible predecir si un canal cumple el umbral BER&nbsp;≤&nbsp;10<sup>−11</sup> con mayor
 acierto que un modelo lineal sencillo (regresión logística).</p>
 <p><b>Alcance.</b> Este paso cubre los objetivos 1 (conjunto de datos con un modelo físico y degradación), 2 (comparar modelos
