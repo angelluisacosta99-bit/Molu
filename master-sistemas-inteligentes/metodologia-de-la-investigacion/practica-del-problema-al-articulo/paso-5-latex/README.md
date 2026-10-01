@@ -30,5 +30,8 @@ con `latexmk -pdf main.tex`:
 desincronicen. Si se edita `main.tex` directamente en Overleaf, ese pasa a ser
 el original y no hay que volver a ejecutar el script.
 
+**Guía explicada** para Angel (no se entrega): `guia-paso-5.pdf`, qué hace cada parte de `main.tex`
+(se regenera desde el `.html` con Chromium).
+
 Comprobado al compilar: sin referencias `??`, sin citas indefinidas, y cada
 tabla y figura citada en el texto antes de aparecer.

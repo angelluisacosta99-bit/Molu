@@ -76,7 +76,7 @@ L_{\mathrm{nom}} = \alpha d + 0{,}1\left\lceil d/4 \right\rceil + 1 + 5 \quad [\
 \label{eq:1}
 \end{equation}
 
-Con un láser de 0 dBm y una sensibilidad del receptor de −25 dBm, el canal se diseña con preamplificador de fibra dopada con erbio (EDFA) cuando el margen nominal es inferior a 3 dB, lo que ocurre en los canales de más de 65 km; los canales amplificados llevan un EDFA cada 110 km como máximo (\emph{n} vanos iguales), y \emph{P}\textsubscript{rx} = \emph{P}\textsubscript{tx} − \emph{L}/\emph{n} es la potencia a la entrada de cada amplificador o del receptor. En los canales sin amplificar, limitados por el ruido térmico del receptor, el factor Q crece de forma lineal con la potencia recibida \emph{P}\textsubscript{rx}, con Q = 7,03 en la sensibilidad (BER = 10\textsuperscript{−12}):
+Con un láser de 0 dBm y una sensibilidad del receptor de −25 dBm, el canal se diseña con preamplificador de fibra dopada con erbio (EDFA) cuando el margen nominal (potencia del láser menos la pérdida de la ec.~(\ref{eq:1}) y la sensibilidad) es inferior a 3 dB, lo que ocurre en los canales de más de 65 km; los canales amplificados llevan un EDFA cada 110 km como máximo (\emph{n} vanos iguales), y \emph{P}\textsubscript{rx} = \emph{P}\textsubscript{tx} − \emph{L}/\emph{n} es la potencia a la entrada de cada amplificador o del receptor. En los canales sin amplificar, limitados por el ruido térmico del receptor, el factor Q crece de forma lineal con la potencia recibida \emph{P}\textsubscript{rx}, con Q = 7,03 en la sensibilidad (BER = 10\textsuperscript{−12}):
 
 \begin{equation}
 Q_t = 7{,}03 \cdot 10^{(P_{\mathrm{rx}} + 25)/10}
@@ -95,7 +95,7 @@ Q_{\mathrm{ASE}} = \sqrt{\frac{B_o}{B_e}}\,\frac{2\,\mathrm{OSNR}}{1 + \sqrt{1 +
 \label{eq:4}
 \end{equation}
 
-donde NF es la figura de ruido del EDFA (6–7 dB más su envejecimiento), B\textsubscript{o} = 12,5 GHz y B\textsubscript{e} = 7,5 GHz. El ruido térmico del receptor preamplificado, con la señal unas diez veces por encima de la sensibilidad, se combina con el anterior:
+donde la OSNR de la ec.~(\ref{eq:3}) se toma en unidades lineales, NF es la figura de ruido del EDFA (6–7 dB más su envejecimiento), B\textsubscript{o} = 12,5 GHz y B\textsubscript{e} = 7,5 GHz. El ruido térmico del receptor preamplificado, con la señal unas diez veces por encima de la sensibilidad, se combina con el Q\textsubscript{ASE} de la ec.~(\ref{eq:4}):
 
 \begin{equation}
 Q_{\mathrm{amp}} = \left(Q_{\mathrm{ASE}}^{-2} + (10 \cdot 7{,}03)^{-2}\right)^{-1/2}
@@ -109,7 +109,7 @@ Se resta además una penalización por dispersión cromática de 2\textperiodcen
 \label{eq:6}
 \end{equation}
 
-y un canal cumple si Q ≥ 6,71, que equivale a BER ≤ 10\textsuperscript{−11}, el umbral del diseño de partida~\cite{acosta2026tfg}. Como comprobación, el tramo Voskresensk – Riazán-1 (108,9 km), sin degradación y con NF = 6,5 dB, obtiene Q ≈ 10,4 con preamplificador. El valor difiere del Q = 7,37 de~\cite{acosta2026tfg} porque el modelo físico es distinto (preamplificador EDFA limitado por ruido ASE); todas las cifras de este artículo proceden del modelo aquí descrito.
+y un canal cumple si Q ≥ 6,71, que equivale, según la ec.~(\ref{eq:6}), a BER ≤ 10\textsuperscript{−11}, el umbral del diseño de partida~\cite{acosta2026tfg}. Como comprobación, el tramo Voskresensk – Riazán-1 (108,9 km), sin degradación y con NF = 6,5 dB, obtiene Q ≈ 10,4 con preamplificador. El valor difiere del Q = 7,37 de~\cite{acosta2026tfg} porque el modelo físico es distinto (preamplificador EDFA limitado por ruido ASE); todas las cifras de este artículo proceden del modelo aquí descrito.
 
 
 \subsection{Degradación y conjunto de datos}

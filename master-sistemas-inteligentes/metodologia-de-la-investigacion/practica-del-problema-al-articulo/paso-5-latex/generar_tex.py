@@ -102,6 +102,7 @@ def texto(t):
     t = re.sub(r"Fig\. (\d)", lambda m: r"Fig.~\ref{" + list(FIGURAS.values())[int(m.group(1)) - 1] + "}", t)
     t = re.sub(r"sección (\d)", r"sección~\\ref{sec:\1}", t)
     t = t.replace("ecs. 2–5", r"ecs.~(\ref{eq:2})--(\ref{eq:5})")
+    t = re.sub(r"ec\. \((\d)\)", r"ec.~(\\ref{eq:\1})", t)
     t = t.replace("señal/ruido", r"señal/\allowbreak ruido")
     t = t.replace("·", r"\textperiodcentered{}").replace("½", r"\textonehalf{}")
     return t
