@@ -2712,9 +2712,9 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/README.md": {
-    "mtime": 1790848847.1247227,
-    "seen": 1790848899.3428352,
-    "ast_hash": "924736af9b034a5a2430361e4b621638",
+    "mtime": 1790857658.5000932,
+    "seen": 1790857694.4093845,
+    "ast_hash": "048ae5779bcbb8b269ca0263d93c1271",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/resultados/mcnemar.txt": {
@@ -2760,9 +2760,9 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/generar_resumen.py": {
-    "mtime": 1790853378.457507,
-    "seen": 1790853383.4006236,
-    "ast_hash": "4647300ba1529ecb8a1be67e7b343ab6",
+    "mtime": 1790857658.4992077,
+    "seen": 1790857694.4090104,
+    "ast_hash": "912a83bb99176e846aab6544c8da816f",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/fuentes-de-informacion-en-ciencia-y-tecnologia.pdf": {
@@ -2772,9 +2772,9 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/resumen-paso-3.pdf": {
-    "mtime": 1790853379.569195,
-    "seen": 1790853383.4015563,
-    "ast_hash": "0016bebaae437dbcd7eef9171014a3bb",
+    "mtime": 1790857661.12144,
+    "seen": 1790857694.4095037,
+    "ast_hash": "09086c4e64047c5ae963e6d650fc68af",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/CLAUDE.md": {
@@ -2898,9 +2898,9 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-4-redaccion/contenido.py": {
-    "mtime": 1790853063.422782,
-    "seen": 1790853068.261049,
-    "ast_hash": "32f5d4ad2c8719edf671367278e59223",
+    "mtime": 1790857658.4986188,
+    "seen": 1790857694.409017,
+    "ast_hash": "ed0d133e86f4159ebbc0467f9a5e44c1",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-4-redaccion/generar_borrador.py": {
@@ -2922,9 +2922,9 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-4-redaccion/borrador-articulo.pdf": {
-    "mtime": 1790853064.7092023,
-    "seen": 1790853068.261877,
-    "ast_hash": "683fecc7e90653844d9c298cdf7aeb5d",
+    "mtime": 1790857659.7574399,
+    "seen": 1790857694.4095051,
+    "ast_hash": "0fe1a484dc868cf28d0a0cb69a746114",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-4-redaccion/guia-paso-4.pdf": {
@@ -2946,8 +2946,8 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-5-latex/articulo/llncs.cls": {
-    "mtime": 1790854724.597685,
-    "seen": 1790854756.7077274,
+    "mtime": 1790857660.040879,
+    "seen": 1790857694.409021,
     "ast_hash": "58816aeb60fb84909ab8aed56b1cca5a",
     "semantic_hash": ""
   },
@@ -2964,27 +2964,27 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-5-latex/articulo/figuras/fig1_q_vs_longitud.pdf": {
-    "mtime": 1790854724.6008124,
-    "seen": 1790854756.708617,
+    "mtime": 1790857660.0446346,
+    "seen": 1790857694.4095073,
     "ast_hash": "1d490af57ccd66035ae959d44666e377",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-5-latex/articulo/figuras/fig2_f1_escenarios.pdf": {
-    "mtime": 1790854724.6021345,
-    "seen": 1790854756.7086194,
+    "mtime": 1790857660.0461252,
+    "seen": 1790857694.4095087,
     "ast_hash": "c7e08e7999cab3fd6ce6ae7cffe8c648",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-5-latex/articulo/figuras/fig3_importancia.pdf": {
-    "mtime": 1790854724.6028502,
-    "seen": 1790854756.7086215,
+    "mtime": 1790857660.046893,
+    "seen": 1790857694.4095097,
     "ast_hash": "a4aa2e24824db389906ebdff5633cb4f",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-5-latex/articulo/main.pdf": {
-    "mtime": 1790854725.1451643,
-    "seen": 1790854756.7086234,
-    "ast_hash": "32eafeef95a6528b9660298ce0ea192f",
+    "mtime": 1790857668.0974398,
+    "seen": 1790857694.4095109,
+    "ast_hash": "e291b222c0e2afd9d3573ef095b2e2c8",
     "semantic_hash": ""
   }
 }
