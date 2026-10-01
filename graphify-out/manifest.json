@@ -2586,9 +2586,9 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/README.md": {
-    "mtime": 1790784034.7447898,
-    "seen": 1790784041.1836371,
-    "ast_hash": "369e7abb74d023b8c5dfc557644813a5",
+    "mtime": 1790851535.938088,
+    "seen": 1790851541.4098263,
+    "ast_hash": "c3dc2b7510f406ac6794368907e86825",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-1-planteamiento/ficha-paso-1.html": {
@@ -2895,6 +2895,42 @@
     "mtime": 1790844162.1791975,
     "seen": 1790844166.8500085,
     "ast_hash": "51f4d4272e1299360a4d6373babe1880",
+    "semantic_hash": ""
+  },
+  "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-4-redaccion/contenido.py": {
+    "mtime": 1790851429.642441,
+    "seen": 1790851541.4092293,
+    "ast_hash": "e2654cc36d8e8a95428d95fa2f3a6786",
+    "semantic_hash": ""
+  },
+  "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-4-redaccion/generar_borrador.py": {
+    "mtime": 1790851457.8562944,
+    "seen": 1790851541.4092336,
+    "ast_hash": "17b8cccf2229f623aa64386e1e43a49d",
+    "semantic_hash": ""
+  },
+  "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-4-redaccion/README.md": {
+    "mtime": 1790851535.9263873,
+    "seen": 1790851541.4098418,
+    "ast_hash": "a0381c9032a66449071357e34389233e",
+    "semantic_hash": ""
+  },
+  "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-4-redaccion/guia-paso-4.html": {
+    "mtime": 1790851517.9362931,
+    "seen": 1790851541.409843,
+    "ast_hash": "848b52046a0239413a5ede023bd58665",
+    "semantic_hash": ""
+  },
+  "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-4-redaccion/borrador-articulo.pdf": {
+    "mtime": 1790851468.2002943,
+    "seen": 1790851541.410003,
+    "ast_hash": "aacef754673e470d15c1e1dc66d05c3f",
+    "semantic_hash": ""
+  },
+  "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-4-redaccion/guia-paso-4.pdf": {
+    "mtime": 1790851535.6642926,
+    "seen": 1790851541.410004,
+    "ast_hash": "eabd14bf0f070f62c8bf448c2e8c7f71",
     "semantic_hash": ""
   }
 }

@@ -235,7 +235,7 @@
   "233": "syncEditBadgeHitProxies",
   "234": "session-store.mjs",
   "235": "Revisión 2026-09-16 (segunda pasada): profesorado real del MUSI, fuente primaria",
-  "236": "cli",
+  "236": "extraer.mjs",
   "237": "caveman-cavecrew/hooks/restrict-cavecrew-bash.sh",
   "238": "caveman-cavecrew/hooks/caveman-mode.sh",
   "239": "Fuente de la plantilla LNCS",
@@ -259,6 +259,5 @@
   "257": "browser-script-parts.mjs",
   "258": "Reglas para los trabajos del máster (MUSI)",
   "259": "Cómo quiere la profesora el LaTeX, y qué haremos en el Paso 5",
-  "260": "generar_resumen.py",
-  "261": "isGeneratedFile"
+  "260": "ref_node_url"
 }

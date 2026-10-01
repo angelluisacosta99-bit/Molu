@@ -6692,6 +6692,18 @@
       "source_location": "L46"
     },
     {
+      "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_generar_resumen_figura",
+      "label": "figura()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 187,
+      "community_name": "experimento.py",
+      "file_type": "code",
+      "norm_label": "figura()",
+      "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/generar_resumen.py",
+      "source_location": "L18"
+    },
+    {
       "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_simulador_ber_desde_q",
       "label": "ber_desde_q()",
       "_callable": true,
@@ -6701,7 +6713,7 @@
       "file_type": "code",
       "norm_label": "ber_desde_q()",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/simulador.py",
-      "source_location": "L52"
+      "source_location": "L53"
     },
     {
       "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_simulador_generar",
@@ -6713,7 +6725,7 @@
       "file_type": "code",
       "norm_label": "generar()",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/simulador.py",
-      "source_location": "L70"
+      "source_location": "L71"
     },
     {
       "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_simulador_perdida_nominal",
@@ -6725,7 +6737,7 @@
       "file_type": "code",
       "norm_label": "perdida_nominal()",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/simulador.py",
-      "source_location": "L65"
+      "source_location": "L66"
     },
     {
       "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_simulador_q_ase",
@@ -6737,7 +6749,7 @@
       "file_type": "code",
       "norm_label": "q_ase()",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/simulador.py",
-      "source_location": "L60"
+      "source_location": "L61"
     },
     {
       "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_simulador_q_termico",
@@ -6749,7 +6761,7 @@
       "file_type": "code",
       "norm_label": "q_termico()",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/simulador.py",
-      "source_location": "L56"
+      "source_location": "L57"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_event_validation_isvalidid",
@@ -10088,100 +10100,52 @@
       "source_location": "L287"
     },
     {
-      "id": "claude_skills_impeccable_scripts_context_buildmissingtargetdirective",
-      "label": "buildMissingTargetDirective()",
+      "id": "docencia_espanol_fuentes_extraer_emittable",
+      "label": "emitTable()",
       "_callable": true,
       "_origin": "ast",
       "community": 236,
-      "community_name": "cli",
+      "community_name": "extraer.mjs",
       "file_type": "code",
-      "norm_label": "buildmissingtargetdirective()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L927"
+      "norm_label": "emittable()",
+      "source_file": "docencia-espanol/fuentes/extraer.mjs",
+      "source_location": "L152"
     },
     {
-      "id": "claude_skills_impeccable_scripts_context_buildresolvedcontextdirective",
-      "label": "buildResolvedContextDirective()",
+      "id": "docencia_espanol_fuentes_extraer_emittheory",
+      "label": "emitTheory()",
       "_callable": true,
       "_origin": "ast",
       "community": 236,
-      "community_name": "cli",
+      "community_name": "extraer.mjs",
       "file_type": "code",
-      "norm_label": "buildresolvedcontextdirective()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L904"
+      "norm_label": "emittheory()",
+      "source_file": "docencia-espanol/fuentes/extraer.mjs",
+      "source_location": "L119"
     },
     {
-      "id": "claude_skills_impeccable_scripts_context_buildtargetselectiondirective",
-      "label": "buildTargetSelectionDirective()",
+      "id": "docencia_espanol_fuentes_extraer_textwithblanks",
+      "label": "textWithBlanks()",
       "_callable": true,
       "_origin": "ast",
       "community": 236,
-      "community_name": "cli",
+      "community_name": "extraer.mjs",
       "file_type": "code",
-      "norm_label": "buildtargetselectiondirective()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L936"
+      "norm_label": "textwithblanks()",
+      "source_file": "docencia-espanol/fuentes/extraer.mjs",
+      "source_location": "L61"
     },
     {
-      "id": "claude_skills_impeccable_scripts_context_cli",
-      "label": "cli()",
+      "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_1_planteamiento_generar_ficha_add",
+      "label": "add()",
       "_callable": true,
       "_origin": "ast",
-      "community": 236,
-      "community_name": "cli",
+      "community": 250,
+      "community_name": "generar_ficha.py",
       "file_type": "code",
-      "norm_label": "cli()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L837"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_hastargetoption",
-      "label": "hasTargetOption()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 236,
-      "community_name": "cli",
-      "file_type": "code",
-      "norm_label": "hastargetoption()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L895"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_parseclioptions",
-      "label": "parseCliOptions()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 236,
-      "community_name": "cli",
-      "file_type": "code",
-      "norm_label": "parseclioptions()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L891"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_pathexistsfortarget",
-      "label": "pathExistsForTarget()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 236,
-      "community_name": "cli",
-      "file_type": "code",
-      "norm_label": "pathexistsfortarget()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L899"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_shouldwarnmissingtarget",
-      "label": "shouldWarnMissingTarget()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 236,
-      "community_name": "cli",
-      "file_type": "code",
-      "norm_label": "shouldwarnmissingtarget()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L916"
+      "norm_label": "add()",
+      "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-1-planteamiento/generar_ficha.py",
+      "source_location": "L62"
     },
     {
       "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_1_planteamiento_generar_ficha_hr",
@@ -10340,16 +10304,16 @@
       "source_location": "L420"
     },
     {
-      "id": "claude_skills_impeccable_scripts_context_iscandidateprojectroot",
-      "label": "isCandidateProjectRoot()",
+      "id": "claude_skills_impeccable_scripts_context_hasfallbackworkspacechildren",
+      "label": "hasFallbackWorkspaceChildren()",
       "_callable": true,
       "_origin": "ast",
       "community": 252,
       "community_name": "discoverTargetCandidates",
       "file_type": "code",
-      "norm_label": "iscandidateprojectroot()",
+      "norm_label": "hasfallbackworkspacechildren()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L405"
+      "source_location": "L244"
     },
     {
       "id": "claude_skills_impeccable_scripts_context_isexcludedbyworkspacepattern",
@@ -10376,16 +10340,16 @@
       "source_location": "L416"
     },
     {
-      "id": "claude_skills_impeccable_scripts_context_nearestpackagerootbetween",
-      "label": "nearestPackageRootBetween()",
+      "id": "claude_skills_impeccable_scripts_context_ismonoreporoot",
+      "label": "isMonorepoRoot()",
       "_callable": true,
       "_origin": "ast",
       "community": 252,
       "community_name": "discoverTargetCandidates",
       "file_type": "code",
-      "norm_label": "nearestpackagerootbetween()",
+      "norm_label": "ismonoreporoot()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L488"
+      "source_location": "L234"
     },
     {
       "id": "claude_skills_impeccable_scripts_context_normalizeworkspacepattern",
@@ -10962,66 +10926,6 @@
       "norm_label": "unquoteyamlkey()",
       "source_file": ".claude/skills/impeccable/scripts/lib/design-parser.mjs",
       "source_location": "L96"
-    },
-    {
-      "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_generar_resumen_figura",
-      "label": "figura()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 260,
-      "community_name": "generar_resumen.py",
-      "file_type": "code",
-      "norm_label": "figura()",
-      "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/generar_resumen.py",
-      "source_location": "L18"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_lib_is_generated_hasgeneratedheader",
-      "label": "hasGeneratedHeader()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 261,
-      "community_name": "isGeneratedFile",
-      "file_type": "code",
-      "norm_label": "hasgeneratedheader()",
-      "source_file": ".claude/skills/impeccable/scripts/lib/is-generated.mjs",
-      "source_location": "L56"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_lib_is_generated_isgeneratedfile",
-      "label": "isGeneratedFile()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 261,
-      "community_name": "isGeneratedFile",
-      "file_type": "code",
-      "norm_label": "isgeneratedfile()",
-      "source_file": ".claude/skills/impeccable/scripts/lib/is-generated.mjs",
-      "source_location": "L33"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_lib_is_generated_isgitignored",
-      "label": "isGitIgnored()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 261,
-      "community_name": "isGeneratedFile",
-      "file_type": "code",
-      "norm_label": "isgitignored()",
-      "source_file": ".claude/skills/impeccable/scripts/lib/is-generated.mjs",
-      "source_location": "L42"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_wrap_searchdir",
-      "label": "searchDir()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 261,
-      "community_name": "isGeneratedFile",
-      "file_type": "code",
-      "norm_label": "searchdir()",
-      "source_file": ".claude/skills/impeccable/scripts/live-wrap.mjs",
-      "source_location": "L667"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_accept_acceptcli",
@@ -13604,54 +13508,6 @@
       "source_location": "L21"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_compactmanuallogtext",
-      "label": "compactManualLogText()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "manual-edits-buffer.mjs",
-      "file_type": "code",
-      "norm_label": "compactmanuallogtext()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L934"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualapplyfailures",
-      "label": "summarizeManualApplyFailures()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "manual-edits-buffer.mjs",
-      "file_type": "code",
-      "norm_label": "summarizemanualapplyfailures()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L900"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualdiagnostics",
-      "label": "summarizeManualDiagnostics()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "manual-edits-buffer.mjs",
-      "file_type": "code",
-      "norm_label": "summarizemanualdiagnostics()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L913"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanuallogfile",
-      "label": "summarizeManualLogFile()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "manual-edits-buffer.mjs",
-      "file_type": "code",
-      "norm_label": "summarizemanuallogfile()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L927"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_manual_edit_routes_createmanualeditroutes",
       "label": "createManualEditRoutes()",
       "_callable": true,
@@ -14072,6 +13928,42 @@
       "source_location": "L240"
     },
     {
+      "id": "claude_skills_impeccable_scripts_context_buildmissingtargetdirective",
+      "label": "buildMissingTargetDirective()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "context.mjs",
+      "file_type": "code",
+      "norm_label": "buildmissingtargetdirective()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L927"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_buildresolvedcontextdirective",
+      "label": "buildResolvedContextDirective()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "context.mjs",
+      "file_type": "code",
+      "norm_label": "buildresolvedcontextdirective()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L904"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_buildtargetselectiondirective",
+      "label": "buildTargetSelectionDirective()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "context.mjs",
+      "file_type": "code",
+      "norm_label": "buildtargetselectiondirective()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L936"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_context_buildupdatedirective",
       "label": "buildUpdateDirective()",
       "_callable": true,
@@ -14082,6 +13974,18 @@
       "norm_label": "buildupdatedirective()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
       "source_location": "L772"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_cli",
+      "label": "cli()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "context.mjs",
+      "file_type": "code",
+      "norm_label": "cli()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L837"
     },
     {
       "id": "claude_skills_impeccable_scripts_context_comparesemver",
@@ -14120,40 +14024,16 @@
       "source_location": "L761"
     },
     {
-      "id": "claude_skills_impeccable_scripts_context_findmonoreporoot",
-      "label": "findMonorepoRoot()",
+      "id": "claude_skills_impeccable_scripts_context_hastargetoption",
+      "label": "hasTargetOption()",
       "_callable": true,
       "_origin": "ast",
       "community": 37,
       "community_name": "context.mjs",
       "file_type": "code",
-      "norm_label": "findmonoreporoot()",
+      "norm_label": "hastargetoption()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L215"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_hasfallbackworkspacechildren",
-      "label": "hasFallbackWorkspaceChildren()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "context.mjs",
-      "file_type": "code",
-      "norm_label": "hasfallbackworkspacechildren()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L244"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_context_hasgitboundary",
-      "label": "hasGitBoundary()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "context.mjs",
-      "file_type": "code",
-      "norm_label": "hasgitboundary()",
-      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L240"
+      "source_location": "L895"
     },
     {
       "id": "claude_skills_impeccable_scripts_context_invokedasscript",
@@ -14168,16 +14048,16 @@
       "source_location": "L949"
     },
     {
-      "id": "claude_skills_impeccable_scripts_context_ismonoreporoot",
-      "label": "isMonorepoRoot()",
+      "id": "claude_skills_impeccable_scripts_context_parseclioptions",
+      "label": "parseCliOptions()",
       "_callable": true,
       "_origin": "ast",
       "community": 37,
       "community_name": "context.mjs",
       "file_type": "code",
-      "norm_label": "ismonoreporoot()",
+      "norm_label": "parseclioptions()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
-      "source_location": "L234"
+      "source_location": "L891"
     },
     {
       "id": "claude_skills_impeccable_scripts_context_parseyamlflowlist",
@@ -14190,6 +14070,18 @@
       "norm_label": "parseyamlflowlist()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
       "source_location": "L590"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_pathexistsfortarget",
+      "label": "pathExistsForTarget()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "context.mjs",
+      "file_type": "code",
+      "norm_label": "pathexistsfortarget()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L899"
     },
     {
       "id": "claude_skills_impeccable_scripts_context_readjson",
@@ -14274,6 +14166,18 @@
       "norm_label": "readworkspacepatterns()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
       "source_location": "L526"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_shouldwarnmissingtarget",
+      "label": "shouldWarnMissingTarget()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "context.mjs",
+      "file_type": "code",
+      "norm_label": "shouldwarnmissingtarget()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L916"
     },
     {
       "id": "claude_skills_impeccable_scripts_context_stripyamlinlinecomment",
@@ -15642,42 +15546,6 @@
       "norm_label": "zt()",
       "source_file": ".claude/skills/impeccable/scripts/modern-screenshot.umd.js",
       "source_location": "L14"
-    },
-    {
-      "id": "docencia_espanol_fuentes_extraer_emittable",
-      "label": "emitTable()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "modern-screenshot.umd.js",
-      "file_type": "code",
-      "norm_label": "emittable()",
-      "source_file": "docencia-espanol/fuentes/extraer.mjs",
-      "source_location": "L152"
-    },
-    {
-      "id": "docencia_espanol_fuentes_extraer_emittheory",
-      "label": "emitTheory()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "modern-screenshot.umd.js",
-      "file_type": "code",
-      "norm_label": "emittheory()",
-      "source_file": "docencia-espanol/fuentes/extraer.mjs",
-      "source_location": "L119"
-    },
-    {
-      "id": "docencia_espanol_fuentes_extraer_textwithblanks",
-      "label": "textWithBlanks()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "modern-screenshot.umd.js",
-      "file_type": "code",
-      "norm_label": "textwithblanks()",
-      "source_file": "docencia-espanol/fuentes/extraer.mjs",
-      "source_location": "L61"
     },
     {
       "id": "claude_skills_impeccable_scripts_context_resolveprojectroot",
@@ -19004,6 +18872,18 @@
       "source_location": "L393"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_compactmanuallogtext",
+      "label": "compactManualLogText()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "compactmanuallogtext()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L934"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_manual_apply_compactnearbymanualedittexts",
       "label": "compactNearbyManualEditTexts()",
       "_callable": true,
@@ -19412,6 +19292,42 @@
       "source_location": "L888"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualapplyfailures",
+      "label": "summarizeManualApplyFailures()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "summarizemanualapplyfailures()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L900"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualdiagnostics",
+      "label": "summarizeManualDiagnostics()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "summarizemanualdiagnostics()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L913"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanuallogfile",
+      "label": "summarizeManualLogFile()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "summarizemanuallogfile()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L927"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_manual_apply_truncatemanualapplytext",
       "label": "truncateManualApplyText()",
       "_callable": true,
@@ -19760,6 +19676,54 @@
       "source_location": "L984"
     },
     {
+      "id": "claude_skills_impeccable_scripts_lib_is_generated_hasgeneratedheader",
+      "label": "hasGeneratedHeader()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 63,
+      "community_name": "ref_node_path",
+      "file_type": "code",
+      "norm_label": "hasgeneratedheader()",
+      "source_file": ".claude/skills/impeccable/scripts/lib/is-generated.mjs",
+      "source_location": "L56"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_lib_is_generated_isgeneratedfile",
+      "label": "isGeneratedFile()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 63,
+      "community_name": "ref_node_path",
+      "file_type": "code",
+      "norm_label": "isgeneratedfile()",
+      "source_file": ".claude/skills/impeccable/scripts/lib/is-generated.mjs",
+      "source_location": "L33"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_lib_is_generated_isgitignored",
+      "label": "isGitIgnored()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 63,
+      "community_name": "ref_node_path",
+      "file_type": "code",
+      "norm_label": "isgitignored()",
+      "source_file": ".claude/skills/impeccable/scripts/lib/is-generated.mjs",
+      "source_location": "L42"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_wrap_searchdir",
+      "label": "searchDir()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 63,
+      "community_name": "ref_node_path",
+      "file_type": "code",
+      "norm_label": "searchdir()",
+      "source_file": ".claude/skills/impeccable/scripts/live-wrap.mjs",
+      "source_location": "L667"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_pin_findharnessdirs",
       "label": "findHarnessDirs()",
       "_callable": true,
@@ -19950,18 +19914,6 @@
       "norm_label": "normalizeignorevalueentries()",
       "source_file": ".claude/skills/impeccable/scripts/hook-lib.mjs",
       "source_location": "L385"
-    },
-    {
-      "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_1_planteamiento_generar_ficha_add",
-      "label": "add()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 69,
-      "community_name": "Novedades de herramientas de IA",
-      "file_type": "code",
-      "norm_label": "add()",
-      "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-1-planteamiento/generar_ficha.py",
-      "source_location": "L62"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_browser_abortsveltecomponentinjection",
@@ -21092,6 +21044,18 @@
       "source_location": "L316"
     },
     {
+      "id": "claude_skills_impeccable_scripts_context_findmonoreporoot",
+      "label": "findMonorepoRoot()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 75,
+      "community_name": "resolveContext",
+      "file_type": "code",
+      "norm_label": "findmonoreporoot()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L215"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_context_firstexisting",
       "label": "firstExisting()",
       "_callable": true,
@@ -21102,6 +21066,30 @@
       "norm_label": "firstexisting()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
       "source_location": "L674"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_hasgitboundary",
+      "label": "hasGitBoundary()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 75,
+      "community_name": "resolveContext",
+      "file_type": "code",
+      "norm_label": "hasgitboundary()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L240"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_iscandidateprojectroot",
+      "label": "isCandidateProjectRoot()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 75,
+      "community_name": "resolveContext",
+      "file_type": "code",
+      "norm_label": "iscandidateprojectroot()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L405"
     },
     {
       "id": "claude_skills_impeccable_scripts_context_ispathinside",
@@ -21126,6 +21114,18 @@
       "norm_label": "ispathinsideorequal()",
       "source_file": ".claude/skills/impeccable/scripts/context.mjs",
       "source_location": "L501"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_context_nearestpackagerootbetween",
+      "label": "nearestPackageRootBetween()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 75,
+      "community_name": "resolveContext",
+      "file_type": "code",
+      "norm_label": "nearestpackagerootbetween()",
+      "source_file": ".claude/skills/impeccable/scripts/context.mjs",
+      "source_location": "L488"
     },
     {
       "id": "claude_skills_impeccable_scripts_context_nearestprojectlikeroot",
@@ -30694,6 +30694,17 @@
       "source_location": "L1"
     },
     {
+      "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_generar_resumen",
+      "label": "generar_resumen.py",
+      "_origin": "ast",
+      "community": 187,
+      "community_name": "experimento.py",
+      "file_type": "code",
+      "norm_label": "generar_resumen.py",
+      "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/generar_resumen.py",
+      "source_location": "L1"
+    },
+    {
       "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_simulador",
       "label": "simulador.py",
       "_origin": "ast",
@@ -30716,6 +30727,17 @@
       "source_location": "L1"
     },
     {
+      "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_generar_resumen_rationale_1",
+      "label": "Genera resumen-paso-3.pdf (tabla + figuras + interpretaci\u00f3n) a partir de\u2026",
+      "_origin": "ast",
+      "community": 187,
+      "community_name": "experimento.py",
+      "file_type": "rationale",
+      "norm_label": "genera resumen-paso-3.pdf (tabla + figuras + interpretacion) a partir de...",
+      "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/generar_resumen.py",
+      "source_location": "L1"
+    },
+    {
       "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_simulador_rationale_1",
       "label": "Generador de datos sint\u00e9ticos de calidad de transmisi\u00f3n (QoT) para la red DWDM\u2026",
       "_origin": "ast",
@@ -30727,7 +30749,7 @@
       "source_location": "L1"
     },
     {
-      "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_simulador_rationale_71",
+      "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_simulador_rationale_72",
       "label": "Genera n canales con su estado de degradaci\u00f3n y la etiqueta cumple/no cumple.",
       "_origin": "ast",
       "community": 187,
@@ -30735,7 +30757,7 @@
       "file_type": "rationale",
       "norm_label": "genera n canales con su estado de degradacion y la etiqueta cumple/no cumple.",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/simulador.py",
-      "source_location": "L71"
+      "source_location": "L72"
     },
     {
       "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_a1_cuaderno_unidad2a_estas_casado",
@@ -34711,6 +34733,50 @@
       "source_location": "L845"
     },
     {
+      "id": "docencia_espanol_fuentes_extraer",
+      "label": "extraer.mjs",
+      "_origin": "ast",
+      "community": 236,
+      "community_name": "extraer.mjs",
+      "file_type": "code",
+      "norm_label": "extraer.mjs",
+      "source_file": "docencia-espanol/fuentes/extraer.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "docencia_espanol_fuentes_extraer_chromium",
+      "label": "{ chromium }",
+      "_origin": "ast",
+      "community": 236,
+      "community_name": "extraer.mjs",
+      "file_type": "code",
+      "norm_label": "{ chromium }",
+      "source_file": "docencia-espanol/fuentes/extraer.mjs",
+      "source_location": "L17"
+    },
+    {
+      "id": "docencia_espanol_fuentes_extraer_file_code",
+      "label": "[file, code]",
+      "_origin": "ast",
+      "community": 236,
+      "community_name": "extraer.mjs",
+      "file_type": "code",
+      "norm_label": "[file, code]",
+      "source_file": "docencia-espanol/fuentes/extraer.mjs",
+      "source_location": "L21"
+    },
+    {
+      "id": "docencia_espanol_fuentes_extraer_require",
+      "label": "require",
+      "_origin": "ast",
+      "community": 236,
+      "community_name": "extraer.mjs",
+      "file_type": "code",
+      "norm_label": "require",
+      "source_file": "docencia-espanol/fuentes/extraer.mjs",
+      "source_location": "L16"
+    },
+    {
       "id": "plugins_caveman_cavecrew_hooks_restrict_cavecrew_bash",
       "label": "caveman-cavecrew/hooks/restrict-cavecrew-bash.sh",
       "_origin": "ast",
@@ -35475,6 +35541,30 @@
       "source_location": "L1"
     },
     {
+      "id": "recursos_generales_herramientas_ia_novedades_2026_08_21_mcp_server_dev_anthropic_activado_deshabilitado_por_defecto",
+      "label": "2026-08-21 \u2014 mcp-server-dev (Anthropic): activado, deshabilitado por defecto",
+      "_origin": "ast",
+      "community": 250,
+      "community_name": "generar_ficha.py",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "2026-08-21 \u2014 mcp-server-dev (anthropic): activado, deshabilitado por defecto",
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L1612"
+    },
+    {
+      "id": "recursos_generales_herramientas_ia_novedades_2026_08_22_ponytail_dietrichgebert_activado_para_todas_las_sesiones",
+      "label": "2026-08-22 \u2014 ponytail (DietrichGebert): activado para todas las sesiones",
+      "_origin": "ast",
+      "community": 250,
+      "community_name": "generar_ficha.py",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "2026-08-22 \u2014 ponytail (dietrichgebert): activado para todas las sesiones",
+      "source_file": "recursos-generales/herramientas-ia/novedades.md",
+      "source_location": "L1511"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_complete",
       "label": "live-complete.mjs",
       "_origin": "ast",
@@ -35579,7 +35669,7 @@
       "node_kind": "heading",
       "norm_label": "archivos",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/README.md",
-      "source_location": "L14"
+      "source_location": "L15"
     },
     {
       "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_readme_dise\u00f1o_experimental",
@@ -35826,48 +35916,48 @@
       "source_location": "L9"
     },
     {
-      "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_generar_resumen",
-      "label": "generar_resumen.py",
+      "id": "claude_skills_impeccable_scripts_detect",
+      "label": "detect.mjs",
       "_origin": "ast",
       "community": 260,
-      "community_name": "generar_resumen.py",
+      "community_name": "ref_node_url",
       "file_type": "code",
-      "norm_label": "generar_resumen.py",
-      "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/generar_resumen.py",
+      "norm_label": "detect.mjs",
+      "source_file": ".claude/skills/impeccable/scripts/detect.mjs",
       "source_location": "L1"
     },
     {
-      "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_generar_resumen_rationale_1",
-      "label": "Genera resumen-paso-3.pdf (tabla + figuras + interpretaci\u00f3n) a partir de\u2026",
+      "id": "claude_skills_impeccable_scripts_detect_candidates",
+      "label": "candidates",
       "_origin": "ast",
       "community": 260,
-      "community_name": "generar_resumen.py",
-      "file_type": "rationale",
-      "norm_label": "genera resumen-paso-3.pdf (tabla + figuras + interpretacion) a partir de...",
-      "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/generar_resumen.py",
-      "source_location": "L1"
+      "community_name": "ref_node_url",
+      "file_type": "code",
+      "norm_label": "candidates",
+      "source_file": ".claude/skills/impeccable/scripts/detect.mjs",
+      "source_location": "L8"
     },
     {
-      "id": "claude_skills_impeccable_scripts_lib_is_generated",
-      "label": "is-generated.mjs",
+      "id": "claude_skills_impeccable_scripts_detect_detectorpath",
+      "label": "detectorPath",
       "_origin": "ast",
-      "community": 261,
-      "community_name": "isGeneratedFile",
+      "community": 260,
+      "community_name": "ref_node_url",
       "file_type": "code",
-      "norm_label": "is-generated.mjs",
-      "source_file": ".claude/skills/impeccable/scripts/lib/is-generated.mjs",
-      "source_location": "L1"
+      "norm_label": "detectorpath",
+      "source_file": ".claude/skills/impeccable/scripts/detect.mjs",
+      "source_location": "L12"
     },
     {
-      "id": "claude_skills_impeccable_scripts_lib_is_generated_header_markers",
-      "label": "HEADER_MARKERS",
+      "id": "claude_skills_impeccable_scripts_detect_dirname",
+      "label": "__dirname",
       "_origin": "ast",
-      "community": 261,
-      "community_name": "isGeneratedFile",
+      "community": 260,
+      "community_name": "ref_node_url",
       "file_type": "code",
-      "norm_label": "header_markers",
-      "source_file": ".claude/skills/impeccable/scripts/lib/is-generated.mjs",
-      "source_location": "L21"
+      "norm_label": "__dirname",
+      "source_file": ".claude/skills/impeccable/scripts/detect.mjs",
+      "source_location": "L7"
     },
     {
       "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_a2_cuaderno_unidad1c_unas_vacaciones_inolvidables",
@@ -36424,50 +36514,6 @@
       "norm_label": "modern-screenshot.umd.js",
       "source_file": ".claude/skills/impeccable/scripts/modern-screenshot.umd.js",
       "source_location": "L1"
-    },
-    {
-      "id": "docencia_espanol_fuentes_extraer",
-      "label": "extraer.mjs",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "modern-screenshot.umd.js",
-      "file_type": "code",
-      "norm_label": "extraer.mjs",
-      "source_file": "docencia-espanol/fuentes/extraer.mjs",
-      "source_location": "L1"
-    },
-    {
-      "id": "docencia_espanol_fuentes_extraer_chromium",
-      "label": "{ chromium }",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "modern-screenshot.umd.js",
-      "file_type": "code",
-      "norm_label": "{ chromium }",
-      "source_file": "docencia-espanol/fuentes/extraer.mjs",
-      "source_location": "L17"
-    },
-    {
-      "id": "docencia_espanol_fuentes_extraer_file_code",
-      "label": "[file, code]",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "modern-screenshot.umd.js",
-      "file_type": "code",
-      "norm_label": "[file, code]",
-      "source_file": "docencia-espanol/fuentes/extraer.mjs",
-      "source_location": "L21"
-    },
-    {
-      "id": "docencia_espanol_fuentes_extraer_require",
-      "label": "require",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "modern-screenshot.umd.js",
-      "file_type": "code",
-      "norm_label": "require",
-      "source_file": "docencia-espanol/fuentes/extraer.mjs",
-      "source_location": "L16"
     },
     {
       "id": "claude_skills_impeccable_scripts_lib_impeccable_paths",
@@ -37700,48 +37746,26 @@
       "source_location": "L58"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detect",
-      "label": "detect.mjs",
+      "id": "claude_skills_impeccable_scripts_lib_is_generated",
+      "label": "is-generated.mjs",
       "_origin": "ast",
       "community": 63,
       "community_name": "ref_node_path",
       "file_type": "code",
-      "norm_label": "detect.mjs",
-      "source_file": ".claude/skills/impeccable/scripts/detect.mjs",
+      "norm_label": "is-generated.mjs",
+      "source_file": ".claude/skills/impeccable/scripts/lib/is-generated.mjs",
       "source_location": "L1"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detect_candidates",
-      "label": "candidates",
+      "id": "claude_skills_impeccable_scripts_lib_is_generated_header_markers",
+      "label": "HEADER_MARKERS",
       "_origin": "ast",
       "community": 63,
       "community_name": "ref_node_path",
       "file_type": "code",
-      "norm_label": "candidates",
-      "source_file": ".claude/skills/impeccable/scripts/detect.mjs",
-      "source_location": "L8"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detect_detectorpath",
-      "label": "detectorPath",
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "ref_node_path",
-      "file_type": "code",
-      "norm_label": "detectorpath",
-      "source_file": ".claude/skills/impeccable/scripts/detect.mjs",
-      "source_location": "L12"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detect_dirname",
-      "label": "__dirname",
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "ref_node_path",
-      "file_type": "code",
-      "norm_label": "__dirname",
-      "source_file": ".claude/skills/impeccable/scripts/detect.mjs",
-      "source_location": "L7"
+      "norm_label": "header_markers",
+      "source_file": ".claude/skills/impeccable/scripts/lib/is-generated.mjs",
+      "source_location": "L21"
     },
     {
       "id": "claude_skills_impeccable_scripts_pin",
@@ -38075,18 +38099,6 @@
       "source_location": "L1700"
     },
     {
-      "id": "recursos_generales_herramientas_ia_novedades_2026_08_21_mcp_server_dev_anthropic_activado_deshabilitado_por_defecto",
-      "label": "2026-08-21 \u2014 mcp-server-dev (Anthropic): activado, deshabilitado por defecto",
-      "_origin": "ast",
-      "community": 69,
-      "community_name": "Novedades de herramientas de IA",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "2026-08-21 \u2014 mcp-server-dev (anthropic): activado, deshabilitado por defecto",
-      "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1612"
-    },
-    {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_22_caveman_juliusbrussee_instalado_correcci\u00f3n_2026_08_30_no_se_activa_solo",
       "label": "2026-08-22 \u2014 caveman (JuliusBrussee): instalado (correcci\u00f3n 2026-08-30: no se activa solo)",
       "_origin": "ast",
@@ -38097,18 +38109,6 @@
       "norm_label": "2026-08-22 \u2014 caveman (juliusbrussee): instalado (correccion 2026-08-30: no se activa solo)",
       "source_file": "recursos-generales/herramientas-ia/novedades.md",
       "source_location": "L1403"
-    },
-    {
-      "id": "recursos_generales_herramientas_ia_novedades_2026_08_22_ponytail_dietrichgebert_activado_para_todas_las_sesiones",
-      "label": "2026-08-22 \u2014 ponytail (DietrichGebert): activado para todas las sesiones",
-      "_origin": "ast",
-      "community": 69,
-      "community_name": "Novedades de herramientas de IA",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "2026-08-22 \u2014 ponytail (dietrichgebert): activado para todas las sesiones",
-      "source_file": "recursos-generales/herramientas-ia/novedades.md",
-      "source_location": "L1511"
     },
     {
       "id": "recursos_generales_herramientas_ia_novedades_2026_08_23_7_skills_m\u00e1s_de_juliusbrussee_caveman_activadas",
@@ -42703,6 +42703,18 @@
       "type": "external"
     },
     {
+      "id": "csv",
+      "label": "csv",
+      "_origin": "semantic",
+      "community": 187,
+      "community_name": "experimento.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "csv",
+      "source_file": "",
+      "type": "external"
+    },
+    {
       "id": "matplotlib",
       "label": "matplotlib",
       "_origin": "semantic",
@@ -42727,6 +42739,18 @@
       "type": "external"
     },
     {
+      "id": "os",
+      "label": "os",
+      "_origin": "semantic",
+      "community": 187,
+      "community_name": "experimento.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "os",
+      "source_file": "",
+      "type": "external"
+    },
+    {
       "id": "pandas",
       "label": "pandas",
       "_origin": "semantic",
@@ -42735,6 +42759,18 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "pandas",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "pathlib",
+      "label": "pathlib",
+      "_origin": "semantic",
+      "community": 187,
+      "community_name": "experimento.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "pathlib",
       "source_file": "",
       "type": "external"
     },
@@ -42835,6 +42871,18 @@
       "type": "external"
     },
     {
+      "id": "subprocess",
+      "label": "subprocess",
+      "_origin": "semantic",
+      "community": 187,
+      "community_name": "experimento.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "subprocess",
+      "source_file": "",
+      "type": "external"
+    },
+    {
       "id": "xgboost",
       "label": "xgboost",
       "_origin": "semantic",
@@ -42903,6 +42951,18 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "ref_puppeteer",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "ref_node_module",
+      "label": "ref_node_module",
+      "_origin": "semantic",
+      "community": 236,
+      "community_name": "extraer.mjs",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "ref_node_module",
       "source_file": "",
       "type": "external"
     },
@@ -43003,50 +43063,14 @@
       "type": "external"
     },
     {
-      "id": "csv",
-      "label": "csv",
+      "id": "ref_node_url",
+      "label": "ref_node_url",
       "_origin": "semantic",
       "community": 260,
-      "community_name": "generar_resumen.py",
+      "community_name": "ref_node_url",
       "external": true,
       "file_type": "concept",
-      "norm_label": "csv",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "os",
-      "label": "os",
-      "_origin": "semantic",
-      "community": 260,
-      "community_name": "generar_resumen.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "os",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "pathlib",
-      "label": "pathlib",
-      "_origin": "semantic",
-      "community": 260,
-      "community_name": "generar_resumen.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "pathlib",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "subprocess",
-      "label": "subprocess",
-      "_origin": "semantic",
-      "community": 260,
-      "community_name": "generar_resumen.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "subprocess",
+      "norm_label": "ref_node_url",
       "source_file": "",
       "type": "external"
     },
@@ -43054,23 +43078,11 @@
       "id": "ref_node_os",
       "label": "ref_node_os",
       "_origin": "semantic",
-      "community": 37,
-      "community_name": "context.mjs",
+      "community": 39,
+      "community_name": "live-copy-edit-agent.mjs",
       "external": true,
       "file_type": "concept",
       "norm_label": "ref_node_os",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "ref_node_module",
-      "label": "ref_node_module",
-      "_origin": "semantic",
-      "community": 4,
-      "community_name": "modern-screenshot.umd.js",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "ref_node_module",
       "source_file": "",
       "type": "external"
     },
@@ -43135,18 +43147,6 @@
       "type": "external"
     },
     {
-      "id": "ref_node_url",
-      "label": "ref_node_url",
-      "_origin": "semantic",
-      "community": 63,
-      "community_name": "ref_node_path",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "ref_node_url",
-      "source_file": "",
-      "type": "external"
-    },
-    {
       "id": "ref_node_readline",
       "label": "ref_node_readline",
       "_origin": "semantic",
@@ -43155,6 +43155,17 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "ref_node_readline",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "pypdf",
+      "label": "pypdf",
+      "community": 187,
+      "community_name": "experimento.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "pypdf",
       "source_file": "",
       "type": "external"
     }
@@ -79985,7 +79996,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/simulador.py",
-      "source_location": "L110",
+      "source_location": "L111",
       "weight": 1.0
     },
     {
@@ -79997,7 +80008,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/simulador.py",
-      "source_location": "L112",
+      "source_location": "L113",
       "weight": 1.0
     },
     {
@@ -80009,7 +80020,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/simulador.py",
-      "source_location": "L138",
+      "source_location": "L139",
       "weight": 1.0
     },
     {
@@ -80021,7 +80032,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/simulador.py",
-      "source_location": "L79",
+      "source_location": "L80",
       "weight": 1.0
     },
     {
@@ -83845,7 +83856,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/simulador.py",
-      "source_location": "L27",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -83857,7 +83868,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/simulador.py",
-      "source_location": "L28",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -86466,6 +86477,18 @@
     },
     {
       "source": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_generar_resumen",
+      "target": "pypdf",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/generar_resumen.py",
+      "source_location": "L105",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_generar_resumen",
       "target": "pathlib",
       "relation": "imports_from",
       "_origin": "ast",
@@ -86485,7 +86508,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/simulador.py",
-      "source_location": "L29",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -115899,7 +115922,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/README.md",
-      "source_location": "L14",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -115954,7 +115977,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/simulador.py",
-      "source_location": "L52",
+      "source_location": "L53",
       "weight": 1.0
     },
     {
@@ -115965,7 +115988,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/simulador.py",
-      "source_location": "L56",
+      "source_location": "L57",
       "weight": 1.0
     },
     {
@@ -115976,7 +115999,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/simulador.py",
-      "source_location": "L60",
+      "source_location": "L61",
       "weight": 1.0
     },
     {
@@ -115987,7 +116010,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/simulador.py",
-      "source_location": "L65",
+      "source_location": "L66",
       "weight": 1.0
     },
     {
@@ -115998,7 +116021,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/simulador.py",
-      "source_location": "L70",
+      "source_location": "L71",
       "weight": 1.0
     },
     {
@@ -119786,14 +119809,14 @@
       "weight": 1.0
     },
     {
-      "source": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_simulador_rationale_71",
+      "source": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_simulador_rationale_72",
       "target": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_simulador_generar",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/simulador.py",
-      "source_location": "L71",
+      "source_location": "L72",
       "weight": 1.0
     },
     {
@@ -123716,5 +123739,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "e1cf9b934b7649522f9e23f5ad11fc6d49c9e051"
+  "built_at_commit": "bb656b64b4cfe55847069ecfabe41a04ace36d8c"
 }
