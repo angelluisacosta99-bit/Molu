@@ -13,6 +13,9 @@ from contenido import BLOQUES, TABLA_RESULTADOS, TABLA_VARIABLES  # noqa: E402
 
 OUT = AQUI / "articulo"
 
+# Firma normalizada (recomendación FECYT: apellidos unidos con guion, segundo nombre en inicial)
+AUTOR = "Angel L. Acosta-González"
+
 # Orden de la lista de referencias del borrador -> claves de referencias.bib
 CLAVES = ["acosta2026tfg", "pointurier2021", "samadi2017", "rottondi2018", "morais2018", "kozdrowski2021",
           "aladin2020", "allogba2022", "yu2019", "igarashi2024", "dicicco2023"]
@@ -71,7 +74,7 @@ PREAMBULO = r"""\documentclass[runningheads]{llncs}
 \title{%(titulo)s}
 \titlerunning{QoT con aprendizaje automático en una red DWDM ferroviaria}
 \author{%(autor)s}
-\authorrunning{A.~L. Acosta González}
+\authorrunning{%(autor)s}
 \institute{%(institucion)s}
 \maketitle
 
@@ -125,8 +128,8 @@ def main():
     shutil.copy(AQUI / "referencias.bib", OUT)
 
     datos = {k: v for k, v, *_ in BLOQUES if k in ("titulo", "resumen", "claves")}
-    autor, institucion = dict((k, v) for k, v, *_ in BLOQUES)["autor"].split("<br>")
-    cuerpo = [PREAMBULO % {"titulo": texto(datos["titulo"]), "autor": autor, "institucion": institucion,
+    _, institucion = dict((k, v) for k, v, *_ in BLOQUES)["autor"].split("<br>")
+    cuerpo = [PREAMBULO % {"titulo": texto(datos["titulo"]), "autor": AUTOR, "institucion": institucion,
                            "resumen": texto(datos["resumen"]), "claves": texto(datos["claves"])}]
     n_tabla = 0
     for b in BLOQUES:
