@@ -6,14 +6,14 @@
     "semantic_hash": ""
   },
   ".claude/hooks/check-pr-review.sh": {
-    "mtime": 1790462772.2492862,
-    "seen": 1790835872.4098723,
+    "mtime": 1790628491.7881896,
+    "seen": 1790630017.0672853,
     "ast_hash": "f305fd17e5659bd0726a5cd3f3698778",
     "semantic_hash": ""
   },
   ".claude/hooks/mark-pr-reviewed.sh": {
-    "mtime": 1790462772.2492862,
-    "seen": 1790835872.4098825,
+    "mtime": 1790628491.7921898,
+    "seen": 1790630017.067295,
     "ast_hash": "cccf57da128e38e25960a1cf1e0da3bb",
     "semantic_hash": ""
   },
@@ -42,8 +42,8 @@
     "semantic_hash": ""
   },
   ".claude/settings.json": {
-    "mtime": 1790462766.0772858,
-    "seen": 1790835872.4098992,
+    "mtime": 1790628482.6281896,
+    "seen": 1790630017.06731,
     "ast_hash": "ff1db20cd5a52eed0abef736dbe53a0b",
     "semantic_hash": ""
   },
@@ -642,14 +642,14 @@
     "semantic_hash": ""
   },
   ".claude/skills/ejercicio-interactivo/SKILL.md": {
-    "mtime": 1790462772.2492862,
-    "seen": 1790835872.4101925,
+    "mtime": 1790628491.7921898,
+    "seen": 1790630017.0674908,
     "ast_hash": "7f1c251b925e019063867947911dbc5b",
     "semantic_hash": ""
   },
   ".claude/skills/ejercicio-interactivo/reference/template.html": {
-    "mtime": 1790462772.2532861,
-    "seen": 1790835872.4101942,
+    "mtime": 1790628491.7921898,
+    "seen": 1790630017.0674922,
     "ast_hash": "bbc2d272759508d8d228bf36ae6e5164",
     "semantic_hash": ""
   },
@@ -708,8 +708,8 @@
     "semantic_hash": ""
   },
   ".claude/skills/hook-hardening/SKILL.md": {
-    "mtime": 1790462772.2532861,
-    "seen": 1790835872.410217,
+    "mtime": 1790628491.7921898,
+    "seen": 1790630017.067508,
     "ast_hash": "d923fc3f07efc8106dc726552f49821c",
     "semantic_hash": ""
   },
@@ -894,8 +894,8 @@
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1790835843.679276,
-    "seen": 1790835872.4102833,
+    "mtime": 1790766805.1708527,
+    "seen": 1790766838.0097785,
     "ast_hash": "dd2a11e5c4a8b928501bde50c1119071",
     "semantic_hash": ""
   },
@@ -1458,8 +1458,8 @@
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a1/nuevo-espanol-en-marcha-1_cuaderno-unidad3a_rosa-se-levanta-a-las-siete_interactivo.html": {
-    "mtime": 1790462772.2532861,
-    "seen": 1790835872.4104798,
+    "mtime": 1790628491.7961898,
+    "seen": 1790630017.0677168,
     "ast_hash": "d351818be39cea8cb552ca3e2921bccc",
     "semantic_hash": ""
   },
@@ -2010,9 +2010,9 @@
     "semantic_hash": ""
   },
   "recursos-generales/README.md": {
-    "mtime": 1790462909.0833805,
-    "seen": 1790835872.410826,
-    "ast_hash": "cddf7a3ae7926f971c09a4b512df6c50",
+    "mtime": 1790306105.8985798,
+    "seen": 1790630017.067952,
+    "ast_hash": "548afef93ee10e72195e6abe8a2c032d",
     "semantic_hash": ""
   },
   "recursos-generales/herramientas-ia/novedades.md": {
@@ -2466,20 +2466,20 @@
     "semantic_hash": ""
   },
   ".claude/hooks/fewer-permission-prompts-reminder.sh": {
-    "mtime": 1790462772.2492862,
-    "seen": 1790835872.4098759,
+    "mtime": 1790628491.7881896,
+    "seen": 1790630017.0672882,
     "ast_hash": "f759dfebf2ae4cce9020554f7fa0f41c",
     "semantic_hash": ""
   },
   ".claude/hooks/mark-permission-scan.sh": {
-    "mtime": 1790462772.2492862,
-    "seen": 1790835872.4098792,
+    "mtime": 1790628491.7921898,
+    "seen": 1790630017.0672917,
     "ast_hash": "854a0f70c7d09aaacb8fbde16f035a0b",
     "semantic_hash": ""
   },
   ".claude/hooks/restrict-cavecrew-reviewer-memory.sh": {
-    "mtime": 1790462772.2492862,
-    "seen": 1790835872.4098887,
+    "mtime": 1790628491.7921898,
+    "seen": 1790630017.0673,
     "ast_hash": "a898de173add6fce6a694b9d40ba29b4",
     "semantic_hash": ""
   },
@@ -2514,8 +2514,8 @@
     "semantic_hash": ""
   },
   "plugins/caveman-cavecrew/hooks/restrict-cavecrew-reviewer-memory.sh": {
-    "mtime": 1790462772.6332862,
-    "seen": 1790835872.4101398,
+    "mtime": 1790628492.1921897,
+    "seen": 1790630017.0674555,
     "ast_hash": "a898de173add6fce6a694b9d40ba29b4",
     "semantic_hash": ""
   },
@@ -2586,315 +2586,309 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/README.md": {
-    "mtime": 1790835843.8065314,
-    "seen": 1790835872.4107358,
+    "mtime": 1790784034.7447898,
+    "seen": 1790784041.1836371,
     "ast_hash": "369e7abb74d023b8c5dfc557644813a5",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-1-planteamiento/ficha-paso-1.html": {
-    "mtime": 1790835843.8119042,
-    "seen": 1790835872.4107416,
+    "mtime": 1790639103.8938448,
+    "seen": 1790639119.2581136,
     "ast_hash": "e8a35fc7edcf05f057ede93c7646edde",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-1-planteamiento/ficha-paso-1.pdf": {
-    "mtime": 1790835843.812309,
-    "seen": 1790835872.410931,
+    "mtime": 1790639105.462335,
+    "seen": 1790639119.258167,
     "ast_hash": "dd4d0f44303543fbd11ea9d81294d181",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/plantilla-lncs/llncs.cls": {
-    "mtime": 1790835843.825719,
-    "seen": 1790835872.4101162,
+    "mtime": 1092731332.0,
+    "seen": 1790633298.756967,
     "ast_hash": "58816aeb60fb84909ab8aed56b1cca5a",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/plantilla-lncs/FUENTE.md": {
-    "mtime": 1790835843.8247018,
-    "seen": 1790835872.4107583,
+    "mtime": 1790633280.8041313,
+    "seen": 1790633298.7575274,
     "ast_hash": "91ebe174236e488e8dbbab8eaf00ba1a",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/plantilla-lncs/history.txt": {
-    "mtime": 1790835843.825719,
-    "seen": 1790835872.4107606,
+    "mtime": 1160997556.0,
+    "seen": 1790633298.7575295,
     "ast_hash": "698dacb7ce0a1097273d4feb28f0f88d",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/plantilla-lncs/llncsdoc.pdf": {
-    "mtime": 1790835843.825719,
-    "seen": 1790835872.4109437,
+    "mtime": 1147016768.0,
+    "seen": 1790633298.757663,
     "ast_hash": "3195bdf0ab1d15537575cdb2ceb2cda6",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/plantilla-lncs/typeinst.pdf": {
-    "mtime": 1790835843.828474,
-    "seen": 1790835872.4109452,
+    "mtime": 1380708818.0,
+    "seen": 1790633298.7576647,
     "ast_hash": "551e8c2c0de43c54a50d6ebefae51185",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/FUENTE.md": {
-    "mtime": 1790835843.7440214,
-    "seen": 1790835872.4107265,
+    "mtime": 1790786859.1807053,
+    "seen": 1790786875.1342208,
     "ast_hash": "1010868faee229cf81e59520e7c355bf",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/ejemplos/articulo-operadores-logicos-espejo.pdf": {
-    "mtime": 1790835843.7505774,
-    "seen": 1790835872.4108875,
+    "mtime": 1790634284.2440202,
+    "seen": 1790634310.3699398,
     "ast_hash": "8cba18af5234a2a398c0e8aab466266b",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/ejemplos/poster-correlated-events-cordon.pdf": {
-    "mtime": 1790835843.7560213,
-    "seen": 1790835872.4108894,
+    "mtime": 1790634284.2378879,
+    "seen": 1790634310.3699408,
     "ast_hash": "e293c5cd67c74ffa4ac1ad018e9ccd8c",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/ejemplos/poster-prospectos-caballero.pdf": {
-    "mtime": 1790835843.762031,
-    "seen": 1790835872.4108913,
+    "mtime": 1790634284.241424,
+    "seen": 1790634310.3699417,
     "ast_hash": "3e16e40be2e9625682700c8a61aa0fad",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/presentacion-asignatura-2026-2027.pdf": {
-    "mtime": 1790835843.799183,
-    "seen": 1790835872.4109106,
+    "mtime": 1790634284.2471418,
+    "seen": 1790634310.3699422,
     "ast_hash": "ab689bedf45fedbcbef5f1a1efc5d28b",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-1-planteamiento/generar_ficha.py": {
-    "mtime": 1790835843.812451,
-    "seen": 1790835872.410103,
+    "mtime": 1790639103.7500443,
+    "seen": 1790639119.2578895,
     "ast_hash": "9a870940d43da2ef6d888d513b72881e",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-1-planteamiento/Angel_Luis_Acosta_Gonzalez_Paso1-version-final.pdf": {
-    "mtime": 1790835843.8072188,
-    "seen": 1790835872.4109292,
+    "mtime": 1790635734.5451891,
+    "seen": 1790637032.5402029,
     "ast_hash": "0dc24401962aea2494db49b7e69476a7",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-2-bibliografia/README.md": {
-    "mtime": 1790835843.812451,
-    "seen": 1790835872.410744,
+    "mtime": 1790701681.944247,
+    "seen": 1790701692.026184,
     "ast_hash": "4f87d3f99b5dd6b9e18bab119c7ca379",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-2-bibliografia/wos-export-2026-09-29.txt": {
-    "mtime": 1790835843.8134186,
-    "seen": 1790835872.410933,
+    "mtime": 1790697695.2365592,
+    "seen": 1790698876.1735995,
     "ast_hash": "479e32f4602699cf3d8c6bec4b32858d",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-2-bibliografia/notas-de-lectura.md": {
-    "mtime": 1790835843.812692,
-    "seen": 1790835872.4107466,
+    "mtime": 1790701681.9444506,
+    "seen": 1790701692.026185,
     "ast_hash": "60faf706fae13b91baa24a03206ee06c",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/crear_cuaderno.py": {
-    "mtime": 1790835843.813581,
-    "seen": 1790835872.410106,
+    "mtime": 1790774386.531127,
+    "seen": 1790774618.8996596,
     "ast_hash": "d63c8a3416da57db2df8ed172e671d49",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/experimento.py": {
-    "mtime": 1790835843.8160214,
-    "seen": 1790835872.410108,
+    "mtime": 1790774386.5273933,
+    "seen": 1790774618.8996615,
     "ast_hash": "81d30d47a64403d513b5742bac9dee44",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/simulador.py": {
-    "mtime": 1790835843.8247018,
-    "seen": 1790835872.4101136,
+    "mtime": 1790701681.9447377,
+    "seen": 1790701692.0259607,
     "ast_hash": "6a71a506e81f2faafddf38e95885b812",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/README.md": {
-    "mtime": 1790835843.8134186,
-    "seen": 1790835872.410749,
+    "mtime": 1790774613.5641992,
+    "seen": 1790774618.8999672,
     "ast_hash": "04a894070378983330195322c816effd",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/resultados/mcnemar.txt": {
-    "mtime": 1790835843.8244758,
-    "seen": 1790835872.4107537,
+    "mtime": 1790701267.6294308,
+    "seen": 1790701332.2222474,
     "ast_hash": "36d226ff782a6bc60cb4986d66b37604",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/figuras/fig1_q_vs_longitud.pdf": {
-    "mtime": 1790835843.8160214,
-    "seen": 1790835872.4109354,
+    "mtime": 1790701268.0698044,
+    "seen": 1790701332.2223423,
     "ast_hash": "c67bfb52821f735d93fcb07ae8ce703d",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/figuras/fig2_f1_escenarios.pdf": {
-    "mtime": 1790835843.822201,
-    "seen": 1790835872.4109373,
+    "mtime": 1790701268.2258043,
+    "seen": 1790701332.2223434,
     "ast_hash": "44872ac276e99b1c43e367ceac4937b0",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/figuras/fig3_importancia.pdf": {
-    "mtime": 1790835843.822201,
-    "seen": 1790835872.4109395,
+    "mtime": 1790701278.301805,
+    "seen": 1790701332.2223442,
     "ast_hash": "87d977ff4ff14f86f222c1503f9036f8",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/figuras/fig1_q_vs_longitud.png": {
-    "mtime": 1790835843.822201,
-    "seen": 1790835872.4110558,
+    "mtime": 1790701267.8578043,
+    "seen": 1790701332.2223854,
     "ast_hash": "27b57976ade06680844d9016878e2899",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/figuras/fig2_f1_escenarios.png": {
-    "mtime": 1790835843.822201,
-    "seen": 1790835872.4110584,
+    "mtime": 1790701268.1738043,
+    "seen": 1790701332.2223864,
     "ast_hash": "28712f9bda67880c4b66b93c561ed8a5",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/figuras/fig3_importancia.png": {
-    "mtime": 1790835843.8244758,
-    "seen": 1790835872.4110603,
+    "mtime": 1790701278.2578049,
+    "seen": 1790701332.2223876,
     "ast_hash": "4a15ac319ca55a7d3a52e6cc7121bd76",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/generar_resumen.py": {
-    "mtime": 1790835843.8244758,
-    "seen": 1790835872.4101112,
+    "mtime": 1790786829.0060554,
+    "seen": 1790786875.1336303,
     "ast_hash": "1f4ba14e56099cdfa7e5a9ee5960af68",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/fuentes-de-informacion-en-ciencia-y-tecnologia.pdf": {
-    "mtime": 1790835843.7633436,
-    "seen": 1790835872.4108937,
+    "mtime": 1790766153.2476485,
+    "seen": 1790766230.9893656,
     "ast_hash": "650004bbdbb83d3781a05102e8546ff8",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/resumen-paso-3.pdf": {
-    "mtime": 1790835843.8247018,
-    "seen": 1790835872.4109414,
+    "mtime": 1790786846.9566472,
+    "seen": 1790786875.134448,
     "ast_hash": "d553a5fb4a7b6aba5b7f97a1c54ab86f",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/CLAUDE.md": {
-    "mtime": 1790835843.7440214,
-    "seen": 1790835872.4106972,
+    "mtime": 1790766799.9748526,
+    "seen": 1790766838.010179,
     "ast_hash": "7d80f7536da51235cbe80cdca42d0727",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/redaccion-y-citas/10-consejos-articulo-terrible-blocken-2017.pdf": {
-    "mtime": 1790835843.8000214,
-    "seen": 1790835872.4109132,
+    "mtime": 1790767282.1981816,
+    "seen": 1790767314.7267406,
     "ast_hash": "682e50b8ab790be260d07557f611a74f",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/redaccion-y-citas/escritura-estructurada-cameron.pdf": {
-    "mtime": 1790835843.8049786,
-    "seen": 1790835872.4109194,
+    "mtime": 1790767282.2018676,
+    "seen": 1790767314.7267437,
     "ast_hash": "54ce8f339027a97ed54acc397ed079c1",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/redaccion-y-citas/iso-690-2-documentos-electronicos.pdf": {
-    "mtime": 1790835843.8053045,
-    "seen": 1790835872.4109216,
+    "mtime": 1790767282.2082298,
+    "seen": 1790767314.7267463,
     "ast_hash": "4f81e9a0d94a7b6f2251484ca3bab336",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/redaccion-y-citas/iso-690-documentos-impresos.pdf": {
-    "mtime": 1790835843.8056204,
-    "seen": 1790835872.4109235,
+    "mtime": 1790767282.2052097,
+    "seen": 1790767314.726749,
     "ast_hash": "e0aedb30ee19e6d0e53cde568c7baa7b",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/poster/el-poster-guardiola-2002.pdf": {
-    "mtime": 1790835843.7949116,
-    "seen": 1790835872.4109087,
+    "mtime": 1790767603.6432812,
+    "seen": 1790767628.5801067,
     "ast_hash": "f8ed743a6ccf968cb93839126e9efa76",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/redaccion-y-citas/como-elaborar-referencias-iso-690-sevilla.pdf": {
-    "mtime": 1790835843.8044007,
-    "seen": 1790835872.4109154,
+    "mtime": 1790767603.6357598,
+    "seen": 1790767628.5801105,
     "ast_hash": "d6a103ce8ca4dbef530fb447353b929b",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/redaccion-y-citas/como-elaborar-referencias-une-50-104.pdf": {
-    "mtime": 1790835843.80471,
-    "seen": 1790835872.4109173,
+    "mtime": 1790767603.6334517,
+    "seen": 1790767628.5801113,
     "ast_hash": "21420307febf0a196a9a52eae164c264",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/redaccion-y-citas/quindos-2009-factor-impacto-indice-h.pdf": {
-    "mtime": 1790835843.8065314,
-    "seen": 1790835872.4109256,
+    "mtime": 1790767603.6382387,
+    "seen": 1790767628.5801158,
     "ast_hash": "0d7b4eb205197bec09732d4ce4caa844",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/latex/bibliografia-en-latex-bibtex-mata-2014.pdf": {
-    "mtime": 1790835843.7633436,
-    "seen": 1790835872.4108963,
+    "mtime": 1790768140.9039345,
+    "seen": 1790768143.981627,
     "ast_hash": "d4e5de2d1b986355a4cd6acedf7cbec7",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/latex/introduccion-a-latex-randez-2013.pdf": {
-    "mtime": 1790835843.7840214,
-    "seen": 1790835872.4109027,
+    "mtime": 1790768140.9061775,
+    "seen": 1790768143.9816282,
     "ast_hash": "90629577d22917259c9181cff2d3a463",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/latex/manual-latex-mora-borbon-2005.pdf": {
-    "mtime": 1790835843.7903903,
-    "seen": 1790835872.410905,
+    "mtime": 1790768140.910994,
+    "seen": 1790768143.9816291,
     "ast_hash": "806b04689195a15c8e8efedfdab31287",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/latex/una-descripcion-de-latex2e-oetiker.pdf": {
-    "mtime": 1790835843.7949116,
-    "seen": 1790835872.4109066,
+    "mtime": 1790768140.9086034,
+    "seen": 1790768143.9816298,
     "ast_hash": "7aebb3d7926db089082c6c9f402defbc",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/guia-explicada/guia-pasos-1-3.html": {
-    "mtime": 1790835843.8069518,
-    "seen": 1790835872.410739,
+    "mtime": 1790786829.0055115,
+    "seen": 1790786875.1342351,
     "ast_hash": "536a9c0181a2e4157cbd3fb65fe6f61e",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/guia-explicada/guia-pasos-1-3.pdf": {
-    "mtime": 1790835843.8072188,
-    "seen": 1790835872.4109273,
+    "mtime": 1790786839.5446475,
+    "seen": 1790786875.1344328,
     "ast_hash": "aada51ec1fc533197dd13f640b249344",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/requirements.txt": {
-    "mtime": 1790835843.8244758,
-    "seen": 1790835872.4107516,
+    "mtime": 1790786829.0109463,
+    "seen": 1790786875.1342504,
     "ast_hash": "a0f0edbfd920f37aea6e12310d09f677",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/latex/introduccion-a-latex-lopez-batista.pdf": {
-    "mtime": 1790835843.7760212,
-    "seen": 1790835872.4109008,
+    "mtime": 1790781438.3048363,
+    "seen": 1790781442.9777493,
     "ast_hash": "d75f9396d9497bfaef7c6358c7b9baa2",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/pautas-latex-profesora.md": {
-    "mtime": 1790835843.8247018,
-    "seen": 1790835872.4107559,
+    "mtime": 1790786859.1812944,
+    "seen": 1790786875.1342552,
     "ast_hash": "aba8448f373c36edc8d4d653704b7f89",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/latex/ejemplos-latex-profesora/tiger.pdf": {
-    "mtime": 1790835843.765127,
-    "seen": 1790835872.4108987,
+    "mtime": 1790786846.9741373,
+    "seen": 1790786875.134399,
     "ast_hash": "b3c7d16a863d80250723a9030b9db46c",
-    "semantic_hash": ""
-  },
-  "recursos-generales/hardware/compra-tarjeta-grafica.md": {
-    "mtime": 1790463710.588837,
-    "seen": 1790835872.4108293,
-    "ast_hash": "fdcfa0305b958cdedccfdc4a0d65fdb8",
     "semantic_hash": ""
   }
 }
