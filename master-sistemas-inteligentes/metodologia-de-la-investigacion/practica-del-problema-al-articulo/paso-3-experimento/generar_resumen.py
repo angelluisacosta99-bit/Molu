@@ -69,13 +69,13 @@ AUC, exactitud equilibrada, sensibilidad y F1 de la clase «no cumple».</p>
 
 <p>La Fig. 1 representa el factor Q de cada canal frente a su longitud: los canales que no cumplen quedan por debajo del
 umbral y se concentran entre 40 y 110&nbsp;km; por debajo de 40&nbsp;km cumple el 99&nbsp;%.</p>
-{figura(1, "fig1_q_vs_longitud", "Factor Q de cada canal según su longitud (muestra aleatoria de 1500 canales por clase); la línea discontinua es el umbral BER = 10<sup>−11</sup>.", "37%")}
+{figura(1, "fig1_q_vs_longitud", "Factor Q de cada canal según su longitud (muestra aleatoria de 1500 canales por clase); la línea discontinua es el umbral BER = 10<sup>−11</sup>.", "35%")}
 <p>En la Fig. 2 se compara el F1 de los tres modelos en cada escenario: la mayor mejora se debe a pasar
 del escenario A al B, no al cambio de modelo.</p>
-{figura(2, "fig2_f1_escenarios", "F1 de la clase «no cumple» por escenario y modelo (media ± desviación típica).", "37%")}
+{figura(2, "fig2_f1_escenarios", "F1 de la clase «no cumple» por escenario y modelo (media ± desviación típica).", "35%")}
 <p>La Fig. 3 muestra cuánto empeora el AUC del Random Forest al permutar aleatoriamente cada variable: la potencia recibida
 medida es, con diferencia, la más importante.</p>
-{figura(3, "fig3_importancia", "Importancia de las variables por permutación (Random Forest, escenario B).", "37%")}
+{figura(3, "fig3_importancia", "Importancia de las variables por permutación (Random Forest, escenario B). Barras de error: desviación típica en 10 permutaciones.", "35%")}
 
 <h2>3. Interpretación</h2>
 <ul>
