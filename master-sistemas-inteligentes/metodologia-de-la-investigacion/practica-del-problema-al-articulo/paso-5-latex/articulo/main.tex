@@ -5,6 +5,7 @@
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
 \usepackage{booktabs}
+\usepackage{array}  % columnas de texto alineadas a la izquierda en las tablas
 \usepackage{textcomp}
 \usepackage{url}
 \usepackage{flafter}  % ninguna figura o tabla aparece antes del párrafo que la cita
@@ -82,7 +83,7 @@ Q_t = 7{,}03 \cdot 10^{(P_{\mathrm{rx}} + 25)/10}
 \label{eq:2}
 \end{equation}
 
-En los amplificados domina el ruido de emisión espontánea amplificada (ASE). La relación señal/ruido óptica en 0,1 nm y el factor Q con detección directa se obtienen como:
+En los amplificados domina el ruido de emisión espontánea amplificada (ASE). La relación señal/\allowbreak ruido óptica en 0,1 nm y el factor Q con detección directa se obtienen como:
 
 \begin{equation}
 \mathrm{OSNR} = 58 + P_{\mathrm{rx}} - \mathrm{NF} - 10\log_{10} n \quad [\mathrm{dB}]
@@ -122,7 +123,7 @@ La Tabla~\ref{tab:variables} resume las variables de entrada de cada escenario. 
 \footnotesize
 \caption{Variables de entrada de los modelos en cada escenario.}
 \label{tab:variables}
-\begin{tabular}{p{2.6cm}p{5.6cm}ccc}
+\begin{tabular}{>{\raggedright\arraybackslash}p{2.8cm}>{\raggedright\arraybackslash}p{5.8cm}ccc}
 \toprule
 Variable & Descripción & A & B & C \\
 \midrule

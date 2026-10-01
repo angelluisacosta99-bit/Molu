@@ -35,6 +35,7 @@ PREAMBULO = r"""\documentclass[runningheads]{llncs}
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
 \usepackage{booktabs}
+\usepackage{array}  %% columnas de texto alineadas a la izquierda en las tablas
 \usepackage{textcomp}
 \usepackage{url}
 \usepackage{flafter}  %% ninguna figura o tabla aparece antes del párrafo que la cita
@@ -98,6 +99,7 @@ def texto(t):
     t = re.sub(r"Fig\. (\d)", lambda m: r"Fig.~\ref{" + list(FIGURAS.values())[int(m.group(1)) - 1] + "}", t)
     t = re.sub(r"sección (\d)", r"sección~\\ref{sec:\1}", t)
     t = t.replace("ecs. 2–5", r"ecs.~(\ref{eq:2})--(\ref{eq:5})")
+    t = t.replace("señal/ruido", r"señal/\allowbreak ruido")
     t = t.replace("·", r"\textperiodcentered{}").replace("½", r"\textonehalf{}")
     return t
 
@@ -105,7 +107,7 @@ def texto(t):
 def tabla(pie, filas, etiqueta):
     pie = re.sub(r"<b>Tabla \d\.</b>\s*", "", pie)
     if etiqueta == "tab:variables":
-        cols, tam = r"p{2.6cm}p{5.6cm}ccc", r"\footnotesize"
+        cols, tam = r">{\raggedright\arraybackslash}p{2.8cm}>{\raggedright\arraybackslash}p{5.8cm}ccc", r"\footnotesize"
     else:
         cols, tam = "llcccc", r"\scriptsize"
     lineas = [r"\begin{table}[htbp]", r"\centering", tam, r"\caption{" + texto(pie) + "}",
