@@ -51,7 +51,7 @@ dispersión cromática. Parámetros de partida del TFG (α&nbsp;=&nbsp;0,22&nbsp
 <li><b>Degradación:</b> 0–25 años de servicio, envejecimiento de fibra, láser y EDFA, reparaciones (solo el 60&nbsp;% registradas),
 hielo y conectores sucios. <b>Etiqueta:</b> Q&nbsp;≥&nbsp;6,71 ⇔ BER&nbsp;≤&nbsp;10<sup>−11</sup>; no cumple el 20,4&nbsp;%.</li>
 <li><b>Escenarios (variables de entrada):</b> A = planificación (longitud, amplificado, n.º de vanos, antigüedad,
-reparaciones registradas, temperatura); B = A + potencia recibida medida (±0,5&nbsp;dB); C = B + causas ocultas
+reparaciones registradas, temperatura); B = A + potencia recibida medida (error gaussiano σ&nbsp;=&nbsp;0,5&nbsp;dB); C = B + causas ocultas
 (pérdidas por reparaciones, hielo y conectores, figura de ruido del EDFA, atenuación real), solo como referencia.</li>
 <li><b>Modelos:</b> regresión logística, Random Forest (300 árboles) y XGBoost (300 árboles, profundidad 4), con pesos
 de clase e hiperparámetros fijados a priori, sin ajuste; umbral de decisión 0,5.</li>
@@ -88,8 +88,8 @@ frente a 90). La ventaja del ensamble depende, por tanto, del umbral de decisió
 <li><b>La potencia recibida medida es la variable decisiva</b> (Fig. 3): el AUC sube de 0,98 (A) a 0,998 (B).
 Monitorizar el receptor aporta más que cambiar de modelo.</li>
 <li><b>Limitación:</b> los datos son sintéticos y la etiqueta sale de un modelo físico determinista, por eso la tarea resulta
-fácil (AUC ≥ 0,98). Además, los 10&nbsp;000 canales proceden de 208 pares de estaciones, por lo que no se evalúa la
-generalización a trayectos no vistos (validación agrupada por trayecto como trabajo futuro). Queda pendiente su contraste
+fácil (AUC ≥ 0,98). Además, los 10&nbsp;000 canales proceden de 208 pares de estaciones, por lo que la validación cruzada no evalúa la
+generalización a trayectos no vistos; esa validación agrupada por trayecto se presenta en el artículo. Queda pendiente su contraste
 con datos medidos reales.</li>
 </ul>
 <p style="font-size:9.5pt;margin-top:6pt">Código, datos y figuras en alta resolución (PNG y PDF): archivo .zip adjunto

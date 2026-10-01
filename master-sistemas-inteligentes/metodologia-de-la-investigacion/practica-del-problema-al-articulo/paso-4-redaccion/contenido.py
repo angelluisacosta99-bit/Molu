@@ -15,10 +15,10 @@ RESUMEN = (
     "10 000 canales sintéticos de la red Moscú-Kazánskaya – Riazán con un modelo físico de transmisión que "
     "incluye envejecimiento, reparaciones y hielo, y se compararon una regresión logística, Random Forest y "
     "XGBoost en tres escenarios de información. Con la potencia recibida medida, los tres modelos alcanzan un "
-    "AUC de 0,998, también en trayectos no vistos; los ensambles obtienen mayor F1 (0,947 frente a 0,931) y "
+    "AUC de 0,998 (≥ 0,996 en trayectos no vistos); los ensambles obtienen mayor F1 (0,947 frente a 0,931) y "
     "cometen menos errores (prueba de McNemar, p < 0,001), aunque la regresión logística detecta más canales "
     "que no cumplen. La potencia recibida medida es la variable decisiva en la red simulada. La hipótesis se "
-    "cumple en parte y debe contrastarse con datos medidos en la red real."
+    "confirma con matices y debe contrastarse con datos medidos en la red real."
 )
 
 REFS = [
@@ -62,7 +62,7 @@ TABLA_VARIABLES = [
 ]
 
 TABLA_RESULTADOS = [
-    ["Escenario", "Modelo", "AUC", "Exactitud equil.", "Sensibilidad", "F1"],
+    ["Escenario", "Modelo", "AUC", "Exactitud equilibrada", "Sensibilidad", "F1"],
     ["A", "Regresión logística", "0,983 ± 0,003", "0,929 ± 0,009", "0,939 ± 0,017", "0,832 ± 0,014"],
     ["A", "Random Forest", "0,981 ± 0,003", "0,921 ± 0,011", "0,901 ± 0,023", "0,847 ± 0,015"],
     ["A", "XGBoost", "0,982 ± 0,003", "0,925 ± 0,010", "0,914 ± 0,019", "0,845 ± 0,014"],
@@ -122,7 +122,7 @@ BLOQUES = [
           "[5] con su incertidumbre [11], queda fuera de su alcance y se plantea como trabajo futuro."),
     ("p", "Las aportaciones son: (i) un modelo físico de la red con degradación en explotación y un conjunto de datos "
           "reproducible; (ii) la comparación de tres modelos en tres escenarios de información con validación "
-          "cruzada y una prueba estadística; y (iii) la identificación de la variable que más aporta a la "
+          "cruzada y una prueba estadística, incluida la evaluación en trayectos y condiciones no vistos; y (iii) la identificación de la variable que más aporta a la "
           "predicción. La sección 2 describe los métodos, la sección 3 presenta y discute los resultados y la "
           "sección 4 recoge las conclusiones."),
 
@@ -196,7 +196,8 @@ BLOQUES = [
           "trayecto (10 pliegues estratificados; los canales de la misma longitud forman un grupo, de modo que "
           "ningún trayecto aparece a la vez en entrenamiento y prueba). Para condiciones no vistas se entrena con "
           "los canales de hasta 15 años y se evalúa con los de más de 15, y se entrena sin hielo (T ≥ −5 °C) y se "
-          "evalúa con T < −5 °C. El código y los datos están disponibles como material complementario."),
+          "evalúa con T < −5 °C. El código y los datos, incluido este análisis, están disponibles como material "
+          "complementario."),
 
     # ---------------------------------------------------------------- 3. Resultados
     ("h2", "3 Resultados y discusión"),
@@ -228,13 +229,16 @@ BLOQUES = [
           "cumplen y da 49 falsas alarmas, XGBoost 18 y 43, y la regresión logística 2 y 90. Como para "
           "el operador un canal defectuoso no detectado cuesta más que una revisión innecesaria, la ventaja del "
           "ensamble depende del umbral de decisión y del coste de cada error. En el escenario A no hay una ventaja "
-          "clara del ensamble (menor AUC y exactitud equilibrada). La hipótesis se cumple, por tanto, solo en parte."),
+          "clara del ensamble (menor AUC y exactitud equilibrada). La hipótesis se confirma, por tanto, con matices."),
     ("p", "Los resultados se mantienen fuera de las condiciones de entrenamiento (objetivo 3). Con validación "
           "agrupada por trayecto, en el escenario B el AUC es de 0,998, 0,997 y 0,996 y el F1 de 0,931, 0,947 y "
           "0,941 (logística, Random Forest y XGBoost), prácticamente iguales que con la validación estándar; en el "
           "escenario A, el F1 es de 0,831, 0,846 y 0,838. Al entrenar con canales de hasta 15 años y evaluar con "
           "los más antiguos, el AUC es ≥ 0,991 y el F1 de 0,911, 0,955 y 0,947; al entrenar sin hielo y evaluar "
-          "por debajo de −5 °C, el AUC es de 0,997 y el F1 de 0,934, 0,949 y 0,942."),
+          "por debajo de −5 °C, el AUC es de 0,997 y el F1 de 0,934, 0,949 y 0,942. Las variaciones son pequeñas "
+          "(hasta unas 0,02 en F1 y sensibilidad). Esta prueba es, no obstante, poco exigente: el simulador no "
+          "incluye efectos propios de cada trayecto (p. ej., tendidos o climas locales distintos), por lo que la "
+          "generalización a trayectos reales no vistos debe confirmarse con datos medidos."),
     ("p", "La Fig. 3 muestra la importancia de cada variable para Random Forest en el escenario B. Al permutar la "
           "potencia recibida el AUC cae 0,26, diez veces más que con la segunda variable (amplificado, 0,03); la "
           "temperatura no aporta información. En la red simulada, monitorizar la potencia en el receptor aporta, así, "
@@ -256,11 +260,11 @@ BLOQUES = [
           "degradación en explotación y ha evaluado tres modelos de aprendizaje automático para predecir si cada "
           "canal cumple BER ≤ 10<sup>−11</sup> (objetivos 1 y 2). En el escenario de monitorización (B), los modelos "
           "de ensamble cometen significativamente menos errores que la regresión logística (McNemar, p < 0,001 tras "
-          "Bonferroni) y obtienen mayor F1, de modo que la hipótesis se confirma según el criterio principal. La "
-          "ventaja no se extiende a la capacidad de ordenar los canales (AUC de 0,998 en los tres modelos) ni a la "
+          "Bonferroni) y obtienen mayor F1, de modo que la hipótesis se confirma según el criterio principal, aunque "
+          "con matices: la ventaja no se extiende a la capacidad de ordenar los canales (AUC de 0,998 en los tres modelos) ni a la "
           "detección de canales que no cumplen (sensibilidad 0,987 de la logística frente a 0,974 de Random Forest "
-          "con el umbral de 0,5), y en el escenario A no hay una ventaja clara; por ello, la hipótesis se cumple en "
-          "parte. Los resultados se mantienen en trayectos, antigüedades y temperaturas no vistos en el "
+          "con el umbral de 0,5), y en el escenario A no hay una ventaja clara. Los resultados se mantienen, en la red "
+          "simulada, en trayectos, antigüedades y temperaturas no vistos en el "
           "entrenamiento (objetivo 3)."),
     ("p", "En la red simulada, la potencia recibida que ya mide el transceptor es la variable decisiva: con ella "
           "cualquiera de los tres modelos supera ampliamente a la estimación con datos de inventario. Como el factor "
