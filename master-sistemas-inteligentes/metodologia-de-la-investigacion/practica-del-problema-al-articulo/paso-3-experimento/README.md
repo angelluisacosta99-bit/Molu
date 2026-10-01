@@ -4,12 +4,13 @@ Entregable de Studium: archivo de datos/código y las imágenes/tablas listas
 para insertar en el manuscrito.
 
 ## Cómo ejecutarlo (en VS Code)
-1. Abrir `experimento.ipynb` → *Select Kernel* → Python 3 → *Run All*.
-2. Tarda unos 2–3 minutos. Regenera `datos/`, `resultados/` y `figuras/`.
+1. Instalar las librerías (versiones exactas en `requirements.txt`):
+   `python -m pip install -r requirements.txt` (en Windows, `py -m pip ...`).
+2. Abrir `experimento.ipynb` → *Select Kernel* → Python 3 → *Run All*.
+3. Tarda unos 2–3 minutos. Regenera `datos/`, `resultados/` y `figuras/`.
    Sin el cuaderno: `python experimento.py`.
 
-Probado con Python 3.11. Librerías (versiones exactas en `requirements.txt`):
-`py -m pip install -r requirements.txt` en Windows.
+Probado con Python 3.11.
 
 ## Archivos
 | Archivo | Qué es |
@@ -17,9 +18,7 @@ Probado con Python 3.11. Librerías (versiones exactas en `requirements.txt`):
 | `simulador.py` | Modelo físico y generador de datos (10 000 canales). Todos los supuestos están comentados |
 | `experimento.py` | Entrenamiento, validación cruzada, McNemar y figuras |
 | `experimento.ipynb` | Cuaderno guiado y ya ejecutado (se ven los resultados sin volver a ejecutarlo) |
-| `crear_cuaderno.py` | Regenera el cuaderno si se cambia su texto |
-| `resumen-paso-3.pdf` | Resumen de 2 páginas para Studium: diseño, tabla, figuras e interpretación |
-| `generar_resumen.py` | Regenera ese PDF desde `resultados/` y `figuras/` (usa Chromium) |
+| `resumen-paso-3.pdf` | Resumen de 2 páginas: diseño, tabla, figuras e interpretación |
 | `datos/dataset.csv` | Conjunto de datos generado (semilla 42) |
 | `resultados/tabla_resultados.{csv,tex}` | Tabla de métricas; la `.tex` va directa al artículo LNCS |
 | `resultados/mcnemar.txt` | Prueba estadística Random Forest / XGBoost frente a regresión logística |
@@ -64,13 +63,14 @@ Probado con Python 3.11. Librerías (versiones exactas en `requirements.txt`):
 44 frente a 13 casos que solo acierta uno de los dos, p = 7·10⁻⁵. XGBoost
 frente a la logística, 54 frente a 23, p = 6·10⁻⁴.
 
-## Interpretación honesta (para Resultados y Discusión)
+## Interpretación (para Resultados y Discusión)
 1. **La hipótesis se cumple solo en parte.** Los modelos de ensamble aciertan
    más en conjunto (F1 más alto y McNemar significativo), pero el **AUC es
    igual** en los tres modelos. La regresión logística detecta **más**
    canales que no cumplen (mayor sensibilidad), a costa de más falsas
-   alarmas. Es un resultado matizado, como el del artículo de Espejo et
-   al. que usa la profesora de modelo.
+   alarmas: en el 30 % de prueba del escenario B, Random Forest deja sin
+   detectar 12 canales que no cumplen (2 la logística) con 49 falsas
+   alarmas (90 la logística).
 2. **Qué importa para el operador:** no detectar un canal que falla
    (falso negativo) cuesta más que una falsa alarma. Con ese criterio, la
    logística sigue siendo competitiva. Conviene discutirlo y proponer
@@ -83,8 +83,13 @@ frente a la logística, 54 frente a 23, p = 6·10⁻⁴.
    relativamente fácil (AUC ≥ 0,98) porque la etiqueta sale de un modelo
    físico determinista. Es la limitación principal: hay que declararla y
    proponer validarlo con datos reales (dataset de Microsoft).
-5. **El modelo físico no es el cálculo del TFG.** En el tramo de 108,9 km
-   este modelo da Q ≈ 10,5 (con preamplificador EDFA y ruido ASE); el TFG
-   daba 7,37 con otro planteamiento y con incoherencias internas
-   detectadas en la revisión independiente. En el artículo, el TFG se cita
-   como el diseño de partida, no como fuente de estos números.
+5. **El modelo físico no reproduce el cálculo del TFG** (Q ≈ 10,5 frente a
+   7,37 en el tramo de 108,9 km, con distinto planteamiento); el TFG se cita
+   como diseño de partida, no como fuente de estos números.
+6. **Generalización:** los 10 000 canales proceden de 208 pares de
+   estaciones, así que la validación cruzada no mide el acierto en
+   trayectos no vistos (validación agrupada por trayecto: trabajo futuro).
+
+Herramientas auxiliares del repositorio (no forman parte del entregable):
+`crear_cuaderno.py` regenera el cuaderno y `generar_resumen.py` el PDF de
+resumen (necesita Chrome; ruta en la variable de entorno `CHROME`).
