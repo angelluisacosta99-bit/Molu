@@ -1,0 +1,76 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[spanish]{babel} % Corta palabras en espa~nol
+\usepackage[utf8]{inputenc} % Escribir con acentos, ~n...
+\usepackage{eurosym} % smbolo del euro
+
+
+\begin{document}
+%\secttion{Introducción}
+\leftline{\textbf{\huge{Ejemplos de Listas y Tablas}}}
+\medskip
+Este primer ejemplo trata de demostrar la facilidad de
+\LaTeX{} para hacer \textbf{listas}:
+
+Ejemplo 1
+\begin{itemize}
+\item primer punto
+\item segundo punto
+\end{itemize}
+
+Ejemplo 2
+\begin{itemize}
+\item[*] punto uno
+\item[$*$] punto dos
+\item[$\circ$] punto tres
+\end{itemize}
+
+Ejemplo 3
+\begin{enumerate}
+\item punto uno
+\begin{enumerate}
+\item pto uno de 1
+\item pto dos de 1
+\end{enumerate}
+\item punto dos
+\end{enumerate}
+
+\textbf{Veamos ahora las tablas:}
+
+
+\begin{tabular}{lrc}
+Nombre & Edad & Clase \\
+\hline
+José & 24 & P \\
+Juanito & 9 & P+ \\
+Carlos & 11 & Q-
+\end{tabular}
+
+\textbf{Otra tabla}
+
+\begin{center}
+\begin{tabular}{|l||r|p{2cm}|}
+\hline
+Nombre & Edad & Clase \\
+\hline \hline
+José & 24 & El otro día
+estaba en clase. \\
+Juanito & 9 & P+ \\
+\hline
+\end{tabular}
+\end{center}
+
+
+
+\mbox{\textbf{En LATEX es posible generar cajas de varios tipos.}}
+
+\fbox{Hola que tal}
+
+fin = f\null{}in = f\mbox{}in?
+
+\fbox{Esta \raisebox{-0.1cm}{forma}
+\raisebox{-0.3cm}{de} \raisebox{-0.4cm}{escribir}
+\raisebox{-0.6cm}{me} \raisebox{-0.8cm}{marea} un
+\raisebox{0.1cm}{poco}}.
+
+
+\end{document}

@@ -1,0 +1,2 @@
+Random Forest vs Regresión logística (escenario B, test 30 %): solo acierta Random Forest: 44; solo acierta la logística: 13; chi2 = 15.79; p = 7.08e-05
+XGBoost vs Regresión logística (escenario B, test 30 %): solo acierta XGBoost: 54; solo acierta la logística: 23; chi2 = 11.69; p = 6.29e-04
