@@ -4,7 +4,8 @@ Material complementario: conjunto de datos, código, tabla de resultados y
 figuras del estudio.
 
 ## Reproducción
-1. Instalar las dependencias (versiones exactas en `requirements.txt`):
+1. Instalar las dependencias (`requirements.txt`, con las versiones de las
+   bibliotecas principales):
    `python -m pip install -r requirements.txt`.
 2. Ejecutar `python experimento.py`, o todas las celdas de `experimento.ipynb`
    (unos 2–3 minutos). Se regeneran `datos/`, `resultados/` y `figuras/`.
@@ -17,7 +18,6 @@ Entorno de referencia: Python 3.11. Semilla aleatoria fija (42).
 | `simulador.py` | Modelo físico y generador de datos (10 000 canales). Todos los supuestos están comentados |
 | `experimento.py` | Entrenamiento, validación cruzada, McNemar y figuras |
 | `experimento.ipynb` | Cuaderno con el experimento completo, ya ejecutado |
-| `resumen-paso-3.pdf` | Resumen de 2 páginas: diseño, tabla, figuras e interpretación |
 | `datos/dataset.csv` | Conjunto de datos generado (semilla 42) |
 | `resultados/tabla_resultados.{csv,tex}` | Tabla de métricas (CSV y LaTeX) |
 | `resultados/mcnemar.txt` | Prueba estadística Random Forest / XGBoost frente a regresión logística |
@@ -76,7 +76,7 @@ frente a la logística, 54 frente a 23, p = 6·10⁻⁴.
    podría ajustarse a ese coste.
 3. **La potencia recibida medida es la variable decisiva** (fig. 3): el AUC
    pasa de 0,98 (A) a 0,998 (B). Monitorizar el receptor aporta más que
-   cualquier modelo.
+   cambiar de modelo.
 4. **Circularidad:** entre B y C apenas hay diferencia, porque la potencia
    medida ya recoge casi todas las causas ocultas. La tarea resulta
    relativamente fácil (AUC ≥ 0,98) porque la etiqueta sale de un modelo

@@ -19,7 +19,7 @@ def figura(n, archivo, pie, ancho="62%"):
     return (f'<figure><img src="figuras/{archivo}.png" style="width:{ancho}">'
             f"<figcaption><b>Fig. {n}.</b> {pie}</figcaption></figure>")
 
-html = f"""<!doctype html><html lang="es"><meta charset="utf-8"><style>
+html = f"""<!doctype html><html lang="es"><meta charset="utf-8"><title>Paso 3 — Diseño experimental y resultados</title><style>
 @page{{size:A4;margin:1.4cm 1.7cm}}
 body{{font-family:"Times New Roman",Times,serif;font-size:11pt;line-height:1.2;margin:0}}
 h1{{font-size:13pt;text-align:center;margin:0 0 2pt}} .m{{text-align:center;font-size:10pt;margin-bottom:8pt}}
@@ -73,7 +73,7 @@ umbral y se concentran entre 40 y 110&nbsp;km; por debajo de 40&nbsp;km cumple e
 <p>En la Fig. 2 se compara el F1 de los tres modelos en cada escenario: la mayor mejora se debe a pasar
 del escenario A al B, no al cambio de modelo.</p>
 {figura(2, "fig2_f1_escenarios", "F1 de la clase «no cumple» por escenario y modelo (media ± desviación típica).", "37%")}
-<p>La Fig. 3 muestra cuánto empeora el AUC del Random Forest al desordenar cada variable: la potencia recibida
+<p>La Fig. 3 muestra cuánto empeora el AUC del Random Forest al permutar aleatoriamente cada variable: la potencia recibida
 medida es, con diferencia, la más importante.</p>
 {figura(3, "fig3_importancia", "Importancia de las variables por permutación (Random Forest, escenario B).", "37%")}
 
@@ -88,8 +88,8 @@ frente a 90). La ventaja del ensamble depende, por tanto, del umbral de decisió
 Monitorizar el receptor aporta más que cambiar de modelo.</li>
 <li><b>Limitación:</b> los datos son sintéticos y la etiqueta sale de un modelo físico determinista, por eso la tarea resulta
 fácil (AUC ≥ 0,98). Además, los 10&nbsp;000 canales proceden de 208 pares de estaciones, por lo que no se evalúa la
-generalización a trayectos no vistos (validación agrupada por trayecto como trabajo futuro). Habrá que contrastarlo con
-datos medidos reales.</li>
+generalización a trayectos no vistos (validación agrupada por trayecto como trabajo futuro). Queda pendiente su contraste
+con datos medidos reales.</li>
 </ul>
 <p style="font-size:9.5pt;margin-top:6pt">Código, datos y figuras en alta resolución (PNG y PDF): archivo .zip adjunto
 (<i>experimento.ipynb</i>, <i>simulador.py</i>, <i>experimento.py</i>, <i>datos/dataset.csv</i>).</p>
@@ -101,4 +101,11 @@ subprocess.run([CHROME, "--headless", "--no-sandbox", "--disable-gpu", "--no-pdf
                 f"--print-to-pdf={AQUI / 'resumen-paso-3.pdf'}", tmp.as_uri()],
                check=True, capture_output=True)
 tmp.unlink()
+try:  # metadatos del PDF
+    from pypdf import PdfWriter
+    w = PdfWriter(clone_from=AQUI / "resumen-paso-3.pdf")
+    w.add_metadata({"/Title": "Paso 3 — Diseño experimental y resultados", "/Author": "Angel Luis Acosta González"})
+    w.write(AQUI / "resumen-paso-3.pdf")
+except ImportError:
+    pass
 print("resumen-paso-3.pdf creado")

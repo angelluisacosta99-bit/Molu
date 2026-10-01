@@ -1,7 +1,7 @@
 """Experimento del Paso 3: ¿predice un modelo de ensamble el cumplimiento de
 BER <= 1e-11 mejor que un modelo lineal sencillo?
 
-Genera: datos/dataset.csv, resultados/tabla_resultados.csv y .tex,
+Genera: datos/dataset.csv, resultados/tabla_resultados.csv y .tex, resultados/mcnemar.txt,
 figuras/fig1_q_vs_longitud, fig2_f1_escenarios, fig3_importancia (PNG y PDF).
 Uso:  python experimento.py
 """

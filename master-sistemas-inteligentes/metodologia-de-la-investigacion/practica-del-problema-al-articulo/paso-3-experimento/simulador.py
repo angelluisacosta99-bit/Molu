@@ -19,7 +19,8 @@ Parámetros de partida tomados del trabajo de fin de grado (RUT MIIT, 2026):
 distancias entre estaciones, alfa = 0,22 dB/km, empalmes cada 4 km de
 0,1 dB, sensibilidad del receptor -25 dBm, figura de ruido del EDFA 6-9 dB.
 Los rangos de degradación (envejecimiento, reparaciones, hielo) son
-supuestos del estudio y se documentan en el artículo. Simplificación:
+supuestos del estudio y se documentan en los comentarios de la función
+generar(). Simplificación:
 la pérdida de OADM (5 dB) se aplica igual a todos los canales, con
 independencia de cuántos OADM atraviesen.
 """
@@ -140,7 +141,7 @@ def generar(n=10000, semilla=42):
     })
 
 
-# Variables que ve cada modelo en los dos escenarios del estudio
+# Variables observables de los escenarios A y B (el C añade las ocultas en experimento.py)
 VARIABLES_PLANIFICACION = ["longitud_km", "amplificado", "n_vanos", "antiguedad_anios",
                            "reparaciones_registradas", "temperatura_c"]
 VARIABLES_MONITORIZACION = VARIABLES_PLANIFICACION + ["p_rx_medida_dbm"]
