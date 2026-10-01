@@ -8,6 +8,17 @@
 \usepackage{textcomp}
 \usepackage{url}
 
+% Colocación de figuras y tablas: dejar que compartan página con el texto
+% y, si ocupan una página propia, ponerlas arriba en vez de centradas.
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\textfraction}{0.07}
+\renewcommand{\floatpagefraction}{0.8}
+\makeatletter
+\setlength{\@fptop}{0pt}
+\setlength{\@fpsep}{12pt plus 1fil}
+\makeatother
+
 % Nombres de la plantilla LNCS en español (babel los cambiaría a «Figura»)
 \addto\captionsspanish{\def\abstractname{Resumen.}\def\figurename{Fig.}}
 \def\keywordname{\textbf{Palabras clave:}}
@@ -105,7 +116,7 @@ Para cada canal se sortean (distribuciones uniformes U salvo indicación): la an
 
 La Tabla~\ref{tab:variables} resume las variables de entrada de cada escenario. El escenario A (planificación) usa solo datos de inventario; el B (monitorización) añade la potencia recibida que mide el propio transceptor; y el C (oráculo) añade las causas físicas que el operador no puede medir, solo como cota superior.
 
-\begin{table}[htbp]
+\begin{table}[!htbp]
 \centering
 \footnotesize
 \caption{Variables de entrada de los modelos en cada escenario.}
@@ -139,7 +150,7 @@ Para evaluar el acierto en trayectos no vistos (objetivo 3) se repite la validac
 
 La Fig.~\ref{fig:q} muestra el factor Q de cada canal frente a su longitud. Los canales que no cumplen se concentran entre 40 y 110 km (el 84~\% de los fallos): canales sin amplificar con poco margen (hasta 65 km) y canales con un solo vano amplificado de gran pérdida (de 65 a 110 km); casi todo el resto son canales de dos vanos de más de 110 km, y por debajo de 40 km cumple el 99~\% de los canales. El margen fijo de diseño, por tanto, no protege por igual a todos los tramos frente a la degradación supuesta.
 
-\begin{figure}[htbp]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.7\textwidth]{figuras/fig1_q_vs_longitud}
 \caption{Factor Q de cada canal según su longitud (muestra aleatoria de 1500 canales por clase); la línea discontinua es el umbral BER = 10\textsuperscript{−11}.}
@@ -148,7 +159,7 @@ La Fig.~\ref{fig:q} muestra el factor Q de cada canal frente a su longitud. Los 
 
 La Tabla~\ref{tab:resultados} recoge las métricas de validación cruzada. En el escenario A, con solo datos de inventario, los tres modelos alcanzan un AUC de 0,98 y un F1 de 0,83–0,85. Al añadir la potencia recibida (escenario B) el AUC sube a 0,998 en los tres modelos y el F1 a 0,93–0,95. El escenario C apenas mejora al B, porque la potencia medida ya recoge casi todo el efecto de las causas ocultas.
 
-\begin{table}[htbp]
+\begin{table}[!htbp]
 \centering
 \scriptsize
 \caption{Resultados de la validación cruzada estratificada (10 pliegues × 3 repeticiones), media ± desviación típica. Clase positiva: canal que no cumple BER ≤ 10\textsuperscript{−11}.}
@@ -172,7 +183,7 @@ C & XGBoost & 0,999 $\pm$ 0,001 & 0,978 $\pm$ 0,007 & 0,969 $\pm$ 0,012 & 0,958 
 
 La Fig.~\ref{fig:f1} compara el F1 de los tres modelos: la mejora más grande se debe a pasar del escenario A al B, no al cambio de modelo. Dentro de cada escenario, los ensambles superan a la regresión logística en F1 (0,947 frente a 0,931 en B). La prueba de McNemar confirma que, en el escenario B, los ensambles cometen menos errores que la logística (61 frente a 92 de 3000 canales para ambos ensambles): Random Forest acierta 44 canales que la logística falla, frente a 13 en sentido contrario (χ\textsuperscript{2} = 15,79; p = 7\textperiodcentered{}10\textsuperscript{−5}), y XGBoost 54 frente a 23 (χ\textsuperscript{2} = 11,69; p = 6\textperiodcentered{}10\textsuperscript{−4}), ambas significativas tras la corrección de Bonferroni.
 
-\begin{figure}[htbp]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.7\textwidth]{figuras/fig2_f1_escenarios}
 \caption{F1 de la clase «no cumple» por escenario y modelo (media ± desviación típica).}
@@ -185,7 +196,7 @@ Los resultados se mantienen fuera de las condiciones de entrenamiento (objetivo 
 
 La Fig.~\ref{fig:importancia} muestra la importancia de cada variable para Random Forest en el escenario B. Al permutar la potencia recibida el AUC cae 0,26, diez veces más que con la segunda variable (amplificado, 0,03); la temperatura no aporta información. En la red simulada, monitorizar la potencia en el receptor aporta, así, más que cambiar de modelo.
 
-\begin{figure}[htbp]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.7\textwidth]{figuras/fig3_importancia}
 \caption{Importancia de las variables por permutación (Random Forest, escenario B). Barras de error: desviación típica en 10 permutaciones.}
