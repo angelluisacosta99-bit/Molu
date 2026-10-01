@@ -10134,7 +10134,7 @@
       "file_type": "code",
       "norm_label": "main()",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-5-latex/generar_tex.py",
-      "source_location": "L118"
+      "source_location": "L120"
     },
     {
       "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_5_latex_generar_tex_tabla",
@@ -10146,7 +10146,7 @@
       "file_type": "code",
       "norm_label": "tabla()",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-5-latex/generar_tex.py",
-      "source_location": "L104"
+      "source_location": "L106"
     },
     {
       "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_5_latex_generar_tex_texto",
@@ -10158,7 +10158,7 @@
       "file_type": "code",
       "norm_label": "texto()",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-5-latex/generar_tex.py",
-      "source_location": "L83"
+      "source_location": "L85"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_server_applylegacydeferredacceptsonstartup",
@@ -34848,7 +34848,7 @@
       "source_location": "L1"
     },
     {
-      "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_5_latex_generar_tex_rationale_84",
+      "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_5_latex_generar_tex_rationale_86",
       "label": "HTML ligero del borrador -> LaTeX.",
       "_origin": "ast",
       "community": 234,
@@ -34856,7 +34856,7 @@
       "file_type": "rationale",
       "norm_label": "html ligero del borrador -> latex.",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-5-latex/generar_tex.py",
-      "source_location": "L84"
+      "source_location": "L86"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_candidatos_nuevos_o_reforzados_con_proyecto_financiado_verificado",
@@ -80490,7 +80490,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-5-latex/generar_tex.py",
-      "source_location": "L126",
+      "source_location": "L128",
       "weight": 1.0
     },
     {
@@ -80502,7 +80502,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-5-latex/generar_tex.py",
-      "source_location": "L142",
+      "source_location": "L144",
       "weight": 1.0
     },
     {
@@ -80514,7 +80514,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-5-latex/generar_tex.py",
-      "source_location": "L110",
+      "source_location": "L112",
       "weight": 1.0
     },
     {
@@ -116855,7 +116855,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-5-latex/generar_tex.py",
-      "source_location": "L104",
+      "source_location": "L106",
       "weight": 1.0
     },
     {
@@ -116866,7 +116866,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-5-latex/generar_tex.py",
-      "source_location": "L118",
+      "source_location": "L120",
       "weight": 1.0
     },
     {
@@ -116877,7 +116877,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-5-latex/generar_tex.py",
-      "source_location": "L83",
+      "source_location": "L85",
       "weight": 1.0
     },
     {
@@ -120797,14 +120797,14 @@
       "weight": 1.0
     },
     {
-      "source": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_5_latex_generar_tex_rationale_84",
+      "source": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_5_latex_generar_tex_rationale_86",
       "target": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_5_latex_generar_tex_texto",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-5-latex/generar_tex.py",
-      "source_location": "L84",
+      "source_location": "L86",
       "weight": 1.0
     },
     {
@@ -124775,5 +124775,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "76e5b858c55153bba747d10e3581ca615520d8cf"
+  "built_at_commit": "6d446341797a3a29b07308cd93cf679f89917d0d"
 }
