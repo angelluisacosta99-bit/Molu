@@ -1,0 +1,12 @@
+Agrupada por trayecto | A | Regresión logística: AUC 0.983 ± 0.005; F1 0.831 ± 0.022; sensibilidad 0.940
+Agrupada por trayecto | A | Random Forest: AUC 0.980 ± 0.006; F1 0.846 ± 0.023; sensibilidad 0.899
+Agrupada por trayecto | A | XGBoost: AUC 0.977 ± 0.015; F1 0.838 ± 0.041; sensibilidad 0.901
+Agrupada por trayecto | B | Regresión logística: AUC 0.998 ± 0.001; F1 0.931 ± 0.014; sensibilidad 0.987
+Agrupada por trayecto | B | Random Forest: AUC 0.997 ± 0.001; F1 0.947 ± 0.012; sensibilidad 0.972
+Agrupada por trayecto | B | XGBoost: AUC 0.996 ± 0.007; F1 0.941 ± 0.033; sensibilidad 0.967
+Extrapolación B | Antigüedad: entrena <=15 años, evalúa >15 | Regresión logística: AUC 0.997; F1 0.911; sensibilidad 0.996 (n evaluación = 4041)
+Extrapolación B | Antigüedad: entrena <=15 años, evalúa >15 | Random Forest: AUC 0.995; F1 0.955; sensibilidad 0.974 (n evaluación = 4041)
+Extrapolación B | Antigüedad: entrena <=15 años, evalúa >15 | XGBoost: AUC 0.991; F1 0.947; sensibilidad 0.945 (n evaluación = 4041)
+Extrapolación B | Temperatura: entrena >=-5 °C, evalúa <-5 °C | Regresión logística: AUC 0.997; F1 0.934; sensibilidad 0.980 (n evaluación = 3822)
+Extrapolación B | Temperatura: entrena >=-5 °C, evalúa <-5 °C | Random Forest: AUC 0.997; F1 0.949; sensibilidad 0.972 (n evaluación = 3822)
+Extrapolación B | Temperatura: entrena >=-5 °C, evalúa <-5 °C | XGBoost: AUC 0.997; F1 0.942; sensibilidad 0.969 (n evaluación = 3822)

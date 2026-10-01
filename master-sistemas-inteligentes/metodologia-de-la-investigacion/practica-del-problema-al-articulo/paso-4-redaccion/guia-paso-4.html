@@ -1,0 +1,127 @@
+<!doctype html><html lang="es"><meta charset="utf-8"><title>Guía explicada del Paso 4</title>
+<style>
+@page{size:A4;margin:1.8cm 1.9cm}
+body{font-family:"DejaVu Serif",Georgia,serif;font-size:10.5pt;line-height:1.38;color:#111;margin:0}
+h1{font-size:18pt;margin:0 0 4pt;text-align:center}
+h2{font-size:13.5pt;margin:16pt 0 5pt;border-bottom:1.2pt solid #1f4e79;color:#1f4e79;break-after:avoid}
+h3{font-size:11pt;margin:10pt 0 3pt;color:#1f4e79;break-after:avoid}
+p,li{text-align:justify;margin:0 0 5pt} ul,ol{padding-left:1.3em;margin:0 0 5pt}
+.sub{text-align:center;font-size:10pt;color:#444;margin-bottom:10pt}
+.caja{border:1pt solid #9bb7d4;background:#eef4fa;padding:6pt 9pt;margin:6pt 0 8pt;break-inside:avoid}
+.aviso{border:1pt solid #d9a441;background:#fdf6e7;padding:6pt 9pt;margin:6pt 0 8pt;break-inside:avoid}
+.analogia{border-left:3pt solid #4a9a5b;padding:3pt 9pt;margin:5pt 0 7pt;background:#f1f8f2;break-inside:avoid}
+table{border-collapse:collapse;width:100%;font-size:9pt;margin:3pt 0 9pt;break-inside:avoid}
+th,td{border:.5pt solid #aaa;padding:2.5pt 4pt;vertical-align:top;text-align:left} th{background:#dde8f3}
+.cap{font-size:9.3pt;margin:8pt 0 2pt;break-after:avoid}
+code{font-family:"DejaVu Sans Mono",monospace;font-size:8.8pt}
+</style><body>
+<h1>Guía explicada del Paso 4<br>Redacción del borrador con el método de «La Casa»</h1>
+<div class="sub">Para Angel (no se entrega) · Qué se escribió, en qué orden, por qué y de dónde sale cada frase</div>
+
+<div class="caja"><b>Cómo usar esta guía.</b> Primero lee el borrador (<code>borrador-articulo.pdf</code>). Después lee esta guía
+sección por sección con el borrador al lado. Al final (sección 7) hay un plan para que lo reescribas tú con tus palabras
+y lo compares con el modelo.</div>
+
+<h2>1. Qué pide la profesora</h2>
+<p>El Paso 4 pide escribir el <b>borrador del artículo en orden inverso</b> a como se lee: (1) Conclusiones, (2) Resultados
+y Discusión, (3) Métodos, (4) Introducción y Marco Teórico con las citas del <code>.bib</code>, y (5) Resumen y Palabras
+clave de 100–200 palabras. El objetivo es evitar el «síndrome de la página en blanco». Cierre: viernes 2 de octubre, 15:00.</p>
+
+<h2>2. Por qué se escribe al revés</h2>
+<div class="analogia"><b>Analogía de «La Casa».</b> Antes de construir una casa decides qué casa quieres (las conclusiones).
+Después compruebas que el terreno y los materiales la soportan (los resultados), describes cómo se construyó (los métodos)
+y por último la presentas a los vecinos (la introducción y el resumen). Si empiezas por la fachada, acabas tirando paredes.</div>
+<ul>
+<li><b>Las conclusiones dicen qué hay que demostrar.</b> Si las escribes primero, todo lo demás se escribe para
+sostenerlas y no te sobran párrafos.</li>
+<li><b>Los resultados ya existen</b> (los obtuvimos en el Paso 3): solo hay que contarlos en orden y explicarlos.</li>
+<li><b>Los métodos se escriben sabiendo qué resultados hay que justificar</b>: solo se describe lo necesario para
+reproducirlos.</li>
+<li><b>La introducción se escribe al final</b> porque ya sabes exactamente qué hueco cubre tu trabajo.</li>
+<li><b>El resumen es lo último</b> porque resume todo lo anterior en 170 palabras.</li>
+</ul>
+<p>El documento que se entrega va en el orden normal de lectura. Que se redactó al revés se puede indicar en el comentario de la entrega en Studium, no dentro del artículo.</p>
+
+<h2>3. Paso a paso: qué se escribió en cada sección (en el orden de redacción)</h2>
+
+<h3>3.1 Conclusiones (lo primero que se escribe)</h3>
+<p>Responden a tres preguntas: <b>¿qué se hizo?</b> (modelo físico + tres modelos), <b>¿se cumple la hipótesis?</b>
+(en parte: mejor F1 y menos errores, pero mismo AUC y menos canales defectuosos detectados) y <b>¿qué significa para el
+operador?</b> (la potencia recibida es la variable decisiva). Cierra con el trabajo futuro. No lleva cifras nuevas ni
+citas, solo las que ya aparecen en resultados.</p>
+
+<h3>3.2 Resultados y discusión</h3>
+<p>Sigue el orden de las figuras y tablas, y cada una <b>se cita antes de aparecer</b> (regla de la profesora):</p>
+<table><tr><th>Párrafo</th><th>Qué cuenta</th><th>De dónde salen los datos</th></tr>
+<tr><td>1 (Fig. 1)</td><td>Dónde fallan los canales: entre 40 y 110 km; por debajo de 40 km cumple el 99 %.</td><td>Recuento sobre <code>datos/dataset.csv</code> por tramos de longitud.</td></tr>
+<tr><td>2 (Tabla 2)</td><td>AUC 0,98 en A, 0,998 en B; C casi igual que B.</td><td><code>resultados/tabla_resultados.csv</code>.</td></tr>
+<tr><td>3 (Fig. 2)</td><td>F1 y prueba de McNemar (44/13 y 54/23, p &lt; 0,001).</td><td><code>resultados/mcnemar.txt</code>.</td></tr>
+<tr><td>4</td><td>El matiz: errores de cada modelo (RF: 12 sin detectar y 49 falsas alarmas; logística: 2 y 90).</td><td>Matrices de confusión del 30 % de prueba (recalculadas y verificadas).</td></tr>
+<tr><td>5 (Fig. 3)</td><td>La potencia recibida hace caer el AUC 0,26 al permutarla; la segunda variable, 0,03.</td><td>Importancia por permutación (mismo cálculo que la figura).</td></tr>
+<tr><td>6 (discusión)</td><td>Comparación con la literatura [4], [6], [7] y limitaciones.</td><td><code>paso-2-bibliografia/notas-de-lectura.md</code>.</td></tr>
+</table>
+<div class="aviso"><b>Diferencia clave:</b> «Resultados» describe lo que salió (cifras). «Discusión» lo interpreta: por qué
+salió así, cómo encaja con otros trabajos y qué limita su validez. En LNCS se pueden juntar en una sección.</div>
+
+<h3>3.3 Métodos</h3>
+<p>Tiene que permitir que otra persona repita el experimento. Por eso incluye:</p>
+<ul>
+<li><b>2.1 Modelo físico:</b> las cinco ecuaciones numeradas (1)–(5) del simulador, con cada constante. La guía de los
+Pasos 1–3 (sección 6) explica cada una.</li>
+<li><b>2.2 Datos:</b> cómo se genera la degradación y cuántos canales hay; la <b>Tabla 1</b> (nueva) resume qué variables ve
+cada escenario. Se añadió porque un lector de metodología quiere ver las variables de entrada de un vistazo.</li>
+<li><b>2.3 Modelos y evaluación:</b> qué modelos, con qué parámetros, qué métricas (definidas), cuál es el <b>criterio principal</b> de la hipótesis (errores totales, prueba de McNemar) y cómo se evalúan trayectos y condiciones no vistos (objetivo 3, <code>analisis_no_vistos.py</code>).</li>
+</ul>
+
+<h3>3.4 Introducción y marco teórico</h3>
+<p>Sigue el esquema clásico de embudo, de lo general a lo concreto:</p>
+<ol>
+<li><b>Contexto:</b> qué son las redes ferroviarias DWDM y qué es la QoT.</li>
+<li><b>Caso de estudio y problema:</b> tu TFG [1] verificó la QoT una sola vez, sin degradación.</li>
+<li><b>Estado del arte:</b> los 10 artículos del <code>.bib</code>, cada uno con una frase que dice qué aportó [2]–[11].</li>
+<li><b>Hueco, pregunta, hipótesis, objetivos y aportaciones:</b> nadie lo ha aplicado a redes ferroviarias (búsqueda en WoS); se enuncian la pregunta, la hipótesis y los 4 objetivos de tu ficha, y se declara que el 4 queda fuera del alcance; organización del artículo.</li>
+</ol>
+<div class="aviso"><b>Corrección respecto a la ficha:</b> en la ficha, la frase «incluso con datos sintéticos» citaba a
+Kozdrowski, que usó datos <b>reales</b>. En el borrador se cita correctamente a Rottondi [4] para los datos sintéticos y a
+Kozdrowski [6] para los datos reales.</div>
+
+<h3>3.5 Resumen y palabras clave (lo último)</h3>
+<p>170 palabras (el límite es 100–200) con la estructura: <b>problema → objetivo → método → resultados con cifras →
+conclusión</b>. Las cinco palabras clave son las que alguien escribiría en un buscador para encontrar el artículo.</p>
+
+<h2>4. Las citas: cómo funcionan</h2>
+<ul>
+<li>Estilo <b>numérico [1]</b>, el de la plantilla LNCS (confirmado por la profesora). Los números van por orden de primera
+aparición en el texto.</li>
+<li>Toda afirmación sobre otro trabajo lleva su número; lo que no lleva número es aportación propia (pauta de Blocken).</li>
+<li><b>La referencia [1] (tu TFG) no está en <code>referencias.bib</code>.</b> En el Paso 5 hay que añadirla como
+<code>@misc</code> o <code>@mastersthesis</code>, porque LaTeX solo pone en la bibliografía lo que esté en el <code>.bib</code>.</li>
+</ul>
+
+<h2>5. Pautas de redacción que se aplicaron</h2>
+<table><tr><th>Pauta (materiales de clase)</th><th>Cómo se aplicó</th></tr>
+<tr><td>Cifras, no adjetivos (Blocken)</td><td>«F1 de 0,947 frente a 0,931», nunca «muy buen resultado».</td></tr>
+<tr><td>Terminología fija</td><td>Siempre «canal», «QoT», «potencia recibida», «escenario A/B/C».</td></tr>
+<tr><td>Modestia y limitaciones</td><td>Hipótesis «en parte»; datos sintéticos; trayectos no vistos.</td></tr>
+<tr><td>Citar tablas y figuras antes (profesora)</td><td>Tabla 1, Tabla 2, Fig. 1–3: comprobado en el PDF.</td></tr>
+<tr><td>Esquema antes de escribir (Cameron)</td><td>Secciones y párrafos fijados antes de redactar (sección 3 de esta guía).</td></tr>
+</table>
+
+<h2>6. Posibles preguntas de la profesora</h2>
+<p><b>¿Por qué la Tabla 1 es nueva?</b> Porque en Métodos hay que enumerar las variables de entrada; en el Paso 3 solo
+estaban en el texto.</p>
+<p><b>¿Por qué la conclusión dice «en parte»?</b> Porque el F1 y McNemar favorecen al ensamble, pero el AUC es igual y la
+logística detecta más canales que fallan.</p>
+<p><b>¿Dónde está el objetivo 4 (margen de diseño)?</b> La introducción declara que queda fuera del alcance y las conclusiones lo proponen como trabajo futuro; el resumen del Paso 3 dice lo mismo.</p>
+<p><b>¿Cómo sabes que funciona en trayectos no vistos?</b> Con la validación agrupada por trayecto: el AUC en B sigue en 0,996–0,998 (párrafo nuevo de resultados).</p>
+
+<h2>7. Plan para que lo reproduzcas tú</h2>
+<ol>
+<li>Lee el borrador entero dos veces sin tomar notas.</li>
+<li>Con el borrador cerrado, escribe <b>las conclusiones</b> con tus palabras (5–6 frases). Compara con el modelo.</li>
+<li>Haz lo mismo con <b>resultados</b> mirando solo las figuras y la tabla, después <b>métodos</b> mirando solo
+<code>simulador.py</code>, después la <b>introducción</b> mirando solo tus notas de lectura, y por último el <b>resumen</b>.</li>
+<li>En cada comparación, apunta qué te faltó y por qué estaba en el modelo. Eso es lo que estás aprendiendo.</li>
+<li>Pásame tu versión y te la corrijo frase a frase.</li>
+</ol>
+</body></html>
