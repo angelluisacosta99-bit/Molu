@@ -40,7 +40,7 @@ reproducirlos.</li>
 <li><b>La introducción se escribe al final</b> porque ya sabes exactamente qué hueco cubre tu trabajo.</li>
 <li><b>El resumen es lo último</b> porque resume todo lo anterior en 170 palabras.</li>
 </ul>
-<p>El documento que se entrega va en el orden normal de lectura; la nota bajo el título indica que se redactó al revés.</p>
+<p>El documento que se entrega va en el orden normal de lectura. Que se redactó al revés se puede indicar en el comentario de la entrega en Studium, no dentro del artículo.</p>
 
 <h2>3. Paso a paso: qué se escribió en cada sección (en el orden de redacción)</h2>
 
@@ -70,8 +70,7 @@ salió así, cómo encaja con otros trabajos y qué limita su validez. En LNCS s
 Pasos 1–3 (sección 6) explica cada una.</li>
 <li><b>2.2 Datos:</b> cómo se genera la degradación y cuántos canales hay; la <b>Tabla 1</b> (nueva) resume qué variables ve
 cada escenario. Se añadió porque un lector de metodología quiere ver las variables de entrada de un vistazo.</li>
-<li><b>2.3 Modelos y evaluación:</b> qué modelos, con qué parámetros, qué métricas y qué prueba estadística, y que los
-hiperparámetros se fijaron antes de ver los datos de prueba.</li>
+<li><b>2.3 Modelos y evaluación:</b> qué modelos, con qué parámetros, qué métricas (definidas), cuál es el <b>criterio principal</b> de la hipótesis (errores totales, prueba de McNemar) y cómo se evalúan trayectos y condiciones no vistos (objetivo 3, <code>analisis_no_vistos.py</code>).</li>
 </ul>
 
 <h3>3.4 Introducción y marco teórico</h3>
@@ -80,7 +79,7 @@ hiperparámetros se fijaron antes de ver los datos de prueba.</li>
 <li><b>Contexto:</b> qué son las redes ferroviarias DWDM y qué es la QoT.</li>
 <li><b>Caso de estudio y problema:</b> tu TFG [1] verificó la QoT una sola vez, sin degradación.</li>
 <li><b>Estado del arte:</b> los 10 artículos del <code>.bib</code>, cada uno con una frase que dice qué aportó [2]–[11].</li>
-<li><b>Hueco, hipótesis y aportaciones:</b> nadie lo ha aplicado a redes ferroviarias; tres aportaciones; organización del artículo.</li>
+<li><b>Hueco, pregunta, hipótesis, objetivos y aportaciones:</b> nadie lo ha aplicado a redes ferroviarias (búsqueda en WoS); se enuncian la pregunta, la hipótesis y los 4 objetivos de tu ficha, y se declara que el 4 queda fuera del alcance; organización del artículo.</li>
 </ol>
 <div class="aviso"><b>Corrección respecto a la ficha:</b> en la ficha, la frase «incluso con datos sintéticos» citaba a
 Kozdrowski, que usó datos <b>reales</b>. En el borrador se cita correctamente a Rottondi [4] para los datos sintéticos y a
@@ -113,8 +112,8 @@ aparición en el texto.</li>
 estaban en el texto.</p>
 <p><b>¿Por qué la conclusión dice «en parte»?</b> Porque el F1 y McNemar favorecen al ensamble, pero el AUC es igual y la
 logística detecta más canales que fallan.</p>
-<p><b>¿Dónde está el objetivo 4 (margen de diseño)?</b> Figura como trabajo futuro en las conclusiones; si da tiempo antes del
-artículo final, se puede añadir como sección de resultados.</p>
+<p><b>¿Dónde está el objetivo 4 (margen de diseño)?</b> La introducción declara que queda fuera del alcance y las conclusiones lo proponen como trabajo futuro; el resumen del Paso 3 dice lo mismo.</p>
+<p><b>¿Cómo sabes que funciona en trayectos no vistos?</b> Con la validación agrupada por trayecto: el AUC en B sigue en 0,996–0,998 (párrafo nuevo de resultados).</p>
 
 <h2>7. Plan para que lo reproduzcas tú</h2>
 <ol>
