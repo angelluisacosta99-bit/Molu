@@ -1,7 +1,7 @@
 # Graph Report - Molu  (2026-10-01)
 
 ## Corpus Check
-- 315 files · ~1,416,974 words
+- 315 files · ~1,418,387 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 112 file(s) not represented in the graph (top: .csv 32, .arff 22, .pptx 15)
 
@@ -11,7 +11,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `10e6e175`
+- Built from commit: `e2458fdc`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -1218,7 +1218,7 @@ Nodes (4): candidates, detectorPath, __dirname, ref_node_url
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Novedades de herramientas de IA` connect `Novedades de herramientas de IA` to `2026-09-07 — Búsqueda a mano: herramientas para posts de blog en plataformas de clases`, `2026-09-19 — Pasada por el correo semanal "This week in Claude Code" (4 números, 21 ago-18 sep)`, `hook-before-edit.mjs`, `2026-09-13 — Búsqueda exhaustiva: herramientas de investigación científica verificada para el máster`, `Runs`, `2026-08-16 — Primera pasada del radar`?**
-  _High betweenness centrality (0.038) - this node is a cross-community bridge._
+  _High betweenness centrality (0.037) - this node is a cross-community bridge._
 - **Why does `2026-08-16 — Segunda pasada: hooks vs. CLAUDE.md, y prácticas de la comunidad` connect `hook-before-edit.mjs` to `Novedades de herramientas de IA`?**
   _High betweenness centrality (0.037) - this node is a cross-community bridge._
 - **Why does `deny()` connect `hook-before-edit.mjs` to `readConfig`?**

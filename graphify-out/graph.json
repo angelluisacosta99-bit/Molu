@@ -10230,7 +10230,7 @@
       "file_type": "code",
       "norm_label": "main()",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-5-latex/generar_tex.py",
-      "source_location": "L124"
+      "source_location": "L125"
     },
     {
       "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_5_latex_generar_tex_tabla",
@@ -10242,7 +10242,7 @@
       "file_type": "code",
       "norm_label": "tabla()",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-5-latex/generar_tex.py",
-      "source_location": "L110"
+      "source_location": "L111"
     },
     {
       "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_5_latex_generar_tex_texto",
@@ -80502,7 +80502,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-5-latex/generar_tex.py",
-      "source_location": "L132",
+      "source_location": "L133",
       "weight": 1.0
     },
     {
@@ -80514,7 +80514,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-5-latex/generar_tex.py",
-      "source_location": "L148",
+      "source_location": "L149",
       "weight": 1.0
     },
     {
@@ -80526,7 +80526,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-5-latex/generar_tex.py",
-      "source_location": "L116",
+      "source_location": "L117",
       "weight": 1.0
     },
     {
@@ -116867,7 +116867,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-5-latex/generar_tex.py",
-      "source_location": "L110",
+      "source_location": "L111",
       "weight": 1.0
     },
     {
@@ -116878,7 +116878,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-5-latex/generar_tex.py",
-      "source_location": "L124",
+      "source_location": "L125",
       "weight": 1.0
     },
     {
@@ -124798,5 +124798,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "10e6e1759429da17fd3278f4df3894ee1487d530"
+  "built_at_commit": "e2458fdc5e3ba407970323cfb19203b38e73e9dd"
 }
