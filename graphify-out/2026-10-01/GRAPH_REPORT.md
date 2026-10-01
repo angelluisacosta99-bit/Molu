@@ -1,7 +1,7 @@
 # Graph Report - Molu  (2026-10-01)
 
 ## Corpus Check
-- 308 files · ~1,407,296 words
+- 308 files · ~1,407,430 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 107 file(s) not represented in the graph (top: .csv 32, .arff 22, .pptx 15)
 
@@ -11,7 +11,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `842a8fa6`
+- Built from commit: `e1cf9b93`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -1195,7 +1195,7 @@ Nodes (5): Archivos de esta carpeta, Cadenas de búsqueda (Scopus / Web of Scien
 
 ### Community 254 - "Paso 3 — Diseño experimental y resultados"
 Cohesion: 0.29
-Nodes (6): Archivos, Cómo ejecutarlo (en VS Code), Diseño (resumen para la sección de Métodos), Interpretación (para Resultados y Discusión), Paso 3 — Diseño experimental y resultados, Resultados
+Nodes (6): Archivos, Diseño experimental, Interpretación, Paso 3 — Diseño experimental y resultados, Reproducción, Resultados
 
 ### Community 256 - "live-target.mjs"
 Cohesion: 0.48
@@ -1218,7 +1218,7 @@ Cohesion: 0.47
 Nodes (5): hasGeneratedHeader(), HEADER_MARKERS, isGeneratedFile(), isGitIgnored(), searchDir()
 
 ## Knowledge Gaps
-- **983 isolated node(s):** `Cómo ejecutarlo (en VS Code)`, `Archivos`, `Diseño (resumen para la sección de Métodos)`, `Resultados`, `Interpretación (para Resultados y Discusión)` (+978 more)
+- **983 isolated node(s):** `Reproducción`, `Archivos`, `Diseño experimental`, `Resultados`, `Interpretación` (+978 more)
   These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1229 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **34 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -1226,12 +1226,12 @@ Nodes (5): hasGeneratedHeader(), HEADER_MARKERS, isGeneratedFile(), isGitIgnored
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Novedades de herramientas de IA` connect `Novedades de herramientas de IA` to `2026-09-07 — Búsqueda a mano: herramientas para posts de blog en plataformas de clases`, `2026-09-19 — Pasada por el correo semanal "This week in Claude Code" (4 números, 21 ago-18 sep)`, `hook-before-edit.mjs`, `2026-09-13 — Búsqueda exhaustiva: herramientas de investigación científica verificada para el máster`, `2026-08-16 — Primera pasada del radar`, `2026-08-30 — Compactación de contexto: palancas oficiales para ahorrar tokens`, `2026-08-30 — Pasada del radar: dos funciones nativas nuevas, sin hallazgos de terceros`?**
-  _High betweenness centrality (0.034) - this node is a cross-community bridge._
+  _High betweenness centrality (0.043) - this node is a cross-community bridge._
 - **Why does `2026-08-16 — Segunda pasada: hooks vs. CLAUDE.md, y prácticas de la comunidad` connect `hook-before-edit.mjs` to `Novedades de herramientas de IA`?**
-  _High betweenness centrality (0.033) - this node is a cross-community bridge._
+  _High betweenness centrality (0.041) - this node is a cross-community bridge._
 - **Why does `deny()` connect `hook-before-edit.mjs` to `readConfig`?**
-  _High betweenness centrality (0.024) - this node is a cross-community bridge._
-- **What connects `Cómo ejecutarlo (en VS Code)`, `Archivos`, `Diseño (resumen para la sección de Métodos)` to the rest of the system?**
+  _High betweenness centrality (0.028) - this node is a cross-community bridge._
+- **What connects `Reproducción`, `Archivos`, `Diseño experimental` to the rest of the system?**
   _983 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `live-browser.js` be split into smaller, more focused modules?**
   _Cohesion score 0.03238095238095238 - nodes in this community are weakly interconnected._

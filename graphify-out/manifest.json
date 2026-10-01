@@ -2700,21 +2700,21 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/experimento.py": {
-    "mtime": 1790847502.4223757,
-    "seen": 1790847701.553804,
-    "ast_hash": "ef2d7b6aba62540af70a305949dc8109",
+    "mtime": 1790848847.1259518,
+    "seen": 1790848899.342412,
+    "ast_hash": "544fd9bf304438361883c2d2b6a2ceb2",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/simulador.py": {
-    "mtime": 1790701681.9447377,
-    "seen": 1790701692.0259607,
-    "ast_hash": "6a71a506e81f2faafddf38e95885b812",
+    "mtime": 1790848847.1254082,
+    "seen": 1790848899.342415,
+    "ast_hash": "c667c445e4844bd10b3e3011eacff256",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/README.md": {
-    "mtime": 1790847502.421431,
-    "seen": 1790847701.554112,
-    "ast_hash": "0df53dcb57f69b0ff41f76621e7e35f9",
+    "mtime": 1790848847.1247227,
+    "seen": 1790848899.3428352,
+    "ast_hash": "924736af9b034a5a2430361e4b621638",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/resultados/mcnemar.txt": {
@@ -2760,9 +2760,9 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/generar_resumen.py": {
-    "mtime": 1790844383.0311801,
-    "seen": 1790844387.5817425,
-    "ast_hash": "33c3b9b6f70ba45d68b287c3f8e672aa",
+    "mtime": 1790848847.1268508,
+    "seen": 1790848899.3424141,
+    "ast_hash": "75336c6a64f6f65404c6f5e7e0e1d3d8",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/materiales-de-clase/fuentes-de-informacion-en-ciencia-y-tecnologia.pdf": {
@@ -2772,9 +2772,9 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/resumen-paso-3.pdf": {
-    "mtime": 1790844383.9209688,
-    "seen": 1790844387.5822332,
-    "ast_hash": "8d75ae042606a01248dbe69a9298a499",
+    "mtime": 1790848850.0738235,
+    "seen": 1790848899.3429503,
+    "ast_hash": "fe689f4d741ec3c7ac103e6b1beeabe1",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/CLAUDE.md": {

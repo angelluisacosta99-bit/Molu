@@ -35579,43 +35579,31 @@
       "node_kind": "heading",
       "norm_label": "archivos",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/README.md",
-      "source_location": "L15"
+      "source_location": "L14"
     },
     {
-      "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_readme_c\u00f3mo_ejecutarlo_en_vs_code",
-      "label": "C\u00f3mo ejecutarlo (en VS Code)",
+      "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_readme_dise\u00f1o_experimental",
+      "label": "Dise\u00f1o experimental",
       "_origin": "ast",
       "community": 254,
       "community_name": "Paso 3 \u2014 Dise\u00f1o experimental y resultados",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "como ejecutarlo (en vs code)",
+      "norm_label": "diseno experimental",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/README.md",
-      "source_location": "L6"
+      "source_location": "L28"
     },
     {
-      "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_readme_dise\u00f1o_resumen_para_la_secci\u00f3n_de_m\u00e9todos",
-      "label": "Dise\u00f1o (resumen para la secci\u00f3n de M\u00e9todos)",
+      "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_readme_interpretaci\u00f3n",
+      "label": "Interpretaci\u00f3n",
       "_origin": "ast",
       "community": 254,
       "community_name": "Paso 3 \u2014 Dise\u00f1o experimental y resultados",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "diseno (resumen para la seccion de metodos)",
+      "norm_label": "interpretacion",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/README.md",
-      "source_location": "L29"
-    },
-    {
-      "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_readme_interpretaci\u00f3n_para_resultados_y_discusi\u00f3n",
-      "label": "Interpretaci\u00f3n (para Resultados y Discusi\u00f3n)",
-      "_origin": "ast",
-      "community": 254,
-      "community_name": "Paso 3 \u2014 Dise\u00f1o experimental y resultados",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "interpretacion (para resultados y discusion)",
-      "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/README.md",
-      "source_location": "L66"
+      "source_location": "L65"
     },
     {
       "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_readme_paso_3_dise\u00f1o_experimental_y_resultados",
@@ -35630,6 +35618,18 @@
       "source_location": "L1"
     },
     {
+      "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_readme_reproducci\u00f3n",
+      "label": "Reproducci\u00f3n",
+      "_origin": "ast",
+      "community": 254,
+      "community_name": "Paso 3 \u2014 Dise\u00f1o experimental y resultados",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "reproduccion",
+      "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/README.md",
+      "source_location": "L6"
+    },
+    {
       "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_readme_resultados",
       "label": "Resultados",
       "_origin": "ast",
@@ -35639,7 +35639,7 @@
       "node_kind": "heading",
       "norm_label": "resultados",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/README.md",
-      "source_location": "L48"
+      "source_location": "L47"
     },
     {
       "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_crear_cuaderno",
@@ -115899,18 +115899,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/README.md",
-      "source_location": "L15",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
       "source": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_readme_paso_3_dise\u00f1o_experimental_y_resultados",
-      "target": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_readme_dise\u00f1o_resumen_para_la_secci\u00f3n_de_m\u00e9todos",
+      "target": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_readme_dise\u00f1o_experimental",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/README.md",
-      "source_location": "L29",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -115921,12 +115921,12 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/README.md",
-      "source_location": "L48",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
       "source": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_readme_paso_3_dise\u00f1o_experimental_y_resultados",
-      "target": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_readme_c\u00f3mo_ejecutarlo_en_vs_code",
+      "target": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_readme_reproducci\u00f3n",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -115937,13 +115937,13 @@
     },
     {
       "source": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_readme_paso_3_dise\u00f1o_experimental_y_resultados",
-      "target": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_readme_interpretaci\u00f3n_para_resultados_y_discusi\u00f3n",
+      "target": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_readme_interpretaci\u00f3n",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/README.md",
-      "source_location": "L66",
+      "source_location": "L65",
       "weight": 1.0
     },
     {
@@ -123716,5 +123716,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "842a8fa6ad6d22b9cd2032e7b540f6a62448309e"
+  "built_at_commit": "e1cf9b934b7649522f9e23f5ad11fc6d49c9e051"
 }
