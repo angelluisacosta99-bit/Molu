@@ -37,9 +37,11 @@ PREAMBULO = r"""\documentclass[runningheads]{llncs}
 \usepackage{booktabs}
 \usepackage{textcomp}
 \usepackage{url}
+\usepackage{float}
+\raggedbottom  %% con [H], el hueco sobrante va al pie de página, no entre párrafos
 
-%% Colocación de figuras y tablas: dejar que compartan página con el texto
-%% y, si ocupan una página propia, ponerlas arriba en vez de centradas.
+%% Figuras y tablas: [H] (paquete float) las coloca justo después del párrafo
+%% que las cita; las fracciones de abajo solo afectan a flotantes normales.
 \renewcommand{\topfraction}{0.9}
 \renewcommand{\bottomfraction}{0.8}
 \renewcommand{\textfraction}{0.07}
@@ -107,7 +109,7 @@ def tabla(pie, filas, etiqueta):
         cols, tam = r"p{2.6cm}p{5.6cm}ccc", r"\footnotesize"
     else:
         cols, tam = "llcccc", r"\scriptsize"
-    lineas = [r"\begin{table}[!htbp]", r"\centering", tam, r"\caption{" + texto(pie) + "}",
+    lineas = [r"\begin{table}[H]", r"\centering", tam, r"\caption{" + texto(pie) + "}",
               r"\label{" + etiqueta + "}", r"\begin{tabular}{" + cols + "}", r"\toprule",
               " & ".join(texto(c) for c in filas[0]) + r" \\", r"\midrule"]
     lineas += [" & ".join(texto(c).replace(" ± ", r" $\pm$ ") for c in f) + r" \\" for f in filas[1:]]
@@ -144,7 +146,7 @@ def main():
             nombre = Path(b[1]).stem
             shutil.copy(BASE / "paso-3-experimento" / "figuras" / (nombre + ".pdf"), OUT / "figuras")
             pie = re.sub(r"<b>Fig\. \d\.</b>\s*", "", b[2])
-            cuerpo.append("\\begin{figure}[!htbp]\n\\centering\n\\includegraphics[width=0.7\\textwidth]{figuras/"
+            cuerpo.append("\\begin{figure}[H]\n\\centering\n\\includegraphics[width=0.7\\textwidth]{figuras/"
                           + nombre + "}\n\\caption{" + texto(pie) + "}\n\\label{" + FIGURAS[nombre] + "}\n\\end{figure}\n")
     cuerpo.append("\n\\bibliographystyle{splncs}\n\\bibliography{referencias}\n\n\\end{document}\n")
     (OUT / "main.tex").write_text("\n".join(cuerpo), encoding="utf-8")
