@@ -1,7 +1,7 @@
 # Graph Report - Molu  (2026-10-01)
 
 ## Corpus Check
-- 315 files · ~1,416,842 words
+- 315 files · ~1,416,843 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 112 file(s) not represented in the graph (top: .csv 32, .arff 22, .pptx 15)
 
@@ -11,7 +11,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `6d446341`
+- Built from commit: `e23294a4`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
