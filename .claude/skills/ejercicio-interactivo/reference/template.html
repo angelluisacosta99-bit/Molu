@@ -1396,7 +1396,7 @@
           row.className = "item-row";
           // ex.numbered: marca 1., 2., 3. en vez de a., b., c. — obligatorio en los diálogos,
           // donde a/b/c chocaría con las letras A/B de los propios interlocutores.
-          const marca = ex.numbered ? (i + 1) + "." : String.fromCharCode(97 + i) + ".";
+          const marca = ex.markers ? ex.markers[i] + "." : (ex.numbered ? (i + 1) + "." : String.fromCharCode(97 + i) + ".");
           if (ex.dialog) row.classList.add("dialog-row");
           // item.solved = fila que el libro ya trae resuelta (el típico ítem 1 hecho como
           // modelo). Se muestra porque está en el original, pero va sin huecos: pedirle al
@@ -1777,7 +1777,7 @@
           row.className = "item-row";
           // ex.numbered: marca 1., 2., 3. en vez de a., b., c. — obligatorio en los diálogos,
           // donde a/b/c chocaría con las letras A/B de los propios interlocutores.
-          const marca = ex.numbered ? (i + 1) + "." : String.fromCharCode(97 + i) + ".";
+          const marca = ex.markers ? ex.markers[i] + "." : (ex.numbered ? (i + 1) + "." : String.fromCharCode(97 + i) + ".");
           if (ex.dialog) row.classList.add("dialog-row");
           // item.solved = fila que el libro ya trae resuelta (el típico ítem 1 hecho como
           // modelo). Se muestra porque está en el original, pero va sin huecos: pedirle al
