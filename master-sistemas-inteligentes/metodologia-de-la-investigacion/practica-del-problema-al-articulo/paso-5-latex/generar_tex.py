@@ -18,7 +18,7 @@ OUT = AQUI / "articulo"
 AUTOR = "Angel L. Acosta-González"
 INSTITUCION = (r"Máster Universitario en Sistemas Inteligentes, Universidad de Salamanca\\"
                r"Plaza de los Caídos s/n, 37008 Salamanca, España")
-EMAIL = ""  # correo institucional @usal.es; vacío = no se imprime \email
+EMAIL = "idu092699@usal.es"  # correo institucional; vacío = no se imprime \email
 
 # Resumen del artículo: 100-150 palabras para cumplir a la vez el Paso 4 (100-200) y typeinst (70-150)
 RESUMEN = (
