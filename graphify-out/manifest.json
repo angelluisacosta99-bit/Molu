@@ -642,15 +642,15 @@
     "semantic_hash": ""
   },
   ".claude/skills/ejercicio-interactivo/SKILL.md": {
-    "mtime": 1790969334.8049438,
-    "seen": 1790969370.918405,
-    "ast_hash": "7f1c251b925e019063867947911dbc5b",
+    "mtime": 1790970017.7915864,
+    "seen": 1790970061.9482455,
+    "ast_hash": "7740ccb987610a268ca9fbb8002e3f92",
     "semantic_hash": ""
   },
   ".claude/skills/ejercicio-interactivo/reference/template.html": {
-    "mtime": 1790969334.8049438,
-    "seen": 1790969370.918407,
-    "ast_hash": "bbc2d272759508d8d228bf36ae6e5164",
+    "mtime": 1790969981.0795841,
+    "seen": 1790970061.9482472,
+    "ast_hash": "0fef938501ee2aa897d6907cf62f1fb2",
     "semantic_hash": ""
   },
   ".claude/skills/graphify/SKILL.md": {
@@ -2994,33 +2994,33 @@
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad3b_amigos.md": {
-    "mtime": 1790969308.9915442,
-    "seen": 1790969370.9185336,
+    "mtime": 1790970039.1515877,
+    "seen": 1790970061.948364,
     "ast_hash": "163870ac2648519ff86fa49fd4dd8f30",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad3c_tengo-problemas.md": {
-    "mtime": 1790969311.6235445,
-    "seen": 1790969370.9185348,
-    "ast_hash": "3f32318a26b88e431c1f91fcd628450e",
+    "mtime": 1790970041.9115877,
+    "seen": 1790970061.9483654,
+    "ast_hash": "2318fa12aefec905d0a9c00e22a80ff9",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad4a_cuanto-tiempo-sin-verte.md": {
-    "mtime": 1790969314.4115446,
-    "seen": 1790969370.9185357,
-    "ast_hash": "3dfa3864ab8a1243cee69e3f53e51895",
+    "mtime": 1790970044.847588,
+    "seen": 1790970061.9483674,
+    "ast_hash": "efdaec54967afc38af60539f70c409b7",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad4b_la-educacion-antes-y-ahora.md": {
-    "mtime": 1790969317.0235448,
-    "seen": 1790969370.9185364,
-    "ast_hash": "1ed5603b6f91fbfab0f09230bdca83d3",
+    "mtime": 1790970047.669028,
+    "seen": 1790970061.9483685,
+    "ast_hash": "ebbe0745cf94acabada50e005fd01c3b",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad4c_trabajo-y-vocacion.md": {
-    "mtime": 1790969319.771545,
-    "seen": 1790969370.9185371,
-    "ast_hash": "589d24555f359df5c290ef4baf6c3c2d",
+    "mtime": 1790970050.6675882,
+    "seen": 1790970061.9483702,
+    "ast_hash": "773614e41b4ace33607c5d198e81e7f9",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad6a_ecologicamente-correcto.md": {
@@ -3048,33 +3048,33 @@
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad3b_amigos_interactivo.html": {
-    "mtime": 1790969137.603326,
-    "seen": 1790969370.9186046,
-    "ast_hash": "35fc0c8331a1e3bc65060c94459cefd8",
+    "mtime": 1790969980.8573518,
+    "seen": 1790970061.9484513,
+    "ast_hash": "11bd0419adf82c47cc3e20d8dabc9b29",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad3c_tengo-problemas_interactivo.html": {
-    "mtime": 1790969137.6075976,
-    "seen": 1790969370.9186053,
-    "ast_hash": "540a38cfa3d64f8d2463212621e34962",
+    "mtime": 1790969980.8650951,
+    "seen": 1790970061.9484527,
+    "ast_hash": "b5b5dbbeab7cd1ffb56fc6e98747b9c2",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad4a_cuanto-tiempo-sin-verte_interactivo.html": {
-    "mtime": 1790969137.6155343,
-    "seen": 1790969370.9186063,
-    "ast_hash": "2fcd1608b6e9af26f553eac24d81ff1a",
+    "mtime": 1790969980.8755841,
+    "seen": 1790970061.9484537,
+    "ast_hash": "51e2e034bda28a5c9ea5684e92ac1f36",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad4b_la-educacion-antes-y-ahora_interactivo.html": {
-    "mtime": 1790969137.6214845,
-    "seen": 1790969370.918607,
-    "ast_hash": "12406bd0608fbaaff77a4ca0ce195bdb",
+    "mtime": 1790969980.8860743,
+    "seen": 1790970061.9484549,
+    "ast_hash": "19bee8208fdb04361712e80554f8c288",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad4c_trabajo-y-vocacion_interactivo.html": {
-    "mtime": 1790969137.6858141,
-    "seen": 1790969370.918608,
-    "ast_hash": "c184082afbf949601c7f0ac31ce00459",
+    "mtime": 1790969980.9835842,
+    "seen": 1790970061.9484563,
+    "ast_hash": "31767570ccf8774a19ce19d1b8fc684d",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad6a_ecologicamente-correcto_interactivo.html": {
@@ -3102,15 +3102,15 @@
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad9b_casate-conmigo.md": {
-    "mtime": 1790969707.1795678,
-    "seen": 1790969725.2586954,
-    "ast_hash": "f547b5bfbc954b8d0b6a86a4f6b3d1c2",
+    "mtime": 1790970053.6115885,
+    "seen": 1790970061.948388,
+    "ast_hash": "b5c6a122078822206a27d667554bb20b",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad9c_quiero-que-mi-ciudad-este-bonita.md": {
-    "mtime": 1790969709.935568,
-    "seen": 1790969725.2586966,
-    "ast_hash": "cb25c6fef91f5129d65eb44ad339bbe4",
+    "mtime": 1790970056.5235887,
+    "seen": 1790970061.948389,
+    "ast_hash": "13e3d14b892795098b11db3df4276a83",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad9a_sucesos_interactivo.html": {
@@ -3120,15 +3120,15 @@
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad9b_casate-conmigo_interactivo.html": {
-    "mtime": 1790969667.6237195,
-    "seen": 1790969725.2587647,
-    "ast_hash": "187ce1ca98397219c1acbac1ee8a1898",
+    "mtime": 1790969981.0256221,
+    "seen": 1790970061.9484727,
+    "ast_hash": "5683b097f4d7a0d3c29fddb25b454d9b",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad9c_quiero-que-mi-ciudad-este-bonita_interactivo.html": {
-    "mtime": 1790969667.6420994,
-    "seen": 1790969725.2587662,
-    "ast_hash": "29245f7afd8917be76a76ec280477f0c",
+    "mtime": 1790969981.0514815,
+    "seen": 1790970061.9484746,
+    "ast_hash": "16f7908c13906bb2205501add8bbedb7",
     "semantic_hash": ""
   }
 }

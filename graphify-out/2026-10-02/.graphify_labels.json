@@ -223,12 +223,12 @@
   "221": "Ejercicios",
   "222": "2026-09-19 — Pasada por el correo semanal \"This week in Claude Code\" (4 números, 21 ago-18 sep)",
   "223": "2. Hallazgos verificados que cambian el plan",
-  "224": "simulador.py",
+  "224": "experimento.py",
   "225": "Optativas elegidas este curso (6)",
-  "226": "event-validation.mjs",
+  "226": "Ejercicios",
   "227": "Parte 2 — Propuesta adjunta (2 páginas)",
   "228": "Ejercicios",
-  "229": "experimento.py",
+  "229": "Ejercicios",
   "230": "caveman-cavecrew/skills/caveman/SKILL.md",
   "231": "generar_tex.py",
   "232": "Plan de entrenamiento para el TFM (energías renovables + sistemas inteligentes)",
@@ -277,5 +277,6 @@
   "275": "articulo/llncs.cls",
   "276": "plantilla-lncs/llncs.cls",
   "277": "criteria.md",
-  "278": "prompt.md"
+  "278": "prompt.md",
+  "279": "Ejercicios"
 }
