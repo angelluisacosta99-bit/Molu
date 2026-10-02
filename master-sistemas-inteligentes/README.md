@@ -74,3 +74,33 @@ Acogida de estudiantes y presentación del máster: 28 de septiembre de 2026, 16
 imparte por seminarios y conferencias anunciadas durante el curso.
 
 **Trabajo Fin de Máster**: sin docencia presencial programada.
+
+## Calendario de exámenes
+
+Fuente: "Calendario de actividades de evaluación 2026-2027" (USAL).
+Solo las asignaturas de tu plan (ver tabla arriba); el documento oficial
+trae también las optativas que no cursas este año.
+
+Vacaciones de Navidad: 23 dic. 2026 – 10 ene. 2027. Vacaciones de
+Pascua: 20 mar. – 30 abr. 2027.
+
+| Asignatura | 1ª convocatoria | 2ª convocatoria |
+|---|---|---|
+| Computación Neuroborrosa | 21/12/2026 | 03/05/2027 |
+| Metodología de la Investigación | 22/12/2026 | 04/05/2027 |
+| Robots Autónomos | 11/01/2027 | 05/05/2027 |
+| Inteligencia Ambiental y Sist. Multiagente | 12/01/2027 | 08/05/2027 |
+| Control Inteligente | 13/01/2027 | 09/05/2027 |
+| Minería de Datos | 14/01/2027 | 10/05/2027 |
+| Lógica para la Web Semántica | 15/01/2027 | 11/05/2027 |
+| Analítica Visual y Visualización de Información | 18/01/2027 | 12/05/2027 |
+| Recuperación Avanzada de la Información | 20/01/2027 | 16/05/2027 |
+| Cibermetría | 22/01/2027 | 18/05/2027 |
+| Tecnologías del Habla | 24/05/2027 | 21/06/2027 |
+| Minería de Datos Aplicada a la Bioinformática | 28/05/2027 | 23/06/2027 |
+| Procesos y Métodos de Modelado para la Ingeniería Web y Web Semántica | 29/05/2027 | 24/06/2027 |
+| Herramientas Interactivas de Simulación y Control | 30/05/2027 | 25/06/2027 |
+| Nuevas Tendencias en Sistemas Inteligentes | Control de asistencia | — |
+
+**Trabajo Fin de Máster**: 1ª convocatoria 16-18 jun. 2027 (entrega 11
+jun.); 2ª convocatoria 14-16 jul. 2027 (entrega 09 jul.).
