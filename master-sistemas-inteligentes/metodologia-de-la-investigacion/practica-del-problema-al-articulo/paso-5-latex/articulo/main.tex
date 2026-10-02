@@ -6,8 +6,6 @@
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{array}  % columnas de texto alineadas a la izquierda en las tablas
-\usepackage{textcomp}
-\usepackage{url}
 \usepackage{flafter}  % ninguna figura o tabla aparece antes del párrafo que la cita
 
 % Figuras y tablas como flotantes [htbp] (pauta de Springer): se escriben justo
@@ -37,16 +35,17 @@
 \DeclareUnicodeCharacter{03B1}{\ensuremath{\alpha}}
 
 \begin{document}
+\mainmatter
 
 \title{Estimación de la calidad de transmisión con aprendizaje automático en la red DWDM ferroviaria Moscú-Kazánskaya – Riazán}
 \titlerunning{QoT con aprendizaje automático en una red DWDM ferroviaria}
 \author{Angel L. Acosta-González}
 \authorrunning{Angel L. Acosta-González}
-\institute{Máster Universitario en Sistemas Inteligentes, Universidad de Salamanca}
+\institute{Máster Universitario en Sistemas Inteligentes, Universidad de Salamanca\\Plaza de los Caídos s/n, 37008 Salamanca, España}
 \maketitle
 
 \begin{abstract}
-La calidad de transmisión (QoT) de los canales de una red DWDM ferroviaria suele verificarse una sola vez, en la fase de diseño, con un cálculo analítico del caso más desfavorable y márgenes fijos. Este trabajo evalúa si un modelo de aprendizaje automático entrenado con parámetros observables de los enlaces puede predecir si cada canal cumple el umbral BER ≤ 10\textsuperscript{−11} cuando la red se degrada. Se generaron 10 000 canales sintéticos de la red Moscú-Kazánskaya – Riazán con un modelo físico de transmisión que incluye envejecimiento, reparaciones y hielo, y se compararon una regresión logística, Random Forest y XGBoost en tres escenarios de información. Con la potencia recibida medida, los tres modelos alcanzan un AUC de 0,998 (≥ 0,996 en trayectos no vistos); los ensambles obtienen mayor F1 (0,947 frente a 0,931) y cometen menos errores (prueba de McNemar, p $<$ 0,001), aunque la regresión logística detecta más canales que no cumplen. La potencia recibida medida es la variable decisiva en la red simulada. La hipótesis se confirma con matices y debe contrastarse con datos medidos en la red real.
+La calidad de transmisión (QoT) de las redes DWDM ferroviarias suele verificarse una sola vez, en el diseño, con márgenes fijos. Este trabajo evalúa si un modelo de aprendizaje automático entrenado con parámetros observables de los enlaces predice si cada canal cumple el umbral BER ≤ 10\textsuperscript{−11} cuando la red se degrada. Se generaron 10 000 canales sintéticos de la red Moscú-Kazánskaya – Riazán con un modelo físico que incluye envejecimiento, reparaciones y hielo, y se compararon una regresión logística, Random Forest y XGBoost en tres escenarios de información. Con la potencia recibida medida, la variable decisiva, los tres modelos alcanzan un AUC de 0,998; los ensambles obtienen mayor F1 (0,947 frente a 0,931) y cometen menos errores (McNemar, p $<$ 0,001), aunque la regresión logística detecta más canales que no cumplen. La hipótesis se confirma con matices y debe contrastarse con datos reales.
 \keywords{redes ópticas DWDM \textperiodcentered{} calidad de transmisión \textperiodcentered{} aprendizaje automático \textperiodcentered{} Random Forest \textperiodcentered{} comunicaciones ferroviarias}
 \end{abstract}
 
@@ -69,43 +68,43 @@ Las aportaciones son: (i) un modelo físico de la red con degradación en explot
 
 \subsection{Modelo físico de transmisión}
 
-Cada canal une dos de las 21 estaciones de la línea, a una distancia \emph{d} de entre 5,4 y 198,3 km (208 pares posibles; se omite una estación cuyo punto kilométrico no consta en~\cite{acosta2026tfg}), y transmite 10 Gbit/s en formato sin retorno a cero (NRZ) con detección directa. La pérdida nominal del canal es la suma de la atenuación de la fibra (α = 0,22 dB/km), un empalme de 0,1 dB cada 4 km, 1 dB de conectores y 5 dB de los multiplexores de inserción-extracción (OADM), aplicados por igual a todos los canales:
+Cada canal une dos de las 21 estaciones de la línea con punto kilométrico conocido (de las 22 de~\cite{acosta2026tfg}, una no lo tiene) separadas al menos 5 km, lo que da 208 pares posibles a una distancia \emph{d} de entre 5,4 y 198,3 km, y transmite 10 Gbit/s en formato sin retorno a cero (NRZ) con detección directa. La pérdida nominal del canal es la suma de la atenuación de la fibra (α = 0,22 dB/km), un empalme de 0,1 dB cada 4 km, 1 dB de conectores y 5 dB de los multiplexores de inserción-extracción (OADM), aplicados por igual a todos los canales:
 
 \begin{equation}
-L_{\mathrm{nom}} = \alpha d + 0{,}1\left\lceil d/4 \right\rceil + 1 + 5 \quad [\mathrm{dB}]
+L_{\mathrm{nom}} = \alpha d + 0{,}1\left\lceil d/4 \right\rceil + 1 + 5 \quad [\mathrm{dB}] .
 \label{eq:1}
 \end{equation}
 
 Con un láser de 0 dBm y una sensibilidad del receptor de −25 dBm, el canal se diseña con preamplificador de fibra dopada con erbio (EDFA) cuando el margen nominal (potencia del láser menos la pérdida de la ec.~(\ref{eq:1}) y la sensibilidad) es inferior a 3 dB, lo que ocurre en los canales de más de 65 km; los canales amplificados llevan un EDFA cada 110 km como máximo (\emph{n} vanos iguales), y \emph{P}\textsubscript{rx} = \emph{P}\textsubscript{tx} − \emph{L}/\emph{n} es la potencia a la entrada de cada amplificador o del receptor. En los canales sin amplificar, limitados por el ruido térmico del receptor, el factor Q crece de forma lineal con la potencia recibida \emph{P}\textsubscript{rx}, con Q = 7,03 en la sensibilidad (BER = 10\textsuperscript{−12}):
 
 \begin{equation}
-Q_t = 7{,}03 \cdot 10^{(P_{\mathrm{rx}} + 25)/10}
+Q_t = 7{,}03 \cdot 10^{(P_{\mathrm{rx}} + 25)/10} .
 \label{eq:2}
 \end{equation}
 
-En los amplificados domina el ruido de emisión espontánea amplificada (ASE). La relación señal/\allowbreak ruido óptica en 0,1 nm y el factor Q con detección directa se obtienen como:
+En los canales amplificados domina el ruido de emisión espontánea amplificada (ASE). La relación señal/\allowbreak ruido óptica en 0,1 nm y el factor Q con detección directa se obtienen como:
 
 \begin{equation}
-\mathrm{OSNR} = 58 + P_{\mathrm{rx}} - \mathrm{NF} - 10\log_{10} n \quad [\mathrm{dB}]
+\mathrm{OSNR} = 58 + P_{\mathrm{rx}} - \mathrm{NF} - 10\log_{10} n \quad [\mathrm{dB}] ,
 \label{eq:3}
 \end{equation}
 
 \begin{equation}
-Q_{\mathrm{ASE}} = \sqrt{\frac{B_o}{B_e}}\,\frac{2\,\mathrm{OSNR}}{1 + \sqrt{1 + 4\,\mathrm{OSNR}}}
+Q_{\mathrm{ASE}} = \sqrt{\frac{B_o}{B_e}}\,\frac{2\,\mathrm{OSNR}}{1 + \sqrt{1 + 4\,\mathrm{OSNR}}} ,
 \label{eq:4}
 \end{equation}
 
 donde la OSNR de la ec.~(\ref{eq:3}) se toma en unidades lineales, NF es la figura de ruido del EDFA (6–7 dB más su envejecimiento), B\textsubscript{o} = 12,5 GHz y B\textsubscript{e} = 7,5 GHz. El ruido térmico del receptor preamplificado, con la señal unas diez veces por encima de la sensibilidad, se combina con el Q\textsubscript{ASE} de la ec.~(\ref{eq:4}):
 
 \begin{equation}
-Q_{\mathrm{amp}} = \left(Q_{\mathrm{ASE}}^{-2} + (10 \cdot 7{,}03)^{-2}\right)^{-1/2}
+Q_{\mathrm{amp}} = \left(Q_{\mathrm{ASE}}^{-2} + (10 \cdot 7{,}03)^{-2}\right)^{-1/2} .
 \label{eq:5}
 \end{equation}
 
 Se resta además una penalización por dispersión cromática de 2\textperiodcentered{}(D/1600)\textsuperscript{2} dB, con D la dispersión acumulada en ps/nm (17 ps/(nm\textperiodcentered{}km) en los canales sin compensar y una residual de ±250 ps/nm en los amplificados). La tasa de error es:
 
 \begin{equation}
-\mathrm{BER} = \tfrac{1}{2}\,\mathrm{erfc}\!\left(Q/\sqrt{2}\right)
+\mathrm{BER} = \tfrac{1}{2}\,\mathrm{erfc}\!\left(Q/\sqrt{2}\right) ,
 \label{eq:6}
 \end{equation}
 
@@ -145,7 +144,7 @@ Se comparan una regresión logística con variables estandarizadas (modelo linea
 
 La evaluación usa validación cruzada estratificada de 10 pliegues con 3 repeticiones y se informa de la media y la desviación típica de cuatro métricas: el área bajo la curva ROC (AUC), que mide la capacidad de ordenar los canales por riesgo; la exactitud equilibrada (media de sensibilidad y especificidad); la sensibilidad (fracción de canales que no cumplen que se detectan); y el F1 (media armónica de precisión y sensibilidad). El criterio principal de acierto para la hipótesis es el número de canales bien clasificados, contrastado con la prueba de McNemar (con corrección de continuidad) entre cada ensamble y la regresión logística sobre un conjunto de prueba estratificado del 30~\% (3000 canales) del escenario B, con corrección de Bonferroni para dos comparaciones; el AUC y la sensibilidad se analizan como criterios secundarios. La importancia de las variables se mide por permutación como la caída del AUC.
 
-Para evaluar el acierto en trayectos no vistos (objetivo 3) se repite la validación agrupando por trayecto (10 pliegues estratificados; los canales de la misma longitud forman un grupo, de modo que ningún trayecto aparece a la vez en entrenamiento y prueba). Para condiciones no vistas se entrena con los canales de hasta 15 años y se evalúa con los de más de 15, y se entrena sin hielo (T ≥ −5 °C) y se evalúa con T $<$ −5 °C. El código y los datos, incluido este análisis, están disponibles como material complementario.
+Para evaluar el acierto en trayectos no vistos (objetivo 3) se repite la validación agrupando por trayecto (10 pliegues estratificados; los canales de la misma longitud forman un grupo, de modo que ningún trayecto aparece a la vez en entrenamiento y prueba). Para condiciones no vistas se entrena con los canales de hasta 15 años y se evalúa con los de más de 15, y se entrena sin hielo (T ≥ −5 °C) y se evalúa con T $<$ −5 °C. El código en Python y el conjunto de datos, incluido este análisis, se adjuntan a este artículo como material complementario.
 
 
 \section{Resultados y discusión}\label{sec:3}
@@ -163,20 +162,20 @@ La Tabla~\ref{tab:resultados} recoge las métricas de validación cruzada. En el
 
 \begin{table}[htbp]
 \centering
-\scriptsize
-\caption{Resultados de la validación cruzada estratificada (10 pliegues × 3 repeticiones), media ± desviación típica. Clase positiva: canal que no cumple BER ≤ 10\textsuperscript{−11}.}
+\footnotesize\setlength{\tabcolsep}{3.5pt}
+\caption{Resultados de la validación cruzada estratificada (10 pliegues × 3 repeticiones), media ± desviación típica. Clase positiva: canal que no cumple BER ≤ 10\textsuperscript{−11}. Esc.: escenario; Exact. equil.: exactitud equilibrada; Sensib.: sensibilidad.}
 \label{tab:resultados}
 \begin{tabular}{llcccc}
 \toprule
-Escenario & Modelo & AUC & Exactitud equilibrada & Sensibilidad & F1 \\
+Esc. & Modelo & AUC & Exact. equil. & Sensib. & F1 \\
 \midrule
-A & Regresión logística & 0,983 $\pm$ 0,003 & 0,929 $\pm$ 0,009 & 0,939 $\pm$ 0,017 & 0,832 $\pm$ 0,014 \\
+A & Reg. logística & 0,983 $\pm$ 0,003 & 0,929 $\pm$ 0,009 & 0,939 $\pm$ 0,017 & 0,832 $\pm$ 0,014 \\
 A & Random Forest & 0,981 $\pm$ 0,003 & 0,921 $\pm$ 0,011 & 0,901 $\pm$ 0,023 & 0,847 $\pm$ 0,015 \\
 A & XGBoost & 0,982 $\pm$ 0,003 & 0,925 $\pm$ 0,010 & 0,914 $\pm$ 0,019 & 0,845 $\pm$ 0,014 \\
-B & Regresión logística & 0,998 $\pm$ 0,001 & 0,977 $\pm$ 0,004 & 0,987 $\pm$ 0,007 & 0,931 $\pm$ 0,009 \\
+B & Reg. logística & 0,998 $\pm$ 0,001 & 0,977 $\pm$ 0,004 & 0,987 $\pm$ 0,007 & 0,931 $\pm$ 0,009 \\
 B & Random Forest & 0,998 $\pm$ 0,001 & 0,976 $\pm$ 0,007 & 0,974 $\pm$ 0,012 & 0,947 $\pm$ 0,012 \\
 B & XGBoost & 0,998 $\pm$ 0,001 & 0,973 $\pm$ 0,008 & 0,964 $\pm$ 0,014 & 0,947 $\pm$ 0,012 \\
-C & Regresión logística & 0,998 $\pm$ 0,001 & 0,980 $\pm$ 0,004 & 0,991 $\pm$ 0,006 & 0,940 $\pm$ 0,010 \\
+C & Reg. logística & 0,998 $\pm$ 0,001 & 0,980 $\pm$ 0,004 & 0,991 $\pm$ 0,006 & 0,940 $\pm$ 0,010 \\
 C & Random Forest & 0,998 $\pm$ 0,001 & 0,978 $\pm$ 0,006 & 0,976 $\pm$ 0,011 & 0,951 $\pm$ 0,011 \\
 C & XGBoost & 0,999 $\pm$ 0,001 & 0,978 $\pm$ 0,007 & 0,969 $\pm$ 0,012 & 0,958 $\pm$ 0,011 \\
 \bottomrule
@@ -212,7 +211,7 @@ Estos resultados concuerdan con la literatura: Random Forest y XGBoost son los c
 
 Este trabajo ha construido un modelo físico de la red DWDM ferroviaria Moscú-Kazánskaya – Riazán con degradación en explotación y ha evaluado tres modelos de aprendizaje automático para predecir si cada canal cumple BER ≤ 10\textsuperscript{−11} (objetivos 1 y 2). En el escenario de monitorización (B), los modelos de ensamble cometen significativamente menos errores que la regresión logística (McNemar, p ≤ 0,0013 tras Bonferroni) y obtienen mayor F1, de modo que la hipótesis se confirma según el criterio principal, aunque con matices: la ventaja no se extiende a la capacidad de ordenar los canales (AUC de 0,998 en los tres modelos) ni a la detección de canales que no cumplen (sensibilidad 0,987 de la logística frente a 0,974 de Random Forest con el umbral de 0,5), y en el escenario A no hay una ventaja clara. Los resultados se mantienen, en la red simulada, en trayectos, antigüedades y temperaturas no vistos en el entrenamiento (objetivo 3).
 
-En la red simulada, la potencia recibida que ya mide el transceptor es la variable decisiva: con ella cualquiera de los tres modelos supera ampliamente a la estimación con datos de inventario. Como el factor Q se calcula a partir de ella, este resultado debe confirmarse con datos medidos. Como trabajo futuro se proponen la validación con datos de la red real, el ajuste del umbral de decisión según el coste de cada error, la cuantificación del margen de diseño que podría ahorrarse (objetivo 4) y la transferencia de modelos entre redes~\cite{yu2019}.
+En la red simulada, la potencia recibida que ya mide el transceptor es la variable decisiva: con ella cualquiera de los tres modelos alcanza un F1 de 0,93–0,95, frente a 0,83–0,85 con solo datos de inventario. Como el factor Q se calcula a partir de ella, este resultado debe confirmarse con datos medidos. Como trabajo futuro se proponen la validación con datos de la red real, el ajuste del umbral de decisión según el coste de cada error, la cuantificación del margen de diseño que podría ahorrarse (objetivo 4) y la transferencia de modelos entre redes~\cite{yu2019}.
 
 
 \bibliographystyle{splncs}

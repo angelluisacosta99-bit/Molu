@@ -52,7 +52,6 @@ bibliografía (la profesora lo enseña como «LaTeX ×3 → BibTeX → LaTeX»; 
 <tr><td><code>\usepackage{graphicx}</code></td><td>Permite <code>\includegraphics</code> (insertar las figuras PDF).</td></tr>
 <tr><td><code>\usepackage{booktabs}</code></td><td>Líneas de tabla profesionales: <code>\toprule</code>, <code>\midrule</code>, <code>\bottomrule</code>.</td></tr>
 <tr><td><code>\usepackage{array}</code></td><td>Columnas de texto alineadas a la izquierda en la Tabla 1.</td></tr>
-<tr><td><code>\usepackage{textcomp}</code>, <code>{url}</code></td><td>Símbolos de texto (·, ½) y direcciones web.</td></tr>
 <tr><td><code>\usepackage{flafter}</code></td><td><b>Ninguna figura o tabla aparece antes del párrafo que la cita</b> (tu regla de la profesora).</td></tr>
 <tr><td><code>\renewcommand{\topfraction}{0.9}</code> y siguientes</td><td>Dejan que figuras y tablas ocupen más parte de una página, para que no queden huecos en blanco.</td></tr>
 <tr><td><code>\addto\captionsspanish{…}</code>, <code>\keywords</code></td><td>Ponen en español «Resumen.», «Fig.» y «Palabras clave:» (la plantilla los trae en inglés).</td></tr>
@@ -60,16 +59,20 @@ bibliografía (la profesora lo enseña como «LaTeX ×3 → BibTeX → LaTeX»; 
 </table>
 
 <h2>4. Título, autor, resumen y palabras clave</h2>
-<pre>\title{Estimación de la calidad de transmisión ...}
+<pre>\begin{document}
+\mainmatter            ← como en typeinst.tex: empieza una contribución
+\title{Estimación de la calidad de transmisión ...}
 \titlerunning{QoT con aprendizaje automático en una red DWDM ferroviaria}
 \author{Angel L. Acosta-González}
 \authorrunning{Angel L. Acosta-González}
-\institute{Máster Universitario en Sistemas Inteligentes, Universidad de Salamanca}
+\institute{Máster Universitario en Sistemas Inteligentes, Universidad de Salamanca\\
+Plaza de los Caídos s/n, 37008 Salamanca, España\\ \email{...}}
 \maketitle
 \begin{abstract} ... \keywords{...} \end{abstract}</pre>
 <p><code>\titlerunning</code> y <code>\authorrunning</code> son las versiones cortas de los encabezados. <code>\maketitle</code>
 «imprime» el bloque de título. La firma «Angel L. Acosta-González» sigue la recomendación de la FECYT (apellidos con guion)
 para que Scopus o Web of Science te indexen como «Acosta-González, A.L.».</p>
+<p><b>Resumen: entre 100 y 150 palabras.</b> El Paso 4 pedía 100–200 y la plantilla (<code>typeinst.tex</code>) 70–150; el del artículo tiene unas 145, así cumple las dos.</p>
 
 <h2>5. Secciones y referencias a secciones</h2>
 <pre>\section{Métodos}\label{sec:2}
@@ -81,7 +84,7 @@ principio de la siguiente.</p>
 
 <h2>6. Ecuaciones numeradas</h2>
 <pre>\begin{equation}
-Q_{\mathrm{ASE}} = \sqrt{\frac{B_o}{B_e}}\,\frac{2\,\mathrm{OSNR}}{1 + \sqrt{1 + 4\,\mathrm{OSNR}}}
+Q_{\mathrm{ASE}} = \sqrt{\frac{B_o}{B_e}}\,\frac{2\,\mathrm{OSNR}}{1 + \sqrt{1 + 4\,\mathrm{OSNR}}} ,
 \label{eq:4}
 \end{equation}
 ... se combina con el Q_ASE de la ec.~(\ref{eq:4}) ...</pre>
@@ -92,6 +95,7 @@ Q_{\mathrm{ASE}} = \sqrt{\frac{B_o}{B_e}}\,\frac{2\,\mathrm{OSNR}}{1 + \sqrt{1 +
 <tr><td><code>\left\lceil d/4 \right\rceil</code></td><td>Redondeo hacia arriba ⌈d/4⌉ (número de empalmes).</td></tr>
 <tr><td><code>0{,}1</code></td><td>Coma decimal sin espacio extra (en modo matemático la coma se trata como separador).</td></tr>
 <tr><td><code>\quad [\mathrm{dB}]</code></td><td>Un espacio y la unidad.</td></tr>
+<tr><td><code> ,</code> / <code> .</code> al final</td><td>Las ecuaciones forman parte de la frase y se puntúan como el texto (lo pide <code>typeinst.tex</code>): coma si la frase sigue («…, donde…»), punto si termina.</td></tr>
 </table>
 <p>Las seis ecuaciones se citan en el texto con <code>\ref</code>: ec. (1) en la regla de diseño, (2)–(5) en la discusión de la
 circularidad, (3) y (4) en las definiciones y (6) en el umbral. Si añades una ecuación nueva antes, todas se renumeran solas.</p>

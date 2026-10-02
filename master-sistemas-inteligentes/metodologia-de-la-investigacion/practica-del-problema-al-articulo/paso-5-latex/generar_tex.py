@@ -1,5 +1,6 @@
 """Genera articulo/main.tex (plantilla LNCS) a partir de ../paso-4-redaccion/contenido.py.
-El texto vive en un solo sitio: si cambia el borrador, se vuelve a ejecutar este script.
+El texto vive en un solo sitio (el borrador del Paso 4, ya entregado y que no se toca); las mejoras
+propias del artículo final van en CAMBIOS y RESUMEN, más abajo.
 Uso: python generar_tex.py   (después, subir la carpeta articulo/ a Overleaf o compilar con latexmk -pdf main.tex)"""
 import re
 import shutil
@@ -15,18 +16,50 @@ OUT = AQUI / "articulo"
 
 # Firma normalizada (recomendación FECYT: apellidos unidos con guion, segundo nombre en inicial)
 AUTOR = "Angel L. Acosta-González"
+INSTITUCION = (r"Máster Universitario en Sistemas Inteligentes, Universidad de Salamanca\\"
+               r"Plaza de los Caídos s/n, 37008 Salamanca, España")
+EMAIL = ""  # correo institucional @usal.es; vacío = no se imprime \email
+
+# Resumen del artículo: 100-150 palabras para cumplir a la vez el Paso 4 (100-200) y typeinst (70-150)
+RESUMEN = (
+    "La calidad de transmisión (QoT) de las redes DWDM ferroviarias suele verificarse una sola vez, en el "
+    "diseño, con márgenes fijos. Este trabajo evalúa si un modelo de aprendizaje automático entrenado con "
+    "parámetros observables de los enlaces predice si cada canal cumple el umbral BER ≤ 10<sup>−11</sup> cuando "
+    "la red se degrada. Se generaron 10 000 canales sintéticos de la red Moscú-Kazánskaya – Riazán con un modelo "
+    "físico que incluye envejecimiento, reparaciones y hielo, y se compararon una regresión logística, Random "
+    "Forest y XGBoost en tres escenarios de información. Con la potencia recibida medida, la variable decisiva, "
+    "los tres modelos alcanzan un AUC de 0,998; los ensambles obtienen mayor F1 (0,947 frente a 0,931) y cometen "
+    "menos errores (McNemar, p < 0,001), aunque la regresión logística detecta más canales que no cumplen. La "
+    "hipótesis se confirma con matices y debe contrastarse con datos reales."
+)
+
+# Mejoras del artículo respecto al borrador del Paso 4 (texto original -> texto del artículo)
+CAMBIOS = {
+    "Cada canal une dos de las 21 estaciones de la línea, a una distancia <i>d</i> de entre 5,4 y 198,3 km "
+    "(208 pares posibles; se omite una estación cuyo punto kilométrico no consta en [1]), y transmite":
+    "Cada canal une dos de las 21 estaciones de la línea con punto kilométrico conocido (de las 22 de [1], una "
+    "no lo tiene) separadas al menos 5 km, lo que da 208 pares posibles a una distancia <i>d</i> de entre 5,4 y "
+    "198,3 km, y transmite",
+    "El código y los datos, incluido este análisis, están disponibles como material complementario.":
+    "El código en Python y el conjunto de datos, incluido este análisis, se adjuntan a este artículo como "
+    "material complementario.",
+    "En los amplificados domina el ruido de emisión espontánea amplificada (ASE).":
+    "En los canales amplificados domina el ruido de emisión espontánea amplificada (ASE).",
+    "cualquiera de los tres modelos supera ampliamente a la estimación con datos de inventario.":
+    "cualquiera de los tres modelos alcanza un F1 de 0,93–0,95, frente a 0,83–0,85 con solo datos de inventario.",
+}
 
 # Orden de la lista de referencias del borrador -> claves de referencias.bib
 CLAVES = ["acosta2026tfg", "pointurier2021", "samadi2017", "rottondi2018", "morais2018", "kozdrowski2021",
           "aladin2020", "allogba2022", "yu2019", "igarashi2024", "dicicco2023"]
 
 ECUACIONES = {
-    1: r"L_{\mathrm{nom}} = \alpha d + 0{,}1\left\lceil d/4 \right\rceil + 1 + 5 \quad [\mathrm{dB}]",
-    2: r"Q_t = 7{,}03 \cdot 10^{(P_{\mathrm{rx}} + 25)/10}",
-    3: r"\mathrm{OSNR} = 58 + P_{\mathrm{rx}} - \mathrm{NF} - 10\log_{10} n \quad [\mathrm{dB}]",
-    4: r"Q_{\mathrm{ASE}} = \sqrt{\frac{B_o}{B_e}}\,\frac{2\,\mathrm{OSNR}}{1 + \sqrt{1 + 4\,\mathrm{OSNR}}}",
-    5: r"Q_{\mathrm{amp}} = \left(Q_{\mathrm{ASE}}^{-2} + (10 \cdot 7{,}03)^{-2}\right)^{-1/2}",
-    6: r"\mathrm{BER} = \tfrac{1}{2}\,\mathrm{erfc}\!\left(Q/\sqrt{2}\right)",
+    1: r"L_{\mathrm{nom}} = \alpha d + 0{,}1\left\lceil d/4 \right\rceil + 1 + 5 \quad [\mathrm{dB}] .",
+    2: r"Q_t = 7{,}03 \cdot 10^{(P_{\mathrm{rx}} + 25)/10} .",
+    3: r"\mathrm{OSNR} = 58 + P_{\mathrm{rx}} - \mathrm{NF} - 10\log_{10} n \quad [\mathrm{dB}] ,",
+    4: r"Q_{\mathrm{ASE}} = \sqrt{\frac{B_o}{B_e}}\,\frac{2\,\mathrm{OSNR}}{1 + \sqrt{1 + 4\,\mathrm{OSNR}}} ,",
+    5: r"Q_{\mathrm{amp}} = \left(Q_{\mathrm{ASE}}^{-2} + (10 \cdot 7{,}03)^{-2}\right)^{-1/2} .",
+    6: r"\mathrm{BER} = \tfrac{1}{2}\,\mathrm{erfc}\!\left(Q/\sqrt{2}\right) ,",
 }
 FIGURAS = {"fig1_q_vs_longitud": "fig:q", "fig2_f1_escenarios": "fig:f1", "fig3_importancia": "fig:importancia"}
 TABLAS = {1: "tab:variables", 2: "tab:resultados"}
@@ -39,8 +72,6 @@ PREAMBULO = r"""\documentclass[runningheads]{llncs}
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{array}  %% columnas de texto alineadas a la izquierda en las tablas
-\usepackage{textcomp}
-\usepackage{url}
 \usepackage{flafter}  %% ninguna figura o tabla aparece antes del párrafo que la cita
 
 %% Figuras y tablas como flotantes [htbp] (pauta de Springer): se escriben justo
@@ -70,6 +101,7 @@ PREAMBULO = r"""\documentclass[runningheads]{llncs}
 \DeclareUnicodeCharacter{03B1}{\ensuremath{\alpha}}
 
 \begin{document}
+\mainmatter
 
 \title{%(titulo)s}
 \titlerunning{QoT con aprendizaje automático en una red DWDM ferroviaria}
@@ -113,7 +145,10 @@ def tabla(pie, filas, etiqueta):
     if etiqueta == "tab:variables":
         cols, tam = r">{\raggedright\arraybackslash}p{2.8cm}>{\raggedright\arraybackslash}p{5.8cm}ccc", r"\footnotesize"
     else:
-        cols, tam = "llcccc", r"\scriptsize"
+        cols, tam = "llcccc", r"\footnotesize\setlength{\tabcolsep}{3.5pt}"
+        filas = [["Esc.", "Modelo", "AUC", "Exact. equil.", "Sensib.", "F1"]] + \
+                [[f[0], f[1].replace("Regresión logística", "Reg. logística")] + f[2:] for f in filas[1:]]
+        pie += " Esc.: escenario; Exact. equil.: exactitud equilibrada; Sensib.: sensibilidad."
     lineas = [r"\begin{table}[htbp]", r"\centering", tam, r"\caption{" + texto(pie) + "}",
               r"\label{" + etiqueta + "}", r"\begin{tabular}{" + cols + "}", r"\toprule",
               " & ".join(texto(c) for c in filas[0]) + r" \\", r"\midrule"]
@@ -129,9 +164,10 @@ def main():
     shutil.copy(AQUI / "referencias.bib", OUT)
 
     datos = {k: v for k, v, *_ in BLOQUES if k in ("titulo", "resumen", "claves")}
-    _, institucion = dict((k, v) for k, v, *_ in BLOQUES)["autor"].split("<br>")
+    institucion = INSTITUCION + (r"\\ \email{" + EMAIL + "}" if EMAIL else "")
     cuerpo = [PREAMBULO % {"titulo": texto(datos["titulo"]), "autor": AUTOR, "institucion": institucion,
-                           "resumen": texto(datos["resumen"]), "claves": texto(datos["claves"])}]
+                           "resumen": texto(RESUMEN), "claves": texto(datos["claves"])}]
+    usados = set()
     n_tabla = 0
     for b in BLOQUES:
         k = b[0]
@@ -141,7 +177,11 @@ def main():
         elif k == "h3":
             cuerpo.append("\n\\subsection{" + texto(b[1].split(" ", 1)[1]) + "}\n")
         elif k == "p":
-            cuerpo.append(texto(b[1]) + "\n")
+            t = b[1]
+            for viejo, nuevo in CAMBIOS.items():
+                if viejo in t:
+                    t = t.replace(viejo, nuevo); usados.add(viejo)
+            cuerpo.append(texto(t) + "\n")
         elif k == "eq":
             cuerpo.append("\\begin{equation}\n" + ECUACIONES[b[2]] + "\n\\label{eq:" + str(b[2]) + "}\n\\end{equation}\n")
         elif k == "tabla":
@@ -153,6 +193,7 @@ def main():
             pie = re.sub(r"<b>Fig\. \d\.</b>\s*", "", b[2])
             cuerpo.append("\\begin{figure}[htbp]\n\\centering\n\\includegraphics[width=0.7\\textwidth]{figuras/"
                           + nombre + "}\n\\caption{" + texto(pie) + "}\n\\label{" + FIGURAS[nombre] + "}\n\\end{figure}\n")
+    assert usados == set(CAMBIOS), f"CAMBIOS sin aplicar: {set(CAMBIOS) - usados}"
     cuerpo.append("\n\\bibliographystyle{splncs}\n\\bibliography{referencias}\n\n\\end{document}\n")
     (OUT / "main.tex").write_text("\n".join(cuerpo), encoding="utf-8")
     print("articulo/main.tex creado")

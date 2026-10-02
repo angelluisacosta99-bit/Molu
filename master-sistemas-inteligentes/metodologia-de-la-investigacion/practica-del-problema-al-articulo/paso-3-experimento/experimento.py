@@ -31,7 +31,7 @@ for carpeta in ("datos", "resultados", "figuras"):
 SEMILLA = 42
 AZUL, NARANJA, VERDE = "#2a78d6", "#eb6834", "#1baf7a"   # paleta distinguible con daltonismo
 TINTA, GRIS = "#1f1f1e", "#8a8a85"
-plt.rcParams.update({"font.family": "serif", "font.size": 9, "axes.edgecolor": GRIS,
+plt.rcParams.update({"pdf.fonttype": 42, "font.family": "serif", "font.size": 9, "axes.edgecolor": GRIS,
                      "axes.labelcolor": TINTA, "xtick.color": TINTA, "ytick.color": TINTA,
                      "axes.spines.top": False, "axes.spines.right": False})
 
@@ -113,10 +113,9 @@ fig, ax = plt.subplots(figsize=(3.4, 2.5))
 for clase, color, marca, etiqueta in [(1, AZUL, "o", "Cumple"), (0, NARANJA, "^", "No cumple")]:
     s = df[df.cumple == clase].sample(1500, random_state=SEMILLA, replace=False) if (df.cumple == clase).sum() > 1500 else df[df.cumple == clase]
     ax.scatter(s.longitud_km, s.q, s=6, marker=marca, color=color, alpha=0.55, linewidths=0, label=etiqueta)
-ax.axhline(sim.Q_UMBRAL, color=TINTA, lw=1, ls="--")
-ax.text(2, sim.Q_UMBRAL * 0.62, "umbral Q = 6,71 (BER = 10$^{-11}$)", ha="left", va="top", fontsize=7, color=TINTA,
-        bbox={"facecolor": "white", "edgecolor": "none", "pad": 1})
-ax.set_yscale("log"); ax.set_xlabel("Longitud del canal (km)"); ax.set_ylabel("Factor Q")
+ax.axhline(sim.Q_UMBRAL, color=TINTA, lw=1, ls="--", label="Umbral Q = 6,71\n(BER = 10$^{-11}$)")
+ax.set_yscale("log"); ax.set_ylim(0.1, 4000)  # margen arriba para que la leyenda no tape puntos
+ax.set_xlabel("Longitud del canal (km)"); ax.set_ylabel("Factor Q")
 ax.legend(frameon=False, fontsize=7, loc="upper right", markerscale=2)
 fig.tight_layout()
 for ext in ("png", "pdf"):
