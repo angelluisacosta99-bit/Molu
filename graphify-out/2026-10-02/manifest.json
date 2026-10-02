@@ -648,9 +648,9 @@
     "semantic_hash": ""
   },
   ".claude/skills/ejercicio-interactivo/reference/template.html": {
-    "mtime": 1790970454.1805255,
-    "seen": 1790970497.6596324,
-    "ast_hash": "6034fc70231a89da478c7923afbe90b8",
+    "mtime": 1790969981.0795841,
+    "seen": 1790970061.9482472,
+    "ast_hash": "0fef938501ee2aa897d6907cf62f1fb2",
     "semantic_hash": ""
   },
   ".claude/skills/graphify/SKILL.md": {
@@ -954,9 +954,9 @@
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/README.md": {
-    "mtime": 1790970482.412809,
-    "seen": 1790970497.6597645,
-    "ast_hash": "5dff1371aa8e3c74366040ecd462a108",
+    "mtime": 1790969710.077529,
+    "seen": 1790969725.2586343,
+    "ast_hash": "10058b7fa7cfbe5f7ac2aeaece6965a5",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad10a_la-salud.md": {
@@ -1776,15 +1776,15 @@
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/codigos-acceso.html": {
-    "mtime": 1790970473.8695912,
-    "seen": 1790970497.6601024,
-    "ast_hash": "67383c9cb6fc926fdc15721bed3e1f3f",
+    "mtime": 1790969701.3740692,
+    "seen": 1790969725.2587712,
+    "ast_hash": "3e85e862160b783d430c698b4ba157ee",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/indice-clases-de-espanol.html": {
-    "mtime": 1790970473.8685029,
-    "seen": 1790970497.6601045,
-    "ast_hash": "6d783dc58a4f1c9e8915368b75608b42",
+    "mtime": 1790969701.372699,
+    "seen": 1790969725.258772,
+    "ast_hash": "2be1542ee24841373b192196957f44ab",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/quizlet/nuevo-espanol-en-marcha-1_unidad1.md": {
@@ -3129,42 +3129,6 @@
     "mtime": 1790969981.0514815,
     "seen": 1790970061.9484746,
     "ast_hash": "16f7908c13906bb2205501add8bbedb7",
-    "semantic_hash": ""
-  },
-  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad10a_de-viaje.md": {
-    "mtime": 1790970476.5396137,
-    "seen": 1790970497.6598651,
-    "ast_hash": "7c5c479f8de97ec19e9ef7dacd6923e2",
-    "semantic_hash": ""
-  },
-  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad10b_alojamientos.md": {
-    "mtime": 1790970479.3796139,
-    "seen": 1790970497.6598678,
-    "ast_hash": "192f699fb2d010b725219340b684a1b2",
-    "semantic_hash": ""
-  },
-  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad10c_historias-de-viajes.md": {
-    "mtime": 1790970482.263614,
-    "seen": 1790970497.6598697,
-    "ast_hash": "a7bc923070798cf0afd51023ba72a476",
-    "semantic_hash": ""
-  },
-  "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad10a_de-viaje_interactivo.html": {
-    "mtime": 1790970432.9293907,
-    "seen": 1790970497.660027,
-    "ast_hash": "50b7e678383f1d02e050a2d7cab465dc",
-    "semantic_hash": ""
-  },
-  "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad10b_alojamientos_interactivo.html": {
-    "mtime": 1790970432.977725,
-    "seen": 1790970497.6600285,
-    "ast_hash": "e74799cc5d586a532f551af535dd5235",
-    "semantic_hash": ""
-  },
-  "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad10c_historias-de-viajes_interactivo.html": {
-    "mtime": 1790970454.3356123,
-    "seen": 1790970497.6600296,
-    "ast_hash": "f6df2d965a35f6806130a36fda2331e9",
     "semantic_hash": ""
   }
 }

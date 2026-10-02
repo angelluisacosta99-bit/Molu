@@ -94,6 +94,25 @@ lección más antigua de "Lecciones aprendidas", esta sección gana.**
   encontrar la palabra en la rejilla), se decidió sin consultar partirlo en dos
   ejercicios separados — un cambio razonable con buena intención, pero no es lo que
   dice el libro, y no se pidió permiso antes de hacerlo.
+- **No escribas lo que el libro no da y no des pistas.** Si el libro no imprime una
+  palabra, una definición o una ayuda, el artefacto tampoco la muestra. Casos reales
+  (unidad 3B de B1, el profesor lo corrigió mirando el artefacto): la sopa de letras
+  listaba las nueve palabras que el libro pide *encontrar*, y se habían añadido notas
+  «Recuerda: …» con la regla gramatical en ejercicios de respuesta libre. Reglas: (1) en
+  `type: "wordsearch"`, si las palabras no vienen en el libro, pon `hideLabels: true` —
+  la lista muestra «Palabra 1…N» (sin longitud) y cada nombre se revela solo al
+  encontrarlo; (2) nada de `pista-gramatical`, «Recuerda» ni títulos de columna
+  inventados (en una tabla `conjTable` sin cabeceras en el libro, `label: ""` y
+  `subjectLabel: ""`); (3) los enunciados e instrucciones son los del libro, solo se
+  añade lo imprescindible para que el motor funcione («pulsa…», «escribe la frase
+  entera»). Los recuadros de palabras que el libro SÍ imprime se conservan.
+- **El ejemplo resuelto de un «relaciona» se ve ya conectado.** Si el libro trae la
+  primera pareja hecha, en `type: "match"` la fila va `{ solved: true, to: [índice de
+  la pareja en la columna 2] }` (con 3 columnas, un índice por columna): el motor
+  dibuja la línea gris y atenúa las dos fichas. Una fila `{ solved: true }` sin `to`
+  deja el ejemplo como una ficha suelta, que no enseña nada. Los capítulos B1 anteriores
+  a la unidad 3 (1A-2C, 7A-8C…) siguen con `{ solved: true }` a secas: si se tocan,
+  añadirles `to` y portar el motor de la plantilla.
 
 ## Flujo de trabajo
 
