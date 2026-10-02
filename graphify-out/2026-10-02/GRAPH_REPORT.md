@@ -1,7 +1,7 @@
 # Graph Report - Molu  (2026-10-02)
 
 ## Corpus Check
-- 327 files · ~1,598,034 words
+- 327 files · ~1,598,864 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 112 file(s) not represented in the graph (top: .csv 32, .arff 22, .pptx 15)
 
@@ -11,7 +11,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `9b83eedc`
+- Built from commit: `9882970b`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -1276,7 +1276,7 @@ Cohesion: 0.29
 Nodes (6): 1. ¡Cásate conmigo!, Ej. 1 — Mensaje en estilo indirecto: relaciona las dos partes, Ej. 2 — Completa este cuadro, Ej. 3 — Pasa las frases a estilo indirecto, Ej. 4 — Completa el texto de las viñetas, Ejercicios
 
 ## Knowledge Gaps
-- **1040 isolated node(s):** `Ej. 1 — Lee esta noticia y responde a las preguntas`, `Ej. 2 — Busca en el texto palabras que signifiquen`, `Ej. 3 — Escucha las noticias y relaciona cada una con su titular`, `Ej. 4 — Reconstruye los titulares`, `Ej. 5 — Construye frases como la del modelo` (+1035 more)
+- **1040 isolated node(s):** `Ej. 1 — Relaciona cada problema con su consejo`, `Ej. 2 — Completa con el verbo apropiado en condicional`, `Ej. 3 — Escribe un consejo para cada persona`, `Ej. 1 — Escribe frases según el modelo`, `Ej. 2 — Observa las viñetas` (+1035 more)
   These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1305 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **41 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -1284,14 +1284,14 @@ Nodes (6): 1. ¡Cásate conmigo!, Ej. 1 — Mensaje en estilo indirecto: relacio
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Novedades de herramientas de IA` connect `Novedades de herramientas de IA` to `2026-08-30 — Compactación de contexto: palancas oficiales para ahorrar tokens`, `2026-08-30 — Pasada del radar: dos funciones nativas nuevas, sin hallazgos de terceros`, `2026-09-07 — Búsqueda a mano: herramientas para posts de blog en plataformas de clases`, `hook-before-edit.mjs`, `2026-08-16 — Primera pasada del radar`, `2026-09-13 — Búsqueda exhaustiva: herramientas de investigación científica verificada para el máster`, `2026-09-19 — Pasada por el correo semanal "This week in Claude Code" (4 números, 21 ago-18 sep)`?**
-  _High betweenness centrality (0.007) - this node is a cross-community bridge._
-- **Why does `2026-08-16 — Segunda pasada: hooks vs. CLAUDE.md, y prácticas de la comunidad` connect `hook-before-edit.mjs` to `Novedades de herramientas de IA`?**
   _High betweenness centrality (0.006) - this node is a cross-community bridge._
+- **Why does `2026-08-16 — Segunda pasada: hooks vs. CLAUDE.md, y prácticas de la comunidad` connect `hook-before-edit.mjs` to `Novedades de herramientas de IA`?**
+  _High betweenness centrality (0.005) - this node is a cross-community bridge._
 - **Why does `deny()` connect `hook-before-edit.mjs` to `readConfig`?**
-  _High betweenness centrality (0.004) - this node is a cross-community bridge._
+  _High betweenness centrality (0.003) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `initGlobalBar()` (e.g. with `hideAgentPollTooltip()` and `onDetectMessage()`) actually correct?**
   _`initGlobalBar()` has 7 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `Ej. 1 — Lee esta noticia y responde a las preguntas`, `Ej. 2 — Busca en el texto palabras que signifiquen`, `Ej. 3 — Escucha las noticias y relaciona cada una con su titular` to the rest of the system?**
+- **What connects `Ej. 1 — Relaciona cada problema con su consejo`, `Ej. 2 — Completa con el verbo apropiado en condicional`, `Ej. 3 — Escribe un consejo para cada persona` to the rest of the system?**
   _1040 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `live-browser.js` be split into smaller, more focused modules?**
   _Cohesion score 0.02863984674329502 - nodes in this community are weakly interconnected._
