@@ -29,7 +29,7 @@ RESUMEN = (
     "físico que incluye envejecimiento, reparaciones y hielo, y se compararon una regresión logística, Random "
     "Forest y XGBoost en tres escenarios de información. Con la potencia recibida medida, la variable decisiva, "
     "los tres modelos alcanzan un AUC de 0,998; los ensambles obtienen mayor F1 (0,947 frente a 0,931) y cometen "
-    "menos errores (McNemar, p < 0,001), aunque la regresión logística detecta más canales que no cumplen. La "
+    "menos errores (McNemar, p ≤ 0,0013 tras Bonferroni), aunque la regresión logística detecta más canales que no cumplen. La "
     "hipótesis se confirma con matices y debe contrastarse con datos reales."
 )
 
@@ -43,6 +43,8 @@ CAMBIOS = {
     "El código y los datos, incluido este análisis, están disponibles como material complementario.":
     "El código en Python y el conjunto de datos, incluido este análisis, se adjuntan a este artículo como "
     "material complementario.",
+    "<i>P</i><sub>rx</sub> = <i>P</i><sub>tx</sub> − <i>L</i>/<i>n</i> es la":
+    "$P_{\\mathrm{rx}} = P_{\\mathrm{tx}} - L/n$ es la",
     "En los amplificados domina el ruido de emisión espontánea amplificada (ASE).":
     "En los canales amplificados domina el ruido de emisión espontánea amplificada (ASE).",
     "cualquiera de los tres modelos supera ampliamente a la estimación con datos de inventario.":
@@ -136,6 +138,10 @@ def texto(t):
     t = t.replace("ecs. 2–5", r"ecs.~(\ref{eq:2})--(\ref{eq:5})")
     t = re.sub(r"ec\. \((\d)\)", r"ec.~(\\ref{eq:\1})", t)
     t = t.replace("señal/ruido", r"señal/\allowbreak ruido")
+    # espacios irrompibles: número-unidad, «p < x», «BER ≤ 10», «Voskresensk – Riazán»
+    t = re.sub(r"(\d) (GHz|Gbit/s|dBm|dB|km|ps/nm|nm|°C|años)\b", r"\1~\2", t)
+    t = t.replace("p $<$ ", "p~$<$~").replace("p ≤ ", "p~≤~").replace("BER ≤ ", "BER~≤~")
+    t = t.replace("Q ≥ ", "Q~≥~").replace("Voskresensk – ", "Voskresensk~– ")
     t = t.replace("·", r"\textperiodcentered{}").replace("½", r"\textonehalf{}")
     return t
 
@@ -143,7 +149,7 @@ def texto(t):
 def tabla(pie, filas, etiqueta):
     pie = re.sub(r"<b>Tabla \d\.</b>\s*", "", pie)
     if etiqueta == "tab:variables":
-        cols, tam = r">{\raggedright\arraybackslash}p{2.8cm}>{\raggedright\arraybackslash}p{5.8cm}ccc", r"\footnotesize"
+        cols, tam = r">{\raggedright\arraybackslash}p{3.1cm}>{\raggedright\arraybackslash}p{5.4cm}ccc", r"\footnotesize"
     else:
         cols, tam = "llcccc", r"\footnotesize\setlength{\tabcolsep}{3.5pt}"
         filas = [["Esc.", "Modelo", "AUC", "Exact. equil.", "Sensib.", "F1"]] + \
@@ -181,6 +187,8 @@ def main():
             for viejo, nuevo in CAMBIOS.items():
                 if viejo in t:
                     t = t.replace(viejo, nuevo); usados.add(viejo)
+            if t[0].islower() and cuerpo[-1].endswith("\\end{equation}\n"):
+                cuerpo[-1] = cuerpo[-1][:-1]  # la frase continúa tras la ecuación: sin línea en blanco ni sangría
             cuerpo.append(texto(t) + "\n")
         elif k == "eq":
             cuerpo.append("\\begin{equation}\n" + ECUACIONES[b[2]] + "\n\\label{eq:" + str(b[2]) + "}\n\\end{equation}\n")
