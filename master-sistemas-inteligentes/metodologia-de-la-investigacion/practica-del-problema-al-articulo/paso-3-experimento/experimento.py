@@ -1,7 +1,7 @@
 """Experimento del Paso 3: ¿predice un modelo de ensamble el cumplimiento de
 BER <= 1e-11 mejor que un modelo lineal sencillo?
 
-Genera: datos/dataset.csv, resultados/tabla_resultados.csv y .tex,
+Genera: datos/dataset.csv, resultados/tabla_resultados.csv y .tex, resultados/mcnemar.txt,
 figuras/fig1_q_vs_longitud, fig2_f1_escenarios, fig3_importancia (PNG y PDF).
 Uso:  python experimento.py
 """
@@ -29,7 +29,7 @@ for carpeta in ("datos", "resultados", "figuras"):
     (AQUI / carpeta).mkdir(exist_ok=True)
 
 SEMILLA = 42
-AZUL, NARANJA, VERDE = "#2a78d6", "#eb6834", "#1baf7a"   # paleta validada (dataviz)
+AZUL, NARANJA, VERDE = "#2a78d6", "#eb6834", "#1baf7a"   # paleta distinguible con daltonismo
 TINTA, GRIS = "#1f1f1e", "#8a8a85"
 plt.rcParams.update({"font.family": "serif", "font.size": 9, "axes.edgecolor": GRIS,
                      "axes.labelcolor": TINTA, "xtick.color": TINTA, "ytick.color": TINTA,
@@ -120,7 +120,8 @@ ax.set_yscale("log"); ax.set_xlabel("Longitud del canal (km)"); ax.set_ylabel("F
 ax.legend(frameon=False, fontsize=7, loc="upper right", markerscale=2)
 fig.tight_layout()
 for ext in ("png", "pdf"):
-    fig.savefig(AQUI / "figuras" / f"fig1_q_vs_longitud.{ext}", dpi=300)
+    fig.savefig(AQUI / "figuras" / f"fig1_q_vs_longitud.{ext}", dpi=300,
+                metadata={"CreationDate": None} if ext == "pdf" else None)
 plt.close(fig)
 
 # Fig. 2: F1 de la clase "no cumple" por escenario y modelo (media ± desviación típica en la CV)
@@ -133,12 +134,13 @@ for k, (nombre, color, marca) in enumerate([("Regresión logística", NARANJA, "
     ax.errorbar(np.arange(3) + (k - 1) * 0.18, medias, yerr=desv, fmt=marca, color=color, ms=6,
                 capsize=2, lw=1, label=nombre)
 ax.set_xticks(range(3)); ax.set_xticklabels(etiquetas, fontsize=7)
-ax.set_ylabel("F1 (clase «no cumple»)"); ax.set_ylim(0.78, 1.0)
+ax.set_xlabel("Escenario"); ax.set_ylabel("F1 (clase «no cumple»)"); ax.set_ylim(0.78, 1.0)
 ax.grid(axis="y", color="#e6e6e3", lw=0.6); ax.set_axisbelow(True)
 ax.legend(frameon=False, fontsize=7, loc="lower right")
 fig.tight_layout()
 for ext in ("png", "pdf"):
-    fig.savefig(AQUI / "figuras" / f"fig2_f1_escenarios.{ext}", dpi=300)
+    fig.savefig(AQUI / "figuras" / f"fig2_f1_escenarios.{ext}", dpi=300,
+                metadata={"CreationDate": None} if ext == "pdf" else None)
 plt.close(fig)
 
 # Fig. 3: importancia por permutación (Random Forest, escenario B)
@@ -153,6 +155,7 @@ ax.barh([nombres[sim.VARIABLES_MONITORIZACION[i]] for i in orden], imp.importanc
 ax.set_xlabel("Caída de AUC al permutar")
 fig.tight_layout()
 for ext in ("png", "pdf"):
-    fig.savefig(AQUI / "figuras" / f"fig3_importancia.{ext}", dpi=300)
+    fig.savefig(AQUI / "figuras" / f"fig3_importancia.{ext}", dpi=300,
+                metadata={"CreationDate": None} if ext == "pdf" else None)
 plt.close(fig)
 print("Listo: datos/, resultados/ y figuras/ generados.")

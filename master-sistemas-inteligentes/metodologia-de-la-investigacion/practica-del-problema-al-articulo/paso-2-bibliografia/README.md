@@ -41,4 +41,14 @@ Detalle de cada uno en `notas-de-lectura.md`.
 - `savedrecs-wos-original.bib`: exportación completa de WoS (con resúmenes y referencias citadas).
 - `wos-export-2026-09-29.txt`: 50 registros de la búsqueda hecha en clase, de la que se eligieron los 10.
 - `referencias-borrador-crossref.bib`: primer borrador generado por DOI desde Crossref, sustituido por la búsqueda en WoS; validado con pybtex (10 entradas).
+- `ficha-actualizada-entregada-paso-2.pdf`: la ficha del Paso 1 revisada por Angel
+  (29-sep), que entregó junto al Paso 2. Cambios frente a la del Paso 1: pregunta e
+  hipótesis ya alineadas con el experimento («con mayor acierto que un modelo lineal
+  sencillo»), limitación de datos sintéticos y referencias [1] Pointurier 2021,
+  [2] Mata et al. 2018 (ICTON, DOI 10.1109/ICTON.2018.8473819, verificado en Crossref)
+  y [3] Kozdrowski et al. **Ojo para el artículo:** la frase «incluso con modelos
+  entrenados con datos sintéticos [3]» cita a Kozdrowski, que usa datos **reales**;
+  el precedente con datos sintéticos es Rottondi 2018. Mata 2018 no está en
+  `referencias.bib` (habrá que añadirlo si se cita). Kozdrowski: año 2021 (vol. 23;
+  en línea desde el 22-dic-2020), como en el `.bib`.
 - `notas-de-lectura.md`: resumen de los 10 artículos y lecciones para el diseño experimental.
