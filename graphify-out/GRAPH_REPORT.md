@@ -1,7 +1,7 @@
 # Graph Report - Molu  (2026-10-02)
 
 ## Corpus Check
-- 316 files · ~1,418,922 words
+- 316 files · ~1,419,824 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 112 file(s) not represented in the graph (top: .csv 32, .arff 22, .pptx 15)
 
@@ -11,7 +11,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `510d4843`
+- Built from commit: `c6ed066d`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -1200,7 +1200,7 @@ Cohesion: 0.40
 Nodes (4): Cómo quiere la profesora el LaTeX, y qué haremos en el Paso 5, Detalles que hay que vigilar, Lo que se cambia, por qué y por qué no afecta a lo que pide, Lo que se sigue tal cual
 
 ## Knowledge Gaps
-- **986 isolated node(s):** `Pautas de redacción para el artículo (materiales de clase)`, `Paso 1: Planteamiento del Problema, Pregunta e Hipótesis (Día 1)`, `Paso 2: Búsqueda Bibliográfica y Generación de la Base .bib (Día 2)`, `Paso 3: Diseño Experimental y Resultados (Día 3)`, `Paso 4: Redacción Estructurada siguiendo la Metodología de "La Casa" (Día 4)` (+981 more)
+- **986 isolated node(s):** `HEADING_TAGS`, `LAYOUT_TRANSITION_PROPS`, `POSITIONED_CHILD_INTERACTIVE_SELECTOR`, `QUALITY_TEXT_TAGS`, `REPEATED_KICKER_CARD_CONTEXT_SELECTOR` (+981 more)
   These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1246 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **37 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -1208,12 +1208,12 @@ Nodes (4): Cómo quiere la profesora el LaTeX, y qué haremos en el Paso 5, Deta
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Novedades de herramientas de IA` connect `Novedades de herramientas de IA` to `2026-09-07 — Búsqueda a mano: herramientas para posts de blog en plataformas de clases`, `2026-09-19 — Pasada por el correo semanal "This week in Claude Code" (4 números, 21 ago-18 sep)`, `hook-before-edit.mjs`, `2026-09-13 — Búsqueda exhaustiva: herramientas de investigación científica verificada para el máster`, `Runs`, `2026-08-16 — Primera pasada del radar`?**
-  _High betweenness centrality (0.031) - this node is a cross-community bridge._
+  _High betweenness centrality (0.035) - this node is a cross-community bridge._
 - **Why does `2026-08-16 — Segunda pasada: hooks vs. CLAUDE.md, y prácticas de la comunidad` connect `hook-before-edit.mjs` to `Novedades de herramientas de IA`?**
-  _High betweenness centrality (0.031) - this node is a cross-community bridge._
+  _High betweenness centrality (0.034) - this node is a cross-community bridge._
 - **Why does `deny()` connect `hook-before-edit.mjs` to `readConfig`?**
-  _High betweenness centrality (0.021) - this node is a cross-community bridge._
-- **What connects `Pautas de redacción para el artículo (materiales de clase)`, `Paso 1: Planteamiento del Problema, Pregunta e Hipótesis (Día 1)`, `Paso 2: Búsqueda Bibliográfica y Generación de la Base .bib (Día 2)` to the rest of the system?**
+  _High betweenness centrality (0.023) - this node is a cross-community bridge._
+- **What connects `HEADING_TAGS`, `LAYOUT_TRANSITION_PROPS`, `POSITIONED_CHILD_INTERACTIVE_SELECTOR` to the rest of the system?**
   _986 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `live-browser.js` be split into smaller, more focused modules?**
   _Cohesion score 0.03319333423655331 - nodes in this community are weakly interconnected._
