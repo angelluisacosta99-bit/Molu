@@ -9822,7 +9822,7 @@
       "file_type": "code",
       "norm_label": "main()",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-5-latex/generar_tex.py",
-      "source_location": "L125"
+      "source_location": "L160"
     },
     {
       "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_5_latex_generar_tex_tabla",
@@ -9834,7 +9834,7 @@
       "file_type": "code",
       "norm_label": "tabla()",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-5-latex/generar_tex.py",
-      "source_location": "L111"
+      "source_location": "L143"
     },
     {
       "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_5_latex_generar_tex_texto",
@@ -9846,7 +9846,7 @@
       "file_type": "code",
       "norm_label": "texto()",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-5-latex/generar_tex.py",
-      "source_location": "L88"
+      "source_location": "L120"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_session_store_applyevent",
@@ -34899,7 +34899,7 @@
       "source_location": "L1"
     },
     {
-      "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_5_latex_generar_tex_rationale_89",
+      "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_5_latex_generar_tex_rationale_121",
       "label": "HTML ligero del borrador -> LaTeX.",
       "_origin": "ast",
       "community": 234,
@@ -34907,7 +34907,7 @@
       "file_type": "rationale",
       "norm_label": "html ligero del borrador -> latex.",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-5-latex/generar_tex.py",
-      "source_location": "L89"
+      "source_location": "L121"
     },
     {
       "id": "master_sistemas_inteligentes_trabajo_fin_de_master_ideas_tfm_energias_renovables_candidatos_nuevos_o_reforzados_con_proyecto_financiado_verificado",
@@ -80586,7 +80586,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-5-latex/generar_tex.py",
-      "source_location": "L133",
+      "source_location": "L168",
       "weight": 1.0
     },
     {
@@ -80598,7 +80598,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-5-latex/generar_tex.py",
-      "source_location": "L149",
+      "source_location": "L189",
       "weight": 1.0
     },
     {
@@ -80610,7 +80610,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-5-latex/generar_tex.py",
-      "source_location": "L117",
+      "source_location": "L152",
       "weight": 1.0
     },
     {
@@ -84542,7 +84542,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-5-latex/generar_tex.py",
-      "source_location": "L4",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -84554,7 +84554,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-5-latex/generar_tex.py",
-      "source_location": "L5",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -84566,7 +84566,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-5-latex/generar_tex.py",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -87338,7 +87338,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-5-latex/generar_tex.py",
-      "source_location": "L12",
+      "source_location": "L13",
       "weight": 1.0
     },
     {
@@ -87350,7 +87350,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-5-latex/generar_tex.py",
-      "source_location": "L7",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -117011,13 +117011,24 @@
     },
     {
       "source": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_5_latex_generar_tex",
+      "target": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_5_latex_generar_tex_texto",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-5-latex/generar_tex.py",
+      "source_location": "L120",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_5_latex_generar_tex",
       "target": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_5_latex_generar_tex_tabla",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-5-latex/generar_tex.py",
-      "source_location": "L111",
+      "source_location": "L143",
       "weight": 1.0
     },
     {
@@ -117028,18 +117039,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-5-latex/generar_tex.py",
-      "source_location": "L125",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_5_latex_generar_tex",
-      "target": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_5_latex_generar_tex_texto",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-5-latex/generar_tex.py",
-      "source_location": "L88",
+      "source_location": "L160",
       "weight": 1.0
     },
     {
@@ -120970,14 +120970,14 @@
       "weight": 1.0
     },
     {
-      "source": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_5_latex_generar_tex_rationale_89",
+      "source": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_5_latex_generar_tex_rationale_121",
       "target": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_5_latex_generar_tex_texto",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-5-latex/generar_tex.py",
-      "source_location": "L89",
+      "source_location": "L121",
       "weight": 1.0
     },
     {
@@ -124948,5 +124948,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "510d4843003ab53d903e712445747c2039c657f6"
+  "built_at_commit": "c6ed066d94a3877a1d4b54a174a1da164044b6fd"
 }
