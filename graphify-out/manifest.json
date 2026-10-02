@@ -954,9 +954,9 @@
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/README.md": {
-    "mtime": 1790969334.807546,
-    "seen": 1790969370.9184802,
-    "ast_hash": "159359674ae5e86c4354c656b8a44a04",
+    "mtime": 1790969710.077529,
+    "seen": 1790969725.2586343,
+    "ast_hash": "10058b7fa7cfbe5f7ac2aeaece6965a5",
     "semantic_hash": ""
   },
   "docencia-espanol/fuentes/nuevo-espanol-en-marcha/a1/cuaderno-unidad10a_la-salud.md": {
@@ -1776,15 +1776,15 @@
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/codigos-acceso.html": {
-    "mtime": 1790969362.2882242,
-    "seen": 1790969370.9186237,
-    "ast_hash": "29c00a75fd9e31bfcfb82d1bc07faf44",
+    "mtime": 1790969701.3740692,
+    "seen": 1790969725.2587712,
+    "ast_hash": "3e85e862160b783d430c698b4ba157ee",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/indice-clases-de-espanol.html": {
-    "mtime": 1790969362.2875597,
-    "seen": 1790969370.9186249,
-    "ast_hash": "fbec42e8082a84d8c007c69cde7015fc",
+    "mtime": 1790969701.372699,
+    "seen": 1790969725.258772,
+    "ast_hash": "2be1542ee24841373b192196957f44ab",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/quizlet/nuevo-espanol-en-marcha-1_unidad1.md": {
@@ -3093,6 +3093,42 @@
     "mtime": 1790968071.3394706,
     "seen": 1790969370.9186134,
     "ast_hash": "33a93480fcafbf60e6c586c6212fc7f4",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad9a_sucesos.md": {
+    "mtime": 1790969704.2795677,
+    "seen": 1790969725.2586944,
+    "ast_hash": "da67e4f3fe9b7319e45ec854a9d03ae5",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad9b_casate-conmigo.md": {
+    "mtime": 1790969707.1795678,
+    "seen": 1790969725.2586954,
+    "ast_hash": "f547b5bfbc954b8d0b6a86a4f6b3d1c2",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad9c_quiero-que-mi-ciudad-este-bonita.md": {
+    "mtime": 1790969709.935568,
+    "seen": 1790969725.2586966,
+    "ast_hash": "cb25c6fef91f5129d65eb44ad339bbe4",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad9a_sucesos_interactivo.html": {
+    "mtime": 1790969667.573097,
+    "seen": 1790969725.2587636,
+    "ast_hash": "6d61dcdb0af816768a54e90e53a948cc",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad9b_casate-conmigo_interactivo.html": {
+    "mtime": 1790969667.6237195,
+    "seen": 1790969725.2587647,
+    "ast_hash": "187ce1ca98397219c1acbac1ee8a1898",
+    "semantic_hash": ""
+  },
+  "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad9c_quiero-que-mi-ciudad-este-bonita_interactivo.html": {
+    "mtime": 1790969667.6420994,
+    "seen": 1790969725.2587662,
+    "ast_hash": "29245f7afd8917be76a76ec280477f0c",
     "semantic_hash": ""
   }
 }

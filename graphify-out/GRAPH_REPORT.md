@@ -1,17 +1,17 @@
 # Graph Report - Molu  (2026-10-02)
 
 ## Corpus Check
-- 324 files · ~1,550,389 words
+- 327 files · ~1,598,034 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 112 file(s) not represented in the graph (top: .csv 32, .arff 22, .pptx 15)
 
 ## Summary
-- 3627 nodes · 6934 edges · 279 communities (237 shown, 42 thin omitted)
+- 3650 nodes · 6954 edges · 280 communities (239 shown, 41 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 131 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `d6003817`
+- Built from commit: `9b83eedc`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -238,10 +238,11 @@
 - Ejercicios
 - 2026-09-19 — Pasada por el correo semanal "This week in Claude Code" (4 números, 21 ago-18 sep)
 - 2. Hallazgos verificados que cambian el plan
-- simulador.py
+- experimento.py
 - Optativas elegidas este curso (6)
-- event-validation.mjs
+- Ejercicios
 - Parte 2 — Propuesta adjunta (2 páginas)
+- Ejercicios
 - Ejercicios
 - caveman-cavecrew/skills/caveman/SKILL.md
 - generar_tex.py
@@ -287,11 +288,12 @@
 - paso-4-redaccion/README.md
 - paso-5-latex/README.md
 - caveman-cavecrew/hooks/caveman-mode.sh
+- Ejercicios
 
 ## God Nodes (most connected - your core abstractions)
 1. `Novedades de herramientas de IA` - 31 edges
-2. `initGlobalBar()` - 29 edges
-3. `runHook()` - 29 edges
+2. `runHook()` - 29 edges
+3. `initGlobalBar()` - 29 edges
 4. `setLiveState()` - 29 edges
 5. `el()` - 27 edges
 6. `detectHtml()` - 27 edges
@@ -301,21 +303,21 @@
 10. `resumeSession()` - 25 edges
 
 ## Surprising Connections (you probably didn't know these)
+- `Aplicado (tras profundizar): hook que bloquea merge sin revisión` --references--> `deny()`  [INFERRED]
+  recursos-generales/herramientas-ia/novedades.md → .claude/skills/impeccable/scripts/hook-before-edit.mjs
 - `2026-08-18 — MarkItDown (Microsoft): herramienta puntual, no instalada` --references--> `docx()`  [INFERRED]
   recursos-generales/herramientas-ia/novedades.md → master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-4-redaccion/generar_borrador.py
 - `Projects (beta) y Claude Design/Slides/Docs en desktop y web (beta)` --references--> `docx()`  [INFERRED]
   recursos-generales/herramientas-ia/novedades.md → master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-4-redaccion/generar_borrador.py
-- `Aplicado (tras profundizar): hook que bloquea merge sin revisión` --references--> `deny()`  [INFERRED]
+- `Anotado, no aplicado: patrones de `awattar/claude-code-best-practices`` --references--> `allow()`  [INFERRED]
   recursos-generales/herramientas-ia/novedades.md → .claude/skills/impeccable/scripts/hook-before-edit.mjs
-- `2026-08-21 — mcp-server-dev (Anthropic): activado, deshabilitado por defecto` --references--> `add()`  [INFERRED]
-  recursos-generales/herramientas-ia/novedades.md → master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-1-planteamiento/generar_ficha.py
-- `2026-08-22 — ponytail (DietrichGebert): activado para todas las sesiones` --references--> `add()`  [INFERRED]
-  recursos-generales/herramientas-ia/novedades.md → master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-1-planteamiento/generar_ficha.py
+- `Anotado, no aplicado: patrones de `awattar/claude-code-best-practices`` --references--> `deny()`  [INFERRED]
+  recursos-generales/herramientas-ia/novedades.md → .claude/skills/impeccable/scripts/hook-before-edit.mjs
 
 ## Import Cycles
 - None detected.
 
-## Communities (279 total, 42 thin omitted)
+## Communities (280 total, 41 thin omitted)
 
 ### Community 0 - "live-browser.js"
 Cohesion: 0.03
@@ -394,8 +396,8 @@ Cohesion: 0.08
 Nodes (34): applyStaticDeclaration(), buildBorderOverrideMap(), parseShorthand(), resolveVar(), buildStaticStyleMap(), buildStaticWindow(), collectStaticCssRules(), compareStaticPriority() (+26 more)
 
 ### Community 19 - "insert-ui.mjs"
-Cohesion: 0.09
-Nodes (13): canCreateInsert(), clampPlaceholderSize(), computeInsertPosition(), groupSiblingRows(), hitSiblingInsertGap(), horizontalOverlap(), insertCreateDisabledReason(), insertLineCoords() (+5 more)
+Cohesion: 0.07
+Nodes (25): FORBIDDEN_MANUAL_EDIT_TEXT_CHARS, INSERT_POSITIONS, isValidId(), isValidVariantId(), validateAnnotationFields(), validateEvent(), validateInsertGenerate(), validateManualEditEvent() (+17 more)
 
 ### Community 20 - "Fuentes transcritas overview"
 Cohesion: 0.15
@@ -482,8 +484,8 @@ Cohesion: 0.17
 Nodes (21): resolveProjectRoot(), CRITIQUE_DIR, firstExisting(), getDesignSidecarCandidates(), getDesignSidecarPath(), getImpeccableDir(), getLegacyLiveAnnotationsDir(), getLegacyLiveConfigPath() (+13 more)
 
 ### Community 41 - "readLiveServerInfo"
-Cohesion: 0.21
-Nodes (17): isLiveServerPidReachable(), readLiveServerInfo(), completeCli(), completeThroughServer(), parseArgs(), readServerInfo(), collectManualApplyFiles(), manualApplyReplyCommand() (+9 more)
+Cohesion: 0.18
+Nodes (19): isLiveServerPidReachable(), readLiveServerInfo(), completeCli(), completeThroughServer(), parseArgs(), readServerInfo(), collectManualApplyFiles(), manualApplyReplyCommand() (+11 more)
 
 ### Community 42 - "parseAnyColor"
 Cohesion: 0.12
@@ -1046,8 +1048,8 @@ Cohesion: 0.40
 Nodes (4): 1. Costumbres, Ej. 1 — Piscina Sol y Agua, Ej. 2 — Antes de un examen, Ejercicios
 
 ### Community 206 - "session-store.mjs"
-Cohesion: 0.22
-Nodes (11): applyEvent(), baseSnapshot(), COMPLETED_PHASES, getReadableJournalPath(), loadCachedOrRebuild(), getJournalPath(), getSnapshotPath(), rebuildSnapshotFromJournal() (+3 more)
+Cohesion: 0.26
+Nodes (9): applyEvent(), baseSnapshot(), COMPLETED_PHASES, getJournalPath(), getSnapshotPath(), rebuildSnapshotFromJournal(), safeSessionId(), toPendingEvent() (+1 more)
 
 ### Community 207 - "Ejercicios"
 Cohesion: 0.33
@@ -1113,17 +1115,17 @@ Nodes (17): docx(), escribir(), 2026-09-13, 2026-09-13 (continuación: dominios 
 Cohesion: 0.12
 Nodes (16): 1. Situación de partida, 2.1 Angel casi con seguridad es ИП на УСН «доходы», no самозанятый, 2.2 Sin contrato de agencia, el impuesto se come el 30 % del margen, 2.3 La salida legal: договор агентский (contrato de agencia), 2.4 La profesora debe darse de alta — y es trivial hacerlo, 2.5 Pagarle en USDT no es viable legalmente, 2.6 Lo que queda sin verificar, 2. Hallazgos verificados que cambian el plan (+8 more)
 
-### Community 224 - "simulador.py"
-Cohesion: 0.17
+### Community 224 - "experimento.py"
+Cohesion: 0.09
 Nodes (5): ber_desde_q(), generar(), perdida_nominal(), q_ase(), q_termico()
 
 ### Community 225 - "Optativas elegidas este curso (6)"
 Cohesion: 0.13
 Nodes (14): Bibliografía oficial — Máster Universitario en Sistemas Inteligentes (USAL), Cibermetría, Herramientas interactivas de simulación y control, Interacción Gestual, Minería de datos aplicada a la bioinformática, Minería Web, Navegación de Robots, Optativas elegidas este curso (6) (+6 more)
 
-### Community 226 - "event-validation.mjs"
+### Community 226 - "Ejercicios"
 Cohesion: 0.25
-Nodes (12): FORBIDDEN_MANUAL_EDIT_TEXT_CHARS, INSERT_POSITIONS, isValidId(), isValidVariantId(), validateAnnotationFields(), validateEvent(), validateInsertGenerate(), validateManualEditEvent() (+4 more)
+Nodes (7): 1. Sucesos, Ej. 1 — Lee esta noticia y responde a las preguntas, Ej. 2 — Busca en el texto palabras que signifiquen, Ej. 3 — Escucha las noticias y relaciona cada una con su titular, Ej. 4 — Reconstruye los titulares, Ej. 5 — Construye frases como la del modelo, Ejercicios
 
 ### Community 227 - "Parte 2 — Propuesta adjunta (2 páginas)"
 Cohesion: 0.14
@@ -1132,6 +1134,10 @@ Nodes (13): 1. Punto de partida, 2. Pregunta de investigación, 3. Metodología,
 ### Community 228 - "Ejercicios"
 Cohesion: 0.15
 Nodes (12): 1. Examen unidades 1-2, Ej. 10 — Habla y escribe las conclusiones, Ej. 1 — Completa con el interrogativo adecuado, Ej. 2 — Subraya la opción adecuada, Ej. 3 — El pasado de Joana y David, Ej. 4 — Vocabulario: objetos de casa, Ej. 5 — Haz suposiciones, Ej. 6 — Localiza y corrige el error (+4 more)
+
+### Community 229 - "Ejercicios"
+Cohesion: 0.25
+Nodes (7): 1. Quiero que mi ciudad esté bonita, Ej. 1 — Completa con el verbo en el tiempo adecuado, Ej. 2 — Busca los errores y corrígelos, Ej. 3 — Lee este anuncio publicitario de una cadena de hoteles, Ej. 4 — Escucha y subraya las palabras que oigas, Ej. 5 — ¿Con «b» o con «v»?, Ejercicios
 
 ### Community 230 - "caveman-cavecrew/skills/caveman/SKILL.md"
 Cohesion: 0.17
@@ -1265,25 +1271,29 @@ Nodes (4): 2026-08-30 — Pasada del radar: dos funciones nativas nuevas, sin ha
 Cohesion: 0.50
 Nodes (4): 2026-09-07 — Búsqueda a mano: herramientas para posts de blog en plataformas de clases, Mencionados pero no propuestos con tarjeta (por completitud, sin encajar tan bien ahora mismo), Plugin "Marketing" (`plugin_01Eeb9y5m4iFuY3yRtytYfdc`), Plugin "SearchFit SEO" (`plugin_016u9h5nGGKuX18riDTJ7otg`)
 
+### Community 279 - "Ejercicios"
+Cohesion: 0.29
+Nodes (6): 1. ¡Cásate conmigo!, Ej. 1 — Mensaje en estilo indirecto: relaciona las dos partes, Ej. 2 — Completa este cuadro, Ej. 3 — Pasa las frases a estilo indirecto, Ej. 4 — Completa el texto de las viñetas, Ejercicios
+
 ## Knowledge Gaps
-- **1026 isolated node(s):** `When to use cavecrew vs alternatives`, `Why this exists (the real win)`, `Output contracts`, `Chaining patterns`, `What NOT to do` (+1021 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1288 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **42 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **1040 isolated node(s):** `Ej. 1 — Lee esta noticia y responde a las preguntas`, `Ej. 2 — Busca en el texto palabras que signifiquen`, `Ej. 3 — Escucha las noticias y relaciona cada una con su titular`, `Ej. 4 — Reconstruye los titulares`, `Ej. 5 — Construye frases como la del modelo` (+1035 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1305 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **41 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Novedades de herramientas de IA` connect `Novedades de herramientas de IA` to `2026-08-30 — Compactación de contexto: palancas oficiales para ahorrar tokens`, `2026-08-30 — Pasada del radar: dos funciones nativas nuevas, sin hallazgos de terceros`, `2026-09-07 — Búsqueda a mano: herramientas para posts de blog en plataformas de clases`, `hook-before-edit.mjs`, `2026-08-16 — Primera pasada del radar`, `2026-09-13 — Búsqueda exhaustiva: herramientas de investigación científica verificada para el máster`, `2026-09-19 — Pasada por el correo semanal "This week in Claude Code" (4 números, 21 ago-18 sep)`?**
-  _High betweenness centrality (0.005) - this node is a cross-community bridge._
+  _High betweenness centrality (0.007) - this node is a cross-community bridge._
 - **Why does `2026-08-16 — Segunda pasada: hooks vs. CLAUDE.md, y prácticas de la comunidad` connect `hook-before-edit.mjs` to `Novedades de herramientas de IA`?**
+  _High betweenness centrality (0.006) - this node is a cross-community bridge._
+- **Why does `deny()` connect `hook-before-edit.mjs` to `readConfig`?**
   _High betweenness centrality (0.004) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `initGlobalBar()` (e.g. with `hideAgentPollTooltip()` and `onDetectMessage()`) actually correct?**
   _`initGlobalBar()` has 7 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `When to use cavecrew vs alternatives`, `Why this exists (the real win)`, `Output contracts` to the rest of the system?**
-  _1026 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `Ej. 1 — Lee esta noticia y responde a las preguntas`, `Ej. 2 — Busca en el texto palabras que signifiquen`, `Ej. 3 — Escucha las noticias y relaciona cada una con su titular` to the rest of the system?**
+  _1040 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `live-browser.js` be split into smaller, more focused modules?**
   _Cohesion score 0.02863984674329502 - nodes in this community are weakly interconnected._
 - **Should `checks.mjs` be split into smaller, more focused modules?**
   _Cohesion score 0.04467084639498432 - nodes in this community are weakly interconnected._
-- **Should `index.mjs` be split into smaller, more focused modules?**
-  _Cohesion score 0.06142410015649452 - nodes in this community are weakly interconnected._
