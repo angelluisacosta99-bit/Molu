@@ -1,7 +1,7 @@
 # Enunciados de Studium (copia literal)
 
-Copiados de las capturas de Studium que envió Angel el 2026-10-02. Falta el
-del Paso 3. Es la referencia para comprobar que cada entrega, y el artículo
+Copiados de las capturas de Studium (Pasos 1, 2, 4 y 5) y de la diapositiva de
+clase (Paso 3) que envió Angel el 2026-10-02. Es la referencia para comprobar que cada entrega, y el artículo
 final, cumplen lo que pide la profesora.
 
 ## Paso 1: Planteamiento del Problema, Pregunta e Hipótesis (Día 1)
@@ -23,6 +23,16 @@ Apertura: martes 29-09-2026, 11:00 · Cierre: miércoles 30-09-2026, 15:00
   2. Seleccionar entre 8 y 10 artículos científicos clave sobre el tema elegido.
   3. Exportar las referencias a un gestor bibliográfico (Zotero, Mendeley, EndNote) y construir un archivo nativo de bibliografía **referencias.bib**.
 - **Entregable:** archivo `.bib` validado con al menos 8 citas formateadas en esquema BibTeX.
+
+## Paso 3: Diseño Experimental y Resultados (Día 3)
+(Copiado de la diapositiva del bootcamp; sin fechas.)
+
+- **Objetivo:** aplicar la parte empírica y preparar los elementos visuales del artículo.
+- **Tarea para el alumno:**
+  1. Seleccionar o definir el marco experimental (un *dataset* público, una prueba algorítmica o una comparativa de modelos).
+  2. Construir al menos **1 tabla comparativa** de resultados con encabezados y métricas.
+  3. Generar al menos **1 gráfico/figura** explícita que ilustre la arquitectura o los resultados.
+- **Entregable:** archivo de datos/código y las imágenes/tablas listas para insertar en el manuscrito.
 
 ## Paso 4: Redacción Estructurada siguiendo la Metodología de "La Casa" (Día 4)
 Apertura: jueves 01-10-2026, 12:00 · Cierre: viernes 02-10-2026, 15:00

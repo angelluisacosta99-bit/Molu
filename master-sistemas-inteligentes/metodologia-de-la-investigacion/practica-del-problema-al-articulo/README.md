@@ -27,7 +27,7 @@ Referencias de la ficha verificadas con Scite y Crossref (2026-09-28).
 origen de cada dato, preguntas de la profesora): `guia-explicada/guia-pasos-1-3.pdf`
 (se regenera desde el `.html` con Chromium, igual que la ficha).
 
-**Enunciados literales de Studium** (Pasos 1, 2, 4 y 5): `enunciados-studium.md`.
+**Enunciados literales de Studium** (Pasos 1-5): `enunciados-studium.md`.
 
 ## Pautas de redacción para el artículo (materiales de clase)
 
