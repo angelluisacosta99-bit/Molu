@@ -30,9 +30,9 @@
 
 #### Ej. 2 — Completa este cuadro
 
-*Completa este cuadro con las formas del presente de subjuntivo y del imperfecto de subjuntivo. Las celdas que ya trae el libro están rellenas.*
+*Completa este cuadro.*
 
-| Infinitivo | Presente de subjuntivo | Imperfecto de subjuntivo |
+| Sujeto |   |   |
 | --- | --- | --- |
 | escuchar | escuche | escuchara / escuchase |
 | venir | vengáis | **vinierais / vinieseis** |
@@ -71,7 +71,7 @@
 
 #### Ej. 4 — Completa el texto de las viñetas
 
-*Completa el texto de las viñetas. En la viñeta 1, el médico da los consejos tal cual; en las viñetas 2 y 3 se cuentan en estilo indirecto.*
+*Completa el texto de las viñetas.*
 
 > **Viñeta 1:** 
 > **Viñeta 2:** 

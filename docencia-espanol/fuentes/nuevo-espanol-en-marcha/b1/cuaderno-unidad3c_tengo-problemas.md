@@ -60,4 +60,3 @@
 > Mi hermano y su novia quieren comprarse un piso, pero no tienen suficiente dinero.
 > He terminado la carrera y no encuentro trabajo.
 > Queremos montar una empresa, pero no tenemos suficiente dinero.
-> Recuerda: yo en tu lugar + condicional (compraría, iría, estudiaría…). En plural: yo en vuestro lugar. Si hablas de otra persona: yo en su lugar.

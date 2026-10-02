@@ -22,8 +22,6 @@
 
 *Observa las viñetas y escribe una frase. Sigue el modelo de las frases del ejercicio 1.*
 
-> Recuerda: cuando + pretérito indefinido (la acción que interrumpe) + estaba + gerundio (la acción que estaba en marcha).
-
 **Ver las respuestas del solucionario (ábrelas solo después de escribir las tuyas)**
 
 #### Ej. 3 — Escribe el verbo en la forma adecuada

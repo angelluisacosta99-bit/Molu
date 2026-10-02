@@ -957,7 +957,7 @@
             ] }
           ],
           rows: [
-            { solved: true },
+            { solved: true, to: [7] },
             { a: [["…que le haga unas fotocopias."]] },
             { a: [["…que practique con algún amigo de habla hispana."]] },
             { a: [["…que te dé las gracias."]] },
@@ -971,15 +971,15 @@
         },
         {
           num: 2, title: "Completa este cuadro",
-          instr: "Completa este cuadro con las formas del presente de subjuntivo y del imperfecto de subjuntivo. Las celdas que ya trae el libro están rellenas.",
+          instr: "Completa este cuadro.",
           type: "conjTable",
-          subjectLabel: "Infinitivo",
+          subjectLabel: "",
           subjects: ["escuchar", "venir", "correr", "hacer", "ser", "ir", "querer", "morir", "poder", "salir"],
           cols: [
-            { label: "Presente de subjuntivo", a: [
+            { label: "", a: [
               "escuche", "vengáis", ["corramos"], "hagáis", "sean", "vayan", "queramos", ["muráis", "murais"], ["puedas"], ["salgan"]
             ] },
-            { label: "Imperfecto de subjuntivo", a: [
+            { label: "", a: [
               "escuchara / escuchase", ["vinierais / vinieseis", "vinierais/vinieseis", "vinierais", "vinieseis"], "corriéramos / corriésemos",
               ["hicierais / hicieseis", "hicierais/hicieseis", "hicierais", "hicieseis"],
               ["fueran / fuesen", "fueran/fuesen", "fueran", "fuesen"],
@@ -1009,7 +1009,7 @@
         },
         {
           num: 4, title: "Completa el texto de las viñetas",
-          instr: "Completa el texto de las viñetas. En la viñeta 1, el médico da los consejos tal cual; en las viñetas 2 y 3 se cuentan en estilo indirecto.",
+          instr: "Completa el texto de las viñetas.",
           refHTML: '<span class="ref-label">Viñeta 1</span>' +
             '<img src="data:image/jpeg;base64,' + VINETA1_B64_VAR + '" alt="Viñeta 1: un médico entrega unas pastillas a un paciente" style="max-width:min(360px, 100%)" />' +
             '<p><i>«Tómate estas pastillas. Come con poca sal, no fumes y evita las grasas. Bebe mucha agua, no hagas grandes esfuerzos y procura descansar. ¡Ah, y vuelve dentro de dos semanas!»</i></p>' +
@@ -1751,11 +1751,12 @@
             const solvedAnchor = isAnchor && rowSpec && rowSpec.solved;
             const btn = document.createElement("button");
             btn.type = "button";
-            btn.className = "match-item" + (isAnchor ? " match-anchor" : "") + (solvedAnchor ? " match-solved" : "");
+            const solvedTarget = !isAnchor && ex.rows.some(function (r) { return r.solved && r.to && r.to[c - 1] === idx; });
+            btn.className = "match-item" + (isAnchor ? " match-anchor" : "") + ((solvedAnchor || solvedTarget) ? " match-solved" : "");
             btn.textContent = text;
             btn.dataset.col = String(c);
             btn.dataset.idx = String(idx);
-            if (solvedAnchor) btn.disabled = true;
+            if (solvedAnchor || solvedTarget) btn.disabled = true;
             columnEls[c][idx] = btn;
             colEl.appendChild(btn);
             if (isAnchor && !solvedAnchor) {
@@ -1818,7 +1819,23 @@
             return { x: (side === "right" ? r.right : r.left) - wrapRect.left, y: r.top + r.height / 2 - wrapRect.top };
           }
           ex.rows.forEach(function (row, i) {
-            if (row.solved) return;
+            if (row.solved) {
+              // Fila resuelta en el libro (row.to = índice de la pareja en cada columna): se dibuja ya conectada.
+              if (!row.to) return;
+              let from = columnEls[0][i];
+              for (let j = 0; j < row.to.length; j++) {
+                const to = columnEls[j + 1][row.to[j]];
+                const q1 = pointFor(from, "right");
+                const q2 = pointFor(to, "left");
+                const ln = document.createElementNS("http://www.w3.org/2000/svg", "line");
+                ln.setAttribute("x1", q1.x); ln.setAttribute("y1", q1.y);
+                ln.setAttribute("x2", q2.x); ln.setAttribute("y2", q2.y);
+                ln.setAttribute("stroke", "var(--pencil)");
+                svg.appendChild(ln);
+                from = to;
+              }
+              return;
+            }
             let fromEl = columnEls[0][i];
             for (let j = 0; j < ex.columns.length - 1; j++) {
               const c = j + 1;
@@ -1983,7 +2000,7 @@
         const wordsEl = document.createElement("ul");
         wordsEl.className = "ws-words";
         const wordRecs = []; // { word, li, input }
-        ex.words.forEach(function (w) {
+        ex.words.forEach(function (w, wi) {
           const li = document.createElement("li");
           li.setAttribute("translate", "no");
           if (w.img) {
@@ -1996,7 +2013,10 @@
             nameSpan.textContent = w.label;
             li.appendChild(nameSpan);
           } else {
-            li.textContent = w.label;
+            const nameSpan = document.createElement("span");
+            nameSpan.textContent = ex.hideLabels ? "Palabra " + (wi + 1) : w.label;
+            li.appendChild(nameSpan);
+            li._nameSpan = nameSpan;
           }
           if (w.solved) {
             li.classList.add("ws-solved");
@@ -2008,6 +2028,7 @@
             const rec = { el: inp, spec: [w.label], label: "Ej. " + ex.num + " sopa de letras (" + w.label + ")" };
             rec.onGrade = function (ok) {
               li.classList.toggle("ws-found-item", ok);
+              if (li._nameSpan) li._nameSpan.textContent = w.label;
               li.classList.toggle("ws-incorrect", !ok);
             };
             allInputs.push(rec);
@@ -2056,6 +2077,7 @@
           if (rec) {
             rec.input.value = rec.word.label;
             rec.li.classList.add("ws-found-item");
+            if (rec.li._nameSpan) rec.li._nameSpan.textContent = rec.word.label;
             rec.word.cells.forEach(function (rc) { cellEls[rc[0]][rc[1]].classList.add("ws-found"); });
           } else {
             path.forEach(function (rc) { cellEls[rc[0]][rc[1]].classList.add("ws-wrong"); });

@@ -51,7 +51,6 @@
 > …de un amigo.
 > …de una niñera para tus hijos.
 > …de unas vacaciones.
-> Recuerda: Que + presente de subjuntivo para expresar deseos (Que me den…, Que no haya…).
 
 #### Ej. 4 — Escucha y subraya las palabras que oigas
 

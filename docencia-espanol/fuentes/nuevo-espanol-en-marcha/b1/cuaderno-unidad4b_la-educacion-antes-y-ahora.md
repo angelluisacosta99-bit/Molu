@@ -27,7 +27,6 @@
 *Seguro que has mejorado mucho tu español. Habla de tus progresos construyendo cinco frases con «antes» y «ahora».*
 
 > AntesAhoraMe daba mucha vergüenza hablar español.Ahora lo hago sin problemas.
-> Recuerda: antes + pretérito imperfecto (cómo eran las cosas) y ahora + presente (cómo son hoy).
 
 #### Ej. 3 — Completa las frases con la palabra adecuada
 

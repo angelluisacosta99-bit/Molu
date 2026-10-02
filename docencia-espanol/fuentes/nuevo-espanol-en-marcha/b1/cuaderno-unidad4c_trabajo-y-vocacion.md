@@ -39,11 +39,10 @@
 *Ahora haz tú cuatro preguntas a Manuel de los Peligros sobre las cosas que ha podido hacer (utiliza siempre el pretérito perfecto).*
 
 > Ejemplo del libro: 1. ¿Has aprendido a hablar otros idiomas?
-> Recuerda: pretérito perfecto = he / has / ha / hemos / habéis / han + participio (¿Has visitado…? ¿Has comido…? ¿Has viajado…?).
 
 #### Ej. 3 — Escribe los contrarios
 
-*Aquí tienes algunos adjetivos que has visto en esta unidad. Escribe sus contrarios (en el libro, en la columna correspondiente: los que se forman con des- y los que se forman con in- / im- / i-).*
+*Aquí tienes algunos adjetivos que has visto en esta unidad. Escribe sus contrarios en la columna correspondiente.*
 
 > **Adjetivos:** feliz · tranquilo · limitado · honesto · útil · legales · ordenado · necesario · experto · responsable · cómodo · controlado · tolerante · paciente · justo · maduro · legal · agradable · sensible · sociable
 

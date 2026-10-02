@@ -2,7 +2,7 @@
   Unidad 4C del cuaderno de ejercicios de Nuevo Español en Marcha 3 (B1), páginas 18-19:
   "Trabajo y vocación". Transcrito mirando las páginas renderizadas del PDF que adjuntó el
   profesor. Las respuestas salen del solucionario oficial del propio cuaderno
-  (página 71). Construido sobre .claude/skills/ejercicio-interactivo/reference/template.html.
+  (página 70). Construido sobre .claude/skills/ejercicio-interactivo/reference/template.html.
   El ejercicio 1 lleva la pista 5 real (carpeta de Drive «Cuaderno.Audio», .wma → .mp3, base64). La foto de María Rosa es la del cuaderno.
   El ejercicio 3 (contrarios) pide el adjetivo contrario; el libro los reparte en dos columnas (des- / in-, im-, i-): el prefijo ya se ve en la respuesta.
 -->
@@ -971,12 +971,11 @@
           num: 2, title: "Preguntas a Manuel de los Peligros",
           instr: "Ahora haz tú cuatro preguntas a Manuel de los Peligros sobre las cosas que ha podido hacer (utiliza siempre el pretérito perfecto).",
           type: "open",
-          html: '<p><i>Ejemplo del libro:</i> 1. ¿Has aprendido a hablar otros idiomas?</p>' +
-            '<p class="pista-gramatical"><b>Recuerda:</b> pretérito perfecto = <i>he / has / ha / hemos / habéis / han</i> + participio (<i>¿Has visitado…? ¿Has comido…? ¿Has viajado…?</i>).</p>'
+          html: '<p><i>Ejemplo del libro:</i> 1. ¿Has aprendido a hablar otros idiomas?</p>'
         },
         {
           num: 3, title: "Escribe los contrarios",
-          instr: "Aquí tienes algunos adjetivos que has visto en esta unidad. Escribe sus contrarios (en el libro, en la columna correspondiente: los que se forman con des- y los que se forman con in- / im- / i-).",
+          instr: "Aquí tienes algunos adjetivos que has visto en esta unidad. Escribe sus contrarios en la columna correspondiente.",
           refHTML: '<span class="ref-label">Adjetivos</span>' +
             '<div class="ref-options">' +
             '<span class="ref-opt">feliz</span><span class="ref-opt">tranquilo</span><span class="ref-opt">limitado</span><span class="ref-opt">honesto</span>' +
@@ -1801,11 +1800,12 @@
             const solvedAnchor = isAnchor && rowSpec && rowSpec.solved;
             const btn = document.createElement("button");
             btn.type = "button";
-            btn.className = "match-item" + (isAnchor ? " match-anchor" : "") + (solvedAnchor ? " match-solved" : "");
+            const solvedTarget = !isAnchor && ex.rows.some(function (r) { return r.solved && r.to && r.to[c - 1] === idx; });
+            btn.className = "match-item" + (isAnchor ? " match-anchor" : "") + ((solvedAnchor || solvedTarget) ? " match-solved" : "");
             btn.textContent = text;
             btn.dataset.col = String(c);
             btn.dataset.idx = String(idx);
-            if (solvedAnchor) btn.disabled = true;
+            if (solvedAnchor || solvedTarget) btn.disabled = true;
             columnEls[c][idx] = btn;
             colEl.appendChild(btn);
             if (isAnchor && !solvedAnchor) {
@@ -1868,7 +1868,23 @@
             return { x: (side === "right" ? r.right : r.left) - wrapRect.left, y: r.top + r.height / 2 - wrapRect.top };
           }
           ex.rows.forEach(function (row, i) {
-            if (row.solved) return;
+            if (row.solved) {
+              // Fila resuelta en el libro (row.to = índice de la pareja en cada columna): se dibuja ya conectada.
+              if (!row.to) return;
+              let from = columnEls[0][i];
+              for (let j = 0; j < row.to.length; j++) {
+                const to = columnEls[j + 1][row.to[j]];
+                const q1 = pointFor(from, "right");
+                const q2 = pointFor(to, "left");
+                const ln = document.createElementNS("http://www.w3.org/2000/svg", "line");
+                ln.setAttribute("x1", q1.x); ln.setAttribute("y1", q1.y);
+                ln.setAttribute("x2", q2.x); ln.setAttribute("y2", q2.y);
+                ln.setAttribute("stroke", "var(--pencil)");
+                svg.appendChild(ln);
+                from = to;
+              }
+              return;
+            }
             let fromEl = columnEls[0][i];
             for (let j = 0; j < ex.columns.length - 1; j++) {
               const c = j + 1;
@@ -2033,7 +2049,7 @@
         const wordsEl = document.createElement("ul");
         wordsEl.className = "ws-words";
         const wordRecs = []; // { word, li, input }
-        ex.words.forEach(function (w) {
+        ex.words.forEach(function (w, wi) {
           const li = document.createElement("li");
           li.setAttribute("translate", "no");
           if (w.img) {
@@ -2046,7 +2062,10 @@
             nameSpan.textContent = w.label;
             li.appendChild(nameSpan);
           } else {
-            li.textContent = w.label;
+            const nameSpan = document.createElement("span");
+            nameSpan.textContent = ex.hideLabels ? "Palabra " + (wi + 1) : w.label;
+            li.appendChild(nameSpan);
+            li._nameSpan = nameSpan;
           }
           if (w.solved) {
             li.classList.add("ws-solved");
@@ -2058,6 +2077,7 @@
             const rec = { el: inp, spec: [w.label], label: "Ej. " + ex.num + " sopa de letras (" + w.label + ")" };
             rec.onGrade = function (ok) {
               li.classList.toggle("ws-found-item", ok);
+              if (li._nameSpan) li._nameSpan.textContent = w.label;
               li.classList.toggle("ws-incorrect", !ok);
             };
             allInputs.push(rec);
@@ -2106,6 +2126,7 @@
           if (rec) {
             rec.input.value = rec.word.label;
             rec.li.classList.add("ws-found-item");
+            if (rec.li._nameSpan) rec.li._nameSpan.textContent = rec.word.label;
             rec.word.cells.forEach(function (rc) { cellEls[rc[0]][rc[1]].classList.add("ws-found"); });
           } else {
             path.forEach(function (rc) { cellEls[rc[0]][rc[1]].classList.add("ws-wrong"); });
