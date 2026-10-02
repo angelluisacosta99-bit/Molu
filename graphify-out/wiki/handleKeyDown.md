@@ -2,12 +2,12 @@
 
 > God node · 26 connections · `.claude/skills/impeccable/scripts/live-browser.js`
 
-**Community:** [Impeccable Live Browser Engine (4)](Impeccable_Live_Browser_Engine_4.md)
+**Community:** [setLiveState](setLiveState.md)
 
 ## Connections by Relation
 
 ### calls
-- [setLiveState()](setLiveState.md) `EXTRACTED`
+- [setLiveState()](setLiveState_2.md) `EXTRACTED`
 - showBar() `EXTRACTED`
 - showManualApplyBusyToast() `EXTRACTED`
 - renderEditBadge() `EXTRACTED`
@@ -27,9 +27,10 @@
 - showAnnotOverlay() `EXTRACTED`
 - hasTextRows() `EXTRACTED`
 - cycleVariant() `EXTRACTED`
+- *…and 3 more `calls` connection(s) not listed (lowest-degree first to go)*
 
 ### contains
-- live-browser.js `EXTRACTED`
+- [live-browser.js](live-browser.js.md) `EXTRACTED`
 
 ### indirect_call
 - init() `INFERRED`

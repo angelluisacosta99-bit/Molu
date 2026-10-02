@@ -8,8 +8,15 @@ description: "Use before declaring \"done\", \"tested\", or \"ready to commit\" 
 Nace de varias sagas reales en este repo — `.claude/hooks/check-pr-review.sh`
 (7 rondas de revisión), `.claude/hooks/session-start.sh` a lo largo de
 la instalación de `agent-browser` (6 rondas), `mcp-server-dev` (4 rondas)
-y `ponytail` (3 rondas), y `.claude/hooks/restrict-cavecrew-bash.sh`
-(4 rondas solo para cerrar los bypasses de su filtro de comandos) —
+y `ponytail` (3 rondas), `.claude/hooks/restrict-cavecrew-bash.sh`
+(4 rondas solo para cerrar los bypasses de su filtro de comandos), y
+`.claude/hooks/sync-main.sh` (7 rondas: un bug real de pérdida de
+datos, una corrección que casi inutilizaba la función entera, un
+mensaje de diagnóstico engañoso, un chequeo de colisión de rutas roto
+por citado/colapso de directorios, una colisión archivo-vs-carpeta sin
+detectar, y finalmente un bug de rendimiento sin cota que llevó a
+abandonar la comparación precisa entera por el chequeo simple
+original) —
 donde la misma familia de errores se repitió una y otra vez, cada vez
 detectada por una revisión externa en vez de por mí mismo antes de
 declarar el trabajo terminado. Esta skill es esa lista de comprobación,
@@ -108,6 +115,48 @@ cat /proc/$$/cmdline | tr '\0' ' '; echo
 en el contexto real (no en una subshell que tú mismo construiste a
 medida) antes de diseñar la prueba alrededor de esa asunción.
 
+**Corolario: el texto que un hook INYECTA no lo ejecuta el hook.** Si un
+hook `SessionStart` inyecta una instrucción con un comando dentro, ese
+comando lo correrá el Bash tool de la sesión, no el proceso del hook —
+y no comparten entorno. En concreto, `CLAUDE_PROJECT_DIR` **sí** existe
+para los procesos de hook (el harness se la pasa) pero **no** está
+definida en el Bash tool (verificado en vivo: `echo
+"${CLAUDE_PROJECT_DIR:-<VACIA>}"` desde una llamada normal de Bash
+devuelve vacío). Así que "anclar la ruta a `$CLAUDE_PROJECT_DIR` en vez
+de dejarla relativa al cwd", que es la corrección correcta *dentro* de
+un script de hook, la rompe *dentro del texto inyectado*: se expande a
+`/.claude/hooks/...` y falla siempre. Para una ruta dentro de una
+instrucción inyectada, usar algo que el Bash tool sí pueda resolver por
+sí mismo — `$(git rev-parse --show-toplevel)` en un repo — nunca una
+variable que solo existe del lado del hook.
+
+**Tercera ronda sobre esto mismo, y la lección de verdad: arreglar la
+ruta del script no basta si el script tampoco puede fiarse de esa
+variable.** La corrección de arriba (cambiar la ruta *dentro del texto
+inyectado*) cerró dónde *estaba* el script, pero `mark-permission-scan.sh`
+seguía resolviendo la raíz del proyecto con `"${CLAUDE_PROJECT_DIR:-.}"`
+en cinco sitios (el `cd`, el `DIR` del marcador y las tres funciones
+`GIT*`). Como la variable está vacía en el Bash tool, ese `:-.` caía
+siempre en el cwd: invocado desde una subcarpeta, el script escribía **y
+comiteaba** el marcador en `<subcarpeta>/.claude/` — reproducido en vivo —
+mientras el hook que lo lee sí recibe la variable del harness y mira la
+raíz, así que no lo encontraba nunca. El recordatorio se repetiría en
+cada arranque sin avanzar los 7 días: el bug del punto 11 otra vez, por
+una vía nueva, más un `.claude/` espurio comiteado donde no toca. Una
+revisión externa lo encontró *después* de que la ronda anterior diera el
+problema por cerrado.
+
+**Comprobación, y es la que resume las tres rondas:** cuando descubras
+que una variable del entorno no llega a un consumidor, `grep` esa
+variable en **todo** el camino de ejecución —el hook, el texto que
+inyecta, y cada script que ese texto invoca— y arréglalos todos de una
+vez. Arreglar solo el sitio donde saltó el síntoma es dejar el mismo bug
+vivo un nivel más abajo. En la práctica: resolver la raíz **una sola
+vez** al principio del script, con un respaldo que no dependa del
+harness (`git rev-parse --show-toplevel`), y usar esa variable en todas
+partes — nunca repetir `"${CLAUDE_PROJECT_DIR:-.}"` inline, porque cada
+repetición es un sitio más donde el fallback silencioso puede morder.
+
 ## 5. Tras cualquier intento de arreglo, re-verificar, no asumir
 
 **El error real:** tras detectar una versión desajustada y lanzar una
@@ -192,9 +241,156 @@ hueco que se intenta cerrar) — nunca hacer `grep`/`case` sobre el texto
 crudo cuando el objetivo es razonar sobre argumentos ya separados por
 espacios/comillas.
 
+## 9. Comparar rutas de archivo entre dos comandos de git exige el mismo
+formato sin citar en ambos lados, y ningún comando que colapse directorios
+
+**El error real:** `sync-main.sh` compara la lista de rutas que
+`origin/main` cambiaría contra la lista de archivos locales sin
+trackear/ignorados, para bloquear un `git merge --ff-only` automático
+si hay colisión (evitar sobrescribir en silencio un archivo local). La
+primera versión usó `git diff --name-only HEAD..origin/main` contra
+`git status --porcelain --ignored=matching` — dos fallos reales,
+encontrados por una revisión externa y reproducidos en vivo, no
+teóricos:
+
+1. **Citado inconsistente entre comandos.** Sin `-z`, `git status`
+   cita (comillas + escapes estilo C) cualquier ruta con espacio o
+   carácter no-ASCII; `git diff --name-only` no cita igual. Una ruta
+   real colisionando sale como `"mi secreto.txt"` de un lado y `mi
+   secreto.txt` del otro — la comparación de cadena exacta nunca
+   coincide, la colisión pasa desapercibida, el archivo se sobrescribe
+   sin aviso.
+2. **Colapso de directorios.** `git status --porcelain`, incluso con
+   `--ignored=matching`, colapsa un directorio entero ignorado (o
+   enteramente sin trackear) a una sola línea (`!! carpeta/`) cuando el
+   propio patrón de `.gitignore` apunta al directorio, no a los
+   archivos de dentro — verificado en vivo contra los propios
+   directorios ignorados de este repo (`.claude/.pr-review-state/`,
+   `graphify-out/cache/`). Una colisión con un archivo *dentro* de esos
+   directorios nunca aparece en la lista, así que tampoco se detecta.
+
+**Comprobación:** para cualquier chequeo que compare rutas de archivo
+sacadas de dos comandos de git distintos (o del mismo comando en dos
+invocaciones):
+- Usar `-z` en **todos** los lados de la comparación (`git diff
+  --name-only -z`, `git status --porcelain -z`), nunca la salida
+  humana por defecto — verificar con una ruta de prueba real que
+  contenga un espacio o un carácter no-ASCII, no asumir que "debería
+  funcionar igual".
+- Si hace falta saber qué archivos concretos hay sin trackear o
+  ignorados (no solo si "hay algo"), usar `git ls-files --others
+  --exclude-standard -z` (sin trackear) y `git ls-files --others
+  --ignored --exclude-standard -z` (ignorados) en vez de `git status
+  --porcelain` — `ls-files` nunca colapsa un directorio a una línea,
+  `status` sí. Probar contra un directorio ignorado con un archivo
+  dentro, en vivo, para confirmarlo — no fiarse de la documentación del
+  flag por sí sola (`--ignored=matching` sonaba como si debiera
+  expandir, y no lo hacía).
+
+**Segunda vuelta sobre el mismo punto (misma saga, una revisión más
+tarde):** con `-z` y `ls-files` ya arreglados, una revisión siguiente
+encontró que la comparación seguía siendo solo **igualdad exacta de
+cadena** — no detecta que `origin/main` añada un archivo trackeado
+*dentro* de una ruta que localmente es un archivo suelto (`foo` local
+como archivo; `origin/main` trackea `foo/bar.txt`): ninguna ruta es
+igual a la otra, pero el fast-forward destruye `foo` igual para
+convertirlo en directorio — verificado en vivo, la misma clase exacta
+de pérdida silenciosa que el punto 1 de más arriba, solo que un nivel
+de ruta más profundo. **Comparar rutas nunca es solo "¿son iguales?" —
+también "¿una es carpeta de la otra?"** en ambos sentidos. Corregido
+comprobando, para cada par de rutas, tanto la igualdad como el prefijo
+`ruta/` en los dos sentidos.
+
+**Advertencia aparte, no otro bug de este mismo tipo:** si se usa
+`case "$ruta_local" in "$ruta_cambiada"/*)` (patrón de `case` de bash)
+para la comprobación de prefijo en vez de un `grep` con la ruta
+escapada, cualquier carácter de glob literal en el nombre de archivo
+(`*`, `?`, `[`) en la ruta usada como *patrón* se interpreta como
+comodín, no como carácter literal — pero esto solo puede hacer que el
+patrón case cuente *de más* como colisión (nunca de menos), así que el
+único efecto es bloquear el auto-heal alguna vez sin que hiciera falta,
+nunca dejar pasar una colisión real sin detectar. Aceptado así a
+propósito, documentado para que quede claro que es una limitación
+conocida y no otro hallazgo pendiente de arreglar.
+
+**Desenlace final de esta saga (6 rondas sobre la comparación precisa,
+ver punto 10):** una 7ª ronda encontró que la propia comparación de
+listas (un bucle anidado en bash) no tenía cota de tamaño y podía
+colgar el arranque de sesión con una rama muy detrás y muchos archivos
+sueltos — en ese punto, se abandonó la comparación precisa entera y se
+volvió al chequeo más simple ("¿hay algo sin trackear o ignorado, sin
+más?"), aceptando que el auto-heal dispare menos veces a cambio de no
+tener ningún hueco de los seis encontrados, ni el de rendimiento. Este
+punto 9 sigue siendo la lección correcta para el día que haga falta de
+verdad comparar rutas con precisión en otro sitio — solo que para
+*este* hook en concreto, no hizo falta al final: ver punto 10.
+
+## 10. Antes de comparar/enumerar con precisión en un hook, preguntar
+si el chequeo simple (con un coste de falsos positivos aceptable) ya basta
+
+**El error real:** `sync-main.sh` empezó con un chequeo simple
+("¿árbol sucio, sí o no?"), lo cambió por uno preciso (comparación de
+rutas) para no penalizar el caso común de este repo, y esa precisión
+costó 6 rondas de revisión cerrando bypasses reales uno a uno (citado,
+colapso de directorios, colisión archivo-vs-carpeta) — hasta que una
+7ª ronda encontró que la propia comparación, sin cota de tamaño, podía
+colgar el arranque de sesión. El chequeo simple original nunca tuvo
+ninguno de esos problemas, porque no compara nada: solo mira si una
+salida está vacía.
+
+**Comprobación:** antes de construir una comparación/enumeración
+"inteligente" en un hook que debe ser best-effort y nunca bloquear,
+preguntar primero: ¿el chequeo simple y conservador (que solo produce
+falsos positivos — bloquea de más, nunca de menos) tiene un coste
+aceptable? Si el peor caso de "bloquear de más" es solo "el hook avisa
+en vez de actuar solo" (nunca pérdida de datos, nunca fallo de sesión),
+el chequeo simple casi siempre gana: no tiene rutas de bug propias que
+cerrar una por una, y no puede tener un coste de rendimiento que
+escale con el tamaño del repo o del cambio. Reservar la comparación
+precisa para cuando el falso positivo importa de verdad (bloquea algo
+que el usuario necesita que pase sí o sí), y en ese caso, presupuestar
+varias rondas de revisión para las sutilezas de las herramientas
+subyacentes (aquí, git) antes de darla por simple.
+
+## 11. Si el hook necesita que algo persista entre contenedores efímeros,
+que lo persista el propio script, nunca una instrucción que el modelo
+debe recordar seguir
+
+**El error real:** `fewer-permission-prompts-reminder.sh` inyecta
+contexto pidiéndole a la sesión que corra una skill y luego "deje
+constancia" de que lo hizo, escribiendo un marcador con timestamp para
+que el propio hook sepa cuándo volver a recordarlo. La primera versión
+dejaba el paso de comitear y subir ese marcador como una instrucción
+de texto aparte ("si añade patrones nuevos... comitea y sube") — una
+revisión encontró que, en el caso más común (sin patrones nuevos que
+añadir), esa instrucción nunca se disparaba: el script que escribe el
+marcador (`mark-permission-scan.sh`) solo tocaba el disco local del
+contenedor, nada lo subía a git, y ese archivo se pierde al reciclarse
+el contenedor. Efecto real: el recordatorio se repetía en cada
+arranque de sesión sin avanzar nunca los 7 días — exactamente el coste
+que el mecanismo existía para evitar. Una segunda versión "arregló" el
+texto de la instrucción (forzar "SIEMPRE comitea y sube") pero seguía
+dependiendo de que la sesión no se saltara ese segundo paso — una
+tercera ronda de revisión encontró que una sesión interrumpida entre
+medias reproducía el mismo bug por una vía distinta, y que forzar
+"rama+PR nuevo cada vez" además acumulaba PRs casi duplicados sin
+fusionar nunca. Solo la cuarta versión, donde `mark-permission-scan.sh`
+comitea y sube el marcador él mismo (con reintento tras rebase si el
+push choca), quedó realmente determinista.
+
+**Comprobación:** si un hook necesita que algo sobreviva a que el
+contenedor se recicle (un marcador, un contador, cualquier estado que
+tiene que verse desde la próxima sesión), preguntar desde el diseño
+inicial: ¿quién garantiza que ese dato llega a git? Si la respuesta es
+"una instrucción en el texto que se inyecta, que la sesión debe
+recordar ejecutar", esa es la señal de la misma familia de bug —
+moverlo al propio script que escribe el estado (o a un hook
+determinista), no a una instrucción de la que depende que el modelo no
+se distraiga, se interrumpa, o decida que "ya lo hizo" sin comprobarlo.
+
 ## Antes de pedir/lanzar la revisión externa
 
-Repasar estos 8 puntos uno por uno contra el diff, con al menos un
+Repasar estos 11 puntos uno por uno contra el diff, con al menos un
 comando ejecutado en vivo por punto que lo confirme (no solo "leído y
 parece bien") — así cada ronda de revisión encuentra menos, en vez de
 encontrar la misma clase de bug que un pase manual ya podría haber

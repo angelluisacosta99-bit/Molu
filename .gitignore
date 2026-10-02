@@ -76,3 +76,10 @@ graphify-out/graph.graphml
 # isolation: "worktree" (ver Agent tool). Se limpian solos al terminar
 # el subagente; nunca es contenido para versionar.
 .claude/worktrees/
+
+# Temporales de mark-permission-scan.sh: escribe el marcador con mktemp
+# dentro de .claude/ y lo mueve con mv atómico, limpiando con trap EXIT.
+# Un SIGKILL (p. ej. el timeout de 120 s del Bash tool) no dispara el
+# trap y deja el temporal ahí. Nunca se comitearía (su git add está
+# acotado al marcador), pero ensucia git status.
+.claude/.tmp.fewer-permission-prompts.*

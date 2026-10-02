@@ -5,6 +5,7 @@
 %       !!!  Dieses Style-File ist urheberrechtlich geschuetzt  !!!
 %       !!!  Aenderungen nur mit Zustimmung der Autoren         !!!
 \message{Option `picins' Version 3.0  Sep. 1992, TH Darmstadt/HRZ}
+\makeatletter
 \newbox\@BILD%
 \newbox\@TEXT%
 \newdimen\d@breite%
@@ -451,7 +452,7 @@
 \newcount\c@envdp
 \newdimen\d@envb
 
-Llong\def\frameenv{\@ifnextchar [{\@frameenv}{\@frameenv[\textwidth]}}
+\long\def\frameenv{\@ifnextchar [{\@frameenv}{\@frameenv[\textwidth]}}
 \long\def\@frameenv[#1]{%
  \hsiz@=\textwidth  \textwidth=#1  \d@envb=#1
  \advance\textwidth by-2\@wholewidth
@@ -567,7 +568,7 @@ Llong\def\frameenv{\@ifnextchar [{\@frameenv}{\@frameenv[\textwidth]}}
  \c@tmpb=\c@envdp   \divide\c@tmpb by2%
  \d@tmpa=2\fboxsep   \advance\d@tmpa by\@wholewidth
  \c@xoff=\d@tmpa     \divide\c@xoff  by65536%
- \advance\d@tmpa by\p\env@box
+ \advance\d@tmpa by\dp\env@box
  \c@yoff=\d@tmpa     \divide\c@yoff  by65536%
  \unitlength 1pt\noindent
  \begin{picture}(\c@breite,\c@hoehe)(0,0)
@@ -575,3 +576,4 @@ Llong\def\frameenv{\@ifnextchar [{\@frameenv}{\@frameenv[\textwidth]}}
    \put(\c@xoff,\c@yoff){\box\env@box}%
  \end{picture}%
 }
+\makeatother

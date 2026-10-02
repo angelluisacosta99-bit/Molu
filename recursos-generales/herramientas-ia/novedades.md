@@ -23,6 +23,924 @@ copias que puedan desincronizarse.
 
 ---
 
+## 2026-09-19 — Pasada por el correo semanal "This week in Claude Code" (4 números, 21 ago-18 sep)
+
+Angel preguntó de qué tratan los correos de Lydia (Claude Code team,
+`no-reply@email.claude.com`) y pidió la pasada completa. Son el mismo
+digest semanal que `whats-new`, así que se cruzó contra la pasada ya
+hecha el 2026-09-18 para no duplicar — lo de abajo es solo lo que
+faltaba. Se añade este correo como fuente propia al Radar (ver
+`CLAUDE.md`).
+
+### `omitClaudeMd: true` en frontmatter de subagentes (2.1.x, semana 18 sep)
+
+**Qué es:** un subagente normalmente carga todos los `CLAUDE.md` del
+repo en su contexto al arrancar; con `omitClaudeMd: true` en su
+frontmatter, se lo salta.
+
+**Por qué le sirve a Angel:** el `CLAUDE.md` raíz de este repo es
+largo (400+ líneas, con la propia regla de "podarlo, no solo hacerlo
+crecer" ya anotada más abajo). Los subagentes `cavecrew-investigator`/
+`-builder`/`-reviewer` son workers acotados (localizar código, editar
+1-2 archivos, revisar un diff) que no necesitan la mayoría de esas
+reglas (coaching, docencia, máster...) para hacer su trabajo — con
+`omitClaudeMd: true` arrancan con menos contexto y más rápido.
+
+**✅ Aplicado el 2026-09-19** — Angel pidió activarlo. Añadido a las 3
+(`.claude/agents/cavecrew-*.md`, y su espejo en
+`plugins/caveman-cavecrew/agents/`, que este repo mantiene sincronizado
+desde el PR #119/#121). Comparar con `/skill-doctor` o `/usage` más
+adelante si se quiere medir el ahorro real de contexto por spawn.
+
+### Fable 5.1 en Claude Code + ajuste de effort por modelo
+
+**Qué es:** `claude update` + `/model fable` cambia al modelo Fable
+5.1. Lydia avisa que es "más eager" que Fable 5 — puede hacer falta
+bajar el nivel de esfuerzo (ella pasó de `high` a `medium`) y revisar
+instrucciones de CLAUDE.md escritas pensando en modelos anteriores.
+`/effort` ahora recuerda el nivel por modelo (`modelSettings` en
+`~/.claude/settings.json`), y `CLAUDE_CODE_SUBAGENT_MODEL` fija qué
+modelo usan los subagentes por defecto, aparte del de la conversación
+principal.
+
+**Por qué le sirve a Angel:** este mismo repo es el caso de uso que
+describe el correo — un `CLAUDE.md` extenso escrito con distintos
+modelos en mente. Si Angel prueba Fable 5.1, `/claude-api prompt-audit`
+(ya cubierto como skill en este repo) es la herramienta hecha a medida
+para detectar instrucciones de CLAUDE.md que asumen un modelo más
+antiguo, en vez de revisarlo a ojo. `CLAUDE_CODE_SUBAGENT_MODEL` (o
+`modelSettings` por modelo) permite, por ejemplo, correr la sesión
+principal en Fable 5.1 pero mantener los subagentes de `cavecrew` en
+Sonnet/Opus si Fable resulta demasiado "eager" para ediciones
+quirúrgicas de 1-2 archivos.
+
+**Cómo probarlo:** `/model fable` para probarlo en una sesión suelta;
+`/claude-api prompt-audit` sobre `CLAUDE.md` antes de adoptarlo en
+serio.
+
+### Reglas de Auto Mode en texto plano (`autoMode.hard_deny`/`soft_deny`)
+
+**Qué es:** las reglas que sigue el clasificador de Auto Mode
+(activo en este repo, `defaultMode: dontAsk`) se pueden escribir en
+frases sueltas en `~/.claude/settings.json` bajo `autoMode.hard_deny`
+(bloquea siempre) y `autoMode.soft_deny` (bloquea salvo petición
+directa), o editarlas desde la pestaña Auto mode de `/permissions` en
+vez de tocar el JSON a mano. `claude auto-mode critique` señala reglas
+ambiguas o redundantes.
+
+**Por qué le sirve a Angel:** esto es una capa **adicional**, no un
+sustituto, a la regla dura de "nunca fusionar sin revisión
+independiente" que ya aplica este repo vía el hook `PreToolUse`
+`check-pr-review.sh`. Un `hard_deny` como *"Never merge a pull request
+without a recent independent review marker"* añadiría un segundo gate
+a nivel de clasificador — coste bajo, y refuerza justo el punto que ya
+tiene más peso en este repo (regla "sin excepciones" del flujo de PR).
+Al vivir en `~/.claude/settings.json` (settings de usuario, no de
+proyecto), estas reglas persisten entre repos y ningún `.claude/
+settings.json` de un proyecto puede sobrescribirlas — relevante si
+Angel trabaja alguna vez en un repo ajeno sin el hook de este.
+
+**Cómo probarlo:** no se toca `settings.json` de Angel desde esta
+sesión sin que lo pida — es su configuración personal de usuario, no
+algo versionado en este repo. Si quiere probarlo, la regla de ejemplo
+de arriba + `claude auto-mode critique` para validarla.
+
+### Memoria persistente de subagentes (`memory: project|user|local`)
+
+**Qué es:** un subagente con `memory: project` (o `user`/`local`) en
+su frontmatter obtiene su propio directorio en
+`.claude/agent-memory/`, que lee al arrancar y escribe mientras
+trabaja — no repite desde cero lo que ya aprendió sobre el repo en
+sesiones anteriores.
+
+**Por qué le sirve a Angel:** encaja con la propia regla de este
+`CLAUDE.md` de "3+ rondas de revisión sobre lo mismo → guardar la
+lección" — `cavecrew-reviewer` podría acumular en su propia memoria
+los patrones de fallo ya vistos (los de `hook-hardening`, por
+ejemplo) sin depender de que la lección se guarde solo en el
+`SKILL.md`.
+
+**✅ Aplicado el 2026-09-19, solo en `cavecrew-reviewer`** — Angel pidió
+activarlo (los otros dos, `-investigator`/`-builder`, se quedan sin
+memoria: no revisan código en el sentido de acumular patrones de
+fallo). Añadido `memory: project` al frontmatter y una sección
+"Memory" en el cuerpo del agente indicándole que consulte su propia
+memoria antes de revisar y anote hallazgos nuevos al terminar. Mismo
+archivo espejado en `plugins/caveman-cavecrew/agents/cavecrew-reviewer.md`.
+
+**Verificado el 2026-09-19 con una revisión real — no escribió nada.**
+Se le pidió revisar un diff real; devolvió 1 hallazgo (nit) pero
+`.claude/agent-memory/` no se creó.
+
+**Causa raíz encontrada (mismo día, con un subagente de diagnóstico
+dedicado, no solo hipótesis):** la documentación oficial de Claude Code
+dice que `memory: project` concede `Read`/`Write`/`Edit` en automático,
+sin depender de `tools:` — pero un test directo ("intenta escribir una
+nota de memoria ahora mismo") confirmó **"Write or Edit tool available:
+NO"** en este entorno concreto. No es un límite de este repo, es un
+hueco entre lo que documenta Anthropic y lo que este entorno concede de
+verdad (puede ser una versión de harness distinta a la que describe la
+documentación — `CLAUDE_CODE_VERSION` en este contenedor marca 2.1.42,
+muy por detrás del CLI local instalado, 2.1.278).
+
+**Arreglo aplicado (pedido explícitamente por Angel), con Auto Mode
+pidiendo confirmación antes de tocar `.claude/hooks/` (categoría
+"Self-Modification" — aprobado por Angel):**
+- `tools:` de `cavecrew-reviewer` (nativo + plugin) pasa a
+  `[Read, Grep, Bash, Write, Edit]` — explícito, ya no depende de que
+  el entorno conceda memoria en automático.
+- Como Write/Edit sin acotar contradice el diseño "solo lectura" del
+  agente (mismo motivo que ya tiene `restrict-cavecrew-bash.sh` para
+  `Bash`), hook nuevo `.claude/hooks/restrict-cavecrew-reviewer-memory.sh`
+  (+ espejo en `plugins/caveman-cavecrew/hooks/`, registrado en ambos
+  `settings.json`/`hooks.json`): deniega cualquier `Write`/`Edit` de
+  `cavecrew-reviewer` fuera de `.claude/agent-memory/cavecrew-reviewer/`
+  — resuelve la ruta con `realpath -m` (a prueba de `../`), y falla
+  **cerrado** (deniega) en cuanto identifica que es `cavecrew-reviewer`
+  pero no puede verificar la ruta, al revés que el resto de hooks
+  best-effort de este repo — aquí fallar abierto sería el propio agravio
+  que el hook existe para evitar. 7/7 casos de prueba manuales (ruta
+  válida, ruta externa, traversal, otro agente, sin `agent_type`,
+  `file_path` ausente, la carpeta misma sin archivo) se comportaron como
+  se esperaba.
+
+**Sin verificar de punta a punta todavía — límite nuevo encontrado, no
+un supuesto.** Con el hook ya activo, un subagente real de
+`cavecrew-reviewer` invocado en esta misma sesión **seguía sin ver
+`Write`/`Edit`** (intentó `Bash` con `>`, bloqueado por
+`restrict-cavecrew-bash.sh` como se esperaba de ese hook, pero
+`Write`/`Edit` ni aparecía en su lista de herramientas) — el cambio de
+`tools:` a mitad de sesión no se recoge para un agente ya en curso;
+hace falta una sesión nueva para confirmar que funciona de verdad.
+Pendiente: repetir el mismo test de escritura en una sesión nueva.
+
+### Projects (beta) y Claude Design/Slides/Docs en desktop y web (beta)
+
+**Qué son:** *Projects* (rediseño completo, en beta para cuentas
+Pro/Max en sesiones cloud) deja describir en una conversación todo lo
+que hace falta y Claude lo reparte en varios hilos, cada uno como
+sesión cloud en su propia rama, en vez de que Angel gestione varias
+sesiones a mano. *Claude Design*, *Claude Slides* y el nuevo *Claude
+Docs* (evolución del `/design` en research preview del 21 ago) ahora
+funcionan dentro de Claude Code en desktop y web, no solo en
+claude.ai — genera una maqueta/deck/RFC desde el propio repo y se
+edita en el panel de vista previa.
+
+**Por qué probablemente no aporta aquí todavía:** este repo ya cubre
+diseño visual con la skill `impeccable` (regla propia en este mismo
+`CLAUDE.md`) y documentos con `docx`/`pptx`/Claude Docs (conector
+propio) — Projects y Claude Design/Slides nativos de Claude Code son
+alternativas a flujos que ya existen, no huecos sin cubrir. Sí vale la
+pena que Angel lo tenga en el radar por si el máster/TFM llega a
+necesitar coordinar varios hilos de trabajo en paralelo desde una sola
+conversación (Projects) — pero no se propone nada activo esta pasada.
+
+**Cómo probarlo (si Angel quiere):** Projects — buscar la opción en
+sesiones cloud de Pro/Max (lista de espera si no aparece aún). Claude
+Design — `/design` o el prompt de ejemplo del correo.
+
+### Nota rápida: Fable 5.1 Build Days
+
+Buildathons de la comunidad de Claude en varias ciudades, hasta el 25
+de septiembre de 2026 — `claude.com/community` tiene el listado. Sin
+acción de este repo, solo FYI por si a Angel le interesa uno cercano
+antes de esa fecha.
+
+### Remote Control desde el móvil (`claude rc`) — ya en uso de facto
+
+**Qué es:** cualquier máquina con `claude rc` corriendo aparece como
+tarjeta en la pestaña Code del móvil — tocarla, elegir directorio, y
+arranca la sesión ahí mismo con todos sus archivos, conectores MCP y
+herramientas.
+
+**Por qué le sirve a Angel:** esta misma sesión (la que escribió esta
+entrada) arrancó con `entrypoint: remote_mobile` — Angel ya lo está
+usando, esto es solo la confirmación de que es un feature soportado y
+documentado, no un hallazgo nuevo que instalar.
+
+---
+
+## 2026-09-18 — Recreada la Routine del Radar (estaba duplicada y rota)
+
+Angel avisó de que "el Radar no funciona bien" y pidió borrar la
+rutina actual y crear una nueva. Investigado antes de tocar nada:
+
+**Lo que había:** dos Routines con el mismo nombre. La original
+(`trig_01Jx2UqBq8ezuTzpknMj7SAW`, agosto) estaba **deshabilitada**
+desde el 7 de septiembre — era la que este CLAUDE.md seguía citando,
+así que en la práctica llevaba dos semanas sin disparar nada. La otra
+(`trig_016qL349a6rEEmaeCCoYmerT`, creada el 7 de septiembre) seguía
+activa pero su única ejecución (14 de septiembre) terminó en estado
+`FAILED` a los 8 segundos, sin subir ninguna rama — se había creado
+con `allowed_tools` vacío en su configuración.
+
+**Ambas se borraron** y se creó una rutina nueva
+(`trig_01N46fmEJzqk7ZrS3L9cPcqt`). Al crearla, la propia herramienta
+avisó de que las sesiones que dispara no llevan conectores MCP — para
+no repetir el mismo fallo a ciegas, se lanzó un disparo de prueba
+única (borrado después de comprobar) para verificar en vivo qué
+herramientas tiene realmente disponibles una sesión disparada por
+Routine en este entorno, en vez de suponerlo:
+
+- ✅ `Bash`, `Read`, `Write`, `Edit`, `Glob`, `Grep`, `WebFetch`,
+  `WebSearch`, `Agent`, `Artifact` — disponibles.
+- ❌ `mcp__github__*` (crear PR, etc.) — **no disponible**. `git push`
+  por Bash sí funciona (el proxy/credenciales del entorno ya lo
+  permiten), solo falla la API de GitHub para abrir el PR.
+- El prompt de la rutina se corrigió para asumir esto: clona/commitea/
+  sube con `git` por Bash, deja la rama subida sin intentar abrir el
+  PR, y lo dice claramente en el mensaje final para que se abra a
+  mano.
+
+**Otro fallo real detectado en el prompt viejo (ambas rutinas):**
+asumía que la rama por defecto del repo es `main` — dejó de serlo en
+algún momento reciente (ver el PR #119/#121 de este mismo registro).
+El prompt nuevo comprueba `git ls-remote --symref origin HEAD` en vez
+de asumirlo, para no volver a romperse si cambia otra vez.
+
+**Lección para futuras Routines creadas por Claude Code (no solo esta
+del Radar):** `create_trigger` invocada desde una sesión de Claude Code
+Remote no hereda conectores MCP ni un preset de herramientas completo
+por defecto — probarlo en vivo con un disparo único antes de confiar
+en que una rutina nueva funciona como la que sustituye, en vez de
+asumir paridad.
+
+---
+
+## 2026-09-18 — Pasada por `code.claude.com/docs/en/whats-new` (Weeks 13-37)
+
+Angel pidió una búsqueda de "qué otras herramientas o instrucciones da
+el equipo de Anthropic que debería usar aquí". Cubierto todo el digest
+semanal desde marzo hasta la semana del 7-11 de septiembre de 2026 —
+lo de abajo es lo que pasa el criterio de relevancia (resuelve una
+necesidad real de este repo), no un volcado del changelog completo.
+Todo esto son comandos nativos, sin tarjeta de instalación — se prueban
+directamente escribiéndolos.
+
+**`/skill-doctor`** (semana del 31 ago-4 sep) — muestra cuánto contexto
+cuesta cada skill instalada y con qué frecuencia se usa realmente.
+Angel tiene ya 10+ skills propias (`graphify`, `impeccable`,
+`ejercicio-interactivo`, `hook-hardening`, `caveman`, `cavecrew`,
+`humanizer`...) — con esto se ve con datos reales cuáles compensan su
+coste de contexto y cuáles no, en vez de adivinar.
+
+**`/usage`** — desglosa qué consume el límite del plan por skill,
+subagente, plugin y servidor MCP. Con la cantidad de conectores MCP
+activos en este repo (Drive, DeepL, GitHub, Scite, alphaXiv,
+Consensus, Wolfram, Hugging Face...), esto identifica cuáles pesan de
+verdad en vez de suponerlo.
+
+**`claude plugin eval`** (semana del 7-11 sep) — corre un plugin
+propio contra una batería de casos de prueba y compara con/sin el
+plugin; `claude plugin eval init` genera los casos y criterios de
+evaluación solos. Directamente aplicable al plugin `caveman-cavecrew`
+que se acaba de empaquetar en este repo.
+
+**✅ Probado el 2026-09-19** — primer caso real
+(`plugins/caveman-cavecrew/evals/caveman-terseness/`, `--bare` +
+criterio escrito a mano: pregunta técnica de React re-render por
+objeto inline, exige explicación correcta + solución correcta + tono
+caveman). Resultado real, no hipotético: **con plugin 0.33 (1/3
+pases), sin plugin 1.00 (3/3) — Δ -0.67, coste $0.30, 6 runs.** Mirando
+la evidencia de los runs "with" que fallaron, el contenido técnico
+seguía siendo correcto (referencia nueva por objeto literal, fix con
+`useMemo`) pero más comprimido de lo que el juez LLM aceptó como
+"completo" bajo este criterio en concreto — puede ser el propio modo
+caveman recortando de más en este caso, o el criterio siendo más
+estricto de lo que debería (n=3 es poco para distinguir una cosa de la
+otra). No se ajusta el criterio ni se toca el plugin desde aquí sin
+que Angel lo decida — es su primera señal real con datos, no un
+veredicto. Informe completo en
+`plugins/caveman-cavecrew/evals/results/2026-09-19T12-54-59-381Z/report.html`
+(local, sin publicar).
+
+**Auto mode ya no es "preview"** — llegó en preview en marzo de 2026
+(semana 13) y para julio-agosto ya es el modo de permisos por defecto
+en cuentas Pro/Max/Team (semana 32): un clasificador aprueba solo las
+acciones seguras en segundo plano y bloquea las arriesgadas, en vez de
+preguntar cada vez. Esto actualiza la entrada del 2026-08-16 de este
+mismo registro, que dejó "permisos por nivel de riesgo" anotado como
+"no aplicado, decisión de fondo" por ser una alternativa poco madura
+frente al `defaultMode: dontAsk` que ya usa este repo — ahora es una
+opción bastante más asentada, sigue siendo una decisión de Angel, no
+algo para cambiar de pasada.
+
+**Subagentes en segundo plano por defecto + fork mode** (semanas 27 y
+33) — un subagente delegado sigue corriendo mientras Claude sigue
+trabajando, y "fork mode" deja que un subagente herede la conversación
+completa en vez de arrancar con un prompt aislado. Relevante para
+cómo se invocan `cavecrew-investigator`/`builder`/`reviewer` — no
+cambia nada por sí solo, pero es la explicación de por qué delegar a
+un subagente ya no bloquea el hilo principal.
+
+**`/goal`** (semana del 11-15 may) — mantiene a Claude trabajando entre
+turnos hasta que se cumple una condición de terminación explícita, en
+vez de un solo turno. Podría servir para tareas largas y repetitivas
+de este repo (una tanda de `ejercicio-interactivo` para varios
+capítulos seguidos, una curación larga de `graphify label`).
+
+**`claude ultrareview`** (semana del 20-24 abr) — una flota de agentes
+de búsqueda de bugs en la nube, pensado para CI/scripts. Complementa
+(no sustituye) la skill `code-review` ya usada en el flujo de PR de
+este repo — candidato para un trabajo de código grande y puntual
+(un script largo de `python/` o `telecomunicaciones/`), no para el
+flujo normal de cada PR.
+
+**Cómo seguir mirando esta fuente:** `code.claude.com/docs/en/whats-new`
+tiene un digest semanal — la próxima pasada del radar solo necesita
+mirar las entradas posteriores a la semana 37 (7-11 sep 2026).
+
+### Con tarjeta: plugin oficial `security-guidance`
+
+**Qué es:** plugin oficial de Anthropic (`anthropics/claude-plugins-official`,
+marketplace `knowledge-work-plugins`) — revisión de seguridad del
+código que genera Claude: avisos basados en patrones en cada edición,
+revisión de diff con LLM al terminar la sesión (hook `Stop`), y un
+revisor de commits que detecta inyección, XSS, SSRF, secretos
+hardcodeados y 25+ clases de vulnerabilidad más.
+
+**Por qué le sirve a Angel:** este repo tiene bastante código propio
+con permisos reales (`.claude/hooks/*.sh`, con `defaultMode: dontAsk`
+— sin cortafuegos de permisos interactivo) y carpetas de código
+(`python/`, `telecomunicaciones/`). La propia skill `hook-hardening`
+de este repo nació de bugs de seguridad reales en hooks anteriores
+(`restrict-cavecrew-bash.sh`, 4 rondas solo para cerrar bypasses) —
+una revisión de seguridad automática en cada sesión habría podido
+detectar alguno de esos antes de que hiciera falta una revisión
+externa.
+
+**✅ Activado el 2026-09-19** — Angel lo instaló desde Settings →
+Plugins (confirmado por captura de pantalla: mismo autor, David
+Dworken, versión 2.0.8, toggle encendido). Sin acción adicional.
+
+---
+
+## 2026-09-18 — Aplicado: `fewer-permission-prompts` en piloto automático
+
+**Qué es:** `.claude/hooks/fewer-permission-prompts-reminder.sh` (hook
+`SessionStart`, matcher `startup`) — comprueba un marcador con
+timestamp (`.claude/.fewer-permission-prompts-last-run.json`, mismo
+patrón de escritura atómica que `mark-pr-reviewed.sh`) y, si han
+pasado 7+ días o nunca se ha corrido, le pide a la sesión que ejecute
+la skill `fewer-permission-prompts` sola, sin que Angel tenga que
+acordarse de pedirlo. `.claude/hooks/mark-permission-scan.sh` escribe
+el marcador al terminar, y **lo comitea y sube él mismo** (git add +
+commit + push, solo ese archivo, directo a la rama activa, con
+reintento tras rebase si el push choca) — no depende de que la sesión
+recuerde subirlo aparte. Ver la entrada de esa misma fecha sobre la
+reconstrucción de la Routine del Radar para el porqué de este diseño
+(costó 3 rondas de revisión encontrar que la versión con instrucción
+manual perdía el marcador en el caso más común).
+
+**Por qué le sirve a Angel:** lo pidió explícitamente ("quiero esto
+para todas las sesiones siempre activa"). No es literal "cada sesión"
+— correr la skill completa (escanear transcripciones) en cada arranque
+gastaría tokens de más sin necesidad; el umbral de 7 días mantiene el
+allowlist actualizado solo, sin ese coste repetido. Es un recordatorio
+en el contexto, no un gate técnico — si una sesión no lo sigue, no
+rompe nada, simplemente se repite en el siguiente arranque.
+
+**Cómo probarlo:** ya está activo — se dispara solo cuando toque. Las
+5 pruebas del checklist de `hook-hardening` (sin marcador, justo tras
+marcar, marcador de 10 días, marcador corrupto, jq ausente) se
+corrieron en vivo antes de activarlo.
+
+---
+
+## 2026-09-18 — Catálogo de Claude Academy (cursos oficiales)
+
+**Qué es:** `academy.claude.com` (antes Anthropic Academy) tiene 26+
+cursos gratis, gratuitos y sin tarjeta, en `anthropic.skilljar.com`.
+Los relevantes para el flujo de este repo: **Claude Code 101**
+(flujo diario de trabajo), **Claude Code in Action** (sesiones largas
+sin supervisión: dirigir, configurar, automatizar, verificar),
+**Introduction to agent skills** (crear/compartir/depurar skills en
+Markdown — este repo ya tiene varias propias en `.claude/skills/`),
+**Introduction to subagents** (delegar tareas para no gastar contexto
+principal), e **Introduction to Model Context Protocol** (cómo
+funcionan los conectores MCP que ya usa este repo — Google Drive,
+DeepL, GitHub, etc.).
+
+**Por qué le sirve a Angel:** surgió al investigar un reel de
+Instagram que prometía "cursos validados por Anthropic" a cambio de
+comentar y dar el contacto por privado — patrón típico de
+engagement-bait, sin verificar. Esto es la alternativa real y oficial:
+mismo tema (aprender Claude Code a fondo), pero verificable y sin
+intermediario. Los cursos de skills/subagentes/MCP en concreto pueden
+formalizar prácticas que este repo ya usa de forma intuitiva
+(`graphify`, `impeccable`, `ejercicio-interactivo` como skills; el
+subagente de revisión antes de cada merge) y rellenar el hueco ya
+anotado el 2026-08-16 sobre subagentes de dominio (ej. uno dedicado a
+revisar ejercicios interactivos).
+
+**Cómo probarlo:** no hace falta instalar nada — son cursos con vídeo,
+quiz y certificado en `academy.claude.com`, con registro simple (sin
+tarjeta ni suscripción de Claude necesaria).
+
+---
+
+## 2026-09-13 — Búsqueda exhaustiva: herramientas de investigación científica verificada para el máster
+
+Angel pidió explícitamente una búsqueda exhaustiva de herramientas/
+conectores/MCP que ayuden a hacer investigación científica con fuentes
+verificadas para el MUSI y el TFM — "busca en fuentes oficiales, busca
+en GitHub, en todas partes". Cubierto: `ListConnectors`,
+`SearchMcpRegistry`, `SearchPlugins`, `SearchSkills` con palabras clave
+de investigación/citas/verificación/energía, más búsqueda web en
+GitHub para lo que no aparece en ningún catálogo de Claude.
+
+### Ya activos en esta cuenta — sin acción, solo usarlos (adoptado)
+
+- **✅ Scite** — `search_literature`, con verificación de retracciones
+  (`editorialNotices`), formato de cita real y `report_citations`/
+  `citation_report` para un registro auditable de qué se incluyó y qué
+  se descartó y por qué (estilo PRISMA). Es exactamente el mecanismo
+  que ya usa este repo a mano en `lluvia-de-ideas.md` ("verificar
+  autor/título/año/editorial reales antes de citar") — con Scite ese
+  paso se puede automatizar en vez de verificar cada cita por separado.
+- **✅ alphaXiv** — búsqueda y texto completo de preprints de arXiv.
+  Ya se usó de facto en la Opción B del TFM (paper Grid-Agent, arXiv
+  2508.05702) sin usar este conector todavía — a partir de ahora, para
+  cualquier paper de arXiv nuevo, usar `alphaXiv` en vez de buscar el
+  PDF a mano.
+- **✅ Firecrawl** — herramientas `firecrawl_research_*`
+  (`search_papers`, `read_paper`, `related_papers`, `search_github`),
+  distintas de la búsqueda web genérica del mismo conector. Complementa
+  a Scite/alphaXiv para papers que no están en Scite ni son de arXiv.
+
+### ✅ Wolfram — ya activo, el aviso de "needs_reconnect" era falso positivo
+
+**Wolfram** (`Inject precise, real-time computation and knowledge`)
+aparece en `ListConnectors` con `installState: needs_reconnect`, pero
+es engañoso: es `isAuthless` (sin login de por medio), así que no hay
+sesión real que caduque. Probado en vivo con una consulta real
+(`WolframAlpha("speed of light")`) — respondió correctamente. Angel
+confirmó lo mismo por su lado ("a mí me sale como conectado"). No hace
+falta reconectar nada — el aviso de la lista de conectores no refleja
+el estado real de este conector en concreto.
+
+Muy relevante para el TFM: permite verificar cálculos/fórmulas
+(estadística, control, series temporales) con Wolfram Language en vez
+de fiarse de una cuenta hecha a mano o por el modelo.
+
+### Propuestos con tarjeta y activados el mismo día
+
+- **✅ Elicit** (`directoryUuid: 1287875c-308f-4a61-9ebf-4a0201ef214f`)
+  — Activado el 2026-09-13. Busca y analiza papers científicos, genera
+  informes de síntesis de evidencia (`search_papers`, `search_trials`,
+  `create_report`, `create_systematic_review`). Herramienta real y
+  reconocida en investigación (usada para revisiones sistemáticas).
+- **✅ Consensus** (`directoryUuid: 65247229-f0c7-49df-9044-fcbb8b3894c6`)
+  — Activado el 2026-09-13. Buscador de literatura científica basado en
+  evidencia, respuestas ancladas a papers reales. Instrucción del propio
+  conector: citar inline con `[1]`/`[2]` y listar referencias con enlace
+  al final — respetar ese formato al usarlo, no resumir sin citar.
+- **✅ bioRxiv** (`directoryUuid: 7f750eb6-c3cb-47d7-9269-d35c43fe9925`,
+  sin autenticación) — Activado el 2026-09-13. Acceso oficial a
+  preprints de bioRxiv/medRxiv. Relevante en concreto por la asignatura
+  "Minería de datos aplicada a la bioinformática" del MUSI, no por el
+  TFM actual (energía).
+- **Plugin Exa** (`plugin_01FWGx9cc7sCNN5aMZkuU63t`) — búsqueda web
+  profunda con extracción de contenido, incluye papers académicos como
+  caso de uso explícito.
+
+  **Corrección importante (mismo día):** el diagnóstico de "requiere
+  plan de pago" de más arriba era una hipótesis, no el motivo real —
+  descartada al comprobar con una captura de Angel que **Exa ya estaba
+  instalado y activado en su cuenta desde hacía 3 días**, en
+  `claude.ai/new#settings/customize-plugins` → pestaña Plugins (así que
+  su plan sí soporta plugins). El problema real: esta sesión de Claude
+  Code en concreto nunca cargó sus herramientas (nunca apareció en la
+  lista de herramientas ni en `ListPlugins`, pese a estar activado a
+  nivel de cuenta).
+
+  **Confirmado el 2026-09-19, en una sesión distinta:** sigue sin
+  cargar — `ListPlugins` con "exa" da vacío, y ni `ListConnectors` ni
+  `ToolSearch` encuentran ninguna herramienta de Exa disponible. Ya no
+  es "pendiente de confirmar si es solo esta sesión" — persiste entre
+  sesiones nuevas, no es una fluctuación puntual. Nada que este repo
+  pueda arreglar desde aquí (no es un ajuste de `.claude/settings.json`
+  ni de este código) — si a Angel le sigue importando Exa en concreto,
+  el siguiente paso sería desinstalar/reinstalar el plugin desde
+  `claude.ai/new#settings/customize-plugins`, o reportarlo con
+  `/feedback` como bug de sincronización de plugins.
+
+### Revisados y descartados por redundancia o desajuste (por completitud)
+
+- **Plugin Tavily** — búsqueda/extracción/crawl general. Se solapa con
+  lo que ya cubren Firecrawl + `WebSearch`/`WebFetch` nativos, ya
+  activos — no aporta nada nuevo. (Nota: no es el mismo motivo por el
+  que se descartaron Perplexity/Composio el 2026-08-30 — a esos ni
+  siquiera existían como conectores en el catálogo; Tavily sí existe,
+  se descarta solo por redundancia real de funcionalidad.) No
+  instalado.
+- **Plugin bio-research** (17 componentes: PubMed, bioRxiv, ChEMBL,
+  Consensus + skills de genómica/single-cell/nf-core) — pensado para
+  investigación preclínica de laboratorio (wet-lab), no para aplicar
+  minería de datos a datasets biológicos ya existentes, que es lo que
+  cubre la asignatura del MUSI. Sobredimensionado para el caso de uso
+  real; **bioRxiv suelto** (arriba) es la pieza que sí encaja.
+- **CourtListener / Midpage Legal Research** — investigación jurídica,
+  sin relación con Sistemas Inteligentes.
+- **EDEN (Basecamp Research)** — modelo fundacional biológico para
+  diseño de antibióticos/vacunas — dominio de investigación muy
+  específico, sin relación con el TFM ni las asignaturas del MUSI.
+
+### Encontrados en GitHub, sin tarjeta posible (no están en ningún catálogo de Claude) — documentados, no instalados
+
+Ninguno de estos tiene `directoryUuid`/`pluginId` real, así que no se
+puede proponer con tarjeta de un clic — instalarlos exigiría
+`claude mcp add` a mano, ejecutando código de un tercero no revisado
+por Anthropic ni por este repo. A diferencia de Gemini Notebook (entrada del
+2026-08-30, rechazado por necesitar cookies de sesión completas de
+Google), el riesgo aquí es menor porque las APIs subyacentes son
+públicas y de solo lectura (sin OAuth a una cuenta personal) — pero
+sigue siendo código de terceros sin auditar corriendo en el entorno.
+Si algún día quieres probar alguno, mirar primero cuál tiene más
+estrellas/actividad reciente, no el primero que aparezca:
+
+- **Semantic Scholar** (225M+ papers, grafos de citas) — varios forks;
+  el más visible en la búsqueda es `FujishigeTemma/semantic-scholar-mcp`.
+- **OpenAlex** (240M+ obras, catálogo abierto sin paywall) — varios
+  forks; `cyanheads/openalex-mcp-server` y `oksure/openalex-research-mcp`
+  parecen los más completos.
+- **CrossRef** (resuelve DOI → metadatos oficiales, exactamente el
+  mecanismo de "verificar que una cita es real antes de usarla" que
+  `lluvia-de-ideas.md` ya pide hacer a mano) — `cyanheads/crossref-mcp-server`.
+- **Zotero** (gestor de referencias, con inyección de códigos de cita
+  directo en `.docx` — encajaría con el flujo ya decidido de entregar
+  un `.docx` de repaso por capítulo del TFM) — `cookjohn/zotero-mcp` se
+  menciona como el más completo con acceso de escritura; alternativa de
+  solo lectura vía biblioteca local: `richardjlyon/zotero-mcp`.
+
+**No se instala nada de esta sección por ahora** — queda documentado
+para si Angel decide probar alguno bajo su propio criterio, revisando
+el código antes de correrlo (mismo estándar que se aplicó a
+`humanizer`, copiado a mano tras revisión en vez de `npx` directo).
+
+---
+
+## 2026-09-09 — Skill "humanizer" (terceros, adaptada a mano)
+
+Angel pidió instalar "Humanizer" tras ver un post de Instagram
+(@cinthyasanchezai) que lo promocionaba como habilidad de Claude. No es
+una función nativa de Anthropic — es un skill open-source de un tercero:
+[`blader/humanizer`](https://github.com/blader/humanizer) (MIT).
+
+**Qué es:** reescribe texto para quitar "tells" típicos de IA (aperturas
+escenificadas, tríadas forzadas, palabras infladas tipo "clave"/
+"panorama", negrita decorativa, coletillas de chatbot como "espero que
+esto ayude"). 25 patrones en 5 categorías.
+
+**Cómo se activó:** el repo original se instala con
+`npx skills add blader/humanizer --global`, pero eso ejecuta un paquete
+de npm de un tercero sin revisar y afecta fuera de este repo (`--global`).
+En vez de eso, revisé `SKILL.md` del repo (solo texto, sin nada
+sospechoso) y lo copié a mano a `.claude/skills/humanizer/SKILL.md`,
+con nota de atribución/licencia. Cero código de terceros ejecutado.
+
+**Aviso a Angel:** estas herramientas están pensadas para que un texto
+no sea detectable como escrito por IA. Para tu caso (post de blog para
+tu propio perfil) no hay nada deshonesto — pero si algún día lo usas en
+un contexto donde declarar que el texto es asistido por IA importa
+(una plataforma con esa política, un trabajo académico), ese es tu
+criterio a aplicar, no algo que el skill decida por ti.
+
+**Actualización 2026-09-09 — ampliada y verificada de nuevo:** a
+petición de Angel, dos mejoras sobre la versión inicial:
+- Los 25 patrones ahora aparecen nombrados uno a uno (antes solo se
+  copió el resumen por categoría del `SKILL.md` original; los nombres
+  concretos de cada patrón solo estaban en el `README.md` de la fuente).
+- Añadida una sección de tics específicos del **español** ("no
+  solo... sino también", "cabe destacar que", "en definitiva" como
+  cierre automático) — el original está pensado para inglés y varios
+  de sus patrones (dashes, "pivotal"/"landscape") no tienen equivalente
+  directo.
+- Reescaneado el archivo completo con un script de `unicodedata` en
+  busca de caracteres Unicode ocultos/de control/homóglifos antes y
+  después de la ampliación: 0 encontrados ambas veces.
+
+**Actualización 2026-09-09 (2) — Angel pidió usarlo para su TFM/máster,
+rechazado; luego ampliado más para blog con fuentes adicionales:**
+
+Angel preguntó si podía usar este skill para sus trabajos de
+universidad (máster) y su TFM. Se le explicó que eso es fraude
+académico (evadir detección de IA en una evaluación formal es distinto
+de raíz a un post de blog sin evaluación de por medio) y se rechazó
+ampliarlo con ese fin. Angel aceptó la explicación y pidió continuar
+solo con el uso de blog — el `description` del frontmatter ahora deja
+explícito ese límite de alcance ("NO usar en trabajos de
+universidad/máster ni en el TFM").
+
+Con el alcance ya acotado a blog/redes, se buscaron más fuentes
+open-source similares y se incorporaron ideas nuevas de:
+- `conorbronsdon/avoid-ai-writing` (MIT) — perfil de voz (casual/
+  profesional/cálido/directo) y el ciclo de "iterar hasta converger"
+  (máximo 2 pasadas).
+- `lguz/humanize-writing-skill` (MIT) — el marco de 3 pasadas
+  (vocabulario → estructura → textura humana) y la idea de niveles de
+  palabras prohibidas (Nivel 1 cortar siempre / Nivel 2 revisar caso a
+  caso).
+
+Ambas fuentes citan como referencia común el ensayo de Wikipedia
+"Signs of AI writing" — no se pudo acceder directamente (`en.wikipedia.org`
+bloqueado por el proxy de red de esta sesión), así que queda
+referenciado de segunda mano vía esas dos fuentes, no leído en
+directo. Reescaneado el archivo tras la ampliación: 2 caracteres "→"
+(flecha derecha) encontrados por el umbral del script, revisados a
+mano — son texto normal que escribí yo mismo ("vocabulario → estructura
+→ textura humana"), no nada oculto ni inyectado.
+
+**Actualización 2026-09-09 (3) — revisión con agente independiente,
+6 hallazgos corregidos:** a petición de Angel, se lanzó un agente sin
+contexto previo a revisar el post de blog, la skill `humanizer` y este
+mismo registro. Encontró 6 problemas reales, todos corregidos en el
+momento:
+
+1. **Contradicción en `humanizer`:** "clave" estaba en Nivel 1 ("cortar
+   siempre") y en Nivel 2 ("a veces preciso") a la vez. Corregido:
+   "clave" solo en Nivel 2 con el matiz; Nivel 1 se queda con
+   "fundamental"/"panorama".
+2. **El mismo tic repetido en 3 sitios** sin remitirse entre sí (fruto
+   de las 3 rondas de ampliación sin consolidar). Corregido: cada tic
+   vive en un solo sitio; la sección de tics de español ahora solo
+   tiene lo que no estaba ya cubierto.
+3. **"Los 25 patrones" en realidad documentaba 27** (dos colados en un
+   paréntesis del punto 11). Corregido: renumerados como 12-13
+   explícitos, cabecera actualizada a "27 patrones" con nota de qué
+   fuente aporta cuáles.
+4. **La nota de "no usar en TFM" se leía como más sólida de lo que
+   es.** Añadida una aclaración explícita: es documentación, no un
+   bloqueo técnico — no impide reescribir algo a mano sin invocar el
+   skill por su nombre.
+5. **Meta-descripción del post en 165 caracteres** (por encima del
+   límite de ~155-160 de Google). Acortada a 124.
+6. **El enlace Markdown del CTA no sobrevive a un editor WYSIWYG.**
+   Añadida una nota en el propio post explicando cómo recrearlo a mano
+   en el editor de la plataforma.
+
+El agente confirmó sin problemas: el contenido del blog no tiene datos
+inventados (contrastado contra los README reales de
+`docencia-espanol/`), las entradas de este registro coinciden con el
+estado real de los archivos, y no hay nada tipo inyección de prompt en
+`SKILL.md` (su propio escaneo con `unicodedata` también dio 0).
+
+---
+
+## 2026-09-07 — Búsqueda a mano: herramientas para posts de blog en plataformas de clases
+
+Angel pidió una búsqueda exhaustiva mientras preparaba un post de blog
+para el perfil de TusClasesParticulares (y potencialmente Superprof).
+Revisado el catálogo completo de conectores MCP y plugins con
+palabras clave de blog/SEO/marketing/tutoring — esto es lo que encajó.
+
+### Plugin "Marketing" (`plugin_01Eeb9y5m4iFuY3yRtytYfdc`)
+
+**Qué es:** paquete de skills para redactar contenido, planificar
+campañas y analizar rendimiento. Incluye `marketing:draft-content`
+(redactar un post con optimización SEO integrada), `content-creation`,
+`seo-audit` y `brand-review`.
+
+**Por qué le sirve a Angel:** encaja directo con el post que se acaba
+de escribir a mano en `docencia-espanol/materiales/blog/` — la próxima
+vez podría usarse `draft-content` para partir de una estructura ya
+pensada para SEO, en vez de escribir el post desde cero.
+
+**Cómo probarlo:** tarjeta de instalación ya mostrada en el chat.
+Bastantes de los conectores que lista (Ahrefs, HubSpot, Klaviyo,
+Supermetrics...) son opcionales — solo hacen falta si se usan las
+skills de analítica, no para simplemente redactar un post.
+
+### Plugin "SearchFit SEO" (`plugin_016u9h5nGGKuX18riDTJ7otg`)
+
+**Qué es:** kit de SEO gratuito con IA — auditoría de sitio,
+`content-brief`, `content-strategy`, `on-page-seo`,
+`keyword-clustering`, generación de schema markup.
+
+**Por qué le sirve a Angel:** más ligero que "Marketing", centrado solo
+en SEO. Útil para revisar palabras clave antes de escribir (¿qué busca
+alguien que quiere "clases de español para rusohablantes"?) y para que
+el post aparezca mejor en buscadores, tal y como promete
+TusClasesParticulares en su propia landing ("Tu post será visible en
+los motores de búsqueda como Google").
+
+**Cómo probarlo:** tarjeta de instalación ya mostrada en el chat.
+
+### Mencionados pero no propuestos con tarjeta (por completitud, sin encajar tan bien ahora mismo)
+
+- **Semrush** y **Ahrefs** (conectores MCP) — SEO avanzado, análisis de
+  competencia, investigación de keywords. Herramientas de pago
+  pensadas para negocios con varios sitios/canales; para un solo post
+  de blog de un profesor particular son sobredimensionadas. Quedan
+  anotadas por si en el futuro Angel monta una web propia y quiere
+  hacer SEO en serio.
+- **Metricool** (conector MCP) — programar y analizar publicaciones en
+  redes sociales. No es blog, pero es la herramienta natural si
+  algún día Angel quiere promocionar sus posts también en redes.
+- **WordPress.com** (conector MCP) — gestión de sitios WordPress.
+  Solo relevante si Angel tuviera su propia web en WordPress (no es el
+  caso: publica en plataformas de terceros como TusClasesParticulares).
+- Revisado también el resto del catálogo (CRM, ventas B2B, analítica
+  empresarial, herramientas de desarrollo) — no aplica a este caso de
+  uso, no se detalla aquí para no "volcar todo el mercado".
+
+---
+
+## 2026-09-07 — sync-main.sh: ramas base viejas ya no se quedan sin funciones fusionadas
+
+**Qué pasó:** la sesión "Nivel B2" arrancó desde un commit (rama
+`claude/molu-repo-status-l7y50m`) anterior a que `caveman-mode.sh`
+existiera siquiera en `main` -- `/caveman` no funcionaba ahí, y nada lo
+avisó hasta que Angel preguntó por qué, varias sesiones después. Pidió
+explícitamente arreglarlo para que no vuelva a pasar, de forma
+automática en cada sesión nueva.
+
+**Por qué pasa en general, no solo con caveman:** cada sesión de Claude
+Code Remote puede arrancar desde cualquier commit/rama que se le indique
+al crearla. Si ese punto de partida es anterior a un merge reciente a
+`main` (una skill, un hook, una corrección), esa sesión simplemente no
+tiene ese contenido -- no hay forma de que un archivo fusionado *después*
+de ese commit aparezca por arte de magia en un checkout de *antes*. Eso
+no tiene arreglo desde el propio repo (es cómo funciona git). Lo que sí
+se puede hacer: detectarlo y corregirlo (cuando sea seguro) o avisarlo
+(cuando no lo sea) en el arranque de cada sesión, en vez de descubrirlo
+por sorpresa como pasó aquí.
+
+**Qué es:** `.claude/hooks/sync-main.sh`, nuevo hook `SessionStart` con
+`"matcher": "startup"` (solo arranque real, nunca resume/clear/compact --
+ver por qué abajo). En cada arranque: hace `fetch` de `origin/main` y,
+si la rama actual está detrás:
+- **Árbol de trabajo limpio (incluyendo archivos ignorados sin
+  trackear, ver corrección de revisión más abajo) y sin commits propios
+  que diverjan** (el caso exacto de "Nivel B2": una sesión recién
+  creada, todavía sin su propio trabajo) → fast-forward automático
+  (`git merge --ff-only`).
+- **Árbol sucio (cambios sin comitear O archivos locales ignorados por
+  `.gitignore`), o rama ya con commits propios que divergen de `main`**
+  (el caso normal de cualquier sesión ya trabajando en su propia tarea)
+  → no toca nada, solo avisa con un mensaje corto sugiriendo
+  `git merge origin/main` a mano.
+- Sin red o sin remoto → avisa y sigue, nunca bloquea el arranque.
+
+**Por qué solo `matcher: "startup"`, nunca resume/clear/compact:** un
+merge a mitad de una tarea, con cambios sin comitear en danza, tocaría
+el árbol de trabajo bajo los pies de la sesión -- exactamente el efecto
+secundario que `hook-hardening` (punto 7) pide evitar. En un arranque
+real todavía no hay nada propio que una sesión pueda perder.
+
+**Revisión antes de fusionar, ronda 1 -- hallazgo real, reproducido en
+vivo:** la primera versión comprobaba `git status --porcelain` sin
+`--ignored` -- un archivo local sin trackear que coincide con un
+patrón de `.gitignore` (ej. un `secret.env` propio) es invisible a esa
+comprobación, así que el chequeo de "árbol limpio" lo daba por bueno.
+Si `origin/main` empieza a trackear un archivo en esa misma ruta, `git
+merge --ff-only` lo sobrescribe en silencio, sin conflicto, sin aviso,
+`exit 0` -- **la propia revisión lo reprodujo en vivo** (un `secret.env`
+local real sustituido por el contenido subido, sin ningún mensaje de
+git avisando). Primer arreglo: añadir `--ignored` a la comprobación
+(`git status --porcelain --ignored`), tratando cualquier archivo
+ignorado sin trackear como "árbol no limpio".
+
+**Ronda 2 -- ese primer arreglo, aunque cerraba el hueco, dejaba el
+hook casi permanentemente inútil en este repo en concreto:** verificado
+en vivo contra el propio checkout de este repo, `git status --porcelain
+--ignored` ya devuelve 8 entradas de siempre (`graphify-out/.graphify_*`,
+`graphify-out/cache/`, `.claude/.pr-review-state/`...) -- artefactos
+rutinarios de `graphify`/`check-pr-review.sh`, no trabajo real sin
+comitear. Con el primer arreglo, el chequeo de "árbol limpio" fallaba
+casi siempre en este repo, así que el auto-heal (el propósito entero
+del hook) casi nunca llegaba a dispararse -- ni siquiera en el caso
+exacto de "Nivel B2" que lo motivó. Rediseñado: en vez de un chequeo
+genérico de "¿hay algo raro en el árbol?", una comprobación precisa de
+colisión de rutas -- se compara la lista de archivos que `origin/main`
+cambiaría (`git diff --name-only HEAD..origin/main`) contra los
+archivos locales sin trackear o ignorados (`git status --porcelain
+--ignored=matching`, que sí lista archivo por archivo en vez de
+colapsar directorios). Solo si una ruta aparece en ambas listas se
+bloquea el auto-heal; un artefacto ignorado que no coincide con nada
+de lo que cambiaría ya no bloquea nada. Se apoya además en que `git
+merge --ff-only` ya protege por sí solo, sin ayuda de este script,
+cualquier cambio local sin comitear en un archivo *trackeado*
+(verificado en vivo: aborta limpio, "Your local changes... would be
+overwritten by merge", contenido intacto) -- por eso ya no hacía falta
+un chequeo propio para ese caso, solo para el hueco real (archivos sin
+trackear/ignorados).
+
+**Ronda 3 -- el propio chequeo de colisión de rutas capturaba de más:**
+al no filtrar por el código de estado de `git status --porcelain`
+(`??`/`!!` para sin trackear/ignorado, pero también ` M`/`M ` etc. para
+trackeados modificados), un archivo trackeado modificado sin comitear
+en una ruta que `origin/main` también cambia caía en el mensaje de
+"colisión con archivo sin trackear" -- resultado seguro (no fusionaba
+igual) pero diagnóstico engañoso, atribuyendo a un archivo sin
+trackear algo que en realidad era un cambio trackeado. Corregido
+filtrando solo `^(\?\?|!!) ` antes de comparar rutas.
+
+**Ronda 4 -- otra revisión externa rompió la propia comprobación de
+colisión de rutas de la ronda 2-3, con dos fallos reales, ambos
+reproducidos en vivo:**
+1. **Citado inconsistente.** `git diff --name-only` y `git status
+   --porcelain` no citan igual una ruta con espacio o carácter
+   no-ASCII sin el flag `-z` -- una colisión real (`mi secreto.txt`)
+   salía citada (`"mi secreto.txt"`) de un lado y sin citar del otro,
+   así que la comparación de cadena exacta nunca coincidía y el
+   archivo se sobrescribía igual, sin aviso.
+2. **Colapso de directorios.** `git status --porcelain
+   --ignored=matching` sigue colapsando un directorio entero a una
+   sola línea cuando el patrón de `.gitignore` apunta al directorio
+   (no a archivos sueltos) -- confirmado en vivo contra los propios
+   `.claude/.pr-review-state/`/`graphify-out/cache/` de este repo. Un
+   archivo *dentro* de esos directorios que colisionara con
+   `origin/main` no se habría detectado nunca.
+
+Corregido con `-z` en ambos lados de la comparación (elimina el
+citado) y sustituyendo `git status --porcelain` por `git ls-files
+--others --exclude-standard -z` (sin trackear) + `git ls-files
+--others --ignored --exclude-standard -z` (ignorados) -- `ls-files`
+nunca colapsa un directorio, a diferencia de `status`. Esta es la
+misma familia de error (citado/formato inconsistente entre dos
+comandos de git al comparar rutas) que ya se documentó como lección
+general en `hook-hardening` (punto 9) tras esta saga de 4 rondas sobre
+el mismo archivo -- regla de "3+ rondas" de `CLAUDE.md` aplicada.
+
+**Verificado en vivo, los 9 casos (7 + los 2 de la ronda 4), contra un
+remoto git real (no simulado con texto) tras cada ronda:** rama detrás
+sin commits propios → fast-forward correcto; rama detrás con commit
+propio que diverge → NO fusiona, `HEAD` idéntico, solo avisa; archivo
+*trackeado* modificado sin comitear en la misma ruta que `origin/main`
+cambia → NO fusiona (git lo protege solo), mensaje genérico correcto;
+rama ya al día → sin ningún output; remoto roto → avisa, `exit 0`;
+archivo ignorado sin trackear que SÍ colisiona → NO fusiona, contenido
+local preservado; archivo ignorado sin trackear que NO colisiona (el
+caso real de `graphify-out/`/`.pr-review-state/` de este mismo repo) →
+SÍ fusiona, confirmado también contra el checkout real de `Molu`;
+archivo *dentro* de un directorio colapsado que colisiona → NO fusiona
+tras la ronda 4 (antes de corregir, sí fusionaba y lo perdía); archivo
+ignorado con espacio en el nombre que colisiona → NO fusiona tras la
+ronda 4 (antes, el citado inconsistente lo dejaba pasar). `shellcheck`
+limpio en cada ronda.
+
+**Ronda 6 -- otra revisión externa, sin haber tocado nada más entre
+medias, encontró un tercer bypass real de la misma comprobación de
+colisión:** la comparación solo miraba igualdad exacta de cadena entre
+rutas -- no detecta que `origin/main` añada un archivo trackeado
+*dentro* de una ruta que localmente es un archivo suelto (`foo` local
+como archivo, `origin/main` empieza a trackear `foo/bar.txt`): ninguna
+ruta es igual a la otra, pero el fast-forward destruye `foo` igual para
+convertirlo en carpeta -- reproducido en vivo, misma clase de pérdida
+silenciosa que las rondas anteriores, un nivel de ruta más profundo.
+Corregido comprobando también el prefijo `ruta/` en ambos sentidos, no
+solo la igualdad -- verificado en vivo con un 10º caso (`foo` local
+preservado tras el arreglo). Ampliada la lección del punto 9 de
+`hook-hardening` con esta segunda vuelta sobre el mismo tipo de error.
+
+**Ronda 7 -- exactamente el escenario anticipado arriba, y la decisión
+tomada en consecuencia:** una séptima revisión encontró que la propia
+comparación de listas (`CHANGED_PATHS` contra `LOCAL_STRAY`, un bucle
+anidado en bash sin cota) es O(n×m) sin límite de tamaño -- con una
+rama muy detrás de `main` y muchos archivos sueltos, puede tardar
+segundos o minutos, colgando el arranque de sesión -- justo lo que este
+hook promete no hacer nunca. Medido en vivo: 2000×2000 rutas tardaron
+54,8s. **Decisión: abandonar la comparación precisa entera, no
+parchearla una vez más.** Vuelto al chequeo simple original (¿hay algo
+sin trackear o ignorado en el árbol, sin más?) -- sin comparar nada, no
+puede sufrir ninguna de las 6 clases de bug encontradas (citado,
+colapso de directorios, colisión de prefijo) ni la de rendimiento.
+Coste aceptado: el auto-heal ahora vuelve a disparar menos veces en
+este repo en concreto (cualquier artefacto ignorado presente, colisione
+o no, bloquea el auto-heal) -- el mismo trade-off que la ronda 2 había
+rechazado, pero esta vez aceptado deliberadamente tras ver hasta dónde
+llevaba la alternativa "inteligente". Verificado en vivo: los 6 casos
+esenciales (fast-forward limpio, diverge, trackeado modificado
+preservado, ya al día, remoto roto, artefacto ignorado sin colisión
+ahora también bloquea) más una prueba de rendimiento explícita (2000
+archivos sueltos, misma rama muy detrás) -- completa en 0,022s en vez
+de colgarse. `shellcheck` limpio. Documentado como punto 10 nuevo en
+`hook-hardening` ("antes de comparar/enumerar con precisión en un hook,
+preguntar si el chequeo simple ya basta").
+
+**Balance final tras 7 rondas sobre el mismo archivo, para que quede
+constancia honesta:** cada ronda encontró un bypass real y distinto
+(citado, colapso de directorios, colisión de prefijo, rendimiento) --
+no fue una sola corrección con ruido alrededor, fue una familia
+completa de sutilezas de git agotándose una a una hasta que el coste de
+seguir agotándolas superó el beneficio de la precisión. La lección
+que se lleva de aquí (punto 10 de `hook-hardening`) es más importante
+que el propio hook: cuando el chequeo conservador solo cuesta "actuar
+menos veces" y nunca "perder algo o colgarse", empezar por él y solo
+complicarlo si de verdad hace falta -- no al revés.
+
+**Límite honesto:** esto NO resuelve el caso de "Nivel B2" en sí (esa
+sesión sigue en su rama vieja, sin este hook ahí tampoco, porque su
+checkout es anterior a que este mismo hook exista -- el mismo problema
+que el hook intenta resolver para el futuro no puede resolverse
+retroactivamente para una sesión que ya arrancó). Tampoco fusiona
+cuando una sesión ya tiene trabajo propio divergente -- ahí sigue
+haciendo falta un merge a mano, a propósito, para no fusionar sin
+revisar.
+
+---
+
 ## 2026-08-30 — Carrusel "4 conectores que le dan superpoderes a Claude": revisado, nada que instalar
 
 **Contexto:** Angel compartió una captura de estilo carrusel de redes
@@ -1337,3 +2255,166 @@ alarga estas sagas a 3+ rondas. Aplica en particular a reglas de
 seguridad (como la (5) aquí): un descuido de propagación en ellas no es
 solo un desprolijidad de estilo, es una ventana real por la que puede
 colarse el daño que la regla existía para prevenir.
+
+---
+
+## 2026-09-14 — Lección: tres rondas declarando "hueco" sobre trabajo ya publicado
+
+Entrada creada por la regla de `CLAUDE.md` "3+ rondas de revisión sobre
+lo mismo → guardar la lección". No es un hook, y no encaja en ninguna
+skill existente, así que va aquí.
+
+**Qué pasó.** Al perfilar el tema del TFM, la misma familia de error se
+repitió tres veces seguidas, cada una detectada solo por una revisión
+posterior, nunca por la pasada que introducía la afirmación:
+
+1. Se propuso un módulo de decisión difuso para gestión de
+   almacenamiento como aportación propia. Ya estaba publicado por
+   Arcos-Avilés et al. en 2017 (*Applied Energy*) y 2018 (*IEEE TSG*).
+2. Se reformuló como comparativa de modelos fundacionales de series
+   temporales. Ya había varias evaluaciones equivalentes de 2026.
+3. Se reformuló como "medir cuánta precisión de pronóstico se traslada
+   a la decisión". Yin, Lei y Feng publicaron en 2024 en *IEEE
+   Transactions on Power Systems* un artículo **cuyo título enuncia esa
+   misma pregunta**, y el marco teórico del campo (*decision-focused learning* /
+   Smart Predict-then-Optimize, Elmachtoub y Grigas, *Management
+   Science*, 2022, 905 citas) llevaba años existiendo sin que ninguna
+   de las tres pasadas lo mencionara.
+
+**El patrón concreto.** En las tres, la afirmación de novedad se
+construyó por ausencia: "no he encontrado trabajo que...". Se buscó lo
+que se iba a proponer, no se buscó **cómo se llama el campo que ya
+estudia eso**. Una búsqueda de "barrido controlado de error en
+pronóstico para gestión de baterías" no devuelve DFL, porque DFL es el
+nombre que la literatura le puso al problema; hay que llegar al nombre
+para encontrarlo.
+
+**La lección, para tareas futuras de estado del arte.** No dar por
+buena ninguna afirmación de novedad basada en no haber encontrado algo.
+Antes de escribir "no existe trabajo que...", hacen falta dos pasos que
+en las tres pasadas se saltaron:
+
+1. **Nombrar el campo, no el método.** Preguntarse "¿qué disciplina
+   estudiaría esto y con qué término técnico lo llamaría?" y buscar ese
+   término. Si no se sabe el término, eso mismo es la señal de que aún
+   no se conoce el campo lo bastante para declarar un hueco en él.
+2. **Ir a los trabajos que citan al artículo fundacional.** Una vez
+   localizado el marco (aquí, Elmachtoub y Grigas), revisar quién lo
+   cita dentro del dominio de aplicación concreto. Es la vía más
+   directa para ver si el cruce que se quiere proponer ya está hecho.
+
+Formulación segura mientras no se completen esos pasos: "las búsquedas
+realizadas no lo encontraron", nunca "no existe". La diferencia importa
+mucho si el texto va a leerlo un doctor del área.
+
+**Aviso operativo de la misma sesión — Scite ignora parámetros mal
+nombrados en silencio.** `mcp__Scite__search_literature` usa `term`
+(y `title`, `author`, `dois`...), **no** `query`. Al pasarle `query`,
+no da error: ignora el parámetro, navega el corpus entero y devuelve
+resultados arbitrarios con aspecto perfectamente normal (en esta sesión
+salieron artículos sobre sedimentos y astronomía babilónica para una
+consulta sobre redes móviles). El síntoma para detectarlo es que el
+campo `query` vuelve vacío en la respuesta y `total` sale idéntico
+(16.800.000) sea cual sea la consulta. Dado que `CLAUDE.md` manda usar
+Scite precisamente para verificar citas, una llamada mal formada da
+falsa sensación de haber verificado: comprobar siempre que el `query`
+devuelto coincide con lo que se pidió.
+
+
+---
+
+## 2026-09-14 — Lección (ampliación): al propagar una corrección, el archivo "resumen para la siguiente sesión" va PRIMERO
+
+Amplía la entrada de arriba sobre propagar una corrección a sus reglas
+hermanas. Se registra por la regla de `CLAUDE.md` de "3+ rondas sobre lo
+mismo": el PR #113 necesitó **cinco rondas** de
+revisión→corrección→revisión, y en casi todas reapareció **la misma
+familia de fallo** — siempre acompañada, eso sí, de hallazgos nuevos e
+independientes, y con la ronda 3 encontrando además un bloqueante de
+otra naturaleza.
+
+**La saga.** Se verificó que la residencia para búsqueda de empleo tras
+el máster son 24 meses y no 12 (DA 17.ª de la Ley 14/2013, ampliada por
+la Ley 28/2022). La corrección se aplicó a `becas-y-tramites-2026-2027.md`
+y se dio el trabajo por terminado.
+
+- **Ronda 1** encontró que `ideas-tfm-energias-renovables.md` seguía con
+  la cifra derogada, dentro de una lista titulada "hechos verificados",
+  y con una remisión que llamaba "sin aclarar" a un dato que el archivo
+  destino ya daba por resuelto.
+- **Ronda 2**, tras corregir eso, encontró que `lluvia-de-ideas.md`
+  —que ni siquiera se había abierto— conservaba otra afirmación de la
+  misma tanda sin propagar, y presentaba como "verificado" un dato que
+  el archivo hermano marcaba explícitamente como no confirmado.
+- **Ronda 3** confirmó por fin la propagación completa... y encontró
+  que esta misma entrada, escrita en el commit que corregía la ronda 2,
+  **daba por hecho que la ronda 3 había salido limpia cuando todavía no
+  se había lanzado**. Es decir: el texto que existe para no dar nada por
+  verificado sin comprobarlo cometía exactamente ese error. Se corrigió
+  al cerrar esa ronda, y se deja aquí escrito porque es la parte más
+  instructiva de la saga.
+
+**Corolario, por si no fuera obvio:** no escribir el desenlace de una
+verificación en el mismo commit que la lanza. Si el texto va a decir
+"salió limpio", tiene que escribirse *después* de que salga limpio.
+
+**Lo nuevo, y lo que más importa:** el archivo que hay que revisar
+**primero** al propagar una corrección es el que la sesión mantiene como
+**resumen/traspaso para la siguiente sesión** (aquí,
+`lluvia-de-ideas.md`). Razón: sus afirmaciones no se leen como
+información sino como **órdenes**. Ese archivo decía "Datos de
+extranjería ya verificados (**no reinvestigar**)" e incluía debajo un
+dato sin confirmar — es decir, el error no solo persistía, sino que
+venía con una instrucción activa para que nadie lo detectara.
+
+**Procedimiento concreto para la próxima vez.** Al corregir un hecho que
+aparece en más de un sitio, antes de dar por cerrado el trabajo:
+
+1. `grep -rn` del dato viejo **y** del nuevo por todo el repositorio —
+   no fiarse de recordar dónde se escribió.
+2. Abrir primero los archivos de traspaso/resumen entre sesiones, y
+   dentro de ellos revisar en especial lo que esté bajo epígrafes del
+   tipo "ya verificado", "no reinvestigar", "cerrado" o "resuelto".
+3. Comprobar que cada remisión cruzada sigue describiendo correctamente
+   el estado del archivo destino: una remisión que dice "pendiente"
+   apuntando a una sección titulada "(resuelto)" es el mismo fallo
+   visto desde el otro lado.
+
+**Ronda 4, y la lección que faltaba:** el barrido del paso 1 se había
+aplicado al dato corregido (los 24 meses) pero **no a los hechos nuevos
+que el propio trabajo introducía**. Así apareció una contradicción sobre
+si un correo a `bisite@usal.es` se había enviado o no: un archivo decía
+"enviado", otro lo listaba como "pendiente de enviar", y el archivo de
+traspaso afirmaba en redondo "no se ha enviado ningún correo a nadie".
+Se resolvió **comprobándolo en Gmail** (sí se envió, el 12/09/2026, sin
+respuesta) en vez de elegir la versión que sonara mejor.
+
+De ahí, dos reglas más:
+
+4. El barrido no es solo del dato que se corrige, sino **de todo hecho
+   afirmado en el trabajo**, incluidos los que se acaban de escribir.
+   Una afirmación categórica recién redactada ("no se ha enviado
+   ninguno", "no existe", "nunca se hizo") es sospechosa por
+   construcción: comprobar si hay un hermano que diga lo contrario.
+5. Cuando dos archivos se contradicen sobre un hecho **comprobable**
+   (un correo enviado, un archivo que existe, una fecha), no razonar
+   sobre cuál parece más fiable: **ir a la fuente y mirarlo**. Aquí
+   bastó una búsqueda en Gmail para cerrar una discusión que llevaba
+   varias rondas latente.
+
+**Ronda 5, el caso más ilustrativo de toda la saga.** Una sección
+entera seguía abriendo con "pendiente de confirmar en cuál de los siete
+institutos IMDEA trabaja Arlet" cuando **el mismo archivo lo confirmaba
+cincuenta líneas más abajo** (Networks) y el archivo de traspaso lo daba
+por sabido. Lo grave no era la frase: de esa premisa ya falsada colgaban
+**treinta líneas** investigando el instituto equivocado y una
+*recomendación estratégica* construida sobre ella. De ahí, la sexta
+regla:
+
+6. Al confirmarse un hecho que hasta entonces era una incógnita, no
+   basta con escribir la confirmación donde toque: hay que **buscar qué
+   texto se escribió mientras la incógnita estaba abierta** y cerrarlo
+   — marcándolo como escenario descartado o borrándolo. Un análisis
+   hecho bajo una hipótesis que luego se cae no se corrige solo por que
+   la respuesta aparezca en otra sección; sigue ahí, leyéndose como
+   vigente.

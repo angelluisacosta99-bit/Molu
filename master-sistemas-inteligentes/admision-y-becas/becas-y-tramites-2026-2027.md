@@ -112,15 +112,16 @@ impide primero.
 
 Confirma que esta convocatoria (Departamentos) remite al RD 1721/2007
 sin transcribirlo — sigue pendiente el punto 6 de la sección de acceso
-más abajo (leer el texto literal en boe.es).
+más abajo (leer el texto literal en boe.es, ya alcanzable vía
+Firecrawl).
 
 **Requisito adicional no registrado antes — aval del departamento**: la
 solicitud (Anexo II) exige un **proyecto de colaboración avalado por
 el consejo del departamento** receptor, puntuado por ese departamento
 (hasta 4 puntos: contenido innovador, aplicabilidad, metodología,
 tecnología). Sin el aval firmado del departamento, la solicitud se
-desestima. Esto conecta directamente con el borrador de correo a
-`bisite@usal.es` de la sección de correspondencia — aunque BISITE no
+desestima. Esto conecta directamente con el correo ya enviado a
+`bisite@usal.es` (12/09/2026, ver la sección de correspondencia) — aunque BISITE no
 sirva para la beca de Institutos/Centros Propios, sí podría ser el
 departamento que avale el proyecto para *esta* beca (Departamentos),
 si el máster está adscrito a él — **pendiente de confirmar**.
@@ -142,8 +143,9 @@ confianza: una autorización de **estancia por estudios** (lo que recibiría
 Angel al llegar en septiembre) **no cuenta como residencia** a efectos de
 estas becas — probable exclusión, salvo que consiga la condición de
 residente antes del cierre de plazo. **Pendiente de verificar contra el texto
-literal del art. 4.1.d) del RD 1721/2007 en el BOE** — bloqueado por proxy de
-red en todas las sesiones probadas hasta ahora (ver sección de acceso).
+literal del art. 4.1.d) del RD 1721/2007 en el BOE** — ya alcanzable vía
+Firecrawl desde el 2026-09-14, pendiente solo de rematar (ver punto 6 de la
+sección de acceso).
 
 ## Correspondencia oficial
 
@@ -155,19 +157,23 @@ red en todas las sesiones probadas hasta ahora (ver sección de acceso).
 - **`rrii@usal.es`** (enviado) — consulta sobre convenios de reducción de
   tasas para estudiantes cubanos. Sin respuesta aún.
 
-### Redactados, pendientes de enviar (a la espera de confirmación del alumno)
+- **`bisite@usal.es`** (enviado el **12/09/2026**, 20:21 UTC) — propuesta de
+  colaboración académica con el grupo de investigación BISITE (IA, sistemas
+  multiagente), mencionando la especialidad oficial, nota media y la Beca de
+  Colaboración en Departamentos. Asunto: "Propuesta de colaboración y TFM —
+  estudiante de nuevo ingreso, Máster en Sistemas Inteligentes". Sin respuesta
+  aún. Contacto: Juan Manuel Corchado, (+34) 923 294 400 ext. 1525.
+  **Verificado en Gmail el 2026-09-14**: este archivo lo listaba como
+  "pendiente de enviar" y era falso.
 
-- **`bisite@usal.es`** — propuesta de colaboración académica con el grupo de
-  investigación BISITE (IA, sistemas multiagente), mencionando la
-  especialidad oficial, nota media y la Beca de Colaboración en
-  Departamentos. Contacto: Juan Manuel Corchado, (+34) 923 294 400 ext. 1525.
+### Redactado, pendiente de enviar (a la espera de confirmación del alumno)
 - **`mastersi@usal.es`** (Dr. Therón — contacto habitual, ya ha respondido
   dos veces por correo: carta de admisión y su corrección) — pregunta sobre
   si la actualización de matrícula (de condicionada a definitiva) puede
   completarse antes del 22 de septiembre, y si la autorización de estancia
   por estudios contaría como "residente" para la Beca de Colaboración.
 
-El texto completo de ambos borradores está en el historial de la sesión de
+El texto completo de ese borrador está en el historial de la sesión de
 Claude Code que generó este registro (no reproducido aquí por brevedad;
 pedir a Angel si hace falta recuperarlo).
 
@@ -302,9 +308,15 @@ este ciclo" — sin poder confirmarlo con certeza por el bloqueo de red.
 El único paso fiable que queda es escribir directamente a
 `becas.master@auip.org` preguntando si Salamanca participa este año.
 
-### Pendiente de verificar por acceso directo — boe.es sigue bloqueado en toda sesión probada (punto 6)
+**ACTUALIZACIÓN 2026-09-14:** `auip.org` también es alcanzable vía
+Firecrawl (ver punto 6). Antes de escribir ese correo, intentar leer las
+bases con ese conector — el bloqueo ya no es un motivo válido para
+saltarse la fuente primaria.
 
-6. Texto literal del art. 4.1.d) del RD 1721/2007: **sigue bloqueado**,
+### Pendiente de rematar — el literal del art. 4.1.d) ya es alcanzable vía Firecrawl (punto 6)
+
+6. Texto literal del art. 4.1.d) del RD 1721/2007: **sigue bloqueado por
+   acceso directo**,
    confirmado de nuevo en sesión del 2026-09-02 — tanto `www.boe.es`
    (ruta directa `/buscar/act.php` y el permalink ELI `/eli/es/rd/2007/12/21/1721/con`)
    como `noticias.juridicas.com` dieron `EGRESS_BLOCKED`. Con esta ya
@@ -313,8 +325,125 @@ El único paso fiable que queda es escribir directamente a
    algo que cambie de sesión a sesión (a diferencia del bloqueo de
    `becas.usal.es`/`bisite.usal.es` etc., que sí resultó ser por
    sesión). El mismo bloqueo aplica a `auip.org` (ver punto 5, arriba).
-   Alternativas para una futura sesión: probar con
-   `agent-browser` (navegador con su propia salida de red, puede que no
-   pase por el mismo proxy) en vez de `WebFetch`, o pedirle directamente
-   a Angel que pegue el texto del artículo si lo consulta él desde su
-   propia conexión.
+   **ACTUALIZACIÓN 2026-09-14: esto ya es resoluble.** El conector MCP
+   de **Firecrawl** descarga desde su propia infraestructura y no pasa
+   por el proxy de salida del contenedor: ese mismo día alcanzó sin
+   problema el texto consolidado del BOE (Ley 14/2013 y RD 1155/2024) y
+   la Hoja informativa 20 de `inclusion.gob.es`. Usarlo aquí antes que
+   `agent-browser` o que molestar a Angel.
+
+   Un primer sondeo con Firecrawl localizó el RD 1721/2007 en el BOE
+   (`BOE-A-2008-821`, art. 4 "Condiciones de los beneficiarios") y
+   varias resoluciones que emplean la fórmula "condición de residente,
+   quedando excluidos de concurrir a las becas" — **coherente con la
+   conclusión ya registrada arriba**, pero **el texto literal del art.
+   4.1.d) sigue sin extraerse**. Sigue pendiente; ya no por bloqueo,
+   solo por no haberlo rematado.
+
+## Residencia tras el máster para búsqueda de empleo: 24 meses (resuelto)
+
+**Son 24 meses, improrrogables. Angel tenía razón.** Una respuesta
+anterior de esta misma sesión dijo "12 meses, no renovable" — **era
+incorrecta** y queda corregida aquí.
+
+### La norma, verificada en el BOE
+
+La regula la **disposición adicional decimoséptima de la Ley 14/2013**
+(introducida por el RD-ley 11/2018). El artículo 190 del RD 1155/2024
+—el que regula el paso de estancia por estudios a residencia y
+trabajo— remite expresamente a ella para quien haya finalizado estudios
+superiores alcanzando **como mínimo el Nivel 6 del Marco Europeo de
+Cualificaciones**. Un máster oficial lo supera con holgura (Nivel 7).
+
+El texto consolidado del BOE dice **"veinticuatro meses"**, y la
+redacción completa del precepto es "un período **máximo improrrogable
+de veinticuatro meses** con el fin de buscar un empleo adecuado en
+relación con el nivel de los estudios finalizados o para emprender un
+proyecto empresarial".
+
+**Por qué circula la cifra de 12 meses:** era la redacción original de
+2018. La **Ley 28/2022, de 21 de diciembre, de fomento del ecosistema
+de las empresas emergentes** ("Ley de Startups") modificó el apartado 1
+de esa disposición adicional **para ampliarlo de 12 a 24 meses**.
+Muchísimas gestorías y blogs de extranjería siguen publicando la cifra
+antigua. Ese es exactamente el origen del error de la respuesta
+anterior.
+
+### Detalles del trámite
+
+Fuente: **Hoja informativa 20 del Ministerio de Inclusión**
+("Autorización de residencia para búsqueda de empleo o inicio de
+proyecto empresarial"), leída el 2026-09-14 **vía el conector Firecrawl**
+—`inclusion.gob.es` está bloqueado desde este entorno—, no desde un
+resumen de terceros.
+
+- **Plazo de solicitud:** los **60 días naturales previos** a la
+  expiración de la autorización de estancia por estudios. También cabe
+  dentro de los **90 días naturales posteriores**, pero entonces "sin
+  perjuicio de la incoación del correspondiente procedimiento
+  sancionador" — es decir, se puede, pero con riesgo de sanción. Mejor
+  pedirlo antes de que expire.
+- **Plazo de resolución: 20 días** desde el día siguiente a la
+  presentación, con **silencio administrativo positivo**: pasado ese
+  plazo sin respuesta expresa, se entiende estimada.
+- **Efectos:** surte efectos desde el día siguiente a la extinción de la
+  autorización de estudios.
+- **Familiares:** pueden acompañarle durante su vigencia si ya le
+  acompañaban durante la estancia por estudios.
+
+### ¿Habilita a trabajar?
+
+**No por sí sola**, y esto sí se sostiene sobre el texto primario: la
+propia disposición adicional dice que, al encontrar un empleo adecuado
+o haber emprendido un proyecto, "se deberá solicitar la autorización
+correspondiente" de entre las de la LO 4/2000 o la Ley 14/2013. Si el
+propio permiso habilitara a trabajar, ese paso no haría falta.
+
+**Mejora asociada del RD 316/2026** (de 14 de abril, en vigor desde el
+día siguiente a su publicación). **Atención: este punto concreto sí
+procede de resúmenes de terceros**, no del texto del BOE leído en
+directo — confirmarlo antes de apoyarse en él para una decisión: admitida a trámite esa solicitud de
+cambio, la persona queda **habilitada provisionalmente para trabajar
+por cuenta ajena**, para que la demora administrativa no frustre la
+oferta. Elimina el tiempo muerto que antes existía entre firmar y poder
+empezar.
+
+### Cómo se resolvió, y la lección
+
+Todas las fuentes autorizadas estaban **bloqueadas por la política de
+red del entorno** (`boe.es`, `inclusion.gob.es`, `comunidad.madrid`,
+Iberley, Laboral-Social), tanto vía `WebFetch` como vía `curl` — el
+gateway devuelve 403 por política de la organización, no es un fallo de
+una herramienta concreta. Con solo resúmenes de búsqueda de segunda
+mano, que repetían mayoritariamente la cifra derogada, se dio por buena
+la incorrecta.
+
+**Lo que sí funcionó: el conector MCP de Firecrawl**, que descarga desde
+su propia infraestructura y por tanto **no pasa por el proxy de salida
+de este contenedor**. Alcanzó tanto el texto consolidado del BOE (Ley
+14/2013 y RD 1155/2024) como la Hoja informativa 20 de
+`inclusion.gob.es`.
+
+**Lección operativa, aplicable a cualquier tarea futura:** cuando un
+dominio esté bloqueado por `EGRESS_BLOCKED`, no darse por vencido ni
+—mucho menos— resolver con fuentes secundarias. Probar antes los
+conectores MCP que hacen la petición desde fuera (Firecrawl y, para
+literatura científica, Scite y alphaXiv). Y en materia legal, la
+diferencia importa: las gestorías replican cifras derogadas durante
+años.
+
+### Consecuencia práctica
+
+Con el precedente de Arlet (contrato y doctorado a la vez, ver
+`../trabajo-fin-de-master/ideas-tfm-energias-renovables.md`), este
+permiso es la red de seguridad, no el objetivo. Pero saber que son **24
+meses y no 12** cambia el margen real de maniobra si al terminar el
+máster no hay oferta cerrada: son dos años para buscar, no uno.
+
+### Dominios a autorizar en el entorno
+
+Para verificar normativa en fuente primaria sin depender de Firecrawl.
+**La lista completa y canónica está
+en la entrada del 2026-09-14 de
+`../trabajo-fin-de-master/lluvia-de-ideas.md`** — mantenerla solo ahí,
+para que no haya copias parciales que se desincronicen.

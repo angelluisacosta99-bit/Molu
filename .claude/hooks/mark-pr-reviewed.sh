@@ -6,9 +6,15 @@
 # con el SHA correcto, para el mismo owner/repo/PR.
 #
 # Uso: mark-pr-reviewed.sh <owner> <repo> <pr_number> <head_sha> <resumen corto>
-# Ej:  mark-pr-reviewed.sh angelluisacosta99-bit molu 65 a1b2c3d4e5f6... "limpia, sin hallazgos"
+# Ej:  bash "$(git rev-parse --show-toplevel)/.claude/hooks/mark-pr-reviewed.sh" \
+#        angelluisacosta99-bit molu 65 a1b2c3d4e5f6... "limpia, sin hallazgos"
 
 set -euo pipefail
+
+command -v jq >/dev/null 2>&1 || {
+  echo "mark-pr-reviewed.sh: falta jq, no se puede escribir el marcador." >&2
+  exit 1
+}
 
 OWNER="${1:?falta el owner del repo}"
 REPO="${2:?falta el nombre del repo}"
@@ -29,7 +35,22 @@ if ! [[ "$HEAD_SHA" =~ ^[0-9a-fA-F]{7,40}$ ]]; then
   exit 1
 fi
 
-DIR="${CLAUDE_PROJECT_DIR:-.}/.claude/.pr-review-state"
+# Este script NO es un hook registrado en .claude/settings.json: lo
+# invoca la sesión por el Bash tool, y ahí CLAUDE_PROJECT_DIR no está
+# definida (solo la reciben los procesos de hook). Con el antiguo
+# "${CLAUDE_PROJECT_DIR:-.}" el marcador se escribía relativo al cwd de
+# la llamada, así que invocarlo desde una subcarpeta lo dejaba donde
+# check-pr-review.sh -- que sí es hook y sí recibe la variable -- nunca
+# lo buscaría: el merge quedaba bloqueado sin explicación. git rev-parse
+# resuelve la raíz desde cualquier cwd dentro del repo y no depende del
+# harness. Ver el punto 4 de .claude/skills/hook-hardening/SKILL.md.
+ROOT="${CLAUDE_PROJECT_DIR:-}"
+if [ -z "$ROOT" ]; then
+  ROOT="$(timeout 15 git rev-parse --show-toplevel 2>/dev/null)" || ROOT=""
+fi
+[ -n "$ROOT" ] || ROOT="."
+
+DIR="$ROOT/.claude/.pr-review-state"
 mkdir -p "$DIR"
 
 OWNER_LOWER=$(printf '%s' "$OWNER" | tr '[:upper:]' '[:lower:]')

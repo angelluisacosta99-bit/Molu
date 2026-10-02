@@ -1,0 +1,73 @@
+% Definimos el estilo del documento
+\documentclass[12pt,a4paper,spanish]{book}
+% Utilizamos el paquete para utilizar espa~nol
+\usepackage{babel}
+% Utilizamos un paquete para gestionar los acentos
+% y las e~nes
+\usepackage[latin1]{inputenc}
+% Utilizamos el paquete para gestionar imagenes jpg
+\usepackage{graphicx}
+% Definimos la zona de la pagina ocupada por el texto
+\oddsidemargin -1.0cm
+\headsep -2.4cm
+\textwidth=18.5cm
+\textheight=26cm
+%Empieza el documento
+\begin{document}
+% Definimos titulo, autor, fecha.
+\title{TITULO DE MI PROYECTO}
+\author{Mar\'ia P\'erez}
+\date{1 de octubre del 2015}
+% Generamos titulo e indice de contenidos
+\maketitle
+\tableofcontents
+% Definimos una primera pagina para los agradecimientos
+\newpage
+\thispagestyle{empty}
+\section*{Agradecimientos}
+Aqu\'{i} ponemos los agradecimientos
+% Empezamos capitulos
+\chapter{Introducci\'on}
+2
+Aqui empieza la introducci\'on
+\chapter{Estado del arte}
+Aqui empieza el capitulo sobre estado del arte\\
+EJEMPLOS DE ECUACIONES\\
+Las expresiones matem\'{a}ticas son
+sencillas de escribir en el propio texto:
+$a=\sum_{i=1}^{i=\infty} x_i^{n+1}$
+y deben ser escritas entre d\'{o}lares. \\
+Los super\'{\i}ndices
+se obtienen con \^{},
+$x^3 y^{\alpha + \beta}$, mientras que los
+sub\'{\i}ndices son con \_  pudiendo
+combinarlos.\\
+Para la f\'{o}rmula  centrada
+$$z^{2+\alpha}_{n+k}.$$
+\begin{equation}
+\label{integral}
+f(x)=\int{f'(x)dx}+C
+\end{equation}
+
+Para centrar f\'omulas matem\'aticas tambi\'en podemos escribirlas entre corchetes. 
+\[
+x=\frac{a_2 x^2 + a_1 x + a_0}{1+2z^3}, \quad
+x+y^{2n+2}=\sqrt{b^2-4ac}
+\]
+En las referencias \cite{La86} y \cite{Ro93} se encuentra una
+descripci\'on en profundidad de las caracter\'{\i}sticas de
+LaTex. La figura 1 que est\'a en la p\'agina 2, la tabla 1, el teorema
+de Pitagoras y la f\'ormula 2 son ejemplos
+de como utilizar las etiquetas.
+
+
+\begin{thebibliography}{1}
+\bibitem{La86} Leslie Lamport.
+{\em LaTex : A document Preparation System}.
+Addison-Wesley, 1986.
+\bibitem{Ro93} Christian Rolland.
+{\em LaTex guide pratique}.
+Addison-Wesley, 1993.
+\end{thebibliography}
+% Termina el documento
+\end{document}

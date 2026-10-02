@@ -360,6 +360,11 @@
     border-radius: 3px 3px 0 0;
   }
   input.blank.wide { width: 15em; }
+  /* Hueco de una sola palabra corta (una preposición, un artículo...): con el ancho normal
+     (8.5em) una frase con 3-4 huecos seguidos no cabe en una línea de móvil y cada hueco
+     salta a la suya, partiendo la frase en trozos sueltos en vez de leerse seguida. Úsalo
+     con item.wide: "narrow" — ver la nota junto a item.wide más abajo en el script. */
+  input.blank.narrow { width: 4.2em; }
   input.blank.full { width: 100%; max-width: 26em; text-align: left; }
   input.blank:focus { outline: none; border-bottom-color: var(--focus); box-shadow: 0 1px 0 0 var(--focus); }
   input.blank.correct { background: var(--good-bg); border-bottom-color: var(--good); color: var(--good); font-weight: 600; }
@@ -1167,13 +1172,24 @@
   // cuando el DOM ya está montado — ver más abajo, después de blocks.forEach(...).
   const pendingMatchDraws = [];
 
-  // wide: true  -> input intermedio (una o dos palabras)
+  // (sin wide)  -> ancho por defecto (8.5em), pensado para una palabra corta o dos.
+  // wide: "narrow" -> input mínimo (4.2em), para UNA sola palabra muy corta (una
+  //                 preposición, un artículo) cuando el item mete VARIOS huecos así en la
+  //                 misma frase — con el ancho por defecto, 3-4 huecos de ese tamaño no
+  //                 caben en una línea de móvil y la frase se lee partida en trozos, uno
+  //                 por hueco, en vez de seguida. Ejemplo real: "Completa con la
+  //                 preposición adecuada" en 3A tenía 10 items con 1-4 huecos cada uno
+  //                 ("La farmacia está abierta {0} las diez {1} la mañana...", cada {n} una
+  //                 preposición de 1-5 letras) usando el ancho por defecto, y cada hueco
+  //                 saltaba a su propia línea. Con wide:"narrow" caben varias palabras y
+  //                 huecos por línea y la frase fluye igual que en el libro.
+  // wide: true  -> input intermedio (una o dos palabras).
   // wide: "full" -> input de frase entera, para los ejercicios de transformar oraciones:
   //                 con el ancho normal la respuesta se escribe pero no se lee.
   function makeInput(spec, wide, label) {
     const inp = document.createElement("input");
     inp.type = "text";
-    inp.className = "blank" + (wide === "full" ? " full" : wide ? " wide" : "");
+    inp.className = "blank" + (wide === "full" ? " full" : wide === "narrow" ? " narrow" : wide ? " wide" : "");
     inp.autocomplete = "off";
     inp.autocapitalize = "off";
     inp.spellcheck = false;

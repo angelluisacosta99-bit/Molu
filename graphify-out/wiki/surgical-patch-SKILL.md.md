@@ -1,0 +1,26 @@
+# surgical-patch/SKILL.md
+
+> 2 nodes
+
+## Key Concepts
+
+- **surgical-patch/SKILL.md** (1 connections) — `.agents/skills/surgical-patch/SKILL.md`
+- **Surgical patch** (1 connections) — `.agents/skills/surgical-patch/SKILL.md`
+
+## Relationships
+
+- No strong cross-community connections detected
+
+## Source Files
+
+- `.agents/skills/surgical-patch/SKILL.md`
+
+## Audit Trail
+
+- EXTRACTED: 1 (100%)
+- INFERRED: 0 (0%)
+- AMBIGUOUS: 0 (0%)
+
+---
+
+*Part of the graphify knowledge wiki. See [index](index.md) to navigate.*

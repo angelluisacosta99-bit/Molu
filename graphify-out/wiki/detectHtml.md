@@ -1,8 +1,8 @@
 # detectHtml()
 
-> God node · 27 connections · `.claude/skills/impeccable/scripts/detector/engines/static-html/detect-html.mjs`
+> God node · 32 connections · `.claude/skills/impeccable/scripts/detector/engines/static-html/detect-html.mjs`
 
-**Community:** [Impeccable File System Scanner](Impeccable_File_System_Scanner.md)
+**Community:** [detect-html.mjs](detect-html.mjs.md)
 
 ## Connections by Relation
 
@@ -13,6 +13,7 @@
 - collectStaticDesignSystemFindings() `EXTRACTED`
 - profileStep() `EXTRACTED`
 - buildStaticStyleMap() `EXTRACTED`
+- StaticDocument `EXTRACTED`
 - profileFindings() `EXTRACTED`
 - finding() `EXTRACTED`
 - profileStepAsync() `EXTRACTED`
@@ -26,16 +27,22 @@
 - runTextContentAnalyzers() `EXTRACTED`
 - .querySelectorAll() `INFERRED`
 - handleStdin() `EXTRACTED`
-- buildStaticWindow() `EXTRACTED`
+- *…and 5 more `calls` connection(s) not listed (lowest-degree first to go)*
 
 ### contains
-- detect-html.mjs `EXTRACTED`
+- [detect-html.mjs](detect-html.mjs.md) `EXTRACTED`
 
 ### imports
 - main.mjs `EXTRACTED`
 
+### imports_from
+- ref_htmlparser2 `EXTRACTED`
+- ref_css_select `EXTRACTED`
+- ref_css_tree `EXTRACTED`
+- ref_domutils `EXTRACTED`
+
 ### re_exports
-- detect-antipatterns.mjs `EXTRACTED`
+- [detect-antipatterns.mjs](detect-antipatterns.mjs.md) `EXTRACTED`
 
 ---
 

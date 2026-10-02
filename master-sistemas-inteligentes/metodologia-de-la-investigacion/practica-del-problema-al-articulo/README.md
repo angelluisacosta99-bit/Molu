@@ -1,0 +1,52 @@
+# Práctica "Del Problema Científico al Artículo en LaTeX"
+
+Práctica por etapas de Metodología de la Investigación (prof. Vivian López
+Batista, curso 2026-2027). Entrega final (artículo LNCS + póster):
+**30 de noviembre de 2026**.
+
+Tema: estimación de la calidad de transmisión (QoT) con aprendizaje
+automático en la red DWDM ferroviaria Moscú-Kazánskaya – Riazán, a partir
+del trabajo de fin de grado de Angel (RUT MIIT, 2026).
+
+| Paso | Contenido | Estado |
+|---|---|---|
+| 1 | Ficha: problema, pregunta, objetivos, hipótesis (PDF 1 pág.) | `paso-1-planteamiento/` |
+| 2 | Búsqueda bibliográfica, `referencias.bib` (8-10 artículos) | `paso-2-bibliografia/` |
+| 3 | Diseño experimental: dataset, ≥1 tabla, ≥1 figura | `paso-3-experimento/` |
+| 4 | Redacción inversa ("método de la Casa") | `paso-4-redaccion/` |
+| 5 | Maquetación en Overleaf con plantilla LNCS + póster | `paso-5-latex/` (artículo hecho; póster pendiente; pautas: `pautas-latex-profesora.md`) |
+
+La ficha se edita en `ficha-paso-1.html` y se regenera el PDF con Chromium:
+
+    /opt/pw-browsers/chromium --headless --no-sandbox --no-pdf-header-footer \
+      --print-to-pdf=ficha-paso-1.pdf "file://$PWD/ficha-paso-1.html"
+
+Referencias de la ficha verificadas con Scite y Crossref (2026-09-28).
+
+**Guía explicada** de todo lo hecho en los Pasos 1-3 (herramientas, fórmulas,
+origen de cada dato, preguntas de la profesora): `guia-explicada/guia-pasos-1-3.pdf`
+(se regenera desde el `.html` con Chromium, igual que la ficha).
+
+## Pautas de redacción para el artículo (materiales de clase)
+
+Resumen de `../materiales-de-clase/redaccion-y-citas/` para los Pasos 4-5:
+
+1. **Esquema antes de escribir** (Cameron): árbol de secciones con una
+   extensión fijada para cada una; redactar después bloque a bloque.
+2. **Partes obligatorias** (Blocken): estado del arte → hueco → novedad y
+   objetivos → metodología reproducible → resultados → conclusiones.
+3. **Cada afirmación con su respaldo**: una referencia o un resultado
+   propio. Si no lleva referencia, se entiende que es aportación nuestra.
+4. **Cifras, no adjetivos**: «F1 = 0,947», no «muy buen resultado».
+5. **Terminología fija**: definir «canal», «modelo», «QoT» una vez y no
+   usar sinónimos para lo mismo.
+6. **Modestia**: declarar las limitaciones (datos sintéticos,
+   circularidad) y no despreciar trabajos previos.
+7. **Tablas y figuras citadas en el texto antes de aparecer** (regla de
+   la profesora, ver `master-sistemas-inteligentes/CLAUDE.md`).
+8. **Estilo de referencias: numérico [1]** con el `splncs.bst` de la
+   plantilla LNCS (confirmado por la profesora el 2026-09-30). Las guías
+   ISO 690 de clase no se aplican al artículo.
+9. **Póster** (Guardiola, `../materiales-de-clase/poster/`): texto ≥ 20 pt,
+   título ≥ 36 pt, letra sencilla (no Times), ≥ 50 % figuras y tablas,
+   columnas, y no es «el artículo en letra grande».

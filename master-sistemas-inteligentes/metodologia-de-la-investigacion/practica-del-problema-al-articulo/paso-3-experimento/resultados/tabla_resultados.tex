@@ -1,0 +1,19 @@
+\begin{table}
+\caption{Resultados de la validación cruzada estratificada (10 pliegues × 3 repeticiones), media ± desviación típica. Clase positiva: canal que no cumple BER $\leq 10^{-11}$.}
+\label{tab:resultados}
+\begin{tabular}{llllll}
+\toprule
+Escenario & Modelo & AUC & Exactitud equilibrada & Sensibilidad (no cumple) & F1 (no cumple) \\
+\midrule
+A: planificación & Regresión logística & 0.983 ± 0.003 & 0.929 ± 0.009 & 0.939 ± 0.017 & 0.832 ± 0.014 \\
+A: planificación & Random Forest & 0.981 ± 0.003 & 0.921 ± 0.011 & 0.901 ± 0.023 & 0.847 ± 0.015 \\
+A: planificación & XGBoost & 0.982 ± 0.003 & 0.925 ± 0.010 & 0.914 ± 0.019 & 0.845 ± 0.014 \\
+B: monitorización & Regresión logística & 0.998 ± 0.001 & 0.977 ± 0.004 & 0.987 ± 0.007 & 0.931 ± 0.009 \\
+B: monitorización & Random Forest & 0.998 ± 0.001 & 0.976 ± 0.007 & 0.974 ± 0.012 & 0.947 ± 0.012 \\
+B: monitorización & XGBoost & 0.998 ± 0.001 & 0.973 ± 0.008 & 0.964 ± 0.014 & 0.947 ± 0.012 \\
+C: oráculo (con variables ocultas) & Regresión logística & 0.998 ± 0.001 & 0.980 ± 0.004 & 0.991 ± 0.006 & 0.940 ± 0.010 \\
+C: oráculo (con variables ocultas) & Random Forest & 0.998 ± 0.001 & 0.978 ± 0.006 & 0.976 ± 0.011 & 0.951 ± 0.011 \\
+C: oráculo (con variables ocultas) & XGBoost & 0.999 ± 0.001 & 0.978 ± 0.007 & 0.969 ± 0.012 & 0.958 ± 0.011 \\
+\bottomrule
+\end{tabular}
+\end{table}

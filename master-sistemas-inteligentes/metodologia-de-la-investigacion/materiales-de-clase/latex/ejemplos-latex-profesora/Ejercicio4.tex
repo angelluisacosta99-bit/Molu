@@ -1,0 +1,69 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[spanish]{babel} % Corta palabras en espa~nol
+\usepackage[utf8]{inputenc} % Escribir con acentos, ~n...
+\usepackage{eurosym} % smbolo del euro
+
+\usepackage{graphicx}
+\begin{document}
+%\secttion{Introducción}
+\leftline{\textbf{\huge{Ejemplos de Fórmulas Matemáticas y Figuras}}}
+
+\textbf{Veamos ahora las figuras:}
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=0.075]{tiger.pdf} \end{center}
+\caption{Tigre}
+\end{figure}
+
+\textbf{{Elementos flotantes}}
+ son tablas y figuras, que pueden estar flotantes en el documento. La posición se especifica:
+\begin{itemize}
+\item h aquí
+\item t Comienzo de una página de texto
+\item b Final de una página de texto
+\item p En una página sin texto
+\end{itemize}
+La forma usual es:
+\begin{figure}[b]
+\begin{center}
+\includegraphics[scale=0.075, angle=45]{tiger.pdf} \end{center}
+\caption{Flotante Tigre}
+\end{figure}
+
+
+%\medskip
+Este primer ejemplo trata de demostrar la facilidad de
+\LaTeX{} para hacer \textbf{ecuaciones}:
+\[
+x=\frac{a_2 x^2 + a_1 x + a_0}{1+2z^3}, \quad
+x+y^{2n+2}=\sqrt{b^2-4ac}
+\]
+
+
+
+
+\[
+\left[ \begin{array}{ccc}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \\
+a_{31} & a_{32} & a_{33}
+\end{array} \right]
+\left\{ \begin{array}{c}
+x_1 \\ x_2 \\ x_3
+\end{array} \right\} =
+\left( \begin{array}{c}
+b_1 \\ b_2 \\ b_3
+\end{array} \right)
+\]
+
+Para numerar ecuaciones y referenciarlas posteriormente, utilizar los
+ambientes:
+
+\begin{eqnarray}
+y &=& 1+x+x^2 +x^3 + \cdots \nonumber \\
+&=& 1+x\left(1+x+x^2+\cdots \right)
+\label{ecu1}
+\end{eqnarray}
+
+\end{document}
