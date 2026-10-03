@@ -195,7 +195,7 @@
   "193": "Ejercicios",
   "194": "Q: PR 90 re-review: verify 5 prior derangement/conjTable fixes on current HEAD",
   "195": "detect-url.mjs",
-  "196": "session-store.mjs",
+  "196": "readLiveServerInfo",
   "197": "Carta de candidatura espontánea — academias de español, Salamanca",
   "198": "Ejercicios",
   "199": "Asignaturas obligatorias (9)",
@@ -248,7 +248,7 @@
   "246": "criteria.md",
   "247": "prompt.md",
   "248": "caveman-cavecrew/hooks/restrict-cavecrew-reviewer-memory.sh",
-  "249": "materiales-de-clase/FUENTE.md",
+  "249": "Materiales de clase — Metodología de la Investigación (2026-2027)",
   "250": "2026-09-14 — PARA LA SESIÓN QUE RETOME ESTO (con los dominios ya autorizados)",
   "251": "isGeneratedFile",
   "252": "cli",
@@ -261,6 +261,7 @@
   "259": "Cómo quiere la profesora el LaTeX, y qué haremos en el Paso 5",
   "260": "Runs",
   "261": "Trabajo final de la asignatura (cierre: 30 de noviembre de 2026, 23:00)",
+  "262": "session-store.mjs",
   "265": "Paso 5 — Artículo en LaTeX (plantilla LNCS)",
   "266": "articulo/llncs.cls"
 }
