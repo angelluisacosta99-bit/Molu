@@ -10,6 +10,8 @@ del repositorio.
   herramientas de terceros) relevantes para el trabajo de este
   repositorio. Ver `herramientas-ia/novedades.md` y la sección
   `## Radar de herramientas de IA` en `CLAUDE.md`.
+- `hardware/` — guías de compra de hardware (por ejemplo,
+  `compra-tarjeta-grafica.md`: qué GPU comprar para IA y el máster).
 
 `notas-sueltas.md`, en la raíz de esta carpeta, es la única excepción
 deliberada a la regla de subcarpetas por tema (ver `CLAUDE.md`): un
