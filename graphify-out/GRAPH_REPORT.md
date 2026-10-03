@@ -1,17 +1,17 @@
 # Graph Report - Molu  (2026-10-03)
 
 ## Corpus Check
-- 318 files · ~1,421,427 words
+- 318 files · ~1,421,577 words
 - Verdict: corpus is large enough that graph structure adds value.
-- Unclassified: 112 file(s) not represented in the graph (top: .csv 32, .arff 22, .pptx 15)
+- Unclassified: 113 file(s) not represented in the graph (top: .csv 32, .arff 22, .pptx 15)
 
 ## Summary
-- 3594 nodes · 7056 edges · 264 communities (227 shown, 37 thin omitted)
+- 3595 nodes · 7057 edges · 265 communities (228 shown, 37 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 135 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `9fde04e6`
+- Built from commit: `beced088`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -212,7 +212,7 @@
 - Ejercicios
 - Q: PR 90 re-review: verify 5 prior derangement/conjTable fixes on current HEAD
 - detect-url.mjs
-- session-store.mjs
+- readLiveServerInfo
 - Carta de candidatura espontánea — academias de español, Salamanca
 - Ejercicios
 - Asignaturas obligatorias (9)
@@ -262,7 +262,7 @@
 - mark-permission-scan.sh
 - .claude/hooks/restrict-cavecrew-reviewer-memory.sh
 - caveman-cavecrew/hooks/restrict-cavecrew-reviewer-memory.sh
-- materiales-de-clase/FUENTE.md
+- Materiales de clase — Metodología de la Investigación (2026-2027)
 - 2026-09-14 — PARA LA SESIÓN QUE RETOME ESTO (con los dominios ya autorizados)
 - isGeneratedFile
 - cli
@@ -275,6 +275,7 @@
 - Cómo quiere la profesora el LaTeX, y qué haremos en el Paso 5
 - Runs
 - Trabajo final de la asignatura (cierre: 30 de noviembre de 2026, 23:00)
+- session-store.mjs
 - Paso 5 — Artículo en LaTeX (plantilla LNCS)
 
 ## God Nodes (most connected - your core abstractions)
@@ -304,7 +305,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (264 total, 37 thin omitted)
+## Communities (265 total, 37 thin omitted)
 
 ### Community 0 - "live-browser.js"
 Cohesion: 0.03
@@ -1006,9 +1007,9 @@ Nodes (4): Answer, Outcome, Q: PR 90 re-review: verify 5 prior derangement/conjT
 Cohesion: 0.27
 Nodes (15): detectUrl(), runVisualContrastFallback(), serializeDesignSystemForBrowser(), captureVisualContrastCandidate(), compareScreenshotContrast(), sanitizeScreenshotClip(), extractFindingIds(), percentile() (+7 more)
 
-### Community 196 - "session-store.mjs"
-Cohesion: 0.12
-Nodes (28): isLiveServerPidReachable(), readLiveServerInfo(), completeCli(), completeThroughServer(), parseArgs(), readServerInfo(), collectManualApplyFiles(), manualApplyReplyCommand() (+20 more)
+### Community 196 - "readLiveServerInfo"
+Cohesion: 0.18
+Nodes (19): isLiveServerPidReachable(), readLiveServerInfo(), completeCli(), completeThroughServer(), parseArgs(), readServerInfo(), collectManualApplyFiles(), manualApplyReplyCommand() (+11 more)
 
 ### Community 197 - "Carta de candidatura espontánea — academias de español, Salamanca"
 Cohesion: 0.40
@@ -1214,8 +1215,12 @@ Nodes (3): HTMLParser, Convierte texto con <b>, <i>, <sup>, <sub>, <br> en fragm
 Cohesion: 0.50
 Nodes (3): Enunciado (Studium, literal), Plan, Trabajo final de la asignatura (cierre: 30 de noviembre de 2026, 23:00)
 
+### Community 262 - "session-store.mjs"
+Cohesion: 0.26
+Nodes (9): applyEvent(), baseSnapshot(), COMPLETED_PHASES, getJournalPath(), getSnapshotPath(), rebuildSnapshotFromJournal(), safeSessionId(), toPendingEvent() (+1 more)
+
 ## Knowledge Gaps
-- **988 isolated node(s):** `Pautas de redacción para el artículo (materiales de clase)`, `Enunciado (Studium, literal)`, `Plan`, `HEADING_TAGS`, `LAYOUT_TRANSITION_PROPS` (+983 more)
+- **988 isolated node(s):** `Plantillas de póster (enviadas el 2026-10-03)`, `HEADING_TAGS`, `LAYOUT_TRANSITION_PROPS`, `POSITIONED_CHILD_INTERACTIVE_SELECTOR`, `QUALITY_TEXT_TAGS` (+983 more)
   These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1253 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **37 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -1223,12 +1228,12 @@ Nodes (3): Enunciado (Studium, literal), Plan, Trabajo final de la asignatura (c
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Novedades de herramientas de IA` connect `Novedades de herramientas de IA` to `2026-09-07 — Búsqueda a mano: herramientas para posts de blog en plataformas de clases`, `2026-09-19 — Pasada por el correo semanal "This week in Claude Code" (4 números, 21 ago-18 sep)`, `hook-before-edit.mjs`, `2026-09-13 — Búsqueda exhaustiva: herramientas de investigación científica verificada para el máster`, `2026-09-14 — PARA LA SESIÓN QUE RETOME ESTO (con los dominios ya autorizados)`, `2026-08-16 — Primera pasada del radar`?**
-  _High betweenness centrality (0.034) - this node is a cross-community bridge._
+  _High betweenness centrality (0.038) - this node is a cross-community bridge._
 - **Why does `2026-08-16 — Segunda pasada: hooks vs. CLAUDE.md, y prácticas de la comunidad` connect `hook-before-edit.mjs` to `Novedades de herramientas de IA`?**
-  _High betweenness centrality (0.033) - this node is a cross-community bridge._
+  _High betweenness centrality (0.037) - this node is a cross-community bridge._
 - **Why does `deny()` connect `hook-before-edit.mjs` to `readConfig`?**
-  _High betweenness centrality (0.022) - this node is a cross-community bridge._
-- **What connects `Pautas de redacción para el artículo (materiales de clase)`, `Enunciado (Studium, literal)`, `Plan` to the rest of the system?**
+  _High betweenness centrality (0.025) - this node is a cross-community bridge._
+- **What connects `Plantillas de póster (enviadas el 2026-10-03)`, `HEADING_TAGS`, `LAYOUT_TRANSITION_PROPS` to the rest of the system?**
   _988 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `live-browser.js` be split into smaller, more focused modules?**
   _Cohesion score 0.03319333423655331 - nodes in this community are weakly interconnected._
