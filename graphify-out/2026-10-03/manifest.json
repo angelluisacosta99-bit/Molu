@@ -2586,9 +2586,9 @@
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/README.md": {
-    "mtime": 1791027358.4472694,
-    "seen": 1791027362.6534295,
-    "ast_hash": "21aaa15b77e0c114daa0dd9f41091968",
+    "mtime": 1790961688.7413495,
+    "seen": 1790961693.3045082,
+    "ast_hash": "fd570f1c09fc43e0ea02e3d625f073fb",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-1-planteamiento/ficha-paso-1.html": {
@@ -3003,24 +3003,6 @@
     "mtime": 1790961688.7405667,
     "seen": 1790961693.304512,
     "ast_hash": "1f9f918c0d1200cb7cf7038e7f44c1c8",
-    "semantic_hash": ""
-  },
-  "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/trabajo-final/analisis_sensibilidad.py": {
-    "mtime": 1791027358.4272203,
-    "seen": 1791027362.6532052,
-    "ast_hash": "797990cd2a91d09015baa5f32ecec6a6",
-    "semantic_hash": ""
-  },
-  "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/trabajo-final/README.md": {
-    "mtime": 1791027358.429469,
-    "seen": 1791027362.653447,
-    "ast_hash": "7392701d82a60fa3f9679b114a1ccd6b",
-    "semantic_hash": ""
-  },
-  "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/trabajo-final/resultados/sensibilidad.txt": {
-    "mtime": 1791027338.2012763,
-    "seen": 1791027362.6534479,
-    "ast_hash": "4e5d55aebf6633ef4374315e611b771a",
     "semantic_hash": ""
   }
 }
