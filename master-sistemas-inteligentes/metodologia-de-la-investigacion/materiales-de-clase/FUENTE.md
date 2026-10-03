@@ -98,3 +98,22 @@ doctoral** de la USAL (2007, clase `book`), no se usa en el máster.
 No copiados (demasiado grandes o ya extraídos en la sesión):
 `Arquitectura_de_la_Investigacion_Cientifica.pdf` (26 MB, práctica por
 días) y `Tecnicas_Investigacion23_24.pdf` (10 MB, teoría).
+
+Revisados de nuevo el 2026-10-03 (Angel los volvió a enviar junto con
+`1cr-1r-2r.pdf` = `ejemplos/articulo-operadores-logicos-espejo.pdf`,
+`Presen_metodologico_ampliado26_27.pptx.pdf` =
+`presentacion-asignatura-2026-2027.pdf` y `llncs2e.zip` = `../practica-del-problema-al-articulo/plantilla-lncs/`,
+los tres idénticos a lo ya guardado):
+- **Arquitectura…** (21 diapositivas, «Bootcamp intensivo»): los
+  enunciados de los Pasos 1-5, ya copiados literalmente en
+  `../practica-del-problema-al-articulo/enunciados-studium.md`, más
+  diapositivas-imagen. Lo que añade: el Día 5 incluye «maquetación en
+  LaTeX **y póster científico**» (póster con plantilla LaTeX dedicada);
+  regla de oro del Día 2: «nunca escribas una referencia a mano,
+  automatiza el flujo» (Scopus/WoS → gestor → .bib); Día 3: el
+  experimento debe ser reproducible y refutable (pruebas estadísticas);
+  Día 4: «asigna un límite de palabras a cada bloque antes de redactar».
+- **Técnicas de Investigación** (82 diapositivas): teoría general del
+  método científico, marco teórico, hipótesis (diap. 67-69) y
+  comunicación; el informe debe indicar si la hipótesis se comprueba o
+  no (diap. 80). Ningún requisito de formato nuevo.
