@@ -1,0 +1,162 @@
+<!doctype html><html lang="es"><meta charset="utf-8"><title>Guía explicada del Paso 5</title>
+<style>
+@page{size:A4;margin:1.8cm 1.9cm}
+body{font-family:"DejaVu Serif",Georgia,serif;font-size:10.5pt;line-height:1.38;color:#111;margin:0}
+h1{font-size:18pt;margin:0 0 4pt;text-align:center}
+h2{font-size:13.5pt;margin:16pt 0 5pt;border-bottom:1.2pt solid #1f4e79;color:#1f4e79;break-after:avoid}
+h3{font-size:11pt;margin:10pt 0 3pt;color:#1f4e79;break-after:avoid}
+p,li{text-align:justify;margin:0 0 5pt} ul,ol{padding-left:1.3em;margin:0 0 5pt}
+.sub{text-align:center;font-size:10pt;color:#444;margin-bottom:10pt}
+.caja{border:1pt solid #9bb7d4;background:#eef4fa;padding:6pt 9pt;margin:6pt 0 8pt;break-inside:avoid}
+.aviso{border:1pt solid #d9a441;background:#fdf6e7;padding:6pt 9pt;margin:6pt 0 8pt;break-inside:avoid}
+.analogia{border-left:3pt solid #4a9a5b;padding:3pt 9pt;margin:5pt 0 7pt;background:#f1f8f2;break-inside:avoid}
+table{border-collapse:collapse;width:100%;font-size:9pt;margin:3pt 0 9pt;break-inside:avoid}
+th,td{border:.5pt solid #aaa;padding:2.5pt 4pt;vertical-align:top;text-align:left} th{background:#dde8f3}
+code{font-family:"DejaVu Sans Mono",monospace;font-size:8.8pt}
+pre{font-family:"DejaVu Sans Mono",monospace;font-size:8.3pt;background:#f5f5f5;border:.5pt solid #ccc;padding:5pt 7pt;margin:3pt 0 7pt;white-space:pre-wrap;break-inside:avoid}
+</style><body>
+<h1>Guía explicada del Paso 5<br>El artículo en LaTeX con la plantilla LNCS</h1>
+<div class="sub">Para Angel (no se entrega) · Qué hace cada parte de <code>main.tex</code> y cómo responder a la profesora</div>
+
+<div class="caja"><b>Cómo usar esta guía.</b> Abre <code>main.tex</code> en Overleaf a la izquierda y el PDF a la derecha. Recorre
+la guía sección por sección buscando cada comando en el código (Ctrl+F). Al final (sección 9) hay un plan para que lo
+reproduzcas tú partiendo de <code>typeinst.tex</code>.</div>
+
+<h2>1. Qué pide la profesora y dónde está en tu artículo</h2>
+<p>Enunciado del Paso 5 en Studium (cierre: viernes 9 de octubre, 23:00):</p>
+<table><tr><th>Lo que pide</th><th>Dónde está en <code>main.tex</code></th><th>Cuántos</th></tr>
+<tr><td>Overleaf + plantilla LNCS</td><td>Línea 1: <code>\documentclass[runningheads]{llncs}</code>, con <code>llncs.cls</code> de clase</td><td>—</td></tr>
+<tr><td>Secciones <code>\section{}</code>, <code>\subsection{}</code></td><td>Introducción, Métodos (2.1–2.3), Resultados, Conclusiones</td><td>4 + 3</td></tr>
+<tr><td>Ecuaciones numeradas <code>\begin{equation}</code></td><td>Sección 2.1, modelo físico</td><td>6</td></tr>
+<tr><td>Figuras <code>\includegraphics</code> y tablas</td><td>Figs. 1–3 (carpeta <code>figuras/</code>), Tablas 1–2</td><td>3 + 2</td></tr>
+<tr><td>Citas cruzadas <code>\label{}</code>, <code>\ref{}</code></td><td>Tablas, figuras, secciones y las 6 ecuaciones</td><td>15 + 14</td></tr>
+<tr><td>Bibliografía <code>\cite{}</code>, <code>\bibliography{}</code></td><td>Todo el texto; al final <code>\bibliography{referencias}</code></td><td>22 citas</td></tr>
+</table>
+
+<h2>2. Cómo funciona LaTeX (la idea clave)</h2>
+<div class="analogia"><b>Analogía.</b> En Word escribes y a la vez decides el aspecto (lo que ves es lo que obtienes). En LaTeX
+escribes el <i>contenido</i> con etiquetas que dicen <i>qué es</i> cada cosa («esto es un título», «esto es una ecuación») y la
+plantilla decide <i>cómo se ve</i>. Es como una receta: tú das los ingredientes y la plantilla LNCS cocina siempre igual para
+todos los autores del congreso.</div>
+<p>Un archivo <code>.tex</code> tiene dos partes: el <b>preámbulo</b> (todo lo que va antes de <code>\begin{document}</code>:
+clase y paquetes) y el <b>cuerpo</b> (entre <code>\begin{document}</code> y <code>\end{document}</code>: el texto). Al pulsar
+<i>Recompile</i>, Overleaf ejecuta pdfLaTeX y BibTeX las veces necesarias para resolver números de figuras, citas y
+bibliografía (la profesora lo enseña como «LaTeX ×3 → BibTeX → LaTeX»; Overleaf lo hace solo).</p>
+
+<h2>3. El preámbulo, línea a línea</h2>
+<table><tr><th>Línea</th><th>Para qué sirve</th></tr>
+<tr><td><code>\documentclass[runningheads]{llncs}</code></td><td>Usa la plantilla LNCS de Springer; <code>runningheads</code> activa los encabezados (nombre en páginas pares, título corto en impares).</td></tr>
+<tr><td><code>\usepackage[T1]{fontenc}</code></td><td>Fuentes con letras acentuadas reales (corta bien las palabras con tilde al final de línea).</td></tr>
+<tr><td><code>\usepackage[spanish,es-tabla]{babel}</code></td><td>Español: guiones, «Referencias»… <code>es-tabla</code> hace que diga «Tabla» y no «Cuadro».</td></tr>
+<tr><td><code>\usepackage{amsmath,amssymb}</code></td><td>Matemáticas: fracciones, raíces, símbolos (≤, ≥).</td></tr>
+<tr><td><code>\usepackage{graphicx}</code></td><td>Permite <code>\includegraphics</code> (insertar las figuras PDF).</td></tr>
+<tr><td><code>\usepackage{booktabs}</code></td><td>Líneas de tabla profesionales: <code>\toprule</code>, <code>\midrule</code>, <code>\bottomrule</code>.</td></tr>
+<tr><td><code>\usepackage{array}</code></td><td>Columnas de texto alineadas a la izquierda en la Tabla 1.</td></tr>
+<tr><td><code>\usepackage{flafter}</code></td><td><b>Ninguna figura o tabla aparece antes del párrafo que la cita</b> (tu regla de la profesora).</td></tr>
+<tr><td><code>\renewcommand{\topfraction}{0.9}</code> y siguientes</td><td>Dejan que figuras y tablas ocupen más parte de una página, para que no queden huecos en blanco.</td></tr>
+<tr><td><code>\addto\captionsspanish{…}</code>, <code>\keywords</code></td><td>Ponen en español «Resumen.», «Fig.» y «Palabras clave:» (la plantilla los trae en inglés).</td></tr>
+<tr><td><code>\DeclareUnicodeCharacter{…}</code></td><td>Permiten escribir tal cual en el texto símbolos como −, ≤, ≥, ≈, ✓, χ, σ, α.</td></tr>
+</table>
+
+<h2>4. Título, autor, resumen y palabras clave</h2>
+<pre>\begin{document}
+\mainmatter            ← como en typeinst.tex: empieza una contribución
+\title{Estimación de la calidad de transmisión ...}
+\titlerunning{QoT con aprendizaje automático en una red DWDM ferroviaria}
+\author{Angel L. Acosta-González}
+\authorrunning{Angel L. Acosta-González}
+\institute{Máster Universitario en Sistemas Inteligentes, Universidad de Salamanca\\
+Plaza de los Caídos s/n, 37008 Salamanca, España\\ \email{idu092699@usal.es}}
+\maketitle
+\begin{abstract} ... \keywords{...} \end{abstract}</pre>
+<p><code>\titlerunning</code> y <code>\authorrunning</code> son las versiones cortas de los encabezados. <code>\maketitle</code>
+«imprime» el bloque de título. La firma «Angel L. Acosta-González» sigue la recomendación de la FECYT (apellidos con guion)
+para que Scopus o Web of Science te indexen como «Acosta-González, A.L.».</p>
+<p><b>Resumen: entre 100 y 150 palabras.</b> El Paso 4 pedía 100–200 y la plantilla (<code>typeinst.tex</code>) 70–150; el del artículo tiene unas 145, así cumple las dos.</p>
+
+<h2>5. Secciones y referencias a secciones</h2>
+<pre>\section{Métodos}\label{sec:2}
+\subsection{Modelo físico de transmisión}
+... La sección~\ref{sec:2} describe los métodos ...</pre>
+<p>LNCS numera solo (1, 2, 2.1…). <code>\label{sec:2}</code> pone una «etiqueta» invisible y <code>\ref{sec:2}</code> escribe su
+número. El <code>~</code> es un espacio que no se puede cortar: evita que «sección» quede al final de una línea y el «2» al
+principio de la siguiente.</p>
+
+<h2>6. Ecuaciones numeradas</h2>
+<pre>\begin{equation}
+Q_{\mathrm{ASE}} = \sqrt{\frac{B_o}{B_e}}\,\frac{2\,\mathrm{OSNR}}{1 + \sqrt{1 + 4\,\mathrm{OSNR}}} ,
+\label{eq:4}
+\end{equation}
+... se combina con el Q_ASE de la ec.~(\ref{eq:4}) ...</pre>
+<table><tr><th>Código</th><th>Qué significa</th></tr>
+<tr><td><code>Q_{\mathrm{ASE}}</code></td><td>Subíndice (<code>_</code>); <code>\mathrm</code> lo pone en letra recta porque es un nombre, no una variable.</td></tr>
+<tr><td><code>10^{(P+25)/10}</code></td><td>Superíndice (<code>^</code>); las llaves agrupan todo lo que sube.</td></tr>
+<tr><td><code>\frac{a}{b}</code>, <code>\sqrt{x}</code></td><td>Fracción y raíz cuadrada.</td></tr>
+<tr><td><code>\left\lceil d/4 \right\rceil</code></td><td>Redondeo hacia arriba ⌈d/4⌉ (número de empalmes).</td></tr>
+<tr><td><code>0{,}1</code></td><td>Coma decimal sin espacio extra (en modo matemático la coma se trata como separador).</td></tr>
+<tr><td><code>\quad [\mathrm{dB}]</code></td><td>Un espacio y la unidad.</td></tr>
+<tr><td><code> ,</code> / <code> .</code> al final</td><td>Las ecuaciones forman parte de la frase y se puntúan como el texto (lo pide <code>typeinst.tex</code>): coma si la frase sigue («…, donde…»), punto si termina.</td></tr>
+</table>
+<p>Las seis ecuaciones se citan en el texto con <code>\ref</code>: ec. (1) en la regla de diseño, (2)–(5) en la discusión de la
+circularidad, (3) y (4) en las definiciones y (6) en el umbral. Si añades una ecuación nueva antes, todas se renumeran solas.</p>
+
+<h2>7. Figuras y tablas</h2>
+<pre>La Fig.~\ref{fig:q} muestra el factor Q ...      ← primero se cita
+\begin{figure}[htbp]                             ← después el entorno
+\centering
+\includegraphics[width=0.7\textwidth]{figuras/fig1_q_vs_longitud}
+\caption{Factor Q de cada canal según su longitud ...}
+\label{fig:q}                                    ← siempre DESPUÉS de \caption
+\end{figure}</pre>
+<ul>
+<li><b><code>[htbp]</code></b>: deja que LaTeX la coloque aquí (h), arriba (t), abajo (b) o en página propia (p). Es lo que
+enseña la profesora y lo que pide Springer («define figures as floating objects»). Con <code>flafter</code> nunca sale antes
+de la cita.</li>
+<li><b><code>width=0.7\textwidth</code></b>: la figura mide el 70 % del ancho del texto. Las figuras son PDF vectoriales: se
+ven nítidas a cualquier tamaño.</li>
+<li><b><code>\label</code> después de <code>\caption</code></b>: si va antes, <code>\ref</code> da un número equivocado.</li>
+</ul>
+<p>Las tablas son iguales pero con <code>\begin{table}</code> y, dentro, <code>tabular</code>:</p>
+<pre>\begin{tabular}{llcccc}      ← una letra por columna: l izquierda, c centro
+\toprule
+Escenario &amp; Modelo &amp; AUC &amp; ... \\   ← &amp; separa columnas, \\ termina la fila
+\midrule
+A &amp; Regresión logística &amp; 0,983 $\pm$ 0,003 &amp; ... \\
+\bottomrule
+\end{tabular}</pre>
+<p>En las tablas el pie va <b>encima</b> (norma de LNCS) y en las figuras <b>debajo</b>.</p>
+
+<h2>8. Citas y bibliografía automática (BibTeX)</h2>
+<pre>... Pointurier~\cite{pointurier2021} revisa sus técnicas ...
+\bibliographystyle{splncs}     ← estilo numérico [1] de LNCS
+\bibliography{referencias}     ← lee referencias.bib</pre>
+<p>Cada obra de <code>referencias.bib</code> tiene una <b>clave</b> (<code>pointurier2021</code>). Con <code>\cite{clave}</code>
+LaTeX escribe el número [2] y añade la obra al final. <b>Solo aparecen en «Referencias» las obras citadas</b>, numeradas por
+orden de primera cita. El <code>.bib</code> del artículo es el del Paso 2 con los campos limpios: revistas abreviadas
+(«J. Opt. Commun. Netw.» y no «JOURNAL OF OPTICAL…»), siglas entre llaves (<code>{DWDM}</code>, para que BibTeX no las
+ponga en minúscula) y guiones de rango <code>--</code> en las páginas.</p>
+<div class="aviso"><b>Si sale <code>[?]</code> o <code>??</code></b> en Overleaf: falta un archivo (por ejemplo, la carpeta
+<code>figuras/</code> o <code>referencias.bib</code>), una clave está mal escrita o falta recompilar. Haz clic en el número
+rojo junto a <i>Recompile</i> para ver el mensaje.</div>
+
+<h2>9. Posibles preguntas de la profesora</h2>
+<p><b>¿Por qué <code>[htbp]</code> y no <code>[H]</code>?</b> Porque la plantilla de Springer pide flotantes y es lo que ella
+enseña; <code>flafter</code> asegura que cada figura sale después de su cita.</p>
+<p><b>¿Por qué UTF-8 y no <code>\usepackage[latin1]{inputenc}</code> como en las diapositivas?</b> Desde 2018 LaTeX lee UTF-8
+por defecto y Overleaf guarda en UTF-8; <code>latin1</code> estropearía las tildes (ver <code>pautas-latex-profesora.md</code>).</p>
+<p><b>¿Por qué figuras PDF y no EPS?</b> pdfLaTeX (el de Overleaf) admite PDF directamente; EPS solo hacía falta con la
+antigua ruta DVI → PostScript.</p>
+<p><b>¿Cómo se generó la bibliografía?</b> Exportando de Web of Science a BibTeX (Paso 2) y citando con <code>\cite</code>.</p>
+<p><b>¿Qué hace <code>~</code>?</b> Un espacio que impide cortar la línea: «Tabla~\ref{…}», «Pointurier~\cite{…}».</p>
+
+<h2>10. Plan para que lo reproduzcas tú</h2>
+<ol>
+<li>En Overleaf, crea un proyecto en blanco y sube <code>llncs.cls</code>, <code>splncs.bst</code>, <code>referencias.bib</code>
+y la carpeta <code>figuras/</code>.</li>
+<li>Copia el preámbulo de <code>typeinst.tex</code> (el ejemplo de la profesora) y añade los paquetes de la sección 3.</li>
+<li>Escribe título, autor y resumen; compila. Después una sección cada vez, compilando tras cada una.</li>
+<li>Añade una ecuación con <code>equation</code> y <code>\label</code>, cítala con <code>\ref</code> y comprueba el número.</li>
+<li>Añade la Fig. 1 y la Tabla 2 citándolas antes; luego las citas <code>\cite</code> y la bibliografía.</li>
+<li>Compara tu PDF con el modelo y apunta qué te faltó. Pásame tu <code>.tex</code> y te lo reviso línea a línea.</li>
+</ol>
+</body></html>

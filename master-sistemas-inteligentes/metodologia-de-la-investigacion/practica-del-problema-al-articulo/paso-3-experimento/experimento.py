@@ -31,7 +31,11 @@ for carpeta in ("datos", "resultados", "figuras"):
 SEMILLA = 42
 AZUL, NARANJA, VERDE = "#2a78d6", "#eb6834", "#1baf7a"   # paleta distinguible con daltonismo
 TINTA, GRIS = "#1f1f1e", "#8a8a85"
-plt.rcParams.update({"font.family": "serif", "font.size": 9, "axes.edgecolor": GRIS,
+def coma(decimales):  # decimales con coma, como el texto del artículo
+    return matplotlib.ticker.FuncFormatter(lambda v, _: f"{v:.{decimales}f}".replace(".", ","))
+
+
+plt.rcParams.update({"pdf.fonttype": 42, "font.family": "serif", "font.size": 9, "axes.edgecolor": GRIS,
                      "axes.labelcolor": TINTA, "xtick.color": TINTA, "ytick.color": TINTA,
                      "axes.spines.top": False, "axes.spines.right": False})
 
@@ -113,10 +117,9 @@ fig, ax = plt.subplots(figsize=(3.4, 2.5))
 for clase, color, marca, etiqueta in [(1, AZUL, "o", "Cumple"), (0, NARANJA, "^", "No cumple")]:
     s = df[df.cumple == clase].sample(1500, random_state=SEMILLA, replace=False) if (df.cumple == clase).sum() > 1500 else df[df.cumple == clase]
     ax.scatter(s.longitud_km, s.q, s=6, marker=marca, color=color, alpha=0.55, linewidths=0, label=etiqueta)
-ax.axhline(sim.Q_UMBRAL, color=TINTA, lw=1, ls="--")
-ax.text(2, sim.Q_UMBRAL * 0.62, "umbral Q = 6,71 (BER = 10$^{-11}$)", ha="left", va="top", fontsize=7, color=TINTA,
-        bbox={"facecolor": "white", "edgecolor": "none", "pad": 1})
-ax.set_yscale("log"); ax.set_xlabel("Longitud del canal (km)"); ax.set_ylabel("Factor Q")
+ax.axhline(sim.Q_UMBRAL, color=TINTA, lw=1, ls="--", label="Umbral Q = 6,71\n(BER = 10$^{-11}$)")
+ax.set_yscale("log"); ax.set_ylim(0.1, 4000)  # margen arriba para que la leyenda no tape puntos
+ax.set_xlabel("Longitud del canal (km)"); ax.set_ylabel("Factor Q")
 ax.legend(frameon=False, fontsize=7, loc="upper right", markerscale=2)
 fig.tight_layout()
 for ext in ("png", "pdf"):
@@ -135,6 +138,7 @@ for k, (nombre, color, marca) in enumerate([("Regresión logística", NARANJA, "
                 capsize=2, lw=1, label=nombre)
 ax.set_xticks(range(3)); ax.set_xticklabels(etiquetas, fontsize=7)
 ax.set_xlabel("Escenario"); ax.set_ylabel("F1 (clase «no cumple»)"); ax.set_ylim(0.78, 1.0)
+ax.yaxis.set_major_formatter(coma(2))
 ax.grid(axis="y", color="#e6e6e3", lw=0.6); ax.set_axisbelow(True)
 ax.legend(frameon=False, fontsize=7, loc="lower right")
 fig.tight_layout()
@@ -152,7 +156,7 @@ orden = np.argsort(imp.importances_mean)
 fig, ax = plt.subplots(figsize=(3.6, 2.4))
 ax.barh([nombres[sim.VARIABLES_MONITORIZACION[i]] for i in orden], imp.importances_mean[orden],
         xerr=imp.importances_std[orden], color=AZUL, height=0.6, error_kw={"ecolor": GRIS, "lw": 1})
-ax.set_xlabel("Caída de AUC al permutar")
+ax.set_xlabel("Caída de AUC al permutar"); ax.xaxis.set_major_formatter(coma(1))
 fig.tight_layout()
 for ext in ("png", "pdf"):
     fig.savefig(AQUI / "figuras" / f"fig3_importancia.{ext}", dpi=300,

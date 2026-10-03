@@ -14,7 +14,8 @@ del trabajo de fin de grado de Angel (RUT MIIT, 2026).
 | 2 | Búsqueda bibliográfica, `referencias.bib` (8-10 artículos) | `paso-2-bibliografia/` |
 | 3 | Diseño experimental: dataset, ≥1 tabla, ≥1 figura | `paso-3-experimento/` |
 | 4 | Redacción inversa ("método de la Casa") | `paso-4-redaccion/` |
-| 5 | Maquetación en Overleaf con plantilla LNCS + póster | `paso-5-latex/` (artículo hecho; póster pendiente; pautas: `pautas-latex-profesora.md`) |
+| 5 | Maquetación en Overleaf con plantilla LNCS + póster | `paso-5-latex/` — **entregado el 2026-10-03** (pautas: `pautas-latex-profesora.md`) |
+| Final | Artículo LNCS mejorado + póster (30-11-2026) | `trabajo-final/` |
 
 La ficha se edita en `ficha-paso-1.html` y se regenera el PDF con Chromium:
 
@@ -26,6 +27,8 @@ Referencias de la ficha verificadas con Scite y Crossref (2026-09-28).
 **Guía explicada** de todo lo hecho en los Pasos 1-3 (herramientas, fórmulas,
 origen de cada dato, preguntas de la profesora): `guia-explicada/guia-pasos-1-3.pdf`
 (se regenera desde el `.html` con Chromium, igual que la ficha).
+
+**Enunciados literales de Studium** (Pasos 1-5): `enunciados-studium.md`.
 
 ## Pautas de redacción para el artículo (materiales de clase)
 

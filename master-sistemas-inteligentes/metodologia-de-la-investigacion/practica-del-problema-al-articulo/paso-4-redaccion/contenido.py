@@ -22,9 +22,9 @@ RESUMEN = (
 )
 
 REFS = [
-    "Acosta González, A.L.: Organización de la red primaria de comunicaciones en el tramo ferroviario "
+    "Acosta-González, A.L.: Organización de la red primaria de comunicaciones en el tramo ferroviario "
     "Moscú-Kazánskaya – Riazán. Trabajo de fin de grado (no publicado, en ruso), Universidad Rusa de Transporte "
-    "(RUT MIIT), Moscú (2026)",
+    "(RUT MIIT), Moscú (2026). Título traducido del ruso",
     "Pointurier, Y.: Machine learning techniques for quality of transmission estimation in optical networks. "
     "J. Opt. Commun. Netw. <b>13</b>(4), B60–B71 (2021)",
     "Samadi, P., Amar, D., Lepers, C., Lourdiane, M., Bergman, K.: Quality of transmission prediction with "
@@ -77,7 +77,7 @@ TABLA_RESULTADOS = [
 BLOQUES = [
     ("titulo", "Estimación de la calidad de transmisión con aprendizaje automático en la red DWDM ferroviaria "
                "Moscú-Kazánskaya – Riazán"),
-    ("autor", "Angel Luis Acosta González<br>Máster Universitario en Sistemas Inteligentes, Universidad de Salamanca"),
+    ("autor", "Angel L. Acosta-González<br>Máster Universitario en Sistemas Inteligentes, Universidad de Salamanca"),
     ("resumen", RESUMEN),
     ("claves", "redes ópticas DWDM · calidad de transmisión · aprendizaje automático · Random Forest · "
                "comunicaciones ferroviarias"),
@@ -136,7 +136,7 @@ BLOQUES = [
           "y 5 dB de los multiplexores de inserción-extracción (OADM), aplicados por igual a todos los canales:"),
     ("eq", "L<sub>nom</sub> = α·d + 0,1·⌈d/4⌉ + 1 + 5  [dB]", 1),
     ("p", "Con un láser de 0 dBm y una sensibilidad del receptor de −25 dBm, el canal se diseña con "
-          "preamplificador de fibra dopada con erbio (EDFA) cuando el margen nominal es inferior a 3 dB, lo que "
+          "preamplificador de fibra dopada con erbio (EDFA) cuando el margen nominal (potencia del láser menos la pérdida de la ec. (1) y la sensibilidad) es inferior a 3 dB, lo que "
           "ocurre en los canales de más de 65 km; los canales amplificados llevan un EDFA cada 110 km como máximo "
           "(<i>n</i> vanos iguales), y <i>P</i><sub>rx</sub> = <i>P</i><sub>tx</sub> − <i>L</i>/<i>n</i> es la "
           "potencia a la entrada de cada amplificador o del receptor. En los canales sin amplificar, limitados por el ruido térmico del receptor, el factor Q crece de forma lineal con la "
@@ -146,15 +146,15 @@ BLOQUES = [
           "óptica en 0,1 nm y el factor Q con detección directa se obtienen como:"),
     ("eq", "OSNR = 58 + P<sub>rx</sub> − NF − 10·log<sub>10</sub> n  [dB]", 3),
     ("eq", "Q<sub>ASE</sub> = √(B<sub>o</sub>/B<sub>e</sub>) · 2·OSNR / (1 + √(1 + 4·OSNR))", 4),
-    ("p", "donde NF es la figura de ruido del EDFA (6–7 dB más su envejecimiento), B<sub>o</sub> = 12,5 GHz y "
+    ("p", "donde la OSNR de la ec. (3) se toma en unidades lineales, NF es la figura de ruido del EDFA (6–7 dB más su envejecimiento), B<sub>o</sub> = 12,5 GHz y "
           "B<sub>e</sub> = 7,5 GHz. El ruido térmico del receptor preamplificado, con la señal unas diez veces por "
-          "encima de la sensibilidad, se combina con el anterior:"),
+          "encima de la sensibilidad, se combina con el Q<sub>ASE</sub> de la ec. (4):"),
     ("eq", "Q<sub>amp</sub> = (Q<sub>ASE</sub><sup>−2</sup> + (10·7,03)<sup>−2</sup>)<sup>−1/2</sup>", 5),
     ("p", "Se resta además una penalización por dispersión cromática de 2·(D/1600)<sup>2</sup> dB, con D la "
           "dispersión acumulada en ps/nm (17 ps/(nm·km) en los canales sin compensar y una residual de ±250 ps/nm "
           "en los amplificados). La tasa de error es:"),
     ("eq", "BER = ½ · erfc(Q / √2)", 6),
-    ("p", "y un canal cumple si Q ≥ 6,71, que equivale a BER ≤ 10<sup>−11</sup>, el umbral del diseño de "
+    ("p", "y un canal cumple si Q ≥ 6,71, que equivale, según la ec. (6), a BER ≤ 10<sup>−11</sup>, el umbral del diseño de "
           "partida [1]. Como comprobación, el tramo Voskresensk – Riazán-1 (108,9 km), sin degradación y con "
           "NF = 6,5 dB, obtiene Q ≈ 10,4 con preamplificador. El valor difiere del Q = 7,37 de [1] porque el modelo "
           "físico es distinto (preamplificador EDFA limitado por ruido ASE); todas las cifras de este artículo "
