@@ -117,3 +117,27 @@ los tres idénticos a lo ya guardado):
   método científico, marco teórico, hipótesis (diap. 67-69) y
   comunicación; el informe debe indicar si la hipótesis se comprueba o
   no (diap. 80). Ningún requisito de formato nuevo.
+
+## Plantillas de póster (enviadas el 2026-10-03)
+
+`poster/plantillas-poster-clase.rar` — `Posters.rar`, las «5 plantillas
+suministradas» del trabajo final (contiene `poster1.rar` … `poster5.rar`).
+Revisadas:
+
+1. **CIT** (`04/CITposter.tex`, `scrartcl`, Caltech, sgeier.net): cajas
+   simples, fondo verde-azulado, 30×31 cm. Ejemplo «Big posters directly in LaTeX».
+2. **IRF** (`07/irfPosterExample.tex`, `a0poster` apaisado, Swedish Institute
+   of Space Physics): cabecera azul con logo, fondo azul oscuro, cajas
+   blancas; con `references.bib`. La más vistosa de las cinco.
+3. **EHU** (`ehu/poster-florence.tex`, `a0poster` vertical): sobria, cajas
+   azules, mucha fórmula.
+4. **Granada** (`granada/poster.tex`, `article` 42×30 cm): escudo de la UGR,
+   cajas de color crema; aspecto académico clásico.
+5. **RUM** (`rum/Template_Posters_RUM/Cesar_poster.tex`, `a0poster`, Univ. de
+   Puerto Rico Mayagüez): título rojo, 3 columnas, logos; el `RUM_ESPANOL/`
+   adjunto es una plantilla de **tesis**, no de póster.
+
+Las cinco son de los años 2000 (`a0poster`/`scrartcl`, compilación DVI → PS,
+figuras EPS). Además: `poster-correlated-events-cordon.pdf` y
+`poster-prospectos-caballero.pdf` (ejemplos de alumnos) y la guía de
+Guardiola, ya en `ejemplos/` y `poster/`.
