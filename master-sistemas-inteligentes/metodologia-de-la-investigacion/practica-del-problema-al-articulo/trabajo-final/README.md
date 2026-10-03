@@ -36,4 +36,14 @@ robustez (`analisis_sensibilidad.py` → `resultados/sensibilidad.txt`):
 2. **Umbral de decisión** (barrido 0,1-0,9 y punto de operación con la misma
    sensibilidad que la logística, elegido en el entrenamiento).
 
-Pendiente: integrar ambos en el artículo y hacer el póster.
+Artículo del trabajo final: `articulo/` (copia del Paso 5 en la que
+`main.tex` ya es el original y se edita a mano, sin `generar_tex.py`).
+Añade a la versión del Paso 5: un párrafo de métodos de robustez, la
+Tabla 3 (ruido de medida), la Fig. 4 (`figuras/fig4_umbral`, compromiso
+no detectados / falsas alarmas al mover el umbral), y los cambios
+correspondientes en resumen, aportaciones, discusión y conclusiones.
+Resultado clave: a igual sensibilidad los tres modelos se igualan
+(RF 4/91, XGB 3/117, RL 3/88 FN/FP en la prueba).
+
+Pendiente: póster (plantilla moderna adaptada a la imagen de la USAL y
+del Departamento de Informática y Automática).

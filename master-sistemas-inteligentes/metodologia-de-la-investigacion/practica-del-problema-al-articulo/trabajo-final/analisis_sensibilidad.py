@@ -92,3 +92,31 @@ for k in prob:
 (AQUI / "resultados").mkdir(exist_ok=True)
 (AQUI / "resultados" / "sensibilidad.txt").write_text("\n".join(lineas) + "\n", encoding="utf-8")
 print("\n".join(lineas))
+
+# Fig. 4: canales no detectados frente a falsas alarmas al mover el umbral (prueba, σ = 0,5 dB)
+import matplotlib
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt  # noqa: E402
+
+AZUL, NARANJA, VERDE = "#2a78d6", "#eb6834", "#1baf7a"   # mismos colores que las Figs. 1-3
+TINTA, GRIS = "#1f1f1e", "#8a8a85"
+plt.rcParams.update({"pdf.fonttype": 42, "font.family": "serif", "font.size": 9, "axes.edgecolor": GRIS,
+                     "axes.labelcolor": TINTA, "xtick.color": TINTA, "ytick.color": TINTA,
+                     "axes.spines.top": False, "axes.spines.right": False})
+fig, ax = plt.subplots(figsize=(3.4, 2.6))
+umbrales = np.round(np.arange(0.02, 0.981, 0.02), 2)
+for (k, color, marca) in [("Regresión logística", NARANJA, "s"), ("Random Forest", AZUL, "o"), ("XGBoost", VERDE, "^")]:
+    pts = np.array([errores(prob[k], yte, u) for u in umbrales])
+    ax.plot(pts[:, 1], pts[:, 0], color=color, lw=1.2, label=k)
+    fn, fp = errores(prob[k], yte, 0.5)
+    ax.plot(fp, fn, marca, color=color, ms=6, mec="white", mew=0.8)
+ax.set_xlabel("Falsas alarmas (de 2388 canales que cumplen)")
+ax.set_ylabel("No detectados (de 612)")
+ax.set_xlim(0, 200); ax.set_ylim(0, 40)
+ax.grid(color="#e6e6e3", lw=0.6); ax.set_axisbelow(True)
+ax.legend(frameon=False, fontsize=7, loc="upper right", title="marcador: umbral 0,5", title_fontsize=6.5)
+fig.tight_layout()
+(AQUI / "figuras").mkdir(exist_ok=True)
+for ext in ("png", "pdf"):
+    fig.savefig(AQUI / "figuras" / f"fig4_umbral.{ext}", dpi=300, metadata={"CreationDate": None} if ext == "pdf" else None)
+plt.close(fig)
