@@ -23,6 +23,43 @@ copias que puedan desincronizarse.
 
 ---
 
+## 2026-10-04 — Pendiente (decisión aplazada): `ponytail` sin versión fijada
+
+Surgió al revisar un reel sobre skills "infectadas" (riesgo de cadena
+de suministro). Angel pidió **solo dejarlo anotado**, para decidirlo más
+adelante — no se ha cambiado nada.
+
+**Problema:** `.claude/hooks/session-start.sh` (bloque `ponytail`, hacia
+las líneas 237-259) registra `DietrichGebert/ponytail` y ejecuta
+`claude plugin marketplace update ponytail` en cada sesión, sin fijar
+commit. Sus hooks son scripts de Node que corren en todas las sesiones,
+con las variables de entorno (incluido el `GITHUB_TOKEN` que usa
+`check-pr-review.sh`). Un cambio malicioso del autor o de quien tomara
+el repo llegaría sin revisión.
+
+**Lo comprobado el 2026-10-04:** versión en uso 4.10.3, commit
+`c982cd4` del repo de terceros; los hooks de esa versión no hacen
+llamadas de red (grep de `curl`/`wget`/`npm`/`git`/`eval`/URLs). **No**
+se leyeron los scripts línea a línea.
+
+**Opciones valoradas:**
+- **A (recomendada): fijar `sha`.** Las fuentes `github` admiten `ref`
+  y `sha` (documentación oficial de marketplaces). Tocaría
+  `.claude/settings.json` y quitar/ajustar el `marketplace update` de
+  `session-start.sh`. Contras: hay que subir la versión a mano; no está
+  verificado que `marketplace update` respete el `sha` (probar en
+  sesión nueva); si el autor reescribe el historial, ponytail dejaría
+  de instalarse. Antes de fijar, leer los scripts de `hooks/`.
+- **B: copiarlo a `plugins/` como `caveman`.** Más control, pero trae
+  ficheros de otros editores y la actualización es manual.
+- **C: quitarlo.** Sin exposición, pero se pierde el modo que Angel
+  pidió activo en cada sesión.
+
+Si se retoma: seguir la skill `hook-hardening` al tocar el hook y
+abrir PR en borrador; no fusionar sin que Angel lo pida.
+
+---
+
 ## 2026-09-19 — Pasada por el correo semanal "This week in Claude Code" (4 números, 21 ago-18 sep)
 
 Angel preguntó de qué tratan los correos de Lydia (Claude Code team,
