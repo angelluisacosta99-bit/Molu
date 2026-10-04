@@ -2028,7 +2028,7 @@
             li.appendChild(nameSpan);
           } else {
             const nameSpan = document.createElement("span");
-            nameSpan.textContent = ex.hideLabels ? "Palabra " + (wi + 1) : w.label;
+            nameSpan.textContent = (ex.hideLabels && !w.solved) ? "Palabra " + (wi + 1) : w.label;
             li.appendChild(nameSpan);
             li._nameSpan = nameSpan;
           }
