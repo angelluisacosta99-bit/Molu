@@ -23,6 +23,56 @@ copias que puedan desincronizarse.
 
 ---
 
+## 2026-10-04 — Revisión: herramientas "watermark remover" (no instalar)
+
+Angel pidió revisar a fondo tres repos de GitHub que quitan marcas de IA.
+**Decisión: no se instala ninguno.** No hay tarjeta de instalación.
+
+**Contexto verificado (página oficial de Anthropic, 14-ago-2026):** la
+marca de texto de Claude es estadística (variante de SynthID-Text), sin
+caracteres ocultos ni información identificativa. Solo una reescritura
+que cambie todas las palabras la elimina. Los archivos llevan una
+credencial C2PA en los metadatos, que es otra cosa.
+
+| Repo | Veredicto |
+|---|---|
+| `Rjgyana/MarkClean-ClaudeWatermarkRemover` | Descartado: su capa A quita "caracteres invisibles" que Anthropic dice que no existen; 9 commits, 11 estrellas; instalación pidiéndole a Claude Code que clone y ejecute todo; licencia no abierta pese a la etiqueta "open-source". |
+| `guillaumemeyer/watermarks-remover` | El más serio, pero no necesario (ver abajo). |
+| `wiltodelta/remove-ai-watermarks` | Para imágenes y vídeo (SynthID de Gemini, C2PA), no texto; `metadata` sobrescribe el original sin `-o`; servicio de pago asociado (raiw.cc). |
+
+**`watermarks-remover` (revisión completa, clon superficial del commit
+`1181fd4`):** sin `shell=True`, `eval`, `exec` ni `pickle`; caracteres
+ocultos solo en comentarios y datos de prueba; commits de terceros
+fijados y verificados, imagen base por resumen, `c2patool` con SHA-256,
+dependencias con `==`, acciones de CI por SHA; protección SSRF; toda su
+suite de pruebas pasa en un entorno aislado. Problemas:
+- La reescritura (capa B) no está probada contra la marca real: su
+  benchmark usa una reimplementación de MarkLLM con otra clave.
+- `remove-ai-marks` se presenta como "anti-detección" y, ante fraude
+  académico, avisa y aun así limpia; `clean-user-facing-text` es más
+  prudente y no usa red.
+- El módulo `stealer` incluye el modo "promover" (`delta < 0`,
+  "spoofing" en el código): sirve para falsificar marcas.
+- Servicio sin clave por defecto, clave comparada con `==`, sin
+  comprobación de `Origin`/`Host`; `--in-place` deja un `.bak` con el
+  original; extras con licencias dudosas; guía de Windows con tarea
+  programada al iniciar sesión.
+- El hook `PostToolUse` está bien hecho (`check` por defecto), pero en
+  modo `clean` modifica archivos en cada escritura.
+
+**Lo que no se leyó línea a línea:** `container_meta.py`,
+`image_meta.py`, `av_meta.py`, el cuerpo del benchmark y los detectores.
+
+**Dato útil para `humanizer`:** su propio benchmark muestra que pedir
+"escribe como un humano" empeoró la puntuación de un detector (0,44 a
+0,02) y que un humanizador es pulido de estilo, no eliminación. Encaja
+con la v1.4.0 de `humanizer` (apostar por lo concreto).
+
+**Alternativa sin instalar nada:** para quitar Unicode invisible basta un
+script con `unicodedata` de la biblioteca estándar.
+
+---
+
 ## 2026-10-04 — Pendiente (decisión aplazada): `ponytail` sin versión fijada
 
 Surgió al revisar un reel sobre skills "infectadas" (riesgo de cadena
