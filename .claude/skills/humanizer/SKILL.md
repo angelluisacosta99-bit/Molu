@@ -1,13 +1,14 @@
 ---
 name: humanizer
 description: Use when Angel asks to "humanizar" un texto para un blog, post en redes o mensaje bajo su propio nombre — hacer que no suene a chatbot. NO usar en trabajos de universidad/máster ni en el TFM (fuera de alcance a propósito, ver nota abajo). Triggers: "humanízalo", "que no suene a IA", "/humanizer".
-version: 1.3.0
+version: 1.4.0
 user-invocable: true
 license: MIT (adaptado y ampliado a partir de varios skills open-source, ver fuentes)
 ---
 
-> **Fuentes** (todas MIT/open-source, leídas y adaptadas a mano — nunca
-> instaladas vía `npx`/CLI, cero código de terceros ejecutado):
+> **Fuentes** (las de código son MIT/open-source, leídas y adaptadas a
+> mano — nunca instaladas vía `npx`/CLI, cero código de terceros
+> ejecutado):
 > - https://github.com/blader/humanizer — los 25 patrones base.
 > - https://github.com/conorbronsdon/avoid-ai-writing — perfil de voz
 >   y el ciclo de "iterar hasta converger".
@@ -18,8 +19,14 @@ license: MIT (adaptado y ampliado a partir de varios skills open-source, ver fue
 >   "Signs of AI writing" (no se pudo acceder directamente por proxy de
 >   red, referenciado de segunda mano vía las tres fuentes de arriba).
 >
-> Escaneado el 2026-09-09 con `unicodedata` (caracteres ocultos, de
-> control, homóglifos): 0 encontrados, en cada revisión (última: v1.3.0).
+> - Artículo académico (no código): Russell et al., "StoryScope:
+>   Investigating idiosyncrasies in AI fiction", arXiv:2604.03136,
+>   COLM 2026 — solo se usan sus hallazgos numéricos, parafraseados,
+>   para los patrones 28-33 (ver "Nota de evidencia" más abajo).
+>
+> Escaneado con `unicodedata` (caracteres ocultos, de control,
+> homóglifos): 0 encontrados, en cada revisión (última: v1.4.0,
+> 2026-10-04).
 
 > **Alcance a propósito, no me lo vuelvas a pedir para trabajos
 > académicos:** este skill es para contenido bajo el nombre de Angel
@@ -58,11 +65,13 @@ otro, el que indique gana sobre el default:
 
 1. **Quitar vocabulario de IA** — sustituir palabras sobreusadas (ver
    "Vocabulario prohibido" abajo) por su equivalente concreto y directo.
-2. **Romper estructuras de IA** — eliminar los 27 patrones catalogados
+2. **Romper estructuras de IA** — eliminar los 33 patrones catalogados
    más abajo.
 3. **Añadir textura humana** — variar la longitud de las frases,
    permitir contracciones/coloquialismos donde encajen, no cerrar cada
-   idea con un lazo perfecto (una idea humana a veces queda abierta).
+   idea con un lazo perfecto (una idea humana a veces queda abierta),
+   y dejar algún aparte directo al lector ("tú que me lees...") si
+   encaja con la voz.
 
 ## Iterar hasta converger
 
@@ -77,11 +86,11 @@ regenerar no suele encontrar nada nuevo. Si Angel pide explícitamente
 "sigue afinando", repetir el ciclo desde cero (no se acumula sobre la
 segunda pasada). Indicar siempre si convergió en 1 o 2 pasadas.
 
-## Los patrones (27, en 5 categorías)
+## Los patrones (33, en 6 categorías)
 
 25 vienen de `blader/humanizer`; los dos últimos de B (7-8) se sumaron
 de las otras fuentes y se numeran aparte para no esconderlos en un
-paréntesis.
+paréntesis. Los 6 de la categoría F (28-33) salen de StoryScope.
 
 **A. Puesta en escena en vez de afirmar directamente** (5)
 1. Contraste "no es X, es Y" forzado.
@@ -123,6 +132,35 @@ paréntesis.
 26. Encabezados repetidos que ya dice el título.
 27. Referencias a versiones/fechas que ya no aplican.
 
+**F. Estructura narrativa de la IA** (6) — del estudio StoryScope;
+aplican sobre todo a anécdotas, ejemplos y textos con relato, menos a
+un texto puramente explicativo. Porcentajes = IA frente a autores
+humanos en ficción en inglés (ver "Nota de evidencia").
+28. **Moraleja explicada:** el texto enuncia la lección ("y ahí entendí
+    que...") en vez de dejar que la anécdota hable (77 % frente a
+    52 %). Cortar la frase que explica lo que el lector ya vio.
+29. **Emoción solo por el cuerpo:** "un nudo en el estómago", "me
+    sudaban las manos" (81 % frente a 38 %). Los humanos nombran más
+    la emoción sin rodeos (29 % frente a 8 %): "tenía miedo" es válido.
+30. **Una sola vía:** causa → efecto sin desvíos ni subtramas (79 % sin
+    subtramas frente a 57 %), en orden cronológico impecable. Probar
+    empezar por la mitad, adelantar el desenlace y volver, o dejar un
+    detalle que no sirve a la tesis — **solo con material real que
+    Angel haya dado**: reordenar vale, inventar no.
+31. **Cierre sereno con aprendizaje:** final resuelto por comprensión o
+    aceptación (47 % frente a 27 %). En textos de Claude, sobre todo el
+    epílogo tranquilo y contenido. Cortar el último párrafo reflexivo o
+    dejar la idea abierta.
+32. **Alusiones vagas en vez de referencias concretas** ("un autor
+    decía", "en ciertas culturas"): 72 % frente a 50 % de referencias
+    difusas; los humanos nombran obra, persona o lugar (47 % frente a
+    24 %). Refuerza el 16. Pedir a Angel el dato real; si no lo hay,
+    cortar la alusión — nunca inventar el nombre.
+33. **Protagonista sin matices:** quien narra siempre acierta y queda
+    bien (los humanos dejan al protagonista ambivalente en 59 % frente
+    a 38 %). En primera persona, conservar el error, la duda o la
+    contradicción que Angel cuente, en vez de pulirlos.
+
 ## Vocabulario prohibido (por niveles)
 
 Incluye ya los equivalentes en español (no solo... sino también, en
@@ -152,8 +190,28 @@ lista es solo lo que no encaja como palabra suelta:
   metodología de enseñanza") en vez del verbo directo ("optimizar cómo
   enseño").
 
+## Nota de evidencia sobre los patrones 28-33
+
+Fuente: StoryScope (arXiv:2604.03136, COLM 2026): ~10.000 relatos
+humanos de Books3 frente a los de 5 modelos (Claude, GPT, Gemini,
+DeepSeek, Kimi), todos sin edición humana. Solo con rasgos narrativos
+se separaban humano e IA con 93,2 % de macro-F1, y un cambio de estilo
+casi no lo afectaba. Límites que no hay que olvidar:
+- Son **tendencias, no reglas**: un texto con moraleja no es "de IA",
+  ni uno sin ella es "humano".
+- Es **ficción en inglés** de ~5.000 palabras. No está validado para
+  español, blogs ni textos cortos — tratar F como lista de hipótesis a
+  revisar, no como detector.
+- En esos mismos datos un clasificador sobre texto crudo llega al
+  99,9 %: ningún retoque garantiza que no se note. El objetivo de la
+  pasada es un texto más concreto y menos mecánico, no "pasar" ningún
+  detector.
+
 ## Flujo de trabajo final
 
+0. Si el texto tiene vaguedades (alusiones, "un estudio", "una vez"),
+   pedir a Angel 1-2 detalles reales (nombre, lugar, cifra, error)
+   antes de reescribir. Lo concreto viene de él, no de mí.
 1. Marcar los tics por orden de fuerza (los patrones que aparecen
    juntos delatan más que uno suelto).
 2. Aplicar el proceso de 3 pasadas con el perfil de voz que corresponda.
