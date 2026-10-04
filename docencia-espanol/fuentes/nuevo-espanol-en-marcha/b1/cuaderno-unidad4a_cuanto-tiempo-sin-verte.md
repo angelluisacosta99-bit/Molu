@@ -106,6 +106,6 @@
 9. He visto de nuevo la película que me prestaste.
    **He vuelto a ver la película que me prestaste**
 10. Julia ha llamado justo ahora para preguntar por ti.
-   **Julia acaba de llamar para preguntar por ti**
+   **Julia acaba de llamar preguntando por ti**
 11. ¡Nuestro equipo de fútbol ha ganado otra vez!
    **¡Nuestro equipo de fútbol ha vuelto a ganar!**

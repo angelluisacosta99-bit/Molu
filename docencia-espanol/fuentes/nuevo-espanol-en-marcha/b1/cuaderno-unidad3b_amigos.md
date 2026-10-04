@@ -81,7 +81,7 @@ GENEROSOÑOPT
 3. Hay pocas personas que **estudien** esa carrera.
 4. Necesitan un coche que **tenga** un buen maletero.
 5. Tengo un sobrino que **hace** mucho deporte.
-6. Le encantan las películas que **acaben** bien.
+6. Le encantan las películas que **acaban** bien.
 7. ¿Les queda algún traje que **cueste** menos de 60 €?
 8. ¿Sabes de alguien que **venda** una moto?
 9. Me gusta mucho la casa que **tienen** en el pueblo.

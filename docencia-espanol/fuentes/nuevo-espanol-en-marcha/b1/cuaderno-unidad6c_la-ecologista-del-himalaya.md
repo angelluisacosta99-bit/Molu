@@ -16,11 +16,11 @@
 >
 > Según Carlos Marín, que cambió su trabajo en la ciudad en una compañía eléctrica por ser pastor de cabras en un pueblo de Huesca, «la vida es dura, pero también sencilla y barata. Por ejemplo, todas las verduras y la carne las sacamos de aquí». Él y su mujer consideran que el campo es una salida para los que están en paro. «Es difícil estar aislado, pero siempre te puedes acercar a la ciudad». Cuando van a Madrid a ver a la familia, aprovechan para ir al cine y de tiendas. Pero siempre con el billete de vuelta cerrado: «Una semana allí y ya te apetece volver a casa».
 
-1. ¿Qué tiene que hacer Malva Gaupp para estudiar? → **Madrugar** (para ir al instituto)
-2. ¿Por qué Malva prefiere el campo a la ciudad? → Porque en la ciudad hay más **ruido**
-3. Según Ágata, ¿cuáles son las desventajas de vivir en La Vera? → No hay **bomberos** en la zona y está cerca la **central** nuclear de Almaraz
-4. ¿En qué trabajaba antes Carlos? ¿Y ahora? → Antes en una compañía **eléctrica**, ahora es **pastor** de cabras
-5. ¿Dónde consiguen gran parte de los alimentos Carlos y su familia? → Del propio **campo**
+1. ¿Qué tiene que hacer Malva Gaupp para estudiar? → **Madrugar para ir al instituto.**
+2. ¿Por qué Malva prefiere el campo a la ciudad? → **Porque en el campo hay menos ruido que en la ciudad.**
+3. Según Ágata, ¿cuáles son las desventajas de vivir en La Vera? → **Que en invierno no hay bomberos en la zona, y muy cerca hay una central nuclear.**
+4. ¿En qué trabajaba antes Carlos? ¿Y ahora? → **Antes trabajaba en una compañía eléctrica, y ahora es pastor.**
+5. ¿Dónde consiguen gran parte de los alimentos Carlos y su familia? → **En el campo.**
 
 #### Ej. 2 — Completa las vocales que faltan
 
