@@ -94,6 +94,47 @@ lección más antigua de "Lecciones aprendidas", esta sección gana.**
   encontrar la palabra en la rejilla), se decidió sin consultar partirlo en dos
   ejercicios separados — un cambio razonable con buena intención, pero no es lo que
   dice el libro, y no se pidió permiso antes de hacerlo.
+- **No escribas lo que el libro no da y no des pistas.** Si el libro no imprime una
+  palabra, una definición o una ayuda, el artefacto tampoco la muestra. Casos reales
+  (unidad 3B de B1, el profesor lo corrigió mirando el artefacto): la sopa de letras
+  listaba las nueve palabras que el libro pide *encontrar*, y se habían añadido notas
+  «Recuerda: …» con la regla gramatical en ejercicios de respuesta libre. Reglas: (1) en
+  `type: "wordsearch"`, si las palabras no vienen en el libro, pon `hideLabels: true` —
+  la lista muestra «Palabra 1…N» (sin longitud) y cada nombre se revela solo al
+  encontrarlo; (2) nada de `pista-gramatical`, «Recuerda» ni títulos de columna
+  inventados (en una tabla `conjTable` sin cabeceras en el libro, `label: ""` y
+  `subjectLabel: ""`); (3) los enunciados e instrucciones son los del libro, solo se
+  añade lo imprescindible para que el motor funcione («pulsa…», «escribe la frase
+  entera»). Los recuadros de palabras que el libro SÍ imprime se conservan.
+- **El ejemplo resuelto de un «relaciona» se ve ya conectado.** Si el libro trae la
+  primera pareja hecha, en `type: "match"` la fila va `{ solved: true, to: [índice de
+  la pareja en la columna 2] }` (con 3 columnas, un índice por columna): el motor
+  dibuja la línea gris y atenúa las dos fichas. Una fila `{ solved: true }` sin `to`
+  deja el ejemplo como una ficha suelta, que no enseña nada. Los capítulos B1 anteriores
+  a la unidad 3 (1A-2C, 7A-8C…) siguen con `{ solved: true }` a secas: si se tocan,
+  añadirles `to` y portar el motor de la plantilla.
+
+- **Las respuestas son EXACTAMENTE las del solucionario del PDF: se transcriben dos
+  veces y se comparan por script.** Los alumnos ya han escrito al profesor porque una
+  respuesta del artefacto no era la del libro (la había «corregido» o deducido yo, o
+  leído mal la página). Antes de publicar cualquier capítulo con solucionario:
+  (1) **Pasada 1:** renderiza la página del solucionario a 200-300 dpi, léela con
+  `Read` y escribe la clave tal cual está impresa en un archivo aparte
+  (`scratchpad/sol_<cap>.txt`, una línea por ejercicio: `1: a) … b) …`), sin mirar aún
+  el capítulo; (2) **Pasada 2, independiente:** vuelve a renderizar (o recorta por
+  ejercicio a mayor zoom) y relee **sin mirar la pasada 1**, escribiendo `sol_<cap>_2.txt`;
+  compara con `diff` y resuelve cada diferencia mirando la imagen; (3) **Contrasta con
+  el capítulo por script:** extrae la primera respuesta aceptada de cada hueco del
+  `exercises`/`blocks` del HTML y compárala con la clave (normalizando
+  tildes/mayúsculas); cualquier discrepancia se resuelve a favor del libro; (4) **El
+  libro manda aunque parezca mal.** Si la respuesta impresa es discutible o errata, la
+  primera respuesta aceptada (la que se enseña al fallar) es la del libro; solo se
+  añaden como alternativas las variantes que el libro admite o que son inequívocamente
+  equivalentes, y la discrepancia se explica en una `attachNote`, nunca se sustituye en
+  silencio; (5) si una respuesta **no** viene en el solucionario, no la presentes como
+  del libro: anótala como deducida en `fuentes/` (ya lo exige el paso 8) y menciónalo
+  al profesor al entregar. En el resumen final al profesor di qué ejercicios se
+  verificaron dos veces y cuáles son deducidos.
 
 ## Flujo de trabajo
 
@@ -403,6 +444,9 @@ y 7 se quedaron sin hacer: la tarjeta de nivel B1 del índice seguía diciendo "
 capítulos publicados" y el código no estaba en la lista del profesor. Lo detectó él, no yo.
 El fallo no fue no saber los pasos, fue no volver a mirarlos al final.
 
+- [ ] **Respuestas verificadas dos veces contra el solucionario del PDF** (dos lecturas
+      independientes + comparación por script con el HTML; ver la regla de arriba). Lo
+      deducido, marcado como deducido.
 - [ ] Artefacto publicado, y **con el mismo `url`** si ya existía.
 - [ ] Fila añadida en `indice-clases-de-espanol.html`, en la tarjeta del nivel correcto, y
       el índice republicado (paso 6).
