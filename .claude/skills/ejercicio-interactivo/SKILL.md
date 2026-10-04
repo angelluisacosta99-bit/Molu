@@ -114,6 +114,28 @@ lección más antigua de "Lecciones aprendidas", esta sección gana.**
   a la unidad 3 (1A-2C, 7A-8C…) siguen con `{ solved: true }` a secas: si se tocan,
   añadirles `to` y portar el motor de la plantilla.
 
+- **Las respuestas son EXACTAMENTE las del solucionario del PDF: se transcriben dos
+  veces y se comparan por script.** Los alumnos ya han escrito al profesor porque una
+  respuesta del artefacto no era la del libro (la había «corregido» o deducido yo, o
+  leído mal la página). Antes de publicar cualquier capítulo con solucionario:
+  (1) **Pasada 1:** renderiza la página del solucionario a 200-300 dpi, léela con
+  `Read` y escribe la clave tal cual está impresa en un archivo aparte
+  (`scratchpad/sol_<cap>.txt`, una línea por ejercicio: `1: a) … b) …`), sin mirar aún
+  el capítulo; (2) **Pasada 2, independiente:** vuelve a renderizar (o recorta por
+  ejercicio a mayor zoom) y relee **sin mirar la pasada 1**, escribiendo `sol_<cap>_2.txt`;
+  compara con `diff` y resuelve cada diferencia mirando la imagen; (3) **Contrasta con
+  el capítulo por script:** extrae la primera respuesta aceptada de cada hueco del
+  `exercises`/`blocks` del HTML y compárala con la clave (normalizando
+  tildes/mayúsculas); cualquier discrepancia se resuelve a favor del libro; (4) **El
+  libro manda aunque parezca mal.** Si la respuesta impresa es discutible o errata, la
+  primera respuesta aceptada (la que se enseña al fallar) es la del libro; solo se
+  añaden como alternativas las variantes que el libro admite o que son inequívocamente
+  equivalentes, y la discrepancia se explica en una `attachNote`, nunca se sustituye en
+  silencio; (5) si una respuesta **no** viene en el solucionario, no la presentes como
+  del libro: anótala como deducida en `fuentes/` (ya lo exige el paso 8) y menciónalo
+  al profesor al entregar. En el resumen final al profesor di qué ejercicios se
+  verificaron dos veces y cuáles son deducidos.
+
 ## Flujo de trabajo
 
 1. **Fundamenta el contenido en material real.** Por este orden:
@@ -422,6 +444,9 @@ y 7 se quedaron sin hacer: la tarjeta de nivel B1 del índice seguía diciendo "
 capítulos publicados" y el código no estaba en la lista del profesor. Lo detectó él, no yo.
 El fallo no fue no saber los pasos, fue no volver a mirarlos al final.
 
+- [ ] **Respuestas verificadas dos veces contra el solucionario del PDF** (dos lecturas
+      independientes + comparación por script con el HTML; ver la regla de arriba). Lo
+      deducido, marcado como deducido.
 - [ ] Artefacto publicado, y **con el mismo `url`** si ya existía.
 - [ ] Fila añadida en `indice-clases-de-espanol.html`, en la tarjeta del nivel correcto, y
       el índice republicado (paso 6).
