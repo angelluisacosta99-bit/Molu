@@ -10,8 +10,7 @@ financieras como si fueran estudios de eólica y de tráfico móvil). Ningún
 número del informe vale hasta comprobarlo en el artículo.
 
 El "impacto" de la tabla es la media de citas a 2 años de la revista según
-OpenAlex, **no** el factor de impacto JCR (de pago). Falta confirmar el
-cuartil en Scimago antes de poner "factor de impacto" en el email.
+OpenAlex, **no** el factor de impacto JCR (de pago). Dato JCR real: ver el apartado "JCR consultado" al final.
 
 | # | Artículo (DOI) | Revista, editorial, año | Técnica y datos | Resultado verificado | Acceso | Impacto revista |
 |---|---|---|---|---|---|---|
@@ -91,3 +90,15 @@ B la más sencilla, D es más complejo y E se descarta.**
   transmisión en PDF, no un conjunto de datos.
 - **Conclusión:** no usarlo. LeapSpace lo había puesto entre los "mejor
   respaldados", lo que confirma que su lista no es fiable sin comprobar.
+
+## JCR consultado (2026-10-05, con el acceso de la USAL)
+
+Fuente: PDF "2025 Journal Performance Data" de Journal Citation Reports,
+descargado por Angel el 5/10/2026. Solo se ha consultado Energy (artículo C).
+
+| Revista | Factor de impacto 2025 | Sin autocitas | Cuartil y categoría (2025) |
+|---|---|---|---|
+| Energy (C) | 10,1 (76.991 citas / 7.608 ítems citables, cuenta comprobada) | 8,6 | Q1 en Energy & Fuels (puesto 34 de 191) y Q1 en Thermodynamics (puesto 3 de 78) |
+
+Pendiente de consultar: Energy Conversion and Management: X (B, ISSN
+2590-1745), Applied Energy (D, 0306-2619) y Energies (A, 1996-1073).
