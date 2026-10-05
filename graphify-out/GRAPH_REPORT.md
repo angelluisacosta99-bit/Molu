@@ -1,17 +1,17 @@
 # Graph Report - Molu  (2026-10-05)
 
 ## Corpus Check
-- 333 files · ~1,649,865 words
+- 333 files · ~1,649,962 words
 - Verdict: corpus is large enough that graph structure adds value.
-- Unclassified: 113 file(s) not represented in the graph (top: .csv 32, .arff 22, .pptx 15)
+- Unclassified: 114 file(s) not represented in the graph (top: .csv 32, .arff 22, .pptx 15)
 
 ## Summary
-- 3683 nodes · 6982 edges · 286 communities (244 shown, 42 thin omitted)
+- 3684 nodes · 6983 edges · 286 communities (244 shown, 42 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 131 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `14460fdc`
+- Built from commit: `1ef76252`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -1281,8 +1281,8 @@ Cohesion: 0.29
 Nodes (6): 1. ¡Cásate conmigo!, Ej. 1 — Mensaje en estilo indirecto: relaciona las dos partes, Ej. 2 — Completa este cuadro, Ej. 3 — Pasa las frases a estilo indirecto, Ej. 4 — Completa el texto de las viñetas, Ejercicios
 
 ### Community 280 - "Candidatos de artículo (lógica difusa aplicada, 2021+) — verificados 2026-10-05"
-Cohesion: 0.25
-Nodes (7): C — Bilal et al., Energy 2023 (ANFIS-MoW, eólica), Candidatos de artículo (lógica difusa aplicada, 2021+) — verificados 2026-10-05, D — Wu et al., Applied Energy 2023 (ANFIS-ELM), Descartados del informe de LeapSpace, E — Fazlollahtabar, ECM:X 2026 (descartado), Lectura completa de C, D y E (2026-10-05), Notas por candidato
+Cohesion: 0.22
+Nodes (8): C — Bilal et al., Energy 2023 (ANFIS-MoW, eólica), Candidatos de artículo (lógica difusa aplicada, 2021+) — verificados 2026-10-05, D — Wu et al., Applied Energy 2023 (ANFIS-ELM), Descartados del informe de LeapSpace, E — Fazlollahtabar, ECM:X 2026 (descartado), JCR consultado (2026-10-05, con el acceso de la USAL), Lectura completa de C, D y E (2026-10-05), Notas por candidato
 
 ### Community 281 - "parseRgb"
 Cohesion: 0.20
@@ -1301,8 +1301,8 @@ Cohesion: 0.33
 Nodes (5): 1. De viaje, Ej. 1 — Lee el texto sobre los aeropuertos, Ej. 2 — Construye correctamente las siguientes frases, Ej. 3 — Explica estas situaciones haciendo conjeturas, Ejercicios
 
 ## Knowledge Gaps
-- **1059 isolated node(s):** `Notas por candidato`, `Descartados del informe de LeapSpace`, `C — Bilal et al., Energy 2023 (ANFIS-MoW, eólica)`, `D — Wu et al., Applied Energy 2023 (ANFIS-ELM)`, `E — Fazlollahtabar, ECM:X 2026 (descartado)` (+1054 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1329 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **1060 isolated node(s):** `Notas por candidato`, `Descartados del informe de LeapSpace`, `C — Bilal et al., Energy 2023 (ANFIS-MoW, eólica)`, `D — Wu et al., Applied Energy 2023 (ANFIS-ELM)`, `E — Fazlollahtabar, ECM:X 2026 (descartado)` (+1055 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1330 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **42 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
@@ -1312,12 +1312,12 @@ _Questions this graph is uniquely positioned to answer:_
   _High betweenness centrality (0.004) - this node is a cross-community bridge._
 - **Why does `2026-08-16 — Segunda pasada: hooks vs. CLAUDE.md, y prácticas de la comunidad` connect `hook-before-edit.mjs` to `Novedades de herramientas de IA`?**
   _High betweenness centrality (0.004) - this node is a cross-community bridge._
-- **Why does `docx()` connect `2026-09-19 — Pasada por el correo semanal "This week in Claude Code" (4 números, 21 ago-18 sep)` to `generar_borrador.py`?**
-  _High betweenness centrality (0.002) - this node is a cross-community bridge._
+- **Why does `deny()` connect `hook-before-edit.mjs` to `readConfig`?**
+  _High betweenness centrality (0.003) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `initGlobalBar()` (e.g. with `hideAgentPollTooltip()` and `onDetectMessage()`) actually correct?**
   _`initGlobalBar()` has 7 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `Notas por candidato`, `Descartados del informe de LeapSpace`, `C — Bilal et al., Energy 2023 (ANFIS-MoW, eólica)` to the rest of the system?**
-  _1059 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _1060 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `live-browser.js` be split into smaller, more focused modules?**
   _Cohesion score 0.02863984674329502 - nodes in this community are weakly interconnected._
 - **Should `checks.mjs` be split into smaller, more focused modules?**

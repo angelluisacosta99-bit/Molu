@@ -37660,7 +37660,7 @@
       "node_kind": "heading",
       "norm_label": "c \u2014 bilal et al., energy 2023 (anfis-mow, eolica)",
       "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/trabajo/candidatos-articulo.md",
-      "source_location": "L54"
+      "source_location": "L53"
     },
     {
       "id": "master_sistemas_inteligentes_computacion_neuroborrosa_trabajo_candidatos_articulo_candidatos_de_art\u00edculo_l\u00f3gica_difusa_aplicada_2021_verificados_2026_10_05",
@@ -37684,7 +37684,7 @@
       "node_kind": "heading",
       "norm_label": "d \u2014 wu et al., applied energy 2023 (anfis-elm)",
       "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/trabajo/candidatos-articulo.md",
-      "source_location": "L73"
+      "source_location": "L72"
     },
     {
       "id": "master_sistemas_inteligentes_computacion_neuroborrosa_trabajo_candidatos_articulo_descartados_del_informe_de_leapspace",
@@ -37696,7 +37696,7 @@
       "node_kind": "heading",
       "norm_label": "descartados del informe de leapspace",
       "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/trabajo/candidatos-articulo.md",
-      "source_location": "L38"
+      "source_location": "L37"
     },
     {
       "id": "master_sistemas_inteligentes_computacion_neuroborrosa_trabajo_candidatos_articulo_e_fazlollahtabar_ecm_x_2026_descartado",
@@ -37708,7 +37708,19 @@
       "node_kind": "heading",
       "norm_label": "e \u2014 fazlollahtabar, ecm:x 2026 (descartado)",
       "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/trabajo/candidatos-articulo.md",
-      "source_location": "L83"
+      "source_location": "L82"
+    },
+    {
+      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_trabajo_candidatos_articulo_jcr_consultado_2026_10_05_con_el_acceso_de_la_usal",
+      "label": "JCR consultado (2026-10-05, con el acceso de la USAL)",
+      "_origin": "ast",
+      "community": 280,
+      "community_name": "Candidatos de art\u00edculo (l\u00f3gica difusa aplicada, 2021+) \u2014 verificados 2026-10-05",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "jcr consultado (2026-10-05, con el acceso de la usal)",
+      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/trabajo/candidatos-articulo.md",
+      "source_location": "L94"
     },
     {
       "id": "master_sistemas_inteligentes_computacion_neuroborrosa_trabajo_candidatos_articulo_lectura_completa_de_c_d_y_e_2026_10_05",
@@ -37720,7 +37732,7 @@
       "node_kind": "heading",
       "norm_label": "lectura completa de c, d y e (2026-10-05)",
       "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/trabajo/candidatos-articulo.md",
-      "source_location": "L49"
+      "source_location": "L48"
     },
     {
       "id": "master_sistemas_inteligentes_computacion_neuroborrosa_trabajo_candidatos_articulo_notas_por_candidato",
@@ -37732,7 +37744,7 @@
       "node_kind": "heading",
       "norm_label": "notas por candidato",
       "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/trabajo/candidatos-articulo.md",
-      "source_location": "L24"
+      "source_location": "L23"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_shared_color",
@@ -116663,7 +116675,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/trabajo/candidatos-articulo.md",
-      "source_location": "L24",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -116674,7 +116686,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/trabajo/candidatos-articulo.md",
-      "source_location": "L38",
+      "source_location": "L37",
       "weight": 1.0
     },
     {
@@ -116685,7 +116697,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/trabajo/candidatos-articulo.md",
-      "source_location": "L49",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_computacion_neuroborrosa_trabajo_candidatos_articulo_candidatos_de_art\u00edculo_l\u00f3gica_difusa_aplicada_2021_verificados_2026_10_05",
+      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_trabajo_candidatos_articulo_jcr_consultado_2026_10_05_con_el_acceso_de_la_usal",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/trabajo/candidatos-articulo.md",
+      "source_location": "L94",
       "weight": 1.0
     },
     {
@@ -116696,7 +116719,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/trabajo/candidatos-articulo.md",
-      "source_location": "L54",
+      "source_location": "L53",
       "weight": 1.0
     },
     {
@@ -116707,7 +116730,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/trabajo/candidatos-articulo.md",
-      "source_location": "L73",
+      "source_location": "L72",
       "weight": 1.0
     },
     {
@@ -116718,7 +116741,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/trabajo/candidatos-articulo.md",
-      "source_location": "L83",
+      "source_location": "L82",
       "weight": 1.0
     },
     {
@@ -125239,5 +125262,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "14460fdcbfbcbe327350309210ad52af71325780"
+  "built_at_commit": "1ef76252e02b0ee4596f3fef103e825f0867989b"
 }
