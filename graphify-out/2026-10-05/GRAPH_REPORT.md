@@ -1,7 +1,7 @@
 # Graph Report - Molu  (2026-10-05)
 
 ## Corpus Check
-- 332 files · ~1,648,804 words
+- 332 files · ~1,648,503 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 113 file(s) not represented in the graph (top: .csv 32, .arff 22, .pptx 15)
 
@@ -11,7 +11,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `5daad0e2`
+- Built from commit: `02b14a60`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -513,7 +513,7 @@ Nodes (14): createLiveBrowserSessionState(), clearHandled(), clearScrollY(), cle
 
 ### Community 47 - "Computación Neuroborrosa (304473 · 3 ECTS · Obligatoria)"
 Cohesion: 0.40
-Nodes (4): Computación Neuroborrosa (304473 · 3 ECTS · Obligatoria), Estructura, Material de clase heredado (solo referencia, NO copiado), Requisitos oficiales 2026-27 (presentación del profesor, 4/10/26)
+Nodes (4): Computación Neuroborrosa (304473 · 3 ECTS · Obligatoria), Estructura, Material heredado (solo referencia, NO copiado), Requisitos 2023-24 — NO CONFIRMADOS para 2026
 
 ### Community 48 - "createLiveBrowserDomHelpers"
 Cohesion: 0.19
@@ -1296,7 +1296,7 @@ Cohesion: 0.33
 Nodes (5): 1. De viaje, Ej. 1 — Lee el texto sobre los aeropuertos, Ej. 2 — Construye correctamente las siguientes frases, Ej. 3 — Explica estas situaciones haciendo conjeturas, Ejercicios
 
 ## Knowledge Gaps
-- **1054 isolated node(s):** `Estructura`, `Requisitos oficiales 2026-27 (presentación del profesor, 4/10/26)`, `Material de clase heredado (solo referencia, NO copiado)`, `HEADING_TAGS`, `LAYOUT_TRANSITION_PROPS` (+1049 more)
+- **1054 isolated node(s):** `Estructura`, `Material heredado (solo referencia, NO copiado)`, `Requisitos 2023-24 — NO CONFIRMADOS para 2026`, `HEADING_TAGS`, `LAYOUT_TRANSITION_PROPS` (+1049 more)
   These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1323 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **42 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -1308,10 +1308,10 @@ _Questions this graph is uniquely positioned to answer:_
 - **Why does `2026-08-16 — Segunda pasada: hooks vs. CLAUDE.md, y prácticas de la comunidad` connect `hook-before-edit.mjs` to `Novedades de herramientas de IA`?**
   _High betweenness centrality (0.004) - this node is a cross-community bridge._
 - **Why does `deny()` connect `hook-before-edit.mjs` to `readConfig`?**
-  _High betweenness centrality (0.002) - this node is a cross-community bridge._
+  _High betweenness centrality (0.003) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `initGlobalBar()` (e.g. with `hideAgentPollTooltip()` and `onDetectMessage()`) actually correct?**
   _`initGlobalBar()` has 7 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `Estructura`, `Requisitos oficiales 2026-27 (presentación del profesor, 4/10/26)`, `Material de clase heredado (solo referencia, NO copiado)` to the rest of the system?**
+- **What connects `Estructura`, `Material heredado (solo referencia, NO copiado)`, `Requisitos 2023-24 — NO CONFIRMADOS para 2026` to the rest of the system?**
   _1054 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `live-browser.js` be split into smaller, more focused modules?**
   _Cohesion score 0.02863984674329502 - nodes in this community are weakly interconnected._
