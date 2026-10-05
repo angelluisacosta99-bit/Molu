@@ -1,15 +1,22 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}</style></head><body>
 <!--
-  Unidad 10C del cuaderno de ejercicios de Nuevo Español en Marcha 1 (A1), página 50-51:
-  "Voy a trabajar en un hotel" (ir a + infinitivo, futuro próximo). El PDF del cuaderno es
-  un escaneado sin texto extraíble, así que el contenido se transcribió mirando la página
-  renderizada, y las respuestas salen del solucionario oficial que el propio cuaderno trae
-  al final (página 61). Nota sobre el ejercicio 5, ítem 6: el enunciado pide la frase para
-  "Tu novia y tú / Río de Janeiro", pero el propio solucionario da la respuesta en primera
-  persona ("Mi novio y yo nos vamos a bañar…") -- no es un error de transcripción, es así
-  literalmente en el libro. Sin ejercicios de audio.
+  Unidad 6C del cuaderno de ejercicios de Nuevo Español en Marcha 3 (B1), páginas 26-27:
+  "La ecologista del Himalaya" (el título de la sección es de la unidad del libro del
+  alumno; el texto de lectura del cuaderno es "Volver al campo"). Transcrito mirando las
+  páginas renderizadas del PDF que adjuntó el profesor. Las respuestas salen del
+  solucionario oficial del propio cuaderno (página 72).
   Construido sobre .claude/skills/ejercicio-interactivo/reference/template.html.
+  El ejercicio 1 (preguntas de comprensión) usa spec {flex:[...]} en vez de un array de
+  frases exactas: son preguntas abiertas de comprensión lectora y lo que importa es que
+  aparezca la idea clave, no que el alumno reproduzca la frase exacta del solucionario.
+  El texto de lectura "Volver al campo" se enseña en un refHTML del ejercicio 1 — sin
+  él, las preguntas de comprensión serían irresolubles.
+  El ejercicio 2 es un pasatiempo de vocales que faltan: en vez de recrear huecos letra a
+  letra (el libro los deja en blanco solo en las vocales), se da la palabra enmascarada
+  como pista y se pide la palabra completa — el mismo criterio que ya se aplicó en 5B con
+  el crucigrama: mejor una interacción distinta y verificada que una réplica a medias.
 -->
-<title>Cuaderno A1 · 10C — Voy a trabajar en un hotel</title>
+<title>Cuaderno B1 · 6C — La ecologista del Himalaya</title>
 <style>
   :root {
     --paper: #F3F5F0;
@@ -201,6 +208,11 @@
   .exnum { color: var(--gold); font-weight: 700; font-size: 0.85rem; }
   .exercise-title h3 { font-size: 1.02rem; font-weight: 700; }
   .exercise-instr { color: var(--pencil); font-size: 0.85rem; font-style: italic; margin-bottom: 0.85rem; }
+  .audio-label {
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--ink-soft); margin-bottom: 0.3rem;
+  }
+  .exercise-audio { width: 100%; max-width: 420px; display: block; margin-bottom: 0.9rem; }
   .exercise-model { color: var(--pencil); font-size: 0.85rem; font-style: italic; margin-bottom: 0.7rem; }
 
   /* Recuadro de referencia dentro de un ejercicio (banco de opciones, lista de verbos...).
@@ -215,20 +227,33 @@
     color: var(--ink-soft); font-family: -apple-system, sans-serif; display: block; margin-bottom: 0.3rem;
   }
   .exercise-ref .ref-options { display: flex; flex-wrap: wrap; gap: 0.4rem 0.9rem; }
+  /* ex.grid: para ejercicios de muchos dibujos pequeños (nombrar 18 alimentos). En una
+     sola columna serían una tira interminable. NO se activa con :has(.foto-act): las
+     fotografías grandes de una actividad deben seguir yendo una por fila. */
+  .items.items-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1.1rem 0.9rem;
+  }
+  .items.items-grid .item-row {
+    margin: 0; display: flex; flex-direction: column; align-items: center; text-align: center;
+  }
+  /* Caja de tamaño único: los dibujos son de proporciones muy distintas y, a su ancho
+     natural, unos se salen de su celda y los números quedan a distinta altura. */
+  .items.items-grid .foto-act {
+    width: 100%; height: 100px; object-fit: contain; margin: 0.15rem 0 0.35rem;
+  }
+  .items.items-grid input.blank { width: 100%; max-width: 9.5em; }
+  /* Turnos de un diálogo dentro de un mismo ítem: cada persona en su línea, y el primero
+     pegado al número para que no se quede huérfano arriba. */
+  .turno { display: block; }
+  .item-letter + .turno { display: inline; }
+  .turno b { color: var(--gold); margin-right: 0.35rem; }
   /* Opciones que son frases enteras, no palabras sueltas: una por línea. En fila y con
      nowrap, una sola opción larga se sale de la pantalla en el móvil y arrastra scroll
      horizontal a TODA la página. */
   .exercise-ref .ref-options.ref-list { display: block; }
   .exercise-ref .ref-options.ref-list .ref-opt { display: block; white-space: normal; }
   .exercise-ref .ref-options.ref-list .ref-opt + .ref-opt { margin-top: 0.3rem; }
-  /* Texto de lectura dentro del recuadro de referencia (ej. 7). A diferencia de un banco
-     de opciones, aquí el recuadro SÍ debe ocupar el ancho de la tarjeta: un párrafo largo
-     en una caja estrecha se lee fatal. */
-  .exercise-ref:has(.lectura) { width: 100%; max-width: none; }
-  .lectura { line-height: 1.7; }
-  .lectura p { margin: 0 0 0.7rem; }
-  .lectura p:last-of-type { margin-bottom: 0.9rem; }
-  .lectura img.foto-act { display: block; max-width: min(100%, 380px); border-radius: 8px; }
   .exercise-ref .ref-opt { white-space: nowrap; }
   @media (max-width: 560px) {
     /* Red de seguridad: en pantalla estrecha ninguna opción se queda en nowrap. Va
@@ -247,6 +272,10 @@
     max-width: 64ch; margin-left: auto; margin-right: auto;
   }
   .open-block b { color: var(--ink); }
+  /* Nota + caja de texto de un ejercicio "open": el alumno escribe su respuesta aquí, no
+     se corrige en la página (no hay una única respuesta correcta que comparar), pero se
+     incluye tal cual en el resumen que se envía al profesor por WhatsApp/Telegram/correo/
+     Teams, para que la revise personalmente — ver openAnswers y buildSummary(). */
   .open-note {
     font-size: 0.82rem; color: var(--ink-soft); max-width: 64ch;
     margin: 0.7rem auto 0.5rem; text-align: center;
@@ -259,55 +288,12 @@
   }
   .open-answer::placeholder { color: var(--pencil); }
   .open-answer:focus { outline: none; border-color: var(--focus); }
-  /* Relaciona con columnas (type: "match") — se toca un elemento de la columna ancla
-     (la primera, fija) y luego su pareja en la(s) columna(s) siguiente(s); se dibuja una
-     línea de color entre ambos. Nació porque el truco anterior para "relaciona" (escribir
-     la letra en un hueco de texto) obligaba a aceptar mil variantes de tecleo ("d, 2",
-     "d,2", "d 2"...) y no se parecía en nada al ejercicio de tocar/unir del libro.
-     .match-wrap tiene overflow-x propio: con 3+ columnas puede no caber en 390px, y debe
-     desplazarse ella sola, nunca la página entera (ver la regla general de tablas anchas). */
-  .match-wrap { position: relative; display: flex; gap: 1.6rem; margin-top: 0.6rem; overflow-x: auto; padding-bottom: 0.3rem; }
-  .match-col { display: flex; flex-direction: column; gap: 0.5rem; min-width: 11em; flex: 1 0 auto; }
-  .match-col-label {
-    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--pencil); margin-bottom: 0.1rem;
-  }
-  .match-item {
-    text-align: left; font: inherit; font-size: 0.88rem; line-height: 1.4;
-    background: var(--paper-raised); border: 1.5px solid var(--border); border-radius: 8px;
-    padding: 0.5rem 0.7rem; color: var(--ink); cursor: pointer;
-    transition: border-color 0.15s ease, background 0.15s ease;
-  }
-  .match-item.match-armed { border-color: var(--gold); background: var(--gold-soft); box-shadow: 0 0 0 2px var(--gold-soft); }
-  .match-item.match-solved { border-style: dashed; color: var(--ink-soft); font-style: italic; cursor: default; }
-  .match-item.match-correct { border-color: var(--good); background: var(--good-bg); }
-  .match-item.match-incorrect { border-color: var(--bad); background: var(--bad-bg); }
-  .match-row-reveal {
-    font-size: 0.76rem; color: var(--bad); margin: -0.25rem 0 0; display: none;
-  }
-  .match-row-reveal.show { display: block; }
-  .match-svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
-  .match-svg line { stroke-width: 2.5; }
-  /* Con 3+ columnas, .match-wrap suele necesitar scroll horizontal propio en móvil — y sin
-     ningún aviso visual, la columna final queda fuera de pantalla sin que nada indique que
-     sigue ahí (se descubrió mirando la propia captura de móvil: la columna "Final" del
-     ejemplo de 3 columnas desaparecía entera, sin rastro). .match-outer no se desplaza —
-     solo lo hace .match-wrap, que va dentro — así que estos degradados se quedan fijos en
-     los bordes mientras el contenido se mueve debajo, y JS los muestra/oculta según haga
-     falta (ver refreshFades() en el renderizador). El color va a juego con el fondo de la
-     tarjeta (--paper-raised) para que el degradado se funda con ella. */
-  .match-outer { position: relative; }
-  .match-fade {
-    position: absolute; top: 0; bottom: 0; width: 1.6rem;
-    pointer-events: none; opacity: 0; transition: opacity 0.15s ease; z-index: 2;
-  }
-  .match-fade.show { opacity: 1; }
-  .match-fade-left { left: 0; background: linear-gradient(to right, var(--paper-raised), transparent); }
-  .match-fade-right { right: 0; background: linear-gradient(to left, var(--paper-raised), transparent); }
-  @media (max-width: 560px) {
-    .match-col { min-width: 8.5em; font-size: 0.92em; }
-    .match-wrap { gap: 0.9rem; }
-  }
+  /* Enunciados y nota de un ejercicio de respuesta libre (type: "open"). Nacieron en la 5A
+     de B1 y vivieron un tiempo solo en ese archivo; están aquí para que el siguiente
+     capítulo que use "open" no se quede sin ellos. */
+  .frases-abiertas { margin: 0 0 0.9rem; padding-left: 1.4rem; line-height: 1.9; }
+  .frases-abiertas li { margin-bottom: 0.15rem; }
+  .pista-gramatical { font-size: 0.87rem; color: var(--ink-soft); margin: 0; }
   .open-block img { max-width: 100%; border-radius: 8px; display: block; margin: 0.6rem auto 0; }
   .exercise-ref img { max-width: 100%; border-radius: 8px; display: block; margin: 0.5rem auto 0; }
 
@@ -383,6 +369,47 @@
   }
   .reveal.show { display: inline; }
   .reveal.bad-reveal { color: var(--bad); }
+
+  /* Crucigrama real (type: "crossword") — celdas que se cruzan, no una lista de
+     definiciones con la foto de la rejilla al lado. Nació en la 5B de B1: hasta entonces
+     un crucigrama del libro se resolvía como lista (ver ex.refHTML con la imagen de la
+     rejilla), porque una rejilla interactiva parecía mucho trabajo para poco. Si vuelve a
+     hacer falta, esto es el punto de partida — no reinventarlo.
+     .cw-cell vacía (sin letra) no lleva borde: es hueco de la rejilla, no una casilla. */
+  .crossword-wrap { overflow-x: auto; margin-bottom: 1rem; }
+  .crossword-grid {
+    display: inline-grid; gap: 2px; margin: 0 auto; padding: 0.4rem;
+  }
+  .cw-cell {
+    position: relative; width: 2.1em; height: 2.1em;
+  }
+  .cw-cell.cw-empty { visibility: hidden; }
+  .cw-num {
+    position: absolute; top: 0; left: 0.15em; font-size: 0.52em; line-height: 1;
+    color: var(--ink-soft); font-weight: 700; pointer-events: none;
+  }
+  .cw-cell input.blank {
+    width: 100%; height: 100%; padding: 0; margin: 0;
+    text-align: center; text-transform: uppercase;
+    font-size: 1rem; border: 1px solid var(--border); border-radius: 4px;
+  }
+  .cw-cell input.blank:focus { border-color: var(--focus); }
+  .cw-cell .cw-solved {
+    display: flex; align-items: center; justify-content: center;
+    width: 100%; height: 100%; border: 1px solid var(--border); border-radius: 4px;
+    background: var(--paper); color: var(--ink-soft); font-style: italic;
+    text-transform: uppercase; font-size: 1rem;
+  }
+  .crossword-clues {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.3rem 1.2rem; font-size: 0.88rem; margin-top: 0.6rem;
+  }
+  .crossword-clues .cw-clue-group h4 {
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--ink-soft); margin: 0.6rem 0 0.3rem;
+  }
+  .crossword-clues .cw-clue { margin: 0.15rem 0; }
+  .crossword-clues .cw-clue b { color: var(--gold); margin-right: 0.3rem; }
 
   /* Hueco de verdadero/falso con botones — ver item.vf en "items" más abajo. */
   .vf-toggle { display: inline-flex; gap: 0.35rem; margin: 0 0.15rem; vertical-align: middle; }
@@ -632,18 +659,18 @@
 </style>
 
 <script>
-  // unlocked-cuaderno-8a here MUST be byte-identical to the one set further down in the gate
+  // unlocked-cuaderno-b1-6c here MUST be byte-identical to the one set further down in the gate
   // script (search "STORAGE_KEY =") — same placeholder, same value, both occurrences.
   document.documentElement.setAttribute(
     "data-locked",
-    localStorage.getItem("unlocked-cuaderno-10c") === "1" ? "false" : "true"
+    localStorage.getItem("unlocked-cuaderno-b1-6c") === "1" ? "false" : "true"
   );
 </script>
 
 <div class="gate-overlay">
   <div class="gate-card">
     <div class="eyebrow">Acceso privado</div>
-    <h2>Unidad 10C · Voy a trabajar en un hotel</h2>
+    <h2>Unidad 6C · La ecologista del Himalaya</h2>
     <p>Pídele el código a tu profesor para entrar.</p>
     <input type="text" id="gateInput" placeholder="CÓDIGO" autocomplete="off" autocapitalize="characters" />
     <button id="gateBtn">Entrar</button>
@@ -654,17 +681,15 @@
   (function () {
     // El código es solo un disuasivo, no seguridad real — cualquiera que vea el HTML
     // fuente lo ve. Elige una palabra corta, memorable y ligada al tema, en MAYÚSCULAS.
-    const CODE = "HOTEL";
-    // MUST be byte-identical al unlocked-cuaderno-8a usado arriba (ver comentario junto al
+    const CODE = "HIMALAYA";
+    // MUST be byte-identical al unlocked-cuaderno-b1-6c usado arriba (ver comentario junto al
     // primer occurrence). Usa un valor único por ejercicio, p. ej. "unlocked-b2-13a-tema".
-    const STORAGE_KEY = "unlocked-cuaderno-10c";
+    const STORAGE_KEY = "unlocked-cuaderno-b1-6c";
     function tryUnlock() {
       const val = document.getElementById("gateInput").value.trim().toUpperCase();
       if (val === CODE) {
         localStorage.setItem(STORAGE_KEY, "1");
         document.documentElement.setAttribute("data-locked", "false");
-        // Avisa al motor de que #main acaba de hacerse visible (redibuja las líneas de «relaciona»).
-        document.dispatchEvent(new CustomEvent("cuaderno:unlocked"));
       } else {
         document.getElementById("gateError").textContent = "Código incorrecto. Inténtalo de nuevo.";
       }
@@ -679,9 +704,8 @@
 <div class="topbar gated-content">
   <div class="topbar-inner">
     <div class="brand">
-      <!-- Cuaderno A1 · Unidad 10C / Voy a trabajar en un hotel -->
-      <span class="brand-title">Cuaderno A1 · Unidad 10C</span>
-      <span class="brand-sub">Voy a trabajar en un hotel</span>
+      <span class="brand-title">Cuaderno B1 · Unidad 6C</span>
+      <span class="brand-sub">La ecologista del Himalaya</span>
     </div>
     <nav class="nav-dots" id="navDots"></nav>
     <div class="score-wrap">
@@ -692,9 +716,9 @@
 </div>
 
 <div class="hero gated-content">
-  <div class="eyebrow">Nuevo Español en Marcha 1 · Cuaderno de ejercicios · Unidad 10</div>
-  <h1>Voy a trabajar en un hotel</h1>
-  <p>Ir a + infinitivo para hablar de planes futuros, con una entrevista y un texto de lectura reales. Escribe tus respuestas, corrige al instante y envía el resultado a tu profesor.</p>
+  <div class="eyebrow">Nuevo Español en Marcha 3 · Cuaderno de ejercicios · Unidad 6 · Nuestro mundo</div>
+  <h1>La ecologista del Himalaya</h1>
+  <p>Lectura sobre quienes se van a vivir al campo, vocabulario de medioambiente y comparativos/superlativos. Escribe tus respuestas, corrige al instante y envía el resultado a tu profesor.</p>
   <div class="hero-meta">
     <span><strong id="totalBlanksLabel" translate="no">—</strong> huecos en total</span>
     <span><strong>1</strong> bloque</span>
@@ -730,7 +754,7 @@
 </div>
 
 <footer class="gated-content">
-  <span>© Angel Luis Acosta González · Nuevo Español en Marcha 1 (A1), cuaderno, unidad 8A</span>
+  <span>Nuevo Español en Marcha 3 (B1), cuaderno de ejercicios, unidad 6C (págs. 26-27)</span>
   <span>© Angel Luis Acosta González</span>
 </footer>
 
@@ -780,109 +804,109 @@
   // template blanks use {0},{1}... matched to item.answers[i]
   const blocks = [
     {
-      id: "unidad-10c", num: 1, title: "Voy a trabajar en un hotel",
-      sub: "Ir a + infinitivo (futuro próximo)",
+      id: "seccion-1", num: 1, title: "La ecologista del Himalaya",
+      sub: "Lectura, vocabulario de medioambiente y comparativos/superlativos",
       exercises: [
         {
-          num: 1, title: "Relaciona las siguientes preguntas con sus respuestas",
-          instr: "Toca una pregunta y después su respuesta. La primera ya la trae resuelta el libro.",
-          type: "match",
-          columns: [
-            { label: "Pregunta", items: ["¿Para qué vas a aprender español?", "¿Cuándo se va a casar Pedro?", "¿Cuántos días van a estar?", "¿A qué hora vamos a quedar?", "¿Qué carrera vas a estudiar?", "¿Adónde vais a ir de viaje de novios?"] },
-            { label: "Respuesta", items: ["A la isla de Fuerteventura.", "Tres o cuatro.", "Porque quiero viajar a España.", "Medicina.", "A las ocho y media.", "En abril."] }
-          ],
-          rows: [
-            { solved: true, to: [2] },
-            { a: [["En abril."]] },
-            { a: [["Tres o cuatro."]] },
-            { a: [["A las ocho y media."]] },
-            { a: [["Medicina."]] },
-            { a: [["A la isla de Fuerteventura."]] }
-          ]
-        },
-        {
-          num: 2, title: "¿Qué planes tienen los siguientes personajes para el fin de semana?",
-          instr: "La primera ya la trae resuelta el libro.",
-          type: "items", numbered: true,
+          num: 1, title: "Lee el texto y contesta a las preguntas",
+          instr: "Lee «Volver al campo» (recuadro de abajo) y responde con la idea principal — no hace falta copiar la frase exacta del texto.",
+          type: "items",
+          numbered: false,
+          refHTML: '<span class="ref-label">Texto: «Volver al campo»</span><div class="ref-options ref-list"><span class="ref-opt"><b>Christoph Gaupp Berghussen</b> tenía 24 años cuando llegó a Torronteras, una aldea abandonada de Guadalajara. En la aventura le acompañaba su mujer, Sarah. Ahora tienen 46 y 44 años, son apicultores y padres de tres hijos: Malva, de 12 años; Ángela, de 10, y Daniel, de 6. Ni la soledad, ni la falta de agua y electricidad de los primeros años han sido un obstáculo insalvable para esta familia. Malva, la hija mayor, cuenta que, aunque tiene que madrugar bastante para ir al instituto, no le gustaría vivir en una ciudad: «Hay más cines, más tiendas, pero también más ruido».</span><span class="ref-opt"><b>Ágata Blanco</b>, de 25 años, que vive en La Vera, Cáceres, opina que «la mejor manera de ser ecológico es irse a vivir al campo. No son solo pueblos, hay muchas tierras de cultivo muy fértiles abandonadas. Solo están esperando que alguien las trabaje». Ágata es agricultora y, además, está estudiando Psicología en la Universidad a Distancia. Está muy contenta de que su niño haya nacido en el campo, pero no todo son ventajas: «Por un lado, piensas que para el bebé va a ser más sano, más seguro, y luego resulta que en invierno no hay bomberos en la zona y que tienes la central nuclear de Almaraz a un paso».</span><span class="ref-opt">Según <b>Carlos Marín</b>, que cambió su trabajo en la ciudad en una compañía eléctrica por ser pastor de cabras en un pueblo de Huesca, «la vida es dura, pero también sencilla y barata. Por ejemplo, todas las verduras y la carne las sacamos de aquí». Él y su mujer consideran que el campo es una salida para los que están en paro. «Es difícil estar aislado, pero siempre te puedes acercar a la ciudad». Cuando van a Madrid a ver a la familia, aprovechan para ir al cine y de tiendas. Pero siempre con el billete de vuelta cerrado: «Una semana allí y ya te apetece volver a casa».</span></div>',
           items: [
-            { t: "Juan / lavar el coche.\nJuan va a lavar el coche.", solved: true },
-            { t: "Yo / llamar a mis amigos.\n{0}", a: [["Yo voy a llamar a mis amigos."]], wide: "full" },
-            { t: "Ana / cenar con Pedro.\n{0}", a: [["Ana va a cenar con Pedro."]], wide: "full" },
-            { t: "María y Alberto / pintar su casa.\n{0}", a: [["María y Alberto van a pintar su casa."]], wide: "full" },
-            { t: "Tomás y yo / arreglar nuestras bicicletas.\n{0}", a: [["Tomás y yo vamos a arreglar nuestras bicicletas."]], wide: "full" },
-            { t: "¿(Tú) / ir a la piscina?\n{0}", a: [["¿Vas a ir a la piscina?"]], wide: "full" },
-            { t: "¿(Vosotros) / venir a comer?\n{0}", a: [["¿Vais a venir a comer?"]], wide: "full" },
-            { t: "¿Tu hermano / correr la maratón de Atenas?\n{0}", a: [["¿Tu hermano va a correr la maratón de Atenas?"]], wide: "full" },
-            { t: "Mis amigos / no ver el partido en casa. (ellos) / ver en un bar.\n{0}", a: [["Mis amigos no van a ver el partido en casa. Lo van a ver en un bar."]], wide: "full" },
-            { t: "¿(Tú) / hacer obra en la cocina?\n{0}", a: [["¿Vas a hacer obra en la cocina?"]], wide: "full" }
+            { t: "¿Qué tiene que hacer Malva Gaupp para estudiar? {0}", a: [{ flex: ["madrugar"], show: "Madrugar para ir al instituto." }] },
+            { t: "¿Por qué Malva prefiere el campo a la ciudad? {0}", a: [{ flex: ["ruido"], show: "Porque en el campo hay menos ruido que en la ciudad." }] },
+            { t: "Según Ágata, ¿cuáles son las desventajas de vivir en La Vera? {0}", a: [{ flex: ["bomberos", "central"], show: "Que en invierno no hay bomberos en la zona, y muy cerca hay una central nuclear." }] },
+            { t: "¿En qué trabajaba antes Carlos? ¿Y ahora? {0}", a: [{ flex: ["electrica", "pastor"], show: "Antes trabajaba en una compañía eléctrica, y ahora es pastor." }] },
+            { t: "¿Dónde consiguen gran parte de los alimentos Carlos y su familia? {0}", a: [{ flex: ["campo"], show: "En el campo." }] }
           ]
         },
         {
-          num: 3, title: "Completa la conversación",
-          type: "text",
-          text: "ROSA: ¡Hola, Pablo! Soy Rosa. ¿Qué vas a hacer este sábado?\nPABLO: Tenemos un examen el lunes, y Elena {0} (venir) a estudiar a mi casa.\nROSA: ¿Y el domingo?\nPABLO: El domingo por la mañana Ángel y yo {1} (ver) una exposición y por la tarde {2} (jugar) a los bolos. ¿Te vienes?\nROSA: El domingo por la mañana yo no {3} (poder) porque {4} (lavar) el coche, pero nos vemos por la tarde.\nPABLO: ¡Estupendo! ¡Hasta el domingo!",
-          a: [["va a venir"], ["vamos a ver"], ["vamos a jugar"], ["puedo"], ["voy a lavar"]]
-        },
-        {
-          num: 4, title: "Relaciona cada país o ciudad con una actividad",
-          instr: "Toca un país o ciudad y después su actividad.",
-          type: "match",
-          columns: [
-            { label: "País o ciudad", items: ["Estados Unidos", "Moscú", "Egipto", "España", "Río de Janeiro", "Kenia", "Grecia", "París", "Roma", "Londres"] },
-            { label: "Actividad", items: ["Admirar la Gioconda.", "Conocer el Coliseo.", "Escuchar flamenco.", "Navegar por el Támesis.", "Hacer fotos a los leones.", "Visitar las pirámides.", "Bañarse en las playas de Copacabana.", "Volar sobre el Gran Cañón.", "Conocer las islas griegas.", "Pasear por la plaza Roja."] }
-          ],
-          rows: [
-            { a: [["Volar sobre el Gran Cañón."]] },
-            { a: [["Pasear por la plaza Roja."]] },
-            { a: [["Visitar las pirámides."]] },
-            { a: [["Escuchar flamenco."]] },
-            { a: [["Bañarse en las playas de Copacabana."]] },
-            { a: [["Hacer fotos a los leones."]] },
-            { a: [["Conocer las islas griegas."]] },
-            { a: [["Admirar la Gioconda."]] },
-            { a: [["Conocer el Coliseo."]] },
-            { a: [["Navegar por el Támesis."]] }
-          ]
-        },
-        {
-          num: 5, title: "Di qué van a hacer las siguientes personas en sus vacaciones",
-          instr: "La primera ya la trae resuelta el libro.",
-          type: "items", numbered: true,
+          num: 2, title: "Completa las vocales que faltan",
+          instr: "Cada palabra de esta unidad ha perdido sus vocales. Descúbrela y escríbela completa.",
+          type: "items",
+          numbered: false,
           items: [
-            { t: "David / Kenia.\nDavid va a hacer fotos a los leones.", solved: true },
-            { t: "Pedro / Estados Unidos.\n{0}", a: [["Pedro va a volar sobre el Gran Cañón."]], wide: "full" },
-            { t: "Alberto y Pablo / Moscú.\n{0}", a: [["Alberto y Pablo van a pasear por la plaza Roja."]], wide: "full" },
-            { t: "Yo / Egipto.\n{0}", a: [["Yo voy a visitar las pirámides."]], wide: "full" },
-            { t: "Tú / España.\n{0}", a: [["Tú vas a escuchar flamenco."]], wide: "full" },
-            { t: "Tu novia y tú / Río de Janeiro.\n{0}", a: [["Mi novio y yo nos vamos a bañar en las playas de Copacabana."]], wide: "full" },
-            { t: "Nosotros / Grecia.\n{0}", a: [["Nosotros vamos a conocer las islas griegas."]], wide: "full" },
-            { t: "Mis padres / París.\n{0}", a: [["Mis padres van a admirar la Gioconda."]], wide: "full" },
-            { t: "Pablo y María / Roma.\n{0}", a: [["Pablo y María van a conocer el Coliseo."]], wide: "full" },
-            { t: "Tu amigo Pedro / Londres.\n{0}", a: [["Tu amigo Pedro va a navegar por el Támesis."]], wide: "full" }
+            { t: "L_GO {0}", a: [["lago"]] },
+            { t: "C_NT_M_N_C__N _C_ST_C_ {0}", a: [["contaminación acústica", "contaminacion acustica"]] },
+            { t: "C_RD_LL_R_ {0}", a: [["cordillera"]] },
+            { t: "S_LV_ {0}", a: [["selva"]] },
+            { t: "M_D__ _MB__NT_ {0}", a: [["medioambiente", "medio ambiente"]] },
+            { t: "_SL_ {0}", a: [["isla"]] },
+            { t: "_C__NO {0}", a: [["océano", "oceano"]] },
+            { t: "_NC_ND__ F_R_ST_L {0}", a: [["incendio forestal"]] },
+            { t: "C_NT_N_NT_ {0}", a: [["continente"]] },
+            { t: "C_P_ D_ _Z_N_ {0}", a: [["capa de ozono"]] },
+            { t: "C_Ñ_N {0}", a: [["cañón", "cañon"]] },
+            { t: "D_S__RT_ {0}", a: [["desierto"]] }
           ]
         },
         {
-          num: 6, title: "Lee el texto y di si las frases siguientes son verdaderas o falsas",
-          instr: "Entrevista a la señora Ruiz, ganadora del sorteo de la revista Su Casa al Día. La primera ya la trae resuelta el libro.",
-          refHTML: '<span class="ref-label">¡Reforme su casa!</span>' +
-            '<div class="lectura">' +
-            '<p>ENTREVISTADORA: ¿Qué va a hacer con el dinero, señora Ruiz?</p>' +
-            '<p>SRA. RUIZ: Lo primero que voy a hacer es pintar toda la casa. Voy a poner distintos colores en cada habitación.</p>' +
-            '<p>ENTREVISTADORA: ¿Qué piensa su familia?</p>' +
-            '<p>SRA. RUIZ: Están todos de acuerdo. Ellos van a elegir el color de cada habitación.</p>' +
-            '<p>ENTREVISTADORA: ¿Y qué va a hacer con los muebles?</p>' +
-            '<p>SRA. RUIZ: Voy a cambiar los muebles viejos y también uno o dos electrodomésticos.</p>' +
-            '<p>ENTREVISTADORA: ¿Va a hacer algo más?</p>' +
-            '<p>SRA. RUIZ: Si me sobra dinero, vamos a comprar un televisor con una pantalla muy grande, como de cine.</p>' +
-            '</div>',
-          type: "items", numbered: true,
+          num: 3, title: "Completa con el comparativo correspondiente",
+          instr: "Usa más/menos/tan + que/como, según corresponda. La primera frase ya viene resuelta como modelo.",
+          type: "items",
+          numbered: true,
           items: [
-            { t: "La Sra. Ruiz va a recibir una herencia de 10 000 euros. → F", solved: true },
-            { t: "Se va a gastar el dinero en un viaje. → {0}", a: [["F"]], vf: true },
-            { t: "Va a pintar las paredes de colores. → {0}", a: [["V"]], vf: true },
-            { t: "La familia no está de acuerdo con la reforma. → {0}", a: [["F"]], vf: true },
-            { t: "Los hijos van a elegir los colores de las habitaciones. → {0}", a: [["V"]], vf: true },
-            { t: "Con el dinero restante van a comprar una televisión. → {0}", a: [["V"]], vf: true }
+            { t: "La vida es más tranquila en los pueblos que en las ciudades.", solved: true },
+            { t: "La comida rápida es {0} sana {1} la tradicional.", a: [["menos"], ["que"]] },
+            { t: "Me gusta mi nuevo trabajo: es {0} estresante {1} el anterior.", a: [["menos"], ["que"]] },
+            { t: "Los niños de hoy leen {0} {1} los de antes. Ahora prefieren ver la televisión.", a: [["menos"], ["que"]] },
+            { t: "Por culpa del cambio climático, ahora hace {0} calor {1} hace unos años.", a: [["más", "mas"], ["que"]] },
+            { t: "El piso de Ana es más espacioso, pero tiene {0} luz {1} el mío.", a: [["menos"], ["que"]] },
+            { t: "Coge la caja más pesada, tú tienes {0} fuerza {1} yo.", a: [["más", "mas"], ["que"]] },
+            { t: "En otros países se genera {0} basura {1} aquí porque la gente es más ecológica.", a: [["menos"], ["que"]] },
+            { t: "Este barrio es {0} ruidoso {1} el mío porque también hay muchos bares y discotecas.", a: [["tan"], ["como"]] }
+          ]
+        },
+        {
+          num: 4, title: "Pon el adjetivo entre paréntesis en la forma más adecuada",
+          instr: "Comparativo o superlativo, según el sentido de la frase. La primera ya viene resuelta como modelo.",
+          type: "items",
+          numbered: true,
+          items: [
+            { t: "México es la ciudad más contaminada del mundo. (contaminada)", solved: true },
+            { t: "El verano pasado fue una de las {0} temporadas de incendios forestales en nuestro país. (malo)", a: [["peores"]] },
+            { t: "La selva amazónica es el {0} pulmón del planeta. (grande)", a: [["mayor"]] },
+            { t: "La hormiga es el animal {0}, porque puede levantar 12 veces su propio peso. (fuerte)", a: [["más fuerte", "mas fuerte"]] },
+            { t: "El elefante asiático es {0} que el africano. (pequeño)", a: [["más pequeño", "mas pequeño"]] },
+            { t: "Valencia es casi {0} como Tokio. (ruidosa)", a: [["tan ruidosa"]] },
+            { t: "Reciclar está muy bien, pero es mucho {0} producir poca basura. (bueno)", a: [["mejor"]] },
+            { t: "La bicicleta es un medio de transporte {0} como agradable. (ecológico)", a: [["tan ecológico", "tan ecologico"]] },
+            { t: "Australia es uno de los países {0} del mundo. (seco)", a: [["más secos", "mas secos"]] }
+          ]
+        },
+        {
+          num: 5, title: "Escribe el superlativo de estos adjetivos",
+          instr: "Como en el ejemplo. La primera ya viene resuelta.",
+          type: "items",
+          numbered: true,
+          items: [
+            { t: "interesante → interesantísimo.", solved: true },
+            { t: "grande {0}", a: [["grandísimo"]] },
+            { t: "seco {0}", a: [["sequísimo"]] },
+            { t: "ruidoso {0}", a: [["ruidosísimo"]] },
+            { t: "vago {0}", a: [["vaguísimo"]] },
+            { t: "pequeño {0}", a: [["pequeñísimo"]] },
+            { t: "lento {0}", a: [["lentísimo"]] },
+            { t: "fuerte {0}", a: [["fortísimo"]] }
+          ]
+        },
+        {
+          num: 6, title: "Completa con tan, tanto, tanta, tantos, tantas",
+          instr: "La primera frase ya viene resuelta como modelo.",
+          type: "items",
+          numbered: true,
+          items: [
+            { t: "Mi hijo no es tan estudioso como el tuyo.", solved: true },
+            { t: "En Madrid hay {0} tráfico como en mi ciudad.", a: [["tanto"]] },
+            { t: "Antes había muchísimas truchas en este río, pero últimamente ya no hay {0}.", a: [["tantas"]] },
+            { t: "Este coche tiene {0} prestaciones como ese otro y, además, es más barato.", a: [["tantas"]] },
+            { t: "Nosotros lo pasamos {0} bien en la playa como en la montaña.", a: [["tan"]] },
+            { t: "En algunas ciudades hay {0} coches como personas.", a: [["tantos"]] },
+            { t: "Yo no tengo {0} confianza en mí misma como tú.", a: [["tanta"]] },
+            { t: "Este año la empresa no ha obtenido unos resultados {0} buenos como el anterior.", a: [["tan"]] },
+            { t: "Nunca había visto {0} libros antiguos.", a: [["tantos"]] },
+            { t: "Mi sobrino duerme {0} como un lirón.", a: [["tanto"]] }
           ]
         }
       ]
@@ -893,9 +917,8 @@
   const main = document.getElementById("main");
   const navDots = document.getElementById("navDots");
   const allInputs = []; // {el, spec}
-  const openAnswers = []; // { num, title, el } de cada textarea de un ejercicio "open"
-  const pendingMatchDraws = []; // drawLines() de cada ejercicio "match", pendientes hasta que el bloque esté insertado en el DOM
   const allExercises = []; // ex objects, para poder llamar a ex._onGraded desde "Corregir todos"
+  const openAnswers = []; // { num, title, el } de cada textarea de un ejercicio "open", para incluirlas en buildSummary()
 
   // wide: true  -> input intermedio (una o dos palabras)
   // wide: "full" -> input de frase entera, para los ejercicios de transformar oraciones:
@@ -1069,6 +1092,26 @@
         instr.textContent = ex.instr;
         card.appendChild(instr);
       }
+      // ex.audioSrc: la grabación de verdad (data: URI, incrustada en base64 — un artefacto
+      // no puede referenciar un archivo externo). Antes de tener el audio, el único recurso
+      // era la transcripción plegada (ex.transcriptHTML), y la regla del profesor sigue
+      // aplicando igual: aunque ahora SÍ haya audio, la transcripción no se quita, se queda
+      // como apoyo. preload="none" porque un documento puede llevar varios audios y no hace
+      // falta descargarlos todos solo por abrir la página.
+      if (ex.audioSrc) {
+        if (ex.audioLabel) {
+          const label = document.createElement("div");
+          label.className = "audio-label";
+          label.textContent = ex.audioLabel;
+          card.appendChild(label);
+        }
+        const audio = document.createElement("audio");
+        audio.className = "exercise-audio";
+        audio.controls = true;
+        audio.preload = "none";
+        audio.src = ex.audioSrc;
+        card.appendChild(audio);
+      }
       if (ex.refHTML) {
         const ref = document.createElement("div");
         ref.className = "exercise-ref";
@@ -1084,7 +1127,7 @@
 
       if (ex.type === "items") {
         const wrap = document.createElement("div");
-        wrap.className = "items";
+        wrap.className = "items" + (ex.grid ? " items-grid" : "");
         ex.items.forEach(function (item, i) {
           const row = document.createElement("div");
           row.className = "item-row";
@@ -1131,7 +1174,15 @@
           // Fila que acaba en botones V/F: los botones se van al borde derecho, para que
           // todos queden en la misma columna por larga que sea la frase. Sin esto, cada par
           // de botones empieza donde acaba su frase y la lista se ve descuadrada.
-          if (!item.pre && !row.querySelector(".foto-act")) {
+          //
+          // Tampoco se toca en una rejilla (ex.grid): ahí no hay «borde derecho» al que
+          // estirarse —la fila es una celda estrecha— y el `width: auto` de .tail-blank
+          // le devuelve al input su ancho intrínseco (~20 caracteres), más ancho que la
+          // celda, así que se sale y arrastra scroll horizontal a TODA la página en el
+          // móvil. Se vio en la 5B de B1, la primera rejilla sin fotos: hasta entonces
+          // todas las rejillas llevaban imagen y ya quedaban fuera por el filtro de
+          // .foto-act.
+          if (!ex.grid && !item.pre && !row.querySelector(".foto-act")) {
             const vfw = row.querySelector(".vf-wrap");
             if (vfw && row.querySelectorAll("input.blank").length === 1) {
               let cola = "", n = vfw.nextSibling;
@@ -1145,7 +1196,7 @@
               }
             }
           }
-          if (!item.pre && !row.querySelector(".foto-act")) {
+          if (!ex.grid && !item.pre && !row.querySelector(".foto-act")) {
             const huecos = row.querySelectorAll("input.blank");
             if (huecos.length === 1) {
               // Después del hueco solo puede quedar puntuación de cierre. Si hay palabras,
@@ -1257,16 +1308,151 @@
         box.className = "open-block";
         box.innerHTML = ex.html;
         card.appendChild(box);
+
+        // No hay una única respuesta correcta que comparar, así que esto no se corrige en
+        // la página — pero el profesor sí necesita leer lo que escribió el alumno. Se
+        // guarda su texto y se añade al resumen que se envía por WhatsApp/Telegram/correo/
+        // Teams, junto a la puntuación del resto del capítulo (ver openAnswers arriba y
+        // buildSummary() más abajo).
         const note = document.createElement("p");
         note.className = "open-note";
         note.textContent = "✏️ Esta actividad no se corrige aquí: escribe tu respuesta y, cuando envíes tus resultados a tu profesor, se incluirá para que la revise personalmente.";
         card.appendChild(note);
+
         const ta = document.createElement("textarea");
         ta.className = "open-answer";
         ta.rows = 4;
         ta.placeholder = "Escribe aquí tu respuesta…";
         card.appendChild(ta);
         openAnswers.push({ num: ex.num, title: ex.title, el: ta });
+      } else if (ex.type === "crossword") {
+        // ex.words: [{ num, clue, answer, row, col, dir: "A"|"D", solved? }]. row/col
+        // empiezan en 0. Dos palabras que se cruzan comparten la MISMA celda del grid: se
+        // calcula una vez por coordenada, no una vez por palabra, para no crear dos inputs
+        // en el mismo sitio. answer va en mayúsculas o minúsculas, da igual: isCorrect ya
+        // normaliza. word.solved (como item.solved) pinta la palabra entera fija, sin
+        // huecos — para la primera palabra, que el libro trae ya resuelta.
+        const cells = new Map(); // "r,c" -> { letter, num, solved, words: [[wordNum, index]] }
+        // inputs de cada palabra, en orden, para poder revelar la respuesta completa junto
+        // a su definición al corregir (ver ex._onGraded más abajo) — las celdas no llevan
+        // .reveal propio, no cabe uno en una casilla de una letra.
+        const wordInputs = {};
+        ex.words.forEach(function (w) { if (!w.solved) wordInputs[w.num] = new Array(w.answer.length).fill(null); });
+        let minR = Infinity, minC = Infinity, maxR = -Infinity, maxC = -Infinity;
+        ex.words.forEach(function (w) {
+          for (let i = 0; i < w.answer.length; i++) {
+            const r = w.dir === "A" ? w.row : w.row + i;
+            const c = w.dir === "A" ? w.col + i : w.col;
+            minR = Math.min(minR, r); maxR = Math.max(maxR, r);
+            minC = Math.min(minC, c); maxC = Math.max(maxC, c);
+            const key = r + "," + c;
+            const letter = w.answer[i].toLowerCase();
+            const existing = cells.get(key);
+            if (!existing) {
+              cells.set(key, { letter: letter, num: i === 0 ? w.num : null, solved: !!w.solved, words: [[w.num, i]] });
+            } else {
+              if (i === 0) existing.num = w.num;
+              if (w.solved) existing.solved = true;
+              existing.words.push([w.num, i]);
+            }
+          }
+        });
+        const wrap = document.createElement("div");
+        wrap.className = "crossword-wrap";
+        const cgrid = document.createElement("div");
+        cgrid.className = "crossword-grid";
+        cgrid.style.gridTemplateColumns = "repeat(" + (maxC - minC + 1) + ", 2.1em)";
+        cgrid.style.gridTemplateRows = "repeat(" + (maxR - minR + 1) + ", 2.1em)";
+        for (let r = minR; r <= maxR; r++) {
+          for (let c = minC; c <= maxC; c++) {
+            const info = cells.get(r + "," + c);
+            const cell = document.createElement("div");
+            if (!info) {
+              cell.className = "cw-cell cw-empty";
+            } else {
+              cell.className = "cw-cell";
+              // data-w<num>="<índice>" por cada palabra que pasa por esta celda, y
+              // data-letter con la letra correcta: lo que extraer.mjs necesita para
+              // reconstruir cada respuesta sin depender de un .reveal (aquí no cabe uno,
+              // las celdas son minúsculas). No se lee del DOM en ningún otro sitio.
+              info.words.forEach(function (pair) { cell.dataset["w" + pair[0]] = pair[1]; });
+              cell.dataset.letter = info.letter;
+              if (info.num != null) {
+                const label = document.createElement("span");
+                label.className = "cw-num";
+                label.setAttribute("translate", "no");
+                label.textContent = info.num;
+                cell.appendChild(label);
+              }
+              if (info.solved) {
+                const fixed = document.createElement("span");
+                fixed.className = "cw-solved";
+                fixed.textContent = info.letter;
+                cell.appendChild(fixed);
+              } else {
+                const inp = makeInput([info.letter], false, "Crucigrama " + info.letter);
+                inp.maxLength = 1;
+                cell.appendChild(inp);
+                info.words.forEach(function (pair) {
+                  if (wordInputs[pair[0]]) wordInputs[pair[0]][pair[1]] = inp;
+                });
+              }
+            }
+            cgrid.appendChild(cell);
+          }
+        }
+        wrap.appendChild(cgrid);
+        card.appendChild(wrap);
+
+        const across = ex.words.filter(function (w) { return w.dir === "A"; });
+        const down = ex.words.filter(function (w) { return w.dir === "D"; });
+        const clues = document.createElement("div");
+        clues.className = "crossword-clues";
+        const wordReveals = {}; // num -> span.reveal, solo para las palabras no resueltas
+        [["Horizontales", across], ["Verticales", down]].forEach(function (pair) {
+          if (!pair[1].length) return;
+          const group = document.createElement("div");
+          group.className = "cw-clue-group";
+          const h = document.createElement("h4");
+          h.textContent = pair[0];
+          group.appendChild(h);
+          pair[1].forEach(function (w) {
+            const p = document.createElement("p");
+            p.className = "cw-clue";
+            p.innerHTML = '<b translate="no">' + w.num + "</b>" + escapeHtml(w.clue) +
+              (w.solved ? " <i>(ya resuelta)</i>" : "");
+            if (!w.solved) {
+              const reveal = document.createElement("span");
+              reveal.className = "reveal";
+              p.appendChild(reveal);
+              wordReveals[w.num] = reveal;
+            }
+            group.appendChild(p);
+          });
+          clues.appendChild(group);
+        });
+        card.appendChild(clues);
+
+        // Al corregir, cada palabra sin resolver del todo revela su respuesta junto a la
+        // definición — igual que "→ respuesta" en cualquier otro hueco, solo que aquí el
+        // chip vive junto al texto de la definición en vez de junto a la celda.
+        ex._onGraded = function () {
+          ex.words.forEach(function (w) {
+            if (w.solved) return;
+            const reveal = wordReveals[w.num];
+            const inputs = wordInputs[w.num];
+            // Una celda de cruce con una palabra YA resuelta (ej. la 1) no lleva input —
+            // se pinta fija, "gratis" — así que esa posición queda null en la lista: cuenta
+            // como correcta sola, no hay nada que el alumno tuviera que rellenar ahí.
+            const allCorrect = inputs.every(function (inp) { return !inp || inp.classList.contains("correct"); });
+            if (allCorrect) {
+              reveal.classList.remove("show", "bad-reveal");
+            } else {
+              reveal.textContent = "→ " + w.answer;
+              reveal.classList.add("show", "bad-reveal");
+            }
+          });
+        };
       } else if (ex.type === "agenda") {
         const twrap = document.createElement("div");
         twrap.className = "table-wrap";
@@ -1285,7 +1471,7 @@
         twrap.appendChild(table);
         card.appendChild(twrap);
         const wrap = document.createElement("div");
-        wrap.className = "items";
+        wrap.className = "items" + (ex.grid ? " items-grid" : "");
         ex.items.forEach(function (item, i) {
           const row = document.createElement("div");
           row.className = "item-row";
@@ -1332,7 +1518,7 @@
           // Fila que acaba en botones V/F: los botones se van al borde derecho, para que
           // todos queden en la misma columna por larga que sea la frase. Sin esto, cada par
           // de botones empieza donde acaba su frase y la lista se ve descuadrada.
-          if (!item.pre && !row.querySelector(".foto-act")) {
+          if (!ex.grid && !item.pre && !row.querySelector(".foto-act")) {
             const vfw = row.querySelector(".vf-wrap");
             if (vfw && row.querySelectorAll("input.blank").length === 1) {
               let cola = "", n = vfw.nextSibling;
@@ -1346,7 +1532,7 @@
               }
             }
           }
-          if (!item.pre && !row.querySelector(".foto-act")) {
+          if (!ex.grid && !item.pre && !row.querySelector(".foto-act")) {
             const huecos = row.querySelectorAll("input.blank");
             if (huecos.length === 1) {
               // Después del hueco solo puede quedar puntuación de cierre. Si hay palabras,
@@ -1383,283 +1569,6 @@
         const colas = wrap.querySelectorAll(".item-row.tail-blank");
         if (colas.length === 1) colas[0].classList.remove("tail-blank");
         card.appendChild(wrap);
-      } else if (ex.type === "match") {
-        // Relaciona con columnas: se toca un elemento de la columna ancla (columns[0], fija)
-        // y luego su pareja en la(s) columna(s) siguiente(s) — se dibuja una línea de color
-        // entre ambos. ex.columns = [{label, items:[...]}, ...]; columns[0] son las anclas.
-        // ex.rows es paralelo a columns[0].items: { solved: true } para una fila ya resuelta
-        // en el libro (sin huecos, sin interacción), o { a: [spec1, spec2, ...] } con un spec
-        // de isCorrect() por cada columna elegible (columns[1], columns[2]...), en ese orden.
-        if (ex.rows.length !== ex.columns[0].items.length) {
-          // Sin este chequeo, un rows/columns[0].items desalineados (copiar/pegar de otro
-          // capítulo, un elemento de más o de menos) no revienta aquí con un mensaje claro,
-          // sino más tarde y críptico: el primer clic en el ancla sobrante deja armedRow
-          // apuntando a un índice sin fila en `state`, y state[i][c] revienta con
-          // "Cannot read properties of undefined" dentro del listener de clic, sin pista de
-          // cuál es la causa real ni de que el problema son los datos, no el motor.
-          throw new Error('type "match": ex.rows.length (' + ex.rows.length + ') debe coincidir con ex.columns[0].items.length (' + ex.columns[0].items.length + ')');
-        }
-        const state = ex.rows.map(function () { return {}; }); // state[i][c] = índice elegido en columns[c] para la fila i
-        const usedBy = Object.create(null); // usedBy["c-idx"] = qué fila reclama esa opción (una opción, una fila)
-        const columnEls = []; // columnEls[c][idx] = elemento <button> de esa opción
-        const anchorRevealEls = []; // anchorRevealEls[i] = <div> con la respuesta correcta si falla
-        const hiddenByRowCol = Object.create(null); // hiddenByRowCol["i-c"] = <input type=hidden>
-        let armedRow = null;
-        // Paleta corta y fija (no depende del tema claro/oscuro: son colores ya diferenciados
-        // en ambos) para que dos o más conexiones a la vez no se confundan entre sí.
-        const PALETTE = ["#62744c", "#b04e72", "#5b7596", "#a3651f", "#7a6ba8", "#3f7a75"];
-        function rowColor(i) { return PALETTE[i % PALETTE.length]; }
-
-        const mouter = document.createElement("div");
-        mouter.className = "match-outer";
-        const fadeLeft = document.createElement("div");
-        fadeLeft.className = "match-fade match-fade-left";
-        const fadeRight = document.createElement("div");
-        fadeRight.className = "match-fade match-fade-right";
-        mouter.appendChild(fadeLeft);
-        mouter.appendChild(fadeRight);
-
-        const mwrap = document.createElement("div");
-        mwrap.className = "match-wrap";
-        mouter.appendChild(mwrap);
-        const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-        svg.classList.add("match-svg");
-        mwrap.appendChild(svg);
-
-        ex.columns.forEach(function (colDef, c) {
-          const colEl = document.createElement("div");
-          colEl.className = "match-col";
-          if (colDef.label) {
-            const lab = document.createElement("div");
-            lab.className = "match-col-label";
-            lab.textContent = colDef.label;
-            colEl.appendChild(lab);
-          }
-          columnEls[c] = [];
-          colDef.items.forEach(function (text, idx) {
-            const isAnchor = c === 0;
-            const rowSpec = isAnchor ? ex.rows[idx] : null;
-            const solvedAnchor = isAnchor && rowSpec && rowSpec.solved;
-            const btn = document.createElement("button");
-            btn.type = "button";
-            const solvedTarget = !isAnchor && ex.rows.some(function (r) { return r.solved && r.to && r.to[c - 1] === idx; });
-            btn.className = "match-item" + (isAnchor ? " match-anchor" : "") + ((solvedAnchor || solvedTarget) ? " match-solved" : "");
-            btn.textContent = text;
-            btn.dataset.col = String(c);
-            btn.dataset.idx = String(idx);
-            if (solvedAnchor || solvedTarget) btn.disabled = true;
-            columnEls[c][idx] = btn;
-            colEl.appendChild(btn);
-            if (isAnchor && !solvedAnchor) {
-              const reveal = document.createElement("div");
-              reveal.className = "match-row-reveal";
-              anchorRevealEls[idx] = reveal;
-              colEl.appendChild(reveal);
-            }
-          });
-          mwrap.appendChild(colEl);
-        });
-
-        // Un hueco (input oculto, como en el V/F de "items") por cada columna elegible de
-        // cada fila NO resuelta. gradeRange() los corrige exactamente igual que a cualquier
-        // otro: los lee, los colorea .correct/.incorrect y los cuenta en el total — todo el
-        // resto (colorear la ficha y la línea, mostrar la respuesta si falla) lo hace
-        // ex._onGraded() más abajo, después de que gradeRange termine, leyendo esas clases.
-        ex.rows.forEach(function (row, i) {
-          if (row.solved) return;
-          for (let j = 0; j < ex.columns.length - 1; j++) {
-            const c = j + 1;
-            const inp = document.createElement("input");
-            inp.type = "hidden";
-            inp.className = "blank";
-            const spec = row.a[j];
-            const label = "Ej. " + ex.num + " " + (i + 1) + " → " + (ex.columns[c].label || "columna " + c);
-            allInputs.push({ el: inp, spec: spec, label: label });
-            hiddenByRowCol[i + "-" + c] = inp;
-            mwrap.appendChild(inp);
-          }
-        });
-
-        function syncHiddenInputs() {
-          ex.rows.forEach(function (row, i) {
-            if (row.solved) return;
-            for (let j = 0; j < ex.columns.length - 1; j++) {
-              const c = j + 1;
-              const idx = state[i][c];
-              hiddenByRowCol[i + "-" + c].value = idx !== undefined ? ex.columns[c].items[idx] : "";
-            }
-          });
-        }
-
-        function refreshArmedStyles() {
-          columnEls[0].forEach(function (btn, idx) {
-            btn.classList.toggle("match-armed", armedRow === idx);
-          });
-          for (let c = 1; c < ex.columns.length; c++) {
-            columnEls[c].forEach(function (btn, idx) {
-              btn.classList.toggle("match-armed", armedRow !== null && state[armedRow][c] === idx);
-            });
-          }
-        }
-
-        function drawLines() {
-          while (svg.lastChild) svg.lastChild.remove();
-          const wrapRect = mwrap.getBoundingClientRect();
-          function pointFor(el, side) {
-            const r = el.getBoundingClientRect();
-            return { x: (side === "right" ? r.right : r.left) - wrapRect.left, y: r.top + r.height / 2 - wrapRect.top };
-          }
-          ex.rows.forEach(function (row, i) {
-            if (row.solved) {
-              // Fila resuelta en el libro (row.to = índice de la pareja en cada columna): se dibuja ya conectada.
-              if (!row.to) return;
-              let from = columnEls[0][i];
-              for (let j = 0; j < row.to.length; j++) {
-                const to = columnEls[j + 1][row.to[j]];
-                const q1 = pointFor(from, "right");
-                const q2 = pointFor(to, "left");
-                const ln = document.createElementNS("http://www.w3.org/2000/svg", "line");
-                ln.setAttribute("x1", q1.x); ln.setAttribute("y1", q1.y);
-                ln.setAttribute("x2", q2.x); ln.setAttribute("y2", q2.y);
-                ln.setAttribute("stroke", "var(--pencil)");
-                svg.appendChild(ln);
-                from = to;
-              }
-              return;
-            }
-            let fromEl = columnEls[0][i];
-            for (let j = 0; j < ex.columns.length - 1; j++) {
-              const c = j + 1;
-              const idx = state[i][c];
-              if (idx === undefined) break; // cadena incompleta: no se dibuja lo que falta
-              const toEl = columnEls[c][idx];
-              const p1 = pointFor(fromEl, "right");
-              const p2 = pointFor(toEl, "left");
-              const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
-              line.setAttribute("x1", p1.x); line.setAttribute("y1", p1.y);
-              line.setAttribute("x2", p2.x); line.setAttribute("y2", p2.y);
-              line.setAttribute("stroke", rowColor(i));
-              line.dataset.row = String(i);
-              line.dataset.col = String(c);
-              svg.appendChild(line);
-              fromEl = toEl;
-            }
-          });
-        }
-        function colorLine(i, c, color) {
-          const line = svg.querySelector('line[data-row="' + i + '"][data-col="' + c + '"]');
-          if (line) line.setAttribute("stroke", color);
-        }
-
-        // Sin esto, un hueco ya corregido (dataset.checked="1" + .correct/.incorrect,
-        // que updateScore()/buildSummary() leen tal cual, sin volver a mirar el valor
-        // actual) sigue contando como "respondido bien" aunque su pareja se le acabe de
-        // quitar (se la roba otra fila) o cambie a otra distinta — el marcador y el
-        // resumen que se envía al profesor podían mostrar más aciertos de los reales
-        // hasta que el alumno pulsara "Corregir" de nuevo. Se marca sin corregir para que
-        // vuelva a contar como pendiente, no como acertado.
-        function invalidateGrading(rowIdx, col) {
-          const inp = hiddenByRowCol[rowIdx + "-" + col];
-          if (!inp) return;
-          delete inp.dataset.checked;
-          inp.classList.remove("correct", "incorrect");
-        }
-
-        mwrap.addEventListener("click", function (e) {
-          const btn = e.target.closest(".match-item");
-          if (!btn || btn.disabled) return;
-          const c = parseInt(btn.dataset.col, 10);
-          const idx = parseInt(btn.dataset.idx, 10);
-          if (c === 0) {
-            // Siempre arma la fila tocada, nunca la desarma (antes alternaba y volver a
-            // tocar la misma ancla —el gesto natural de "quiero repetir esta pareja"—
-            // desarmaba en vez de dejarla lista para elegir de nuevo). No hace falta un
-            // gesto explícito de "desarmar nada": tocar una opción ya elegida en esa
-            // columna la desasigna (ver más abajo), así que "nada armado" solo pasa antes
-            // de la primera vez que se toca cualquier ancla.
-            armedRow = idx;
-            refreshArmedStyles();
-            return;
-          }
-          if (armedRow === null) return; // hay que armar primero una fila de la columna ancla
-          const i = armedRow;
-          const prev = state[i][c];
-          const claimKey = c + "-" + idx;
-          if (prev === idx) {
-            delete state[i][c];
-            delete usedBy[claimKey];
-            invalidateGrading(i, c);
-            // Sin esto, una ficha que ya se había corregido (.match-correct/-incorrect)
-            // se queda coloreada para siempre al desmarcarla — nada más la vuelve a tocar
-            // tras gradeRange(), solo ex._onGraded() la recolorea, y eso solo pasa si sigue
-            // elegida por alguna fila.
-            btn.classList.remove("match-correct", "match-incorrect");
-          } else {
-            const priorRow = usedBy[claimKey];
-            // Cada opción, una sola fila a la vez: si ya la tenía otra fila, se la quita.
-            if (priorRow !== undefined && priorRow !== i) {
-              delete state[priorRow][c];
-              invalidateGrading(priorRow, c);
-            }
-            if (prev !== undefined) {
-              delete usedBy[c + "-" + prev];
-              // Igual que arriba: la ficha que se abandona (el alumno cambia de opción en
-              // esta misma fila) puede llevar un color de una corrección anterior que ya
-              // no aplica a nada — visto en vivo: se corrige, se re-arma la fila y se elige
-              // otra opción, y la ficha vieja se queda roja/verde para siempre.
-              columnEls[c][prev].classList.remove("match-correct", "match-incorrect");
-            }
-            btn.classList.remove("match-correct", "match-incorrect");
-            invalidateGrading(i, c);
-            state[i][c] = idx;
-            usedBy[claimKey] = i;
-          }
-          syncHiddenInputs();
-          refreshArmedStyles();
-          drawLines();
-        });
-
-        ex._onGraded = function () {
-          ex.rows.forEach(function (row, i) {
-            if (row.solved) return;
-            let anyChecked = false, allOk = true;
-            for (let j = 0; j < ex.columns.length - 1; j++) {
-              const c = j + 1;
-              const inp = hiddenByRowCol[i + "-" + c];
-              if (inp.dataset.checked !== "1") continue;
-              anyChecked = true;
-              const ok = inp.classList.contains("correct");
-              if (!ok) allOk = false;
-              const idx = state[i][c];
-              if (idx !== undefined) {
-                const chip = columnEls[c][idx];
-                chip.classList.remove("match-correct", "match-incorrect");
-                chip.classList.add(ok ? "match-correct" : "match-incorrect");
-                colorLine(i, c, ok ? "var(--good)" : "var(--bad)");
-              }
-            }
-            const revealEl = anchorRevealEls[i];
-            if (!revealEl) return;
-            if (anyChecked && !allOk) {
-              const parts = [];
-              for (let j = 0; j < ex.columns.length - 1; j++) parts.push(correctTextFor(row.a[j]));
-              revealEl.textContent = "→ " + parts.join(" · ");
-              revealEl.classList.add("show");
-            } else {
-              revealEl.classList.remove("show");
-            }
-          });
-        };
-
-        function refreshFades() {
-          const canLeft = mwrap.scrollLeft > 2;
-          const canRight = mwrap.scrollLeft < mwrap.scrollWidth - mwrap.clientWidth - 2;
-          fadeLeft.classList.toggle("show", canLeft);
-          fadeRight.classList.toggle("show", canRight);
-        }
-        mwrap.addEventListener("scroll", refreshFades);
-        pendingMatchDraws.push(function () { drawLines(); refreshFades(); });
-        card.appendChild(mouter);
       }
 
       // Transcripción de audio, si el ejercicio la trae. Va al final de la tarjeta, después
@@ -1682,6 +1591,11 @@
       if (hdr.btn) hdr.btn.addEventListener("click", function () {
         gradeRange(startIdx, endIdx);
         updateScore();
+        // Hook para tipos que necesitan hacer algo MÁS después de colorear los inputs de
+        // este rango — nació con "crossword": sus celdas no llevan .reveal propio (no cabe
+        // uno en una casilla de una letra), así que la respuesta se revela junto a la
+        // definición en vez de junto a la celda. Debe ir DESPUÉS de gradeRange, para poder
+        // mirar qué quedó .correct/.incorrect.
         if (typeof ex._onGraded === "function") ex._onGraded();
       });
 
@@ -1690,12 +1604,6 @@
 
     main.appendChild(sec);
   });
-
-  pendingMatchDraws.forEach(function (fn) { fn(); });
-  if (pendingMatchDraws.length) {
-    window.addEventListener("resize", function () { pendingMatchDraws.forEach(function (fn) { fn(); }); });
-    document.addEventListener("cuaderno:unlocked", function () { pendingMatchDraws.forEach(function (fn) { fn(); }); });
-  }
 
   document.getElementById("totalBlanksLabel").textContent = allInputs.length;
   document.getElementById("scoreTotal").textContent = allInputs.length;
@@ -1744,7 +1652,7 @@
   });
 
   // ---------- results panel: motivational message + send to teacher ----------
-  const TITLE_LABEL = "Cuaderno A1 · 10C Voy a trabajar en un hotel"; // short label used in email subject / summary header
+  const TITLE_LABEL = "Cuaderno B1 · 6C La ecologista del Himalaya"; // short label used in email subject / summary header
   // These are Angel's real, reusable contact details — copy verbatim into every new
   // exercise unless he says they changed. IMPORTANT: telegram MUST be his @username
   // (no @, no phone number) — t.me/+<phone> links silently ignore ?text= and never
@@ -1963,3 +1871,5 @@
   updateScore();
 })();
 </script>
+
+</body></html>

@@ -1141,6 +1141,7 @@
           num: 8, title: "{{EXERCISE_TITLE}}",
           instr: "{{EXERCISE_INSTRUCTIONS}}",
           type: "wordsearch",
+          hideLabels: true,
           grid: [
             "RECICLAR",
             "OXFPZQWM",
@@ -1396,7 +1397,7 @@
           row.className = "item-row";
           // ex.numbered: marca 1., 2., 3. en vez de a., b., c. — obligatorio en los diálogos,
           // donde a/b/c chocaría con las letras A/B de los propios interlocutores.
-          const marca = ex.numbered ? (i + 1) + "." : String.fromCharCode(97 + i) + ".";
+          const marca = ex.markers ? ex.markers[i] + "." : (ex.numbered ? (i + 1) + "." : String.fromCharCode(97 + i) + ".");
           if (ex.dialog) row.classList.add("dialog-row");
           // item.solved = fila que el libro ya trae resuelta (el típico ítem 1 hecho como
           // modelo). Se muestra porque está en el original, pero va sin huecos: pedirle al
@@ -1777,7 +1778,7 @@
           row.className = "item-row";
           // ex.numbered: marca 1., 2., 3. en vez de a., b., c. — obligatorio en los diálogos,
           // donde a/b/c chocaría con las letras A/B de los propios interlocutores.
-          const marca = ex.numbered ? (i + 1) + "." : String.fromCharCode(97 + i) + ".";
+          const marca = ex.markers ? ex.markers[i] + "." : (ex.numbered ? (i + 1) + "." : String.fromCharCode(97 + i) + ".");
           if (ex.dialog) row.classList.add("dialog-row");
           // item.solved = fila que el libro ya trae resuelta (el típico ítem 1 hecho como
           // modelo). Se muestra porque está en el original, pero va sin huecos: pedirle al
@@ -2228,7 +2229,7 @@
         const wordsEl = document.createElement("ul");
         wordsEl.className = "ws-words";
         const wordRecs = []; // { word, li, input }
-        ex.words.forEach(function (w) {
+        ex.words.forEach(function (w, wi) {
           const li = document.createElement("li");
           li.setAttribute("translate", "no");
           if (w.img) {
@@ -2243,7 +2244,10 @@
             nameSpan.textContent = w.label;
             li.appendChild(nameSpan);
           } else {
-            li.textContent = w.label;
+            const nameSpan = document.createElement("span");
+            nameSpan.textContent = (ex.hideLabels && !w.solved) ? "Palabra " + (wi + 1) : w.label;
+            li.appendChild(nameSpan);
+            li._nameSpan = nameSpan;
           }
           if (w.solved) {
             li.classList.add("ws-solved");
@@ -2255,6 +2259,7 @@
             const rec = { el: inp, spec: [w.label], label: "Ej. " + ex.num + " sopa de letras (" + w.label + ")" };
             rec.onGrade = function (ok) {
               li.classList.toggle("ws-found-item", ok);
+              if (li._nameSpan) li._nameSpan.textContent = w.label;
               li.classList.toggle("ws-incorrect", !ok);
             };
             allInputs.push(rec);
@@ -2309,6 +2314,7 @@
           if (rec) {
             rec.input.value = rec.word.label;
             rec.li.classList.add("ws-found-item");
+            if (rec.li._nameSpan) rec.li._nameSpan.textContent = rec.word.label;
             rec.word.cells.forEach(function (rc) { cellEls[rc[0]][rc[1]].classList.add("ws-found"); });
           } else {
             path.forEach(function (rc) { cellEls[rc[0]][rc[1]].classList.add("ws-wrong"); });

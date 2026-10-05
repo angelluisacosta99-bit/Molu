@@ -11,7 +11,7 @@
 1. ¿Hay algún concurso esta noche? **No**
 2. ¿A qué hora se puede ver un documental? **A las seis de la tarde**
 3. ¿Por qué no van a poder ver la serie de los abogados? **Porque la quitaron hace quince días**
-4. ¿En qué canal le gusta a Jesús ver las noticias? **En la 2**
+4. ¿En qué canal le gusta a Jesús ver las noticias? **En la dos**
 5. ¿Hay alguna película divertida esta noche? **Sí, La máscara del Zorro**
 6. ¿Cuándo es el partido de fútbol? **Mañana**
 
@@ -61,7 +61,7 @@
 1. ¿Qué hora es? → Quería saber qué hora era. / Dijo que qué hora era.
 2. ¿Por qué os vais tan pronto? → **Quería saber por qué nos íbamos tan pronto**
 3. ¿Dónde habéis quedado? → **Quería saber dónde habíamos quedado**
-4. ¿Cuándo tendrás el dinero? → **Quería saber cuándo tendría el dinero**
+4. ¿Cuándo tendrás el dinero? → **Quería saber cuándo tendrá el dinero**
 5. ¿En qué año naciste? → **Quería saber en qué año había nacido**
 6. ¿Qué vas a hacer esta noche? → **Quería saber qué iba a hacer esa noche**
 7. ¿Quién era ese hombre? → **Quería saber quién era ese hombre**
@@ -78,7 +78,7 @@
 6. ¿Volverás tarde a casa? → **Preguntó si volvería tarde a casa**
 7. ¿Preferirías quedar más pronto? → **Preguntó si preferiría quedar más pronto**
 8. ¿Participáis en alguna red social? → **Preguntó si participábamos en alguna red social**
-9. ¿Tus padres ya están jubilados? → **Preguntó si mis padres ya estaban jubilados**
+9. ¿Tus padres ya están jubilados? → **Preguntó si mis padres ya están jubilados**
 
 #### Ej. 6 — Reconstruye la pregunta
 
@@ -86,7 +86,7 @@
 
 1. Me preguntó dónde pasaríamos las vacaciones. → ¿Dónde pasaréis las vacaciones?
 2. Me preguntó si me apetecía un bocadillo de calamares. → **¿Te apetece un bocadillo de calamares?**
-3. Me preguntó dónde habíamos visto el partido de fútbol del domingo. → **¿Dónde habéis visto el partido de fútbol del domingo?**
+3. Me preguntó dónde habíamos visto el partido de fútbol del domingo. → **¿Dónde habéis visto el partido de fútbol?**
 4. Me preguntó a qué hora tenía la entrevista. → **¿A qué hora tienes la entrevista?**
 5. Me preguntó si hago ejercicio a menudo. → **¿Haces ejercicio a menudo?**
 6. Me preguntó si había entregado el paquete a mi suegra. → **¿Le has entregado el paquete a tu suegra?**

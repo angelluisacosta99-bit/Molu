@@ -1,15 +1,12 @@
 <!--
-  Unidad 10C del cuaderno de ejercicios de Nuevo Español en Marcha 1 (A1), página 50-51:
-  "Voy a trabajar en un hotel" (ir a + infinitivo, futuro próximo). El PDF del cuaderno es
-  un escaneado sin texto extraíble, así que el contenido se transcribió mirando la página
-  renderizada, y las respuestas salen del solucionario oficial que el propio cuaderno trae
-  al final (página 61). Nota sobre el ejercicio 5, ítem 6: el enunciado pide la frase para
-  "Tu novia y tú / Río de Janeiro", pero el propio solucionario da la respuesta en primera
-  persona ("Mi novio y yo nos vamos a bañar…") -- no es un error de transcripción, es así
-  literalmente en el libro. Sin ejercicios de audio.
-  Construido sobre .claude/skills/ejercicio-interactivo/reference/template.html.
+  Unidad 4B del cuaderno de ejercicios de Nuevo Español en Marcha 3 (B1), páginas 17-18:
+  "La educación antes y ahora". Transcrito mirando las páginas renderizadas del PDF que adjuntó el
+  profesor. Las respuestas salen del solucionario oficial del propio cuaderno
+  (página 70). Construido sobre .claude/skills/ejercicio-interactivo/reference/template.html.
+  Sin ejercicio de audio en este capítulo.
+  
 -->
-<title>Cuaderno A1 · 10C — Voy a trabajar en un hotel</title>
+<title>Cuaderno B1 · 4B — La educación antes y ahora</title>
 <style>
   :root {
     --paper: #F3F5F0;
@@ -201,6 +198,11 @@
   .exnum { color: var(--gold); font-weight: 700; font-size: 0.85rem; }
   .exercise-title h3 { font-size: 1.02rem; font-weight: 700; }
   .exercise-instr { color: var(--pencil); font-size: 0.85rem; font-style: italic; margin-bottom: 0.85rem; }
+  .audio-label {
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--ink-soft); margin-bottom: 0.3rem;
+  }
+  .exercise-audio { width: 100%; max-width: 420px; display: block; margin-bottom: 0.9rem; }
   .exercise-model { color: var(--pencil); font-size: 0.85rem; font-style: italic; margin-bottom: 0.7rem; }
 
   /* Recuadro de referencia dentro de un ejercicio (banco de opciones, lista de verbos...).
@@ -215,20 +217,39 @@
     color: var(--ink-soft); font-family: -apple-system, sans-serif; display: block; margin-bottom: 0.3rem;
   }
   .exercise-ref .ref-options { display: flex; flex-wrap: wrap; gap: 0.4rem 0.9rem; }
+  /* ex.grid: para ejercicios de muchos dibujos pequeños (nombrar 18 alimentos). En una
+     sola columna serían una tira interminable. NO se activa con :has(.foto-act): las
+     fotografías grandes de una actividad deben seguir yendo una por fila. */
+  .items.items-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1.1rem 0.9rem;
+  }
+  .items.items-grid .item-row {
+    margin: 0; display: flex; flex-direction: column; align-items: center; text-align: center;
+  }
+  /* Caja de tamaño único: los dibujos son de proporciones muy distintas y, a su ancho
+     natural, unos se salen de su celda y los números quedan a distinta altura. */
+  .items.items-grid .foto-act {
+    width: 100%; height: 100px; object-fit: contain; margin: 0.15rem 0 0.35rem;
+  }
+  .items.items-grid input.blank { width: 100%; max-width: 9.5em; }
+  /* Turnos de un diálogo dentro de un mismo ítem: cada persona en su línea, y el primero
+     pegado al número para que no se quede huérfano arriba. */
+  .turno { display: block; }
+  .item-letter + .turno { display: inline; }
+  .turno b { color: var(--gold); margin-right: 0.35rem; }
   /* Opciones que son frases enteras, no palabras sueltas: una por línea. En fila y con
      nowrap, una sola opción larga se sale de la pantalla en el móvil y arrastra scroll
      horizontal a TODA la página. */
   .exercise-ref .ref-options.ref-list { display: block; }
-  .exercise-ref .ref-options.ref-list .ref-opt { display: block; white-space: normal; }
+  /* Convención del profesor para prosa corrida (textos de lectura): justificado, con
+     sangría de 1.25cm solo en la primera línea de cada párrafo — como en un documento
+     impreso. Solo aplica aquí (.ref-list, prosa de varias frases), no a .ref-opt suelto
+     fuera de .ref-list, que son opciones/palabras cortas, no párrafos. */
+  .exercise-ref .ref-options.ref-list .ref-opt {
+    display: block; white-space: normal; text-align: justify; text-indent: 1.25cm;
+  }
   .exercise-ref .ref-options.ref-list .ref-opt + .ref-opt { margin-top: 0.3rem; }
-  /* Texto de lectura dentro del recuadro de referencia (ej. 7). A diferencia de un banco
-     de opciones, aquí el recuadro SÍ debe ocupar el ancho de la tarjeta: un párrafo largo
-     en una caja estrecha se lee fatal. */
-  .exercise-ref:has(.lectura) { width: 100%; max-width: none; }
-  .lectura { line-height: 1.7; }
-  .lectura p { margin: 0 0 0.7rem; }
-  .lectura p:last-of-type { margin-bottom: 0.9rem; }
-  .lectura img.foto-act { display: block; max-width: min(100%, 380px); border-radius: 8px; }
   .exercise-ref .ref-opt { white-space: nowrap; }
   @media (max-width: 560px) {
     /* Red de seguridad: en pantalla estrecha ninguna opción se queda en nowrap. Va
@@ -247,6 +268,10 @@
     max-width: 64ch; margin-left: auto; margin-right: auto;
   }
   .open-block b { color: var(--ink); }
+  /* Nota + caja de texto de un ejercicio "open": el alumno escribe su respuesta aquí, no
+     se corrige en la página (no hay una única respuesta correcta que comparar), pero se
+     incluye tal cual en el resumen que se envía al profesor por WhatsApp/Telegram/correo/
+     Teams, para que la revise personalmente — ver openAnswers y buildSummary(). */
   .open-note {
     font-size: 0.82rem; color: var(--ink-soft); max-width: 64ch;
     margin: 0.7rem auto 0.5rem; text-align: center;
@@ -259,55 +284,12 @@
   }
   .open-answer::placeholder { color: var(--pencil); }
   .open-answer:focus { outline: none; border-color: var(--focus); }
-  /* Relaciona con columnas (type: "match") — se toca un elemento de la columna ancla
-     (la primera, fija) y luego su pareja en la(s) columna(s) siguiente(s); se dibuja una
-     línea de color entre ambos. Nació porque el truco anterior para "relaciona" (escribir
-     la letra en un hueco de texto) obligaba a aceptar mil variantes de tecleo ("d, 2",
-     "d,2", "d 2"...) y no se parecía en nada al ejercicio de tocar/unir del libro.
-     .match-wrap tiene overflow-x propio: con 3+ columnas puede no caber en 390px, y debe
-     desplazarse ella sola, nunca la página entera (ver la regla general de tablas anchas). */
-  .match-wrap { position: relative; display: flex; gap: 1.6rem; margin-top: 0.6rem; overflow-x: auto; padding-bottom: 0.3rem; }
-  .match-col { display: flex; flex-direction: column; gap: 0.5rem; min-width: 11em; flex: 1 0 auto; }
-  .match-col-label {
-    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--pencil); margin-bottom: 0.1rem;
-  }
-  .match-item {
-    text-align: left; font: inherit; font-size: 0.88rem; line-height: 1.4;
-    background: var(--paper-raised); border: 1.5px solid var(--border); border-radius: 8px;
-    padding: 0.5rem 0.7rem; color: var(--ink); cursor: pointer;
-    transition: border-color 0.15s ease, background 0.15s ease;
-  }
-  .match-item.match-armed { border-color: var(--gold); background: var(--gold-soft); box-shadow: 0 0 0 2px var(--gold-soft); }
-  .match-item.match-solved { border-style: dashed; color: var(--ink-soft); font-style: italic; cursor: default; }
-  .match-item.match-correct { border-color: var(--good); background: var(--good-bg); }
-  .match-item.match-incorrect { border-color: var(--bad); background: var(--bad-bg); }
-  .match-row-reveal {
-    font-size: 0.76rem; color: var(--bad); margin: -0.25rem 0 0; display: none;
-  }
-  .match-row-reveal.show { display: block; }
-  .match-svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
-  .match-svg line { stroke-width: 2.5; }
-  /* Con 3+ columnas, .match-wrap suele necesitar scroll horizontal propio en móvil — y sin
-     ningún aviso visual, la columna final queda fuera de pantalla sin que nada indique que
-     sigue ahí (se descubrió mirando la propia captura de móvil: la columna "Final" del
-     ejemplo de 3 columnas desaparecía entera, sin rastro). .match-outer no se desplaza —
-     solo lo hace .match-wrap, que va dentro — así que estos degradados se quedan fijos en
-     los bordes mientras el contenido se mueve debajo, y JS los muestra/oculta según haga
-     falta (ver refreshFades() en el renderizador). El color va a juego con el fondo de la
-     tarjeta (--paper-raised) para que el degradado se funda con ella. */
-  .match-outer { position: relative; }
-  .match-fade {
-    position: absolute; top: 0; bottom: 0; width: 1.6rem;
-    pointer-events: none; opacity: 0; transition: opacity 0.15s ease; z-index: 2;
-  }
-  .match-fade.show { opacity: 1; }
-  .match-fade-left { left: 0; background: linear-gradient(to right, var(--paper-raised), transparent); }
-  .match-fade-right { right: 0; background: linear-gradient(to left, var(--paper-raised), transparent); }
-  @media (max-width: 560px) {
-    .match-col { min-width: 8.5em; font-size: 0.92em; }
-    .match-wrap { gap: 0.9rem; }
-  }
+  /* Enunciados y nota de un ejercicio de respuesta libre (type: "open"). Nacieron en la 5A
+     de B1 y vivieron un tiempo solo en ese archivo; están aquí para que el siguiente
+     capítulo que use "open" no se quede sin ellos. */
+  .frases-abiertas { margin: 0 0 0.9rem; padding-left: 1.4rem; line-height: 1.9; }
+  .frases-abiertas li { margin-bottom: 0.15rem; }
+  .pista-gramatical { font-size: 0.87rem; color: var(--ink-soft); margin: 0; }
   .open-block img { max-width: 100%; border-radius: 8px; display: block; margin: 0.6rem auto 0; }
   .exercise-ref img { max-width: 100%; border-radius: 8px; display: block; margin: 0.5rem auto 0; }
 
@@ -383,6 +365,153 @@
   }
   .reveal.show { display: inline; }
   .reveal.bad-reveal { color: var(--bad); }
+
+  /* Crucigrama real (type: "crossword") — celdas que se cruzan, no una lista de
+     definiciones con la foto de la rejilla al lado. Nació en la 5B de B1: hasta entonces
+     un crucigrama del libro se resolvía como lista (ver ex.refHTML con la imagen de la
+     rejilla), porque una rejilla interactiva parecía mucho trabajo para poco. Si vuelve a
+     hacer falta, esto es el punto de partida — no reinventarlo.
+     .cw-cell vacía (sin letra) no lleva borde: es hueco de la rejilla, no una casilla. */
+  .crossword-wrap { overflow-x: auto; margin-bottom: 1rem; }
+  .crossword-grid {
+    display: inline-grid; gap: 2px; margin: 0 auto; padding: 0.4rem;
+  }
+  .cw-cell {
+    position: relative; width: 2.1em; height: 2.1em;
+  }
+  .cw-cell.cw-empty { visibility: hidden; }
+  .cw-num {
+    position: absolute; top: 0; left: 0.15em; font-size: 0.52em; line-height: 1;
+    color: var(--ink-soft); font-weight: 700; pointer-events: none;
+  }
+  .cw-cell input.blank {
+    width: 100%; height: 100%; padding: 0; margin: 0;
+    text-align: center; text-transform: uppercase;
+    font-size: 1rem; border: 1px solid var(--border); border-radius: 4px;
+  }
+  .cw-cell input.blank:focus { border-color: var(--focus); }
+  .cw-cell .cw-solved {
+    display: flex; align-items: center; justify-content: center;
+    width: 100%; height: 100%; border: 1px solid var(--border); border-radius: 4px;
+    background: var(--paper); color: var(--ink-soft); font-style: italic;
+    text-transform: uppercase; font-size: 1rem;
+  }
+  .crossword-clues {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.3rem 1.2rem; font-size: 0.88rem; margin-top: 0.6rem;
+  }
+  .crossword-clues .cw-clue-group h4 {
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--ink-soft); margin: 0.6rem 0 0.3rem;
+  }
+  .crossword-clues .cw-clue { margin: 0.15rem 0; }
+  .crossword-clues .cw-clue b { color: var(--gold); margin-right: 0.3rem; }
+
+  /* Relaciona con columnas (type: "match") — se toca un elemento de la columna ancla
+     (la primera, fija) y luego su pareja en la(s) columna(s) siguiente(s); se dibuja una
+     línea de color entre ambos. Nació porque el truco anterior para "relaciona" (escribir
+     la letra en un hueco de texto) obligaba a aceptar mil variantes de tecleo ("d, 2",
+     "d,2", "d 2"...) y no se parecía en nada al ejercicio de tocar/unir del libro.
+     .match-wrap tiene overflow-x propio: con 3+ columnas puede no caber en 390px, y debe
+     desplazarse ella sola, nunca la página entera (ver la regla general de tablas anchas). */
+  .match-wrap { position: relative; display: flex; gap: 1.6rem; margin-top: 0.6rem; overflow-x: auto; padding-bottom: 0.3rem; }
+  .match-col { display: flex; flex-direction: column; gap: 0.5rem; min-width: 11em; flex: 1 0 auto; }
+  .match-col-label {
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--pencil); margin-bottom: 0.1rem;
+  }
+  .match-item {
+    text-align: left; font: inherit; font-size: 0.88rem; line-height: 1.4;
+    background: var(--paper-raised); border: 1.5px solid var(--border); border-radius: 8px;
+    padding: 0.5rem 0.7rem; color: var(--ink); cursor: pointer;
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+  .match-item.match-armed { border-color: var(--gold); background: var(--gold-soft); box-shadow: 0 0 0 2px var(--gold-soft); }
+  .match-item.match-solved { border-style: dashed; color: var(--ink-soft); font-style: italic; cursor: default; }
+  .match-item.match-correct { border-color: var(--good); background: var(--good-bg); }
+  .match-item.match-incorrect { border-color: var(--bad); background: var(--bad-bg); }
+  .match-row-reveal {
+    font-size: 0.76rem; color: var(--bad); margin: -0.25rem 0 0; display: none;
+  }
+  .match-row-reveal.show { display: block; }
+  .match-svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
+  .match-svg line { stroke-width: 2.5; }
+  /* Con 3+ columnas, .match-wrap suele necesitar scroll horizontal propio en móvil — y sin
+     ningún aviso visual, la columna final queda fuera de pantalla sin que nada indique que
+     sigue ahí (se descubrió mirando la propia captura de móvil: la columna "Final" del
+     ejemplo de 3 columnas desaparecía entera, sin rastro). .match-outer no se desplaza —
+     solo lo hace .match-wrap, que va dentro — así que estos degradados se quedan fijos en
+     los bordes mientras el contenido se mueve debajo, y JS los muestra/oculta según haga
+     falta (ver refreshFades() en el renderizador). El color va a juego con el fondo de la
+     tarjeta (--paper-raised) para que el degradado se funda con ella. */
+  .match-outer { position: relative; }
+  .match-fade {
+    position: absolute; top: 0; bottom: 0; width: 1.6rem;
+    pointer-events: none; opacity: 0; transition: opacity 0.15s ease; z-index: 2;
+  }
+  .match-fade.show { opacity: 1; }
+  .match-fade-left { left: 0; background: linear-gradient(to right, var(--paper-raised), transparent); }
+  .match-fade-right { right: 0; background: linear-gradient(to left, var(--paper-raised), transparent); }
+  @media (max-width: 560px) {
+    .match-col { min-width: 8.5em; font-size: 0.92em; }
+    .match-wrap { gap: 0.9rem; }
+  }
+
+  /* Sopa de letras interactiva (type: "wordsearch") — se toca una letra para armarla y
+     luego otra en línea recta (horizontal, vertical o diagonal) para completar la selección. */
+  .ws-outer {
+    display: flex; flex-wrap: wrap; gap: 1.6rem; margin-top: 0.6rem; align-items: flex-start;
+    max-width: 100%; overflow-x: auto; padding-bottom: 0.2rem;
+  }
+  .ws-grid {
+    display: grid; gap: 2px; background: var(--border); padding: 3px; border-radius: 8px;
+    width: max-content; flex-shrink: 0;
+  }
+  .ws-cell {
+    width: 2rem; height: 2rem; display: flex; align-items: center; justify-content: center;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.88rem; font-weight: 700; line-height: 1;
+    background: var(--paper-raised); color: var(--ink); border: none; border-radius: 4px;
+    cursor: pointer; padding: 0; transition: background 0.1s ease, color 0.1s ease;
+  }
+  .ws-cell:hover { background: var(--gold-soft); }
+  .ws-cell.ws-armed { background: var(--gold); color: var(--paper-raised); }
+  .ws-cell.ws-found { background: var(--good-bg); color: var(--good); }
+  .ws-cell.ws-wrong { background: var(--bad-bg); color: var(--bad); }
+  .ws-words { list-style: none; margin: 0; padding: 0; min-width: 10em; }
+  .ws-words li {
+    padding: 0.4rem 0; font-size: 0.92rem; border-bottom: 1px dashed var(--border); color: var(--ink);
+  }
+  .ws-words li:last-child { border-bottom: none; }
+  .ws-words li.ws-solved { color: var(--ink-soft); font-style: italic; }
+  .ws-words li.ws-solved::before { content: "✓ "; }
+  .ws-words li.ws-found-item { color: var(--good); font-weight: 600; }
+  .ws-words li.ws-found-item::before { content: "✓ "; }
+  .ws-words li.ws-incorrect { color: var(--bad); }
+  .ws-words:has(img) { display: flex; flex-wrap: wrap; gap: 0.9rem; max-width: 22em; padding: 0; }
+  .ws-words:has(img) li {
+    width: 6.4em; text-align: center; font-size: 0.82rem; color: var(--ink);
+    padding: 0; border-bottom: none;
+  }
+  .ws-words li img {
+    width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 8px;
+    border: 1.5px solid var(--border); display: block; margin-bottom: 0.3rem;
+    filter: grayscale(1) contrast(1.05);
+  }
+  .ws-words li .ws-prof-name { display: none; }
+  .ws-words li.ws-solved img,
+  .ws-words li.ws-found-item img { border-color: var(--good); filter: none; }
+  .ws-words li.ws-solved .ws-prof-name,
+  .ws-words li.ws-found-item .ws-prof-name { display: block; color: var(--good); font-weight: 600; }
+  .ws-words li.ws-solved .ws-prof-name::before,
+  .ws-words li.ws-found-item .ws-prof-name::before { content: "✓ "; }
+  .ws-words li.ws-incorrect img { border-color: var(--bad); }
+  .ws-words li.ws-incorrect .ws-prof-name { display: block; color: var(--bad); }
+  @media (max-width: 560px) {
+    .ws-cell { width: 1.7rem; height: 1.7rem; font-size: 0.78rem; }
+    .ws-words:has(img) { max-width: 100%; }
+    .ws-words:has(img) li { width: 5.4em; }
+  }
 
   /* Hueco de verdadero/falso con botones — ver item.vf en "items" más abajo. */
   .vf-toggle { display: inline-flex; gap: 0.35rem; margin: 0 0.15rem; vertical-align: middle; }
@@ -632,18 +761,18 @@
 </style>
 
 <script>
-  // unlocked-cuaderno-8a here MUST be byte-identical to the one set further down in the gate
+  // unlocked-cuaderno-b1-4b here MUST be byte-identical to the one set further down in the gate
   // script (search "STORAGE_KEY =") — same placeholder, same value, both occurrences.
   document.documentElement.setAttribute(
     "data-locked",
-    localStorage.getItem("unlocked-cuaderno-10c") === "1" ? "false" : "true"
+    localStorage.getItem("unlocked-cuaderno-b1-4b") === "1" ? "false" : "true"
   );
 </script>
 
 <div class="gate-overlay">
   <div class="gate-card">
     <div class="eyebrow">Acceso privado</div>
-    <h2>Unidad 10C · Voy a trabajar en un hotel</h2>
+    <h2>Unidad 4B · La educación antes y ahora</h2>
     <p>Pídele el código a tu profesor para entrar.</p>
     <input type="text" id="gateInput" placeholder="CÓDIGO" autocomplete="off" autocapitalize="characters" />
     <button id="gateBtn">Entrar</button>
@@ -654,16 +783,24 @@
   (function () {
     // El código es solo un disuasivo, no seguridad real — cualquiera que vea el HTML
     // fuente lo ve. Elige una palabra corta, memorable y ligada al tema, en MAYÚSCULAS.
-    const CODE = "HOTEL";
-    // MUST be byte-identical al unlocked-cuaderno-8a usado arriba (ver comentario junto al
+    const CODE = "ESCUELA";
+    // MUST be byte-identical al unlocked-cuaderno-b1-4b usado arriba (ver comentario junto al
     // primer occurrence). Usa un valor único por ejercicio, p. ej. "unlocked-b2-13a-tema".
-    const STORAGE_KEY = "unlocked-cuaderno-10c";
+    const STORAGE_KEY = "unlocked-cuaderno-b1-4b";
     function tryUnlock() {
       const val = document.getElementById("gateInput").value.trim().toUpperCase();
       if (val === CODE) {
         localStorage.setItem(STORAGE_KEY, "1");
         document.documentElement.setAttribute("data-locked", "false");
-        // Avisa al motor de que #main acaba de hacerse visible (redibuja las líneas de «relaciona»).
+        // #main lleva la clase "gated-content", que la CSS de arriba pone a display:none
+        // mientras data-locked="true" — así que en la primera visita (sin el localStorage
+        // de una vez anterior) el script de más abajo que monta los bloques se ejecuta
+        // con #main todavía oculto, y cualquier medida de layout que tome en ese momento
+        // (scrollWidth, getBoundingClientRect...) sale a 0. Para ejercicios "match", eso
+        // deja mal calculado si hace falta el aviso de scroll horizontal (ver
+        // refreshFades() en el motor) — nada más lo vuelve a comprobar después, así que
+        // sin este evento se quedaría mal para siempre en la primera visita. Este evento
+        // avisa al motor, ya cargado, de que el contenido acaba de hacerse visible.
         document.dispatchEvent(new CustomEvent("cuaderno:unlocked"));
       } else {
         document.getElementById("gateError").textContent = "Código incorrecto. Inténtalo de nuevo.";
@@ -679,9 +816,8 @@
 <div class="topbar gated-content">
   <div class="topbar-inner">
     <div class="brand">
-      <!-- Cuaderno A1 · Unidad 10C / Voy a trabajar en un hotel -->
-      <span class="brand-title">Cuaderno A1 · Unidad 10C</span>
-      <span class="brand-sub">Voy a trabajar en un hotel</span>
+      <span class="brand-title">Cuaderno B1 · Unidad 4B</span>
+      <span class="brand-sub">La educación antes y ahora</span>
     </div>
     <nav class="nav-dots" id="navDots"></nav>
     <div class="score-wrap">
@@ -692,13 +828,13 @@
 </div>
 
 <div class="hero gated-content">
-  <div class="eyebrow">Nuevo Español en Marcha 1 · Cuaderno de ejercicios · Unidad 10</div>
-  <h1>Voy a trabajar en un hotel</h1>
-  <p>Ir a + infinitivo para hablar de planes futuros, con una entrevista y un texto de lectura reales. Escribe tus respuestas, corrige al instante y envía el resultado a tu profesor.</p>
+  <div class="eyebrow">Nuevo Español en Marcha 3 · Cuaderno de ejercicios · Unidad 4 · El tiempo pasa</div>
+  <h1>La educación antes y ahora</h1>
+  <p>Contrastar el pasado y el presente con «antes» y «ahora», y vocabulario de educación. Escribe tus respuestas, corrige al instante y envía el resultado a tu profesor.</p>
   <div class="hero-meta">
     <span><strong id="totalBlanksLabel" translate="no">—</strong> huecos en total</span>
     <span><strong>1</strong> bloque</span>
-    <span><strong>6</strong> ejercicios</span>
+    <span><strong>3</strong> ejercicios</span>
   </div>
 </div>
 
@@ -730,7 +866,7 @@
 </div>
 
 <footer class="gated-content">
-  <span>© Angel Luis Acosta González · Nuevo Español en Marcha 1 (A1), cuaderno, unidad 8A</span>
+  <span>Nuevo Español en Marcha 3 (B1), cuaderno de ejercicios, unidad 4B (pág. 17-18)</span>
   <span>© Angel Luis Acosta González</span>
 </footer>
 
@@ -752,7 +888,16 @@
   function norm(s) {
     return (s || "")
       .toLowerCase()
-      .replace(/[¿?¡!.,]/g, "")
+      .replace(/[¿?¡!.]/g, "")
+      // La coma se sustituye por un espacio, no se borra sin más: borrarla trataba
+      // "a,d,h" (sin espacio) y "a, d, h" (con espacio) como cadenas distintas —
+      // "adh" vs "a d h" — así que una respuesta de varias letras separadas por
+      // comas se marcaba mal si al alumno se le olvidaba el espacio (bug real,
+      // encontrado en revisión de PR). Sustituir por espacio y luego colapsar
+      // espacios seguidos normaliza las dos formas (y cualquier mezcla de las
+      // dos) a la misma cadena. No afecta a una frase normal con coma ("Sí,
+      // gracias" ya lleva un espacio después de la coma en el texto real).
+      .replace(/,/g, " ")
       .trim()
       .replace(/\s+/g, " ");
   }
@@ -780,109 +925,54 @@
   // template blanks use {0},{1}... matched to item.answers[i]
   const blocks = [
     {
-      id: "unidad-10c", num: 1, title: "Voy a trabajar en un hotel",
-      sub: "Ir a + infinitivo (futuro próximo)",
+      id: "unidad4b", num: 1, title: "La educación antes y ahora",
+      sub: "Unidad 4B del cuaderno",
       exercises: [
         {
-          num: 1, title: "Relaciona las siguientes preguntas con sus respuestas",
-          instr: "Toca una pregunta y después su respuesta. La primera ya la trae resuelta el libro.",
-          type: "match",
-          columns: [
-            { label: "Pregunta", items: ["¿Para qué vas a aprender español?", "¿Cuándo se va a casar Pedro?", "¿Cuántos días van a estar?", "¿A qué hora vamos a quedar?", "¿Qué carrera vas a estudiar?", "¿Adónde vais a ir de viaje de novios?"] },
-            { label: "Respuesta", items: ["A la isla de Fuerteventura.", "Tres o cuatro.", "Porque quiero viajar a España.", "Medicina.", "A las ocho y media.", "En abril."] }
-          ],
-          rows: [
-            { solved: true, to: [2] },
-            { a: [["En abril."]] },
-            { a: [["Tres o cuatro."]] },
-            { a: [["A las ocho y media."]] },
-            { a: [["Medicina."]] },
-            { a: [["A la isla de Fuerteventura."]] }
-          ]
-        },
-        {
-          num: 2, title: "¿Qué planes tienen los siguientes personajes para el fin de semana?",
-          instr: "La primera ya la trae resuelta el libro.",
-          type: "items", numbered: true,
+          num: 1, title: "Construye frases",
+          instr: "Construye frases con «antes» y «ahora». La primera ya viene resuelta en el libro.",
+          type: "items",
+          numbered: true,
           items: [
-            { t: "Juan / lavar el coche.\nJuan va a lavar el coche.", solved: true },
-            { t: "Yo / llamar a mis amigos.\n{0}", a: [["Yo voy a llamar a mis amigos."]], wide: "full" },
-            { t: "Ana / cenar con Pedro.\n{0}", a: [["Ana va a cenar con Pedro."]], wide: "full" },
-            { t: "María y Alberto / pintar su casa.\n{0}", a: [["María y Alberto van a pintar su casa."]], wide: "full" },
-            { t: "Tomás y yo / arreglar nuestras bicicletas.\n{0}", a: [["Tomás y yo vamos a arreglar nuestras bicicletas."]], wide: "full" },
-            { t: "¿(Tú) / ir a la piscina?\n{0}", a: [["¿Vas a ir a la piscina?"]], wide: "full" },
-            { t: "¿(Vosotros) / venir a comer?\n{0}", a: [["¿Vais a venir a comer?"]], wide: "full" },
-            { t: "¿Tu hermano / correr la maratón de Atenas?\n{0}", a: [["¿Tu hermano va a correr la maratón de Atenas?"]], wide: "full" },
-            { t: "Mis amigos / no ver el partido en casa. (ellos) / ver en un bar.\n{0}", a: [["Mis amigos no van a ver el partido en casa. Lo van a ver en un bar."]], wide: "full" },
-            { t: "¿(Tú) / hacer obra en la cocina?\n{0}", a: [["¿Vas a hacer obra en la cocina?"]], wide: "full" }
+            { t: "Los niños tener mucha imaginación / ser menos creativos. → Antes los niños tenían mucha imaginación, pero ahora son menos creativos.", solved: true },
+            { t: "Darme miedo el agua / encantarme nadar.\n{0}", wide: "full", a: [["Antes me daba miedo el agua, pero ahora me encanta nadar", "Antes me daba miedo el agua, ahora me encanta nadar"]] },
+            { t: "Los niños construir sus propios juguetes / sus padres comprárselos.\n{0}", wide: "full", a: [["Antes los niños construían sus propios juguetes, ahora sus padres se los compran", "Antes los niños construían sus propios juguetes, pero ahora sus padres se los compran"]] },
+            { t: "Los niños jugar en la calle con sus amigos / preferir divertirse con los videojuegos.\n{0}", wide: "full", a: [["Antes los niños jugaban en la calle con sus amigos, ahora prefieren divertirse con los videojuegos", "Antes los niños jugaban en la calle con sus amigos, pero ahora prefieren divertirse con los videojuegos"]] },
+            { t: "Las madres pasar más tiempo en casa con sus hijos / trabajar fuera.\n{0}", wide: "full", a: [["Antes las madres pasaban más tiempo en casa con sus hijos, ahora trabajan fuera de casa", "Antes las madres pasaban más tiempo en casa con sus hijos, pero ahora trabajan fuera de casa", "Antes las madres pasaban más tiempo en casa con sus hijos, ahora trabajan fuera", "Antes las madres pasaban más tiempo en casa con sus hijos, pero ahora trabajan fuera"]] },
+            { t: "(Vosotros) ir a clase por la mañana y por la tarde / tener jornada continua.\n{0}", wide: "full", a: [["Antes vosotros ibais a clase por la mañana y por la tarde, ahora tenéis jornada continua", "Antes vosotros ibais a clase por la mañana y por la tarde, pero ahora tenéis jornada continua", "Antes ibais a clase por la mañana y por la tarde, ahora tenéis jornada continua", "Antes ibais a clase por la mañana y por la tarde, pero ahora tenéis jornada continua"]] },
+            { t: "Este colegio ser solo para niñas / ser mixto.\n{0}", wide: "full", a: [["Antes este colegio era solo para niñas, ahora es mixto", "Antes este colegio era solo para niñas, pero ahora es mixto"]] }
           ]
         },
         {
-          num: 3, title: "Completa la conversación",
-          type: "text",
-          text: "ROSA: ¡Hola, Pablo! Soy Rosa. ¿Qué vas a hacer este sábado?\nPABLO: Tenemos un examen el lunes, y Elena {0} (venir) a estudiar a mi casa.\nROSA: ¿Y el domingo?\nPABLO: El domingo por la mañana Ángel y yo {1} (ver) una exposición y por la tarde {2} (jugar) a los bolos. ¿Te vienes?\nROSA: El domingo por la mañana yo no {3} (poder) porque {4} (lavar) el coche, pero nos vemos por la tarde.\nPABLO: ¡Estupendo! ¡Hasta el domingo!",
-          a: [["va a venir"], ["vamos a ver"], ["vamos a jugar"], ["puedo"], ["voy a lavar"]]
+          num: 2, title: "Habla de tus progresos",
+          instr: "Seguro que has mejorado mucho tu español. Habla de tus progresos construyendo cinco frases con «antes» y «ahora».",
+          type: "open",
+          html: '<table class="exercise-table"><thead><tr><th>Antes</th><th>Ahora</th></tr></thead><tbody>' +
+            '<tr><td><i>Me daba mucha vergüenza hablar español.</i></td><td><i>Ahora lo hago sin problemas.</i></td></tr>' +
+            '</tbody></table>'
         },
         {
-          num: 4, title: "Relaciona cada país o ciudad con una actividad",
-          instr: "Toca un país o ciudad y después su actividad.",
-          type: "match",
-          columns: [
-            { label: "País o ciudad", items: ["Estados Unidos", "Moscú", "Egipto", "España", "Río de Janeiro", "Kenia", "Grecia", "París", "Roma", "Londres"] },
-            { label: "Actividad", items: ["Admirar la Gioconda.", "Conocer el Coliseo.", "Escuchar flamenco.", "Navegar por el Támesis.", "Hacer fotos a los leones.", "Visitar las pirámides.", "Bañarse en las playas de Copacabana.", "Volar sobre el Gran Cañón.", "Conocer las islas griegas.", "Pasear por la plaza Roja."] }
-          ],
-          rows: [
-            { a: [["Volar sobre el Gran Cañón."]] },
-            { a: [["Pasear por la plaza Roja."]] },
-            { a: [["Visitar las pirámides."]] },
-            { a: [["Escuchar flamenco."]] },
-            { a: [["Bañarse en las playas de Copacabana."]] },
-            { a: [["Hacer fotos a los leones."]] },
-            { a: [["Conocer las islas griegas."]] },
-            { a: [["Admirar la Gioconda."]] },
-            { a: [["Conocer el Coliseo."]] },
-            { a: [["Navegar por el Támesis."]] }
-          ]
-        },
-        {
-          num: 5, title: "Di qué van a hacer las siguientes personas en sus vacaciones",
-          instr: "La primera ya la trae resuelta el libro.",
-          type: "items", numbered: true,
-          items: [
-            { t: "David / Kenia.\nDavid va a hacer fotos a los leones.", solved: true },
-            { t: "Pedro / Estados Unidos.\n{0}", a: [["Pedro va a volar sobre el Gran Cañón."]], wide: "full" },
-            { t: "Alberto y Pablo / Moscú.\n{0}", a: [["Alberto y Pablo van a pasear por la plaza Roja."]], wide: "full" },
-            { t: "Yo / Egipto.\n{0}", a: [["Yo voy a visitar las pirámides."]], wide: "full" },
-            { t: "Tú / España.\n{0}", a: [["Tú vas a escuchar flamenco."]], wide: "full" },
-            { t: "Tu novia y tú / Río de Janeiro.\n{0}", a: [["Mi novio y yo nos vamos a bañar en las playas de Copacabana."]], wide: "full" },
-            { t: "Nosotros / Grecia.\n{0}", a: [["Nosotros vamos a conocer las islas griegas."]], wide: "full" },
-            { t: "Mis padres / París.\n{0}", a: [["Mis padres van a admirar la Gioconda."]], wide: "full" },
-            { t: "Pablo y María / Roma.\n{0}", a: [["Pablo y María van a conocer el Coliseo."]], wide: "full" },
-            { t: "Tu amigo Pedro / Londres.\n{0}", a: [["Tu amigo Pedro va a navegar por el Támesis."]], wide: "full" }
-          ]
-        },
-        {
-          num: 6, title: "Lee el texto y di si las frases siguientes son verdaderas o falsas",
-          instr: "Entrevista a la señora Ruiz, ganadora del sorteo de la revista Su Casa al Día. La primera ya la trae resuelta el libro.",
-          refHTML: '<span class="ref-label">¡Reforme su casa!</span>' +
-            '<div class="lectura">' +
-            '<p>ENTREVISTADORA: ¿Qué va a hacer con el dinero, señora Ruiz?</p>' +
-            '<p>SRA. RUIZ: Lo primero que voy a hacer es pintar toda la casa. Voy a poner distintos colores en cada habitación.</p>' +
-            '<p>ENTREVISTADORA: ¿Qué piensa su familia?</p>' +
-            '<p>SRA. RUIZ: Están todos de acuerdo. Ellos van a elegir el color de cada habitación.</p>' +
-            '<p>ENTREVISTADORA: ¿Y qué va a hacer con los muebles?</p>' +
-            '<p>SRA. RUIZ: Voy a cambiar los muebles viejos y también uno o dos electrodomésticos.</p>' +
-            '<p>ENTREVISTADORA: ¿Va a hacer algo más?</p>' +
-            '<p>SRA. RUIZ: Si me sobra dinero, vamos a comprar un televisor con una pantalla muy grande, como de cine.</p>' +
+          num: 3, title: "Completa las frases con la palabra adecuada",
+          instr: "Completa las frases con la palabra adecuada. La primera («colegio privado») ya viene resuelta en el libro.",
+          refHTML: '<span class="ref-label">Palabras y expresiones del recuadro</span>' +
+            '<div class="ref-options">' +
+            '<span class="ref-opt">pedir una beca</span><span class="ref-opt">matricularse</span><span class="ref-opt">colegios públicos</span>' +
+            '<span class="ref-opt">uniforme</span><span class="ref-opt">aprobar</span><span class="ref-opt"><s>colegio privado</s></span>' +
+            '<span class="ref-opt">asignatura</span><span class="ref-opt">colegio mixto</span><span class="ref-opt">guardería</span>' +
+            '<span class="ref-opt">suspender</span>' +
             '</div>',
-          type: "items", numbered: true,
+          type: "items",
+          numbered: true,
           items: [
-            { t: "La Sra. Ruiz va a recibir una herencia de 10 000 euros. → F", solved: true },
-            { t: "Se va a gastar el dinero en un viaje. → {0}", a: [["F"]], vf: true },
-            { t: "Va a pintar las paredes de colores. → {0}", a: [["V"]], vf: true },
-            { t: "La familia no está de acuerdo con la reforma. → {0}", a: [["F"]], vf: true },
-            { t: "Los hijos van a elegir los colores de las habitaciones. → {0}", a: [["V"]], vf: true },
-            { t: "Con el dinero restante van a comprar una televisión. → {0}", a: [["V"]], vf: true }
+            { t: "Su hijo estudia en un colegio privado carísimo.", solved: true },
+            { t: "Estoy en un {0}, así que en mi clase hay niños y niñas.", a: [["colegio mixto"]], wide: true },
+            { t: "No he estudiado lo suficiente: creo que voy a {0} este examen.", a: [["suspender"]] },
+            { t: "Mi {0} favorita son las matemáticas.", a: [["asignatura"]] },
+            { t: "Para {0} el curso tendrás que esforzarte mucho.", a: [["aprobar"]] },
+            { t: "En la mayoría de los {0} los alumnos no llevan {1}.", a: [["colegios públicos"], ["uniforme"]], wide: true },
+            { t: "Clara va a {0} en la universidad para el próximo curso.", a: [["matricularse"]] },
+            { t: "Voy a {0} para estudiar en el extranjero.", a: [["pedir una beca"]], wide: true },
+            { t: "A las 16.00 horas recojo a mi hijo de la {0}.", a: [["guardería"]] }
           ]
         }
       ]
@@ -893,9 +983,14 @@
   const main = document.getElementById("main");
   const navDots = document.getElementById("navDots");
   const allInputs = []; // {el, spec}
-  const openAnswers = []; // { num, title, el } de cada textarea de un ejercicio "open"
-  const pendingMatchDraws = []; // drawLines() de cada ejercicio "match", pendientes hasta que el bloque esté insertado en el DOM
   const allExercises = []; // ex objects, para poder llamar a ex._onGraded desde "Corregir todos"
+  const openAnswers = []; // { num, title, el } de cada textarea de un ejercicio "open", para incluirlas en buildSummary()
+  // Funciones drawLines() de cada ejercicio "match", pendientes de la primera pasada: al
+  // construirse, .match-wrap todavía no está insertado en el documento (su <section> se
+  // añade a #main una vez terminado TODO el bloque, no ejercicio a ejercicio), así que
+  // getBoundingClientRect() daría 0 en todos los puntos. Se llaman todas juntas al final,
+  // cuando el DOM ya está montado — ver más abajo, después de blocks.forEach(...).
+  const pendingMatchDraws = [];
 
   // wide: true  -> input intermedio (una o dos palabras)
   // wide: "full" -> input de frase entera, para los ejercicios de transformar oraciones:
@@ -1069,6 +1164,26 @@
         instr.textContent = ex.instr;
         card.appendChild(instr);
       }
+      // ex.audioSrc: la grabación de verdad (data: URI, incrustada en base64 — un artefacto
+      // no puede referenciar un archivo externo). Antes de tener el audio, el único recurso
+      // era la transcripción plegada (ex.transcriptHTML), y la regla del profesor sigue
+      // aplicando igual: aunque ahora SÍ haya audio, la transcripción no se quita, se queda
+      // como apoyo. preload="none" porque un documento puede llevar varios audios y no hace
+      // falta descargarlos todos solo por abrir la página.
+      if (ex.audioSrc) {
+        if (ex.audioLabel) {
+          const label = document.createElement("div");
+          label.className = "audio-label";
+          label.textContent = ex.audioLabel;
+          card.appendChild(label);
+        }
+        const audio = document.createElement("audio");
+        audio.className = "exercise-audio";
+        audio.controls = true;
+        audio.preload = "none";
+        audio.src = ex.audioSrc;
+        card.appendChild(audio);
+      }
       if (ex.refHTML) {
         const ref = document.createElement("div");
         ref.className = "exercise-ref";
@@ -1084,7 +1199,7 @@
 
       if (ex.type === "items") {
         const wrap = document.createElement("div");
-        wrap.className = "items";
+        wrap.className = "items" + (ex.grid ? " items-grid" : "");
         ex.items.forEach(function (item, i) {
           const row = document.createElement("div");
           row.className = "item-row";
@@ -1131,7 +1246,15 @@
           // Fila que acaba en botones V/F: los botones se van al borde derecho, para que
           // todos queden en la misma columna por larga que sea la frase. Sin esto, cada par
           // de botones empieza donde acaba su frase y la lista se ve descuadrada.
-          if (!item.pre && !row.querySelector(".foto-act")) {
+          //
+          // Tampoco se toca en una rejilla (ex.grid): ahí no hay «borde derecho» al que
+          // estirarse —la fila es una celda estrecha— y el `width: auto` de .tail-blank
+          // le devuelve al input su ancho intrínseco (~20 caracteres), más ancho que la
+          // celda, así que se sale y arrastra scroll horizontal a TODA la página en el
+          // móvil. Se vio en la 5B de B1, la primera rejilla sin fotos: hasta entonces
+          // todas las rejillas llevaban imagen y ya quedaban fuera por el filtro de
+          // .foto-act.
+          if (!ex.grid && !item.pre && !row.querySelector(".foto-act")) {
             const vfw = row.querySelector(".vf-wrap");
             if (vfw && row.querySelectorAll("input.blank").length === 1) {
               let cola = "", n = vfw.nextSibling;
@@ -1145,7 +1268,7 @@
               }
             }
           }
-          if (!item.pre && !row.querySelector(".foto-act")) {
+          if (!ex.grid && !item.pre && !row.querySelector(".foto-act")) {
             const huecos = row.querySelectorAll("input.blank");
             if (huecos.length === 1) {
               // Después del hueco solo puede quedar puntuación de cierre. Si hay palabras,
@@ -1257,16 +1380,151 @@
         box.className = "open-block";
         box.innerHTML = ex.html;
         card.appendChild(box);
+
+        // No hay una única respuesta correcta que comparar, así que esto no se corrige en
+        // la página — pero el profesor sí necesita leer lo que escribió el alumno. Se
+        // guarda su texto y se añade al resumen que se envía por WhatsApp/Telegram/correo/
+        // Teams, junto a la puntuación del resto del capítulo (ver openAnswers arriba y
+        // buildSummary() más abajo).
         const note = document.createElement("p");
         note.className = "open-note";
         note.textContent = "✏️ Esta actividad no se corrige aquí: escribe tu respuesta y, cuando envíes tus resultados a tu profesor, se incluirá para que la revise personalmente.";
         card.appendChild(note);
+
         const ta = document.createElement("textarea");
         ta.className = "open-answer";
         ta.rows = 4;
         ta.placeholder = "Escribe aquí tu respuesta…";
         card.appendChild(ta);
         openAnswers.push({ num: ex.num, title: ex.title, el: ta });
+      } else if (ex.type === "crossword") {
+        // ex.words: [{ num, clue, answer, row, col, dir: "A"|"D", solved? }]. row/col
+        // empiezan en 0. Dos palabras que se cruzan comparten la MISMA celda del grid: se
+        // calcula una vez por coordenada, no una vez por palabra, para no crear dos inputs
+        // en el mismo sitio. answer va en mayúsculas o minúsculas, da igual: isCorrect ya
+        // normaliza. word.solved (como item.solved) pinta la palabra entera fija, sin
+        // huecos — para la primera palabra, que el libro trae ya resuelta.
+        const cells = new Map(); // "r,c" -> { letter, num, solved, words: [[wordNum, index]] }
+        // inputs de cada palabra, en orden, para poder revelar la respuesta completa junto
+        // a su definición al corregir (ver ex._onGraded más abajo) — las celdas no llevan
+        // .reveal propio, no cabe uno en una casilla de una letra.
+        const wordInputs = {};
+        ex.words.forEach(function (w) { if (!w.solved) wordInputs[w.num] = new Array(w.answer.length).fill(null); });
+        let minR = Infinity, minC = Infinity, maxR = -Infinity, maxC = -Infinity;
+        ex.words.forEach(function (w) {
+          for (let i = 0; i < w.answer.length; i++) {
+            const r = w.dir === "A" ? w.row : w.row + i;
+            const c = w.dir === "A" ? w.col + i : w.col;
+            minR = Math.min(minR, r); maxR = Math.max(maxR, r);
+            minC = Math.min(minC, c); maxC = Math.max(maxC, c);
+            const key = r + "," + c;
+            const letter = w.answer[i].toLowerCase();
+            const existing = cells.get(key);
+            if (!existing) {
+              cells.set(key, { letter: letter, num: i === 0 ? w.num : null, solved: !!w.solved, words: [[w.num, i]] });
+            } else {
+              if (i === 0) existing.num = w.num;
+              if (w.solved) existing.solved = true;
+              existing.words.push([w.num, i]);
+            }
+          }
+        });
+        const wrap = document.createElement("div");
+        wrap.className = "crossword-wrap";
+        const cgrid = document.createElement("div");
+        cgrid.className = "crossword-grid";
+        cgrid.style.gridTemplateColumns = "repeat(" + (maxC - minC + 1) + ", 2.1em)";
+        cgrid.style.gridTemplateRows = "repeat(" + (maxR - minR + 1) + ", 2.1em)";
+        for (let r = minR; r <= maxR; r++) {
+          for (let c = minC; c <= maxC; c++) {
+            const info = cells.get(r + "," + c);
+            const cell = document.createElement("div");
+            if (!info) {
+              cell.className = "cw-cell cw-empty";
+            } else {
+              cell.className = "cw-cell";
+              // data-w<num>="<índice>" por cada palabra que pasa por esta celda, y
+              // data-letter con la letra correcta: lo que extraer.mjs necesita para
+              // reconstruir cada respuesta sin depender de un .reveal (aquí no cabe uno,
+              // las celdas son minúsculas). No se lee del DOM en ningún otro sitio.
+              info.words.forEach(function (pair) { cell.dataset["w" + pair[0]] = pair[1]; });
+              cell.dataset.letter = info.letter;
+              if (info.num != null) {
+                const label = document.createElement("span");
+                label.className = "cw-num";
+                label.setAttribute("translate", "no");
+                label.textContent = info.num;
+                cell.appendChild(label);
+              }
+              if (info.solved) {
+                const fixed = document.createElement("span");
+                fixed.className = "cw-solved";
+                fixed.textContent = info.letter;
+                cell.appendChild(fixed);
+              } else {
+                const inp = makeInput([info.letter], false, "Crucigrama " + info.letter);
+                inp.maxLength = 1;
+                cell.appendChild(inp);
+                info.words.forEach(function (pair) {
+                  if (wordInputs[pair[0]]) wordInputs[pair[0]][pair[1]] = inp;
+                });
+              }
+            }
+            cgrid.appendChild(cell);
+          }
+        }
+        wrap.appendChild(cgrid);
+        card.appendChild(wrap);
+
+        const across = ex.words.filter(function (w) { return w.dir === "A"; });
+        const down = ex.words.filter(function (w) { return w.dir === "D"; });
+        const clues = document.createElement("div");
+        clues.className = "crossword-clues";
+        const wordReveals = {}; // num -> span.reveal, solo para las palabras no resueltas
+        [["Horizontales", across], ["Verticales", down]].forEach(function (pair) {
+          if (!pair[1].length) return;
+          const group = document.createElement("div");
+          group.className = "cw-clue-group";
+          const h = document.createElement("h4");
+          h.textContent = pair[0];
+          group.appendChild(h);
+          pair[1].forEach(function (w) {
+            const p = document.createElement("p");
+            p.className = "cw-clue";
+            p.innerHTML = '<b translate="no">' + w.num + "</b>" + escapeHtml(w.clue) +
+              (w.solved ? " <i>(ya resuelta)</i>" : "");
+            if (!w.solved) {
+              const reveal = document.createElement("span");
+              reveal.className = "reveal";
+              p.appendChild(reveal);
+              wordReveals[w.num] = reveal;
+            }
+            group.appendChild(p);
+          });
+          clues.appendChild(group);
+        });
+        card.appendChild(clues);
+
+        // Al corregir, cada palabra sin resolver del todo revela su respuesta junto a la
+        // definición — igual que "→ respuesta" en cualquier otro hueco, solo que aquí el
+        // chip vive junto al texto de la definición en vez de junto a la celda.
+        ex._onGraded = function () {
+          ex.words.forEach(function (w) {
+            if (w.solved) return;
+            const reveal = wordReveals[w.num];
+            const inputs = wordInputs[w.num];
+            // Una celda de cruce con una palabra YA resuelta (ej. la 1) no lleva input —
+            // se pinta fija, "gratis" — así que esa posición queda null en la lista: cuenta
+            // como correcta sola, no hay nada que el alumno tuviera que rellenar ahí.
+            const allCorrect = inputs.every(function (inp) { return !inp || inp.classList.contains("correct"); });
+            if (allCorrect) {
+              reveal.classList.remove("show", "bad-reveal");
+            } else {
+              reveal.textContent = "→ " + w.answer;
+              reveal.classList.add("show", "bad-reveal");
+            }
+          });
+        };
       } else if (ex.type === "agenda") {
         const twrap = document.createElement("div");
         twrap.className = "table-wrap";
@@ -1285,7 +1543,7 @@
         twrap.appendChild(table);
         card.appendChild(twrap);
         const wrap = document.createElement("div");
-        wrap.className = "items";
+        wrap.className = "items" + (ex.grid ? " items-grid" : "");
         ex.items.forEach(function (item, i) {
           const row = document.createElement("div");
           row.className = "item-row";
@@ -1332,7 +1590,7 @@
           // Fila que acaba en botones V/F: los botones se van al borde derecho, para que
           // todos queden en la misma columna por larga que sea la frase. Sin esto, cada par
           // de botones empieza donde acaba su frase y la lista se ve descuadrada.
-          if (!item.pre && !row.querySelector(".foto-act")) {
+          if (!ex.grid && !item.pre && !row.querySelector(".foto-act")) {
             const vfw = row.querySelector(".vf-wrap");
             if (vfw && row.querySelectorAll("input.blank").length === 1) {
               let cola = "", n = vfw.nextSibling;
@@ -1346,7 +1604,7 @@
               }
             }
           }
-          if (!item.pre && !row.querySelector(".foto-act")) {
+          if (!ex.grid && !item.pre && !row.querySelector(".foto-act")) {
             const huecos = row.querySelectorAll("input.blank");
             if (huecos.length === 1) {
               // Después del hueco solo puede quedar puntuación de cierre. Si hay palabras,
@@ -1660,6 +1918,125 @@
         mwrap.addEventListener("scroll", refreshFades);
         pendingMatchDraws.push(function () { drawLines(); refreshFades(); });
         card.appendChild(mouter);
+      } else if (ex.type === "wordsearch") {
+        // Sopa de letras interactiva. ex.grid = array de strings (una por fila); ex.words =
+        // [{ label, cells:[[r,c],...], solved?, img? }]. `cells` es la secuencia exacta de
+        // casillas que forma la palabra en la rejilla real del libro, calculada con un
+        // script de búsqueda direccional, no a mano.
+        const gridRows = ex.grid.length, gridCols = ex.grid[0].length;
+        const outer = document.createElement("div");
+        outer.className = "ws-outer";
+        const gridEl = document.createElement("div");
+        gridEl.className = "ws-grid";
+        gridEl.style.gridTemplateColumns = "repeat(" + gridCols + ", 1fr)";
+        const cellEls = [];
+        for (let r = 0; r < gridRows; r++) {
+          cellEls[r] = [];
+          for (let c = 0; c < gridCols; c++) {
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "ws-cell";
+            btn.textContent = ex.grid[r][c];
+            btn.dataset.r = String(r);
+            btn.dataset.c = String(c);
+            btn.setAttribute("translate", "no");
+            cellEls[r][c] = btn;
+            gridEl.appendChild(btn);
+          }
+        }
+        outer.appendChild(gridEl);
+
+        const wordsEl = document.createElement("ul");
+        wordsEl.className = "ws-words";
+        const wordRecs = []; // { word, li, input }
+        ex.words.forEach(function (w, wi) {
+          const li = document.createElement("li");
+          li.setAttribute("translate", "no");
+          if (w.img) {
+            const img = document.createElement("img");
+            img.src = w.img;
+            img.alt = w.label;
+            li.appendChild(img);
+            const nameSpan = document.createElement("span");
+            nameSpan.className = "ws-prof-name";
+            nameSpan.textContent = w.label;
+            li.appendChild(nameSpan);
+          } else {
+            const nameSpan = document.createElement("span");
+            nameSpan.textContent = ex.hideLabels ? "Palabra " + (wi + 1) : w.label;
+            li.appendChild(nameSpan);
+            li._nameSpan = nameSpan;
+          }
+          if (w.solved) {
+            li.classList.add("ws-solved");
+            w.cells.forEach(function (rc) { cellEls[rc[0]][rc[1]].classList.add("ws-found"); });
+          } else {
+            const inp = document.createElement("input");
+            inp.type = "hidden";
+            inp.className = "blank";
+            const rec = { el: inp, spec: [w.label], label: "Ej. " + ex.num + " sopa de letras (" + w.label + ")" };
+            rec.onGrade = function (ok) {
+              li.classList.toggle("ws-found-item", ok);
+              if (li._nameSpan) li._nameSpan.textContent = w.label;
+              li.classList.toggle("ws-incorrect", !ok);
+            };
+            allInputs.push(rec);
+            li.appendChild(inp);
+            wordRecs.push({ word: w, li: li, input: inp });
+          }
+          wordsEl.appendChild(li);
+        });
+        outer.appendChild(wordsEl);
+
+        function pathBetween(r1, c1, r2, c2) {
+          const dr = Math.sign(r2 - r1), dc = Math.sign(c2 - c1);
+          if (r1 !== r2 && c1 !== c2 && Math.abs(r2 - r1) !== Math.abs(c2 - c1)) return null;
+          const dist = Math.max(Math.abs(r2 - r1), Math.abs(c2 - c1));
+          const path = [];
+          for (let i = 0; i <= dist; i++) path.push([r1 + dr * i, c1 + dc * i]);
+          return path;
+        }
+        function sameCells(a, b) {
+          if (a.length !== b.length) return false;
+          for (let i = 0; i < a.length; i++) if (a[i][0] !== b[i][0] || a[i][1] !== b[i][1]) return false;
+          return true;
+        }
+
+        let armed = null;
+        gridEl.addEventListener("click", function (e) {
+          const btn = e.target.closest(".ws-cell");
+          if (!btn) return;
+          const r = parseInt(btn.dataset.r, 10), c = parseInt(btn.dataset.c, 10);
+          if (armed === null) {
+            armed = [r, c];
+            btn.classList.add("ws-armed");
+            return;
+          }
+          const ar = armed[0], ac = armed[1];
+          cellEls[ar][ac].classList.remove("ws-armed");
+          armed = null;
+          if (ar === r && ac === c) return;
+          const path = pathBetween(ar, ac, r, c);
+          if (!path) return;
+          const rev = path.slice().reverse();
+          const rec = wordRecs.find(function (wr) {
+            return wr.input.value !== wr.word.label &&
+              (sameCells(path, wr.word.cells) || sameCells(rev, wr.word.cells));
+          });
+          if (rec) {
+            rec.input.value = rec.word.label;
+            rec.li.classList.add("ws-found-item");
+            if (rec.li._nameSpan) rec.li._nameSpan.textContent = rec.word.label;
+            rec.word.cells.forEach(function (rc) { cellEls[rc[0]][rc[1]].classList.add("ws-found"); });
+          } else {
+            path.forEach(function (rc) { cellEls[rc[0]][rc[1]].classList.add("ws-wrong"); });
+            setTimeout(function () {
+              path.forEach(function (rc) { cellEls[rc[0]][rc[1]].classList.remove("ws-wrong"); });
+            }, 450);
+          }
+        });
+
+        card.appendChild(outer);
       }
 
       // Transcripción de audio, si el ejercicio la trae. Va al final de la tarjeta, después
@@ -1682,6 +2059,11 @@
       if (hdr.btn) hdr.btn.addEventListener("click", function () {
         gradeRange(startIdx, endIdx);
         updateScore();
+        // Hook para tipos que necesitan hacer algo MÁS después de colorear los inputs de
+        // este rango — nació con "crossword": sus celdas no llevan .reveal propio (no cabe
+        // uno en una casilla de una letra), así que la respuesta se revela junto a la
+        // definición en vez de junto a la celda. Debe ir DESPUÉS de gradeRange, para poder
+        // mirar qué quedó .correct/.incorrect.
         if (typeof ex._onGraded === "function") ex._onGraded();
       });
 
@@ -1691,6 +2073,18 @@
     main.appendChild(sec);
   });
 
+  // Cada .match-wrap ya está insertado en el documento (su <section> se acaba de añadir a
+  // #main arriba), así que getBoundingClientRect()/scrollWidth dan medidas reales — PERO
+  // solo si #main es visible. En la primera visita (sin el localStorage de una vez
+  // anterior) #main sigue con display:none tras la puerta de acceso en este mismo
+  // instante, así que esta primera pasada mide un contenedor de tamaño 0 (nada grave para
+  // drawLines(), que no tiene nada que dibujar todavía; sí importa para refreshFades(), que
+  // necesita saber YA si hace falta el aviso de scroll horizontal). Por eso se repite: una
+  // vez aquí (sirve tal cual en visitas ya desbloqueadas) y otra vez en cuanto se dispara
+  // "cuaderno:unlocked" (ver tryUnlock() más arriba), que es el único momento en que #main
+  // pasa de oculto a visible en una primera visita. Un solo listener de resize (y uno de
+  // desbloqueo) redibuja TODOS los ejercicios "match" a la vez, no uno por ejercicio — de
+  // sobra para el puñado de estos que puede llevar un capítulo.
   pendingMatchDraws.forEach(function (fn) { fn(); });
   if (pendingMatchDraws.length) {
     window.addEventListener("resize", function () { pendingMatchDraws.forEach(function (fn) { fn(); }); });
@@ -1744,7 +2138,7 @@
   });
 
   // ---------- results panel: motivational message + send to teacher ----------
-  const TITLE_LABEL = "Cuaderno A1 · 10C Voy a trabajar en un hotel"; // short label used in email subject / summary header
+  const TITLE_LABEL = "Cuaderno B1 · 4B La educación antes y ahora"; // short label used in email subject / summary header
   // These are Angel's real, reusable contact details — copy verbatim into every new
   // exercise unless he says they changed. IMPORTANT: telegram MUST be his @username
   // (no @, no phone number) — t.me/+<phone> links silently ignore ?text= and never

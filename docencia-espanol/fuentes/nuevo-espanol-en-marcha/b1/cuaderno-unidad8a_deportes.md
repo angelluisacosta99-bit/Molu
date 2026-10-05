@@ -72,7 +72,7 @@ BCGRSERISOHF
 *Escucha esta entrevista al ciclista Emilio Pedal y completa el cuestionario.*
 
 1. Edad a la que tuvo su primera bici: **A los cuatro años**
-2. Lo que hace para relajarse: **Ir al campo y a pescar**
+2. Lo que hace para relajarse: **Para relajarse le gusta ir al campo y a pescar**
 3. Un defecto: **Es muy perfeccionista**
 4. Un sueño: **Ganar otra vez la Vuelta a la Gran Montaña**
 5. Su victoria más importante: **Hasta el momento ha ganado por tercera vez la Vuelta a la Gran Montaña**
