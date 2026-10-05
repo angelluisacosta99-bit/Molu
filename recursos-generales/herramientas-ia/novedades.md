@@ -23,6 +23,159 @@ copias que puedan desincronizarse.
 
 ---
 
+## 2026-10-05 — Pasada del radar rescatada a mano: `/doctor prompt-audit`, Sonnet 5.5, Claude Mods
+
+La Routine semanal (`trig_01N46fmEJzqk7ZrS3L9cPcqt`) corrió el 5-oct pero
+**no pudo subir nada**: `git push` devolvió 403 porque Molu no estaba
+entre los repositorios autorizados de su sesión (la Routine tiene
+`folders: []`). El commit se perdió con el contenedor. Esta entrada
+recupera sus hallazgos y los **verifica contra el changelog oficial**
+(`code.claude.com/docs/en/changelog`, versiones 2.1.282-2.1.289) y las
+páginas de Anthropic. Sin tarjetas: ningún conector, plugin ni skill
+nuevo.
+
+**Pendiente (lo hace Angel):** añadir Molu a las sources de la Routine.
+`update_trigger` no puede cambiarlo. Sin esto, el lunes 12-oct fallará
+igual.
+
+### `/doctor prompt-audit` (2.1.283, 25-sep) — lo más útil
+
+**Qué es:** audita `CLAUDE.md`, skills, agentes y comandos buscando
+patrones escritos para modelos más antiguos. El informe pone primero
+rutas obsoletas, comandos obsoletos e instrucciones que se contradicen.
+También existe como `/checkup prompt-audit`.
+
+**Por qué le sirve a Angel:** `CLAUDE.md` tiene 497 líneas y la propia
+regla del repo es podarlo, no solo hacerlo crecer. Relacionado con el
+`/claude-api prompt-audit` ya registrado más abajo (mismo objetivo, para
+prompts de API).
+
+**Cómo probarlo:** `/doctor prompt-audit` en una sesión interactiva.
+Revisar a mano cada cambio propuesto antes de aplicarlo (una poda mal
+hecha ya costó 6-7 rondas de revisión, PR #63).
+
+### Claude Sonnet 5.5 (`claude-sonnet-5-5`, 2.1.284, 28-sep)
+
+Ya es el Sonnet por defecto en la API. Datos de la ficha oficial:
+1M de contexto, 128K de salida, 2 $ de entrada y 10 $ de salida por
+MTok, lectura de caché 0,20 $, corte de conocimiento jun 2026. Anthropic
+afirma que necesita menos tokens y va un 30 % más rápido que Sonnet 5
+(afirmación suya, no medida aquí).
+
+### Claude Mods (2.1.287, 1-oct)
+
+**Qué es:** plugins que pueden modificar un comportamiento más profundo
+de Claude Code. Incluye un mod integrado, "You should know": un agente
+lateral que avisa de cosas que tú o Claude podéis pasar por alto.
+Se activa con `/plugin enable cc-plugin-you-should-know@builtin`, solo
+en sesiones de primera parte con telemetría activada. El comando sale
+del changelog oficial (la Routine lo había marcado como no verificado).
+
+**Cautela:** un agente lateral gasta tokens, y un mod de terceros es
+código que cambia el comportamiento de la herramienta: mismo cuidado que
+con hooks y plugins (ver la entrada de `ponytail`). No activado; decide
+Angel.
+
+### Otras funciones nativas (verificadas)
+- Ultracode pasa a ser un interruptor propio en `/effort` (2.1.284): ya
+  no fuerza el esfuerzo `xhigh` y se mantiene en cualquier nivel.
+- `/code-review --max-findings <n>|all` (2.1.288, 2-oct): más o menos
+  hallazgos de lo habitual.
+- `/mcp reconnect all` (2.1.284, terminal interactivo): reintenta de una
+  vez todos los servidores MCP que fallaron o piden autenticación. Útil
+  cuando fallan muchos conectores al arrancar.
+- Dólares en `/usage` (2.1.284): matiz importante, solo para el límite
+  de gasto del gateway de las apps de Claude, no para cualquier uso.
+
+---
+
+## 2026-10-04 — Revisión: herramientas "watermark remover" (no instalar)
+
+Angel pidió revisar a fondo tres repos de GitHub que quitan marcas de IA.
+**Decisión: no se instala ninguno.** No hay tarjeta de instalación.
+
+**Contexto verificado (página oficial de Anthropic, 14-ago-2026):** la
+marca de texto de Claude es estadística (variante de SynthID-Text), sin
+caracteres ocultos ni información identificativa. Solo una reescritura
+que cambie todas las palabras la elimina. Los archivos llevan una
+credencial C2PA en los metadatos, que es otra cosa.
+
+| Repo | Veredicto |
+|---|---|
+| `Rjgyana/MarkClean-ClaudeWatermarkRemover` | Descartado: su capa A quita "caracteres invisibles" que Anthropic dice que no existen; 9 commits, 11 estrellas; instalación pidiéndole a Claude Code que clone y ejecute todo; licencia no abierta pese a la etiqueta "open-source". |
+| `guillaumemeyer/watermarks-remover` | El más serio, pero no necesario (ver abajo). |
+| `wiltodelta/remove-ai-watermarks` | Para imágenes y vídeo (SynthID de Gemini, C2PA), no texto; `metadata` sobrescribe el original sin `-o`; servicio de pago asociado (raiw.cc). |
+
+**`watermarks-remover` (revisión completa, clon superficial del commit
+`1181fd4`):** sin `shell=True`, `eval`, `exec` ni `pickle`; caracteres
+ocultos solo en comentarios y datos de prueba; commits de terceros
+fijados y verificados, imagen base por resumen, `c2patool` con SHA-256,
+dependencias con `==`, acciones de CI por SHA; protección SSRF; toda su
+suite de pruebas pasa en un entorno aislado. Problemas:
+- La reescritura (capa B) no está probada contra la marca real: su
+  benchmark usa una reimplementación de MarkLLM con otra clave.
+- `remove-ai-marks` se presenta como "anti-detección" y, ante fraude
+  académico, avisa y aun así limpia; `clean-user-facing-text` es más
+  prudente y no usa red.
+- El módulo `stealer` incluye el modo "promover" (`delta < 0`,
+  "spoofing" en el código): sirve para falsificar marcas.
+- Servicio sin clave por defecto, clave comparada con `==`, sin
+  comprobación de `Origin`/`Host`; `--in-place` deja un `.bak` con el
+  original; extras con licencias dudosas; guía de Windows con tarea
+  programada al iniciar sesión.
+- El hook `PostToolUse` está bien hecho (`check` por defecto), pero en
+  modo `clean` modifica archivos en cada escritura.
+
+**Lo que no se leyó línea a línea:** `container_meta.py`,
+`image_meta.py`, `av_meta.py`, el cuerpo del benchmark y los detectores.
+
+**Dato útil para `humanizer`:** su propio benchmark muestra que pedir
+"escribe como un humano" empeoró la puntuación de un detector (0,44 a
+0,02) y que un humanizador es pulido de estilo, no eliminación. Encaja
+con la v1.4.0 de `humanizer` (apostar por lo concreto).
+
+**Alternativa sin instalar nada:** para quitar Unicode invisible basta un
+script con `unicodedata` de la biblioteca estándar.
+
+---
+
+## 2026-10-04 — Pendiente (decisión aplazada): `ponytail` sin versión fijada
+
+Surgió al revisar un reel sobre skills "infectadas" (riesgo de cadena
+de suministro). Angel pidió **solo dejarlo anotado**, para decidirlo más
+adelante — no se ha cambiado nada.
+
+**Problema:** `.claude/hooks/session-start.sh` (bloque `ponytail`, hacia
+las líneas 237-259) registra `DietrichGebert/ponytail` y ejecuta
+`claude plugin marketplace update ponytail` en cada sesión, sin fijar
+commit. Sus hooks son scripts de Node que corren en todas las sesiones,
+con las variables de entorno (incluido el `GITHUB_TOKEN` que usa
+`check-pr-review.sh`). Un cambio malicioso del autor o de quien tomara
+el repo llegaría sin revisión.
+
+**Lo comprobado el 2026-10-04:** versión en uso 4.10.3, commit
+`c982cd4` del repo de terceros; los hooks de esa versión no hacen
+llamadas de red (grep de `curl`/`wget`/`npm`/`git`/`eval`/URLs). **No**
+se leyeron los scripts línea a línea.
+
+**Opciones valoradas:**
+- **A (recomendada): fijar `sha`.** Las fuentes `github` admiten `ref`
+  y `sha` (documentación oficial de marketplaces). Tocaría
+  `.claude/settings.json` y quitar/ajustar el `marketplace update` de
+  `session-start.sh`. Contras: hay que subir la versión a mano; no está
+  verificado que `marketplace update` respete el `sha` (probar en
+  sesión nueva); si el autor reescribe el historial, ponytail dejaría
+  de instalarse. Antes de fijar, leer los scripts de `hooks/`.
+- **B: copiarlo a `plugins/` como `caveman`.** Más control, pero trae
+  ficheros de otros editores y la actualización es manual.
+- **C: quitarlo.** Sin exposición, pero se pierde el modo que Angel
+  pidió activo en cada sesión.
+
+Si se retoma: seguir la skill `hook-hardening` al tocar el hook y
+abrir PR en borrador; no fusionar sin que Angel lo pida.
+
+---
+
 ## 2026-09-19 — Pasada por el correo semanal "This week in Claude Code" (4 números, 21 ago-18 sep)
 
 Angel preguntó de qué tratan los correos de Lydia (Claude Code team,
