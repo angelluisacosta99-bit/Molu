@@ -55,12 +55,17 @@ Ya añadidas como eventos recurrentes en Google Calendar (16:00-18:00 y
 |---|---|---|---|
 | 1–2 | 28 sep. – 9 oct. 2026 | Metodología de la Investigación | Computación Neuroborrosa |
 | 3–4 | 12 – 23 oct. 2026 | Inteligencia Ambiental y Sist. Multiagente | Robots Autónomos |
-| 5–6 | 26 oct. – 6 nov. 2026 | Minería de Datos | Control Inteligente |
-| 7–8 | 9 – 20 nov. 2026 | Analítica Visual y Visualización de la Información | Lógica para la Web Semántica |
+| 5–6 | 26 oct. – 6 nov. 2026 | Analítica Visual y Visualización de la Información | Control Inteligente |
+| 7–8 | 9 – 20 nov. 2026 | Minería de Datos | Lógica para la Web Semántica |
 | 9–10 | 23 nov. – 4 dic. 2026 | Recuperación Avanzada de la Información | *(Navegación de Robots — no es de este plan)* |
 | 11–12 | 7 – 18 dic. 2026 | Cibermetría | *(Técnicas de Planificación de Robots — no es de este plan)* |
 
 Acogida de estudiantes y presentación del máster: 28 de septiembre de 2026, 16:00.
+
+> **Cambio de calendario (5 oct. 2026, aviso del director del máster por Teams):**
+> Analítica Visual y Minería de Datos intercambian sus semanas respecto al
+> horario inicial de la Guía Académica; la tabla de arriba ya refleja la
+> nueva planificación.
 
 ### 2º cuatrimestre
 
