@@ -23,6 +23,72 @@ copias que puedan desincronizarse.
 
 ---
 
+## 2026-10-05 — Pasada del radar rescatada a mano: `/doctor prompt-audit`, Sonnet 5.5, Claude Mods
+
+La Routine semanal (`trig_01N46fmEJzqk7ZrS3L9cPcqt`) corrió el 5-oct pero
+**no pudo subir nada**: `git push` devolvió 403 porque Molu no estaba
+entre los repositorios autorizados de su sesión (la Routine tiene
+`folders: []`). El commit se perdió con el contenedor. Esta entrada
+recupera sus hallazgos y los **verifica contra el changelog oficial**
+(`code.claude.com/docs/en/changelog`, versiones 2.1.282-2.1.289) y las
+páginas de Anthropic. Sin tarjetas: ningún conector, plugin ni skill
+nuevo.
+
+**Pendiente (lo hace Angel):** añadir Molu a las sources de la Routine.
+`update_trigger` no puede cambiarlo. Sin esto, el lunes 12-oct fallará
+igual.
+
+### `/doctor prompt-audit` (2.1.283, 25-sep) — lo más útil
+
+**Qué es:** audita `CLAUDE.md`, skills, agentes y comandos buscando
+patrones escritos para modelos más antiguos. El informe pone primero
+rutas obsoletas, comandos obsoletos e instrucciones que se contradicen.
+También existe como `/checkup prompt-audit`.
+
+**Por qué le sirve a Angel:** `CLAUDE.md` tiene 497 líneas y la propia
+regla del repo es podarlo, no solo hacerlo crecer. Relacionado con el
+`/claude-api prompt-audit` ya registrado más abajo (mismo objetivo, para
+prompts de API).
+
+**Cómo probarlo:** `/doctor prompt-audit` en una sesión interactiva.
+Revisar a mano cada cambio propuesto antes de aplicarlo (una poda mal
+hecha ya costó 6-7 rondas de revisión, PR #63).
+
+### Claude Sonnet 5.5 (`claude-sonnet-5-5`, 2.1.284, 28-sep)
+
+Ya es el Sonnet por defecto en la API. Datos de la ficha oficial:
+1M de contexto, 128K de salida, 2 $ de entrada y 10 $ de salida por
+MTok, lectura de caché 0,20 $, corte de conocimiento jun 2026. Anthropic
+afirma que necesita menos tokens y va un 30 % más rápido que Sonnet 5
+(afirmación suya, no medida aquí).
+
+### Claude Mods (2.1.287, 1-oct)
+
+**Qué es:** plugins que pueden modificar un comportamiento más profundo
+de Claude Code. Incluye un mod integrado, "You should know": un agente
+lateral que avisa de cosas que tú o Claude podéis pasar por alto.
+Se activa con `/plugin enable cc-plugin-you-should-know@builtin`, solo
+en sesiones de primera parte con telemetría activada. El comando sale
+del changelog oficial (la Routine lo había marcado como no verificado).
+
+**Cautela:** un agente lateral gasta tokens, y un mod de terceros es
+código que cambia el comportamiento de la herramienta: mismo cuidado que
+con hooks y plugins (ver la entrada de `ponytail`). No activado; decide
+Angel.
+
+### Otras funciones nativas (verificadas)
+- Ultracode pasa a ser un interruptor propio en `/effort` (2.1.284): ya
+  no fuerza el esfuerzo `xhigh` y se mantiene en cualquier nivel.
+- `/code-review --max-findings <n>|all` (2.1.288, 2-oct): más o menos
+  hallazgos de lo habitual.
+- `/mcp reconnect all` (2.1.284, terminal interactivo): reintenta de una
+  vez todos los servidores MCP que fallaron o piden autenticación. Útil
+  cuando fallan muchos conectores al arrancar.
+- Dólares en `/usage` (2.1.284): matiz importante, solo para el límite
+  de gasto del gateway de las apps de Claude, no para cualquier uso.
+
+---
+
 ## 2026-10-04 — Revisión: herramientas "watermark remover" (no instalar)
 
 Angel pidió revisar a fondo tres repos de GitHub que quitan marcas de IA.
