@@ -94,11 +94,14 @@ B la más sencilla, D es más complejo y E se descarta.**
 ## JCR consultado (2026-10-05, con el acceso de la USAL)
 
 Fuente: PDF "2025 Journal Performance Data" de Journal Citation Reports,
-descargado por Angel el 5/10/2026. Solo se ha consultado Energy (artículo C).
+descargado por Angel el 5-6/10/2026. Consultadas Energy (C) y Energy Conversion and Management: X (B).
 
 | Revista | Factor de impacto 2025 | Sin autocitas | Cuartil y categoría (2025) |
 |---|---|---|---|
 | Energy (C) | 10,1 (76.991 citas / 7.608 ítems citables, cuenta comprobada) | 8,6 | Q1 en Energy & Fuels (puesto 34 de 191) y Q1 en Thermodynamics (puesto 3 de 78) |
+| Energy Conversion and Management: X (B) | 8,8 (4.467 citas / 506 ítems citables, cuenta comprobada) | 7,6 | Q1 en Energy & Fuels (43 de 191), Q1 en Mechanics (6 de 172) y Q1 en Thermodynamics (4 de 78) |
 
-Pendiente de consultar: Energy Conversion and Management: X (B, ISSN
-2590-1745), Applied Energy (D, 0306-2619) y Energies (A, 1996-1073).
+ECM: X figura en la edición ESCI (Emerging Sources Citation Index), no en la
+SCIE: tiene factor de impacto, pero conviene decirlo si el profesor pregunta.
+
+Pendiente de consultar: Applied Energy (D, 0306-2619) y Energies (A, 1996-1073).
