@@ -16,10 +16,10 @@ cuartil en Scimago antes de poner "factor de impacto" en el email.
 | # | Artículo (DOI) | Revista, editorial, año | Técnica y datos | Resultado verificado | Acceso | Impacto revista |
 |---|---|---|---|---|---|---|
 | B | Salameh et al., ANFIS para predecir potencia de un sistema FV conectado a red, Sharjah (10.1016/j.ecmx.2025.100958) | Energy Conversion and Management: X, Elsevier, 2025 | ANFIS; FV de 2,88 kW, datos reales de temporada pico | R² = 0,9967 (potencia), 0,9076 (tensión), 0,9913 (corriente); comparado con regresión lineal, árbol, SVM y random forest | Abierto, ScienceDirect | 4,09 |
-| C | Bilal et al., predicción de potencia de turbina eólica con ANFIS de ventana móvil (10.1016/j.energy.2022.126159) | Energy, Elsevier, 2023 | ANFIS-MoW; parque eólico real de 30 MW (Mauritania) | Sin comprobar: LeapSpace no da cifras | De pago (acceso USAL) | 11,18 |
+| C | Bilal et al., predicción de potencia de turbina eólica con ANFIS de ventana móvil (10.1016/j.energy.2022.126159) | Energy, Elsevier, 2023 | ANFIS-MoW; parque eólico real de 30 MW (Mauritania) | Leído entero (ver sección final): RMSE 36,7 kW y R = 0,9987 en ventana de 10 min | De pago (acceso USAL) | 11,18 |
 | A | Lara-Cerecedo et al., FV de 60 kW con ANFIS y ANFIS-PSO (10.3390/en16166050) | Energies, MDPI, 2023 | ANFIS y ANFIS-PSO; 225.441 registros por variable (~26 meses) medidos | ANFIS-PSO: RMSE 0,754 kW, MAPE 0,556 %. ANFIS: 1,79 kW y 1,47 % (leído en el texto) | Abierto, pero **no** es ScienceDirect | 5,18 |
-| D | Wu et al., demanda eléctrica a corto plazo con ANFIS-ELM (10.1016/j.apenergy.2023.121316) | Applied Energy, Elsevier, 2023 | ANFIS-ELM + optimizador | Sin comprobar | De pago | 15,60 |
-| E | Fazlollahtabar, optimización difusa en dos fases bajo incertidumbre (10.1016/j.ecmx.2026.101600) | Energy Conversion and Management: X, Elsevier, 2026 | Mamdani + programación lineal difusa; datos de California ISO | Sin comprobar (LeapSpace: −18,7 % de coste, 99,2 % de fiabilidad) | Abierto | 4,09 |
+| D | Wu et al., demanda eléctrica a corto plazo con ANFIS-ELM (10.1016/j.apenergy.2023.121316) | Applied Energy, Elsevier, 2023 | ANFIS-ELM + optimizador | Leído entero: reduce el RMSE un 48,4 % frente a ELM (media semanal) | De pago | 15,60 |
+| E | Fazlollahtabar, optimización difusa en dos fases bajo incertidumbre (10.1016/j.ecmx.2026.101600) | Energy Conversion and Management: X, Elsevier, 2026 | Mamdani + programación lineal difusa; datos de California ISO | Leído entero: **no recomendable**, ver sección final | Abierto | 4,09 |
 
 ## Notas por candidato
 
@@ -45,3 +45,49 @@ cuartil en Scimago antes de poner "factor de impacto" en el email.
   revista nueva y R² = 0,9999, sospechoso de sobreajuste.
 - No hay artículos de lógica difusa sobre tráfico de redes móviles en lo
   recuperado, por lo que este trabajo no sirve para el Camino D del TFM.
+
+## Lectura completa de C, D y E (2026-10-05)
+
+Hecha sobre los PDF que subió Angel. **Resultado: C es la mejor opción técnica,
+B la más sencilla, D es más complejo y E se descarta.**
+
+### C — Bilal et al., Energy 2023 (ANFIS-MoW, eólica)
+
+- **Datos:** SCADA real de un parque de 30 MW (15 aerogeneradores de 2 MW,
+  Nouakchott), medias de 10 min, cuatro turbinas y cuatro ventanas temporales
+  (10 min, 1 h, 1 día, 1 semana).
+- **Método:** ANFIS con ventana móvil; reparto 70 % entrenamiento y 30 % prueba
+  (el texto no aclara si es cronológico). Entrada: velocidad del viento y estado
+  de la turbina.
+- **Resultado:** en 10 min, RMSE 36,7 kW y R = 0,9987; empeora con la ventana
+  (1 semana: 44,2 kW y R = 0,9977).
+- **Comparación justa:** contra cinco variantes de ANFIS (partición en rejilla,
+  agrupamiento sustractivo, fuzzy c-means, algoritmo genético y PSO) sobre los
+  mismos datos. Las demás dan RMSE de 37,2 a 65,3 kW frente a 36,6 kW: la mejor
+  alternativa queda a solo un 1,6 % de distancia.
+- **Límite:** la Tabla 3 compara con modelos de la literatura (persistencia, AR,
+  VAR, etc.) cuyos números salen de otros conjuntos de datos.
+- **Para el curso:** explica varias formas de construir un sistema borroso
+  (rejilla frente a agrupamiento), que encaja con el temario.
+
+### D — Wu et al., Applied Energy 2023 (ANFIS-ELM)
+
+- **Datos:** consumo eléctrico de Serbia de **un solo mes** (noviembre de 2021),
+  separado por días de la semana.
+- **Resultado:** el híbrido reduce el RMSE un 48,4 % frente a ELM, y mejora a
+  ANFIS en media. Se compara además con SSA-CNN-BiGRU, ARIMAX-GARCH y VMD-LSTM.
+- **Límites:** la lógica borrosa es solo un componente; el peso del trabajo está
+  en un algoritmo de optimización nuevo. "ELM" aquí es una red de Elman, no la
+  *Extreme Learning Machine* habitual: ojo con la confusión de siglas.
+
+### E — Fazlollahtabar, ECM:X 2026 (descartado)
+
+- **Bibliografía:** de 20 DOIs, **11 no existen en Crossref**. Nueve tienen cifras
+  con patrón de relleno (…123456, …234567, …345678 dos veces, …567890,
+  …654321, …678901, …789012, …901234). Es señal de referencias inventadas.
+- **Datos incoherentes:** dice usar todo 2023 y luego "Q2 2023, nodo 1";
+  normaliza a [0,1] y define los números borrosos en MW; el "10-node" lleva una
+  demanda de 200-300 MW; la fuente de datos citada ([42]) es un plan de
+  transmisión en PDF, no un conjunto de datos.
+- **Conclusión:** no usarlo. LeapSpace lo había puesto entre los "mejor
+  respaldados", lo que confirma que su lista no es fiable sin comprobar.
