@@ -106,6 +106,10 @@ lección más antigua de "Lecciones aprendidas", esta sección gana.**
   `subjectLabel: ""`); (3) los enunciados e instrucciones son los del libro, solo se
   añade lo imprescindible para que el motor funcione («pulsa…», «escribe la frase
   entera»). Los recuadros de palabras que el libro SÍ imprime se conservan.
+- **Un hueco que va en su propia línea (`"...\n{0}"`) y espera una frase entera lleva
+  `wide: "full"`.** Sin él la casilla mide 8,5 em y el alumno no ve lo que escribe (7B de
+  B1: «Cuando nos entreguen el piso» en una raya corta). Aplica a toda respuesta de frase
+  completa; las de una palabra o una letra se quedan con el ancho normal.
 - **El ejemplo resuelto de un «relaciona» se ve ya conectado.** Si el libro trae la
   primera pareja hecha, en `type: "match"` la fila va `{ solved: true, to: [índice de
   la pareja en la columna 2] }` (con 3 columnas, un índice por columna): el motor
