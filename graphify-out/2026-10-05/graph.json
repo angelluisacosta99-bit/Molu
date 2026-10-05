@@ -39064,31 +39064,31 @@
       "node_kind": "heading",
       "norm_label": "estructura",
       "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/FUENTE.md",
-      "source_location": "L6"
+      "source_location": "L7"
     },
     {
-      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_fuente_material_heredado_solo_referencia_no_copiado",
-      "label": "Material heredado (solo referencia, NO copiado)",
+      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_fuente_material_de_clase_heredado_solo_referencia_no_copiado",
+      "label": "Material de clase heredado (solo referencia, NO copiado)",
       "_origin": "ast",
       "community": 47,
       "community_name": "Computaci\u00f3n Neuroborrosa (304473 \u00b7 3 ECTS \u00b7 Obligatoria)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "material heredado (solo referencia, no copiado)",
+      "norm_label": "material de clase heredado (solo referencia, no copiado)",
       "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/FUENTE.md",
-      "source_location": "L11"
+      "source_location": "L69"
     },
     {
-      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_fuente_requisitos_2023_24_no_confirmados_para_2026",
-      "label": "Requisitos 2023-24 \u2014 NO CONFIRMADOS para 2026",
+      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_fuente_requisitos_oficiales_2026_27_presentaci\u00f3n_del_profesor_4_10_26",
+      "label": "Requisitos oficiales 2026-27 (presentaci\u00f3n del profesor, 4/10/26)",
       "_origin": "ast",
       "community": 47,
       "community_name": "Computaci\u00f3n Neuroborrosa (304473 \u00b7 3 ECTS \u00b7 Obligatoria)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "requisitos 2023-24 \u2014 no confirmados para 2026",
+      "norm_label": "requisitos oficiales 2026-27 (presentacion del profesor, 4/10/26)",
       "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/FUENTE.md",
-      "source_location": "L23"
+      "source_location": "L12"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_browser_dom",
@@ -116517,24 +116517,24 @@
     },
     {
       "source": "master_sistemas_inteligentes_computacion_neuroborrosa_fuente_computaci\u00f3n_neuroborrosa_304473_3_ects_obligatoria",
-      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_fuente_material_heredado_solo_referencia_no_copiado",
+      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_fuente_requisitos_oficiales_2026_27_presentaci\u00f3n_del_profesor_4_10_26",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/FUENTE.md",
-      "source_location": "L11",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
       "source": "master_sistemas_inteligentes_computacion_neuroborrosa_fuente_computaci\u00f3n_neuroborrosa_304473_3_ects_obligatoria",
-      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_fuente_requisitos_2023_24_no_confirmados_para_2026",
+      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_fuente_material_de_clase_heredado_solo_referencia_no_copiado",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/FUENTE.md",
-      "source_location": "L23",
+      "source_location": "L69",
       "weight": 1.0
     },
     {
@@ -116545,7 +116545,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/FUENTE.md",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -125066,5 +125066,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "02b14a604e23f18e0cc6df5b2502a5ede8a6f274"
+  "built_at_commit": "5daad0e25cad44f66c545038f7d303477187f158"
 }
