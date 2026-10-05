@@ -1,7 +1,7 @@
 # Graph Report - Molu  (2026-10-05)
 
 ## Corpus Check
-- 316 files · ~1,420,106 words
+- 316 files · ~1,418,905 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 112 file(s) not represented in the graph (top: .csv 32, .arff 22, .pptx 15)
 
@@ -11,7 +11,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `c2e00263`
+- Built from commit: `ccdea03d`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -749,7 +749,7 @@ Nodes (10): caveman, Example output, How to invoke, See also, What it does, Auto
 
 ### Community 122 - "hook-hardening"
 Cohesion: 0.14
-Nodes (13): 10. Antes de comparar/enumerar con precisión en un hook, preguntar, 11. Si el hook necesita que algo persista entre contenedores efímeros,, 1. Todo código de salida se comprueba antes de declarar éxito, 2. Cada comando externo nuevo tiene `timeout`, sin excepción, 3. Antes de inventar un mecanismo, buscar si ya existe uno oficial, 4. "Probado de punta a punta" solo cuenta si reproduce la invocación real, 5. Tras cualquier intento de arreglo, re-verificar, no asumir, 6. Decir exactamente lo que un chequeo garantiza, ni más ni menos (+5 more)
+Nodes (13): 10. Antes de comparar o enumerar con precisión en un hook, preguntar si el chequeo simple (con falsos positivos aceptables) ya basta, 11. Si el hook necesita que algo persista entre contenedores efímeros, que lo persista el propio script, 1. Todo código de salida se comprueba antes de declarar éxito, 2. Cada comando externo nuevo tiene `timeout`, sin excepción, 3. Antes de inventar un mecanismo, buscar si ya existe uno oficial, 4. "Probado de punta a punta" solo cuenta si reproduce la invocación real, 5. Tras cualquier intento de arreglo, re-verificar, no asumir, 6. Decir exactamente lo que un chequeo garantiza, ni más ni menos (+5 more)
 
 ### Community 123 - "Ejercicios"
 Cohesion: 0.25
@@ -1188,7 +1188,7 @@ Cohesion: 0.19
 Nodes (3): main(), tabla(), texto()
 
 ## Knowledge Gaps
-- **989 isolated node(s):** `Perfil de voz (opcional)`, `Proceso en 3 pasadas`, `Iterar hasta converger`, `Los patrones (33, en 6 categorías)`, `Vocabulario prohibido (por niveles)` (+984 more)
+- **989 isolated node(s):** `1. Todo código de salida se comprueba antes de declarar éxito`, `2. Cada comando externo nuevo tiene `timeout`, sin excepción`, `3. Antes de inventar un mecanismo, buscar si ya existe uno oficial`, `4. "Probado de punta a punta" solo cuenta si reproduce la invocación real`, `5. Tras cualquier intento de arreglo, re-verificar, no asumir` (+984 more)
   These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1248 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **39 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -1196,10 +1196,10 @@ Nodes (3): main(), tabla(), texto()
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Novedades de herramientas de IA` connect `Novedades de herramientas de IA` to `generar_borrador.py`, `2026-10-05 — Pasada del radar rescatada a mano: `/doctor prompt-audit`, Sonnet 5.5, Claude Mods`, `2026-09-07 — Búsqueda a mano: herramientas para posts de blog en plataformas de clases`, `2026-08-30 — Pasada del radar: dos funciones nativas nuevas, sin hallazgos de terceros`, `hook-before-edit.mjs`, `2026-09-13 — Búsqueda exhaustiva: herramientas de investigación científica verificada para el máster`, `2026-09-19 — Pasada por el correo semanal "This week in Claude Code" (4 números, 21 ago-18 sep)`, `2026-08-16 — Primera pasada del radar`?**
-  _High betweenness centrality (0.191) - this node is a cross-community bridge._
+  _High betweenness centrality (0.186) - this node is a cross-community bridge._
 - **Why does `2026-08-16 — Segunda pasada: hooks vs. CLAUDE.md, y prácticas de la comunidad` connect `hook-before-edit.mjs` to `Novedades de herramientas de IA`?**
-  _High betweenness centrality (0.171) - this node is a cross-community bridge._
-- **What connects `Perfil de voz (opcional)`, `Proceso en 3 pasadas`, `Iterar hasta converger` to the rest of the system?**
+  _High betweenness centrality (0.167) - this node is a cross-community bridge._
+- **What connects `1. Todo código de salida se comprueba antes de declarar éxito`, `2. Cada comando externo nuevo tiene `timeout`, sin excepción`, `3. Antes de inventar un mecanismo, buscar si ya existe uno oficial` to the rest of the system?**
   _989 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `live-browser.js` be split into smaller, more focused modules?**
   _Cohesion score 0.031246273106738224 - nodes in this community are weakly interconnected._

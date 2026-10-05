@@ -642,15 +642,15 @@
     "semantic_hash": ""
   },
   ".claude/skills/ejercicio-interactivo/SKILL.md": {
-    "mtime": 1791017476.0109916,
-    "seen": 1791111831.1608546,
-    "ast_hash": "7f1c251b925e019063867947911dbc5b",
+    "mtime": 1791206342.5241585,
+    "seen": 1791206362.0094018,
+    "ast_hash": "535036182341fb9bf2c84e424358b5d4",
     "semantic_hash": ""
   },
   ".claude/skills/ejercicio-interactivo/reference/template.html": {
-    "mtime": 1791017476.0149915,
-    "seen": 1791111831.1608558,
-    "ast_hash": "bbc2d272759508d8d228bf36ae6e5164",
+    "mtime": 1791206342.5267675,
+    "seen": 1791206362.0094037,
+    "ast_hash": "493a0d60152781c151a1b15485a0b892",
     "semantic_hash": ""
   },
   ".claude/skills/graphify/SKILL.md": {
@@ -708,15 +708,15 @@
     "semantic_hash": ""
   },
   ".claude/skills/hook-hardening/SKILL.md": {
-    "mtime": 1791205671.6716387,
-    "seen": 1791205686.3136084,
-    "ast_hash": "15483e004049c6bdf99ab3dce2a06ece",
+    "mtime": 1791206350.1201606,
+    "seen": 1791206362.0094156,
+    "ast_hash": "f70c8ed29d24675cc3aa742ec2db0731",
     "semantic_hash": ""
   },
   ".claude/skills/humanizer/SKILL.md": {
-    "mtime": 1791205610.65964,
-    "seen": 1791205635.0480654,
-    "ast_hash": "574acbbca683570d7415ab639b4b8160",
+    "mtime": 1791206342.5364065,
+    "seen": 1791206362.0094163,
+    "ast_hash": "0a29df79fc2706562c5c592a22875ebb",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/SKILL.md": {

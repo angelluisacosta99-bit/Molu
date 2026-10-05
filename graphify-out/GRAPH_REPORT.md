@@ -1,7 +1,7 @@
 # Graph Report - Molu  (2026-10-05)
 
 ## Corpus Check
-- 316 files · ~1,418,905 words
+- 316 files · ~1,413,223 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 112 file(s) not represented in the graph (top: .csv 32, .arff 22, .pptx 15)
 
@@ -11,7 +11,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `ccdea03d`
+- Built from commit: `eefc5e49`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -1196,9 +1196,9 @@ Nodes (3): main(), tabla(), texto()
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Novedades de herramientas de IA` connect `Novedades de herramientas de IA` to `generar_borrador.py`, `2026-10-05 — Pasada del radar rescatada a mano: `/doctor prompt-audit`, Sonnet 5.5, Claude Mods`, `2026-09-07 — Búsqueda a mano: herramientas para posts de blog en plataformas de clases`, `2026-08-30 — Pasada del radar: dos funciones nativas nuevas, sin hallazgos de terceros`, `hook-before-edit.mjs`, `2026-09-13 — Búsqueda exhaustiva: herramientas de investigación científica verificada para el máster`, `2026-09-19 — Pasada por el correo semanal "This week in Claude Code" (4 números, 21 ago-18 sep)`, `2026-08-16 — Primera pasada del radar`?**
-  _High betweenness centrality (0.186) - this node is a cross-community bridge._
+  _High betweenness centrality (0.171) - this node is a cross-community bridge._
 - **Why does `2026-08-16 — Segunda pasada: hooks vs. CLAUDE.md, y prácticas de la comunidad` connect `hook-before-edit.mjs` to `Novedades de herramientas de IA`?**
-  _High betweenness centrality (0.167) - this node is a cross-community bridge._
+  _High betweenness centrality (0.156) - this node is a cross-community bridge._
 - **What connects `1. Todo código de salida se comprueba antes de declarar éxito`, `2. Cada comando externo nuevo tiene `timeout`, sin excepción`, `3. Antes de inventar un mecanismo, buscar si ya existe uno oficial` to the rest of the system?**
   _989 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `live-browser.js` be split into smaller, more focused modules?**

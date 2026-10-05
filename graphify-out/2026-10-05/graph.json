@@ -25077,28 +25077,28 @@
       "source_location": "L1"
     },
     {
-      "id": "claude_skills_hook_hardening_skill_10_antes_de_comparar_enumerar_con_precisi\u00f3n_en_un_hook_preguntar",
-      "label": "10. Antes de comparar/enumerar con precisi\u00f3n en un hook, preguntar",
+      "id": "claude_skills_hook_hardening_skill_10_antes_de_comparar_o_enumerar_con_precisi\u00f3n_en_un_hook_preguntar_si_el_chequeo_simple_con_falsos_positivos_aceptables_ya_basta",
+      "label": "10. Antes de comparar o enumerar con precisi\u00f3n en un hook, preguntar si el chequeo simple (con falsos positivos aceptables) ya basta",
       "_origin": "ast",
       "community": 122,
       "community_name": "hook-hardening",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "10. antes de comparar/enumerar con precision en un hook, preguntar",
+      "norm_label": "10. antes de comparar o enumerar con precision en un hook, preguntar si el chequeo simple (con falsos positivos aceptables) ya basta",
       "source_file": ".claude/skills/hook-hardening/SKILL.md",
-      "source_location": "L328"
+      "source_location": "L234"
     },
     {
-      "id": "claude_skills_hook_hardening_skill_11_si_el_hook_necesita_que_algo_persista_entre_contenedores_ef\u00edmeros",
-      "label": "11. Si el hook necesita que algo persista entre contenedores ef\u00edmeros,",
+      "id": "claude_skills_hook_hardening_skill_11_si_el_hook_necesita_que_algo_persista_entre_contenedores_ef\u00edmeros_que_lo_persista_el_propio_script",
+      "label": "11. Si el hook necesita que algo persista entre contenedores ef\u00edmeros, que lo persista el propio script",
       "_origin": "ast",
       "community": 122,
       "community_name": "hook-hardening",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "11. si el hook necesita que algo persista entre contenedores efimeros,",
+      "norm_label": "11. si el hook necesita que algo persista entre contenedores efimeros, que lo persista el propio script",
       "source_file": ".claude/skills/hook-hardening/SKILL.md",
-      "source_location": "L355"
+      "source_location": "L255"
     },
     {
       "id": "claude_skills_hook_hardening_skill_1_todo_c\u00f3digo_de_salida_se_comprueba_antes_de_declarar_\u00e9xito",
@@ -25110,7 +25110,7 @@
       "node_kind": "heading",
       "norm_label": "1. todo codigo de salida se comprueba antes de declarar exito",
       "source_file": ".claude/skills/hook-hardening/SKILL.md",
-      "source_location": "L37"
+      "source_location": "L24"
     },
     {
       "id": "claude_skills_hook_hardening_skill_2_cada_comando_externo_nuevo_tiene_timeout_sin_excepci\u00f3n",
@@ -25122,7 +25122,7 @@
       "node_kind": "heading",
       "norm_label": "2. cada comando externo nuevo tiene `timeout`, sin excepcion",
       "source_file": ".claude/skills/hook-hardening/SKILL.md",
-      "source_location": "L62"
+      "source_location": "L49"
     },
     {
       "id": "claude_skills_hook_hardening_skill_3_antes_de_inventar_un_mecanismo_buscar_si_ya_existe_uno_oficial",
@@ -25134,7 +25134,7 @@
       "node_kind": "heading",
       "norm_label": "3. antes de inventar un mecanismo, buscar si ya existe uno oficial",
       "source_file": ".claude/skills/hook-hardening/SKILL.md",
-      "source_location": "L76"
+      "source_location": "L62"
     },
     {
       "id": "claude_skills_hook_hardening_skill_4_probado_de_punta_a_punta_solo_cuenta_si_reproduce_la_invocaci\u00f3n_real",
@@ -25146,7 +25146,7 @@
       "node_kind": "heading",
       "norm_label": "4. \"probado de punta a punta\" solo cuenta si reproduce la invocacion real",
       "source_file": ".claude/skills/hook-hardening/SKILL.md",
-      "source_location": "L95"
+      "source_location": "L78"
     },
     {
       "id": "claude_skills_hook_hardening_skill_5_tras_cualquier_intento_de_arreglo_re_verificar_no_asumir",
@@ -25158,7 +25158,7 @@
       "node_kind": "heading",
       "norm_label": "5. tras cualquier intento de arreglo, re-verificar, no asumir",
       "source_file": ".claude/skills/hook-hardening/SKILL.md",
-      "source_location": "L160"
+      "source_location": "L124"
     },
     {
       "id": "claude_skills_hook_hardening_skill_6_decir_exactamente_lo_que_un_chequeo_garantiza_ni_m\u00e1s_ni_menos",
@@ -25170,7 +25170,7 @@
       "node_kind": "heading",
       "norm_label": "6. decir exactamente lo que un chequeo garantiza, ni mas ni menos",
       "source_file": ".claude/skills/hook-hardening/SKILL.md",
-      "source_location": "L172"
+      "source_location": "L136"
     },
     {
       "id": "claude_skills_hook_hardening_skill_7_probar_en_vivo_contra_estado_compartido_puede_ensuciar_lo_que_vas_a_comitear",
@@ -25182,43 +25182,43 @@
       "node_kind": "heading",
       "norm_label": "7. probar en vivo contra estado compartido puede ensuciar lo que vas a comitear",
       "source_file": ".claude/skills/hook-hardening/SKILL.md",
+      "source_location": "L150"
+    },
+    {
+      "id": "claude_skills_hook_hardening_skill_8_un_filtro_de_texto_sobre_un_comando_de_shell_debe_operar_sobre_lo_que_la_shell_real_interpreta",
+      "label": "8. Un filtro de texto sobre un comando de shell debe operar sobre lo que la shell real interpreta",
+      "_origin": "ast",
+      "community": 122,
+      "community_name": "hook-hardening",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "8. un filtro de texto sobre un comando de shell debe operar sobre lo que la shell real interpreta",
+      "source_file": ".claude/skills/hook-hardening/SKILL.md",
+      "source_location": "L170"
+    },
+    {
+      "id": "claude_skills_hook_hardening_skill_9_comparar_rutas_entre_dos_comandos_de_git_exige_el_mismo_formato_sin_citar_y_ning\u00fan_comando_que_colapse_directorios",
+      "label": "9. Comparar rutas entre dos comandos de git exige el mismo formato sin citar y ning\u00fan comando que colapse directorios",
+      "_origin": "ast",
+      "community": 122,
+      "community_name": "hook-hardening",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "9. comparar rutas entre dos comandos de git exige el mismo formato sin citar y ningun comando que colapse directorios",
+      "source_file": ".claude/skills/hook-hardening/SKILL.md",
       "source_location": "L189"
     },
     {
-      "id": "claude_skills_hook_hardening_skill_8_un_filtro_de_texto_sobre_un_comando_de_shell_debe_operar_sobre_lo",
-      "label": "8. Un filtro de texto sobre un comando de shell debe operar sobre lo",
+      "id": "claude_skills_hook_hardening_skill_antes_de_pedir_o_lanzar_la_revisi\u00f3n_externa",
+      "label": "Antes de pedir o lanzar la revisi\u00f3n externa",
       "_origin": "ast",
       "community": 122,
       "community_name": "hook-hardening",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "8. un filtro de texto sobre un comando de shell debe operar sobre lo",
+      "norm_label": "antes de pedir o lanzar la revision externa",
       "source_file": ".claude/skills/hook-hardening/SKILL.md",
-      "source_location": "L216"
-    },
-    {
-      "id": "claude_skills_hook_hardening_skill_9_comparar_rutas_de_archivo_entre_dos_comandos_de_git_exige_el_mismo",
-      "label": "9. Comparar rutas de archivo entre dos comandos de git exige el mismo",
-      "_origin": "ast",
-      "community": 122,
-      "community_name": "hook-hardening",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "9. comparar rutas de archivo entre dos comandos de git exige el mismo",
-      "source_file": ".claude/skills/hook-hardening/SKILL.md",
-      "source_location": "L244"
-    },
-    {
-      "id": "claude_skills_hook_hardening_skill_antes_de_pedir_lanzar_la_revisi\u00f3n_externa",
-      "label": "Antes de pedir/lanzar la revisi\u00f3n externa",
-      "_origin": "ast",
-      "community": 122,
-      "community_name": "hook-hardening",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "antes de pedir/lanzar la revision externa",
-      "source_file": ".claude/skills/hook-hardening/SKILL.md",
-      "source_location": "L391"
+      "source_location": "L278"
     },
     {
       "id": "claude_skills_hook_hardening_skill_hook_hardening",
@@ -88868,7 +88868,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".claude/skills/hook-hardening/SKILL.md",
-      "source_location": "L160",
+      "source_location": "L124",
       "weight": 1.0
     },
     {
@@ -88879,7 +88879,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".claude/skills/hook-hardening/SKILL.md",
-      "source_location": "L172",
+      "source_location": "L136",
       "weight": 1.0
     },
     {
@@ -88890,51 +88890,40 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".claude/skills/hook-hardening/SKILL.md",
+      "source_location": "L150",
+      "weight": 1.0
+    },
+    {
+      "source": "claude_skills_hook_hardening_skill_hook_hardening",
+      "target": "claude_skills_hook_hardening_skill_8_un_filtro_de_texto_sobre_un_comando_de_shell_debe_operar_sobre_lo_que_la_shell_real_interpreta",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/hook-hardening/SKILL.md",
+      "source_location": "L170",
+      "weight": 1.0
+    },
+    {
+      "source": "claude_skills_hook_hardening_skill_hook_hardening",
+      "target": "claude_skills_hook_hardening_skill_9_comparar_rutas_entre_dos_comandos_de_git_exige_el_mismo_formato_sin_citar_y_ning\u00fan_comando_que_colapse_directorios",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/hook-hardening/SKILL.md",
       "source_location": "L189",
       "weight": 1.0
     },
     {
       "source": "claude_skills_hook_hardening_skill_hook_hardening",
-      "target": "claude_skills_hook_hardening_skill_8_un_filtro_de_texto_sobre_un_comando_de_shell_debe_operar_sobre_lo",
+      "target": "claude_skills_hook_hardening_skill_10_antes_de_comparar_o_enumerar_con_precisi\u00f3n_en_un_hook_preguntar_si_el_chequeo_simple_con_falsos_positivos_aceptables_ya_basta",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".claude/skills/hook-hardening/SKILL.md",
-      "source_location": "L216",
-      "weight": 1.0
-    },
-    {
-      "source": "claude_skills_hook_hardening_skill_hook_hardening",
-      "target": "claude_skills_hook_hardening_skill_9_comparar_rutas_de_archivo_entre_dos_comandos_de_git_exige_el_mismo",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": ".claude/skills/hook-hardening/SKILL.md",
-      "source_location": "L244",
-      "weight": 1.0
-    },
-    {
-      "source": "claude_skills_hook_hardening_skill_hook_hardening",
-      "target": "claude_skills_hook_hardening_skill_10_antes_de_comparar_enumerar_con_precisi\u00f3n_en_un_hook_preguntar",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": ".claude/skills/hook-hardening/SKILL.md",
-      "source_location": "L328",
-      "weight": 1.0
-    },
-    {
-      "source": "claude_skills_hook_hardening_skill_hook_hardening",
-      "target": "claude_skills_hook_hardening_skill_11_si_el_hook_necesita_que_algo_persista_entre_contenedores_ef\u00edmeros",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": ".claude/skills/hook-hardening/SKILL.md",
-      "source_location": "L355",
+      "source_location": "L234",
       "weight": 1.0
     },
     {
@@ -88945,18 +88934,29 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".claude/skills/hook-hardening/SKILL.md",
-      "source_location": "L37",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
       "source": "claude_skills_hook_hardening_skill_hook_hardening",
-      "target": "claude_skills_hook_hardening_skill_antes_de_pedir_lanzar_la_revisi\u00f3n_externa",
+      "target": "claude_skills_hook_hardening_skill_11_si_el_hook_necesita_que_algo_persista_entre_contenedores_ef\u00edmeros_que_lo_persista_el_propio_script",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".claude/skills/hook-hardening/SKILL.md",
-      "source_location": "L391",
+      "source_location": "L255",
+      "weight": 1.0
+    },
+    {
+      "source": "claude_skills_hook_hardening_skill_hook_hardening",
+      "target": "claude_skills_hook_hardening_skill_antes_de_pedir_o_lanzar_la_revisi\u00f3n_externa",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/hook-hardening/SKILL.md",
+      "source_location": "L278",
       "weight": 1.0
     },
     {
@@ -88967,7 +88967,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".claude/skills/hook-hardening/SKILL.md",
-      "source_location": "L62",
+      "source_location": "L49",
       "weight": 1.0
     },
     {
@@ -88978,7 +88978,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".claude/skills/hook-hardening/SKILL.md",
-      "source_location": "L76",
+      "source_location": "L62",
       "weight": 1.0
     },
     {
@@ -88989,7 +88989,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".claude/skills/hook-hardening/SKILL.md",
-      "source_location": "L95",
+      "source_location": "L78",
       "weight": 1.0
     },
     {
@@ -124947,5 +124947,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "c2e00263a6809ea5975bac83af9e49c20c65eed9"
+  "built_at_commit": "ccdea03d4334bd2d7452a49b9f7c8ffc3a10e9c2"
 }

@@ -25086,7 +25086,7 @@
       "node_kind": "heading",
       "norm_label": "10. antes de comparar o enumerar con precision en un hook, preguntar si el chequeo simple (con falsos positivos aceptables) ya basta",
       "source_file": ".claude/skills/hook-hardening/SKILL.md",
-      "source_location": "L234"
+      "source_location": "L236"
     },
     {
       "id": "claude_skills_hook_hardening_skill_11_si_el_hook_necesita_que_algo_persista_entre_contenedores_ef\u00edmeros_que_lo_persista_el_propio_script",
@@ -25098,7 +25098,7 @@
       "node_kind": "heading",
       "norm_label": "11. si el hook necesita que algo persista entre contenedores efimeros, que lo persista el propio script",
       "source_file": ".claude/skills/hook-hardening/SKILL.md",
-      "source_location": "L255"
+      "source_location": "L257"
     },
     {
       "id": "claude_skills_hook_hardening_skill_1_todo_c\u00f3digo_de_salida_se_comprueba_antes_de_declarar_\u00e9xito",
@@ -25218,7 +25218,7 @@
       "node_kind": "heading",
       "norm_label": "antes de pedir o lanzar la revision externa",
       "source_file": ".claude/skills/hook-hardening/SKILL.md",
-      "source_location": "L278"
+      "source_location": "L280"
     },
     {
       "id": "claude_skills_hook_hardening_skill_hook_hardening",
@@ -28880,7 +28880,7 @@
       "file_type": "document",
       "frontmatter": {
         "name": "humanizer",
-        "description": "Use when Angel asks to &quot;humanizar&quot; un texto para un blog, post en redes o mensaje bajo su propio nombre \u2014 hacer que no suene a chatbot. NO usar en trabajos de universidad/m\u00e1ster ni en el TFM (fuera de alcance a prop\u00f3sito, ver nota abajo). Triggers: &quot;human\u00edzalo&quot;, &quot;que no suene a IA&quot;, &quot;/humanizer&quot;.",
+        "description": "Use when Angel asks to \\&quot;humanizar\\&quot; un texto para un blog, post en redes o mensaje bajo su propio nombre \u2014 hacer que no suene a chatbot. NO usar en trabajos de universidad/m\u00e1ster ni en el TFM (fuera de alcance a prop\u00f3sito, ver nota abajo). Triggers: \\&quot;human\u00edzalo\\&quot;, \\&quot;que no suene a IA\\&quot;, \\&quot;/humanizer\\&quot;.",
         "version": "1.4.0",
         "user-invocable": "true",
         "license": "MIT (adaptado y ampliado a partir de varios skills open-source, ver fuentes)"
@@ -88923,7 +88923,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".claude/skills/hook-hardening/SKILL.md",
-      "source_location": "L234",
+      "source_location": "L236",
       "weight": 1.0
     },
     {
@@ -88945,7 +88945,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".claude/skills/hook-hardening/SKILL.md",
-      "source_location": "L255",
+      "source_location": "L257",
       "weight": 1.0
     },
     {
@@ -88956,7 +88956,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".claude/skills/hook-hardening/SKILL.md",
-      "source_location": "L278",
+      "source_location": "L280",
       "weight": 1.0
     },
     {
@@ -124947,5 +124947,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "ccdea03d4334bd2d7452a49b9f7c8ffc3a10e9c2"
+  "built_at_commit": "eefc5e4928cdbf30010a3459937f43a3cb0b84d4"
 }
