@@ -1,6 +1,6 @@
 ---
 name: humanizer
-description: Use when Angel asks to "humanizar" un texto para un blog, post en redes o mensaje bajo su propio nombre — hacer que no suene a chatbot. NO usar en trabajos de universidad/máster ni en el TFM (fuera de alcance a propósito, ver nota abajo). Triggers: "humanízalo", "que no suene a IA", "/humanizer".
+description: "Use when Angel asks to \"humanizar\" un texto para un blog, post en redes o mensaje bajo su propio nombre — hacer que no suene a chatbot. NO usar en trabajos de universidad/máster ni en el TFM (fuera de alcance a propósito, ver nota abajo). Triggers: \"humanízalo\", \"que no suene a IA\", \"/humanizer\"."
 version: 1.4.0
 user-invocable: true
 license: MIT (adaptado y ampliado a partir de varios skills open-source, ver fuentes)
@@ -21,7 +21,7 @@ license: MIT (adaptado y ampliado a partir de varios skills open-source, ver fue
 >
 > - Artículo académico (no código): Russell et al., "StoryScope:
 >   Investigating idiosyncrasies in AI fiction", arXiv:2604.03136,
->   COLM 2026 — solo se usan sus hallazgos numéricos, parafraseados,
+>   COLM 2026 — solo se usan sus hallazgos cualitativos, parafraseados,
 >   para los patrones 28-33 (ver "Nota de evidencia" más abajo).
 
 > **Alcance a propósito, no me lo vuelvas a pedir para trabajos

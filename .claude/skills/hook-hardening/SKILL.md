@@ -230,6 +230,8 @@ comandos de git (o del mismo en dos invocaciones):
   comodín en el patrón. Eso solo puede contar *de más* como colisión
   (bloquea el auto-heal alguna vez sin hacer falta), nunca de menos:
   limitación aceptada a propósito.
+- Si tanta precisión no compensa, ver el punto 10: a menudo basta un
+  chequeo simple con falsos positivos aceptables.
 
 ## 10. Antes de comparar o enumerar con precisión en un hook, preguntar si el chequeo simple (con falsos positivos aceptables) ya basta
 

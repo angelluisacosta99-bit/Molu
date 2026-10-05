@@ -59,7 +59,7 @@ esta sección gana.
   `reference/template.html`.
 - **Audio: búscalo activamente en Drive antes de conformarte con la transcripción.** Se
   busca primero; la transcripción es apoyo o último recurso. Ver el paso del checklist y la
-  sección "Audio".
+  sección "Transcripciones y audio".
 - **Nunca inventes una formulación distinta del ejercicio.** El ejercicio va tal cual está
   en el libro: mismo enunciado, misma tarea, mismas partes. Si el motor actual no puede
   reproducirlo exactamente (una interacción que no existe todavía, un formato que no encaja
@@ -168,7 +168,7 @@ esta sección gana.
    posible, pide al profesor que lo pruebe en un dispositivo real antes de cerrarlo.
 
 5. **Publica con el tool `Artifact`.** En la primera publicación pasa `icon` (una palabra
-   genérica, p. ej. `exercise`; el parámetro `favicon` está obsoleto) y `description`. Al
+   genérica, distinta por nivel si quieres distinguirlos en la lista, p. ej. `exercise`; el parámetro `favicon` está obsoleto) y `description`. Al
    actualizar un artefacto ya publicado, pasa siempre el mismo `url` para no crear uno nuevo.
    Título: `Nuevo Español en Marcha · <Nivel> · <Capítulo> — <Tema>` (ver los ya publicados),
    para que se lea claro en la lista plana de Artefactos y en el índice del paso siguiente.
@@ -219,13 +219,15 @@ esta sección gana.
 9. **Sigue el flujo de PR de `CLAUDE.md` (raíz).** Abrir el PR no dispara nada más; solo
    cuando el profesor pida fusionarlo se lanza la revisión con un agente independiente
    sobre el estado actual del PR (con contexto completo, y pidiéndole que verifique en vivo
-   con Playwright en vez de fiarse de la descripción), y se fusiona solo sin hallazgos
+   con Playwright en vez de fiarse de la descripción; p. ej. skill `code-review` o `Agent` en
+   segundo plano), y se fusiona solo sin hallazgos
    bloqueantes.
 
    Los PRs anteriores de esta rama se fusionaron con `squash`, así que sus commits dejan de
    ser ancestros literales de `main`. Si antes de abrir un PR nuevo
-   `git merge-base --is-ancestor <último-commit> origin/main` falla, la rama ya no desciende
-   de `main`: avisa al profesor, rehaz la rama desde `origin/main` re-aplicando
+   `git merge-base --is-ancestor <último-commit> origin/main` falla, ese commit ya no es
+   ancestro de `main`: avisa al profesor, rehaz la rama
+   (`git fetch origin main && git checkout -B <rama> origin/main`) re-aplicando
    (`git stash`/cherry-pick) solo los commits todavía no fusionados, y no fuerces un push sin
    confirmar qué commits se perderían.
 
@@ -247,7 +249,7 @@ mirarlos al final.
       cabecera se publica en el código fuente que ve el alumno).
 - [ ] **Si algún ejercicio es de audio ("Pista N", "Escucha y..."), se buscó el mp3 real en
       Drive ANTES de conformarse con la transcripción.** Obligatorio, no "si hay tiempo": ya
-      se saltó dos veces (A1, y A2 Unidad 1). Ver la sección "Audio".
+      se saltó dos veces (A1, y A2 Unidad 1). Ver la sección "Transcripciones y audio".
 - [ ] **TODO lo visual que el libro imprime junto a un ejercicio** (foto, retrato, cartel,
       cómic, tabla con dibujos, plano, cuadro, ilustración de cualquier tipo) **se recorta de
       la página renderizada y se incrusta como `ex.refHTML`/`item.img`.** Nunca solo texto
@@ -399,7 +401,7 @@ plantilla.
   direcciones** (en Practica más 3 «LECHUGA» va hacia la izquierda y a ojo no aparecía).
 - **"Relaciona" con columnas de verdad (`type: "match"`).** El patrón antiguo (escribir la
   letra o el número de la pareja en un hueco de texto) no se parecía al ejercicio real
-  (tocar/unir) y obligaba a aceptar muchas variantes de tecleo (`"d, 2"`, `"d,2"`, `"d 2"`,
+  (tocar/unir; 6A ej. 2 y 6B ej. 3 aún lo usan) y obligaba a aceptar muchas variantes de tecleo (`"d, 2"`, `"d,2"`, `"d 2"`,
   `"d2"`) porque `norm()` quita comas y puntos pero no espacios internos. `ex.columns` es un
   array de columnas (`{ label, items: [...] }`); `columns[0]` es la columna ancla (fija, una
   por fila) y las demás son elegibles. `ex.rows` es paralelo a `columns[0].items`:
@@ -850,7 +852,7 @@ plantilla.
 - **OCR: `tesseract` puede no estar.** Si hace falta un borrador gratis y local, se intenta
   instalar y, si no se puede, se lee el render con `Read` (acierta donde `pdftotext` se
   equivoca): el procedimiento y el orden de prioridad están en `docencia-espanol/CLAUDE.md`
-  ("instalar si se puede; si no, leer el render"). Comprobado que **no** hay `qpdf`, `mutool`
+  (instalar si se puede; si no, leer el render). Comprobado que **no** hay `qpdf`, `mutool`
   ni `pdftk`, y que `pypdf` y `pdfplumber` **se instalan pero revientan al importarse** (el
   binding de `cryptography` lanza un `PanicException` de Rust). Sin OCR no se puede generar un
   PDF con capa de texto buscable.
