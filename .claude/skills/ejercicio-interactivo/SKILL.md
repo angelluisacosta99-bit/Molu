@@ -730,6 +730,19 @@ no las deshagas sin querer al modificar la plantilla.
     ejercicio — así pierdes el chip de color en las réplicas reales, pero evitas falsos
     interlocutores en las frases sueltas. Actívalo solo cuando TODOS los ítems del ejercicio
     son diálogo de verdad.
+  - **Un diálogo marcado con "•" (una viñeta por turno, sin letra de interlocutor — "•
+    ¿Puedo...?\n• Sí, claro...") necesita `ex.dialog: true` TAMBIÉN, aunque el regex de
+    interlocutor (A/B/CELIA:) nunca vaya a hacer match ahí.** Encontrado en A2 Unidad 0,
+    ejercicios "Formula la pregunta" y "Pedir permiso e imperativo": sin el flag, la
+    primera viñeta (tras el número del ítem) y la segunda (tras el `<br>`, sola al
+    principio de su línea) quedaban en columnas distintas — la primera arrancaba después
+    del "6." pero la segunda arrancaba en el borde izquierdo de la fila. `ex.dialog: true`
+    añade la clase `.dialog-row`, que trae la sangría colgante (`padding-left` + el número
+    del ítem sacado con margen negativo) — ESO es lo que alinea las viñetas, no el chip de
+    color del interlocutor (que aquí ni se pinta, porque "•" no matchea el regex). Regla
+    general: si un ítem tiene dos o más turnos separados por `\n`, actívalo SIEMPRE que
+    todos sean diálogo de verdad (ver el punto de arriba sobre "A "/"B " como preposición),
+    marquen el turno con letra, con nombre, o solo con una viñeta.
 
 - **REGLA DEL PROFESOR, sin excepciones: todo ejercicio con audio lleva su transcripción en
   un plegable.** No es opcional ni depende de si tenemos la grabación — de hecho es cuando
