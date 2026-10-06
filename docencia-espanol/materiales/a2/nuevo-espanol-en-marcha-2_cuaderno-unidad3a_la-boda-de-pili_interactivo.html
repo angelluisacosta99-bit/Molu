@@ -464,7 +464,13 @@
      visible desde el principio: si `img` está presente, la imagen es la pista y el nombre
      solo aparece DESPUÉS de encontrar la palabra, como confirmación — igual que un .reveal en
      cualquier otro tipo de ejercicio. Si la pista del libro es solo texto (sin dibujo), omite
-     `img` y el nombre se ve desde el principio como en cualquier otra lista. REGLA GENERAL,
+     `img` y el nombre se ve desde el principio como en cualquier otra lista.
+     Tercera corrección real: si el libro NO imprime ninguna lista de palabras junto a la
+     rejilla (solo da la categoría, ej. "Encuentra ocho palabras referidas a relaciones
+     familiares"), poner `ex.hideLabels = true` — oculta el label de cada palabra no resuelta
+     (mismo span `.ws-prof-name` que el caso `img`, con un placeholder "?" en su lugar) hasta
+     que se encuentra, para no regalar la lista completa cuando el libro no la da. Si el libro
+     SÍ imprime la lista junto a la rejilla, no usar `hideLabels`. REGLA GENERAL,
      no solo para esta sopa de letras: en CUALQUIER ejercicio donde el libro dé la pista con
      una imagen (`item.img` en "items" incluido), el texto de la respuesta nunca va visible
      antes de que el alumno la resuelva — la imagen es la pista, no un adorno junto al texto
@@ -508,6 +514,9 @@
     filter: grayscale(1) contrast(1.05);
   }
   .ws-words li .ws-prof-name { display: none; }
+  .ws-words li .ws-placeholder { color: var(--ink-soft); }
+  .ws-words li.ws-solved .ws-placeholder,
+  .ws-words li.ws-found-item .ws-placeholder { display: none; }
   .ws-words li.ws-solved img,
   .ws-words li.ws-found-item img { border-color: var(--good); filter: none; }
   .ws-words li.ws-solved .ws-prof-name,
@@ -973,6 +982,7 @@
           num: 3, title: "Relaciones familiares",
           instr: "Encuentra ocho palabras referidas a relaciones familiares.",
           type: "wordsearch",
+          hideLabels: true,
           grid: [
             "SAHERMANA",
             "LIMUPECLÑ",
@@ -2046,6 +2056,15 @@
             img.src = w.img;
             img.alt = w.label;
             li.appendChild(img);
+            const nameSpan = document.createElement("span");
+            nameSpan.className = "ws-prof-name";
+            nameSpan.textContent = w.label;
+            li.appendChild(nameSpan);
+          } else if (ex.hideLabels && !w.solved) {
+            const placeholder = document.createElement("span");
+            placeholder.className = "ws-placeholder";
+            placeholder.textContent = "?";
+            li.appendChild(placeholder);
             const nameSpan = document.createElement("span");
             nameSpan.className = "ws-prof-name";
             nameSpan.textContent = w.label;
