@@ -4,6 +4,34 @@ Bloque: semanas 1-2 del 1er cuatrimestre, 28 sep – 9 oct 2026, 18-20h
 (ver `../README.md`). Bibliografía oficial: `../bibliografia-oficial.md`.
 Profesor: Emilio Corchado, escorchado@usal.es.
 
+## Drive del alumno
+
+Carpeta "Máster" (cuenta USAL de Angel, compartida con su cuenta personal):
+https://drive.google.com/drive/folders/1sMrfXPNjgQlDV6BPGKNbPDfyTcv_UNvC
+(fileId `1sMrfXPNjgQlDV6BPGKNbPDfyTcv_UNvC`). Subcarpeta "Computación
+Neuroborrosa" (fileId `1zRE8r8RND6v7bnn9s3O4lF_L33mEI5E8`): ahí van los
+materiales de esta asignatura, entre ellos los `.bib` de ScienceDirect de los
+candidatos de artículo y la presentación de redes neuronales. La subcarpeta
+"MI" es de Metodología de la Investigación. Las cuentas institucionales suelen
+cerrarse al acabar el máster: conviene tener copia en la cuenta personal.
+
+## Parte neuronal (Angélica González Arrieta)
+
+Presentación "RNA master 2026" (Sistemas conexionistas: redes neuronales
+artificiales, octubre de 2026; fileId `198NzsRgjGKblMug4MzSmq7KpUkh65qVA`). La
+profesora es María Angélica González Arrieta (Dpto. Informática y Automática).
+Esto indica que la asignatura incluye una parte de redes neuronales, que no
+aparece en el temario de lógica borrosa de Corchado: preguntar cómo se evalúa.
+
+Esquema de la presentación: 1 introducción y motivaciones; 2 definiciones,
+modelos e historia; 3 arquitecturas; 4 aprendizaje (paradigmas, reglas y
+algoritmos); 5 redes supervisadas (perceptrón simple, ADALINE, perceptrón
+multicapa y redes convolucionales profundas); 6 redes autoorganizadas; 7 redes
+recurrentes y jerárquicas; 8 funciones de base radial; 9 implementaciones
+(software y hardware); 10 aplicaciones; 11 conclusiones y bibliografía.
+Herramientas que cita: Matlab, R, Python (Jupyter) y Neural Designer. Incluye
+ejercicios con soluciones (neurona, representación matricial, perceptrón).
+
 ## Estructura
 
 - `apuntes/` — notas de clase y de estudio propias.
