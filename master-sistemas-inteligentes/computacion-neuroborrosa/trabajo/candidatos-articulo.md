@@ -105,3 +105,21 @@ ECM: X figura en la edición ESCI (Emerging Sources Citation Index), no en la
 SCIE: tiene factor de impacto, pero conviene decirlo si el profesor pregunta.
 
 Pendiente de consultar: Applied Energy (D, 0306-2619) y Energies (A, 1996-1073).
+
+## Candidatos V y S (aportados por el compañero, 2026-10-06)
+
+Leídos en sus secciones clave. Detalle completo en el documento compartido.
+
+- **V — Alhamad, *Visual comfort index (VCI)*, Building and Environment 287
+  (2026), 113872** (10.1016/j.buildenv.2025.113872). Mamdani puro con 8
+  entradas. Validado solo con 20 escenarios y 3.000 casos simulados, sin datos
+  reales ni personas; los umbrales se ajustan contra el propio sistema difuso.
+  Bibliografía: 38 de 45 DOIs resuelven, los 7 restantes son límites de consulta
+  o DOIs cortados por la extracción. Scimago Q1 (2024). JCR sin consultar
+  (ISSN 0360-1323). Cumple con reservas.
+- **S — Usman et al., *Energy management for smart residential homes*,
+  Electric Power Systems Research 238 (2025), 111057**
+  (10.1016/j.epsr.2024.111057). Datos reales de 15 hogares (Ontario, julio de
+  2016). La lógica difusa es un controlador de 2 entradas dentro de un
+  algoritmo mayor; solo se compara con un caso base y con su versión sin lógica
+  difusa. Scimago Q1 (SJR 1,14). JCR sin consultar (ISSN 0378-7796). Cumple.
