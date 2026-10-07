@@ -1,17 +1,17 @@
 # Graph Report - Molu  (2026-10-07)
 
 ## Corpus Check
-- 334 files · ~1,652,858 words
+- 334 files · ~1,655,751 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 114 file(s) not represented in the graph (top: .csv 32, .arff 22, .pptx 15)
 
 ## Summary
-- 3702 nodes · 7000 edges · 286 communities (245 shown, 41 thin omitted)
+- 3716 nodes · 7013 edges · 288 communities (246 shown, 42 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 131 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `f7f20691`
+- Built from commit: `86f090e1`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -238,7 +238,7 @@
 - Ejercicios
 - 2026-09-19 — Pasada por el correo semanal "This week in Claude Code" (4 números, 21 ago-18 sep)
 - 2. Hallazgos verificados que cambian el plan
-- experimento.py
+- simulador.py
 - Optativas elegidas este curso (6)
 - Ejercicios
 - Parte 2 — Propuesta adjunta (2 páginas)
@@ -294,6 +294,7 @@
 - Ejercicios
 - Ejercicios
 - Ejercicios
+- Compra de tarjeta gráfica (GPU) para IA
 - Neural Designer: guía de estudio (tutoriales oficiales, 2026-10-07)
 
 ## God Nodes (most connected - your core abstractions)
@@ -323,7 +324,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (286 total, 41 thin omitted)
+## Communities (288 total, 42 thin omitted)
 
 ### Community 0 - "live-browser.js"
 Cohesion: 0.03
@@ -1121,8 +1122,8 @@ Nodes (17): docx(), escribir(), 2026-09-13, 2026-09-13 (continuación: dominios 
 Cohesion: 0.12
 Nodes (16): 1. Situación de partida, 2.1 Angel casi con seguridad es ИП на УСН «доходы», no самозанятый, 2.2 Sin contrato de agencia, el impuesto se come el 30 % del margen, 2.3 La salida legal: договор агентский (contrato de agencia), 2.4 La profesora debe darse de alta — y es trivial hacerlo, 2.5 Pagarle en USDT no es viable legalmente, 2.6 Lo que queda sin verificar, 2. Hallazgos verificados que cambian el plan (+8 more)
 
-### Community 224 - "experimento.py"
-Cohesion: 0.09
+### Community 224 - "simulador.py"
+Cohesion: 0.17
 Nodes (5): ber_desde_q(), generar(), perdida_nominal(), q_ase(), q_termico()
 
 ### Community 225 - "Optativas elegidas este curso (6)"
@@ -1301,14 +1302,18 @@ Nodes (6): 1. Historias de viajes, Ej. 1 — ¿Qué tiempo hace?, Ej. 2 — Escu
 Cohesion: 0.33
 Nodes (5): 1. De viaje, Ej. 1 — Lee el texto sobre los aeropuertos, Ej. 2 — Construye correctamente las siguientes frases, Ej. 3 — Explica estas situaciones haciendo conjeturas, Ejercicios
 
+### Community 285 - "Compra de tarjeta gráfica (GPU) para IA"
+Cohesion: 0.14
+Nodes (13): 1. Antes de nada: ¿hace falta para el TFM?, 2. La regla más importante: la VRAM, 3. Opciones y precios reales (idealo.es, 2026-09-26), 4. Puntos débiles y riesgos, 5. Tu equipo: BOREY 2.0 Plus (Роботкомп), 6. Qué comprar y dónde (Salamanca), 7. Lista de comprobación antes de comprar, 8. Después de montarla (+5 more)
+
 ### Community 286 - "Neural Designer: guía de estudio (tutoriales oficiales, 2026-10-07)"
 Cohesion: 0.13
 Nodes (14): 10. Discrepancias y erratas de la documentación, 11. Errores típicos (resumen), 12. Comprobar en la app (pendiente), 1. Idea general y flujo de trabajo, 2. Elegir el tipo de modelo, 3. Data set, 4. Neural network, 5. Training strategy (+6 more)
 
 ## Knowledge Gaps
-- **1076 isolated node(s):** `1. Idea general y flujo de trabajo`, `2. Elegir el tipo de modelo`, `3. Data set`, `4. Neural network`, `5. Training strategy` (+1071 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1347 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **41 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **1087 isolated node(s):** `1. Antes de nada: ¿hace falta para el TFM?`, `2. La regla más importante: la VRAM`, `NVIDIA RTX 5060 Ti 16 GB, nueva (precio más bajo por modelo)`, `AMD RX 9060 XT 16 GB, nueva (Sapphire)`, `Otras referencias` (+1082 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1359 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **42 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
@@ -1316,13 +1321,13 @@ _Questions this graph is uniquely positioned to answer:_
 - **Why does `Novedades de herramientas de IA` connect `Novedades de herramientas de IA` to `2026-08-30 — Compactación de contexto: palancas oficiales para ahorrar tokens`, `2026-08-30 — Pasada del radar: dos funciones nativas nuevas, sin hallazgos de terceros`, `2026-09-07 — Búsqueda a mano: herramientas para posts de blog en plataformas de clases`, `hook-before-edit.mjs`, `2026-08-16 — Primera pasada del radar`, `2026-09-13 — Búsqueda exhaustiva: herramientas de investigación científica verificada para el máster`, `2026-09-19 — Pasada por el correo semanal "This week in Claude Code" (4 números, 21 ago-18 sep)`?**
   _High betweenness centrality (0.005) - this node is a cross-community bridge._
 - **Why does `2026-08-16 — Segunda pasada: hooks vs. CLAUDE.md, y prácticas de la comunidad` connect `hook-before-edit.mjs` to `Novedades de herramientas de IA`?**
-  _High betweenness centrality (0.004) - this node is a cross-community bridge._
+  _High betweenness centrality (0.005) - this node is a cross-community bridge._
 - **Why does `deny()` connect `hook-before-edit.mjs` to `readConfig`?**
   _High betweenness centrality (0.003) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `initGlobalBar()` (e.g. with `hideAgentPollTooltip()` and `onDetectMessage()`) actually correct?**
   _`initGlobalBar()` has 7 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `1. Idea general y flujo de trabajo`, `2. Elegir el tipo de modelo`, `3. Data set` to the rest of the system?**
-  _1076 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `1. Antes de nada: ¿hace falta para el TFM?`, `2. La regla más importante: la VRAM`, `NVIDIA RTX 5060 Ti 16 GB, nueva (precio más bajo por modelo)` to the rest of the system?**
+  _1087 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `live-browser.js` be split into smaller, more focused modules?**
   _Cohesion score 0.02863984674329502 - nodes in this community are weakly interconnected._
 - **Should `checks.mjs` be split into smaller, more focused modules?**

@@ -38263,7 +38263,7 @@
       "node_kind": "heading",
       "norm_label": "fuentes (todas en neuraldesigner.com/learning)",
       "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L250"
+      "source_location": "L258"
     },
     {
       "id": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_neural_designer_gu\u00eda_de_estudio_tutoriales_oficiales_2026_10_07",
@@ -116957,7 +116957,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L250",
+      "source_location": "L258",
       "weight": 1.0
     },
     {
@@ -125665,5 +125665,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "df72b6b37e41184f45f1e2ad2aa07d384cf63701"
+  "built_at_commit": "f7f2069100804c687ef7b7d7d1c842ac071d6675"
 }
