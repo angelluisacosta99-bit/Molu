@@ -94,7 +94,7 @@ Mismo nombre, dos memorias: comprueba siempre que el anuncio dice
 
 ### Recomendación
 
-1. **Elegida para el máster: RTX 3060 12 GB de segunda mano (~220–250 €).**
+1. **Recomendada para el máster (Angel aún no ha decidido): RTX 3060 12 GB de segunda mano (~220–250 €).**
    Basta para el TFM y LLMs pequeños, y deja margen para cambiarla
    cuando bajen los precios.
 2. **Solo si quieres 16 GB ya:** RTX 5060 Ti 16 GB de segunda mano (~540 €)
@@ -155,7 +155,7 @@ Conclusiones:
 
 ## 6. Qué comprar y dónde (Salamanca)
 
-**Elección:** ver la recomendación del apartado 3. La fuente ya
+**Recomendación (sin decidir):** ver el apartado 3. La fuente ya
 aguantaba la 4070, así que no hace falta cambiar nada más. Una RTX 4070
 de segunda mano no compensa: las SUPER rondan los 600 € y siguen
 teniendo 12 GB.
