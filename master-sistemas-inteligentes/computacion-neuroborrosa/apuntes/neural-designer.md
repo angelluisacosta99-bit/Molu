@@ -241,8 +241,16 @@ CSV de ciclo combinado e Iris en las páginas de cada ejemplo.
 
 ## 12. Comprobar en la app (pendiente)
 
-- Qué pérdida, optimizador y regularización vienen preseleccionados (punto 1 de
-  la sección 10) y qué reparto de muestras propone la pestaña Data set.
+- Qué pérdida y qué reparto de muestras vienen preseleccionados (punto 1 de la
+  sección 10; la pestaña Data set sigue sin comprobar).
+- **Visto en la app (captura del 7 oct, pestaña Training strategy):**
+  regularización *None*, algoritmo Adam, batch size 100, learning rate 0,001,
+  training loss goal 0, maximum epochs 75, maximum time 6.000 min, minimum loss
+  decrease 0, hardware multi-core (CPU) con opción NVIDIA CUDA (GPU). Coincide
+  con el tutorial en "sin regularización" y Adam, pero no con la guía de 7
+  pasos (lote 32, 1.000 épocas, L2). Los 75 epochs son pocos: mirar si la curva
+  de error sigue bajando al parar. **[no aparece]** si estos valores son los de
+  fábrica o los de un proyecto concreto.
 - Nombres exactos de menús y botones: las páginas **no los describen**.
 - Si el escalador por defecto y el cleaning parameter coinciden con la guía.
 - Cómo se evalúa la parte neuronal de la asignatura.
