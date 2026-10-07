@@ -12,7 +12,7 @@
   "10": "impeccable-config.mjs",
   "11": "live-server.mjs",
   "12": "svelte-component.mjs",
-  "13": "detect-url.mjs",
+  "13": "detect-html.mjs",
   "14": "hook-lib.mjs",
   "15": "initPageChat",
   "16": "live-inject.mjs",
@@ -223,7 +223,7 @@
   "221": "Ejercicios",
   "222": "2026-09-19 — Pasada por el correo semanal \"This week in Claude Code\" (4 números, 21 ago-18 sep)",
   "223": "2. Hallazgos verificados que cambian el plan",
-  "224": "simulador.py",
+  "224": "experimento.py",
   "225": "Optativas elegidas este curso (6)",
   "226": "Ejercicios",
   "227": "Parte 2 — Propuesta adjunta (2 páginas)",
@@ -280,10 +280,9 @@
   "278": "prompt.md",
   "279": "Ejercicios",
   "280": "Candidatos de artículo (lógica difusa aplicada, 2021+) — verificados 2026-10-05",
-  "281": "parseRgb",
+  "281": "resolveLengthPx",
   "282": "Ejercicios",
   "283": "Ejercicios",
   "284": "Ejercicios",
-  "285": "experimento.py",
-  "286": "Neural Designer: cómo funciona (estudiado 2026-10-07)"
+  "286": "Neural Designer: guía de estudio (tutoriales oficiales, 2026-10-07)"
 }
