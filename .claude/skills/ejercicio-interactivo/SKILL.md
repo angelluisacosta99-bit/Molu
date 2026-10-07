@@ -106,6 +106,17 @@ lección más antigua de "Lecciones aprendidas", esta sección gana.**
   `subjectLabel: ""`); (3) los enunciados e instrucciones son los del libro, solo se
   añade lo imprescindible para que el motor funcione («pulsa…», «escribe la frase
   entera»). Los recuadros de palabras que el libro SÍ imprime se conservan.
+- **Variantes que el español admite y el libro no escribe se aceptan.** Una alumna escribió
+  «Cuando me den *a mí* las vacaciones» y «Cuando *yo* tenga tiempo» y el motor lo marcó mal
+  porque el libro da la versión mínima. El motor (`tolerantMatch` en `isCorrect`) ya acepta,
+  en respuestas de 3+ palabras: (a) pronombre sujeto añadido u omitido (yo, tú, él, ella,
+  usted, nosotros/as, vosotros/as, ellos/as, ustedes) y (b) la duplicación «a mí / a ti / a él…»
+  siempre que la frase lleve el átono que le corresponde (me, te, le…). NO se acepta cambiar
+  el pronombre del libro por otro, ni quitar tildes. Cuando una respuesta tenga además otra
+  forma legítima (orden del sujeto: «Cuando el médico me lo diga» / «Cuando me lo diga el
+  médico»; «tendrá/tendría»; dos tiempos posibles), añádela a mano como segunda opción del
+  array; la primera sigue siendo la del libro. Antes de publicar un ejercicio de frases,
+  pregúntate qué otras formas correctas daría un alumno y añádelas.
 - **Un hueco que va en su propia línea (`"...\n{0}"`) y espera una frase entera lleva
   `wide: "full"`.** Sin él la casilla mide 8,5 em y el alumno no ve lo que escribe (7B de
   B1: «Cuando nos entreguen el piso» en una raya corta). Aplica a toda respuesta de frase

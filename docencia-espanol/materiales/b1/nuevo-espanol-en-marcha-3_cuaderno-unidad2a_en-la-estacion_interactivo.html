@@ -850,11 +850,49 @@
     return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   }
   // answer spec: array of accepted exact strings, OR {flex:[...]} meaning all keywords must appear (accent-insensitive)
+  // Variantes que el español admite y el libro no escribe: en una frase de 3 o más palabras
+  // se aceptan (a) el pronombre sujeto añadido u omitido («Cuando yo tenga tiempo» =
+  // «Cuando tenga tiempo») y (b) la duplicación «a mí / a ti / a él…» («Cuando me den a mí las
+  // vacaciones» = «Cuando me den las vacaciones»). Si la respuesta del libro ya lleva uno de
+  // esos pronombres, el alumno no puede cambiarlo por otro (a mí ≠ a ti). Las tildes siguen
+  // contando. Mismo criterio en todos los capítulos: ver SKILL.md, «Variantes que se aceptan».
+  const PRON_SUJ = ["yo", "tú", "él", "ella", "usted", "nosotros", "nosotras", "vosotros", "vosotras", "ellos", "ellas", "ustedes"];
+  const PREP_ANTES = ["a", "con", "de", "para", "por", "sin", "en", "sobre", "hacia", "entre", "desde", "hasta", "según", "ante"];
+  function sinPronOpc(s) {
+    const t = s.split(" "), out = [], quitados = [], frases = [];
+    for (let i = 0; i < t.length; i++) {
+      if (t[i] === "a" && i + 1 < t.length && (t[i + 1] === "mí" || t[i + 1] === "ti" || PRON_SUJ.indexOf(t[i + 1]) !== -1)) {
+        quitados.push(t[i + 1]); frases.push(t[i + 1]); i++; continue;
+      }
+      if (PRON_SUJ.indexOf(t[i]) !== -1 && PREP_ANTES.indexOf(t[i - 1]) === -1) { quitados.push(t[i]); continue; }
+      out.push(t[i]);
+    }
+    // «a ti» solo es redundante si la frase lleva el pronombre átono que le corresponde (te…).
+    const ATONO = { "mí": ["me"], "ti": ["te"], "nosotros": ["nos"], "nosotras": ["nos"], "vosotros": ["os"], "vosotras": ["os"] };
+    const coherente = frases.every(function (p) {
+      const cl = ATONO[p] || ["le", "les", "se", "lo", "la", "los", "las"];
+      return cl.some(function (c) { return out.indexOf(c) !== -1; });
+    });
+    return { texto: out.join(" "), quitados: quitados, coherente: coherente };
+  }
+  function tolerantMatch(n, spec) {
+    const alumno = sinPronOpc(n);
+    if (!alumno.texto || !alumno.coherente) return false;
+    return spec.some(function (a) {
+      const libro = norm(a);
+      if (libro.split(" ").length < 3) return false;
+      const lb = sinPronOpc(libro);
+      if (lb.texto !== alumno.texto) return false;
+      if (lb.quitados.length && alumno.quitados.some(function (p) { return lb.quitados.indexOf(p) === -1; })) return false;
+      return true;
+    });
+  }
   function isCorrect(input, spec) {
     const n = norm(input);
     if (!n) return false;
     if (Array.isArray(spec)) {
-      return spec.some(function (a) { return norm(a) === n; });
+      if (spec.some(function (a) { return norm(a) === n; })) return true;
+      return tolerantMatch(n, spec);
     }
     if (spec && spec.flex) {
       const hay = stripAccents(n);
