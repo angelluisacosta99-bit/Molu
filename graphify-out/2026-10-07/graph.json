@@ -3321,18 +3321,6 @@
       "source_location": "L285"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_server_applylegacydeferredacceptsonstartup",
-      "label": "applyLegacyDeferredAcceptsOnStartup()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "live-server.mjs",
-      "file_type": "code",
-      "norm_label": "applylegacydeferredacceptsonstartup()",
-      "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
-      "source_location": "L974"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_server_broadcast",
       "label": "broadcast()",
       "_callable": true,
@@ -3655,6 +3643,18 @@
       "norm_label": "removeallsveltecomponentsessions()",
       "source_file": ".claude/skills/impeccable/scripts/live/svelte-component.mjs",
       "source_location": "L732"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_server_applylegacydeferredacceptsonstartup",
+      "label": "applyLegacyDeferredAcceptsOnStartup()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "svelte-component.mjs",
+      "file_type": "code",
+      "norm_label": "applylegacydeferredacceptsonstartup()",
+      "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
+      "source_location": "L974"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_svelte_component_appendcsstosveltestyle",
@@ -9765,36 +9765,12 @@
       "source_location": "L82"
     },
     {
-      "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_experimento_mcnemar",
-      "label": "mcnemar()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 224,
-      "community_name": "experimento.py",
-      "file_type": "code",
-      "norm_label": "mcnemar()",
-      "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/experimento.py",
-      "source_location": "L94"
-    },
-    {
-      "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_experimento_modelos",
-      "label": "modelos()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 224,
-      "community_name": "experimento.py",
-      "file_type": "code",
-      "norm_label": "modelos()",
-      "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/experimento.py",
-      "source_location": "L46"
-    },
-    {
       "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_simulador_ber_desde_q",
       "label": "ber_desde_q()",
       "_callable": true,
       "_origin": "ast",
       "community": 224,
-      "community_name": "experimento.py",
+      "community_name": "simulador.py",
       "file_type": "code",
       "norm_label": "ber_desde_q()",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/simulador.py",
@@ -9806,7 +9782,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 224,
-      "community_name": "experimento.py",
+      "community_name": "simulador.py",
       "file_type": "code",
       "norm_label": "generar()",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/simulador.py",
@@ -9818,7 +9794,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 224,
-      "community_name": "experimento.py",
+      "community_name": "simulador.py",
       "file_type": "code",
       "norm_label": "perdida_nominal()",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/simulador.py",
@@ -9830,7 +9806,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 224,
-      "community_name": "experimento.py",
+      "community_name": "simulador.py",
       "file_type": "code",
       "norm_label": "q_ase()",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/simulador.py",
@@ -9842,7 +9818,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 224,
-      "community_name": "experimento.py",
+      "community_name": "simulador.py",
       "file_type": "code",
       "norm_label": "q_termico()",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/simulador.py",
@@ -9854,7 +9830,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 224,
-      "community_name": "experimento.py",
+      "community_name": "simulador.py",
       "file_type": "code",
       "norm_label": "modelos()",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-4-redaccion/analisis_no_vistos.py",
@@ -10231,6 +10207,18 @@
       "norm_label": "replaceonce()",
       "source_file": ".claude/skills/impeccable/scripts/live-wrap.mjs",
       "source_location": "L502"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_wrap_searchdir",
+      "label": "searchDir()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 23,
+      "community_name": "live-wrap.mjs",
+      "file_type": "code",
+      "norm_label": "searchdir()",
+      "source_file": ".claude/skills/impeccable/scripts/live-wrap.mjs",
+      "source_location": "L667"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_wrap_splitclasslist",
@@ -11443,6 +11431,30 @@
       "norm_label": "relativeluminance()",
       "source_file": ".claude/skills/impeccable/scripts/detector/shared/color.mjs",
       "source_location": "L61"
+    },
+    {
+      "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_experimento_mcnemar",
+      "label": "mcnemar()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 285,
+      "community_name": "experimento.py",
+      "file_type": "code",
+      "norm_label": "mcnemar()",
+      "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/experimento.py",
+      "source_location": "L94"
+    },
+    {
+      "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_experimento_modelos",
+      "label": "modelos()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 285,
+      "community_name": "experimento.py",
+      "file_type": "code",
+      "norm_label": "modelos()",
+      "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/experimento.py",
+      "source_location": "L46"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_copy_edit_agent_applymockwrites",
@@ -13989,6 +14001,18 @@
       "source_location": "L235"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_commit_manual_edits_clearappliedentries",
+      "label": "clearAppliedEntries()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "manual-edit-routes.mjs",
+      "file_type": "code",
+      "norm_label": "clearappliedentries()",
+      "source_file": ".claude/skills/impeccable/scripts/live-commit-manual-edits.mjs",
+      "source_location": "L555"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_discard_manual_edits_argval",
       "label": "argVal()",
       "_callable": true,
@@ -13999,54 +14023,6 @@
       "norm_label": "argval()",
       "source_file": ".claude/skills/impeccable/scripts/live-discard-manual-edits.mjs",
       "source_location": "L21"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_compactmanuallogtext",
-      "label": "compactManualLogText()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "compactmanuallogtext()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L934"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualapplyfailures",
-      "label": "summarizeManualApplyFailures()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "summarizemanualapplyfailures()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L900"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualdiagnostics",
-      "label": "summarizeManualDiagnostics()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "summarizemanualdiagnostics()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L913"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanuallogfile",
-      "label": "summarizeManualLogFile()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "summarizemanuallogfile()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L927"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_manual_edit_evidence_buildmanualeditevidence",
@@ -15019,18 +14995,6 @@
       "norm_label": "isgitignored()",
       "source_file": ".claude/skills/impeccable/scripts/lib/is-generated.mjs",
       "source_location": "L42"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_wrap_searchdir",
-      "label": "searchDir()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 39,
-      "community_name": "isGeneratedFile",
-      "file_type": "code",
-      "norm_label": "searchdir()",
-      "source_file": ".claude/skills/impeccable/scripts/live-wrap.mjs",
-      "source_location": "L667"
     },
     {
       "id": "claude_skills_impeccable_scripts_modern_screenshot_umd_ae",
@@ -18933,6 +18897,18 @@
       "source_location": "L393"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_compactmanuallogtext",
+      "label": "compactManualLogText()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "compactmanuallogtext()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L934"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_manual_apply_compactnearbymanualedittexts",
       "label": "compactNearbyManualEditTexts()",
       "_callable": true,
@@ -19339,6 +19315,42 @@
       "norm_label": "summarizemanualapplyevent()",
       "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
       "source_location": "L888"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualapplyfailures",
+      "label": "summarizeManualApplyFailures()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "summarizemanualapplyfailures()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L900"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualdiagnostics",
+      "label": "summarizeManualDiagnostics()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "summarizemanualdiagnostics()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L913"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanuallogfile",
+      "label": "summarizeManualLogFile()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "summarizemanuallogfile()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L927"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_manual_apply_truncatemanualapplytext",
@@ -21631,18 +21643,6 @@
       "norm_label": "changedfilessincesnapshot()",
       "source_file": ".claude/skills/impeccable/scripts/live-commit-manual-edits.mjs",
       "source_location": "L631"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_commit_manual_edits_clearappliedentries",
-      "label": "clearAppliedEntries()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "live-commit-manual-edits.mjs",
-      "file_type": "code",
-      "norm_label": "clearappliedentries()",
-      "source_file": ".claude/skills/impeccable/scripts/live-commit-manual-edits.mjs",
-      "source_location": "L555"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_commit_manual_edits_collectapplyownedfiles",
@@ -33607,22 +33607,11 @@
       "source_location": "L137"
     },
     {
-      "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_experimento",
-      "label": "experimento.py",
-      "_origin": "ast",
-      "community": 224,
-      "community_name": "experimento.py",
-      "file_type": "code",
-      "norm_label": "experimento.py",
-      "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/experimento.py",
-      "source_location": "L1"
-    },
-    {
       "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_simulador",
       "label": "simulador.py",
       "_origin": "ast",
       "community": 224,
-      "community_name": "experimento.py",
+      "community_name": "simulador.py",
       "file_type": "code",
       "norm_label": "simulador.py",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/simulador.py",
@@ -33633,21 +33622,10 @@
       "label": "analisis_no_vistos.py",
       "_origin": "ast",
       "community": 224,
-      "community_name": "experimento.py",
+      "community_name": "simulador.py",
       "file_type": "code",
       "norm_label": "analisis_no_vistos.py",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-4-redaccion/analisis_no_vistos.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_experimento_rationale_1",
-      "label": "Experimento del Paso 3: \u00bfpredice un modelo de ensamble el cumplimiento de BER\u2026",
-      "_origin": "ast",
-      "community": 224,
-      "community_name": "experimento.py",
-      "file_type": "rationale",
-      "norm_label": "experimento del paso 3: \u00bfpredice un modelo de ensamble el cumplimiento de ber...",
-      "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/experimento.py",
       "source_location": "L1"
     },
     {
@@ -33655,7 +33633,7 @@
       "label": "Generador de datos sint\u00e9ticos de calidad de transmisi\u00f3n (QoT) para la red DWDM\u2026",
       "_origin": "ast",
       "community": 224,
-      "community_name": "experimento.py",
+      "community_name": "simulador.py",
       "file_type": "rationale",
       "norm_label": "generador de datos sinteticos de calidad de transmision (qot) para la red dwdm...",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/simulador.py",
@@ -33666,7 +33644,7 @@
       "label": "Genera n canales con su estado de degradaci\u00f3n y la etiqueta cumple/no cumple.",
       "_origin": "ast",
       "community": 224,
-      "community_name": "experimento.py",
+      "community_name": "simulador.py",
       "file_type": "rationale",
       "norm_label": "genera n canales con su estado de degradacion y la etiqueta cumple/no cumple.",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/simulador.py",
@@ -33677,7 +33655,7 @@
       "label": "Objetivo 3: acierto en trayectos y condiciones no vistos en el entrenamiento.\u2026",
       "_origin": "ast",
       "community": 224,
-      "community_name": "experimento.py",
+      "community_name": "simulador.py",
       "file_type": "rationale",
       "norm_label": "objetivo 3: acierto en trayectos y condiciones no vistos en el entrenamiento....",
       "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-4-redaccion/analisis_no_vistos.py",
@@ -38030,6 +38008,100 @@
       "norm_label": "ejercicios",
       "source_file": "docencia-espanol/fuentes/nuevo-espanol-en-marcha/b1/cuaderno-unidad10a_de-viaje.md",
       "source_location": "L5"
+    },
+    {
+      "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_experimento",
+      "label": "experimento.py",
+      "_origin": "ast",
+      "community": 285,
+      "community_name": "experimento.py",
+      "file_type": "code",
+      "norm_label": "experimento.py",
+      "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/experimento.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_experimento_rationale_1",
+      "label": "Experimento del Paso 3: \u00bfpredice un modelo de ensamble el cumplimiento de BER\u2026",
+      "_origin": "ast",
+      "community": 285,
+      "community_name": "experimento.py",
+      "file_type": "rationale",
+      "norm_label": "experimento del paso 3: \u00bfpredice un modelo de ensamble el cumplimiento de ber...",
+      "source_file": "master-sistemas-inteligentes/metodologia-de-la-investigacion/practica-del-problema-al-articulo/paso-3-experimento/experimento.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer",
+      "label": "neural-designer.md",
+      "_origin": "ast",
+      "community": 286,
+      "community_name": "Neural Designer: c\u00f3mo funciona (estudiado 2026-10-07)",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "neural-designer.md",
+      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_flujo_de_un_proyecto_siempre_el_mismo_orden",
+      "label": "Flujo de un proyecto (siempre el mismo orden)",
+      "_origin": "ast",
+      "community": 286,
+      "community_name": "Neural Designer: c\u00f3mo funciona (estudiado 2026-10-07)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "flujo de un proyecto (siempre el mismo orden)",
+      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
+      "source_location": "L18"
+    },
+    {
+      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_las_tres_ventanas",
+      "label": "Las tres ventanas",
+      "_origin": "ast",
+      "community": 286,
+      "community_name": "Neural Designer: c\u00f3mo funciona (estudiado 2026-10-07)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "las tres ventanas",
+      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
+      "source_location": "L7"
+    },
+    {
+      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_neural_designer_c\u00f3mo_funciona_estudiado_2026_10_07",
+      "label": "Neural Designer: c\u00f3mo funciona (estudiado 2026-10-07)",
+      "_origin": "ast",
+      "community": 286,
+      "community_name": "Neural Designer: c\u00f3mo funciona (estudiado 2026-10-07)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "neural designer: como funciona (estudiado 2026-10-07)",
+      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_ojo_con_puntos_d\u00e9biles",
+      "label": "Ojo con (puntos d\u00e9biles)",
+      "_origin": "ast",
+      "community": 286,
+      "community_name": "Neural Designer: c\u00f3mo funciona (estudiado 2026-10-07)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "ojo con (puntos debiles)",
+      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
+      "source_location": "L51"
+    },
+    {
+      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_tipos_de_aplicaci\u00f3n",
+      "label": "Tipos de aplicaci\u00f3n",
+      "_origin": "ast",
+      "community": 286,
+      "community_name": "Neural Designer: c\u00f3mo funciona (estudiado 2026-10-07)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "tipos de aplicacion",
+      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
+      "source_location": "L46"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_copy_edit_agent",
@@ -44636,6 +44708,18 @@
       "type": "external"
     },
     {
+      "id": "pathlib",
+      "label": "pathlib",
+      "_origin": "semantic",
+      "community": 187,
+      "community_name": "generar_borrador.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "pathlib",
+      "source_file": "",
+      "type": "external"
+    },
+    {
       "id": "pypdf",
       "label": "pypdf",
       "_origin": "semantic",
@@ -44660,47 +44744,11 @@
       "type": "external"
     },
     {
-      "id": "sys",
-      "label": "sys",
-      "_origin": "semantic",
-      "community": 187,
-      "community_name": "generar_borrador.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "sys",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "matplotlib",
-      "label": "matplotlib",
-      "_origin": "semantic",
-      "community": 224,
-      "community_name": "experimento.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "matplotlib",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "matplotlib_pyplot",
-      "label": "matplotlib_pyplot",
-      "_origin": "semantic",
-      "community": 224,
-      "community_name": "experimento.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "matplotlib_pyplot",
-      "source_file": "",
-      "type": "external"
-    },
-    {
       "id": "numpy",
       "label": "numpy",
       "_origin": "semantic",
       "community": 224,
-      "community_name": "experimento.py",
+      "community_name": "simulador.py",
       "external": true,
       "file_type": "concept",
       "norm_label": "numpy",
@@ -44712,7 +44760,7 @@
       "label": "pandas",
       "_origin": "semantic",
       "community": 224,
-      "community_name": "experimento.py",
+      "community_name": "simulador.py",
       "external": true,
       "file_type": "concept",
       "norm_label": "pandas",
@@ -44724,58 +44772,10 @@
       "label": "scipy_special",
       "_origin": "semantic",
       "community": 224,
-      "community_name": "experimento.py",
+      "community_name": "simulador.py",
       "external": true,
       "file_type": "concept",
       "norm_label": "scipy_special",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "scipy_stats",
-      "label": "scipy_stats",
-      "_origin": "semantic",
-      "community": 224,
-      "community_name": "experimento.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "scipy_stats",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "sklearn_ensemble",
-      "label": "sklearn_ensemble",
-      "_origin": "semantic",
-      "community": 224,
-      "community_name": "experimento.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "sklearn_ensemble",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "sklearn_inspection",
-      "label": "sklearn_inspection",
-      "_origin": "semantic",
-      "community": 224,
-      "community_name": "experimento.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "sklearn_inspection",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "sklearn_linear_model",
-      "label": "sklearn_linear_model",
-      "_origin": "semantic",
-      "community": 224,
-      "community_name": "experimento.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "sklearn_linear_model",
       "source_file": "",
       "type": "external"
     },
@@ -44784,7 +44784,7 @@
       "label": "sklearn_metrics",
       "_origin": "semantic",
       "community": 224,
-      "community_name": "experimento.py",
+      "community_name": "simulador.py",
       "external": true,
       "file_type": "concept",
       "norm_label": "sklearn_metrics",
@@ -44796,58 +44796,10 @@
       "label": "sklearn_model_selection",
       "_origin": "semantic",
       "community": 224,
-      "community_name": "experimento.py",
+      "community_name": "simulador.py",
       "external": true,
       "file_type": "concept",
       "norm_label": "sklearn_model_selection",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "sklearn_pipeline",
-      "label": "sklearn_pipeline",
-      "_origin": "semantic",
-      "community": 224,
-      "community_name": "experimento.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "sklearn_pipeline",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "sklearn_preprocessing",
-      "label": "sklearn_preprocessing",
-      "_origin": "semantic",
-      "community": 224,
-      "community_name": "experimento.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "sklearn_preprocessing",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "xgboost",
-      "label": "xgboost",
-      "_origin": "semantic",
-      "community": 224,
-      "community_name": "experimento.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "xgboost",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "pathlib",
-      "label": "pathlib",
-      "_origin": "semantic",
-      "community": 231,
-      "community_name": "generar_tex.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "pathlib",
       "source_file": "",
       "type": "external"
     },
@@ -44876,6 +44828,18 @@
       "type": "external"
     },
     {
+      "id": "sys",
+      "label": "sys",
+      "_origin": "semantic",
+      "community": 231,
+      "community_name": "generar_tex.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "sys",
+      "source_file": "",
+      "type": "external"
+    },
+    {
       "id": "nbformat",
       "label": "nbformat",
       "_origin": "semantic",
@@ -44884,6 +44848,114 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "nbformat",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "matplotlib",
+      "label": "matplotlib",
+      "_origin": "semantic",
+      "community": 285,
+      "community_name": "experimento.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "matplotlib",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "matplotlib_pyplot",
+      "label": "matplotlib_pyplot",
+      "_origin": "semantic",
+      "community": 285,
+      "community_name": "experimento.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "matplotlib_pyplot",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "scipy_stats",
+      "label": "scipy_stats",
+      "_origin": "semantic",
+      "community": 285,
+      "community_name": "experimento.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "scipy_stats",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "sklearn_ensemble",
+      "label": "sklearn_ensemble",
+      "_origin": "semantic",
+      "community": 285,
+      "community_name": "experimento.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "sklearn_ensemble",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "sklearn_inspection",
+      "label": "sklearn_inspection",
+      "_origin": "semantic",
+      "community": 285,
+      "community_name": "experimento.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "sklearn_inspection",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "sklearn_linear_model",
+      "label": "sklearn_linear_model",
+      "_origin": "semantic",
+      "community": 285,
+      "community_name": "experimento.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "sklearn_linear_model",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "sklearn_pipeline",
+      "label": "sklearn_pipeline",
+      "_origin": "semantic",
+      "community": 285,
+      "community_name": "experimento.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "sklearn_pipeline",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "sklearn_preprocessing",
+      "label": "sklearn_preprocessing",
+      "_origin": "semantic",
+      "community": 285,
+      "community_name": "experimento.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "sklearn_preprocessing",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "xgboost",
+      "label": "xgboost",
+      "_origin": "semantic",
+      "community": 285,
+      "community_name": "experimento.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "xgboost",
       "source_file": "",
       "type": "external"
     }
@@ -116649,6 +116721,61 @@
       "weight": 1.0
     },
     {
+      "source": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer",
+      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_neural_designer_c\u00f3mo_funciona_estudiado_2026_10_07",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_neural_designer_c\u00f3mo_funciona_estudiado_2026_10_07",
+      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_flujo_de_un_proyecto_siempre_el_mismo_orden",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_neural_designer_c\u00f3mo_funciona_estudiado_2026_10_07",
+      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_tipos_de_aplicaci\u00f3n",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_neural_designer_c\u00f3mo_funciona_estudiado_2026_10_07",
+      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_ojo_con_puntos_d\u00e9biles",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_neural_designer_c\u00f3mo_funciona_estudiado_2026_10_07",
+      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_las_tres_ventanas",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
       "source": "master_sistemas_inteligentes_computacion_neuroborrosa_fuente",
       "target": "master_sistemas_inteligentes_computacion_neuroborrosa_fuente_computaci\u00f3n_neuroborrosa_304473_3_ects_obligatoria",
       "relation": "contains",
@@ -125331,5 +125458,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "46da05d49ac6812c032cb4359bbf5c199c5533be"
+  "built_at_commit": "815b360f0ff40daee5cbe5d66f6cdfb3e95c92c3"
 }

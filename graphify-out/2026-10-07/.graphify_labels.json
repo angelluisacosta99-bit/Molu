@@ -223,7 +223,7 @@
   "221": "Ejercicios",
   "222": "2026-09-19 — Pasada por el correo semanal \"This week in Claude Code\" (4 números, 21 ago-18 sep)",
   "223": "2. Hallazgos verificados que cambian el plan",
-  "224": "experimento.py",
+  "224": "simulador.py",
   "225": "Optativas elegidas este curso (6)",
   "226": "Ejercicios",
   "227": "Parte 2 — Propuesta adjunta (2 páginas)",
@@ -283,5 +283,7 @@
   "281": "parseRgb",
   "282": "Ejercicios",
   "283": "Ejercicios",
-  "284": "Ejercicios"
+  "284": "Ejercicios",
+  "285": "experimento.py",
+  "286": "Neural Designer: cómo funciona (estudiado 2026-10-07)"
 }
