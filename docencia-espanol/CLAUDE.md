@@ -147,3 +147,19 @@ falta `extract_image()` para sacar los bytes reales). Sin tesseract
 tampoco pasa nada: leer el render con `Read` es la fuente de verdad de
 todos modos (paso 3), tesseract solo ahorra el borrador previo, nunca es
 imprescindible.
+
+## Ejercicios interactivos (todos los niveles: A1, A2, B1, B2…): corrección tolerante
+
+Esta regla vale para **todos** los capítulos y sesiones, en cualquier nivel del libro. Al
+construir o tocar un ejercicio interactivo de frases, las respuestas del libro son la
+referencia (la primera opción de cada hueco), pero se aceptan además las variantes que el
+español admite y el libro no escribe: **pronombre sujeto añadido u omitido** («Cuando *yo*
+tenga tiempo» = «Cuando tenga tiempo») y **«a mí / a ti / a él…» de más** («Cuando me den
+*a mí* las vacaciones»), siempre con el átono que le corresponde y sin cambiar el pronombre
+del libro por otro. El motor ya lo hace (`tolerantMatch` en `isCorrect`, en
+`.claude/skills/ejercicio-interactivo/reference/template.html`): **todo capítulo nuevo debe
+partir de esa plantilla**, y uno antiguo que se republique debe llevar ese bloque. Las otras
+formas legítimas (orden del sujeto, dos tiempos posibles, etc.) se añaden a mano como
+segunda opción del array. Detalle completo en la sección «Variantes que el español admite»
+de `.claude/skills/ejercicio-interactivo/SKILL.md`. Origen: una alumna escribió «Cuando me
+den a mí las vacaciones» en la 7B de B1 y salió como error.
