@@ -135,7 +135,7 @@ Mismo nombre, dos memorias: comprueba siempre que el anuncio dice
 | Almacenamiento | SSD 960 GB + SSD 480 GB (PCIe) | Sin problema |
 | Monitor | MSI Optix G27C7 (1080p, 165 Hz, DisplayPort y HDMI) | Cualquier tarjeta de la tabla sobra para él |
 | GPU anterior (dañada) | Gigabyte RTX 4070 Windforce (GV-N4070WF3-12GD), 12 GB | Consumía ~200 W: la fuente la aguantaba |
-| Fuente | **Pendiente** (mirar la etiqueta lateral) | — |
+| Fuente | 1STPLAYER FK 7.0, modelo PS-700FK, 700 W (+12 V: 58 A / 696 W; foto de la etiqueta, 2026-10-08) | Sobra para las RTX 5060 Ti (180 W). Sin sello 80 Plus visible en la etiqueta. Fabricada ~2023 (código 230618). Falta confirmar que tiene cable PCIe de 8 pines libre |
 
 Conclusiones:
 
@@ -183,8 +183,10 @@ la garantía cerca.
 
 ## 7. Lista de comprobación antes de comprar
 
-- [ ] Modelo de la fuente de alimentación y sus vatios (mirar la
-      etiqueta de la fuente)
+- [x] Modelo de la fuente de alimentación y sus vatios (1STPLAYER
+      PS-700FK, 700 W; hecho 2026-10-08)
+- [ ] Cable PCIe de 8 pines libre en la fuente (no confundir con el
+      EPS de 8 pines de la CPU)
 - [ ] Largo máximo de tarjeta que cabe en la caja
 - [ ] Modelo de placa base y de procesador
 - [ ] Cantidad de RAM
