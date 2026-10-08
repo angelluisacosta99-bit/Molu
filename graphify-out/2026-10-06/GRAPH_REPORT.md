@@ -1,17 +1,17 @@
-# Graph Report - Molu  (2026-10-08)
+# Graph Report - Molu  (2026-10-06)
 
 ## Corpus Check
-- 334 files · ~1,655,816 words
+- 333 files · ~1,650,186 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 114 file(s) not represented in the graph (top: .csv 32, .arff 22, .pptx 15)
 
 ## Summary
-- 3716 nodes · 7013 edges · 288 communities (246 shown, 42 thin omitted)
+- 3685 nodes · 6984 edges · 286 communities (244 shown, 42 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 131 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `35c97e65`
+- Built from commit: `9bb47b72`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -294,8 +294,6 @@
 - Ejercicios
 - Ejercicios
 - Ejercicios
-- Compra de tarjeta gráfica (GPU) para IA
-- Neural Designer: guía de estudio (tutoriales oficiales, 2026-10-07)
 
 ## God Nodes (most connected - your core abstractions)
 1. `Novedades de herramientas de IA` - 31 edges
@@ -324,7 +322,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (288 total, 42 thin omitted)
+## Communities (286 total, 42 thin omitted)
 
 ### Community 0 - "live-browser.js"
 Cohesion: 0.03
@@ -351,16 +349,16 @@ Cohesion: 0.08
 Nodes (49): actionLabel(), applyConfigureBarChrome(), bindConfigureCountPillTooltip(), bindConfigureInlineControlHover(), bindConfigureModifierPillHover(), buildConfigureActionControl(), buildConfigureCountControl(), buildConfigureRow() (+41 more)
 
 ### Community 6 - "manual-apply.mjs"
-Cohesion: 0.09
-Nodes (49): addOpToManualApplyChunk(), APPLY_EVENT_HARD_TIMEOUT_MS, APPLY_EVENT_SOFT_DEADLINE_MS, buildManualApplyAgentAction(), clearManualApplyTransaction(), collectManualApplyFiles(), compactManualApplyBatch(), compactManualApplyCandidates() (+41 more)
+Cohesion: 0.08
+Nodes (55): addOpToManualApplyChunk(), APPLY_EVENT_HARD_TIMEOUT_MS, APPLY_EVENT_SOFT_DEADLINE_MS, buildManualApplyAgentAction(), clearManualApplyTransaction(), collectManualApplyFiles(), compactManualApplyBatch(), compactManualApplyCandidates() (+47 more)
 
 ### Community 7 - "setLiveState"
 Cohesion: 0.08
 Nodes (69): abortSvelteComponentInjection(), applyEditing(), buildInsertPlaceholderSnapshotFromDom(), buildLocatorForLeaf(), buildPickedAnchorSnapshot(), cancelEditing(), cancelEditingToPicking(), cancelInsertConfigure() (+61 more)
 
 ### Community 8 - "live-commit-manual-edits.mjs"
-Cohesion: 0.10
-Nodes (49): allEntryIds(), argVal(), buildRepairBatch(), candidatesForEntry(), changedFilesSinceSnapshot(), clearAppliedEntries(), collectApplyOwnedFiles(), collectRollbackFiles() (+41 more)
+Cohesion: 0.11
+Nodes (48): allEntryIds(), argVal(), buildRepairBatch(), candidatesForEntry(), changedFilesSinceSnapshot(), collectApplyOwnedFiles(), collectRollbackFiles(), commitManualEdits() (+40 more)
 
 ### Community 9 - "design-system.mjs"
 Cohesion: 0.09
@@ -372,11 +370,11 @@ Nodes (47): applyDetectionConfigSource(), clampByte(), cleanIgnoreValueDisplay()
 
 ### Community 11 - "live-server.mjs"
 Cohesion: 0.09
-Nodes (45): assembleLiveBrowserScript(), assertLiveBrowserScriptParts(), LIVE_BROWSER_SCRIPT_PARTS, readLiveBrowserScriptParts(), resolveLiveBrowserScriptParts(), acknowledgePendingEvent(), activeSessionSummaries(), agentPollingConnected() (+37 more)
+Nodes (46): assembleLiveBrowserScript(), assertLiveBrowserScriptParts(), LIVE_BROWSER_SCRIPT_PARTS, readLiveBrowserScriptParts(), resolveLiveBrowserScriptParts(), acknowledgePendingEvent(), activeSessionSummaries(), agentPollingConnected() (+38 more)
 
 ### Community 12 - "svelte-component.mjs"
-Cohesion: 0.09
-Nodes (47): applyLegacyDeferredAcceptsOnStartup(), appendCssToSvelteStyle(), appendSanitizedCssRule(), applyDeferredSvelteComponentAccepts(), bakeParamValuesInCss(), buildInsertVariantStub(), buildPropContract(), buildPropsScript() (+39 more)
+Cohesion: 0.10
+Nodes (46): appendCssToSvelteStyle(), appendSanitizedCssRule(), applyDeferredSvelteComponentAccepts(), bakeParamValuesInCss(), buildInsertVariantStub(), buildPropContract(), buildPropsScript(), buildVariantStub() (+38 more)
 
 ### Community 13 - "detect-html.mjs"
 Cohesion: 0.13
@@ -419,8 +417,8 @@ Cohesion: 0.10
 Nodes (41): allow(), bumpCursorDenial(), cursorBlockMessage(), deny(), done(), escapeRegExp(), findingSignature(), firstMatch() (+33 more)
 
 ### Community 23 - "live-wrap.mjs"
-Cohesion: 0.13
-Nodes (35): argVal(), buildInsertWrapperLines(), computeInsertLine(), INSERT_POSITIONS, insertCli(), isInsertPosition(), resolveElementMatch(), buildSvelteComponentCssAuthoring() (+27 more)
+Cohesion: 0.14
+Nodes (34): argVal(), buildInsertWrapperLines(), computeInsertLine(), INSERT_POSITIONS, insertCli(), isInsertPosition(), resolveElementMatch(), buildSvelteComponentCssAuthoring() (+26 more)
 
 ### Community 24 - "Skill: ejercicio-interactivo"
 Cohesion: 0.08
@@ -467,8 +465,8 @@ Cohesion: 0.05
 Nodes (32): Auto-clarity, Output (receipt), Refusals (terminal lines), Scope, Workflow, Auto-clarity, Example, Job (+24 more)
 
 ### Community 35 - "manual-edit-routes.mjs"
-Cohesion: 0.18
-Nodes (22): args, buffer, cwd, pageUrlFilter, remaining, compactManualLogText(), summarizeManualApplyFailures(), summarizeManualDiagnostics() (+14 more)
+Cohesion: 0.20
+Nodes (17): clearAppliedEntries(), args, buffer, cwd, pageUrlFilter, remaining, buildManualEditEvidence(), summarizePendingManualEditBatch() (+9 more)
 
 ### Community 36 - "live-manual-edit-evidence.mjs"
 Cohesion: 0.15
@@ -483,8 +481,8 @@ Cohesion: 0.18
 Nodes (26): clearStoredManualApplyState(), fetchPendingCount(), handleManualEditActivity(), hidePendingApplyDock(), manualApplyLoadingText(), manualApplyStateKey(), manualEditEventForCurrentPage(), numberOrNull() (+18 more)
 
 ### Community 39 - "isGeneratedFile"
-Cohesion: 0.60
-Nodes (4): hasGeneratedHeader(), HEADER_MARKERS, isGeneratedFile(), isGitIgnored()
+Cohesion: 0.47
+Nodes (5): hasGeneratedHeader(), HEADER_MARKERS, isGeneratedFile(), isGitIgnored(), searchDir()
 
 ### Community 40 - "impeccable-paths.mjs"
 Cohesion: 0.17
@@ -515,8 +513,8 @@ Cohesion: 0.20
 Nodes (14): createLiveBrowserSessionState(), clearHandled(), clearScrollY(), clearSession(), isHandled(), loadSession(), markHandled(), nextCheckpointRevision() (+6 more)
 
 ### Community 47 - "Computación Neuroborrosa (304473 · 3 ECTS · Obligatoria)"
-Cohesion: 0.29
-Nodes (6): Computación Neuroborrosa (304473 · 3 ECTS · Obligatoria), Drive del alumno, Estructura, Material de clase heredado (solo referencia, NO copiado), Parte neuronal (Angélica González Arrieta), Requisitos oficiales 2026-27 (presentación del profesor, 4/10/26)
+Cohesion: 0.40
+Nodes (4): Computación Neuroborrosa (304473 · 3 ECTS · Obligatoria), Estructura, Material de clase heredado (solo referencia, NO copiado), Requisitos oficiales 2026-27 (presentación del profesor, 4/10/26)
 
 ### Community 48 - "createLiveBrowserDomHelpers"
 Cohesion: 0.19
@@ -1302,33 +1300,25 @@ Nodes (6): 1. Historias de viajes, Ej. 1 — ¿Qué tiempo hace?, Ej. 2 — Escu
 Cohesion: 0.33
 Nodes (5): 1. De viaje, Ej. 1 — Lee el texto sobre los aeropuertos, Ej. 2 — Construye correctamente las siguientes frases, Ej. 3 — Explica estas situaciones haciendo conjeturas, Ejercicios
 
-### Community 285 - "Compra de tarjeta gráfica (GPU) para IA"
-Cohesion: 0.14
-Nodes (13): 1. Antes de nada: ¿hace falta para el TFM?, 2. La regla más importante: la VRAM, 3. Opciones y precios reales (idealo.es, 2026-09-26), 4. Puntos débiles y riesgos, 5. Tu equipo: BOREY 2.0 Plus (Роботкомп), 6. Qué comprar y dónde (Salamanca), 7. Lista de comprobación antes de comprar, 8. Después de montarla (+5 more)
-
-### Community 286 - "Neural Designer: guía de estudio (tutoriales oficiales, 2026-10-07)"
-Cohesion: 0.13
-Nodes (14): 10. Discrepancias y erratas de la documentación, 11. Errores típicos (resumen), 12. Comprobar en la app (pendiente), 1. Idea general y flujo de trabajo, 2. Elegir el tipo de modelo, 3. Data set, 4. Neural network, 5. Training strategy (+6 more)
-
 ## Knowledge Gaps
-- **1087 isolated node(s):** `1. Antes de nada: ¿hace falta para el TFM?`, `2. La regla más importante: la VRAM`, `NVIDIA RTX 5060 Ti 16 GB, nueva (precio más bajo por modelo)`, `AMD RX 9060 XT 16 GB, nueva (Sapphire)`, `Otras referencias` (+1082 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1359 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **1061 isolated node(s):** `Notas por candidato`, `Descartados del informe de LeapSpace`, `C — Bilal et al., Energy 2023 (ANFIS-MoW, eólica)`, `D — Wu et al., Applied Energy 2023 (ANFIS-ELM)`, `E — Fazlollahtabar, ECM:X 2026 (descartado)` (+1056 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1331 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **42 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Novedades de herramientas de IA` connect `Novedades de herramientas de IA` to `2026-08-30 — Compactación de contexto: palancas oficiales para ahorrar tokens`, `2026-08-30 — Pasada del radar: dos funciones nativas nuevas, sin hallazgos de terceros`, `2026-09-07 — Búsqueda a mano: herramientas para posts de blog en plataformas de clases`, `hook-before-edit.mjs`, `2026-08-16 — Primera pasada del radar`, `2026-09-13 — Búsqueda exhaustiva: herramientas de investigación científica verificada para el máster`, `2026-09-19 — Pasada por el correo semanal "This week in Claude Code" (4 números, 21 ago-18 sep)`?**
-  _High betweenness centrality (0.006) - this node is a cross-community bridge._
+  _High betweenness centrality (0.004) - this node is a cross-community bridge._
 - **Why does `2026-08-16 — Segunda pasada: hooks vs. CLAUDE.md, y prácticas de la comunidad` connect `hook-before-edit.mjs` to `Novedades de herramientas de IA`?**
-  _High betweenness centrality (0.005) - this node is a cross-community bridge._
-- **Why does `deny()` connect `hook-before-edit.mjs` to `readConfig`?**
-  _High betweenness centrality (0.003) - this node is a cross-community bridge._
+  _High betweenness centrality (0.004) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `initGlobalBar()` (e.g. with `hideAgentPollTooltip()` and `onDetectMessage()`) actually correct?**
   _`initGlobalBar()` has 7 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `1. Antes de nada: ¿hace falta para el TFM?`, `2. La regla más importante: la VRAM`, `NVIDIA RTX 5060 Ti 16 GB, nueva (precio más bajo por modelo)` to the rest of the system?**
-  _1087 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `Notas por candidato`, `Descartados del informe de LeapSpace`, `C — Bilal et al., Energy 2023 (ANFIS-MoW, eólica)` to the rest of the system?**
+  _1061 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `live-browser.js` be split into smaller, more focused modules?**
   _Cohesion score 0.02863984674329502 - nodes in this community are weakly interconnected._
 - **Should `checks.mjs` be split into smaller, more focused modules?**
   _Cohesion score 0.045351473922902494 - nodes in this community are weakly interconnected._
+- **Should `index.mjs` be split into smaller, more focused modules?**
+  _Cohesion score 0.06142410015649452 - nodes in this community are weakly interconnected._

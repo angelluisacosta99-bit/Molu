@@ -1821,18 +1821,6 @@
       "source_location": "L2462"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkcolors",
-      "label": "checkColors()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "checks.mjs",
-      "file_type": "code",
-      "norm_label": "checkcolors()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L65"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkcreampalette",
       "label": "checkCreamPalette()",
       "_callable": true,
@@ -1843,18 +1831,6 @@
       "norm_label": "checkcreampalette()",
       "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
       "source_location": "L2196"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementaipalettedom",
-      "label": "checkElementAIPaletteDOM()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "checks.mjs",
-      "file_type": "code",
-      "norm_label": "checkelementaipalettedom()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L1164"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementborders",
@@ -1905,54 +1881,6 @@
       "source_location": "L2491"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementcolors",
-      "label": "checkElementColors()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "checks.mjs",
-      "file_type": "code",
-      "norm_label": "checkelementcolors()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L1748"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementcolorsdom",
-      "label": "checkElementColorsDOM()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "checks.mjs",
-      "file_type": "code",
-      "norm_label": "checkelementcolorsdom()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L770"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementglow",
-      "label": "checkElementGlow()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "checks.mjs",
-      "file_type": "code",
-      "norm_label": "checkelementglow()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L1900"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementglowdom",
-      "label": "checkElementGlowDOM()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "checks.mjs",
-      "file_type": "code",
-      "norm_label": "checkelementglowdom()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L1135"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementgptbordershadow",
       "label": "checkElementGptBorderShadow()",
       "_callable": true,
@@ -1977,28 +1905,28 @@
       "source_location": "L2341"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementicontile",
-      "label": "checkElementIconTile()",
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementheroeyebrow",
+      "label": "checkElementHeroEyebrow()",
       "_callable": true,
       "_origin": "ast",
       "community": 1,
       "community_name": "checks.mjs",
       "file_type": "code",
-      "norm_label": "checkelementicontile()",
+      "norm_label": "checkelementheroeyebrow()",
       "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L1802"
+      "source_location": "L1850"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementicontiledom",
-      "label": "checkElementIconTileDOM()",
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementheroeyebrowdom",
+      "label": "checkElementHeroEyebrowDOM()",
       "_callable": true,
       "_origin": "ast",
       "community": 1,
       "community_name": "checks.mjs",
       "file_type": "code",
-      "norm_label": "checkelementicontiledom()",
+      "norm_label": "checkelementheroeyebrowdom()",
       "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L797"
+      "source_location": "L845"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementitalicserif",
@@ -2109,18 +2037,6 @@
       "source_location": "L2571"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkglow",
-      "label": "checkGlow()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "checks.mjs",
-      "file_type": "code",
-      "norm_label": "checkglow()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L410"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkgptthinborderwideshadow",
       "label": "checkGptThinBorderWideShadow()",
       "_callable": true,
@@ -2133,16 +2049,16 @@
       "source_location": "L2307"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkicontile",
-      "label": "checkIconTile()",
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkheroeyebrow",
+      "label": "checkHeroEyebrow()",
       "_callable": true,
       "_origin": "ast",
       "community": 1,
       "community_name": "checks.mjs",
       "file_type": "code",
-      "norm_label": "checkicontile()",
+      "norm_label": "checkheroeyebrow()",
       "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L179"
+      "source_location": "L308"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkitalicserif",
@@ -2241,6 +2157,42 @@
       "source_location": "L1349"
     },
     {
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkrepeatedsectionkickers",
+      "label": "checkRepeatedSectionKickers()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "checks.mjs",
+      "file_type": "code",
+      "norm_label": "checkrepeatedsectionkickers()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
+      "source_location": "L356"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkrepeatedsectionkickersdom",
+      "label": "checkRepeatedSectionKickersDOM()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "checks.mjs",
+      "file_type": "code",
+      "norm_label": "checkrepeatedsectionkickersdom()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
+      "source_location": "L1113"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkrepeatedsectionkickersfromdoc",
+      "label": "checkRepeatedSectionKickersFromDoc()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "checks.mjs",
+      "file_type": "code",
+      "norm_label": "checkrepeatedsectionkickersfromdoc()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
+      "source_location": "L1881"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_detector_rules_checks_checktypography",
       "label": "checkTypography()",
       "_callable": true,
@@ -2263,6 +2215,18 @@
       "norm_label": "classselector()",
       "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
       "source_location": "L2349"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_cleaninlinetext",
+      "label": "cleanInlineText()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "checks.mjs",
+      "file_type": "code",
+      "norm_label": "cleaninlinetext()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
+      "source_location": "L1032"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_rules_checks_clippedbyinset",
@@ -2299,6 +2263,18 @@
       "norm_label": "clippingcontainerisintentionalviewport()",
       "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
       "source_location": "L2407"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_collectrepeatedsectionkickercandidates",
+      "label": "collectRepeatedSectionKickerCandidates()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "checks.mjs",
+      "file_type": "code",
+      "norm_label": "collectrepeatedsectionkickercandidates()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
+      "source_location": "L1075"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_rules_checks_colorsnearlymatch",
@@ -2421,6 +2397,18 @@
       "source_location": "L1296"
     },
     {
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_isaccentcolor",
+      "label": "isAccentColor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "checks.mjs",
+      "file_type": "code",
+      "norm_label": "isaccentcolor()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
+      "source_location": "L261"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_detector_rules_checks_iscardlike",
       "label": "isCardLike()",
       "_callable": true,
@@ -2469,18 +2457,6 @@
       "source_location": "L2162"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_isemojionlytext",
-      "label": "isEmojiOnlyText()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "checks.mjs",
-      "file_type": "code",
-      "norm_label": "isemojionlytext()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L59"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_detector_rules_checks_isrenderedforbrowserrule",
       "label": "isRenderedForBrowserRule()",
       "_callable": true,
@@ -2491,6 +2467,30 @@
       "norm_label": "isrenderedforbrowserrule()",
       "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
       "source_location": "L2559"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_isrepeatedkickercandidate",
+      "label": "isRepeatedKickerCandidate()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "checks.mjs",
+      "file_type": "code",
+      "norm_label": "isrepeatedkickercandidate()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
+      "source_location": "L1046"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_isrepeatedkickercardcontext",
+      "label": "isRepeatedKickerCardContext()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "checks.mjs",
+      "file_type": "code",
+      "norm_label": "isrepeatedkickercardcontext()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
+      "source_location": "L1041"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_rules_checks_isscreenreaderonlytextstyle",
@@ -2539,18 +2539,6 @@
       "norm_label": "parseanycolor()",
       "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
       "source_location": "L951"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_parsecolorresolved",
-      "label": "parseColorResolved()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "checks.mjs",
-      "file_type": "code",
-      "norm_label": "parsecolorresolved()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L998"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_rules_checks_parseradiustopx",
@@ -2613,30 +2601,6 @@
       "source_location": "L2430"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_readownbackgroundcolor",
-      "label": "readOwnBackgroundColor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "checks.mjs",
-      "file_type": "code",
-      "norm_label": "readownbackgroundcolor()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L616"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_resolvebackground",
-      "label": "resolveBackground()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "checks.mjs",
-      "file_type": "code",
-      "norm_label": "resolvebackground()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L637"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_detector_rules_checks_resolveborderradiuspx",
       "label": "resolveBorderRadiusPx()",
       "_callable": true,
@@ -2661,16 +2625,16 @@
       "source_location": "L1226"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_resolvegradientstops",
-      "label": "resolveGradientStops()",
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_resolvelengthpx",
+      "label": "resolveLengthPx()",
       "_callable": true,
       "_origin": "ast",
       "community": 1,
       "community_name": "checks.mjs",
       "file_type": "code",
-      "norm_label": "resolvegradientstops()",
+      "norm_label": "resolvelengthpx()",
       "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L699"
+      "source_location": "L1252"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_rules_checks_resolveserif",
@@ -2719,90 +2683,6 @@
       "norm_label": "textdescendantsflushsides()",
       "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
       "source_location": "L1323"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_shared_color_colortohex",
-      "label": "colorToHex()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "checks.mjs",
-      "file_type": "code",
-      "norm_label": "colortohex()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/shared/color.mjs",
-      "source_location": "L110"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_shared_color_contrastratio",
-      "label": "contrastRatio()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "checks.mjs",
-      "file_type": "code",
-      "norm_label": "contrastratio()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/shared/color.mjs",
-      "source_location": "L68"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_shared_color_gethue",
-      "label": "getHue()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "checks.mjs",
-      "file_type": "code",
-      "norm_label": "gethue()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/shared/color.mjs",
-      "source_location": "L97"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_shared_color_haschroma",
-      "label": "hasChroma()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "checks.mjs",
-      "file_type": "code",
-      "norm_label": "haschroma()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/shared/color.mjs",
-      "source_location": "L92"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_shared_color_parsegradientcolors",
-      "label": "parseGradientColors()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "checks.mjs",
-      "file_type": "code",
-      "norm_label": "parsegradientcolors()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/shared/color.mjs",
-      "source_location": "L74"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_shared_color_parsergb",
-      "label": "parseRgb()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "checks.mjs",
-      "file_type": "code",
-      "norm_label": "parsergb()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/shared/color.mjs",
-      "source_location": "L54"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_shared_color_relativeluminance",
-      "label": "relativeLuminance()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "checks.mjs",
-      "file_type": "code",
-      "norm_label": "relativeluminance()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/shared/color.mjs",
-      "source_location": "L61"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_shared_constants_isbrandfontonowndomain",
@@ -3295,6 +3175,18 @@
       "norm_label": "sethookconsent()",
       "source_file": ".claude/skills/impeccable/scripts/lib/impeccable-config.mjs",
       "source_location": "L574"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_lib_impeccable_config_shouldignoredetectionfile",
+      "label": "shouldIgnoreDetectionFile()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "impeccable-config.mjs",
+      "file_type": "code",
+      "norm_label": "shouldignoredetectionfile()",
+      "source_file": ".claude/skills/impeccable/scripts/lib/impeccable-config.mjs",
+      "source_location": "L427"
     },
     {
       "id": "claude_skills_impeccable_scripts_lib_impeccable_config_splitcolorargs",
@@ -4286,7 +4178,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-url.mjs",
       "file_type": "code",
       "norm_label": "detecturl()",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/browser/detect-url.mjs",
@@ -4298,7 +4190,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-url.mjs",
       "file_type": "code",
       "norm_label": "runvisualcontrastfallback()",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/browser/detect-url.mjs",
@@ -4310,7 +4202,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-url.mjs",
       "file_type": "code",
       "norm_label": "serializedesignsystemforbrowser()",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/browser/detect-url.mjs",
@@ -4322,35 +4214,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-url.mjs",
       "file_type": "code",
       "norm_label": "runregexmatchers()",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/regex/detect-text.mjs",
       "source_location": "L380"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_collectstaticcsstext",
-      "label": "collectStaticCssText()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "detect-html.mjs",
-      "file_type": "code",
-      "norm_label": "collectstaticcsstext()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
-      "source_location": "L862"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_detect_html_checkelementbrokenimage",
-      "label": "checkElementBrokenImage()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "detect-html.mjs",
-      "file_type": "code",
-      "norm_label": "checkelementbrokenimage()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/detect-html.mjs",
-      "source_location": "L78"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_engines_visual_screenshot_contrast_capturevisualcontrastcandidate",
@@ -4358,7 +4226,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-url.mjs",
       "file_type": "code",
       "norm_label": "capturevisualcontrastcandidate()",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/visual/screenshot-contrast.mjs",
@@ -4370,7 +4238,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-url.mjs",
       "file_type": "code",
       "norm_label": "comparescreenshotcontrast()",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/visual/screenshot-contrast.mjs",
@@ -4382,7 +4250,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-url.mjs",
       "file_type": "code",
       "norm_label": "sanitizescreenshotclip()",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/visual/screenshot-contrast.mjs",
@@ -4394,7 +4262,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-url.mjs",
       "file_type": "code",
       "norm_label": "finding()",
       "source_file": ".claude/skills/impeccable/scripts/detector/findings.mjs",
@@ -4406,7 +4274,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-url.mjs",
       "file_type": "code",
       "norm_label": "getap()",
       "source_file": ".claude/skills/impeccable/scripts/detector/findings.mjs",
@@ -4418,7 +4286,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-url.mjs",
       "file_type": "code",
       "norm_label": "extractfindingids()",
       "source_file": ".claude/skills/impeccable/scripts/detector/profile/profiler.mjs",
@@ -4430,7 +4298,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-url.mjs",
       "file_type": "code",
       "norm_label": "percentile()",
       "source_file": ".claude/skills/impeccable/scripts/detector/profile/profiler.mjs",
@@ -4442,7 +4310,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-url.mjs",
       "file_type": "code",
       "norm_label": "profilefindings()",
       "source_file": ".claude/skills/impeccable/scripts/detector/profile/profiler.mjs",
@@ -4454,7 +4322,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-url.mjs",
       "file_type": "code",
       "norm_label": "profilefindingsasync()",
       "source_file": ".claude/skills/impeccable/scripts/detector/profile/profiler.mjs",
@@ -4466,7 +4334,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-url.mjs",
       "file_type": "code",
       "norm_label": "profilenow()",
       "source_file": ".claude/skills/impeccable/scripts/detector/profile/profiler.mjs",
@@ -4478,7 +4346,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-url.mjs",
       "file_type": "code",
       "norm_label": "profilestep()",
       "source_file": ".claude/skills/impeccable/scripts/detector/profile/profiler.mjs",
@@ -4490,7 +4358,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-url.mjs",
       "file_type": "code",
       "norm_label": "profilestepasync()",
       "source_file": ".claude/skills/impeccable/scripts/detector/profile/profiler.mjs",
@@ -4502,7 +4370,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-url.mjs",
       "file_type": "code",
       "norm_label": "recordprofileevent()",
       "source_file": ".claude/skills/impeccable/scripts/detector/profile/profiler.mjs",
@@ -4514,7 +4382,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-url.mjs",
       "file_type": "code",
       "norm_label": "summarizedetectorprofile()",
       "source_file": ".claude/skills/impeccable/scripts/detector/profile/profiler.mjs",
@@ -4526,7 +4394,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-url.mjs",
       "file_type": "code",
       "norm_label": "filterbyproviders()",
       "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
@@ -4538,47 +4406,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-url.mjs",
       "file_type": "code",
       "norm_label": "getantipattern()",
       "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
       "source_location": "L410"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_registry_antipatterns_getruleenginesupport",
-      "label": "getRuleEngineSupport()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "detect-html.mjs",
-      "file_type": "code",
-      "norm_label": "getruleenginesupport()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
-      "source_location": "L418"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_registry_antipatterns_getrulesforcategory",
-      "label": "getRulesForCategory()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "detect-html.mjs",
-      "file_type": "code",
-      "norm_label": "getrulesforcategory()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
-      "source_location": "L414"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkhtmlpatterns",
-      "label": "checkHtmlPatterns()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "detect-html.mjs",
-      "file_type": "code",
-      "norm_label": "checkhtmlpatterns()",
-      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L446"
     },
     {
       "id": "claude_skills_impeccable_scripts_hook_lib_bumpeditcount",
@@ -11337,155 +11169,275 @@
       "source_location": "L524"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementheroeyebrow",
-      "label": "checkElementHeroEyebrow()",
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkcolors",
+      "label": "checkColors()",
       "_callable": true,
       "_origin": "ast",
       "community": 281,
-      "community_name": "resolveLengthPx",
+      "community_name": "parseRgb",
       "file_type": "code",
-      "norm_label": "checkelementheroeyebrow()",
+      "norm_label": "checkcolors()",
       "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L1850"
+      "source_location": "L65"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementheroeyebrowdom",
-      "label": "checkElementHeroEyebrowDOM()",
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementaipalettedom",
+      "label": "checkElementAIPaletteDOM()",
       "_callable": true,
       "_origin": "ast",
       "community": 281,
-      "community_name": "resolveLengthPx",
+      "community_name": "parseRgb",
       "file_type": "code",
-      "norm_label": "checkelementheroeyebrowdom()",
+      "norm_label": "checkelementaipalettedom()",
       "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L845"
+      "source_location": "L1164"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkheroeyebrow",
-      "label": "checkHeroEyebrow()",
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementcolors",
+      "label": "checkElementColors()",
       "_callable": true,
       "_origin": "ast",
       "community": 281,
-      "community_name": "resolveLengthPx",
+      "community_name": "parseRgb",
       "file_type": "code",
-      "norm_label": "checkheroeyebrow()",
+      "norm_label": "checkelementcolors()",
       "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L308"
+      "source_location": "L1748"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkrepeatedsectionkickers",
-      "label": "checkRepeatedSectionKickers()",
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementcolorsdom",
+      "label": "checkElementColorsDOM()",
       "_callable": true,
       "_origin": "ast",
       "community": 281,
-      "community_name": "resolveLengthPx",
+      "community_name": "parseRgb",
       "file_type": "code",
-      "norm_label": "checkrepeatedsectionkickers()",
+      "norm_label": "checkelementcolorsdom()",
       "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L356"
+      "source_location": "L770"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkrepeatedsectionkickersdom",
-      "label": "checkRepeatedSectionKickersDOM()",
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementglow",
+      "label": "checkElementGlow()",
       "_callable": true,
       "_origin": "ast",
       "community": 281,
-      "community_name": "resolveLengthPx",
+      "community_name": "parseRgb",
       "file_type": "code",
-      "norm_label": "checkrepeatedsectionkickersdom()",
+      "norm_label": "checkelementglow()",
       "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L1113"
+      "source_location": "L1900"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkrepeatedsectionkickersfromdoc",
-      "label": "checkRepeatedSectionKickersFromDoc()",
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementglowdom",
+      "label": "checkElementGlowDOM()",
       "_callable": true,
       "_origin": "ast",
       "community": 281,
-      "community_name": "resolveLengthPx",
+      "community_name": "parseRgb",
       "file_type": "code",
-      "norm_label": "checkrepeatedsectionkickersfromdoc()",
+      "norm_label": "checkelementglowdom()",
       "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L1881"
+      "source_location": "L1135"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_cleaninlinetext",
-      "label": "cleanInlineText()",
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementicontile",
+      "label": "checkElementIconTile()",
       "_callable": true,
       "_origin": "ast",
       "community": 281,
-      "community_name": "resolveLengthPx",
+      "community_name": "parseRgb",
       "file_type": "code",
-      "norm_label": "cleaninlinetext()",
+      "norm_label": "checkelementicontile()",
       "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L1032"
+      "source_location": "L1802"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_collectrepeatedsectionkickercandidates",
-      "label": "collectRepeatedSectionKickerCandidates()",
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkelementicontiledom",
+      "label": "checkElementIconTileDOM()",
       "_callable": true,
       "_origin": "ast",
       "community": 281,
-      "community_name": "resolveLengthPx",
+      "community_name": "parseRgb",
       "file_type": "code",
-      "norm_label": "collectrepeatedsectionkickercandidates()",
+      "norm_label": "checkelementicontiledom()",
       "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L1075"
+      "source_location": "L797"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_isaccentcolor",
-      "label": "isAccentColor()",
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkglow",
+      "label": "checkGlow()",
       "_callable": true,
       "_origin": "ast",
       "community": 281,
-      "community_name": "resolveLengthPx",
+      "community_name": "parseRgb",
       "file_type": "code",
-      "norm_label": "isaccentcolor()",
+      "norm_label": "checkglow()",
       "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L261"
+      "source_location": "L410"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_isrepeatedkickercandidate",
-      "label": "isRepeatedKickerCandidate()",
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkicontile",
+      "label": "checkIconTile()",
       "_callable": true,
       "_origin": "ast",
       "community": 281,
-      "community_name": "resolveLengthPx",
+      "community_name": "parseRgb",
       "file_type": "code",
-      "norm_label": "isrepeatedkickercandidate()",
+      "norm_label": "checkicontile()",
       "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L1046"
+      "source_location": "L179"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_isrepeatedkickercardcontext",
-      "label": "isRepeatedKickerCardContext()",
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_isemojionlytext",
+      "label": "isEmojiOnlyText()",
       "_callable": true,
       "_origin": "ast",
       "community": 281,
-      "community_name": "resolveLengthPx",
+      "community_name": "parseRgb",
       "file_type": "code",
-      "norm_label": "isrepeatedkickercardcontext()",
+      "norm_label": "isemojionlytext()",
       "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L1041"
+      "source_location": "L59"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_rules_checks_resolvelengthpx",
-      "label": "resolveLengthPx()",
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_parsecolorresolved",
+      "label": "parseColorResolved()",
       "_callable": true,
       "_origin": "ast",
       "community": 281,
-      "community_name": "resolveLengthPx",
+      "community_name": "parseRgb",
       "file_type": "code",
-      "norm_label": "resolvelengthpx()",
+      "norm_label": "parsecolorresolved()",
       "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
-      "source_location": "L1252"
+      "source_location": "L998"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_readownbackgroundcolor",
+      "label": "readOwnBackgroundColor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 281,
+      "community_name": "parseRgb",
+      "file_type": "code",
+      "norm_label": "readownbackgroundcolor()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
+      "source_location": "L616"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_resolvebackground",
+      "label": "resolveBackground()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 281,
+      "community_name": "parseRgb",
+      "file_type": "code",
+      "norm_label": "resolvebackground()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
+      "source_location": "L637"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_resolvegradientstops",
+      "label": "resolveGradientStops()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 281,
+      "community_name": "parseRgb",
+      "file_type": "code",
+      "norm_label": "resolvegradientstops()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
+      "source_location": "L699"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_shared_color_colortohex",
+      "label": "colorToHex()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 281,
+      "community_name": "parseRgb",
+      "file_type": "code",
+      "norm_label": "colortohex()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/shared/color.mjs",
+      "source_location": "L110"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_shared_color_contrastratio",
+      "label": "contrastRatio()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 281,
+      "community_name": "parseRgb",
+      "file_type": "code",
+      "norm_label": "contrastratio()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/shared/color.mjs",
+      "source_location": "L68"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_shared_color_gethue",
+      "label": "getHue()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 281,
+      "community_name": "parseRgb",
+      "file_type": "code",
+      "norm_label": "gethue()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/shared/color.mjs",
+      "source_location": "L97"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_shared_color_haschroma",
+      "label": "hasChroma()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 281,
+      "community_name": "parseRgb",
+      "file_type": "code",
+      "norm_label": "haschroma()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/shared/color.mjs",
+      "source_location": "L92"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_shared_color_parsegradientcolors",
+      "label": "parseGradientColors()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 281,
+      "community_name": "parseRgb",
+      "file_type": "code",
+      "norm_label": "parsegradientcolors()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/shared/color.mjs",
+      "source_location": "L74"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_shared_color_parsergb",
+      "label": "parseRgb()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 281,
+      "community_name": "parseRgb",
+      "file_type": "code",
+      "norm_label": "parsergb()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/shared/color.mjs",
+      "source_location": "L54"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_shared_color_relativeluminance",
+      "label": "relativeLuminance()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 281,
+      "community_name": "parseRgb",
+      "file_type": "code",
+      "norm_label": "relativeluminance()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/shared/color.mjs",
+      "source_location": "L61"
     },
     {
       "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_experimento_mcnemar",
       "label": "mcnemar()",
       "_callable": true,
       "_origin": "ast",
-      "community": 287,
+      "community": 285,
       "community_name": "experimento.py",
       "file_type": "code",
       "norm_label": "mcnemar()",
@@ -11497,7 +11449,7 @@
       "label": "modelos()",
       "_callable": true,
       "_origin": "ast",
-      "community": 287,
+      "community": 285,
       "community_name": "experimento.py",
       "file_type": "code",
       "norm_label": "modelos()",
@@ -20025,6 +19977,30 @@
       "source_location": "L20"
     },
     {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_css_cascade_collectstaticcsstext",
+      "label": "collectStaticCssText()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 66,
+      "community_name": "detect-antipatterns.mjs",
+      "file_type": "code",
+      "norm_label": "collectstaticcsstext()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_location": "L862"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_detect_html_checkelementbrokenimage",
+      "label": "checkElementBrokenImage()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 66,
+      "community_name": "detect-antipatterns.mjs",
+      "file_type": "code",
+      "norm_label": "checkelementbrokenimage()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/detect-html.mjs",
+      "source_location": "L78"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_detector_engines_static_html_detect_html_detecthtml",
       "label": "detectHtml()",
       "_callable": true,
@@ -20109,6 +20085,42 @@
       "source_location": "L7"
     },
     {
+      "id": "claude_skills_impeccable_scripts_detector_registry_antipatterns_getruleenginesupport",
+      "label": "getRuleEngineSupport()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 66,
+      "community_name": "detect-antipatterns.mjs",
+      "file_type": "code",
+      "norm_label": "getruleenginesupport()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
+      "source_location": "L418"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_registry_antipatterns_getrulesforcategory",
+      "label": "getRulesForCategory()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 66,
+      "community_name": "detect-antipatterns.mjs",
+      "file_type": "code",
+      "norm_label": "getrulesforcategory()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
+      "source_location": "L414"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkhtmlpatterns",
+      "label": "checkHtmlPatterns()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 66,
+      "community_name": "detect-antipatterns.mjs",
+      "file_type": "code",
+      "norm_label": "checkhtmlpatterns()",
+      "source_file": ".claude/skills/impeccable/scripts/detector/rules/checks.mjs",
+      "source_location": "L446"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_detector_rules_checks_checkpagetypography",
       "label": "checkPageTypography()",
       "_callable": true,
@@ -20143,18 +20155,6 @@
       "norm_label": "isfullpage()",
       "source_file": ".claude/skills/impeccable/scripts/detector/shared/page.mjs",
       "source_location": "L2"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_lib_impeccable_config_shouldignoredetectionfile",
-      "label": "shouldIgnoreDetectionFile()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "detect-antipatterns.mjs",
-      "file_type": "code",
-      "norm_label": "shouldignoredetectionfile()",
-      "source_file": ".claude/skills/impeccable/scripts/lib/impeccable-config.mjs",
-      "source_location": "L427"
     },
     {
       "id": "claude_skills_impeccable_scripts_hook_lib_cleanignorevaluedisplay",
@@ -23287,17 +23287,6 @@
       "source_location": "L2497"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_shared_color",
-      "label": "color.mjs",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "checks.mjs",
-      "file_type": "code",
-      "norm_label": "color.mjs",
-      "source_file": ".claude/skills/impeccable/scripts/detector/shared/color.mjs",
-      "source_location": "L1"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_lib_impeccable_config",
       "label": "impeccable-config.mjs",
       "_origin": "ast",
@@ -25881,40 +25870,18 @@
       "label": "detect-url.mjs",
       "_origin": "ast",
       "community": 13,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-url.mjs",
       "file_type": "code",
       "norm_label": "detect-url.mjs",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/browser/detect-url.mjs",
       "source_location": "L1"
     },
     {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_detect_html",
-      "label": "detect-html.mjs",
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "detect-html.mjs",
-      "file_type": "code",
-      "norm_label": "detect-html.mjs",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/detect-html.mjs",
-      "source_location": "L1"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_detect_html_static_element_rules",
-      "label": "STATIC_ELEMENT_RULES",
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "detect-html.mjs",
-      "file_type": "code",
-      "norm_label": "static_element_rules",
-      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/detect-html.mjs",
-      "source_location": "L92"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_detector_engines_visual_screenshot_contrast",
       "label": "screenshot-contrast.mjs",
       "_origin": "ast",
       "community": 13,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-url.mjs",
       "file_type": "code",
       "norm_label": "screenshot-contrast.mjs",
       "source_file": ".claude/skills/impeccable/scripts/detector/engines/visual/screenshot-contrast.mjs",
@@ -25925,7 +25892,7 @@
       "label": "findings.mjs",
       "_origin": "ast",
       "community": 13,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-url.mjs",
       "file_type": "code",
       "norm_label": "findings.mjs",
       "source_file": ".claude/skills/impeccable/scripts/detector/findings.mjs",
@@ -25936,55 +25903,11 @@
       "label": "profiler.mjs",
       "_origin": "ast",
       "community": 13,
-      "community_name": "detect-html.mjs",
+      "community_name": "detect-url.mjs",
       "file_type": "code",
       "norm_label": "profiler.mjs",
       "source_file": ".claude/skills/impeccable/scripts/detector/profile/profiler.mjs",
       "source_location": "L1"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_registry_antipatterns",
-      "label": "antipatterns.mjs",
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "detect-html.mjs",
-      "file_type": "code",
-      "norm_label": "antipatterns.mjs",
-      "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
-      "source_location": "L1"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_registry_antipatterns_antipatterns",
-      "label": "ANTIPATTERNS",
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "detect-html.mjs",
-      "file_type": "code",
-      "norm_label": "antipatterns",
-      "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
-      "source_location": "L1"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_registry_antipatterns_gated_providers",
-      "label": "GATED_PROVIDERS",
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "detect-html.mjs",
-      "file_type": "code",
-      "norm_label": "gated_providers",
-      "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
-      "source_location": "L423"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_detector_registry_antipatterns_rule_engine_support",
-      "label": "RULE_ENGINE_SUPPORT",
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "detect-html.mjs",
-      "file_type": "code",
-      "norm_label": "rule_engine_support",
-      "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
-      "source_location": "L403"
     },
     {
       "id": "claude_hooks_restrict_cavecrew_bash",
@@ -37737,7 +37660,7 @@
       "node_kind": "heading",
       "norm_label": "c \u2014 bilal et al., energy 2023 (anfis-mow, eolica)",
       "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/trabajo/candidatos-articulo.md",
-      "source_location": "L53"
+      "source_location": "L54"
     },
     {
       "id": "master_sistemas_inteligentes_computacion_neuroborrosa_trabajo_candidatos_articulo_candidatos_de_art\u00edculo_l\u00f3gica_difusa_aplicada_2021_verificados_2026_10_05",
@@ -37752,18 +37675,6 @@
       "source_location": "L1"
     },
     {
-      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_trabajo_candidatos_articulo_candidatos_v_y_s_aportados_por_el_compa\u00f1ero_2026_10_06",
-      "label": "Candidatos V y S (aportados por el compa\u00f1ero, 2026-10-06)",
-      "_origin": "ast",
-      "community": 280,
-      "community_name": "Candidatos de art\u00edculo (l\u00f3gica difusa aplicada, 2021+) \u2014 verificados 2026-10-05",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "candidatos v y s (aportados por el companero, 2026-10-06)",
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/trabajo/candidatos-articulo.md",
-      "source_location": "L109"
-    },
-    {
       "id": "master_sistemas_inteligentes_computacion_neuroborrosa_trabajo_candidatos_articulo_d_wu_et_al_applied_energy_2023_anfis_elm",
       "label": "D \u2014 Wu et al., Applied Energy 2023 (ANFIS-ELM)",
       "_origin": "ast",
@@ -37773,7 +37684,7 @@
       "node_kind": "heading",
       "norm_label": "d \u2014 wu et al., applied energy 2023 (anfis-elm)",
       "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/trabajo/candidatos-articulo.md",
-      "source_location": "L72"
+      "source_location": "L73"
     },
     {
       "id": "master_sistemas_inteligentes_computacion_neuroborrosa_trabajo_candidatos_articulo_descartados_del_informe_de_leapspace",
@@ -37785,7 +37696,7 @@
       "node_kind": "heading",
       "norm_label": "descartados del informe de leapspace",
       "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/trabajo/candidatos-articulo.md",
-      "source_location": "L37"
+      "source_location": "L38"
     },
     {
       "id": "master_sistemas_inteligentes_computacion_neuroborrosa_trabajo_candidatos_articulo_e_fazlollahtabar_ecm_x_2026_descartado",
@@ -37797,19 +37708,7 @@
       "node_kind": "heading",
       "norm_label": "e \u2014 fazlollahtabar, ecm:x 2026 (descartado)",
       "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/trabajo/candidatos-articulo.md",
-      "source_location": "L82"
-    },
-    {
-      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_trabajo_candidatos_articulo_jcr_consultado_2026_10_05_con_el_acceso_de_la_usal",
-      "label": "JCR consultado (2026-10-05, con el acceso de la USAL)",
-      "_origin": "ast",
-      "community": 280,
-      "community_name": "Candidatos de art\u00edculo (l\u00f3gica difusa aplicada, 2021+) \u2014 verificados 2026-10-05",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "jcr consultado (2026-10-05, con el acceso de la usal)",
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/trabajo/candidatos-articulo.md",
-      "source_location": "L94"
+      "source_location": "L83"
     },
     {
       "id": "master_sistemas_inteligentes_computacion_neuroborrosa_trabajo_candidatos_articulo_lectura_completa_de_c_d_y_e_2026_10_05",
@@ -37821,7 +37720,7 @@
       "node_kind": "heading",
       "norm_label": "lectura completa de c, d y e (2026-10-05)",
       "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/trabajo/candidatos-articulo.md",
-      "source_location": "L48"
+      "source_location": "L49"
     },
     {
       "id": "master_sistemas_inteligentes_computacion_neuroborrosa_trabajo_candidatos_articulo_notas_por_candidato",
@@ -37833,7 +37732,18 @@
       "node_kind": "heading",
       "norm_label": "notas por candidato",
       "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/trabajo/candidatos-articulo.md",
-      "source_location": "L23"
+      "source_location": "L24"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_shared_color",
+      "label": "color.mjs",
+      "_origin": "ast",
+      "community": 281,
+      "community_name": "parseRgb",
+      "file_type": "code",
+      "norm_label": "color.mjs",
+      "source_file": ".claude/skills/impeccable/scripts/detector/shared/color.mjs",
+      "source_location": "L1"
     },
     {
       "id": "docencia_espanol_fuentes_nuevo_espanol_en_marcha_b1_cuaderno_unidad10b_alojamientos",
@@ -38076,358 +37986,10 @@
       "source_location": "L5"
     },
     {
-      "id": "recursos_generales_hardware_compra_tarjeta_grafica",
-      "label": "compra-tarjeta-grafica.md",
-      "_origin": "ast",
-      "community": 285,
-      "community_name": "Compra de tarjeta gr\u00e1fica (GPU) para IA",
-      "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "compra-tarjeta-grafica.md",
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "recursos_generales_hardware_compra_tarjeta_grafica_1_antes_de_nada_hace_falta_para_el_tfm",
-      "label": "1. Antes de nada: \u00bfhace falta para el TFM?",
-      "_origin": "ast",
-      "community": 285,
-      "community_name": "Compra de tarjeta gr\u00e1fica (GPU) para IA",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "1. antes de nada: \u00bfhace falta para el tfm?",
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L12"
-    },
-    {
-      "id": "recursos_generales_hardware_compra_tarjeta_grafica_2_la_regla_m\u00e1s_importante_la_vram",
-      "label": "2. La regla m\u00e1s importante: la VRAM",
-      "_origin": "ast",
-      "community": 285,
-      "community_name": "Compra de tarjeta gr\u00e1fica (GPU) para IA",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "2. la regla mas importante: la vram",
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L35"
-    },
-    {
-      "id": "recursos_generales_hardware_compra_tarjeta_grafica_3_opciones_y_precios_reales_idealo_es_2026_09_26",
-      "label": "3. Opciones y precios reales (idealo.es, 2026-09-26)",
-      "_origin": "ast",
-      "community": 285,
-      "community_name": "Compra de tarjeta gr\u00e1fica (GPU) para IA",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "3. opciones y precios reales (idealo.es, 2026-09-26)",
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L52"
-    },
-    {
-      "id": "recursos_generales_hardware_compra_tarjeta_grafica_4_puntos_d\u00e9biles_y_riesgos",
-      "label": "4. Puntos d\u00e9biles y riesgos",
-      "_origin": "ast",
-      "community": 285,
-      "community_name": "Compra de tarjeta gr\u00e1fica (GPU) para IA",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "4. puntos debiles y riesgos",
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L106"
-    },
-    {
-      "id": "recursos_generales_hardware_compra_tarjeta_grafica_5_tu_equipo_borey_2_0_plus_\u0440\u043e\u0431\u043e\u0442\u043a\u043e\u043c\u043f",
-      "label": "5. Tu equipo: BOREY 2.0 Plus (\u0420\u043e\u0431\u043e\u0442\u043a\u043e\u043c\u043f)",
-      "_origin": "ast",
-      "community": 285,
-      "community_name": "Compra de tarjeta gr\u00e1fica (GPU) para IA",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "5. tu equipo: borey 2.0 plus (\u0440\u043e\u0431\u043e\u0442\u043a\u043e\u043c\u043f)",
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L128"
-    },
-    {
-      "id": "recursos_generales_hardware_compra_tarjeta_grafica_6_qu\u00e9_comprar_y_d\u00f3nde_salamanca",
-      "label": "6. Qu\u00e9 comprar y d\u00f3nde (Salamanca)",
-      "_origin": "ast",
-      "community": 285,
-      "community_name": "Compra de tarjeta gr\u00e1fica (GPU) para IA",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "6. que comprar y donde (salamanca)",
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L156"
-    },
-    {
-      "id": "recursos_generales_hardware_compra_tarjeta_grafica_7_lista_de_comprobaci\u00f3n_antes_de_comprar",
-      "label": "7. Lista de comprobaci\u00f3n antes de comprar",
-      "_origin": "ast",
-      "community": 285,
-      "community_name": "Compra de tarjeta gr\u00e1fica (GPU) para IA",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "7. lista de comprobacion antes de comprar",
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L184"
-    },
-    {
-      "id": "recursos_generales_hardware_compra_tarjeta_grafica_8_despu\u00e9s_de_montarla",
-      "label": "8. Despu\u00e9s de montarla",
-      "_origin": "ast",
-      "community": 285,
-      "community_name": "Compra de tarjeta gr\u00e1fica (GPU) para IA",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "8. despues de montarla",
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L199"
-    },
-    {
-      "id": "recursos_generales_hardware_compra_tarjeta_grafica_amd_rx_9060_xt_16_gb_nueva_sapphire",
-      "label": "AMD RX 9060 XT 16 GB, nueva (Sapphire)",
-      "_origin": "ast",
-      "community": 285,
-      "community_name": "Compra de tarjeta gr\u00e1fica (GPU) para IA",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "amd rx 9060 xt 16 gb, nueva (sapphire)",
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L73"
-    },
-    {
-      "id": "recursos_generales_hardware_compra_tarjeta_grafica_compra_de_tarjeta_gr\u00e1fica_gpu_para_ia",
-      "label": "Compra de tarjeta gr\u00e1fica (GPU) para IA",
-      "_origin": "ast",
-      "community": 285,
-      "community_name": "Compra de tarjeta gr\u00e1fica (GPU) para IA",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "compra de tarjeta grafica (gpu) para ia",
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "recursos_generales_hardware_compra_tarjeta_grafica_nvidia_rtx_5060_ti_16_gb_nueva_precio_m\u00e1s_bajo_por_modelo",
-      "label": "NVIDIA RTX 5060 Ti 16 GB, nueva (precio m\u00e1s bajo por modelo)",
-      "_origin": "ast",
-      "community": 285,
-      "community_name": "Compra de tarjeta gr\u00e1fica (GPU) para IA",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "nvidia rtx 5060 ti 16 gb, nueva (precio mas bajo por modelo)",
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L59"
-    },
-    {
-      "id": "recursos_generales_hardware_compra_tarjeta_grafica_otras_referencias",
-      "label": "Otras referencias",
-      "_origin": "ast",
-      "community": 285,
-      "community_name": "Compra de tarjeta gr\u00e1fica (GPU) para IA",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "otras referencias",
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L81"
-    },
-    {
-      "id": "recursos_generales_hardware_compra_tarjeta_grafica_recomendaci\u00f3n",
-      "label": "Recomendaci\u00f3n",
-      "_origin": "ast",
-      "community": 285,
-      "community_name": "Compra de tarjeta gr\u00e1fica (GPU) para IA",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "recomendacion",
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L95"
-    },
-    {
-      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer",
-      "label": "neural-designer.md",
-      "_origin": "ast",
-      "community": 286,
-      "community_name": "Neural Designer: gu\u00eda de estudio (tutoriales oficiales, 2026-10-07)",
-      "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "neural-designer.md",
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_10_discrepancias_y_erratas_de_la_documentaci\u00f3n",
-      "label": "10. Discrepancias y erratas de la documentaci\u00f3n",
-      "_origin": "ast",
-      "community": 286,
-      "community_name": "Neural Designer: gu\u00eda de estudio (tutoriales oficiales, 2026-10-07)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "10. discrepancias y erratas de la documentacion",
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L203"
-    },
-    {
-      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_11_errores_t\u00edpicos_resumen",
-      "label": "11. Errores t\u00edpicos (resumen)",
-      "_origin": "ast",
-      "community": 286,
-      "community_name": "Neural Designer: gu\u00eda de estudio (tutoriales oficiales, 2026-10-07)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "11. errores tipicos (resumen)",
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L226"
-    },
-    {
-      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_12_comprobar_en_la_app_pendiente",
-      "label": "12. Comprobar en la app (pendiente)",
-      "_origin": "ast",
-      "community": 286,
-      "community_name": "Neural Designer: gu\u00eda de estudio (tutoriales oficiales, 2026-10-07)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "12. comprobar en la app (pendiente)",
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L242"
-    },
-    {
-      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_1_idea_general_y_flujo_de_trabajo",
-      "label": "1. Idea general y flujo de trabajo",
-      "_origin": "ast",
-      "community": 286,
-      "community_name": "Neural Designer: gu\u00eda de estudio (tutoriales oficiales, 2026-10-07)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "1. idea general y flujo de trabajo",
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L10"
-    },
-    {
-      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_2_elegir_el_tipo_de_modelo",
-      "label": "2. Elegir el tipo de modelo",
-      "_origin": "ast",
-      "community": 286,
-      "community_name": "Neural Designer: gu\u00eda de estudio (tutoriales oficiales, 2026-10-07)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "2. elegir el tipo de modelo",
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L23"
-    },
-    {
-      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_3_data_set",
-      "label": "3. Data set",
-      "_origin": "ast",
-      "community": 286,
-      "community_name": "Neural Designer: gu\u00eda de estudio (tutoriales oficiales, 2026-10-07)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "3. data set",
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L45"
-    },
-    {
-      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_4_neural_network",
-      "label": "4. Neural network",
-      "_origin": "ast",
-      "community": 286,
-      "community_name": "Neural Designer: gu\u00eda de estudio (tutoriales oficiales, 2026-10-07)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "4. neural network",
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L71"
-    },
-    {
-      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_5_training_strategy",
-      "label": "5. Training strategy",
-      "_origin": "ast",
-      "community": 286,
-      "community_name": "Neural Designer: gu\u00eda de estudio (tutoriales oficiales, 2026-10-07)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "5. training strategy",
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L101"
-    },
-    {
-      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_6_model_selection_y_sobreajuste",
-      "label": "6. Model selection y sobreajuste",
-      "_origin": "ast",
-      "community": 286,
-      "community_name": "Neural Designer: gu\u00eda de estudio (tutoriales oficiales, 2026-10-07)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "6. model selection y sobreajuste",
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L131"
-    },
-    {
-      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_7_testing_analysis",
-      "label": "7. Testing analysis",
-      "_origin": "ast",
-      "community": 286,
-      "community_name": "Neural Designer: gu\u00eda de estudio (tutoriales oficiales, 2026-10-07)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "7. testing analysis",
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L146"
-    },
-    {
-      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_8_model_deployment",
-      "label": "8. Model deployment",
-      "_origin": "ast",
-      "community": 286,
-      "community_name": "Neural Designer: gu\u00eda de estudio (tutoriales oficiales, 2026-10-07)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "8. model deployment",
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L174"
-    },
-    {
-      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_9_lo_que_ense\u00f1an_los_ejemplos_oficiales",
-      "label": "9. Lo que ense\u00f1an los ejemplos oficiales",
-      "_origin": "ast",
-      "community": 286,
-      "community_name": "Neural Designer: gu\u00eda de estudio (tutoriales oficiales, 2026-10-07)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "9. lo que ensenan los ejemplos oficiales",
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L185"
-    },
-    {
-      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_fuentes_todas_en_neuraldesigner_com_learning",
-      "label": "Fuentes (todas en neuraldesigner.com/learning)",
-      "_origin": "ast",
-      "community": 286,
-      "community_name": "Neural Designer: gu\u00eda de estudio (tutoriales oficiales, 2026-10-07)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "fuentes (todas en neuraldesigner.com/learning)",
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L258"
-    },
-    {
-      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_neural_designer_gu\u00eda_de_estudio_tutoriales_oficiales_2026_10_07",
-      "label": "Neural Designer: gu\u00eda de estudio (tutoriales oficiales, 2026-10-07)",
-      "_origin": "ast",
-      "community": 286,
-      "community_name": "Neural Designer: gu\u00eda de estudio (tutoriales oficiales, 2026-10-07)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "neural designer: guia de estudio (tutoriales oficiales, 2026-10-07)",
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L1"
-    },
-    {
       "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_experimento",
       "label": "experimento.py",
       "_origin": "ast",
-      "community": 287,
+      "community": 285,
       "community_name": "experimento.py",
       "file_type": "code",
       "norm_label": "experimento.py",
@@ -38438,7 +38000,7 @@
       "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_experimento_rationale_1",
       "label": "Experimento del Paso 3: \u00bfpredice un modelo de ensamble el cumplimiento de BER\u2026",
       "_origin": "ast",
-      "community": 287,
+      "community": 285,
       "community_name": "experimento.py",
       "file_type": "rationale",
       "norm_label": "experimento del paso 3: \u00bfpredice un modelo de ensamble el cumplimiento de ber...",
@@ -39523,18 +39085,6 @@
       "source_location": "L1"
     },
     {
-      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_fuente_drive_del_alumno",
-      "label": "Drive del alumno",
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "Computaci\u00f3n Neuroborrosa (304473 \u00b7 3 ECTS \u00b7 Obligatoria)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "drive del alumno",
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/FUENTE.md",
-      "source_location": "L7"
-    },
-    {
       "id": "master_sistemas_inteligentes_computacion_neuroborrosa_fuente_estructura",
       "label": "Estructura",
       "_origin": "ast",
@@ -39544,7 +39094,7 @@
       "node_kind": "heading",
       "norm_label": "estructura",
       "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/FUENTE.md",
-      "source_location": "L35"
+      "source_location": "L7"
     },
     {
       "id": "master_sistemas_inteligentes_computacion_neuroborrosa_fuente_material_de_clase_heredado_solo_referencia_no_copiado",
@@ -39556,19 +39106,7 @@
       "node_kind": "heading",
       "norm_label": "material de clase heredado (solo referencia, no copiado)",
       "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/FUENTE.md",
-      "source_location": "L97"
-    },
-    {
-      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_fuente_parte_neuronal_ang\u00e9lica_gonz\u00e1lez_arrieta",
-      "label": "Parte neuronal (Ang\u00e9lica Gonz\u00e1lez Arrieta)",
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "Computaci\u00f3n Neuroborrosa (304473 \u00b7 3 ECTS \u00b7 Obligatoria)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "parte neuronal (angelica gonzalez arrieta)",
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/FUENTE.md",
-      "source_location": "L18"
+      "source_location": "L69"
     },
     {
       "id": "master_sistemas_inteligentes_computacion_neuroborrosa_fuente_requisitos_oficiales_2026_27_presentaci\u00f3n_del_profesor_4_10_26",
@@ -39580,7 +39118,7 @@
       "node_kind": "heading",
       "norm_label": "requisitos oficiales 2026-27 (presentacion del profesor, 4/10/26)",
       "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/FUENTE.md",
-      "source_location": "L40"
+      "source_location": "L12"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_browser_dom",
@@ -40276,6 +39814,28 @@
       "source_location": "L437"
     },
     {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_detect_html",
+      "label": "detect-html.mjs",
+      "_origin": "ast",
+      "community": 66,
+      "community_name": "detect-antipatterns.mjs",
+      "file_type": "code",
+      "norm_label": "detect-html.mjs",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/detect-html.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_engines_static_html_detect_html_static_element_rules",
+      "label": "STATIC_ELEMENT_RULES",
+      "_origin": "ast",
+      "community": 66,
+      "community_name": "detect-antipatterns.mjs",
+      "file_type": "code",
+      "norm_label": "static_element_rules",
+      "source_file": ".claude/skills/impeccable/scripts/detector/engines/static-html/detect-html.mjs",
+      "source_location": "L92"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_detector_node_file_system",
       "label": "file-system.mjs",
       "_origin": "ast",
@@ -40329,6 +39889,50 @@
       "norm_label": "skip_dirs",
       "source_file": ".claude/skills/impeccable/scripts/detector/node/file-system.mjs",
       "source_location": "L8"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_registry_antipatterns",
+      "label": "antipatterns.mjs",
+      "_origin": "ast",
+      "community": 66,
+      "community_name": "detect-antipatterns.mjs",
+      "file_type": "code",
+      "norm_label": "antipatterns.mjs",
+      "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_registry_antipatterns_antipatterns",
+      "label": "ANTIPATTERNS",
+      "_origin": "ast",
+      "community": 66,
+      "community_name": "detect-antipatterns.mjs",
+      "file_type": "code",
+      "norm_label": "antipatterns",
+      "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_registry_antipatterns_gated_providers",
+      "label": "GATED_PROVIDERS",
+      "_origin": "ast",
+      "community": 66,
+      "community_name": "detect-antipatterns.mjs",
+      "file_type": "code",
+      "norm_label": "gated_providers",
+      "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
+      "source_location": "L423"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_detector_registry_antipatterns_rule_engine_support",
+      "label": "RULE_ENGINE_SUPPORT",
+      "_origin": "ast",
+      "community": 66,
+      "community_name": "detect-antipatterns.mjs",
+      "file_type": "code",
+      "norm_label": "rule_engine_support",
+      "source_file": ".claude/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
+      "source_location": "L403"
     },
     {
       "id": "claude_skills_impeccable_scripts_detector_shared_constants",
@@ -45131,7 +44735,7 @@
       "id": "matplotlib",
       "label": "matplotlib",
       "_origin": "semantic",
-      "community": 287,
+      "community": 285,
       "community_name": "experimento.py",
       "external": true,
       "file_type": "concept",
@@ -45143,7 +44747,7 @@
       "id": "matplotlib_pyplot",
       "label": "matplotlib_pyplot",
       "_origin": "semantic",
-      "community": 287,
+      "community": 285,
       "community_name": "experimento.py",
       "external": true,
       "file_type": "concept",
@@ -45155,7 +44759,7 @@
       "id": "scipy_stats",
       "label": "scipy_stats",
       "_origin": "semantic",
-      "community": 287,
+      "community": 285,
       "community_name": "experimento.py",
       "external": true,
       "file_type": "concept",
@@ -45167,7 +44771,7 @@
       "id": "sklearn_ensemble",
       "label": "sklearn_ensemble",
       "_origin": "semantic",
-      "community": 287,
+      "community": 285,
       "community_name": "experimento.py",
       "external": true,
       "file_type": "concept",
@@ -45179,7 +44783,7 @@
       "id": "sklearn_inspection",
       "label": "sklearn_inspection",
       "_origin": "semantic",
-      "community": 287,
+      "community": 285,
       "community_name": "experimento.py",
       "external": true,
       "file_type": "concept",
@@ -45191,7 +44795,7 @@
       "id": "sklearn_linear_model",
       "label": "sklearn_linear_model",
       "_origin": "semantic",
-      "community": 287,
+      "community": 285,
       "community_name": "experimento.py",
       "external": true,
       "file_type": "concept",
@@ -45203,7 +44807,7 @@
       "id": "sklearn_pipeline",
       "label": "sklearn_pipeline",
       "_origin": "semantic",
-      "community": 287,
+      "community": 285,
       "community_name": "experimento.py",
       "external": true,
       "file_type": "concept",
@@ -45215,7 +44819,7 @@
       "id": "sklearn_preprocessing",
       "label": "sklearn_preprocessing",
       "_origin": "semantic",
-      "community": 287,
+      "community": 285,
       "community_name": "experimento.py",
       "external": true,
       "file_type": "concept",
@@ -45227,7 +44831,7 @@
       "id": "xgboost",
       "label": "xgboost",
       "_origin": "semantic",
-      "community": 287,
+      "community": 285,
       "community_name": "experimento.py",
       "external": true,
       "file_type": "concept",
@@ -116997,160 +116601,6 @@
       "weight": 1.0
     },
     {
-      "source": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer",
-      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_neural_designer_gu\u00eda_de_estudio_tutoriales_oficiales_2026_10_07",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L1",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_neural_designer_gu\u00eda_de_estudio_tutoriales_oficiales_2026_10_07",
-      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_1_idea_general_y_flujo_de_trabajo",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L10",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_neural_designer_gu\u00eda_de_estudio_tutoriales_oficiales_2026_10_07",
-      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_5_training_strategy",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L101",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_neural_designer_gu\u00eda_de_estudio_tutoriales_oficiales_2026_10_07",
-      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_6_model_selection_y_sobreajuste",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L131",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_neural_designer_gu\u00eda_de_estudio_tutoriales_oficiales_2026_10_07",
-      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_7_testing_analysis",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L146",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_neural_designer_gu\u00eda_de_estudio_tutoriales_oficiales_2026_10_07",
-      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_8_model_deployment",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L174",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_neural_designer_gu\u00eda_de_estudio_tutoriales_oficiales_2026_10_07",
-      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_9_lo_que_ense\u00f1an_los_ejemplos_oficiales",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L185",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_neural_designer_gu\u00eda_de_estudio_tutoriales_oficiales_2026_10_07",
-      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_10_discrepancias_y_erratas_de_la_documentaci\u00f3n",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L203",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_neural_designer_gu\u00eda_de_estudio_tutoriales_oficiales_2026_10_07",
-      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_11_errores_t\u00edpicos_resumen",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L226",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_neural_designer_gu\u00eda_de_estudio_tutoriales_oficiales_2026_10_07",
-      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_2_elegir_el_tipo_de_modelo",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L23",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_neural_designer_gu\u00eda_de_estudio_tutoriales_oficiales_2026_10_07",
-      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_12_comprobar_en_la_app_pendiente",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L242",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_neural_designer_gu\u00eda_de_estudio_tutoriales_oficiales_2026_10_07",
-      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_fuentes_todas_en_neuraldesigner_com_learning",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L258",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_neural_designer_gu\u00eda_de_estudio_tutoriales_oficiales_2026_10_07",
-      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_3_data_set",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L45",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_neural_designer_gu\u00eda_de_estudio_tutoriales_oficiales_2026_10_07",
-      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_4_neural_network",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L71",
-      "weight": 1.0
-    },
-    {
       "source": "master_sistemas_inteligentes_computacion_neuroborrosa_fuente",
       "target": "master_sistemas_inteligentes_computacion_neuroborrosa_fuente_computaci\u00f3n_neuroborrosa_304473_3_ects_obligatoria",
       "relation": "contains",
@@ -117163,46 +116613,13 @@
     },
     {
       "source": "master_sistemas_inteligentes_computacion_neuroborrosa_fuente_computaci\u00f3n_neuroborrosa_304473_3_ects_obligatoria",
-      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_fuente_parte_neuronal_ang\u00e9lica_gonz\u00e1lez_arrieta",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/FUENTE.md",
-      "source_location": "L18",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_computacion_neuroborrosa_fuente_computaci\u00f3n_neuroborrosa_304473_3_ects_obligatoria",
-      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_fuente_estructura",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/FUENTE.md",
-      "source_location": "L35",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_computacion_neuroborrosa_fuente_computaci\u00f3n_neuroborrosa_304473_3_ects_obligatoria",
       "target": "master_sistemas_inteligentes_computacion_neuroborrosa_fuente_requisitos_oficiales_2026_27_presentaci\u00f3n_del_profesor_4_10_26",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/FUENTE.md",
-      "source_location": "L40",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_computacion_neuroborrosa_fuente_computaci\u00f3n_neuroborrosa_304473_3_ects_obligatoria",
-      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_fuente_drive_del_alumno",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/FUENTE.md",
-      "source_location": "L7",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -117213,7 +116630,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/FUENTE.md",
-      "source_location": "L97",
+      "source_location": "L69",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_computacion_neuroborrosa_fuente_computaci\u00f3n_neuroborrosa_304473_3_ects_obligatoria",
+      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_fuente_estructura",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/FUENTE.md",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -117229,24 +116657,13 @@
     },
     {
       "source": "master_sistemas_inteligentes_computacion_neuroborrosa_trabajo_candidatos_articulo_candidatos_de_art\u00edculo_l\u00f3gica_difusa_aplicada_2021_verificados_2026_10_05",
-      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_trabajo_candidatos_articulo_candidatos_v_y_s_aportados_por_el_compa\u00f1ero_2026_10_06",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/trabajo/candidatos-articulo.md",
-      "source_location": "L109",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_computacion_neuroborrosa_trabajo_candidatos_articulo_candidatos_de_art\u00edculo_l\u00f3gica_difusa_aplicada_2021_verificados_2026_10_05",
       "target": "master_sistemas_inteligentes_computacion_neuroborrosa_trabajo_candidatos_articulo_notas_por_candidato",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/trabajo/candidatos-articulo.md",
-      "source_location": "L23",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -117257,7 +116674,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/trabajo/candidatos-articulo.md",
-      "source_location": "L37",
+      "source_location": "L38",
       "weight": 1.0
     },
     {
@@ -117268,18 +116685,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/trabajo/candidatos-articulo.md",
-      "source_location": "L48",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_computacion_neuroborrosa_trabajo_candidatos_articulo_candidatos_de_art\u00edculo_l\u00f3gica_difusa_aplicada_2021_verificados_2026_10_05",
-      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_trabajo_candidatos_articulo_jcr_consultado_2026_10_05_con_el_acceso_de_la_usal",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/trabajo/candidatos-articulo.md",
-      "source_location": "L94",
+      "source_location": "L49",
       "weight": 1.0
     },
     {
@@ -117290,7 +116696,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/trabajo/candidatos-articulo.md",
-      "source_location": "L53",
+      "source_location": "L54",
       "weight": 1.0
     },
     {
@@ -117301,7 +116707,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/trabajo/candidatos-articulo.md",
-      "source_location": "L72",
+      "source_location": "L73",
       "weight": 1.0
     },
     {
@@ -117312,7 +116718,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/trabajo/candidatos-articulo.md",
-      "source_location": "L82",
+      "source_location": "L83",
       "weight": 1.0
     },
     {
@@ -120316,149 +119722,6 @@
       "confidence_score": 1.0,
       "source_file": "plugins/caveman-cavecrew/skills/caveman/SKILL.md",
       "source_location": "L88",
-      "weight": 1.0
-    },
-    {
-      "source": "recursos_generales_hardware_compra_tarjeta_grafica",
-      "target": "recursos_generales_hardware_compra_tarjeta_grafica_compra_de_tarjeta_gr\u00e1fica_gpu_para_ia",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L1",
-      "weight": 1.0
-    },
-    {
-      "source": "recursos_generales_hardware_compra_tarjeta_grafica_3_opciones_y_precios_reales_idealo_es_2026_09_26",
-      "target": "recursos_generales_hardware_compra_tarjeta_grafica_nvidia_rtx_5060_ti_16_gb_nueva_precio_m\u00e1s_bajo_por_modelo",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L59",
-      "weight": 1.0
-    },
-    {
-      "source": "recursos_generales_hardware_compra_tarjeta_grafica_3_opciones_y_precios_reales_idealo_es_2026_09_26",
-      "target": "recursos_generales_hardware_compra_tarjeta_grafica_amd_rx_9060_xt_16_gb_nueva_sapphire",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L73",
-      "weight": 1.0
-    },
-    {
-      "source": "recursos_generales_hardware_compra_tarjeta_grafica_3_opciones_y_precios_reales_idealo_es_2026_09_26",
-      "target": "recursos_generales_hardware_compra_tarjeta_grafica_otras_referencias",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L81",
-      "weight": 1.0
-    },
-    {
-      "source": "recursos_generales_hardware_compra_tarjeta_grafica_3_opciones_y_precios_reales_idealo_es_2026_09_26",
-      "target": "recursos_generales_hardware_compra_tarjeta_grafica_recomendaci\u00f3n",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L95",
-      "weight": 1.0
-    },
-    {
-      "source": "recursos_generales_hardware_compra_tarjeta_grafica_compra_de_tarjeta_gr\u00e1fica_gpu_para_ia",
-      "target": "recursos_generales_hardware_compra_tarjeta_grafica_4_puntos_d\u00e9biles_y_riesgos",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L106",
-      "weight": 1.0
-    },
-    {
-      "source": "recursos_generales_hardware_compra_tarjeta_grafica_compra_de_tarjeta_gr\u00e1fica_gpu_para_ia",
-      "target": "recursos_generales_hardware_compra_tarjeta_grafica_1_antes_de_nada_hace_falta_para_el_tfm",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L12",
-      "weight": 1.0
-    },
-    {
-      "source": "recursos_generales_hardware_compra_tarjeta_grafica_compra_de_tarjeta_gr\u00e1fica_gpu_para_ia",
-      "target": "recursos_generales_hardware_compra_tarjeta_grafica_5_tu_equipo_borey_2_0_plus_\u0440\u043e\u0431\u043e\u0442\u043a\u043e\u043c\u043f",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L128",
-      "weight": 1.0
-    },
-    {
-      "source": "recursos_generales_hardware_compra_tarjeta_grafica_compra_de_tarjeta_gr\u00e1fica_gpu_para_ia",
-      "target": "recursos_generales_hardware_compra_tarjeta_grafica_6_qu\u00e9_comprar_y_d\u00f3nde_salamanca",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L156",
-      "weight": 1.0
-    },
-    {
-      "source": "recursos_generales_hardware_compra_tarjeta_grafica_compra_de_tarjeta_gr\u00e1fica_gpu_para_ia",
-      "target": "recursos_generales_hardware_compra_tarjeta_grafica_7_lista_de_comprobaci\u00f3n_antes_de_comprar",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L184",
-      "weight": 1.0
-    },
-    {
-      "source": "recursos_generales_hardware_compra_tarjeta_grafica_compra_de_tarjeta_gr\u00e1fica_gpu_para_ia",
-      "target": "recursos_generales_hardware_compra_tarjeta_grafica_8_despu\u00e9s_de_montarla",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L199",
-      "weight": 1.0
-    },
-    {
-      "source": "recursos_generales_hardware_compra_tarjeta_grafica_compra_de_tarjeta_gr\u00e1fica_gpu_para_ia",
-      "target": "recursos_generales_hardware_compra_tarjeta_grafica_2_la_regla_m\u00e1s_importante_la_vram",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L35",
-      "weight": 1.0
-    },
-    {
-      "source": "recursos_generales_hardware_compra_tarjeta_grafica_compra_de_tarjeta_gr\u00e1fica_gpu_para_ia",
-      "target": "recursos_generales_hardware_compra_tarjeta_grafica_3_opciones_y_precios_reales_idealo_es_2026_09_26",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L52",
       "weight": 1.0
     },
     {
@@ -125976,5 +125239,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "35c97e65f4bfb2c0c857b6cca902503af8f1b1bd"
+  "built_at_commit": "14460fdcbfbcbe327350309210ad52af71325780"
 }

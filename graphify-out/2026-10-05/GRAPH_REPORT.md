@@ -1,17 +1,17 @@
-# Graph Report - Molu  (2026-10-08)
+# Graph Report - Molu  (2026-10-05)
 
 ## Corpus Check
-- 334 files · ~1,655,816 words
+- 333 files · ~1,649,865 words
 - Verdict: corpus is large enough that graph structure adds value.
-- Unclassified: 114 file(s) not represented in the graph (top: .csv 32, .arff 22, .pptx 15)
+- Unclassified: 113 file(s) not represented in the graph (top: .csv 32, .arff 22, .pptx 15)
 
 ## Summary
-- 3716 nodes · 7013 edges · 288 communities (246 shown, 42 thin omitted)
+- 3683 nodes · 6982 edges · 286 communities (244 shown, 42 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 131 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `35c97e65`
+- Built from commit: `14460fdc`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -29,7 +29,7 @@
 - impeccable-config.mjs
 - live-server.mjs
 - svelte-component.mjs
-- detect-html.mjs
+- detect-url.mjs
 - hook-lib.mjs
 - initPageChat
 - live-inject.mjs
@@ -290,12 +290,10 @@
 - caveman-cavecrew/hooks/caveman-mode.sh
 - Ejercicios
 - Candidatos de artículo (lógica difusa aplicada, 2021+) — verificados 2026-10-05
-- resolveLengthPx
+- parseRgb
 - Ejercicios
 - Ejercicios
 - Ejercicios
-- Compra de tarjeta gráfica (GPU) para IA
-- Neural Designer: guía de estudio (tutoriales oficiales, 2026-10-07)
 
 ## God Nodes (most connected - your core abstractions)
 1. `Novedades de herramientas de IA` - 31 edges
@@ -324,15 +322,15 @@
 ## Import Cycles
 - None detected.
 
-## Communities (288 total, 42 thin omitted)
+## Communities (286 total, 42 thin omitted)
 
 ### Community 0 - "live-browser.js"
 Cohesion: 0.03
 Nodes (140): acceptedDomAlreadyClean(), addManualContextText(), applyGlobalBarLabelState(), applyPlaceholderSizingStyles(), applySvelteComponentVariantStyle(), bufferToBase64(), buildCollapsible(), buildColorModels() (+132 more)
 
 ### Community 1 - "checks.mjs"
-Cohesion: 0.05
-Nodes (96): borderColorsFromStyle(), borderWidthsFromStyle(), checkBorders(), checkClippedOverflow(), checkColors(), checkCreamPalette(), checkElementAIPaletteDOM(), checkElementBorders() (+88 more)
+Cohesion: 0.04
+Nodes (86): borderColorsFromStyle(), borderWidthsFromStyle(), checkBorders(), checkClippedOverflow(), checkCreamPalette(), checkElementBorders(), checkElementBordersDOM(), checkElementClippedOverflow() (+78 more)
 
 ### Community 2 - "index.mjs"
 Cohesion: 0.06
@@ -368,7 +366,7 @@ Nodes (51): addColorObject(), addDesignColor(), addRoundedScale(), addRoundedTok
 
 ### Community 10 - "impeccable-config.mjs"
 Cohesion: 0.10
-Nodes (47): applyDetectionConfigSource(), clampByte(), cleanIgnoreValueDisplay(), cloneDetectionConfig(), cloneRawDetectionConfig(), colorIgnoreKey(), DEFAULT_DETECTION_CONFIG, DETECTOR_CONFIG_KEYS (+39 more)
+Nodes (48): applyDetectionConfigSource(), clampByte(), cleanIgnoreValueDisplay(), cloneDetectionConfig(), cloneRawDetectionConfig(), colorIgnoreKey(), DEFAULT_DETECTION_CONFIG, DETECTOR_CONFIG_KEYS (+40 more)
 
 ### Community 11 - "live-server.mjs"
 Cohesion: 0.09
@@ -378,9 +376,9 @@ Nodes (45): assembleLiveBrowserScript(), assertLiveBrowserScriptParts(), LIVE_BR
 Cohesion: 0.09
 Nodes (47): applyLegacyDeferredAcceptsOnStartup(), appendCssToSvelteStyle(), appendSanitizedCssRule(), applyDeferredSvelteComponentAccepts(), bakeParamValuesInCss(), buildInsertVariantStub(), buildPropContract(), buildPropsScript() (+39 more)
 
-### Community 13 - "detect-html.mjs"
-Cohesion: 0.13
-Nodes (28): detectUrl(), runVisualContrastFallback(), serializeDesignSystemForBrowser(), runRegexMatchers(), collectStaticCssText(), STATIC_ELEMENT_RULES, captureVisualContrastCandidate(), compareScreenshotContrast() (+20 more)
+### Community 13 - "detect-url.mjs"
+Cohesion: 0.20
+Nodes (20): detectUrl(), runVisualContrastFallback(), serializeDesignSystemForBrowser(), runRegexMatchers(), captureVisualContrastCandidate(), compareScreenshotContrast(), sanitizeScreenshotClip(), finding() (+12 more)
 
 ### Community 14 - "hook-lib.mjs"
 Cohesion: 0.06
@@ -515,8 +513,8 @@ Cohesion: 0.20
 Nodes (14): createLiveBrowserSessionState(), clearHandled(), clearScrollY(), clearSession(), isHandled(), loadSession(), markHandled(), nextCheckpointRevision() (+6 more)
 
 ### Community 47 - "Computación Neuroborrosa (304473 · 3 ECTS · Obligatoria)"
-Cohesion: 0.29
-Nodes (6): Computación Neuroborrosa (304473 · 3 ECTS · Obligatoria), Drive del alumno, Estructura, Material de clase heredado (solo referencia, NO copiado), Parte neuronal (Angélica González Arrieta), Requisitos oficiales 2026-27 (presentación del profesor, 4/10/26)
+Cohesion: 0.40
+Nodes (4): Computación Neuroborrosa (304473 · 3 ECTS · Obligatoria), Estructura, Material de clase heredado (solo referencia, NO copiado), Requisitos oficiales 2026-27 (presentación del profesor, 4/10/26)
 
 ### Community 48 - "createLiveBrowserDomHelpers"
 Cohesion: 0.19
@@ -587,8 +585,8 @@ Cohesion: 0.20
 Nodes (9): Clarify Reference (UX Copy), Button Label Problem, Confirmation Dialogs Used Sparingly, Error Message Formula (What/Why/How to Fix), Writing for Translation (i18n Copy Expansion), Harden Reference (Edge Case Resilience), Internationalization Hardening, Interaction Design Reference (+1 more)
 
 ### Community 66 - "detect-antipatterns.mjs"
-Cohesion: 0.08
-Nodes (43): confirm(), detectCli(), formatFindings(), formatFindingSummary(), handleStdin(), printUsage(), createBrowserDetector(), CSS_IN_JS_EXTENSIONS (+35 more)
+Cohesion: 0.07
+Nodes (50): confirm(), detectCli(), formatFindings(), formatFindingSummary(), handleStdin(), printUsage(), createBrowserDetector(), CSS_IN_JS_EXTENSIONS (+42 more)
 
 ### Community 67 - "normalizeIgnoreValueEntries"
 Cohesion: 0.36
@@ -1283,12 +1281,12 @@ Cohesion: 0.29
 Nodes (6): 1. ¡Cásate conmigo!, Ej. 1 — Mensaje en estilo indirecto: relaciona las dos partes, Ej. 2 — Completa este cuadro, Ej. 3 — Pasa las frases a estilo indirecto, Ej. 4 — Completa el texto de las viñetas, Ejercicios
 
 ### Community 280 - "Candidatos de artículo (lógica difusa aplicada, 2021+) — verificados 2026-10-05"
-Cohesion: 0.20
-Nodes (9): C — Bilal et al., Energy 2023 (ANFIS-MoW, eólica), Candidatos de artículo (lógica difusa aplicada, 2021+) — verificados 2026-10-05, Candidatos V y S (aportados por el compañero, 2026-10-06), D — Wu et al., Applied Energy 2023 (ANFIS-ELM), Descartados del informe de LeapSpace, E — Fazlollahtabar, ECM:X 2026 (descartado), JCR consultado (2026-10-05, con el acceso de la USAL), Lectura completa de C, D y E (2026-10-05) (+1 more)
+Cohesion: 0.25
+Nodes (7): C — Bilal et al., Energy 2023 (ANFIS-MoW, eólica), Candidatos de artículo (lógica difusa aplicada, 2021+) — verificados 2026-10-05, D — Wu et al., Applied Energy 2023 (ANFIS-ELM), Descartados del informe de LeapSpace, E — Fazlollahtabar, ECM:X 2026 (descartado), Lectura completa de C, D y E (2026-10-05), Notas por candidato
 
-### Community 281 - "resolveLengthPx"
+### Community 281 - "parseRgb"
 Cohesion: 0.20
-Nodes (12): checkElementHeroEyebrow(), checkElementHeroEyebrowDOM(), checkHeroEyebrow(), checkRepeatedSectionKickers(), checkRepeatedSectionKickersDOM(), checkRepeatedSectionKickersFromDoc(), cleanInlineText(), collectRepeatedSectionKickerCandidates() (+4 more)
+Nodes (22): checkColors(), checkElementAIPaletteDOM(), checkElementColors(), checkElementColorsDOM(), checkElementGlow(), checkElementGlowDOM(), checkElementIconTile(), checkElementIconTileDOM() (+14 more)
 
 ### Community 282 - "Ejercicios"
 Cohesion: 0.29
@@ -1302,33 +1300,25 @@ Nodes (6): 1. Historias de viajes, Ej. 1 — ¿Qué tiempo hace?, Ej. 2 — Escu
 Cohesion: 0.33
 Nodes (5): 1. De viaje, Ej. 1 — Lee el texto sobre los aeropuertos, Ej. 2 — Construye correctamente las siguientes frases, Ej. 3 — Explica estas situaciones haciendo conjeturas, Ejercicios
 
-### Community 285 - "Compra de tarjeta gráfica (GPU) para IA"
-Cohesion: 0.14
-Nodes (13): 1. Antes de nada: ¿hace falta para el TFM?, 2. La regla más importante: la VRAM, 3. Opciones y precios reales (idealo.es, 2026-09-26), 4. Puntos débiles y riesgos, 5. Tu equipo: BOREY 2.0 Plus (Роботкомп), 6. Qué comprar y dónde (Salamanca), 7. Lista de comprobación antes de comprar, 8. Después de montarla (+5 more)
-
-### Community 286 - "Neural Designer: guía de estudio (tutoriales oficiales, 2026-10-07)"
-Cohesion: 0.13
-Nodes (14): 10. Discrepancias y erratas de la documentación, 11. Errores típicos (resumen), 12. Comprobar en la app (pendiente), 1. Idea general y flujo de trabajo, 2. Elegir el tipo de modelo, 3. Data set, 4. Neural network, 5. Training strategy (+6 more)
-
 ## Knowledge Gaps
-- **1087 isolated node(s):** `1. Antes de nada: ¿hace falta para el TFM?`, `2. La regla más importante: la VRAM`, `NVIDIA RTX 5060 Ti 16 GB, nueva (precio más bajo por modelo)`, `AMD RX 9060 XT 16 GB, nueva (Sapphire)`, `Otras referencias` (+1082 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1359 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **1059 isolated node(s):** `Notas por candidato`, `Descartados del informe de LeapSpace`, `C — Bilal et al., Energy 2023 (ANFIS-MoW, eólica)`, `D — Wu et al., Applied Energy 2023 (ANFIS-ELM)`, `E — Fazlollahtabar, ECM:X 2026 (descartado)` (+1054 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1329 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **42 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Novedades de herramientas de IA` connect `Novedades de herramientas de IA` to `2026-08-30 — Compactación de contexto: palancas oficiales para ahorrar tokens`, `2026-08-30 — Pasada del radar: dos funciones nativas nuevas, sin hallazgos de terceros`, `2026-09-07 — Búsqueda a mano: herramientas para posts de blog en plataformas de clases`, `hook-before-edit.mjs`, `2026-08-16 — Primera pasada del radar`, `2026-09-13 — Búsqueda exhaustiva: herramientas de investigación científica verificada para el máster`, `2026-09-19 — Pasada por el correo semanal "This week in Claude Code" (4 números, 21 ago-18 sep)`?**
-  _High betweenness centrality (0.006) - this node is a cross-community bridge._
+  _High betweenness centrality (0.004) - this node is a cross-community bridge._
 - **Why does `2026-08-16 — Segunda pasada: hooks vs. CLAUDE.md, y prácticas de la comunidad` connect `hook-before-edit.mjs` to `Novedades de herramientas de IA`?**
-  _High betweenness centrality (0.005) - this node is a cross-community bridge._
-- **Why does `deny()` connect `hook-before-edit.mjs` to `readConfig`?**
-  _High betweenness centrality (0.003) - this node is a cross-community bridge._
+  _High betweenness centrality (0.004) - this node is a cross-community bridge._
+- **Why does `docx()` connect `2026-09-19 — Pasada por el correo semanal "This week in Claude Code" (4 números, 21 ago-18 sep)` to `generar_borrador.py`?**
+  _High betweenness centrality (0.002) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `initGlobalBar()` (e.g. with `hideAgentPollTooltip()` and `onDetectMessage()`) actually correct?**
   _`initGlobalBar()` has 7 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `1. Antes de nada: ¿hace falta para el TFM?`, `2. La regla más importante: la VRAM`, `NVIDIA RTX 5060 Ti 16 GB, nueva (precio más bajo por modelo)` to the rest of the system?**
-  _1087 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `Notas por candidato`, `Descartados del informe de LeapSpace`, `C — Bilal et al., Energy 2023 (ANFIS-MoW, eólica)` to the rest of the system?**
+  _1059 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `live-browser.js` be split into smaller, more focused modules?**
   _Cohesion score 0.02863984674329502 - nodes in this community are weakly interconnected._
 - **Should `checks.mjs` be split into smaller, more focused modules?**
-  _Cohesion score 0.045351473922902494 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.04467084639498432 - nodes in this community are weakly interconnected._

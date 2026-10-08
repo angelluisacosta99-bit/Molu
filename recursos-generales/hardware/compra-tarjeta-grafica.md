@@ -94,7 +94,7 @@ Mismo nombre, dos memorias: comprueba siempre que el anuncio dice
 
 ### Recomendación
 
-1. **Elegida para el máster: RTX 3060 12 GB de segunda mano (~220–250 €).**
+1. **Recomendada para el máster (Angel aún no ha decidido): RTX 3060 12 GB de segunda mano (~220–250 €).**
    Basta para el TFM y LLMs pequeños, y deja margen para cambiarla
    cuando bajen los precios.
 2. **Solo si quieres 16 GB ya:** RTX 5060 Ti 16 GB de segunda mano (~540 €)
@@ -135,7 +135,7 @@ Mismo nombre, dos memorias: comprueba siempre que el anuncio dice
 | Almacenamiento | SSD 960 GB + SSD 480 GB (PCIe) | Sin problema |
 | Monitor | MSI Optix G27C7 (1080p, 165 Hz, DisplayPort y HDMI) | Cualquier tarjeta de la tabla sobra para él |
 | GPU anterior (dañada) | Gigabyte RTX 4070 Windforce (GV-N4070WF3-12GD), 12 GB | Consumía ~200 W: la fuente la aguantaba |
-| Fuente | **Pendiente** (mirar la etiqueta lateral) | — |
+| Fuente | 1STPLAYER FK 7.0, modelo PS-700FK, 700 W (+12 V: 58 A / 696 W; foto de la etiqueta, 2026-10-08) | Sobra para las RTX 5060 Ti (180 W). Sin sello 80 Plus visible en la etiqueta. Fabricada ~2023 (código 230618). Cable PCIe de 8 pines suelto y rotulado "PCI-E" (confirmado con foto, 2026-10-08): vale para tarjetas de 1×8 pines |
 
 Conclusiones:
 
@@ -155,7 +155,7 @@ Conclusiones:
 
 ## 6. Qué comprar y dónde (Salamanca)
 
-**Elección:** ver la recomendación del apartado 3. La fuente ya
+**Recomendación (sin decidir):** ver el apartado 3. La fuente ya
 aguantaba la 4070, así que no hace falta cambiar nada más. Una RTX 4070
 de segunda mano no compensa: las SUPER rondan los 600 € y siguen
 teniendo 12 GB.
@@ -183,8 +183,10 @@ la garantía cerca.
 
 ## 7. Lista de comprobación antes de comprar
 
-- [ ] Modelo de la fuente de alimentación y sus vatios (mirar la
-      etiqueta de la fuente)
+- [x] Modelo de la fuente de alimentación y sus vatios (1STPLAYER
+      PS-700FK, 700 W; hecho 2026-10-08)
+- [x] Cable PCIe de 8 pines libre en la fuente (hecho 2026-10-08: un
+      cable rotulado "PCI-E"; solo hay uno, no sirve para la RTX 5070 Ti)
 - [ ] Largo máximo de tarjeta que cabe en la caja
 - [ ] Modelo de placa base y de procesador
 - [ ] Cantidad de RAM

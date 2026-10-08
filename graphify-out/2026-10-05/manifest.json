@@ -642,15 +642,15 @@
     "semantic_hash": ""
   },
   ".claude/skills/ejercicio-interactivo/SKILL.md": {
-    "mtime": 1791386479.5179014,
-    "seen": 1791386599.103403,
-    "ast_hash": "9960baea512369c2c30474bebcb56e10",
+    "mtime": 1791205189.0921612,
+    "seen": 1791205381.3719594,
+    "ast_hash": "7ff5006b7f83016696b1714b8efe0dbb",
     "semantic_hash": ""
   },
   ".claude/skills/ejercicio-interactivo/reference/template.html": {
-    "mtime": 1791386479.5179014,
-    "seen": 1791386599.1034043,
-    "ast_hash": "5d5a54a5733f20229363f9b874153d06",
+    "mtime": 1791205189.0921612,
+    "seen": 1791205381.3719616,
+    "ast_hash": "6a849ea3a10c63f4abdf17aaf3d68570",
     "semantic_hash": ""
   },
   ".claude/skills/graphify/SKILL.md": {
@@ -1596,63 +1596,63 @@
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a2/nuevo-espanol-en-marcha-2_cuaderno-unidad0_antes-de-empezar_interactivo.html": {
-    "mtime": 1791386479.5179014,
-    "seen": 1791386599.1036339,
-    "ast_hash": "7dc3597ba958748bcf9023454cabcd59",
+    "mtime": 1791017467.0869918,
+    "seen": 1791205381.3723407,
+    "ast_hash": "d4d5c1755aae340caf7e00818e5e8e94",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a2/nuevo-espanol-en-marcha-2_cuaderno-unidad1a_encantado_interactivo.html": {
-    "mtime": 1791386479.5219014,
-    "seen": 1791386599.1036348,
-    "ast_hash": "9958d7facc6b099df8dbed63791d2dec",
+    "mtime": 1791017467.0909917,
+    "seen": 1791205381.372343,
+    "ast_hash": "0db298995939ab40a8327ab1bc4c3df7",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a2/nuevo-espanol-en-marcha-2_cuaderno-unidad1b_duermo-poco_interactivo.html": {
-    "mtime": 1791386479.5379014,
-    "seen": 1791386599.103636,
-    "ast_hash": "8ab1cf315a6b1aeaf9488fce0e7d092f",
+    "mtime": 1791017467.1029918,
+    "seen": 1791205381.3723466,
+    "ast_hash": "f2e9c0fbe8db6f15e94c3d771a484dc4",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a2/nuevo-espanol-en-marcha-2_cuaderno-unidad1c_unas-vacaciones-inolvidables_interactivo.html": {
-    "mtime": 1791386479.5419014,
-    "seen": 1791386599.103637,
-    "ast_hash": "282a652abab126036531bbc4eda03fef",
+    "mtime": 1791017467.1029918,
+    "seen": 1791205381.372349,
+    "ast_hash": "ee5af9dfd3f67a318f990c000997dbe6",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a2/nuevo-espanol-en-marcha-2_cuaderno-unidad2a_quieres-ser-millonario_interactivo.html": {
-    "mtime": 1791386479.5459013,
-    "seen": 1791386599.103638,
-    "ast_hash": "d562c3e9564d99364ec82dfe0da4000c",
+    "mtime": 1791017467.1029918,
+    "seen": 1791205381.3723507,
+    "ast_hash": "11e4266c35d4c04cb73b08b469279bdb",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a2/nuevo-espanol-en-marcha-2_cuaderno-unidad2b_biografias_interactivo.html": {
-    "mtime": 1791386479.5459013,
-    "seen": 1791386599.103639,
-    "ast_hash": "d72be1761b62f100e89e63407fbee5cf",
+    "mtime": 1791017467.1069918,
+    "seen": 1791205381.3723533,
+    "ast_hash": "e00d219f686dc84ede1633bbf18740c5",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a2/nuevo-espanol-en-marcha-2_cuaderno-unidad2c_ganadores_interactivo.html": {
-    "mtime": 1791386479.5699012,
-    "seen": 1791386599.1036398,
-    "ast_hash": "70382b48b9a28df5b1e543a6fa185a5c",
+    "mtime": 1791017467.1269917,
+    "seen": 1791205381.3723557,
+    "ast_hash": "147fc9f2ff05ec0a0341f8cb48c73b11",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a2/nuevo-espanol-en-marcha-2_cuaderno-unidad3a_la-boda-de-pili_interactivo.html": {
-    "mtime": 1791386479.5819013,
-    "seen": 1791386599.1036408,
-    "ast_hash": "42e191028d10bc6413e05f20e96125ca",
+    "mtime": 1791017467.1269917,
+    "seen": 1791205381.3723578,
+    "ast_hash": "69ff1c4785d3a7edd65ead7c8172542c",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a2/nuevo-espanol-en-marcha-2_cuaderno-unidad3b_como-te-ha-ido-hoy_interactivo.html": {
-    "mtime": 1791386479.5939014,
-    "seen": 1791386599.1036417,
-    "ast_hash": "6d086ba9b3e8a885e8acc3f6417b4346",
+    "mtime": 1791017467.1309917,
+    "seen": 1791205381.3723595,
+    "ast_hash": "a9d4efd34e27ca6ce0a3f63bb3401579",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/a2/nuevo-espanol-en-marcha-2_cuaderno-unidad3c_costumbres_interactivo.html": {
-    "mtime": 1791386479.5939014,
-    "seen": 1791386599.1036427,
-    "ast_hash": "68cbc167963b38af45ff64215fc0cacb",
+    "mtime": 1791017467.1309917,
+    "seen": 1791205381.372361,
+    "ast_hash": "203012fea13c2c2a9f3bf13e79deeb9e",
     "semantic_hash": ""
   },
   "docencia-espanol/materiales/b1/nuevo-espanol-en-marcha-3_cuaderno-unidad1a_vida-cotidiana_interactivo.html": {
@@ -3168,27 +3168,21 @@
     "semantic_hash": ""
   },
   "recursos-generales/hardware/compra-tarjeta-grafica.md": {
-    "mtime": 1791458350.503569,
-    "seen": 1791458353.6876469,
-    "ast_hash": "40aba6d6c08858fa69330a22de07ba79",
+    "mtime": 1791205189.252161,
+    "seen": 1791205381.3726137,
+    "ast_hash": "fdcfa0305b958cdedccfdc4a0d65fdb8",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/computacion-neuroborrosa/FUENTE.md": {
-    "mtime": 1791296374.2432253,
-    "seen": 1791296394.1664221,
-    "ast_hash": "ee7c29382573f956270d1e136980883f",
+    "mtime": 1791211546.8852565,
+    "seen": 1791211561.957918,
+    "ast_hash": "d03387834d07caf8396695f229079dc4",
     "semantic_hash": ""
   },
   "master-sistemas-inteligentes/computacion-neuroborrosa/trabajo/candidatos-articulo.md": {
-    "mtime": 1791460481.4118407,
-    "seen": 1791460483.9218788,
-    "ast_hash": "cf5c509c0bd48217b515ecbee09578f7",
-    "semantic_hash": ""
-  },
-  "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md": {
-    "mtime": 1791386328.0978923,
-    "seen": 1791386340.0290933,
-    "ast_hash": "93ece10425e0e31a6784123a563b7fb5",
+    "mtime": 1791231850.9661152,
+    "seen": 1791231857.5411773,
+    "ast_hash": "75b334f45ecd1f30196a2418c992b018",
     "semantic_hash": ""
   }
 }

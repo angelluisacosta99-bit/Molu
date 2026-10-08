@@ -38181,7 +38181,7 @@
       "node_kind": "heading",
       "norm_label": "8. despues de montarla",
       "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L199"
+      "source_location": "L197"
     },
     {
       "id": "recursos_generales_hardware_compra_tarjeta_grafica_amd_rx_9060_xt_16_gb_nueva_sapphire",
@@ -120436,7 +120436,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L199",
+      "source_location": "L197",
       "weight": 1.0
     },
     {
@@ -125976,5 +125976,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "35c97e65f4bfb2c0c857b6cca902503af8f1b1bd"
+  "built_at_commit": "86f090e167ac371a92e5d685fbd097af407f0f42"
 }

@@ -3429,6 +3429,18 @@
       "source_location": "L285"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_server_applylegacydeferredacceptsonstartup",
+      "label": "applyLegacyDeferredAcceptsOnStartup()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "live-server.mjs",
+      "file_type": "code",
+      "norm_label": "applylegacydeferredacceptsonstartup()",
+      "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
+      "source_location": "L974"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_server_broadcast",
       "label": "broadcast()",
       "_callable": true,
@@ -3751,18 +3763,6 @@
       "norm_label": "removeallsveltecomponentsessions()",
       "source_file": ".claude/skills/impeccable/scripts/live/svelte-component.mjs",
       "source_location": "L732"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_server_applylegacydeferredacceptsonstartup",
-      "label": "applyLegacyDeferredAcceptsOnStartup()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 12,
-      "community_name": "svelte-component.mjs",
-      "file_type": "code",
-      "norm_label": "applylegacydeferredacceptsonstartup()",
-      "source_file": ".claude/skills/impeccable/scripts/live-server.mjs",
-      "source_location": "L974"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_svelte_component_appendcsstosveltestyle",
@@ -10377,18 +10377,6 @@
       "source_location": "L502"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_wrap_searchdir",
-      "label": "searchDir()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 23,
-      "community_name": "live-wrap.mjs",
-      "file_type": "code",
-      "norm_label": "searchdir()",
-      "source_file": ".claude/skills/impeccable/scripts/live-wrap.mjs",
-      "source_location": "L667"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_wrap_splitclasslist",
       "label": "splitClassList()",
       "_callable": true,
@@ -11485,7 +11473,7 @@
       "label": "mcnemar()",
       "_callable": true,
       "_origin": "ast",
-      "community": 287,
+      "community": 285,
       "community_name": "experimento.py",
       "file_type": "code",
       "norm_label": "mcnemar()",
@@ -11497,7 +11485,7 @@
       "label": "modelos()",
       "_callable": true,
       "_origin": "ast",
-      "community": 287,
+      "community": 285,
       "community_name": "experimento.py",
       "file_type": "code",
       "norm_label": "modelos()",
@@ -14049,6 +14037,18 @@
       "source_location": "L235"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_commit_manual_edits_clearappliedentries",
+      "label": "clearAppliedEntries()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "manual-edit-routes.mjs",
+      "file_type": "code",
+      "norm_label": "clearappliedentries()",
+      "source_file": ".claude/skills/impeccable/scripts/live-commit-manual-edits.mjs",
+      "source_location": "L555"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_discard_manual_edits_argval",
       "label": "argVal()",
       "_callable": true,
@@ -14061,54 +14061,6 @@
       "source_location": "L21"
     },
     {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_compactmanuallogtext",
-      "label": "compactManualLogText()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "compactmanuallogtext()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L934"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualapplyfailures",
-      "label": "summarizeManualApplyFailures()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "summarizemanualapplyfailures()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L900"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualdiagnostics",
-      "label": "summarizeManualDiagnostics()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "summarizemanualdiagnostics()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L913"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanuallogfile",
-      "label": "summarizeManualLogFile()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "summarizemanuallogfile()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
-      "source_location": "L927"
-    },
-    {
       "id": "claude_skills_impeccable_scripts_live_manual_edit_evidence_buildmanualeditevidence",
       "label": "buildManualEditEvidence()",
       "_callable": true,
@@ -14119,30 +14071,6 @@
       "norm_label": "buildmanualeditevidence()",
       "source_file": ".claude/skills/impeccable/scripts/live-manual-edit-evidence.mjs",
       "source_location": "L39"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_edit_routes_createmanualeditroutes",
-      "label": "createManualEditRoutes()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "createmanualeditroutes()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-edit-routes.mjs",
-      "source_location": "L17"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_manual_edit_routes_sendjson",
-      "label": "sendJson()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "manual-edit-routes.mjs",
-      "file_type": "code",
-      "norm_label": "sendjson()",
-      "source_file": ".claude/skills/impeccable/scripts/live/manual-edit-routes.mjs",
-      "source_location": "L340"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_manual_edit_routes_summarizependingmanualeditbatch",
@@ -15079,6 +15007,18 @@
       "norm_label": "isgitignored()",
       "source_file": ".claude/skills/impeccable/scripts/lib/is-generated.mjs",
       "source_location": "L42"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_wrap_searchdir",
+      "label": "searchDir()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 39,
+      "community_name": "isGeneratedFile",
+      "file_type": "code",
+      "norm_label": "searchdir()",
+      "source_file": ".claude/skills/impeccable/scripts/live-wrap.mjs",
+      "source_location": "L667"
     },
     {
       "id": "claude_skills_impeccable_scripts_modern_screenshot_umd_ae",
@@ -18981,6 +18921,18 @@
       "source_location": "L393"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_compactmanuallogtext",
+      "label": "compactManualLogText()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "compactmanuallogtext()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L934"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_manual_apply_compactnearbymanualedittexts",
       "label": "compactNearbyManualEditTexts()",
       "_callable": true,
@@ -19389,6 +19341,42 @@
       "source_location": "L888"
     },
     {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualapplyfailures",
+      "label": "summarizeManualApplyFailures()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "summarizemanualapplyfailures()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L900"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanualdiagnostics",
+      "label": "summarizeManualDiagnostics()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "summarizemanualdiagnostics()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L913"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_apply_summarizemanuallogfile",
+      "label": "summarizeManualLogFile()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "summarizemanuallogfile()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
+      "source_location": "L927"
+    },
+    {
       "id": "claude_skills_impeccable_scripts_live_manual_apply_truncatemanualapplytext",
       "label": "truncateManualApplyText()",
       "_callable": true,
@@ -19435,6 +19423,30 @@
       "norm_label": "writemanualapplytransaction()",
       "source_file": ".claude/skills/impeccable/scripts/live/manual-apply.mjs",
       "source_location": "L726"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_edit_routes_createmanualeditroutes",
+      "label": "createManualEditRoutes()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "createmanualeditroutes()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-edit-routes.mjs",
+      "source_location": "L17"
+    },
+    {
+      "id": "claude_skills_impeccable_scripts_live_manual_edit_routes_sendjson",
+      "label": "sendJson()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "manual-apply.mjs",
+      "file_type": "code",
+      "norm_label": "sendjson()",
+      "source_file": ".claude/skills/impeccable/scripts/live/manual-edit-routes.mjs",
+      "source_location": "L340"
     },
     {
       "id": "master_sistemas_inteligentes_robots_autonomos_roomba_codigo_roomba_roomba_roombacontroller_avoid_obstacle",
@@ -21631,18 +21643,6 @@
       "norm_label": "changedfilessincesnapshot()",
       "source_file": ".claude/skills/impeccable/scripts/live-commit-manual-edits.mjs",
       "source_location": "L631"
-    },
-    {
-      "id": "claude_skills_impeccable_scripts_live_commit_manual_edits_clearappliedentries",
-      "label": "clearAppliedEntries()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "live-commit-manual-edits.mjs",
-      "file_type": "code",
-      "norm_label": "clearappliedentries()",
-      "source_file": ".claude/skills/impeccable/scripts/live-commit-manual-edits.mjs",
-      "source_location": "L555"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_commit_manual_edits_collectapplyownedfiles",
@@ -38076,358 +38076,10 @@
       "source_location": "L5"
     },
     {
-      "id": "recursos_generales_hardware_compra_tarjeta_grafica",
-      "label": "compra-tarjeta-grafica.md",
-      "_origin": "ast",
-      "community": 285,
-      "community_name": "Compra de tarjeta gr\u00e1fica (GPU) para IA",
-      "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "compra-tarjeta-grafica.md",
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "recursos_generales_hardware_compra_tarjeta_grafica_1_antes_de_nada_hace_falta_para_el_tfm",
-      "label": "1. Antes de nada: \u00bfhace falta para el TFM?",
-      "_origin": "ast",
-      "community": 285,
-      "community_name": "Compra de tarjeta gr\u00e1fica (GPU) para IA",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "1. antes de nada: \u00bfhace falta para el tfm?",
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L12"
-    },
-    {
-      "id": "recursos_generales_hardware_compra_tarjeta_grafica_2_la_regla_m\u00e1s_importante_la_vram",
-      "label": "2. La regla m\u00e1s importante: la VRAM",
-      "_origin": "ast",
-      "community": 285,
-      "community_name": "Compra de tarjeta gr\u00e1fica (GPU) para IA",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "2. la regla mas importante: la vram",
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L35"
-    },
-    {
-      "id": "recursos_generales_hardware_compra_tarjeta_grafica_3_opciones_y_precios_reales_idealo_es_2026_09_26",
-      "label": "3. Opciones y precios reales (idealo.es, 2026-09-26)",
-      "_origin": "ast",
-      "community": 285,
-      "community_name": "Compra de tarjeta gr\u00e1fica (GPU) para IA",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "3. opciones y precios reales (idealo.es, 2026-09-26)",
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L52"
-    },
-    {
-      "id": "recursos_generales_hardware_compra_tarjeta_grafica_4_puntos_d\u00e9biles_y_riesgos",
-      "label": "4. Puntos d\u00e9biles y riesgos",
-      "_origin": "ast",
-      "community": 285,
-      "community_name": "Compra de tarjeta gr\u00e1fica (GPU) para IA",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "4. puntos debiles y riesgos",
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L106"
-    },
-    {
-      "id": "recursos_generales_hardware_compra_tarjeta_grafica_5_tu_equipo_borey_2_0_plus_\u0440\u043e\u0431\u043e\u0442\u043a\u043e\u043c\u043f",
-      "label": "5. Tu equipo: BOREY 2.0 Plus (\u0420\u043e\u0431\u043e\u0442\u043a\u043e\u043c\u043f)",
-      "_origin": "ast",
-      "community": 285,
-      "community_name": "Compra de tarjeta gr\u00e1fica (GPU) para IA",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "5. tu equipo: borey 2.0 plus (\u0440\u043e\u0431\u043e\u0442\u043a\u043e\u043c\u043f)",
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L128"
-    },
-    {
-      "id": "recursos_generales_hardware_compra_tarjeta_grafica_6_qu\u00e9_comprar_y_d\u00f3nde_salamanca",
-      "label": "6. Qu\u00e9 comprar y d\u00f3nde (Salamanca)",
-      "_origin": "ast",
-      "community": 285,
-      "community_name": "Compra de tarjeta gr\u00e1fica (GPU) para IA",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "6. que comprar y donde (salamanca)",
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L156"
-    },
-    {
-      "id": "recursos_generales_hardware_compra_tarjeta_grafica_7_lista_de_comprobaci\u00f3n_antes_de_comprar",
-      "label": "7. Lista de comprobaci\u00f3n antes de comprar",
-      "_origin": "ast",
-      "community": 285,
-      "community_name": "Compra de tarjeta gr\u00e1fica (GPU) para IA",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "7. lista de comprobacion antes de comprar",
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L184"
-    },
-    {
-      "id": "recursos_generales_hardware_compra_tarjeta_grafica_8_despu\u00e9s_de_montarla",
-      "label": "8. Despu\u00e9s de montarla",
-      "_origin": "ast",
-      "community": 285,
-      "community_name": "Compra de tarjeta gr\u00e1fica (GPU) para IA",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "8. despues de montarla",
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L199"
-    },
-    {
-      "id": "recursos_generales_hardware_compra_tarjeta_grafica_amd_rx_9060_xt_16_gb_nueva_sapphire",
-      "label": "AMD RX 9060 XT 16 GB, nueva (Sapphire)",
-      "_origin": "ast",
-      "community": 285,
-      "community_name": "Compra de tarjeta gr\u00e1fica (GPU) para IA",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "amd rx 9060 xt 16 gb, nueva (sapphire)",
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L73"
-    },
-    {
-      "id": "recursos_generales_hardware_compra_tarjeta_grafica_compra_de_tarjeta_gr\u00e1fica_gpu_para_ia",
-      "label": "Compra de tarjeta gr\u00e1fica (GPU) para IA",
-      "_origin": "ast",
-      "community": 285,
-      "community_name": "Compra de tarjeta gr\u00e1fica (GPU) para IA",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "compra de tarjeta grafica (gpu) para ia",
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "recursos_generales_hardware_compra_tarjeta_grafica_nvidia_rtx_5060_ti_16_gb_nueva_precio_m\u00e1s_bajo_por_modelo",
-      "label": "NVIDIA RTX 5060 Ti 16 GB, nueva (precio m\u00e1s bajo por modelo)",
-      "_origin": "ast",
-      "community": 285,
-      "community_name": "Compra de tarjeta gr\u00e1fica (GPU) para IA",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "nvidia rtx 5060 ti 16 gb, nueva (precio mas bajo por modelo)",
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L59"
-    },
-    {
-      "id": "recursos_generales_hardware_compra_tarjeta_grafica_otras_referencias",
-      "label": "Otras referencias",
-      "_origin": "ast",
-      "community": 285,
-      "community_name": "Compra de tarjeta gr\u00e1fica (GPU) para IA",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "otras referencias",
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L81"
-    },
-    {
-      "id": "recursos_generales_hardware_compra_tarjeta_grafica_recomendaci\u00f3n",
-      "label": "Recomendaci\u00f3n",
-      "_origin": "ast",
-      "community": 285,
-      "community_name": "Compra de tarjeta gr\u00e1fica (GPU) para IA",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "recomendacion",
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L95"
-    },
-    {
-      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer",
-      "label": "neural-designer.md",
-      "_origin": "ast",
-      "community": 286,
-      "community_name": "Neural Designer: gu\u00eda de estudio (tutoriales oficiales, 2026-10-07)",
-      "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "neural-designer.md",
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_10_discrepancias_y_erratas_de_la_documentaci\u00f3n",
-      "label": "10. Discrepancias y erratas de la documentaci\u00f3n",
-      "_origin": "ast",
-      "community": 286,
-      "community_name": "Neural Designer: gu\u00eda de estudio (tutoriales oficiales, 2026-10-07)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "10. discrepancias y erratas de la documentacion",
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L203"
-    },
-    {
-      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_11_errores_t\u00edpicos_resumen",
-      "label": "11. Errores t\u00edpicos (resumen)",
-      "_origin": "ast",
-      "community": 286,
-      "community_name": "Neural Designer: gu\u00eda de estudio (tutoriales oficiales, 2026-10-07)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "11. errores tipicos (resumen)",
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L226"
-    },
-    {
-      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_12_comprobar_en_la_app_pendiente",
-      "label": "12. Comprobar en la app (pendiente)",
-      "_origin": "ast",
-      "community": 286,
-      "community_name": "Neural Designer: gu\u00eda de estudio (tutoriales oficiales, 2026-10-07)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "12. comprobar en la app (pendiente)",
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L242"
-    },
-    {
-      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_1_idea_general_y_flujo_de_trabajo",
-      "label": "1. Idea general y flujo de trabajo",
-      "_origin": "ast",
-      "community": 286,
-      "community_name": "Neural Designer: gu\u00eda de estudio (tutoriales oficiales, 2026-10-07)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "1. idea general y flujo de trabajo",
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L10"
-    },
-    {
-      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_2_elegir_el_tipo_de_modelo",
-      "label": "2. Elegir el tipo de modelo",
-      "_origin": "ast",
-      "community": 286,
-      "community_name": "Neural Designer: gu\u00eda de estudio (tutoriales oficiales, 2026-10-07)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "2. elegir el tipo de modelo",
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L23"
-    },
-    {
-      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_3_data_set",
-      "label": "3. Data set",
-      "_origin": "ast",
-      "community": 286,
-      "community_name": "Neural Designer: gu\u00eda de estudio (tutoriales oficiales, 2026-10-07)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "3. data set",
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L45"
-    },
-    {
-      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_4_neural_network",
-      "label": "4. Neural network",
-      "_origin": "ast",
-      "community": 286,
-      "community_name": "Neural Designer: gu\u00eda de estudio (tutoriales oficiales, 2026-10-07)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "4. neural network",
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L71"
-    },
-    {
-      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_5_training_strategy",
-      "label": "5. Training strategy",
-      "_origin": "ast",
-      "community": 286,
-      "community_name": "Neural Designer: gu\u00eda de estudio (tutoriales oficiales, 2026-10-07)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "5. training strategy",
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L101"
-    },
-    {
-      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_6_model_selection_y_sobreajuste",
-      "label": "6. Model selection y sobreajuste",
-      "_origin": "ast",
-      "community": 286,
-      "community_name": "Neural Designer: gu\u00eda de estudio (tutoriales oficiales, 2026-10-07)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "6. model selection y sobreajuste",
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L131"
-    },
-    {
-      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_7_testing_analysis",
-      "label": "7. Testing analysis",
-      "_origin": "ast",
-      "community": 286,
-      "community_name": "Neural Designer: gu\u00eda de estudio (tutoriales oficiales, 2026-10-07)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "7. testing analysis",
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L146"
-    },
-    {
-      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_8_model_deployment",
-      "label": "8. Model deployment",
-      "_origin": "ast",
-      "community": 286,
-      "community_name": "Neural Designer: gu\u00eda de estudio (tutoriales oficiales, 2026-10-07)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "8. model deployment",
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L174"
-    },
-    {
-      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_9_lo_que_ense\u00f1an_los_ejemplos_oficiales",
-      "label": "9. Lo que ense\u00f1an los ejemplos oficiales",
-      "_origin": "ast",
-      "community": 286,
-      "community_name": "Neural Designer: gu\u00eda de estudio (tutoriales oficiales, 2026-10-07)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "9. lo que ensenan los ejemplos oficiales",
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L185"
-    },
-    {
-      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_fuentes_todas_en_neuraldesigner_com_learning",
-      "label": "Fuentes (todas en neuraldesigner.com/learning)",
-      "_origin": "ast",
-      "community": 286,
-      "community_name": "Neural Designer: gu\u00eda de estudio (tutoriales oficiales, 2026-10-07)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "fuentes (todas en neuraldesigner.com/learning)",
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L258"
-    },
-    {
-      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_neural_designer_gu\u00eda_de_estudio_tutoriales_oficiales_2026_10_07",
-      "label": "Neural Designer: gu\u00eda de estudio (tutoriales oficiales, 2026-10-07)",
-      "_origin": "ast",
-      "community": 286,
-      "community_name": "Neural Designer: gu\u00eda de estudio (tutoriales oficiales, 2026-10-07)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "neural designer: guia de estudio (tutoriales oficiales, 2026-10-07)",
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L1"
-    },
-    {
       "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_experimento",
       "label": "experimento.py",
       "_origin": "ast",
-      "community": 287,
+      "community": 285,
       "community_name": "experimento.py",
       "file_type": "code",
       "norm_label": "experimento.py",
@@ -38438,7 +38090,7 @@
       "id": "master_sistemas_inteligentes_metodologia_de_la_investigacion_practica_del_problema_al_articulo_paso_3_experimento_experimento_rationale_1",
       "label": "Experimento del Paso 3: \u00bfpredice un modelo de ensamble el cumplimiento de BER\u2026",
       "_origin": "ast",
-      "community": 287,
+      "community": 285,
       "community_name": "experimento.py",
       "file_type": "rationale",
       "norm_label": "experimento del paso 3: \u00bfpredice un modelo de ensamble el cumplimiento de ber...",
@@ -39523,18 +39175,6 @@
       "source_location": "L1"
     },
     {
-      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_fuente_drive_del_alumno",
-      "label": "Drive del alumno",
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "Computaci\u00f3n Neuroborrosa (304473 \u00b7 3 ECTS \u00b7 Obligatoria)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "drive del alumno",
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/FUENTE.md",
-      "source_location": "L7"
-    },
-    {
       "id": "master_sistemas_inteligentes_computacion_neuroborrosa_fuente_estructura",
       "label": "Estructura",
       "_origin": "ast",
@@ -39544,7 +39184,7 @@
       "node_kind": "heading",
       "norm_label": "estructura",
       "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/FUENTE.md",
-      "source_location": "L35"
+      "source_location": "L7"
     },
     {
       "id": "master_sistemas_inteligentes_computacion_neuroborrosa_fuente_material_de_clase_heredado_solo_referencia_no_copiado",
@@ -39556,19 +39196,7 @@
       "node_kind": "heading",
       "norm_label": "material de clase heredado (solo referencia, no copiado)",
       "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/FUENTE.md",
-      "source_location": "L97"
-    },
-    {
-      "id": "master_sistemas_inteligentes_computacion_neuroborrosa_fuente_parte_neuronal_ang\u00e9lica_gonz\u00e1lez_arrieta",
-      "label": "Parte neuronal (Ang\u00e9lica Gonz\u00e1lez Arrieta)",
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "Computaci\u00f3n Neuroborrosa (304473 \u00b7 3 ECTS \u00b7 Obligatoria)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "parte neuronal (angelica gonzalez arrieta)",
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/FUENTE.md",
-      "source_location": "L18"
+      "source_location": "L69"
     },
     {
       "id": "master_sistemas_inteligentes_computacion_neuroborrosa_fuente_requisitos_oficiales_2026_27_presentaci\u00f3n_del_profesor_4_10_26",
@@ -39580,7 +39208,7 @@
       "node_kind": "heading",
       "norm_label": "requisitos oficiales 2026-27 (presentacion del profesor, 4/10/26)",
       "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/FUENTE.md",
-      "source_location": "L40"
+      "source_location": "L12"
     },
     {
       "id": "claude_skills_impeccable_scripts_live_browser_dom",
@@ -45131,7 +44759,7 @@
       "id": "matplotlib",
       "label": "matplotlib",
       "_origin": "semantic",
-      "community": 287,
+      "community": 285,
       "community_name": "experimento.py",
       "external": true,
       "file_type": "concept",
@@ -45143,7 +44771,7 @@
       "id": "matplotlib_pyplot",
       "label": "matplotlib_pyplot",
       "_origin": "semantic",
-      "community": 287,
+      "community": 285,
       "community_name": "experimento.py",
       "external": true,
       "file_type": "concept",
@@ -45155,7 +44783,7 @@
       "id": "scipy_stats",
       "label": "scipy_stats",
       "_origin": "semantic",
-      "community": 287,
+      "community": 285,
       "community_name": "experimento.py",
       "external": true,
       "file_type": "concept",
@@ -45167,7 +44795,7 @@
       "id": "sklearn_ensemble",
       "label": "sklearn_ensemble",
       "_origin": "semantic",
-      "community": 287,
+      "community": 285,
       "community_name": "experimento.py",
       "external": true,
       "file_type": "concept",
@@ -45179,7 +44807,7 @@
       "id": "sklearn_inspection",
       "label": "sklearn_inspection",
       "_origin": "semantic",
-      "community": 287,
+      "community": 285,
       "community_name": "experimento.py",
       "external": true,
       "file_type": "concept",
@@ -45191,7 +44819,7 @@
       "id": "sklearn_linear_model",
       "label": "sklearn_linear_model",
       "_origin": "semantic",
-      "community": 287,
+      "community": 285,
       "community_name": "experimento.py",
       "external": true,
       "file_type": "concept",
@@ -45203,7 +44831,7 @@
       "id": "sklearn_pipeline",
       "label": "sklearn_pipeline",
       "_origin": "semantic",
-      "community": 287,
+      "community": 285,
       "community_name": "experimento.py",
       "external": true,
       "file_type": "concept",
@@ -45215,7 +44843,7 @@
       "id": "sklearn_preprocessing",
       "label": "sklearn_preprocessing",
       "_origin": "semantic",
-      "community": 287,
+      "community": 285,
       "community_name": "experimento.py",
       "external": true,
       "file_type": "concept",
@@ -45227,7 +44855,7 @@
       "id": "xgboost",
       "label": "xgboost",
       "_origin": "semantic",
-      "community": 287,
+      "community": 285,
       "community_name": "experimento.py",
       "external": true,
       "file_type": "concept",
@@ -116997,160 +116625,6 @@
       "weight": 1.0
     },
     {
-      "source": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer",
-      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_neural_designer_gu\u00eda_de_estudio_tutoriales_oficiales_2026_10_07",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L1",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_neural_designer_gu\u00eda_de_estudio_tutoriales_oficiales_2026_10_07",
-      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_1_idea_general_y_flujo_de_trabajo",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L10",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_neural_designer_gu\u00eda_de_estudio_tutoriales_oficiales_2026_10_07",
-      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_5_training_strategy",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L101",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_neural_designer_gu\u00eda_de_estudio_tutoriales_oficiales_2026_10_07",
-      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_6_model_selection_y_sobreajuste",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L131",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_neural_designer_gu\u00eda_de_estudio_tutoriales_oficiales_2026_10_07",
-      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_7_testing_analysis",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L146",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_neural_designer_gu\u00eda_de_estudio_tutoriales_oficiales_2026_10_07",
-      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_8_model_deployment",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L174",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_neural_designer_gu\u00eda_de_estudio_tutoriales_oficiales_2026_10_07",
-      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_9_lo_que_ense\u00f1an_los_ejemplos_oficiales",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L185",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_neural_designer_gu\u00eda_de_estudio_tutoriales_oficiales_2026_10_07",
-      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_10_discrepancias_y_erratas_de_la_documentaci\u00f3n",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L203",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_neural_designer_gu\u00eda_de_estudio_tutoriales_oficiales_2026_10_07",
-      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_11_errores_t\u00edpicos_resumen",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L226",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_neural_designer_gu\u00eda_de_estudio_tutoriales_oficiales_2026_10_07",
-      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_2_elegir_el_tipo_de_modelo",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L23",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_neural_designer_gu\u00eda_de_estudio_tutoriales_oficiales_2026_10_07",
-      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_12_comprobar_en_la_app_pendiente",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L242",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_neural_designer_gu\u00eda_de_estudio_tutoriales_oficiales_2026_10_07",
-      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_fuentes_todas_en_neuraldesigner_com_learning",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L258",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_neural_designer_gu\u00eda_de_estudio_tutoriales_oficiales_2026_10_07",
-      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_3_data_set",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L45",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_neural_designer_gu\u00eda_de_estudio_tutoriales_oficiales_2026_10_07",
-      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_apuntes_neural_designer_4_neural_network",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/apuntes/neural-designer.md",
-      "source_location": "L71",
-      "weight": 1.0
-    },
-    {
       "source": "master_sistemas_inteligentes_computacion_neuroborrosa_fuente",
       "target": "master_sistemas_inteligentes_computacion_neuroborrosa_fuente_computaci\u00f3n_neuroborrosa_304473_3_ects_obligatoria",
       "relation": "contains",
@@ -117163,46 +116637,13 @@
     },
     {
       "source": "master_sistemas_inteligentes_computacion_neuroborrosa_fuente_computaci\u00f3n_neuroborrosa_304473_3_ects_obligatoria",
-      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_fuente_parte_neuronal_ang\u00e9lica_gonz\u00e1lez_arrieta",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/FUENTE.md",
-      "source_location": "L18",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_computacion_neuroborrosa_fuente_computaci\u00f3n_neuroborrosa_304473_3_ects_obligatoria",
-      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_fuente_estructura",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/FUENTE.md",
-      "source_location": "L35",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_computacion_neuroborrosa_fuente_computaci\u00f3n_neuroborrosa_304473_3_ects_obligatoria",
       "target": "master_sistemas_inteligentes_computacion_neuroborrosa_fuente_requisitos_oficiales_2026_27_presentaci\u00f3n_del_profesor_4_10_26",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/FUENTE.md",
-      "source_location": "L40",
-      "weight": 1.0
-    },
-    {
-      "source": "master_sistemas_inteligentes_computacion_neuroborrosa_fuente_computaci\u00f3n_neuroborrosa_304473_3_ects_obligatoria",
-      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_fuente_drive_del_alumno",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/FUENTE.md",
-      "source_location": "L7",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -117213,7 +116654,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/FUENTE.md",
-      "source_location": "L97",
+      "source_location": "L69",
+      "weight": 1.0
+    },
+    {
+      "source": "master_sistemas_inteligentes_computacion_neuroborrosa_fuente_computaci\u00f3n_neuroborrosa_304473_3_ects_obligatoria",
+      "target": "master_sistemas_inteligentes_computacion_neuroborrosa_fuente_estructura",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "master-sistemas-inteligentes/computacion-neuroborrosa/FUENTE.md",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -120316,149 +119768,6 @@
       "confidence_score": 1.0,
       "source_file": "plugins/caveman-cavecrew/skills/caveman/SKILL.md",
       "source_location": "L88",
-      "weight": 1.0
-    },
-    {
-      "source": "recursos_generales_hardware_compra_tarjeta_grafica",
-      "target": "recursos_generales_hardware_compra_tarjeta_grafica_compra_de_tarjeta_gr\u00e1fica_gpu_para_ia",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L1",
-      "weight": 1.0
-    },
-    {
-      "source": "recursos_generales_hardware_compra_tarjeta_grafica_3_opciones_y_precios_reales_idealo_es_2026_09_26",
-      "target": "recursos_generales_hardware_compra_tarjeta_grafica_nvidia_rtx_5060_ti_16_gb_nueva_precio_m\u00e1s_bajo_por_modelo",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L59",
-      "weight": 1.0
-    },
-    {
-      "source": "recursos_generales_hardware_compra_tarjeta_grafica_3_opciones_y_precios_reales_idealo_es_2026_09_26",
-      "target": "recursos_generales_hardware_compra_tarjeta_grafica_amd_rx_9060_xt_16_gb_nueva_sapphire",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L73",
-      "weight": 1.0
-    },
-    {
-      "source": "recursos_generales_hardware_compra_tarjeta_grafica_3_opciones_y_precios_reales_idealo_es_2026_09_26",
-      "target": "recursos_generales_hardware_compra_tarjeta_grafica_otras_referencias",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L81",
-      "weight": 1.0
-    },
-    {
-      "source": "recursos_generales_hardware_compra_tarjeta_grafica_3_opciones_y_precios_reales_idealo_es_2026_09_26",
-      "target": "recursos_generales_hardware_compra_tarjeta_grafica_recomendaci\u00f3n",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L95",
-      "weight": 1.0
-    },
-    {
-      "source": "recursos_generales_hardware_compra_tarjeta_grafica_compra_de_tarjeta_gr\u00e1fica_gpu_para_ia",
-      "target": "recursos_generales_hardware_compra_tarjeta_grafica_4_puntos_d\u00e9biles_y_riesgos",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L106",
-      "weight": 1.0
-    },
-    {
-      "source": "recursos_generales_hardware_compra_tarjeta_grafica_compra_de_tarjeta_gr\u00e1fica_gpu_para_ia",
-      "target": "recursos_generales_hardware_compra_tarjeta_grafica_1_antes_de_nada_hace_falta_para_el_tfm",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L12",
-      "weight": 1.0
-    },
-    {
-      "source": "recursos_generales_hardware_compra_tarjeta_grafica_compra_de_tarjeta_gr\u00e1fica_gpu_para_ia",
-      "target": "recursos_generales_hardware_compra_tarjeta_grafica_5_tu_equipo_borey_2_0_plus_\u0440\u043e\u0431\u043e\u0442\u043a\u043e\u043c\u043f",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L128",
-      "weight": 1.0
-    },
-    {
-      "source": "recursos_generales_hardware_compra_tarjeta_grafica_compra_de_tarjeta_gr\u00e1fica_gpu_para_ia",
-      "target": "recursos_generales_hardware_compra_tarjeta_grafica_6_qu\u00e9_comprar_y_d\u00f3nde_salamanca",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L156",
-      "weight": 1.0
-    },
-    {
-      "source": "recursos_generales_hardware_compra_tarjeta_grafica_compra_de_tarjeta_gr\u00e1fica_gpu_para_ia",
-      "target": "recursos_generales_hardware_compra_tarjeta_grafica_7_lista_de_comprobaci\u00f3n_antes_de_comprar",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L184",
-      "weight": 1.0
-    },
-    {
-      "source": "recursos_generales_hardware_compra_tarjeta_grafica_compra_de_tarjeta_gr\u00e1fica_gpu_para_ia",
-      "target": "recursos_generales_hardware_compra_tarjeta_grafica_8_despu\u00e9s_de_montarla",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L199",
-      "weight": 1.0
-    },
-    {
-      "source": "recursos_generales_hardware_compra_tarjeta_grafica_compra_de_tarjeta_gr\u00e1fica_gpu_para_ia",
-      "target": "recursos_generales_hardware_compra_tarjeta_grafica_2_la_regla_m\u00e1s_importante_la_vram",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L35",
-      "weight": 1.0
-    },
-    {
-      "source": "recursos_generales_hardware_compra_tarjeta_grafica_compra_de_tarjeta_gr\u00e1fica_gpu_para_ia",
-      "target": "recursos_generales_hardware_compra_tarjeta_grafica_3_opciones_y_precios_reales_idealo_es_2026_09_26",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "recursos-generales/hardware/compra-tarjeta-grafica.md",
-      "source_location": "L52",
       "weight": 1.0
     },
     {
@@ -125976,5 +125285,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "35c97e65f4bfb2c0c857b6cca902503af8f1b1bd"
+  "built_at_commit": "9bb47b72e600be16be54a258692471a82fb2da67"
 }
