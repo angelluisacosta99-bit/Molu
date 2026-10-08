@@ -116,8 +116,8 @@ Leídos en sus secciones clave. Detalle completo en el documento compartido.
   reales ni personas; los umbrales se ajustan contra el propio sistema difuso.
   Bibliografía: 38 de 45 DOIs resuelven, los 7 restantes son límites de consulta
   o DOIs cortados por la extracción. Scimago Q1 (2024). Factor de impacto 8,4 y CiteScore 15,0 según la ficha
-  de la revista en ScienceDirect (captura del 2026-10-08; año del JCR por
-  confirmar pasando el ratón sobre la cifra; ISSN 0360-1323). Cumple con reservas.
+  de la revista en ScienceDirect (captura del 2026-10-08; el aviso de la
+  ficha indica 2025 Journal Citation Reports, Clarivate, 2026; ISSN 0360-1323). Cumple con reservas.
 - **S — Usman et al., *Energy management for smart residential homes*,
   Electric Power Systems Research 238 (2025), 111057**
   (10.1016/j.epsr.2024.111057). Datos reales de 15 hogares (Ontario, julio de
